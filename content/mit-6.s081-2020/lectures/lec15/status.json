@@ -1,0 +1,78 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lecture": "lec15",
+  "title": "崩溃恢复",
+  "status": "done",
+  "completed_at": "2026-11-06T17:27:38+00:00",
+  "completion_scope": "Content production complete within actual source coverage; done does not mean full audio/visual verification or gap-free original recording",
+  "parts": {
+    "notes": "done",
+    "draft": "done",
+    "materials": "done"
+  },
+  "deliverables": [
+    "notes.zh.md",
+    "draft.zh.md",
+    "materials.zh.md",
+    "status.json",
+    "sources/coverage.json",
+    "sources/manifest.json",
+    "sources/metadata-proposal.json",
+    "sources/video.metadata.json"
+  ],
+  "part_details": {
+    "notes": "Mechanisms, crash-point proof table,2k+2 write-count derivation,admission formula,pinning versus locking,shared-block group-commit reasoning,8 self-tests; sources and supplements distinguished",
+    "draft": "31 detailed autonomous Chinese reading windows covering00:00–90:30 in source order, including lab discussion,derivations,code walk,actual echo trace and post-class questions;3 actual viewed classroom stills",
+    "materials": "Complete MIT-licensed translation of rev1§8.4–8.6,p84–87 before§8.7;both code excerpts,all paragraphs and exact license notice;4 original pages visually reviewed;no figures/tables in assigned scope"
+  },
+  "sources": ["schedule","video-7Hk2dIorDkk","video-asr","outline-text","outline-boards","book-rev1","book-license","xv6-e23d53f"],
+  "video": {
+    "id": "7Hk2dIorDkk",
+    "duration_seconds": 5430,
+    "duration": "90:30",
+    "captions": "English original automatic;manual tracks absent",
+    "cue_count": 2345,
+    "all_caption_text_read": true,
+    "raw_first_start_ms": 240,
+    "raw_last_end_ms": 5431600,
+    "draft_segments": 31,
+    "evidence_timestamps": 127,
+    "reviewed_stills_seconds": [2100,3060,3750],
+    "full_audio_review": false,
+    "full_video_visual_review": false,
+    "license": "No explicit open license; autonomous retelling, not verbatim full translation"
+  },
+  "gaps": [
+    "00:00–00:00.240无字幕；未猜测讲话。",
+    "70:17.840–70:29.920、77:40.560–77:54.880为超过10秒的字幕空隙；没有音频核对，不把它们擅称静音或补造内容。",
+    "原片在90:30结束，最后学生询问文本讲义的问题未录完；没有后续回答可整理。原始字幕结束90:31.600超时1.600秒，发布窗口已封顶。",
+    "已完整读ASR并核对函数名、关键数字及3帧，未逐句听音，也没有审阅全片画面。",
+    "录课51:00显示install_trans(1)，共享e23d53f是install_trans(void)且恢复也走bunpin；差异在译稿/笔记明确，未将参考快照当录课树或实验分支，未运行验证该旧快照边界。"
+  ],
+  "blockers": [],
+  "checks": {
+    "status": "passed",
+    "command": "python3 content/mit-6.s081-2020/lectures/lec15/sources/validate.py",
+    "performed_at": "2026-11-06T17:27:38+00:00",
+    "json_files_parsed": 6,
+    "image_links_verified": 3,
+    "internal_links_verified": 15,
+    "source_code_asset_hashes_verified": 21,
+    "metadata_hash": "Independently computed after final metadata edit and inserted in manifest",
+    "caption_start_monotonic": true,
+    "all_evidence_times_match_real_cues_to_centisecond_rounding": true,
+    "all_31_headings_match_coverage": true,
+    "timeline_contiguous_0_to_5430": true,
+    "book_sections_and_both_code_blocks_present": true,
+    "mit_license_exact_match": true,
+    "classroom_images_only_in_draft": true,
+    "semantic_review": "All captions read before writing; book assigned sections read and rendered pages viewed; derivations/questions mapped manually. Structural checks are not proof of full audio accuracy.",
+    "site_build": "not-run-per-worker-contract",
+    "xv6_or_lab_tests": "not-run",
+    "commit_push": "not-performed"
+  },
+  "metadata_proposal": "sources/metadata-proposal.json",
+  "shared_metadata_changes": "none; propose course.json lec15 video.duration=90:30 only",
+  "next_action": "Parent agent integration and batch-level review/build; no further local production required"
+}

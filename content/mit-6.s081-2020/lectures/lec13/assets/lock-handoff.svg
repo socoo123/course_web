@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" role="img" aria-labelledby="title desc">
+  <title id="title">sleep 的两锁交接</title>
+  <desc id="desc">从持条件锁检查条件，到取得进程锁，再释放条件锁、登记睡眠并切换，最后调度器释放进程锁。关键窗口中始终至少有一把锁阻止唤醒检查越过睡眠登记。</desc>
+  <rect width="900" height="300" rx="16" fill="#f8fafc"/>
+  <g font-family="sans-serif" fill="#0f172a" font-size="17">
+    <text x="28" y="35" font-size="21" font-weight="bold">锁交接覆盖整个“检查 → 登记”窗口（编者自绘）</text>
+    <text x="28" y="85">等待方动作</text>
+    <text x="185" y="85">检查条件</text><text x="340" y="85">取得 P</text>
+    <text x="480" y="85">释放 L</text><text x="610" y="85">登记并切换</text>
+    <text x="755" y="85">调度器释放 P</text>
+    <text x="28" y="140">条件锁 L</text>
+    <rect x="180" y="114" width="345" height="36" rx="8" fill="#93c5fd"/>
+    <text x="203" y="139">持有：唤醒方不能更新条件并通知</text>
+    <text x="28" y="202">进程锁 P</text>
+    <rect x="340" y="176" width="450" height="36" rx="8" fill="#86efac"/>
+    <text x="365" y="201">持有：wakeup 不能检查这个进程</text>
+    <text x="28" y="263">两条色带重叠，没有无保护的空隙；唤醒后还须持 L 重新检查条件。</text>
+  </g>
+</svg>

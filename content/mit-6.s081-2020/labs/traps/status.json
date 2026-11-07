@@ -1,0 +1,54 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lab": "traps",
+  "title": "陷阱",
+  "status": "done",
+  "updated_at": "2026-11-06",
+  "scope": "中文内容生产完成；done 不表示已实现或运行 xv6 实验",
+  "parts": {
+    "lab": {
+      "status": "done",
+      "file": "lab.zh.md",
+      "coverage": "全部六组汇编问答、backtrace、alarm、提示、实验示例输出、专用测试与选做；通用提交段转公共资料"
+    },
+    "guide": {
+      "status": "done",
+      "file": "guide.zh.md",
+      "coverage": "机制、阶段目标、不变量与坑点；无完整答案代码，无汇编题答案集"
+    }
+  },
+  "sources": ["lab-traps-2020", "xv6-book-rev1", "xv6-code-2020", "lec05-local", "common-handin-local"],
+  "artifacts": [
+    "lab.zh.md",
+    "guide.zh.md",
+    "status.json",
+    "sources/coverage.json",
+    "sources/manifest.json",
+    "sources/metadata-proposal.json"
+  ],
+  "gaps": [
+    "固定上游快照不是 traps 实验分支，缺少 user/call.c、user/bttest.c、user/alarmtest.c 和本实验评分脚本；没有获取额外实验分支文件。",
+    "未生成 call.asm 或 alarmtest.asm；具体地址与测试内部行为未独立核验，题面输出明确标为官方示例。",
+    "未运行编译、QEMU、bttest、alarmtest、usertests、make grade、全站 build 或提交命令。",
+    "教材第4章以共享抽取文本核对，未在本任务查看 PDF 图像；无教材图表复制。",
+    "题面外链仅保留入口，未重新验证可用性；历史提交服务未访问。"
+  ],
+  "technical_notes": [
+    "fp-8/fp-16 仅用于标准 RV64 帧记录；解释固定栈页范围、页对齐取整与 trap 边界。",
+    "CPU ticks 按题面 usertrap 的 timer 路径计数，不混用全局 ticks、墙上时间或 kerneltrap。",
+    "恢复包括原 epc 与用户整数寄存器，明确 syscall 返回写回 a0、64位值与 sigreturn 的 ecall 路径。",
+    "handler 地址可以为0；sigalarm(0,0) 停止未来投递但不能破坏活动 handler 的恢复现场。",
+    "官方要求周期重新布置与不重入，未将 handler 期间计数策略或积压投递规则伪装为题面要求。",
+    "rev1 §4.2 对 userret 参数顺序的文字与固定源码不一致，指导依据源码解释。"
+  ],
+  "checks": {
+    "official_html_and_text_read": "passed",
+    "shared_submission_semantics_compared": "passed",
+    "source_paths_and_version_review": "passed",
+    "local_json_markdown_links_and_coverage": "passed: 4 JSON文件可解析，2份Markdown围栏闭合，站内路由ID与相对路径有效，来源哈希匹配，21条覆盖映射及11个非通用提交区的原文pre块全部保留",
+    "runtime_tests": "not-run",
+    "site_build": "not-run"
+  },
+  "metadata_proposal": "sources/metadata-proposal.json"
+}

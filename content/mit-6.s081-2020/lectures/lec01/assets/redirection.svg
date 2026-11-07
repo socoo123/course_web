@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320" role="img" aria-labelledby="title desc">
+  <title id="title">fork、重定向与 exec 如何组合</title>
+  <desc id="desc">父 shell 的 fd 1 保持指向终端；fork 后的子进程关闭 fd 1，打开 out，再执行 echo，使 echo 的输出进入文件。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#9a5a32"/></marker></defs>
+  <rect width="800" height="320" rx="16" fill="#faf7f0"/>
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif" fill="#302b25" text-anchor="middle">
+    <g fill="#fffdf8" stroke="#d6cbbb"><rect x="25" y="112" width="150" height="78" rx="10"/><rect x="260" y="30" width="210" height="75" rx="10"/><rect x="260" y="205" width="210" height="85" rx="10"/><rect x="565" y="30" width="210" height="75" rx="10"/><rect x="565" y="205" width="210" height="85" rx="10"/></g>
+    <text x="100" y="145" font-size="19">shell</text><text x="100" y="170" font-size="14">fd 1 → 终端</text>
+    <text x="365" y="61" font-size="18">父 shell</text><text x="365" y="87" font-size="14">wait，保留原 fd 表</text>
+    <text x="365" y="239" font-size="18">子进程</text><text x="365" y="266" font-size="14">close(1) → open("out")</text>
+    <text x="670" y="62" font-size="18">终端</text><text x="670" y="87" font-size="14">shell 仍可输出提示符</text>
+    <text x="670" y="239" font-size="18">echo</text><text x="670" y="266" font-size="14">fd 1 → 文件 out</text>
+    <text x="215" y="140" font-size="14">fork</text><text x="519" y="235" font-size="14">exec</text>
+  </g>
+  <g fill="none" stroke="#9a5a32" stroke-width="2" marker-end="url(#arrow)"><path d="M175 135 L220 67 L252 67"/><path d="M175 167 L220 247 L252 247"/><path d="M470 67 H555"/><path d="M470 253 H555"/></g>
+</svg>

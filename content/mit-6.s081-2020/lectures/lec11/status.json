@@ -1,0 +1,36 @@
+{
+  "course": "mit-6.s081-2020",
+  "lecture": "lec11",
+  "year": 2020,
+  "title": "线程切换",
+  "status": "done",
+  "parts": {
+    "draft": {"status": "done", "file": "draft.zh.md", "scope": "00:00–91:27 共31段，完整可用ASR自主中文译述，保留推导、单核GDB演示及课后问答；不是机械逐字全文翻译", "ending_source_gap": "最后问题随录像截断，已标明，不补造回答"},
+    "materials": {"status": "done", "file": "materials.zh.md", "scope": "rev1第7章导言、§7.1–7.4，67–71页止于§7.5前；含图7.1、原页核对、MIT许可及版本校对"},
+    "notes": {"status": "done", "file": "notes.zh.md", "scope": "保存协议、调用约定、栈独占、锁交接不变量、CPU迁移、首次调度、易错与6道自测"}
+  },
+  "video": {
+    "id": "vsgrTHY5tkg", "duration_seconds": 5487, "duration_display": "91:27",
+    "captions": "English original-language automatic; no manual captions available",
+    "cue_count": 2373, "captions_read": "all 2373 cues",
+    "first_start_ms": 80, "last_end_ms": 5488320,
+    "reviewed_stills_seconds": [1800,2980,3750,5290],
+    "full_audio_review": false, "full_video_viewing": false,
+    "license": "not explicitly provided by video metadata; website CC not applied"
+  },
+  "sources": ["V11: metadata and full ASR", "S11: l-threads.txt full outline read", "B1: rev1 pp67–71 within assigned boundary", "C20: fixed e23d53f27f6e187732a92a2b4705639d1c260f05, nine kernel files"],
+  "source_manifest": "sources/manifest.json",
+  "coverage": "sources/coverage.json",
+  "checks": {"report": "sources/check-report.json", "scope": "JSON、逐段cue映射、图片存在与解码、共享来源哈希、教材范围、站内路由ID", "site_build_run": false, "experiments_run": false, "toolchain_run": false},
+  "gaps": [
+    "未逐句听音或核对全片画面；全文依据已通读的自动字幕，技术名词结合已读源码与真实帧校对",
+    "91:21–91:27最后问题未说完；不确定准确所指且无完整回答",
+    "首字幕前0.080秒无文字；原始末尾超时长1.320秒，正文封顶91:27",
+    "视频授权未明确，仅自主译述与必要图像说明；不套用网站CC",
+    "固定源码不是录课工作树或实验分支；课堂spin示例未在本地复跑，未声称取得其精确源码",
+    "教材§7.5以后由lec13唯一负责；跨讲链接核对课程ID，不替另一worker证明正文完成",
+    "未运行全站build、xv6、实验评分或工具链；本讲未提交推送"
+  ],
+  "metadata_proposal": "sources/metadata-proposal.json",
+  "write_boundary": "content/mit-6.s081-2020/lectures/lec11/"
+}

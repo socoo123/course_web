@@ -1,0 +1,61 @@
+{
+  "course":"mit-6.s081-2020",
+  "year":2020,
+  "lecture":"lec20",
+  "title":"内核与高级语言",
+  "status":"done",
+  "revision":"lec20-v1-2026-11-07",
+  "review_status":"reviewed-and-build-passed",
+  "main_agent_acceptance":{"date":"2026-11-07","review":"../../sources/review-lec20.json","structure":"passed","caption_timeline":"passed","site_build":"passed: 2451 modules, 5.81s; one batch build","worker_checks_note":"下方未运行build是worker交付时记录；统一构建由主agent完成，实验仍未运行"},
+  "model":"openai/gpt-6-astra#high（主agent已确认）",
+  "write_scope":"content/mit-6.s081-2020/lectures/lec20/",
+  "existing_files":"目录原先不存在；没有覆盖旧内容",
+  "parts":{"notes":"done","draft":"done","materials":"done"},
+  "deliverables":["notes.zh.md","draft.zh.md","materials.zh.md","status.json","sources/coverage.json","sources/manifest.json","sources/metadata-proposal.json","sources/corrections.json"],
+  "sources":["V20","P20","F20","S20-outline","S20-slides"],
+  "video":{
+    "id":"AAtXWGwxI9k",
+    "duration_seconds":5668,
+    "duration":"94:28",
+    "captions":"en-orig-asr-fetched-and-all-read",
+    "cue_count":2433,
+    "windows":32,
+    "raw_first_start_ms":2159,
+    "raw_last_end_ms":5667199,
+    "reviewed_stills_seconds":[2560,3525,4300],
+    "full_audio_review":false,
+    "runtime_demo":"仅slides/手写批注/讨论；提议QEMU演示未实际执行，未编造命令结果",
+    "coverage":"00:00–94:28连续阅读窗口；正文含正式讲授后约12分钟问答"
+  },
+  "reading":{
+    "paper":"OSDI2018正文§1–10，印刷89–102；书目103–105也已读；PDF封面1/正文2–15/书目16–18/19空白",
+    "figures":"图1–11原页全部实际查看；PDF5/7/9/10/11/13/14/15",
+    "faq":"288行、26问答全文阅读，materials按原序26项定位；重叠内容交叉链接",
+    "license":"论文仅确认open access、视频许可未确认，采用自主译述；FAQ按课程网站CC BY3.0 US署名；逐来源判断在manifest",
+    "outline_and_slides":"全文文本已读，仅核对；slides 67物理页。跳过的扩展性slides不冒充已讲或论文实验"
+  },
+  "checks":{
+    "command":"python3 content/mit-6.s081-2020/lectures/lec20/sources/validate.py",
+    "result":"passed",
+    "json":"所有本讲JSON解析通过",
+    "timeline":"32窗口首尾连续；每个cue按开始时间恰归属一个窗口；时间单调且末端不超5668秒；draft标题与coverage一致",
+    "images":"3张相对图片存在且JPEG解码通过；read实际查看；仅draft引用",
+    "internal_links":"8处路由的lecture/lab id与视图类型有效",
+    "source_hashes":"共享原始文件、抽取文本、原ASR、规范化字幕、阅读文本及三帧SHA-256一致",
+    "reading_structure":"11图与26FAQ项已记录",
+    "build":"not-run（按worker合同由主agent执行）",
+    "experiments":"not-run"
+  },
+  "gaps":[
+    "未全片听音或逐帧核验；仅全部字幕文本与三张关键帧核对",
+    "开头2.159秒与尾部0.801秒没有字幕，未补造内容",
+    "末段源码行数/汇编指令的口述或ASR歧义未听音确认，已用论文统计作显式编者校订",
+    "字符串复制函数名不可可靠辨认，保留NUL语义而未补造API名",
+    "论文与视频未确认开放全文改编授权，公开正文为自主译述而非逐字全文翻译",
+    "共享来源Last-Modified为2025年，未保证与2020录课工作副本逐字一致",
+    "未运行Biscuit基准、xv6或net实验；未运行全站build；未提交推送"
+  ],
+  "metadata_proposal":"course.json lectures[lec20].video.duration = 94:28；必要元数据见sources/metadata-proposal.json",
+  "main_review_focus":["42:00–48:00入口预留与逃逸","66:00–72:00两种比值分母及115微秒校订","81:00–94:28课后问答完整性","materials §2.5未实现边界与§4实验单位/条件"],
+  "completed_on":"2026-11-07"
+}

@@ -1,0 +1,83 @@
+{
+  "course": "mit-6.s081-2020",
+  "lecture": "lec16",
+  "title": "文件系统性能与快速崩溃恢复",
+  "year": 2020,
+  "status": "done",
+  "updated_on": "2026-11-07",
+  "parts": {
+    "notes": {
+      "status": "done",
+      "file": "notes.zh.md",
+      "scope": "三个完成时点、性能收益分类、两道并发防线、恢复证据、ordered data保证边界、空间预留、7题折叠自测；与课堂/论文定位互链"
+    },
+    "draft": {
+      "status": "done",
+      "file": "draft.zh.md",
+      "scope": "99:12按33个约三分钟窗口自主中文译述，涵盖82分钟总结后的全部实质问答；3张已read查看的真实课堂帧；保留未知线程数和末尾语义歧义",
+      "review_limit": "全部2615条英文ASR已读，不等于全片听音或逐帧观看；非逐字译本"
+    },
+    "materials": {
+      "status": "done",
+      "file": "materials.zh.md",
+      "scope": "实际阅读入口29行及链接PDF全部8页已读；11个主题章节自主译述：机制、格式、依赖、checkpoint、碰撞、NFS、未来工作、评测缺席；明确1998设计与后续ext3差异",
+      "license_limit": "论文无已确认开放再利用许可，不声称全文翻译，不套用课程CC"
+    }
+  },
+  "video": {
+    "id": "CmDcf6rjFb4",
+    "duration_seconds": 5952,
+    "duration": "99:12",
+    "caption_kind": "English automatic en-orig; no manual captions listed by extractor",
+    "cue_count": 2615,
+    "all_caption_text_read": true,
+    "raw_first_start_ms": 2080,
+    "raw_last_start_ms": 5950440,
+    "raw_last_end_ms": 5953440,
+    "opening_gap_ms": 2080,
+    "tail_uncovered_ms": 0,
+    "raw_tail_overrun_ms": 1440,
+    "reviewed_stills_seconds": [1190,4655,5180],
+    "stills_crop": "none;1280x720",
+    "full_audio_review_performed": false,
+    "full_video_visual_review_performed": false
+  },
+  "reading": {
+    "author": "Stephen C. Tweedie",
+    "title": "Journaling the Linux ext2fs Filesystem",
+    "version": "LinuxExpo1998 design-in-progress",
+    "entry_read": "sources/followup/journal-ext2fs.html all29lines; it links paper body, is not itself the paper",
+    "paper_url": "https://pdos.csail.mit.edu/6.S081/2020/readings/journal-design.pdf",
+    "pdf_pages_text_read": [1,2,3,4,5,6,7,8],
+    "visual_review": "All-page rendered contact sheet read, confirms no figures/tables/math/evaluation graphs; paper original textual steps5then7 explicitly noted",
+    "evaluation": "No empirical benchmark/evaluation section; only qualitative mechanism and expected performance; future work remains future work",
+    "code_scope": "kernel/log.c all235lines and LICENSE all24lines in fixed2020snapshot",
+    "code_commit": "e23d53f27f6e187732a92a2b4705639d1c260f05",
+    "shared_textbook": "Chapter8 not retranslated; lec14/lec15 linked"
+  },
+  "sources": ["S16","V16-meta","V16-asr","O16","H16","P16","X16","X16-license"],
+  "evidence_files": ["sources/manifest.json","sources/coverage.json","sources/video.metadata.json","sources/captions.normalized.json","sources/transcript.en.txt","sources/journal-design.pdf","sources/paper-contact.png"],
+  "gaps": [
+    "未全片逐句听音；ASR术语与关键机制经提纲、论文、固定源码及3张实帧辅助核对，不声称每句音频准确。",
+    "00:00–00:02.080没有字幕；末条结束时间超出视频元数据1.44秒，正文封顶99:12；字幕内部5秒以上间隔已列coverage，不猜写静音或缺失讲话。",
+    "98:27.679–99:03.760学生似乎改问覆盖已有块，但回答仍使用未被文件引用的空闲块前提；正文明确保留错位，不宣称ordered data保障任意已有内容覆盖原子性。",
+    "讲者对后台线程实际数量明确不确定；保留为未知，不用常识补成具体实现。",
+    "论文/视频未确认开放再利用许可，因此为自主译述而非逐字全文译本；公开可读不作为授权依据。",
+    "1998论文的固定header格式、提交步骤与课堂后续ext3有差异，均保留；提纲中的revoke、孤儿inode及完整reservation死锁案例未在视频展开。",
+    "官方提纲和PDF托管文件Last-Modified为2025；固定xv6快照只作2020辅助参考，非录课工作树或实验分支。",
+    "未运行文件系统实验或性能基准；论文原文也没有实测评测数据。"
+  ],
+  "checks": {
+    "status": "done",
+    "command": "python3 content/mit-6.s081-2020/lectures/lec16/sources/verify.py",
+    "result": "passed",
+    "scope": ["全部本讲JSON解析","33段标题逐项与coverage匹配","0–5952秒窗口连续","2615条字幕起点单调且全部归入窗口","逐段证据cue/time/text精确匹配","来源与派生文件SHA256","3张截图尺寸与可解码性","Markdown图片可达且截图只在draft","站内课程/实验ID链接","11个论文主题章节与12项原文范围映射","7个自测答案"],
+    "limitations": "结构检查不替代全文理解、全片听音或实验验证。首次发现一条证据cue编号偏一，patch修正后通过。",
+    "whole_site_build": "not-run; reserved for main agent",
+    "experiments": "not-run",
+    "commit_push": "not-performed"
+  },
+  "metadata_proposal": "sources/metadata-proposal.json",
+  "write_scope": "content/mit-6.s081-2020/lectures/lec16/ only",
+  "resume": "本讲交付完成；主agent可合并99:12视频时长和实际论文正文链接。若后续处理音频歧义，仅按gaps定位，不覆盖当前完整正文。"
+}

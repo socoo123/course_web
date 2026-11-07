@@ -1,0 +1,43 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lab": "cow",
+  "title": "写时复制 fork",
+  "updated_on": "2026-11-07",
+  "status": "done",
+  "completion_scope": "实验内容文档交付完成；不代表实验代码实现、测试或评分通过",
+  "parts": {
+    "lab": {"status": "done", "file": "lab.zh.md", "scope": "官方全部实质要求中译；共同提交段按合同链接公共资料"},
+    "guide": {"status": "done", "file": "guide.zh.md", "scope": "机制、思路骨架、权限与引用计数、copyout、排错、自测与选做边界；无完整答案"}
+  },
+  "sources": ["lab-cow-2020", "book-rev1-section-4.6", "xv6-reference-2020", "lec08-existing", "lec12-existing", "common-submission"],
+  "source_readiness": {
+    "official_requirements": "reviewed",
+    "reference_code": "reviewed-selected-scope-not-lab-branch",
+    "cow_branch_test_sources": "not-acquired",
+    "cow_grader": "not-acquired"
+  },
+  "artifacts": ["lab.zh.md", "guide.zh.md", "status.json", "sources/coverage.json", "sources/manifest.json", "sources/metadata-proposal.json"],
+  "checks": {
+    "official_html_and_text_read_fully": true,
+    "official_html_sha256_matches_shared_manifest": true,
+    "common_submission_compared_with_pgtbl": "HTML 内容空白归一化后完全相同；公共资料已全读并逐项对照",
+    "official_task_plan_hints_examples_optional_review": "done",
+    "local_json_links_images_coverage_check": "passed：4个JSON可解析；Markdown围栏成对；全部站内链接目标存在；无图片与占位资产；3段官方命令/输出逐字对照通过；来源SHA256匹配；27项覆盖含5条提示、2项选做；公共章节存在；无英文空壳",
+    "full_site_build": "not-run-worker-scope",
+    "xv6_qemu_gdb": "not-run",
+    "cowtest": "not-run",
+    "usertests": "not-run",
+    "make_grade": "not-run",
+    "submission": "not-run"
+  },
+  "gaps": [
+    "未取得 xv6-labs-2020 的 cow 分支、user/cowtest.c、分支版 usertests 与专用评分器；测试内部断言、评分权重及当前分支提交未核实。没有把固定教材快照当作实验分支。",
+    "未运行 xv6、QEMU、GDB、cowtest、usertests 或 make grade；正文输出来自官方网页，不是本地运行证据。",
+    "教材仅阅读 §4.6 抽取文本；本 worker 未重新查看 PDF 原页或任何课堂画面，也未重新阅读原字幕或听音。",
+    "历史课程 URL 的 2026 抓取快照不证明正文自 2020 年起从未更新。"
+  ],
+  "metadata_proposal": "sources/metadata-proposal.json",
+  "shared_files_modified": false,
+  "resume_note": "文档已完成，等待主 agent 统一审阅与构建；若以后获得真实 cow 分支，可再核对测试实现和评分器，不影响当前官方要求译文完整性。"
+}

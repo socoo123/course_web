@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 265" role="img" aria-labelledby="title desc">
+  <title id="title">xv6 自旋锁的三层保证</title>
+  <desc id="desc">原子交换防止多个核同时取得锁，关闭本核中断防止同核重入，内存屏障把共享数据访问约束在正确的取锁释放顺序中。三者共同支持临界区协议。</desc>
+  <rect width="900" height="265" rx="12" fill="#f8fafc"/>
+  <g font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif" text-anchor="middle">
+    <g fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5">
+      <rect x="20" y="20" width="270" height="130" rx="10"/>
+      <rect x="315" y="20" width="270" height="130" rx="10"/>
+      <rect x="610" y="20" width="270" height="130" rx="10"/>
+    </g>
+    <g fill="#0f172a" font-size="22" font-weight="600">
+      <text x="155" y="56">跨核互斥</text><text x="450" y="56">同核中断</text><text x="745" y="56">内存顺序</text>
+    </g>
+    <g fill="#334155" font-size="17">
+      <text x="155" y="92">原子交换锁字</text><text x="155" y="123">至多一个成功持有者</text>
+      <text x="450" y="92">push_off / pop_off</text><text x="450" y="123">避免打断持锁者后重取锁</text>
+      <text x="745" y="92">__sync_synchronize</text><text x="745" y="123">防止访问越过同步边界</text>
+    </g>
+    <path d="M155 150V180H745V150M450 150V205" fill="none" stroke="#64748b" stroke-width="2"/>
+    <rect x="180" y="205" width="540" height="42" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="450" y="233" fill="#14532d" font-size="18">仍需程序员：所有访问遵守同一锁协议，解锁前恢复不变量</text>
+  </g>
+</svg>

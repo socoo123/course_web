@@ -1,0 +1,52 @@
+{
+  "course": "mit-6.s081-2020",
+  "lecture": "lec02",
+  "title": "C 语言、指针与 GDB",
+  "updated_on": "2026-11-06",
+  "status": "done",
+  "completion_scope": "用户指定的无视频书面内容任务完成；不表示取得课堂录像、完成 K&R 全译或运行过示例",
+  "parts": {
+    "notes": {
+      "status": "done",
+      "file": "notes.zh.md",
+      "coverage": "对象/地址/类型/有效性、参数与生命周期、字符串/argv/结构体、位操作、假设驱动调试、8 道自测与原创 SVG"
+    },
+    "draft": {
+      "status": "not-applicable",
+      "file": null,
+      "reason": "2020 官方课表 LEC 2 未提供视频；不生成口述稿、时间轴或问答"
+    },
+    "materials": {
+      "status": "done",
+      "file": "materials.zh.md",
+      "coverage": "C slides 全部 17 页；GDB slides 全部 44 个 PDF 页/16 个逻辑页；pointers.c 全部 47 行；K&R 八个指定小节的定位与自主讲解索引",
+      "nature": "无视频讲次的书面课程资料整理，保留页码对应；技术校正及 2018 x86/JOS 与 2020 RISC-V 差异明确标注"
+    }
+  },
+  "sources": ["S0", "C", "G", "P", "GW", "X-KALLOC", "X-MAKE", "X-GDBINIT", "KR"],
+  "source_manifest": "sources/manifest.json",
+  "coverage_file": "sources/coverage.json",
+  "metadata_proposal": "sources/metadata-proposal.json",
+  "visual_review": {
+    "pdf_text": "C p.1–17、GDB p.1–44 全读",
+    "viewed": "实际查看六张全页 contact sheet；另单独查看 C p.14、GDB p.10 和 p.31",
+    "notes_figure": "assets/pointer-stride.svg，编者原创，XML 已解析",
+    "classroom_stills": "none"
+  },
+  "checks": [
+    "JSON 可解析；来源清单中 8 个实际本地文件的 SHA-256 与存档相符",
+    "C 页码 1–17、GDB 页码 1–44、pointers.c 行号 1–47 的覆盖区间完整且无重复；所有资料目标小节存在",
+    "Markdown 代码围栏成对，图片路径存在；SVG XML 可解析",
+    "3 个讲座/实验站内链接对应既有 course.json ID；公共资料根链接符合课程路由约定",
+    "sources 下没有 .md；没有 draft.zh.md 或伪造时间轴",
+    "仅做本讲内容检查；未运行全站 build、pointers.c、GDB、QEMU 或实验"
+  ],
+  "gaps": [
+    "无官方视频链接，实际课堂讲授、问答、演示输出与起尾时间无法核验",
+    "K&R 未取得可全文再利用版本；仅按课表定位并自主讲解，不覆盖原书逐页内容或习题译文",
+    "三份课程文件 HTTP Last-Modified 为 2025-09-05，不能保证与 2020 最初发布版本逐字一致",
+    "GDB 讲义实际为 2018 x86/JOS 版本；已标明历史范围及核对过的 2020 RISC-V 适配",
+    "所有数值分析均为代码推理；未运行示例、工具链或实验"
+  ],
+  "resume": "本讲正文与来源档案已交付；无待续正文。共享元数据建议由主 agent 整合，统一构建由主 agent 执行。"
+}

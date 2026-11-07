@@ -1,0 +1,64 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lecture": "lec21",
+  "title": "网络",
+  "status": "done",
+  "review_status": "reviewed-and-build-passed",
+  "main_agent_acceptance": {"date":"2026-11-07","review":"../../sources/review-lec21.json","structure":"passed","caption_timeline":"passed","site_build":"passed: 2451 modules, 5.81s; one batch build","worker_checks_note":"下方未运行build是worker交付时记录；统一构建由主agent完成，实验仍未运行"},
+  "version": "2026-11-07-worker-v1",
+  "model": "openai/gpt-6-astra#high",
+  "parts": {"notes": "done", "draft": "done", "materials": "done"},
+  "part_details": {
+    "notes": "提炼寻址、协议/执行分层、编者过载模型、四类调度控制点、DMA边界与六题自测",
+    "draft": "基于完整ASR的31个连续窗口，自主中文译述；保留全部实质问答、抓包/板书演示与讲者不确定性；四张课堂原帧仅在draft",
+    "materials": "指定阅读全文已读；自主中文机制与评测译述，覆盖摘要及§1–9，七幅图单位/条件/结果/局限；不是未知许可论文的全文译文"
+  },
+  "sources": ["V21", "P21", "O21", "S21"],
+  "video": {
+    "id": "Fcjychg4Tvk",
+    "duration_seconds": 5594,
+    "duration": "93:14",
+    "captions": "fetched-en-orig-asr",
+    "cue_count": 2429,
+    "all_caption_text_read": true,
+    "first_start_ms": 6160,
+    "last_end_ms": 5589840,
+    "windows": 31,
+    "full_audio_listened": false,
+    "all_frames_reviewed": false,
+    "reviewed_stills_seconds": [1270,2300,3300,3750]
+  },
+  "reading": {
+    "source": "P21",
+    "pdf_pages_read": "1–14 including cover and references",
+    "visual_pdf_pages": [1,8,9,10,12],
+    "figures_reviewed": ["6-1","6-2","6-3","6-4","6-5","6-6","7-1"],
+    "license": "unknown; independently written exposition, no full translation",
+    "experiments_run": false
+  },
+  "gaps": [
+    "未全片听音，ASR可能有残余识别错误；仅核对四帧，没有核对全部课堂画面",
+    "视频开头0–6.160秒和末尾5589.840–5594秒无字幕，不补造内容；无大于10秒的内部字幕覆盖空隙",
+    "课堂单播示例出现广播目的MAC，讲者未确定原因，正文保留此异常而不擅自归因",
+    "课堂对DMA翻译、多NIC循环细节的回答含猜测；译述明确保留，论文确切实现另放materials",
+    "视频及论文未确认全文翻译许可，均按自主译述交付",
+    "未运行论文实验或net实验；net实验本轮只链接",
+    "固定xv6参考快照e23d53f27f6e187732a92a2b4705639d1c260f05不是录课工作树或net实验分支"
+  ],
+  "checks": {
+    "local_command": "python3 content/mit-6.s081-2020/lectures/lec21/sources/check.py",
+    "result": "passed",
+    "json_parse": true,
+    "caption_start_monotonic": true,
+    "caption_bounds": true,
+    "window_and_cue_coverage": "31 contiguous windows, all2429 cues assigned exactly once by start time",
+    "markdown_images": "4 reachable and decodable; classroom images only in draft",
+    "internal_links": "9 checked against shared course metadata; net route exists but body generation is out of scope",
+    "source_and_image_hashes": "17 verified",
+    "full_site_build_run": false,
+    "lab_tests_run": false
+  },
+  "artifacts": ["notes.zh.md", "draft.zh.md", "materials.zh.md", "sources/coverage.json", "sources/manifest.json", "sources/corrections.json", "sources/metadata-proposal.json", "sources/video.en-orig.json3", "sources/captions.normalized.json", "sources/video.metadata.json"],
+  "metadata_proposal": "video.duration=93:14; duration_seconds=5594; proposal only, no shared metadata modified"
+}

@@ -1,0 +1,133 @@
+{
+  "id": "mit-6.s081-2020",
+  "year": 2020,
+  "instructors": ["Robert Morris", "Frans Kaashoek"],
+  "versions": [
+    { "label": "学期", "value": "Fall 2020（课程 / 视频 / 实验）" },
+    { "label": "教材", "value": "xv6 RISC-V rev1" }
+  ],
+  "intro": "读 xv6 源码、看 2020 年的课堂录像，再亲手给内核加系统调用、页表、写时复制、锁和文件系统功能。每讲有课程笔记、中文译稿和课程资料三部分；实验有中文说明和实验指导。教材、工具链等各讲共用的资料放在「公共资料」。",
+  "links": [
+    { "label": "2020 官方课表", "url": "https://pdos.csail.mit.edu/6.S081/2020/schedule.html" },
+    { "label": "xv6 教材 rev1", "url": "https://pdos.csail.mit.edu/6.S081/2020/xv6/book-riscv-rev1.pdf" },
+    { "label": "2020 工具页", "url": "https://pdos.csail.mit.edu/6.S081/2020/tools.html" }
+  ],
+  "workflow": ["git clone git://g.csail.mit.edu/xv6-labs-2020", "cd xv6-labs-2020", "git checkout util", "make qemu", "make grade"],
+  "lectures": [
+    { "id": "lec01", "num": "1", "title": "课程导论与 Unix 系统调用", "titleEn": "Introduction and examples", "video": { "label": "2020 L1", "youtube": "https://youtu.be/L6YqHxYHa7A", "duration": "1:19:57" }, "readings": ["xv6 教材 rev1 第 1 章"], "lab": "util" },
+    { "id": "lec02", "num": "2", "title": "C 与 GDB", "titleEn": "C and gdb", "readings": ["K&R §2.9、§5.1–5.6、§6.4", "C slides（2020）、GDB slides（课表所链 2018 版）、pointers.c"], "note": "官方课表无视频；提供书面资料与笔记。GDB 讲义使用 2018 x86/JOS 示例，正文已区分 2020 RISC-V 环境。" },
+    { "id": "lec03", "num": "3", "title": "操作系统组织与系统调用", "titleEn": "OS organization and system calls", "video": { "label": "2020 L3", "youtube": "https://youtu.be/o44d---Dk4o", "duration": "80:47" }, "readings": ["xv6 教材 rev1 第 2 章（导言、§2.1–2.8，含图表与习题）", "kernel/proc.h、defs.h、entry.S、main.c；user/initcode.S、init.c；略读 proc.c、exec.c"], "lab": "syscall" },
+    { "id": "lec04", "num": "4", "title": "页表", "titleEn": "Page tables", "video": { "label": "2020 L4", "youtube": "https://youtu.be/f1Hpjty3TT8", "duration": "93:05" }, "readings": ["xv6 教材 rev1 第 3 章（导言、§3.1–3.10，含六道习题）", "kernel/memlayout.h、vm.c、kalloc.c、riscv.h、exec.c"], "lab": "pgtbl" },
+    { "id": "lec05", "num": "5", "title": "RISC-V 调用约定与栈帧", "titleEn": "Calling conventions and stack frames", "video": { "label": "2020 L5", "youtube": "https://youtu.be/s-Z5t_yTyTM", "duration": "75:08" }, "readings": ["RISC-V Calling Convention（V2.1draft 第 18 章，课表指定 PDF）"], "lab": "traps" },
+    { "id": "lec06", "num": "6", "title": "隔离与系统调用进入/退出", "titleEn": "Isolation & system call entry/exit", "video": { "label": "2020 L6", "youtube": "https://youtu.be/T26UuauaxWA", "duration": "87:30" }, "readings": ["xv6 教材 rev1 第 4 章（除 §4.6）", "kernel/riscv.h、trampoline.S、trap.c"], "lab": "traps" },
+    { "id": "lec07", "num": "7", "title": "实验问答（一）", "titleEn": "Q&A labs", "video": { "label": "2020 L7", "youtube": "https://youtu.be/_WWjNIJAfVg", "duration": "87:14" }, "lab": "pgtbl" },
+    { "id": "lec08", "num": "8", "title": "缺页异常", "titleEn": "Page faults", "video": { "label": "2020 L8", "youtube": "https://youtu.be/KSYO-gTZo0A", "duration": "82:08" }, "readings": ["xv6 教材 rev1 §4.6（印刷页 46–47）"], "lab": "lazy" },
+    { "id": "lec09", "num": "9", "title": "中断", "titleEn": "Interrupts", "video": { "label": "2020 L9", "youtube": "https://youtu.be/zRnGNndcVEA", "duration": "97:18" }, "readings": ["xv6 教材 rev1 第 5 章", "kernel/kernelvec.S、plic.c、console.c、uart.c、printf.c"] },
+    { "id": "lec10", "num": "10", "title": "多处理器与锁", "titleEn": "Multiprocessors and locking", "video": { "label": "2020 L10", "youtube": "https://youtu.be/NGXu3vN7yAk", "duration": "92:56" }, "readings": ["xv6 教材 rev1 第 6 章 Locking（导言、§6.1–6.9，55–66 页）", "kernel/spinlock.h、spinlock.c"], "lab": "lock" },
+    { "id": "lec11", "num": "11", "title": "线程切换", "titleEn": "Thread switching", "video": { "label": "2020 L11", "youtube": "https://youtu.be/vsgrTHY5tkg", "duration": "91:27" }, "readings": ["xv6 教材 rev1 第 7 章导言、§7.1–7.4（67–71 页，止于 §7.5 前）", "kernel/proc.c、swtch.S"], "lab": "thread" },
+    { "id": "lec12", "num": "12", "title": "实验问答（二）", "titleEn": "Q&A labs", "video": { "label": "2020 L12", "youtube": "https://youtu.be/S8ZTJKzhQao", "duration": "87:26" }, "lab": "cow" },
+    { "id": "lec13", "num": "13", "title": "sleep 与 wakeup", "titleEn": "sleep & wakeup", "video": { "label": "2020 L13", "youtube": "https://youtu.be/gP67sJ4PTnc", "duration": "85:26" }, "readings": ["xv6 教材 rev1 §7.5–7.10（印刷页 71–80）", "kernel/proc.c、sleeplock.c"] },
+    { "id": "lec14", "num": "14", "title": "文件系统", "titleEn": "File systems", "video": { "label": "2020 L14", "youtube": "https://youtu.be/ADzLv1nRtR8", "duration": "85:38" }, "readings": ["xv6 教材 rev1 第 8 章导言、§8.1–8.3、§8.7–8.16（81–84、87–98 页，排除日志专节）", "kernel/bio.c、fs.c、sysfile.c、file.c"], "lab": "fs" },
+    { "id": "lec15", "num": "15", "title": "崩溃恢复", "titleEn": "Crash recovery", "video": { "label": "2020 L15", "youtube": "https://youtu.be/7Hk2dIorDkk", "duration": "90:30" }, "readings": ["xv6 教材 rev1 §8.4–8.6（84–87 页，止于 §8.7 前）", "kernel/log.c"], "lab": "fs" },
+    { "id": "lec16", "num": "16", "title": "文件系统性能与快速崩溃恢复", "titleEn": "File system performance and fast crash recovery", "video": { "label": "2020 L16", "youtube": "https://youtu.be/CmDcf6rjFb4", "duration": "99:12" }, "readings": ["Journaling the Linux ext2fs Filesystem (1998)"] },
+    { "id": "lec17", "num": "17", "title": "面向应用的虚拟内存", "titleEn": "Virtual memory for applications", "video": { "label": "2020 L17", "youtube": "https://youtu.be/YNQghIvk0jc", "duration": "83:15" }, "readings": ["Virtual Memory Primitives for User Programs (1991)"], "lab": "mmap" },
+    { "id": "lec18", "num": "18", "title": "操作系统组织", "titleEn": "OS Organization", "video": { "label": "2020 L18", "youtube": "https://youtu.be/dM9PLdaTpnA", "duration": "94:19" }, "readings": ["The Performance of micro-Kernel-Based Systems (1997)"] },
+    { "id": "lec19", "num": "19", "title": "虚拟机", "titleEn": "Virtual Machines", "video": { "label": "2020 L19", "youtube": "https://youtu.be/R8obXHAIPY0", "duration": "97:28" }, "readings": ["Dune: Safe User-level Access to Privileged CPU Features (2012)"] },
+    { "id": "lec20", "num": "20", "title": "内核与高级语言", "titleEn": "Kernels and HLL", "video": { "label": "2020 L20", "youtube": "https://youtu.be/AAtXWGwxI9k", "duration": "94:28" }, "readings": ["Biscuit paper (2018)", "Biscuit FAQ"] },
+    { "id": "lec21", "num": "21", "title": "网络", "titleEn": "Networking", "video": { "label": "2020 L21", "youtube": "https://youtu.be/Fcjychg4Tvk", "duration": "93:14" }, "readings": ["Receive Livelock (1996)"], "lab": "net" },
+    { "id": "lec22", "num": "22", "title": "Meltdown", "titleEn": "Meltdown", "video": { "label": "2020 L22", "youtube": "https://youtu.be/WpKVr3p5rjE" }, "readings": ["Meltdown (2018)"] },
+    { "id": "lec23", "num": "23", "title": "RCU", "titleEn": "Read-copy update", "video": { "label": "2020 L23", "youtube": "https://youtu.be/KUwyCGMTeq8" }, "readings": ["RCU paper (2013)", "RCU FAQ"], "note": "2020 课表指定的 slides 标注为 2018 年" },
+    { "id": "lec24", "num": "24", "title": "课程问答", "titleEn": "Q&A", "video": { "label": "2020 L24", "youtube": "https://youtu.be/W9m6m0OGNB8" } }
+  ],
+  "labs": [
+    {
+      "id": "util", "num": 1, "title": "Xv6 与 Unix 工具", "titleEn": "Xv6 and Unix utilities",
+      "stars": 1, "hours": "因 C 基础而异", "branch": "util",
+      "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/util.html",
+      "goal": "用 fork、pipe、exec 等系统调用写几个 Unix 小工具，熟悉 xv6 的开发流程。",
+      "tasks": [
+        { "id": "boot", "title": "启动 xv6" },
+        { "id": "sleep", "title": "sleep", "grade": "./grade-lab-util sleep" },
+        { "id": "pingpong", "title": "pingpong" },
+        { "id": "primes", "title": "primes" },
+        { "id": "find", "title": "find" },
+        { "id": "xargs", "title": "xargs" }
+      ]
+    },
+    {
+      "id": "syscall", "num": 2, "title": "系统调用", "titleEn": "System calls",
+      "stars": 2, "hours": "因基础而异", "branch": "syscall",
+      "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/syscall.html",
+      "goal": "实现系统调用追踪和系统信息查询，贯通用户接口、分派与内核数据。",
+      "tasks": [{"id": "trace", "title": "系统调用追踪", "titleEn": "System call tracing"}, {"id": "sysinfo", "title": "Sysinfo"}]
+    },
+    {
+      "id": "pgtbl", "num": 3, "title": "页表", "titleEn": "Page tables",
+      "stars": 4, "hours": "因基础而异", "branch": "pgtbl",
+      "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/pgtbl.html",
+      "goal": "打印多级页表，为每个进程建立内核页表，并简化用户内存复制。",
+      "tasks": [{"id": "vmprint", "title": "打印页表"}, {"id": "kpagetable", "title": "每进程内核页表"}, {"id": "copyin", "title": "简化 copyin/copyinstr"}]
+    },
+    {
+      "id": "traps", "num": 4, "title": "陷阱", "titleEn": "Traps",
+      "stars": 4, "hours": "因基础而异", "branch": "traps",
+      "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/traps.html",
+      "goal": "阅读 RISC-V 汇编，实现栈回溯和用户态定时回调。",
+      "tasks": [{"id": "assembly", "title": "RISC-V 汇编"}, {"id": "backtrace", "title": "栈回溯"}, {"id": "alarm", "title": "Alarm"}]
+    },
+    {
+      "id": "lazy", "num": 5, "title": "惰性内存分配", "titleEn": "Lazy page allocation",
+      "stars": 3, "hours": "因基础而异", "branch": "lazy",
+      "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/lazy.html",
+      "goal": "把 sbrk 的物理内存分配推迟到首次缺页，处理释放和非法访问。",
+      "tasks": [{"id": "sbrk", "title": "去掉 sbrk 中的立即分配"}, {"id": "lazyalloc", "title": "缺页时分配"}, {"id": "tests", "title": "Lazytests 与 Usertests"}]
+    },
+    {
+      "id": "cow", "num": 6, "title": "写时复制 fork", "titleEn": "Copy-on-Write Fork",
+      "stars": 4, "hours": "因基础而异", "branch": "cow",
+      "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/cow.html",
+      "goal": "通过只读共享映射、写缺页和引用计数实现延迟复制。",
+      "tasks": [{"id": "cowfork", "title": "实现写时复制", "titleEn": "Implement copy-on write"}]
+    },
+    {
+      "id": "thread", "num": 7, "title": "多线程", "titleEn": "Multithreading",
+      "stars": 3, "hours": "因基础而异", "branch": "thread",
+      "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/thread.html",
+      "goal": "实现用户线程切换，并用互斥锁和屏障协调宿主机线程。",
+      "tasks": [{"id": "uthread", "title": "用户线程切换"}, {"id": "ph", "title": "使用线程与并发哈希表"}, {"id": "barrier", "title": "屏障"}]
+    },
+    {
+      "id": "lock", "num": 8, "title": "锁与并行", "titleEn": "Locks",
+      "stars": 4, "hours": "因基础而异", "branch": "lock",
+      "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/lock.html",
+      "goal": "降低内存分配器与磁盘块缓存的锁竞争，同时保持共享状态一致。",
+      "tasks": [{"id": "kalloc", "title": "内存分配器"}, {"id": "bcache", "title": "缓冲区缓存"}]
+    },
+    {
+      "id": "fs", "num": 9, "title": "文件系统", "titleEn": "File system",
+      "stars": 3, "hours": "因基础而异", "branch": "fs",
+      "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/fs.html",
+      "goal": "用二级间接块支持大文件，并加入符号链接。",
+      "tasks": [{"id": "largefiles", "title": "大文件"}, {"id": "symlink", "title": "符号链接"}]
+    },
+    {
+      "id": "mmap", "num": 10, "title": "内存映射文件", "titleEn": "Mmap",
+      "stars": 4, "hours": "因基础而异", "branch": "mmap",
+      "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/mmap.html",
+      "goal": "实现文件映射、缺页载入和解除映射时的共享修改写回。",
+      "tasks": [{"id": "mmap", "title": "实现 mmap 与 munmap"}]
+    },
+    {
+      "id": "net", "num": 11, "title": "网络", "titleEn": "Networking",
+      "stars": 4, "hours": "因基础而异", "branch": "net",
+      "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/net.html",
+      "goal": "实现 E1000 网卡驱动的发送与接收，理解描述符环和缓冲区所有权。",
+      "tasks": [{"id": "e1000", "title": "补全 E1000 发送与接收"}]
+    }
+  ],
+  "resources": [
+    { "group": "课程", "label": "完整 2020 课表", "url": "https://pdos.csail.mit.edu/6.S081/2020/schedule.html", "desc": "24 讲、11 个实验；讲座关联按知识主题选择，实验发布日期以官方课表为准" },
+    { "group": "教材", "label": "xv6 book rev1", "url": "https://pdos.csail.mit.edu/6.S081/2020/xv6/book-riscv-rev1.pdf", "desc": "第 1 章中文译文在第 1 讲的「课程资料」；印刷页码 9–20" },
+    { "group": "课程", "label": "Lecture 1 官方示例", "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-overview/", "desc": "已抓取 10 个 C 文件；目录显示 2025 修改时间" }
+  ]
+}

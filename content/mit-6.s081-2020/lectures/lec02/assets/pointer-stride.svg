@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="280" viewBox="0 0 840 280" role="img" aria-labelledby="title desc">
+  <title id="title">指针步长与元素边界</title>
+  <desc id="desc">三个 int 元素，每个四字节。int 指针加一到第二个元素，字符指针加一只向前一个字节。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#334155"/></marker></defs>
+  <rect width="840" height="280" rx="12" fill="#f8fafc"/>
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" fill="#0f172a">
+    <text x="28" y="34">假设 sizeof(int) = 4；方格中的数字是相对字节偏移</text>
+    <g stroke="#64748b" stroke-width="1.5">
+      <rect x="100" y="90" width="200" height="55" fill="#dbeafe"/>
+      <rect x="300" y="90" width="200" height="55" fill="#dcfce7"/>
+      <rect x="500" y="90" width="200" height="55" fill="#fef3c7"/>
+      <path d="M150 90V145 M200 90V145 M250 90V145 M350 90V145 M400 90V145 M450 90V145 M550 90V145 M600 90V145 M650 90V145"/>
+    </g>
+    <g text-anchor="middle">
+      <text x="200" y="75">values[0]</text><text x="400" y="75">values[1]</text><text x="600" y="75">values[2]</text>
+      <text x="125" y="124">0</text><text x="175" y="124">1</text><text x="225" y="124">2</text><text x="275" y="124">3</text>
+      <text x="325" y="124">4</text><text x="375" y="124">5</text><text x="425" y="124">6</text><text x="475" y="124">7</text>
+      <text x="525" y="124">8</text><text x="575" y="124">9</text><text x="625" y="124">10</text><text x="675" y="124">11</text>
+    </g>
+    <g stroke="#334155" stroke-width="2" fill="none" marker-end="url(#arrow)">
+      <path d="M100 158V190H300V151"/><path d="M100 205V245H150V151"/>
+    </g>
+    <text x="325" y="195">int * 加 1：前进 4 字节，落到下个元素</text>
+    <text x="180" y="251">char * 加 1：前进 1 字节，仍在首个 int 内部</text>
+  </g>
+</svg>

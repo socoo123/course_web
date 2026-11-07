@@ -1,0 +1,67 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lecture": "lec03",
+  "title": "操作系统组织与系统调用",
+  "status": "done",
+  "updated_at": "2026-11-06T15:09:32.169472+00:00",
+  "parts": {
+    "notes": {
+      "status": "done",
+      "file": "notes.zh.md",
+      "scope": "mechanism derivation, reading map, 7 self-checks, original SVG"
+    },
+    "draft": {
+      "status": "done",
+      "file": "draft.zh.md",
+      "scope": "27 detailed autonomous rendering segments, all intelligible ASR topics/questions/demos; 3 reviewed real frames",
+      "mode": "autonomous Chinese rendering, not verbatim licensed translation"
+    },
+    "materials": {
+      "status": "done",
+      "file": "materials.zh.md",
+      "scope": "full chapter 2 intro, §§2.1–2.8, all 3 figures, 27 file table rows and sole exercise"
+    }
+  },
+  "sources": [
+    "sources/manifest.json",
+    "sources/video-metadata.json",
+    "sources/coverage.json",
+    "sources/figures.json",
+    "sources/frames.json"
+  ],
+  "gaps": [
+    "Video prefix 0–7.759 s has no captions; not reconstructed.",
+    "Speech breaks at about 31:59; last cue persists to 32:15.840; next cue begins at 33:08.159. No invented completion of interrupted answer.",
+    "Raw final cue ends at 4847.840 s, 0.840 s past duration; reading timeline ends at 4847 s.",
+    "Only three video frames viewed, not whole-video visual or audio review.",
+    "2020 fixed upstream snapshot is not asserted to match recording working tree or syscall lab branch.",
+    "GDB and xv6 experiments not executed; no site build run.",
+    "Official outline/boards URL currently reports 2025 Last-Modified; archived content used with explicit 2020 snapshot context."
+  ],
+  "checks": [
+    "local source JSON parses",
+    "all Markdown image targets exist",
+    "classroom frames referenced only in draft",
+    "all internal links point to this registered lecture",
+    "SVG is valid XML",
+    "chapter introduction, §§2.1–2.8, 3 figures and exercise retained",
+    "27 contiguous draft windows span 0–4847 seconds",
+    "caption starts monotonic; original overrun documented"
+  ],
+  "video": {
+    "id": "o44d---Dk4o",
+    "duration_seconds": 4847,
+    "cue_count": 2242,
+    "full_caption_text_read": true,
+    "reviewed_stills_seconds": [
+      2160,
+      3180,
+      4560
+    ],
+    "full_audio_review": false
+  },
+  "site_build": "not run per worker contract",
+  "experiments": "not run",
+  "resume": "Content production complete at ASR+selected-frame verification level; optional future audio audit, no fabricated recovery for recording interruption"
+}

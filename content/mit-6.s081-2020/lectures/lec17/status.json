@@ -1,0 +1,92 @@
+{
+  "course": "mit-6.s081-2020",
+  "lecture": "lec17",
+  "status": "done",
+  "parts": {"notes": "done", "draft": "done", "materials": "done"},
+  "completion_scope": "本讲三份中文内容与证据包完成；done不代表逐字译本、全片听音、源码运行或mmap实验完成。",
+  "outputs": {
+    "notes": "notes.zh.md",
+    "draft": "draft.zh.md",
+    "materials": "materials.zh.md",
+    "coverage": "sources/coverage.json",
+    "manifest": "sources/manifest.json",
+    "video_metadata": "sources/video-metadata.json",
+    "metadata_proposal": "sources/metadata-proposal.json",
+    "assets": ["assets/gc-map2.svg", "assets/classroom-2375.jpg", "assets/classroom-3520.jpg", "assets/classroom-4470.jpg"]
+  },
+  "coverage": {
+    "video_id": "YNQghIvk0jc",
+    "duration_seconds": 4995,
+    "draft_time_range": "00:00–83:15",
+    "draft_windows": 28,
+    "english_asr_cues_read": 2203,
+    "caption_line_range": [1, 2203],
+    "full_audio_reviewed": false,
+    "classroom_frames_actually_viewed": [2375, 3520, 4470],
+    "paper_pdf_pages_read_and_viewed": [1, 12],
+    "paper_printed_pages": [96, 107],
+    "paper_visual_checks": ["Figure 1 p.98", "arithmetic p.101", "Table 1 / Figure 2 / formula p.102", "Table 2 p.105"],
+    "paper_applications_covered": 8,
+    "notes_self_checks": 7,
+    "original_diagrams": 1
+  },
+  "sources": [
+    {"id": "V17", "review": "2203条英文ASR全读；三帧已实际查看；必要元数据及原始/规范化字幕已存档"},
+    {"id": "P17", "review": "Appel与Li 1991论文12页扫描原页全读；图表、公式、评测、版权页已核对"},
+    {"id": "O17", "review": "官方l-uservm.txt全部180行"},
+    {"id": "B17", "review": "官方l-uservm.pdf全部14页"},
+    {"id": "C17S", "review": "官方sqrts.c全部116行；继承共享sqrt.c→sqrts.c修正"},
+    {"id": "C17B", "review": "官方baker.c全部403行；只作课堂走读核对"}
+  ],
+  "license_decisions": {
+    "video": "未检出明确开放许可；自主中文译述与课堂分析帧，不声称全文翻译授权",
+    "paper": "©1991 ACM及有条件复制声明；不套用官网CC，不认定全文翻译授权；自主译述、机制分析与选择性事实摘录",
+    "official_outline_and_boards": "MIT课程网站CC BY 3.0 US；只用于核对",
+    "code": "各文件未见独立许可头；仅核对与自主解释，不另行声称代码独立许可"
+  },
+  "gaps": [
+    "录像从实验讨论中开始；此前语境无法恢复，未猜定开头实验名称。",
+    "83:12起ASR末句不清，明确留缺；原始字幕结束时间超视频1.960秒，正文封顶83:15。",
+    "没有人工字幕，未全片听音；2203条ASR全读不等于全部词句经音频核实。",
+    "sqrts.c与baker.c快照Last-Modified为2025年，不能保证与2020录课工作树一致。sqrts.c的MAX_SQRTS未在文件内定义。",
+    "示例及论文评测均未本次运行或复现；All tests passed仅是39:35课堂帧中的演示输出。",
+    "mmap实验本轮未制作或运行。"
+  ],
+  "resolved_source_gaps": [
+    "论文共享文本只有空页标记，已通过实际查看全部12页扫描PDF完成阅读。",
+    "课表sqrt.c的404沿用共享记录；复用同年官方sqrts.c，未重复失败请求。"
+  ],
+  "editorial_corrections": [
+    "MAP_PRIVATE修改不会自动写回原文件。",
+    "一页缓存是handler完成后的稳态，映射新页后释放旧页前可短暂两页。",
+    "GC未扫描to-space可以含from-space指针；不变量按已扫描/未扫描区区分。",
+    "GC结束要求未扫描集合为空，不仅是暂时不增长。",
+    "论文p.101的64KiB/8B容量应为8192个cell；p.102误称Figure4，实际图注Figure2。"
+  ],
+  "checks": {
+    "checked_at_utc": "2026-11-06T17:28:14.488591+00:00",
+    "result": "passed",
+    "json_files_parsed": 6,
+    "raw_json3_parsed": true,
+    "caption_start_times_monotonic": true,
+    "caption_intervals_valid": true,
+    "draft_headings_match_coverage": true,
+    "windows_continuous_and_within_duration": true,
+    "all_2203_caption_lines_assigned_once": true,
+    "source_and_asset_sha256_verified": 14,
+    "image_paths_checked": 4,
+    "jpeg_decode_verification": "3 passed",
+    "svg_xml_parse": "passed",
+    "internal_routes_and_target_files_checked": 5,
+    "self_check_details_balanced": true,
+    "all_eight_paper_application_sections_present": true,
+    "classroom_images_only_in_draft": true,
+    "external_urls_reprobed": false,
+    "full_site_build_run": false,
+    "example_or_lab_tests_run": false
+  },
+  "metadata_proposals": ["course.json补video.duration=83:15", "lecture-index保留历史sqrt.c并登记sqrts.c有效映射"],
+  "shared_metadata_modified": false,
+  "delegated": false,
+  "committed_or_pushed": false
+}

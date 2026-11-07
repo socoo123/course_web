@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="330" viewBox="0 0 860 330" role="img" aria-labelledby="title desc">
+  <title id="title">系统调用进入路径：执行模式与当前页表分开变化</title>
+  <desc id="desc">用户程序在用户模式使用用户页表。ecall 后的 uservec 在监管者模式仍使用用户页表。切换 satp 后，uservec 仍在监管者模式，改用内核页表，随后进入 usertrap。返回方向相反。</desc>
+  <rect width="860" height="330" rx="12" fill="#f8fafc"/>
+  <g font-family="system-ui, PingFang SC, Microsoft YaHei, sans-serif" font-size="19" fill="#172033">
+    <text x="28" y="35" font-weight="700">执行位置</text><text x="385" y="35" font-weight="700">模式</text><text x="565" y="35" font-weight="700">当前页表</text>
+    <rect x="20" y="52" width="820" height="50" rx="8" fill="#dbeafe"/>
+    <text x="35" y="84">用户 write 封装</text><text x="385" y="84">U</text><text x="565" y="84">用户页表</text>
+    <rect x="20" y="112" width="820" height="50" rx="8" fill="#fef3c7"/>
+    <text x="35" y="144">uservec：保存状态</text><text x="385" y="144">S</text><text x="565" y="144">用户页表</text>
+    <rect x="20" y="172" width="820" height="50" rx="8" fill="#dcfce7"/>
+    <text x="35" y="204">uservec：已切换 satp</text><text x="385" y="204">S</text><text x="565" y="204">内核页表</text>
+    <rect x="20" y="232" width="820" height="50" rx="8" fill="#dcfce7"/>
+    <text x="35" y="264">usertrap：内核 C 代码</text><text x="385" y="264">S</text><text x="565" y="264">内核页表</text>
+    <text x="28" y="312" font-size="17" fill="#475569">关键：ecall 改模式和入口；入口汇编稍后才改变 satp。返回按相反方向过渡。</text>
+  </g>
+</svg>

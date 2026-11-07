@@ -1,0 +1,75 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lecture": "lec12",
+  "title": "实验问答（二）：COW fork 现场实现与排错",
+  "status": "done",
+  "completion_basis": "所分配的中文译述、提炼笔记、截图和证据记录已交付；done 不表示全片音视频逐句校订或实验执行完成。",
+  "updated_at": "2026-11-06T16:26:19.116749+00:00",
+  "parts": {
+    "notes": "done",
+    "draft": "done",
+    "materials": "not-applicable"
+  },
+  "part_details": {
+    "notes": "六组问题与机制提炼、排错方法、七道折叠答案自测；教材只跨讲引用，未放课堂截图。",
+    "draft": "完整读取1968条ASR后按原片顺序自主中文译述，29个连续约三分钟窗口，保留实际问答、错误实现、编译/运行/调试证据和课后init追问；六张已查看真实关键帧。",
+    "materials": "Q&A无指定阅读；按课程reading-ownership与课表条目不创建materials.zh.md。"
+  },
+  "video": {
+    "id": "S8ZTJKzhQao",
+    "title": "6.S081 Fall 2020 Lecture 12: Q&A #2 (COW lab)",
+    "duration_seconds": 5246,
+    "duration_display": "87:26",
+    "caption_status": "reviewed",
+    "caption_type": "automatic-English-original",
+    "manual_captions_available": false,
+    "cue_count": 1968,
+    "raw_first_start_ms": 11120,
+    "raw_last_end_ms": 5248000,
+    "document_range_seconds": [0, 5246],
+    "reviewed_stills_seconds": [1030, 1940, 3515, 4090, 4590, 5200],
+    "stills_crop": "none",
+    "full_audio_review": false,
+    "full_visual_review": false,
+    "license": "unknown; autonomous retelling only; no inherited website CC license"
+  },
+  "sources": ["V12", "S12", "L12", "C12"],
+  "source_manifest": "sources/manifest.json",
+  "coverage": "sources/coverage.json",
+  "metadata_proposal": "sources/metadata-proposal.json",
+  "code_version": {
+    "commit": "e23d53f27f6e187732a92a2b4705639d1c260f05",
+    "role": "只读基础参考快照；不是录课解答工作树或cow实验分支",
+    "checked_boundaries": [
+      "课堂把exec口述为先释放旧页再装载；固定参考源码实际先构造新映像，提交后释放旧页；正文单独校注。",
+      "课堂非W用户页即COW的捷径依赖当时简化布局；固定基础源码uvmalloc的R/W/X/U权限仅辅助解释，不推广到其他分支；2020原页有RSW提示。",
+      "PHYSTOP是物理地址上界，不等于RAM字节数。",
+      "课堂copyout不走MMU的表述仅指未按用户页表进行本次权限检查。"
+    ]
+  },
+  "checks": {
+    "status": "passed",
+    "report": "sources/checks.json",
+    "scope": ["JSON解析", "29段标题与coverage逐一对应", "0至5246秒连续时间结构", "1968字幕起点单调且各归入一段", "六张图片路径和解码", "实际read查看全部截图", "八条站内路由ID", "来源文件SHA-256与共享实验manifest比对", "sources无Markdown", "materials未创建"],
+    "site_build": "not-run-by-worker",
+    "xv6_lab_tests": "not-run",
+    "git_commit_push": "not-run"
+  },
+  "gaps": [
+    "字幕驱动译述，未全片逐句听音；未辨认学生身份，个别含混口头说法未强行补全。",
+    "视频开头0–11.120秒没有字幕；末条ASR结束时间超过元数据2秒，文档按87:26封顶。",
+    "仅六张关键帧实际查看，不声称全片视觉核对。",
+    "最后一次usertests的完整ALL TESTS PASSED输出未核实；本地没有运行实验、工具链或评分。",
+    "file测试三败一成及init取指缺页未做逐进程/逐指令重现证明；正文保留教师的不确定性与最终解释方向。",
+    "基础源码不能证明录课工作树的逐行内容；课堂新增cowfault/incref只由字幕和所查看画面定位。"
+  ],
+  "acquisition": {
+    "blocked": false,
+    "retries": 0,
+    "warning": "yt-dlp提示无支持的JavaScript运行时，但元数据、字幕和六张单帧均成功取得。",
+    "full_media_downloaded": false,
+    "signed_media_urls_or_cookies_archived": false
+  },
+  "write_scope": "content/mit-6.s081-2020/lectures/lec12/ only"
+}

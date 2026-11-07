@@ -1,0 +1,50 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lecture": "lec08",
+  "title": "缺页异常与按需虚拟内存",
+  "status": "done",
+  "status_scope": "本讲中文内容交付完成；不代表全片听音复核或实验实现验证",
+  "completed_at": "2026-11-06",
+  "parts": {"notes": "done", "draft": "done", "materials": "done"},
+  "coverage": {
+    "draft": "28个连续语义阅读窗口，00:00–82:08；全部2129条可用英文ASR已读；机制、lazy现场修改、COW、按需分页、mmap及收尾问答均有对应；开头12.320秒无字幕不编造",
+    "materials": "rev1 §4.6全节译文；正文印刷页46–47，已看48页确认§4.7边界；本节无图表和习题；其余第4章归lec06",
+    "notes": "逻辑承诺与驻留映射、重试PC、不变量、共享与引用计数、编者成本推导、换页/VMA及8道折叠自测"
+  },
+  "video": {
+    "id": "KSYO-gTZo0A",
+    "duration_seconds": 4928,
+    "caption_type": "en-orig automatic; manual captions absent",
+    "cue_count": 2129,
+    "raw_first_start_ms": 12320,
+    "raw_last_end_ms": 4930000,
+    "full_caption_text_read": true,
+    "full_audio_verified": false,
+    "stills_actually_viewed_seconds": [1490,1740,1950,3270],
+    "stills_used_in_draft_seconds": [1490,1740,1950,3270],
+    "license": "No explicit reuse license verified; autonomous paraphrase"
+  },
+  "gaps": [
+    "00:00–00:12.320无字幕；原始末条超过标称视频时长2秒，正文封顶82:08",
+    "未逐句听音，仅实际查看四张选定原片帧，不声称完整观看",
+    "课堂末尾mmap可见性与不同fd的精确语义没有得到确定回答，已明确保留不确定性并加编者澄清",
+    "官方提纲历史URL当前仍有2016标题与未讲主题；共享板书PDF未逐页通读，不能当作与录课工作文档完全相同",
+    "固定2020源码仅辅助核对，不是录课工作树或lazy/cow实验分支",
+    "未运行xv6、GDB、lazytests、usertests、make grade、全站build；未提交推送"
+  ],
+  "technical_checks": [
+    "真实24:50帧确认sepc0x12a4、stval0x4008、scause0xf、sw s6,8(a0)、hp->s.size=nu",
+    "真实29:00帧确认分配/清零/对齐/RWU及失败回收；画面为尚未修好括号的编辑中代码",
+    "真实32:30帧确认两次fault0x4008/0x13f48后hi成功；uvmunmap walk失败路径仍panic，明确最小演示限制",
+    "COW双使用者图与一般多共享者引用计数区分；RSW标记与物理页引用计数区分",
+    "sbrk按字节、4096字节页、重试epc不加四、只读零页仅写入需要拆分",
+    "教材§4.6全文与46–48原页核对，完整MIT许可保留"
+  ],
+  "checks": "sources/checks.json",
+  "sources": ["sources/manifest.json", "sources/coverage.json", "sources/video-metadata.json"],
+  "metadata_proposal": "sources/metadata-proposal.json",
+  "write_boundary": "content/mit-6.s081-2020/lectures/lec08/",
+  "existing_work": "任务开始时lec08目录不存在；无其他成果覆盖",
+  "delegation": "none"
+}

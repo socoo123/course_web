@@ -1,0 +1,45 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lab": "pgtbl",
+  "title": "页表",
+  "updated_at": "2026-11-06",
+  "status": "done",
+  "scope": "中文内容生产，不是实验实现或测试验收",
+  "parts": {
+    "lab": {
+      "status": "done",
+      "file": "lab.zh.md",
+      "coverage": "2020 官方三任务、全部提示和样例、两组问题、三项选做；通用提交内容明确链接公共资料"
+    },
+    "guide": {
+      "status": "done",
+      "file": "guide.zh.md",
+      "coverage": "遍历、页表生命周期、切换与陷阱、所有权、四入口同步、PLIC/CLINT差异、溢出推导及调试骨架；无完整代码解答"
+    }
+  },
+  "sources": ["lab-pgtbl-2020", "lec04-chapter3", "xv6-reference-2020", "shared-submission"],
+  "artifacts": ["lab.zh.md", "guide.zh.md", "status.json", "sources/coverage.json", "sources/manifest.json", "sources/metadata-proposal.json"],
+  "existing_work": "开始时目标目录不存在，未覆盖已有成果",
+  "checks": {
+    "official_html_and_text": "reviewed-full",
+    "lec04_materials": "read-full-chapter",
+    "code": "static-review-only; pinned reference snapshot, not lab branch",
+    "local_documents": "passed: 4 JSON解析、2 Markdown头信息及代码围栏、站内路由ID、图片路径（无图片）、vmprint官方样例逐字对照、关键要求、官方HTML及8个已读源码文件SHA-256、公共提交范围转移记录",
+    "build": "not-run-per-assignment",
+    "xv6_usertests_make_grade": "not-run",
+    "git_commit_push_handin": "not-run"
+  },
+  "gaps": [
+    "固定源码不是 xv6-labs-2020 的 pgtbl 分支；kernel/vmcopyin.c 不存在，未另行抓取，未核验 copyin_new/copyinstr_new 的完整实现和前两项检查的精确代码。",
+    "实验专用统计代码及评分器未取得或核验；测试名和通过条件仅按官方原页保留。",
+    "参考快照 kvminit 映射 CLINT=0x02000000，低于官方 PLIC=0x0c000000 上界；已明确标出差异，未假装验证实验分支的处理方式。",
+    "未运行实验、站点构建或历史提交服务；内容完成不表示实验通过。"
+  ],
+  "handoff": {
+    "metadata": "sources/metadata-proposal.json",
+    "shared_files_modified": false,
+    "common_submission_target": "resources.zh.md §实验的共同验收与提交步骤",
+    "common_submission_route": "#/c/mit-6.s081-2020"
+  }
+}

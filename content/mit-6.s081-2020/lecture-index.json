@@ -1,0 +1,806 @@
+[
+  {
+    "id": "lec01",
+    "number": 1,
+    "schedule_text": "sep 2 LEC 1 (rtm): Introduction and examples (handouts: xv6 book ) video Preparation : Read chapter 1 (for your amusement: Unix ) Homework 1 due: Question Assignment : Lab util: Unix utilities",
+    "links": [
+      {
+        "label": "Introduction",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-overview.txt"
+      },
+      {
+        "label": "examples",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-overview/"
+      },
+      {
+        "label": "xv6 book",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/xv6/book-riscv-rev1.pdf"
+      },
+      {
+        "label": "video",
+        "url": "https://youtu.be/L6YqHxYHa7A"
+      },
+      {
+        "label": "Read chapter 1",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/xv6/book-riscv-rev1.pdf"
+      },
+      {
+        "label": "Unix",
+        "url": "https://www.youtube.com/watch?v=tc4ROCJYbm0"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      },
+      {
+        "label": "Lab util: Unix utilities",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/util.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec02",
+    "number": 2,
+    "schedule_text": "sep 9 LEC 2 (TAs/dm): C and gdb ( pointers example ) Preparation : 2.9 (Bitwise operators) and 5.1 (Pointers and addresses) through 5.6 (Pointer arrays) and 6.4 (pointers to structures) by Kernighan and Ritchie (K&R) Assignment : Lab syscall: System calls",
+    "links": [
+      {
+        "label": "C",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-c-slides.pdf"
+      },
+      {
+        "label": "gdb",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/gdb_slides.pdf"
+      },
+      {
+        "label": "pointers example",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/pointers.c"
+      },
+      {
+        "label": "Lab syscall: System calls",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/syscall.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec03",
+    "number": 3,
+    "schedule_text": "sep 14 LEC 3 (fk): OS organization and system calls ( boards ) video Preparation : Read chapter 2 and xv6 code: kernel/proc.h , kernel/defs.h , kernel/entry.S , kernel/main.c , user/initcode.S , user/init.c , and skim kernel/proc.c and kernel/exec.c Homework 2 due: Question",
+    "links": [
+      {
+        "label": "OS organization and system calls",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-os.txt"
+      },
+      {
+        "label": "boards",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-os-boards.pdf"
+      },
+      {
+        "label": "video",
+        "url": "https://youtu.be/o44d---Dk4o"
+      },
+      {
+        "label": "Read chapter 2",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/xv6/book-riscv-rev1.pdf"
+      },
+      {
+        "label": "kernel/proc.h",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/proc.h"
+      },
+      {
+        "label": "kernel/defs.h",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/defs.h"
+      },
+      {
+        "label": "kernel/entry.S",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/entry.S"
+      },
+      {
+        "label": "kernel/main.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/main.c"
+      },
+      {
+        "label": "user/initcode.S",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/user/initcode.S"
+      },
+      {
+        "label": "user/init.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/user/init.c"
+      },
+      {
+        "label": "kernel/proc.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/proc.c"
+      },
+      {
+        "label": "kernel/exec.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/exec.c"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec04",
+    "number": 4,
+    "schedule_text": "sep 16 LEC 4 (fk): Page tables ( boards ) video Preparation : Read Chapter 3 and kernel/memlayout.h , kernel/vm.c , kernel/kalloc.c , kernel/riscv.h , and kernel/exec.c Homework 3 due: Question Assignment : Lab pgtbl: Page tables",
+    "links": [
+      {
+        "label": "Page tables",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-vm.txt"
+      },
+      {
+        "label": "boards",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-vm-boards.pdf"
+      },
+      {
+        "label": "video",
+        "url": "https://youtu.be/f1Hpjty3TT8"
+      },
+      {
+        "label": "Chapter 3",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/xv6/book-riscv-rev1.pdf"
+      },
+      {
+        "label": "kernel/memlayout.h",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/memlayout.h"
+      },
+      {
+        "label": "kernel/vm.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/vm.c"
+      },
+      {
+        "label": "kernel/kalloc.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/kalloc.c"
+      },
+      {
+        "label": "kernel/riscv.h",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/riscv.h"
+      },
+      {
+        "label": "kernel/exec.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/exec.c"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      },
+      {
+        "label": "Lab pgtbl: Page tables",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/pgtbl.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec05",
+    "number": 5,
+    "schedule_text": "sep 21 LEC 5 (TAs/nk): Calling conventions and stack frames RISC-V ( slides ) video Preparation : Read Calling Convention",
+    "links": [
+      {
+        "label": "Calling conventions and stack frames RISC-V",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-riscv.txt"
+      },
+      {
+        "label": "slides",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-riscv-slides.pdf"
+      },
+      {
+        "label": "video",
+        "url": "https://youtu.be/s-Z5t_yTyTM"
+      },
+      {
+        "label": "Calling Convention",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/readings/riscv-calling.pdf"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec06",
+    "number": 6,
+    "schedule_text": "sep 23 LEC 6 (rtm): Isolation & system call entry/exit (video) Preparation : Read Chapter 4, except 4.6 and kernel/riscv.h , kernel/trampoline.S , and kernel/trap.c Homework 4 due: Question Assignment : Lab traps: Trap",
+    "links": [
+      {
+        "label": "Isolation & system call entry/exit",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-internal.txt"
+      },
+      {
+        "label": "(video)",
+        "url": "https://youtu.be/T26UuauaxWA"
+      },
+      {
+        "label": "Chapter 4, except 4.6",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/xv6/book-riscv-rev1.pdf"
+      },
+      {
+        "label": "kernel/riscv.h",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/riscv.h"
+      },
+      {
+        "label": "kernel/trampoline.S",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/trampoline.S"
+      },
+      {
+        "label": "kernel/trap.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/trap.c"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      },
+      {
+        "label": "Lab traps: Trap",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/traps.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec07",
+    "number": 7,
+    "schedule_text": "sep 28 LEC 7 (fk): Q&A labs ( boards ) video Homework 5 due: Question",
+    "links": [
+      {
+        "label": "Q&A labs",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-QA1.txt"
+      },
+      {
+        "label": "boards",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-QA1.pdf"
+      },
+      {
+        "label": " video",
+        "url": "https://youtu.be/_WWjNIJAfVg"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/QA.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec08",
+    "number": 8,
+    "schedule_text": "sep 30 LEC 8 (fk): Page faults ( boards ) video Preparation : Read Section 4.6 Homework 6 due: Question Assignment : Lab lazy: Lazy allocation",
+    "links": [
+      {
+        "label": "Page faults",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-pgfaults.txt"
+      },
+      {
+        "label": "boards",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-pgfaults.pdf"
+      },
+      {
+        "label": "video",
+        "url": "https://youtu.be/KSYO-gTZo0A"
+      },
+      {
+        "label": "Section 4.6",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/xv6/book-riscv-rev1.pdf"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      },
+      {
+        "label": "Lab lazy: Lazy allocation",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/lazy.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec09",
+    "number": 9,
+    "schedule_text": "oct 5 LEC 9 (fk): Interrupts ( boards ) video Preparation : Read Chapter 5 and kernel/kernelvec.S , kernel/plic.c , kernel/console.c , kernel/uart.c , kernel/printf.c Homework 7 due: Question",
+    "links": [
+      {
+        "label": "Interrupts",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-interrupt.txt"
+      },
+      {
+        "label": "boards",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-interrupt.pdf"
+      },
+      {
+        "label": " video ",
+        "url": "https://youtu.be/zRnGNndcVEA"
+      },
+      {
+        "label": "Chapter 5",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/xv6/book-riscv-rev1.pdf"
+      },
+      {
+        "label": "kernel/kernelvec.S",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/kernelvec.S"
+      },
+      {
+        "label": "kernel/plic.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/plic.c"
+      },
+      {
+        "label": "kernel/console.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/console.c"
+      },
+      {
+        "label": "kernel/uart.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/uart.c"
+      },
+      {
+        "label": "kernel/printf.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/printf.c"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec10",
+    "number": 10,
+    "schedule_text": "oct 7 LEC 10 (fk): Multiprocessors and locking ( boards ) video Preparation : Read \"Locking\" with kernel/spinlock.h and kernel/spinlock.c Homework 8 due: Question Assignment : Lab cow: Copy-on-write fork",
+    "links": [
+      {
+        "label": "Multiprocessors and locking",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-lockv2.txt"
+      },
+      {
+        "label": "boards",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-lock.pdf"
+      },
+      {
+        "label": " video",
+        "url": "https://youtu.be/NGXu3vN7yAk"
+      },
+      {
+        "label": "\"Locking\"",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/xv6/book-riscv-rev1.pdf"
+      },
+      {
+        "label": "kernel/spinlock.h",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/spinlock.h"
+      },
+      {
+        "label": "kernel/spinlock.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/spinlock.c"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      },
+      {
+        "label": "Lab cow: Copy-on-write fork",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/cow.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec11",
+    "number": 11,
+    "schedule_text": "oct 14 LEC 11 (rtm): Thread switching (video) Preparation : Read \"Scheduling\" through Section 7.4, and kernel/proc.c , kernel/swtch.S Homework 9 due: Question Assignment : Lab thread: Multithreading",
+    "links": [
+      {
+        "label": "Thread switching",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-threads.txt"
+      },
+      {
+        "label": "(video)",
+        "url": "https://youtu.be/vsgrTHY5tkg"
+      },
+      {
+        "label": "\"Scheduling\"",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/xv6/book-riscv-rev1.pdf"
+      },
+      {
+        "label": "kernel/proc.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/proc.c"
+      },
+      {
+        "label": "kernel/swtch.S",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/swtch.S"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      },
+      {
+        "label": "Lab thread: Multithreading",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/thread.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec12",
+    "number": 12,
+    "schedule_text": "oct 19 LEC 12 (rtm): Q&A labs (video) Homework 10 due: Question",
+    "links": [
+      {
+        "label": "(video)",
+        "url": "https://youtu.be/S8ZTJKzhQao"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/QA.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec13",
+    "number": 13,
+    "schedule_text": "oct 21 LEC 13 (rtm): sleep&wakeup and code (video) Preparation : Read remainder of \"Scheduling\" , and corresponding parts of kernel/proc.c , kernel/sleeplock.c Homework 11 due: Question Assignment : Lab lock: Parallelism/locking",
+    "links": [
+      {
+        "label": "sleep&wakeup",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-coordination.txt"
+      },
+      {
+        "label": "code",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-coordination.c"
+      },
+      {
+        "label": "(video)",
+        "url": "https://youtu.be/gP67sJ4PTnc"
+      },
+      {
+        "label": "\"Scheduling\"",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/xv6/book-riscv-rev1.pdf"
+      },
+      {
+        "label": "kernel/proc.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/proc.c"
+      },
+      {
+        "label": "kernel/sleeplock.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/sleeplock.c"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      },
+      {
+        "label": "Lab lock: Parallelism/locking",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/lock.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec14",
+    "number": 14,
+    "schedule_text": "oct 26 LEC 14 (fk): File systems ( boards ) (video) Preparation : Read kernel/bio.c , kernel/fs.c , kernel/sysfile.c , kernel/file.c and \"File system\" (except for the logging sections) Homework 12 due: Question",
+    "links": [
+      {
+        "label": "File systems",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-fs.txt"
+      },
+      {
+        "label": "boards",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-fs.pdf"
+      },
+      {
+        "label": "(video)",
+        "url": "https://youtu.be/ADzLv1nRtR8"
+      },
+      {
+        "label": "kernel/bio.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/bio.c"
+      },
+      {
+        "label": "kernel/fs.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/fs.c"
+      },
+      {
+        "label": "kernel/sysfile.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/sysfile.c"
+      },
+      {
+        "label": "kernel/file.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/file.c"
+      },
+      {
+        "label": "\"File system\" (except for the logging sections)",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/xv6-book-riscv-rev1.pdf"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec15",
+    "number": 15,
+    "schedule_text": "oct 28 LEC 15 (fk): Crash recovery ( boards ) video Preparation : Read kernel/log.c and the logging sections of \"File system\" Homework 13 due: Question Assignment : Lab fs: File system",
+    "links": [
+      {
+        "label": "Crash recovery",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-crash.txt"
+      },
+      {
+        "label": "boards",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-crash.pdf"
+      },
+      {
+        "label": " video",
+        "url": "https://youtu.be/7Hk2dIorDkk"
+      },
+      {
+        "label": "kernel/log.c",
+        "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/log.c"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      },
+      {
+        "label": "Lab fs: File system",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/fs.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec16",
+    "number": 16,
+    "schedule_text": "nov 2 LEC 16 (rtm): File system performance and fast crash recovery (video) Preparation : Read Journaling the Linux ext2fs Filesystem (1998) Homework 14 due: Question",
+    "links": [
+      {
+        "label": "File system performance and fast crash recovery",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-journal.txt"
+      },
+      {
+        "label": "(video)",
+        "url": "https://youtu.be/CmDcf6rjFb4"
+      },
+      {
+        "label": "Journaling the Linux ext2fs Filesystem (1998)",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/readings/journal-ext2fs.html"
+      },
+      {
+        "label": "论文正文（阅读入口页所链）",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/readings/journal-design.pdf"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec17",
+    "number": 17,
+    "schedule_text": "nov 4 LEC 17 (fk): Virtual memory for applications ( boards ) ( sqrt example ) ( baker example ) video Preparation : Read Virtual Memory Primitives for User Programs (1991) Homework 15 due: Question Assignment : Lab mmap: Mmap",
+    "links": [
+      {
+        "label": "Virtual memory for applications",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-uservm.txt"
+      },
+      {
+        "label": "boards",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-uservm.pdf"
+      },
+      {
+        "label": "sqrt example",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/sqrt.c",
+        "resolved_url": "https://pdos.csail.mit.edu/6.S081/2020/lec/sqrts.c",
+        "mapping_note": "历史课表sqrt.c为404；同年官方目录实际为sqrts.c，已存档，非HTTP重定向。"
+      },
+      {
+        "label": "baker example",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/baker.c"
+      },
+      {
+        "label": " video ",
+        "url": "https://youtu.be/YNQghIvk0jc"
+      },
+      {
+        "label": "Virtual Memory Primitives for User Programs (1991)",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/readings/appel-li.pdf"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      },
+      {
+        "label": "Lab mmap: Mmap",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/mmap.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec18",
+    "number": 18,
+    "schedule_text": "nov 9 LEC 18 (rtm): OS Organization (video) Preparation : Read The Performance of micro-Kernel-Based Systems (1997) Homework 16 due: Question",
+    "links": [
+      {
+        "label": "OS Organization",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-organization.txt"
+      },
+      {
+        "label": " (video)",
+        "url": "https://youtu.be/dM9PLdaTpnA"
+      },
+      {
+        "label": "The Performance of micro-Kernel-Based Systems (1997)",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/readings/microkernel.pdf"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec19",
+    "number": 19,
+    "schedule_text": "nov 16 LEC 19 (rtm): Virtual Machines (video) Preparation : Read Dune: Safe User-level Access to Privileged CPU Features (2012) Homework 17 due: Question",
+    "links": [
+      {
+        "label": "Virtual Machines",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-vmm.txt"
+      },
+      {
+        "label": " (video)",
+        "url": "https://youtu.be/R8obXHAIPY0"
+      },
+      {
+        "label": "Dune: Safe User-level Access to Privileged CPU Features (2012)",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/readings/belay-dune.pdf"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec20",
+    "number": 20,
+    "schedule_text": "nov 18 DROP DATE LEC 20 (fk): Kernels and HLL ( slides ) video Preparation : Read the Biscuit paper (2018) , FAQ Homework 18 due: Question Assignment : Lab net: Network stack",
+    "links": [
+      {
+        "label": "Kernels and HLL",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-biscuit.txt"
+      },
+      {
+        "label": "slides",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-biscuit-slides.pdf"
+      },
+      {
+        "label": " video ",
+        "url": "https://youtu.be/AAtXWGwxI9k"
+      },
+      {
+        "label": "the Biscuit paper (2018)",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/readings/biscuit.pdf"
+      },
+      {
+        "label": "FAQ",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/faq-biscuit.txt"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      },
+      {
+        "label": "Lab net: Network stack",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/labs/net.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec21",
+    "number": 21,
+    "schedule_text": "nov 30 LEC 21 (rtm): Networking (video) Preparation : Read Receive Livelock (1996) Homework 19 due: Question",
+    "links": [
+      {
+        "label": "Networking",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-net.txt"
+      },
+      {
+        "label": " (video)",
+        "url": "https://youtu.be/Fcjychg4Tvk"
+      },
+      {
+        "label": "Receive Livelock (1996)",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/readings/mogul96usenix.pdf"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec22",
+    "number": 22,
+    "schedule_text": "dec 2 LEC 22 (rtm): Meltdown (video) Preparation : Read Meltdown (2018) Homework 20 due: Question",
+    "links": [
+      {
+        "label": "Meltdown",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-meltdown.txt"
+      },
+      {
+        "label": " (video)",
+        "url": "https://youtu.be/WpKVr3p5rjE"
+      },
+      {
+        "label": "Meltdown (2018)",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/readings/meltdown.pdf"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec23",
+    "number": 23,
+    "schedule_text": "dec 7 LEC 23 (rtm): RCU notes , 2018 slides (video) Preparation : Read RCU paper (2013) , FAQ Homework 21 due: Question",
+    "links": [
+      {
+        "label": "RCU notes",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-rcu.txt"
+      },
+      {
+        "label": "2018 slides",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-rcu.pdf",
+        "resolved_url": "https://pdos.csail.mit.edu/6.828/2018/lec/l-rcu.pdf",
+        "mapping_note": "2020课表明确标注2018 slides；2020目录链接404，采用2018官方课目录同名文档，非HTTP重定向或2020录像画面。"
+      },
+      {
+        "label": " (video)",
+        "url": "https://youtu.be/KUwyCGMTeq8"
+      },
+      {
+        "label": "RCU paper (2013)",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/readings/rcu-decade-later.pdf"
+      },
+      {
+        "label": "FAQ",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/rcu-faq.txt"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/q.html"
+      }
+    ],
+    "status": "discovered"
+  },
+  {
+    "id": "lec24",
+    "number": 24,
+    "schedule_text": "dec 9 LAST DAY OF CLASSES LEC 24 (fk): Q&A (video) Homework 22 due: Question",
+    "links": [
+      {
+        "label": " (video)",
+        "url": "https://youtu.be/W9m6m0OGNB8"
+      },
+      {
+        "label": "Question",
+        "url": "https://pdos.csail.mit.edu/6.S081/2020/homework/QA.html"
+      }
+    ],
+    "status": "discovered"
+  }
+]

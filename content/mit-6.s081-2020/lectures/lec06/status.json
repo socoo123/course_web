@@ -1,0 +1,73 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lecture": "lec06",
+  "title": "隔离与系统调用进入/退出",
+  "status": "done",
+  "updated_at": "2026-11-06T15:51:04.653488+00:00",
+  "parts": {
+    "notes": {
+      "status": "done",
+      "file": "notes.zh.md",
+      "scope": "dependency derivation, state invariants, 7 self-checks, original SVG"
+    },
+    "draft": {
+      "status": "done",
+      "file": "draft.zh.md",
+      "scope": "29 detailed autonomous rendering segments across 87:30; all intelligible ASR topics, derivations, demos and questions; 3 viewed genuine frames",
+      "mode": "not a verbatim licensed translation"
+    },
+    "materials": {
+      "status": "done",
+      "file": "materials.zh.md",
+      "scope": "full assigned chapter4 intro, §§4.1-4.5,4.7-4.8; 8 hardware steps, 3 exercises; excludes §4.6"
+    }
+  },
+  "sources": [
+    "sources/manifest.json",
+    "sources/coverage.json",
+    "sources/frames.json",
+    "sources/figures.json",
+    "sources/video-metadata.json"
+  ],
+  "video": {
+    "id": "T26UuauaxWA",
+    "duration_seconds": 5250,
+    "cue_count": 2298,
+    "full_caption_text_read": true,
+    "reviewed_stills_seconds": [
+      1500,
+      2640,
+      4320
+    ],
+    "full_audio_review": false
+  },
+  "gaps": [
+    "0–2.320 s has no captions; no speech reconstructed.",
+    "Final ASR cue ends at 5251.840 s, 1.840 s beyond metadata duration; draft capped at 5250 s.",
+    "No full-video audio or frame-by-frame audit; only full caption reading and 3 selected frames.",
+    "Final classroom UIE answer is explicitly uncertain; preserved as a guess and separately corrected using official ISA rules.",
+    "Shared 2020 source snapshot is not asserted to match recording working tree or any lab branch; outline/book URL reports 2025 Last-Modified.",
+    "Video has no verified redistribution/translation license; autonomous Chinese rendering used, website CC not applied.",
+    "No xv6/GDB experiment execution; no site build."
+  ],
+  "checks": [
+    "all local JSON parses",
+    "all Markdown image targets exist",
+    "classroom stills only in draft",
+    "SVG parses",
+    "internal links target registered lecture/lab IDs",
+    "29 contiguous windows with all 2298 caption starts assigned",
+    "source hashes match",
+    "assigned chapter coverage and 3 exercises retained"
+  ],
+  "technical_findings": [
+    "rev1 p44 userret parameters reversed relative to source and lecture: corrected as a0=TRAPFRAME, a1=user satp",
+    "SRET copies SPIE to SIE, not UIE",
+    "x0 requires no save; 31 variable integer registers",
+    "RISC-V integer divide-by-zero does not trap"
+  ],
+  "resume": "Complete at ASR plus selected-frame verification level; optional future audio audit only; metadata proposal awaits main-agent integration",
+  "site_build": "not run",
+  "experiments": "not run"
+}

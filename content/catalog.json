@@ -1,0 +1,68 @@
+{
+  "tracks": [
+    {
+      "id": "systems",
+      "name": "系统方向",
+      "nameEn": "Systems",
+      "desc": "从单机内核到多机共识，再到存储引擎：一条把“计算机如何可靠地运行程序”讲透的路线。",
+      "courses": ["mit-6.s081-2020", "mit-6.824", "cmu-15-445"]
+    },
+    {
+      "id": "ml-systems",
+      "name": "大模型方向",
+      "nameEn": "LLM Systems",
+      "desc": "从分词器、Transformer 到 GPU 内核与分布式训练，亲手搭一个语言模型。",
+      "courses": ["stanford-cs336"]
+    }
+  ],
+  "courses": [
+    {
+      "id": "mit-6.s081-2020",
+      "school": "MIT",
+      "code": "6.S081",
+      "altCode": "Fall 2020",
+      "title": "操作系统工程",
+      "titleEn": "Operating System Engineering",
+      "status": "active",
+      "accent": { "light": "194 65 12", "dark": "251 146 60" },
+      "tags": ["C", "RISC-V", "xv6", "QEMU"],
+      "counts": { "lectures": 24, "labs": 11 },
+      "blurb": "读 xv6 源码，亲手给内核加系统调用、页表、写时复制、锁和文件系统功能。"
+    },
+    {
+      "id": "mit-6.824",
+      "school": "MIT",
+      "code": "6.824",
+      "altCode": "6.5840",
+      "title": "分布式系统",
+      "titleEn": "Distributed Systems",
+      "status": "planned",
+      "accent": { "light": "29 78 216", "dark": "96 165 250" },
+      "tags": ["Go", "Raft", "MapReduce", "线性一致"],
+      "blurb": "从 MapReduce 到 Raft，再到分片 KV 存储，在不可靠网络上构建可靠服务。"
+    },
+    {
+      "id": "cmu-15-445",
+      "school": "CMU",
+      "code": "15-445",
+      "altCode": "15-645",
+      "title": "数据库系统",
+      "titleEn": "Database Systems",
+      "status": "planned",
+      "accent": { "light": "15 118 110", "dark": "45 212 191" },
+      "tags": ["C++", "BusTub", "B+ 树", "并发控制"],
+      "blurb": "在 BusTub 里实现缓冲池、索引、查询执行与并发控制，理解存储引擎的每一层。"
+    },
+    {
+      "id": "stanford-cs336",
+      "school": "Stanford",
+      "code": "CS336",
+      "title": "从零构建语言模型",
+      "titleEn": "Language Modeling from Scratch",
+      "status": "planned",
+      "accent": { "light": "109 40 217", "dark": "167 139 250" },
+      "tags": ["Python", "PyTorch", "Transformer", "GPU"],
+      "blurb": "从 BPE 分词器写到 Transformer、Triton 内核、并行训练与对齐。"
+    }
+  ]
+}

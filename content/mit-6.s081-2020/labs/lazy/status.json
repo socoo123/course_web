@@ -1,0 +1,41 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lab": "lazy",
+  "status": "done",
+  "status_scope": "中文内容交付完成；不表示实验实现或测试通过",
+  "updated_at": "2026-11-06",
+  "parts": {
+    "lab": {
+      "status": "done",
+      "file": "lab.zh.md",
+      "scope": "2020 官方页三阶段任务、八项提示、六项边界、问题、报错、测试样例与选做；共同提交流程链接公共资料"
+    },
+    "guide": {
+      "status": "done",
+      "file": "guide.zh.md",
+      "scope": "机制与思路骨架、地址/权限边界、收缩、fork、内核复制、OOM、失败回收、诊断表及七道自测；无完整解答"
+    }
+  },
+  "sources": ["lab-lazy-2020", "book-rev1-section-4.6", "xv6-reference-2020", "lec04-existing", "reading-ownership", "common-submission"],
+  "artifacts": ["lab.zh.md", "guide.zh.md", "status.json", "sources/coverage.json", "sources/manifest.json", "sources/metadata-proposal.json"],
+  "existing_work": "任务开始时 lazy 目录不存在，无已有成果被覆盖",
+  "gaps": [
+    "未取得 lazy 实验分支及 user/lazytests.c、评分脚本；有限获取尝试失败。专用测试名称和输出仅据官方实验页，未推断内部实现或分值。",
+    "共享 e23d53f27f6e187732a92a2b4705639d1c260f05 是 2020 普通参考源码，不是 lazy 起始分支。",
+    "未运行 xv6、lazytests、usertests、make grade；未验证历史提交网站可用性。"
+  ],
+  "checks": {
+    "official_html_and_text": "已全读，并按原页逐节核对",
+    "source_hashes": "已计算共享 HTML、文本、教材及五个参考源码文件的 SHA-256；HTML 与共享 manifest 一致",
+    "common_submission": "已比较 lazy 原页 HTML 178–253 与 resources.zh.md 共同提交章节；无新增专用步骤，原页 util 提交输出标为通用样例",
+    "json_and_links": "passed：四份 JSON 解析、Markdown 围栏、站内讲座/实验 ID、来源路径与记录的 SHA-256 均通过",
+    "coverage_structure": "passed：12 个原文范围映射、专用要求关键词及七道自测；已人工对照官方全页",
+    "check_note": "首次局部检查脚本把覆盖块数量误写为13，实际为12；纠正脚本期望后剩余检查通过，无需改内容",
+    "images": "无新增或引用图片，无图片路径检查需求",
+    "experiment_tests": "not-run",
+    "site_build": "not-run（遵循 worker 合同）",
+    "git_commit_or_push": "not-run"
+  },
+  "metadata_proposal": "sources/metadata-proposal.json"
+}

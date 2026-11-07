@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="340" viewBox="0 0 760 340" role="img" aria-labelledby="title desc">
+  <title id="title">RV64 常见帧记录：返回地址与旧帧指针</title>
+  <desc id="desc">当前帧的 fp 指向高地址边界，fp 减八存返回地址，fp 减十六存上一帧的帧指针；sp 位于低地址边界。旧 fp 链接到上层调用帧。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#526071"/></marker></defs>
+  <rect width="760" height="340" rx="12" fill="#f8fafc"/>
+  <g font-family="system-ui, sans-serif" font-size="17" fill="#172033" stroke="none">
+    <text x="30" y="40">高地址</text><text x="30" y="307">低地址</text>
+    <rect x="200" y="24" width="310" height="68" rx="5" fill="#e2e8f0" stroke="#64748b"/>
+    <text x="245" y="65">调用者帧（大小不固定）</text>
+    <rect x="200" y="119" width="310" height="45" fill="#dbeafe" stroke="#64748b"/>
+    <rect x="200" y="164" width="310" height="45" fill="#dcfce7" stroke="#64748b"/>
+    <rect x="200" y="209" width="310" height="89" fill="#ffffff" stroke="#64748b"/>
+    <text x="235" y="147">保存的返回地址（fp − 8）</text>
+    <text x="235" y="193">上一帧的 fp（fp − 16）</text>
+    <text x="235" y="247">其他保存值、局部数据</text>
+    <text x="235" y="275">及对齐空间（按需）</text>
+    <text x="116" y="125">fp</text><text x="116" y="302">sp</text>
+    <text x="570" y="137">沿旧 fp</text><text x="570" y="163">找到上层</text>
+  </g>
+  <g fill="none" stroke="#526071" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M65 62 V275"/>
+    <path d="M145 119 H195"/><path d="M145 298 H195"/>
+    <path d="M510 186 H550 V24 H514"/>
+  </g>
+</svg>

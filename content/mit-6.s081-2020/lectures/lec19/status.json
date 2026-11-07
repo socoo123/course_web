@@ -1,0 +1,64 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lecture": "lec19",
+  "title": "虚拟机",
+  "status": "done",
+  "version": "2026-11-07.1",
+  "review_state": "reviewed-and-build-passed",
+  "main_agent_acceptance": {"date":"2026-11-07","review":"../../sources/review-lec19.json","structure":"passed","caption_timeline":"passed","site_build":"passed: 2451 modules, 5.81s; one batch build","worker_checks_note":"下方未运行build是worker交付时记录；统一构建由主agent完成，实验仍未运行"},
+  "model": "openai/gpt-6-astra#high",
+  "model_confirmation": "主agent已确认；本worker未再次委派",
+  "write_boundary": "content/mit-6.s081-2020/lectures/lec19/",
+  "existing_directory": "absent when first checked; no existing lecture files overwritten",
+  "parts": {
+    "notes": {"status":"done","file":"notes.zh.md","description":"不变量、两条权限轴、策略责任、性能成本、自测；链接详细课堂/阅读"},
+    "draft": {"status":"done","file":"draft.zh.md","description":"全ASR驱动33窗口自主中文译述，含课后问答与4张查看过的原片单帧；非逐字全文翻译"},
+    "materials": {"status":"done","file":"materials.zh.md","description":"Dune全文阅读后的自主精读，机制、图表1–3/1–6、实验平台/单位/结果/局限；非全文译文"}
+  },
+  "sources": ["V19","S19","P19","INDEX19"],
+  "video": {
+    "id":"R8obXHAIPY0",
+    "duration_seconds":5848,
+    "duration":"97:28",
+    "caption_type":"English original ASR en-orig",
+    "manual_captions_available":false,
+    "cue_count":2642,
+    "windows":33,
+    "all_captions_read":true,
+    "full_audio_reviewed":false,
+    "reviewed_stills_seconds":[1440,2460,4200,4860],
+    "first_start_ms":2800,
+    "last_end_ms":5850159,
+    "public_timeline_end_ms":5848000
+  },
+  "reading": {
+    "title":"Dune: Safe User-level Access to Privileged CPU Features",
+    "year":2012,
+    "pages_read":"1–14",
+    "sections":"Abstract, §§1–9, acknowledgments, references entries",
+    "visual_review_pages":[3,4,5,10,11,12],
+    "license":"No confirmed open translation grant; autonomous exposition",
+    "experiments_run":false
+  },
+  "gaps": [
+    "英文自动字幕未全片听音复核，学生说话人不具名",
+    "只查看4张单帧，未全片逐帧核对；课堂无已核实的现场代码运行",
+    "开头2.800秒无字幕；原ASR末尾超元数据2.159秒，正文封顶97:28",
+    "未运行xv6、Dune或论文实验；共享固定xv6快照不是录课工作树",
+    "论文和视频未确认开放全文翻译许可，正文采用自主译述而非全文翻译"
+  ],
+  "checks": {
+    "json":"passed: all local JSON parsed, including raw json3",
+    "caption_timeline":"passed: 2642 nondecreasing cue starts; raw overrun explicitly retained and public timeline capped",
+    "draft_windows":"passed: 33 headings match coverage; contiguous 0–5848 seconds; all cue indices assigned exactly once by start time",
+    "image_links":"passed: 4 reachable classroom images, referenced only in draft; all 4 visually reviewed",
+    "internal_links":"passed: all lecture-tab links resolve to existing local Markdown",
+    "source_hashes":"passed: archived captions, metadata, shared outline/PDF/text, 4 frames and PDF page image hashes",
+    "check_command":"python3 content/mit-6.s081-2020/lectures/lec19/sources/check.py",
+    "build":"not-run-by-worker",
+    "experiments":"not-run"
+  },
+  "metadata_proposal":"sources/metadata-proposal.json",
+  "coverage":"sources/coverage.json"
+}

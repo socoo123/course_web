@@ -1,0 +1,40 @@
+{
+  "course": "mit-6.s081-2020",
+  "lecture": "lec04",
+  "title": "页表与虚拟内存",
+  "status": "done",
+  "parts": {"notes": "done", "draft": "done", "materials": "done"},
+  "completed_at": "2026-11-06",
+  "coverage": {
+    "draft": "31 semantic windows, 00:00–93:05, including after-class Q&A; autonomous paraphrase from entire English ASR",
+    "materials": "Chapter 3 introduction and sections 3.1–3.10, four figures, all six exercises; printed pp29–39, p40 blank",
+    "notes": "Mechanisms, bit-width derivation, UART indices, source-version distinctions, reading map and self-checks"
+  },
+  "video": {
+    "id": "f1Hpjty3TT8", "duration_seconds": 5585,
+    "caption_type": "en-orig automatic", "cue_count": 2461,
+    "raw_first_start_seconds": 0.08, "raw_last_end_seconds": 5586.56,
+    "full_caption_read": true, "full_audio_verified": false,
+    "stills_actually_viewed_seconds": [1980, 3660, 4560, 5100],
+    "stills_used_in_draft_seconds": [1980, 3660, 4560]
+  },
+  "gaps": [
+    "未逐句对照音频；仅查看选定真实帧，不声称全片听音或完整观看",
+    "开头0.080秒无字幕；原字幕末条超过视频标称时长1.560秒，正文封顶93:05",
+    "开场部分姓名/先修课程号识别不可靠，省略不猜；早期GDB操作没有逐条重建命令",
+    "官方板书PDF已存档但未逐页全读；实际课堂帧和教材四幅原图均已查看",
+    "参考源码为2020固定快照，不保证与讲者修改过的工作树完全一致",
+    "未运行xv6、GDB、实验或全站build"
+  ],
+  "technical_corrections": [
+    "Sv39高25位符号扩展、xv6 MAXVA=2^38、PPN44位与页内偏移12位",
+    "satp保存模式及根PPN；中间页表基址补零而非用户offset",
+    "PHYSTOP原书图0x86400000与源码0x88000000差异",
+    "用户guard清U、内核guard无效映射；2020普通用户页RWXU",
+    "rev1旧式初始栈图与RISC-V a0/a1传参的区别",
+    "etext和end不同；Sv39大页为2MiB/1GiB"
+  ],
+  "checks": "sources/checks.json",
+  "sources": ["sources/manifest.json", "sources/coverage.json", "sources/figures.json"],
+  "metadata_proposal": "sources/metadata-proposal.json"
+}

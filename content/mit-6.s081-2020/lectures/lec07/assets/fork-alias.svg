@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 330" role="img" aria-labelledby="title desc">
+  <title id="title">普通 fork 后父子各自的用户映射与内核别名</title>
+  <desc id="desc">父用户页表和父内核页表的同一虚拟地址指向物理页 A；子用户页表和子内核页表指向另一物理页 B。A 和 B 初始内容相同，但不是同一物理页。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker></defs>
+  <rect width="820" height="330" rx="12" fill="#f8fafc"/>
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" fill="#0f172a" text-anchor="middle">
+    <text x="410" y="31" font-weight="bold">同一进程共享物理页；父子进程仅初始内容相同</text>
+    <g fill="#dbeafe" stroke="#3b82f6"><rect x="25" y="65" width="210" height="60" rx="8"/><rect x="25" y="155" width="210" height="60" rx="8"/><rect x="295" y="105" width="100" height="70" rx="8"/></g>
+    <g fill="#dcfce7" stroke="#22c55e"><rect x="585" y="65" width="210" height="60" rx="8"/><rect x="585" y="155" width="210" height="60" rx="8"/><rect x="425" y="105" width="100" height="70" rx="8"/></g>
+    <text x="130" y="91">父用户页表</text><text x="130" y="113">VA v · U=1</text>
+    <text x="130" y="181">父内核页表</text><text x="130" y="203">VA v · U=0</text>
+    <text x="345" y="136">PA-A</text><text x="345" y="159">父数据页</text>
+    <text x="690" y="91">子用户页表</text><text x="690" y="113">VA v · U=1</text>
+    <text x="690" y="181">子内核页表</text><text x="690" y="203">VA v · U=0</text>
+    <text x="475" y="136">PA-B</text><text x="475" y="159">子数据页</text>
+    <text x="410" y="265">PA-A ≠ PA-B；内核别名必须跟随各自的用户表</text>
+    <text x="410" y="298" font-size="14" fill="#475569">编者示意 · 普通复制式 fork · 仅画普通用户数据页，省略其他权限位</text>
+  </g>
+  <g fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"><path d="M235 95 L295 122"/><path d="M235 185 L295 158"/><path d="M585 95 L525 122"/><path d="M585 185 L525 158"/></g>
+</svg>

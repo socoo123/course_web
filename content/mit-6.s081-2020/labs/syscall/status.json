@@ -1,0 +1,38 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lab": "syscall",
+  "status": "done",
+  "updated_at": "2026-11-06",
+  "scope": "中文内容交付；done 不表示实验实现或测试通过",
+  "parts": {
+    "lab": {
+      "status": "done",
+      "file": "lab.zh.md",
+      "coverage": "2020 官方导言、前置阅读、分支命令、trace/sysinfo 两项任务及全部提示、完整追踪样例、验收、两项选做；通用提交段明确转公共资料"
+    },
+    "guide": {
+      "status": "done",
+      "file": "guide.zh.md",
+      "coverage": "用户桩至内核分派；trace 掩码、进程生命周期与 fork 继承；sysinfo 字节统计、非 UNUSED 定义、锁与 copyout；排错及编者自测；无完整解答"
+    }
+  },
+  "sources": ["lab-syscall-2020", "xv6-reference-2020", "lec03-materials", "lec04-materials", "shared-resources"],
+  "coverage_file": "sources/coverage.json",
+  "manifest_file": "sources/manifest.json",
+  "metadata_proposal": "sources/metadata-proposal.json",
+  "gaps": [
+    "未读取 syscall 实验分支的 user/trace.c、user/sysinfotest.c、kernel/sysinfo.h、grade-lab-syscall；共享固定快照不包含它们，不能核验测试内部断言、结构字段类型和实验新增调用号",
+    "未运行 QEMU、实验、make grade 或提交命令；未验证工具链与历史提交网站"
+  ],
+  "checks": {
+    "official_html_and_text": "已全文阅读并逐节对应，追踪样例完整保留",
+    "critical_semantics": "已核对掩码位、fork 继承及不影响其他进程、freemem 字节数、state != UNUSED、sysinfotest: OK",
+    "common_submission": "已对比本实验 HTML 204–279 行与公共资料共同提交章，无流程差异；模板中的 util 日志已单独说明",
+    "source_version": "固定参考快照不冒充实验分支；实验专有文件缺失已实际检查",
+    "json_links_and_files": "passed：4个JSON可解析；来源文件及全部记录哈希匹配；站内链接目标及Markdown代码围栏检查通过；官方trace样例逐行匹配（忽略行尾空白）；8个覆盖范围及关键要求检查通过",
+    "images": "未新增图片，无图片依赖",
+    "build": "not_run_by_instruction",
+    "lab_tests": "not_run_by_instruction"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lecture": "lec05",
+  "title": "RISC-V 调用约定与栈帧",
+  "status": "done",
+  "updated_at": "2026-11-06",
+  "parts": {
+    "notes": {"status": "done", "file": "notes.zh.md", "mode": "机制推导、调试方法、自测；1张自绘SVG；课堂过程通过时间索引定位"},
+    "draft": {"status": "done", "file": "draft.zh.md", "mode": "ASR驱动的详细自主译述，非逐字翻译", "windows": 25, "range": "00:00–75:08", "classroom_stills": 7, "full_audio_verified": false},
+    "materials": {"status": "done", "file": "materials.zh.md", "mode": "自主技术讲解，非全文译文", "coverage": "指定riscv-calling.pdf §18.1–18.3全部四页，类型/参数/返回/保存/soft-float", "license_decision": "实际摘录只见UC版权保留声明；现行仓库CC BY 4.0未被套用到历史版本"}
+  },
+  "sources": [
+    {"id": "video", "url": "https://www.youtube.com/watch?v=s-Z5t_yTyTM", "file": "sources/video-metadata.json", "status": "reviewed", "duration_seconds": 4508},
+    {"id": "captions", "file": "sources/video.en.json3", "status": "reviewed", "kind": "English ASR, no manual captions", "cue_count": 1917, "raw_range_ms": [1280,4509520]},
+    {"id": "reading", "url": "https://pdos.csail.mit.edu/6.S081/2020/readings/riscv-calling.pdf", "file": "sources/riscv-calling.pdf", "status": "reviewed", "version": "V2.1draft, chapter18, printed89–92", "pdf_pages_read_and_viewed": [1,2,3,4]},
+    {"id": "slides", "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-riscv-slides.pdf", "file": "sources/l-riscv-slides.pdf", "status": "reviewed", "pdf_pages_viewed": [1,2,3,4,5,6], "use": "cross-check only"},
+    {"id": "outline", "url": "https://pdos.csail.mit.edu/6.S081/2020/lec/l-riscv.txt", "file": "sources/l-riscv.txt", "status": "reviewed", "version_caveat": "header says2019 Lecture11; demo sequence differs and stack adjustment signs are reversed"},
+    {"id": "code", "status": "reviewed", "commit": "e23d53f27f6e187732a92a2b4705639d1c260f05", "files": ["Makefile", "kernel/printf.c", "kernel/console.c"], "use": "targeted cross-check; shared read-only snapshot"}
+  ],
+  "gaps": [
+    "未逐句听音或核对全片画面；ASR技术术语用PDF、slides和7张真实帧辅助校订",
+    "开头0–1.280秒无字幕；末条字幕结束超视频1.520秒，正文封顶75:08",
+    "trace顺序问题的部分口述断裂；保留其可确认含义，没有还原未展示代码",
+    "历史V2.1draft摘录的明确再利用授权未确认，已按约定交付自主译述而非全文译文",
+    "未获得录课定制kernel/demos.c及asmdemo.S文件；可见关键代码与命令从原片核对，不宣称2020共享快照含这些demo",
+    "x/d演示未明确单位宽度，负数输出已保留；没有伪造正确内存dump",
+    "课堂条件断点命令如实记录，不保证任意调试上下文可直接访问调用者局部变量"
+  ],
+  "checks": {
+    "source_and_content_review": "completed; see sources/coverage.json",
+    "local_structural_check": "sources/checks.json produced by sources/finalize.py",
+    "build_run": false,
+    "demo_or_lab_run": false,
+    "signed_media_urls_archived": false,
+    "cookies_archived": false,
+    "subdelegation": false
+  },
+  "handoff": {
+    "metadata_proposal": "sources/metadata-proposal.json",
+    "coverage": "sources/coverage.json",
+    "manifest": "sources/manifest.json",
+    "figures": "sources/figures.json",
+    "next": "主agent批次汇总并运行全站build；无必须补写的正文占位"
+  }
+}

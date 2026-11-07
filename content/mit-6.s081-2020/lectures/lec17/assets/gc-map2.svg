@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 310" role="img" aria-labelledby="title desc">
+  <title id="title">Map2：同一物理页的两种虚拟地址视图</title>
+  <desc id="desc">同一进程共用一张页表，应用虚拟地址A不可访问，收集器虚拟地址B可读写，两个地址映射到同一个未扫描物理页。扫描完成后才开放应用视图。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#475569"/></marker></defs>
+  <rect width="820" height="310" rx="12" fill="#f8fafc"/>
+  <g font-family="system-ui, PingFang SC, Microsoft YaHei, sans-serif" font-size="19" fill="#0f172a">
+    <text x="32" y="37" font-weight="bold">同一进程 · 同一张页表 · 两个虚拟别名</text>
+    <rect x="32" y="65" width="325" height="77" rx="9" fill="#fee2e2" stroke="#b91c1c"/>
+    <text x="48" y="95">应用地址 A：PROT_NONE</text>
+    <text x="48" y="124" font-size="17">普通访问 → 缺页处理</text>
+    <rect x="32" y="174" width="325" height="77" rx="9" fill="#dbeafe" stroke="#1d4ed8"/>
+    <text x="48" y="204">收集器地址 B：可读写</text>
+    <text x="48" y="233" font-size="17">扫描对象并修正内部指针</text>
+    <rect x="522" y="104" width="262" height="108" rx="9" fill="#e2e8f0" stroke="#475569"/>
+    <text x="548" y="144">同一个物理页</text>
+    <text x="548" y="179" font-size="17">未扫描的 to-space 数据</text>
+    <path d="M357 103 L515 135 M357 212 L515 180" stroke="#475569" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+    <text x="32" y="287" font-size="18">顺序：扫描完成 → 开放 A 的权限 → 应用重试原访问</text>
+  </g>
+</svg>

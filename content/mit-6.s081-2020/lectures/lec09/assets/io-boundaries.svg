@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="310" viewBox="0 0 900 310" role="img" aria-labelledby="title desc">
+  <title id="title">中断通知与数据搬运是两条路径</title>
+  <desc id="desc">上行是数据路径：用户进程经驱动软件缓冲和MMIO与UART交换字节。下行是通知路径：UART经PLIC通知CPU，trap处理再调用驱动。中断不携带字符，也不指定用户进程。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#475569"/></marker></defs>
+  <rect width="900" height="310" rx="12" fill="#f8fafc"/>
+  <g font-family="system-ui, PingFang SC, Microsoft YaHei, sans-serif" text-anchor="middle" fill="#0f172a">
+    <text x="450" y="30" font-size="20" font-weight="600">通知回答“谁需要处理”，数据另走设备接口</text>
+    <g fill="#dbeafe" stroke="#60a5fa"><rect x="30" y="65" width="170" height="65" rx="8"/><rect x="280" y="65" width="240" height="65" rx="8"/><rect x="680" y="65" width="180" height="65" rx="8"/></g>
+    <text x="115" y="92" font-size="17">用户进程</text><text x="115" y="115" font-size="14">确定的地址空间</text>
+    <text x="400" y="92" font-size="17">驱动的内核缓冲区</text><text x="400" y="115" font-size="14">锁 + 索引 + 等待条件</text>
+    <text x="770" y="92" font-size="17">UART</text><text x="770" y="115" font-size="14">有限 FIFO／寄存器</text>
+    <g stroke="#475569" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"><path d="M210 97H270"/><path d="M530 97H670"/></g>
+    <text x="240" y="153" font-size="14">复制</text><text x="600" y="153" font-size="14">MMIO 读写字节</text>
+    <g fill="#fef3c7" stroke="#fbbf24"><rect x="280" y="202" width="240" height="55" rx="8"/><rect x="680" y="202" width="180" height="55" rx="8"/></g>
+    <text x="400" y="235" font-size="17">CPU：trap → devintr</text><text x="770" y="235" font-size="17">PLIC：claim / complete</text>
+    <g fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"><path d="M770 138V192"/><path d="M670 229H530"/><path d="M400 192V140"/></g>
+    <text x="823" y="176" font-size="14">IRQ</text><text x="600" y="216" font-size="14">外部中断通知</text>
+    <text x="450" y="290" font-size="15">进程与设备各自前进；中断发生时的当前进程未必是 I/O 的所有者。</text>
+  </g>
+</svg>

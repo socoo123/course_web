@@ -1,0 +1,57 @@
+{
+  "course":"mit-6.s081-2020",
+  "lecture":"lec13",
+  "title":"sleep 与 wakeup",
+  "status":"done",
+  "updated_on":"2026-11-07",
+  "parts":{
+    "notes":{"status":"done","file":"notes.zh.md","scope":"条件/channel/状态区分，两锁交接证明，调度约束，pipe/sleeplock 对照，2020 退出回收协议，kill 限制，6 题自测与答案；1 张自绘 SVG"},
+    "draft":{"status":"done","file":"draft.zh.md","scope":"全片 85:26 按 29 个约三分钟真实时间窗口自主译述；保留推导、故障演示、问答、讲者未解释的边界；4 张已实际查看的课堂单帧","review_limit":"全部字幕已读，不等于全片听音复核；视频许可不明，非逐字全文翻译"},
+    "materials":{"status":"done","file":"materials.zh.md","scope":"rev1 §7.5–7.10 全文中文译文，印刷页 71–80；4 版信号量代码、脚注及全部 8 道习题；逐页查看原 PDF；范围内无编号图表；排除 lec11 负责的导言至 §7.4"}
+  },
+  "video":{
+    "id":"gP67sJ4PTnc",
+    "duration_seconds":5126,
+    "duration":"85:26",
+    "caption_kind":"English automatic en-orig; no manual subtitles available",
+    "cue_count":2273,
+    "all_caption_text_read":true,
+    "raw_first_start_ms":5520,
+    "raw_last_end_ms":5127840,
+    "reviewed_stills_seconds":[210,2155,3020,4230],
+    "stills_crop":"none",
+    "full_audio_review_performed":false,
+    "full_video_visual_review_performed":false
+  },
+  "reading":{
+    "version":"2020-08-31 rev1",
+    "sections":["7.5","7.6","7.7","7.8","7.9","7.10"],
+    "pdf_pages_visually_reviewed":[71,72,73,74,75,76,77,78,79,80],
+    "code_commit":"e23d53f27f6e187732a92a2b4705639d1c260f05",
+    "code_scope":"proc.c, sleeplock.c, pipe.c 全读；trap.c 30–179、virtio_disk.c 210–270 核对",
+    "version_constraint":"固定源码只作辅助，非录课工作树或实验起始分支；父 p->lock / wakeup1 协议，不使用新版 wait_lock"
+  },
+  "sources":["V13-metadata","V13-asr","B7-pdf","B7-shared-text","B7-license","O13-outline","O13-code","C2020"],
+  "evidence_files":["sources/manifest.json","sources/coverage.json","sources/figures.json","sources/video-metadata.json","sources/captions.normalized.json","sources/transcript.en.txt"],
+  "gaps":[
+    "未全片逐句听音；自动字幕专名与关键机制已用源码、原页和四张截图核对，但不能宣称每句语音均已复核。",
+    "00:00–00:05.520 无字幕，未猜写内容；最后字幕结束时间超过视频元数据 1.840 秒，正文封顶 85:26。",
+    "约 04:33 学生关于共享内存的追问措辞不清，正文明确标出。",
+    "约 68:08–69:57 original_parent 问题的课堂回答未给完整并发退出证明；忠实保留其解释边界，源码补充在 notes/materials。",
+    "官网提纲与示例文件 Last-Modified 为 2025-09-05，不断言与 2020 录课文件逐字一致。",
+    "未在本地运行 xv6、复现 UART 故障、完成教材习题或实验评分。"
+  ],
+  "checks":{
+    "status":"done",
+    "command":"python3 content/mit-6.s081-2020/lectures/lec13/sources/verify.py",
+    "result":"passed",
+    "scope":["JSON 解析","29 段标题逐项对应 coverage，0–5126 时间连续","字幕 2273 条起点单调，全部英文证据行被覆盖","教材 §7.5–7.10 与 8 题完整","MIT 许可原文精确包含","来源 SHA-256","截图指纹、尺寸与图片可读取","SVG XML","Markdown 图片路径与截图仅入 draft","站内链接 course.json 中的讲次/实验 ID"],
+    "limitations":"结构检查不替代人工阅读或全片音频核对。",
+    "whole_site_build":"not-run; reserved for main agent",
+    "experiments":"not-run",
+    "commit_push":"not-performed"
+  },
+  "metadata_proposal":"sources/metadata-proposal.json",
+  "write_scope":"content/mit-6.s081-2020/lectures/lec13/ only",
+  "resume":"本讲已完成交付并停止；后续如需音频核验，仅按 gaps 定位，不覆盖已有正文。"
+}

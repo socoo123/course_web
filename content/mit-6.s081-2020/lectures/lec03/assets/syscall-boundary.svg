@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="250" viewBox="0 0 800 250" role="img" aria-labelledby="title desc">
+  <title id="title">系统调用的受控入口</title>
+  <desc id="desc">用户侧准备调用号与参数，经 ecall 进入内核指定入口，再由内核分派并检查服务请求。图省略底层陷阱保存细节。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#475569"/></marker></defs>
+  <rect width="800" height="250" rx="12" fill="#f8fafc"/>
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" fill="#0f172a">
+    <text x="36" y="35">用户空间</text><text x="440" y="35">内核空间</text>
+    <rect x="28" y="75" width="200" height="90" rx="8" fill="#dbeafe" stroke="#60a5fa"/>
+    <text x="128" y="109" text-anchor="middle">用户侧系统调用桩</text>
+    <text x="128" y="140" text-anchor="middle">准备 a7 和参数</text>
+    <rect x="435" y="75" width="145" height="90" rx="8" fill="#dcfce7" stroke="#4ade80"/>
+    <text x="507" y="110" text-anchor="middle">内核指定入口</text>
+    <text x="507" y="140" text-anchor="middle">进入后分派</text>
+    <rect x="623" y="75" width="150" height="90" rx="8" fill="#dcfce7" stroke="#4ade80"/>
+    <text x="698" y="110" text-anchor="middle">检查与实现</text>
+    <text x="698" y="140" text-anchor="middle">sys_exec 等</text>
+    <text x="314" y="103" text-anchor="middle">ecall</text>
+    <text x="400" y="220" text-anchor="middle">请求进入 ≠ 任意选择内核入口 ≠ 请求自动获准</text>
+  </g>
+  <path d="M385 50V185" stroke="#ef4444" stroke-width="2" stroke-dasharray="6 5"/>
+  <path d="M228 125H426 M580 125H614" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

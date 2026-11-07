@@ -1,0 +1,28 @@
+{
+  "course":"mit-6.s081-2020",
+  "year":2020,
+  "lecture":"lec18",
+  "title":"操作系统组织",
+  "status":"done",
+  "review_status":"reviewed-and-build-passed",
+  "main_agent_acceptance":{"date":"2026-11-07","review":"../../sources/review-lec18.json","structure":"passed","caption_timeline":"passed","site_build":"passed: 2451 modules, 5.81s; one batch build","worker_checks_note":"下方未运行build是worker交付时记录；统一构建由主agent完成，实验仍未运行"},
+  "version":"1.0.0",
+  "updated_on":"2026-11-07",
+  "model":"openai/gpt-6-astra#high",
+  "parts":{"notes":"done","draft":"done","materials":"done"},
+  "artifacts":{"notes":"notes.zh.md","draft":"draft.zh.md","materials":"materials.zh.md","coverage":"sources/coverage.json","manifest":"sources/manifest.json","metadata_proposal":"sources/metadata-proposal.json","corrections":"sources/corrections.json"},
+  "sources":["V18","C18","O18","P18"],
+  "video":{"id":"dM9PLdaTpnA","duration_seconds":5659,"duration":"94:19","captions":"english-asr-en-orig","cue_count":2526,"all_caption_text_read":true,"raw_first_start_ms":7600,"raw_last_end_ms":5659840,"windows":32,"coverage_start_seconds":0,"coverage_end_seconds":5659,"head_gap_seconds":7.6,"raw_end_overrun_seconds":0.84,"reviewed_stills_seconds":[3300,4200],"full_audio_review":false,"full_video_review":false,"treatment":"自主逐段中文译述；不是逐字全文翻译"},
+  "reading":{"title":"The Performance of µ-Kernel-Based Systems","year":1997,"pdf_pages_read":[1,15],"sections_read":"Abstract,1–8,Availability,Acknowledgments,References","figures_reviewed":[1,2,3,4,5,6,7,8,9],"tables_reviewed":[1,2,3,4,5,6],"license_review":"ACM notice onp1 visually checked; autonomous exposition rather than full translation","treatment":"机制、条件、图表意义、代表数据、结果与局限完整自主整理"},
+  "gaps":[
+    "ASR未逐句听音复核；说话人未命名，无法保证自动字幕没有遗漏",
+    "开头0–7.6秒没有字幕，不补写；末尾ASR超元数据0.84秒，阅读时间封顶94:19",
+    "只查看55:00和70:00两张课堂单帧，未核对全片画面",
+    "图8原图只写Real time，时间单位未标明，正文保留这一限制",
+    "未运行论文实验、L4、Linux或xv6实验；未运行全站build",
+    "共享xv6快照是固定2020参考版本，不是录课工作树；未用它充当Linux2.0源码",
+    "视频开放许可未确认；论文ACM许可不作为公开全文翻译依据"
+  ],
+  "checks":{"all_caption_text_read":true,"paper_all_sections_read":true,"paper_all_figures_tables_visually_reviewed":true,"two_stills_actually_read":true,"source_specific_licenses_checked":true,"structural_validation":"passed: JSON/JSON3,32 windows,2526 cues assigned once,2 image paths and decodes,6 internal links,15 SHA256 records; see sources/validation.json","experiments_run":false,"site_build_run":false,"committed":false,"pushed":false},
+  "metadata":"建议仅补course.json中lec18的video.duration=94:19；详见sources/metadata-proposal.json"
+}

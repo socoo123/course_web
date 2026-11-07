@@ -1,0 +1,73 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lecture": "lec10",
+  "title": "多处理器与锁",
+  "status": "done",
+  "updated_on": "2026-11-07",
+  "completion_basis": "Complete authored content at full-English-ASR-reading, selected-frame and fixed-source verification level; not an audio-certified transcript",
+  "write_boundary": "lectures/lec10/",
+  "shared_files_modified": false,
+  "parts": {
+    "notes": {
+      "status": "done",
+      "file": "notes.zh.md",
+      "scope": "锁协议与不变量、原子性的观察边界、跨核/中断/顺序三层保证、嵌套关中断源码补读、锁顺序、测量驱动的性能设计、八道自测、一张自绘 SVG"
+    },
+    "draft": {
+      "status": "done",
+      "file": "draft.zh.md",
+      "scope": "00:00–92:56 的31个约三分钟段落；课前lazy实验交流、kfree演示panic、链表交错、rename、锁实现、UART与完整课后问答",
+      "mode": "自主中文译述，非逐字翻译；技术纠正与课堂未解答处明确标记",
+      "embedded_reviewed_frames": [685,975,2445,4110]
+    },
+    "materials": {
+      "status": "done",
+      "file": "materials.zh.md",
+      "scope": "xv6 rev1第6章导言及§6.1–6.9全文中译；三幅图表、全部代码与五道习题；MIT许可全文",
+      "pages_reviewed": [55,56,57,58,59,60,61,62,63,64,65,66],
+      "blank_pages": [66]
+    }
+  },
+  "sources": ["sources/manifest.json","sources/video-metadata.json","sources/coverage.json"],
+  "video": {
+    "id": "NGXu3vN7yAk",
+    "duration_seconds": 5576,
+    "cue_count": 2332,
+    "caption_type": "English original automatic captions",
+    "manual_captions_available": false,
+    "full_caption_text_read": true,
+    "raw_first_start_ms": 80,
+    "raw_last_end_ms": 5577760,
+    "full_audio_review": false,
+    "full_video_visual_review": false,
+    "reviewed_stills_seconds": [685,975,2445,4110]
+  },
+  "gaps": [
+    "英文ASR未逐句听音复核；只查看四张真实关键帧，不是全片画面审核。",
+    "片头已在课前交流中途；首条字幕从0.080秒开始，缺失的前半句不补造。末条显示结束超出视频1.760秒，仅正文时间轴封顶。",
+    "合并字幕覆盖区间后，超过10秒的内部空隙为2565.839–2586.000秒、5114.320–5124.880秒；未判定为已听证实的静音，没有补写发言。",
+    "课后关于仅约束编译器且不重复产生硬件fence的细粒度接口，教师未当场给出准确实现；保留追问和未解决边界。",
+    "首次HLS单帧请求100秒超时；一次针对性的直接MP4格式重试成功获取四帧，无剩余截图缺口。",
+    "固定e23d53f27f6e187732a92a2b4705639d1c260f05快照仅辅助校对，不是录课工作树或实验分支。",
+    "共享官方提纲、板书、教材抓取件的Last-Modified为2025；版本与快照已记录，不声称历史URL内容未变。",
+    "视频授权未明确，采用自主译述；课程网站CC未套用到视频或板书嵌入的第三方图。",
+    "没有运行xv6、教材练习或实验；没有运行全站build。"
+  ],
+  "checks": [
+    "本讲所有JSON可解析",
+    "字幕起点单调，2332条字幕按起点恰好分配一次",
+    "31个draft标题与coverage主题及时间完全一致，连续覆盖0–5576秒",
+    "所有Markdown图片路径存在；课堂截图仅在draft，教材图仅在materials",
+    "八张内容图片：四张课堂图、三张教材图、一张自绘SVG；原片与教材图均实际查看",
+    "SVG可解析为XML，代码围栏配对",
+    "站内链接指向course.json已登记讲座/实验ID",
+    "教材导言、九节、五道习题与三幅图表覆盖检查通过",
+    "manifest所列文件与已读源码SHA-256核对通过",
+    "sources/check.py最小检查通过；统计正文字符数draft18228、materials13491、notes6384"
+  ],
+  "metadata_proposal": "sources/metadata-proposal.json",
+  "proposed_metadata_change": "增加video.duration=92:56；指定阅读无需修正，补充印刷66页为空白说明；lock教学关联与当日发布cow区分",
+  "constraints": {"write_scope":"lectures/lec10/","full_site_build":"not-run","experiments":"not-run","delegation":"none","commit_push":"not-run"},
+  "resume": "本讲内容生产完成，停止。主agent可整合真实时长并做批次全站构建；全片听音复核为另行可选工作，不作为已完成事项。"
+}

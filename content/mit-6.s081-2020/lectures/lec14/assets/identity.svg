@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="260" viewBox="0 0 820 260" role="img" aria-labelledby="title desc">
+  <title id="title">名字与打开文件分别连接到同一个 inode</title>
+  <desc id="desc">目录项通过 inode 编号引用文件；进程 fd 表通过打开文件对象引用内存 inode，偏移保存在打开文件对象中。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#475569"/></marker></defs>
+  <rect width="820" height="260" rx="12" fill="#f8fafc"/>
+  <g fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5">
+    <rect x="24" y="26" width="205" height="64" rx="8"/>
+    <rect x="24" y="165" width="160" height="64" rx="8"/>
+    <rect x="259" y="165" width="210" height="64" rx="8"/>
+    <rect x="560" y="90" width="230" height="95" rx="8"/>
+  </g>
+  <g font-family="sans-serif" font-size="17" fill="#0f172a" text-anchor="middle">
+    <text x="126" y="52">目录项 x/y、x/z</text><text x="126" y="76">name → inum</text>
+    <text x="104" y="192">进程 fd 表</text><text x="104" y="216">ofile[fd]</text>
+    <text x="364" y="192">struct file</text><text x="364" y="216">偏移 off / 打开模式</text>
+    <text x="675" y="119">同一个文件的 inode</text><text x="675" y="145">nlink：名字关系</text><text x="675" y="171">ref：内存使用者</text>
+  </g>
+  <g stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M229 58 H675 V86"/><path d="M184 197 H254"/><path d="M469 197 H515 V151 H555"/>
+  </g>
+</svg>

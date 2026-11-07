@@ -1,0 +1,76 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lab": "fs",
+  "title": "文件系统",
+  "updated_on": "2026-11-07",
+  "status": "done",
+  "status_scope": "文档交付完成；不代表实验实现、专用源码审阅或运行验证完成",
+  "parts": {
+    "lab": {
+      "status": "done",
+      "file": "lab.zh.md",
+      "scope": "完整翻译2020官方要求、两项任务、各8条提示、全部专用命令和样例输出、选做及致谢；共同提交段链接公共资料"
+    },
+    "guide": {
+      "status": "done",
+      "file": "guide.zh.md",
+      "scope": "编者机制解释、逻辑块号分区、按需分配与逆向回收、日志和缓存生命周期、符号链接语义与锁交接、排错和自测；无完整解答代码"
+    },
+    "english_original": {
+      "status": "not-applicable",
+      "reason": "用户未要求英文原文标签，不创建lab.en.md"
+    }
+  },
+  "sources": ["lab-fs-2020", "book-rev1-fs-excerpts", "xv6-reference-2020", "common-submission", "reading-ownership"],
+  "source_review": {
+    "official_page": "reviewed",
+    "official_page_range": "sources/lab-fs.html 1–340及sources/lab-fs.txt 1–400，全读",
+    "book_range": "仅抽取文本§8.4–8.14，3186–3658行，印刷页84–95；非全章阅读，未目视核验PDF图像",
+    "code": "固定2020参考快照；实际文件和范围见sources/manifest.json",
+    "fs_branch": "pending",
+    "dedicated_tests_and_grader": "pending",
+    "supplemental_fetch_attempted": false
+  },
+  "common_submission": {
+    "owner": "main",
+    "file": "resources.zh.md",
+    "section": "实验的共同验收与提交步骤",
+    "comparison": "fs与pgtbl原页Submit the lab至提交警告列表的HTML，归一化空白后完全相同；公共资料已覆盖其要求",
+    "differences": [],
+    "answer_file": "原页仅有条件式answers-lab-name.txt模板，无独立问答题或明确fs答案文件"
+  },
+  "checks": {
+    "official_section_and_hint_coverage": "passed-manual",
+    "common_submission_comparison": "passed",
+    "source_html_sha256": "passed",
+    "json_parse": "passed-four-json-files",
+    "internal_links": "passed-local-course-and-lab-targets",
+    "image_paths": "not-applicable-no-images",
+    "markdown_fences": "passed",
+    "official_output_blocks": "passed-five-blocks-match-source-including-progress-dots",
+    "manifest_file_hashes": "passed-all-recorded-file-hashes",
+    "coverage_structure": "passed-35-items-including-eight-plus-eight-hints",
+    "whole_site_build": "not-run-owner-main"
+  },
+  "execution": {
+    "xv6": "not-run",
+    "qemu": "not-run",
+    "gdb": "not-run",
+    "bigfile": "not-run",
+    "symlinktest": "not-run",
+    "usertests": "not-run",
+    "make_grade": "not-run",
+    "make_handin": "not-run"
+  },
+  "gaps": [
+    "未取得fs实验分支及专用bigfile、symlinktest、评分器源码；官方输出已核对，测试实现、额外断言与评分权重未核验。",
+    "参考提交e23d53f27f6e187732a92a2b4705639d1c260f05不是实验分支；其FSSIZE为1000，不能冒充官方fs分支的200000块配置。",
+    "教材仅实际阅读§8.4–8.14文本，未读全章或目视核验图8.3；没有重译教材或复用教材图像。",
+    "LEC14–15尚未制作；正文明确指向公共资料中的原版教材入口，不声称已有对应中文阅读。",
+    "未运行实验、工具链或评分；历史提交网站可用性未验证。"
+  ],
+  "artifacts": ["lab.zh.md", "guide.zh.md", "status.json", "sources/coverage.json", "sources/manifest.json", "sources/metadata-proposal.json"],
+  "shared_files_modified": false,
+  "delegated": false
+}

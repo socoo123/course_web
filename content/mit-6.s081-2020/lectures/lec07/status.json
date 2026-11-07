@@ -1,0 +1,58 @@
+{
+  "course": "mit-6.s081-2020",
+  "lecture": "lec07",
+  "title": "实验问答（一）",
+  "status": "done",
+  "parts": {"notes": "done", "draft": "done", "materials": "not-applicable"},
+  "completed_at": "2026-11-06",
+  "write_boundary": "content/mit-6.s081-2020/lectures/lec07/",
+  "coverage": {
+    "draft": "29个约三分钟语义窗口，00:00–87:14；保留课堂问答、GDB索引推导、代码讲解、设备/guard/共同页表设计讨论与课后交流；约1.82万字符",
+    "notes": "按真实疑问提炼映射目标、权限和生命周期不变量；fork别名自绘图、排错自测、实验衔接与版本差异；约0.68万字符",
+    "materials": "无指定阅读；不建立空壳文件，提纲和板书只用于核对课堂",
+    "source_review": "英文自动字幕完整阅读；官方问答提纲全读；9页板书全部渲染并查看；固定2020源码按记录范围核对"
+  },
+  "video": {
+    "id": "_WWjNIJAfVg",
+    "duration_seconds": 5234,
+    "caption_type": "en-orig automatic; no manual captions listed",
+    "cue_count": 2235,
+    "raw_first_start_seconds": 0.48,
+    "raw_last_end_seconds": 5236.08,
+    "full_caption_read": true,
+    "full_audio_verified": false,
+    "stills_actually_viewed_seconds": [1080, 3480, 4620],
+    "stills_used_in_draft_seconds": [1080, 3480, 4620],
+    "timeline": "Approximate semantic reading windows; final caption clamped to nominal video end"
+  },
+  "gaps": [
+    "未逐句对照音频，也未完整观看全片画面；只有三张真实帧实际查看",
+    "开头0.48秒无字幕；末条字幕超标称时长2.08秒且末句未完整结束，未补写后续",
+    "早期地址数字、部分设备名与口误按板书/源码校注；未猜学生姓名，未逐帧重建全部GDB输入",
+    "CLINT/PLIC口述顺序与固定参考快照、官方PLIC上限存在未解决的实现差异，已明确标出；没有讲者完整解答工作树",
+    "共同页表下简化trampoline是讲者的现场设计推演，未给出经测试实现，不标成实验现成结论",
+    "官方提纲计划中的syscall/util完整解答、部分课前问题及memmove前检查逐项解释未在视频展开，未冒充课堂已讲内容",
+    "SUM仅数据访问的精确校注补充核对了明确标年的RISC-V v20260120规范相关段落，不是2020指定阅读",
+    "未运行xv6、GDB、实验测试或全站build"
+  ],
+  "technical_corrections": [
+    "0x0b为V|R|X，而非只有V|X",
+    "satp含模式与根页号，不能把任何非零值都等同启用分页",
+    "MAXVA=2^38来自Sv39低半区选择；不把虚拟宽度直接等同物理寻址能力",
+    "fork内容相同不代表PPN相同；叶PTE错取父表会让子内核别名指向父用户数据页",
+    "kfree填每字节0x01；不称所有位均为1",
+    "SUM只允许S-mode数据访问U页，不能允许S-mode从U页取指",
+    "trapframe通用寄存器按x编号排列；压缩指令紧凑子集不表示机器只剩该子集",
+    "用户guard清U且有物理页，内核guard不映射；guard不能保证拦住跳过整页的访问",
+    "背景图PHYSTOP=0x86400000与固定128MiB配置0x88000000区分",
+    "每进程内核表与用户/内核共用同一表是不同设计，不能完成pgtbl后直接删trampoline"
+  ],
+  "checks": {
+    "status": "passed",
+    "record": "sources/checks.json",
+    "performed": ["本目录JSON解析", "29段连续时间结构", "2235字幕条目按起点恰好归属一段", "图片路径", "SVG XML", "站内目标ID与标签", "Markdown围栏与折叠块", "截图仅用于draft"],
+    "scope": "局部必要检查；结构检查不等于逐句音频校验"
+  },
+  "sources": ["sources/manifest.json", "sources/coverage.json", "sources/frames.json"],
+  "metadata_proposal": "sources/metadata-proposal.json"
+}

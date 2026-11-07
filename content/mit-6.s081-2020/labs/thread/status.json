@@ -1,0 +1,41 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lab": "thread",
+  "title": "多线程",
+  "status": "done",
+  "updated_at": "2026-11-07",
+  "completion_scope": "本实验内容交付完成；不代表实验程序或评分通过；共享整合与全站构建由主agent负责",
+  "parts": {
+    "lab": {"status": "done", "file": "lab.zh.md", "scope": "官方目标、先修、分支、三任务、全部提示/问题/样例/验收、选做中译；共同提交步骤链接公共资料"},
+    "guide": {"status": "done", "file": "guide.zh.md", "scope": "编者机制与思路骨架、失败定位、自测；无完整实验实现或问答答案"},
+    "coverage": {"status": "done", "file": "sources/coverage.json"},
+    "manifest": {"status": "done", "file": "sources/manifest.json"},
+    "metadata_proposal": {"status": "done", "file": "sources/metadata-proposal.json"},
+    "english_original": {"status": "not-applicable", "reason": "不要求英文标签，未建立空壳"}
+  },
+  "sources": ["lab-thread-2020", "xv6-book-rev1", "lec11-existing", "xv6-reference-2020", "shared-submission"],
+  "source_gaps": ["thread-lab-branch", "official-external-links"],
+  "gaps": [
+    "未取得thread实验分支、专用起始文件及评分器；未核对其完整字段布局、具体编译规则和测试实现",
+    "固定源码e23d53f27f6e187732a92a2b4705639d1c260f05仅作教材机制参考，不能替代实验版本",
+    "外链GDB/pthread/百科文档未获取；本次教材阅读限提取文本指定范围与已完成LEC11正文，未重新查看PDF原页和视频",
+    "未运行xv6、QEMU、GDB、宿主pthread程序、make grade或任何实验提交"
+  ],
+  "checks": {
+    "official_html_sha256": "matched shared manifest",
+    "official_html_and_text": "read in full",
+    "official_requirements": "30项逐项覆盖；命令、答案文件、输出、验收阈值和选做均保留",
+    "shared_submission": "与pgtbl提交段合并空白后的HTML完全相同；公共资料逐项对照无实质差异",
+    "json": "passed：4份JSON可解析；coverage共30项均有正文归属",
+    "internal_links": "passed：6处讲座/实验带视图链接均有对应文件；公共资料页及共同提交章节存在",
+    "sample_outputs": "passed：uthread、ph单/双线程、barrier失败输出与官方pre块逐字匹配",
+    "commands_and_symbols": "passed：逐项核对分支、GDB命令、专用函数/路径、测试名、答案文件、1.25倍阈值及选做术语",
+    "markdown": "passed：代码围栏成对；无空英文标签或图片占位",
+    "images": "not-applicable：未添加图片",
+    "experiment": "not-run",
+    "site_build": "not-run：按合同交主agent统一检查",
+    "git_commit_or_push": "not-run"
+  },
+  "deliverables": ["lab.zh.md", "guide.zh.md", "status.json", "sources/coverage.json", "sources/manifest.json", "sources/metadata-proposal.json"]
+}

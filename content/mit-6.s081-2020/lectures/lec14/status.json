@@ -1,0 +1,55 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lecture": "lec14",
+  "title": "文件系统",
+  "instructor": "Frans Kaashoek",
+  "status": "done",
+  "updated_on": "2026-11-07",
+  "parts": {
+    "notes": {"status":"done","file":"notes.zh.md","scope":"身份/偏移/块映射/缓存不变量提炼，8题折叠自测，1张原创SVG，现成实验链接"},
+    "draft": {"status":"done","file":"draft.zh.md","scope":"按全片2076条英文ASR自主中文译述，29个约3分钟窗口，保留讲解、演示、课堂及课后问答；2张真实帧已查看"},
+    "materials": {"status":"done","file":"materials.zh.md","scope":"rev1第8章导言、§8.1–8.3、§8.7–8.16全文中译，3张教材原图、11题、完整MIT许可；排除lec15独占日志小节"}
+  },
+  "sources": ["schedule-lec14","video-metadata","video-asr-en","official-outline","official-boards","book-riscv-rev1","book-license","xv6-code"],
+  "source_manifest": "sources/manifest.json",
+  "coverage": "sources/coverage.json",
+  "metadata_proposal": "sources/metadata-proposal.json",
+  "video": {
+    "id":"ADzLv1nRtR8",
+    "duration_seconds":5138,
+    "captions":"English ASR en json3",
+    "cue_count":2076,
+    "raw_first_start_ms":240,
+    "raw_last_end_ms":5139920,
+    "draft_windows":29,
+    "reviewed_stills_seconds":[3180,3635],
+    "review":"完整字幕文本阅读；非全片听音/画面复核"
+  },
+  "reading": {
+    "version":"2020-08-31 rev1",
+    "pages":"81–84、87–97，98空白",
+    "sections":["第8章导言","8.1","8.2","8.3","8.7","8.8","8.9","8.10","8.11","8.12","8.13","8.14","8.15","8.16"],
+    "pdf_pages_visually_reviewed":[82,83,90,96,97],
+    "figures":["8.1","8.2","8.3"],
+    "exercises":11,
+    "code_commit":"e23d53f27f6e187732a92a2b4705639d1c260f05",
+    "specified_code_read":"bio.c/fs.c/sysfile.c/file.c全文"
+  },
+  "gaps": [
+    "视频许可未知，产出自主中文译述而非逐字全文译本；未逐句听音，只检查两张关键帧",
+    "开头0–0.240秒无字幕；内部39:01.839–39:12.839、54:24.160–54:36.839有超过10秒的字幕空隙，未断言静音或补写；原末尾超时1.920秒，正文封顶85:38",
+    "课堂将两次595更新解释为h/i，与固定源码和官方提纲的清零/写hi不同；正文分开保留课堂解释与编者校正，未把参考快照当录课树",
+    "2020官方提纲和板书URL显示2025 Last-Modified；教材有若干遗留描述，与快照差异已明示",
+    "官方提纲中的rm x、完整namex并发走读等未在本视频展开；笔记明确指出并链接教材补充",
+    "未运行xv6或fs实验；未执行全站build，交主agent统一处理"
+  ],
+  "checks": {
+    "status":"done",
+    "command":"python3 content/mit-6.s081-2020/lectures/lec14/sources/check_delivery.py",
+    "result":"PASS",
+    "performed":["JSON解析","29窗口连续且封顶5138秒","2076cue完整归属与时间单调","逐窗证据时间在窗口内","6张Markdown图片可达且PNG/JPEG可解码、SVG可解析并含title/desc","12条讲座/实验内部链接ID存在","13个指定小节加导言及11题覆盖","教材MIT声明原文保留","来源及派生文件sha256一致","课堂截图只在draft"],
+    "not_performed":["全片音频复核","全片画面复核","xv6/实验执行","全站build"]
+  },
+  "handoff":"仅本讲目录已编辑；共享元数据未改。建议主agent补video.duration=85:38；fs关联与reading归属确认正确。"
+}

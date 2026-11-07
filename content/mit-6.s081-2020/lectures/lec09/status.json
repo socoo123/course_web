@@ -1,0 +1,73 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lecture": "lec09",
+  "title": "中断",
+  "status": "done",
+  "updated_on": "2026-11-06",
+  "completion_basis": "Complete authored content at English-ASR plus selected-frame and fixed-source verification level; not an audio-certified transcript",
+  "write_boundary": "lectures/lec09/",
+  "shared_files_modified": false,
+  "parts": {
+    "notes": {
+      "status": "done",
+      "file": "notes.zh.md",
+      "scope": "Boundary/invariant reasoning, circular queue capacity, input commit distinction, interrupt enable layers, explicit kernelvec source supplement, version notes, 7 self-checks and one original SVG"
+    },
+    "draft": {
+      "status": "done",
+      "file": "draft.zh.md",
+      "scope": "33 detailed chronological windows spanning 00:00–97:18; opening lab discussion, top demonstration, hardware/device/code reasoning, teacher correction and post-lecture Q&A preserved",
+      "mode": "Autonomous Chinese rendering from real English ASR; not verbatim video translation",
+      "embedded_reviewed_frames": [1020,4200,5700]
+    },
+    "materials": {
+      "status": "done",
+      "file": "materials.zh.md",
+      "scope": "xv6 rev1 chapter 5 introduction and §§5.1–5.6 full Chinese translation; 2 exercises, MIT notice; no original figures/tables, p54 blank",
+      "pages_reviewed": [49,50,51,52,53,54]
+    }
+  },
+  "sources": ["sources/manifest.json","sources/video-metadata.json","sources/coverage.json"],
+  "video": {
+    "id": "zRnGNndcVEA",
+    "duration_seconds": 5838,
+    "cue_count": 2174,
+    "caption_language": "en-orig",
+    "manual_captions_available": false,
+    "full_caption_text_read": true,
+    "raw_first_start_ms": 40,
+    "raw_last_end_ms": 5839480,
+    "full_audio_review": false,
+    "reviewed_stills_seconds": [1020,4080,4200,5700],
+    "unused_still_reason": "4080-second frame was an unfinished buffer sketch; 4200-second completed drawing used instead"
+  },
+  "gaps": [
+    "English ASR not checked sentence-by-sentence against audio; only four individual frames viewed, not whole-video visual review.",
+    "First 0.040 seconds have no cue; raw final cue overruns duration by 1.480 seconds; document timeline clamped to 5838 seconds.",
+    "Cue coverage gaps longer than 10 seconds: 767.560–777.839, 4985.840–4997.400, 5787.060–5801.440; not classified as verified silence and not reconstructed.",
+    "Teacher did not resolve historical reason for 32-element per-hart scratch allocation; source-derived layout is separated from this unanswered question.",
+    "Independent optional byterunner.com UART manual fetch failed with transport error; no full-manual review claimed.",
+    "Fixed e23d53f27f6e187732a92a2b4705639d1c260f05 snapshot is not asserted to be recording working tree or lab branch; old consolewrite lock composition not experimentally validated.",
+    "Official lecture outline/boards/book URLs report 2025 Last-Modified; retrieved versions explicitly recorded.",
+    "Video license not explicitly open; autonomous rendering used; third-party SiFive diagram copyright not subsumed under course CC.",
+    "No xv6, GDB or laboratory exercises run; no whole-site build run under worker contract."
+  ],
+  "checks": [
+    "All local JSON parses",
+    "Caption starts monotonic",
+    "33 contiguous draft windows span 0–5838 seconds",
+    "Coverage cue ranges exactly assign all 2174 normalized cues once by start time",
+    "All Markdown image paths exist; classroom frames referenced only in draft",
+    "Original SVG parses as XML",
+    "Internal lecture links resolve to registered lec09",
+    "Markdown fenced blocks balanced",
+    "Chapter introduction, §§5.1–5.6 and both exercises retained",
+    "Source file and reviewed code hashes match manifest"
+  ],
+  "metadata_proposal": "sources/metadata-proposal.json",
+  "proposed_metadata_change": "Add video.duration = 97:18; existing title, video ID and readings remain appropriate",
+  "site_build": "not run per worker contract",
+  "experiments": "not run",
+  "resume": "Content production complete. Main agent may integrate duration and perform batch site build. Optional future audio audit or historical investigation of scratch allocation remains explicitly separate from delivered content."
+}

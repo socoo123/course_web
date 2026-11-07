@@ -1,0 +1,47 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lab": "lock",
+  "title": "锁与并行",
+  "updated_at": "2026-11-07",
+  "status": "done",
+  "completion_scope": "内容交付；不表示取得实验分支或测试通过",
+  "parts": {
+    "lab": {"status": "done", "file": "lab.zh.md", "scope": "2020 官方任务、全部提示、四组完整实验输出、验收与选做；共同提交段链接公共资料"},
+    "guide": {"status": "done", "file": "guide.zh.md", "scope": "编者机制分析、设计骨架、不变量、交错、排错与自测；无完整答案"}
+  },
+  "sources": ["lab-lock-2020", "book-rev1", "xv6-reference-2020", "lec10-notes", "lec13-notes", "shared-submission", "lock-branch-specific-files"],
+  "source_records": "sources/manifest.json",
+  "coverage": "sources/coverage.json",
+  "metadata_proposal": "sources/metadata-proposal.json",
+  "checks": {
+    "official_html_and_text_read": true,
+    "official_tasks_hints_commands_outputs_optional_reviewed": true,
+    "shared_submission_compared": true,
+    "json_parse": "passed；4 个 JSON 已解析",
+    "internal_links": "passed；11 个站内链接均定位到已存在内容",
+    "image_paths": "not-applicable；未使用图片",
+    "source_paths_and_sha256": "passed；manifest 中 16 个带 SHA-256 的文件逐一匹配，所有非空 file 路径存在",
+    "sample_output_comparison": "passed；HTML pre 与 Markdown 代码块比较，忽略行尾空白后四组实验输出完全一致；分支命令忽略缩进后完全一致",
+    "coverage_items": "passed；41 个独立条目均已对应，两项任务、全部提示、验收、共同提交与选做已人工逐项核对",
+    "markdown_structure": "passed；头信息、代码围栏和 details 成对，无空壳英文原文或图片引用",
+    "site_build": "not-run；主 agent 统一检查",
+    "xv6_qemu_gdb": "not-run",
+    "lab_tests": "not-run",
+    "submission": "not-run"
+  },
+  "gaps": [
+    "未取得 2020 lock 实验分支，专用测试/评分器/带计数的锁实现及 kernel/sprintf.c 未逐行核对；不推断隐藏测试、计分或内存任务数值阈值。",
+    "e23d53f27f6e187732a92a2b4705639d1c260f05 是教材参考快照，不是实验起始分支或录课工作树。",
+    "未运行 xv6/QEMU/GDB、kalloctest、bcachetest、usertests、make grade 或提交；网页完成不等于实验通过。",
+    "教材只读 manifest 记录的提取文本范围，未重新视觉复核 PDF 图表；没有复制图表或重复教材章节译文。",
+    "官方 bcache 成功样例逐行零计数而 tot=128，已忠实保留并注明，未猜测底层统计原因。"
+  ],
+  "optional_parts": {
+    "english_original": "not-applicable；未提供 lab.en.md，不创建空壳标签",
+    "assets": "not-applicable；机制用表格和交错说明，无需图片"
+  },
+  "shared_files_modified": false,
+  "delegated": false,
+  "next_action": "交主 agent 审阅、整合可选元数据并统一构建；本 worker 已完成本目录交付，不推进其他任务"
+}
