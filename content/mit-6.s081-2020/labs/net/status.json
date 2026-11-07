@@ -1,0 +1,56 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lab": "net",
+  "title": "网络",
+  "status": "done",
+  "updated_on": "2026-11-07",
+  "meaning_of_done": "content production, main review and single batch site build passed; laboratory was not executed",
+  "main_review": {"status":"reviewed-and-build-passed","file":"../../sources/review-net.json","build_log":"../../sources/build-mmap-net.log","build_runs":1,"modules":2517,"vite_seconds":5.74},
+  "parts": {
+    "lab": {"status": "done", "file": "lab.zh.md", "scope": "all official lab-specific requirements, all 13 TX/RX hints plus debug/locking hints, complete pcap and nettests examples, nine challenges; common submission explicitly delegated"},
+    "guide": {"status": "done", "file": "guide.zh.md", "scope": "mechanisms, state invariants, implementation stages, failures and six self-checks; no complete solution"},
+    "coverage": {"status": "done", "file": "sources/coverage.json"},
+    "manifest": {"status": "done", "file": "sources/manifest.json"},
+    "english_original": {"status": "not-applicable", "reason": "no English placeholder requested or created"}
+  },
+  "sources": ["N20", "C20", "I8254X", "LOCAL-COURSE"],
+  "branch": "net",
+  "commit": "8c336ca9e340196025a8d80f9ac34fcc0230bdd5",
+  "checks": {
+    "official_html_sha256": "matched shared manifest",
+    "official_html_and_text": "fully read",
+    "source_code": "13 selected official net-branch files fully read; hashes recorded",
+    "manual": "targeted text reading and seven visually reviewed original pages; scope in manifest",
+    "json_links_images_and_sections": {
+      "result": "passed",
+      "json_files_parsed": 5,
+      "internal_links_checked": 12,
+      "markdown_images": 0,
+      "source_page_images": 7,
+      "source_hashes": "all archived artifacts and manifest source SHA-256 values matched",
+      "official_example_blocks": "both pcap and nettests blocks match original after whitespace normalization",
+      "coverage_sections": 23,
+      "transmit_hints": 6,
+      "receive_hints": 7,
+      "optional_challenges": 9,
+      "self_checks": 6,
+      "check_note": "Initial validation assumed 24 coverage groups; actual grouping has 23 (UDP/TCP challenges share one range). Corrected checker count and reran successfully; no missing source section."
+    },
+    "full_site_build": "passed by main in single batch build; not run by worker",
+    "experiment": "not run",
+    "nettests": "not run",
+    "make_grade": "not run",
+    "submission": "not run"
+  },
+  "gaps": [
+    "未运行工具链、xv6、QEMU、nettests、make grade 或实验提交；所有输出为官方示例而非本地结果。",
+    "Intel 手册只定向阅读记录的页码，未全本阅读或翻译；没有核验选做中的多队列、RSC/GRO及真实硬件性能。",
+    "未审计 QEMU 网卡实现或整个实验仓库；只核对 manifest 所列起始源码与评分入口，未读 gradelib 的完整实现。",
+    "2020 DNS 测试硬编码 8.8.8.8 查询及 128.52.129.126 结果；今日外部服务与旧解析器兼容性未运行验证。",
+    "官网历史 URL 的快照不保证自2020起未更新；Intel PDF Last-Modified为2025。",
+    "课程网站 CC 未扩展到 Intel 手册、外链文档或视频；QEMU/RFC/提交网站入口未本次访问。",
+    "LEC24扫描整RX环替代方案未验证；普通屏障不是通用DMA缓存维护，ICR确认不是CPU中断使能。"
+  ],
+  "metadata_proposal": "sources/metadata-proposal.json"
+}

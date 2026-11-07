@@ -1,7 +1,41 @@
 {
   "course": "mit-6.s081-2020",
   "lecture": "lec23",
-  "status": "running",
-  "parts": {"notes": "pending", "draft": "pending", "materials": "running"},
-  "gaps": ["正在读取原始来源；尚未宣称正文完成"]
+  "year": 2020,
+  "title": "RCU 与多核读密集共享数据",
+  "status": "done",
+  "updated_on": "2026-11-07",
+  "main_acceptance": {"result":"reviewed-and-build-passed","review":"../../sources/review-lec23.json","structure":"passed","caption_evidence":"raw-json3/normalized/coverage/draft matched","build":{"command":"npm run build","runs":1,"result":"passed","modules":2506,"vite_seconds":5.06},"experiments_run":false},
+  "parts": {
+    "notes": {"status": "done", "file": "notes.zh.md", "scope": "机制提炼、三份正确性证明、生命周期与语义区别、7道折叠自测；无课堂截图"},
+    "draft": {"status": "done", "file": "draft.zh.md", "scope": "30个连续约3分钟语义窗口，00:00–88:06；自主译述保留推导、问答和讲者不确定性；3张真帧"},
+    "materials": {"status": "done", "file": "materials.zh.md", "scope": "指定论文§1–8自主译述、11图表原页核对、FAQ13问定位与补充；旧slides仅核对"}
+  },
+  "sources": ["V23", "O23", "P23", "F23", "S23"],
+  "video": {"id": "KUwyCGMTeq8", "duration_seconds": 5286, "duration": "88:06", "caption_count": 2369, "caption_text_read": "1–2369全部", "raw_first_start_ms": 5440, "raw_last_end_ms": 5286120, "windows": 30, "reviewed_stills_seconds": [1500,2220,3780], "full_audio_verified": false, "full_video_reviewed": false, "full_video_downloaded": false},
+  "reading": {"paper_pdf_pages_text_read": "1–12", "paper_pdf_pages_visually_reviewed": "1–12", "paper_figures_visually_reviewed": "1–11", "faq_lines": "1–140", "faq_actual_questions": 13, "slides_text_pages": "1–35", "slides_pages_visually_reviewed": []},
+  "version_mapping": {
+    "paper_schedule_label": "RCU paper (2013)",
+    "faq_header_year": 2012,
+    "paper_snapshot_content": "图1至2014，图10/11为Linux3.16；非冻结2013快照，确切修订日期未知",
+    "slides": "2020课表指定2018 slides；2020同名PDF404，解析到2018官方目录，不换讲次",
+    "shared_source_last_modified": "2025-09-05",
+    "xv6": "e23d53f仅共享参考快照，不宣称录课树；本讲未运行代码"
+  },
+  "gaps": [
+    "英文自动字幕未逐句听音复核；没有人工英文字幕；仅三张关键帧实际查看，未核对全片画面",
+    "开头0–5.440秒无字幕；末条字幕超出视频时长0.120秒，时间窗已封顶",
+    "主审补记87:44.840–87:54.880的10.040秒字幕覆盖空隙；未听音，不判为静音或补写发言",
+    "46–48分钟讲者没有解决具体读侧重排例子；75/83分钟对论文旧值语义案例保留不确定性，正文忠实保留",
+    "论文图8纵轴标纳秒、RCU曲线约1e-4至1e-3，与正文6ns不一致；采用正文6/89/6654ns，不猜改单位",
+    "论文图10总9559、图11总9434；分类口径不同，原文未交代差额具体原因，不强配平",
+    "课表2013、FAQ2012、PDF含2014统计版本差异保留；来源历史URL Last-Modified为2025，无法证实录课时字节一致",
+    "l-rcu.txt禁用timer interrupts简写与论文preempt_disable不同；原片61分钟明确中断可发生但不调度。所有限制均限定非抢占教学模型，不推广到全部Linux RCU",
+    "FAQ完整屏障展开只是教学近似，不将rcu_dereference一律解释为完整硬件fence",
+    "2018 slides仅全文文本核对，未声称逐页看图；每核引用计数转换/交换律未冒充2020录像内容",
+    "视频与论文未取得全文翻译许可，交付自主中文译述而非逐字全译；论文书目和FAQ外链未逐篇读取",
+    "课堂与论文含简化/有笔误伪代码，正文已标出；未运行Linux评测或xv6实验"
+  ],
+  "checks": {"record": "sources/validation.json", "build": "not-run; main agent统一一次", "experiments": "not-run"},
+  "handoff": {"coverage": "sources/coverage.json", "manifest": "sources/manifest.json", "metadata_proposal": "sources/metadata-proposal.json", "shared_metadata_modified": false}
 }

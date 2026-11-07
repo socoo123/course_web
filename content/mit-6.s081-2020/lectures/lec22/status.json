@@ -1,8 +1,82 @@
 {
   "course": "mit-6.s081-2020",
   "lecture": "lec22",
-  "status": "running",
-  "parts": {"notes": "pending", "draft": "pending", "materials": "running"},
-  "gaps": ["字幕与PDF阅读进行中"],
-  "delegation": "none"
+  "year": 2020,
+  "title": "Meltdown",
+  "status": "done",
+  "completed_on": "2026-11-07",
+  "main_acceptance": {"result":"reviewed-and-build-passed","review":"../../sources/review-lec22.json","structure":"passed","caption_evidence":"raw-json3/normalized/coverage/draft matched","build":{"command":"npm run build","runs":1,"result":"passed","modules":2506,"vite_seconds":5.06},"experiments_run":false},
+  "completion_scope": "requested three-document autonomous Chinese content package and evidence records; not audiovisual transcription certification or experiment replication",
+  "parts": {
+    "notes": {"status":"done","file":"notes.zh.md","scope":"mechanisms, information-flow invariant, misconceptions, two derivations, seven self-tests, one author-drawn SVG"},
+    "draft": {"status":"done","file":"draft.zh.md","scope":"30 continuous chronological paraphrase windows; all2435 EnglishASR cues read; demonstrations and substantive questions retained; three real frames visually reviewed"},
+    "materials": {"status":"done","file":"materials.zh.md","scope":"exclusive Meltdown2018 reading exposition covering §1–9 and AppendixA; original PDF figures/tables and measurements checked; not verbatim full translation"}
+  },
+  "sources": ["V22","O22","P22","F22-300","F22-2160","F22-3260"],
+  "video": {
+    "id":"WpKVr3p5rjE",
+    "duration_seconds":5447,
+    "duration":"90:47",
+    "captions":"original-language-English-ASR",
+    "cue_count":2435,
+    "read_cue_range_inclusive":[1,2435],
+    "window_count":30,
+    "coverage_seconds":[0,5447],
+    "raw_first_start_ms":960,
+    "raw_last_end_ms":5449120,
+    "reviewed_stills_seconds":[300,2160,3260],
+    "full_audio_review":false,
+    "full_video_review":false,
+    "full_video_download":false
+  },
+  "reading": {
+    "paper":"Meltdown: Reading Kernel Memory from User Space (2018)",
+    "pdf_pages":18,
+    "text_pages_read":"1–18",
+    "page_images_viewed":[1,3,4,5,6,8,10,11,12,13,14,18],
+    "figure_count":5,
+    "table_count":1,
+    "listing_count":4,
+    "outline_lines_read":[1,229],
+    "ownership":"lec22 only; no duplicate shared reading or classroom-outline translation"
+  },
+  "notable_corrections": [
+    "讲义b-a<c-b却解码为1的错误：字幕53:47学生提出、54:01教师确认、54:20原帧见红笔改0；译稿保留完整边界",
+    "区分异常退休时交付与权限检查实际启动时间；不声称权限一定到退休才查",
+    "L1虚拟寻址及换页表清缓存是课堂简化，注明VIPT/物理标记及TLB区别",
+    "论文图4单位cycles、data84；582KB/s/12.4KB/s/<10B/s/3.2KB/s分别保留条件",
+    "保留论文503与582KB/s内部口径差异、AMD双重否定笔误、Table1 Cores列歧义、LineageOS14.1版本说明"
+  ],
+  "gaps": [
+    "未逐句听音或核对全片画面；只实看3帧，部分插话的说话人无法可靠识别",
+    "自动字幕首0.960秒无文本，末尾超过片长2.120秒；正文封顶90:47，未制造末尾内容",
+    "主审补记55:50.720–56:01.599的10.879秒字幕覆盖空隙；未听音，不判为静音或补写发言",
+    "约73分钟Linux命令名无法从字幕可靠确定，未补造；浏览器可行性、电磁辐射、Ubuntu补丁日期讨论保留未核实边界",
+    "视频和论文全文翻译许可未确认，交付为自主译述/精读，不是逐字全文翻译",
+    "官方历史URL文件标记2025-09-05修改，无法证明与录课原稿字节一致；共享xv6 e23d53f仅参考树，不是录课树",
+    "论文文本18页全读，原页图像只查看列明12页；没有追读文献表中每篇外部论文",
+    "未运行漏洞实验、课程实验、补丁性能测试或当前硬件审计；全站build留给主agent统一运行"
+  ],
+  "checks": {
+    "status":"passed",
+    "command":"python3 content/mit-6.s081-2020/lectures/lec22/sources/validate.py",
+    "json_parse":"pass",
+    "source_and_derivative_sha256":"pass",
+    "caption_monotonicity":"pass",
+    "all_cues_assigned_once":"pass",
+    "draft_heading_window_match":"pass-30",
+    "image_references":"pass-4",
+    "internal_links":"pass-7",
+    "svg_xml":"pass",
+    "jpg_decode":"pass-3",
+    "source_markdown_absence":"pass",
+    "build":"not-run-by-worker",
+    "experiments":"not-run",
+    "report":"sources/checks.json"
+  },
+  "metadata_proposal":"sources/metadata-proposal.json",
+  "coverage_record":"sources/coverage.json",
+  "source_manifest":"sources/manifest.json",
+  "delegation":"none",
+  "write_scope":"content/mit-6.s081-2020/lectures/lec22/ only"
 }

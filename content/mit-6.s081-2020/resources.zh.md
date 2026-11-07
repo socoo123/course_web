@@ -253,3 +253,4 @@ $ make grade             # 在 qemu 外运行，跑本实验全部测试
 - 实验列表与分支名取自 2020 课表与课程导航中的实验链接。
 - MIT 6.S081 课程团队，[2020 Page tables 实验](https://pdos.csail.mit.edu/6.S081/2020/labs/pgtbl.html)的「Submit the lab」「Time spent」「Submit」：本章共同验收与提交步骤的中文整理，按课程官网 [CC BY 3.0 US](https://creativecommons.org/licenses/by/3.0/us/) 署名；已区分本地自学说明。原提交入口为 `https://6828.scripts.mit.edu/2020/handin.py/`，未验证当前可用性，未实际执行提交或实验测试。
 - 已核对 2020 [cow](https://pdos.csail.mit.edu/6.S081/2020/labs/cow.html)、[thread](https://pdos.csail.mit.edu/6.S081/2020/labs/thread.html)、[lock](https://pdos.csail.mit.edu/6.S081/2020/labs/lock.html)、[fs](https://pdos.csail.mit.edu/6.S081/2020/labs/fs.html) 的共同提交段，与上述 pgtbl 原文一致；thread 专用的 `answers-thread.txt` 要求保留在该实验说明中。
+- 已核对 2020 [mmap](https://pdos.csail.mit.edu/6.S081/2020/labs/mmap.html)、[net](https://pdos.csail.mit.edu/6.S081/2020/labs/net.html) 的共同提交段，与上述 pgtbl 原文一致；两实验的专用测试、示例输出与选做保留在各自实验说明中。

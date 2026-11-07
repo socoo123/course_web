@@ -1,0 +1,62 @@
+{
+  "course": "mit-6.s081-2020",
+  "year": 2020,
+  "lab": "mmap",
+  "title": "内存映射文件",
+  "updated_on": "2026-11-07",
+  "status": "done",
+  "status_scope": "正文、来源记录、主agent主审及本批统一结构检查与一次构建通过；不代表实验实现或运行验证完成",
+  "main_review": {"status":"reviewed-and-build-passed","file":"../../sources/review-mmap.json","build_log":"../../sources/build-mmap-net.log","build_runs":1,"modules":2517,"vite_seconds":5.74},
+  "parts": {
+    "lab": {"status":"done","file":"lab.zh.md","scope":"2020要求、9提示、完整专用测试输出、5选做；共同提交段链接公共资料"},
+    "guide": {"status":"done","file":"guide.zh.md","scope":"三类状态、VMA和地址布局、三种偏移、缺页、前后缀解除与写回、引用寿命、阶段目标、8项测试阅读、排错及5题自测；无完整解答"},
+    "coverage": {"status":"done","file":"sources/coverage.json","items":28},
+    "manifest": {"status":"done","file":"sources/manifest.json"},
+    "english_original": {"status":"not-applicable","reason":"未要求英文原文标签，不建空壳"}
+  },
+  "sources": ["lab-mmap-2020","course-site-license","common-submission","xv6-mmap-branch","lecture-context"],
+  "source_review": {
+    "official_html": "reviewed-full-319-lines",
+    "official_text": "reviewed-full-358-lines",
+    "html_sha256": "verified-against-shared-manifest",
+    "mmap_branch": "reviewed-selected-files",
+    "commit": "82bc3d5ee6564de79889bdd146c580399bdf04e6",
+    "code_files_archived": 18,
+    "dedicated_test": "user/mmaptest.c全297行已读",
+    "grader": "grade-lab-mmap全57行已读；未获取或审阅gradelib.py、完整usertests源码和所有构建依赖"
+  },
+  "common_submission": {
+    "owner":"main",
+    "file":"resources.zh.md",
+    "section":"实验的共同验收与提交步骤",
+    "comparison":"mmap与pgtbl的Submit the lab至Optional标题前HTML归一空白完全相同",
+    "differences":[],
+    "answer_file":"无独立书面题；仅条件式answers-lab-name.txt通用模板"
+  },
+  "checks": {
+    "official_section_and_hint_coverage":"passed-manual-28-items-9-hints-5-optionals",
+    "common_submission_comparison":"passed",
+    "official_html_sha256":"passed",
+    "json_parse":"passed-3-json-files",
+    "source_hashes":"passed-22-recorded-hashes",
+    "internal_links":"passed-12-links-course-and-content-targets-resolve",
+    "image_paths":"not-applicable-no-images",
+    "markdown_fences":"passed",
+    "official_output_blocks":"passed-full-official-test-transcript-and-mmap-prototype-match",
+    "coverage_structure":"passed-28-items-9-hints-5-optionals-source-paths-and-line-ranges",
+    "whole_site_build":"passed-by-main-single-batch-build; worker-did-not-run"
+  },
+  "execution": {"toolchain":"not-run","xv6":"not-run","qemu":"not-run","mmaptest":"not-run","usertests":"not-run","make_grade":"not-run","make_handin":"not-run","optional_challenges":"not-run"},
+  "gaps": [
+    "未运行工具链、QEMU、mmaptest、usertests、make grade或选做；测试输出为官方示例，源码推导不等于测试通过。",
+    "源码是官方mmap分支所取18个文件，不是完整可构建快照；gradelib.py、usertests具体实现及其余依赖未独立审阅。",
+    "历史URL的抓取快照不能证明自2020起未修改；mmap原文Lecture15编号与本站2020主题不一致，已保留原称并编者注，不猜其历史来源。",
+    "当前mmaptest不覆盖纯后缀解除、私有脏页fork继承、只写prot、完整共享一致性与EOF之外的通用语义；指导已区分题面要求、测试事实和扩展。",
+    "外部man手册及历史提交网站未读取或验证可用性；没有再利用外部手册正文或将官网CC套用于它们。"
+  ],
+  "metadata_suggestion": "course.json现有mmap分支、URL及任务名称符合原页，无必要修改；共同提交归属已通知主agent。",
+  "artifacts": ["lab.zh.md","guide.zh.md","status.json","sources/coverage.json","sources/manifest.json","sources/code/"],
+  "shared_files_modified": false,
+  "delegated": false,
+  "resume": "主审与本批一次构建通过，已暂停；course.json无需修订。实验执行及其他后续阶段等待用户另行指定。"
+}

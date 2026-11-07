@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="350" viewBox="0 0 940 350" role="img" aria-labelledby="title desc">
+  <title id="title">架构回滚与仍然可见的缓存痕迹</title>
+  <desc id="desc">受保护数据在暂态阶段选择一个用户缓存位置；异常撤销寄存器结果，却可能留下可被正常计时读出的缓存状态。KPTI撤掉映射，硬件修复阻断秘密传播。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#475569"/></marker></defs>
+  <rect width="940" height="350" rx="12" fill="#f8fafc"/>
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif" fill="#0f172a" text-anchor="middle">
+    <text x="470" y="32" font-size="20" font-weight="bold">同一个秘密，两条状态路径</text>
+    <rect x="25" y="120" width="185" height="65" rx="8" fill="#fee2e2" stroke="#dc2626"/>
+    <text x="117" y="147" font-size="17">映射存在、用户无权限</text><text x="117" y="172" font-size="16">受保护的秘密</text>
+    <rect x="280" y="120" width="190" height="65" rx="8" fill="#fef3c7" stroke="#d97706"/>
+    <text x="375" y="148" font-size="18">暂态依赖计算</text><text x="375" y="172" font-size="16">秘密选择探测位置</text>
+    <rect x="550" y="65" width="175" height="55" rx="8" fill="#e2e8f0" stroke="#64748b"/>
+    <text x="637" y="98" font-size="17">寄存器结果被撤销</text>
+    <rect x="550" y="200" width="175" height="55" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="637" y="233" font-size="17">缓存痕迹仍可能保留</text>
+    <rect x="770" y="200" width="150" height="55" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="845" y="233" font-size="17">正常计时恢复信息</text>
+    <text x="117" y="220" font-size="15" fill="#b91c1c">KPTI：撤掉秘密映射</text>
+    <text x="375" y="220" font-size="15" fill="#92400e">硬件：阻断无权限数据</text>
+    <text x="470" y="310" font-size="17">“不能提交非法读取”不等于“秘密不能影响任何可观察状态”</text>
+    <text x="470" y="337" font-size="13" fill="#64748b">编者重绘：概念信息流，不是处理器物理结构或完整攻击代码</text>
+  </g>
+  <g stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M210 152 H275"/><path d="M470 145 L545 94"/><path d="M470 165 L545 225"/><path d="M725 227 H765"/>
+  </g>
+</svg>
