@@ -1,0 +1,129 @@
+P2 阅读、字幕校订与接口核对记录
+日期：2026-11-08
+课程：MIT 6.824 Spring 2021；实验：MIT 6.5840 Spring 2026。
+固定代码：513cac0aef010750fc74688da8a395974a83cf7a。
+
+一、产物与范围
+lectures/lec02/{notes,draft}.zh.md
+lectures/lec10/{notes,draft}.zh.md
+lectures/update-linearizability/{notes,materials}.zh.md
+lectures/update-linearizability/assets/operation-intervals.svg（编者自绘）
+labs/kvsrv/{lab,guide}.zh.md
+共新增 6 份讲座文档、2 份实验文档、1 张 SVG。
+L2 Go Tour 作为共享入口；课堂提纲/代码不复制成 materials。
+L10 PDF 为课堂幻灯片，非独立课外阅读，不生成重复 materials。
+线性一致性没有登记视频，不生成 draft。
+
+二、获取方式与逐视频元数据
+使用本机 yt-dlp（与 P1 相同工具）主动下载：
+  --skip-download --write-subs --write-auto-subs
+  --sub-langs en-orig,en --sub-format json3 --no-progress
+  -o sources/lecNN-2021.%(ext)s <YouTube URL>
+首次字幕命令成功；未循环重试，无需用户下载。
+stderr 原样留在 lec02-caption-p2.log、lec10-caption-p2.log。
+其警告为缺少推荐 JS runtime 与 impersonation target，未阻止字幕保存。
+首次 after_move 元数据 print 没有产生可保存对象，随后单独用
+--skip-download --dump-single-json 提取并在内存中过滤字段后保存。
+只保存 id/title/duration/channel/channel_id/uploader/upload_date/license/
+webpage_url/description；完整播放器响应、带签名媒体地址未归档。
+没有下载视频或音轨。字幕类型为英文原语言自动字幕，不是机器翻译字幕。
+
+L2：oZR76REwSyA；Lecture 2: RPC and Threads；4027 秒 / 67:07。
+上传日 2021-02-18，频道 MIT 6.824: Distributed Systems。
+独立元数据许可：Creative Commons Attribution license (reuse allowed)。
+L10：IdCbMO0Ey9I；Lecture 10: Guest Lecture on Go: Russ Cox；5727 秒 / 95:27。
+上传日 2021-03-25，同频道。
+独立元数据许可：Creative Commons Attribution license (reuse allowed)。
+两条许可均是本次逐视频查询所得，不沿用 L1；具体 CC 版本仍未明确。
+
+三、字幕阅读与时间结构
+使用 skill 的 normalize_captions.py 将原始 JSON3 规范化为 JSON/VTT/TXT。
+额外 reading-by-minute.txt 仅按 cue 起点分组拼接，未改原始 ASR 文本，
+用于完整顺序阅读。en 与 en-orig 两份原始文件均保留，哈希相同。
+L2：1898 条，首起点 1199 ms，末终点 4028640 ms；24 个中文时间段。
+L10：3145 条，首起点 240 ms，末终点 5728639 ms；37 个中文时间段。
+末条分别超过整数视频时长 1640/1639 ms，保留原始字幕时间。
+中文标题以视频整数时长收尾，时间段按分钟组织并非逐句对齐字幕。
+全部字幕文本已读，包括开场交流、技术演变、问答与 L10 下课后的问答。
+没有逐段听音轨、识别说话者音色或核对视频画面；不声称准确逐字听写。
+字幕起点单调与标题覆盖检查仅是结构检查，不能证明翻译无遗漏或无误。
+
+四、L2 交叉核对与校订
+完整读取 l-rpc.txt、crawler.go、kv.go、condvar.tar.gz 内六个 vote-count 文件。
+1. ASR threats/frets/fred -> threads；mutex、goroutine、WaitGroup、stub
+   依照来源规范化。学生姓名不可靠，未凭 ASR 补全。
+2. count>=5 是十请求示例中的教学阈值，非十节点 Raft 的严格多数。
+3. defer 在函数返回时运行；课堂 basic block 说法单列校注。
+4. 30–32 分钟局部变量存活回答有当场收回；保留修正过程，并指出 Go
+   逃逸与 GC 语义，不要求用户手工 new 才能安全闭包捕获。
+5. vote-count-5 提前停止接收可能泄漏；第 6 版收满十份，属书面补读，
+   不冒充课堂逐行展示。
+6. 约 45 分钟前后分组讨论被上传录像省去，未插入虚构十分钟。
+7. crawler 的 fetched 是领取/尝试标记；coordinator n=1 对应种子消息；
+   失败 worker 也回复一份空列表。WaitGroup 是逐递归调用的局部对象。
+8. kv.go 的客户端参数硬编码 subject/6.824；net/rpc 使用反射/编码库，
+   不宣称编译器自动为业务函数生成专用 stub。
+9. 2021 讲义额外的事件驱动、XID、去重回收、崩溃后去重状态未全部在课上展开。
+10. 2021 实验编号、无版本 Put 不回填为 2026 Lab 2。
+
+五、L10 交叉核对与校订
+完整读 2021 PDF 的 78 页文字（包括最终 BLANK CODE 页）。
+Last-Modified 2021-03-26，保留实际快照而不假定上课当天课表已是同一版。
+1. 第 15 页额外渲染检查：循环内 c := readChar() 遮蔽外层 c。
+2. 第 34 页额外渲染检查：helper 的 in != nil && len(q)>0 应按协议为 ||。
+3. 11–13 分钟讲师自己指出终止状态发送遗漏；不把代码包装成完整解析器。
+4. 其他 PDF 片段有 cancel 分支 c/r、ReadTag/Tag、map channel 类型和
+   send channel 初始化不完整等现象；本批不编译或拼接修复代码。
+5. 2021 循环变量捕获与 Go 1.22 新语义分开；已针对官方 release notes
+   读取 loop language changes 与 vet-loopclosure 部分。
+6. timer GC 的历史回答与 Go 1.23 变化分开；已针对官方 Go123Timer
+   读取回收、go.mod 启用条件及 asynctimerchan。实验 go.mod 是 1.22。
+7. 泛型、min/max、slices 函数是当时提案/设想，不伪装成当前 API 清单。
+8. Plan 9、Gerrit、SHA-1、ThreadSanitizer 等按来源语境规范化。
+9. 其他语言与包管理器的口头比较不冒充独立核验后的现状。
+10. 未读取/套用其他年份 Go 并发示例包；2026 Go patterns 仍待以后对照。
+
+六、线性一致性阅读
+完整读 2026 L8 讲义与 FAQ；外链进一步论文不算已读。
+原文 Example 3 内的 example 2 编号笔误已标注。
+Herlihy/Wing：本批精读 §1–§3.1，PDF 1–9 / 印刷页 463–471。
+完整抽取文本供存档；后文文本存在不等于后文已精读。
+另查看 PDF 3、4、7 页图像，对照 FIFO 图、寄存器图、L1/L2 正式公式。
+学习内容区分操作区间、实时偏序、pending 与已返回 ErrMaybe、
+顺序规格与版本化 Put 实现、单对象原子性与多操作事务。
+论文 ACM 版权未明确允许公开全文中译，产出自主精读，不复制原图。
+
+七、Lab 2 固定代码静态核对
+从已有 lab-code-513cac0aef01.tar.gz 解压到临时阅读目录，未修改源代码。
+全文读取（相对固定实验仓库）：
+  src/kvsrv1/client.go
+  src/kvsrv1/server.go
+  src/kvsrv1/rpc/rpc.go
+  src/kvsrv1/lock/lock.go
+  src/kvsrv1/kvsrv_test.go
+  src/kvsrv1/lock/lock_test.go
+  src/kvtest1/kvtest.go
+  src/models1/kv.go
+  src/Makefile 与仓库根 Makefile
+确认 Get/Put 版本与错误规则、Clerk-only ErrMaybe、RPC 名 KVServer.*、
+MakeLock(IKVClerk,lockname)、无独立 Append RPC、四阶段任务。
+可靠测试筛选 make RUN="-run Reliable" kvsrv1 / lock1。
+全量入口在 src 下 make kvsrv1 / make lock1，先 build main/kvsrv1d。
+固定内存测试 NCLIENT=20000；锁 Basic/Nested 空实现也可能通过。
+models1/kv.go 的 Put 模型允许 Maybe 对应匹配更新或不匹配不变；
+Get Step 仅比 Value，不完整验证 Version/Err，指导中明确测试与规格的边界。
+2026 Lab 2 页面沿用同日抓取快照，完整正文/提示中译，样例终端输出压缩。
+网站 home-2026 的 CC BY 3.0 US 链接重新核实，只用于课程自有文本。
+没有编译或执行 Go 课堂程序、Lab 2 或其他实验测试；没有实现实验答案。
+学习者实验完成度不跟踪。
+
+八、内容检查
+已执行通过：JSON、9 份讲座/4 份实验文件、2 张 SVG、来源 SHA-256、
+课程路由注册、P2 站内链接目标文件、图片可达、代码围栏成对、视频元数据。
+字幕起点单调且每条起点唯一归属连续译稿段落；末尾越界已显式保留。
+git diff --check 通过；npm run build（tsc --noEmit + vite build）通过。
+检查结果同步 status.json.validation；未运行任何实验测试。
+来源清单：manifest-2021.json；原始获取时间、Last-Modified 与 SHA-256 保留。
+历史 manifest.json 不改写为本批已精读，当前读取范围在新清单中明确记录。
+按项目 .gitignore 的既有约定，原始字幕/PDF/HTML/源码归档及派生阅读文本
+保留在本地 sources；Git 提交包含正文、索引、计划与明确纳入的审阅记录。

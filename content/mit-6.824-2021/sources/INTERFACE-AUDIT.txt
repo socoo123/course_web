@@ -1,0 +1,122 @@
+P0：2026 实验版本与接口核对
+核对日期：2026-11-08
+范围：官方五个实验页 + 官方 starter 仓库接口、测试名称与 Makefile 静态核对。
+结论：五个实验的阶段、入口、核心 API 与所固定提交相对应。
+未运行实验测试；未实现任何实验答案。本文不是测试通过报告。
+
+固定仓库：git://g.csail.mit.edu/6.5840-golabs-2026
+固定提交：513cac0aef010750fc74688da8a395974a83cf7a
+提交时间：2026-02-13T16:36:14-05:00
+提交说明：update
+归档：lab-code-513cac0aef01.tar.gz（git archive，含原始 starter 与测试，无 .git）
+文件哈希、Git tree、已核对文件：lab-code-manifest.json。
+所有路径均相对官方实验仓库；不要将它与课程站的 src/ 混淆。
+
+一、环境与启动方式
+- src/go.mod：module 6.5840；go 1.22；porcupine v1.0.3。
+- go-2026.html 同样要求 Go >= 1.22。
+- 五个实验共享一个提交、一套模块与依赖，无逐实验分支流程。
+- src/Makefile 的 all 目标：mr kvsrv1 lock1 raft1 rsm1 kvraft1 shardkv。
+- 默认 VERB=-v、RACE=-race。先 build main/*d 等进程，再进入对应包 go test。
+- 后续教程以 src 下的 make 目标为首选，不直接复制旧 test-mr.sh 或 xv6 命令。
+- 只核对了工具链要求，没有安装或实测本机 Go 实验环境。
+
+二、Lab 1 MapReduce
+要求：lab-mr-2026.html，Your Job / tests / rules。
+代码：src/mr/{coordinator,worker,rpc}.go；src/main/mr{coordinator,worker}.go。
+- MakeCoordinator(sockname string, files []string, nReduce int) *Coordinator。
+- Worker(sockname string, mapf func(string,string) []KeyValue,
+         reducef func(string,[]string) string)。
+- main/mrcoordinator.go：socket 为第一个用户参数，之后是输入文件。
+- main/mrworker.go：插件为第一个用户参数，socket 为第二个。
+- 官方要求 worker 任务超时使用 10 秒；只有一个协调器，测试 worker 失败恢复。
+- 测试：src/mr/mr_test.go，Wc、Indexer、MapParallel、ReduceParallel、
+  JobCount、EarlyExit、CrashWorker。
+- 验收入口：在 src 下 make mr；筛选示例 make RUN="-run Wc" mr。
+
+三、Lab 2 KV + lock
+要求：lab-kvsrv-2026.html，四节：可靠 KV、可靠 lock、丢消息 KV、不可靠 lock。
+代码：src/kvsrv1/{client,server}.go、rpc/rpc.go、lock/lock.go；src/kvtest1/kvtest.go。
+- IKVClerk：Get(string) (string, rpc.Tversion, rpc.Err)；
+  Put(string,string,rpc.Tversion) rpc.Err。
+- rpc.Tversion 为 uint64；PutArgs 包含 Key/Value/Version。
+- 版本匹配才更新并递增；创建新键使用 version=0；无键且 version>0 返回 ErrNoKey。
+- Clerk 首次 RPC 收到 ErrVersion 可确定未执行；重发后收到 ErrVersion 返回 ErrMaybe。
+  ErrMaybe 是 Clerk 层错误，不应由服务器当成写入结果返回。
+- Lock：MakeLock(ck kvtest.IKVClerk, lockname string)、Acquire()、Release()。
+- 验收：make kvsrv1 与 make lock1；两者必须分别覆盖可靠与不可靠网络。
+- 不把旧 Get/Put/Append 接口或请求编号去重教程当作本版要求。
+
+四、Lab 3 Raft
+要求：lab-raft-2026.html，3A election / 3B log / 3C persistence / 3D log compaction。
+代码：src/raft1/raft.go、src/raftapi/raftapi.go、src/tester1/persister.go。
+- Make(peers []*labrpc.ClientEnd, me int, persister *tester.Persister,
+       applyCh chan raftapi.ApplyMsg) raftapi.Raft。
+- raftapi.Raft：Start(interface{}) (int,int,bool)、GetState() (int,bool)、
+  Snapshot(int,[]byte)、PersistBytes() int。
+- ApplyMsg：CommandValid/Command/CommandIndex；
+  SnapshotValid/Snapshot/SnapshotTerm/SnapshotIndex。
+- Persister：Save(raftstate,snapshot []byte)、ReadRaftState、ReadSnapshot 等。
+- 不实现论文 §6 成员变更；Snapshot 与 InstallSnapshot 属于 3D。
+- src/raft1/raft_test.go 包含 3A/B/C/D 各组，含 TestSnapshotInit3D。
+- 验收：make raft1；分阶段 make RUN="-run 3A" raft1 等。
+
+五、Lab 4 RSM 与 KV
+要求：lab-kvraft-2026.html，A RSM / B KV without snapshots / C with snapshots。
+代码：src/kvraft1/rsm/rsm.go、src/kvraft1/{client,server}.go。
+- StateMachine：DoOp(any) any、Snapshot() []byte、Restore([]byte)。
+- MakeRSM(..., maxraftstate int, sm StateMachine) *RSM。
+- Submit(req any) (rpc.Err, any)；无法继续的领导者请求向上报告 ErrWrongLeader。
+- KV 继续使用 Lab 2 的 Get/versioned Put 语义；Clerk 需找 leader。
+- C 不只是 KV 的快照，还包括 RSM 触发快照、恢复和接收快照 ApplyMsg。
+- 代码中 rsm.go 的注释写 persister.SaveStateAndSnapshot，但实际类型只有 Save；
+  不把残留注释中的旧名字复制到教程。
+- 已核对 TestRestartReplay4A、TestShutdown4A、TestRestartSubmit4A、
+  RSM TestSnapshot4C 与 KV TestSnapshotRPC4C 等测试存在。
+- 验收：make rsm1 + make kvraft1。
+  A：make RUN="-run 4A" rsm1。
+  B：make RUN="-run 4B" kvraft1。
+  C：make RUN="-run 4C" rsm1，以及 make RUN="-run 4C" kvraft1。
+
+六、Lab 5 Sharded KV
+要求：lab-shard-2026.html。
+- A Moving shards；B Handling a failed controller；C Concurrent configuration changes；
+  D Extend your solution。D 是官方实验的一部分，本自学路线将其列为进阶，
+  不能把“自学可后做”说成“MIT 不要求做”。
+- src/shardkv1/shardctrler/shardctrler.go：InitConfig、Query、ChangeConfigTo、
+  InitController；构造时使用 kvsrv1.MakeClerk 存储控制器状态。
+- src/shardkv1/shardgrp/server.go 实现 StateMachine 和 Get/Put，
+  以及 FreezeShard、InstallShard、DeleteShard。
+- shardgrp/shardrpc/shardrpc.go：迁移参数带 Shard 与 Num；Freeze 回复
+  State/Num/Err，Install 参数带 State；Num 是配置号，非某个键的版本号。
+- 分片组使用 Lab 4 的 RSM/Raft；控制器使用 Lab 2 的 KV。
+  用复制 KV 存控制器配置属于 D 的一种扩展方向。
+- 本版控制器不是旧版 shardmaster Join/Leave/Move/Query Raft 服务。
+- 已核对 TestInitQuery5A、TestRecoverCtrler5B、TestConcurrentReliable5C、
+  TestAcquireLockConcurrentUnreliable5C 和 PartitionRecovery 测试存在。
+- 验收：make shardkv；可筛选 5A/5B/5C；Makefile 为此包设置 -timeout 15m。
+- D 自编测试并说明扩展；无官方通用 5D 测试组。2PC 是 D 的扩展方向之一。
+
+七、网页协议限制与后续核实
+- 课程站 src/pages/Lab.tsx 的 Commands 硬编码 git checkout / make qemu / make grade。
+  本批只改 content/；公共导航与各实验 goal 已给正确 Go 命令，问题登记 status.json。
+  branch 字段保存共同的起始提交；学习者应在自己的 study-2026 分支持续开发。
+- 课程主线与实验关联是编者学习路线，不是 2020 官方发布日关联；原课表关联另存清单。
+- 2020 课表逐讲没有讲师字段，schedule-inventory.json 保留 null；不由视频猜测讲师。
+- 2026 课表无视频入口：Updates 不登记 video，不生成虚假课堂译稿。
+- P0 获取的增补论文/PDF 仅归档，read_pages 为空；尚未逐页精读。
+- 公开可访问不等于统一许可。P1 正式中译前核实 L1 视频与实验要求许可；
+  无明确全文翻译许可的材料使用自主中文精读并明确标注。
+
+八、P2 补充核对（2026-11-08）
+- 在同一固定提交重新全文读取 Lab 2 client/server/rpc/lock、两组测试、
+  kvtest1/kvtest.go、models1/kv.go 与 Makefiles，未修改或运行实验代码。
+- handler 名为 KVServer.Get/Put，参数为指针、无 Go error 返回；
+  2021 kv.go 的 net/rpc handler 不能直接替换此接口。
+- ErrMaybe 只在 Clerk 层表达：同一 Put 重发后收到 ErrVersion；重发参数不变。
+- 内存测试固定 NCLIENT=20000，不用官网样例 RPC 计数反推固定测试规模。
+- 锁 Basic/Nested 不验证完整互斥；Nested 指两把不同名锁，不是可重入锁。
+- models1/kv.go 的 Put Step 允许 Maybe 在匹配版本时更新、不匹配时不变；
+  Get Step 只比较 Value，因此不能用该检查器替代全部 Version/Err 规格检查。
+- 指导已登记可靠筛选及 make kvsrv1 / make lock1；完整记录 P2-REVIEW.txt。
+- 官方实验文本许可重新查 home-2026 的 CC BY 3.0 US；论文采用自主精读。

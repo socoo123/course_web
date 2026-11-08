@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="280" viewBox="0 0 780 280" role="img" aria-labelledby="title desc">
+  <title id="title">调用区间与线性化点</title>
+  <desc id="desc">写入一的操作与第一个读取重叠，可将写入的点放在读取的点之前。第二个读取在写入返回后调用，必须观察到写入一。</desc>
+  <rect width="780" height="280" rx="12" fill="#f8fafc"/>
+  <g font-family="system-ui, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" fill="#0f172a">
+    <text x="24" y="35">初值 x = 0；圆点为一种合法线性化位置</text>
+    <text x="24" y="88">W：写 1</text>
+    <text x="24" y="148">R：读到 1</text>
+    <text x="24" y="208">R2：读到 1</text>
+    <text x="167" y="256">调用</text><text x="487" y="256">返回</text><text x="655" y="256">时间 →</text>
+  </g>
+  <g stroke-width="5" stroke-linecap="round" fill="none">
+    <path d="M180 80 H510 M180 70 V90 M510 70 V90" stroke="#2563eb"/>
+    <path d="M240 140 H450 M240 130 V150 M450 130 V150" stroke="#0f766e"/>
+    <path d="M560 200 H720 M560 190 V210 M720 190 V210" stroke="#0f766e"/>
+  </g>
+  <circle cx="280" cy="80" r="8" fill="#1d4ed8"/>
+  <circle cx="370" cy="140" r="8" fill="#0f766e"/>
+  <circle cx="625" cy="200" r="8" fill="#0f766e"/>
+  <path d="M510 52 V220" stroke="#64748b" stroke-dasharray="5 5"/>
+</svg>

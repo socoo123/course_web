@@ -1,6 +1,6 @@
 ---
 source: MIT 6.824 Spring 2021 官方课表与课程信息；MIT 6.5840 Spring 2026 官方课表、实验页与固定代码
-status: P1 已完成：2021 L1 逐段中文整理译稿、衔接笔记、论文精读与 2026 Lab 1 说明及指导。译稿已对照全部自动字幕和书面来源，未逐段回听音轨；其余课程按计划推进，实验测试未运行。
+status: P1/P2 已完成：2021 L1/L2/L10 字幕整理与笔记，MapReduce 与线性一致性精读，2026 Lab 1/2 说明及指导。字幕已全部文本阅读，未逐段回听音轨；实验测试未运行。
 license: 本页为编者自主导航；外链论文、视频、讲义与实验要求分别核实许可。
 ---
 
@@ -102,7 +102,11 @@ go version
 
 **MapReduce (2004)** 由 [L1 课程资料](#/c/mit-6.824-2021/lec/lec01?v=materials)集中精读。**Raft extended (2014)** 由 [L5 课程资料](#/c/mit-6.824-2021/lec/lec05?v=materials)集中展开：L5 读至 §5 末，L7 读 §7 至末、跳过 §6；Lab 3 不实现成员变更，Lab 4 回看快照。**事务**指定章节放 L13，**线性一致性**论文至 §3.1 放对应 Updates。
 
-Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector 文档；动态网页应对照所用工具链，不当作 2021 原文。阅读时区分 replication / sharding、retry / at-most-once、commit / apply、term / version / configuration number，以及 snapshot / persistence。
+Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector 文档；动态网页应对照所用工具链，不当作 2021 原文。L2 的 Go Tour 是共享入门入口，不在各讲重复翻译；L2 讲义／代码与 L10 幻灯片均随课堂译稿走读，不再制作重复的 materials 标签。
+
+排查并发时，先用 `-race` 检查实际执行中的冲突访问；观察阻塞可看 goroutine 栈。在 Unix 上 `Ctrl-\` 会让程序打印栈并退出；导入 `net/http/pprof` 的 HTTP 服务可通过 `/debug/pprof/goroutine` 查看在线栈。具体模式见 [L10](#/c/mit-6.824-2021/lec/lec10?v=notes)。Go 1.22 循环变量和 Go 1.23 timer 的变化均在该讲标注，不将 2021 经验直接当作所有新版本语义。
+
+阅读时区分 replication / sharding、retry / at-most-once、commit / apply、term / version / configuration number，以及 snapshot / persistence。先完成 [Lab 2 的可靠 KV 与锁](#/c/mit-6.824-2021/lab/kvsrv?v=guide)，再加入重试与 ErrMaybe；一致性定义在 Updates，具体实现思路在实验指导。
 
 ## 引用与来源
 
@@ -111,7 +115,15 @@ Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector �
 - MIT 6.824 Spring 2021：[官方课表](http://nil.csail.mit.edu/6.824/2021/schedule.html)、[课程信息](http://nil.csail.mit.edu/6.824/2021/general.html)。课程讲师 Frans Kaashoek；L10 嘉宾 Russ Cox。
 - L1：[2021 视频](https://www.youtube.com/watch?v=WtZ7pcRSkOA)。字幕与后续时间轴以该视频为准。
 - L15 FaRM：[上半场](https://www.youtube.com/watch?v=07xsfL5E8Ck)、[续集](https://www.youtube.com/watch?v=XwU4jKhBxws)。译稿须分别保留两段的时间轴。
-- 全部视频入口来自官方课表；登记见 `sources/schedule-inventory-2021.json`。L1 标题为 Lecture 1: Introduction，频道 MIT 6.824: Distributed Systems，时长 79:08，上传日期 2021-02-16；元数据标注 CC Attribution（具体版本待核实）。其余视频元数据尚需逐条核对。
+- 全部视频入口来自官方课表；登记见 `sources/schedule-inventory-2021.json`。以下三条分别查询元数据，频道均为 MIT 6.824: Distributed Systems，各自均标注 CC Attribution（具体版本未明确）：
+
+| 条目 | 实际视频标题 | 时长 / 上传日 | 字幕文本阅读 |
+|---|---|---|---|
+| L1 | Lecture 1: Introduction | 79:08 / 2021-02-16 | 1906 条 |
+| [L2](https://www.youtube.com/watch?v=oZR76REwSyA) | Lecture 2: RPC and Threads | 67:07 / 2021-02-18 | 1898 条 |
+| [L10](https://www.youtube.com/watch?v=IdCbMO0Ey9I) | Lecture 10: Guest Lecture on Go: Russ Cox | 95:27 / 2021-03-25 | 3145 条，含课后问答 |
+
+均保存英文自动字幕，未逐段回听或核对视频画面。L2 分组讨论不在上传录像中；L10 幻灯片代码笔误在译稿另列。其余视频标题、时长、频道和许可仍待逐条核对。
 
 ### 2021 指定阅读入口
 
@@ -142,6 +154,8 @@ Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector �
 - MIT 6.5840 Spring 2026：[课表](https://pdos.csail.mit.edu/6.824/schedule.html)、[Go 环境](https://pdos.csail.mit.edu/6.824/labs/go.html)；无年份 URL 以 2026-11-08 快照固定。
 - 实验要求：[Lab 1](https://pdos.csail.mit.edu/6.824/labs/lab-mr.html)、[Lab 2](https://pdos.csail.mit.edu/6.824/labs/lab-kvsrv1.html)、[Lab 3](https://pdos.csail.mit.edu/6.824/labs/lab-raft1.html)、[Lab 4](https://pdos.csail.mit.edu/6.824/labs/lab-kvraft1.html)、[Lab 5](https://pdos.csail.mit.edu/6.824/labs/lab-shard1.html)。
 - Go：[Tour](https://go.dev/tour/)、[Memory Model](https://go.dev/ref/mem)、[Race Detector](https://go.dev/doc/articles/race_detector)。
+- Go 版本校注：[Go 1.22 语言变更](https://go.dev/doc/go1.22)、[Go 1.23 Timer Channel Changes](https://go.dev/wiki/Go123Timer)，已针对循环变量与 timer 回收规则读取；不等于已通读所有 Go 文档。
+- 线性一致性共享阅读：[论文](https://pdos.csail.mit.edu/6.824/papers/p463-herlihy.pdf)至 §3.1、[FAQ](https://pdos.csail.mit.edu/6.824/papers/linearizability-faq.txt)，分别集中于 Updates 的课程资料与笔记。
 - 新版讲义：[Paxos](https://pdos.csail.mit.edu/6.824/notes/l-paxos.txt)、[Go patterns](https://pdos.csail.mit.edu/6.824/notes/Go-MIT6824-2026.pdf)、[线性一致性](https://pdos.csail.mit.edu/6.824/notes/l-linearizability.txt)、[Raft 问答](https://pdos.csail.mit.edu/6.824/notes/l-raft-QA.txt)、[Chain Replication](https://pdos.csail.mit.edu/6.824/notes/l-cr.txt)、[验证](https://pdos.csail.mit.edu/6.824/notes/l-ironfleet.txt)、[Lambda](https://pdos.csail.mit.edu/6.824/notes/mbrooker_cs_slides_2026.pdf)、[Ray](https://pdos.csail.mit.edu/6.824/notes/l-ray.txt)、[SUNDR](https://pdos.csail.mit.edu/6.824/notes/l-sundr.txt)、[BFT](https://pdos.csail.mit.edu/6.824/notes/l-bft.txt)。论文入口见各讲元数据与官方课表。
 
 ### 归档与复用说明
@@ -151,3 +165,5 @@ Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector �
 L1 中文译稿按 2021 英文自动字幕的真实时间顺序整理，课堂问答与书面材料的差异单列校注；笔记已对照 2021 讲义并保留实际使用过的 2020 讲义出处。论文精读使用 P1 阅读的 13 页 OSDI 2004 快照，课上展开的词频例子与基本流程转向译稿，不重复铺陈。当前校订记录见 `sources/L1-2021-REVIEW.txt`。
 
 P1 对 2020 视频的 HTTP 429、79:35 时长与 CC 标签仅为历史记录，不能用于 2021 视频。详细历史许可与来源见 `sources/P1-REVIEW.txt`；2026 Lab 1 中译保留课程网站 [CC BY 3.0 US](https://creativecommons.org/licenses/by/3.0/us/) 署名与修改说明。
+
+P2 记录见 `sources/P2-REVIEW.txt`：2021 L2/L10 原始字幕与独立元数据、2021 课堂代码／幻灯片快照、2026 线性一致性论文第 1–9 页，以及固定提交的 Lab 2 接口／测试静态阅读。Lab 2 要求中译沿用 2026 课程网站 CC BY 3.0 US 署名；论文与外链幻灯片不套用网站许可。内容完成不表示实验通过。
