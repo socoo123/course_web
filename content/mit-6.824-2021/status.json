@@ -1,0 +1,123 @@
+{
+  "courseId": "mit-6.824-2021",
+  "plannedAt": "2026-11-08",
+  "updatedAt": "2026-11-08",
+  "phase": "2021_mainline_migrated_P1_written_sample_reused",
+  "plan": "sources/PLAN.txt",
+  "versions": {
+    "lectures": "MIT 6.824 Spring 2021",
+    "labs": "MIT 6.5840 Spring 2026",
+    "updates": "2026 compared with 2021",
+    "labCodeCommit": "513cac0aef010750fc74688da8a395974a83cf7a",
+    "labCodeRepository": "git://g.csail.mit.edu/6.5840-golabs-2026",
+    "snapshotDate": "2026-11-08",
+    "goMinimum": "1.22"
+  },
+  "sourcesManifest": "sources/manifest-2021.json",
+  "scheduleInventory": "sources/schedule-inventory-2021.json",
+  "versionMap": "sources/version-map-2021.json",
+  "labCodeManifest": "sources/lab-code-manifest.json",
+  "interfaceAudit": "sources/INTERFACE-AUDIT.txt",
+  "p1Review": "sources/P1-REVIEW.txt",
+  "artifacts": {
+    "courseRegistration": "complete",
+    "catalogMigration": "mit-6.824-2020 -> mit-6.824-2021; active",
+    "publicResources": "updated_for_2021",
+    "mainlineEntries": 21,
+    "updateEntries": 8,
+    "labEntries": 5,
+    "lectureDocumentsCompleted": 2,
+    "labDocumentsCompleted": 2,
+    "lectureIllustrationsCompleted": 1
+  },
+  "sourceCoverage": {
+    "reviewed2021Pages": ["schedule", "general"],
+    "mainlineLecturesWithVideoLinks": 19,
+    "mainlineVideoLinks": 20,
+    "mainlineWithoutVideo": ["lec06", "lec08"],
+    "splitVideos": { "lec15": ["07xsfL5E8Ck", "XwU4jKhBxws"] },
+    "videoMetadataFetched": [],
+    "mainlineVideoMetadataPending": "All 2021 videos: title, duration, channel and license; schedule links alone are verified",
+    "mainlineLectureInstructors": "Frans Kaashoek from 2021 general.html; Russ Cox guest at L10 from schedule; per-video speakers not yet reviewed",
+    "labRequirementsSnapshotted": ["mr", "kvsrv", "raft", "kvraft", "shardkv"],
+    "labInterfaces": "P0/P1 static checks retained for the same pinned 2026 code; no lab tests run",
+    "updatesVideo": "No video links on 2026 schedule; editorial bridge has no lecture video",
+    "legacySources": "manifest.json, schedule-inventory.json and version-map.json retain pre-migration 2020/2026 source states; do not count them as 2021 coverage",
+    "mapreduceReading": "Reused P1 independent commentary on 13-page OSDI 2004 paper, sections 1-8 and Appendix A; original 2020-hosted snapshot retained",
+    "mapreduceReadingSha256": "9cfef3ef1b8fe1a1b66c7221f56c2eeca0b15d6608ea68b0c85a38bfbffd8ce5"
+  },
+  "sample": {
+    "lecture": "lec01",
+    "officialNotes": "P1 uses reviewed 2020 notes as explicitly attributed supplementary material; 2021 notes not yet reviewed",
+    "videoId": "WtZ7pcRSkOA",
+    "durationSeconds": null,
+    "videoMetadata": "not_started",
+    "captions": "awaiting_user",
+    "captionDownloadAttempted": false,
+    "notes": "complete_reused_written_sample",
+    "draft": "awaiting_user_captions",
+    "materials": "complete_independent_reading",
+    "videoCoverage": "not_reviewed; no timestamps or classroom coverage claimed"
+  },
+  "batches": {
+    "P0": "complete_then_migrated_to_2021",
+    "P1": "written_sample_reused_2021_draft_pending",
+    "P2": "not_started",
+    "P3": "not_started",
+    "P4": "not_started",
+    "P5": "not_started",
+    "P6": "not_started"
+  },
+  "content": {
+    "lectures": {
+      "lec01": { "notes": "complete_reused_written_sample", "draft": "awaiting_user_captions", "materials": "complete_independent_reading" },
+      "lec02": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec03": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec04": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec05": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec06": { "notes": "pending_sources", "draft": "no_video_listed", "materials": "not_planned_shared_lab_sources" },
+      "lec07": { "notes": "not_started", "draft": "not_started", "materials": "planned_reference_to_lec05" },
+      "lec08": { "notes": "pending_sources", "draft": "no_video_listed", "materials": "not_planned_shared_lab_sources" },
+      "lec09": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec10": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec11": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec12": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec13": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec14": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec15": { "notes": "not_started", "draft": "not_started_two_videos", "materials": "not_started" },
+      "lec16": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec17": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec18": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec19": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec20": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec21": { "notes": "not_started", "draft": "not_started_project_demos", "materials": "not_started" },
+      "update-linearizability": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" },
+      "update-lab-bridge": { "notes": "not_started", "draft": "not_applicable", "materials": "not_planned_shared_lab_sources" },
+      "update-paxos": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" },
+      "update-go-patterns": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" },
+      "update-verification": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" },
+      "update-lambda": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" },
+      "update-ray": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" },
+      "update-bft": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" }
+    },
+    "labs": {
+      "mr": { "zh": "complete", "guide": "complete", "en": "not_published" },
+      "kvsrv": { "zh": "not_started", "guide": "not_started", "en": "not_published" },
+      "raft": { "zh": "not_started", "guide": "not_started", "en": "not_published" },
+      "kvraft": { "zh": "not_started", "guide": "not_started", "en": "not_published" },
+      "shardkv": { "zh": "not_started", "guide": "not_started", "en": "not_published" }
+    }
+  },
+  "knownIssues": [
+    { "id": "lab-command-widget-xv6", "status": "open_outside_content_scope", "location": "src/pages/Lab.tsx: Commands", "issue": "Generic widget uses xv6 commands; correct Go commands remain in resources and lab goals", "blocksNextBatch": false },
+    { "id": "lec01-captions-2021", "status": "awaiting_user", "issue": "User plans to supply English captions for WtZ7pcRSkOA; no automatic download attempted for this video", "blocks": ["2021 lec01 draft"], "blocksNextBatch": false },
+    { "id": "video-licenses-2021", "status": "not_started", "issue": "Check each 2021 video's license; 2020 metadata does not transfer", "blocksNextBatch": false }
+  ],
+  "historicalIssues": [
+    { "videoId": "cQP8WApzIQQ", "year": 2020, "captions": "HTTP 429 after one P1 retry", "log": "sources/lec01-caption-p1.log", "license": "CC Attribution label; historical version unresolved", "status": "retired_as_primary_video" }
+  ],
+  "labTests": "not_run",
+  "learnerLabCompletion": "not_tracked",
+  "validation": { "checkedAt": "2026-11-08", "contentIntegrity": "passed: official per-lecture links and all 20 video links, 21+8 entries, mappings, state, routes, images/SVG, snapshot hashes and catalog counts", "siteBuild": "passed: npm run build (tsc --noEmit + vite build)", "labTests": "not_run" },
+  "next": "Use user-provided 2021 L1 captions when available; otherwise P2: 2021 L2/L10 + update-linearizability + 2026 Lab 2. Preserve pinned lab interfaces."
+}

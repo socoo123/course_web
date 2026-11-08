@@ -1,0 +1,104 @@
+MIT 6.824 分布式系统：课程生成与学习计划
+更新：2026-11-08；按用户要求切换至 Spring 2021 视频主线。
+
+一、当前版本（后续执行以本节为准）
+
+- courseId / 目录：mit-6.824-2021 / content/mit-6.824-2021/。
+- 课程、视频、编号：MIT 6.824 Spring 2021。
+  http://nil.csail.mit.edu/6.824/2021/schedule.html
+- 讲师：Frans Kaashoek；L10 Go 嘉宾为 Russ Cox。
+- 实验：MIT 6.5840 Spring 2026，五个实验统一固定代码提交
+  513cac0aef010750fc74688da8a395974a83cf7a；Go >= 1.22。
+- 用户亲自做实验；只制作要求中译与思路指导，不生成完整实验答案。
+- 仅改 content/；每批必要校验通过后提交并推送 GitHub。
+
+二、2021 课表核对结果
+
+21 个官方编号条目，19 个条目有录像、合计 20 条视频链接。
+L6 Q&A Lab 1、L8 Q&A Lab2 A+B 未列视频或讲义，保留条目和缺口。
+L15 FaRM 分上下两段，必须都登记，不用单个视频冒充整讲。
+L21 有项目展示录像，按实际展示内容处理。
+
+L1 Introduction / MapReduce     L2 RPC and Threads
+L3 GFS                         L4 Primary-Backup Replication
+L5 Raft (1)                    L6 Q&A Lab 1
+L7 Raft (2)                    L8 Q&A Lab2 A+B
+L9 ZooKeeper                   L10 Guest lecturer on Go (Russ Cox)
+L11 Chain Replication          L12 Frangipani
+L13 Distributed Transactions   L14 Spanner
+L15 FaRM                       L16 Spark
+L17 Memcached                  L18 SUNDR
+L19 Bitcoin                    L20 Blockstack (2016)
+L21 Project demos
+
+不能对 2020 清单只替换年份：旧 L5 Go/线程不是新 L5，旧 L6 Raft 对应新 L5，
+旧 L8 ZooKeeper 对应新 L9，旧事务/Spanner 对应新 L13/L14。
+2021 没有独立 CRAQ、Aurora、COPS、Certificate Transparency 讲次。
+Chain Replication 和 SUNDR 已属 2021 主线，原两个同名 Updates 合并到 L11/L18
+的阅读对照。保留其 2026 来源，不再列为相对 2021 的新主题。
+
+三、来源与产物状态
+
+当前清单：sources/schedule-inventory-2021.json。
+当前映射：sources/version-map-2021.json。
+2021 抓取：sources/manifest-2021.json；已保存并核对课表与 general.html。
+21 讲的链接已登记，视频时长、频道、标题、许可均待逐条核对。
+
+无 -2021 后缀的 manifest.json、schedule-inventory.json、version-map.json
+是迁移前 P0/P1 历史记录；其中 2020 来源不能冒充 2021 已抓取材料。
+原始来源整体移至新目录；旧 manifest 中含旧目录的路径按迁移前根目录解释。
+2026 lab-code-manifest.json、INTERFACE-AUDIT.txt 与固定源码归档继续有效。
+
+P1 复用：L1 notes/materials、自绘 SVG；2026 Lab 1 lab/guide。
+L1 notes 仍标明实际使用的 2020 讲义，materials 保留已读论文快照出处。
+它们不是 2021 视频译稿。收到字幕后再核对课堂与书面笔记的连接。
+
+用户准备协助抓取 2021 L1 英文字幕（优先带时间戳 SRT/VTT/JSON3）：
+https://www.youtube.com/watch?v=WtZ7pcRSkOA
+当前状态：awaiting_user_captions；尚未尝试下载该视频字幕。
+旧 cQP8WApzIQQ 的 HTTP 429、4775 秒和 CC 标签仅属 2020 历史记录，
+不能沿用到 2021。不要循环重试旧视频。
+
+四、学习路线与批次
+
+P0：已完成原站骨架；本次 2021 迁移重建讲次、视频和版本映射。
+P1：书面样板已复用；2021 L1 draft 待字幕和视频许可核对。
+
+P2 Go/RPC + KV：2021 L2/L10 + update-linearizability + 2026 Lab 2。
+  L2 特有代码含 crawler.go、kv.go、condvar.tar.gz（vote examples）。
+  L10 使用 Russ Cox 2021 幻灯片，不套旧 L5 的 go-concurrency.tar.gz。
+  重点：goroutine、锁/条件变量、RPC、版本化 Put、ErrMaybe、锁服务。
+P3 复制/Raft：先 L3/L4，再 L5/L7 + 2026 Lab 3。
+  Raft 论文统一放 lectures/lec05/materials.zh.md；L5 至 §5 末，L7 从 §7 至末，
+  跳过 §6。结合 Figure 2、选举、提交、持久化与快照。
+P4 服务：L9 + update-lab-bridge 的 RSM 部分 + 2026 Lab 4。
+P5 分片：L13/L14 + update-lab-bridge 的迁移部分 + 2026 Lab 5。
+  事务与 Spanner 是扩展理解；2PC 非基础要求；Lab 5D 单列开放扩展。
+P6 案例：L11/L12/L15/L17，再按兴趣 L16/L18/L19/L20/L21 与 Updates。
+  L6/L8 不补造无来源课堂内容；有新增真实材料时再处理。
+
+2021 Lab 1/2/3/4 分别对应本路线 2026 Lab 1/3/4/5；2026 Lab 2 是新增桥接。
+这只是主题映射，不表示 API、子任务或测试兼容。
+
+Updates 共 8 条：线性一致性、实验接口桥接、Paxos、Go patterns、验证、Lambda、
+Ray、BFT。Go patterns 制作前对照 2021 L10，只展开真正有差异的部分。
+2026 Chain Replication、SUNDR 阅读分别在 L11/L18 对照，不另生成重复正文。
+
+五、内容边界与验收
+
+- notes：核心问题、推导、不变量、故障情境、权衡、自测；自绘简图。
+- draft：真实课堂按时间顺序整理；截图只在这里；无字幕不造时间轴。
+- materials：课外论文/教材；未获全文翻译许可时采用自主精读与短引。
+- lab：官方要求中译；guide：接口、阶段、常见坑、验收入口，不给完整答案。
+- 共用资料集中 resources；引用页底；完成度和抓取缺口放 status/头信息。
+- 字幕与授权逐视频核对，官网许可不自动授予外链视频或论文。
+- 2026 Lab 1 必须显式 socket 参数，src 下 make mr；Lab 2 使用 versioned Put。
+  Lab 3 持久化为 Persister.Save；Lab 4/5 使用 rsm、Freeze/Install/Delete。
+- 实验通用命令框仍有 xv6 命令；只在内容中给正确 Go 命令，不改 src/。
+- 最小验收：讲次/来源/路由/图片与状态一致，npm run build，git diff --check。
+- 教程验收与用户实验完成分开；本次没有运行实验测试。
+- 无用户要求不启动多 agent。
+
+恢复口令：继续 6.824，读取 content/mit-6.824-2021/sources/PLAN.txt 和 status.json，
+按计划执行下一批，仅改 content/，校验后提交并推送。
+下一步：若收到 2021 L1 字幕先补译稿；否则推进 P2（L2/L10 + 线性一致性 + Lab 2）。

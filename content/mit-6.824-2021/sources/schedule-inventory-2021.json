@@ -1,0 +1,38 @@
+{
+  "course_id": "mit-6.824-2021",
+  "year": 2021,
+  "source_id": "schedule-2021",
+  "schedule_url": "http://nil.csail.mit.edu/6.824/2021/schedule.html",
+  "url_base": "http://nil.csail.mit.edu/6.824/2021/",
+  "snapshot": "schedule-2021.html",
+  "checked_at": "2026-11-08",
+  "linked_source_state": { "status": "discovered", "retrieved_at": null, "file": null, "sha256": null },
+  "source_id_convention": "<lecture id>-2021-<field>-<1-based index>; relative links resolve against url_base; linked sources are not yet fetched",
+  "video_metadata": "not_started; titles, durations, speakers and licenses not verified from videos",
+  "lectures": [
+    { "id": "lec01", "num": 1, "date": "2021-02-16", "title": "Introduction", "notes": ["notes/l01.txt"], "videos": ["https://youtu.be/WtZ7pcRSkOA"], "readings": ["papers/mapreduce.pdf"], "assigned": ["labs/lab-mr.html"] },
+    { "id": "lec02", "num": 2, "date": "2021-02-18", "title": "RPC and Threads", "notes": ["notes/l-rpc.txt", "notes/crawler.go", "notes/kv.go", "notes/condvar.tar.gz"], "videos": ["https://youtu.be/oZR76REwSyA"], "readings": ["http://tour.golang.org/"], "faq": ["papers/tour-faq.txt"], "questions": ["questions.html?q=q-gointro&lec=2"] },
+    { "id": "lec03", "num": 3, "date": "2021-02-23", "title": "GFS", "notes": ["notes/l-gfs.txt"], "videos": ["https://youtu.be/6ETFk1-53qU"], "readings": ["papers/gfs.pdf"], "faq": ["papers/gfs-faq.txt"], "questions": ["questions.html?q=q-gfs&lec=3"], "assigned": ["labs/lab-raft.html"] },
+    { "id": "lec04", "num": 4, "date": "2021-02-25", "title": "Primary-Backup Replication", "notes": ["notes/l-vm-ft.txt"], "videos": ["https://youtu.be/gXiDmq1zDq4"], "readings": ["papers/vm-ft.pdf"], "faq": ["papers/vm-ft-faq.txt"], "questions": ["questions.html?q=q-vm-ft&lec=4"] },
+    { "id": "lec05", "num": 5, "date": "2021-03-02", "title": "Fault Tolerance: Raft (1)", "notes": ["notes/l-raft.txt"], "videos": ["https://youtu.be/R2-9bsKmEbo"], "readings": ["papers/raft-extended.pdf"], "reading_scope": "to end of Section 5", "faq": ["papers/raft-faq.txt"], "questions": ["questions.html?q=q-raft&lec=5"] },
+    { "id": "lec06", "num": 6, "date": "2021-03-04", "title": "Q&A Lab 1", "notes": [], "videos": [], "readings": [], "questions": ["questions.html?q=q-QAlab&lec=6"] },
+    { "id": "lec07", "num": 7, "date": "2021-03-11", "title": "Fault Tolerance: Raft (2)", "notes": ["notes/l-raft2.txt"], "videos": ["https://youtu.be/h3JiQ_lnkE8"], "readings": ["papers/raft-extended.pdf"], "reading_scope": "Section 7 to end (but not Section 6)", "faq": ["papers/raft2-faq.txt"], "questions": ["questions.html?q=q-raft2&lec=7"] },
+    { "id": "lec08", "num": 8, "date": "2021-03-16", "title": "Q&A Lab2 A+B", "notes": [], "videos": [], "readings": [], "questions": ["questions.html?q=q-QAlab&lec=8"], "assigned": ["project.html"] },
+    { "id": "lec09", "num": 9, "date": "2021-03-18", "title": "Zookeeper", "notes": ["notes/l-zookeeper.txt"], "videos": ["https://youtu.be/HYTDDLo2vSE"], "readings": ["papers/zookeeper.pdf"], "faq": ["papers/zookeeper-faq.txt"], "questions": ["questions.html?q=q-zookeeper&lec=9"] },
+    { "id": "lec10", "num": 10, "date": "2021-03-25", "title": "Guest lecturer on Go", "instructor": "Russ Cox", "notes": ["https://swtch.com/mit-6824-go-2021.pdf"], "videos": ["https://youtu.be/IdCbMO0Ey9I"], "readings": [], "faq": ["papers/go-faq.txt"], "questions": ["questions.html?q=q-go&lec=10"] },
+    { "id": "lec11", "num": 11, "date": "2021-03-30", "title": "Chain Replication", "notes": ["notes/l-cr.txt"], "videos": ["https://youtu.be/1uUcW-Mqg5o"], "readings": ["papers/cr-osdi04.pdf"], "questions": ["questions.html?q=q-cr&lec=11"] },
+    { "id": "lec12", "num": 12, "date": "2021-04-06", "title": "Cache Consistency: Frangipani", "notes": ["notes/l-frangipani.txt"], "videos": ["https://youtu.be/jPrUxfIcWWs"], "readings": ["papers/thekkath-frangipani.pdf"], "faq": ["papers/frangipani-faq.txt"], "questions": ["questions.html?q=q-frangipani&lec=12"], "assigned": ["labs/lab-shard.html"] },
+    { "id": "lec13", "num": 13, "date": "2021-04-08", "title": "Distributed Transactions", "notes": ["notes/l-2pc.txt"], "videos": ["https://youtu.be/B6btpukqHpM"], "readings": ["https://ocw.mit.edu/resources/res-6-004-principles-of-computer-system-design-an-introduction-spring-2009/online-textbook/"], "reading_scope": "Chapter 9: 9.1.5, 9.1.6, 9.5.2, 9.5.3, 9.6.3", "faq": ["papers/chapter9-faq.txt"], "questions": ["questions.html?q=q-chapter9&lec=13"] },
+    { "id": "lec14", "num": 14, "date": "2021-04-15", "title": "Spanner", "notes": ["notes/l-spanner.txt"], "videos": ["https://youtu.be/ZulDvY429B8"], "readings": ["papers/spanner.pdf"], "faq": ["papers/spanner-faq.txt"], "questions": ["questions.html?q=q-spanner&lec=14"] },
+    { "id": "lec15", "num": 15, "date": "2021-04-27", "title": "Optimistic Concurrency Control", "notes": ["notes/l-farm.txt"], "videos": ["https://youtu.be/07xsfL5E8Ck", "https://youtu.be/XwU4jKhBxws"], "readings": ["papers/farm-2015.pdf"], "faq": ["papers/farm-faq.txt"], "questions": ["questions.html?q=q-farm&lec=15"] },
+    { "id": "lec16", "num": 16, "date": "2021-04-29", "title": "Big Data: Spark", "notes": ["notes/l-spark.txt"], "videos": ["https://youtu.be/qXb5rDGqFdc"], "readings": ["papers/zaharia-spark.pdf"], "faq": ["papers/spark-faq.txt"], "questions": ["questions.html?q=q-spark&lec=16"] },
+    { "id": "lec17", "num": 17, "date": "2021-05-04", "title": "Cache Consistency: Memcached at Facebook", "notes": ["notes/l-memcached.txt"], "videos": ["https://youtu.be/eYZg0YJtFEE"], "readings": ["papers/memcache-fb.pdf"], "faq": ["papers/memcache-faq.txt"], "questions": ["questions.html?q=q-memcached&lec=17"] },
+    { "id": "lec18", "num": 18, "date": "2021-05-06", "title": "Fork Consistency, SUNDR", "notes": ["notes/l-sundr.txt"], "videos": ["https://youtu.be/FxwjSs_xSBM"], "readings": ["papers/li-sundr.pdf"], "reading_scope": "until Section 3.4", "faq": ["papers/sundr-faq.txt"], "questions": ["questions.html?q=q-sundr&lec=18"] },
+    { "id": "lec19", "num": 19, "date": "2021-05-11", "title": "Peer-to-peer: Bitcoin", "notes": ["notes/l-bitcoin.txt"], "videos": ["https://youtu.be/yB6m8EjAqPU"], "readings": ["papers/bitcoin.pdf", "http://www.michaelnielsen.org/ddi/how-the-bitcoin-protocol-actually-works"], "faq": ["papers/bitcoin-faq.txt"], "questions": ["questions.html?q=q-bitcoin&lec=19"] },
+    { "id": "lec20", "num": 20, "date": "2021-05-18", "title": "Blockstack", "notes": ["notes/l-blockstack.txt"], "videos": ["https://youtu.be/DnyBPxo3B6I"], "readings": ["papers/blockstack-atc16.pdf"], "reading_label": "BlockStack (2016)", "faq": ["papers/blockstack-faq.txt"], "questions": ["questions.html?q=q-blockstack&lec=20"] },
+    { "id": "lec21", "num": 21, "date": "2021-05-20", "title": "Project demos", "notes": [], "videos": ["https://youtu.be/bu41Qt9G5Qo"], "readings": ["papers/katabi-analogicfs.pdf"], "faq": ["papers/analogicfs-faq.txt"], "questions": ["questions.html?q=q-analogic&lec=21"] }
+  ],
+  "assignments_without_lecture": [
+    { "date": "2021-03-23", "url": "labs/lab-kvraft.html", "label": "Lab 3: KV Raft", "class": "No Class" }
+  ]
+}

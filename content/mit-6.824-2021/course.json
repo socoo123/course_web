@@ -1,0 +1,106 @@
+{
+  "id": "mit-6.824-2021",
+  "year": 2021,
+  "instructors": ["Frans Kaashoek", "Russ Cox（Go 嘉宾课）"],
+  "versions": [
+    { "label": "课程 / 视频", "value": "MIT 6.824 Spring 2021" },
+    { "label": "实验", "value": "MIT 6.5840 Spring 2026 · 513cac0aef01" },
+    { "label": "Updates", "value": "2026 对照 2021 · 2026-11-08 快照" }
+  ],
+  "intro": "在会丢消息、会宕机的机器上构建可靠服务：从 MapReduce 与 RPC 入门，掌握复制、Raft、线性一致性和分片迁移，再阅读经典系统案例。主线采用 2021 年视频并保留官方讲次，动手部分统一采用 2026 年五个 Go 实验；Updates 衔接新版接口与专题。建议先按公共资料中的实验路线学习，再拓展案例。",
+  "links": [
+    { "label": "2021 官方课表", "url": "http://nil.csail.mit.edu/6.824/2021/schedule.html" },
+    { "label": "2026 官方课表（动态地址）", "url": "https://pdos.csail.mit.edu/6.824/schedule.html" },
+    { "label": "Go 环境", "url": "https://pdos.csail.mit.edu/6.824/labs/go.html" }
+  ],
+  "lectures": [
+    { "id": "lec01", "num": "1", "title": "导论与 MapReduce", "titleEn": "Introduction", "video": { "label": "2021 L1", "youtube": "https://www.youtube.com/watch?v=WtZ7pcRSkOA" }, "readings": ["MapReduce (2004)"], "lab": "mr", "core": true },
+    { "id": "lec02", "num": "2", "title": "RPC 与线程", "titleEn": "RPC and Threads", "video": { "label": "2021 L2", "youtube": "https://www.youtube.com/watch?v=oZR76REwSyA" }, "readings": ["Online Go tutorial", "课堂代码 crawler.go、kv.go、condvar.tar.gz（vote examples）"], "lab": "mr", "core": true },
+    { "id": "lec03", "num": "3", "title": "GFS：分布式文件系统", "titleEn": "GFS", "video": { "label": "2021 L3", "youtube": "https://www.youtube.com/watch?v=6ETFk1-53qU" }, "readings": ["GFS (2003)"], "lab": "raft", "core": true },
+    { "id": "lec04", "num": "4", "title": "主备复制", "titleEn": "Primary-Backup Replication", "video": { "label": "2021 L4", "youtube": "https://www.youtube.com/watch?v=gXiDmq1zDq4" }, "readings": ["Fault-Tolerant Virtual Machines (2010)"], "lab": "raft", "core": true },
+    { "id": "lec05", "num": "5", "title": "容错：Raft（一）", "titleEn": "Fault Tolerance: Raft (1)", "video": { "label": "2021 L5", "youtube": "https://www.youtube.com/watch?v=R2-9bsKmEbo" }, "readings": ["Raft extended (2014)，读至 §5 末；重点 Figure 2"], "lab": "raft", "core": true },
+    { "id": "lec06", "num": "6", "title": "MapReduce 实验答疑", "titleEn": "Q&A Lab 1", "lab": "mr", "note": "2021 Lab 1 答疑；官方课表未列视频或讲义。具体实现要求以本路线 2026 Lab 1 为准。", "optional": true },
+    { "id": "lec07", "num": "7", "title": "容错：Raft（二）", "titleEn": "Fault Tolerance: Raft (2)", "video": { "label": "2021 L7", "youtube": "https://www.youtube.com/watch?v=h3JiQ_lnkE8" }, "readings": ["Raft extended (2014)，§7 至末尾，不读 §6"], "lab": "raft", "core": true },
+    { "id": "lec08", "num": "8", "title": "Raft 实验答疑", "titleEn": "Q&A Lab2 A+B", "lab": "raft", "note": "2021 Lab 2 A+B 答疑；官方课表未列视频或讲义。主题对应本路线 2026 Lab 3。", "optional": true },
+    { "id": "lec09", "num": "9", "title": "ZooKeeper：协调服务", "titleEn": "Zookeeper", "video": { "label": "2021 L9", "youtube": "https://www.youtube.com/watch?v=HYTDDLo2vSE" }, "readings": ["ZooKeeper (2010)"], "lab": "kvraft", "core": true },
+    { "id": "lec10", "num": "10", "title": "Go 嘉宾课：Russ Cox", "titleEn": "Guest lecturer on Go", "video": { "label": "2021 L10", "youtube": "https://www.youtube.com/watch?v=IdCbMO0Ey9I" }, "readings": ["Russ Cox：mit-6824-go-2021.pdf"], "core": true },
+    { "id": "lec11", "num": "11", "title": "链式复制", "titleEn": "Chain Replication", "video": { "label": "2021 L11", "youtube": "https://www.youtube.com/watch?v=1uUcW-Mqg5o" }, "readings": ["Chain Replication (2004)"], "optional": true },
+    { "id": "lec12", "num": "12", "title": "缓存一致性：Frangipani", "titleEn": "Cache Consistency: Frangipani", "video": { "label": "2021 L12", "youtube": "https://www.youtube.com/watch?v=jPrUxfIcWWs" }, "readings": ["Frangipani"], "optional": true },
+    { "id": "lec13", "num": "13", "title": "分布式事务", "titleEn": "Distributed Transactions", "video": { "label": "2021 L13", "youtube": "https://www.youtube.com/watch?v=B6btpukqHpM" }, "readings": ["6.033 Chapter 9：§9.1.5、§9.1.6、§9.5.2、§9.5.3、§9.6.3"], "lab": "shardkv", "note": "用于拓展分片与事务的理解；2PC 不是 2026 Lab 5 A–C 的必需实现。" },
+    { "id": "lec14", "num": "14", "title": "Spanner", "titleEn": "Spanner", "video": { "label": "2021 L14", "youtube": "https://www.youtube.com/watch?v=ZulDvY429B8" }, "readings": ["Spanner (2012)"], "lab": "shardkv" },
+    { "id": "lec15", "num": "15", "title": "乐观并发控制：FaRM", "titleEn": "Optimistic Concurrency Control", "video": { "label": "2021 L15 · 上半场", "youtube": "https://www.youtube.com/watch?v=07xsfL5E8Ck" }, "readings": ["FaRM (2015)"], "note": "本讲分两段；续集 https://www.youtube.com/watch?v=XwU4jKhBxws ，见公共资料的视频入口。", "optional": true },
+    { "id": "lec16", "num": "16", "title": "大数据：Spark", "titleEn": "Big Data: Spark", "video": { "label": "2021 L16", "youtube": "https://www.youtube.com/watch?v=qXb5rDGqFdc" }, "readings": ["Spark (2012)"], "optional": true },
+    { "id": "lec17", "num": "17", "title": "缓存一致性：Facebook Memcached", "titleEn": "Cache Consistency: Memcached at Facebook", "video": { "label": "2021 L17", "youtube": "https://www.youtube.com/watch?v=eYZg0YJtFEE" }, "readings": ["Memcached at Facebook (2013)"], "optional": true },
+    { "id": "lec18", "num": "18", "title": "分叉一致性：SUNDR", "titleEn": "Fork Consistency, SUNDR", "video": { "label": "2021 L18", "youtube": "https://www.youtube.com/watch?v=FxwjSs_xSBM" }, "readings": ["SUNDR (2004)，课表原文：until Section 3.4"], "optional": true },
+    { "id": "lec19", "num": "19", "title": "点对点系统：Bitcoin", "titleEn": "Peer-to-peer: Bitcoin", "video": { "label": "2021 L19", "youtube": "https://www.youtube.com/watch?v=yB6m8EjAqPU" }, "readings": ["Bitcoin (2008)", "Michael Nielsen：How the Bitcoin protocol actually works"], "optional": true },
+    { "id": "lec20", "num": "20", "title": "Blockstack", "titleEn": "Blockstack", "video": { "label": "2021 L20", "youtube": "https://www.youtube.com/watch?v=DnyBPxo3B6I" }, "readings": ["BlockStack (2016)，blockstack-atc16.pdf"], "optional": true },
+    { "id": "lec21", "num": "21", "title": "项目展示", "titleEn": "Project demos", "video": { "label": "2021 L21", "youtube": "https://www.youtube.com/watch?v=bu41Qt9G5Qo" }, "readings": ["AnalogicFS experience paper"], "note": "项目展示录像，按展示内容整理，不视为普通授课。", "optional": true },
+    { "id": "update-linearizability", "num": "增补", "title": "Updates · 线性一致性与版本化 KV", "titleEn": "Consistency and Linearizability", "readings": ["2026 L8 讲义", "Linearizability，读至 §3.1", "2026 Lab 2 的 Get / versioned Put / ErrMaybe"], "lab": "kvsrv", "core": true, "isNew": true, "note": "桥接必读；对应 2026 L8，课表未提供视频。" },
+    { "id": "update-lab-bridge", "num": "增补", "title": "Updates · RSM、KV 与分片实验衔接", "titleEn": "2026 Lab Interface Bridge", "readings": ["2026 Lab 2–5 要求与固定提交的 raftapi、rsm、shardctrler 接口"], "lab": "kvraft", "core": true, "isNew": true, "note": "编者跨版本导读，无独立官方讲次；Lab 4 与 Lab 5 前分段阅读。" },
+    { "id": "update-paxos", "num": "增补", "title": "Updates · Paxos", "titleEn": "Paxos", "readings": ["2026 L4 讲义与伪代码", "Paxos Made Simple"], "optional": true, "isNew": true, "note": "对应 2026 L4；与 2021 L5/L7 Raft 对照。" },
+    { "id": "update-go-patterns", "num": "增补", "title": "Updates · Go 编程模式", "titleEn": "Go patterns", "readings": ["Russ Cox：Go-MIT6824-2026.pdf", "The Go Programming Language and Environment (2022)"], "optional": true, "isNew": true, "note": "对应 2026 L5 嘉宾课；衔接 2021 L2/L10，制作前核对超出旧课的内容。" },
+    { "id": "update-verification", "num": "增补", "title": "Updates · 分布式系统验证", "titleEn": "Verification of distributed systems", "readings": ["2026 L15 讲义", "IronFleet (2015)"], "optional": true, "isNew": true, "note": "2026 L15，Upamanyu Sharma。" },
+    { "id": "update-lambda", "num": "增补", "title": "Updates · AWS Lambda", "titleEn": "AWS Lambda", "readings": ["2026 L17 Marc Brooker 幻灯片", "On-demand Container Loading (2023)"], "optional": true, "isNew": true },
+    { "id": "update-ray", "num": "增补", "title": "Updates · Ray", "titleEn": "Ray", "readings": ["2026 L18 讲义", "Ray (2021，按课表标注)"], "optional": true, "isNew": true, "note": "与 2021 L16 Spark 衔接。" },
+    { "id": "update-bft", "num": "增补", "title": "Updates · 实用拜占庭容错", "titleEn": "Practical Byzantine Fault Tolerance", "readings": ["2026 L21 讲义与 Derek Leung 幻灯片", "Practical BFT (1999)"], "optional": true, "isNew": true }
+  ],
+  "labs": [
+    {
+      "id": "mr", "num": 1, "title": "MapReduce", "titleEn": "MapReduce",
+      "stars": 3, "hours": "因 Go 与并发基础而异", "branch": "513cac0aef01",
+      "url": "https://pdos.csail.mit.edu/6.824/labs/lab-mr.html",
+      "goal": "实现协调器与 worker，支持并行任务和 worker 失败后的重派。2026 版在 src 下运行 make mr；页面通用命令框的 make qemu / make grade 不适用，完整命令见公共资料。",
+      "tasks": [
+        { "id": "implementation", "title": "实现分布式 MapReduce：调度、RPC、输出与失败重试", "titleEn": "Your Job" },
+        { "id": "tests", "title": "通过官方正确性、并行性、退出与崩溃测试" }
+      ]
+    },
+    {
+      "id": "kvsrv", "num": 2, "title": "键值服务器与锁", "titleEn": "Key/Value Server",
+      "stars": 3, "hours": "因 RPC 与并发基础而异", "branch": "513cac0aef01",
+      "url": "https://pdos.csail.mit.edu/6.824/labs/lab-kvsrv1.html",
+      "goal": "实现带版本号的 Get/Put、丢消息时的 ErrMaybe，以及基于 KV 的锁。2026 版在 src 下运行 make kvsrv1 和 make lock1；通用命令框的 QEMU/grade 命令不适用。",
+      "tasks": [
+        { "id": "kv-reliable", "title": "可靠网络下的键值服务器" },
+        { "id": "lock-reliable", "title": "基于 KV Clerk 实现锁" },
+        { "id": "kv-unreliable", "title": "丢消息时的键值服务器" },
+        { "id": "lock-unreliable", "title": "不可靠网络下的锁" }
+      ]
+    },
+    {
+      "id": "raft", "num": 3, "title": "Raft 共识", "titleEn": "Raft",
+      "stars": 5, "hours": "需多轮实现与调试", "branch": "513cac0aef01",
+      "url": "https://pdos.csail.mit.edu/6.824/labs/lab-raft1.html",
+      "goal": "实现选举、复制日志、持久化与快照，维护 Raft 安全性。2026 版在 src 下运行 make raft1；通用命令框的 QEMU/grade 命令不适用。",
+      "tasks": [
+        { "id": "3a", "title": "3A：领导者选举", "titleEn": "Leader election" },
+        { "id": "3b", "title": "3B：日志复制", "titleEn": "Log" },
+        { "id": "3c", "title": "3C：持久化", "titleEn": "Persistence" },
+        { "id": "3d", "title": "3D：日志压缩与快照", "titleEn": "Log compaction" }
+      ]
+    },
+    {
+      "id": "kvraft", "num": 4, "title": "容错键值服务", "titleEn": "Fault-tolerant Key/Value Service",
+      "stars": 4, "hours": "取决于 Raft 的稳定程度", "branch": "513cac0aef01",
+      "url": "https://pdos.csail.mit.edu/6.824/labs/lab-kvraft1.html",
+      "goal": "用独立 RSM 层连接 Raft 与 KV 状态机，再加入快照。2026 版在 src 下运行 make rsm1 和 make kvraft1；通用命令框的 QEMU/grade 命令不适用。",
+      "tasks": [
+        { "id": "4a", "title": "4A：复制状态机 RSM", "titleEn": "Replicated state machine" },
+        { "id": "4b", "title": "4B：不带快照的 KV 服务", "titleEn": "Key/value service without snapshots" },
+        { "id": "4c", "title": "4C：RSM 与 KV 快照", "titleEn": "Key/value service with snapshots" }
+      ]
+    },
+    {
+      "id": "shardkv", "num": 5, "title": "分片键值服务", "titleEn": "Sharded Key/Value Service",
+      "stars": 5, "hours": "需分阶段实现与故障调试", "branch": "513cac0aef01",
+      "url": "https://pdos.csail.mit.edu/6.824/labs/lab-shard1.html",
+      "goal": "实现控制器驱动的分片迁移、恢复与并发配置变更。2026 版在 src 下运行 make shardkv；通用命令框的 QEMU/grade 命令不适用。D 为官方开放扩展，本学习路线列为进阶。",
+      "tasks": [
+        { "id": "5a", "title": "5A：迁移分片", "titleEn": "Moving shards" },
+        { "id": "5b", "title": "5B：控制器故障恢复", "titleEn": "Handling a failed controller" },
+        { "id": "5c", "title": "5C：并发配置变更", "titleEn": "Concurrent configuration changes" },
+        { "id": "5d", "title": "5D：开放扩展与自编测试（路线进阶项）", "titleEn": "Extend your solution" }
+      ]
+    }
+  ]
+}
