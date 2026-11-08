@@ -1,0 +1,76 @@
+P1 样板核对记录 — 2026-11-08
+
+一、交付范围
+主线：MIT 6.824 Spring 2020 L1。
+实验：MIT 6.5840 Spring 2026 Lab 1，代码固定为
+513cac0aef010750fc74688da8a395974a83cf7a。
+
+交付：lectures/lec01/notes.zh.md、materials.zh.md、assets/task-attempts.svg；
+labs/mr/lab.zh.md、guide.zh.md。更新公共资料、status.json、PLAN.txt。
+中文译稿未生成；没有伪造时间轴，没有用官方提纲代替视频正文。
+实验源码未修改，实验测试未运行，学习者实验完成情况不跟踪。
+
+二、阅读与接口核对
+官方 L1 讲义：
+http://nil.csail.mit.edu/6.824/2020/notes/l01.txt
+已读完整书面提纲；用于笔记提炼，不代表听完课堂视频。
+
+论文：Dean, Jeffrey; Ghemawat, Sanjay. MapReduce: Simplified Data Processing
+on Large Clusters. OSDI 2004, pp. 137–149.
+http://nil.csail.mit.edu/6.824/2020/papers/mapreduce.pdf
+抓取时间：2026-11-08T13:07:49.039368+00:00
+Last-Modified：Wed, 11 Dec 2019 14:31:46 GMT
+SHA-256：9cfef3ef1b8fe1a1b66c7221f56c2eeca0b15d6608ea68b0c85a38bfbffd8ce5
+快照：mapreduce-2004.pdf；已读 PDF 第 1–13 页（§1–§8、附录 A）。
+Figure 1–4、Table 1 已对照页面图像；不声称已阅读参考文献列出的其他论文。
+中文精读保留章节与页码；不复制原文全文及图版。
+
+Lab 1 官方要求：
+https://pdos.csail.mit.edu/6.824/labs/lab-mr.html
+快照：lab-mr-2026.html；原抓取时间 2026-11-08T12:09:28.821242+00:00。
+SHA-256：c5ce2eec8743adb362a87e22eae93e6f61988455a45f06059976726f078351a2
+中译覆盖 Introduction、Getting started、Your Job、rules、Hints、challenges。
+重复输出合并；共享环境入口集中到 resources；编者补充显式标记。
+
+静态阅读固定归档中的 src/Makefile、src/main/mrcoordinator.go、mrworker.go、
+mrsequential.go、src/mr/{coordinator,worker,rpc,mr_test}.go、
+src/mrapps/{wc,indexer}.go，核对：
+- socket 是显式参数；main 源文件顶部旧示例注释缺参数，不应沿用。
+- MakeCoordinator(sockname, files, nReduce)，Worker(sockname, mapf, reducef)。
+- 验收在 src 下 make mr，RUN 可筛选测试，默认 -race，插件由 Makefile 构建。
+- 七项测试名称与其检查性质一致，尤其 JobCount、EarlyExit、CrashWorker。
+- call() 拨号失败会 log.Fatal，调用失败才返回 false；指导已说明差异。
+- 不把任务派完等同完成，不把超时等同证明死亡，不把 rename 等同 exactly-once。
+- 论文允许提前 shuffle；实验用完整 Map 阶段屏障，二者明确区分。
+- 论文的机器本地中间文件与实验共享目录的故障模型明确区分。
+
+三、逐来源许可
+1. 2020 首页 home-2020.html 第 55 行、2026 首页 home-2026.html 第 61 行：
+   rel="license" -> https://creativecommons.org/licenses/by/3.0/us/
+   将此站点许可用于 MIT 自有课程讲义与 Lab 1 要求；页面保留署名、链接、修改说明。
+   不将站点许可自动授予论文、视频或实验仓库代码。
+2. MapReduce PDF 未核实到允许全文翻译的明确许可。
+   交付为编者自主中文精读，不称为全文译文。
+3. L1 官方视频入口嵌入 cQP8WApzIQQ。
+   元数据：Lecture 1: Introduction；频道 MIT 6.824: Distributed Systems；
+   4775 秒；Creative Commons Attribution license (reuse allowed)。
+   https://support.google.com/youtube/answer/2797468?hl=en
+   已抓取 youtube-license-help.html（2026-11-08T13:08:17.009891+00:00）。
+   SHA-256：b51a8039ffe2ef71d0594151f50440b334beb7a6e0a276ea20f907051112a7a5
+   当前帮助页链接 https://creativecommons.org/licenses/by/4.0/。
+   这可解释当前 CC 选项，但不能确定旧视频历史授权的具体版本；保留该不确定性。
+   本批未生成译稿，未下载视频或音频，未归档带签名媒体地址。
+
+四、字幕阻塞
+P1 仅重试一次，关闭下载与提取器重试，字幕语言 en，格式 json3。
+结果仍为 HTTP 429: Too Many Requests，日志 lec01-caption-p1.log。
+没有可用字幕文件；原 P0 失败日志保留。
+后续若用户提供字幕或来源恢复，再单独补 draft；P2 不被此阻塞。
+
+五、样板约定
+笔记：核心问题、不变量、故障情境、权衡、自测；只用自绘简图。
+资料：论文自主精读，保留具体章节、页码、测量条件；不重复课堂提纲。
+实验说明：官方要求中译；指导：实现阶段、关键问题、调试与验收，不给完整答案。
+来源状态与内容完成状态分开；阶段名 P1_complete_with_blocked_draft。
+原始抓取物按项目 .gitignore 留在本地 sources/；本核对记录与 PLAN.txt 随批次提交。
+构建与链接/图片/哈希验收结果以课程 status.json 的 validation 为准。

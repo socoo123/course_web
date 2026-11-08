@@ -1,6 +1,6 @@
 ---
 source: MIT 6.824 Spring 2020 官方课表；MIT 6.5840 Spring 2026 官方课表、五个实验页与实验代码
-status: P0 学习导航与版本清单完成；逐讲内容与实验中译待后续批次。L1 字幕仍受 HTTP 429 阻塞；其余视频仅核对官方入口。实验测试未运行。
+status: P1 已交付 L1 笔记、论文精读与 2026 Lab 1 说明及指导；L1 字幕重试仍为 HTTP 429，译稿缺失。其余内容按后续批次推进；实验测试未运行。
 license: 本页为编者自主导航；外链论文、视频、讲义与实验要求的许可分别核实，不视为统一 CC 授权。
 ---
 
@@ -129,6 +129,8 @@ go version
 
 ## 共享阅读与术语
 
+**MapReduce (2004)** 是 L1 与 Lab 1 共用的阅读，集中在 [L1 课程资料](#/c/mit-6.824-2020/lec/lec01?v=materials)自主精读：程序模型、故障语义、性能实验及与 2026 实验的差异。实验页仅展开实现要求与指导。
+
 **Raft extended (2014)** 是 L6/L7 与 Lab 3/4 共用的主要阅读。L6 读至 §5 末，L7 读 §7 至末尾、跳过 §6；Lab 3 不实现成员变更，Lab 4 重点回看 §7。后续中文精读统一放在 [L6 课程资料](#/c/mit-6.824-2020/lec/lec06?v=materials)，其他条目引用其章节。
 
 **Go** 的共同入口为 A Tour of Go、The Go Memory Model 和 Go 的 race detector 文档。旧课表中的在线链接可能指向更新后的版本；学习当前 Go 行为时应与所用工具链一致，不把当前页面文字视为 2020 原文。
@@ -197,4 +199,4 @@ go version
 
 归档文件位于本项目的 `content/mit-6.824-2020/sources/`，不作为站内 Markdown 页面发布：`manifest.json` 记录来源状态、抓取时间、SHA-256 与 Last-Modified；`version-map.json` 记录跨年对应与实验依赖；`lab-code-manifest.json` 记录固定代码树和已核对文件；`INTERFACE-AUDIT.txt` 记录接口核对结论。抓到文件不等于已精读，也不等于已完成中文内容。
 
-L1 视频元数据标示 Creative Commons Attribution，但具体许可链接仍需在 P1 核实；不推广到其余视频。未确认全文翻译授权的论文与材料使用自主中文精读、章节定位和短引；实验说明正式中译前同样核实许可。
+2020 与 2026 官方课程首页均标注 [CC BY 3.0 US](https://creativecommons.org/licenses/by/3.0/us/)，本批据此整理官方 L1 讲义与翻译 Lab 1 要求，不推广到外链论文和视频。MapReduce 论文使用自主中文精读。L1 视频元数据标示 Creative Commons Attribution；当前 YouTube 帮助页链接 CC BY 4.0，尚不能据此确定旧视频的具体许可版本。核对记录见 `sources/P1-REVIEW.txt`；本批没有发布视频译稿。

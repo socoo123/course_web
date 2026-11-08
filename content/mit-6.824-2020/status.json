@@ -2,7 +2,7 @@
   "courseId": "mit-6.824-2020",
   "plannedAt": "2026-11-08",
   "updatedAt": "2026-11-08",
-  "phase": "P0_complete",
+  "phase": "P1_complete_with_blocked_draft",
   "plan": "sources/PLAN.txt",
   "versions": {
     "lectures": "MIT 6.824 Spring 2020",
@@ -18,18 +18,20 @@
   "versionMap": "sources/version-map.json",
   "labCodeManifest": "sources/lab-code-manifest.json",
   "interfaceAudit": "sources/INTERFACE-AUDIT.txt",
+  "p1Review": "sources/P1-REVIEW.txt",
   "artifacts": {
     "courseRegistration": "complete",
     "catalogMigration": "mit-6.824 -> mit-6.824-2020; active",
-    "publicResources": "complete_for_P0",
+    "publicResources": "updated_for_P1",
     "mainlineEntries": 21,
     "updateEntries": 10,
     "labEntries": 5,
-    "lectureDocumentsCompleted": 0,
-    "labDocumentsCompleted": 0
+    "lectureDocumentsCompleted": 2,
+    "labDocumentsCompleted": 2,
+    "lectureIllustrationsCompleted": 1
   },
   "sourceCoverage": {
-    "byState": { "reviewed": 31, "fetched": 23, "discovered": 173, "blocked": 1 },
+    "byState": { "reviewed": 37, "fetched": 19, "discovered": 172, "blocked": 1 },
     "mainlineVideoEmbedsResolved": 20,
     "videoMetadataFetched": ["lec01"],
     "mainlineVideoMetadataPending": "lec02–lec20: title, duration, channel and license still to be checked against video metadata",
@@ -40,23 +42,28 @@
     "updatePdfReading": "not_started; manifest read_pages/read_sections are empty",
     "updateGoArticle": "discovered_only; external ACM article not fetched",
     "updatesVideo": "no video links on the 2026 schedule; editorial lab bridge has no lecture video",
-    "fullTranslationLicenses": "not_verified; check each source before full translation"
+    "fullTranslationLicenses": "P1: official 2020 course notes and 2026 Lab 1 use course-site CC BY 3.0 US; other sources checked individually in later batches",
+    "mapreduceReading": "reviewed: 13-page OSDI 2004 PDF, sections 1-8 and Appendix A; figures 1-4 and table 1 visually checked; independent Chinese commentary, not full translation",
+    "mapreduceReadingSha256": "9cfef3ef1b8fe1a1b66c7221f56c2eeca0b15d6608ea68b0c85a38bfbffd8ce5",
+    "lec01VideoLicense": "CC Attribution label verified in saved metadata; current YouTube help links CC BY 4.0, historical video-specific version unresolved; no draft published"
   },
   "sample": {
     "lecture": "lec01",
-    "officialNotes": "fetched",
+    "officialNotes": "reviewed",
     "videoId": "cQP8WApzIQQ",
     "durationSeconds": 4775,
-    "videoMetadata": "fetched",
+    "videoMetadata": "reviewed",
     "captions": "blocked",
-    "captionError": "HTTP 429 while downloading English captions; see sources/lec01-caption-download.log",
-    "notes": "not_started",
-    "draft": "not_started",
-    "materials": "not_started"
+    "captionError": "One P1 retry still returned HTTP 429; see sources/lec01-caption-p1.log; no usable captions",
+    "notes": "complete",
+    "draft": "blocked_captions",
+    "materials": "complete_independent_reading",
+    "style": "Written sample delivered under PLAN P1 fallback: concepts/invariants/self-checks; source-located reading; requirements translation and non-solution lab guide",
+    "videoCoverage": "not_reviewed; no timestamps or classroom coverage claimed"
   },
   "batches": {
     "P0": "complete",
-    "P1": "not_started",
+    "P1": "complete_with_blocked_draft",
     "P2": "not_started",
     "P3": "not_started",
     "P4": "not_started",
@@ -65,7 +72,7 @@
   },
   "content": {
     "lectures": {
-      "lec01": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec01": { "notes": "complete", "draft": "blocked_captions", "materials": "complete_independent_reading" },
       "lec02": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
       "lec03": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
       "lec04": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
@@ -98,7 +105,7 @@
       "update-bft": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" }
     },
     "labs": {
-      "mr": { "zh": "not_started", "guide": "not_started", "en": "not_published" },
+      "mr": { "zh": "complete", "guide": "complete", "en": "not_published" },
       "kvsrv": { "zh": "not_started", "guide": "not_started", "en": "not_published" },
       "raft": { "zh": "not_started", "guide": "not_started", "en": "not_published" },
       "kvraft": { "zh": "not_started", "guide": "not_started", "en": "not_published" },
@@ -116,19 +123,27 @@
     },
     {
       "id": "lec01-captions-429",
-      "status": "blocked",
-      "issue": "No usable captions; do not generate a time-coded draft from lecture notes.",
+      "status": "blocked_after_P1_retry",
+      "issue": "One P1 retry with retries disabled still returned HTTP 429; no usable captions, draft remains absent. Written P1 sample delivered under planned fallback.",
       "blocks": ["P1 lec01 draft"],
-      "log": "sources/lec01-caption-download.log"
+      "log": "sources/lec01-caption-p1.log",
+      "blocksNextBatch": false
+    },
+    {
+      "id": "lec01-video-license-version",
+      "status": "unresolved",
+      "issue": "Saved video metadata identifies CC Attribution but not its version. Current YouTube help links CC BY 4.0; do not infer the historical video-specific version from it.",
+      "mitigation": "No video draft published; source-specific evidence retained in sources/P1-REVIEW.txt",
+      "blocksNextBatch": false
     }
   ],
   "labTests": "not_run",
   "learnerLabCompletion": "not_tracked",
   "validation": {
     "checkedAt": "2026-11-08",
-    "contentIntegrity": "passed: catalog, lecture/lab IDs, video mapping, internal routes, source hashes, pinned archive and status coverage",
+    "contentIntegrity": "passed: P1 metadata, lecture/lab IDs, internal routes, image existence and SVG XML, source SHA-256 hashes; draft correctly absent; git diff --check",
     "siteBuild": "passed: npm run build (tsc --noEmit + vite build)",
     "labTests": "not_run"
   },
-  "next": "P1: L1 sample + 2026 Lab 1; verify per-source licenses, fetch MapReduce reading and retry captions once; if captions remain blocked, keep draft absent and continue notes/materials/lab documents"
+  "next": "P2: L2/L5 + update-linearizability + 2026 Lab 2. Reuse P1 document boundaries and pinned interfaces; retain L1 draft blocker until captions become available, without repeated retries."
 }
