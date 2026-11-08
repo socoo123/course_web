@@ -1,0 +1,130 @@
+{
+  "course_id": "mit-6.824-2021",
+  "lecture_id": "lec04",
+  "batch": "P3",
+  "review_file": "p3-lec04/review.txt",
+  "content_status": "completed_text_review_with_explicit_caption_gaps",
+  "sources": [
+    {
+      "id": "lec04-2021-notes-1",
+      "url": "http://nil.csail.mit.edu/6.824/2021/notes/l-vm-ft.txt",
+      "retrieved_at": "2026-11-08T15:00:00.201542+00:00",
+      "last_modified": "Tue, 02 Mar 2021 21:01:22 GMT",
+      "file": "p3-lec04/l-vm-ft.txt",
+      "sha256": "be1f74afa3150856c508ed4468f6072ca53eb9621daa26ffbe1fd463857af473",
+      "status": "reviewed",
+      "scope": "Complete 312-line lecture outline linked by the 2021 schedule; original first line says 2020. Snapshot modified after the lecture; not silently relabelled. Classroom-only outline not duplicated as materials.",
+      "license": "Course-authored content: CC BY 3.0 US, per archived 2021 course homepage; attribution retained."
+    },
+    {
+      "id": "lec04-2021-readings-1",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/vm-ft.pdf",
+      "retrieved_at": "2026-11-08T15:00:03.508754+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "file": "p3-lec04/vm-ft.pdf",
+      "sha256": "f9da1a709d98d69c850e94c02952d95958585d4287b020f0c19626f4cafc79c5",
+      "status": "reviewed",
+      "scope": "All PDF pages 1-10 / printed pages 30-39: abstract, sections 1-7, acknowledgments and section 8 reference list. Viewed rendered pages 1,2,3,5,7,8,9; all Figures 1-4 and Tables 1-2 visually checked. Cited external papers not independently read. Independent Chinese close reading, not full translation.",
+      "license": "No explicit public full-translation/republication permission verified; course CC license not inherited by this paper."
+    },
+    {
+      "id": "lec04-2021-faq-1",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/vm-ft-faq.txt",
+      "retrieved_at": "2026-11-08T15:00:04.088784+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "file": "p3-lec04/vm-ft-faq.txt",
+      "sha256": "d9a7e833b3b109bd6af68dff97facba6471b53965f959e26a5c7d296b6426428",
+      "status": "reviewed",
+      "scope": "Complete 179-line FAQ; virtualization, bounce buffers, arbitration, output duplication, pending I/O, counters and fault model cross-checked. Speculation about completeness of deterministic replay labelled as such.",
+      "license": "Course-authored FAQ: CC BY 3.0 US, per archived 2021 course homepage; attribution retained."
+    },
+    {
+      "id": "lec04-2021-video-metadata",
+      "url": "https://www.youtube.com/watch?v=gXiDmq1zDq4",
+      "retrieved_at": "2026-11-08T15:00:02.030819+00:00",
+      "last_modified": null,
+      "file": "p3-lec04/video.metadata.json",
+      "sha256": "9708e67b4825eed1c55a13670a722906ea77e3352b9f773a672e0bffd7150e9e",
+      "status": "reviewed",
+      "scope": "Independent yt-dlp query filtered in memory. Lecture 4: Primary-Backup Replication; 5580 seconds; channel MIT 6.824: Distributed Systems; upload 2021-02-25. No complete player response, signed media URL, audio or video archived.",
+      "license": "Video metadata: Creative Commons Attribution license (reuse allowed); exact CC version unspecified."
+    },
+    {
+      "id": "lec04-2021-asr-en-orig",
+      "url": "https://www.youtube.com/watch?v=gXiDmq1zDq4",
+      "retrieved_at": "2026-11-08T14:59:37.864171+00:00",
+      "last_modified": null,
+      "file": "p3-lec04/lec04-2021.en-orig.json3",
+      "sha256": "9e4cd5a7e4d3c0f81c7be1c717373474ee3c97699953aa12bd04aab8c664148a",
+      "status": "reviewed",
+      "scope": "Original-language English automatic captions actively downloaded with yt-dlp. All 2484 nonempty cues read sequentially through normalized minute grouping, 3199-5581520 ms. Breakout discussion missing, only scattered administrative cues 42:18-50:00. Final utterance incomplete; no audio/visual verification. Download completion UTC timestamp used for retrieved_at.",
+      "license": "Associated video metadata independently labels CC Attribution reuse allowed; version unspecified. ASR accuracy not guaranteed."
+    },
+    {
+      "id": "lec04-2021-asr-en",
+      "url": "https://www.youtube.com/watch?v=gXiDmq1zDq4",
+      "retrieved_at": "2026-11-08T14:59:42.544926+00:00",
+      "last_modified": null,
+      "file": "p3-lec04/lec04-2021.en.json3",
+      "sha256": "9e4cd5a7e4d3c0f81c7be1c717373474ee3c97699953aa12bd04aab8c664148a",
+      "status": "reviewed",
+      "scope": "English automatic caption alias, byte-identical to en-orig; not auto-translated. Same full text review and gaps as en-orig. Download completion UTC timestamp used for retrieved_at.",
+      "license": "Associated video metadata independently labels CC Attribution reuse allowed; version unspecified."
+    },
+    {
+      "id": "lec04-2021-captions-normalized",
+      "url": "https://www.youtube.com/watch?v=gXiDmq1zDq4",
+      "retrieved_at": "2026-11-08T14:59:37.864171+00:00",
+      "last_modified": null,
+      "file": "p3-lec04/captions/captions.normalized.json",
+      "sha256": "e57cf7c7aa76408d45391f56794154bcd92a284554fc87cd28f5206423b83d32",
+      "status": "reviewed",
+      "scope": "Derived with the required skill normalize_captions.py, generated 2026-11-08T15:00:12Z; retrieved_at refers to parent source. 2484 cues; monotonic starts, all cue starts uniquely assigned to 36 continuous draft segments; final end exceeds video duration by 1520 ms, preserved. Structure checks do not prove translation correctness.",
+      "license": "Derived from video captions with independently queried CC Attribution label; exact version unspecified."
+    },
+    {
+      "id": "lec04-2021-captions-vtt",
+      "url": "https://www.youtube.com/watch?v=gXiDmq1zDq4",
+      "retrieved_at": "2026-11-08T14:59:37.864171+00:00",
+      "last_modified": null,
+      "file": "p3-lec04/captions/captions.en.vtt",
+      "sha256": "a6722cc8d31859abd62fed1579f8b561dd46bcb7f37f1571fa2e5bc2053d77b0",
+      "status": "reviewed",
+      "scope": "Timed VTT derived by the required normalization script from all 2484 cues; same original timing and content. retrieved_at refers to parent source.",
+      "license": "Derived from video captions with independently queried CC Attribution label; exact version unspecified."
+    },
+    {
+      "id": "lec04-2021-captions-transcript",
+      "url": "https://www.youtube.com/watch?v=gXiDmq1zDq4",
+      "retrieved_at": "2026-11-08T14:59:37.864171+00:00",
+      "last_modified": null,
+      "file": "p3-lec04/captions/transcript.en.txt",
+      "sha256": "f80d8e28dd522b9602932b5b9c319dada983e00eed7cfc3ccba24001fc5741a5",
+      "status": "reviewed",
+      "scope": "Complete normalized timestamped English transcript; all text read via minute-grouped derivative. No ASR words silently corrected in source files. retrieved_at refers to parent source.",
+      "license": "Derived from video captions with independently queried CC Attribution label; exact version unspecified."
+    },
+    {
+      "id": "lec04-2021-reading-by-minute",
+      "url": "https://www.youtube.com/watch?v=gXiDmq1zDq4",
+      "retrieved_at": "2026-11-08T14:59:37.864171+00:00",
+      "last_modified": null,
+      "file": "p3-lec04/reading-by-minute.txt",
+      "sha256": "6245bf8afc49ed4eae1debb96dce9fd3570e4eae6d9e2c6f4322baf2c106fbed",
+      "status": "reviewed",
+      "scope": "All cue text concatenated by start minute without summarization or repetition removal; all 177 lines read sequentially, including post-class questions and unfinished ending. retrieved_at refers to parent source.",
+      "license": "Derived from video captions with independently queried CC Attribution label; exact version unspecified."
+    },
+    {
+      "id": "lec04-2021-paper-readable-extraction",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/vm-ft.pdf",
+      "retrieved_at": "2026-11-08T15:00:03.508754+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "file": "p3-lec04/vm-ft.pymupdf.txt",
+      "sha256": "686cd0227b90c73e862f13db0913294d8056078f105957e9e9ece4a7f83984a1",
+      "status": "reviewed",
+      "scope": "PyMuPDF extraction of all 10 pages; all 1302 lines read. Generated after pdftotext layout output showed overlapping duplicated text; compared to rendered pages. retrieved_at and last_modified refer to parent PDF.",
+      "license": "Paper rights remain with original holders; local reading derivative, not full-text public republication."
+    }
+  ]
+}

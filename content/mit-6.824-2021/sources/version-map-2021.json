@@ -12,11 +12,11 @@
   "mainline": [
     { "id": "lec01", "related_2026_lecture": 1 },
     { "id": "lec02", "related_2026_lecture": 2, "context": "P2 reviewed actual 2021 captions, crawler.go, kv.go and six condvar vote examples; old unversioned KV is not the 2026 Lab 2 API" },
-    { "id": "lec03", "related_2026_lecture": 3 },
-    { "id": "lec04", "related_2026_lecture": null },
-    { "id": "lec05", "related_2026_lecture": 6 },
+    { "id": "lec03", "related_2026_lecture": 3, "context": "P3 uses actual 2021 captions and 2021 schedule-linked notes/FAQ/GFS paper; notes retain internal 2020 heading; current video and paper are independently reviewed" },
+    { "id": "lec04", "related_2026_lecture": null, "context": "P3 uses actual 2021 captions and 2021 schedule-linked VM-FT material; notes retain internal 2020 heading and post-lecture Last-Modified; missing breakout discussion and incomplete final utterance remain explicit" },
+    { "id": "lec05", "related_2026_lecture": 6, "context": "2021 assigned reading through end of section 5; unique shared paper commentary at lec05/materials.zh.md, also covering L7 assigned sections; classroom Lab 2 maps thematically to pinned 2026 Lab 3. All 2426 caption texts reviewed; notes retain internal 2020 Lecture 6 heading, FAQ Last-Modified is after video upload; unavailable breakout and classroom corrections explicit" },
     { "id": "lec06", "related_2026_lecture": null, "context": "2021 Lab 1 Q&A; no video listed" },
-    { "id": "lec07", "related_2026_lecture": 7 },
+    { "id": "lec07", "related_2026_lecture": 7, "context": "2021 assigned reading section 7 to end, excluding section 6; references shared lec05/materials.zh.md instead of duplicating a materials tab; paper request-ID deduplication is not the 2026 versioned Put API. All 2732 caption texts reviewed; notes retain 2020 Lecture 7 header; classroom CondInstallSnapshot is not a pinned 2026 interface requirement; election/matchIndex inconsistencies explicitly annotated" },
     { "id": "lec08", "related_2026_lecture": 10, "context": "Different-year Raft lab Q&A; not interchangeable" },
     { "id": "lec09", "related_2026_lecture": 9 },
     { "id": "lec10", "related_2026_lecture": 5, "context": "P2 reviewed actual 2021 captions and 78-page mit-6824-go-2021.pdf; 2026 patterns differences still to review, no other-year example package used" },
@@ -49,7 +49,7 @@
   "labs": [
     { "id": "mr", "official_2026_number": 1, "old_2021_number": 1, "prerequisite_lectures": ["lec01", "lec02"], "implementation_dependencies": [], "commands": ["make mr"] },
     { "id": "kvsrv", "official_2026_number": 2, "old_2021_number": null, "prerequisite_lectures": ["lec02", "lec10", "update-linearizability"], "implementation_dependencies": [], "commands": ["make kvsrv1", "make lock1"], "content_status": "P2 requirements translation and guide complete; pinned interfaces statically reviewed; tests not run" },
-    { "id": "raft", "official_2026_number": 3, "old_2021_number": 2, "prerequisite_lectures": ["lec03", "lec04", "lec05", "lec07"], "implementation_dependencies": [], "commands": ["make raft1"] },
+    { "id": "raft", "official_2026_number": 3, "old_2021_number": 2, "prerequisite_lectures": ["lec03", "lec04", "lec05", "lec07"], "implementation_dependencies": [], "commands": ["make raft1"], "content_status": "P3 3A-D requirements translation and guide complete; nine pinned source/test/Makefile files fully read; tests not run", "interface_notes": "raftapi.Raft + ApplyMsg; Persister.Save atomically replaces state and snapshot; service restores initial snapshot, then expects advancing application messages; no CondInstallSnapshot or Kill interface requirement" },
     { "id": "kvraft", "official_2026_number": 4, "old_2021_number": 3, "prerequisite_lectures": ["lec09", "update-linearizability", "update-lab-bridge"], "implementation_dependencies": ["raft"], "optional_code_reuse": ["kvsrv"], "commands": ["make rsm1", "make kvraft1"] },
     { "id": "shardkv", "official_2026_number": 5, "old_2021_number": 4, "prerequisite_lectures": ["update-lab-bridge"], "optional_context": ["lec11", "lec13", "lec14"], "implementation_dependencies": ["kvsrv", "raft", "kvraft"], "commands": ["make shardkv"] }
   ],
@@ -59,6 +59,6 @@
   "shared_readings": [
     { "name": "Linearizability (1990)", "owner": "lectures/update-linearizability/materials.zh.md", "users": ["update-linearizability", "kvsrv", "kvraft"], "status": "P2 independent reading through 3.1 complete", "url": "https://pdos.csail.mit.edu/6.824/papers/p463-herlihy.pdf" },
     { "name": "MapReduce", "owner": "lectures/lec01/materials.zh.md", "users": ["lec01", "mr"], "status": "P1 commentary reused with original source attribution" },
-    { "name": "Raft extended", "owner": "lectures/lec05/materials.zh.md", "users": ["lec05", "lec07", "raft", "kvraft"], "status": "planned", "url": "http://nil.csail.mit.edu/6.824/2021/papers/raft-extended.pdf" }
+    { "name": "Raft extended", "owner": "lectures/lec05/materials.zh.md", "users": ["lec05", "lec07", "raft", "kvraft"], "status": "P3 independent reading complete: abstract, sections 1-5.6 and 7-12 plus reference list; section 6 excluded; external cited works not counted", "source_id": "raft-paper-2021-p3", "url": "http://nil.csail.mit.edu/6.824/2021/papers/raft-extended.pdf" }
   ]
 }

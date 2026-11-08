@@ -120,3 +120,19 @@ P0：2026 实验版本与接口核对
   Get Step 只比较 Value，因此不能用该检查器替代全部 Version/Err 规格检查。
 - 指导已登记可靠筛选及 make kvsrv1 / make lock1；完整记录 P2-REVIEW.txt。
 - 官方实验文本许可重新查 home-2026 的 CC BY 3.0 US；论文采用自主精读。
+
+九、P3 Lab 3 补充核对（2026-11-08）
+- 固定归档哈希校验后，完整阅读 raft1/raft.go、raftapi/raftapi.go、
+  tester1/persister.go、raft1/server.go、proxy.go、test.go、raft_test.go、
+  main/raft1d.go 和 src/Makefile；未编译或运行实验测试。
+- raftapi.Raft 没有 CondInstallSnapshot、Kill；测试器通过独立进程控制故障。
+- ApplyMsg 的 CommandValid / SnapshotValid 必须恰好一个为 true。
+- 服务在构造 Raft 前取得初始快照副本，并自行恢复应用状态；第一条交付为
+  更高索引快照或紧接恢复快照的命令，不能重复应用旧快照或旧命令。
+- Save 原子替换两份数据；重启后每次保存仍需携带当前快照。
+  TestSnapshotInit3D 的两次重启验证此契约。
+- TestSnapshotBasic3D 不要求远程安装快照即可通过；MAXLOGSIZE=2000
+  是持久 Raft 状态检查阈值，不是应用快照限制。
+- checkOneLeader 检查同任期唯一性，不要求旧分区 leader 立即自知失效。
+- 官方页全部任务/提示已阅读并翻译；统计数字的文字/样例不一致已校注。
+- 细节见 P3-REVIEW.txt；指导不提供完整答案。

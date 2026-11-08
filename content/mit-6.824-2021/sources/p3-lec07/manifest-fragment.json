@@ -1,0 +1,147 @@
+{
+  "course_id": "mit-6.824-2021",
+  "lecture_id": "lec07",
+  "batch": "P3",
+  "review_file": "p3-lec07/review.txt",
+  "acquisition_file": "p3-lec07/acquisition.json",
+  "content_status": "completed_text_review_with_explicit_caption_gaps",
+  "sources": [
+    {
+      "id": "lec07-2021-notes-1",
+      "url": "http://nil.csail.mit.edu/6.824/2021/notes/l-raft2.txt",
+      "retrieved_at": "2026-11-08T15:14:04.982422+00:00",
+      "last_modified": "Thu, 11 Mar 2021 23:52:15 GMT",
+      "file": "p3-lec07/l-raft2.txt",
+      "sha256": "d21cb513f122da71b952be16f6dea2e3f751d62f180b3dee8fc2df70c07a4457",
+      "status": "reviewed",
+      "scope": "All 496 lines read. The 2021 schedule links this file, but its original header says 6.824 2020 Lecture 7; not claimed to be newly authored in 2021. Last-Modified is preserved; upload date alone cannot establish whether this text predates the class. Differences from the recorded lecture are documented in review.txt.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "basis": "Existing home-2021.html snapshot links rel=license; applies to course-authored text, not external video/paper.",
+        "evidence_file": "home-2021.html"
+      },
+      "content_type": "text/plain"
+    },
+    {
+      "id": "lec07-2021-faq-1",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/raft2-faq.txt",
+      "retrieved_at": "2026-11-08T15:14:06.557795+00:00",
+      "last_modified": "Thu, 11 Mar 2021 23:52:15 GMT",
+      "file": "p3-lec07/raft2-faq.txt",
+      "sha256": "9b607e22450aac25f455dd5226dd809b9d376a585fdbaabd6418a09238fa89f9",
+      "status": "reviewed",
+      "scope": "All 563 lines read. Used to check snapshots, stale snapshot rejection, persistence, log rollback and client semantics. Membership-change questions were read but not expanded into the course's deliberately skipped paper section 6. Historical lab numbering is not treated as the 2026 interface.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "basis": "Existing home-2021.html snapshot links rel=license; applies to course-authored text, not external video/paper.",
+        "evidence_file": "home-2021.html"
+      },
+      "content_type": "text/plain"
+    },
+    {
+      "id": "lec07-2021-video-1-metadata",
+      "url": "https://youtu.be/h3JiQ_lnkE8",
+      "retrieved_at": "2026-11-08T15:14:26.616373+00:00",
+      "last_modified": null,
+      "file": "p3-lec07/metadata.json",
+      "sha256": "3a1cce0a281aeab9e4523ebae3932b535f59e308f44a83411535a91c43ff48f0",
+      "status": "reviewed",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "last_modified_note": "Not exposed by yt-dlp for this metadata extraction.",
+      "scope": "All metadata fields read: Lecture 7: Fault Tolerance: Raft (2), 6526 seconds, MIT 6.824: Distributed Systems, upload 20210311. License label independently queried for this video during acquisition; specific CC version unknown. No audio or video reviewed."
+    },
+    {
+      "id": "lec07-2021-video-1-captions-en-orig",
+      "url": "https://youtu.be/h3JiQ_lnkE8",
+      "retrieved_at": "2026-11-08T15:14:23.420523+00:00",
+      "last_modified": null,
+      "file": "p3-lec07/video.en-orig.json3",
+      "sha256": "1b0eb974f8c55d5c00e686b556d256a3a90d6b6a286497b81c95ebedd4946380",
+      "status": "reviewed",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "caption_type": "English original-language automatic captions (ASR)",
+      "language": "en-orig",
+      "last_modified_note": "Caption HTTP Last-Modified not exposed in yt-dlp download result.",
+      "scope": "All 2732 cue texts read sequentially through unchanged normalized minute grouping, with targeted timestamped transcript checks. 6000-6527440 ms; no captions in the first 6 seconds, not assumed silent; breakout discussion absent, only administrative/isolated cues at 61:16-69:32; post-class questions retained; last cue overruns metadata duration by 1440 ms. Original ASR untouched. No audio/visual verification.",
+      "derived_files": [
+        "p3-lec07/captions/captions.normalized.json",
+        "p3-lec07/captions/transcript.en.txt",
+        "p3-lec07/captions/reading-by-minute.txt"
+      ]
+    }
+  ],
+  "derived_files": [
+    {
+      "id": "lec07-2021-video-1-derived-captions.normalized.json",
+      "url": "https://youtu.be/h3JiQ_lnkE8",
+      "retrieved_at": "2026-11-08T15:14:23.420523+00:00",
+      "last_modified": null,
+      "file": "p3-lec07/captions/captions.normalized.json",
+      "sha256": "e004d6c29b042d3d97169102e33d0c88f01a6558dae1b0a930155815f271f57f",
+      "status": "reviewed",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "derived_from": "p3-lec07/video.en-orig.json3",
+      "generated_at": "2026-11-08T15:14:26.677019+00:00",
+      "transformation": "Skill normalize_captions.py; no ASR corrections.",
+      "scope": "All cue objects structurally parsed; all text read via minute grouping. Starts and ends monotonic, durations nonnegative; original final 1440 ms overrun preserved. Timing structure is not audio/visual verification."
+    },
+    {
+      "id": "lec07-2021-video-1-derived-transcript.en.txt",
+      "url": "https://youtu.be/h3JiQ_lnkE8",
+      "retrieved_at": "2026-11-08T15:14:23.420523+00:00",
+      "last_modified": null,
+      "file": "p3-lec07/captions/transcript.en.txt",
+      "sha256": "3c924018981b4b3c5c78eddd9550f7fd6fc38fba95f9cef22116ae17a4f11c23",
+      "status": "reviewed",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "derived_from": "p3-lec07/video.en-orig.json3",
+      "generated_at": "2026-11-08T15:14:26.677299+00:00",
+      "transformation": "Skill normalize_captions.py; no ASR corrections.",
+      "scope": "Full cue text read via minute grouping; lines 1500-1684 additionally read directly to locate breakout boundaries. No ASR or original timing edits."
+    },
+    {
+      "id": "lec07-2021-video-1-derived-reading-by-minute.txt",
+      "url": "https://youtu.be/h3JiQ_lnkE8",
+      "retrieved_at": "2026-11-08T15:14:23.420523+00:00",
+      "last_modified": null,
+      "file": "p3-lec07/captions/reading-by-minute.txt",
+      "sha256": "68eb12eaff29180a055a2b70ee9f2980e1192bf5c812fc2a4751fed91b951a03",
+      "status": "reviewed",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "derived_from": "p3-lec07/video.en-orig.json3",
+      "generated_at": "2026-11-08T15:14:26.677381+00:00",
+      "transformation": "Skill normalizer; minute reader groups unchanged cue texts by start minute.",
+      "scope": "All 314 lines read in order in three bounded reads: 1-110,111-206,207-314. Concatenated text checked equal to all 2732 normalized cue texts, including post-class questions and goodbye."
+    }
+  ],
+  "shared_reading": {
+    "file": "p3-raft-shared/raft-extended.pdf",
+    "review_file": "p3-raft-shared/review.txt",
+    "materials_route": "#/c/mit-6.824-2021/lec/lec05?v=materials",
+    "assigned_scope": "Paper sections 7 through the end; shared owner has completed the reading, with section 6 excluded from combined L5/L7 coverage.",
+    "local_review_scope": "Read shared materials and review record; targeted checks of Figure 2,7,8,12,13 and relevant text on PDF pages 4,7,8,12,13. No claim of a fresh complete paper reading."
+  },
+  "caption_time_structure": {
+    "cue_count": 2732,
+    "first_start_ms": 6000,
+    "last_end_ms": 6527440,
+    "metadata_duration_seconds": 6526,
+    "initial_uncaptioned_ms": 6000,
+    "tail_overrun_ms": 1440,
+    "draft_segment_count": 40,
+    "draft_start": "00:00",
+    "draft_end": "108:46",
+    "audio_reviewed": false,
+    "video_frames_reviewed": false,
+    "interpretation": "Textual review and continuous editorial timeline, not verified silence, image reconstruction, or word-aligned translation."
+  },
+  "issues": [
+    "First six seconds uncaptioned; breakout technical discussion unavailable.",
+    "Last caption ends 1440 ms after integer metadata duration; raw timing retained.",
+    "Lecture figure/election/matchIndex inconsistencies and uncertain history drawing wording are explicitly annotated in draft and review.",
+    "Video CC Attribution label has no specific version in metadata.",
+    "2021-linked lecture outline retains a 2020 header; historical lab interfaces are not 2026 requirements."
+  ]
+}

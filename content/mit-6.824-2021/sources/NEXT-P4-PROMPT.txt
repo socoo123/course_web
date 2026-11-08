@@ -1,0 +1,11 @@
+继续完成 MIT 6.824 中文课程 P4。先读取项目 AGENTS.md、technical-video-notes skill，以及 content/mit-6.824-2021/sources/PLAN.txt、status.json、manifest-2021.json、P3-REVIEW.txt 和来源清单，按计划确认范围。
+
+主线固定 MIT 6.824 Spring 2021；实验固定 MIT 6.5840 Spring 2026，代码提交 513cac0aef010750fc74688da8a395974a83cf7a。
+
+本批完成：2021 L9 ZooKeeper、update-lab-bridge 的 RSM 部分、2026 Lab 4 A–C。桥接页明确哪些内容已完成；分片迁移部分留给 P5，不以占位摘要冒充完成。
+
+允许多 agent 并行处理独立内容，主 agent 负责共享元数据和最终整合。先主动获取 L9 对应 2021 字幕，逐视频核对标题、时长、频道与许可；按真实时间顺序整理问答与讲授，明确实际文本阅读范围及音画核验边界。核对 2021 原版讲义、ZooKeeper 论文及 FAQ，notes/draft/materials 分工清楚。
+
+Lab 4 严格依据固定提交的 raftapi、kvraft1/rsm、KV 与测试接口：StateMachine.DoOp/Snapshot/Restore、Submit、版本化 Get/Put、ErrWrongLeader，以及 RSM/KV 快照协作。复用 L5 的 Raft 共享阅读和 P3 的恢复契约；持久化方法是 Persister.Save，不套用旧实验。提供要求中译与思路指导，不给完整答案。
+
+只修改 content/，同步课程元数据、状态、来源清单、版本映射与计划。完成最小必要检查、git diff --check 和 npm run build；通过后提交并推送 GitHub。最后简要汇报产物、实际资料边界、提交信息，并生成 P5 可直接复制的提示词。

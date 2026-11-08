@@ -1,6 +1,6 @@
 ---
 source: MIT 6.824 Spring 2021 官方课表与课程信息；MIT 6.5840 Spring 2026 官方课表、实验页与固定代码
-status: P1/P2 已完成：2021 L1/L2/L10 字幕整理与笔记，MapReduce 与线性一致性精读，2026 Lab 1/2 说明及指导。字幕已全部文本阅读，未逐段回听音轨；实验测试未运行。
+status: P1–P3 已完成：2021 L1/L2/L3/L4/L5/L7/L10 字幕整理与笔记，共享论文精读及线性一致性专题，2026 Lab 1–3 说明与指导。已获取字幕全部文本阅读，分组与识别缺口明确保留；未核验视频音画，实验测试未运行。
 license: 本页为编者自主导航；外链论文、视频、讲义与实验要求分别核实许可。
 ---
 
@@ -100,7 +100,7 @@ go version
 
 2026 课表没有为这些条目列视频；按书面材料制作。2026 L13 Chain Replication 的讲义与论文归入 2021 L11 的阅读对照；2026 L19 SUNDR 归入 2021 L18。2026 L10 Raft 问答作为 Lab 3 的补充入口。
 
-**MapReduce (2004)** 由 [L1 课程资料](#/c/mit-6.824-2021/lec/lec01?v=materials)集中精读。**Raft extended (2014)** 由 [L5 课程资料](#/c/mit-6.824-2021/lec/lec05?v=materials)集中展开：L5 读至 §5 末，L7 读 §7 至末、跳过 §6；Lab 3 不实现成员变更，Lab 4 回看快照。**事务**指定章节放 L13，**线性一致性**论文至 §3.1 放对应 Updates。
+**MapReduce (2004)** 由 [L1 课程资料](#/c/mit-6.824-2021/lec/lec01?v=materials)集中精读。**Raft extended (2014)** 由 [L5 课程资料](#/c/mit-6.824-2021/lec/lec05?v=materials)集中展开：L5 读至 §5 末，L7 读 §7 至末、跳过 §6；L7 不再建第二份论文正文。Lab 3 不实现成员变更，Lab 4 回看快照。论文的请求编号去重与免日志读是阅读主题，2026 实验仍以版本化 Put、实际索引和恢复契约为准。**事务**指定章节放 L13，**线性一致性**论文至 §3.1 放对应 Updates。
 
 Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector 文档；动态网页应对照所用工具链，不当作 2021 原文。L2 的 Go Tour 是共享入门入口，不在各讲重复翻译；L2 讲义／代码与 L10 幻灯片均随课堂译稿走读，不再制作重复的 materials 标签。
 
@@ -115,15 +115,19 @@ Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector �
 - MIT 6.824 Spring 2021：[官方课表](http://nil.csail.mit.edu/6.824/2021/schedule.html)、[课程信息](http://nil.csail.mit.edu/6.824/2021/general.html)。课程讲师 Frans Kaashoek；L10 嘉宾 Russ Cox。
 - L1：[2021 视频](https://www.youtube.com/watch?v=WtZ7pcRSkOA)。字幕与后续时间轴以该视频为准。
 - L15 FaRM：[上半场](https://www.youtube.com/watch?v=07xsfL5E8Ck)、[续集](https://www.youtube.com/watch?v=XwU4jKhBxws)。译稿须分别保留两段的时间轴。
-- 全部视频入口来自官方课表；登记见 `sources/schedule-inventory-2021.json`。以下三条分别查询元数据，频道均为 MIT 6.824: Distributed Systems，各自均标注 CC Attribution（具体版本未明确）：
+- 全部视频入口来自官方课表；登记见 `sources/schedule-inventory-2021.json`。以下七条分别查询元数据，频道均为 MIT 6.824: Distributed Systems，各自均标注 CC Attribution（具体版本未明确）：
 
-| 条目 | 实际视频标题 | 时长 / 上传日 | 字幕文本阅读 |
+| 条目 | 实际视频标题 | 时长 / 上传日 | 已获取英文自动字幕 |
 |---|---|---|---|
 | L1 | Lecture 1: Introduction | 79:08 / 2021-02-16 | 1906 条 |
 | [L2](https://www.youtube.com/watch?v=oZR76REwSyA) | Lecture 2: RPC and Threads | 67:07 / 2021-02-18 | 1898 条 |
+| [L3](https://www.youtube.com/watch?v=6ETFk1-53qU) | Lecture 3: GFS | 66:17 / 2021-02-23 | 1860 条 |
+| [L4](https://www.youtube.com/watch?v=gXiDmq1zDq4) | Lecture 4: Primary-Backup Replication | 93:00 / 2021-02-25 | 2484 条，含课后问答 |
+| [L5](https://www.youtube.com/watch?v=R2-9bsKmEbo) | Lecture 5: Fault Tolerance: Raft (1) | 99:22 / 2021-03-02 | 2426 条 |
+| [L7](https://www.youtube.com/watch?v=h3JiQ_lnkE8) | Lecture 7: Fault Tolerance: Raft (2) | 108:46 / 2021-03-11 | 2732 条 |
 | [L10](https://www.youtube.com/watch?v=IdCbMO0Ey9I) | Lecture 10: Guest Lecture on Go: Russ Cox | 95:27 / 2021-03-25 | 3145 条，含课后问答 |
 
-均保存英文自动字幕，未逐段回听或核对视频画面。L2 分组讨论不在上传录像中；L10 幻灯片代码笔误在译稿另列。其余视频标题、时长、频道和许可仍待逐条核对。
+均保存并完整阅读英文自动字幕，未逐段回听或核对视频画面。L2/L3 分组讨论不在上传录像中；L4 的 42:18–50:00、L5 的 64:07–72:10 与 L7 的 61:16–69:32 保留分组活动及零散会务区间，无法恢复分组技术讨论。L4 末句未完成；L7 开头六秒无字幕，不据此断定静音。L5/L7 的提交判断、任期字段、批处理与匹配索引争论，以及 L10 幻灯片代码笔误，均在译稿单列校注。其余视频标题、时长、频道和许可仍待逐条核对。
 
 ### 2021 指定阅读入口
 
@@ -160,10 +164,12 @@ Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector �
 
 ### 归档与复用说明
 
-归档位于 `content/mit-6.824-2021/sources/`。`schedule-inventory-2021.json` 与 `version-map-2021.json` 记录当前讲次、视频和映射；`manifest-2021.json` 记录本次抓取。无 `-2021` 后缀的原 manifest、inventory、version-map 保留为 P0/P1 的历史记录，不能用于当前编号。
+归档位于 `content/mit-6.824-2021/sources/`。`schedule-inventory-2021.json` 与 `version-map-2021.json` 记录当前讲次、视频和映射；`manifest-2021.json` 及其 `source_fragments` 记录逐来源获取与审阅。无 `-2021` 后缀的原 manifest、inventory、version-map 保留为 P0/P1 的历史记录，不能用于当前编号。
 
 L1 中文译稿按 2021 英文自动字幕的真实时间顺序整理，课堂问答与书面材料的差异单列校注；笔记已对照 2021 讲义并保留实际使用过的 2020 讲义出处。论文精读使用 P1 阅读的 13 页 OSDI 2004 快照，课上展开的词频例子与基本流程转向译稿，不重复铺陈。当前校订记录见 `sources/L1-2021-REVIEW.txt`。
 
 P1 对 2020 视频的 HTTP 429、79:35 时长与 CC 标签仅为历史记录，不能用于 2021 视频。详细历史许可与来源见 `sources/P1-REVIEW.txt`；2026 Lab 1 中译保留课程网站 [CC BY 3.0 US](https://creativecommons.org/licenses/by/3.0/us/) 署名与修改说明。
 
 P2 记录见 `sources/P2-REVIEW.txt`：2021 L2/L10 原始字幕与独立元数据、2021 课堂代码／幻灯片快照、2026 线性一致性论文第 1–9 页，以及固定提交的 Lab 2 接口／测试静态阅读。Lab 2 要求中译沿用 2026 课程网站 CC BY 3.0 US 署名；论文与外链幻灯片不套用网站许可。内容完成不表示实验通过。
+
+P3 记录见 `sources/P3-REVIEW.txt` 和各 `sources/p3-*/review.txt`。GFS 论文完整 15 页、VM-FT 论文完整 10 页，Raft 扩展论文按指定范围跳过 §6；图表实际核对，引用文献的外链全文不算已读。2021 链接的 L3/L4/L5/L7 讲义内部仍写 2020；L4 讲义与 L5 FAQ 的快照修改时间晚于对应课堂，L7 讲义／FAQ 与视频上传同日，但无法判断课前课后，保留这些史料边界。Lab 3 采用固定提交的 `raftapi`、`Persister.Save` 与应用层先恢复快照的契约；说明与指导均基于静态核对，未运行实验。原始字幕、PDF、HTML 和源码归档按既有约定留在本地，提交包含正文、来源清单与审阅记录。

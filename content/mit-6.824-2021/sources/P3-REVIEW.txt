@@ -1,0 +1,154 @@
+P3 阅读、字幕与固定接口审阅记录
+日期：2026-11-08
+主线：MIT 6.824 Spring 2021；实验：MIT 6.5840 Spring 2026。
+固定提交：513cac0aef010750fc74688da8a395974a83cf7a。
+
+一、组织与范围
+先完成 L3 GFS / L4 Primary-Backup，再整合 L5 / L7 Raft 与 Lab 3 A–D。
+各讲 worker 仅写分配的 lecture 目录与独立 sources/p3-lecNN 来源目录。
+主 agent 负责共享 Raft 来源、Lab 3、元数据、来源清单与最终检查。
+Raft 论文唯一正文位置：lectures/lec05/materials.zh.md；L7 引用它。
+逐讲完整阅读、字幕纠错及许可记录见各 sources/p3-lecNN/review.txt。
+
+二、Lab 3 要求与代码核对
+沿用 2026-11-08 12:48:14 UTC 获取的 lab-raft-2026.html。
+Last-Modified: Sun, 01 Feb 2026 18:46:36 GMT。
+SHA-256: 492b2f05bf8452392a94aac9e40d35a2f24211ec23eb2477061cc2b675f0de7a。
+完整阅读 HTML 1–732 行：正文、四项任务、全部提示及终端示例。
+译文保留任务与提示，终端样例压缩为命令、测试范围和时间解释。
+官方示例有四组打印数值，文字说明却称五项，已单列编者校注。
+官网建议 git pull 与本路线固定提交分开说明；未把网站后续更新纳入代码。
+home-2026.html 的 rel=license 链接已重查，为 CC BY 3.0 US。
+协作、提交、工具链、guidance、vis 等外链只列入口，未计为全文已读。
+
+核对归档 lab-code-513cac0aef01.tar.gz 的 SHA-256 与 lab-code-manifest.json
+一致后，在批准的临时目录解压只读；未修改实验代码。
+下列文件均完整静态阅读（路径相对固定实验仓库）：
+  src/raft1/raft.go (216 lines)
+  src/raftapi/raftapi.go (34 lines)
+  src/tester1/persister.go (70 lines)
+  src/raft1/server.go (235 lines)
+  src/raft1/proxy.go (85 lines)
+  src/raft1/test.go (432 lines)
+  src/raft1/raft_test.go (1353 lines)
+  src/main/raft1d.go (16 lines)
+  src/Makefile (66 lines)
+框架其他内部实现未计为通读。未执行 Go 编译或任何实验测试。
+
+关键结论：
+1. Make 返回 raftapi.Raft，参数包括 *tester.Persister 和 chan raftapi.ApplyMsg。
+2. 导入路径 tester1 的包名为 tester；接口为 Start/GetState/Snapshot/PersistBytes。
+3. 无 CondInstallSnapshot 或 Kill 接口要求；测试使用独立服务器进程。
+4. ApplyMsg 恰好一个 CommandValid/SnapshotValid 为 true。
+5. Persister.Save 原子替换 raftstate 与 snapshot；3D 之后不能继续传 nil 清快照。
+6. 服务启动前抓取初始快照副本，服务自己恢复 lastApplied，再消费 ApplyMsg；
+   第一条为更靠后的快照或恢复边界紧接的命令，不能回送旧快照导致状态倒退。
+7. Snapshot(index,bytes) 在各副本可调用；InstallSnapshot 一次发完整快照；不做成员变更。
+8. TestSnapshotBasic3D 刻意让 follower 追上以避免依赖 InstallSnapshot。
+   TestSnapshotInit3D 检查两次重启之间的新保存是否误丢快照。
+9. MAXLOGSIZE=2000 检查持久 Raft 状态大小，不是应用快照大小限制。
+10. checkOneLeader 按任期检查已连接节点，选择最高任期 leader；
+    不要求被隔离的旧 leader 瞬间知道自己过期。
+11. make raft1 构建 main/raft1d 后运行 go test -v -race；阶段通过 RUN 筛选。
+12. 页面评分时间限制不等于测试实际执行报告；本站只制作内容。
+
+主 agent 另定点阅读共享 Raft PDF 第 4 页 Figure 2、第 11 页 §7 开头、
+第 12–13 页 §7 和 §8；实际查看第 4、12 页图像，确认 Figure 2/12/13。
+这部分是 Lab 3 指导交叉核对，不替代后续专责 worker 的完整指定章节阅读。
+首次尝试 HTTPS 论文地址出现 SSLEOFError，改用官方课表 HTTP URL 成功；
+获取记录在 p3-raft-shared/fetch.json。
+
+三、整合与检查
+L3/L4 已先行完成；主 agent 已完整阅读其六份中文正文与审阅记录。
+L3：1860 cues，80–3978880ms；3977秒/66:17；30个连续中文段落。
+  视频 Lecture 3: GFS，6ETFk1-53qU，上传2021-02-23。
+  55:19附近安排的五分钟分组讨论在上传录像未保留，不扩造时间或发言。
+  notes/FAQ 全文及 GFS PDF1–15（§1–9、致谢/文献表）完整阅读；
+  Figure1–3、Table1–6逐图查看，具体页码在p3-lec03/review.txt。
+L4：2484 cues，3199–5581520ms；5580秒/93:00；36个连续中文段落。
+  视频 Lecture 4: Primary-Backup Replication，gXiDmq1zDq4，上传2021-02-25。
+  42:18–50:00分组/会务区间无法恢复技术讨论，末句不完整；保留课后问答。
+  notes/FAQ全文及VM-FT PDF1–10（印刷30–39）完整阅读，所有图表已查看。
+两条视频独立查询CC Attribution标签，具体版本未明；均无音画核验。
+2021路径L3/L4讲义内部仍写2020；L4讲义Last-Modified晚于授课日。
+按2021课表URL、原始响应和2021字幕区分，不偷改文件标题来冒充新版本。
+
+Raft共享论文：主 agent已完整审阅共享中文正文及专责阅读记录。
+专责worker完整读取摘要、§1–5.6、§7–12及末尾文献表，明确排除§6；
+实际查看Figure1–9、12–16与Table1；外链证明/研究材料和引用论文未读。
+PDF9安全性证明将间接提交误指Figure8(d)，按实际图意(e)校注。
+主审对§8.4再精确措辞：论文由Raft提交新任期no-op，不称其必然由服务层提交；
+它不是客户端业务请求，且Figure2未列该步骤，仍须遵循固定Lab3的索引约定。
+论文采用自主精读，未将项目主页CC页脚或USENIX开放下载视为扩展PDF全译授权。
+正文分工：notes提炼不变量/故障例/自测，draft承载真实课堂顺序，
+materials补足论文；Raft只放lec05/materials，L7引用，不生成重复正文。
+L3/L4未添加图：表格、公式足以表达，不为了模板生成重复插图。
+主 agent另抽查原始规范化字幕与中文时间段：
+  L3 35:00–36:50、55:10–56:10、58:50–61:04；
+  L4 41:40–50:20、76:30–80:00、91:00–93:00。
+检查版本最大值反例、分组缺口、重配置推测、输出规则、UDP问题及未完末句，
+与对应正文和校注一致。该抽查是字幕文本对照，不是音画复核；全量字幕阅读
+由各讲专责worker完成，不将主agent抽查表述成主agent全量重读英文字幕。
+
+主 agent编写Lab3后，另由只读review agent对照官方页和固定接口检查：
+未发现实质事实错漏；未运行实验。此复核不意味着测试完整证明了接口规范。
+最终内容检查与构建在L5/L7交付后统一执行并登记。
+
+四、独立来源预获取（随后由讲次 worker 阅读正文）
+L5/L7 来源抓取与正文阅读分开登记：acquisition.json 仅代表 fetched，
+后续 manifest-fragment.json 和逐讲 review.txt 才记录实际阅读范围。
+L5: R2-9bsKmEbo；Lecture 5: Fault Tolerance: Raft (1)；5962秒/99:22；
+  上传2021-03-02；2426 cues，640–5964159ms，末条超整数时长2159ms。
+L7: h3JiQ_lnkE8；Lecture 7: Fault Tolerance: Raft (2)；6526秒/108:46；
+  上传2021-03-11；2732 cues，6000–6527440ms，末条超整数时长1440ms。
+两条视频均独立获取元数据，频道 MIT 6.824: Distributed Systems，
+许可标签 Creative Commons Attribution license (reuse allowed)，具体版本未明。
+每讲 en-orig/en 自动字幕相同，完整播放器及带签名媒体URL未归档。
+初始无字幕区间不直接解释为静音；时间结构检查不证明音画或语义正确。
+L5/L7 notes/FAQ 已按2021课表URL取得HTTP快照；保留文件内部旧标题，不以旧年URL替代。
+
+五、L5 交付整合
+主 agent 完整审阅 L5 notes/draft、review 和来源分片；38段覆盖00:00–99:22，
+专责worker全部阅读2426条字幕文本，含课后问答。讲义195行、FAQ413行已全文阅读。
+讲义首行仍为2020 Lecture6；FAQ Last-Modified为2021-03-11，晚于视频上传日。
+64:07–72:10分组区间无法恢复技术讨论；不以讲义或想象补足。
+Figure7关于currentTerm/lastLogTerm、拒票与退选的现场争论保留；未将讲义中
+计划讲解但课堂未完整展开的日志修复、Figure8/9证明补进L5时间线。
+主 agent 抽查39:54–40:15、92:00–94:00、96:00–98:00原始规范化字幕，
+确认条目覆盖识别疑点、提交与通知混淆、batching回答修正均有独立校注。
+主审修正notes§3小标题的先后关系：节点认知可以晚于提交事实成立。
+主 agent另完整读取L5原版l-raft.txt 195行，确认接口清单与五秒选举阈值的书面对照。
+另读FAQ全部413行，确认其单在途RPC表述与论文批处理/流水线优化须区分；
+FAQ内仍提COPS等旧课表阅读，不据此改写2021主线清单，外链全文不计为已读。
+此抽查仅为文本对照，不是音画复核；未新增插图。
+
+L7交付通知前的工作区已执行一次npm run build，tsc --noEmit与Vite构建通过。
+这次检查仅代表当时工作区；最终整合后的验证结果另记于本记录末尾。
+
+六、L7 交付整合
+主 agent完整审阅L7 notes/draft、SVG源码、review及来源分片。
+专责worker全量顺序读取2732条字幕，40段覆盖00:00–108:46，含课后问答；
+讲义496行、FAQ563行完整阅读，论文规则按实际定点核对范围登记。
+首六秒无字幕不推断静音；61:16–69:32无小组技术讨论内容；末条超时1440ms。
+讲义保留2020 Lecture7标题；讲义与FAQ修改于视频上传同日，无法判断课前课后。
+主 agent抽查07:00–11:00、97:00–99:30、107:00–108:46规范化原字幕，
+确认投票与currentTerm争论、matchIndex/nextIndex混淆及Start返回对象的澄清。
+课堂错误没有被静默改造成正确原话；2021 CondInstallSnapshot与2026接口明确区分。
+新增原创SVG区分快照80、已应用85、已提交88和日志末尾90，不是课堂截图。
+L7继续引用L5唯一共享论文正文，不生成重复materials。
+
+七、最终交付与验收
+P3新增11份讲座正文、2份实验正文、1张自绘SVG；累计20份讲座正文、6份实验正文、3张SVG。
+四讲共9502条字幕文本，144段中文时间区间；全量阅读由各讲worker完成，主agent整合审阅
+全部13份中文正文并做上列定点字幕对照。没有视频音画核验或实验测试。
+来源清单分片及各讲审阅记录纳入提交；原始抓取物按既有规则留在本地。
+python3 sources/check-p3.py（从课程目录理解该相对路径）通过：13份P3正文，
+共享JSON、来源及派生文件哈希、路由/目标正文、图片、SVG XML、代码围栏、视频元数据、
+有意缺省的L7 materials及累计产物数量均通过；脚本需本地原始快照，不是新克隆离线测试。
+四讲字幕起点单调、时长非负、所有起点各落入唯一连续区间；144段完整覆盖视频整数时长，
+末尾超时1880/1520/2159/1440ms保留。时间结构检查不证明译文完整或音画正确。
+最终整合后npm run build通过（tsc --noEmit + vite build），包括新增SVG；
+未因预构建通过就跳过随后变更的最终构建。
+git diff --check与git diff --cached --check均通过；暂存35个文件，全部位于
+content/mit-6.824-2021/，无前端改动、原始媒体/PDF/源码归档或完整实验答案。
+下一批P4：L9 ZooKeeper、RSM桥接、2026 Lab4 A–C；完整提示词NEXT-P4-PROMPT.txt。

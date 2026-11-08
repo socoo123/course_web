@@ -1,0 +1,119 @@
+{
+  "course_id": "mit-6.824-2021",
+  "lecture_id": "lec03",
+  "batch": "P3",
+  "source_inventory": "schedule-inventory-2021.json",
+  "review_file": "p3-lec03/review.txt",
+  "sources": [
+    {
+      "id": "lec03-2021-notes-1",
+      "url": "http://nil.csail.mit.edu/6.824/2021/notes/l-gfs.txt",
+      "retrieved_at": "2026-11-08T14:59:45.261180+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:42 GMT",
+      "file": "p3-lec03/l-gfs.txt",
+      "sha256": "500b73e96c4a5734655f9d5ff1d629ee8d70af2fbfa6d788df11fb80ce0c5dca",
+      "status": "reviewed",
+      "scope": "All 308 lines read. Source is the 2021 schedule URL; internal heading still says 6.824 2020 Lecture 3: GFS. Written-only failure checklist and retrospective are not represented as 2021 spoken coverage.",
+      "license": "Course-authored material under course-site CC BY 3.0 US; does not license external paper or video"
+    },
+    {
+      "id": "lec03-2021-readings-1",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/gfs.pdf",
+      "retrieved_at": "2026-11-08T14:59:47.031170+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:42 GMT",
+      "file": "p3-lec03/gfs.pdf",
+      "sha256": "1728013d8b50cf875a41d480acb16b112fda9513500c391caa2c8951acdf3329",
+      "status": "reviewed",
+      "scope": "Complete PDF pages 1-15: abstract, sections 1-9, acknowledgments and reference list. Viewed rendered pages 3,4,6,11,12,13 for Figures 1-3 and Tables 1-6. Cited external works not independently read. Autonomous study commentary, not full translation; measurements not reproduced.",
+      "license": "ACM 2003 notice on PDF page 1; limited personal/classroom copying permission, no verified public full-translation permission"
+    },
+    {
+      "id": "lec03-2021-faq-1",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/gfs-faq.txt",
+      "retrieved_at": "2026-11-08T14:59:45.231796+00:00",
+      "last_modified": "Tue, 23 Feb 2021 20:27:07 GMT",
+      "file": "p3-lec03/gfs-faq.txt",
+      "sha256": "dd674ae9bbf8fde81cdc46da293584ce4e6994568c5cadff9d339d5d5e43f259",
+      "status": "reviewed",
+      "scope": "All 163 lines read. Master failover wording compared with paper section 5.1.3, checksum granularity compared with section 5.2, record-library deduplication wording compared with section 2.7.2. External interview/disk-study links not independently read.",
+      "license": "Course-authored material under course-site CC BY 3.0 US; external links retain separate terms"
+    },
+    {
+      "id": "lec03-2021-video-metadata",
+      "url": "https://www.youtube.com/watch?v=6ETFk1-53qU",
+      "retrieved_at": "2026-11-08T14:59:29.013671+00:00",
+      "last_modified": null,
+      "file": "p3-lec03/video.metadata.json",
+      "sha256": "16a42af5ecb55b551b2927b22995c5b6e39edbe2877347acabe88260a8987e0b",
+      "status": "reviewed_metadata",
+      "scope": "Independent yt-dlp metadata query, filtered in memory before saving. Lecture 3: GFS; 3977 s; MIT 6.824: Distributed Systems; uploaded 20210223; video id verified. No full player response, signed media URL, media or cookies archived.",
+      "license": "Creative Commons Attribution license (reuse allowed), independently returned for this video; exact CC version unspecified"
+    },
+    {
+      "id": "lec03-2021-captions-en-orig",
+      "url": "https://www.youtube.com/watch?v=6ETFk1-53qU",
+      "retrieved_at": "2026-11-08T14:59:30.805306+00:00",
+      "last_modified": null,
+      "file": "p3-lec03/video.en-orig.json3",
+      "sha256": "867cb400d3b089c9cf313428a9bf71110d0088e3a46628880a57953768eb3f19",
+      "status": "reviewed_text",
+      "scope": "Original-language English automatic captions, all 1860 normalized cues read sequentially; 80-3978880 ms, video duration 3977000 ms. 30 Chinese sections cover 00:00-66:17. Breakout discussion omitted from upload. No audio/visual verification; not a claim of error-free verbatim transcription.",
+      "license": "Associated video metadata reports CC Attribution reuse allowed; exact version unspecified; ASR text archived locally"
+    },
+    {
+      "id": "lec03-2021-captions-en",
+      "url": "https://www.youtube.com/watch?v=6ETFk1-53qU",
+      "retrieved_at": "2026-11-08T14:59:32.784217+00:00",
+      "last_modified": null,
+      "file": "p3-lec03/video.en.json3",
+      "sha256": "867cb400d3b089c9cf313428a9bf71110d0088e3a46628880a57953768eb3f19",
+      "status": "reviewed_text",
+      "scope": "Downloaded English automatic track; byte-identical to en-orig. Not machine-translated captions. Coverage and audio/visual limitations identical to en-orig entry.",
+      "license": "Associated video metadata reports CC Attribution reuse allowed; exact version unspecified; ASR text archived locally"
+    },
+    {
+      "id": "lec03-2021-captions-normalized",
+      "url": "https://www.youtube.com/watch?v=6ETFk1-53qU",
+      "retrieved_at": "2026-11-08T14:59:30.805306+00:00",
+      "last_modified": null,
+      "file": "p3-lec03/captions/captions.normalized.json",
+      "sha256": "daccfd03800156db57cb37dbe0a7e397c2891435b042c8e3900b7787b6c71ed6",
+      "status": "reviewed_text",
+      "scope": "Derived using technical-video-notes/scripts/normalize_captions.py from en-orig; generated 2026-11-08T14:59:44Z, retrieved_at is original source retrieval. 1860 cues, monotonic starts, original overrun retained. No editorial corrections written into raw/normalized ASR.",
+      "license": "Derived from video ASR; independently reported CC Attribution tag, exact version unspecified"
+    },
+    {
+      "id": "lec03-2021-captions-vtt",
+      "url": "https://www.youtube.com/watch?v=6ETFk1-53qU",
+      "retrieved_at": "2026-11-08T14:59:30.805306+00:00",
+      "last_modified": null,
+      "file": "p3-lec03/captions/captions.en.vtt",
+      "sha256": "d2a05d129106d2aa8b73673e47dcf2342df5ab2b81893e6e9948db73c9edae15",
+      "status": "reviewed_text",
+      "scope": "Deterministic VTT derivative of normalized captions; all source text read via timestamped TXT. No replay against media. Original overlapping ASR end times preserved.",
+      "license": "Derived from video ASR; independently reported CC Attribution tag, exact version unspecified"
+    },
+    {
+      "id": "lec03-2021-transcript-text",
+      "url": "https://www.youtube.com/watch?v=6ETFk1-53qU",
+      "retrieved_at": "2026-11-08T14:59:30.805306+00:00",
+      "last_modified": null,
+      "file": "p3-lec03/captions/transcript.en.txt",
+      "sha256": "a8657967a0a3bad0641ef119bc02a134c0c21e9c9e4d7c65763e89b4ff6eb27d",
+      "status": "reviewed_text",
+      "scope": "All 1860 timestamped lines read in source order in ranges 1-650,651-1270,1271-1860. Classroom opening, examples, Q&A, return from omitted breakout and ending retained in Chinese narrative; repetitions condensed, technical corrections labeled.",
+      "license": "Derived from video ASR; independently reported CC Attribution tag, exact version unspecified"
+    },
+    {
+      "id": "lec03-2021-paper-extracted-text",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/gfs.pdf",
+      "retrieved_at": "2026-11-08T14:59:47.031170+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:42 GMT",
+      "file": "p3-lec03/gfs.text.txt",
+      "sha256": "6e7630d605f1bc253bc71ac5726837d5d12d34102f67af43ac3784ada189e074",
+      "status": "reviewed",
+      "scope": "Local pdftotext -layout derivative, all 1054 lines and 15 pages read; tables/figures checked against rendered pages, not interpreted from extraction alone. Derivative generated 2026-11-08T14:59:55Z.",
+      "license": "ACM 2003 paper; local reading derivative only, no public full translation or original figure reproduction"
+    }
+  ]
+}

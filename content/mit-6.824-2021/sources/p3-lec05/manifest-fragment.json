@@ -1,0 +1,129 @@
+{
+  "course_id": "mit-6.824-2021",
+  "lecture_id": "lec05",
+  "batch": "P3",
+  "review_file": "p3-lec05/review.txt",
+  "content_status": "completed_text_review_with_explicit_caption_gaps_and_corrections",
+  "acquisition_record": "p3-lec05/acquisition.json",
+  "path_base": "content/mit-6.824-2021/sources/",
+  "sources": [
+    {
+      "id": "lec05-2021-notes-1",
+      "url": "http://nil.csail.mit.edu/6.824/2021/notes/l-raft.txt",
+      "retrieved_at": "2026-11-08T15:14:04.721251+00:00",
+      "last_modified": "Tue, 02 Mar 2021 21:01:22 GMT",
+      "file": "p3-lec05/l-raft.txt",
+      "sha256": "020bc36ed3be7f8a4bfa2978d8b0e054d2b04831762d23991ae0a45c0358f98d",
+      "status": "reviewed",
+      "scope": "All 195 lines read. First line remains '6.824 2020 Lecture 6: Raft (1)' despite the 2021 schedule URL; Last-Modified preserved, not claimed to be newly authored in 2021. Outline differs from the actual lecture in interface detail, election timing advice, and the extended Figure 7 discussion.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "basis": "Existing home-2021.html snapshot links rel=license; applies to course-authored text, not external video/paper.",
+        "evidence_file": "home-2021.html"
+      },
+      "content_type": "text/plain"
+    },
+    {
+      "id": "lec05-2021-faq-1",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/raft-faq.txt",
+      "retrieved_at": "2026-11-08T15:14:05.526718+00:00",
+      "last_modified": "Thu, 11 Mar 2021 23:52:15 GMT",
+      "file": "p3-lec05/raft-faq.txt",
+      "sha256": "91026b579953898983e894cf013fea7e72d7fa0dd0119d69a947b8804b6f038f",
+      "status": "reviewed",
+      "scope": "All 413 lines read, including performance, history, quorum, failures, RPC, persistence, application and duplicate-request boundaries. Last-Modified is later than the video's upload date; used as written cross-check, not claimed to reproduce the precise classroom-day FAQ. Linked external works not read.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "basis": "Existing home-2021.html snapshot links rel=license; applies to course-authored text, not external video/paper.",
+        "evidence_file": "home-2021.html"
+      },
+      "content_type": "text/plain"
+    },
+    {
+      "id": "lec05-2021-video-1-metadata",
+      "url": "https://youtu.be/R2-9bsKmEbo",
+      "retrieved_at": "2026-11-08T15:14:29.076134+00:00",
+      "last_modified": null,
+      "file": "p3-lec05/metadata.json",
+      "sha256": "f6d092166e79ba19cf8e8623975c3ab46b5ba975242b7d8ac4d4587e3e0c1551",
+      "status": "reviewed",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "last_modified_note": "Not exposed by yt-dlp for this metadata extraction.",
+      "scope": "Read all 12 lines of the independently acquired metadata: Lecture 5: Fault Tolerance: Raft (1), 5962 seconds, channel MIT 6.824: Distributed Systems, upload_date 20210302, description Spring 2021 Lecture 5. No media download or audio/visual verification by this content worker.",
+      "specific_cc_version": null
+    },
+    {
+      "id": "lec05-2021-video-1-captions-en-orig",
+      "url": "https://youtu.be/R2-9bsKmEbo",
+      "retrieved_at": "2026-11-08T15:14:25.050886+00:00",
+      "last_modified": null,
+      "file": "p3-lec05/video.en-orig.json3",
+      "sha256": "ce17ed82ece8c6e27c86960e3699143380e536f9431e8782068667ee108ab548",
+      "status": "reviewed",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "caption_type": "English original-language automatic captions (ASR)",
+      "language": "en-orig",
+      "last_modified_note": "Caption HTTP Last-Modified not exposed in yt-dlp download result.",
+      "scope": "All 2426 normalized cue texts read sequentially through unchanged minute-grouped text (all 284 lines); timestamped transcript and normalized cues spot-checked. 38 continuous reading segments, 00:00-99:22, include classroom and post-class questions. Breakout discussion unavailable at 64:07-72:10, with sparse administrative cues. Original 640-5964159 ms retained; final overrun 2159 ms. Reviewed means text review only, not audio/visual verification; ASR ambiguities and technical corrections recorded separately.",
+      "derived_files": [
+        {
+          "file": "p3-lec05/captions/captions.normalized.json",
+          "sha256": "45fa3c4e956427e86d68bb7d4b6394562c4748a39956b5e59639de92acbef396",
+          "retrieved_at": "2026-11-08T15:14:25.050886+00:00",
+          "generated_at": "2026-11-08T15:14:29.131209+00:00",
+          "derived_from": "p3-lec05/video.en-orig.json3",
+          "transformation": "Skill normalize_captions.py; no ASR corrections."
+        },
+        {
+          "file": "p3-lec05/captions/captions.en.vtt",
+          "sha256": "20f34101b4288e6a78b237e554e3580b6b4df2050967db440b633ab15613022f",
+          "retrieved_at": "2026-11-08T15:14:25.050886+00:00",
+          "generated_at": "2026-11-08T15:14:29.131371+00:00",
+          "derived_from": "p3-lec05/video.en-orig.json3",
+          "transformation": "Skill normalize_captions.py; no ASR corrections."
+        },
+        {
+          "file": "p3-lec05/captions/transcript.en.txt",
+          "sha256": "c2703cd53e26f65c40d47faff2276095727fe78dbe2bd36fc2a87deee7c1f132",
+          "retrieved_at": "2026-11-08T15:14:25.050886+00:00",
+          "generated_at": "2026-11-08T15:14:29.131472+00:00",
+          "derived_from": "p3-lec05/video.en-orig.json3",
+          "transformation": "Skill normalize_captions.py; no ASR corrections."
+        },
+        {
+          "file": "p3-lec05/captions/reading-by-minute.txt",
+          "sha256": "ac5f7154c465f4186639ac4768fd5b1db26cdc7ecfcd08886ca4fd96c2c0afe2",
+          "retrieved_at": "2026-11-08T15:14:25.050886+00:00",
+          "generated_at": "2026-11-08T15:14:29.131547+00:00",
+          "derived_from": "p3-lec05/video.en-orig.json3",
+          "transformation": "Skill normalizer; minute reader groups unchanged cue texts by start minute."
+        }
+      ]
+    }
+  ],
+  "shared_paper": {
+    "source_id": "raft-paper-2021-p3",
+    "file": "p3-raft-shared/raft-extended.pdf",
+    "manifest_fragment": "p3-raft-shared/manifest-fragment.json",
+    "review_file": "p3-raft-shared/review.txt",
+    "scope": "Shared owner reviewed sections 1-5.6 and 7-12, excluding section 6. L5 content worker used the shared materials and spot-checked PDF 4, 7-9, 13 and 15 for classroom corrections; no claim of independent whole-paper rereading. Shared materials and raw PDF not modified."
+  },
+  "caption_time_structure": {
+    "cue_count": 2426,
+    "first_start_ms": 640,
+    "last_end_ms": 5964159,
+    "metadata_duration_seconds": 5962,
+    "tail_overrun_ms": 2159,
+    "draft_segment_count": 38,
+    "draft_start": "00:00",
+    "draft_end": "99:22",
+    "breakout_interval": "64:07-72:10",
+    "uncaptioned_gaps_over_30_seconds": [
+      {"start_ms": 3895839, "end_ms": 4032839},
+      {"start_ms": 4035839, "end_ms": 4312840}
+    ],
+    "interpretation": "Continuous editorial headings include explicit unavailable-discussion interval; they do not assert continuous recoverable speech. Original caption end overrun was not edited."
+  }
+}

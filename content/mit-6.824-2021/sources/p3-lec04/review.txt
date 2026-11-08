@@ -1,0 +1,160 @@
+P3 L4 阅读、字幕校订与内容审阅记录
+日期：2026-11-08
+课程：MIT 6.824 Spring 2021，L4 Primary-Backup Replication
+讲师：Frans Kaashoek；视频 gXiDmq1zDq4。
+
+一、交付范围
+lectures/lec04/draft.zh.md：36 个连续时间段，00:00–93:00，约 14410 字符。
+lectures/lec04/notes.zh.md：不变量、故障推演、复制边界与 6 道折叠自测。
+lectures/lec04/materials.zh.md：整篇论文自主精读，补充课堂未展开的实现和设计取舍。
+sources/p3-lec04/manifest-fragment.json：独立来源条目供主 agent 整合。
+所有写入均限定 lectures/lec04/ 和 sources/p3-lec04/。
+未修改共享元数据、前端、其他讲座；未提交；最终构建与整合交主 agent。
+未生成 SVG：本讲的短表格和故障序列足以表达关系，没有增加重复图。
+
+二、获取方式与元数据
+按 schedule-inventory-2021.json 的 lec04 获取 2021 课表原始路径：
+  notes/l-vm-ft.txt
+  papers/vm-ft.pdf
+  papers/vm-ft-faq.txt
+初次 Python urllib 访问 HTTPS 出现 SSL UNEXPECTED_EOF_WHILE_READING；
+随后使用课表登记的 HTTP URL，经 curl -fL 成功取得三份文档及响应头。
+未用其他年份讲义替换。各来源 UTC 获取时间、Last-Modified 和 SHA-256
+在 manifest-fragment.json 中；fetch-records.json 保留初始获取状态。
+讲义首行写“6.824 2020 Lecture 4”，但确为 2021 课表链接的快照。
+其 Last-Modified 为 2021-03-02（晚于授课日），没有伪称上课日原封不动版本。
+论文及 FAQ 的 Last-Modified 为 2021-01-22。
+
+主动使用 yt-dlp：
+  --skip-download --write-subs --write-auto-subs
+  --sub-langs en-orig,en --sub-format json3 --no-progress
+  -o sources/p3-lec04/lec04-2021.%(ext)s https://youtu.be/gXiDmq1zDq4
+第一次字幕获取成功；英文原语言自动字幕，不是机器翻译字幕。
+en-orig 与 en 两份均保存，SHA-256 相同。
+另一次独立 --skip-download --dump-single-json 查询，在内存中过滤字段：
+id/title/duration/channel/channel_id/uploader/upload_date/license/webpage_url/
+description，再加 retrieved_at，保存 video.metadata.json。
+未落盘完整播放器响应或带签名媒体 URL；未下载视频、音轨或片段。
+caption-fetch.log 与 metadata-fetch.log 保存工具消息；缺少 JS runtime 与
+impersonation target 的警告没有阻断字幕获取。
+
+独立核实：
+  title = Lecture 4: Primary-Backup Replication
+  duration = 5580 秒 / 93:00
+  channel = MIT 6.824: Distributed Systems
+  channel_id = UC_7WrbZTCODu1o_kfUMq88g
+  upload_date = 20210225，确为 2021 上传
+  license = Creative Commons Attribution license (reuse allowed)
+视频具体 CC 许可版本未在元数据明确；没有沿用其他讲次的许可结论。
+已有 home-2021.html 第 55 行的课程 CC BY 3.0 US 链接另行查验；只用于课程
+自有文本，不能扩展为外链论文的全文翻译授权。
+
+三、字幕与真实时间覆盖
+调用 skill 原始脚本：
+  /Users/zy/.config/opencode/skills/technical-video-notes/scripts/normalize_captions.py
+  lec04-2021.en-orig.json3 captions/
+输出 captions/captions.normalized.json、captions.en.vtt、transcript.en.txt。
+2484 条非空 cues；首起点 3199 ms（00:00:03.199），末终点 5581520 ms
+（01:33:01.520）。末条比整数时长多 1520 ms，保留原始时间，不截改。
+reading-by-minute.txt 按 cue 起点分钟分组，完整拼接全部 cue 文本，没有摘要或
+去掉口头重复；已按顺序读取全部 177 行，包含课后问答直到未完成末句。
+译稿 36 段标题连续从 00:00 到 93:00；时间按话题整理，并非逐句精确对齐。
+首约 3 秒没有字幕，不补造开场词。
+
+42:18–50:00 单列分组活动与会务区间，不能恢复分组讨论。
+主要字幕空白（前一条结束到后一条开始）：
+  42:17.839–46:19.440，241601 ms
+  46:43.839–46:54.839，11000 ms
+  47:11.839–49:00.839，109000 ms
+  49:03.839–49:54.640，50801 ms
+46–47 分钟只有尝试进入房间/未能加入的零散会务发言，49 分钟为共享屏幕过渡。
+没有把空白说成已证实的静音；没有音频核验，不能据字幕判断全部现场活动。
+最后一问讨论几秒超时和克隆时间，讲师未给出完整确定回答，译稿保留不确定性。
+
+四、实际阅读及页图核对
+完整读取 l-vm-ft.txt 312 行、vm-ft-faq.txt 179 行。
+完整读取论文 PDF 1–10 页 / 印刷页 30–39：摘要、§1 Introduction，
+§2.1 Deterministic Replay、§2.2 FT Protocol、§2.3 Failure，
+§3.1–§3.5 启动/日志/管理/磁盘/网络，§4.1–§4.2 两种设计替代，
+§5.1–§5.2 性能，§6 Related Work、§7 Conclusion/Future Work，
+致谢及 §8 参考目录；没有把参考目录所列论文当作全部已读。
+pdftotext -layout 提取出现双层文字重叠；保留 vm-ft.txt 作为原始派生物，
+改用 PyMuPDF 得到可读的 vm-ft.pymupdf.txt，全部 1302 行分三段读取。
+
+已实际通过图像查看以下 PDF 页面，不仅提取文本：
+  第 1 页：核对可读页面与文字提取异常；标题/作者/摘要。
+  第 2 页：Figure 1，主备 VM、日志通道、共享存储。
+  第 3 页：Figure 2、Output Requirement/Rule，确认输出日志与 ACK 边界。
+  第 5 页：Figure 3，两侧日志缓冲、传输与 ACK。
+  第 7 页：Figure 4，非共享盘、主机读写与备机写。
+  第 8 页：Table 1 和 Table 2，全行数字、单位、列标题。
+  第 9 页：表 2 的网络配置和延迟解释、相关工作与结论。
+图像留在 paper-page-01/02/03/05/07/08/09.png，仅本地核对，未转载进网页。
+论文未确认全文再利用许可，materials 是自主组织的中文精读，不是全译。
+
+五、技术校订与课堂/书面边界
+1. ASR perma-backup / petition / fmft 等按 primary-backup / partition /
+   VMware FT 规范化；test-and-set、VMotion、hypervisor 按来源恢复术语。
+   不凭不稳定自动字幕补学生姓名。
+2. 状态相同指同一逻辑执行点，不是相同墙上时间；不发送每一条 x86 指令。
+   客户机内核也在重放范围，不能误成只复制用户态应用。
+3. 单 vCPU 能运行多线程；多核即使正确加锁仍有先后不确定性。
+4. 课堂“备机落后一个消息/epoch”解释不能越过未知事件；论文 §2.1 明确
+   不需要固定 epoch 末统一注入中断，已标注类比边界。
+5. 课堂启动时改写非确定性指令是截获机制的示意，论文未给出完整二进制
+   改写实现，未推广为所有现代 hypervisor 的工作方式。
+6. 最关键差异：论文 §2.2 每次输出需要专门日志项并获得 ACK；只确认此前
+   输入不足以确保重放到输出点。draft 单列校注，materials §2 独立推导。
+7. ACK 表示日志进入备机缓冲，不必等客户机执行；不是双机落盘保证。
+   输出暂缓不必暂停整个主机；缓冲满导致暂停是另一种约束。
+8. go-live 前处理已有日志，正常重放抑制备机输出；允许重复包，不声称
+   exactly-once 输出或 arbitrary application retry 的 exactly-once 效果。
+9. 课堂对 repair 的人工管理措辞与论文自动恢复不同；FT VMotion 典型暂停
+   小于一秒，不是复制全程停止服务；完整重建通常数分钟。
+10. 仲裁位复位是课堂简化生命周期说明，论文未给出孤立复位 API。
+    旧主必须终止清理，不能让旧实例在新一轮重新争用；仅讨论两个参与者。
+11. 最后 UDP 问题的前提错误：论文 §2.3 UDP heartbeat；§3.5 TCP 栈处理
+    日志/ACK。故障检测几秒、克隆暂停小于一秒、恢复冗余数分钟分开。
+12. 共享存储对 guest 是虚拟磁盘；guest 不必知道背后远程协议。
+    Shared disk 写是外部输出；非共享盘写属于内部状态，规则边界不同。
+13. bounce buffer、DMA/CPU 竞争、待完成块 I/O 和备机自行读盘的依赖
+    在 materials 精读；课堂没有逐项讲解，不补写成视频内容。
+14. 表 1 基线是同一 VM FT/non-FT，不是裸机。末行为 MS-SQL DVD Store，
+    不是讲义写的 my-sql。表 2 括号为日志链路速率，客户端链路始终 1 Gb。
+    接收 940→604 约下降 35.7%，发送 940→855 约下降 9.0%，不能统一说 30%。
+    10 Gb 对照同时改变带宽和延迟，不是单变量带宽实验。
+15. 论文的物理机器有八个 CPU，不表示 guest 支持八个 vCPU。
+16. 讲义中的 GFS 租约例与 bounce buffer 未完整出现在可辨认课堂中，
+    分别标为书面扩展。FAQ 对捕获全部非确定性的经验推测不作形式证明。
+17. 后续 VMware 多核产品机制未独立调查，课堂自己的猜测仍以未核实标记；
+    本文只读 vSphere 4.0 论文，不偷换为现代产品能力。
+18. 2021 课堂实验编号不替代本路线 2026 实验版本；没有生成实验答案。
+
+六、文档分工
+draft：实际课堂顺序、例子和问答，保留分组缺口及末句不完整。
+notes：逻辑不变量和编者故障推演，关键细节链接到 materials 具体章节。
+materials：论文比课堂多出的输出边界、重建/流控/管理面、设备 I/O、
+  非共享存储与备机读盘、完整性能表解释及相关工作定位；基础架构转引 draft。
+来源信息、许可和完成边界都在 frontmatter 或页底来源节。
+
+七、最小检查及未做事项
+已通过：
+  36 个标题时间段连续，起 0 秒，止 5580 秒；标题均 MM:SS–MM:SS。
+  2484 个 cue 起点单调；每个 cue 起点恰好落在一个译稿区间；末尾 +1520 ms 显式标记。
+  en 与 en-orig 字节一致；来源清单逐文件 SHA-256 核对。
+  三份 Markdown 围栏与 details 标签成对；无图片引用需要解析。
+  站内链接使用 courseId=mit-6.824-2021，目标 L2/L4 与公共首页可定位。
+  git diff --check（限定分配路径）通过；未暂存、未提交。
+  原始 JSON/JSON3 未包含 googlevideo.com、signature=、expire= 或 videoplayback。
+字幕时间结构校验不能证明译述完整无误。仅完成全量文本阅读及书面对照，
+没有回听音轨、核对课堂画面、说话者声纹或现场板书。
+没有运行 VMware、课程实验或性能复现；没有把测试完成归于学习者。
+最终站点构建和共享清单整合由主 agent 执行。
+
+八、仍未解决的边界
+视频 CC Attribution 的具体版本未明。
+分组讨论不可从现有字幕恢复；末句未完成；无音画复核的 ASR 局限仍存在。
+2021 路径讲义保留 2020 首行，且修改晚于授课日，已如实记录。
+论文全文再利用许可未确认，因此交付自主精读；不阻塞本次内容包。
+原始抓取及派生阅读文件由项目 .gitignore 忽略，本地保留；主 agent 可只纳入
+本 review 和整合后的清单，不要求把原始字幕/PDF/页图提交到 Git。

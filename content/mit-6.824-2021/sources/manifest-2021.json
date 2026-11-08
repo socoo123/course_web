@@ -1,10 +1,47 @@
 {
   "course_id": "mit-6.824-2021",
   "source_inventory": "schedule-inventory-2021.json",
-  "linked_sources_default_status": "discovered unless explicitly recorded below; P1 and P2 reviewed sources recorded with explicit scopes",
+  "linked_sources_default_status": "discovered unless explicitly recorded below or in source_fragments; all review states have explicit scopes",
+  "source_fragments": [
+    "p3-lec03/manifest-fragment.json",
+    "p3-lec04/manifest-fragment.json",
+    "p3-raft-shared/manifest-fragment.json",
+    "p3-lec05/manifest-fragment.json",
+    "p3-lec07/manifest-fragment.json"
+  ],
+  "source_fragment_format": "Committed P3 source records, each containing sources[] or a single source object; source file paths are relative to this sources directory, while material_file paths are relative to the course root. Acquisition-only files are historical fetched evidence, not the current review state.",
+  "batch_review": "P3-REVIEW.txt",
   "legacy_manifest": "manifest.json",
   "legacy_scope": "2020/2026 P0/P1 only; old course-root paths refer to the pre-migration directory",
   "sources": [
+    {
+      "id": "lab-raft-2026-p3",
+      "url": "https://pdos.csail.mit.edu/6.824/labs/lab-raft1.html",
+      "file": "lab-raft-2026.html",
+      "sha256": "492b2f05bf8452392a94aac9e40d35a2f24211ec23eb2477061cc2b675f0de7a",
+      "retrieved_at": "2026-11-08T12:48:14.788149+00:00",
+      "last_modified": "Sun, 01 Feb 2026 18:46:36 GMT",
+      "status": "reviewed",
+      "scope": "Reused same-day snapshot; all 732 HTML lines read, complete introduction, interfaces, 3A-D requirements and hints translated; terminal examples reduced; five-statistics prose versus four-label output discrepancy annotated",
+      "license": "CC BY 3.0 US via independently rechecked home-2026 license link",
+      "code_manifest": "lab-code-manifest.json",
+      "review_file": "P3-REVIEW.txt",
+      "lab_tests": "not_run"
+    },
+    {
+      "id": "lab-raft-code-2026-p3",
+      "url": "git://g.csail.mit.edu/6.5840-golabs-2026",
+      "commit": "513cac0aef010750fc74688da8a395974a83cf7a",
+      "file": "lab-code-513cac0aef01.tar.gz",
+      "sha256": "5a6d4a143a6f7fab6e6e6a525b3160ef16433de36506ca4600850ed8659ab1c4",
+      "retrieved_at": "2026-11-08T12:56:42.897091+00:00",
+      "last_modified": null,
+      "status": "reviewed",
+      "scope": "Archive and all nine reviewed file hashes verified. Complete static reading: src/raft1/{raft.go,server.go,proxy.go,test.go,raft_test.go}, src/raftapi/raftapi.go, src/tester1/persister.go, src/main/raft1d.go, src/Makefile. Other framework internals not counted as fully read; no implementation or execution",
+      "license": "Code used for interface review; no full code reproduction",
+      "review_file": "P3-REVIEW.txt",
+      "lab_tests": "not_run"
+    },
     {
       "id": "lec02-2021-notes",
       "url": "http://nil.csail.mit.edu/6.824/2021/notes/l-rpc.txt",

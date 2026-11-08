@@ -1,0 +1,88 @@
+P3 共享 Raft 论文精读核对
+日期：2026-11-08
+任务：MIT 6.824 Spring 2021 L5/L7 共享阅读；唯一正文 lectures/lec05/materials.zh.md。
+角色边界：只写该 materials 与 sources/p3-raft-shared/；未改共享元数据，未提交。
+
+一、版本与读取方法
+- 实读 raft-extended.pdf，18 页，印刷页码与 PDF 页序一致。
+- 题名 In Search of an Understandable Consensus Algorithm (Extended Version)。
+- 作者 Diego Ongaro、John Ousterhout；首页标注 Published May 20, 2014。
+- 2021 是指定课程/镜像年份，不是论文发表年份。
+- 原始获取字段复用 fetch.json；没有修改原 PDF、fetch.json 或既有文本抽取。
+- 使用 read 工具直接读取 PDF 的分页面文本与呈现的实际页面图像，按左栏后右栏阅读；
+  没有把 raft-extended.txt 的 sort=True 交织输出作为连续正文依据。
+- 已另外打开现有 page-4.png、page-12.png；其他视觉核对使用 PDF read 返回的页面图像。
+
+二、实际阅读范围
+PDF 1：摘要、§1 完整、§2 开始；核对首页日期与扩展版说明。
+PDF 2：§2 续至末、§3 开始；Figure 1 复制状态机。
+PDF 3：§3 末、§4 全部、§5 开始。
+PDF 4：Figure 2 全部字段、RequestVote/AppendEntries、服务器规则。
+PDF 5：Figure 3 性质、§5 续、§5.1、§5.2 开始；Figure 4/5。
+PDF 6：§5.2 续、§5.3 开始；Figure 6。
+PDF 7：§5.3 续；Figure 7。
+PDF 8：§5.3 末、§5.4 引入、§5.4.1、§5.4.2 开始；Figure 8。
+PDF 9：§5.4.2 末、§5.4.3 全部；Figure 9。
+PDF 10：§5.5、§5.6 全部，含右栏 Figure 10 下方、§6 标题之前的 §5.6 末句。
+PDF 11：只纳入右栏底部 §7 标题至页末；§6 续文不纳入阅读交付范围。
+PDF 12：§7 续文、Figure 12/13。
+PDF 13：§7 末、§8 全部、§9 引入、§9.1 开始。
+PDF 14：§9.1 续至末、§9.2 开始；Figure 14/15、Table 1。
+PDF 15：§9.2 末、§9.3 全部、§10 开始；Figure 16。
+PDF 16：§10 末、§11 全部、§12 开始。§10 成员变更比较只记录其位置/作者比较，不扩写§6。
+PDF 17：§12 末、References [1]–[23]。
+PDF 18：References [24]–[39]，核对题名/年份/文献类型；未沿外链读论文全文。
+
+三、明确跳过与未读
+- 按任务跳过 §6：PDF 10 §6 标题至 PDF 11 §7 标题前，包括 Figure 10/11 的成员变更机制。
+  PDF 工具整页返回使这些内容可见，但没有将其当作已精读覆盖或生成正文。
+- 文献表外链的全文、博士论文、TLA+ 规格及证明附件、用户研究视频/题目/评分材料未读。
+- L5/L7 视频、字幕、课堂讲义不是本共享任务的材料来源，未制造课堂时间轴。
+- 没有独立阅读/运行 Lab 3 完整源码与测试；接口边界复用已存在的 INTERFACE-AUDIT.txt。
+
+四、实际图像核对与关键发现
+- PDF 2：Figure 1 的 client/consensus/log/state machine 层次。
+- PDF 4 + page-4.png：Figure 2 持久字段、投票条件、空 AppendEntries 前缀检查、
+  冲突才删后缀、commitIndex 上界、leader 当前任期提交条件、next/match 区别。
+- PDF 5：Figure 3 五性质、Figure 4 状态转换、Figure 5 无 leader 的任期。
+- PDF 6：Figure 6 的索引、条目任期、已提交前缀。
+- PDF 7：Figure 7 的 follower 缺项、多项与混合分歧。
+- PDF 8：Figure 8(c) S1=[1,2,4]，S2/S3=[1,2]，S4=[1]，S5=[1,3]；
+  (d) 旧条目可被替换，(e) 当期条目复制到多数后保护旧前缀。
+- PDF 9：Figure 9 的交点 S3 先接受 term T 条目，再为 term U 投票。
+  §5.4.3 最末编号项指向 Figure 8(d) 的文字与图意不符，间接提交对应 (e)，正文已校注。
+  原文 Log Completeness 与 Figure 3 Leader Completeness 用语不一致，记录而不隐瞒。
+- PDF 12 + page-12.png：Figure 12 边界 5/term3，状态 x=0,y=9，保留索引 6/7；
+  Figure 13 分块字段 offset/data/done、匹配边界保留后缀、不匹配丢弃旧日志。
+- PDF 14：Figure 14 43 人、33 个 Raft 得分较高；Figure 15 主观题每题 41 人，
+  implement 为 20+13、explain 为 15+18 倾向 Raft；Table 1 的三类偏差控制措施。
+- PDF 15：Figure 16 上图对数横轴/下图线性横轴、曲线区间、1000 次与固定区间100次例外；
+  5节点、broadcast约15ms；5ms随机中位287ms；50ms随机试验最大513ms；
+  12–24ms均值35ms/试验最大152ms。均对照原文，不把试验最大值写成理论上界。
+
+五、许可独立核对
+- 论文 PDF 中未见为该扩展版明确授予全文中译的 CC 声明。
+- 2026-11-08 用 webfetch 实际读取 https://raft.github.io/：
+  Publications 链接扩展版论文，页脚存在 CC BY 3.0 Unported；未据此将网站页脚许可
+  自动套用到 MIT 镜像中的这份 PDF 快照。
+- 同日实际读取 https://www.usenix.org/conference/atc14/technical-sessions/presentation/ongaro：
+  核对作者、2014 会议信息、普通会议版题名；Open Access Media 说明可免费访问，
+  未见在该页面明确授予这份扩展版全文中译的声明。
+- 这些网页仅用于书目信息与许可核对；本任务未下载新的论文版本替换指定快照。
+- 结论：未确认全文中译授权，采用自主精读、原创例子、概念重组与证明讲解；
+  不发布逐段全文翻译，不把论文页面 PNG 嵌入上线正文。
+
+六、交付结构与跨版本边界
+- materials 是 L5/L7 唯一共享论文正文，不复制课堂逐时讲解。
+- 覆盖背景、理解性、Figure2规则含义、旧任期多数反例、安全证明、持久化、
+  时间/可用性、快照、客户去重/线性读、评估数据及局限、§10/11。
+- 原创库存例子、持久投票反例、重复 RPC 后缀例子、快照边界例子及6道自测。
+- 明确论文 request-ID 去重不是2026 versioned Put的API要求。
+- 明确 no-op/免日志读不是直接搬入 Lab3 的指令，内部条目占用日志索引，
+  必须服从 Start/ApplyMsg 和固定测试器约定；未声称逐条静态审核此处测试代码。
+- 2026 Save/恢复约定引用项目 INTERFACE-AUDIT.txt，未新增实验答案。
+
+七、验证与待主 agent 整合
+- manifest-fragment.json 保留 fetch.json 的真实抓取字段，status 改 reviewed，scope 明确排除§6。
+- 局部 JSON/哈希核对与 diff 空白检查完成；全站 build 由主 agent 统一执行。
+- 无新的内容阻塞；全文翻译许可未确认，以自主精读交付。

@@ -1,0 +1,144 @@
+P3 / L3 GFS 阅读、字幕校订与内容审阅记录
+日期：2026-11-08
+课程：MIT 6.824 Spring 2021；讲师 Frans Kaashoek。
+
+一、产物与工作边界
+lectures/lec03/draft.zh.md：30 个连续时间段的中文课堂整理译述。
+lectures/lec03/notes.zh.md：机制约束、故障推导、应用边界、性能取舍与 6 道自测。
+lectures/lec03/materials.zh.md：完整指定论文的自主精读，重点补足课堂之外的机制和测量。
+sources/p3-lec03/manifest-fragment.json：10 条来源/派生文件记录，文件路径相对 sources 根。
+sources/p3-lec03/review.txt：本记录。
+只写上述 lec03 与 p3-lec03 两个目录；未修改共享元数据、src、其他讲次或实验。
+未提交。主 agent 负责合并清单和最终站点构建。
+原始抓取、字幕、PDF、渲染页面、派生文本保留本地，不要求纳入 Git。
+没有创建课堂截图或自绘 SVG；故障表和公式已足以表达本讲推导。
+
+二、获取与版本核对
+按 sources/schedule-inventory-2021.json 的 L3 条目解析：
+  http://nil.csail.mit.edu/6.824/2021/notes/l-gfs.txt
+  http://nil.csail.mit.edu/6.824/2021/papers/gfs.pdf
+  http://nil.csail.mit.edu/6.824/2021/papers/gfs-faq.txt
+最初 Python urllib 对 HTTPS notes 请求发生 SSL UNEXPECTED_EOF_WHILE_READING，
+未得到文件；随后改用课表本身的 HTTP 地址，curl 三个来源均成功，保存响应头。
+讲义与 PDF Last-Modified：Fri, 22 Jan 2021 09:21:42 GMT。
+FAQ Last-Modified：Tue, 23 Feb 2021 20:27:07 GMT。
+所有抓取发生于 2026-11-08 14:59 UTC，精确时间及 SHA-256 见 manifest fragment。
+历史 URL 的内容以本次快照为准，不声称从 2021 至今从未改变。
+讲义首行是“6.824 2020 Lecture 3: GFS”；没有改写原始文件，也没有以此冒充
+获取了 2020 录像。2021 课程讲次映射来自 2021 schedule，课堂顺序来自本次 2021 字幕。
+PDF 元数据为 15 页，CreationDate/ModDate 为 2016-02-09 UTC（本机显示 2 月 10 日），
+这是课表中的 2003 论文 PDF 快照，不把 PDF 制作时间当作论文发表年份。
+
+三、视频元数据与字幕取得
+主动运行 yt-dlp：
+  --skip-download --write-auto-subs --sub-langs en-orig,en --sub-format json3
+  --no-progress -o sources/p3-lec03/video.%(ext)s https://youtu.be/6ETFk1-53qU
+字幕首次成功。提示缺少推荐 JS runtime 和 impersonation target，未阻止保存。
+独立运行 --skip-download --dump-single-json，并在内存中过滤以下字段后才保存：
+  id/title/duration/channel/channel_id/uploader/upload_date/license/webpage_url/description
+未保存完整播放器响应、签名媒体地址、cookies；未下载视频、音轨或媒体片段。
+yt-dlp 的“Downloading 1 format(s)”是格式选择输出；实际下载产物只有字幕和过滤元数据。
+
+视频 ID：6ETFk1-53qU。
+标题：Lecture 3: GFS。
+整数时长：3977 秒 = 66:17。
+频道与 uploader：MIT 6.824: Distributed Systems。
+channel_id：UC_7WrbZTCODu1o_kfUMq88g。
+upload_date：20210223；description：02/23/2021，与 2021 L3 课表日期对应。
+独立返回许可：Creative Commons Attribution license (reuse allowed)。
+具体 CC 版本未明确，未套用其他讲的标签或课程网站许可。
+en-orig/en 均为英文自动字幕，两份 SHA-256 相同；不是机器翻译字幕。
+
+四、实际字幕阅读与时间范围
+使用已加载 skill 的脚本：
+  /Users/zy/.config/opencode/skills/technical-video-notes/scripts/normalize_captions.py
+生成 captions/captions.normalized.json、captions.en.vtt、transcript.en.txt。
+1860 条非空 cue；首起点 80 ms（00:00:00.080）；末起点 3976000 ms；
+末终点 3978880 ms（01:06:18.880），超过元数据整数时长 1880 ms。
+原始结束时间未截断，原 ASR 与规范化 ASR 未写入技术纠正。
+逐条顺序阅读 timestamped text：1–650、651–1270、1271–1860，全部读完。
+draft 有 30 个真实时间段，从 00:00 连续到 66:17；按话题分段，不是逐句同步字幕。
+开头约 80 ms 无字幕，不补造内容。最终字幕是“another class”，没有额外课后问答。
+55:19–55:34 左右安排分组讨论，55:44 已回全班；讨论正文和计划的五分钟未保留，
+没有虚构讨论发言，也没有把五分钟加入上传录像时间轴。
+保留全部可辨认的实质问答：每天故障次数、并发读值、朴素复制、性能量级、
+持久化字段、最大在线版本误区、缓存与近副本、追加负载、lease/version、
+副本版本持久化、重试位置、word count 重复、只补失败副本、可信假设、
+旧版本相等、serial number、成员变化、lease 到期与 split brain。
+未回听音轨、未识别说话者音色、未核对录像画面；不声称完整无误或逐字听写。
+时间结构检查只能证明标题和 cue 结构，不能证明语言解释无遗漏或无误。
+
+五、实际书面阅读与图表核对
+l-gfs.txt：全部 308 行。gfs-faq.txt：全部 163 行。
+gfs.pdf：全部 PDF 1–15 页，abstract、§1–§9、致谢与参考文献表。
+pdftotext -layout 输出 gfs.text.txt 全部 1054 行已读（1–458、459–908、909–1054）。
+双栏页面的段落衔接依章节重新理解，没有把逐行左右栏混排直接翻译。
+用 pdftoppm 渲染并通过 image read 实际查看：
+  page-03.png：Figure 1，控制箭头与数据粗箭头、客户端直连 chunkserver。
+  page-04.png：Table 1，尤其 record append 的合并单元格、defined 与 inconsistent。
+  page-06.png：Figure 2，数据链可以先到 secondary；控制消息另走 primary。
+  page-11.png：Table 2，物理空间含副本、master 与 chunkserver 元数据量。
+  page-12.png：Figure 3(a)(b)(c) 的坐标、网络上限与误差线；Table 3 的统计窗口。
+  page-13.png：Table 4–6，请求次数与字节占比、实际读取量、master 请求种类。
+没有把 PDF 图片放进课堂译稿或公开转载；所有图像属于本地文献审阅物。
+论文所引文献未逐篇读；FAQ 的磁盘研究与工程访谈外链未独立阅读；不算已核验来源。
+论文首页 ACM 条款不明确允许公开全文中译，materials 为自主论文精读与分析，
+不是完整逐段翻译。数据引用限于支撑解释和计算，未复制完整六张表。
+
+六、技术纠错与边界
+1. ASR 中 GFS/chunk/shard/lease/append/primary/stable storage 等按书面来源规范化。
+   “unstable storage”按稳定存储语境纠正；无法确定的人名未编造。
+2. 14:35–18:30 “master not replicated”不能按字面理解。论文有日志/checkpoint
+   的远端复制与 shadow master；single master 是活动修改角色单中心。
+3. 课堂展示的 MapReduce 图中超过 10000 MB/s 是课堂口述，未核验录像图像，
+   不与 GFS Figure 3 的 16 客户端 94 MB/s 混淆。
+4. read 的客户端版本检查作为课堂教学模型保留。论文 §2.4 描述 handle/range，
+   §4.5 明确 lease 查询和克隆中的版本检查，不据此虚构普通 read RPC 完整字段。
+5. version 按新 lease 时期变化，不是每次写递增；serial number 才是期内修改序号。
+   相同 version 不能证明内容一致，更不能证明客户端掌握的是最新 version。
+6. 版本持久化在课堂口述与讲义的先后细节不同，采用论文明确边界：通知客户端
+   前 master 与参与副本已持久化。记录了 master 授权中途崩溃、发现更高版本的恢复。
+7. master 不持久记录 lease/角色，不代表重启后可立即发重叠 lease；原文没有
+   完整重启租约协议及时间误差证明，未自行补造。
+8. record append 成功是至少一份完整记录的共同位置；失败不回滚，重复允许，
+   不等于事务提交或 exactly-once。后续不会覆盖的推导限定 append-only。
+9. 课堂把记录过滤描述为库行为；论文 §2.7.2 的共享 record I/O 库明确排除
+   duplicate removal，去重属于需要此语义的应用责任。checksum 与 ID 用途区分。
+10. 可信故障模型不等于没有 ACL；论文 §2.3、§6.2.2、§7 有权限/配额说明。
+11. stale-read 图的 10/11 同时充当版本与数据值、S1/S2 口头指代混乱，正文重述
+    为新组 P/S1 与旧 S2，保留客户端和旧副本均为 v10 的反例。
+12. 59–61 分钟配置变更是讲师明确带“imagine”限定的解释。论文未给完整状态机，
+    不将其补成精确成员协议；master 心跳不误写成 primary 全局心跳。
+13. 双主针对一个 chunk；“全部或没有”是外部可见效果目标，不要求同一物理瞬间
+    所有节点写盘，不等于 Raft 等全体节点提交。
+14. FAQ 说 master 切换需人工，论文 §5.1.3 说外部监控启动替代进程。两者并列，
+    不伪称论文逐字要求人工，也不伪称已有内部自动一致选主。
+15. checksum 粒度是 64 KB / 32 bit，chunk 是 64 MB，不能混为一谈。
+16. 性能分母区分 100 Mbps/12.5 MB/s、1 Gbps/125 MB/s、三副本写入、逻辑/物理
+    容量、请求次数/字节数。Figure 3 误差线含义核对；历史数字不推作现代性能。
+17. 2021 Lab 2/3 口述保留为当年 Raft/复制 KV；未据此改写 2026 实验编号。
+18. 没有编译或运行 GFS、模拟故障、论文基准或任何课程实验；未提供实验完整答案。
+
+七、分工与内容去重
+draft 只展开真实课堂顺序与问答；补充机制通过具体节链接指向 materials。
+notes 提炼约束、反例、公式与自测，不复述逐步正常消息流程。
+materials 使用 §2.7 精确语义、snapshot/locks/placement/GC/checksum/diagnostics/
+measurements/experiences 补足论文；基本架构与正常写流程指向 draft。
+notes 与 materials 的适量概念回顾用于自包含推理，没有三份都逐段重译讲义。
+全部来源信息放 front matter 或末尾引用区；sources 内没有 .md 原始资料。
+
+八、必要内容校验
+已通过：10 条来源的必填字段、唯一 ID、文件存在与 SHA-256；fragment/metadata/
+normalized JSON 解析；视频 ID/日期/时长和过滤字段集合；字幕起点单调及有效区间；
+30 段标题连续覆盖 00:00–66:17，1860 个 cue 起点各自恰好归属一段。
+每个 cue 起点在整数时长以内，末终点超出 1880 ms，正文和本记录均明确保留。
+已通过：lec03 元数据注册、三份正文内部讲次链接及目标文件、图片路径（本讲无图片）、
+Markdown 围栏成对、front matter 和页底引用区、sources 无 .md。
+三份正文字符数（含 Markdown）：draft 15063、notes 6872、materials 11786。
+范围内 git diff --check 无报错；新增文件还另行执行尾随空格/冲突标记检查。
+最终 npm run build 由主 agent 统一执行，本子任务不声称已构建。
+
+九、未解决问题
+视频 CC Attribution 的具体版本未确定；无媒体音画核验，ASR 可能仍有语言细节误差。
+论文未详述的动态重配置、在途写与重复制衔接、租约时钟/重启边界维持未详述状态。
+人工/外部监控故障切换的史料措辞差异已显式说明，不推测当时全部运维实现。

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="330" viewBox="0 0 920 330" role="img" aria-labelledby="title desc">
+  <title id="title">快照、应用、提交和日志末尾的不同边界</title>
+  <desc id="desc">快照保存索引一到八十的效果；八十一到八十五已经应用；八十六到八十八已提交但未应用；八十九到九十尚未确定。当前服务状态最多声明覆盖到八十五。</desc>
+  <rect width="920" height="330" rx="12" fill="#f8fafc"/>
+  <g font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#0f172a">
+    <text x="30" y="38" font-size="21" font-weight="600">同一条逻辑历史，四个不同边界</text>
+    <text x="30" y="67" font-size="15" fill="#475569">快照压缩表示，不重置日志索引</text>
+    <rect x="30" y="102" width="285" height="70" rx="7" fill="#dbeafe" stroke="#2563eb"/>
+    <rect x="325" y="102" width="200" height="70" rx="7" fill="#dcfce7" stroke="#15803d"/>
+    <rect x="535" y="102" width="185" height="70" rx="7" fill="#fef3c7" stroke="#b45309"/>
+    <rect x="730" y="102" width="160" height="70" rx="7" fill="#e2e8f0" stroke="#64748b"/>
+    <g text-anchor="middle" font-size="17">
+      <text x="172" y="129">快照：1–80 的效果</text>
+      <text x="172" y="155">原前缀可由快照替代</text>
+      <text x="425" y="129">81–85</text>
+      <text x="425" y="155">已应用的日志</text>
+      <text x="627" y="129">86–88</text>
+      <text x="627" y="155">已提交，尚未应用</text>
+      <text x="810" y="129">89–90</text>
+      <text x="810" y="155">未确定尾部</text>
+    </g>
+    <g stroke="#475569" stroke-width="1.5">
+      <path d="M315 177v27 M525 177v27 M720 177v27 M890 177v27"/>
+    </g>
+    <g text-anchor="end" font-size="15">
+      <text x="315" y="227">快照边界 80</text>
+      <text x="525" y="227">lastApplied = 85</text>
+      <text x="720" y="227">commitIndex = 88</text>
+      <text x="890" y="227">日志末尾 90</text>
+    </g>
+    <path d="M30 249v9h495v-9" fill="none" stroke="#15803d" stroke-width="2"/>
+    <text x="30" y="289" font-size="17" fill="#166534">当前服务状态反映到 85；不能拿它宣称快照已覆盖到 88 或 90。</text>
+  </g>
+</svg>
