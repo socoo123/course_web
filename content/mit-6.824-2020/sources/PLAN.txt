@@ -1,0 +1,215 @@
+MIT 6.824 分布式系统：课程生成与学习计划
+规划日期：2026-11-08
+状态：P0 已完成（2026-11-08）：课程登记、公共导航、完整映射与实验版本固定；下一批 P1。
+P0 交付：course.json、resources.zh.md、sources/version-map.json、schedule-inventory.json、
+lab-code-manifest.json、INTERFACE-AUDIT.txt；详细产物与缺口以 status.json 为准。
+代码固定：513cac0aef010750fc74688da8a395974a83cf7a（Go 1.22）。
+下列规划与试抓记录保留当时语境；P0 已补齐 Lab 3/4 原文并核对五个实验接口。
+
+一、目标与版本决定
+
+用户希望沿用现有 MIT 6.S081 的课程站结构，以旧版 6.824 为主线，
+搭配最新实验，新增内容单列 Updates；按重点逐步学习并独立完成实验。
+
+默认方案：
+- courseId：mit-6.824-2020。
+- 主线：Spring 2020 MIT 6.824，严格保留官方讲次编号。
+- 实验：Spring 2026 MIT 6.5840（截至规划日官网当前版本），五个实验统一使用此版。
+- 增补：与 2020 对照后的 2026 新增/显著变化主题，另列 Updates。
+- versions 明确写“课程/视频 2020；实验 2026；Updates 对照 2026”。
+- 固定 2026 实验快照与代码提交；未来年份发布后不自动替换正在学习的版本。
+- 用户亲自做实验；生成官方要求中译与思路指导，不生成完整实验答案。
+
+二、已核对的依据与试抓结果
+
+1. 2020 官方课表：
+   http://nil.csail.mit.edu/6.824/2020/schedule.html
+   共 21 个编号条目；L1–L20 有官方视频入口，L21 是 Project demos，不能冒充普通录像课。
+2. 当前官方首页和课表均标 Spring 2026：
+   https://pdos.csail.mit.edu/6.824/
+   https://pdos.csail.mit.edu/6.824/schedule.html
+   当前站点 URL 没有 /2026/，因此必须记录抓取时间并保留快照。
+3. 已保存 2020/2026 课表、2020 L1 讲义及视频入口、2026 Lab 1/2/5、Go 环境页。
+   文件和哈希见同目录 manifest.json；这些是来源已获取，不代表中文内容已完成。
+4. 单讲试抓选 L1 Introduction / MapReduce：
+   - 官方视频入口：http://nil.csail.mit.edu/6.824/2020/video/1.html
+   - YouTube：cQP8WApzIQQ，Lecture 1: Introduction。
+   - 频道：MIT 6.824: Distributed Systems；时长 4775 秒（79:35）。
+   - 视频元数据标 Creative Commons Attribution license (reuse allowed)。
+     正式生成前仍需核对具体许可链接，不能推广为全部视频或论文的许可。
+   - 官方讲义已获取，可用于内容结构核对。
+   - 英文字幕下载遇到 HTTP 429，尚未获得可用字幕，不能生成带时间轴的完整译稿。
+     具体日志：lec01-caption-download.log；未下载视频或音轨。
+5. 旧站本次 HTTPS 访问失败、HTTP 官方地址可访问；不要反复猜 pdos 的年份路径。
+
+三、网页组织（沿用项目协议，仅改 content/）
+
+content/mit-6.824-2020/
+  course.json
+  resources.zh.md
+  status.json
+  lectures/lec01 ... lec21/
+    notes.zh.md        提炼、推导、易错点、自测；按实际需要使用自绘 SVG
+    draft.zh.md        有字幕依据的完整课堂中文整理；截图只放此处
+    materials.zh.md    指定阅读的译文（许可允许）或明确标注的自主中文精读
+    assets/
+  lectures/update-linearizability/ ...
+    notes.zh.md
+    materials.zh.md    按材料实际情况生成；没有视频就不造 draft
+  labs/mr/、kvsrv/、raft/、kvraft/、shardkv/
+    lab.zh.md          2026 官方实验说明中译
+    guide.zh.md        设计思路、阶段目标、调试方法、常见坑、自测
+    lab.en.md          可选，仅在实际保存英文原文时提供
+  sources/            原始抓取、清单、规划；不用 .md 后缀
+
+Updates 的最小落地方式：
+- 在 lectures 数组的旧课之后追加 update-* 条目。
+- num 用“增补”，title 用“Updates · 线性一致性”等明确前缀。
+- 使用已有 core / optional 标记学习优先级；isNew 仅用于确实无视频的新条目，
+  因为当前界面把 isNew 渲染为“新讲次 · 无视频”。
+- 公共资料章提供“主线 / 实验 / Updates”学习导航与跨版本映射。
+- 这实现内容上的增补分组；当前协议没有独立 Updates 侧栏分区字段，不新增前端结构。
+- 主线编号不变；Updates 中实验前置内容从学习路线提前链接进入。
+- catalog.json 已有 planned 的 mit-6.824 占位卡片。
+  建站时将该卡片及 systems track 引用一起改为 mit-6.824-2020，避免重复课程。
+
+三份讲座材料遵守项目 AGENTS.md，不重复铺陈同一内容。
+公共工具、术语导航、共享论文入口集中在 resources.zh.md；共用论文只在一处展开。
+资料没有明确全文翻译许可时，使用自主精读、章节定位与短引，不冒充全文译文。
+引用一律页底；正文不开篇汇报抓取进度；缺口写 status.json 或文件 status 头。
+
+四、先完成实验主线，再拓展系统案例
+
+阶段 0：Go 与开发准备
+  L2 RPC and Threads + L5 Go, Threads, and Raft（按需提前读）。
+  补齐 goroutine、channel、mutex/cond、RPC、race detector、失败日志阅读。
+  2026 官方要求 Go >= 1.22；实际工具链以所选代码提交的要求一起核对。
+  生成环境说明时核实源码目录和命令，不套用 xv6 的逐实验分支流程。
+
+阶段 1：任务调度与失败重试
+  L1 Introduction / MapReduce + L2。
+  完成 2026 Lab 1 MapReduce。
+  重点：任务状态、超时重派、Map/Reduce 阶段边界、原子发布、worker 退出。
+  学完应能解释：worker 变慢与宕机为何无法可靠区分？重复执行何时安全？
+
+阶段 2：RPC 语义与线性一致性
+  Updates · 线性一致性与 2026 KV 接口；回看 L2/L5。
+  完成 2026 Lab 2 Key/Value Server 与 lock。
+  重点：版本化 Put、条件更新、at-most-once、ErrMaybe、锁与丢回复。
+  不使用旧版 Get/Put/Append 或“请求去重即 exactly-once”替代新版要求。
+
+阶段 3：复制与共识（核心投入）
+  L3 GFS、L4 Primary-Backup Replication、L5、L6–L7 Raft。
+  完成 2026 Lab 3 Raft 的 A–D（具体分项以实验原文为准）。
+  重点：选举、日志一致性、提交规则、持久化、快照、崩溃恢复。
+  将 Raft 论文 Figure 2 的规则逐项联系状态变化，不只背结论。
+
+阶段 4：从共识到可用服务
+  L8 ZooKeeper + Updates 中 2026 RSM/服务接口衔接。
+  完成 2026 Lab 4 KV Raft 的 A–C（具体分项以实验原文为准）。
+  重点：提交与应用的区别、等待结果、领导权变化、快照与线性一致性。
+
+阶段 5：分片与重配置
+  L12 Distributed Transactions、L13 Spanner；按需参考 L9 CRAQ。
+  事务与 Spanner 用于扩展理解；2PC 不是 Lab 5 基础部分的必需实现。
+  完成 2026 Lab 5 Sharded KV 的 A–C；D 是官方开放扩展，另列进阶。
+  重点：Freeze/Install/Delete、配置号、迁移中单一服务权、控制器恢复和并发。
+  Lab 5 复用 Lab 2 的 kvsrv 与 Lab 4 的 rsm/Raft；须保持同一版依赖。
+  分片配置变化不等于 Raft 成员变更。
+
+阶段 6：经典案例与专题选读
+  优先扩展：L9 CRAQ、L10 Aurora、L11 Frangipani、L14 FaRM、L16 Memcached、L17 COPS。
+  按兴趣继续：L15 Spark、L18 Certificate Transparency、L19 Bitcoin、L20 Blockstack。
+  L21 保留官方 Project demos 条目和阅读入口，按真实来源决定能生成哪些文件。
+  这些都登记入课程，但第一批内容生产优先服务五个实验。
+
+五、2020 → 2026 实验对照
+
+2020 Lab 1 MapReduce       → 2026 Lab 1 MapReduce
+2020 无独立同名实验         → 2026 Lab 2 KV Server + lock
+2020 Lab 2 Raft            → 2026 Lab 3 Raft
+2020 Lab 3 KV Raft         → 2026 Lab 4 KV Raft
+2020 Lab 4 Sharded KV      → 2026 Lab 5 Sharded KV
+
+此表仅表示主题对应，不表示 API、子任务、代码、测试兼容。
+已发现新版 Lab 1 使用显式 socket 参数以及 src 下 make mr / Go 测试，
+因此不能直接复制旧教程的启动方式或 test-mr.sh 命令。
+已发现新版 Lab 2 使用 Get 与带 version 的 Put，并要求处理 ErrMaybe。
+已发现新版 Lab 5 使用控制器驱动分片迁移及恢复/并发控制，不能套旧 shardmaster 教程。
+Lab 3/4 正式生成前仍需抓取全文和代码核对，当前没有宣称完成接口审计。
+
+六、Updates 候选与优先级
+
+必读桥接（随实验提前学习）：
+- update-linearizability：2026 L8 线性一致性 + Lab 2 的 RPC/版本化 Put 语义。
+- update-lab-bridge：2026 RSM、KV 和分片实验接口的跨版本衔接；官方内容与编者导读分开。
+
+新版专题（按兴趣读，不阻塞实验）：
+- update-paxos：2026 L4 Paxos，与 Raft 对照。
+- update-go-patterns：2026 L5 Go patterns，只展开超出旧 L2/L5 的内容。
+- update-chain-replication：2026 L13 原始 Chain Replication，与 2020 CRAQ 对照。
+- update-verification：2026 L15 IronFleet / 分布式系统验证。
+- update-lambda：2026 L17 AWS Lambda / On-demand Container Loading。
+- update-ray：2026 L18 Ray，与旧 Spark 课衔接。
+- update-sundr：2026 L19 SUNDR，与旧 Certificate Transparency 的 fork consistency 对照。
+- update-bft：2026 L21 Practical Byzantine Fault Tolerance。
+
+这些是对照已获取课表得出的候选；P0 建清单时再核实讲义/论文/视频。
+“新增”指相对于本项目采用的 2020 主线，不意味着技术本身是 2026 新发明。
+
+七、内容生成批次与验收
+
+P0 建站与版本清单
+  已完成。主线 21 条、Updates 10 条、2026 实验 5 个；课程正文保持待生成。
+  已知界面问题：实验通用命令框硬编码 xv6 命令；本批仅改 content/，
+  公共导航与实验目标给出正确 Go 命令，状态另记。L1 字幕阻塞仍影响 P1 draft。
+  建 course.json、更新 catalog、公共资料学习导航、完整来源与讲次/实验映射。
+  抓取缺失的实验要求，核对实验仓库提交及实际接口。
+  主线完整登记，内容未生成就保留待生成，不用摘要占位冒充完成。
+
+P1 单讲样板 + 第一实验
+  先完整制作 L1，连同 2026 Lab 1 说明/指导，作为风格和深度样板。
+  字幕仍失败时记录阻塞，可继续做 notes、阅读精读和实验；draft 保持缺失。
+  样板通过后沿用约定，不批量生产后再统一重写。
+
+P2 Go/RPC + KV
+  L2/L5 + update-linearizability + 2026 Lab 2。
+
+P3 复制/Raft（可分小批）
+  先 L3/L4，再 L6/L7 + 2026 Lab 3；补共享 Raft 阅读资料。
+
+P4 复制状态机服务
+  L8 + update-lab-bridge 对应部分 + 2026 Lab 4。
+
+P5 分片闭环
+  L12/L13 + update-lab-bridge 对应部分 + 2026 Lab 5。
+
+P6 案例与 Updates
+  按用户关注度生成剩余经典课，再逐项生成新版专题。
+
+每次只完成一个明确批次，更新 status.json 的产物状态、来源覆盖和下一步。
+用户交付约定：每批修改完成且必要校验通过后，提交本批内容并推送到远程 GitHub。
+每讲围绕：核心问题 → 机制/不变量 → 故障情境 → 权衡 → 自测。
+每个实验指导围绕：前置阅读 → 阶段拆解 → 接口 → 思路 → 常见坑 → 官方验收命令。
+验收：内容版本一致、来源可定位、站内链接/图片有效、npm run build 通过。
+课程内容验收与用户实验完成状态分开记录；未运行实验测试就明确写“未运行”。
+未经用户明确要求不启动多 agent；用户要求并行时先样板，再按讲次分配独立目录。
+
+八、清理上下文后的恢复关键词
+
+通用恢复口令：
+  继续 6.824，读取 content/mit-6.824-2020/sources/PLAN.txt 和 status.json，
+  按计划执行下一个未完成批次，仅改 content/。
+  完成并校验后提交、推送到 GitHub。
+
+定点口令：
+  6.824 P0：建课程骨架与版本映射。
+  6.824 P1：生成 L1 样板与 2026 MapReduce 实验资料。
+  6.824 P2：生成 Go/RPC、线性一致性与 2026 KV 实验资料。
+  6.824 P3：生成复制/Raft 核心课程与 2026 Raft 实验资料。
+  6.824 P4：生成 RSM/KV Raft 课程与实验资料。
+  6.824 P5：生成分片与重配置课程及实验资料。
+  6.824 P6：按计划补经典案例和 Updates。
+
+未来会话先读本文件与 status.json，再读项目 AGENTS.md 与 technical-video-notes skill。
+当前建议下一步：P1。先核实 L1 视频、论文与 Lab 1 要求的许可；字幕失败则按 P1 约定处理。
