@@ -2,7 +2,7 @@
   "courseId": "mit-6.824-2021",
   "plannedAt": "2026-11-08",
   "updatedAt": "2026-11-08",
-  "phase": "2021_mainline_migrated_P1_written_sample_reused",
+  "phase": "P1_complete_2021_caption_based_draft",
   "plan": "sources/PLAN.txt",
   "versions": {
     "lectures": "MIT 6.824 Spring 2021",
@@ -19,25 +19,26 @@
   "labCodeManifest": "sources/lab-code-manifest.json",
   "interfaceAudit": "sources/INTERFACE-AUDIT.txt",
   "p1Review": "sources/P1-REVIEW.txt",
+  "l1Review2021": "sources/L1-2021-REVIEW.txt",
   "artifacts": {
     "courseRegistration": "complete",
     "catalogMigration": "mit-6.824-2020 -> mit-6.824-2021; active",
-    "publicResources": "updated_for_2021",
+    "publicResources": "updated_for_2021_P1_complete",
     "mainlineEntries": 21,
     "updateEntries": 8,
     "labEntries": 5,
-    "lectureDocumentsCompleted": 2,
+    "lectureDocumentsCompleted": 3,
     "labDocumentsCompleted": 2,
     "lectureIllustrationsCompleted": 1
   },
   "sourceCoverage": {
-    "reviewed2021Pages": ["schedule", "general"],
+    "reviewed2021Pages": ["schedule", "general", "lec01-notes"],
     "mainlineLecturesWithVideoLinks": 19,
     "mainlineVideoLinks": 20,
     "mainlineWithoutVideo": ["lec06", "lec08"],
     "splitVideos": { "lec15": ["07xsfL5E8Ck", "XwU4jKhBxws"] },
-    "videoMetadataFetched": [],
-    "mainlineVideoMetadataPending": "All 2021 videos: title, duration, channel and license; schedule links alone are verified",
+    "videoMetadataFetched": ["lec01"],
+    "mainlineVideoMetadataPending": "2021 videos except lec01: title, duration, channel and license; lec01 has a CC Attribution label, exact version unresolved",
     "mainlineLectureInstructors": "Frans Kaashoek from 2021 general.html; Russ Cox guest at L10 from schedule; per-video speakers not yet reviewed",
     "labRequirementsSnapshotted": ["mr", "kvsrv", "raft", "kvraft", "shardkv"],
     "labInterfaces": "P0/P1 static checks retained for the same pinned 2026 code; no lab tests run",
@@ -48,20 +49,22 @@
   },
   "sample": {
     "lecture": "lec01",
-    "officialNotes": "P1 uses reviewed 2020 notes as explicitly attributed supplementary material; 2021 notes not yet reviewed",
+    "officialNotes": "2021 L1 outline fully reviewed; original 2020 P1 attribution retained as historical supplementary source",
     "videoId": "WtZ7pcRSkOA",
-    "durationSeconds": null,
-    "videoMetadata": "not_started",
-    "captions": "awaiting_user",
-    "captionDownloadAttempted": false,
-    "notes": "complete_reused_written_sample",
-    "draft": "awaiting_user_captions",
+    "durationSeconds": 4748,
+    "videoMetadata": "fetched: sources/lec01-video-2021.metadata.json",
+    "captions": "reviewed_text_english_auto; sources/lec01-2021.en-orig.json3; raw ASR preserved",
+    "captionDownloadAttempted": true,
+    "captionTiming": { "cues": 1906, "firstStartMs": 880, "lastEndMs": 4748679, "check": "starts monotonic; all cue starts assigned to 35 contiguous draft sections; final cue extends 679 ms beyond integer video duration; raw timing preserved" },
+    "normalizedCaptions": "sources/lec01-captions-2021/",
+    "notes": "complete_aligned_with_2021",
+    "draft": "complete_caption_based_adaptation",
     "materials": "complete_independent_reading",
-    "videoCoverage": "not_reviewed; no timestamps or classroom coverage claimed"
+    "videoCoverage": "00:00-79:08 caption-based chronological adaptation including classroom questions; all caption text reviewed, not audio/screens; uncertain phrases documented in review"
   },
   "batches": {
     "P0": "complete_then_migrated_to_2021",
-    "P1": "written_sample_reused_2021_draft_pending",
+    "P1": "complete_2021_caption_based",
     "P2": "not_started",
     "P3": "not_started",
     "P4": "not_started",
@@ -70,7 +73,7 @@
   },
   "content": {
     "lectures": {
-      "lec01": { "notes": "complete_reused_written_sample", "draft": "awaiting_user_captions", "materials": "complete_independent_reading" },
+      "lec01": { "notes": "complete_aligned_with_2021", "draft": "complete_caption_based_adaptation", "materials": "complete_independent_reading" },
       "lec02": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
       "lec03": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
       "lec04": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
@@ -110,14 +113,14 @@
   },
   "knownIssues": [
     { "id": "lab-command-widget-xv6", "status": "open_outside_content_scope", "location": "src/pages/Lab.tsx: Commands", "issue": "Generic widget uses xv6 commands; correct Go commands remain in resources and lab goals", "blocksNextBatch": false },
-    { "id": "lec01-captions-2021", "status": "awaiting_user", "issue": "User plans to supply English captions for WtZ7pcRSkOA; no automatic download attempted for this video", "blocks": ["2021 lec01 draft"], "blocksNextBatch": false },
-    { "id": "video-licenses-2021", "status": "not_started", "issue": "Check each 2021 video's license; 2020 metadata does not transfer", "blocksNextBatch": false }
+    { "id": "lec01-captions-2021", "status": "resolved", "issue": "English auto captions downloaded for WtZ7pcRSkOA; JSON3, normalized JSON, VTT and timestamped text saved locally; no user download needed", "blocks": [], "blocksNextBatch": false },
+    { "id": "video-licenses-2021", "status": "partial", "issue": "L1 metadata reports Creative Commons Attribution license (reuse allowed); exact version unresolved. Other 2021 videos remain unchecked", "blocksNextBatch": false }
   ],
   "historicalIssues": [
     { "videoId": "cQP8WApzIQQ", "year": 2020, "captions": "HTTP 429 after one P1 retry", "log": "sources/lec01-caption-p1.log", "license": "CC Attribution label; historical version unresolved", "status": "retired_as_primary_video" }
   ],
   "labTests": "not_run",
   "learnerLabCompletion": "not_tracked",
-  "validation": { "checkedAt": "2026-11-08", "contentIntegrity": "passed: official per-lecture links and all 20 video links, 21+8 entries, mappings, state, routes, images/SVG, snapshot hashes and catalog counts", "siteBuild": "passed: npm run build (tsc --noEmit + vite build)", "labTests": "not_run" },
-  "next": "Use user-provided 2021 L1 captions when available; otherwise P2: 2021 L2/L10 + update-linearizability + 2026 Lab 2. Preserve pinned lab interfaces."
+  "validation": { "checkedAt": "2026-11-08", "contentIntegrity": "passed: L1 metadata, 3 lecture/2 lab document counts, source hashes, status, internal routes, images/SVG, Markdown fences and diff whitespace", "captionTimeline": "passed: 35 contiguous sections covering 00:00-79:08; all 1906 caption starts assigned exactly once; does not imply audio review", "siteBuild": "passed: npm run build (tsc --noEmit + vite build), including 2021 L1 draft", "labTests": "not_run" },
+  "next": "Proceed directly with P2: fetch 2021 L2/L10 English captions, then L2/L10 + update-linearizability + 2026 Lab 2. Preserve pinned lab interfaces; do not wait for confirmation between planned steps."
 }

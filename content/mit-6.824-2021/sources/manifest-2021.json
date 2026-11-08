@@ -1,10 +1,45 @@
 {
   "course_id": "mit-6.824-2021",
   "source_inventory": "schedule-inventory-2021.json",
-  "linked_sources_default_status": "discovered; no linked video, note, paper, FAQ or code fetched in this migration",
+  "linked_sources_default_status": "discovered unless explicitly recorded below; L1 metadata, captions and notes fetched after migration",
   "legacy_manifest": "manifest.json",
   "legacy_scope": "2020/2026 P0/P1 only; old course-root paths refer to the pre-migration directory",
   "sources": [
+    {
+      "id": "lec01-2021-notes-1",
+      "url": "http://nil.csail.mit.edu/6.824/2021/notes/l01.txt",
+      "retrieved_at": "2026-11-08T14:06:29.185718+00:00",
+      "status": "reviewed",
+      "file": "lec01-2021.txt",
+      "sha256": "5a6ebd064dc0a67fe60f3cc4b22c2ec55776e89b60cf0f4fce0932914ff5de9b",
+      "last_modified": "Mon, 15 Feb 2021 16:27:02 GMT",
+      "scope": "Complete written outline; used for terms, staff names, word-count example and comparison with classroom coverage"
+    },
+    {
+      "id": "lec01-2021-videos-1",
+      "url": "https://www.youtube.com/watch?v=WtZ7pcRSkOA",
+      "retrieved_at": "2026-11-08T14:03:23.745002+00:00",
+      "status": "fetched",
+      "file": "lec01-video-2021.metadata.json",
+      "sha256": "90e6870f06b35f754622bf1447b6871c8d91a15ce49fbe479154229d67365499",
+      "scope": "Selected metadata only; video not downloaded or reviewed",
+      "license": "Creative Commons Attribution license (reuse allowed); exact version unresolved"
+    },
+    {
+      "id": "lec01-2021-captions-en-orig",
+      "url": "https://www.youtube.com/watch?v=WtZ7pcRSkOA",
+      "retrieved_at": "2026-11-08T14:03:23.745002+00:00",
+      "status": "reviewed",
+      "file": "lec01-2021.en-orig.json3",
+      "sha256": "ece6feee2062761a2de073eff870940b60817f7cd3590dc3497236158a5276de",
+      "kind": "English original automatic captions; raw text preserved unchanged",
+      "review_scope": "All 1906 text cues read in order; Chinese adaptation with source-based corrections and explicit technical notes; no audio or screen review",
+      "review_file": "L1-2021-REVIEW.txt",
+      "duplicate": "lec01-2021.en.json3 has identical SHA-256",
+      "derived_files": ["lec01-captions-2021/captions.normalized.json", "lec01-captions-2021/captions.en.vtt", "lec01-captions-2021/transcript.en.txt"],
+      "timing_check": "1906 cues, monotonic starts, 00:00:00.880 to 01:19:08.679; final cue 679 ms beyond integer duration 4748 s, preserved unchanged",
+      "method": "yt-dlp 2026.08.19; skip-download, write-subs/write-auto-subs, en/en-orig, JSON3; normalize_captions.py"
+    },
     {
       "id": "schedule-2021",
       "url": "http://nil.csail.mit.edu/6.824/2021/schedule.html",

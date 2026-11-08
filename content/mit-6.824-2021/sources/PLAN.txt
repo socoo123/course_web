@@ -42,27 +42,34 @@ Chain Replication 和 SUNDR 已属 2021 主线，原两个同名 Updates 合并�
 当前清单：sources/schedule-inventory-2021.json。
 当前映射：sources/version-map-2021.json。
 2021 抓取：sources/manifest-2021.json；已保存并核对课表与 general.html。
-21 讲的链接已登记，视频时长、频道、标题、许可均待逐条核对。
+21 讲的链接已登记；L1 已抓取视频元数据，其余视频时长、频道、标题、许可待逐条核对。
 
 无 -2021 后缀的 manifest.json、schedule-inventory.json、version-map.json
 是迁移前 P0/P1 历史记录；其中 2020 来源不能冒充 2021 已抓取材料。
 原始来源整体移至新目录；旧 manifest 中含旧目录的路径按迁移前根目录解释。
 2026 lab-code-manifest.json、INTERFACE-AUDIT.txt 与固定源码归档继续有效。
 
-P1 复用：L1 notes/materials、自绘 SVG；2026 Lab 1 lab/guide。
-L1 notes 仍标明实际使用的 2020 讲义，materials 保留已读论文快照出处。
-它们不是 2021 视频译稿。收到字幕后再核对课堂与书面笔记的连接。
+P1 已完成 2021 衔接：L1 draft/notes/materials、自绘 SVG；2026 Lab 1 lab/guide。
+L1 draft 按 2021 字幕完整顺序整理；notes 已对照 2021 讲义与字幕并保留 2020 历史出处，
+materials 保留已读论文快照出处，将课堂词频例子与基本流程转向 draft。
+校订与课堂/论文差异见 L1-2021-REVIEW.txt；不声称逐段回听音轨或核对画面。
 
-用户准备协助抓取 2021 L1 英文字幕（优先带时间戳 SRT/VTT/JSON3）：
+2021 L1 英文自动字幕已由 agent 成功抓取，无需用户手动下载：
 https://www.youtube.com/watch?v=WtZ7pcRSkOA
-当前状态：awaiting_user_captions；尚未尝试下载该视频字幕。
+当前状态：reviewed_text；1906 条字幕已逐段阅读，中文译稿 35 个时间段已完成。
+原始字幕：lec01-2021.en-orig.json3；en.json3 内容相同。
+规范化 JSON、VTT、带时间文本：lec01-captions-2021/。
+1906 条，00:00:00.880–01:19:08.679；起点单调，末条超过整数视频时长 679 ms，
+保留原始时间；时间结构校验不代表音频或画面核验。
+元数据：lec01-video-2021.metadata.json；Lecture 1: Introduction，79:08，
+MIT 6.824: Distributed Systems，2021-02-16 上传；CC Attribution 标签，具体版本待核实。
 旧 cQP8WApzIQQ 的 HTTP 429、4775 秒和 CC 标签仅属 2020 历史记录，
 不能沿用到 2021。不要循环重试旧视频。
 
 四、学习路线与批次
 
 P0：已完成原站骨架；本次 2021 迁移重建讲次、视频和版本映射。
-P1：书面样板已复用；2021 L1 draft 待字幕和视频许可核对。
+P1：已完成 2021 L1 逐段中文整理译稿及书面材料衔接，保留明确的字幕识别边界。
 
 P2 Go/RPC + KV：2021 L2/L10 + update-linearizability + 2026 Lab 2。
   L2 特有代码含 crawler.go、kv.go、condvar.tar.gz（vote examples）。
@@ -101,4 +108,6 @@ Ray、BFT。Go patterns 制作前对照 2021 L10，只展开真正有差异的�
 
 恢复口令：继续 6.824，读取 content/mit-6.824-2021/sources/PLAN.txt 和 status.json，
 按计划执行下一批，仅改 content/，校验后提交并推送。
-下一步：若收到 2021 L1 字幕先补译稿；否则推进 P2（L2/L10 + 线性一致性 + Lab 2）。
+执行偏好：按既定批次直接推进，获取字幕成功后继续制作，不停在“可以继续”的确认上。
+只有需要用户决策的真实阻塞才询问；字幕失败时按已有书面来源分支推进。
+下一步：推进 P2（L2/L10 + 线性一致性 + Lab 2），先尝试抓取 2021 L2/L10 英文字幕。

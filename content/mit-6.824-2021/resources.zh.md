@@ -1,6 +1,6 @@
 ---
 source: MIT 6.824 Spring 2021 官方课表与课程信息；MIT 6.5840 Spring 2026 官方课表、实验页与固定代码
-status: 已切换 2021 讲次和视频入口；复用 P1 的 L1 书面笔记、论文精读与 2026 Lab 1 说明和指导。2021 字幕待用户提供，视频元数据与许可待核对；实验测试未运行。
+status: P1 已完成：2021 L1 逐段中文整理译稿、衔接笔记、论文精读与 2026 Lab 1 说明及指导。译稿已对照全部自动字幕和书面来源，未逐段回听音轨；其余课程按计划推进，实验测试未运行。
 license: 本页为编者自主导航；外链论文、视频、讲义与实验要求分别核实许可。
 ---
 
@@ -111,7 +111,7 @@ Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector �
 - MIT 6.824 Spring 2021：[官方课表](http://nil.csail.mit.edu/6.824/2021/schedule.html)、[课程信息](http://nil.csail.mit.edu/6.824/2021/general.html)。课程讲师 Frans Kaashoek；L10 嘉宾 Russ Cox。
 - L1：[2021 视频](https://www.youtube.com/watch?v=WtZ7pcRSkOA)。字幕与后续时间轴以该视频为准。
 - L15 FaRM：[上半场](https://www.youtube.com/watch?v=07xsfL5E8Ck)、[续集](https://www.youtube.com/watch?v=XwU4jKhBxws)。译稿须分别保留两段的时间轴。
-- 全部视频入口来自官方课表；登记见 `sources/schedule-inventory-2021.json`，视频标题、时长、频道与许可尚需逐条核对。
+- 全部视频入口来自官方课表；登记见 `sources/schedule-inventory-2021.json`。L1 标题为 Lecture 1: Introduction，频道 MIT 6.824: Distributed Systems，时长 79:08，上传日期 2021-02-16；元数据标注 CC Attribution（具体版本待核实）。其余视频元数据尚需逐条核对。
 
 ### 2021 指定阅读入口
 
@@ -148,4 +148,6 @@ Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector �
 
 归档位于 `content/mit-6.824-2021/sources/`。`schedule-inventory-2021.json` 与 `version-map-2021.json` 记录当前讲次、视频和映射；`manifest-2021.json` 记录本次抓取。无 `-2021` 后缀的原 manifest、inventory、version-map 保留为 P0/P1 的历史记录，不能用于当前编号。
 
-L1 书面笔记仍明确引用实际读过的 2020 讲义；论文精读仍使用 P1 阅读的 13 页 OSDI 2004 快照。两者是复用的书面学习材料，不代表已覆盖 2021 课堂。P1 对 2020 视频的 HTTP 429、79:35 时长与 CC 标签不适用于新的 2021 视频。详细历史许可与来源见 `sources/P1-REVIEW.txt`；2026 Lab 1 中译保留课程网站 [CC BY 3.0 US](https://creativecommons.org/licenses/by/3.0/us/) 署名与修改说明。
+L1 中文译稿按 2021 英文自动字幕的真实时间顺序整理，课堂问答与书面材料的差异单列校注；笔记已对照 2021 讲义并保留实际使用过的 2020 讲义出处。论文精读使用 P1 阅读的 13 页 OSDI 2004 快照，课上展开的词频例子与基本流程转向译稿，不重复铺陈。当前校订记录见 `sources/L1-2021-REVIEW.txt`。
+
+P1 对 2020 视频的 HTTP 429、79:35 时长与 CC 标签仅为历史记录，不能用于 2021 视频。详细历史许可与来源见 `sources/P1-REVIEW.txt`；2026 Lab 1 中译保留课程网站 [CC BY 3.0 US](https://creativecommons.org/licenses/by/3.0/us/) 署名与修改说明。
