@@ -1,0 +1,125 @@
+P4 Lab 4 A–C 静态阅读与交付审阅
+日期：2026-11-09
+课程容器：MIT 6.824 Spring 2021；实验：MIT 6.5840 Spring 2026。
+固定提交：513cac0aef010750fc74688da8a395974a83cf7a。
+
+一、写入边界
+仅新增 labs/kvraft/lab.zh.md、labs/kvraft/guide.zh.md，及本 p4-lab4 来源目录。
+未修改共享元数据、其他 lecture/lab、前端或实验代码；未提交。
+已读项目 AGENTS.md、technical-video-notes skill、PLAN.txt、P3-REVIEW.txt、
+INTERFACE-AUDIT.txt、lab-code-manifest.json，以及 labs/raft 两份样本。
+
+二、官方页与许可
+完整阅读 lab-kvraft-2026.html 1–589 行，包括全部正文、任务、提示与终端样例。
+沿用 manifest.json 的抓取时间 2026-11-08T12:48:14.788373+00:00，未重新抓取。
+Last-Modified: Sat, 11 Apr 2026 11:09:57 GMT。
+SHA-256: ee7cee4b56c4f20968affd71e2e5de0f9063d522cea990ff215f291f01dc90bf。
+实际重新核对文件哈希；正文/全部 A–C 任务与提示中译，重复终端输出缩写。
+许可定点复查 home-2026.html 第 61 行 rel=license：CC BY 3.0 US。
+外链图、论文、协作/提交/工具链/Piazza 等只保留入口，未计为全文已读。
+共享 Raft 论文只链接 lec05/materials；未另写论文内容或声称本次重读 PDF。
+
+三、代码获取与完整阅读范围
+归档 lab-code-513cac0aef01.tar.gz 在解压前校验 SHA-256：
+5a6d4a143a6f7fab6e6e6a525b3160ef16433de36506ca4600850ed8659ab1c4。
+独立解压到批准目录：
+/private/var/folders/5k/y6qh6sfd2g30js0v0qrv4mfr0000gn/T/opencode/p4-lab4-796fulol/6.5840-golabs-2026/
+归档含顶层 6.5840-golabs-2026；初次按无顶层路径验证找不到文件，调整到实际
+归档根后完成原 manifest 全部成员哈希核对。未篡改归档；解压文件统一 chmod 0444。
+以下 27 个文件均从首行到末行完整静态阅读，括号为行数，路径相对实验仓库：
+  src/raftapi/raftapi.go (34)
+  src/raft1/raft.go (216)
+  src/raft1/server.go (235)
+  src/tester1/persister.go (70)
+  src/kvraft1/client.go (63)
+  src/kvraft1/server.go (69)
+  src/kvraft1/test.go (103)
+  src/kvraft1/kvraft_test.go (478)
+  src/kvraft1/rsm/rsm.go (87)
+  src/kvraft1/rsm/server.go (122)
+  src/kvraft1/rsm/proxy.go (41)
+  src/kvraft1/rsm/test.go (208)
+  src/kvraft1/rsm/rsm_test.go (352)
+  src/kvsrv1/rpc/rpc.go (40)
+  src/kvsrv1/client.go (56)
+  src/kvsrv1/server.go (54)
+  src/kvtest1/kvtest.go (401)
+  src/kvtest1/porcupine.go (186)
+  src/models1/kv.go (80)
+  src/tester1/group.go (327)
+  src/tester1/srv.go (98)
+  src/tester1/daemonclnt.go (160)
+  src/tester1/daemonsrv.go (195)
+  src/main/rsm1d.go (16)
+  src/main/kvraft1d.go (16)
+  src/Makefile (66)
+  Makefile (33)
+另定点读取 src/raft1/raft_test.go 1317–1353，含完整 TestSnapshotInit3D 及前一
+测试末尾；本次未重读该文件其余部分，P3 通读记录不能冒充 P4 新通读。
+全部文件的 SHA-256 与精确阅读范围见 manifest-fragment.json 的 members。
+没有 kvraft1/common.go；共同协议定义实际在 kvsrv1/rpc/rpc.go。
+其他框架文件、依赖包和实验测试没有计为本次完整阅读；未执行 Go 编译或实验测试。
+
+四、关键结论
+1. StateMachine 为 DoOp(any) any / Snapshot() []byte / Restore([]byte)。RSM
+   只处理不透明业务操作；Submit(req any) (rpc.Err, any) 区分复制完成与业务结果。
+2. MakeRSM/StartKVServer 需尽快返回；服务数据必须在 reader 访问前准备好。
+3. Start 返回 index/term/leader 只表示接受提议，不保证提交；结果必须来自身份
+   匹配的已提交操作及 DoOp。所有副本执行，无 waiter 也不能跳过状态机更新。
+4. 请求身份不是 index、term 或键 version；须避免跨副本/跨重启碰撞，以及
+   Start 后 apply 早于 waiter 登记、waiter 退出后通知阻塞等竞态。
+5. 旧 leader 可能不知道新任期；允许隔离期间等待。任期变化/ErrWrongLeader
+   不能普遍证明业务没有执行；Clerk 重试保留原参数和不确定性。
+6. TestLeaderPartition4A：100 个 Dec 并发 Submit，任意 OK 失败；全体非 OK 在
+   1 秒观察窗内完成也失败；恢复连接后要求 1 秒内全体完成。指导不推荐统一
+   固定短超时把等待全部提前结束。
+7. 关闭实际链路：rsm/test.go kill → ServerGrp.Kill/ShutdownServer →
+   Server.shutdownServer → checkpointPersister → DaemonClnt.kill →
+   cmd.Process.Kill。checkpoint 先关闭 daemon 通信并复制两份持久状态。
+   测试侧通过 RSMproxy/DaemonClnt 调用；不把旧注释的 Kill/close applyCh
+   当成当前 Raft API。没有 CondInstallSnapshot。
+8. Get 返回 value/version/err；Put 使用 Key/Value/Version，版本匹配更新并
+   递增；创建使用 0，创建后 1；无键非零 ErrNoKey，已存在不匹配 ErrVersion。
+   业务状态只在 DoOp 路径改变。Get 也经日志，避免旧 leader 读取旧状态。
+9. ErrMaybe 仅 Clerk 层；固定 client.go 规定首次 RPC ErrVersion 确定冲突，
+   重发后 ErrVersion 则 ErrMaybe；不能自动提高 version 来重试。
+10. RSM 负责阈值/应用边界/恢复封装，KV 负责业务快照，Raft 负责前缀压缩与
+    原子保存。snapshot(S) 字节必须反映恰好到 S 的状态；value/version 都要保存。
+    若 RSM 需要持久应用边界，须在自己可恢复的元数据封装中保留，服务接口本身
+    不传 index。没有要求完整请求历史或 waiter 入快照。
+11. P3 服务先抓取初始快照副本，恢复后再消费 apply；第一条是更后快照或紧接
+    边界命令。接收远程快照不走 DoOp、不重放覆盖前缀，不能倒退。
+12. Persister.Save 原子替换两份数据；已有快照仍传 nil 会清掉快照。
+    TestSnapshotInit3D 检查恢复后新提交再重启，确认每次保存保留当前快照。
+13. maxraftstate 限制 Raft 持久字节而非快照；-1 时 KV 测试实际检查未用快照。
+    RSM TestSnapshot4C 用 2 倍阈值容差，KV 部分用 8 倍；不是新阈值建议。
+    SnapshotSize4C 的 500 字节针对一个键反复覆写，不是一般数据库大小上限。
+14. SnapshotRPC4C 先隔离落后节点、允许多数派压缩，再让落后节点参与新多数派。
+    Speed 测试检查平均每操作不超过约 100ms/3，不能仅每次心跳处理一个操作。
+15. kvtest 的显式 CheckGet 比较 value/version；Porcupine Get 模型只比 value。
+    Unknown 会输出 assumed OK，不代表证明成功。官方例子中的该行已作解释。
+16. src/Makefile 默认 -v -race，rsm1/kvraft1 先构建不同 daemon；4C 有 RSM 与
+    KV 两个入口；全回归还包括 raft1。根 Makefile 是提交打包入口，不混用。
+
+五、页面、骨架与测试差异／疑点
+- 官方 HTML 最后修改晚于固定提交；本次不更新固定提交，不假定两者同日发布。
+- HTML 4B ErrMaybe 句子不精确；按固定客户端注释校正，译文明确标为编者校注。
+- rsm.go 残留 SaveStateAndSnapshot 名称；实际方法是 Save。
+- TestShutdown4A 的 Kill/close applyCh 注释过时；实际进程链路见上文。
+- HTML 4C 第一任务说 RSM TestSnapshot4C，相邻失败样例却运行 kvraft1；给出两入口。
+- HTML/代码基本 RSM 失败样例 expected 0 instead of 0 来自测试错误文本使用 i
+  而判断用 i+1；不照抄这一误导数字，译文只说骨架初始失败。
+- TestOnePartition4B 的恢复后 Get select 带 default，单独该段不足以证明等到
+  Get 完成；不据此改变 Get 语义，也不把单个测试当作完备证明。
+- 未发现阻碍按既定接口完成任务的冲突。以上用差异说明处理，不修改 starter。
+
+六、内容分工与验证
+lab.zh.md 保留完整任务/提示，guide 聚焦操作路径、身份/索引、竞态、重试、
+快照边界和测试定位；不提供完整实现。桥接 notes 由主 agent 写，本站内链接引用。
+本次没有实验实现，没有运行任何实验测试或 Go 编译。本记录不是实验通过报告。
+本 worker 最小验证通过：manifest JSON 可解析，三个来源 SHA-256 与 28 个已读
+成员 SHA-256 一致，完整/部分阅读行范围与文件长度一致，两份 Markdown 围栏配对、
+无行末空白、所有站内链接目标正文存在（包括主 agent 的桥接 notes）。
+npm run build 通过：tsc --noEmit + Vite，2584 modules，5.17s；仅代表执行时
+共享工作区的网站构建。主 agent 后续整合若继续变更，最终构建由主 agent 记录。
+限定路径 git diff --check 无报错；新增未跟踪正文的空白另由上列静态检查覆盖。

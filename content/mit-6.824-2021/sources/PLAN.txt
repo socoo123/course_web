@@ -1,5 +1,5 @@
 MIT 6.824 分布式系统：课程生成与学习计划
-更新：2026-11-08；按用户要求切换至 Spring 2021 视频主线。
+更新：2026-11-09；主线 Spring 2021，实验固定 Spring 2026。
 
 一、当前版本（后续执行以本节为准）
 
@@ -42,7 +42,7 @@ Chain Replication 和 SUNDR 已属 2021 主线，原两个同名 Updates 合并�
 当前清单：sources/schedule-inventory-2021.json。
 当前映射：sources/version-map-2021.json。
 2021 抓取：sources/manifest-2021.json；已保存并核对课表与 general.html。
-21 讲的链接已登记；L1/L2/L3/L4/L5/L7/L10 已独立核对视频元数据，其余待逐条核对。
+21 讲的链接已登记；L1/L2/L3/L4/L5/L7/L9/L10 已独立核对视频元数据，其余待逐条核对。
 
 无 -2021 后缀的 manifest.json、schedule-inventory.json、version-map.json
 是迁移前 P0/P1 历史记录；其中 2020 来源不能冒充 2021 已抓取材料。
@@ -98,7 +98,18 @@ P3 复制/Raft：内容已完成，先 L3/L4，再 L5/L7 + 2026 Lab 3。
   分组缺口、原始字幕末条超时及课堂技术疑点明确保留。实验测试未运行。
   P3逐讲来源清单以manifest-2021.json的source_fragments索引纳入；
   p3-lecNN/acquisition.json仅代表获取时状态，不能代替最终审阅范围。
-P4 服务：L9 + update-lab-bridge 的 RSM 部分 + 2026 Lab 4。
+P4 服务：内容已完成，L9 + update-lab-bridge 的 RSM 部分 + 2026 Lab 4 A–C。
+  RSM 桥接围绕提交身份、日志位置、业务回复与 ErrWrongLeader/ErrMaybe；
+  KV 与 RSM 快照协作延续 P3 恢复契约；使用 Persister.Save，不套旧实验。
+  三份 L9 材料、桥接笔记与原创请求边界图、两份 Lab4 正文的来源边界
+  见 P4-REVIEW.txt、p4-lec09/review.txt 与 p4-lab4/review.txt。
+  桥接迁移部分明确未完成，留待 P5；没有将接口摘要当作完整迁移教程。
+  Lab4 完整阅读官方页589行、固定代码27个完整文件与TestSnapshotInit3D定点范围；
+  ErrMaybe网页措辞、4C RSM/KV入口错配与旧注释已校注；实验测试未运行。
+  L9：82:50，2239条英文ASR全部文本阅读，32段含课后问答；无音画核验。
+  讲义269行/FAQ245行、ZooKeeper论文14页及全部8图3表完整审阅；课堂未讲锁配方
+  仅在materials展开。147处字幕并集间隙与末条超时2159ms保留，不推断为静音。
+  本批6份新正文与1张原创SVG；累计24份讲座正文、8份实验正文、4张SVG。
 P5 分片：L13/L14 + update-lab-bridge 的迁移部分 + 2026 Lab 5。
   事务与 Spanner 是扩展理解；2PC 非基础要求；Lab 5D 单列开放扩展。
 P6 案例：L11/L12/L15/L17，再按兴趣 L16/L18/L19/L20/L21 与 Updates。
@@ -130,6 +141,7 @@ Ray、BFT。Go patterns 制作前对照 2021 L10，只展开真正有差异的�
 按计划执行下一批，仅改 content/，校验后提交并推送。
 执行偏好：按既定批次直接推进，获取字幕成功后继续制作，不停在“可以继续”的确认上。
 只有需要用户决策的真实阻塞才询问；字幕失败时按已有书面来源分支推进。
-下一步：P4，2021 L9 ZooKeeper + update-lab-bridge的RSM部分 + 2026 Lab4 A–C。
-直接复制提示词见 sources/NEXT-P4-PROMPT.txt；分片迁移桥接留给P5。
-最新验证结果见 status.json.validation 与 sources/P3-REVIEW.txt。
+下一步：P5，2021 L13 事务 / L14 Spanner + 分片迁移桥接 + 2026 Lab5。
+Lab5 A–C 完整说明/指导，D 单列官方开放扩展、自学路线进阶项；2PC非A–C要求。
+直接复制提示词见 sources/NEXT-P5-PROMPT.txt；NEXT-P4-PROMPT.txt 保留为历史入口。
+最新验证结果见 status.json.validation 与 sources/P4-REVIEW.txt。

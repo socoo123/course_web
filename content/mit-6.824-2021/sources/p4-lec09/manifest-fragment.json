@@ -1,0 +1,844 @@
+{
+  "course_id": "mit-6.824-2021",
+  "lecture_id": "lec09",
+  "batch": "P4",
+  "review_file": "p4-lec09/review.txt",
+  "acquisition_file": "p4-lec09/acquisition.json",
+  "content_status": "completed_text_review_with_explicit_asr_and_audio_visual_limits",
+  "sources": [
+    {
+      "id": "lec09-2021-l-zookeeper.txt",
+      "url": "http://nil.csail.mit.edu/6.824/2021/notes/l-zookeeper.txt",
+      "retrieved_at": "2026-11-09T00:46:28.580330+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:42 GMT",
+      "file": "p4-lec09/l-zookeeper.txt",
+      "sha256": "58531836fd37aacaf487c3c1ab0f84e0b787a5cf3b5db3638d46ae0ab8c7114e",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T01:02:03.551101+00:00",
+      "scope": "All 269 lines read. Original heading says 6.824 2020 Lecture 8 despite 2021 schedule URL. Locks and implementation topics not presented in this recording are kept outside the draft timeline.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "evidence_file": "home-2021.html",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "basis": "Existing course homepage rel=license rechecked; course-authored text only."
+      }
+    },
+    {
+      "id": "lec09-2021-zookeeper.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zookeeper.pdf",
+      "retrieved_at": "2026-11-09T00:46:32.383256+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "file": "p4-lec09/zookeeper.pdf",
+      "sha256": "743d56888f7b698cf4d0a86a4538793bbbf3c94c8e21d5c27dc34369d56102a0",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T01:02:03.551101+00:00",
+      "scope": "All PDF pages 1-14 read: abstract, sections 1-7, acknowledgements and references. Layout extraction lines 1-980 read in three sequential reads; interpreted in per-page column order. Actual page images inspected for Figure 1-8 and Table 1-3, plus page 6 pseudocode and page 9 transaction notation. No linked papers or implementation source read.",
+      "license": "Full translation permission unconfirmed; original Chinese analytical reading, not a full translation."
+    },
+    {
+      "id": "lec09-2021-zookeeper-faq.txt",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zookeeper-faq.txt",
+      "retrieved_at": "2026-11-09T00:46:28.716707+00:00",
+      "last_modified": "Thu, 18 Mar 2021 20:34:14 GMT",
+      "file": "p4-lec09/zookeeper-faq.txt",
+      "sha256": "170d79f8041f3e1a2a872a91cf92bab98e9b41ec7dca91a6ac0c540941b180a7",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T01:02:03.551101+00:00",
+      "scope": "All 245 lines read. Includes read-lock goto 3 correction, pipelining, wait-free, fuzzy snapshots, session and retry implementation conjectures. External links not read.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "evidence_file": "home-2021.html",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "basis": "Existing course homepage rel=license rechecked; course-authored text only."
+      }
+    },
+    {
+      "id": "lec09-2021-metadata.json",
+      "url": "https://www.youtube.com/watch?v=HYTDDLo2vSE",
+      "retrieved_at": "2026-11-09T00:46:31.730159+00:00",
+      "last_modified": null,
+      "file": "p4-lec09/metadata.json",
+      "sha256": "89660d5fc79c8e80660d4871bb87ee6d172ee1fa519d20299cc2c9b694c23d92",
+      "status": "reviewed",
+      "last_modified_note": "Not exposed by yt-dlp; unknown, not inferred.",
+      "reviewed_at": "2026-11-09T01:02:03.551101+00:00",
+      "scope": "All selected fields independently acquired and read: HYTDDLo2vSE; Lecture 9: Zookeeper; 4970 seconds; MIT 6.824: Distributed Systems; channel UC_7WrbZTCODu1o_kfUMq88g; upload 20210318; CC Attribution label, specific version unknown. No audio or frames reviewed.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Independently queried for this video; specific CC version absent."
+    },
+    {
+      "id": "lec09-2021-video.en-orig.json3",
+      "url": "https://www.youtube.com/watch?v=HYTDDLo2vSE",
+      "retrieved_at": "2026-11-09T00:46:31.730232+00:00",
+      "last_modified": null,
+      "file": "p4-lec09/video.en-orig.json3",
+      "sha256": "c20b06f9eecc5b210b1eda66c64b3fc6e70cb53219a661b87f20a1b33dda550d",
+      "status": "reviewed",
+      "last_modified_note": "Not exposed by yt-dlp; unknown, not inferred.",
+      "reviewed_at": "2026-11-09T01:02:03.551101+00:00",
+      "scope": "All 2239 cue texts read sequentially via lossless minute grouping, lines 1-87,88-174,175-248. Raw original-language automatic English ASR unchanged. Starts 719ms, final end 4972159ms; all substantive discussion and post-class Q&A organized into 32 continuous editorial intervals. No audio/visual verification; not a claim of word-aligned translation.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Independently queried for this video; specific CC version absent.",
+      "caption_type": "English original-language automatic captions (ASR)",
+      "language": "en-orig"
+    }
+  ],
+  "derived_files": [
+    {
+      "file": "p4-lec09/captions/captions.normalized.json",
+      "sha256": "30b7f77f32a994bfedc025d802fb6e453c462cfcfa4529284fbe382126768d84",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T00:46:41.465961+00:00",
+      "derived_from": "p4-lec09/video.en-orig.json3",
+      "scope": "All objects structurally checked; all cue text read through lossless minute grouping."
+    },
+    {
+      "file": "p4-lec09/captions/transcript.en.txt",
+      "sha256": "616b2470cc6efa1c03ea661d4298c24d340f1f6db10b28d09beb4040e1a2c988",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T00:46:41.471075+00:00",
+      "derived_from": "p4-lec09/video.en-orig.json3",
+      "scope": "Unchanged timed text generated from all cues; text read via minute grouping, not a separate full reread of this file."
+    },
+    {
+      "file": "p4-lec09/captions/captions.en.vtt",
+      "sha256": "51cd4293b9ff80c7fbf8315b215510b19252ed1bfff64ffac35848ef8f90b504",
+      "status": "fetched",
+      "generated_at": "2026-11-09T00:46:41.469215+00:00",
+      "derived_from": "p4-lec09/video.en-orig.json3",
+      "scope": "Generated caption representation; no player playback or separate line-by-line review."
+    },
+    {
+      "file": "p4-lec09/captions/reading-by-minute.txt",
+      "sha256": "1134e0ca3263dae393c60aa4d75a23541c38e0e8f69a5a266dd6968a3568e01d",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T00:47:00.961995+00:00",
+      "derived_from": "p4-lec09/video.en-orig.json3",
+      "scope": "All 248 lines read in order; concatenation asserted equal to all 2239 cue texts."
+    },
+    {
+      "file": "p4-lec09/zookeeper.layout.txt",
+      "sha256": "1b183a7529e34974527f7b31038e492eb66d28d33e1ee014498978c5da9c8655",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T00:46:41.542957+00:00",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "All 980 lines read, including paper references; page images resolve figures, tables, formulas and pseudocode."
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-01.png",
+      "sha256": "283e7fa1354333c5bf4d3d4631f0e3ed2b2c36fceaf322c147ed4a8b7849b9d9",
+      "status": "fetched",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "Rendered only; page text reviewed in extracted paper, this page image not separately inspected."
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-02.png",
+      "sha256": "9fa26848ad46bebf5234ac29ccee5abd418ea71b4f8c48625cb652a8e82351aa",
+      "status": "fetched",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "Rendered only; page text reviewed in extracted paper, this page image not separately inspected."
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-03.png",
+      "sha256": "b5ee2812de6cac7295198690859bbe56d7a59edfcc2b0e8049c0b94c2559f96c",
+      "status": "reviewed",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "Figure 1"
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-04.png",
+      "sha256": "cf2bffe9808a5dbc5737fbda6d90d510f45755c543993c1994e5a0f1708aab2c",
+      "status": "fetched",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "Rendered only; page text reviewed in extracted paper, this page image not separately inspected."
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-05.png",
+      "sha256": "d9bf2c9300d5f16f3b5b2a171caa75cf1abb01ef1a7e42539c942393f4c2479f",
+      "status": "fetched",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "Rendered only; page text reviewed in extracted paper, this page image not separately inspected."
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-06.png",
+      "sha256": "6df3e86c6c240d1cd8f977dba35e2dc43775ea2a32d8962a669bafed8282e31e",
+      "status": "reviewed",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "All lock/read-write-lock pseudocode; original Read Lock line 6 says goto 3"
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-07.png",
+      "sha256": "6942d048bbcb205c9b39893a3acdd70f34dd70232a8088b618d10235c283e9dc",
+      "status": "reviewed",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "Figure 2 and Figure 3"
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-08.png",
+      "sha256": "1ce51e5f674fa8ea9eab9fb54c58a77322e4f99f5ad9998b02088f2b1082d819",
+      "status": "reviewed",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "Figure 4"
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-09.png",
+      "sha256": "958e2de281259920aa4180229d99836d3599bb0757c308facd09419823a2f670",
+      "status": "reviewed",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "Fuzzy snapshot transaction sequence and sync implementation text"
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-10.png",
+      "sha256": "df54d83a90d702f47a898523ed1625b1c52669379f30f89323483a9f1980e4ed",
+      "status": "reviewed",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "Figure 5 and Table 1"
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-11.png",
+      "sha256": "37bc70c9aea95a39598405d3380e1640145fdb1565c6485edecee2387f5c9d6f",
+      "status": "reviewed",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "Figure 6,7,8"
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-12.png",
+      "sha256": "750062c411530d344d4fa97c3309f09283f82215117dadb8abbb52861bc23d26",
+      "status": "reviewed",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "Table 2 and Table 3"
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-13.png",
+      "sha256": "7823e5ea0b4cec3776a787613ccfb3d9bd43153c2014a3b95175643df884fd0e",
+      "status": "fetched",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "Rendered only; page text reviewed in extracted paper, this page image not separately inspected."
+    },
+    {
+      "file": "p4-lec09/paper-pages/page-14.png",
+      "sha256": "0a38eb656b82a783b295ae353e7854e993c9da4b8fc8f45f799cb7995426c1ad",
+      "status": "fetched",
+      "derived_from": "p4-lec09/zookeeper.pdf",
+      "scope": "Rendered only; page text reviewed in extracted paper, this page image not separately inspected."
+    }
+  ],
+  "caption_time_structure": {
+    "cue_count": 2239,
+    "first_start_ms": 719,
+    "last_start_ms": 4962880,
+    "last_end_ms": 4972159,
+    "metadata_duration_seconds": 4970,
+    "initial_uncaptioned_ms": 719,
+    "tail_overrun_ms": 2159,
+    "starts_monotonic": true,
+    "ends_monotonic": true,
+    "negative_duration_count": 0,
+    "cues_ending_after_video": 1,
+    "positive_uncovered_gap_count": 147,
+    "uncovered_ms_within_video": 259331,
+    "maximum_uncovered_gap_ms": 8480,
+    "uncovered_gaps_over_2000ms": [
+      {
+        "start_ms": 62000,
+        "end_ms": 64479,
+        "duration_ms": 2479
+      },
+      {
+        "start_ms": 104560,
+        "end_ms": 106960,
+        "duration_ms": 2400
+      },
+      {
+        "start_ms": 149920,
+        "end_ms": 155200,
+        "duration_ms": 5280
+      },
+      {
+        "start_ms": 230400,
+        "end_ms": 238640,
+        "duration_ms": 8240
+      },
+      {
+        "start_ms": 368240,
+        "end_ms": 372160,
+        "duration_ms": 3920
+      },
+      {
+        "start_ms": 691360,
+        "end_ms": 693760,
+        "duration_ms": 2400
+      },
+      {
+        "start_ms": 859600,
+        "end_ms": 865440,
+        "duration_ms": 5840
+      },
+      {
+        "start_ms": 1014320,
+        "end_ms": 1017040,
+        "duration_ms": 2720
+      },
+      {
+        "start_ms": 1256880,
+        "end_ms": 1260840,
+        "duration_ms": 3960
+      },
+      {
+        "start_ms": 1421039,
+        "end_ms": 1425760,
+        "duration_ms": 4721
+      },
+      {
+        "start_ms": 1488240,
+        "end_ms": 1491840,
+        "duration_ms": 3600
+      },
+      {
+        "start_ms": 1518080,
+        "end_ms": 1523440,
+        "duration_ms": 5360
+      },
+      {
+        "start_ms": 1628480,
+        "end_ms": 1631919,
+        "duration_ms": 3439
+      },
+      {
+        "start_ms": 1731039,
+        "end_ms": 1733279,
+        "duration_ms": 2240
+      },
+      {
+        "start_ms": 1915200,
+        "end_ms": 1917760,
+        "duration_ms": 2560
+      },
+      {
+        "start_ms": 1995919,
+        "end_ms": 2000240,
+        "duration_ms": 4321
+      },
+      {
+        "start_ms": 2052079,
+        "end_ms": 2058839,
+        "duration_ms": 6760
+      },
+      {
+        "start_ms": 2175119,
+        "end_ms": 2183599,
+        "duration_ms": 8480
+      },
+      {
+        "start_ms": 2203680,
+        "end_ms": 2210880,
+        "duration_ms": 7200
+      },
+      {
+        "start_ms": 2239040,
+        "end_ms": 2241280,
+        "duration_ms": 2240
+      },
+      {
+        "start_ms": 2292960,
+        "end_ms": 2296839,
+        "duration_ms": 3879
+      },
+      {
+        "start_ms": 2518319,
+        "end_ms": 2520839,
+        "duration_ms": 2520
+      },
+      {
+        "start_ms": 2782079,
+        "end_ms": 2784240,
+        "duration_ms": 2161
+      },
+      {
+        "start_ms": 2943839,
+        "end_ms": 2952319,
+        "duration_ms": 8480
+      },
+      {
+        "start_ms": 3060240,
+        "end_ms": 3062319,
+        "duration_ms": 2079
+      },
+      {
+        "start_ms": 3125839,
+        "end_ms": 3131760,
+        "duration_ms": 5921
+      },
+      {
+        "start_ms": 3142000,
+        "end_ms": 3145599,
+        "duration_ms": 3599
+      },
+      {
+        "start_ms": 3509440,
+        "end_ms": 3514640,
+        "duration_ms": 5200
+      },
+      {
+        "start_ms": 3730559,
+        "end_ms": 3734799,
+        "duration_ms": 4240
+      },
+      {
+        "start_ms": 3839839,
+        "end_ms": 3846000,
+        "duration_ms": 6161
+      },
+      {
+        "start_ms": 3952480,
+        "end_ms": 3955520,
+        "duration_ms": 3040
+      },
+      {
+        "start_ms": 3979839,
+        "end_ms": 3983119,
+        "duration_ms": 3280
+      },
+      {
+        "start_ms": 4014960,
+        "end_ms": 4017119,
+        "duration_ms": 2159
+      },
+      {
+        "start_ms": 4322560,
+        "end_ms": 4327040,
+        "duration_ms": 4480
+      },
+      {
+        "start_ms": 4366400,
+        "end_ms": 4368840,
+        "duration_ms": 2440
+      },
+      {
+        "start_ms": 4484159,
+        "end_ms": 4488080,
+        "duration_ms": 3921
+      },
+      {
+        "start_ms": 4597440,
+        "end_ms": 4604800,
+        "duration_ms": 7360
+      },
+      {
+        "start_ms": 4640640,
+        "end_ms": 4645199,
+        "duration_ms": 4559
+      },
+      {
+        "start_ms": 4725520,
+        "end_ms": 4729360,
+        "duration_ms": 3840
+      },
+      {
+        "start_ms": 4777840,
+        "end_ms": 4781920,
+        "duration_ms": 4080
+      },
+      {
+        "start_ms": 4812000,
+        "end_ms": 4814800,
+        "duration_ms": 2800
+      },
+      {
+        "start_ms": 4959840,
+        "end_ms": 4962880,
+        "duration_ms": 3040
+      }
+    ],
+    "overlapping_adjacent_cue_pairs": 2092,
+    "draft_segment_count": 32,
+    "draft_start": "00:00",
+    "draft_end": "82:50",
+    "audio_reviewed": false,
+    "video_frames_reviewed": false,
+    "interpretation": "Caption interval union only; no uncovered interval is inferred to be silence. ASR may omit or misrecognize speech even inside covered intervals. All cues read; no breakout discussion is identified in this recording."
+  },
+  "draft_segments": [
+    {
+      "start": "00:00",
+      "end": "03:00",
+      "start_ms": 0,
+      "end_ms": 180000,
+      "title": "为什么在 Raft 之后研究 ZooKeeper",
+      "cue_count": 81,
+      "first_cue": 1,
+      "last_cue": 81
+    },
+    {
+      "start": "03:00",
+      "end": "07:00",
+      "start_ms": 180000,
+      "end_ms": 420000,
+      "title": "相同的复制状态机骨架，不同的服务接口",
+      "cue_count": 109,
+      "first_cue": 82,
+      "last_cue": 190
+    },
+    {
+      "start": "07:00",
+      "end": "09:00",
+      "start_ms": 420000,
+      "end_ms": 540000,
+      "title": "先算一个最直接的写请求",
+      "cue_count": 61,
+      "first_cue": 191,
+      "last_cue": 251
+    },
+    {
+      "start": "09:00",
+      "end": "12:00",
+      "start_ms": 540000,
+      "end_ms": 720000,
+      "title": "五毫秒与每秒两百次，只是串行粗算",
+      "cue_count": 88,
+      "first_cue": 252,
+      "last_cue": 339
+    },
+    {
+      "start": "12:00",
+      "end": "15:00",
+      "start_ms": 720000,
+      "end_ms": 900000,
+      "title": "论文图里的两条趋势",
+      "cue_count": 78,
+      "first_cue": 340,
+      "last_cue": 417
+    },
+    {
+      "start": "15:00",
+      "end": "17:00",
+      "start_ms": 900000,
+      "end_ms": 1020000,
+      "title": "异步、批量与本地读取分别解决什么",
+      "cue_count": 59,
+      "first_cue": 418,
+      "last_cue": 476
+    },
+    {
+      "start": "17:00",
+      "end": "20:00",
+      "start_ms": 1020000,
+      "end_ms": 1200000,
+      "title": "让 follower 直接读，会看到什么",
+      "cue_count": 88,
+      "first_cue": 477,
+      "last_cue": 564
+    },
+    {
+      "start": "20:00",
+      "end": "23:00",
+      "start_ms": 1200000,
+      "end_ms": 1380000,
+      "title": "不仅可能陈旧，还可能先新后旧",
+      "cue_count": 79,
+      "first_cue": 565,
+      "last_cue": 643
+    },
+    {
+      "start": "23:00",
+      "end": "25:00",
+      "start_ms": 1380000,
+      "end_ms": 1500000,
+      "title": "正不正确，要先说清楚承诺",
+      "cue_count": 57,
+      "first_cue": 644,
+      "last_cue": 700
+    },
+    {
+      "start": "25:00",
+      "end": "28:00",
+      "start_ms": 1500000,
+      "end_ms": 1680000,
+      "title": "已完成的写不能被后来开始的读忽略",
+      "cue_count": 87,
+      "first_cue": 701,
+      "last_cue": 787
+    },
+    {
+      "start": "28:00",
+      "end": "30:00",
+      "start_ms": 1680000,
+      "end_ms": 1800000,
+      "title": "两次不重叠的读也不能倒退",
+      "cue_count": 56,
+      "first_cue": 788,
+      "last_cue": 843
+    },
+    {
+      "start": "30:00",
+      "end": "33:00",
+      "start_ms": 1800000,
+      "end_ms": 1980000,
+      "title": "最直接的办法：让 Get 也进入日志",
+      "cue_count": 92,
+      "first_cue": 844,
+      "last_cue": 935
+    },
+    {
+      "start": "33:00",
+      "end": "36:00",
+      "start_ms": 1980000,
+      "end_ms": 2160000,
+      "title": "ZooKeeper 改变了读的承诺",
+      "cue_count": 73,
+      "first_cue": 936,
+      "last_cue": 1008
+    },
+    {
+      "start": "36:00",
+      "end": "39:00",
+      "start_ms": 2160000,
+      "end_ms": 2340000,
+      "title": "可以落后，但读到的历史前缀不能缩短",
+      "cue_count": 68,
+      "first_cue": 1009,
+      "last_cue": 1076
+    },
+    {
+      "start": "39:00",
+      "end": "42:00",
+      "start_ms": 2340000,
+      "end_ms": 2520000,
+      "title": "“只有写线性一致”是什么意思，以及 zxid 的直觉",
+      "cue_count": 89,
+      "first_cue": 1077,
+      "last_cue": 1165
+    },
+    {
+      "start": "42:00",
+      "end": "44:00",
+      "start_ms": 2520000,
+      "end_ms": 2640000,
+      "title": "zxid 是最低进度，不是要求读取某个历史版本",
+      "cue_count": 60,
+      "first_cue": 1166,
+      "last_cue": 1225
+    },
+    {
+      "start": "44:00",
+      "end": "46:00",
+      "start_ms": 2640000,
+      "end_ms": 2760000,
+      "title": "会话通常粘在一个服务器上，写则最终到 leader",
+      "cue_count": 55,
+      "first_cue": 1226,
+      "last_cue": 1280
+    },
+    {
+      "start": "46:00",
+      "end": "48:00",
+      "start_ms": 2760000,
+      "end_ms": 2880000,
+      "title": "等待提交与“至少到这里”的区别",
+      "cue_count": 53,
+      "first_cue": 1281,
+      "last_cue": 1333
+    },
+    {
+      "start": "48:00",
+      "end": "50:00",
+      "start_ms": 2880000,
+      "end_ms": 3000000,
+      "title": "较弱语义还是否适合编程",
+      "cue_count": 58,
+      "first_cue": 1334,
+      "last_cue": 1391
+    },
+    {
+      "start": "50:00",
+      "end": "53:00",
+      "start_ms": 3000000,
+      "end_ms": 3180000,
+      "title": "ready 文件：先发布内容，再发布可用标志",
+      "cue_count": 63,
+      "first_cue": 1392,
+      "last_cue": 1454
+    },
+    {
+      "start": "53:00",
+      "end": "56:00",
+      "start_ms": 3180000,
+      "end_ms": 3360000,
+      "title": "学生指出了 ready 例子隐含的前提",
+      "cue_count": 93,
+      "first_cue": 1455,
+      "last_cue": 1547
+    },
+    {
+      "start": "56:00",
+      "end": "58:00",
+      "start_ms": 3360000,
+      "end_ms": 3480000,
+      "title": "真正危险的是读到一半时配置换代",
+      "cue_count": 49,
+      "first_cue": 1548,
+      "last_cue": 1596
+    },
+    {
+      "start": "58:00",
+      "end": "61:00",
+      "start_ms": 3480000,
+      "end_ms": 3660000,
+      "title": "通知必须先于后续新状态的可见性",
+      "cue_count": 71,
+      "first_cue": 1597,
+      "last_cue": 1667
+    },
+    {
+      "start": "61:00",
+      "end": "63:00",
+      "start_ms": 3660000,
+      "end_ms": 3780000,
+      "title": "收到通知以后，整组重读",
+      "cue_count": 54,
+      "first_cue": 1668,
+      "last_cue": 1721
+    },
+    {
+      "start": "63:00",
+      "end": "65:00",
+      "start_ms": 3780000,
+      "end_ms": 3900000,
+      "title": "协调服务还需要帮助应用竞争角色",
+      "cue_count": 57,
+      "first_cue": 1722,
+      "last_cue": 1778
+    },
+    {
+      "start": "65:00",
+      "end": "68:00",
+      "start_ms": 3900000,
+      "end_ms": 4080000,
+      "title": "两个线性一致调用，不等于一个原子竞争操作",
+      "cue_count": 78,
+      "first_cue": 1779,
+      "last_cue": 1856
+    },
+    {
+      "start": "68:00",
+      "end": "71:00",
+      "start_ms": 4080000,
+      "end_ms": 4260000,
+      "title": "znode、会话和顺序编号",
+      "cue_count": 85,
+      "first_cue": 1857,
+      "last_cue": 1941
+    },
+    {
+      "start": "71:00",
+      "end": "73:00",
+      "start_ms": 4260000,
+      "end_ms": 4380000,
+      "title": "用版本化更新实现计数器",
+      "cue_count": 43,
+      "first_cue": 1942,
+      "last_cue": 1984
+    },
+    {
+      "start": "73:00",
+      "end": "76:00",
+      "start_ms": 4380000,
+      "end_ms": 4560000,
+      "title": "两个客户端同时加一，为什么不会丢一次",
+      "cue_count": 81,
+      "first_cue": 1985,
+      "last_cue": 2065
+    },
+    {
+      "start": "76:00",
+      "end": "79:00",
+      "start_ms": 4560000,
+      "end_ms": 4740000,
+      "title": "本讲止于计数器，锁留到以后",
+      "cue_count": 80,
+      "first_cue": 2066,
+      "last_cue": 2145
+    },
+    {
+      "start": "79:00",
+      "end": "81:00",
+      "start_ms": 4740000,
+      "end_ms": 4860000,
+      "title": "课后问答：版本号能修复刚才的 test-and-set 吗",
+      "cue_count": 44,
+      "first_cue": 2146,
+      "last_cue": 2189
+    },
+    {
+      "start": "81:00",
+      "end": "82:50",
+      "start_ms": 4860000,
+      "end_ms": 4970000,
+      "title": "课后问答：重点是表达能力，不是宣称无锁永远更快",
+      "cue_count": 50,
+      "first_cue": 2190,
+      "last_cue": 2239
+    }
+  ],
+  "paper_visual_review": {
+    "pdf_pages": 14,
+    "figures": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "tables": [
+      1,
+      2,
+      3
+    ],
+    "inspected_page_images": [
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "audio_or_video_frames": false
+  },
+  "shared_reading": {
+    "materials_route": "#/c/mit-6.824-2021/lec/lec05?v=materials",
+    "local_review_scope": "Targeted existing Chinese materials sections 6 and 8 read; no new full reading of shared Raft PDF and no duplicate Raft materials."
+  },
+  "version_mapping_evidence": {
+    "file": "schedule-2021.html",
+    "scope": "Lines 154-155 link LEC 9 to this video ID, outline, paper and FAQ; existing shared snapshot only, not refetched or modified."
+  },
+  "content_paths": [
+    "lectures/lec09/draft.zh.md",
+    "lectures/lec09/materials.zh.md",
+    "lectures/lec09/notes.zh.md"
+  ],
+  "validation": {
+    "local_structure": "passed",
+    "sha256": "passed",
+    "draft_timeline": "passed",
+    "caption_text_lossless_grouping": "passed",
+    "build": "Not run by this path-restricted worker; main session must run integrated npm run build.",
+    "experiments": "Not run",
+    "no_media_download": true,
+    "no_full_player_response_saved": true,
+    "no_signed_urls_saved": true
+  },
+  "issues": [
+    "Video CC label lacks version; paper full-translation permission unconfirmed.",
+    "2021 outline retains 2020 Lecture 8 header; FAQ modified on upload date, temporal relation to class unknown.",
+    "Initial 719ms uncaptioned; last cue exceeds integer duration by 2159ms; ASR text is not audio/visual verification.",
+    "Lecture only promises a later discussion of lock recipes; not inserted into this draft.",
+    "Lecture zxid sketch, commit/apply distinction, sticky sessions, ready-generation challenge, watch visibility wording and getData argument slip explicitly annotated.",
+    "Paper Read Lock goto 3 flagged by course FAQ; sync timing assumption and Figure 8 sampling limits preserved."
+  ]
+}

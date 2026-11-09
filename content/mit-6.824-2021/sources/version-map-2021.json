@@ -1,6 +1,6 @@
 {
   "course_id": "mit-6.824-2021",
-  "updated_at": "2026-11-08",
+  "updated_at": "2026-11-09",
   "mainline_year": 2021,
   "lab_year": 2026,
   "lab_commit": "513cac0aef010750fc74688da8a395974a83cf7a",
@@ -18,7 +18,7 @@
     { "id": "lec06", "related_2026_lecture": null, "context": "2021 Lab 1 Q&A; no video listed" },
     { "id": "lec07", "related_2026_lecture": 7, "context": "2021 assigned reading section 7 to end, excluding section 6; references shared lec05/materials.zh.md instead of duplicating a materials tab; paper request-ID deduplication is not the 2026 versioned Put API. All 2732 caption texts reviewed; notes retain 2020 Lecture 7 header; classroom CondInstallSnapshot is not a pinned 2026 interface requirement; election/matchIndex inconsistencies explicitly annotated" },
     { "id": "lec08", "related_2026_lecture": 10, "context": "Different-year Raft lab Q&A; not interchangeable" },
-    { "id": "lec09", "related_2026_lecture": 9 },
+    { "id": "lec09", "related_2026_lecture": 9, "context": "P4: actual 2021 video HYTDDLo2vSE, 82:50; all 2239 English ASR cues read, 32 chronological sections including post-class Q&A, no audio/frame review. Full 14-page ZooKeeper paper and 2021 notes/FAQ read; all figures/tables visually checked. Outline retains 2020 L8 heading; classroom postpones lock recipes, covered only as paper reading. ZooKeeper local reads are not the pinned 2026 KV read contract" },
     { "id": "lec10", "related_2026_lecture": 5, "context": "P2 reviewed actual 2021 captions and 78-page mit-6824-go-2021.pdf; 2026 patterns differences still to review, no other-year example package used" },
     { "id": "lec11", "related_2026_lecture": 13 },
     { "id": "lec12", "related_2026_lecture": null },
@@ -34,7 +34,7 @@
   ],
   "updates": [
     { "id": "update-linearizability", "official_2026_lecture": 8, "study_lab": "kvsrv", "status": "P2 notes and independent paper reading through 3.1 complete; no video listed" },
-    { "id": "update-lab-bridge", "official_2026_lecture": null, "kind": "editorial_bridge", "study_labs": ["kvsrv", "raft", "kvraft", "shardkv"] },
+    { "id": "update-lab-bridge", "official_2026_lecture": null, "kind": "editorial_bridge", "study_labs": ["kvsrv", "raft", "kvraft", "shardkv"], "completed_scope": "P4: RSM request/result identity, versioned KV, ErrWrongLeader/ErrMaybe, linearizable logged reads, RSM/KV/Raft snapshots and P3 recovery contract", "pending_scope": "P5: shard migration, controller recovery and concurrent configuration changes; no migration completion claimed" },
     { "id": "update-paxos", "official_2026_lecture": 4, "related_mainline": ["lec05", "lec07"] },
     { "id": "update-go-patterns", "official_2026_lecture": 5, "related_mainline": ["lec02", "lec10"], "scope": "review differences before generating" },
     { "id": "update-verification", "official_2026_lecture": 15 },
@@ -50,7 +50,7 @@
     { "id": "mr", "official_2026_number": 1, "old_2021_number": 1, "prerequisite_lectures": ["lec01", "lec02"], "implementation_dependencies": [], "commands": ["make mr"] },
     { "id": "kvsrv", "official_2026_number": 2, "old_2021_number": null, "prerequisite_lectures": ["lec02", "lec10", "update-linearizability"], "implementation_dependencies": [], "commands": ["make kvsrv1", "make lock1"], "content_status": "P2 requirements translation and guide complete; pinned interfaces statically reviewed; tests not run" },
     { "id": "raft", "official_2026_number": 3, "old_2021_number": 2, "prerequisite_lectures": ["lec03", "lec04", "lec05", "lec07"], "implementation_dependencies": [], "commands": ["make raft1"], "content_status": "P3 3A-D requirements translation and guide complete; nine pinned source/test/Makefile files fully read; tests not run", "interface_notes": "raftapi.Raft + ApplyMsg; Persister.Save atomically replaces state and snapshot; service restores initial snapshot, then expects advancing application messages; no CondInstallSnapshot or Kill interface requirement" },
-    { "id": "kvraft", "official_2026_number": 4, "old_2021_number": 3, "prerequisite_lectures": ["lec09", "update-linearizability", "update-lab-bridge"], "implementation_dependencies": ["raft"], "optional_code_reuse": ["kvsrv"], "commands": ["make rsm1", "make kvraft1"] },
+    { "id": "kvraft", "official_2026_number": 4, "old_2021_number": 3, "prerequisite_lectures": ["lec09", "update-linearizability", "update-lab-bridge"], "implementation_dependencies": ["raft"], "optional_code_reuse": ["kvsrv"], "commands": ["make rsm1", "make kvraft1"], "content_status": "P4 A-C requirements and guidance; static source/test review recorded in p4-lab4/review.txt; lab tests not run", "interface_notes": "StateMachine.DoOp/Snapshot/Restore; Submit returns transport/coordination error separately from application reply; Get and versioned Put through RSM; ErrWrongLeader is not a rollback proof; Persister.Save, not obsolete SaveStateAndSnapshot; reuse P3 initial-snapshot recovery contract" },
     { "id": "shardkv", "official_2026_number": 5, "old_2021_number": 4, "prerequisite_lectures": ["update-lab-bridge"], "optional_context": ["lec11", "lec13", "lec14"], "implementation_dependencies": ["kvsrv", "raft", "kvraft"], "commands": ["make shardkv"] }
   ],
   "commands_cwd": "src",

@@ -136,3 +136,17 @@ P0：2026 实验版本与接口核对
 - checkOneLeader 检查同任期唯一性，不要求旧分区 leader 立即自知失效。
 - 官方页全部任务/提示已阅读并翻译；统计数字的文字/样例不一致已校注。
 - 细节见 P3-REVIEW.txt；指导不提供完整答案。
+
+十、P4 Lab 4 与 RSM 桥接补充核对（2026-11-09）
+- 具体来源、逐文件静态阅读与测试边界见 P4-REVIEW.txt、p4-lab4/review.txt。
+- StateMachine 方法为 DoOp(any) any、Snapshot() []byte、Restore([]byte)；
+  Submit(req any) (rpc.Err, any) 的外层错误与 KV 回复内的业务错误分离。
+- RSM 用提交身份匹配结果，不能只靠可能被覆盖的日志索引；重启重放仍须应用。
+- KV 复用 kvsrv1/rpc 的版本化 Get/Put；没有本版专用 PutAppend/common 接口。
+- Get 也经 Submit；旧 leader 的 GetState 自认领导权不能单独授权本地读取。
+- ErrWrongLeader 是重寻 leader 的信号，不是操作回滚证明；ErrMaybe 由 Clerk 表达。
+- KV 快照含值与版本，RSM 协调应用边界，Raft 将状态与快照通过 Save 原子保存。
+- maxraftstate 比较 PersistBytes，限制 Raft 持久状态而非应用快照字节；-1 关闭要求。
+- TestLeaderPartition4A 包含分区中等待与恢复后退出的观察；不推荐短超时直接放行。
+- rsm.go 的 SaveStateAndSnapshot、TestShutdown4A 注释的 Kill 均不能替代实际接口。
+- 未运行实验测试；未生成实验答案。分片迁移的详细接口/恢复审阅留待 P5。

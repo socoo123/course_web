@@ -1,0 +1,97 @@
+{
+  "course_id": "mit-6.824-2021",
+  "lab_id": "kvraft",
+  "lab_term": "MIT 6.5840 Spring 2026",
+  "batch": "P4",
+  "reviewed_at": "2026-11-09",
+  "path_base": "content/mit-6.824-2021/sources/",
+  "review_file": "p4-lab4/review.txt",
+  "content_status": "completed_requirements_translation_and_original_guide",
+  "lab_tests": "not_run",
+  "code_compilation": "not_run",
+  "sources": [
+    {
+      "id": "lab-kvraft-2026-p4",
+      "url": "https://pdos.csail.mit.edu/6.824/labs/lab-kvraft1.html",
+      "retrieved_at": "2026-11-08T12:48:14.788373+00:00",
+      "last_modified": "Sat, 11 Apr 2026 11:09:57 GMT",
+      "file": "lab-kvraft-2026.html",
+      "sha256": "ee7cee4b56c4f20968affd71e2e5de0f9063d522cea990ff215f291f01dc90bf",
+      "status": "reviewed",
+      "read_lines": [[1, 589]],
+      "scope": "Complete HTML read: introduction, getting started, all A/B/C task blocks and hints, terminal examples, footer. Translation preserves every task and hint; terminal output condensed. Existing capture reused, not re-fetched. External links not read.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "evidence_file": "home-2026.html",
+        "basis": "Course homepage rel=license; course-authored lab text only, not external papers or code. Translation and editorial corrections explicitly identified."
+      }
+    },
+    {
+      "id": "home-2026-p4",
+      "url": "https://pdos.csail.mit.edu/6.824/index.html",
+      "retrieved_at": "2026-11-08T12:48:14.787990+00:00",
+      "last_modified": "Tue, 10 Feb 2026 19:00:35 GMT",
+      "file": "home-2026.html",
+      "sha256": "0e84bf9377933215c745734c742f29b40b34a7bd41e146717c8c661ac7c13856",
+      "status": "partial",
+      "read_lines": [[61, 61]],
+      "scope": "Targeted re-check of rel=license only; no claim of full homepage reading in P4."
+    },
+    {
+      "id": "lab-code-513cac0aef01-p4-lab4-review",
+      "url": "git://g.csail.mit.edu/6.5840-golabs-2026",
+      "retrieved_at": "2026-11-08T12:56:42.897091+00:00",
+      "file": "lab-code-513cac0aef01.tar.gz",
+      "sha256": "5a6d4a143a6f7fab6e6e6a525b3160ef16433de36506ca4600850ed8659ab1c4",
+      "commit": "513cac0aef010750fc74688da8a395974a83cf7a",
+      "tree": "43595f63557ea35834dead671b32da097396f92f",
+      "status": "reviewed",
+      "scope": "Archive hash verified before independent extraction under approved temporary directory. All original manifest member hashes verified; extracted files chmod 0444. Static full reads of the 27 files below; raft_test.go only specified tail. No code modifications, compilation, execution or lab tests. No kvraft1/common.go exists; shared protocol is kvsrv1/rpc/rpc.go.",
+      "member_path_base": "6.5840-golabs-2026/ inside archive; member path is relative to experiment repository",
+      "members": [
+        {"path": "src/raftapi/raftapi.go", "sha256": "344709d774ffea744778aafd6bb0f860b6b1974a7e38aea3f034cb5d482376f4", "read_lines": [[1, 34]], "scope": "complete_static_read"},
+        {"path": "src/raft1/raft.go", "sha256": "7f94cd5ecf34630ef3dc52fbca43409a59a9e885354a9d500b1420073b879942", "read_lines": [[1, 216]], "scope": "complete_static_read"},
+        {"path": "src/raft1/server.go", "sha256": "c05d65ccdf751684374e6e5ff3fe3be1ab72247834525c2fb107fa36dd540556", "read_lines": [[1, 235]], "scope": "complete_static_read"},
+        {"path": "src/tester1/persister.go", "sha256": "68190ff44526bba9f9f5a05ffd9c4d81dcea935ed4d7b520576313e39363530c", "read_lines": [[1, 70]], "scope": "complete_static_read"},
+        {"path": "src/kvraft1/client.go", "sha256": "f502a0045fcbd72929f522f62911b889758d7207ff052f5fd9b0598a859e6c6f", "read_lines": [[1, 63]], "scope": "complete_static_read"},
+        {"path": "src/kvraft1/server.go", "sha256": "3c03d21ccfa209dfa72d3b9ceb3678bce7c05969fc9c89a42bdcd1febd9c8836", "read_lines": [[1, 69]], "scope": "complete_static_read"},
+        {"path": "src/kvraft1/test.go", "sha256": "f62067928cf92d74d07783f3d72a19c2da2ed3de1488e7e99662e77cdf1be57e", "read_lines": [[1, 103]], "scope": "complete_static_read"},
+        {"path": "src/kvraft1/kvraft_test.go", "sha256": "5116b256a6b8668f93dfe4c947522bd3895fcd65b1537581a38c0bba26060a90", "read_lines": [[1, 478]], "scope": "complete_static_read"},
+        {"path": "src/kvraft1/rsm/rsm.go", "sha256": "1b4cf1d897064722fc60c76ba8514a3f2281b0d8264ec6dcd280c99c93b1f01b", "read_lines": [[1, 87]], "scope": "complete_static_read"},
+        {"path": "src/kvraft1/rsm/server.go", "sha256": "d09faac0a02e79f4879006f9b8080b13297666f12fe6ff4556da98d07c4c9494", "read_lines": [[1, 122]], "scope": "complete_static_read"},
+        {"path": "src/kvraft1/rsm/proxy.go", "sha256": "a409114d7d1a8b3c0bd1750b9e0a2ca80f7dcc614de5a1d73a10a9ca3304ca64", "read_lines": [[1, 41]], "scope": "complete_static_read"},
+        {"path": "src/kvraft1/rsm/test.go", "sha256": "89aa8328065b27e7c85a702e20d052f409db64919afbc8587d5a018b08ec16ee", "read_lines": [[1, 208]], "scope": "complete_static_read"},
+        {"path": "src/kvraft1/rsm/rsm_test.go", "sha256": "7b3cb0dcdf2530d26a17d941f3c1f9ae07523f8ee68d9e1258cda3a002b6b3dd", "read_lines": [[1, 352]], "scope": "complete_static_read"},
+        {"path": "src/kvsrv1/rpc/rpc.go", "sha256": "77e07ead7459f4e73fcd680471230654df9b043052ec15894c73c0f29adfb052", "read_lines": [[1, 40]], "scope": "complete_static_read"},
+        {"path": "src/kvsrv1/client.go", "sha256": "ee8ae899c3e63d9a4ab35ec833d88ddecb0124cf4278b0e3a0ab8ae0077b5b6f", "read_lines": [[1, 56]], "scope": "complete_static_read"},
+        {"path": "src/kvsrv1/server.go", "sha256": "dfbe7452d556d6ebb53c344447ecf723b00d4c748087bb70baa79b982c4da233", "read_lines": [[1, 54]], "scope": "complete_static_read"},
+        {"path": "src/kvtest1/kvtest.go", "sha256": "9f55670b70f0a66d176dca081330d45354d533ee5475e6cbb04e0672743846bc", "read_lines": [[1, 401]], "scope": "complete_static_read"},
+        {"path": "src/kvtest1/porcupine.go", "sha256": "9b2d0a236c9bfca003e7e6337bac7f729778f6349c0672468b166987c7137ba8", "read_lines": [[1, 186]], "scope": "complete_static_read"},
+        {"path": "src/models1/kv.go", "sha256": "24a32b936d32b812d6f5b6db34159a24141582337459cd00b41cfc3bc117468d", "read_lines": [[1, 80]], "scope": "complete_static_read"},
+        {"path": "src/tester1/group.go", "sha256": "39a4cb558be434d8bd68d539e28a392fe486be60fd8a54dec20a09dfbac2db9b", "read_lines": [[1, 327]], "scope": "complete_static_read"},
+        {"path": "src/tester1/srv.go", "sha256": "6b675defcec692d3d52b8168f876e6ea59bc9e7d9785e1e4426bec08e44586a3", "read_lines": [[1, 98]], "scope": "complete_static_read"},
+        {"path": "src/tester1/daemonclnt.go", "sha256": "d15f62ae3db0e7bd2d67d7cd7fd044abb2a033a09e96d4427e7be6f195abde68", "read_lines": [[1, 160]], "scope": "complete_static_read"},
+        {"path": "src/tester1/daemonsrv.go", "sha256": "5e99d046db342e57de0524ee23d4ea68fd71313651305d6f82ceacadb35d440b", "read_lines": [[1, 195]], "scope": "complete_static_read"},
+        {"path": "src/main/rsm1d.go", "sha256": "d84e68ef1a61bfa65eb9ae60f98386af6b0604b99297e4c80a93f7db2bc8f3ea", "read_lines": [[1, 16]], "scope": "complete_static_read"},
+        {"path": "src/main/kvraft1d.go", "sha256": "1f7a5a6ad55c4ea07ac8639bb99e6af494a1f11e69adab9a9aff78d96d97b6a5", "read_lines": [[1, 16]], "scope": "complete_static_read"},
+        {"path": "src/Makefile", "sha256": "e09cd2ba72117f54a3480f97385590836fcff76a1110c984acfd77912114b7af", "read_lines": [[1, 66]], "scope": "complete_static_read"},
+        {"path": "Makefile", "sha256": "394bcfec0ef6d075427e6f14b473c638a1fc04a75fc6936e55c1efdde7eb3cd1", "read_lines": [[1, 33]], "scope": "complete_static_read"},
+        {"path": "src/raft1/raft_test.go", "sha256": "731115bfad13ef5d1d3da3065d8bb1ddc3e963baf7d940e9c1e1c24b9dcc87ef", "read_lines": [[1317, 1353]], "scope": "partial_static_read; TestSnapshotInit3D and preceding tail only"}
+      ]
+    }
+  ],
+  "shared_references": [
+    {"route": "#/c/mit-6.824-2021/lec/lec05?v=materials", "scope": "Shared Raft reading linked only; no duplicate paper content or new PDF reading claimed."},
+    {"route": "#/c/mit-6.824-2021/lec/update-lab-bridge?v=notes", "scope": "RSM concept bridge by main agent; guide focuses on operation paths, concurrency and test diagnosis."}
+  ],
+  "known_differences": [
+    "HTML last-modified 2026-04-11 is later than pinned code commit 2026-02-13; no implied same-day release.",
+    "HTML Part B ErrMaybe wording is imprecise; fixed client.go specifies ErrVersion on resend => ErrMaybe.",
+    "rsm.go comment names SaveStateAndSnapshot; actual Persister method is Save.",
+    "TestShutdown4A comment names raft.Kill and channel close; actual fixed process lifecycle uses daemon checkpoint and Process.Kill; raftapi has no Kill or CondInstallSnapshot.",
+    "HTML first C task targets RSM TestSnapshot4C but adjacent failure output invokes kvraft1; both targets documented.",
+    "Fixed TestLeaderPartition4A also rejects all 100 non-OK returns completing during the one-second partition observation, then requires completion within one second after healing.",
+    "Porcupine Unknown is printed as assumed OK, not proof; Get model compares Value only."
+  ]
+}

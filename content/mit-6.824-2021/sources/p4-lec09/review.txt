@@ -1,0 +1,145 @@
+P4 / MIT 6.824 Spring 2021 / L9 ZooKeeper 审阅记录
+日期：2026-11-09 UTC
+工作边界：只写 lectures/lec09/ 和 sources/p4-lec09/；不改共享元数据，不提交，不启动其他 agent。
+
+一、交付与分工
+lectures/lec09/draft.zh.md：32 个连续真实时间区间的中文自主逐段整理，全部实质讲授、现场追问及课后问答。
+lectures/lec09/notes.zh.md：前缀模型、不变量、最小反例、故障边界、自测，指向 draft 的课堂推演。
+lectures/lec09/materials.zh.md：论文自主精读；不复写课堂 ready／计数器推演，重点补齐配方、恢复实现、全部实验图表及相关工作。
+本讲以简短表格／文字链表达机制即可，未新建 SVG，更没有课堂截图。
+Raft 复用 lec05/materials.zh.md；仅定点阅读该既有中文资料 §6 和 §8，未重新通读 Raft PDF。
+
+二、前置阅读
+AGENTS.md 全文；technical-video-notes skill；sources/PLAN.txt 全文；sources/P3-REVIEW.txt 全文；
+lec07/draft.zh.md 全文及 p3-lec07/manifest-fragment.json，另参考已有获取脚本与 skill normalizer。
+已有 schedule-2021.html 154–155 行重新核对：LEC 9 对应 HYTDDLo2vSE、l-zookeeper.txt、zookeeper.pdf、zookeeper-faq.txt。
+已有 home-2021.html 第55行 rel=license 重新核对：课程自有文字 CC BY 3.0 US；不据此外推视频和论文许可。
+
+三、获取与版本
+工具：本目录 acquire.py（通过 patch 建立），Python urllib 获取官方文档；yt-dlp 仅抓字幕和裁剪字段。
+未下载任何音视频媒体；未保存完整播放器响应、info.json、cookies 或签名URL。
+yt-dlp stderr 仅在内存中用于判断失败，未落盘，以免包含带签名字幕地址。
+原始文件保留在当前来源目录；受仓库既有忽略规则约束，未强制 git add。
+acquisition.json 保留获取时 fetched 状态；最终阅读状态以 manifest-fragment.json 与本记录为准。
+
+逐来源获取记录（UTC；完整 SHA-256 在 acquisition.json / manifest-fragment.json）：
+1. http://nil.csail.mit.edu/6.824/2021/notes/l-zookeeper.txt
+   2026-11-09T00:46:28.580330+00:00
+   Last-Modified: Fri, 22 Jan 2021 09:21:42 GMT
+   SHA-256: 58531836fd37aacaf487c3c1ab0f84e0b787a5cf3b5db3638d46ae0ab8c7114e
+   原文标题仍为 6.824 2020 Lecture 8，不修改快照，也不将它用作2020视频出处。
+2. http://nil.csail.mit.edu/6.824/2021/papers/zookeeper.pdf
+   2026-11-09T00:46:32.383256+00:00
+   Last-Modified: Fri, 22 Jan 2021 09:21:43 GMT
+   SHA-256: 743d56888f7b698cf4d0a86a4538793bbbf3c94c8e21d5c27dc34369d56102a0
+3. http://nil.csail.mit.edu/6.824/2021/papers/zookeeper-faq.txt
+   2026-11-09T00:46:28.716707+00:00
+   Last-Modified: Thu, 18 Mar 2021 20:34:14 GMT
+   SHA-256: 170d79f8041f3e1a2a872a91cf92bab98e9b41ec7dca91a6ac0c540941b180a7
+   修改日期与视频上传日期相同；仅凭日期无法确定课前或课后，不做这一断言。
+4. https://www.youtube.com/watch?v=HYTDDLo2vSE
+   元数据获取 2026-11-09T00:46:31.730159+00:00；字幕登记 00:46:31.730232+00:00。
+   yt-dlp 未暴露该元数据／字幕响应的 Last-Modified，明确记录 null，不能用上传日代填。
+
+四、逐条核对的视频元数据
+ID: HYTDDLo2vSE
+标题: Lecture 9: Zookeeper
+时长: 4970 秒 = 82:50
+频道: MIT 6.824: Distributed Systems
+频道ID: UC_7WrbZTCODu1o_kfUMq88g
+Uploader: MIT 6.824: Distributed Systems
+上传日期: 20210318
+许可标签: Creative Commons Attribution license (reuse allowed)
+该许可为本视频独立查询结果，不是从L7或课程网页继承；元数据没有具体CC版本。
+论文没有确认全文翻译许可，因此 materials 为自主精读，不作全文翻译或页面转载。
+
+五、字幕原始性、阅读范围与时间统计
+原始：video.en-orig.json3；英语原语言自动字幕，不是机器翻译轨。
+SHA-256: c20b06f9eecc5b210b1eda66c64b3fc6e70cb53219a661b87f20a1b33dda550d
+通过 skill 的 normalize_captions.py 生成 JSON、VTT、带时间英文文本；原始ASR不修改。
+prepare-reading.py 按 cue 起点所在分钟分组，保留全部原文字串；断言合并后与2239个规范化cue逐字相等。
+reading-by-minute.txt 248行，真实顺序读取三段：1–87、88–174、175–248。
+所有2239条文本均读，包括最后79–82分钟的课后test-and-set／无锁竞争问答。
+没有把只解析JSON或校验时间结构当作全文阅读；VTT只生成，没有播放器回放。
+
+cue_count: 2239
+first_start_ms: 719（00:00.719）
+last_start_ms: 4962880（82:42.880）
+last_end_ms: 4972159（82:52.159）
+metadata_duration_ms: 4970000
+tail_overrun_ms: 2159；仅最后1条结束时间超过整数片长；原时间保留。
+起点单调：是；终点单调：是；负时长：0；起点超出片长：0。
+相邻cue重叠对：2092；重叠是时间结构事实，未删除重复口语。
+按cue区间并集计算，在片长内共有147个正间隙，含开头0.719秒；总未覆盖259.331秒。
+大于2秒的间隙42个，完整起止毫秒列表见manifest caption_time_structure。
+最长8.480秒两处：36:15.119–36:23.599、49:03.839–49:12.319。
+这些是字幕覆盖间隙，不能判断其对应静音、停顿、画图、漏识别或真实漏讲；没有音画证据。
+没有在本片字幕中识别到分组讨论区间，不套用L5/L7的breakout缺口。
+全段有字幕也不保证每个词识别正确：专名Raft/Zab/znode、版本数字及口头否定可能被ASR误识别。
+公开draft头信息明确给出间隙统计，不声称无缺口。
+
+六、中文时间区间
+32段；起点00:00，终点82:50，连续无重叠；每条字幕起点恰好归属一个区间。
+每段 first_cue/last_cue/cue_count 已写入 manifest-fragment.json 的 draft_segments。
+00:00–03:00 引入；03:00–07:00 复制服务分层；07:00–09:00 正常写路径；09:00–12:00 延迟粗算；
+12:00–15:00 吞吐图；15:00–17:00 异步批量／本地读；17:00–20:00 本地读反例；20:00–23:00 先新后旧；
+23:00–25:00 线性一致定义；25:00–28:00 已完成写与陈旧读；28:00–30:00 倒退反例；30:00–33:00 Get进日志；
+33:00–36:00 更换读契约；36:00–39:00 会话前缀；39:00–42:00 只有写线性一致的提问／zxid草图；
+42:00–44:00 下界；44:00–46:00 粘性会话／提交；46:00–48:00 提交与前缀问答；48:00–50:00 如何编程／sync；
+50:00–53:00 ready初例；53:00–56:00 旧ready追问；56:00–58:00 混代；58:00–61:00 通知可见顺序；
+61:00–63:00 整组重读；63:00–65:00 协调原语；65:00–68:00 Put/Get竞争错误；68:00–71:00 数据模型；
+71:00–73:00 计数器接口；73:00–76:00 两个增量；76:00–79:00 小结与锁推迟；79:00–81:00 课后问答；
+81:00–82:50 竞争／退避／无惊群锁预告。
+这是一份按真实字幕时间分段的自主整理，不是词对词强制对齐，也不是音频逐句复核。
+
+七、书面来源实际阅读
+讲义：269行全部读。FAQ：245行全部读，包括外链介绍；外链正文未读。
+论文：PDF共14页，完整摘要、§1–7、致谢和末尾31项参考文献表。
+pdftotext -layout 提取980行，分1–400、401–780、781–980顺序读取；按每页双栏顺序理解正文，不把跨栏横排当一句。
+材料覆盖：定位／接口和保证／全部§2.4配方／三个应用案例／四个实现子节／全部评估／相关工作／结论。
+课堂已讲的ready、计数器和基本读取反例不在materials重复展开，使用明确指引。
+全文公开可下载不代表获准全文翻译；材料是按问题重新组织的精读。
+
+实际查看的PDF页面图像：
+第3页：Figure1，树是命名空间，不是复制拓扑；两种生命周期加sequential标志。
+第6页：简单锁、无惊群锁、读写锁伪代码；确认Read Lock第6行确实为goto3。
+第7页：Figure2（每秒样本、小时刻度的多日工作负载）、Figure3（YMB结构）。
+第8页：Figure4（请求处理、原子广播、复制数据库与本地读路径）。
+第9页：fuzzy snapshot的三条事务及f3/g1组合；sync领导权与超时假设的原文。
+第10页：Figure5与Table1（纯读曲线超出90k图框，具体极值看表）。
+第11页：Figure6（都连leader）、Figure7（广播吞吐及min/max误差条）、Figure8（故障低谷）。
+第12页：Table2创建吞吐、Table3屏障总时间，单位与实验条件核对。
+共完整查看Figure1–8、Table1–3；其余页图像仅生成未单独查看，manifest明确区分fetched/rendered与reviewed。
+没有在公开正文复制论文PNG；没有把论文图查看说成课堂画面核验。
+
+八、主要校订与疑点
+1. 课堂200/s为1ms RTT+两次2ms落盘的串行粗算，不是Raft吞吐上限或新版实验实测。
+   论文硬件是SATA硬盘，不是课堂假设的SSD；两套条件不混用。
+2. 三节点也能出现先新后旧；保留学生纠正讲师先换成五节点例子的过程。
+3. 单调读取约束同一会话，不把“不会回到过去”扩为跨客户端最新读。
+4. “只写线性一致是否有意义”是现场明确提出的问题；讲师延后，未单独正式回答。
+   注释联系后面的条件写成功／失败解释其含义，不伪造课堂回答。
+5. zxid草图：课堂称为推测并简化最后写zxid；实际单调观察要涵盖读响应进度。
+   不把每次读一定携带某字段、会话跨leader请求编号或去重机制称为已读源码事实。
+6. “看见zxid”要区分已收到／已提交／已应用；客户端已知提交不自动更新follower可读内存。
+7. 写可先到follower，再转leader；客户端通常粘在一个server上，不能写成每个读随机换机。
+8. ready=true无法区分旧ready与新ready；保留学生追问和讲师转向watch的过程。
+9. 通知在后续写“对该客户端可见”之前，不是所有服务器必须等待客户端收通知才继续写。
+   画图“这里／那里”的口头坐标没有音画依据，不复原为精确截图或时间坐标。
+10. getData参数口头／ASR称version，论文为watch；版本来自返回元数据，setData才接收预期版本。
+11. sequential标志可与ephemeral组合，名字序号、节点版本、zxid三者不同。
+12. 76分钟后锁配方明确推迟，本片并未讲简单锁／无惊群锁算法；只在materials补读，不补时间轴。
+13. “无锁总是更快”不成立；保留课后竞争、退避、简单锁同样竞争以及更聪明排队锁的讨论。
+14. 论文Read Lock goto3的疑点按FAQ注明；只读了FAQ，不声称验证了其外链修正版代码。
+15. fuzzy snapshot恢复使用已编译的幂等事务，不是原始客户请求天然幂等；恢复完成前不可暴露混合状态。
+16. 论文sync实现有超时／权威前提，不扩成对所有现代版本或纯异步模型的无条件结论。
+17. Figure8两次leader故障附近明显接近零，文字“没有观测到零”不能解读为完全没有停顿。
+18. 旧锁持有者继续操作外部资源的例子为编者推论，标明不是本片原话，也不提供完整生产锁实现。
+
+九、验证与未执行项
+finalize.py检查来源SHA-256、规范化起止单调/非负、字幕起点与32区间一一归属、连续覆盖整数片长、
+本讲Markdown头信息／代码围栏／站内lecture目录／图片路径；通过。
+git diff --check针对两个授权目录通过（新文件未暂存，因此另由finalize检查正文结构）；未做git add或commit。
+构建留给主session整批执行npm run build：本worker仅允许写两个分配目录，未生成dist或触碰共享构建产物。
+没有运行ZooKeeper、Go实验、基准测试或故障注入。音轨未听，课堂视频帧未看。
+原始ASR与原始论文均保留；正文完成仅指已取得文本范围的自主整理完成，不意味着音画或字幕准确率已验证。

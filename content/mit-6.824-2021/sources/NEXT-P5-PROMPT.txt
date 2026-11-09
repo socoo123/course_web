@@ -1,0 +1,11 @@
+继续完成 MIT 6.824 中文课程 P5。先读取项目 AGENTS.md、technical-video-notes skill，以及 content/mit-6.824-2021/sources/PLAN.txt、status.json、manifest-2021.json、P4-REVIEW.txt、p4-lab4/review.txt、版本映射与来源清单，按计划确认范围。
+
+主线固定 MIT 6.824 Spring 2021；实验固定 MIT 6.5840 Spring 2026，代码提交 513cac0aef010750fc74688da8a395974a83cf7a。
+
+本批完成：2021 L13 Distributed Transactions、L14 Spanner；补完 update-lab-bridge 的分片迁移、控制器恢复与并发配置变更部分；2026 Lab 5 A–C 要求中译与思路指导，5D 单列官方开放扩展（自学路线进阶项，不说成 MIT 不要求）。事务与 Spanner 用于拓展理解，2PC 不是 Lab 5 A–C 基础要求。
+
+允许多 agent 并行处理独立内容，主 agent 负责共享资料、元数据与最终整合。先主动获取 L13/L14 对应 2021 英文字幕，逐视频核对标题、时长、频道与许可；按真实时间顺序完整整理讲授和问答，不补造分组讨论。实际文本阅读范围、音画核验边界与来源疑点明确记录。核对 2021 原版讲义、FAQ、L13 指定 Chapter 9 的 §9.1.5、§9.1.6、§9.5.2、§9.5.3、§9.6.3，以及 L14 Spanner 论文。notes/draft/materials 各司其职，论文许可不明时做自主精读。
+
+Lab 5 严格依据固定提交 shardctrler、shardgrp、shardrpc、Clerk 与测试接口：InitConfig/Query/ChangeConfigTo/InitController，FreezeShard/InstallShard/DeleteShard，配置号 Num 与键版本号的区分；控制器默认使用 Lab 2 KV 存配置，分片组使用 Lab 4 RSM 与 Lab 3 Raft。不要套用旧 shardmaster Join/Leave/Move 接口或假定控制器已复制。核对冻结→安装→删除的服务权、重试、恢复与并发配置约束；配置迁移不等于 Raft 成员变更。复用 P4 的 RSM/KV/双层快照桥接与 P3 恢复契约，只扩写迁移部分。提供要求中译与指导，不生成完整实验答案。
+
+只修改 content/，同步课程元数据、状态、来源清单、版本映射与计划。完成最小必要检查、git diff --check 和 npm run build；通过后提交并推送 GitHub。明确实验测试是否实际运行，不将内容完成等同实验通过。最后简要汇报产物、实际资料边界与提交信息，并生成 P6 可直接复制的提示词。

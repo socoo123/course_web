@@ -1,0 +1,112 @@
+P4 阅读、字幕与固定接口审阅记录
+日期：2026-11-09
+主线：MIT 6.824 Spring 2021；实验：MIT 6.5840 Spring 2026。
+固定提交：513cac0aef010750fc74688da8a395974a83cf7a。
+
+一、分工与交付边界
+L9 专责 worker 负责 lec09 三份正文及 sources/p4-lec09 独立来源记录。
+Lab4 专责 worker 负责 labs/kvraft 两份正文及 sources/p4-lab4 审阅记录。
+主 agent 负责 update-lab-bridge 的 RSM/KV/快照笔记与自绘图、共享元数据和整合。
+桥接仅 RSM 部分完成；分片迁移、控制器恢复与并发配置变更明确留给 P5。
+没有把接口导航或占位摘要当成迁移教学正文；没有生成桥接课堂译稿。
+共用 Raft 论文仍在 lectures/lec05/materials.zh.md，不复制第二份论文正文。
+
+二、主 agent 的接口阅读
+完整读取 lab-kvraft-2026.html 589 行，含介绍、4A-C 全部要求/提示与输出样例。
+源码归档 SHA-256 先与 lab-code-manifest.json 比对一致：
+5a6d4a143a6f7fab6e6e6a525b3160ef16433de36506ca4600850ed8659ab1c4。
+主 agent 从 tar 直接只读完整提取并核验六份文件哈希：
+  src/raftapi/raftapi.go
+  src/kvraft1/rsm/rsm.go
+  src/kvraft1/server.go
+  src/kvraft1/client.go
+  src/kvsrv1/rpc/rpc.go
+  src/tester1/persister.go
+随后完整读取 src/kvraft1/rsm/server.go 与 rsm_test.go，核对通用计数器、
+请求重放、分区等待与重启提交的测试情境；另完整读取 src/Makefile，核对
+rsm1/kvraft1 的先构建进程、再带默认 -race 测试入口。其余测试由实验专责 worker 阅读，
+不把分工审阅表述为主 agent 完整重读所有测试。没有运行 Go 编译或实验测试。
+
+关键衔接：
+1. Start 接纳提议不等于提交，更不等于 DoOp 业务成功或 RPC 回复送达。
+2. Submit 外层错误与状态机业务回复不同；日志位置不等于请求身份。
+3. reader 在所有副本应用已提交前缀，不以有无本地等待者决定是否执行。
+4. Get 与版本化 Put 都走 RSM；不套 ZooKeeper 本地读或旧 PutAppend API。
+5. ErrWrongLeader 不构成通用回滚证明；ErrMaybe 按 Clerk 重发契约表达不确定性。
+6. StateMachine.Snapshot/Restore、RSM 应用边界与 Raft.Snapshot 分工明确。
+7. 持久化是 Persister.Save；RSM 骨架的 SaveStateAndSnapshot 为旧注释残留。
+8. 沿用 P3 的初始化快照副本与先恢复、再消费推进消息的契约。
+9. TestLeaderPartition4A 除禁止少数分区成功执行，也观察其等待不能全提前退出；
+   恢复后要求退出。不能把任意短超时当成固定测试要求。
+10. TestShutdown4A 注释提及 Kill/关闭 applyCh，不能据此给固定 raftapi 添加
+    并不存在的必需接口；运行路径的静态核对见实验专责 review。
+
+主 agent 桥接图为原创 SVG：请求路径、提交/应用/回复边界；无课堂截图。
+未在本批重新通读 Raft PDF；共享知识与恢复契约复用 P3 已记录的阅读范围。
+
+三、桥接独立复核
+只读 review agent 对照官方 Lab4、P3 记录与固定源码指定接口，检查双层错误、
+未知提交、ErrMaybe 重试语义、请求身份、初始化快照副本与恢复边界、应用串行化。
+结论：未发现必须修复的实质技术问题。没有编辑源码、运行实验或重读媒体。
+
+四、Lab4 交付整合
+主 agent 完整审阅两份中文正文、实验 review 与来源分片。官方页完整 A–C 任务、
+提示已中译，终端输出压缩为命令与测试范围；guide 提供思路与排错，不给完整实现。
+实验专责完整静态阅读 27 个源码文件，另定点阅读 raft_test.go 1317–1353；
+逐文件行范围和 SHA-256 已记录于 p4-lab4/manifest-fragment.json 的 members。
+HTML 沿用 2026-11-08 快照，Last-Modified 为 2026-04-11，晚于固定代码提交；
+不暗示同日版本、不自动更新代码。三个页面/骨架差异均已校注：
+  - 网页 ErrMaybe 表述不精确，固定 Clerk 注释规定重发后 ErrVersion 才转 ErrMaybe；
+  - RSM 骨架的旧持久化方法名、Shutdown 测试的旧 Kill 注释不替代实际 API；
+  - 4C 首任务指 RSM TestSnapshot4C，但紧随输出用 KV 目标，两入口分别提供。
+整数测试等待、KV 500 字节小状态快照测试、2倍/8倍状态阈值容差均按具体情境表述。
+Porcupine Unknown 与只比较 Value 的 Get 模型边界明确，不把通过样例说成证明。
+主 agent 将分片中的复用旧 ID 改为 lab-kvraft-2026-p4/home-2026-p4，
+不使用迁移前 lec09-lab-5-2026 命名来误导当前2021讲次或实验编号。
+实验 worker 的网站预构建已通过；之后共享文档继续更新，最终整合另行构建。
+
+独立只读 reviewer 进一步核对 ErrMaybe、分区等待、Shutdown 进程链、快照大小／
+阈值、速度和官方任务完整性，指出 guide 对速度门槛描述过宽。
+主 agent 定点读取 kvraft_test.go 120–175，确认1000次串行Put总耗时门槛为
+1000*(100ms/3)；已改为平均不超过约33.3ms/op，不按实现自己的心跳间隔计算。
+其余指定校注未报告需修复问题；没有运行实验测试。
+
+五、L9 交付整合
+主 agent 完整审阅 L9 三份中文正文、review与来源分片；全量英文字幕阅读由
+L9 worker 完成，主 agent 定点对照53:00–56:00、58:00–61:00、76:00–79:00
+规范化原始字幕，确认旧ready追问、watch可见顺序修正、课堂推迟锁配方。
+该抽查是文本对照，不是音画复核，也不冒称主 agent 重新通读全部英文字幕。
+
+视频独立元数据：HYTDDLo2vSE；Lecture 9: Zookeeper；4970秒/82:50；
+频道 MIT 6.824: Distributed Systems；上传2021-03-18；CC Attribution标签，
+具体许可版本未明。全部2239条英文原语言ASR顺序文本阅读；32段中文整理，
+含课后问答。起点719ms、末条结束4972159ms，尾部超整数片长2159ms原样保留。
+字幕区间并集有147处间隙（含开头），合计259331ms，最长8480ms；不推断静音、
+不声称字幕准确率已经验证。没有识别到分组讨论区间，不套用前几讲的breakout。
+
+2021讲义269行/FAQ245行均全文读；讲义保留2020 L8标题，FAQ修改于上传同日，
+无法判断其与课堂先后关系。ZooKeeper论文14页全文、8图3表实际查看；具体图页
+和锁伪代码/快照/sync核验见逐讲review。论文全文翻译许可未确认，正文为自主精读。
+不把论文图查看当作课堂画面核验；外链论文、实现源码及现代版本未读。
+
+notes提炼前缀不变量/反例/自测；draft承载课堂顺序；materials补齐未展开的锁、
+恢复实现与评估。课堂zxid草图、提交/应用区别、getData参数口误和sync时间假设
+均明确校注。主 agent 将排队节点清理措辞收紧为会话过期后，避免暗示瞬时失联
+就删除；另明确“L5第6/8节”指既有中文资料章节，不是新增Raft论文§6阅读。
+L9未新建插图；本批唯一新图是主 agent 的RSM请求边界SVG。
+
+六、产物与最终验收
+本批新增6份正文：L9三份、桥接笔记一份、Lab4两份；新增原创SVG一张。
+累计24份讲座正文、8份实验正文、4张SVG。课程元数据、状态、来源清单、
+版本映射、公共资料与计划同步；完整P5续做提示词为NEXT-P5-PROMPT.txt。
+提交只包含正文、SVG、来源清单、审阅记录与本地检查脚本；原始字幕、PDF、
+HTML、渲染图片和固定源码归档按既有约定留本地，不新增公开英文原文页。
+
+最终 python3 content/mit-6.824-2021/sources/check-p4.py 通过：6份P4正文，
+JSON、全清单来源ID唯一性、P4来源/派生文件哈希、站内目标正文、图片、SVG XML、
+代码围栏、元数据及累计产物数量。L9字幕起点单调，每条起点恰归属一个连续区间；
+原始尾部超时保留。该检查不证明译文语义或音画准确性。
+最终整合 npm run build 通过：tsc --noEmit + Vite，2586 modules，4.56s，
+包括全部六份新正文与RSM原创SVG；其后仅登记验证结果，不修改网页教学正文。
+git diff --check 与 git diff --cached --check 通过；提交范围仅 content/mit-6.824-2021/。
+没有运行实验测试；本批完成状态不代表用户实验实现完成。
