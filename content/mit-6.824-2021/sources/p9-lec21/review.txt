@@ -1,0 +1,136 @@
+P9 / 2021 L21 Project demos + independent AnalogicFS reading
+Worker scope: content/mit-6.824-2021/lectures/lec21/ and sources/p9-lec21/ only.
+Read AGENTS.md, technical-video-notes skill, NEXT-P9-PROMPT.txt. Shared historical review delegated to main agent as instructed; no claim of worker rereading all prior manifests.
+
+DELIVERY
+lectures/lec21/notes.zh.md: eight-project analytical notes, invariants, counterexamples, evidence boundaries, self-tests.
+lectures/lec21/draft.zh.md:43 continuous time sections from00:00 to98:00; all recoverable project content, demos as narrated, Q&A, voting follow-up, closing and logistics.
+lectures/lec21/materials.zh.md: standalone AnalogicFS critical reading, every paper section, all5figures, internal citation mismatches, FAQ paraphrase with attribution/license.
+sources/p9-lec21/manifest-fragment.json: unique p9-lec21-* source/derived IDs, source-relative paths, actual acquisition timestamps, Last-Modified, SHA256, reading scopes, video metadata/time stats/segments.
+acquire.py / prepare.py / finalize.py: acquisition whitelist, lossless ASR preparation + PDF extraction/rendering, minimal validation/provenance respectively.
+Raw HTML/PDF/ASR/page PNGs remain local originals under this assigned directory. No classroom screenshots created. Main agent chooses tracked files per project archive policy.
+
+INDEPENDENT OFFICIAL LINK CHECK
+Fetched http://nil.csail.mit.edu/6.824/2021/schedule.html at2026-11-09T14:18:40.564709+00:00.
+Last-Modified Sun,02Jan2022 22:13:51GMT; sha256 d89f453171c5c03a4cd7aad8fc143ce7064a5df7791f4ec1f744bfdb9f1ba83f.
+Targeted read lines257-273, especially264-267:2021-05-20 LEC21 Project demos, https://youtu.be/bu41Qt9G5Qo; Preparation links papers/katabi-analogicfs.pdf and papers/analogicfs-faq.txt, plus course question; Last day of classes. No lecture-outline link. Did not treat paper as a video segment.
+Fetched2021 home independently at2026-11-09T14:18:40.294829+00:00; Last-Modified Mon,25Jan2021 15:25:34GMT; sha256 f6dd24ebf226f80035a860a7cea1cefb7c0cdc282089ca1d988f0c3b188b6650.
+Targeted read lines45-59; line55 explicit https://creativecommons.org/licenses/by/3.0/us/. Attribution for unbylined FAQ is MIT6.824 course staff. Course license not extended to PDF/video.
+
+VIDEO IDENTITY / ACQUISITION
+ID bu41Qt9G5Qo
+Title Lecture 21: Project Presentations
+Channel/uploader MIT 6.824: Distributed Systems
+Channel ID UC_7WrbZTCODu1o_kfUMq88g
+Duration5880seconds =98:00
+Upload_date20210520
+License Creative Commons Attribution license (reuse allowed); exact CC version not returned.
+metadata retrieved_at2026-11-09T14:18:37.995206+00:00; sha2567fe9e720422b0c4df34dc74cc59f0ba2fc5fac629c25a1a1acf23d9cafd478ef.
+ASR retrieved_at2026-11-09T14:18:37.995877+00:00; sha2569f3218e7050c77b0e6022211df18bd5282787b86cd2a42f692ec1d1378b4ecc8.
+Last-Modified unavailable through yt-dlp, explicitly null. Successful first attempt, no retry needed.
+Only whitelist id/title/duration/channel/channel_id/uploader/upload_date/license/webpage_url persisted. --no-write-info-json; no media download, signed playback URL, cookies or full player response saved. English en-orig automatic subtitles, not translated captions.
+
+ACTUAL SUBTITLE READING
+All2829 cue texts read sequentially through reading-by-minute.txt,98 lossless minute groups/293lines: reads1-100,100-198,199-293. Normalization concatenates all nonempty original json3 event text without dropping repetition; grouping asserts concatenated texts exactly equal normalized cues.
+Additional normalized objects directly read around10:30,21:30,32:30,44:00,58:00,70:40,79:20,93:00,95:00 to check project transitions. Collaborative editor substantive introduction starts21:32.880;32:40 is host transition into Egg Scrambler, with actual introduction shortly afterward. Heading boundaries are topic-oriented/second-rounded, not exact speaker alignment.
+Audio reviewed=false. Video/classroom frames reviewed=false. No project code fetched, no project repository identity verified. All demos/results are reports by presenters, not independently observed program behavior.
+
+TIME STRUCTURE (MILLISECONDS)
+duration_ms5880000; cue_count2829; first_start_ms9840; last_start_ms5878320; last_end_ms5881280.
+starts_monotonic=true; ends_monotonic=true; negative durations0.
+2cues end after metadata duration; raw overrun1280ms retained, no timestamp clamping in normalized data; tail_uncaptioned_ms0.
+Overlapping adjacent cue pairs2733.
+Interval-union gaps inside[0,5880000]:96; sum193794ms; maximum9840ms (initial0-9840).
+Largest internal gap4539840-4548800 =8960ms (75:39.840-75:48.800, filesystem demo/transition into limitations).
+All gaps>=5000ms:
+0-9840 (9840)
+1069120-1074240 (5120;17:49.120-17:54.240)
+3171200-3178000 (6800;52:51.200-52:58.000)
+3267040-3273280 (6240;54:27.040-54:33.280)
+4107839-4115679 (7840;68:27.839-68:35.679)
+4245840-4251199 (5359;70:45.840-70:51.199)
+4539840-4548800 (8960;75:39.840-75:48.800)
+Full96-entry gap list in videos[0].caption_time_structure.all_uncovered_gaps. These are caption-interval gaps, not detected silence and not proof of missing speech. No invented fill for silent/visual activity.
+
+43 DRAFT TIME SECTIONS
+00:00–03:00 voting threat model
+03:00–05:00 Shamir shares and aggregation
+05:00–07:00 retry/persist/fail-stop assumptions
+07:00–08:00 narrated voting demo
+08:00–10:30 testing/course-idea Q&A and transition
+10:30–13:00 private aggregation privacy dimensions
+13:00–15:00 proxy routing and well-formedness proofs
+15:00–17:00 proposed replication/parallelism, actual prototype scope
+17:00–19:00 demo, reliability and supported functions Q&A
+19:00–21:30 measurements versus extrapolation, proof implementation/testing
+21:30–24:00 collaborative editor identities/position keys
+24:00–26:00 deletion set and propagation
+26:00–28:00 narrated editing demo/motivation
+28:00–30:00 trust/client failure/server-count Q&A
+30:00–32:40 local batch convergence measurements/product speculation
+32:40–35:00 Egg Scrambler motivation/protocol sketch
+35:00–38:00 Raft coordination and membership
+38:00–40:00 narrated prerecorded demo/component split
+40:00–42:00 partitions and anonymity question
+42:00–44:00 n-1 collusion/admission attack acknowledged
+44:00–47:00 9P/serverless motivation
+47:00–51:00 global namespace/S3 narrated example
+51:00–54:00 chain replication and failure demo
+54:00–56:00 protocol choice/no online replica addition
+56:00–58:00 TCP/interface overhead Q&A
+58:00–61:00 modular verification rationale/model/specification limits
+61:00–64:00 unreplicated in-memory sharded KV/client specification
+64:00–66:00 partially verified single-decree Paxos/monotone knowledge
+66:00–68:00 log prefix order and future Raft-like verification
+68:00–70:40 tool recommendation, implemented naive log protocol, no benchmark
+70:40–73:00 Pigeon Protocol2 parameters and consistency goals
+73:00–75:00 journaling/locks/nonstandard write
+75:00–77:00 concurrent whole-file flush demo/limitations
+77:00–79:20 tests/POSIX comparison/cache discussion
+79:20–82:00 Pinguino region-based game workers
+82:00–84:00 coordinator/backup/mappings
+84:00–86:00 fast versus stable moves
+86:00–88:00 narrated demo/future region transition and balancing
+88:00–90:00 atomicity and coordinator partition Q&A
+90:00–92:00 diverging-room history objection/unresolved answers
+92:00–93:00 API example choices/presentations end
+93:00–95:00 voting follow-up: no malicious-voter defense
+95:00–98:00 final class thanks/exam logistics/recording ends
+Each cue start belongs to exactly one section; segment cue counts and first/last cue numbers in manifest videos[0].draft_segments.
+
+ASR / IDENTITY / EVIDENCE BOUNDARIES TO RETAIN
+No student names asserted as verified identities. Some recognizable technical spellings normalized in prose only; raw ASR preserved.
+Private statistics name ASR "sis"; official name unconfirmed. No guessing referenced zero-knowledge paper.
+Editor name varies bookadocks/pokedogs/wukadox/lucadox etc.; use turtle-themed collaborative editor. Sequence CRDT ASR lc/l c/elsic with variable-length keys, tentatively LSEQ but not confirmed from slides/audio; do not silently promote that guess.
+Egg Scrambler appears in host transition; later ASR ice grounder etc. interpreted within same project. Threat-model answer evolves and explicitly admits n-1 takeover is not detected. Do not summarize as Byzantine secure.
+9P named/memfs inferred from context as service terminology; no independent code check. Five-to-four replica removal shown only through narration. Adding replicas not implemented.
+single-decree Paxos repeatedly corrupted as single degree/practice/taxes; technical context supports normalization. IronFleet/Verdi and Dafny names recognizable but not visually checked; draft flags phonetic ASR. Partial verification and future Raft-like verification kept separate.
+Pigeon Protocol2 explicitly introduced; no mapping to a repository. Testing phrase around77min is "partitions" in ASR; draft conservatively says five integration scenarios, not five verified network partition tests. RAM blocks versus future disk persistence retained despite crash-recovery ambition. No claim of full POSIX implementation.
+Pinguino spelling from ASR only. Coordinator/backup answers around89-92min conflict/incomplete; draft preserves them and does not repair split-brain by inserting quorum/fencing logic. Cross-room movement and region load balancing future work.
+Private aggregation four-core ~1000qps is presenter report;20-server ~22000qps is extrapolation, not implemented parallel benchmark. Editor19000edits/32s and3000edits/3s are localhost burst-to-convergence numbers, not sustained throughput.
+Visual-only code, exact terminal output, slide formulas, cursor interactions, student identities not recovered. Voting tie rule and precise client-duplicate policies not invented. All notes counterexamples/verification suggestions are editorial, not claims of student tests run.
+
+ANALOGICFS FULL READING / ACTUAL VISUAL CHECK
+PDF fetched2026-11-09T14:18:41.076869+00:00; Last-Modified Fri,22Jan2021 09:21:42GMT.
+sha256 eb99c93f3267b947f85975de6c6f30ef56a1157867d6683df77d987d0f2440ac.
+Full335-line layout extraction read, all7pages, abstract, sections1-6 including5.1/5.2, all32bibliography entries.
+Actual images page-01.png through page-07.png each opened and inspected, not merely rendered:
+p1 exact title/three displayed authors/abstract/object drift; no publication year claimed.
+p2 Figure1 undefined variables M,V,D,F,Y,I,P/start/goto6/7/AnalogicFS; branch labels; malformed bare(n²)time typography (no inferred O or Theta); contradictory traces and assumptions.
+p3 implementation9941PHP instructions/935Fortran lines/676nm; Figure2 energy(percentile) versus hit ratio(connections/sec), superblocks/10-node; hardware/software narrative.
+p4 Figures3-4: latency(dB)/power(cylinders), clock speed(bytes)/hit ratio(Joules); chart attribution; experimental details; identical10th-percentile contrast;60standard-deviations claim.
+p5 Figure5 bandwidth(dB)/popularity of multicast algorithms(pages), checksum caption mismatch; related-work sections.
+p6 conclusion and references1-16, internal mismatch of Figure2/3/4 author attributions versus bibliography6/7/8.
+p7 references17-32, no external works independently retrieved/read.
+All5figures checked; no tables or code listings in PDF; no valid numbered equation reconstructed. Notes' log-prefix formula and materials' Chebyshev inequality are explicit editorial derivations, not claimed paper equations. Page images kept local.
+FAQ fetched2026-11-09T14:18:40.306495+00:00; Last-Modified Fri,22Jan2021 09:21:42GMT; sha2567583ddc1d57d0c45664003f7cc52bbf99641464c47edda19c6bb6d895dc03979.
+All8lines read. Its quoted "written" and SCIgen link identify the humorous pseudo-paper/tradition; warning is to be careful what one reads/believes. No individual FAQ author given. Did not follow SCIgen page or claim its contents read.
+PDF independent license/full-translation permission not confirmed: materials is original Chinese critical paraphrase with short labels/examples, not full translated pseudo-paper. Course-authored FAQ paraphrase attributed and CC BY3.0US linked via actual fetched2021home line55.
+
+MINIMAL CHECKS / INTEGRATION
+finalize.py passed: acquisition hashes, whitelist metadata shape, normalized cue order/nonnegative durations, continuous43segments, exact one-section assignment of every cue start, valid local lecture links/frontmatter/no trailing whitespace/fence balance.
+git diff --check scoped to assigned directories passed. No build run per worker instruction; no staging/commit/push; no project/lab/cloud experiments.
+Main agent should still read all3Chinese documents and spot-check originals as planned. Shared course/status/manifest/PLAN not edited by worker.
+Integration fields: durationSeconds5880; display98:00; videoIdbu41Qt9G5Qo; cues2829; firstStartMs9840; lastEndMs5881280; draftSections43; overrun1280; gaps96,total193794,max9840.
+Metadata path relative course: sources/p9-lec21/metadata.json. Normalized captions: sources/p9-lec21/captions.normalized.json. Fragment paths remain relative sources.
+Suggested state meanings: notes complete_with_explicit_ASR_and_demo_limits; draft complete_caption_text_only; materials complete_critical_reading_FAQ_and_full_paper_visual_review. No claim entire course/historical missing lectures complete.

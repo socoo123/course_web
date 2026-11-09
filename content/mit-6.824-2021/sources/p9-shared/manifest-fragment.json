@@ -1,0 +1,66 @@
+{
+  "batch": "P9",
+  "reviewed_at": "2026-11-09",
+  "snapshot_policy": "Main-agent shared records reuse existing schedules/homepages after SHA256 verification and retain original GET dates. L21 worker separately refetched the2021 schedule/home into p9-lec21,with new GET dates and identical hashes; those are distinct records. No2026 schedule/home refetch.",
+  "sources": [
+    {
+      "id": "p9-shared-schedule-2021",
+      "original_source_id": "schedule-2021",
+      "url": "http://nil.csail.mit.edu/6.824/2021/schedule.html",
+      "file": "schedule-2021.html",
+      "sha256": "d89f453171c5c03a4cd7aad8fc143ce7064a5df7791f4ec1f744bfdb9f1ba83f",
+      "retrieved_at": "2026-11-08T13:56:18.830391+00:00",
+      "last_modified": "Sun, 02 Jan 2022 22:13:51 GMT",
+      "status": "reviewed",
+      "scope": "Complete 297-line schedule read; L21 demo video, AnalogicFS paper and FAQ checked independently; L6/L8 source absence, L15 two videos, SUNDR scope and Blockstack2016 preserved",
+      "internal_title": "6.824 Schedule: Spring 2021"
+    },
+    {
+      "id": "p9-shared-schedule-2026",
+      "original_source_id": "schedule-2026",
+      "url": "https://pdos.csail.mit.edu/6.824/schedule.html",
+      "final_url": "https://pdos.csail.mit.edu/6.824/schedule.html",
+      "file": "schedule-2026.html",
+      "sha256": "907861ca7e9d06d8c84051805a28308e391bb069684f166b0d74e07e48ac9e31",
+      "retrieved_at": "2026-11-08T12:09:28.821121+00:00",
+      "last_modified": "Thu, 14 May 2026 16:26:21 GMT",
+      "status": "reviewed",
+      "scope": "Complete 299-line schedule read; L17 Marc Brooker slides and2023 paper, L18 notes/2021-labelled Ray paper/FAQ verified. Neither entry lists video; Lambda has no FAQ",
+      "internal_title": "6.5840 Schedule: Spring 2026"
+    },
+    {
+      "id": "p9-shared-home-2026",
+      "original_source_id": "home-2026",
+      "url": "https://pdos.csail.mit.edu/6.824/index.html",
+      "final_url": "https://pdos.csail.mit.edu/6.824/index.html",
+      "file": "home-2026.html",
+      "sha256": "0e84bf9377933215c745734c742f29b40b34a7bd41e146717c8c661ac7c13856",
+      "retrieved_at": "2026-11-08T12:48:14.787990+00:00",
+      "last_modified": "Tue, 10 Feb 2026 19:00:35 GMT",
+      "status": "reviewed",
+      "scope": "Complete102-line homepage read; line61 license link applies to course-owned text, not independently to papers, guest slides or video",
+      "internal_title": "6.5840 Home Page: Spring 2026",
+      "license": "https://creativecommons.org/licenses/by/3.0/us/"
+    },
+    {
+      "id": "p9-shared-home-2021",
+      "original_source_id": "home-2021",
+      "url": "http://nil.csail.mit.edu/6.824/2021/",
+      "file": "home-2021.html",
+      "sha256": "f6dd24ebf226f80035a860a7cea1cefb7c0cdc282089ca1d988f0c3b188b6650",
+      "retrieved_at": "2026-11-08T14:24:44.335258+00:00",
+      "last_modified": "Mon, 25 Jan 2021 15:25:34 GMT",
+      "status": "reviewed",
+      "scope": "Complete96-line homepage read; line55 course-owned text license link, not an independent license for AnalogicFS or YouTube video",
+      "internal_title": "6.824 Home Page: Spring 2021",
+      "license": "https://creativecommons.org/licenses/by/3.0/us/"
+    }
+  ],
+  "scheduled_topics": [
+    { "id": "update-lambda", "year": 2026, "lecture": 17, "instructor": "Marc Brooker", "base": "https://pdos.csail.mit.edu/6.824/", "links": ["notes/mbrooker_cs_slides_2026.pdf", "papers/atc23-brooker.pdf"] },
+    { "id": "update-ray", "year": 2026, "lecture": 18, "instructor": "fk", "base": "https://pdos.csail.mit.edu/6.824/", "links": ["notes/l-ray.txt", "papers/ray.pdf", "papers/ray-faq.txt"] },
+    { "id": "lec21", "year": 2021, "lecture": 21, "base": "http://nil.csail.mit.edu/6.824/2021/", "links": ["https://youtu.be/bu41Qt9G5Qo", "papers/katabi-analogicfs.pdf", "papers/analogicfs-faq.txt"] }
+  ],
+  "lab_tests": "not_run",
+  "learner_completion": "not_tracked"
+}

@@ -1,7 +1,7 @@
 ---
 source: MIT 6.824 Spring 2021 L16 Spark；完整课堂英文字幕、2021 讲义/FAQ；RDD 论文 NSDI 2012
 license: 自主中文学习笔记；课程自有文字 CC BY 3.0 US。视频独立 CC Attribution 标签未给具体版本；论文全文翻译许可未确认。
-status: 从完整字幕与论文精读提炼；未做音画核验或运行 Spark。窄依赖方向、PageRank shuffle、缓存/检查点及 scheduler 故障边界按原论文校正。Ray 仅作后续学习连接，update-ray 未完成；未运行固定 2026 实验。
+status: 从完整字幕与论文精读提炼；未做音画核验或运行 Spark。窄依赖方向、PageRank shuffle、缓存/检查点及 scheduler 故障边界按原论文校正。Ray 的独立阅读见 update-ray；未运行固定 2026 实验。
 ---
 
 # L16 课程笔记：何时可以保存配方，而不复制每份结果
@@ -123,7 +123,7 @@ worker 丢失缓存，有稳定输入和 lineage 可补算；driver/scheduler �
 
 与 [Memcached](#/c/mit-6.824-2021/lec/lec17?v=notes) 的对照也有帮助：两者都有缓存，但 Memcached 缓存外部可变数据库结果，必须防止过期回填；RDD 缓存固定版本的纯转换结果，不需要用 delete 把同一版本“更新成新值”。可变权威源若未纳入版本边界，RDD 的简单性同样会消失。
 
-未来学习 Ray 时，可继续问任务粒度、对象依赖、可重算性和控制面的存活条件。这里只建立问题清单；**Ray 指定阅读与 update-ray 内容仍留后续，不算本讲已完成范围。**
+继续学习 [Ray](#/c/mit-6.824-2021/lec/update-ray?v=notes)时，可追问任务粒度、对象依赖、可重算性和控制面的存活条件。Ray 的 Ownership 论文在该专题独立精读；本讲的 RDD 阅读仍限定于 Spark。
 
 ## 8. 自测
 

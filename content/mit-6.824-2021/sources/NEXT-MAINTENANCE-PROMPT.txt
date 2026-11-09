@@ -1,0 +1,14 @@
+继续 MIT 6.824 中文课程的来源补缺与勘误。先读 AGENTS.md、technical-video-notes skill、sources/PLAN.txt、status.json、manifest-2021.json、P9-REVIEW.txt 和有关专题的 review.txt，按实际记录决定可做范围；P1–P9 的批次交付不表示所有课堂来源完整。
+
+主线为 Spring 2021；Updates 为 Spring 2026 书面材料；实验仍固定 513cac0aef010750fc74688da8a395974a83cf7a。仅修改 content/，不改变用户实验要求，不把静态阅读当作运行或测试通过。
+
+目前只保留下列有条件任务，不自动开新专题：
+1. update-go-patterns 的 CACM 2022 The Go Programming Language and Environment：原入口、出版社现行入口及 DOI PDF 已返回 403。只有取得合法可读全文时再补独立精读、实际图表/代码检查和许可记录；不盲重试，不以搜索摘要、FAQ 或 Go Tour 替代全文。材料继续 partial，直到真正补齐。
+2. 2021 L6/L8：官方课表无视频或讲义；只有新增真实来源后才制作课堂内容。新版实验指导不冒充旧年课堂答疑。
+3. 用户指出的具体错误或提供的可核验来源：仅定点修订。全部课堂稿现有核验范围为英文字幕文本；若任务要求核对某处音画，要记录真实核对区间及结果，不能把某段核验扩成全片已核验。
+
+保持 P7 SUNDR 两年指定范围、额外并发局部阅读、Nielsen 原站/UBC 替代快照、Blockstack 2016 主体与 2021 增补分别记录；FaRM 两条录像独立时间轴。P8 的 Go 版本差异、IronFleet 证明边界、PBFT 原型未实现路径等继续保留。P9 的 Lambda 论文/幻灯片/产品行为、Ray 2021 实际论文及所有权恢复边界、项目展示字幕与独立 AnalogicFS 文体精读严格区分。
+
+复用来源保留原 retrieved_at/Last-Modified/hash；新抓取另记实际时间、最终 URL、HTTP 状态、字节差异及内部版本。PDF 图表公式代码必须实际看对应页。fetched 不等于 reviewed，全文和定点阅读分开。
+
+若没有新来源或具体勘误请求，报告现有缺口即可，不制造“下一批完成”。若有实际变更，更新正文、来源分片、状态和计划；最小必要哈希、路由/图片/元数据检查，git diff --check 与 npm run build 通过后提交并推送 GitHub。原件留本地，仅选择正文、必要脚本、清单和 review 入库，不无差别强制加入 sources。

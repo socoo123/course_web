@@ -1,0 +1,109 @@
+P9 / update-ray — worker review
+日期：2026-11-09
+限定写入：content/mit-6.824-2021/lectures/update-ray/ 与 sources/p9-ray/。
+共享文件只读；没有 git 暂存/提交/推送、全站 build、Ray/TLA+ 或课程实验执行。
+
+交付与整合
+- lectures/update-ray/notes.zh.md：任务/actor、owner/producer/location 区分，三个不变量，细粒度开销推导、调度与分层计数动机，故障反例、Spark 比较、10 题折叠自测。
+- lectures/update-ray/materials.zh.md：论文 16 页自主中文精读，全部 15 图、3 表、图内代码/API 与附录公式；含论文独有协议细节、微基准/应用实验、相关工作、讨论和两个附录。FAQ 与讲义问题单独校注，不复制课堂提纲。
+- sources/p9-ray/manifest-fragment.json：5 项 sources，全部 id 唯一并以 p9-ray- 开头；file 相对 sources 根。3 核心来源 + 课表定点证据 + 首页许可定点证据。既有来源通过 original_source_id 关联。
+- prepare.py：独立核验两份既有快照哈希；只新抓 FAQ，存 GET metadata；渲染第 16 页供实际看页；不覆盖成功原件。
+- check.py / validation.txt：局部来源/沿用取得时间/FAQ response metadata/页面结构/路由检查。
+- acquisition.json、ray-faq.txt、page-16.png 是本地抓取/衍生物，按项目既有原件不提交策略由主 agent 处理。
+- 新增已发布正文 2 份，均 complete；draft 为不适用（课表无视频），没有图片资源需要上线。
+- manifest.integration 提供 suggested_readings / suggested_note / parent_follow_up，可供共享 course/status/PLAN/version map/source_fragments 整合。
+- lec16 notes/materials 仍保留历史“update-ray 尚未完成”的句子，已报告主 agent 后续按最新状态修订；worker 未越界改它们。
+
+任务输入与对照阅读
+- 项目 AGENTS.md、technical-video-notes skill、NEXT-P9-PROMPT.txt 完整读取。
+- 主 agent 已负责 PLAN/status/manifest-2021/P8 历史、两年课表总体核验与既有历史边界，本 worker 不冒称重复完成全站历史审计。
+- 独立读取 schedule-2026.html 1–45、238–245 行，核对 2026-04-23 L18 (fk) 与 notes/l-ray.txt、papers/ray.pdf、papers/ray-faq.txt，条目没有视频。
+- home-2026.html 1–19、48–66 行定点读取：Spring 2026 及第 61 行 rel=license；未标成首页全文精读。
+- 全文读 lec16/notes.zh.md 215 行、materials.zh.md 263 行、sources/p7-lec16/review.txt 98 行。比较范围是 RDD 分区/lineage/缓存/checkpoint/driver 与 scheduler 边界，未新读 Spark 原片或原论文。
+- p8-verification/manifest-fragment.json 全 70 行作为清单结构样本。manifest.json 最初读取工具截断到 1478 行，后按需 1857–1900 行定位 Ray 原始元数据；没有声称完整重读整个 manifest。
+
+来源身份与抓取时间
+1. p9-ray-notes / original lec18-notes-1-2026
+   URL https://pdos.csail.mit.edu/6.824/notes/l-ray.txt
+   file update-2026-l-ray.txt
+   原 retrieved_at 2026-11-08T12:48:22.152320+00:00
+   Last-Modified Thu, 23 Apr 2026 21:50:36 GMT
+   SHA256 024a34c98686cb20f9b67bd59f0c145980f02f984ed8eb7a9de63c3ed9c9d419
+   本批只读取和重算哈希，没有重新抓取或篡改原取得时间。
+   全 223 行读完；内部标题 6.5840 2026 Lecture 18: Ray，开头指明 Wang 等 Ownership / NSDI 2021。
+2. p9-ray-paper / original lec18-reading-2-2026
+   URL https://pdos.csail.mit.edu/6.824/papers/ray.pdf
+   file update-2026-ray.pdf，1667665 bytes，16 页。
+   原 retrieved_at 2026-11-08T12:48:23.023974+00:00
+   Last-Modified Tue, 27 Jan 2026 14:57:07 GMT
+   SHA256 6d6557e7ad7b98d58e0e07bd67b45a4301c1d009ed114d2c53239361240d7bd9
+   本批复用原 PDF，独立重算哈希；无新 GET、无新版替换。
+   第 1 页内部题名 Ownership: A Distributed Futures System for Fine-Grained Tasks。
+   作者 Stephanie Wang、Eric Liang、Edward Oakes、Ben Hindman、Frank Luan、Audrey Cheng、Ion Stoica。
+   PDF 内部 CreationDate/ModDate D:20210402112000-07'00'（pdfinfo -rawdates 实际输出）。
+   第 15 页文献 [53] 为 Ownership nsdi'21 artifact；与讲义 NSDI 2021、课表 Ray (2021) 匹配。
+   首页面并没有会议/年份横栏，不伪称看见了“NSDI2021”页眉；HTTP 修改日期也不是发表年份。
+   第 14 页文献 [34] 才是 Ray: A Distributed Framework for Emerging AI Applications，OSDI 2018，未把其替换为指定阅读。
+3. p9-ray-faq / original lec18-faq-3-2026
+   URL/final_url https://pdos.csail.mit.edu/6.824/papers/ray-faq.txt
+   file p9-ray/ray-faq.txt，4251 bytes，105 行、14 个问答。
+   新 GET retrieved_at 2026-11-09T14:18:39.525273+00:00；HTTP 200，Content-Type text/plain。
+   Last-Modified Wed, 22 Apr 2026 18:27:36 GMT
+   ETag "109b-65010af9eb0de"；Date Mon, 09 Nov 2026 14:18:39 GMT。
+   SHA256 51dec5056f5e6bab38898e3d4db93ca675060147a0881d18823387651e78ed9b。
+   acquisition.json 为 fetched 的获取事实，manifest 为阅读后 reviewed；二者有意区分。
+   既有清单仅 discovered、无 FAQ 旧 bytes，故没有虚构新旧字节比较。
+4–5. schedule/home 快照原取得时间/Last-Modified/hash 从 manifest 保留；本批只做与本题相关的定点阅读，check.py 核对现存哈希。
+
+全文阅读与实际页面查看
+- PDF 工具一次返回全部 16 页逐页完整文本（摘要、§1–7、致谢、56 条文献条目、附录 A–B），按页/双栏上下文完整读完。
+- 同次 PDF 返回实际页面图 1、3、4、5、6、7、8、9、10、11、12；所有这些页图实际查看，不仅依据文本提取。
+- 第 16 页额外用 pdftoppm 渲染 page-16.png，并实际 read 图片核对附录 A/Table 3 及附录 B 公式/范围。
+- p1：title/authors、Figure 1 四行程序、Figure 2 同步/异步与传值/传引用四格执行图。
+- p3：Table 1 完整 API，普通 DFut 与 SharedDFut 的不同解引用；Figure 3 两应用任务/数据/状态边。
+- p4：Figure 4 先有 future 后有位置的检测困难；Figure 5 参数也可能丢失，不止 pending result。
+- p5：Figure 6 中央表、任务租约和 Ownership，W1=A 是 X/Y owner，W2=B/W3=C 是 executors。
+- p6：Table 2 六字段与 borrower 星号；Figure 7 三层架构。正文末引用 Figure 7g 但实际图仅 a–f，未据此补画 g，也未让笔误决定协议。
+- p7：Figure 8 所有箭头和 (e) RTT 表，半 RTT/本地远端区分；资源复用并非无条件；actor 同 caller 次序边界。
+- p8：Figure 9 Create/Pin/Release/Get、primary/secondary、大小结果两路径；源码层 API 未执行。
+- p9：Figure 10 值/executor 丢失的重建，Figure 11 owner 丢失的 fate sharing；借用向父返回与 actor 状态限制。
+- p10：Figure 12(a–e) drivers colocated/spread、small/large、nested-task 吞吐；大对象按值基线缺数据原因保留。正文图读数仅标约数。
+- p11：Figure 13 4 组延迟、毫秒/标准差；Figure 14 归一化总运行时间/对数轴，不误作绝对恢复秒数。
+- p12：Figure 15(a) p95–p100 放大图，(b) 无故障视频，(c) p90 起、秒单位、O/L/CP/WF/OF 图例；结合 p11 条件解释。
+- p16：Table 3 全五类引用信息，borrower 集合移交与 nested future，LineageInScope 定义、3 层×3 futures、>44 million 状态、不含 first-class futures/actors。
+- p2/p13/p14/p15 读了完整文字，未额外声称图像查看。文献 [53]/[34] 身份来自这些已读正文文献条目，metadata 年份另经 pdfinfo 核验。
+- 全 15 图、3 编号表、Figure 8 内 RTT 表、Figure 9 API 表、Figure 1/6 代码及附录公式均核对；未复制原图到公开页面。
+
+语义重点与校注
+- task caller owns returned DFut；producer、physical data location、owner 不能互换。borrower 可拥有它自己新调用产生的 future。
+- 普通 DFut 参数在被调函数执行前隐式转成值；SharedDFut 传句柄，不为路由无谓搬运大数据；论文抽象 API 不冒充现代 Ray Python 同名接口。
+- actor 私有可变状态与共享不可变对象分开；只重启 constructor 不承诺恢复 Counter 的旧数值或所有请求队列。
+- TaskID 原文为父 TaskID+调用序号之 hash，不把讲义加号简记当完整字符串算法。
+- pending task location 在每次转交前本地同步更新；object-copy directory 可异步；ownership 不是取消元数据。
+- 旧 distributed task leases 与新 worker/resource lease 分开；最坏 RTT 不保证优于基线，资源可复用时才有短路径。
+- 引用计数不等于局部变量数，submitted task/borrower/nested/local/lineage 各有寿命；borrower 子集合由 owner 合并追踪，不能自己抹除。
+- 值可释放不等于 Task 字段可回收；lineage count 按依赖 Task 记录被回收才减，避免提前丢配方。
+- owner 存活时优先 secondary、否则重跑必要链；owner 死亡时 fate sharing 而不是另选主保留旧表。
+- 返回 future 给祖先可向上传播 fate sharing；不只限后代。root driver 仍是应用边界。
+- GC 可追踪 actor 保存 borrowed DFut，但 §4.3 透明 owner 恢复论证不覆盖这种保存；不能混淆两种承诺。
+- 讲义 195–198 行把 W2 crash 写在 loss-of-owner 下，与既定角色不自洽；以 200–208 行和论文 Figures10–11 对齐。
+- FAQ 87–88 行说 borrower 可改 Ray object，与论文不可变对象冲突；正文指出冲突，不用它扩大对象可写语义，也不捏造作者澄清。
+- 实验按作者设置报告：Fig14 故障5秒/心跳1秒；Fig15 旧租约5秒故障与 Ownership10秒故障分开；Redis CP 为应用层，不是全 actor 自动快照。
+- TLA+ 是有限抽象模型检查，排除 first-class futures 与 actors，未声称完整实现证明。
+- notes 与 materials 分工：notes 推导、反例与自测；materials 承担 API/RTT/树协议/数据路径/实验条件/相关工作和附录细节。必要衔接通过站内链接。
+
+许可与未决边界
+- MIT 自有讲义和 FAQ 按 home-2026 的 CC BY 3.0 US 改写，保留课程归属与课表 fk；不是声称文档存在作者签名。
+- PDF 未建立公开全文翻译许可。只写自主精读，不整篇翻译或公开转载页面；课程站 CC 不扩展到论文。
+- 2026 无年份 URL 动态；FAQ 新抓而讲义/PDF 复用旧 bytes，三个取得时间不混同；Last-Modified 不当作发表日期。
+- 讲义和 FAQ 校注保留冲突，不假定已经获得作者外部修订；不核验 latest 产品调度、当前用户规模或现代多租户安全策略。
+- 未追读文献、artifact、现代 Ray 代码、GC survey、Rust/actor 外链；未运行 Ray、论文性能实验、TLA+ 或固定实验提交。
+- 课表无视频；没有 draft、时间轴、杜撰问答或屏幕演示。两份完整文档只代表书面阅读包完成。
+- P7 SUNDR/Bitcoin/Blockstack/FaRM、P8 Go CACM 403、L6/L8 缺口均仍由主 agent 维护，本 worker 不更动或宣称解决。
+
+最小检查
+- check.py 已通过五源 hash/原 retrieved_at/Last-Modified 对照，FAQ 新 GET metadata/105行/14问，L18精确链接与日期。
+- 两正文头信息、围栏、折叠块、尾空格、站内 lecture id、图片路径、保留关键词小节位置均局部检查；未生成 draft。
+- materials §5 标题采用“分层计数”避免“引用”关键词被前端整节误收至来源区。
+- 正文哈希和行数在 validation.txt 动态计算；检查不证明所有语义，主 agent 仍需全文审阅与定点核验。
+- 全站共享元数据一致性、git diff --check、npm run build 及最终提交推送由主 agent 执行；worker 未运行这些操作。

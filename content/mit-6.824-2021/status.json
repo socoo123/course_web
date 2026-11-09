@@ -2,7 +2,7 @@
   "courseId": "mit-6.824-2021",
   "plannedAt": "2026-11-08",
   "updatedAt": "2026-11-09",
-  "phase": "P8_complete_with_CACM_gap",
+  "phase": "P9_complete_with_known_source_gaps",
   "plan": "sources/PLAN.txt",
   "versions": {
     "lectures": "MIT 6.824 Spring 2021",
@@ -27,6 +27,7 @@
   "p6Review": "sources/P6-REVIEW.txt",
   "p7Review": "sources/P7-REVIEW.txt",
   "p8Review": "sources/P8-REVIEW.txt",
+  "p9Review": "sources/P9-REVIEW.txt",
   "plannedBatches": {
     "P8": { "lectures": ["update-paxos", "update-go-patterns", "update-verification", "update-bft"], "prompt": "sources/NEXT-P8-PROMPT.txt", "scope": "2026 written sources; compare Go patterns with completed2021 L10 before expanding; no lecture video listed" },
     "P9": { "lectures": ["update-lambda", "update-ray", "lec21"], "prompt": "sources/NEXT-P9-PROMPT.txt", "scope": "Ray compared with Spark;2021 project-demo video and assigned AnalogicFS reading remain distinct" }
@@ -34,12 +35,12 @@
   "artifacts": {
     "courseRegistration": "complete",
     "catalogMigration": "mit-6.824-2020 -> mit-6.824-2021; active",
-    "publicResources": "updated_for_2021_P8",
+    "publicResources": "updated_for_2021_P9",
     "mainlineEntries": 21,
     "updateEntries": 8,
     "labEntries": 5,
-    "lectureDocumentsCompleted": 61,
-    "lectureDocumentsPublished": 62,
+    "lectureDocumentsCompleted": 68,
+    "lectureDocumentsPublished": 69,
     "lectureDocumentsPartial": 1,
     "labDocumentsCompleted": 10,
     "lectureIllustrationsCompleted": 4
@@ -50,8 +51,8 @@
     "mainlineVideoLinks": 20,
     "mainlineWithoutVideo": ["lec06", "lec08"],
     "splitVideos": { "lec15": ["07xsfL5E8Ck", "XwU4jKhBxws"] },
-    "videoMetadataFetched": ["lec01", "lec02", "lec03", "lec04", "lec05", "lec07", "lec09", "lec10", "lec11", "lec12", "lec13", "lec14", "lec15", "lec16", "lec17", "lec18", "lec19", "lec20"],
-    "mainlineVideoMetadataPending": "lec21 only;nineteen independently queried videos including both lec15 recordings report CC Attribution labels,exact versions unresolved",
+    "videoMetadataFetched": ["lec01", "lec02", "lec03", "lec04", "lec05", "lec07", "lec09", "lec10", "lec11", "lec12", "lec13", "lec14", "lec15", "lec16", "lec17", "lec18", "lec19", "lec20", "lec21"],
+    "mainlineVideoMetadataPending": "none among20 scheduled videos;all independently queried including both lec15 recordings andlec21 report CC Attribution labels,exact versions unresolved. This is metadata/caption-text coverage,not audio/frame review;L6/L8 have no listed videos",
     "mainlineLectureInstructors": "Frans Kaashoek from 2021 general.html; Russ Cox guest at L10 from schedule and transcript introduction; no audio identity verification",
     "labRequirementsSnapshotted": ["mr", "kvsrv", "raft", "kvraft", "shardkv"],
     "labInterfaces": "P0-P4 reviews retained. P5 lab worker fully read20 pinned files/2804 lines including shardctrler/shardgrp/shardrpc, both Clerks, shardcfg, tests/models and Makefiles; main agent separately read8 complete bridge interface files and targeted migration/recovery test excerpts. Archive/member hashes verified; exact scopes in sources/p5-lab5/manifest-fragment.json and p5-bridge/manifest-fragment.json. No lab compilation or tests run",
@@ -68,7 +69,7 @@
     "frangipaniReading": "Complete14-page paper and all9 figures/3 tables;full337-line outline and309-line FAQ. Metadata-only logging,per-block versions,lock recovery and prototype delayed-write lease limitation distinguished. Notes modified on lecture day,before/after-class ordering unknown;Petal linked paper not read",
     "farmReading": "Complete17-page2015 paper,abstract,sections1-8,acknowledgements and40 bibliography entries;all16 figures/2 tables visually checked. Full331-line outline and266-line FAQ,both modified after first video upload. Single-object atomic reads vs mixed execution states,successful strict serializability,commit evidence and recovery separated. External2014 FaRM/Vertical Paxos papers not read",
     "memcacheReading": "Complete14-page2013 paper,abstract,sections1-9,acknowledgements and37 bibliography entries;all11 figures/3 tables and Little law checked on actual pages. Full301-line outline and179-line FAQ;modified on lecture day,ordering unknown. Token issuance vs revocation,warmup add/hold-off,remote-marker order/limits and inconsistent measurement wording preserved;external linked works and current implementations not read",
-    "sparkReading": "Complete14-page NSDI2012 RDD paper,abstract,sections1-9,acknowledgements and33 bibliography entries;all14 figures/3 tables/formulas visually checked. Full219-line outline/135-line FAQ modified after class. Narrow parent fan-out,PageRank contribution shuffle,collect/count and unsupported2012 scheduler failure corrected;Ray and external works not read",
+    "sparkReading": "Complete14-page NSDI2012 RDD paper,abstract,sections1-9,acknowledgements and33 bibliography entries;all14 figures/3 tables/formulas visually checked. Full219-line outline/135-line FAQ modified after class. Narrow parent fan-out,PageRank contribution shuffle,collect/count and unsupported2012 scheduler failure corrected;Ray independently reviewed in P9,not counted as Spark reading;external works not read",
     "sundrReading": "2021 until Section3.4 interpreted as exclusive based on paper structure;2026 through the end of Section3.3.2 separately preserved. Assigned prefix complete:PDF1-5 and6 before3.4,Figures1-5;extra6-7 concurrency reading partial,8-16 unread. Full2021 outline239/FAQ54 lines and2026 outline306/543-line diff read;PDF SHA256 identical. Comparison merged at lec18;2026 FAQ not read",
     "bitcoinReading": "Complete9-page whitepaper,sections1-12 and8 bibliography entries;all7 diagram groups,formulas/code/numerical lists visually checked. Full286-line outline/340-line FAQ,stale reward and chain-size values annotated. Nielsen original404 after variants and one requested retry;complete2013 essay in UBC10-page2015 merged PDF read,all6 figures/visible formulas viewed;unrelated adjacent articles not counted,comments absent,original final revision unverified. Both readings independent commentary,full-translation permission unconfirmed",
     "blockstackReading": "Complete15-page ATC2016 PDF including cover,sections1-7,acknowledgements and53 bibliography entries;all8 figures/two SNV formulas visually checked. Full330-line outline/174-line FAQ;2016 DHT separated from2021 Atlas/Gaia/Browser andFAQ2019 whitepaper link. SNV trusted anchor,mutable freshness andFigure7 CPU wording discrepancy retained;no modern Stacks review",
@@ -77,6 +78,10 @@
     "goPatternsReading": "Full2026 73-page and2021 78-page slide texts compared with existing L10 notes/draft;20/12 selected code pages visually checked. Full144-line FAQ read;new done/Gosched race example,loop/parser/helper/timer changes separated from reused patterns. CACM2022 original,current publisher variants andDOI PDF return403;article unread andlicense unverified;materials partial",
     "bftReading": "Complete342-line outline,206-line FAQ,23-page slides and14-page OSDI1999 paper;all37 PDF pages visually checked including2 figures/3 tables. Outline retains2024 L22 title;client assumptions,FAQ commit-threshold error,MAC proof boundary,unimplemented prototype view-change/retransmission andbenchmark denominators annotated;no prototype execution",
     "updatesVideo": "No video links on 2026 schedule; editorial bridge has no lecture video",
+    "rayReading": "Complete223-line outline,105-line FAQ/14 questions and16-page Ownership:NSDI2021 paper including appendicesA-B and56 references;all15 figures/3 tables/code/formulas visually checked. Compared with existing Spark notes/materials,not substituted for independent Ray reading. Task/actor,owner/executor,resource/task leases,value/lineage lifetimes,fate sharing anddriver/actor/model-checking limits separated;outline failure-role andFAQ mutation conflicts annotated. No Ray/TLA+/benchmark execution",
+    "lambdaReading": "Complete57-page slides and15-page ATC2023 paper includingcover,sections1-7.1 and41 references;41/10 pages actually viewed,all11 paper figures/two listings/crypto andslide formulas checked. Reused originals retained. Paper4-of-5/CTR versus slides4-of-6/GCM,150Pb/s arithmetic,6.4percent Slacker attribution andmeasurement denominators separated. No FAQ/video listed;Question only discovered. No AWS/current-product/benchmark execution",
+    "projectDemosReading": "2021 L21:all2829 English original ASR cues read,43 chronological sections,eight projects plus voting follow-up andclosing. Metadata98:00/upload20210520 independently fetched. Text-only,no audio/frame/project-code review. Uncertain project names,unimplemented features,reported versus estimated measurements andPinguino partition inconsistency retained",
+    "analogicfsReading": "Independent2021 L21 reading:complete7-page Experiences with a Distributed,Scalable,Methodological File System:AnalogicFS,all5 figures and32 bibliography entries;all7pages actually viewed. Full8-line FAQ links SCIgen andexplains humorous reading tradition. Critical commentary,not acredible implemented system orpart ofdemo video;external references andSCIgen page not read;full-translation permission unconfirmed",
     "legacySources": "manifest.json, schedule-inventory.json and version-map.json retain pre-migration 2020/2026 source states; do not count them as 2021 coverage",
     "mapreduceReading": "Reused P1 independent commentary on 13-page OSDI 2004 paper, sections 1-8 and Appendix A; original 2020-hosted snapshot retained",
     "mapreduceReadingSha256": "9cfef3ef1b8fe1a1b66c7221f56c2eeca0b15d6608ea68b0c85a38bfbffd8ce5"
@@ -105,7 +110,8 @@
     "P5": "complete_2021_caption_based_and_pinned_2026_lab_guidance",
     "P6": "complete_2021_caption_based_four_cases_five_videos_and_2026_chain_comparison",
     "P7": "complete_2021_caption_based_four_topics_2026_SUNDR_comparison_and_Nielsen_substitute",
-    "P8": "delivered_four_written_topics_eight_documents_with_Go_CACM_article_blocked_403"
+    "P8": "delivered_four_written_topics_eight_documents_with_Go_CACM_article_blocked_403",
+    "P9": "delivered_Lambda_Ray_written_topics_and2021_project_demos_with_independent_AnalogicFS_reading_seven_documents"
   },
   "content": {
     "lectures": {
@@ -129,14 +135,14 @@
       "lec18": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_Zoom_and_breakout_gaps", "materials": "complete_assigned_prefix_through_3.3.2_and_2026_comparison_extra_concurrency_partial" },
       "lec19": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_explicit_gaps_and_technical_corrections", "materials": "complete_whitepaper_and_Nielsen_substitute_article_original_404_comments_unavailable" },
       "lec20": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_public_discussion_and_explicit_gaps", "materials": "complete_independent_reading_2016_paper_15_pages_all_figures_formulas" },
-      "lec21": { "notes": "not_started", "draft": "not_started_project_demos", "materials": "not_started" },
+      "lec21": { "notes": "complete_eight_projects_with_explicit_ASR_and_demo_limits", "draft": "complete_caption_text_only_43_sections", "materials": "complete_critical_AnalogicFS_reading_7_pages_all_figures_and_FAQ" },
       "update-linearizability": { "notes": "complete", "draft": "no_video_listed", "materials": "complete_independent_reading_through_3.1" },
       "update-lab-bridge": { "notes": "complete_RSM_and_migration", "rsm": "complete_with_versioned_KV_and_snapshot_contract", "migration": "complete_P5", "draft": "not_applicable", "materials": "not_planned_shared_lab_sources" },
       "update-paxos": { "notes": "complete_written_source_analysis", "draft": "no_video_listed", "materials": "complete_independent_reading_14_pages" },
       "update-go-patterns": { "notes": "complete_slide_comparison", "draft": "no_video_listed", "materials": "partial_FAQ_complete_CACM_article_blocked" },
       "update-verification": { "notes": "complete_written_source_analysis", "draft": "no_video_listed", "materials": "complete_independent_reading_17_pages_all_figures_code" },
-      "update-lambda": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" },
-      "update-ray": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" },
+      "update-lambda": { "notes": "complete_written_source_analysis", "draft": "no_video_listed", "materials": "complete_independent_reading_15_page_paper_and57_page_slides_with_version_differences" },
+      "update-ray": { "notes": "complete_written_source_analysis_with_Spark_comparison", "draft": "no_video_listed", "materials": "complete_independent_reading_16_pages_including_appendices_all_figures_tables" },
       "update-bft": { "notes": "complete_written_source_analysis", "draft": "no_video_listed", "materials": "complete_independent_reading_14_pages_and_teaching_source_comparison" }
     },
     "labs": {
@@ -150,7 +156,7 @@
   "knownIssues": [
     { "id": "lab-command-widget-xv6", "status": "open_outside_content_scope", "location": "src/pages/Lab.tsx: Commands", "issue": "Generic widget uses xv6 commands; correct Go commands remain in resources and lab goals", "blocksNextBatch": false },
     { "id": "lec01-captions-2021", "status": "resolved", "issue": "English auto captions downloaded for WtZ7pcRSkOA; JSON3, normalized JSON, VTT and timestamped text saved locally; no user download needed", "blocks": [], "blocksNextBatch": false },
-    { "id": "video-licenses-2021", "status": "partial", "issue": "L1/L2/L3/L4/L5/L7/L9/L10/L11/L12/L13/L14/L15(two videos)/L16/L17/L18/L19/L20 independently report Creative Commons Attribution license (reuse allowed);exact versions unresolved. L21 remains unchecked", "blocksNextBatch": false },
+    { "id": "video-licenses-2021", "status": "partial", "issue": "All20 scheduled videos:L1/L2/L3/L4/L5/L7/L9/L10/L11/L12/L13/L14/L15(two videos)/L16/L17/L18/L19/L20/L21 independently report Creative Commons Attribution license (reuse allowed);exact versions unresolved. No audio/frame verification inferred", "blocksNextBatch": false },
     { "id": "p2-audio-screen-review", "status": "text_review_only", "issue": "All L2/L10 captions read; no audio or video screen review. ASR ambiguities and slide errors marked in drafts; L2 breakout discussion absent from upload", "blocksNextBatch": false },
     { "id": "p3-written-heading-years", "status": "documented_source_difference", "issue": "L3/L4/L5/L7 notes fetched from actual 2021 schedule URLs retain 2020 internal headings. L4 notes and L5 FAQ have post-lecture Last-Modified dates. L7 notes/FAQ modified on upload day, before/after-class timing unknown. Raw files retained and separately compared with 2021 captions", "blocksNextBatch": false },
     { "id": "p3-caption-gaps", "status": "documented", "issue": "L3 breakout omitted from upload; L4 42:18-50:00, L5 64:07-72:10 and L7 61:16-69:32 cannot recover breakout technical discussion; L4 final utterance incomplete; L7 first six seconds uncaptioned. Original cue overhangs retained; no audio/screen verification", "blocksNextBatch": false },
@@ -167,7 +173,10 @@
     { "id": "p7-nielsen-original", "status": "original_blocked_substitute_reviewed", "issue": "Original page andHTTPS variants404;one user-requested retry still404. Complete Bitcoin essay in UBC2015 ten-page merged PDF read with all6 figures/visible formulas. Original latest revision andcomments unavailable;some isolated symbols blank inPDF. Original URL andsubstitute fetched/final URL separately recorded;no full-translation permission inferred", "blocksNextBatch": false },
     { "id": "p7-written-versions-and-scope", "status": "documented", "issue": "Spark notes/FAQ postdate class;upload next day. SUNDR assigned prefix complete,extra concurrency partial,PDF8-16 unread;2021/2026 ranges retained,PDF bytes identical. Blockstack2016 DHT distinguished from2021 Atlas/Gaia andFAQ whitepaper references;SNV anchor andFigure7 CPU mismatch retained. Papers independent commentary,not licensed full translations;external works/modern implementations/experiments not reviewed", "blocksNextBatch": false },
     { "id": "p8-go-cacm-article", "status": "blocked_HTTP403", "issue": "Original2026 scheduled CACM2022 URL,current publisher slash/non-slash variants andDOI epdf return403. Error responses andprovenance retained. Article text/figures/code andfull license not reviewed;search CC BY4.0 hint unconfirmed. Go materials contains completed FAQ only andremains partial;do not substitute Tour orsearch snippets", "blocksNextBatch": false },
-    { "id": "p8-written-versions-and-proof-boundaries", "status": "documented", "issue": "No2026 video forfour topics. Go PDF generated afterscheduled class;IronFleet outline modified afterclass;BFT outline internally2024 L22. Independent paper/guest-slide commentary,not licensed full translations. IronFleet reduction sufficiency remains informal;PBFT prototype lacks view changes/retransmissions. Static source reasoning not Go/protocol/prover/lab execution", "blocksNextBatch": false }
+    { "id": "p8-written-versions-and-proof-boundaries", "status": "documented", "issue": "No2026 video forfour topics. Go PDF generated afterscheduled class;IronFleet outline modified afterclass;BFT outline internally2024 L22. Independent paper/guest-slide commentary,not licensed full translations. IronFleet reduction sufficiency remains informal;PBFT prototype lacks view changes/retransmissions. Static source reasoning not Go/protocol/prover/lab execution", "blocksNextBatch": false },
+    { "id": "p9-lambda-version-and-measurement-boundaries", "status": "documented", "issue": "2026 slides modified afterclass,cover2026 with inherited2020 footers. Paper2023 uses4-of-5/CTR while slides use4-of-6/GCM;150Pb/s arithmetic inconsistent with15000x10GiB/s. Workingset,upload dedup,cache-hit andlatency denominators separated. No FAQ/video,current AWS verification orAWS/benchmark execution;paper/guest slides independently paraphrased", "blocksNextBatch": false },
+    { "id": "p9-ray-recovery-and-proof-boundaries", "status": "documented", "issue": "Assigned paper is2021 Ownership,not2018 Ray. Outline failure numbering andFAQ borrower mutation conflict annotated. Owner failure fate-sharing can propagate toancestors;root driver remains boundary;arbitrary actor state recovery excluded. Bounded model excludesfirst-class futures/actors. No Ray/TLA+/benchmark execution", "blocksNextBatch": false },
+    { "id": "p9-project-caption-and-reading-boundaries", "status": "text_review_only", "issue": "L21 eight projects,2829 ASR cues/43 sections;no audio/frame/project-code check.96 caption-union gaps,total193794ms,initial9840ms,tailoverrun1280ms preserved. Project-name/CRDT ASR doubts andPinguino partition answers unresolved. Demos are presenter reports,not reproduced tests. IndependentAnalogicFS7-page SCIgen-linked pseudo-paper critically read,not validated system orvideo segment", "blocksNextBatch": false }
   ],
   "historicalIssues": [
     { "videoId": "cQP8WApzIQQ", "year": 2020, "captions": "HTTP 429 after one P1 retry", "log": "sources/lec01-caption-p1.log", "license": "CC Attribution label; historical version unresolved", "status": "retired_as_primary_video" }
@@ -220,7 +229,12 @@
       { "videoId": "DnyBPxo3B6I", "durationSeconds": 5383, "cues": 2363, "draftSections": 34, "firstStartMs": 80, "lastEndMs": 5384880, "normalizedCaptions": "sources/p7-lec20/captions/captions.normalized.json", "metadata": "sources/p7-lec20/metadata.json" }
     ] }
   },
-  "validation": { "checkedAt": "2026-11-09", "contentIntegrity": "passed: check-p8.py;8 new documents,shared navigation,JSON,unique source IDs,P8 source hashes/original timestamps,13 exact schedule URLs,registered routes/targets,images,SVG XML,fences andstate consistency. Totals:62 published lecture documents(61 complete,1 partial),10 lab documents,4 SVGs;CACM403 gap retained", "captionTimeline": "P8 not applicable:no videos ornew timelines. P7 prior result retained in P7-REVIEW andp7Captions;FaRM two separate timelines unchanged", "siteBuild": "passed: npm run build (tsc --noEmit + vite build);all8 P8 documents andshared metadata/navigation included", "labTests": "not_run", "goCompilation": "not_run", "protocolOrProofExecution": "not_run" },
+  "p9Captions": {
+    "lec21": { "sources": "sources/p9-lec21/manifest-fragment.json", "review": "all_text_cues_read_eight_projects_no_audio_or_frame_review", "gap": "96 caption-union gaps,total193794ms;initial9840ms,longest internal8960ms at75:39.840-75:48.800;raw1280ms tail overrun retained. Project names andPinguino partition answers unresolved;gaps not inferred silence", "videos": [
+      { "videoId": "bu41Qt9G5Qo", "durationSeconds": 5880, "cues": 2829, "draftSections": 43, "firstStartMs": 9840, "lastEndMs": 5881280, "normalizedCaptions": "sources/p9-lec21/captions.normalized.json", "metadata": "sources/p9-lec21/metadata.json" }
+    ] }
+  },
+  "validation": { "checkedAt": "2026-11-09", "contentIntegrity": "passed: check-p9.py;P9 source/derived hashes,original provenance,unique source IDs,8 schedule links,registered routes/targets,images,SVG XML,fences,metadata andstate consistency. Totals:69 lecture documents(68 complete,1 partial),10 lab documents,4 SVGs;CACM403 andL6/L8 gaps retained", "captionTimeline": "passed:2829 L21 cues,43 continuous sections00:00-98:00,one section percue start,monotonic starts/nonnegative durations,metadata identity/duration;raw1280ms overrun retained. Text-only,no audio/frame review;FaRM two timelines unchanged", "siteBuild": "passed: npm run build (tsc --noEmit + vite build);seven P9 documents andshared metadata/navigation included", "labTests": "not_run", "goCompilation": "not_run", "protocolOrProofExecution": "not_run" },
   "gitDiffCheck": "passed: git diff --check;changes confined to content/mit-6.824-2021/",
-  "next": "P9: update-lambda,update-ray and2021 lec21 project demos plus separate AnalogicFS reading. Preserve P8 CACM403 gap;complete article only when a legitimate full-text source becomes available,no repeated blind retries. L6/L8 await actual sources. Full prompt: sources/NEXT-P9-PROMPT.txt."
+  "next": "P1-P9 planned packages delivered;maintenance only on actual new sources orspecific corrections. Go CACM403 remains partial;complete only after legitimate readable full text/license evidence,no blind retry. L6/L8 await real sources;audio/frame andhistorical version boundaries retained. No automatic unrelated topics. Entry:sources/NEXT-MAINTENANCE-PROMPT.txt."
 }

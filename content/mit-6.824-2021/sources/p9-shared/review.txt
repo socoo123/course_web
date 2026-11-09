@@ -1,0 +1,27 @@
+P9 共享来源核对 — 2026-11-09
+
+主agent全文读项目AGENTS、technical-video-notes skill、NEXT-P9-PROMPT、PLAN、status、
+manifest-2021、P8-REVIEW、五份p8-*/review、两年课表、inventory和version-map。
+确认P1–P8交付范围、fetched与reviewed区别、Go CACM403和partial资料、各历史边界。
+起始工作区干净；origin为https://github.com/socoo123/course_web.git。
+用户入口允许三个独立内容agent，分别限定Lambda、Ray、lec21及对应p9来源目录；
+共享索引、最终正文审阅、来源定点复核及提交由主agent负责。
+
+完整读取2021课表297行、2026课表299行，核对本批八个实际链接。
+2026 L17（4月21日）Marc Brooker：两份PDF，无FAQ/视频；Question不是FAQ。
+2026 L18（4月23日）fk：讲义、Ray(2021)论文、FAQ，无视频；具体论文身份由PDF核实。
+2021 L21（5月20日）：项目展示bu41Qt9G5Qo与独立AnalogicFS论文/FAQ，不混为一项来源。
+两年课表及home-2026、四份既有Lambda/Ray快照独立SHA256核验通过，保留原获取时间。
+主agent未重抓这些URL；2026讲义和论文在旧清单只是fetched，实际阅读由worker另行记录。
+L21 worker另行GET了2021课表和主页，保存在p9-lec21，记录新时间且哈希与旧版相同；
+这些新抓取与本目录旧快照复用记录分开，不改写旧retrieved_at。2026动态课表/主页未复抓。
+home-2026全部102行、home-2021全部96行读，分别在61/55行看到CC BY3.0 US许可链接。
+该证据仅用于课程自有文字，不为论文、嘉宾slides或视频推定全译许可。
+共享来源完整哈希和原GET/Last-Modified见manifest-fragment.json。
+四份共享来源哈希及八个课表链接已独立检查通过；home-2021亦与旧清单一致。
+
+保留P7 SUNDR两年范围及额外并发局部阅读、Nielsen原站404和UBC替代快照区别、
+Blockstack2016和2021增补；FaRM两条真实时间轴独立。P8版本/许可/静态审阅边界继续有效。
+Go CACM不盲重试，合法可读全文出现后再补；L6/L8无新来源不补造课堂。
+实验固定513cac0aef010750fc74688da8a395974a83cf7a，教程检查不代表用户实验通过。
+最终整合、实际计数与验证见../P9-REVIEW.txt。

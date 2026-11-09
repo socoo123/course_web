@@ -1,0 +1,86 @@
+P9 平台与项目整合审阅
+日期：2026-11-09
+主线 MIT 6.824 Spring 2021；Updates 为 MIT 6.5840 Spring 2026 书面材料。
+实验固定513cac0aef010750fc74688da8a395974a83cf7a。
+
+一、前置核对与分工
+主agent全文读取项目AGENTS、technical-video-notes skill、NEXT-P9-PROMPT、PLAN、
+status、manifest-2021、P8-REVIEW、五份p8-*/review、两年课表、inventory和version-map。
+P1–P8已交付62份讲座正文（61完成、1部分）、10份实验正文，Go CACM403仍为真实缺口。
+起始工作区干净，main与fetch后的origin/main一致。
+用户入口明确允许三名内容worker，分别只写Lambda/Ray/lec21及各自来源目录；
+主agent负责共享来源、最终审阅、状态整合、最小检查和git。
+共享前置记录见p9-shared/review.txt；复用两年课表、主页和四份既有专题快照，
+SHA256与历史清单吻合，保留原GET时间，不将原fetched直接改称全文reviewed。
+实际课表八个链接逐一核对；2026 L17/L18无视频，L17无FAQ。
+2021 L21展示录像和同日AnalogicFS阅读作为独立内容处理。
+另全文读P6-REVIEW、P7-REVIEW及p7-lec16/review，核对FaRM双时间轴、Spark/Ray
+先前范围和SUNDR/Nielsen/Blockstack边界；没有因此重新计为已读各历史论文或字幕。
+
+二、逐专题审阅
+各worker完整阅读及实际PDF页面核验见p9-*/review.txt和manifest-fragment.json。
+主agent的中文全文审阅与原始来源定点复核在下文另列，不冒称重读全部原始来源。
+
+Ray
+- worker完整读223行讲义、105行FAQ/14问及16页2021 Ownership论文（含附录A–B），
+  全15图、3表、代码及公式实际查看。具体页码和身份依据见p9-ray/review。
+- 主agent全文读notes266行、materials295行和全部review/manifest；实际查看PDF7、9、16，
+  核对Figure8 RTT/租用复用限制、Figures10–11的executor/owner失败区别、Table3、
+  lineage寿命、向父返回future与actor借用状态限制、附录公式及有限模型排除范围。
+  另定点读原讲义180–223行和FAQ75–105行，确认故障编号与可变性冲突的校注依据。
+- 主agent未发现需改的实质问题；独立Ray精读不由Spark阅读替代。仅把L16正文的
+  “Ray尚未完成”更新为新专题回链；P7原始审阅记录保持历史事实。
+- 本论文是NSDI2021 Ownership，非OSDI2018 Ray；论文完整译权未确认，正文自主精读。
+  无视频、无虚构课堂时间轴；未运行Ray、artifact、TLA+或论文实验。
+
+Lambda
+- worker完整读57页幻灯片和15页论文；实际查看41/10页，覆盖全部图表/公式/代码。
+  具体页码与逐页阅读清单见p9-lambda/review，不把纯文本页称作已查看页面图像。
+- 主agent全文读notes303行、materials334行和全部review/manifest；定点读论文第2页
+  算术上下文，实际查看论文第6、8、11页及幻灯片第37、52页。
+  核对15000×10GiB/s约1.29Pb/s与原文150Pb/s不符；CTR/GCM、4-of-5/4-of-6
+  分别属于论文/幻灯片；验证缓存服务份额与条件命中率、局部读与冷启动的测量边界。
+- 未发现需改的实质问题；保留幻灯片修改晚于课表日期、2026封面/2020继承页脚。
+  没有FAQ/视频，不造时间轴；Question链接只登记发现。未运行AWS或核验现行产品。
+
+L21与独立AnalogicFS
+- worker全文按序读2829条英文ASR，43段覆盖00:00–98:00；独立核对标题、频道、
+  上传20210520、时长5880秒和CC Attribution标签（具体版本未明）。仅保存白名单元数据。
+  AnalogicFS七页全文、五图、32条文献条目及八行FAQ完整已读；PDF全部页实际查看。
+- 主agent全文读notes183行、draft352行、materials152行及全部review/manifest；
+  全文复读八行FAQ，实际查看AnalogicFS第2、4页图表，核对SCIgen幽默定位、
+  不连贯流程与坐标量纲，不把其当作常规可信系统论文。
+  定点复核字幕40:30–44:00、89:00–92:25、93:00–95:00，检查Egg Scrambler的
+  n-1串通回答、Pinguino协调器/房间分区回答不完整及投票项目恶意投票者边界。
+- 未发现需改的实质问题；演示仅为展示者叙述，没有音画、代码或运行核验。
+  项目名/CRDT的ASR疑点保留，不用理论替现场回答补齐协议。
+  96处字幕并集间隙共193794ms；开头9840ms，最大内部8960ms位于75:39.840–75:48.800；
+  原始末条超时1280ms保留，不将间隙解释为静音或裁掉超时制造完整性。
+  AnalogicFS作为课外批判性精读，与课堂展示分开；FAQ署名与课程CC BY3.0US单列。
+
+三、共享整合
+- course/resources/status、manifest片段索引、inventory、version-map、PLAN同步P9。
+  两个Updates只建notes/materials；L21三份正文分别处理提炼、真实字幕、课外阅读。
+  共新增7份讲座正文，累计69份（68完成、1部分）、10份实验正文、4张既有SVG。
+- 主agent复用共享课表/主页；L21 worker独立复抓2021课表/主页，哈希与旧快照相同，
+  新时间单独保留。旧manifest/review保留历史状态，当前阅读覆盖在P9片段中登记。
+- FaRM双时间轴、SUNDR两年范围、Nielsen替代快照和Blockstack2016边界保持。
+  Go CACM403本批未重试，materials仍partial；L6/L8无新来源，继续pending_sources。
+  全部20条已列视频现有元数据/字幕文本记录，不声称全课程音画核验或来源无缺口。
+- 新增NEXT-MAINTENANCE-PROMPT.txt：后续依合法新来源或明确纠错维护，不自动另开专题。
+  实验固定提交未变；未运行Go编译、AWS、Ray、项目、协议/证明器或实验测试。
+
+四、最小验证结果（2026-11-09）
+- 各worker局部检查已通过，具体见各review及validation记录。
+- python3 content/mit-6.824-2021/sources/check-p9.py：PASS。
+  检查P9来源/派生文件SHA256、原抓取时间/Last-Modified、全清单来源ID唯一性、
+  八个课表实际链接、路由目标/图片存在、SVG XML、正文头信息/代码围栏/尾空格、
+  29讲/5实验元数据与69份讲座正文（68完成、1部分）/10实验正文/4SVG状态一致性。
+  L21视频身份/白名单元数据/5880秒、2829条字幕/43段连续时间轴、每条起点唯一分段、
+  时间单调/非负时长及末条1280ms超时均通过；检查不表示音画或展示程序核验。
+  固定实验提交、FaRM双录像、SUNDR范围、CACM partial及L6/L8缺口断言通过。
+- git diff --check：PASS；变更只在content/mit-6.824-2021/。
+- npm run build：PASS（tsc --noEmit + vite build，Vite构建5.03秒）。
+- 按既有归档约定选择正文、元数据、清单、review、必要脚本和检查结果入库；
+  原始PDF/HTML/字幕/提取正文/页面图保留本地。来源检查脚本需要这些本地原件，
+  不能把仅含版本记录的干净检出目录当作已随库提供全部原件。

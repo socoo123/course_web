@@ -1,0 +1,119 @@
+P9 update-lambda review — 2026-11-09
+
+Assignment and boundaries
+- Only lectures/update-lambda/ and sources/p9-lambda/ written.
+- Read root AGENTS.md, technical-video-notes skill and NEXT-P9-PROMPT.txt in full.
+- Parent owns shared historical PLAN/status/manifest-2021/P8 reviews/two-year schedule/version-map/inventory audit. Worker independently checks Lambda sources and L17 actual links.
+- Deliverables: notes.zh.md and materials.zh.md; independent Chinese explanations/close reading, not full translations. Notes cover problems, mechanism derivation, invariants, counterexamples, tradeoffs and original self-tests. Materials add source-specific implementation, lifecycle, evidence and version details, with cross-links rather than a second full retelling.
+- No draft, classroom timeline, fabricated Q&A, AWS execution, lab changes or claimed experiment reproduction. No build, git staging/commit/push or other git operation.
+
+Provenance and reuse integrity
+1. Original lec17-notes-1-2026 -> p9-lambda-slides
+   file update-2026-mbrooker_cs_slides_2026.pdf
+   retrieved_at 2026-11-08T12:48:19.743839+00:00
+   Last-Modified Fri, 08 May 2026 16:57:26 GMT
+   SHA256 63b29a9b1c3d0369815b997ab9210942e271491437ae86718ce0491f54ad27e9
+   Internal title AWS Lambda (specifically container loading and snapstart), Marc Brooker, VP/Distinguished Engineer.
+   Cover visibly copyright 2026; many remaining pages inherited copyright 2020 footers. p3/p7 code image says Hello 6.5840.
+   57 PDF pages. Full sequential reading of every page's text, including supplementary pages 47-57 after Questions page 46.
+   Not represented as unchanged 2026-04-21 lecture-day slides: server modification date is later.
+2. Original lec17-reading-2-2026 -> p9-lambda-paper
+   file update-2026-atc23-brooker.pdf
+   retrieved_at 2026-11-08T12:48:20.404748+00:00
+   Last-Modified Tue, 27 Jan 2026 14:57:07 GMT
+   SHA256 b7892006fc63fd97c1fe0ffe8f4408392d1fcdc7bf673d23d20d4473755eaad2
+   Internal title On-demand Container Loading in AWS Lambda; Marc Brooker, Mike Danilov, Chris Greenwood, Phil Piwonka; Amazon Web Services; USENIX ATC 2023, July 10-12, 2023.
+   15 PDF pages: p1 proceedings cover, p2-15 printed pages 315-328. Full abstract, sections 1-7.1 and all subsections, acknowledgements, bibliography entries 1-41. No appendix. Bibliography works themselves not independently read.
+3. Original schedule-2026 -> p9-lambda-schedule
+   file schedule-2026.html
+   retrieved_at 2026-11-08T12:09:28.821121+00:00
+   Last-Modified Thu, 14 May 2026 16:26:21 GMT
+   SHA256 907861ca7e9d06d8c84051805a28308e391bb069684f166b0d74e07e48ac9e31
+   Targeted HTML lines 220-285, central evidence 236-239: 2026-04-21 L17 Marc Brooker on zoom; AWS Lambda slides; On-demand Container Loading (2023); Question. No FAQ or video.
+   Actual hrefs: notes/mbrooker_cs_slides_2026.pdf; papers/atc23-brooker.pdf; questions.html?q=q-lambda&lec=17 (ampersand HTML-escaped in source).
+4. Original lec17-question-3-2026 -> p9-lambda-question-link
+   Discovery only. No retrieval, file, hash, reading or licensing claim. Question is not FAQ.
+- prepare.py independently hashed all three reused files; all match shared manifest.json exactly. No refetch, no source-byte change, no replacement of retrieved_at/last_modified/hash. All new source ids have unique p9-lambda- prefix and retain original_source_id; file paths relative to sources/.
+
+Actual visual coverage: method and scope
+- Direct functions.read of original PDFs returned full parsed page text plus page images. These delivered images were actually viewed; text-only pages are not claimed as visually inspected.
+- Additional renders via PyMuPDF at 1.5 scale were saved under p9-lambda/pages/ and individually opened with functions.read for formulas/permission slides and paper crypto detail.
+- Slides actual visual pages: 1,3,5,6,7,10,11,14,16,17,19,21,22,23,24,25,26,27,28,30,31,33,34,35,37,38,39,40,42,43,46,48,49,50,51,52,53,54,55,56,57 (41 pages).
+- Of these, targeted PNG pages are 31,49,50,51,52,53,54,55,57. All other listed visual pages were delivered directly in original-PDF read. All 57 pages read as text.
+- Paper actual visual pages: 1,3,4,5,6,7,8,9,10,11 (10 pages). p6 is the targeted PNG; others delivered directly. p2,12-15 read completely as text only.
+- Source diagrams/graphs/screenshots are not republished. No new diagram needed for these two texts; simple text paths and tables suffice. Original PDFs remain in shared sources; 10 generated PNGs remain local in assigned sources path.
+
+Slides visual and full-reading inventory
+- p1 title/author/copyright; p2 event-driven definition; p3/p7 Python handler image returning statusCode and JSON Hello 6.5840, static viewing only; p4 motivation: scale/fault tolerance, utilization, multi-tenancy, glue and code near data.
+- p5 frontend/worker-manager/function-metadata diagram; p6 worker/micro-manager/guest/Linux/virtio/Firecracker boundaries; p8-9 simplicity versus implementation complexity.
+- p10-11 table: before 250MB/code-or-zip/custom tools, after 10GB/container/standard tools, without slower cold starts (design goal, not universal guarantee).
+- p12 150 Pb/s scalar; p13 6.4% explicitly attributed to Slacker/FAST'16. No new Slacker review claimed.
+- p14 and p48 cumulative unique-chunk graphs, size quartile legend, percent unique chunks vs cumulative population; not cache-hit measurements.
+- p15 transparent demand-load/dedup aim; p16-17 MicroVM/virtio-block/Firecracker boundary and interception point; p18 images are not filesystems; p19 deterministic flattening to ext4 and 512kB chunks.
+- p20-22 storage latency challenge, ideal sub-ms whole-dataset storage and S3 Express One Zone image. Not proof that Express replaced paper L2 or that present-day products meet a particular SLA.
+- p23-24 popularity vs chunk-count curves explicitly labeled fake data. Not CDFs or real capacity thresholds; L1/L2/L3 placement boundaries illustrative only.
+- p25 L1 worker, AZ-local L2, S3 authority L3; p26 box plot fraction of chunks from each tier; p27 L2 hit-rate eCDF; p28 multi-modal read latency in milliseconds.
+- p29 size question; p30 cache-vs-reload cost equality and Gray/Putzolu photo; p31 max(cost-required size, latency-required size), PNG viewed. Photo-caption 1977 not used as Five Minute Rule publication year (paper bibliography says 1987).
+- p32 failures; p33-35 Dynamo-derived hash ring and failures/replicas; not evidence of using full Dynamo consistency protocol.
+- p36 one-copy fragility versus two-copy cost; p37 Any 4 of 6, not paper 4-of-5.
+- p38 erasure/replicated latency eCDF in microseconds; p39 p99 zoom (vertical axis 0.95-1.00); p40 eCDF in milliseconds (~100-250ms) lacking full measurement definition. No ungrounded cold-start classification or product-wide conclusions.
+- p41 memory-chunk question; p42 lifecycle with boot/download/init/invoke; p43 pre-initialization/snapshot and fan-out restore; p44 userfaultfd definition; p45 tenant and session/AI-agent isolation directions. Restoring Uniqueness in MicroVM Snapshots is cited by slides only, not independently read.
+- p46 Questions separator with no actual Q&A; p47 erasure coding vs complexity title, no invented response.
+- p49/p57 least-privilege roles: flattener put/no general read of existing chunks, worker function-scoped data, other actors lack capability.
+- p50 plaintext SHA2 identity; p51 ciphertext identity construction; p52 AES-GCM content-derived key and zero IV; p53 ciphertext SHA2 name; p54 why not GCM tag; p55 encrypted key manifest schematic; p56 manifest/worker-manager/worker relation. Formula pages 50-55 actually viewed, not merely extracted text.
+
+Paper visual inventory (PDF pages, not printed pages)
+- p1 title/authors/conference year/open-access cover statement.
+- p3 Figures 1-2 invoke and worker architecture: frontend lookup/auth, sticky Worker Manager, per-function MicroVM, guest shim/kernel, virtio boundary. Full surrounding section 1.1/2 read.
+- p4 Figures 3-4 control-plane flattening versus data-plane chunks/keys, local-agent per-function boundary, worker-local cache and guest ext4. 512 KiB tradeoff, deterministic layout read.
+- p5 Figure 5 eCDF, percentage unique chunks and top-size-quartile/remainder legend. Text denominators: exclude zero-unique uploads and zero chunks; 80% reuploads, 4.3% mean/2.5% median among remaining uploads. Copy-on-write and partial-page RMW read.
+- p6 explicit AES-CTR chunk encryption versus AES-GCM manifest key table, associated authenticated document, hashes/MAC wording and footnote on collision resistance against key-knowing adversary. Compression/side-channel rationale and salt blast-radius discussion fully read.
+- p7 Figure 6 root lifecycle active/retired/expired/deleted, migration arrows; closure invariant, root id in salt, access alarm and deletion-stop guard. Three-tier cache description and hit-rate denominator text.
+- p8 Figures 7-8: per-tier service-share box plot and minute-bucket L2 hit-rate eCDF. Tail-latency probability discussion, 4-of-5 versus hypothetical 4-of-4, 25% accounting, constant work and metastability.
+- p9 Figure 9 client-side latency in microseconds, erasure_k vs parallel_k, not slide replicated legend. Concurrency limiting, cold-cache tests, LRU-k, capacity sizing, Rust 1.46 history read.
+- p10 Listings 1-2: byte-at-a-time assembly with perf percentages; Rust parity with inline(never), equal lengths, len-1 probes and XOR loop. Figure 10 server-side GET/PUT microsecond eCDF. No code execution.
+- p11 Figure 11 local-agent/FUSE read eCDF milliseconds, origin mode trimmed; guest page cache not part of denominator. FUSE four-thread scheduling and migration-in-progress discussion; related work fully read.
+- p12-15 fully read text: conclusion, broader lessons, SnapStart use, future work, acknowledgements and all 41 bibliography entries. No page-visual claim for these pages.
+
+Important interpretation and correction decisions
+- Distinguish function publish, image, execution environment and invocation. Warm invoke is not automatically a new MicroVM or full image transfer.
+- Working set can change with execution/input and across the fleet; 512 KiB fetch granularity differs from guest I/O bytes and page-level overlay writes.
+- Guest page cache precedes chunk L1/L2/L3; AZ L2 itself has memory and flash. Worker fetches S3 and fills cache on miss. Cache immutability plus private encrypted overlays preserves sharing.
+- Dedup is content-derived chunk encryption with separately protected customer manifest; hash identity is not authorization; integrity detection is not repair/availability; salt limits sharing/blast radius rather than replacing key authorization.
+- 2023 CTR vs 2026 GCM and 4-of-5 vs 4-of-6 explicitly kept apart. No claim to know whether these represent a deployment change, simplification or another explanation choice.
+- Paper 15000 x 10 GiB/s ordinarily converts to ~161 TB/s or ~1.29 Pb/s, not the stated 150 Pb/s. Materials §1.2 flags source arithmetic/unit inconsistency without inventing an omitted factor. Motivation still holds.
+- 6.4% is cited Slacker average, not Lambda empirical constant. 16 GiB manifest-overhead example is not a product limit. 512 KiB/512kB source-unit discrepancy retained.
+- Dedup upload population/byte-weighting/access-frequency distinctions maintained. 23x and another 5x not generalized as universal 115x user savings.
+- Tier service shares (~67%,32%,0.06%) and L2 conditional hit rate (99.9% median) not conflated; medians from different distributions not forced to sum/multiply exactly; minute buckets not individual function samples.
+- Worker/client fetch latency, server-side GET/PUT processing, local-agent read and guest/end-user cold start are separate. Fig11 origin tail omitted; slide40 unspecified timing not labeled universal cold-start result.
+- 25% request overhead relative to 4 stripe requests, not relative to one whole-chunk GET. Coding threshold not a consensus quorum or unlimited node/AZ resilience. Constant work scoped to tolerable failure path, not identical whole-system workload.
+- Normal-origin-traffic amplification and Little's Law feedback separated. Author reports S3 can take uncached traffic; concern is increased duration/concurrency/new slots and working set. No claim that S3 capacity itself caused the described metastability.
+- GC root closure plus salt isolation; expired access alarm is an extra guard, not proof that all later-needed data will be detected during finite observation. Full concurrent GC algorithm unavailable.
+- SnapStart/warm reuse/demand disk load distinct. Uniqueness thought experiment marked as editorial reasoning; external snapshot paper protocol and present product support not invented.
+- Rust historical compiler issue scoped to 1.46 implementation period; no claim of current compiler defect. Complete Listing2 not copied or offered as general empty-slice-safe API.
+- No global Lambda launch year asserted; manuscript focuses on described architecture rather than unverified historical/product marketing statements.
+
+Licensing
+- Slides explicitly AWS All rights reserved (cover 2026, inherited 2020 footer elsewhere); not covered by an assumed MIT course CC grant.
+- USENIX PDF open-access cover does not itself establish public full-translation permission. No broader external license independently checked.
+- Both outputs are original Chinese organization/explanation with source attribution and limited factual/formula discussion. No source figure republishing, no full source code listing or full translation. References at page bottom.
+
+Unresolved/excluded boundaries
+- Current AWS product behavior, quotas, region/runtime/container-image/SnapStart support matrix, pricing and SLA not independently verified and not asserted.
+- Source-level ambiguities: 150 Pb/s arithmetic, CTR/GCM and 4/5-vs-4/6 version differences, slide performance figures without full setup; explicitly documented, not silently resolved.
+- No actual lecture video/FAQ and no classroom Q&A recovered. Slides p46 Questions is not content evidence; Question URL remains discovered only.
+- No independent reading of bibliography sources, Restoring Uniqueness paper, S3 Express documentation, source implementation or cryptographic security proof.
+- No AWS run, workload deployment, microbenchmark, Rust compilation, lab test or site build. All performance claims attributed to source authors.
+- No blocker to completing assigned written-topic package; these are bounded evidence limitations.
+
+Integration data for parent
+- update-lambda corresponds to 2026 L17, 2026-04-21, Marc Brooker on zoom, within 2021-main-course Updates.
+- Add 2 completed lecture bodies (notes/materials), 0 draft, 0 labs, 0 new partial bodies. Do not use this to erase prior course-wide partial/blocked sources.
+- Fragment has 3 reviewed reused sources and 1 discovered Question link; 2 PDF full-text reads with distinct visual page arrays. All ids p9-lambda-*; original ids retained.
+- Parent should review both full Markdown files, especially materials §1.1-1.2, §3.1-3.5, §6.1-6.5; targeted PDF anchors paper p6,p8-p11 and slides p23-24,p37-40,p50-55.
+- Suggested original-source review upgrades: lec17-notes-1-2026 and lec17-reading-2-2026 fetched -> reviewed with exact fragment reading scopes; no change to historical retrieval timestamps. Question remains discovered.
+
+Local validation
+- prepare.py run: all three reused hashes matched; confirmed 57/15 pages; created 9 slides renders and 1 paper render, all actually read.
+- check.py validates unique prefixed ids, exact original metadata and bytes, full-read arrays and visual subsets, retained targeted images, lecture routes, Markdown delimiters/details/whitespace, no public images and no draft.
+- Executed python3 content/mit-6.824-2021/sources/p9-lambda/check.py: PASS. Notes 303 lines / 9672 characters; materials 334 lines / 13204 characters. Three source hashes and exact original provenance matched; page scope, ids, routes and basic Markdown checks passed. No build or git commands performed.

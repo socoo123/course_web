@@ -1,6 +1,6 @@
 ---
 source: MIT 6.824 Spring 2021 官方课表与课程信息；MIT 6.5840 Spring 2026 官方课表、实验页与固定代码
-status: P8 已交付四个书面专题、八份正文；Go 两年幻灯片对照与 FAQ 完成，CACM 指定文章因 403 待补，该专题课程资料标为部分完成。累计 62 份讲座正文（61 完成、1 部分完成）、10 份实验正文；实验测试未运行。
+status: P9 已交付 Lambda、Ray 与 L21 项目展示及独立 AnalogicFS 阅读，共七份新正文。累计 69 份讲座正文（68 完成、1 部分完成）、10 份实验正文；Go CACM 指定文章仍因 403 待补，L6/L8 无新增课堂来源；实验测试未运行。
 license: 本页为编者自主导航；外链论文、视频、讲义与实验要求分别核实许可。
 ---
 
@@ -56,7 +56,7 @@ Lab 5 基础部分实现分片迁移与控制器协调；跨分片事务和 2PC 
 | [L19 Bitcoin](#/c/mit-6.824-2021/lec/lec19?v=notes) | 开放成员环境怎样决定双花冲突；交易有效与所在历史获采用有何区别？ | 对照 Raft 的固定成员多数与 SUNDR 的分叉约束 |
 | [L20 Blockstack](#/c/mit-6.824-2021/lec/lec20?v=notes) | 链确定名字归谁后，文件内容、新鲜度和可用性由谁负责？ | 将 L19 的历史选择与命名、链外存储的职责分开 |
 
-学习顺序可取 Spark 独立阅读，SUNDR → Bitcoin → Blockstack 连读。Blockstack 以指定的 **2016 论文**为准；Spark 与后续 Ray 有学习联系，Ray 仍是单独的待读专题。L21 则是项目展示，展示内容与当天指定的 AnalogicFS 阅读分别整理。
+学习顺序可取 Spark 独立阅读，SUNDR → Bitcoin → Blockstack 连读。Blockstack 以指定的 **2016 论文**为准；Spark 可接着对照 [Ray 的任务、对象所有权与恢复](#/c/mit-6.824-2021/lec/update-ray?v=notes)。[L21 项目展示](#/c/mit-6.824-2021/lec/lec21?v=notes)则用八个项目检验设计与证据，当天指定的 AnalogicFS 阅读独立放在课程资料中。
 
 ## 固定版本与开发目录
 
@@ -118,8 +118,8 @@ go version
 | [Paxos](#/c/mit-6.824-2021/lec/update-paxos?v=notes) | L4 | 对照 L5/L7 Raft：多数交集怎样继承旧决定，持久化与选主各负责什么 |
 | [Go 模式](#/c/mit-6.824-2021/lec/update-go-patterns?v=notes) | L5 Russ Cox | 对照 L10 幻灯片，已有模式回链；语言和工程环境的阅读集中于本专题资料 |
 | [验证](#/c/mit-6.824-2021/lec/update-verification?v=notes) | L15 IronFleet | 从 RSM 不变量走向协议模型、实现 refinement 和有条件的活性证明 |
-| [AWS Lambda](#/c/mit-6.824-2021/lec/update-lambda?v=notes) | L17 | 按需加载 |
-| [Ray](#/c/mit-6.824-2021/lec/update-ray?v=notes) | L18 | 与 L16 Spark 衔接 |
+| [AWS Lambda](#/c/mit-6.824-2021/lec/update-lambda?v=notes) | L17 Marc Brooker | 从启动关键路径理解工作集、按需加载、共享缓存与隔离 |
+| [Ray](#/c/mit-6.824-2021/lec/update-ray?v=notes) | L18 | 对照 L16 Spark：任务与对象的依赖、所有权、回收和恢复条件 |
 | [实用拜占庭容错](#/c/mit-6.824-2021/lec/update-bft?v=notes) | L21 Derek Leung | 固定成员的恶意行为容错；把认证、prepared、提交、换届与检查点分开 |
 
 2026 课表没有为这些条目列视频；按书面材料制作。2026 L13 Chain Replication 的讲义差异集中于 [L11 课程资料 §7](#/c/mit-6.824-2021/lec/lec11?v=materials)，两年论文快照字节相同，论文只精读一次；2026 L19 SUNDR 的讲义差异集中于 [L18 课程资料 §7](#/c/mit-6.824-2021/lec/lec18?v=materials)，同样复用同字节论文，分别保留两年指定范围。2026 L10 Raft 问答作为 Lab 3 的补充入口。
@@ -164,8 +164,9 @@ Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector �
 | [L18](https://www.youtube.com/watch?v=FxwjSs_xSBM) | Lecture 18: Fork Consistency, SUNDR | 91:04 / 2021-05-06 | 2149 条，35 段译述 |
 | [L19](https://www.youtube.com/watch?v=yB6m8EjAqPU) | Lecture 19: Peer-to-Peeer: Bitcoin（原题拼写） | 82:44 / 2021-05-11 | 2163 条，33 段译述 |
 | [L20](https://www.youtube.com/watch?v=DnyBPxo3B6I) | Lecture 20: Blockstack | 89:43 / 2021-05-18 | 2363 条，34 段译述 |
+| [L21](https://www.youtube.com/watch?v=bu41Qt9G5Qo) | Lecture 21: Project Presentations | 98:00 / 2021-05-20 | 2829 条，43 段译述 |
 
-均保存并完整阅读英文自动字幕，未逐段回听或核对视频画面。L2/L3 分组讨论不在上传录像中；L4 的 42:18–50:00、L5 的 64:07–72:10 与 L7 的 61:16–69:32 保留分组活动及零散会务区间，无法恢复分组技术讨论。L4 末句未完成；L7 开头六秒无字幕，不据此断定静音。L5/L7 的提交判断、任期字段、批处理与匹配索引争论，以及 L10 幻灯片代码笔误，均在译稿单列校注。尚待独立核对的是 L21 项目展示视频。
+以上 20 条视频均独立核对元数据，保存并完整阅读英文自动字幕，未逐段回听或核对视频画面。L2/L3 分组讨论不在上传录像中；L4 的 42:18–50:00、L5 的 64:07–72:10 与 L7 的 61:16–69:32 保留分组活动及零散会务区间，无法恢复分组技术讨论。L4 末句未完成；L7 开头六秒无字幕，不据此断定静音。L5/L7 的提交判断、任期字段、批处理与匹配索引争论，以及 L10 幻灯片代码笔误，均在译稿单列校注。L21 的演示结果按展示者叙述整理，项目名称识别与未答清的问题保留疑点。
 
 ### 2021 指定阅读入口
 
@@ -260,3 +261,13 @@ Paxos 完整读讲义 351 行、伪代码 40 行、FAQ 103 行及论文 14 页�
 Go 完整对照 2026 的 73 页与 2021 的 78 页幻灯片，分别定点查看 20／12 个代码页，新增共享 `done` 竞争与既有模式分开；FAQ 144 行全文已读。2026 PDF 创建和修改日期晚于课表日期。CACM 2022 指定文章的原入口、出版社现行入口及 DOI PDF 均返回 403，全文与独立许可尚未核验，课程资料只完成 FAQ，文章精读待补。
 
 PBFT 完整读讲义 342 行、FAQ 206 行、幻灯片 23 页与 1999 论文 14 页，两份 PDF 全页实际查看。讲义内部仍为 2024 L22；客户端模型、prepared／committed-local、FAQ 门槛错误及 MAC 证据边界已校注。原型当时未实现换主与重传，正常路径性能不代表故障恢复测试；论文和嘉宾幻灯片均采用自主精读。
+
+P9 记录见 `sources/P9-REVIEW.txt` 与各 `sources/p9-*/review.txt`。主审全文阅读七份中文成品并定点核对原始来源；各 worker 的全文阅读与 PDF 实际查看范围单独记录。复用快照保留原获取时间，L21 新抓取的课表／主页与旧快照哈希相同但保留新时间。Lambda、Ray 无课表视频，采用独立书面专题。
+
+Lambda 完整读 57 页幻灯片与 15 页论文，实际查看其中 41／10 页，覆盖图表、代码和公式。2023 论文的 4-of-5、AES-CTR 与 2026 幻灯片的 4-of-6、AES-GCM 分开；原文 `15000 × 10 GiB/s` 与 `150 Pb/s` 的算术不符明确校注。工作集、上传去重、缓存命中与各层延迟分别解释；不据此断言今日 AWS 产品行为或已复现实验。
+
+Ray 指定的是 **Ownership: A Distributed Futures System for Fine-Grained Tasks（NSDI 2021）**。讲义 223 行、FAQ 105 行及论文 16 页含附录完整已读，全部 15 图、3 表实际核对。保留 owner 失败、根 driver、actor 状态恢复与有限模型的边界；讲义故障编号和 FAQ 可变性冲突单列，不由 Spark 阅读替代。
+
+L21 全部 2829 条字幕文本整理为 43 段，覆盖八个项目、可恢复问答及收尾。96 处字幕并集间隙共 193.794 秒，开头 9.840 秒无字幕，最大内部间隙为 75:39.840–75:48.800，末条超时 1.280 秒保留。没有音画、项目代码或实际演示运行核验；项目名、CRDT 名称与 Pinguino 分区回答的疑点明确保留。
+
+AnalogicFS 的七页全文、五图、32 条文献条目与八行 FAQ 均已读，PDF 全页查看。FAQ 将其置于 SCIgen 相关幽默传统，课程资料采用独立批判性精读，不把荒诞图表与实验陈述当作可信系统证据，也不补成展示视频内容。论文及外链幻灯片全文翻译许可未确认；课程自有 FAQ 按实际署名与 CC BY 3.0 US 标注。未运行 AWS、Ray、证明器、项目或课程实验。

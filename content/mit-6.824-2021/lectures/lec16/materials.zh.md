@@ -252,7 +252,7 @@ Figure 14 的硬件与默认实验不同：100 台 m2.4xlarge，每台 8 核、6
 
 FAQ 说明 Spark 对多轮复用很有优势，但单次扫描再聚合若主要受 I/O 限制，RDD 缓存没有天然收益；“更通用”不等于任意作业都必然更快。FAQ 还强调位置元数据、闭包捕获、不可变与确定性重算，不需要为每份中间 RDD运行 Raft。
 
-FAQ 的能源问题主要讨论硬件、机房与冷却的影响，并给出 FAWN 链接；流式系统、DataFrame、Databricks 用户、Naiad、Piccolo 等外链没有在本任务展开。“RDD somewhat deprecated”是当时材料的描述，不作为当前 API 弃用状态。未来可与 Ray 比较任务/对象、数据依赖和恢复边界，但 **update-ray 仍是后续未完成主题**，本页没有代替其指定阅读。
+FAQ 的能源问题主要讨论硬件、机房与冷却的影响，并给出 FAWN 链接；流式系统、DataFrame、Databricks 用户、Naiad、Piccolo 等外链没有在本任务展开。“RDD somewhat deprecated”是当时材料的描述，不作为当前 API 弃用状态。任务/对象、数据依赖和恢复边界的进一步比较见 [Ray 课程资料](#/c/mit-6.824-2021/lec/update-ray?v=materials)；该专题独立阅读 2021 Ownership 论文，本页不代替它。
 
 ## 引用与来源
 

@@ -42,8 +42,8 @@ Chain Replication 和 SUNDR 已属 2021 主线，原两个同名 Updates 合并�
 当前清单：sources/schedule-inventory-2021.json。
 当前映射：sources/version-map-2021.json。
 2021 抓取：sources/manifest-2021.json；已保存并核对课表与 general.html。
-21 讲的链接已登记；除无视频的L6/L8及待处理的L21外，其余18讲已独立核对
-19条视频元数据（含L15两条）；L21项目展示待核对。视频CC标签具体版本仍未明。
+21 讲的链接已登记；除无视频的L6/L8外，其余19讲的20条视频元数据均已独立核对
+（含L15两条与L21展示），全部英文字幕文本已读。无音画核验，CC标签具体版本仍未明。
 
 无 -2021 后缀的 manifest.json、schedule-inventory.json、version-map.json
 是迁移前 P0/P1 历史记录；其中 2020 来源不能冒充 2021 已抓取材料。
@@ -148,7 +148,7 @@ P7 兴趣拓展：内容已完成，L16 Spark / L18 SUNDR / L19 Bitcoin / L20 Bl
   L20以2016 DHT设计为主，2021 Atlas/Gaia/Browser和FAQ白皮书背景单列。
   新增12份正文，无新增图；累计54份讲座正文、10份实验正文、4张SVG。
   论文全译许可未确认，采用自主精读。没有运行Spark、原型或任何实验测试。
-  L21项目展示及六项剩余Updates留后续明确批次；L21的展示与AnalogicFS阅读分开。
+  P7当时留下的六项Updates与L21现已在P8/P9交付；L21展示与AnalogicFS阅读分开。
   L6/L8 不补造无来源课堂内容；有新增真实材料时再处理。
 P8 专题增补：已交付 update-paxos / update-go-patterns / update-verification / update-bft。
   对应2026 L4/L5/L15/L21；课表只列书面资料，无视频，不生成虚构课堂译稿。
@@ -163,9 +163,22 @@ P8 专题增补：已交付 update-paxos / update-go-patterns / update-verificat
   主agent全文审阅8份中文成品，定点查看源PDF/伪代码；范围与worker全文阅读分开记录。
   新增8份正文，累计62份讲座正文（61完成、1部分完成）、10份实验正文、4张SVG。
   论文和嘉宾幻灯片自主精读；未运行Go、协议、证明器、实验。详见P8-REVIEW.txt。
-P9 平台与项目：update-lambda / update-ray / 2021 L21 Project demos。
-  Ray回链Spark但独立核验；L21录像bu41Qt9G5Qo与AnalogicFS论文/FAQ分开整理。
-  沿用逐来源授权、快照版本、实际阅读范围与最小验证规则；入口sources/NEXT-P9-PROMPT.txt。
+P9 平台与项目：已交付 update-lambda / update-ray / 2021 L21 Project demos。
+  Lambda完整读57页幻灯片与15页论文，实际查看41/10页，覆盖图表/公式/代码。
+  2023论文4-of-5/CTR与2026幻灯片4-of-6/GCM分开，150Pb/s算术疑点明确校注；
+  工作集/去重/缓存命中/各层延迟口径分开，不断言今日AWS产品行为。无FAQ/视频。
+  Ray指定2021 Ownership论文，非2018 Ray；223行讲义/105行FAQ及16页论文含附录
+  完整已读，全15图3表实际查看。owner失败、root driver、actor及有限模型边界保留。
+  Ray独立精读并回链Spark，既有L16“待读”改为新专题入口；历史P7审阅记录保持原状。
+  L21视频bu41Qt9G5Qo为98:00，独立元数据及2829条字幕全部文本已读，43段真实时间轴。
+  96处字幕并集间隙共193794ms，开头9840ms，原始末条超时1280ms；无音画核验。
+  八个项目、问答和收尾按字幕整理；演示是展示者陈述，名称/分区回答疑点不补造。
+  AnalogicFS七页全文、五图及32条文献条目与八行FAQ已读，PDF全页查看；按SCIgen
+  相关幽默伪论文作独立批判性精读，不当作可信系统或视频已讲内容。
+  主agent全文审阅七份中文成品并定点核对原始来源，范围见P9-REVIEW.txt。
+  新增七份正文，无新增图；累计69份讲座正文（68完成、1部分）、10份实验正文、4张SVG。
+  Go CACM403仍保留partial，L6/L8仍待真实课堂来源；未运行AWS/Ray/项目/证明器/实验。
+  复用与新抓取时间分开记录，论文/外链幻灯片自主精读，不宣称外部全文翻译授权。
 
 2021 Lab 1/2/3/4 分别对应本路线 2026 Lab 1/3/4/5；2026 Lab 2 是新增桥接。
 这只是主题映射，不表示 API、子任务或测试兼容。
@@ -190,11 +203,12 @@ Ray、BFT。Go patterns 已对照 2021 L10，只展开真实差异；CACM文章�
 - 无用户要求不启动多 agent。
 
 恢复口令：继续 6.824，读取 content/mit-6.824-2021/sources/PLAN.txt 和 status.json，
-按计划执行下一批，仅改 content/，校验后提交并推送。
+按实际来源缺口维护，仅改 content/，校验后提交并推送。
 执行偏好：按既定批次直接推进，获取字幕成功后继续制作，不停在“可以继续”的确认上。
 只有需要用户决策的真实阻塞才询问；字幕失败时按已有书面来源分支推进。
-最近交付批次：P8，四个2026书面专题；Go CACM文章403缺口单列，批次交付不等于来源全齐。
-下一批P9：Lambda、Ray、2021 L21展示及独立AnalogicFS阅读；L6/L8不补造课堂内容。
+最近交付批次：P9，Lambda、Ray、2021 L21展示及独立AnalogicFS阅读。
+后续为条件式来源修补或具体校订，不自动开启无关专题；Go CACM需合法可读全文，
+L6/L8需新增真实课堂材料；无新来源时保留缺口，不盲重试或补造。
 L15两条录像继续保留独立时间轴；P7 SUNDR/Nielsen/Blockstack和P8版本/许可边界继续有效。
-可直接复制的P9提示词见 sources/NEXT-P9-PROMPT.txt；NEXT-P4/P5/P6/P7/P8-PROMPT保留历史入口。
-最新验证结果见 status.json.validation 与 sources/P8-REVIEW.txt。
+可直接复制的维护提示词见 sources/NEXT-MAINTENANCE-PROMPT.txt；NEXT-P4至P9保留历史入口。
+最新验证结果见 status.json.validation 与 sources/P9-REVIEW.txt。
