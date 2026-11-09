@@ -1,0 +1,140 @@
+P5 Lab 5 A–C 与官方开放扩展：静态阅读及交付审阅
+日期：2026-11-09
+课程容器：MIT 6.824 Spring 2021；实验固定 MIT 6.5840 Spring 2026。
+提交：513cac0aef010750fc74688da8a395974a83cf7a。
+
+一、交付与写入边界
+仅新增 labs/shardkv/lab.zh.md、labs/shardkv/guide.zh.md，及
+sources/p5-lab5/manifest-fragment.json、本 review.txt。
+未修改主 agent 桥接、共享来源清单、课程元数据、前端或实验代码；未提交。
+先读项目 AGENTS.md、technical-video-notes skill、NEXT-P5-PROMPT.txt、PLAN.txt、
+p4-lab4/review.txt、P3-REVIEW.txt、INTERFACE-AUDIT.txt、lab-code-manifest.json。
+另完整阅读现有 labs/kvraft/guide.zh.md、labs/raft/guide.zh.md，复用 P4 双层
+快照及 P3 恢复契约，不把旧阅读冒充本次 Raft 源码全量重审。
+主 agent 桥接完成后，只读 lectures/update-lab-bridge/notes.zh.md 179–327 行
+（§9–15 与页底来源），确认迁移边界一致；本 worker 未编辑该文件。
+
+二、官方页、时间与许可
+完整静态阅读 lab-shard-2026.html 1–807 行，包括引言、起步、全部 A–C
+任务/提示/终端样例、D 六个扩展方向、提交要求和页尾。
+沿用 manifest.json 的快照，未重新抓取；抓取时间：
+2026-11-08T12:09:28.821505+00:00。
+Last-Modified: Thu, 23 Apr 2026 21:50:36 GMT。
+SHA-256: bf57f725eed0acbf567936f905f3fd0a41e9a0cac3b7815c3829cfe62f8e9a35。
+实际重新核对文件哈希。lab.zh.md 完整保留 A–C 实质要求与全部提示；重复
+构建输出、通过样例的计数和耗时缩写为命令及测试范围，不伪称本次运行结果。
+D 明确是官方最后一部分：选扩展、自编测试、extension.md、较难项目可合作；
+自学路线后做不等于 MIT 不要求。六个建议全部中译，2PC/2PL 位于跨分片事务方向。
+引言附图仅依据相邻文字解释组成；未获取或查看 shardkv.png，不声称图像核验。
+协作/提交/工具链/Piazza/期末项目、2024 实验、etcd 等外链未计为已读全文。
+home-2026.html 仅定点核对第 61 行 rel=license，为 CC BY 3.0 US；哈希重查：
+0e84bf9377933215c745734c742f29b40b34a7bd41e146717c8c661ac7c13856。
+此证据只用于课程自有实验文字，不给源码、外链论文或其他网站一并授予许可。
+
+三、固定源码获取与实际完整阅读范围
+解压前校验 archive SHA-256：
+5a6d4a143a6f7fab6e6e6a525b3160ef16433de36506ca4600850ed8659ab1c4。
+独立临时解压位置：
+/private/var/folders/5k/y6qh6sfd2g30js0v0qrv4mfr0000gn/T/opencode/p5-lab5-u9t54mvb/6.5840-golabs-2026/
+全部原 lab-code-manifest 成员哈希匹配，解压后文件统一 chmod 0444。
+以下 20 个文件均完整静态读取首行到末行，共 2804 行；路径相对实验仓库：
+  src/shardkv1/shardctrler/shardctrler.go (64)
+  src/shardkv1/shardgrp/server.go (90)
+  src/shardkv1/shardgrp/client.go (49)
+  src/shardkv1/shardgrp/shardrpc/shardrpc.go (36)
+  src/shardkv1/client.go (59)
+  src/shardkv1/shardcfg/shardcfg.go (284)
+  src/shardkv1/shardcfg/shardcfg_test.go (62)
+  src/shardkv1/test.go (394)
+  src/shardkv1/shardkv_test.go (722)
+  src/kvsrv1/rpc/rpc.go (40)
+  src/kvsrv1/client.go (56)
+  src/kvraft1/client.go (63)
+  src/kvraft1/rsm/rsm.go (87)
+  src/main/shardgrp1d.go (16)
+  src/main/kvsrv1d.go (16)
+  src/kvtest1/kvtest.go (401)
+  src/kvtest1/porcupine.go (186)
+  src/models1/kv.go (80)
+  src/Makefile (66)
+  Makefile (33)
+各文件 SHA-256 与精确 read_lines 见 manifest-fragment.json 的 members。
+其余 tester 内部实现、Raft 实现、旧论文未计为本次重新通读。
+完整读取文件只表明审阅 skeleton/interface/test，不是参考实现，也没有运行代码。
+
+四、关键接口结论与桥接要点
+1. 控制器是短生命周期客户端，MakeShardCtrler 通过 kvsrv.MakeClerk 访问
+   group 0 的单机配置 KV；默认未复制。各数据组使用 Lab4 RSM / Lab3 Raft。
+2. InitConfig 只初始化一次，version 0 创建配置键；Query 无参数、只读当前配置；
+   ChangeConfigTo 接受完整候选且无返回值；InitController 是 B/C 恢复入口。
+   ShardConfig.Join/Leave/JoinBalance/LeaveBalance 是现有本地辅助方法，非旧
+   shardmaster RPC。NShards=12，Key2Shard 固定 FNV-1a，初始 Num=1 / Gid1。
+3. 外层 Clerk 路由至组，内层 Clerk 找组 leader；维护 rcks/GetClerk/Leader，
+   测试器使用它关闭实际最近使用的 leader。配置缓存只提供路由，不提供服务权。
+4. Freeze/Install/Delete 都经 RSM，在 DoOp 内与 Get/Put 排序并检查服务状态。
+   handler 入口 ownership 预检查不能替代 apply 时检查；冻结后拒绝 Get/Put。
+5. Freeze→Install→Delete→发布 current 是推荐序列；允许暂时无人服务，但至多
+   一组可服务。冻结状态应含此前所有已执行写入；安装确认后才能删除源数据。
+6. 迁移状态要包含 value/version；State 实际是 []byte，需稳定编码副本。
+   Num 是分片配置代际，配置 KV 键版本用于 CAS，业务键版本用于条件写；这些
+   也不同于 Raft index/term 或 RSM 请求身份。
+7. 每分片 Num + 阶段共同约束迁移；不能把同 Num 一律拒绝或一律重新执行。
+   重复 Install 不能覆盖目标组已接受的新写；重复 Freeze 不能把已删数据误作
+   有效空分片。Delete 释放业务数据但保留必要的防旧 RPC 屏障。
+8. FreezeShardReply 为 State/Num/Err；内层 Clerk.FreezeShard 只返回 State/Err，
+   必须解释回复代际，不能把任意状态当成本次冻结结果。固定接口没有完整状态机。
+9. 控制器先把工作意图保存在独立 KV，再产生迁移副作用；InitController 读取
+   current/next 接续已选工作。同号不同目标先由 KV versioned Put 唯一选定，
+   然后才能迁移。竞争失败者不能执行自己的候选；多个恢复者可协作同一已选目标。
+10. 配置 Put 的 ErrMaybe 不证明胜选或落败，需核对已存内容/Num/记录版本。
+    next 选择与 current 发布都需防旧写；两个键不是事务，必须解释中间状态。
+11. 跨组重试仍是一条逻辑 Put。旧组已写而丢回复，迁移携带增大的业务版本，
+    新组拒绝原版本；外层刷新路由不能将结果误报为确定 ErrVersion。内外层
+    保留不确定性且重试参数不变；ErrMaybe 只在 Clerk 层表达。
+12. P4 快照新增分片服务状态、Num、恢复/幂等所需阶段；首次 Gid1 默认归属不能
+    覆盖 Restore。InstallShard 是跨独立组迁移一片数据的 RSM 业务命令，
+    InstallSnapshot 是同组 Raft 前缀恢复；两者不混用。迁移非 Raft 成员变更。
+13. 未受影响分片持续服务，不能整组锁住等待另一组 RPC。2PC/2PL 是 5D 跨分片
+    事务方向，非 A–C 前提。基础 RSM 与 P3 恢复仅引用现有教程，不再展开实现。
+
+五、网页与固定代码差异／测试观察边界
+- HTML Last-Modified 晚于固定代码，沿用快照并显式校注，不更新固定提交。
+- 网页冻结叙述只提 Put；固定 shardgrp/server.go:50 明确 Get/Puts 均拒绝。
+- HTML TestStatiOneShardGroup5A 拼写少 c，实际 TestStaticOneShardGroup5A。
+- B 段 Delete 实为 DeleteShard；B/C 示例构建行 main/k 被截断，不作为命令照抄。
+- A “no failures”不是全套无故障保证：Static 关闭 leader，ManyJoinLeave 有
+  unreliable 版本，Shutdown 会重启组，完整并发测试也含丢消息。
+- HTML “map 可直接传输”是思路提示；固定 State 是 []byte，需编码与副本边界。
+- D 提示替换 MakeTestMaxRaft 内的 StartKVServer 是旧框架残留。固定版本为
+  MakeConfig(t,1,reliable,"kvsrv1d",...)，真正 StartKVServer 在 main/kvsrv1d.go；
+  控制器仍用单机 Clerk。扩展复制配置 KV 需同步调整启动/Clerk/构建。
+- D 网页把 URL 为 2024 的旧 Lab2 称“去年”，中译保留具体 2024 年份并校注。
+- 网页要求回归 4A–C，但列的 raft1/kvraft1/shardkv 不含 rsm1；固定 src Makefile
+  的 RSM 测试是独立目标。根 Makefile 为提交打包；无通用 5D 目标/测试组。
+- make shardkv 不递归测试 shardcfg 子包；单独入口 go test -race ./shardkv1/shardcfg。
+- MakeTestLeases、leased leadership、AcquireLock 是测试命名，实际并发入口
+  concurCtrler 没有直接 Acquire 调用，不能由名字额外要求实现时间租约/锁 API。
+- concurCtrler 运行四条控制器工作流；partitionCtrler 停组促成中断、隔离旧
+  控制器、重启组、新控制器 InitController 后立即检查配置，再按 partition
+  标志决定是否重连旧控制器。新对象本地内存不能成为恢复依据。
+- TestProgressShutdown5A 观察在线组 Get；TestProgressJoin5A 特意读参与迁移组
+  内的稳定分片，4 秒工作窗口至少 100 次 Get，外层 8 秒超时。
+- TestDeleteBasic5A 开启快照并检查两组快照总量不超过旧量+10000；
+  TestShutdown5A 使用 maxraftstate=-1，不能把它单独称为开启快照的重启专项。
+  网页的整体快照/重启描述不表示固定测试中每种组合都独立被测。
+- TestJoinLeave5B 第一段 time.After(1*NSEC) 实为 2 纳秒，后续才乘 time.Second；
+  文档保留停机时不能虚报完成的语义，不从此短窗口放宽实现。
+- MakeTestMaxRaft 传 randomkeys=false；OneClientPut 用 ka[0]，不能因测试预建
+  多键就声称并发热路径随机覆盖所有分片。SpreadPuts/CheckGet 另行检查多键。
+- CheckGet 检查 Value/Version/Err；Porcupine Get 模型只比 Value；Unknown
+  输出 assumed OK，不是线性一致性证明。未改测试代码或为缺陷提供完整解答。
+
+六、验证边界
+仅做本 worker 文件的静态检查；实验测试、Go 编译、全站 build 均未运行。
+共享来源清单整合与最终 build 由主 agent 统一处理。
+本地最小静态检查通过：manifest JSON 可解析；3 个来源哈希一致；20 个源码成员
+哈希、完整阅读行数及只读权限一致；本分片来源 ID 与已有 manifest-fragment
+无冲突；两份 Markdown 围栏、details 配对、无行末空白，站内链接目标正文存在；
+所有 shardkv 的 RUN 正则均能匹配固定测试名称。
+限定路径 git diff --check 无报错；新增未跟踪正文的空白另以上述静态检查覆盖。
+未把这些内容检查记为实验实现通过。

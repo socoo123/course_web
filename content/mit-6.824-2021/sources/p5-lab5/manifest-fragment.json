@@ -1,0 +1,324 @@
+{
+  "course_id": "mit-6.824-2021",
+  "lab_id": "shardkv",
+  "lab_term": "MIT 6.5840 Spring 2026",
+  "batch": "P5",
+  "reviewed_at": "2026-11-09",
+  "path_base": "content/mit-6.824-2021/sources/",
+  "review_file": "p5-lab5/review.txt",
+  "content_status": "completed_A-C_requirements_translation_and_original_guide_with_D_official_open_extensions",
+  "lab_tests": "not_run",
+  "code_compilation": "not_run",
+  "site_build": "not_run_by_worker",
+  "sources": [
+    {
+      "url": "https://pdos.csail.mit.edu/6.824/labs/lab-shard1.html",
+      "retrieved_at": "2026-11-08T12:09:28.821505+00:00",
+      "last_modified": "Thu, 23 Apr 2026 21:50:36 GMT",
+      "file": "lab-shard-2026.html",
+      "sha256": "bf57f725eed0acbf567936f905f3fd0a41e9a0cac3b7815c3829cfe62f8e9a35",
+      "id": "lab-shard-2026-p5",
+      "status": "reviewed",
+      "read_lines": [
+        [
+          1,
+          807
+        ]
+      ],
+      "scope": "Complete static read of all 807 HTML lines: introduction, getting started, all A-C requirements/hints/test examples, all six D extensions, handin and footer. A-C fully translated; D separately translated as official open extension/self-study advanced work. Repeated terminal output condensed; diagram meaning covered by accompanying text, image not fetched or visually reviewed. Existing capture reused, not re-fetched; linked pages not read.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "evidence_file": "home-2026.html",
+        "basis": "Homepage rel=license for course-owned lab text only; not a blanket license for code or external readings. Translation/editorial changes identified."
+      }
+    },
+    {
+      "url": "https://pdos.csail.mit.edu/6.824/index.html",
+      "retrieved_at": "2026-11-08T12:48:14.787990+00:00",
+      "last_modified": "Tue, 10 Feb 2026 19:00:35 GMT",
+      "file": "home-2026.html",
+      "sha256": "0e84bf9377933215c745734c742f29b40b34a7bd41e146717c8c661ac7c13856",
+      "id": "home-2026-p5-lab5-license",
+      "status": "partial",
+      "read_lines": [
+        [
+          61,
+          61
+        ]
+      ],
+      "scope": "Targeted static re-check of homepage rel=license; no full homepage reading claimed."
+    },
+    {
+      "id": "lab-code-513cac0aef01-p5-lab5-review",
+      "url": "git://g.csail.mit.edu/6.5840-golabs-2026",
+      "retrieved_at": "2026-11-08T12:56:42.897091+00:00",
+      "last_modified": null,
+      "file": "lab-code-513cac0aef01.tar.gz",
+      "sha256": "5a6d4a143a6f7fab6e6e6a525b3160ef16433de36506ca4600850ed8659ab1c4",
+      "commit": "513cac0aef010750fc74688da8a395974a83cf7a",
+      "commit_date": "2026-02-13T16:36:14-05:00",
+      "tree": "43595f63557ea35834dead671b32da097396f92f",
+      "status": "reviewed",
+      "scope": "Archive SHA-256 checked before extraction to approved temporary directory; every original manifest member hash checked; extracted files chmod 0444. Complete static reading of the 20 files enumerated below only. No source code modifications, compilation, execution or lab tests; P3/P4 restoration facts reused from existing guides/review records, not a new full Raft audit. last_modified is null because source is a git archive, not an HTTP response.",
+      "member_path_base": "6.5840-golabs-2026/ inside archive; member path relative to experiment repository",
+      "members": [
+        {
+          "path": "src/shardkv1/shardctrler/shardctrler.go",
+          "sha256": "294abbcd0bd7d9a48c020b0c5b5516677ab01eb43bfd2044dadf71066d177113",
+          "read_lines": [
+            [
+              1,
+              64
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/shardkv1/shardgrp/server.go",
+          "sha256": "535512ca3d1543dcde1303c930df90222c79c579441e8cbf6ccbdaa77dbc3b28",
+          "read_lines": [
+            [
+              1,
+              90
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/shardkv1/shardgrp/client.go",
+          "sha256": "645248d17663dca020489f22ee5f3d25aa0751f14ab774f6521900a3dbd4f782",
+          "read_lines": [
+            [
+              1,
+              49
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/shardkv1/shardgrp/shardrpc/shardrpc.go",
+          "sha256": "27d8a691f156d058ba0af39de69b0f16e7d6b1b3c4c592a3bcf5fd7f0d36e768",
+          "read_lines": [
+            [
+              1,
+              36
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/shardkv1/client.go",
+          "sha256": "38a314008630db210febb31724e8a20f57459ebc1ad3c4b5a10739bb562852d9",
+          "read_lines": [
+            [
+              1,
+              59
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/shardkv1/shardcfg/shardcfg.go",
+          "sha256": "a7af239230624ce1bd24fb6726b3e12383cfde190a2bdfab3677c1185d632c63",
+          "read_lines": [
+            [
+              1,
+              284
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/shardkv1/shardcfg/shardcfg_test.go",
+          "sha256": "82de3a2087707c3b2fce4ee35eab3fb219bc6d8a0ac7f481069f91077970a21c",
+          "read_lines": [
+            [
+              1,
+              62
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/shardkv1/test.go",
+          "sha256": "dc3cdc02ec80a8c5fd929984f4e001fb050902ce5bdd34211827385d8d73f8b1",
+          "read_lines": [
+            [
+              1,
+              394
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/shardkv1/shardkv_test.go",
+          "sha256": "4ef1479aedc0a12170ee194c919f1d5d8bfdb5d5bb9a495725842fa153c4e8d3",
+          "read_lines": [
+            [
+              1,
+              722
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/kvsrv1/rpc/rpc.go",
+          "sha256": "77e07ead7459f4e73fcd680471230654df9b043052ec15894c73c0f29adfb052",
+          "read_lines": [
+            [
+              1,
+              40
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/kvsrv1/client.go",
+          "sha256": "ee8ae899c3e63d9a4ab35ec833d88ddecb0124cf4278b0e3a0ab8ae0077b5b6f",
+          "read_lines": [
+            [
+              1,
+              56
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/kvraft1/client.go",
+          "sha256": "f502a0045fcbd72929f522f62911b889758d7207ff052f5fd9b0598a859e6c6f",
+          "read_lines": [
+            [
+              1,
+              63
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/kvraft1/rsm/rsm.go",
+          "sha256": "1b4cf1d897064722fc60c76ba8514a3f2281b0d8264ec6dcd280c99c93b1f01b",
+          "read_lines": [
+            [
+              1,
+              87
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/main/shardgrp1d.go",
+          "sha256": "4985fe77f463dadbd3da0d1672e717c846f609a00d7829184833badb26117a8f",
+          "read_lines": [
+            [
+              1,
+              16
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/main/kvsrv1d.go",
+          "sha256": "a69728bc9fbb649c868bb5f90ca112359ad34ac26b1a84a57bd474ca4cba30f9",
+          "read_lines": [
+            [
+              1,
+              16
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/kvtest1/kvtest.go",
+          "sha256": "9f55670b70f0a66d176dca081330d45354d533ee5475e6cbb04e0672743846bc",
+          "read_lines": [
+            [
+              1,
+              401
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/kvtest1/porcupine.go",
+          "sha256": "9b2d0a236c9bfca003e7e6337bac7f729778f6349c0672468b166987c7137ba8",
+          "read_lines": [
+            [
+              1,
+              186
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/models1/kv.go",
+          "sha256": "24a32b936d32b812d6f5b6db34159a24141582337459cd00b41cfc3bc117468d",
+          "read_lines": [
+            [
+              1,
+              80
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "src/Makefile",
+          "sha256": "e09cd2ba72117f54a3480f97385590836fcff76a1110c984acfd77912114b7af",
+          "read_lines": [
+            [
+              1,
+              66
+            ]
+          ],
+          "scope": "complete_static_read"
+        },
+        {
+          "path": "Makefile",
+          "sha256": "394bcfec0ef6d075427e6f14b473c638a1fc04a75fc6936e55c1efdde7eb3cd1",
+          "read_lines": [
+            [
+              1,
+              33
+            ]
+          ],
+          "scope": "complete_static_read"
+        }
+      ]
+    }
+  ],
+  "shared_references": [
+    {
+      "route": "#/c/mit-6.824-2021/lec/update-lab-bridge?v=notes",
+      "scope": "Main-agent shared RSM/migration bridge linked; read notes.zh.md lines 179-327 (sections 9-15 and sources) after delivery, migration boundaries consistent; not edited by this worker."
+    },
+    {
+      "route": "#/c/mit-6.824-2021/lab/kvraft?v=guide",
+      "scope": "Existing P4 guide fully read; RSM request identity and two-layer snapshot/recovery contract reused without duplicate tutorial."
+    },
+    {
+      "route": "#/c/mit-6.824-2021/lab/raft?v=guide",
+      "scope": "Existing P3 guide fully read; recovery boundary contract reused, no new full Raft source audit."
+    },
+    {
+      "route": "#/c/mit-6.824-2021/lec/lec05?v=materials",
+      "scope": "Existing shared Raft paper reading linked only, no new PDF reading claimed."
+    }
+  ],
+  "known_differences": [
+    "Lab HTML modified 2026-04-23, later than fixed code commit 2026-02-13; snapshot not silently upgraded.",
+    "HTML freeze description mentions rejecting Put; fixed FreezeShard comment requires rejecting future Get/Puts.",
+    "HTML TestStatiOneShardGroup5A command typo; fixed name is TestStaticOneShardGroup5A.",
+    "A no-failures wording does not remove actual unreliable-network, leader shutdown, and group restart tests.",
+    "HTML map-transfer hint is conceptual; fixed migration State is []byte, requiring encoding/copy boundary.",
+    "B HTML Delete is DeleteShard in code; blanket same-Num rejection would conflate legal stages and retransmission.",
+    "D replace StartKVServer hint is stale: fixed MakeTestMaxRaft uses MakeConfig with one kvsrv1d and constructor uses kvsrv.MakeClerk.",
+    "D linked previous-year Lab 2 URL is explicitly 2024; no 2025 or 2026 interface inference.",
+    "HTML regression commands omit separate rsm1 target despite saying all 4A-C tests; fixed Makefile requires it.",
+    "MakeTestLeases/AcquireLock/leased leadership labels do not themselves mandate timed leases or a lock API; inspect actual concurrent/fencing tests.",
+    "TestJoinLeave5B first time.After(1*NSEC) is 2 nanoseconds, unlike later explicit seconds.",
+    "TestShutdown5A uses maxraftstate=-1; not itself an enabled-snapshot recovery test.",
+    "MakeTestMaxRaft uses randomkeys=false; OneClientPut selects ka[0], despite multi-key list setup.",
+    "Porcupine Get model compares only Value; explicit CheckGet checks Value/Version/Err; Unknown is assumed OK, not proof.",
+    "src make shardkv tests only shardkv1 package; shardcfg TestBasic is not recursively included."
+  ]
+}

@@ -1,0 +1,83 @@
+P5 阅读、字幕与固定接口审阅记录
+日期：2026-11-09
+主线：MIT 6.824 Spring 2021；实验：MIT 6.5840 Spring 2026。
+固定提交：513cac0aef010750fc74688da8a395974a83cf7a。
+
+一、分工
+L13与L14各有专责worker，负责本讲notes/draft/materials及独立来源目录。
+Lab5专责worker负责labs/shardkv两份正文、完整任务/提示和固定源码测试静态审阅。
+主agent负责迁移桥接、公共资料、元数据、来源整合与最终验证。
+三份讲座材料分工、许可、真实字幕顺序及实际阅读边界遵循AGENTS.md和skill。
+不以课堂提纲冒充视频、不以文档完成代表用户实验通过。
+
+二、主agent桥接阅读与交付
+先读完整P4-REVIEW、p4-lab4/review及P3恢复记录，保留P4桥接§1–8教学正文。
+完整读Lab5官方HTML 807行，主agent完整静态读8个接口文件并核验归档和成员hash，
+精确范围见p5-bridge/manifest-fragment.json；测试全文由Lab5专责worker审阅。
+新增桥接§9–15：单一服务权、冻结→安装→删除→发布、幂等与旧RPC屏障、
+current/next恢复、同Num不同目标竞争、KVversion条件写、跨组ErrMaybe和快照扩展。
+Freeze后按固定server.go拒绝Get/Puts，防止源组继续提供冻结旧值；
+Num不是业务version，安装分片不是Restore整个组；控制器默认使用单机Lab2 KV。
+5D单列官方开放扩展，不声称MIT不要求；2PC不属于A–C基础要求。
+独立只读reviewer核对§9–15及对应源码/官方页，未报告实质错误；详见p5-bridge/review。
+没有新建迁移图，使用阶段/故障表；没有提供完整实验答案。
+
+三、讲座与实验整合
+Lab5主agent完整审阅两份中文正文、review与来源分片。实验专责完整读官方807行，
+固定源码20个完整文件共2804行；A–C实质任务/全部提示中译，D六项扩展单列。
+主agent定点对照shardkv_test.go中的DeleteBasic5A、Shutdown5A、ProgressJoin5A、
+JoinLeave5B，及test.go中的MakeTestMaxRaft、partitionCtrler和concurCtrler开头，
+确认2纳秒初始窗口、快照空间比较、4秒/100次Get与8秒外层超时、恢复后立即查询。
+检索const块时另输出并阅读了ProgressShutdown/并发Clerk/部分分区测试片段；
+这不是通读全部测试，完整静态阅读由实验专责完成，不冒称主agent重复通读。
+默认配置KV单机、D旧启动提示、回归漏列rsm1及网页/代码时间差均已准确校注。
+没有发现需修的实质技术问题；主agent将guide末尾“未运行全站构建”收紧为实验/
+Go编译未运行，网站构建另由本批登记，避免把worker未构建误读成最终整合未构建。
+实验测试和Go编译均未运行。
+L13主agent完整审阅三份中文正文、review及来源分片。独立元数据：B6btpukqHpM，
+Lecture13: Distributed Transactions，4889秒/81:29，频道MIT6.824:Distributed
+Systems，2021-04-08上传，CC Attribution标签但具体版本未明。
+专责worker按序读全部1893条字幕，29段含课后问答；首560ms无字幕，末条超1560ms；
+136处区间并集间隙，共661492ms，最长37:37.839–44:07.119为分组期间无字幕。
+不推断静音、不补组内发言、没有音画核验。
+2021讲义309行/FAQ310行全文已读，Last-Modified均晚于视频上传日。
+Chapter9五节按指定边界完整读，图9.2–9.5/9.37与相关公式/规则页实际核验；
+不称118页全章通读。旧OCW入口重定向循环，改用当前官方v5.0入口，不声称2021
+字节一致。PDF版权页BY-NC-SA3.0 US，教材改写沿同许可；不套HTML页脚4.0。
+2022官方PartII勘误3页全文读，用于书9–18/9–73/9–74；只属后续核对，非课堂材料。
+主agent定点读原始规范化字幕24:00–27:00、44:00–47:00、78:00–81:29，核对
+strong strict2PL、lockpoint/commitpoint、分组返回问答、末尾prepared恢复疑问；
+另实际查看教材PDF75和勘误PDF2页面，确认Y→X修正与一般2PL释放条件限定。
+字幕全量阅读由worker完成，不将主agent定点对照写成主agent全量重读。无新增插图。
+L13三份内容分工明确，书面独有例子不塞入视频时间轴；未发现需修实质问题。
+
+L14主agent完整审阅三份正文、review与来源核心记录。独立视频ZulDvY429B8，
+Lecture14: Spanner，5829秒/97:09，频道MIT6.824:Distributed Systems，
+上传2021-04-15；本视频CC Attribution标签，具体版本未明。
+专责完整读2326条字幕，36段含课后问答；首0ms，末5827840ms，末尾缺1160ms；
+160处区间并集间隙共650364ms，约46:24–53:43分组/会议切换不可恢复组内讨论。
+未听音轨或查看课堂画面。讲义305行、FAQ99行全文读，讲义修改于2021-04-30，
+晚于课堂；FAQ含2020时间例子不代表视频年份。论文14页含附录A全文读，6图6表
+全部实际核验，未读外链文献全文；全译许可未确认，materials采用自主精读。
+主agent定点核对规范化字幕65:00–70:00、88:00–93:00及论文PDF7/8/14图像，
+确认TT半宽、safe time与commit wait的独立约束、客户端缓冲写的读语义和租约
+多数相交证明；没有把定点核对写成主agent全量重读来源。
+只发现notes机制表五行而标题写“四个”，已修正为“五个／五种”；无实质技术缺陷。
+课程时长、阅读元数据、版本映射和公共资料均已同步，无新增插图。
+
+四、验证与下一批
+python3 sources/check-p5.py通过：本批8份新增正文及扩写桥接，共9份检查对象；
+JSON、来源ID唯一、P5来源/派生物/固定源码成员SHA-256、路由和目标正文、图片、
+SVG XML、Markdown围栏、视频元数据与数量一致。累计30份讲座/10份实验/4张SVG。
+L13 1893条/29段/4889秒，首560ms末4890560ms；L14 2326条/36段/5829秒，
+首0ms末5827840ms；时间段连续、字幕起点单调且各归属一次，保留原始时间。
+结构校验不替代翻译审阅，也不证明音画覆盖。
+git diff --check通过。npm run build通过：tsc --noEmit + vite build，
+2620 modules，4.75s；包含全部本批正文与扩写桥接。
+git diff --cached --check通过；暂存27个文件，全部位于content/mit-6.824-2021/。
+提交正文、共享元数据、来源manifest/review、检查脚本和P6提示词；原始字幕/PDF/
+HTML/源码归档及本地渲染图仍按既有约定留本地，没有将整个sources加入提交。
+实验测试未运行；未执行Go编译，不将内容校验视为实验验收。
+下一批P6核心案例为2021 L11/L12/L15/L17；L15保留两段录像和独立时间轴。
+可直接复制的完整提示词：sources/NEXT-P6-PROMPT.txt。
+后续兴趣拓展与无来源L6/L8不自动标完成。

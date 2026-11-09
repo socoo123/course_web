@@ -1,0 +1,15 @@
+继续完成 MIT 6.824 中文课程 P6。先读取项目 AGENTS.md、technical-video-notes skill，以及 content/mit-6.824-2021/sources/PLAN.txt、status.json、manifest-2021.json、P5-REVIEW.txt、各 p5-*/review.txt、版本映射与来源清单，确认既有完成范围。
+
+主线固定 MIT 6.824 Spring 2021；实验固定 MIT 6.5840 Spring 2026，代码提交 513cac0aef010750fc74688da8a395974a83cf7a。P1–P5 的内容完成不代表用户实验通过，实验测试实际运行情况独立记录。
+
+本批 P6 核心案例：2021 L11 Chain Replication、L12 Frangipani、L15 FaRM、L17 Memcached。L15 有两条官方录像：07xsfL5E8Ck 与 XwU4jKhBxws，必须分别核对元数据、获取英文字幕、保留各自从零开始的真实时间轴；两段合成同一讲的正文，不用单段冒充全讲，不用2020编号替换2021。其他讲次的视频与来源从2021官方课表和schedule-inventory-2021.json读取。
+
+允许多 agent 并行处理独立讲次，主 agent 负责共享来源、元数据与最终整合。先主动获取原语言英文字幕，逐视频核对标题、时长、频道、上传日期和许可；按真实顺序完整整理讲授、演示和问答，不虚构分组讨论、未留在录像中的交流或字幕缺段。保留ASR原件、原始末条超时、实际缺口；没有音轨/画面核验就明确说明。
+
+逐讲核对2021实际链接的讲义、已列出的FAQ、指定论文：Chain Replication (2004)、Frangipani、FaRM (2015)、Memcached at Facebook (2013)。L11课表未列FAQ，不凭命名猜出一个再冒充指定来源。实际文本范围、图表/公式页面核验、版本标题与Last-Modified疑点写入独立来源清单和review。论文全译许可未确认时做自主精读，不把课程网站许可套给外链论文。notes提炼核心问题/推导/不变量/自测，draft承载课堂时间顺序，materials承载课外精读；课堂截图只入draft，自绘图保持简单。
+
+Chain Replication 已属2021主线：将现有2026 Chain Replication讲义与论文快照作为L11阅读对照，只展开确有差异的部分，不新建重复Updates。L12锁/缓存一致性、L15乐观并发控制与事务、L17缓存失效/租约，应和P3复制、P4协调、P5事务/迁移建立准确连接，不重复大段已有正文。案例中的历史接口不能替换固定2026实验API，也不新增完整实验解答。
+
+本批完成后再安排兴趣拓展 L16/L18/L19/L20/L21 与尚未完成 Updates；不要将这些或无来源的L6/L8答疑自动记为完成。L18将来与2026 SUNDR阅读合并对照；Go patterns将来先对照已完成的2021 L10。是否开展这些后续批次由后续提示词明确。
+
+只修改 content/，同步课程元数据、公共资料、状态、来源清单、版本映射与计划。完成最小必要检查、git diff --check 和 npm run build；通过后提交并推送 GitHub。最后简要汇报产物、实际资料边界与提交信息，并生成下一批可直接复制的提示词。

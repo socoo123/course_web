@@ -1,6 +1,6 @@
 ---
 source: MIT 6.824 Spring 2021 官方课表与课程信息；MIT 6.5840 Spring 2026 官方课表、实验页与固定代码
-status: P1–P4 已完成：2021 L1/L2/L3/L4/L5/L7/L9/L10 字幕整理与笔记，共享论文精读、线性一致性及 RSM/KV/快照桥接，2026 Lab 1–4 说明与指导。分片迁移桥接留待 P5；已获取字幕全部文本阅读，缺口明确保留，未核验视频音画，实验测试未运行。
+status: P5 内容完成：新增 2021 L13/L14、分片迁移桥接与 2026 Lab 5。来源和实际阅读范围见页底各批审阅记录；实验测试未运行。
 license: 本页为编者自主导航；外链论文、视频、讲义与实验要求分别核实许可。
 ---
 
@@ -28,7 +28,7 @@ license: 本页为编者自主导航；外链论文、视频、讲义与实验�
 | 2 · RPC 语义 | [线性一致性](#/c/mit-6.824-2021/lec/update-linearizability?v=notes)、L2/L10 | [Lab 2 KV 与锁](#/c/mit-6.824-2021/lab/kvsrv?v=zh) | versioned Put、ErrVersion 与 ErrMaybe 的区别？ |
 | 3 · 复制与共识 | [L3 GFS](#/c/mit-6.824-2021/lec/lec03?v=notes)、[L4 主备](#/c/mit-6.824-2021/lec/lec04?v=notes)、[L5](#/c/mit-6.824-2021/lec/lec05?v=notes) / [L7 Raft](#/c/mit-6.824-2021/lec/lec07?v=notes) | [Lab 3 Raft A–D](#/c/mit-6.824-2021/lab/raft?v=zh) | 选举、日志匹配、提交、持久化和快照维护什么？ |
 | 4 · 从日志到服务 | [L9 ZooKeeper](#/c/mit-6.824-2021/lec/lec09?v=notes)、[实验衔接](#/c/mit-6.824-2021/lec/update-lab-bridge?v=notes)的 RSM 部分 | [Lab 4 KV Raft A–C](#/c/mit-6.824-2021/lab/kvraft?v=zh) | Start 返回、提交、应用与回复有何区别？ |
-| 5 · 分片闭环 | 实验衔接中的迁移部分；扩展读 [L13 事务](#/c/mit-6.824-2021/lec/lec13?v=notes)、[L14 Spanner](#/c/mit-6.824-2021/lec/lec14?v=notes) | [Lab 5 Sharded KV A–C](#/c/mit-6.824-2021/lab/shardkv?v=zh)，D 为进阶 | 迁移中如何保持单一服务权，并恢复中断的配置变更？ |
+| 5 · 分片闭环 | [实验衔接 §9–15](#/c/mit-6.824-2021/lec/update-lab-bridge?v=notes)；扩展读 [L13 事务](#/c/mit-6.824-2021/lec/lec13?v=notes)、[L14 Spanner](#/c/mit-6.824-2021/lec/lec14?v=notes) | [Lab 5 Sharded KV A–C](#/c/mit-6.824-2021/lab/shardkv?v=zh)，D 为官方开放扩展、路线进阶项 | 迁移中如何保持单一服务权，并恢复中断的配置变更？ |
 
 Lab 5 基础部分实现分片迁移与控制器协调；跨分片事务和 2PC 属于开放扩展方向。分片配置变更不等于 Raft 成员变更。
 
@@ -90,7 +90,7 @@ go version
 | 条目 | 对应 2026 内容 | 学习连接 |
 |---|---|---|
 | [线性一致性](#/c/mit-6.824-2021/lec/update-linearizability?v=notes) | L8、Lab 2 | KV 与锁之前必读 |
-| [RSM、KV 与分片衔接](#/c/mit-6.824-2021/lec/update-lab-bridge?v=notes) | Lab 2–5；编者导读 | 已完成 RSM、版本化 KV 与快照；迁移部分留待 P5 |
+| [RSM、KV 与分片衔接](#/c/mit-6.824-2021/lec/update-lab-bridge?v=notes) | Lab 2–5；编者导读 | RSM、版本化 KV、快照，以及冻结／安装／删除、控制器恢复与并发目标选择 |
 | [Paxos](#/c/mit-6.824-2021/lec/update-paxos?v=notes) | L4 | 对照 L5/L7 Raft |
 | [Go 模式](#/c/mit-6.824-2021/lec/update-go-patterns?v=notes) | L5 Russ Cox | L2/L10 后核对差异 |
 | [验证](#/c/mit-6.824-2021/lec/update-verification?v=notes) | L15 IronFleet | 从不变量走向证明 |
@@ -115,7 +115,7 @@ Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector �
 - MIT 6.824 Spring 2021：[官方课表](http://nil.csail.mit.edu/6.824/2021/schedule.html)、[课程信息](http://nil.csail.mit.edu/6.824/2021/general.html)。课程讲师 Frans Kaashoek；L10 嘉宾 Russ Cox。
 - L1：[2021 视频](https://www.youtube.com/watch?v=WtZ7pcRSkOA)。字幕与后续时间轴以该视频为准。
 - L15 FaRM：[上半场](https://www.youtube.com/watch?v=07xsfL5E8Ck)、[续集](https://www.youtube.com/watch?v=XwU4jKhBxws)。译稿须分别保留两段的时间轴。
-- 全部视频入口来自官方课表；登记见 `sources/schedule-inventory-2021.json`。以下八条分别查询元数据，频道均为 MIT 6.824: Distributed Systems，各自均标注 CC Attribution（具体版本未明确）：
+- 全部视频入口来自官方课表；登记见 `sources/schedule-inventory-2021.json`。以下十条分别查询元数据，频道均为 MIT 6.824: Distributed Systems，各自均标注 CC Attribution（具体版本未明确）：
 
 | 条目 | 实际视频标题 | 时长 / 上传日 | 已获取英文自动字幕 |
 |---|---|---|---|
@@ -127,6 +127,8 @@ Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector �
 | [L7](https://www.youtube.com/watch?v=h3JiQ_lnkE8) | Lecture 7: Fault Tolerance: Raft (2) | 108:46 / 2021-03-11 | 2732 条 |
 | [L9](https://www.youtube.com/watch?v=HYTDDLo2vSE) | Lecture 9: Zookeeper | 82:50 / 2021-03-18 | 2239 条，含课后问答 |
 | [L10](https://www.youtube.com/watch?v=IdCbMO0Ey9I) | Lecture 10: Guest Lecture on Go: Russ Cox | 95:27 / 2021-03-25 | 3145 条，含课后问答 |
+| [L13](https://www.youtube.com/watch?v=B6btpukqHpM) | Lecture 13: Distributed Transactions | 81:29 / 2021-04-08 | 1893 条，含课后问答 |
+| [L14](https://www.youtube.com/watch?v=ZulDvY429B8) | Lecture 14: Spanner | 97:09 / 2021-04-15 | 2326 条，含课后问答 |
 
 均保存并完整阅读英文自动字幕，未逐段回听或核对视频画面。L2/L3 分组讨论不在上传录像中；L4 的 42:18–50:00、L5 的 64:07–72:10 与 L7 的 61:16–69:32 保留分组活动及零散会务区间，无法恢复分组技术讨论。L4 末句未完成；L7 开头六秒无字幕，不据此断定静音。L5/L7 的提交判断、任期字段、批处理与匹配索引争论，以及 L10 幻灯片代码笔误，均在译稿单列校注。其余视频标题、时长、频道和许可仍待逐条核对。
 
@@ -175,6 +177,12 @@ P2 记录见 `sources/P2-REVIEW.txt`：2021 L2/L10 原始字幕与独立元数�
 
 P3 记录见 `sources/P3-REVIEW.txt` 和各 `sources/p3-*/review.txt`。GFS 论文完整 15 页、VM-FT 论文完整 10 页，Raft 扩展论文按指定范围跳过 §6；图表实际核对，引用文献的外链全文不算已读。2021 链接的 L3/L4/L5/L7 讲义内部仍写 2020；L4 讲义与 L5 FAQ 的快照修改时间晚于对应课堂，L7 讲义／FAQ 与视频上传同日，但无法判断课前课后，保留这些史料边界。Lab 3 采用固定提交的 `raftapi`、`Persister.Save` 与应用层先恢复快照的契约；说明与指导均基于静态核对，未运行实验。原始字幕、PDF、HTML 和源码归档按既有约定留在本地，提交包含正文、来源清单与审阅记录。
 
-P4 的实验及桥接记录见 `sources/P4-REVIEW.txt`、`sources/p4-lab4/review.txt`。Lab 4 沿用固定提交的 `StateMachine.DoOp/Snapshot/Restore`、`Submit` 与版本化 Get/Put，区分提交、应用、回复和客户端不确定性；快照恢复复用 P3 契约。RSM 桥接已完成，分片迁移未计入完成范围；测试入口已核对，但实验测试未运行。
+P4 的实验及桥接记录见 `sources/P4-REVIEW.txt`、`sources/p4-lab4/review.txt`。Lab 4 沿用固定提交的 `StateMachine.DoOp/Snapshot/Restore`、`Submit` 与版本化 Get/Put，区分提交、应用、回复和客户端不确定性；快照恢复复用 P3 契约。P4 完成 RSM 桥接，迁移部分在 P5 接续；测试入口已核对，但实验测试未运行。
 
 L9 的 2239 条字幕全部文本阅读，32 段译稿覆盖 82:50，包含课后问答；字幕区间并集有 147 处间隙（含开头 0.719 秒），不推断为静音，末条超时 2.159 秒保留，无音画核验。ZooKeeper 论文完整 14 页及全部 8 图、3 表已读／查看；未获全译许可，采用自主精读。2021 链接讲义仍写 2020 L8；课堂明确推迟锁配方，配方只在课程资料展开，不补入时间轴。详情见 `sources/p4-lec09/review.txt`。
+
+P5 分片实验与迁移桥接见 `sources/P5-REVIEW.txt`、`sources/p5-lab5/review.txt`、`sources/p5-bridge/review.txt`。完整阅读 Lab 5 官方页 807 行与 20 个固定源码文件，静态核对接口和测试；A–C 全部要求与指导、D 六项官方开放扩展均已整理。网页快照修改于 2026-04-23，晚于固定提交；冻结后的 Get/Put 边界、测试名笔误、5D 旧启动提示及回归需额外覆盖 `rsm1` 均已校注。实验测试和 Go 编译未运行，来源中已有的示例通过输出不代表本次执行结果。
+
+L13 的全部 1893 条字幕整理为 29 段；开头 0.560 秒无字幕，末条超时 1.560 秒。136 处字幕并集间隙共 661.492 秒，其中 37:37.839–44:07.119 为分组期间无字幕。L14 的全部 2326 条字幕整理为 36 段；160 处间隙共 650.364 秒，末尾 1.160 秒无字幕，约 46:24–53:43 分组／会议切换不能恢复组内讨论。两讲均只做文本阅读，未听音轨或核验课堂画面；不将字幕空隙断定为静音。
+
+L13 指定 Chapter 9 五节与对应图表／公式页、2022 官方 Part II 勘误已读；没有通读全章 118 页。旧 OCW 入口出现重定向循环，实际使用[当前官方教材入口](https://ocw.mit.edu/courses/res-6-004-principles-of-computer-system-design-an-introduction-spring-2009/pages/online-textbook/)的 v5.0 PDF，不声称与 2021 字节一致；教材 PDF 自身为 CC BY-NC-SA 3.0 US，相关改写遵循该许可。2022 勘误属于后续核对。L14 Spanner 论文 14 页含附录 A、全部 6 图和 6 表已审阅，全文翻译许可未确认，采用自主精读。两讲讲义／FAQ 全文已读；L13 讲义／FAQ 修改于 2021-04-09，L14 讲义修改于 2021-04-30，均晚于对应视频上传日。详细边界见 `sources/p5-lec13/review.txt`、`sources/p5-lec14/review.txt`。

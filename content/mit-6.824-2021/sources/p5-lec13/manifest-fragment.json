@@ -1,0 +1,1312 @@
+{
+  "course_id": "mit-6.824-2021",
+  "lecture_id": "lec13",
+  "batch": "P5",
+  "review_file": "p5-lec13/review.txt",
+  "acquisition_file": "p5-lec13/acquisition.json",
+  "content_status": "completed_assigned_text_with_explicit_breakout_asr_audio_visual_and_pdf_scope_limits",
+  "sources": [
+    {
+      "id": "lec13-2021-l-2pc.txt",
+      "url": "http://nil.csail.mit.edu/6.824/2021/notes/l-2pc.txt",
+      "retrieved_at": "2026-11-09T11:38:50.947381+00:00",
+      "last_modified": "Fri, 09 Apr 2021 03:34:38 GMT",
+      "file": "p5-lec13/l-2pc.txt",
+      "sha256": "213b45514562d9f1b86b99c62d2c633371f1432be4994e5affe6ab000fec685e",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T11:55:32.939467+00:00",
+      "scope": "All 309 lines read including final external URL (linked article not read). Correct 2021 Lecture 13 heading. Transfer code signs differ from video; strong strict locking, GC and version differences annotated.",
+      "license": {
+        "label": "CC BY3.0 US",
+        "evidence_file": "home-2021.html",
+        "evidence_scope": "line55 rel=license rechecked",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/"
+      }
+    },
+    {
+      "id": "lec13-2021-chapter9-faq.txt",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/chapter9-faq.txt",
+      "retrieved_at": "2026-11-09T11:38:51.757902+00:00",
+      "last_modified": "Fri, 09 Apr 2021 03:34:38 GMT",
+      "file": "p5-lec13/chapter9-faq.txt",
+      "sha256": "d2a2677b98a02a72d4131b6ac6968724d190706a15933ce2973f3287c5a5ba3a",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T11:55:32.939467+00:00",
+      "scope": "All 310 lines read. All questions and answers including 3PC network assumptions, log alternatives, lock manager and final entry. External references not read.",
+      "license": {
+        "label": "CC BY3.0 US",
+        "evidence_file": "home-2021.html",
+        "evidence_scope": "line55 rel=license rechecked",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/"
+      }
+    },
+    {
+      "id": "lec13-2021-textbook-index.html",
+      "url": "https://ocw.mit.edu/courses/res-6-004-principles-of-computer-system-design-an-introduction-spring-2009/pages/open-textbook/",
+      "retrieved_at": "2026-11-09T11:38:52.354565+00:00",
+      "last_modified": "Wed, 04 Nov 2026 18:36:14 GMT",
+      "file": "p5-lec13/textbook-index.html",
+      "sha256": "0d2f22b08c128f9e8461b04c0d39cbb7b75f41f1a26de6c6fbc4a1e01de1da94",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T11:55:32.939467+00:00",
+      "scope": "Targeted Chapter9, PartII errata link and license/footer lookup only. Current official replacement for looping historical schedule URL; not full HTML/site reading.",
+      "license": "Current OCW HTML footer BY-NC-SA4.0; errata final page points to OCW terms. Do not override Chapter9 PDF's own BY-NC-SA3.0 US notice."
+    },
+    {
+      "id": "lec13-2021-chapter9.pdf",
+      "url": "https://ocw.mit.edu/courses/res-6-004-principles-of-computer-system-design-an-introduction-spring-2009/de2b7c59e413f58e51eac60acd52efef_atomicity_open_5_0.pdf",
+      "retrieved_at": "2026-11-09T11:38:53.247945+00:00",
+      "last_modified": "Wed, 14 Oct 2026 13:43:47 GMT",
+      "file": "p5-lec13/chapter9.pdf",
+      "sha256": "4d792cb233b2f5a4676d80b75abdda74f3fe4c956e4769fee433f27bfe4c75ed",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T11:55:32.939467+00:00",
+      "scope": "Complete PDF downloaded (118 pages); scoped full reading of all five assigned sections only: 9.1.5 book9-13 through start9.1.6 on9-16 (PDF15-18); 9.1.6 through start9.1.7 on9-19 (PDF18-21); 9.5.2 book9-72 through start9.5.3 on9-73 (PDF74-75); 9.5.3 through start9.5.4 on9-75 (PDF75-77); 9.6.3 book9-85 through9-89 (PDF87-91). Cover, copyright, contents and adjacent boundaries also inspected. Actual page images2,17,18,19,20,74,75,76,90,91 reviewed; all assigned-section figures9.2-9.5,9.37 and AUDIT pseudocode checked. Not full chapter review.",
+      "license": {
+        "label": "CC BY-NC-SA3.0 US",
+        "evidence": "PDF page2 copyright actually viewed",
+        "url": "https://creativecommons.org/licenses/by-nc-sa/3.0/us/",
+        "reuse": "Original Chinese analytical adaptation with same-license attribution, not official full translation."
+      }
+    },
+    {
+      "id": "lec13-2021-metadata.json",
+      "url": "https://www.youtube.com/watch?v=B6btpukqHpM",
+      "retrieved_at": "2026-11-09T11:38:04.334369+00:00",
+      "last_modified": null,
+      "file": "p5-lec13/metadata.json",
+      "sha256": "3897d1d50519f6a47cb0098385a1fe476416af4419a9f9648e57ba243c1ec3de",
+      "status": "reviewed",
+      "last_modified_note": "Not exposed by yt-dlp.",
+      "reviewed_at": "2026-11-09T11:55:32.939467+00:00",
+      "scope": "All selected fields independently acquired/read: B6btpukqHpM, Lecture13 Distributed Transactions,4889sec,MIT6.824 Distributed Systems,channel UC_7WrbZTCODu1o_kfUMq88g,upload20210408,CC Attribution label without version. No audio/video review.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Independently queried; specific version not provided."
+    },
+    {
+      "id": "lec13-2021-video.en-orig.json3",
+      "url": "https://www.youtube.com/watch?v=B6btpukqHpM",
+      "retrieved_at": "2026-11-09T11:38:04.291780+00:00",
+      "last_modified": null,
+      "file": "p5-lec13/video.en-orig.json3",
+      "sha256": "7aadd63129f53cdc9824660f7bf03d1e27b262b91059699b6ea157e88bc12f51",
+      "status": "reviewed",
+      "last_modified_note": "Not exposed by yt-dlp.",
+      "reviewed_at": "2026-11-09T11:55:32.939467+00:00",
+      "scope": "All1893 original-language automatic English cue texts read sequentially through lossless minute grouping (227lines in reads1-90,91-180,181-227). First560ms,last end4890560ms. Breakout gap2257839-2647119ms not filled. All substantive lecture and post-class Q&A organized in continuous editorial intervals, not word-aligned or audio-verified translation.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Independently queried; specific version not provided.",
+      "caption_type": "Original-language English automatic captions (ASR)",
+      "language": "en-orig"
+    },
+    {
+      "id": "lec13-2021-errata-part2-2022.pdf",
+      "url": "https://ocw.mit.edu/courses/res-6-004-principles-of-computer-system-design-an-introduction-spring-2009/mitres-6-033s09_part_iierrata2022-02-28.pdf",
+      "retrieved_at": "2026-11-09T11:40:41.058508+00:00",
+      "last_modified": "Wed, 14 Oct 2026 13:43:47 GMT",
+      "file": "p5-lec13/errata-part2-2022.pdf",
+      "sha256": "b8b5c224b55bca771c8246cc03b379e324d4ddc19585f7b0ff8e4e42f0641c0a",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T11:55:32.939467+00:00",
+      "scope": "All3 PDF pages/309 extracted lines read; actual images pages1,2 reviewed. Corrections to book9-18,9-73,9-74 applied/qualified. Other chapter entries read but not independently technically audited. Later official errata, not claimed to be shown in2021 class.",
+      "license": "Current OCW HTML footer BY-NC-SA4.0; errata final page points to OCW terms. Do not override Chapter9 PDF's own BY-NC-SA3.0 US notice."
+    }
+  ],
+  "derived_files": [
+    {
+      "file": "p5-lec13/captions/captions.normalized.json",
+      "sha256": "ba851354e7c2b08d22ad40f3d39fb930761dc5ac947147649d0f75c98c8cdf4a",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T11:38:29.312588+00:00",
+      "derived_from": "p5-lec13/video.en-orig.json3",
+      "scope": "All1893 texts read via lossless grouping; timing structurally checked."
+    },
+    {
+      "file": "p5-lec13/captions/reading-by-minute.txt",
+      "sha256": "9f9c74ce169c14975d241b7994f6bc93e434bbc65cf3fab8228e63449b84a416",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T11:38:53.251204+00:00",
+      "derived_from": "p5-lec13/video.en-orig.json3",
+      "scope": "All227 lines read sequentially; full caption text retained."
+    },
+    {
+      "file": "p5-lec13/captions/transcript.en.txt",
+      "sha256": "566319b2439b78c79c8d2d5ad334bf6b3db936ffcac64f3f3d8ee96f3c82ff4d",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T11:38:29.317237+00:00",
+      "derived_from": "p5-lec13/video.en-orig.json3",
+      "scope": "Generated all-cue timed representation; texts read via grouping, not a second file reread."
+    },
+    {
+      "file": "p5-lec13/captions/captions.en.vtt",
+      "sha256": "fe3de1a35b3a3213d4963bb83647ed104e9f13651a165ad7c5113ccb449b4d45",
+      "status": "fetched",
+      "generated_at": "2026-11-09T11:38:29.315546+00:00",
+      "derived_from": "p5-lec13/video.en-orig.json3",
+      "scope": "Generated only; no player playback or separate full reread."
+    },
+    {
+      "file": "p5-lec13/chapter9.full.txt",
+      "sha256": "0511c8cac1d589817b4b64c05043baf4b370cc0bd533f0bf7299018224b71eee",
+      "status": "partial",
+      "generated_at": "2026-11-09T11:38:53.542853+00:00",
+      "derived_from": "p5-lec13/chapter9.pdf",
+      "scope": "Full chapter extracted; only lines1-100,590-954,3740-3919,4370-4624 read, covering all five assigned sections and neighboring boundaries."
+    },
+    {
+      "file": "p5-lec13/errata-part2-2022.txt",
+      "sha256": "f72f4232d0ee6425b9cffe91b0c9a79b5d29570d4509a855cd1f8fc2a3290c50",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T11:40:41.096155+00:00",
+      "derived_from": "p5-lec13/errata-part2-2022.pdf",
+      "scope": "All309 lines read, all3 pages; only Chapter9 corrections used."
+    },
+    {
+      "file": "p5-lec13/paper-pages/errata-1.png",
+      "sha256": "30148ebe19dc128dc9c418ea30d406510ebb645634b8d63c9111606bd212269a",
+      "status": "reviewed",
+      "derived_from": "p5-lec13/errata-part2-2022.pdf",
+      "scope": "Actual rendered page inspected; specific figures/rules/errata and boundaries in review.txt."
+    },
+    {
+      "file": "p5-lec13/paper-pages/errata-2.png",
+      "sha256": "626fe3ae902264a9c464c6ea4a89193bf2ff6bac75aa18e8848bbcff9bcd2721",
+      "status": "reviewed",
+      "derived_from": "p5-lec13/errata-part2-2022.pdf",
+      "scope": "Actual rendered page inspected; specific figures/rules/errata and boundaries in review.txt."
+    },
+    {
+      "file": "p5-lec13/paper-pages/page-002.png",
+      "sha256": "a3afbc3ccdcc82e0c76759e7e1c5e109053418ff2c8d6abe14388f640b5b4b7c",
+      "status": "reviewed",
+      "derived_from": "p5-lec13/chapter9.pdf",
+      "scope": "Actual rendered page inspected; specific figures/rules/errata and boundaries in review.txt."
+    },
+    {
+      "file": "p5-lec13/paper-pages/page-017.png",
+      "sha256": "dc478325ba94d81326908c28a1f94ecf3ddb406bb24ecabcb69d47a7319dba6a",
+      "status": "reviewed",
+      "derived_from": "p5-lec13/chapter9.pdf",
+      "scope": "Actual rendered page inspected; specific figures/rules/errata and boundaries in review.txt."
+    },
+    {
+      "file": "p5-lec13/paper-pages/page-018.png",
+      "sha256": "7376a444be7f926cce2e4a35d59c17af149fbcb044fe50f0b94c87688bf6192e",
+      "status": "reviewed",
+      "derived_from": "p5-lec13/chapter9.pdf",
+      "scope": "Actual rendered page inspected; specific figures/rules/errata and boundaries in review.txt."
+    },
+    {
+      "file": "p5-lec13/paper-pages/page-019.png",
+      "sha256": "d18f9a03edffc7e527a3cc28d701f67e0c7205c771f6ca6bed19b0d037369879",
+      "status": "reviewed",
+      "derived_from": "p5-lec13/chapter9.pdf",
+      "scope": "Actual rendered page inspected; specific figures/rules/errata and boundaries in review.txt."
+    },
+    {
+      "file": "p5-lec13/paper-pages/page-020.png",
+      "sha256": "2601be2b22d00735cbbcf96343a1a3dac069db4079c6d0f8e138e0910da70db9",
+      "status": "reviewed",
+      "derived_from": "p5-lec13/chapter9.pdf",
+      "scope": "Actual rendered page inspected; specific figures/rules/errata and boundaries in review.txt."
+    },
+    {
+      "file": "p5-lec13/paper-pages/page-074.png",
+      "sha256": "d9e007f6f56bc69f4b61aea0443953e6e7655b64c536b7b9aa39798ab27b4d41",
+      "status": "reviewed",
+      "derived_from": "p5-lec13/chapter9.pdf",
+      "scope": "Actual rendered page inspected; specific figures/rules/errata and boundaries in review.txt."
+    },
+    {
+      "file": "p5-lec13/paper-pages/page-075.png",
+      "sha256": "7ff7b5aab84e1cefeb61dabafd68d19b613320de5e21b12db43d8093a3b763f8",
+      "status": "reviewed",
+      "derived_from": "p5-lec13/chapter9.pdf",
+      "scope": "Actual rendered page inspected; specific figures/rules/errata and boundaries in review.txt."
+    },
+    {
+      "file": "p5-lec13/paper-pages/page-076.png",
+      "sha256": "8fd64a9e9aa537f13070afeb95c5b1e48e43141c47174ed9f99eba36653ca319",
+      "status": "reviewed",
+      "derived_from": "p5-lec13/chapter9.pdf",
+      "scope": "Actual rendered page inspected; specific figures/rules/errata and boundaries in review.txt."
+    },
+    {
+      "file": "p5-lec13/paper-pages/page-090.png",
+      "sha256": "ab075da128fec306897ab1daa3ca77faed2a108a5cf2574d02c4ecfd7da9a120",
+      "status": "reviewed",
+      "derived_from": "p5-lec13/chapter9.pdf",
+      "scope": "Actual rendered page inspected; specific figures/rules/errata and boundaries in review.txt."
+    },
+    {
+      "file": "p5-lec13/paper-pages/page-091.png",
+      "sha256": "de685fc0bf3c7875379a9a8469077e78ac4af6c975e3605d7c7934f17b998f53",
+      "status": "reviewed",
+      "derived_from": "p5-lec13/chapter9.pdf",
+      "scope": "Actual rendered page inspected; specific figures/rules/errata and boundaries in review.txt."
+    }
+  ],
+  "caption_time_structure": {
+    "cue_count": 1893,
+    "first_start_ms": 560,
+    "last_start_ms": 4888480,
+    "last_end_ms": 4890560,
+    "metadata_duration_seconds": 4889,
+    "initial_uncaptioned_ms": 560,
+    "tail_overrun_ms": 1560,
+    "starts_monotonic": true,
+    "ends_monotonic": true,
+    "negative_duration_count": 0,
+    "cues_ending_after_video": 2,
+    "positive_uncovered_gap_count": 136,
+    "uncovered_ms_within_video": 661492,
+    "maximum_uncovered_gap_ms": 389280,
+    "uncovered_gaps": [
+      {
+        "start_ms": 0,
+        "end_ms": 560,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 52480,
+        "end_ms": 56160,
+        "duration_ms": 3680
+      },
+      {
+        "start_ms": 59840,
+        "end_ms": 66240,
+        "duration_ms": 6400
+      },
+      {
+        "start_ms": 130399,
+        "end_ms": 130479,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 137520,
+        "end_ms": 140800,
+        "duration_ms": 3280
+      },
+      {
+        "start_ms": 143840,
+        "end_ms": 146000,
+        "duration_ms": 2160
+      },
+      {
+        "start_ms": 194959,
+        "end_ms": 195120,
+        "duration_ms": 161
+      },
+      {
+        "start_ms": 219120,
+        "end_ms": 220159,
+        "duration_ms": 1039
+      },
+      {
+        "start_ms": 223360,
+        "end_ms": 224720,
+        "duration_ms": 1360
+      },
+      {
+        "start_ms": 227920,
+        "end_ms": 229040,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 231840,
+        "end_ms": 235519,
+        "duration_ms": 3679
+      },
+      {
+        "start_ms": 287199,
+        "end_ms": 288000,
+        "duration_ms": 801
+      },
+      {
+        "start_ms": 302479,
+        "end_ms": 309680,
+        "duration_ms": 7201
+      },
+      {
+        "start_ms": 392400,
+        "end_ms": 392960,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 400720,
+        "end_ms": 401120,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 403759,
+        "end_ms": 407440,
+        "duration_ms": 3681
+      },
+      {
+        "start_ms": 480240,
+        "end_ms": 482319,
+        "duration_ms": 2079
+      },
+      {
+        "start_ms": 487759,
+        "end_ms": 488400,
+        "duration_ms": 641
+      },
+      {
+        "start_ms": 503039,
+        "end_ms": 503520,
+        "duration_ms": 481
+      },
+      {
+        "start_ms": 592560,
+        "end_ms": 593519,
+        "duration_ms": 959
+      },
+      {
+        "start_ms": 623760,
+        "end_ms": 626800,
+        "duration_ms": 3040
+      },
+      {
+        "start_ms": 680800,
+        "end_ms": 683040,
+        "duration_ms": 2240
+      },
+      {
+        "start_ms": 708880,
+        "end_ms": 709360,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 727040,
+        "end_ms": 728320,
+        "duration_ms": 1280
+      },
+      {
+        "start_ms": 733839,
+        "end_ms": 742240,
+        "duration_ms": 8401
+      },
+      {
+        "start_ms": 761760,
+        "end_ms": 764240,
+        "duration_ms": 2480
+      },
+      {
+        "start_ms": 780399,
+        "end_ms": 785120,
+        "duration_ms": 4721
+      },
+      {
+        "start_ms": 788160,
+        "end_ms": 788880,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 821839,
+        "end_ms": 822959,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 874560,
+        "end_ms": 880240,
+        "duration_ms": 5680
+      },
+      {
+        "start_ms": 990639,
+        "end_ms": 991279,
+        "duration_ms": 640
+      },
+      {
+        "start_ms": 1048240,
+        "end_ms": 1048720,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 1055120,
+        "end_ms": 1055200,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 1073280,
+        "end_ms": 1074320,
+        "duration_ms": 1040
+      },
+      {
+        "start_ms": 1141919,
+        "end_ms": 1142320,
+        "duration_ms": 401
+      },
+      {
+        "start_ms": 1145679,
+        "end_ms": 1146160,
+        "duration_ms": 481
+      },
+      {
+        "start_ms": 1151840,
+        "end_ms": 1162000,
+        "duration_ms": 10160
+      },
+      {
+        "start_ms": 1170400,
+        "end_ms": 1170640,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 1221840,
+        "end_ms": 1221919,
+        "duration_ms": 79
+      },
+      {
+        "start_ms": 1239679,
+        "end_ms": 1240240,
+        "duration_ms": 561
+      },
+      {
+        "start_ms": 1268720,
+        "end_ms": 1271919,
+        "duration_ms": 3199
+      },
+      {
+        "start_ms": 1319840,
+        "end_ms": 1321520,
+        "duration_ms": 1680
+      },
+      {
+        "start_ms": 1353440,
+        "end_ms": 1353679,
+        "duration_ms": 239
+      },
+      {
+        "start_ms": 1446559,
+        "end_ms": 1455760,
+        "duration_ms": 9201
+      },
+      {
+        "start_ms": 1460960,
+        "end_ms": 1461039,
+        "duration_ms": 79
+      },
+      {
+        "start_ms": 1480240,
+        "end_ms": 1481279,
+        "duration_ms": 1039
+      },
+      {
+        "start_ms": 1488720,
+        "end_ms": 1492320,
+        "duration_ms": 3600
+      },
+      {
+        "start_ms": 1503120,
+        "end_ms": 1503440,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 1539760,
+        "end_ms": 1540240,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 1557840,
+        "end_ms": 1558000,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 1628480,
+        "end_ms": 1632159,
+        "duration_ms": 3679
+      },
+      {
+        "start_ms": 1667360,
+        "end_ms": 1667520,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 1703919,
+        "end_ms": 1706399,
+        "duration_ms": 2480
+      },
+      {
+        "start_ms": 1715039,
+        "end_ms": 1715360,
+        "duration_ms": 321
+      },
+      {
+        "start_ms": 1717919,
+        "end_ms": 1721039,
+        "duration_ms": 3120
+      },
+      {
+        "start_ms": 1803440,
+        "end_ms": 1803760,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 1814159,
+        "end_ms": 1814320,
+        "duration_ms": 161
+      },
+      {
+        "start_ms": 1917039,
+        "end_ms": 1917200,
+        "duration_ms": 161
+      },
+      {
+        "start_ms": 1926799,
+        "end_ms": 1926880,
+        "duration_ms": 81
+      },
+      {
+        "start_ms": 1981600,
+        "end_ms": 1982960,
+        "duration_ms": 1360
+      },
+      {
+        "start_ms": 2105520,
+        "end_ms": 2106000,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 2108640,
+        "end_ms": 2113040,
+        "duration_ms": 4400
+      },
+      {
+        "start_ms": 2160160,
+        "end_ms": 2164320,
+        "duration_ms": 4160
+      },
+      {
+        "start_ms": 2167200,
+        "end_ms": 2170880,
+        "duration_ms": 3680
+      },
+      {
+        "start_ms": 2246320,
+        "end_ms": 2246640,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 2251599,
+        "end_ms": 2254320,
+        "duration_ms": 2721
+      },
+      {
+        "start_ms": 2257839,
+        "end_ms": 2647119,
+        "duration_ms": 389280
+      },
+      {
+        "start_ms": 2649839,
+        "end_ms": 2657680,
+        "duration_ms": 7841
+      },
+      {
+        "start_ms": 2663839,
+        "end_ms": 2676000,
+        "duration_ms": 12161
+      },
+      {
+        "start_ms": 2733839,
+        "end_ms": 2734880,
+        "duration_ms": 1041
+      },
+      {
+        "start_ms": 2749200,
+        "end_ms": 2752240,
+        "duration_ms": 3040
+      },
+      {
+        "start_ms": 2777920,
+        "end_ms": 2779839,
+        "duration_ms": 1919
+      },
+      {
+        "start_ms": 2807839,
+        "end_ms": 2809280,
+        "duration_ms": 1441
+      },
+      {
+        "start_ms": 2812960,
+        "end_ms": 2813760,
+        "duration_ms": 800
+      },
+      {
+        "start_ms": 2816640,
+        "end_ms": 2821839,
+        "duration_ms": 5199
+      },
+      {
+        "start_ms": 2825839,
+        "end_ms": 2827200,
+        "duration_ms": 1361
+      },
+      {
+        "start_ms": 2834319,
+        "end_ms": 2836160,
+        "duration_ms": 1841
+      },
+      {
+        "start_ms": 2849920,
+        "end_ms": 2852400,
+        "duration_ms": 2480
+      },
+      {
+        "start_ms": 2876240,
+        "end_ms": 2876880,
+        "duration_ms": 640
+      },
+      {
+        "start_ms": 2902880,
+        "end_ms": 2903440,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 2924800,
+        "end_ms": 2925200,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 2978960,
+        "end_ms": 2979760,
+        "duration_ms": 800
+      },
+      {
+        "start_ms": 3037599,
+        "end_ms": 3039040,
+        "duration_ms": 1441
+      },
+      {
+        "start_ms": 3042800,
+        "end_ms": 3045200,
+        "duration_ms": 2400
+      },
+      {
+        "start_ms": 3084480,
+        "end_ms": 3084559,
+        "duration_ms": 79
+      },
+      {
+        "start_ms": 3125839,
+        "end_ms": 3127040,
+        "duration_ms": 1201
+      },
+      {
+        "start_ms": 3137520,
+        "end_ms": 3137760,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 3195839,
+        "end_ms": 3199280,
+        "duration_ms": 3441
+      },
+      {
+        "start_ms": 3204319,
+        "end_ms": 3206839,
+        "duration_ms": 2520
+      },
+      {
+        "start_ms": 3261839,
+        "end_ms": 3262559,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 3283440,
+        "end_ms": 3284640,
+        "duration_ms": 1200
+      },
+      {
+        "start_ms": 3324880,
+        "end_ms": 3325359,
+        "duration_ms": 479
+      },
+      {
+        "start_ms": 3421280,
+        "end_ms": 3422160,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 3441680,
+        "end_ms": 3442480,
+        "duration_ms": 800
+      },
+      {
+        "start_ms": 3476559,
+        "end_ms": 3476799,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 3587839,
+        "end_ms": 3588079,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 3596160,
+        "end_ms": 3598839,
+        "duration_ms": 2679
+      },
+      {
+        "start_ms": 3609040,
+        "end_ms": 3609680,
+        "duration_ms": 640
+      },
+      {
+        "start_ms": 3618000,
+        "end_ms": 3618079,
+        "duration_ms": 79
+      },
+      {
+        "start_ms": 3730079,
+        "end_ms": 3732960,
+        "duration_ms": 2881
+      },
+      {
+        "start_ms": 3817520,
+        "end_ms": 3818720,
+        "duration_ms": 1200
+      },
+      {
+        "start_ms": 3853839,
+        "end_ms": 3855680,
+        "duration_ms": 1841
+      },
+      {
+        "start_ms": 3944640,
+        "end_ms": 3945200,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 3954640,
+        "end_ms": 3954960,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 4000480,
+        "end_ms": 4004839,
+        "duration_ms": 4359
+      },
+      {
+        "start_ms": 4007839,
+        "end_ms": 4012319,
+        "duration_ms": 4480
+      },
+      {
+        "start_ms": 4059760,
+        "end_ms": 4060319,
+        "duration_ms": 559
+      },
+      {
+        "start_ms": 4063839,
+        "end_ms": 4065599,
+        "duration_ms": 1760
+      },
+      {
+        "start_ms": 4082480,
+        "end_ms": 4086240,
+        "duration_ms": 3760
+      },
+      {
+        "start_ms": 4092319,
+        "end_ms": 4093359,
+        "duration_ms": 1040
+      },
+      {
+        "start_ms": 4141839,
+        "end_ms": 4142000,
+        "duration_ms": 161
+      },
+      {
+        "start_ms": 4147839,
+        "end_ms": 4149440,
+        "duration_ms": 1601
+      },
+      {
+        "start_ms": 4154960,
+        "end_ms": 4157359,
+        "duration_ms": 2399
+      },
+      {
+        "start_ms": 4168000,
+        "end_ms": 4171199,
+        "duration_ms": 3199
+      },
+      {
+        "start_ms": 4175839,
+        "end_ms": 4176400,
+        "duration_ms": 561
+      },
+      {
+        "start_ms": 4228560,
+        "end_ms": 4229520,
+        "duration_ms": 960
+      },
+      {
+        "start_ms": 4250239,
+        "end_ms": 4250480,
+        "duration_ms": 241
+      },
+      {
+        "start_ms": 4284719,
+        "end_ms": 4284800,
+        "duration_ms": 81
+      },
+      {
+        "start_ms": 4324880,
+        "end_ms": 4326000,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 4329840,
+        "end_ms": 4333920,
+        "duration_ms": 4080
+      },
+      {
+        "start_ms": 4337760,
+        "end_ms": 4338080,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 4345280,
+        "end_ms": 4355199,
+        "duration_ms": 9919
+      },
+      {
+        "start_ms": 4371840,
+        "end_ms": 4374800,
+        "duration_ms": 2960
+      },
+      {
+        "start_ms": 4385840,
+        "end_ms": 4387600,
+        "duration_ms": 1760
+      },
+      {
+        "start_ms": 4418000,
+        "end_ms": 4423679,
+        "duration_ms": 5679
+      },
+      {
+        "start_ms": 4471600,
+        "end_ms": 4476640,
+        "duration_ms": 5040
+      },
+      {
+        "start_ms": 4513679,
+        "end_ms": 4516080,
+        "duration_ms": 2401
+      },
+      {
+        "start_ms": 4520320,
+        "end_ms": 4520800,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 4587679,
+        "end_ms": 4588560,
+        "duration_ms": 881
+      },
+      {
+        "start_ms": 4699280,
+        "end_ms": 4700960,
+        "duration_ms": 1680
+      },
+      {
+        "start_ms": 4783760,
+        "end_ms": 4785040,
+        "duration_ms": 1280
+      },
+      {
+        "start_ms": 4791840,
+        "end_ms": 4794000,
+        "duration_ms": 2160
+      },
+      {
+        "start_ms": 4797040,
+        "end_ms": 4797520,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 4833840,
+        "end_ms": 4834880,
+        "duration_ms": 1040
+      },
+      {
+        "start_ms": 4847840,
+        "end_ms": 4852159,
+        "duration_ms": 4319
+      },
+      {
+        "start_ms": 4875840,
+        "end_ms": 4877440,
+        "duration_ms": 1600
+      }
+    ],
+    "overlapping_adjacent_cue_pairs": 1757,
+    "draft_segment_count": 29,
+    "draft_start": "00:00",
+    "draft_end": "81:29",
+    "audio_reviewed": false,
+    "video_frames_reviewed": false,
+    "interpretation": "All cue texts read, not audio/visual verification. Gaps are caption-interval-union gaps, not inferred silence. Breakout explicitly announced but no group content transcribed. Raw overrun retained."
+  },
+  "draft_segments": [
+    {
+      "start": "00:00",
+      "end": "03:00",
+      "start_ms": 0,
+      "end_ms": 180000,
+      "title": "两个名字相似、职责不同的机制",
+      "cue_count": 74,
+      "first_cue": 1,
+      "last_cue": 74
+    },
+    {
+      "start": "03:00",
+      "end": "05:00",
+      "start_ms": 180000,
+      "end_ms": 300000,
+      "title": "一次转账，两类原子性",
+      "cue_count": 52,
+      "first_cue": 75,
+      "last_cue": 126
+    },
+    {
+      "start": "05:00",
+      "end": "08:00",
+      "start_ms": 300000,
+      "end_ms": 480000,
+      "title": "用事务边界表达意图",
+      "cue_count": 78,
+      "first_cue": 127,
+      "last_cue": 204
+    },
+    {
+      "start": "08:00",
+      "end": "10:00",
+      "start_ms": 480000,
+      "end_ms": 600000,
+      "title": "Abort 也是事务接口的一部分",
+      "cue_count": 52,
+      "first_cue": 205,
+      "last_cue": 256
+    },
+    {
+      "start": "10:00",
+      "end": "12:00",
+      "start_ms": 600000,
+      "end_ms": 720000,
+      "title": "ACID：讲师当场修正 A 与 I",
+      "cue_count": 54,
+      "first_cue": 257,
+      "last_cue": 310
+    },
+    {
+      "start": "12:00",
+      "end": "16:00",
+      "start_ms": 720000,
+      "end_ms": 960000,
+      "title": "可串行化：寻找一个等价串行顺序",
+      "cue_count": 94,
+      "first_cue": 311,
+      "last_cue": 404
+    },
+    {
+      "start": "16:00",
+      "end": "20:00",
+      "start_ms": 960000,
+      "end_ms": 1200000,
+      "title": "两种不能接受的交错",
+      "cue_count": 94,
+      "first_cue": 405,
+      "last_cue": 498
+    },
+    {
+      "start": "20:00",
+      "end": "24:00",
+      "start_ms": 1200000,
+      "end_ms": 1440000,
+      "title": "悲观与乐观并发控制",
+      "cue_count": 100,
+      "first_cue": 499,
+      "last_cue": 598
+    },
+    {
+      "start": "24:00",
+      "end": "27:00",
+      "start_ms": 1440000,
+      "end_ms": 1620000,
+      "title": "本讲使用的 2PL 规则",
+      "cue_count": 73,
+      "first_cue": 599,
+      "last_cue": 671
+    },
+    {
+      "start": "27:00",
+      "end": "30:00",
+      "start_ms": 1620000,
+      "end_ms": 1800000,
+      "title": "为什么不能“用完一个就释放一个”",
+      "cue_count": 78,
+      "first_cue": 672,
+      "last_cue": 749
+    },
+    {
+      "start": "30:00",
+      "end": "33:00",
+      "start_ms": 1800000,
+      "end_ms": 1980000,
+      "title": "逐步取锁会产生死锁",
+      "cue_count": 82,
+      "first_cue": 750,
+      "last_cue": 831
+    },
+    {
+      "start": "33:00",
+      "end": "36:00",
+      "start_ms": 1980000,
+      "end_ms": 2160000,
+      "title": "问答：怎样检测死锁，撤销后怎样继续",
+      "cue_count": 78,
+      "first_cue": 832,
+      "last_cue": 909
+    },
+    {
+      "start": "36:00",
+      "end": "37:38",
+      "start_ms": 2160000,
+      "end_ms": 2258000,
+      "title": "分组题：什么时候逐步取锁更有并发性",
+      "cue_count": 43,
+      "first_cue": 910,
+      "last_cue": 952
+    },
+    {
+      "start": "37:38",
+      "end": "44:07",
+      "start_ms": 2258000,
+      "end_ms": 2647000,
+      "title": "分组期间的字幕缺口",
+      "cue_count": 0,
+      "first_cue": null,
+      "last_cue": null,
+      "scope": "Breakout-period caption gap only; no group discussion reconstructed."
+    },
+    {
+      "start": "44:07",
+      "end": "47:00",
+      "start_ms": 2647000,
+      "end_ms": 2820000,
+      "title": "返回主会场：锁点、读锁与条件分支",
+      "cue_count": 60,
+      "first_cue": 953,
+      "last_cue": 1012
+    },
+    {
+      "start": "47:00",
+      "end": "50:00",
+      "start_ms": 2820000,
+      "end_ms": 3000000,
+      "title": "2PC 的场景：协调者与参与者",
+      "cue_count": 71,
+      "first_cue": 1013,
+      "last_cue": 1083
+    },
+    {
+      "start": "50:00",
+      "end": "53:00",
+      "start_ms": 3000000,
+      "end_ms": 3180000,
+      "title": "无故障时的准备与提交",
+      "cue_count": 73,
+      "first_cue": 1084,
+      "last_cue": 1156
+    },
+    {
+      "start": "53:00",
+      "end": "55:00",
+      "start_ms": 3180000,
+      "end_ms": 3300000,
+      "title": "有一个参与者说 NO，就不能提交",
+      "cue_count": 51,
+      "first_cue": 1157,
+      "last_cue": 1207
+    },
+    {
+      "start": "55:00",
+      "end": "57:00",
+      "start_ms": 3300000,
+      "end_ms": 3420000,
+      "title": "问答：说 YES 后还能改变主意吗",
+      "cue_count": 55,
+      "first_cue": 1208,
+      "last_cue": 1262
+    },
+    {
+      "start": "57:00",
+      "end": "60:00",
+      "start_ms": 3420000,
+      "end_ms": 3600000,
+      "title": "参与者恢复时，必须恢复自己的承诺",
+      "cue_count": 80,
+      "first_cue": 1263,
+      "last_cue": 1342
+    },
+    {
+      "start": "60:00",
+      "end": "62:00",
+      "start_ms": 3600000,
+      "end_ms": 3720000,
+      "title": "协调者恢复时，必须重复同一个决定",
+      "cue_count": 57,
+      "first_cue": 1343,
+      "last_cue": 1399
+    },
+    {
+      "start": "62:00",
+      "end": "64:00",
+      "start_ms": 3720000,
+      "end_ms": 3840000,
+      "title": "准备消息丢失与协调者超时",
+      "cue_count": 51,
+      "first_cue": 1400,
+      "last_cue": 1450
+    },
+    {
+      "start": "64:00",
+      "end": "66:00",
+      "start_ms": 3840000,
+      "end_ms": 3960000,
+      "title": "问答：锁究竟放在哪里",
+      "cue_count": 57,
+      "first_cue": 1451,
+      "last_cue": 1507
+    },
+    {
+      "start": "66:00",
+      "end": "68:00",
+      "start_ms": 3960000,
+      "end_ms": 4080000,
+      "title": "Prepared 之后的等待，就是阻塞问题",
+      "cue_count": 47,
+      "first_cue": 1508,
+      "last_cue": 1554
+    },
+    {
+      "start": "68:00",
+      "end": "70:00",
+      "start_ms": 4080000,
+      "end_ms": 4200000,
+      "title": "用复制提高每个角色的可用性",
+      "cue_count": 43,
+      "first_cue": 1555,
+      "last_cue": 1597
+    },
+    {
+      "start": "70:00",
+      "end": "74:00",
+      "start_ms": 4200000,
+      "end_ms": 4440000,
+      "title": "2PC 与 Raft 到底差在哪里",
+      "cue_count": 100,
+      "first_cue": 1598,
+      "last_cue": 1697
+    },
+    {
+      "start": "74:00",
+      "end": "76:00",
+      "start_ms": 4440000,
+      "end_ms": 4560000,
+      "title": "课后问答：2PL 是单机的，2PC 是分布式的吗",
+      "cue_count": 53,
+      "first_cue": 1698,
+      "last_cue": 1750
+    },
+    {
+      "start": "76:00",
+      "end": "78:00",
+      "start_ms": 4560000,
+      "end_ms": 4680000,
+      "title": "课后问答：只能用于分片数据库吗",
+      "cue_count": 58,
+      "first_cue": 1751,
+      "last_cue": 1808
+    },
+    {
+      "start": "78:00",
+      "end": "81:29",
+      "start_ms": 4680000,
+      "end_ms": 4889000,
+      "title": "课后问答：恢复后直接相信 COMMIT 不行吗",
+      "cue_count": 85,
+      "first_cue": 1809,
+      "last_cue": 1893
+    }
+  ],
+  "paper_visual_review": {
+    "pdf_pages": 118,
+    "figures": [
+      "9.2",
+      "9.3",
+      "9.4",
+      "9.5",
+      "9.37"
+    ],
+    "inspected_page_images": [
+      2,
+      17,
+      18,
+      19,
+      20,
+      74,
+      75,
+      76,
+      90,
+      91
+    ],
+    "errata_pdf_pages": 3,
+    "errata_inspected_page_images": [
+      1,
+      2
+    ],
+    "audio_or_video_frames": false
+  },
+  "version_mapping_evidence": {
+    "file": "schedule-2021.html",
+    "scope": "Existing shared snapshot lines195-196 checked; lecture13 exact video,notes,FAQ and five sections; shared file not modified."
+  },
+  "acquisition_issues": [
+    {
+      "url": "https://ocw.mit.edu/resources/res-6-004-principles-of-computer-system-design-an-introduction-spring-2009/online-textbook/",
+      "status": "blocked",
+      "error": "HTTP301/302 redirect loop",
+      "resolution": "Current official open-textbook index and Chapter9 v5.0 PDF acquired; no historical byte-equivalence claim."
+    }
+  ],
+  "content_paths": [
+    "lectures/lec13/draft.zh.md",
+    "lectures/lec13/materials.zh.md",
+    "lectures/lec13/notes.zh.md"
+  ],
+  "validation": {
+    "local_structure": "passed",
+    "sha256": "passed",
+    "draft_timeline": "passed",
+    "caption_text_lossless_grouping": "passed",
+    "build": "Not run by path-restricted worker; main session integrates/builds.",
+    "experiments": "Not run",
+    "no_media_download": true,
+    "no_full_player_response_saved": true,
+    "no_signed_urls_saved": true
+  },
+  "issues": [
+    "Video CC label lacks version; no audio/video review.",
+    "Breakout caption gap37:37.839-44:07.119; no reconstructed group discussion.",
+    "Last caption exceeds integer duration by1560ms; raw times unchanged.",
+    "Textbook PDF own BY-NC-SA3.0 US license verified, not HTML footer4.0.",
+    "Book9-73/74 official errata read; remaining serial-order and general-versus-strong-strict2PL qualifications explicit.",
+    "Lecture transfer signs, lockpoint/commitpoint, simple/strict terminology, OCC/no-lock shorthand, logging/forgetting and recovery Q&A qualified.",
+    "2PC is not a2026Lab5A-C requirement; 2021Lab4 replicated-controller assumptions not carried forward."
+  ]
+}

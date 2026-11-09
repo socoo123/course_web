@@ -150,3 +150,23 @@ P0：2026 实验版本与接口核对
 - TestLeaderPartition4A 包含分区中等待与恢复后退出的观察；不推荐短超时直接放行。
 - rsm.go 的 SaveStateAndSnapshot、TestShutdown4A 注释的 Kill 均不能替代实际接口。
 - 未运行实验测试；未生成实验答案。分片迁移的详细接口/恢复审阅留待 P5。
+
+十一、P5 Lab 5 迁移桥接补充核对（2026-11-09）
+- 固定提交不变。主agent完整读取8个桥接接口文件；精确范围与hash见
+  p5-bridge/manifest-fragment.json，实验任务/测试审阅另见p5-lab5/review.txt。
+- ShardConfig含Num、12项Shards与Groups；用Key2Shard，初始Gid1拥有所有分片。
+  Join/Leave是配置对象本地辅助方法，不是旧shardmaster RPC接口。
+- 控制器InitConfig/Query/ChangeConfigTo/InitController与分片组
+  FreezeShard/InstallShard/DeleteShard为固定入口；迁移调用经过RSM。
+- server.go的Freeze注释要求拒绝未来Get/Puts；网页简述只说Put，不能因此
+  让冻结源在目标已写新值后仍提供旧读。
+- shardrpc.State为[]byte；FreezeReply带Num，不能把其他配置的状态当作本轮数据。
+- 同轮Install重试不能覆盖已服务后的更新，Delete后必须保留必要配置屏障；
+  源已删除不能凭空返回旧截面，恢复需能识别已完成动作。
+- per-shard Num约束迁移轮次，KV键version竞争唯一next内容；同号不同目标
+  必须先仲裁再迁移。ErrMaybe不是获胜证明，收尾发布也不能回退共享配置。
+- 跨组重试保留原逻辑Put的版本与不确定性，ErrWrongGroup不撤销更早的请求。
+- 快照除值/版本还需恢复服务权、迁移阶段与屏障；InstallShard不是整组Restore。
+- 默认配置KV是Lab2单机服务，不声称控制器状态已复制；复制配置存储属于5D方向。
+- 2PC非A–C基础要求；5D是官方开放扩展、自学路线进阶项，需自编测试与extension.md。
+- 没有运行实验测试或Go编译；本记录是接口静态核对，不是实现通过报告。

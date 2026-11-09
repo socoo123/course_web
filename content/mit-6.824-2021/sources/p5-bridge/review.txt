@@ -1,0 +1,34 @@
+P5 迁移桥接审阅
+日期：2026-11-09
+写入范围：lectures/update-lab-bridge/notes.zh.md 的标题、头信息、§9–15及来源。
+既有P4 §1–8教学正文复用，P3恢复契约复用，不声称重新通读Raft论文或测试。
+
+主agent完整读lab-shard-2026.html 1–807行，含A–D任务提示与终端样例。
+网页Last-Modified为2026-04-23，晚于固定代码2026-02-13提交；没有升级源码。
+直接从固定tar读取8个完整接口文件，归档与成员SHA-256核验一致。
+逐文件范围见manifest-fragment.json。测试由p5-lab5专责完整阅读，不冒称主agent通读。
+实验交付后主agent另读取迁移删除/停机/局部进展/恢复测试的定点片段，范围已追加
+到同一来源分片，主整合记录说明用途；不把这些片段计为两份测试全文阅读。
+
+教学覆盖：
+- 控制器是客户端，默认配置存Lab2 KV；分片组复用Lab4 RSM与Lab3 Raft。
+- InitConfig/Query/ChangeConfigTo/InitController，配置结构和Key2Shard；
+  本地ShardConfig.Join/Leave辅助方法不是旧shardmaster远程接口。
+- Freeze→Install→Delete→发布；单一服务权、移交截面、无关分片继续服务。
+- 网页简述冻结只提Put；固定server.go:50–52要求Get/Puts均拒绝，防陈旧读。
+- 所有业务/迁移在RSM应用顺序判定；State为[]byte，不共享可变map给编码器。
+- 同轮Install不能覆盖已服务后的新写；删除后屏障仍持久化；不能用空数据
+  伪造已删除源的Freeze回复。具体完成证据/状态结构留给实现，无完整答案。
+- InstallShard是单分片业务命令，不是整个状态机Restore或Raft InstallSnapshot。
+- current/next恢复、配置目标持久化先于迁移、重复步骤与已完成步骤的区别。
+- Num隔离旧迁移，KV键version竞争同号配置唯一内容；ErrMaybe需读回状态，
+  不能凭编号相同判断获选，不能换version强推旧候选或回退current。
+- 内外Clerk跨组重试保留逻辑Put不确定性、值与版本；ErrWrongGroup不撤销旧请求。
+- 2PC非A–C基础要求，5D为官方开放扩展且本路线进阶；不称MIT不要求。
+
+独立只读reviewer对照官方页与固定源码，审阅§9–15，未发现需修实质技术错误。
+复核定位：server.go:50–52；官方页379–386、525–546、589–604、332–336；
+kvsrv1/client.go:36–45。未修改文件、未编译或运行实验、未执行网站build。
+
+本页没有新增课堂截图或自绘图，用阶段表和故障表表达迁移。
+最小结构/来源校验与最终网站build由P5主整合记录；本记录不代表实验通过。

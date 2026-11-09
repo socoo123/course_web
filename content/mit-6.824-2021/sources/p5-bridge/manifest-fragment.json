@@ -1,0 +1,41 @@
+{
+  "batch": "P5",
+  "review_file": "p5-bridge/review.txt",
+  "sources": [
+    {
+      "id": "lab-shard-2026-p5-bridge",
+      "url": "https://pdos.csail.mit.edu/6.824/labs/lab-shard1.html",
+      "file": "lab-shard-2026.html",
+      "sha256": "bf57f725eed0acbf567936f905f3fd0a41e9a0cac3b7815c3829cfe62f8e9a35",
+      "retrieved_at": "2026-11-08T12:09:28.821505+00:00",
+      "last_modified": "Thu, 23 Apr 2026 21:50:36 GMT",
+      "status": "reviewed",
+      "scope": "Main agent fully read HTML lines 1-807 for migration bridge; no linked-page full reading or lab execution claimed. Snapshot postdates pinned code commit.",
+      "license": "CC BY 3.0 US for course-owned text via existing home-2026 license record; bridge is original explanation"
+    },
+    {
+      "id": "lab-code-2026-p5-bridge",
+      "url": "git://g.csail.mit.edu/6.5840-golabs-2026",
+      "commit": "513cac0aef010750fc74688da8a395974a83cf7a",
+      "file": "lab-code-513cac0aef01.tar.gz",
+      "sha256": "5a6d4a143a6f7fab6e6e6a525b3160ef16433de36506ca4600850ed8659ab1c4",
+      "retrieved_at": "2026-11-08T12:56:42.897091+00:00",
+      "last_modified": null,
+      "status": "reviewed",
+      "scope": "Eight complete interface files read directly from tar; archive and individual hashes verified against lab-code-manifest.json. After lab delivery main agent additionally read targeted test excerpts below; lab worker separately read full tests. P3/P4 recovery and RSM reading reused rather than re-counted. No implementation or execution.",
+      "members": [
+        { "path": "src/shardkv1/shardctrler/shardctrler.go", "sha256": "294abbcd0bd7d9a48c020b0c5b5516677ab01eb43bfd2044dadf71066d177113", "read_lines": [1, 64] },
+        { "path": "src/shardkv1/shardgrp/server.go", "sha256": "535512ca3d1543dcde1303c930df90222c79c579441e8cbf6ccbdaa77dbc3b28", "read_lines": [1, 90] },
+        { "path": "src/shardkv1/shardgrp/client.go", "sha256": "645248d17663dca020489f22ee5f3d25aa0751f14ab774f6521900a3dbd4f782", "read_lines": [1, 49] },
+        { "path": "src/shardkv1/shardgrp/shardrpc/shardrpc.go", "sha256": "27d8a691f156d058ba0af39de69b0f16e7d6b1b3c4c592a3bcf5fd7f0d36e768", "read_lines": [1, 36] },
+        { "path": "src/shardkv1/client.go", "sha256": "38a314008630db210febb31724e8a20f57459ebc1ad3c4b5a10739bb562852d9", "read_lines": [1, 59] },
+        { "path": "src/shardkv1/shardcfg/shardcfg.go", "sha256": "a7af239230624ce1bd24fb6726b3e12383cfde190a2bdfab3677c1185d632c63", "read_lines": [1, 284] },
+        { "path": "src/kvsrv1/rpc/rpc.go", "sha256": "77e07ead7459f4e73fcd680471230654df9b043052ec15894c73c0f29adfb052", "read_lines": [1, 40] },
+        { "path": "src/kvsrv1/client.go", "sha256": "ee8ae899c3e63d9a4ab35ec833d88ddecb0124cf4278b0e3a0ab8ae0077b5b6f", "read_lines": [1, 56] },
+        { "path": "src/shardkv1/shardkv_test.go", "sha256": "4ef1479aedc0a12170ee194c919f1d5d8bfdb5d5bb9a495725842fa153c4e8d3", "read_lines": [[16,22],[120,156],[237,273],[275,425],[427,461],[485,559],[561,577],[600,661],[697,702],[704,709],[711,716],[718,722]], "scope": "targeted main-agent excerpts only; const-block search also returned listed ancillary fragments; omitted function headers in some ancillary ranges do not imply whole-file review" },
+        { "path": "src/shardkv1/test.go", "sha256": "dc3cdc02ec80a8c5fd929984f4e001fb050902ce5bdd34211827385d8d73f8b1", "read_lines": [[41,55],[242,374]], "scope": "MakeTestMaxRaft, partitionCtrler and beginning of concurCtrler; not whole file" }
+      ],
+      "lab_tests": "not_run"
+    }
+  ]
+}

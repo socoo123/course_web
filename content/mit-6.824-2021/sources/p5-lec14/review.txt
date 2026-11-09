@@ -1,0 +1,170 @@
+P5 / MIT 6.824 Spring 2021 / L14 Spanner 审阅记录
+日期：2026-11-09 UTC
+写入边界：仅 lectures/lec14/ 与 sources/p5-lec14/，不修改共享文件、不暂存／提交、不构建全站。
+
+一、交付
+
+lectures/lec14/draft.zh.md：36 个连续 ## MM:SS–MM:SS 区间，00:00–97:09；完整整理现有字幕中的讲授、现场追问和 82 分钟以后的课后问答。
+lectures/lec14/notes.zh.md：机制分工、三类时间与不变量、两个编者反例、safe time 算例、故障承诺、易错点、8 道自测。
+lectures/lec14/materials.zh.md：论文自主精读，完整覆盖正文主题及附录 A，补齐课堂简化、省略与实验条件。
+sources/p5-lec14/manifest-fragment.json：sources[] 唯一 ID，原始源 file 相对 sources 根目录，SHA-256、retrieved_at、last_modified、最终 reviewed 状态与实际阅读 scope；另列 derived_files 和所有字幕空隙。
+sources/p5-lec14/acquisition.json：保持获取时 fetched 状态，不冒充最终阅读记录。
+sources/p5-lec14/validation.txt：最小本地结构验证结果。
+未绘制额外 SVG：本讲的短公式、算例表足够表达不变量；没有课堂截图或转载论文页面。
+
+二、前置核对与只读依据
+
+AGENTS.md 全文；technical-video-notes skill 全部指令；NEXT-P5-PROMPT.txt、PLAN.txt 全文。
+schedule-inventory-2021.json 定位 lec14；schedule-2021.html 第 206–207 行重新核对指定讲义、视频、论文与 FAQ。
+p4-lec09/acquire.py、prepare-reading.py、finalize.py、review.txt 全文；lec09/draft.zh.md 前 100 行参考成品分工与格式。
+home-2021.html 第 55 行 rel=license 重新核对，CC BY 3.0 US 只用于课程自有文字。
+本讲不依赖其他 worker 的未完成正文，也不修改共享目录、课程 metadata/status、总 manifest 或计划。
+
+三、获取方式与逐来源记录
+
+脚本 acquire.py、prepare-reading.py、finalize.py 通过 patch 创建；正文／review 同样通过 patch 编辑。
+urllib 获取三份指定文档；yt-dlp 只抓 en-orig 自动字幕和裁剪元数据字段。
+没有下载视频、音轨、媒体片段；没有保存完整播放器响应、带签名媒体 URL、cookies 或 info.json。
+yt-dlp stdout 只从内存提取指定 JSON 字段；stderr 不落盘，避免保存带签名字幕地址。
+
+1. http://nil.csail.mit.edu/6.824/2021/notes/l-spanner.txt
+   retrieved_at: 2026-11-09T11:38:06.913545+00:00
+   Last-Modified: Fri, 30 Apr 2021 19:05:16 GMT
+   SHA-256: dd568aa98a4ef32439790528f275f02b12162b624d4483a1c160d0f02270505c
+   全部 305 行读完；标题为 6.824 2021 Lecture 14: Spanner。
+   修改时间晚于 4 月 15 日录像，不能称授课当日未经修改的讲义。
+   末尾 2017 SQL 系统论文只读链接说明，没有抓取或阅读链接正文。
+
+2. http://nil.csail.mit.edu/6.824/2021/papers/spanner.pdf
+   retrieved_at: 2026-11-09T11:38:08.673086+00:00
+   Last-Modified: Fri, 22 Jan 2021 09:21:43 GMT
+   SHA-256: 8cf30f4b379da5873dc9f7d82595d5cdc402083091cfff0e7beb00fd84473ea5
+   14 页全部阅读，细目见第五节；没有确认全文翻译权，因此 materials 是自主精读，不是全文翻译。
+
+3. http://nil.csail.mit.edu/6.824/2021/papers/spanner-faq.txt
+   retrieved_at: 2026-11-09T11:38:07.171703+00:00
+   Last-Modified: Fri, 22 Jan 2021 09:21:43 GMT
+   SHA-256: 9fded53a5f3045a9cef88b0ca57576e87e29224e60217b4cee292952a8fbb8e5
+   全部 99 行读完。含 2020 年时间示例，不能误判为 2020 视频；它确由 2021 课表链接。
+   时间／时钟／原子振荡源、硬件猜测、外部一致性／密码例子、Raft 替代、commit wait、使用情况全部核对。
+   未阅读 FAQ 外链或检查目前相关服务的实现。
+
+4. https://www.youtube.com/watch?v=ZulDvY429B8
+   元数据 retrieved_at: 2026-11-09T11:38:09.573530+00:00
+   metadata.json SHA-256: b865d385106859f84ea641ed153bedb4c58df9fb0577d62e06fe77f08f0f7ce4
+   字幕 retrieved_at: 2026-11-09T11:38:09.573620+00:00
+   video.en-orig.json3 SHA-256: ae6d5e85e62384017858043e177e8d87775e1ec093ba890a679b85c6d2bf6b91
+   两者 Last-Modified 均未由 yt-dlp 暴露，明确为 null，不以上传日期补造。
+
+独立核对元数据全字段：
+   id: ZulDvY429B8
+   title: Lecture 14: Spanner
+   duration: 5829 秒 = 97:09
+   channel / uploader: MIT 6.824: Distributed Systems
+   channel_id: UC_7WrbZTCODu1o_kfUMq88g
+   upload_date: 20210415
+   license: Creative Commons Attribution license (reuse allowed)
+   webpage_url: https://www.youtube.com/watch?v=ZulDvY429B8
+该许可标签来自本视频独立查询，不由 L9、其他讲次或课程首页继承。具体 CC 版本未给出。
+
+四、字幕全部文本阅读及真实时间边界
+
+使用 skill 的 normalize_captions.py 生成 captions/captions.normalized.json、captions.en.vtt、transcript.en.txt。
+prepare-reading.py 按 cue 起点所在分钟聚合，没有遗漏、改写、去重任何 cue 文本；断言拼接等于所有规范化 cue 的顺序拼接。
+reading-by-minute.txt 共 290 行，按 1–100、101–200、201–290 顺序完整读完。
+97 个非空分钟组；第 48 分钟没有字幕起点，不为填满分钟号而造内容。
+另直接查看 46:00–54:00 的规范化原 cue 文本与起止毫秒，核对 breakout 切换。
+VTT 只生成，没有在播放器回放；带时间英文 txt 不作另一次独立通读声称。
+
+统计：
+   cue_count: 2326
+   first_start_ms: 0 = 00:00.000
+   last_start_ms: 5823600 = 97:03.600
+   last_end_ms: 5827840 = 97:07.840
+   metadata_duration_ms: 5829000 = 97:09.000
+   tail_uncaptioned_ms: 1160
+   tail_overrun_ms: 0
+   起点、终点均单调；负时长 0；结束超出整数片长 0；起点超出片长 0。
+   相邻 cue 重叠对：2166。保留原始时间，不裁剪／平移／人为压缩。
+   cue 区间并集在片长内有 160 个正空隙，合计 650364 ms = 650.364 秒。
+   最长空隙 81000 ms，共两处：47:39.839–49:00.839、51:23.839–52:44.839。
+   全部 160 处空隙的 start_ms/end_ms/duration_ms 见 manifest-fragment.json 的 all_uncovered_gaps。
+这些仅是字幕区间覆盖，不判断静音、画图、实际漏讲或其他声音。已覆盖的时间也不保证 ASR 正确。
+
+分组与会议切换边界：
+   46:24.720 左右 cue 开始明确提及 breakout room，题目为 T3 选到 9 的后果。
+   46:48.160 前后题目／切换说明结束；46:49.119 起有不连贯会议话语。
+   47:18.079 起询问是否听到声音，47:36.839 一个 okay。
+   49:00.839、49:42.839、50:38.839、51:20.839、52:44.839 仅 uh/um/foreign/first 孤词。
+   53:42.720 开始询问是否回来、能否听见，之后同学确认音频恢复。
+   54 分钟后恢复题目与回答。
+因此 draft 46:00–47:00 保留布置问题；47:00–54:00 明示缺口，既不补写分组回答，也不说这段必然静音或录像已剪掉。
+没有听音轨，没有查看课堂帧；不能精确证明 breakout 实际开始、结束或所有学生发言的录制保留情况。
+
+36 个连续整理区间（每条字幕起点恰属一个区间；cue 重叠跨界不强行裁剪）：
+00:00–03:00 广域事务；03:00–05:00 当年课程安排；05:00–08:00 分片与复制组；08:00–11:00 三种收益；
+11:00–13:00 挑战；13:00–16:00 客户端读与缓冲写；16:00–18:00 leader 和读锁；18:00–20:00 复制 TC；
+20:00–23:00 prepare／commit；23:00–25:00 锁复制追问；25:00–27:00 只读目标；27:00–30:00 正确性；
+30:00–33:00 最新值反例；33:00–35:00 版本；35:00–38:00 时间戳快照；38:00–41:00 safe time；
+41:00–43:00 跨片保证追问；43:00–46:00 快慢时钟；46:00–47:00 分组题；47:00–54:00 会议／分组缺口；
+54:00–57:00 返场答案；57:00–60:00 本地已有新版本追问；60:00–63:00 时钟漂移；63:00–65:00 网络校时追问；
+65:00–68:00 TT 区间／epsilon 提问；68:00–70:00 两条规则；70:00–73:00 上界例子；73:00–76:00 外部顺序；
+76:00–79:00 读写事务内部读；79:00–82:00 小结／性能；82:00–85:00 旧 leader／租约；85:00–88:00 同时间戳／并发；
+88:00–90:00 时间与进度混淆；90:00–93:00 为何需要 wait；93:00–95:00 schema change；95:00–97:09 未来时间选择／道别。
+每段 first_cue/last_cue/cue_count 均在 manifest 的 draft_segments 中，不用时间结构校验冒充内容完整性证据。
+
+五、论文全文与实际页面核验
+
+spanner.layout.txt 由 pdftotext -layout 生成，共 948 行。
+按 1–350、351–700、701–948 顺序通读，按每页双栏自然顺序理解正文，不把横向跨栏碎片直接当一句话。
+覆盖摘要、§1 动机、§2.1 软件栈、§2.2 directory／movedir、§2.3 数据模型、§3 TrueTime、§4 全部子节、
+§5 全部实验、§6 相关工作、§7 未来工作、§8 结论、致谢、42 项参考文献表及附录 A。
+未阅读文献表对应论文的外部全文；未运行论文系统、基准或代码。
+
+完整实际查看图像的页码与核验项：
+2：Figure 1，universe/zone/server 角色；(key,timestamp)->string 映射。
+3：Figures 2、3，软件栈／leader 额外职责、directory 跨组移动。
+5：Figure 4 interleave 数据布局；Table 1 API；TrueTime 区间不等式、epsilon 为半宽。
+6：Table 2 操作类别／副本选择；租约有效区间和 s_max。
+7：外部一致性不等式链、Paxos 单调性、safe time 两分量与 prepare 下界减一。
+8：实际 commit 流程、客户端缓存写的读语义、commit wait 放置、2*平均epsilon、多组只读与 schema change。
+9：Table 3 数值／单位／1D；MinNextTS 与空闲组 8 秒推进说明。
+10：Table 4 2PC 参与者延迟；Figure 5 累计读轴（斜率才是吞吐）、故障后近零进展与恢复。
+11：Figure 6 毫秒轴／百分位／刚轮询后采样；Table 5 directory-fragment 分布。
+12：Table 6 all reads／single-site commit／multi-site commit、均值／标准差／次数。
+14：附录 A 全部租约时间公式、持久化单票规则和多数相交证明链。
+上述 11 页图像为 reviewed；其他 1、4、13 页只是渲染保存，文本已读、图像未单独查看。
+全部 Figures 1–6 与 Tables 1–6 已实际查看。图片仅在 sources 下作审阅证据，公开正文不复制这些图片。
+
+六、校订、疑点与分工
+
+1. Paxos/shard/lock 等 ASR 反复误识别，用上下文和书面材料校订；没有声称回听确认每个词。
+2. 转账方向和 T1/T2/T3 标签现场有口头变化，保持问题结构，不伪造屏幕精确坐标。
+3. 讲义第 170 行把时间戳 10、15、20 的串行顺序误写 T1 T2 T3，正文纠正为 T1 T3 T2。
+4. snapshot isolation 一般不保证可串行化；本讲要连同写侧锁／统一提交／safe time 理解。
+5. 偏小时间戳反例核心是违反外部一致性，不能由现场“serializability”用词推断无任何串行顺序。
+6. 课堂 TC 转发写的简图与论文客户端直发参与者不同；materials §4 列真实流程和协调者跳过 prepare 的优化。
+7. 未准备的读锁故障后可丢弃并 abort，prepared 恢复状态须复制；复制 TC 不能消灭多数不可用时的阻塞。
+8. 课堂“先看更晚写”不是完整 safe-time 规则；公式、prepared 限制和 MinNextTS 空闲推进见 materials §5。
+9. 论文 TT epsilon 为半区间宽，课堂 67 分钟左右“不清楚论文是否说”的答复用独立校注修正。
+10. GPS 时间源的微秒级精度与服务器 TT 毫秒级误差界不是一回事；Figure 6 单位／特殊采样已核对。
+11. FAQ 对具体原子钟类型只作猜测；不把铷钟型号、价格或“零漂移”口头说明当独立验证的硬件结论。
+12. 选 latest 不是证明时间已过去；commit wait 的正确方向 s < now.earliest。实际 s 还受 prepare 和单调性约束。
+13. 76–79 分钟“读自己的写”是确认问题的探问，不是 API 规格；论文明确事务读不观察客户端缓冲写。
+14. 88–90 分钟把 TT.after 与“见过所有过去写”混淆，现场大致肯定缺前提；draft 独立校注 safe time 必不可少。
+15. 并发时允许前后两种完整串行次序，不是本地副本有哪个版本就任意返回哪个版本。
+16. 100ms 的倒数只限制单条串行流；不是集群 10 TPS。Table 6 all reads 不是完整只读事务延迟。
+17. Figure 5 是累计数量；Figure 6 不含本地漂移锯齿；Table 3 与 Table 6 部署距离／负载不同。
+18. 97 分钟前 schema-change 未来时间选择算法现场仅猜“启发式”，未伪造算法；选得不够远是等待而非允许错误。
+19. 讲义／FAQ 自有文字许可不扩展到外链论文。materials 是按问题组织的自主精读，不逐段翻译全文。
+20. notes 使用编者反例／不变量与自测；课堂时间轴只在 draft；论文实现和图表只在 materials，必要交叉定位。
+21. 事务与 Spanner 是拓展理解，2PC／TrueTime／SQL 不作 2026 Lab 5 A–C 基础要求；5D 保留官方开放扩展身份。
+22. 未验证当前 Cloud Spanner、CockroachDB、Zanzibar 的接口与实现，也未阅读 2017 后续 SQL 论文。
+
+七、本地验收
+
+finalize.py 已通过：原始来源 SHA-256；来源 ID 唯一；字幕非负／单调；无损阅读分组；36 段连续到 97:09；
+每条字幕起点恰属一段；Markdown 头信息、围栏、行末空白、本站 lecture 路由与图片存在性。
+git diff --check 对两个授权路径通过；新文件没有暂存，正文／脚本结构另由实际运行和本地断言核对。
+没有执行 npm run build，交主 agent 统一构建；没有运行任何实验测试或 Spanner 基准。
+没有修改共享文件，没有 git add/commit/push。获取与文本整理完成不等于音画核验或实验通过。
