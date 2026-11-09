@@ -92,7 +92,7 @@ for path in documents:
 assert complete + partial == len(documents)
 assert state["artifacts"]["lectureDocumentsPublished"] == len(documents)
 assert state["artifacts"]["lectureDocumentsCompleted"] == complete
-assert state["artifacts"]["lectureDocumentsPartial"] == partial == 1
+assert state["artifacts"]["lectureDocumentsPartial"] == partial == 0
 
 for path in documents + [ROOT / "resources.zh.md"]:
     text = path.read_text()
@@ -144,8 +144,8 @@ assert len(state["p6Captions"]["lec15"]["videos"]) == 2
 for ident in ["lec06", "lec08"]:
     assert state["content"]["lectures"][ident]["notes"] == "not_planned_lab_QA_user_scope"
     assert state["content"]["lectures"][ident]["draft"] == "not_required_lab_QA_user_scope"
-assert state["content"]["lectures"]["update-go-patterns"]["materials"] == "partial_FAQ_complete_CACM_article_blocked"
-assert any(r["id"] == "p8-go-cacm-article" and r["status"] == "blocked_HTTP403" for r in state["knownIssues"])
+assert state["content"]["lectures"]["update-go-patterns"]["materials"] == "complete_FAQ_optional_blog_introductions_CACM_link_only_user_scope"
+assert any(r["id"] == "p8-go-cacm-article" and r["status"] == "closed_link_only_user_scope" for r in state["knownIssues"])
 assert inventory["lectures"][17]["reading_scope"] == "until Section 3.4"
 assert state["phase"].startswith("P9_")
 assert (SOURCES / "NEXT-MAINTENANCE-PROMPT.txt").is_file()

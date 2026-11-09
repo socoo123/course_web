@@ -1,7 +1,7 @@
 ---
 source: Russ Cox，Patterns and Hints for Concurrency in Go，MIT 6.5840 Spring 2026；对照 MIT 6.824 Spring 2021 的 78 页幻灯片与 L10 正文
 license: 本页为自主学习笔记；两版嘉宾幻灯片均未核实独立全文翻译许可，不套用课程网站许可。
-status: 完整读取 2026 PDF 73 页与 2021 PDF 78 页，定点查看代码页面；只展开已核实差异。CACM 指定文章及已尝试的出版社同文入口均返回 403，文章精读待补。未运行 Go 程序或实验。
+status: 完整读取 2026 PDF 73 页与 2021 PDF 78 页，定点查看代码页面；只展开已核实差异。CACM 指定文章按用户要求仅保留链接，课程资料页首增加可跳过的官方博客导读。未运行 Go 程序或实验。
 ---
 
 # Go patterns：从旧模式中看清新的同步示例

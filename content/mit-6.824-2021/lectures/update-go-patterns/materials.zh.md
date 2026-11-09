@@ -1,10 +1,20 @@
 ---
-source: MIT 6.5840 Spring 2026 L5，papers/go-faq.txt
+source: MIT 6.5840 Spring 2026 L5，papers/go-faq.txt；Go 官方博客选读（见页底）
 license: 课程自有文字参照 MIT 课程首页 CC BY 3.0 US；本页为自主中文改写与校注。CACM 外部文章和嘉宾幻灯片分别核验，不沿用此许可。
-status: 已完整读取 FAQ 144 行，整理书面独有讨论并回链旧课。CACM 2022 指定文章原入口、出版社现行入口及 DOI PDF 入口均为 403，未获得全文，文章精读待补；本页不是该文章的替代摘要。
+status: FAQ 整理完成，新增三篇官方博客的简短选读导读。按用户要求，CACM 2022 仅保留原文链接，不再安排全文精读；原文仍未获取。选读不计作课程指定阅读的全文覆盖。
 ---
 
 # Go 的书面问答：语法一致性与共享对象的边界
+
+## 选读速览：现代 Go 的三个实用变化
+
+这部分可以直接跳过，不影响课程主线。只想了解近年的变化，记住下面三点即可；文章链接集中在页底。
+
+- **Go 是一整套开发环境。** *Go’s Sweet 16*（2025-11-14）回顾语言、标准库、运行时和工具链如何一起演进。例如，并发测试的小接口背后有运行时支持，容器内的调度也会考虑 CPU 配额。学习 Go 不必只盯着语法。
+- **并发测试不要靠“多睡一会儿”判断完成。** *Testing Time (and other asynchronicities)*（2025-08-26）介绍 Go 1.25 正式提供的 `testing/synctest`：在测试 bubble 中使用虚拟时间，并用 `Wait` 等待其他 goroutine 退出或进入持久阻塞状态。时间经过本身不建立同步；真实网络 I/O 也不能直接当成 bubble 内可控的阻塞。
+- **没有数据竞争，也可能泄漏 goroutine。** *Goroutine Leak Profiles*（2026-09-02）介绍 Go 1.27 的泄漏诊断。典型错误是接收方提前返回，发送方却永远卡在 channel 上。新工具能定位一部分永久阻塞在 channel／`sync` 原语上的 goroutine，但不能检出所有泄漏，也不覆盖网络 I/O 等所有阻塞原因。
+
+这些是编者补充选读。相关工具分别有版本要求，不改变本课程实验的 Go 版本约定；实验中更重要的仍是明确任务何时完成、何时取消、由谁回收。
 
 ## 1. 逗号与分号：一致的底层规则也可能显得不一致
 
@@ -70,5 +80,6 @@ FAQ 关于 defer 起源、其他语言借鉴关系的说法是答题者的历史
 
 - MIT 6.5840 Spring 2026 L5，[Go FAQ](https://pdos.csail.mit.edu/6.824/papers/go-faq.txt)，全文 144 行；本页重组其书面设计讨论并增加措辞校注。文件没有独立作者／日期头；L5 嘉宾为 Russ Cox，不据此伪造 FAQ 的单独署名或撰写时间。HTTP Last-Modified 为 2026-01-27，抓取于 2026-11-09，完整记录见 `sources/p8-go-patterns/manifest-fragment.json`。
 - [课程首页](https://pdos.csail.mit.edu/6.824/index.html)标注 [CC BY 3.0 US](https://creativecommons.org/licenses/by/3.0/us/)。仅用于课程自有文字；不授予对外链文章或嘉宾幻灯片的权利。
-- Russ Cox、Robert Griesemer、Rob Pike、Ian Lance Taylor、Ken Thompson，*The Go Programming Language and Environment*，CACM 65(5)，2022，70–78，DOI `10.1145/3488716`。这是本讲另一份独立指定阅读，**全文尚未获取、未完成精读**：[课表原入口](https://cacm.acm.org/magazines/2022/5/260357-the-go-programming-language-and-environment/fulltext)、[出版社现行入口](https://cacm.acm.org/research/the-go-programming-language-and-environment/)、[DOI PDF 入口](https://dl.acm.org/doi/epdf/10.1145/3488716)在本次环境均返回 HTTP 403。搜索结果显示过文章自身 CC BY 4.0 提示，但直接页面未获取，不将搜索摘要视为完整许可核验，也不借它编写全文精读。
+- **额外选读（可跳过）**：Austin Clements / Go team，[Go’s Sweet 16](https://go.dev/blog/16years)，2025-11-14；Damien Neil，[Testing Time (and other asynchronicities)](https://go.dev/blog/testing-time)，2025-08-26；Vlad Saioc，[Goroutine Leak Profiles](https://go.dev/blog/goroutine-leak-profiles)，2026-09-02。以上为官方博客，页首为自主简短导读，不是 2026 L5 指定阅读或全文译文。
+- **课程指定阅读（仅保留链接）**：Russ Cox、Robert Griesemer、Rob Pike、Ian Lance Taylor、Ken Thompson，[The Go Programming Language and Environment](https://cacm.acm.org/research/the-go-programming-language-and-environment/)，CACM 65(5)，2022，70–78，DOI `10.1145/3488716`。本地抓取返回 HTTP 403，未作全文精读；按用户选择不再列为待补任务。
 - FAQ 中的声明语法、所有权展望、2010 演讲等外链未另行全文读取；它们不是本页已完成范围。Go Tour 共用入口仍在[公共资料](#/c/mit-6.824-2021)。
