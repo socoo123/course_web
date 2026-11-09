@@ -28,6 +28,7 @@
   "p7Review": "sources/P7-REVIEW.txt",
   "p8Review": "sources/P8-REVIEW.txt",
   "p9Review": "sources/P9-REVIEW.txt",
+  "maintenanceScope": { "labQA": "User explicitly excludes2021 L6/L8 lab Q&A videos from required work;retain official entries anduse2026 Lab1/Lab3 guidance. These are not pending source tasks.", "remainingContentGap": "Go CACM2022 article requires legitimate readable full text;materials remains partial" },
   "plannedBatches": {
     "P8": { "lectures": ["update-paxos", "update-go-patterns", "update-verification", "update-bft"], "prompt": "sources/NEXT-P8-PROMPT.txt", "scope": "2026 written sources; compare Go patterns with completed2021 L10 before expanding; no lecture video listed" },
     "P9": { "lectures": ["update-lambda", "update-ray", "lec21"], "prompt": "sources/NEXT-P9-PROMPT.txt", "scope": "Ray compared with Spark;2021 project-demo video and assigned AnalogicFS reading remain distinct" }
@@ -120,9 +121,9 @@
       "lec03": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_breakout_gap", "materials": "complete_independent_reading" },
       "lec04": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_explicit_gaps", "materials": "complete_independent_reading" },
       "lec05": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_explicit_gaps_and_corrections", "materials": "complete_shared_independent_reading_excluding_section6" },
-      "lec06": { "notes": "pending_sources", "draft": "no_video_listed", "materials": "not_planned_shared_lab_sources" },
+      "lec06": { "notes": "not_planned_lab_QA_user_scope", "draft": "not_required_lab_QA_user_scope", "materials": "not_planned_shared_lab_sources" },
       "lec07": { "notes": "complete_with_original_snapshot_diagram", "draft": "complete_caption_based_adaptation_with_explicit_gaps_and_corrections", "materials": "not_planned_shared_reading_at_lec05" },
-      "lec08": { "notes": "pending_sources", "draft": "no_video_listed", "materials": "not_planned_shared_lab_sources" },
+      "lec08": { "notes": "not_planned_lab_QA_user_scope", "draft": "not_required_lab_QA_user_scope", "materials": "not_planned_shared_lab_sources" },
       "lec09": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_explicit_ASR_gaps", "materials": "complete_independent_reading_14_pages_all_figures_tables" },
       "lec10": { "notes": "complete", "draft": "complete_caption_based_adaptation", "materials": "not_planned_classroom_slides_only" },
       "lec11": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_explicit_gaps_and_corrections", "materials": "complete_independent_reading_14_pages_and_2026_outline_comparison" },
@@ -236,5 +237,5 @@
   },
   "validation": { "checkedAt": "2026-11-09", "contentIntegrity": "passed: check-p9.py;P9 source/derived hashes,original provenance,unique source IDs,8 schedule links,registered routes/targets,images,SVG XML,fences,metadata andstate consistency. Totals:69 lecture documents(68 complete,1 partial),10 lab documents,4 SVGs;CACM403 andL6/L8 gaps retained", "captionTimeline": "passed:2829 L21 cues,43 continuous sections00:00-98:00,one section percue start,monotonic starts/nonnegative durations,metadata identity/duration;raw1280ms overrun retained. Text-only,no audio/frame review;FaRM two timelines unchanged", "siteBuild": "passed: npm run build (tsc --noEmit + vite build);seven P9 documents andshared metadata/navigation included", "labTests": "not_run", "goCompilation": "not_run", "protocolOrProofExecution": "not_run" },
   "gitDiffCheck": "passed: git diff --check;changes confined to content/mit-6.824-2021/",
-  "next": "P1-P9 planned packages delivered;maintenance only on actual new sources orspecific corrections. Go CACM403 remains partial;complete only after legitimate readable full text/license evidence,no blind retry. L6/L8 await real sources;audio/frame andhistorical version boundaries retained. No automatic unrelated topics. Entry:sources/NEXT-MAINTENANCE-PROMPT.txt."
+  "next": "P1-P9 planned packages delivered;maintenance only on actual new sources orspecific corrections. Go CACM403 remains the only pending content gap;complete only after legitimate readable full text/license evidence,no blind retry. User excludesL6/L8 lab Q&A videos from required work;these are not pending source tasks. Audio/frame andhistorical version boundaries retained. No automatic unrelated topics. Entry:sources/NEXT-MAINTENANCE-PROMPT.txt."
 }

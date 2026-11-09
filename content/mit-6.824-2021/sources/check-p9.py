@@ -142,8 +142,8 @@ assert state["artifacts"]["labDocumentsCompleted"] == len(list(ROOT.glob("labs/*
 assert state["artifacts"]["lectureIllustrationsCompleted"] == len(list(ROOT.glob("lectures/*/assets/*.svg")))
 assert len(state["p6Captions"]["lec15"]["videos"]) == 2
 for ident in ["lec06", "lec08"]:
-    assert state["content"]["lectures"][ident]["notes"] == "pending_sources"
-    assert state["content"]["lectures"][ident]["draft"] == "no_video_listed"
+    assert state["content"]["lectures"][ident]["notes"] == "not_planned_lab_QA_user_scope"
+    assert state["content"]["lectures"][ident]["draft"] == "not_required_lab_QA_user_scope"
 assert state["content"]["lectures"]["update-go-patterns"]["materials"] == "partial_FAQ_complete_CACM_article_blocked"
 assert any(r["id"] == "p8-go-cacm-article" and r["status"] == "blocked_HTTP403" for r in state["knownIssues"])
 assert inventory["lectures"][17]["reading_scope"] == "until Section 3.4"

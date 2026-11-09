@@ -1,6 +1,6 @@
 ---
 source: MIT 6.824 Spring 2021 官方课表与课程信息；MIT 6.5840 Spring 2026 官方课表、实验页与固定代码
-status: P9 已交付 Lambda、Ray 与 L21 项目展示及独立 AnalogicFS 阅读，共七份新正文。累计 69 份讲座正文（68 完成、1 部分完成）、10 份实验正文；Go CACM 指定文章仍因 403 待补，L6/L8 无新增课堂来源；实验测试未运行。
+status: P9 已交付 Lambda、Ray 与 L21 项目展示及独立 AnalogicFS 阅读，共七份新正文。累计 69 份讲座正文（68 完成、1 部分完成）、10 份实验正文；Go CACM 指定文章仍因 403 待补，L6/L8 实验 Q&A 无需补视频；实验测试未运行。
 license: 本页为编者自主导航；外链论文、视频、讲义与实验要求分别核实许可。
 ---
 
@@ -98,7 +98,7 @@ go version
 | Lab 3 KV Raft | Lab 4 KV Raft A–C | A 通用 RSM；B 版本化 KV；C 双层快照 |
 | Lab 4 Sharded KV | Lab 5 Sharded KV A–D | 控制器驱动迁移、恢复与并发；D 开放扩展 |
 
-此表仅表示主题对应，不表示旧代码和测试兼容。2021 L6/L8 答疑讨论当年 Lab 1 / Lab 2 A+B，学习时需对照新版要求。
+此表仅表示主题对应，不表示旧代码和测试兼容。2021 L6/L8 是当年 Lab 1 / Lab 2 A+B 的实验 Q&A，无需补看答疑视频；学习时直接使用本路线 [2026 Lab 1 实验指导](#/c/mit-6.824-2021/lab/mr?v=guide)与 [2026 Lab 3 实验指导](#/c/mit-6.824-2021/lab/raft?v=guide)。
 
 ### 跨实验接口速查
 
