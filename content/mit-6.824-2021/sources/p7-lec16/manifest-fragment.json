@@ -1,0 +1,2421 @@
+{
+  "course_id": "mit-6.824-2021",
+  "lecture_id": "lec16",
+  "batch": "P7",
+  "content_status": "completed_for_available_text_with_explicit_ASR_and_historical_implementation_limits",
+  "review_file": "p7-lec16/review.txt",
+  "acquisition_file": "p7-lec16/acquisition.json",
+  "sources": [
+    {
+      "id": "lec16-2021-l-spark.txt",
+      "url": "http://nil.csail.mit.edu/6.824/2021/notes/l-spark.txt",
+      "retrieved_at": "2026-11-09T13:08:52.468405+00:00",
+      "last_modified": "Tue, 04 May 2021 20:38:49 GMT",
+      "file": "p7-lec16/l-spark.txt",
+      "sha256": "c79708cf1ec7635d537c8cb0b3ee4d9d3031d08b1fae42356eec458409887857",
+      "status": "reviewed",
+      "final_url": "http://nil.csail.mit.edu/6.824/2021/notes/l-spark.txt",
+      "final_url_observed_at": "2026-11-09T13:29:30.694828+00:00",
+      "final_url_note": "Separate HEAD observation; original GET bytes and retrieval time retained.",
+      "reviewed_at": "2026-11-09T13:34:33.629238+00:00",
+      "scope": "All219 lines read. Internal title6.8242021Lecture16; PageRank Scala setup/distinct/groupByKey/cache, local command/output, shell commands, lineage, scheduling/shuffle, optimization and recovery. Shell execution/output not present in video ASR and not claimed as video demo. Last-Modified2021-05-04 is after class2021-04-29. No current Spark implementation fetched.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "evidence_file": "home-2021.html",
+        "evidence_scope": "Existing homepage line55 checked; only course-authored text, not paper/video.",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/"
+      }
+    },
+    {
+      "id": "lec16-2021-zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "file": "p7-lec16/zaharia-spark.pdf",
+      "sha256": "64bf8651757c0696b5fc75cdcbed117f82e0f70396744b537c53c5530d4938a2",
+      "status": "reviewed",
+      "final_url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "final_url_observed_at": "2026-11-09T13:29:31.908611+00:00",
+      "final_url_note": "Separate HEAD observation; original GET bytes and retrieval time retained.",
+      "reviewed_at": "2026-11-09T13:34:33.629238+00:00",
+      "scope": "All14 PDF pages read: abstract,sections1-9,acknowledgements,all33 bibliography entries. All1244 layout text lines read sequentially in1-360,361-720,721-1244 with two-column/page continuation understood. All14 figures,3 tables,logistic-regression code formula and PageRank formula visually checked on actual rendered pages3-11; page1 title also inspected. Definition/checkpoint/scheduler and figure numerical disagreements explicitly resolved or retained. Bibliography full texts not read.",
+      "license": "Full-translation permission unconfirmed; original analytical Chinese reading, no full translation/public page-image reproduction.",
+      "pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "id": "lec16-2021-spark-faq.txt",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/spark-faq.txt",
+      "retrieved_at": "2026-11-09T13:08:52.459620+00:00",
+      "last_modified": "Fri, 30 Apr 2021 19:05:16 GMT",
+      "file": "p7-lec16/spark-faq.txt",
+      "sha256": "3f9097e9f5f36c23297d9d55daa03774eb87e98bf967f3f16ac4168d373166da",
+      "status": "reviewed",
+      "final_url": "http://nil.csail.mit.edu/6.824/2021/papers/spark-faq.txt",
+      "final_url_observed_at": "2026-11-09T13:29:32.493972+00:00",
+      "final_url_note": "Separate HEAD observation; original GET bytes and retrieval time retained.",
+      "reviewed_at": "2026-11-09T13:34:33.629238+00:00",
+      "scope": "All135 lines and every Q/A read, including reuse, immutable versions, energy discussion, location metadata, Scala closures, single-scan limitations, hash partitioning and historical DataFrame wording. Last-Modified2021-04-30 after class; heading Spark FAQ has no year. Linked commercial sites, Naiad/SparkStreaming/FAWN/Piccolo and latest API pages not read.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "evidence_file": "home-2021.html",
+        "evidence_scope": "Existing homepage line55 checked; only course-authored text, not paper/video.",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/"
+      }
+    },
+    {
+      "id": "lec16-2021-metadata.json",
+      "url": "https://youtu.be/qXb5rDGqFdc",
+      "retrieved_at": "2026-11-09T13:08:54.343272+00:00",
+      "last_modified": null,
+      "file": "p7-lec16/metadata.json",
+      "sha256": "5053eb47c9782d49e1c93c389c1cf4c41149bc41f1a094abc4b4369e8a1cd90e",
+      "status": "reviewed",
+      "last_modified_note": "Not exposed by yt-dlp; unknown.",
+      "request_url": "https://www.youtube.com/watch?v=qXb5rDGqFdc",
+      "final_url": "https://www.youtube.com/watch?v=qXb5rDGqFdc",
+      "reviewed_at": "2026-11-09T13:34:33.629238+00:00",
+      "scope": "All whitelist fields independently acquired and checked: qXb5rDGqFdc; Lecture16:BigData:Spark;4728s/78:48;MIT6.824:DistributedSystems;channelUC_7WrbZTCODu1o_kfUMq88g;upload20210430;CreativeCommonsAttributionlicense(reuseallowed),exact version absent. Original schedule URL preserved; canonical request URL separate.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Video-specific independent metadata; exact CC version absent."
+    },
+    {
+      "id": "lec16-2021-video.en-orig.json3",
+      "url": "https://youtu.be/qXb5rDGqFdc",
+      "retrieved_at": "2026-11-09T13:08:54.343382+00:00",
+      "last_modified": null,
+      "file": "p7-lec16/video.en-orig.json3",
+      "sha256": "ef98f25456bc36b0897c057cae2673babed03f93847156c097c6039e9bdd470c",
+      "status": "reviewed",
+      "last_modified_note": "Not exposed by yt-dlp; unknown.",
+      "request_url": "https://www.youtube.com/watch?v=qXb5rDGqFdc",
+      "final_url": "https://www.youtube.com/watch?v=qXb5rDGqFdc",
+      "reviewed_at": "2026-11-09T13:34:33.629238+00:00",
+      "scope": "All2026 original-English automatic cue texts read in order via79 lossless minute groups,reading-by-minute.txt lines1-90,91-180,181-236. Full available lecture plus55min-onward post-class Q/A including FaRM61-65min and unresolved narrow-dependency debate65-71min. Direct cue reinspection15:00-20:30 collect/count,51:00-52:20 only-final-collect claim,56:45-57:50 driver/scheduler uncertainty. First0ms,last start4726640,last end4730000,2 cues exceed4728000ms. No audio/video-frame review.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Video-specific independent metadata; exact CC version absent.",
+      "language": "en-orig",
+      "caption_type": "original-language automatic English ASR"
+    }
+  ],
+  "derived_files": [
+    {
+      "id": "lec16-2021-derived-captions-captions.normalized.json",
+      "file": "p7-lec16/captions/captions.normalized.json",
+      "sha256": "cc36031c32a073ebf568476ac1fca55af3aedf79291b92190211fbebaae6ea6f",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:05.644754+00:00",
+      "derived_from": "p7-lec16/video.en-orig.json3",
+      "url": "https://youtu.be/qXb5rDGqFdc",
+      "retrieved_at": "2026-11-09T13:08:54.343382+00:00",
+      "last_modified": null,
+      "scope": "All cue content read through lossless grouping; selected raw timed cues rechecked and all timing structure checked."
+    },
+    {
+      "id": "lec16-2021-derived-captions-transcript.en.txt",
+      "file": "p7-lec16/captions/transcript.en.txt",
+      "sha256": "30896a2792f259d53dce1eb8f69420690f0bc2286e1fd3e076e4f228a22a7261",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:05.649895+00:00",
+      "derived_from": "p7-lec16/video.en-orig.json3",
+      "url": "https://youtu.be/qXb5rDGqFdc",
+      "retrieved_at": "2026-11-09T13:08:54.343382+00:00",
+      "last_modified": null,
+      "scope": "Generated timed text; all cue content read via lossless grouping, not separately reread in this representation."
+    },
+    {
+      "id": "lec16-2021-derived-captions-captions.en.vtt",
+      "file": "p7-lec16/captions/captions.en.vtt",
+      "sha256": "3b57139b9ea63f3719beffa968ebd2c37a5b19f91a627883c3258d84153f1d45",
+      "status": "fetched",
+      "generated_at": "2026-11-09T13:09:05.648120+00:00",
+      "derived_from": "p7-lec16/video.en-orig.json3",
+      "url": "https://youtu.be/qXb5rDGqFdc",
+      "retrieved_at": "2026-11-09T13:08:54.343382+00:00",
+      "last_modified": null,
+      "scope": "Generated only; not played or independently line-read."
+    },
+    {
+      "id": "lec16-2021-derived-captions-reading-by-minute.txt",
+      "file": "p7-lec16/captions/reading-by-minute.txt",
+      "sha256": "1832a9dbc856e04d976fe5775309547ad5db8287fe7925b7fc20bacb18416193",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:05.655797+00:00",
+      "derived_from": "p7-lec16/video.en-orig.json3",
+      "url": "https://youtu.be/qXb5rDGqFdc",
+      "retrieved_at": "2026-11-09T13:08:54.343382+00:00",
+      "last_modified": null,
+      "scope": "All236 lines/79 nonempty minute groups read sequentially; concatenation exactly equals all2026 cue texts."
+    },
+    {
+      "id": "lec16-2021-derived-zaharia-spark.layout.txt",
+      "file": "p7-lec16/zaharia-spark.layout.txt",
+      "sha256": "9dfcd5666a9658d9566b1c3205c16d52a56547c91e59a27d6364f8976534095a",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:05.842055+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "All1244 lines read including33 bibliography entries; formulas/figures checked against pages."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-01.png",
+      "file": "p7-lec16/paper-pages/page-01.png",
+      "sha256": "86d3243dd808512f9a72b9e265963fbb83835ff3a2fbe661fe65d937344b5b14",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:05.888849+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Actual internal title, authors, abstract and historical paper identity; no blanket CC/full-translation permission inferred."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-02.png",
+      "file": "p7-lec16/paper-pages/page-02.png",
+      "sha256": "2e906f11962926a0acb66b35d349240f5bb62d7732397965bba2ed17528392ac",
+      "status": "fetched",
+      "generated_at": "2026-11-09T13:09:05.916643+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Rendered only; full page text read through extraction, image not independently inspected."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-03.png",
+      "file": "p7-lec16/paper-pages/page-03.png",
+      "sha256": "b18568af7895db4f5b0027282cefd8c32e387c23a253cb7c08801040b7d5eb38",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:05.955628+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Figure1 log lineage and exact collect/count/code indexing; Table1 all comparison rows and notes."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-04.png",
+      "file": "p7-lec16/paper-pages/page-04.png",
+      "sha256": "11932710025295d7f4e8c6fa499f4bf8c14bfb8c55e4c5ed4d658c41b45e1cb9",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:05.993819+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Figure2 driver/workers/RAM/input/tasks/results; closure-capture footnote."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-05.png",
+      "file": "p7-lec16/paper-pages/page-05.png",
+      "sha256": "b399d8ec8b7394310d912312c731a6b9e3e0f33bcf79c46522032f13a25a4722",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:06.020852+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Table2 all transformation/action signatures; Figure3 PageRank versions; logistic-regression formula/code and alpha/N PageRank formula, immutable-variable footnote."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-06.png",
+      "file": "p7-lec16/paper-pages/page-06.png",
+      "sha256": "d8ffb407134831a20755cfeed54a6cb817c2a1832bf613e4e4f351bf4b6d6664",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:06.048288+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Table3 five representation methods; exact parent-to-child narrow-dependency definition; RELIABLE flag, partitioning and contribution-aggregation wording."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-07.png",
+      "file": "p7-lec16/paper-pages/page-07.png",
+      "sha256": "b8017c7b4b87a2c43663cb41c2be5773a029341d94ee9c6ef20d7b4b9292e220",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:06.077954+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Figures4-5 all partition arrows and cached-black-partition/stage labels; join mixed narrow/wide cases; shuffle materialization; explicit no scheduler-failure tolerance."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-08.png",
+      "file": "p7-lec16/paper-pages/page-08.png",
+      "sha256": "1c1a768cddc312a7d6509d0caf435cc6a6aab8fefb332b0e7643243c7c7253ee",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:06.107128+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Figure6 closure/reference graph; exact RDD LRU exception, storage choices; REPLICATE flag vs page6RELIABLE; auto checkpoint future work."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-09.png",
+      "file": "p7-lec16/paper-pages/page-09.png",
+      "sha256": "e7bad460c53a1bf8fc3b9c3c7256d759177911645b19c89fb8297812982c5852",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:06.134132+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Figures7-8 all first/later and25/50/100-node bars,seconds and algorithm/implementation legends;up-to20x versus specific25.3x/20.7x results."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-10.png",
+      "file": "p7-lec16/paper-pages/page-10.png",
+      "sha256": "71375c17afe75209f56b1ea5ef4364be3cf47a6c9e51848432ad7aeaba86472e",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:06.162644+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Figures9-11 all bars/units;single-machine256MB input-format comparison;PageRank30/60nodes;fault iteration6 graph81s vs prose80s;conditions75nodes/400tasks."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-11.png",
+      "file": "p7-lec16/paper-pages/page-11.png",
+      "sha256": "79891443d9ef3d6e40ba39ba00b0ea0a4ae000bd5d0c03f63d376f4bba356ffe",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T13:09:06.189051+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Figures12-14 all percentages/node counts/data sizes,units/legends/error bars;Twitter10^7 exponent;query100GB/500GB/1TB distinction and distinct hardware."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-12.png",
+      "file": "p7-lec16/paper-pages/page-12.png",
+      "sha256": "d91e3104a0e2de317d00afef0da5739ad7045bc82d3baa84e3907dad083a79f8",
+      "status": "fetched",
+      "generated_at": "2026-11-09T13:09:06.214497+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Rendered only; full page text read through extraction, image not independently inspected."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-13.png",
+      "file": "p7-lec16/paper-pages/page-13.png",
+      "sha256": "e128fe6fa14cfc21ce966b1760db0ce3609200756cac70f6b6c44a7fbcb6758b",
+      "status": "fetched",
+      "generated_at": "2026-11-09T13:09:06.240608+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Rendered only; full page text read through extraction, image not independently inspected."
+    },
+    {
+      "id": "lec16-2021-derived-paper-pages-page-14.png",
+      "file": "p7-lec16/paper-pages/page-14.png",
+      "sha256": "50af78f95ab2acd967b44566ad8626020dd25c43dd367aa7441e275092ca2601",
+      "status": "fetched",
+      "generated_at": "2026-11-09T13:09:06.268682+00:00",
+      "derived_from": "p7-lec16/zaharia-spark.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+      "retrieved_at": "2026-11-09T13:08:57.101738+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "scope": "Rendered only; full page text read through extraction, image not independently inspected."
+    },
+    {
+      "id": "lec16-2021-head-observations",
+      "file": "p7-lec16/header-observations.json",
+      "sha256": "ac0143ffc72bee767e7dc527092b49568931dfd807bd903f41fe0f3205da19ea",
+      "status": "reviewed",
+      "scope": "Separate HEAD requests confirm final URLs and Last-Modified for all3 existing official source snapshots; did not redownload bodies or alter original GET timestamps.",
+      "observations": [
+        {
+          "url": "http://nil.csail.mit.edu/6.824/2021/notes/l-spark.txt",
+          "final_url": "http://nil.csail.mit.edu/6.824/2021/notes/l-spark.txt",
+          "observed_at": "2026-11-09T13:29:30.694828+00:00",
+          "last_modified": "Tue, 04 May 2021 20:38:49 GMT",
+          "method": "HEAD"
+        },
+        {
+          "url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+          "final_url": "http://nil.csail.mit.edu/6.824/2021/papers/zaharia-spark.pdf",
+          "observed_at": "2026-11-09T13:29:31.908611+00:00",
+          "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+          "method": "HEAD"
+        },
+        {
+          "url": "http://nil.csail.mit.edu/6.824/2021/papers/spark-faq.txt",
+          "final_url": "http://nil.csail.mit.edu/6.824/2021/papers/spark-faq.txt",
+          "observed_at": "2026-11-09T13:29:32.493972+00:00",
+          "last_modified": "Fri, 30 Apr 2021 19:05:16 GMT",
+          "method": "HEAD"
+        }
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "video_id": "qXb5rDGqFdc",
+      "url": "https://youtu.be/qXb5rDGqFdc",
+      "metadata": {
+        "id": "qXb5rDGqFdc",
+        "title": "Lecture 16: Big Data: Spark",
+        "duration": 4728,
+        "channel": "MIT 6.824: Distributed Systems",
+        "channel_id": "UC_7WrbZTCODu1o_kfUMq88g",
+        "uploader": "MIT 6.824: Distributed Systems",
+        "upload_date": "20210430",
+        "license": "Creative Commons Attribution license (reuse allowed)",
+        "webpage_url": "https://www.youtube.com/watch?v=qXb5rDGqFdc"
+      },
+      "metadata_file": "p7-lec16/metadata.json",
+      "normalized_caption_file": "p7-lec16/captions/captions.normalized.json",
+      "caption_file": "p7-lec16/video.en-orig.json3",
+      "caption_time_structure": {
+        "cue_count": 2026,
+        "first_start_ms": 0,
+        "last_start_ms": 4726640,
+        "last_end_ms": 4730000,
+        "metadata_duration_seconds": 4728,
+        "starts_monotonic": true,
+        "ends_monotonic": true,
+        "negative_duration_count": 0,
+        "cues_ending_after_video": 2,
+        "tail_overrun_ms": 2000,
+        "tail_uncaptioned_ms": 0,
+        "overlapping_adjacent_cue_pairs": 1898,
+        "positive_uncovered_gap_count": 127,
+        "uncovered_ms_within_video": 216290,
+        "maximum_uncovered_gap_ms": 11000,
+        "all_uncovered_gaps": [
+          {
+            "start_ms": 23920,
+            "end_ms": 25119,
+            "duration_ms": 1199
+          },
+          {
+            "start_ms": 28720,
+            "end_ms": 28800,
+            "duration_ms": 80
+          },
+          {
+            "start_ms": 37680,
+            "end_ms": 38559,
+            "duration_ms": 879
+          },
+          {
+            "start_ms": 50079,
+            "end_ms": 52719,
+            "duration_ms": 2640
+          },
+          {
+            "start_ms": 73840,
+            "end_ms": 74799,
+            "duration_ms": 959
+          },
+          {
+            "start_ms": 112159,
+            "end_ms": 112240,
+            "duration_ms": 81
+          },
+          {
+            "start_ms": 119680,
+            "end_ms": 120719,
+            "duration_ms": 1039
+          },
+          {
+            "start_ms": 129840,
+            "end_ms": 140840,
+            "duration_ms": 11000
+          },
+          {
+            "start_ms": 143840,
+            "end_ms": 154840,
+            "duration_ms": 11000
+          },
+          {
+            "start_ms": 190000,
+            "end_ms": 191200,
+            "duration_ms": 1200
+          },
+          {
+            "start_ms": 205200,
+            "end_ms": 207920,
+            "duration_ms": 2720
+          },
+          {
+            "start_ms": 222000,
+            "end_ms": 222959,
+            "duration_ms": 959
+          },
+          {
+            "start_ms": 230239,
+            "end_ms": 230319,
+            "duration_ms": 80
+          },
+          {
+            "start_ms": 248159,
+            "end_ms": 249280,
+            "duration_ms": 1121
+          },
+          {
+            "start_ms": 283840,
+            "end_ms": 286160,
+            "duration_ms": 2320
+          },
+          {
+            "start_ms": 311840,
+            "end_ms": 316400,
+            "duration_ms": 4560
+          },
+          {
+            "start_ms": 339840,
+            "end_ms": 340240,
+            "duration_ms": 400
+          },
+          {
+            "start_ms": 556000,
+            "end_ms": 560839,
+            "duration_ms": 4839
+          },
+          {
+            "start_ms": 667680,
+            "end_ms": 668079,
+            "duration_ms": 399
+          },
+          {
+            "start_ms": 723040,
+            "end_ms": 726000,
+            "duration_ms": 2960
+          },
+          {
+            "start_ms": 775120,
+            "end_ms": 775839,
+            "duration_ms": 719
+          },
+          {
+            "start_ms": 831040,
+            "end_ms": 831839,
+            "duration_ms": 799
+          },
+          {
+            "start_ms": 849600,
+            "end_ms": 849760,
+            "duration_ms": 160
+          },
+          {
+            "start_ms": 917519,
+            "end_ms": 918480,
+            "duration_ms": 961
+          },
+          {
+            "start_ms": 927839,
+            "end_ms": 928240,
+            "duration_ms": 401
+          },
+          {
+            "start_ms": 1028079,
+            "end_ms": 1033280,
+            "duration_ms": 5201
+          },
+          {
+            "start_ms": 1039839,
+            "end_ms": 1042079,
+            "duration_ms": 2240
+          },
+          {
+            "start_ms": 1072880,
+            "end_ms": 1075679,
+            "duration_ms": 2799
+          },
+          {
+            "start_ms": 1141840,
+            "end_ms": 1142559,
+            "duration_ms": 719
+          },
+          {
+            "start_ms": 1210159,
+            "end_ms": 1210640,
+            "duration_ms": 481
+          },
+          {
+            "start_ms": 1213280,
+            "end_ms": 1215440,
+            "duration_ms": 2160
+          },
+          {
+            "start_ms": 1420080,
+            "end_ms": 1420880,
+            "duration_ms": 800
+          },
+          {
+            "start_ms": 1426080,
+            "end_ms": 1426400,
+            "duration_ms": 320
+          },
+          {
+            "start_ms": 1525360,
+            "end_ms": 1526799,
+            "duration_ms": 1439
+          },
+          {
+            "start_ms": 1593760,
+            "end_ms": 1595679,
+            "duration_ms": 1919
+          },
+          {
+            "start_ms": 1674880,
+            "end_ms": 1676080,
+            "duration_ms": 1200
+          },
+          {
+            "start_ms": 1679520,
+            "end_ms": 1681200,
+            "duration_ms": 1680
+          },
+          {
+            "start_ms": 1687279,
+            "end_ms": 1690640,
+            "duration_ms": 3361
+          },
+          {
+            "start_ms": 1735919,
+            "end_ms": 1737039,
+            "duration_ms": 1120
+          },
+          {
+            "start_ms": 1767840,
+            "end_ms": 1768559,
+            "duration_ms": 719
+          },
+          {
+            "start_ms": 1772159,
+            "end_ms": 1773919,
+            "duration_ms": 1760
+          },
+          {
+            "start_ms": 1776159,
+            "end_ms": 1777760,
+            "duration_ms": 1601
+          },
+          {
+            "start_ms": 1784399,
+            "end_ms": 1788080,
+            "duration_ms": 3681
+          },
+          {
+            "start_ms": 1809840,
+            "end_ms": 1812640,
+            "duration_ms": 2800
+          },
+          {
+            "start_ms": 1818640,
+            "end_ms": 1819840,
+            "duration_ms": 1200
+          },
+          {
+            "start_ms": 1830799,
+            "end_ms": 1831120,
+            "duration_ms": 321
+          },
+          {
+            "start_ms": 1837840,
+            "end_ms": 1839200,
+            "duration_ms": 1360
+          },
+          {
+            "start_ms": 1872240,
+            "end_ms": 1875679,
+            "duration_ms": 3439
+          },
+          {
+            "start_ms": 1963840,
+            "end_ms": 1968880,
+            "duration_ms": 5040
+          },
+          {
+            "start_ms": 1995440,
+            "end_ms": 1997679,
+            "duration_ms": 2239
+          },
+          {
+            "start_ms": 2000559,
+            "end_ms": 2000960,
+            "duration_ms": 401
+          },
+          {
+            "start_ms": 2042559,
+            "end_ms": 2045440,
+            "duration_ms": 2881
+          },
+          {
+            "start_ms": 2050320,
+            "end_ms": 2051359,
+            "duration_ms": 1039
+          },
+          {
+            "start_ms": 2093520,
+            "end_ms": 2093839,
+            "duration_ms": 319
+          },
+          {
+            "start_ms": 2107680,
+            "end_ms": 2111040,
+            "duration_ms": 3360
+          },
+          {
+            "start_ms": 2145839,
+            "end_ms": 2146000,
+            "duration_ms": 161
+          },
+          {
+            "start_ms": 2150320,
+            "end_ms": 2152800,
+            "duration_ms": 2480
+          },
+          {
+            "start_ms": 2230960,
+            "end_ms": 2232000,
+            "duration_ms": 1040
+          },
+          {
+            "start_ms": 2244480,
+            "end_ms": 2246640,
+            "duration_ms": 2160
+          },
+          {
+            "start_ms": 2250560,
+            "end_ms": 2251119,
+            "duration_ms": 559
+          },
+          {
+            "start_ms": 2327839,
+            "end_ms": 2328560,
+            "duration_ms": 721
+          },
+          {
+            "start_ms": 2330800,
+            "end_ms": 2331599,
+            "duration_ms": 799
+          },
+          {
+            "start_ms": 2343599,
+            "end_ms": 2344560,
+            "duration_ms": 961
+          },
+          {
+            "start_ms": 2351839,
+            "end_ms": 2352800,
+            "duration_ms": 961
+          },
+          {
+            "start_ms": 2534720,
+            "end_ms": 2535119,
+            "duration_ms": 399
+          },
+          {
+            "start_ms": 2621839,
+            "end_ms": 2622800,
+            "duration_ms": 961
+          },
+          {
+            "start_ms": 2635839,
+            "end_ms": 2637440,
+            "duration_ms": 1601
+          },
+          {
+            "start_ms": 2640160,
+            "end_ms": 2640720,
+            "duration_ms": 560
+          },
+          {
+            "start_ms": 2699599,
+            "end_ms": 2699680,
+            "duration_ms": 81
+          },
+          {
+            "start_ms": 2705839,
+            "end_ms": 2706400,
+            "duration_ms": 561
+          },
+          {
+            "start_ms": 2726400,
+            "end_ms": 2726880,
+            "duration_ms": 480
+          },
+          {
+            "start_ms": 2792160,
+            "end_ms": 2792319,
+            "duration_ms": 159
+          },
+          {
+            "start_ms": 2800640,
+            "end_ms": 2801359,
+            "duration_ms": 719
+          },
+          {
+            "start_ms": 2912000,
+            "end_ms": 2912559,
+            "duration_ms": 559
+          },
+          {
+            "start_ms": 3001520,
+            "end_ms": 3002079,
+            "duration_ms": 559
+          },
+          {
+            "start_ms": 3005359,
+            "end_ms": 3011119,
+            "duration_ms": 5760
+          },
+          {
+            "start_ms": 3059440,
+            "end_ms": 3061200,
+            "duration_ms": 1760
+          },
+          {
+            "start_ms": 3097839,
+            "end_ms": 3105280,
+            "duration_ms": 7441
+          },
+          {
+            "start_ms": 3125839,
+            "end_ms": 3129040,
+            "duration_ms": 3201
+          },
+          {
+            "start_ms": 3163920,
+            "end_ms": 3164559,
+            "duration_ms": 639
+          },
+          {
+            "start_ms": 3171599,
+            "end_ms": 3172240,
+            "duration_ms": 641
+          },
+          {
+            "start_ms": 3181839,
+            "end_ms": 3182079,
+            "duration_ms": 240
+          },
+          {
+            "start_ms": 3195839,
+            "end_ms": 3199040,
+            "duration_ms": 3201
+          },
+          {
+            "start_ms": 3212400,
+            "end_ms": 3212880,
+            "duration_ms": 480
+          },
+          {
+            "start_ms": 3217920,
+            "end_ms": 3221520,
+            "duration_ms": 3600
+          },
+          {
+            "start_ms": 3227920,
+            "end_ms": 3232079,
+            "duration_ms": 4159
+          },
+          {
+            "start_ms": 3237839,
+            "end_ms": 3238240,
+            "duration_ms": 401
+          },
+          {
+            "start_ms": 3251839,
+            "end_ms": 3254559,
+            "duration_ms": 2720
+          },
+          {
+            "start_ms": 3310880,
+            "end_ms": 3314319,
+            "duration_ms": 3439
+          },
+          {
+            "start_ms": 3391839,
+            "end_ms": 3391920,
+            "duration_ms": 81
+          },
+          {
+            "start_ms": 3422960,
+            "end_ms": 3423200,
+            "duration_ms": 240
+          },
+          {
+            "start_ms": 3426480,
+            "end_ms": 3427280,
+            "duration_ms": 800
+          },
+          {
+            "start_ms": 3461839,
+            "end_ms": 3463839,
+            "duration_ms": 2000
+          },
+          {
+            "start_ms": 3497839,
+            "end_ms": 3500000,
+            "duration_ms": 2161
+          },
+          {
+            "start_ms": 3524240,
+            "end_ms": 3524640,
+            "duration_ms": 400
+          },
+          {
+            "start_ms": 3556799,
+            "end_ms": 3557440,
+            "duration_ms": 641
+          },
+          {
+            "start_ms": 3560400,
+            "end_ms": 3560960,
+            "duration_ms": 560
+          },
+          {
+            "start_ms": 3583040,
+            "end_ms": 3584000,
+            "duration_ms": 960
+          },
+          {
+            "start_ms": 3629200,
+            "end_ms": 3632000,
+            "duration_ms": 2800
+          },
+          {
+            "start_ms": 3651359,
+            "end_ms": 3654839,
+            "duration_ms": 3480
+          },
+          {
+            "start_ms": 3664480,
+            "end_ms": 3665040,
+            "duration_ms": 560
+          },
+          {
+            "start_ms": 3762480,
+            "end_ms": 3763039,
+            "duration_ms": 559
+          },
+          {
+            "start_ms": 3830079,
+            "end_ms": 3830640,
+            "duration_ms": 561
+          },
+          {
+            "start_ms": 3890400,
+            "end_ms": 3890960,
+            "duration_ms": 560
+          },
+          {
+            "start_ms": 3895839,
+            "end_ms": 3896000,
+            "duration_ms": 161
+          },
+          {
+            "start_ms": 3901039,
+            "end_ms": 3902319,
+            "duration_ms": 1280
+          },
+          {
+            "start_ms": 3905920,
+            "end_ms": 3906640,
+            "duration_ms": 720
+          },
+          {
+            "start_ms": 3911200,
+            "end_ms": 3916160,
+            "duration_ms": 4960
+          },
+          {
+            "start_ms": 3971520,
+            "end_ms": 3972640,
+            "duration_ms": 1120
+          },
+          {
+            "start_ms": 3976400,
+            "end_ms": 3976480,
+            "duration_ms": 80
+          },
+          {
+            "start_ms": 4014960,
+            "end_ms": 4016319,
+            "duration_ms": 1359
+          },
+          {
+            "start_ms": 4025359,
+            "end_ms": 4026559,
+            "duration_ms": 1200
+          },
+          {
+            "start_ms": 4029440,
+            "end_ms": 4029920,
+            "duration_ms": 480
+          },
+          {
+            "start_ms": 4042319,
+            "end_ms": 4044000,
+            "duration_ms": 1681
+          },
+          {
+            "start_ms": 4080880,
+            "end_ms": 4082160,
+            "duration_ms": 1280
+          },
+          {
+            "start_ms": 4090319,
+            "end_ms": 4091039,
+            "duration_ms": 720
+          },
+          {
+            "start_ms": 4156400,
+            "end_ms": 4157199,
+            "duration_ms": 799
+          },
+          {
+            "start_ms": 4203840,
+            "end_ms": 4207600,
+            "duration_ms": 3760
+          },
+          {
+            "start_ms": 4320640,
+            "end_ms": 4321970,
+            "duration_ms": 1330
+          },
+          {
+            "start_ms": 4349760,
+            "end_ms": 4350640,
+            "duration_ms": 880
+          },
+          {
+            "start_ms": 4361040,
+            "end_ms": 4362080,
+            "duration_ms": 1040
+          },
+          {
+            "start_ms": 4365520,
+            "end_ms": 4368640,
+            "duration_ms": 3120
+          },
+          {
+            "start_ms": 4427840,
+            "end_ms": 4428080,
+            "duration_ms": 240
+          },
+          {
+            "start_ms": 4459440,
+            "end_ms": 4464000,
+            "duration_ms": 4560
+          },
+          {
+            "start_ms": 4468880,
+            "end_ms": 4471600,
+            "duration_ms": 2720
+          },
+          {
+            "start_ms": 4527120,
+            "end_ms": 4527280,
+            "duration_ms": 160
+          },
+          {
+            "start_ms": 4592000,
+            "end_ms": 4593040,
+            "duration_ms": 1040
+          }
+        ],
+        "draft_segment_count": 30,
+        "draft_start": "00:00",
+        "draft_end": "78:48",
+        "audio_reviewed": false,
+        "video_frames_reviewed": false,
+        "interpretation": "All 2026 cue texts read sequentially through lossless minute grouping. Interval-union gaps are not silence detection or proof of missing speech. No breakout discussion in available transcript. Environment interruption near02min retained. Raw final2000ms overrun retained; no audio/classroom frame review."
+      },
+      "draft_segment_count": 30,
+      "draft_segments": [
+        {
+          "start": "00:00",
+          "end": "02:00",
+          "start_ms": 0,
+          "end_ms": 120000,
+          "title": "回到 MapReduce，看看迭代计算需要什么",
+          "cue_count": 46,
+          "first_cue": 1,
+          "last_cue": 46
+        },
+        {
+          "start": "02:00",
+          "end": "05:00",
+          "start_ms": 120000,
+          "end_ms": 300000,
+          "title": "内存复用与这堂课的历史范围",
+          "cue_count": 72,
+          "first_cue": 47,
+          "last_cue": 118
+        },
+        {
+          "start": "05:00",
+          "end": "08:00",
+          "start_ms": 300000,
+          "end_ms": 480000,
+          "title": "一个 RDD 可以先只是“怎样得到数据”的描述",
+          "cue_count": 73,
+          "first_cue": 119,
+          "last_cue": 191
+        },
+        {
+          "start": "08:00",
+          "end": "12:00",
+          "start_ms": 480000,
+          "end_ms": 720000,
+          "title": "过滤日志，标记复用，再把转换串成流水线",
+          "cue_count": 112,
+          "first_cue": 192,
+          "last_cue": 303
+        },
+        {
+          "start": "12:00",
+          "end": "14:00",
+          "start_ms": 720000,
+          "end_ms": 840000,
+          "title": "问答：分区并行、lineage 与事务日志",
+          "cue_count": 56,
+          "first_cue": 304,
+          "last_cue": 359
+        },
+        {
+          "start": "14:00",
+          "end": "17:00",
+          "start_ms": 840000,
+          "end_ms": 1020000,
+          "title": "两个查询共用 errors，动作的名字不能混淆",
+          "cue_count": 76,
+          "first_cue": 360,
+          "last_cue": 435
+        },
+        {
+          "start": "17:00",
+          "end": "20:00",
+          "start_ms": 1020000,
+          "end_ms": 1200000,
+          "title": "driver、worker 与分区任务",
+          "cue_count": 77,
+          "first_cue": 436,
+          "last_cue": 512
+        },
+        {
+          "start": "20:00",
+          "end": "23:00",
+          "start_ms": 1200000,
+          "end_ms": 1380000,
+          "title": "窄依赖与宽依赖：学生指出定义方向的问题",
+          "cue_count": 77,
+          "first_cue": 513,
+          "last_cue": 589
+        },
+        {
+          "start": "23:00",
+          "end": "26:00",
+          "start_ms": 1380000,
+          "end_ms": 1560000,
+          "title": "问答：不 persist 会怎样，初始分区从哪里来",
+          "cue_count": 80,
+          "first_cue": 590,
+          "last_cue": 669
+        },
+        {
+          "start": "26:00",
+          "end": "30:00",
+          "start_ms": 1560000,
+          "end_ms": 1800000,
+          "title": "worker 失败：丢失的是可重算分区",
+          "cue_count": 99,
+          "first_cue": 670,
+          "last_cue": 768
+        },
+        {
+          "start": "30:00",
+          "end": "33:00",
+          "start_ms": 1800000,
+          "end_ms": 1980000,
+          "title": "宽依赖让一次失败影响更多祖先",
+          "cue_count": 74,
+          "first_cue": 769,
+          "last_cue": 842
+        },
+        {
+          "start": "33:00",
+          "end": "35:00",
+          "start_ms": 1980000,
+          "end_ms": 2100000,
+          "title": "问答：缓存不等于可靠检查点",
+          "cue_count": 49,
+          "first_cue": 843,
+          "last_cue": 891
+        },
+        {
+          "start": "35:00",
+          "end": "38:00",
+          "start_ms": 2100000,
+          "end_ms": 2280000,
+          "title": "PageRank：适合展示复用的迭代例子",
+          "cue_count": 77,
+          "first_cue": 892,
+          "last_cue": 968
+        },
+        {
+          "start": "38:00",
+          "end": "41:00",
+          "start_ms": 2280000,
+          "end_ms": 2460000,
+          "title": "links 不变，ranks 每轮产生新版本",
+          "cue_count": 72,
+          "first_cue": 969,
+          "last_cue": 1040
+        },
+        {
+          "start": "41:00",
+          "end": "44:00",
+          "start_ms": 2460000,
+          "end_ms": 2640000,
+          "title": "平分出边贡献，再按目标网页求和",
+          "cue_count": 73,
+          "first_cue": 1041,
+          "last_cue": 1113
+        },
+        {
+          "start": "44:00",
+          "end": "47:00",
+          "start_ms": 2640000,
+          "end_ms": 2820000,
+          "title": "循环展开成增长的依赖图",
+          "cue_count": 82,
+          "first_cue": 1114,
+          "last_cue": 1195
+        },
+        {
+          "start": "47:00",
+          "end": "50:00",
+          "start_ms": 2820000,
+          "end_ms": 3000000,
+          "title": "相同 partitioner 让 join 更局部",
+          "cue_count": 79,
+          "first_cue": 1196,
+          "last_cue": 1274
+        },
+        {
+          "start": "50:00",
+          "end": "53:00",
+          "start_ms": 3000000,
+          "end_ms": 3180000,
+          "title": "问答：复用、并行，以及一个不能照抄的结论",
+          "cue_count": 74,
+          "first_cue": 1275,
+          "last_cue": 1348
+        },
+        {
+          "start": "53:00",
+          "end": "55:00",
+          "start_ms": 3180000,
+          "end_ms": 3300000,
+          "title": "正式讲授结束与实验提醒",
+          "cue_count": 43,
+          "first_cue": 1349,
+          "last_cue": 1391
+        },
+        {
+          "start": "55:00",
+          "end": "57:00",
+          "start_ms": 3300000,
+          "end_ms": 3420000,
+          "title": "课后问答：自动 checkpoint 在优化什么",
+          "cue_count": 57,
+          "first_cue": 1392,
+          "last_cue": 1448
+        },
+        {
+          "start": "57:00",
+          "end": "60:00",
+          "start_ms": 3420000,
+          "end_ms": 3600000,
+          "title": "课后问答：driver 故障未明，哈希分区再解释",
+          "cue_count": 84,
+          "first_cue": 1449,
+          "last_cue": 1532
+        },
+        {
+          "start": "60:00",
+          "end": "61:00",
+          "start_ms": 3600000,
+          "end_ms": 3660000,
+          "title": "哈希桶不是“消灭所有图边通信”",
+          "cue_count": 27,
+          "first_cue": 1533,
+          "last_cue": 1559
+        },
+        {
+          "start": "61:00",
+          "end": "64:00",
+          "start_ms": 3660000,
+          "end_ms": 3840000,
+          "title": "课后插问：FaRM 提交以后，恢复必须留下证据",
+          "cue_count": 88,
+          "first_cue": 1560,
+          "last_cue": 1647
+        },
+        {
+          "start": "64:00",
+          "end": "65:00",
+          "start_ms": 3840000,
+          "end_ms": 3900000,
+          "title": "FaRM 的故障预算不因恢复而消失",
+          "cue_count": 26,
+          "first_cue": 1648,
+          "last_cue": 1673
+        },
+        {
+          "start": "65:00",
+          "end": "68:00",
+          "start_ms": 3900000,
+          "end_ms": 4080000,
+          "title": "再读论文定义：多对一为什么不必然是宽依赖",
+          "cue_count": 63,
+          "first_cue": 1674,
+          "last_cue": 1736
+        },
+        {
+          "start": "68:00",
+          "end": "71:00",
+          "start_ms": 4080000,
+          "end_ms": 4260000,
+          "title": "争论没有消除定义差异，正文保留并校正",
+          "cue_count": 84,
+          "first_cue": 1737,
+          "last_cue": 1820
+        },
+        {
+          "start": "71:00",
+          "end": "74:00",
+          "start_ms": 4260000,
+          "end_ms": 4440000,
+          "title": "课后问答：流水线不是为每个函数单开并发任务",
+          "cue_count": 77,
+          "first_cue": 1821,
+          "last_cue": 1897
+        },
+        {
+          "start": "74:00",
+          "end": "76:00",
+          "start_ms": 4440000,
+          "end_ms": 4560000,
+          "title": "使用过 Spark 的学生追问 DAG 与 RDD",
+          "cue_count": 50,
+          "first_cue": 1898,
+          "last_cue": 1947
+        },
+        {
+          "start": "76:00",
+          "end": "78:00",
+          "start_ms": 4560000,
+          "end_ms": 4680000,
+          "title": "RDD 是分区集合，箭头是转换关系",
+          "cue_count": 57,
+          "first_cue": 1948,
+          "last_cue": 2004
+        },
+        {
+          "start": "78:00",
+          "end": "78:48",
+          "start_ms": 4680000,
+          "end_ms": 4728000,
+          "title": "最后的学习建议",
+          "cue_count": 22,
+          "first_cue": 2005,
+          "last_cue": 2026
+        }
+      ],
+      "status": "reviewed_text",
+      "review_scope": "All2026 original-English automatic cue texts read in order via79 lossless minute groups,reading-by-minute.txt lines1-90,91-180,181-236. Full available lecture plus55min-onward post-class Q/A including FaRM61-65min and unresolved narrow-dependency debate65-71min. Direct cue reinspection15:00-20:30 collect/count,51:00-52:20 only-final-collect claim,56:45-57:50 driver/scheduler uncertainty. First0ms,last start4726640,last end4730000,2 cues exceed4728000ms. No audio/video-frame review."
+    }
+  ],
+  "caption_time_structure": {
+    "cue_count": 2026,
+    "first_start_ms": 0,
+    "last_start_ms": 4726640,
+    "last_end_ms": 4730000,
+    "metadata_duration_seconds": 4728,
+    "starts_monotonic": true,
+    "ends_monotonic": true,
+    "negative_duration_count": 0,
+    "cues_ending_after_video": 2,
+    "tail_overrun_ms": 2000,
+    "tail_uncaptioned_ms": 0,
+    "overlapping_adjacent_cue_pairs": 1898,
+    "positive_uncovered_gap_count": 127,
+    "uncovered_ms_within_video": 216290,
+    "maximum_uncovered_gap_ms": 11000,
+    "all_uncovered_gaps": [
+      {
+        "start_ms": 23920,
+        "end_ms": 25119,
+        "duration_ms": 1199
+      },
+      {
+        "start_ms": 28720,
+        "end_ms": 28800,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 37680,
+        "end_ms": 38559,
+        "duration_ms": 879
+      },
+      {
+        "start_ms": 50079,
+        "end_ms": 52719,
+        "duration_ms": 2640
+      },
+      {
+        "start_ms": 73840,
+        "end_ms": 74799,
+        "duration_ms": 959
+      },
+      {
+        "start_ms": 112159,
+        "end_ms": 112240,
+        "duration_ms": 81
+      },
+      {
+        "start_ms": 119680,
+        "end_ms": 120719,
+        "duration_ms": 1039
+      },
+      {
+        "start_ms": 129840,
+        "end_ms": 140840,
+        "duration_ms": 11000
+      },
+      {
+        "start_ms": 143840,
+        "end_ms": 154840,
+        "duration_ms": 11000
+      },
+      {
+        "start_ms": 190000,
+        "end_ms": 191200,
+        "duration_ms": 1200
+      },
+      {
+        "start_ms": 205200,
+        "end_ms": 207920,
+        "duration_ms": 2720
+      },
+      {
+        "start_ms": 222000,
+        "end_ms": 222959,
+        "duration_ms": 959
+      },
+      {
+        "start_ms": 230239,
+        "end_ms": 230319,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 248159,
+        "end_ms": 249280,
+        "duration_ms": 1121
+      },
+      {
+        "start_ms": 283840,
+        "end_ms": 286160,
+        "duration_ms": 2320
+      },
+      {
+        "start_ms": 311840,
+        "end_ms": 316400,
+        "duration_ms": 4560
+      },
+      {
+        "start_ms": 339840,
+        "end_ms": 340240,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 556000,
+        "end_ms": 560839,
+        "duration_ms": 4839
+      },
+      {
+        "start_ms": 667680,
+        "end_ms": 668079,
+        "duration_ms": 399
+      },
+      {
+        "start_ms": 723040,
+        "end_ms": 726000,
+        "duration_ms": 2960
+      },
+      {
+        "start_ms": 775120,
+        "end_ms": 775839,
+        "duration_ms": 719
+      },
+      {
+        "start_ms": 831040,
+        "end_ms": 831839,
+        "duration_ms": 799
+      },
+      {
+        "start_ms": 849600,
+        "end_ms": 849760,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 917519,
+        "end_ms": 918480,
+        "duration_ms": 961
+      },
+      {
+        "start_ms": 927839,
+        "end_ms": 928240,
+        "duration_ms": 401
+      },
+      {
+        "start_ms": 1028079,
+        "end_ms": 1033280,
+        "duration_ms": 5201
+      },
+      {
+        "start_ms": 1039839,
+        "end_ms": 1042079,
+        "duration_ms": 2240
+      },
+      {
+        "start_ms": 1072880,
+        "end_ms": 1075679,
+        "duration_ms": 2799
+      },
+      {
+        "start_ms": 1141840,
+        "end_ms": 1142559,
+        "duration_ms": 719
+      },
+      {
+        "start_ms": 1210159,
+        "end_ms": 1210640,
+        "duration_ms": 481
+      },
+      {
+        "start_ms": 1213280,
+        "end_ms": 1215440,
+        "duration_ms": 2160
+      },
+      {
+        "start_ms": 1420080,
+        "end_ms": 1420880,
+        "duration_ms": 800
+      },
+      {
+        "start_ms": 1426080,
+        "end_ms": 1426400,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 1525360,
+        "end_ms": 1526799,
+        "duration_ms": 1439
+      },
+      {
+        "start_ms": 1593760,
+        "end_ms": 1595679,
+        "duration_ms": 1919
+      },
+      {
+        "start_ms": 1674880,
+        "end_ms": 1676080,
+        "duration_ms": 1200
+      },
+      {
+        "start_ms": 1679520,
+        "end_ms": 1681200,
+        "duration_ms": 1680
+      },
+      {
+        "start_ms": 1687279,
+        "end_ms": 1690640,
+        "duration_ms": 3361
+      },
+      {
+        "start_ms": 1735919,
+        "end_ms": 1737039,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 1767840,
+        "end_ms": 1768559,
+        "duration_ms": 719
+      },
+      {
+        "start_ms": 1772159,
+        "end_ms": 1773919,
+        "duration_ms": 1760
+      },
+      {
+        "start_ms": 1776159,
+        "end_ms": 1777760,
+        "duration_ms": 1601
+      },
+      {
+        "start_ms": 1784399,
+        "end_ms": 1788080,
+        "duration_ms": 3681
+      },
+      {
+        "start_ms": 1809840,
+        "end_ms": 1812640,
+        "duration_ms": 2800
+      },
+      {
+        "start_ms": 1818640,
+        "end_ms": 1819840,
+        "duration_ms": 1200
+      },
+      {
+        "start_ms": 1830799,
+        "end_ms": 1831120,
+        "duration_ms": 321
+      },
+      {
+        "start_ms": 1837840,
+        "end_ms": 1839200,
+        "duration_ms": 1360
+      },
+      {
+        "start_ms": 1872240,
+        "end_ms": 1875679,
+        "duration_ms": 3439
+      },
+      {
+        "start_ms": 1963840,
+        "end_ms": 1968880,
+        "duration_ms": 5040
+      },
+      {
+        "start_ms": 1995440,
+        "end_ms": 1997679,
+        "duration_ms": 2239
+      },
+      {
+        "start_ms": 2000559,
+        "end_ms": 2000960,
+        "duration_ms": 401
+      },
+      {
+        "start_ms": 2042559,
+        "end_ms": 2045440,
+        "duration_ms": 2881
+      },
+      {
+        "start_ms": 2050320,
+        "end_ms": 2051359,
+        "duration_ms": 1039
+      },
+      {
+        "start_ms": 2093520,
+        "end_ms": 2093839,
+        "duration_ms": 319
+      },
+      {
+        "start_ms": 2107680,
+        "end_ms": 2111040,
+        "duration_ms": 3360
+      },
+      {
+        "start_ms": 2145839,
+        "end_ms": 2146000,
+        "duration_ms": 161
+      },
+      {
+        "start_ms": 2150320,
+        "end_ms": 2152800,
+        "duration_ms": 2480
+      },
+      {
+        "start_ms": 2230960,
+        "end_ms": 2232000,
+        "duration_ms": 1040
+      },
+      {
+        "start_ms": 2244480,
+        "end_ms": 2246640,
+        "duration_ms": 2160
+      },
+      {
+        "start_ms": 2250560,
+        "end_ms": 2251119,
+        "duration_ms": 559
+      },
+      {
+        "start_ms": 2327839,
+        "end_ms": 2328560,
+        "duration_ms": 721
+      },
+      {
+        "start_ms": 2330800,
+        "end_ms": 2331599,
+        "duration_ms": 799
+      },
+      {
+        "start_ms": 2343599,
+        "end_ms": 2344560,
+        "duration_ms": 961
+      },
+      {
+        "start_ms": 2351839,
+        "end_ms": 2352800,
+        "duration_ms": 961
+      },
+      {
+        "start_ms": 2534720,
+        "end_ms": 2535119,
+        "duration_ms": 399
+      },
+      {
+        "start_ms": 2621839,
+        "end_ms": 2622800,
+        "duration_ms": 961
+      },
+      {
+        "start_ms": 2635839,
+        "end_ms": 2637440,
+        "duration_ms": 1601
+      },
+      {
+        "start_ms": 2640160,
+        "end_ms": 2640720,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 2699599,
+        "end_ms": 2699680,
+        "duration_ms": 81
+      },
+      {
+        "start_ms": 2705839,
+        "end_ms": 2706400,
+        "duration_ms": 561
+      },
+      {
+        "start_ms": 2726400,
+        "end_ms": 2726880,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 2792160,
+        "end_ms": 2792319,
+        "duration_ms": 159
+      },
+      {
+        "start_ms": 2800640,
+        "end_ms": 2801359,
+        "duration_ms": 719
+      },
+      {
+        "start_ms": 2912000,
+        "end_ms": 2912559,
+        "duration_ms": 559
+      },
+      {
+        "start_ms": 3001520,
+        "end_ms": 3002079,
+        "duration_ms": 559
+      },
+      {
+        "start_ms": 3005359,
+        "end_ms": 3011119,
+        "duration_ms": 5760
+      },
+      {
+        "start_ms": 3059440,
+        "end_ms": 3061200,
+        "duration_ms": 1760
+      },
+      {
+        "start_ms": 3097839,
+        "end_ms": 3105280,
+        "duration_ms": 7441
+      },
+      {
+        "start_ms": 3125839,
+        "end_ms": 3129040,
+        "duration_ms": 3201
+      },
+      {
+        "start_ms": 3163920,
+        "end_ms": 3164559,
+        "duration_ms": 639
+      },
+      {
+        "start_ms": 3171599,
+        "end_ms": 3172240,
+        "duration_ms": 641
+      },
+      {
+        "start_ms": 3181839,
+        "end_ms": 3182079,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 3195839,
+        "end_ms": 3199040,
+        "duration_ms": 3201
+      },
+      {
+        "start_ms": 3212400,
+        "end_ms": 3212880,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 3217920,
+        "end_ms": 3221520,
+        "duration_ms": 3600
+      },
+      {
+        "start_ms": 3227920,
+        "end_ms": 3232079,
+        "duration_ms": 4159
+      },
+      {
+        "start_ms": 3237839,
+        "end_ms": 3238240,
+        "duration_ms": 401
+      },
+      {
+        "start_ms": 3251839,
+        "end_ms": 3254559,
+        "duration_ms": 2720
+      },
+      {
+        "start_ms": 3310880,
+        "end_ms": 3314319,
+        "duration_ms": 3439
+      },
+      {
+        "start_ms": 3391839,
+        "end_ms": 3391920,
+        "duration_ms": 81
+      },
+      {
+        "start_ms": 3422960,
+        "end_ms": 3423200,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 3426480,
+        "end_ms": 3427280,
+        "duration_ms": 800
+      },
+      {
+        "start_ms": 3461839,
+        "end_ms": 3463839,
+        "duration_ms": 2000
+      },
+      {
+        "start_ms": 3497839,
+        "end_ms": 3500000,
+        "duration_ms": 2161
+      },
+      {
+        "start_ms": 3524240,
+        "end_ms": 3524640,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 3556799,
+        "end_ms": 3557440,
+        "duration_ms": 641
+      },
+      {
+        "start_ms": 3560400,
+        "end_ms": 3560960,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 3583040,
+        "end_ms": 3584000,
+        "duration_ms": 960
+      },
+      {
+        "start_ms": 3629200,
+        "end_ms": 3632000,
+        "duration_ms": 2800
+      },
+      {
+        "start_ms": 3651359,
+        "end_ms": 3654839,
+        "duration_ms": 3480
+      },
+      {
+        "start_ms": 3664480,
+        "end_ms": 3665040,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 3762480,
+        "end_ms": 3763039,
+        "duration_ms": 559
+      },
+      {
+        "start_ms": 3830079,
+        "end_ms": 3830640,
+        "duration_ms": 561
+      },
+      {
+        "start_ms": 3890400,
+        "end_ms": 3890960,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 3895839,
+        "end_ms": 3896000,
+        "duration_ms": 161
+      },
+      {
+        "start_ms": 3901039,
+        "end_ms": 3902319,
+        "duration_ms": 1280
+      },
+      {
+        "start_ms": 3905920,
+        "end_ms": 3906640,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 3911200,
+        "end_ms": 3916160,
+        "duration_ms": 4960
+      },
+      {
+        "start_ms": 3971520,
+        "end_ms": 3972640,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 3976400,
+        "end_ms": 3976480,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 4014960,
+        "end_ms": 4016319,
+        "duration_ms": 1359
+      },
+      {
+        "start_ms": 4025359,
+        "end_ms": 4026559,
+        "duration_ms": 1200
+      },
+      {
+        "start_ms": 4029440,
+        "end_ms": 4029920,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 4042319,
+        "end_ms": 4044000,
+        "duration_ms": 1681
+      },
+      {
+        "start_ms": 4080880,
+        "end_ms": 4082160,
+        "duration_ms": 1280
+      },
+      {
+        "start_ms": 4090319,
+        "end_ms": 4091039,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 4156400,
+        "end_ms": 4157199,
+        "duration_ms": 799
+      },
+      {
+        "start_ms": 4203840,
+        "end_ms": 4207600,
+        "duration_ms": 3760
+      },
+      {
+        "start_ms": 4320640,
+        "end_ms": 4321970,
+        "duration_ms": 1330
+      },
+      {
+        "start_ms": 4349760,
+        "end_ms": 4350640,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 4361040,
+        "end_ms": 4362080,
+        "duration_ms": 1040
+      },
+      {
+        "start_ms": 4365520,
+        "end_ms": 4368640,
+        "duration_ms": 3120
+      },
+      {
+        "start_ms": 4427840,
+        "end_ms": 4428080,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 4459440,
+        "end_ms": 4464000,
+        "duration_ms": 4560
+      },
+      {
+        "start_ms": 4468880,
+        "end_ms": 4471600,
+        "duration_ms": 2720
+      },
+      {
+        "start_ms": 4527120,
+        "end_ms": 4527280,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 4592000,
+        "end_ms": 4593040,
+        "duration_ms": 1040
+      }
+    ],
+    "draft_segment_count": 30,
+    "draft_start": "00:00",
+    "draft_end": "78:48",
+    "audio_reviewed": false,
+    "video_frames_reviewed": false,
+    "interpretation": "All 2026 cue texts read sequentially through lossless minute grouping. Interval-union gaps are not silence detection or proof of missing speech. No breakout discussion in available transcript. Environment interruption near02min retained. Raw final2000ms overrun retained; no audio/classroom frame review."
+  },
+  "draft_segments": [
+    {
+      "start": "00:00",
+      "end": "02:00",
+      "start_ms": 0,
+      "end_ms": 120000,
+      "title": "回到 MapReduce，看看迭代计算需要什么",
+      "cue_count": 46,
+      "first_cue": 1,
+      "last_cue": 46
+    },
+    {
+      "start": "02:00",
+      "end": "05:00",
+      "start_ms": 120000,
+      "end_ms": 300000,
+      "title": "内存复用与这堂课的历史范围",
+      "cue_count": 72,
+      "first_cue": 47,
+      "last_cue": 118
+    },
+    {
+      "start": "05:00",
+      "end": "08:00",
+      "start_ms": 300000,
+      "end_ms": 480000,
+      "title": "一个 RDD 可以先只是“怎样得到数据”的描述",
+      "cue_count": 73,
+      "first_cue": 119,
+      "last_cue": 191
+    },
+    {
+      "start": "08:00",
+      "end": "12:00",
+      "start_ms": 480000,
+      "end_ms": 720000,
+      "title": "过滤日志，标记复用，再把转换串成流水线",
+      "cue_count": 112,
+      "first_cue": 192,
+      "last_cue": 303
+    },
+    {
+      "start": "12:00",
+      "end": "14:00",
+      "start_ms": 720000,
+      "end_ms": 840000,
+      "title": "问答：分区并行、lineage 与事务日志",
+      "cue_count": 56,
+      "first_cue": 304,
+      "last_cue": 359
+    },
+    {
+      "start": "14:00",
+      "end": "17:00",
+      "start_ms": 840000,
+      "end_ms": 1020000,
+      "title": "两个查询共用 errors，动作的名字不能混淆",
+      "cue_count": 76,
+      "first_cue": 360,
+      "last_cue": 435
+    },
+    {
+      "start": "17:00",
+      "end": "20:00",
+      "start_ms": 1020000,
+      "end_ms": 1200000,
+      "title": "driver、worker 与分区任务",
+      "cue_count": 77,
+      "first_cue": 436,
+      "last_cue": 512
+    },
+    {
+      "start": "20:00",
+      "end": "23:00",
+      "start_ms": 1200000,
+      "end_ms": 1380000,
+      "title": "窄依赖与宽依赖：学生指出定义方向的问题",
+      "cue_count": 77,
+      "first_cue": 513,
+      "last_cue": 589
+    },
+    {
+      "start": "23:00",
+      "end": "26:00",
+      "start_ms": 1380000,
+      "end_ms": 1560000,
+      "title": "问答：不 persist 会怎样，初始分区从哪里来",
+      "cue_count": 80,
+      "first_cue": 590,
+      "last_cue": 669
+    },
+    {
+      "start": "26:00",
+      "end": "30:00",
+      "start_ms": 1560000,
+      "end_ms": 1800000,
+      "title": "worker 失败：丢失的是可重算分区",
+      "cue_count": 99,
+      "first_cue": 670,
+      "last_cue": 768
+    },
+    {
+      "start": "30:00",
+      "end": "33:00",
+      "start_ms": 1800000,
+      "end_ms": 1980000,
+      "title": "宽依赖让一次失败影响更多祖先",
+      "cue_count": 74,
+      "first_cue": 769,
+      "last_cue": 842
+    },
+    {
+      "start": "33:00",
+      "end": "35:00",
+      "start_ms": 1980000,
+      "end_ms": 2100000,
+      "title": "问答：缓存不等于可靠检查点",
+      "cue_count": 49,
+      "first_cue": 843,
+      "last_cue": 891
+    },
+    {
+      "start": "35:00",
+      "end": "38:00",
+      "start_ms": 2100000,
+      "end_ms": 2280000,
+      "title": "PageRank：适合展示复用的迭代例子",
+      "cue_count": 77,
+      "first_cue": 892,
+      "last_cue": 968
+    },
+    {
+      "start": "38:00",
+      "end": "41:00",
+      "start_ms": 2280000,
+      "end_ms": 2460000,
+      "title": "links 不变，ranks 每轮产生新版本",
+      "cue_count": 72,
+      "first_cue": 969,
+      "last_cue": 1040
+    },
+    {
+      "start": "41:00",
+      "end": "44:00",
+      "start_ms": 2460000,
+      "end_ms": 2640000,
+      "title": "平分出边贡献，再按目标网页求和",
+      "cue_count": 73,
+      "first_cue": 1041,
+      "last_cue": 1113
+    },
+    {
+      "start": "44:00",
+      "end": "47:00",
+      "start_ms": 2640000,
+      "end_ms": 2820000,
+      "title": "循环展开成增长的依赖图",
+      "cue_count": 82,
+      "first_cue": 1114,
+      "last_cue": 1195
+    },
+    {
+      "start": "47:00",
+      "end": "50:00",
+      "start_ms": 2820000,
+      "end_ms": 3000000,
+      "title": "相同 partitioner 让 join 更局部",
+      "cue_count": 79,
+      "first_cue": 1196,
+      "last_cue": 1274
+    },
+    {
+      "start": "50:00",
+      "end": "53:00",
+      "start_ms": 3000000,
+      "end_ms": 3180000,
+      "title": "问答：复用、并行，以及一个不能照抄的结论",
+      "cue_count": 74,
+      "first_cue": 1275,
+      "last_cue": 1348
+    },
+    {
+      "start": "53:00",
+      "end": "55:00",
+      "start_ms": 3180000,
+      "end_ms": 3300000,
+      "title": "正式讲授结束与实验提醒",
+      "cue_count": 43,
+      "first_cue": 1349,
+      "last_cue": 1391
+    },
+    {
+      "start": "55:00",
+      "end": "57:00",
+      "start_ms": 3300000,
+      "end_ms": 3420000,
+      "title": "课后问答：自动 checkpoint 在优化什么",
+      "cue_count": 57,
+      "first_cue": 1392,
+      "last_cue": 1448
+    },
+    {
+      "start": "57:00",
+      "end": "60:00",
+      "start_ms": 3420000,
+      "end_ms": 3600000,
+      "title": "课后问答：driver 故障未明，哈希分区再解释",
+      "cue_count": 84,
+      "first_cue": 1449,
+      "last_cue": 1532
+    },
+    {
+      "start": "60:00",
+      "end": "61:00",
+      "start_ms": 3600000,
+      "end_ms": 3660000,
+      "title": "哈希桶不是“消灭所有图边通信”",
+      "cue_count": 27,
+      "first_cue": 1533,
+      "last_cue": 1559
+    },
+    {
+      "start": "61:00",
+      "end": "64:00",
+      "start_ms": 3660000,
+      "end_ms": 3840000,
+      "title": "课后插问：FaRM 提交以后，恢复必须留下证据",
+      "cue_count": 88,
+      "first_cue": 1560,
+      "last_cue": 1647
+    },
+    {
+      "start": "64:00",
+      "end": "65:00",
+      "start_ms": 3840000,
+      "end_ms": 3900000,
+      "title": "FaRM 的故障预算不因恢复而消失",
+      "cue_count": 26,
+      "first_cue": 1648,
+      "last_cue": 1673
+    },
+    {
+      "start": "65:00",
+      "end": "68:00",
+      "start_ms": 3900000,
+      "end_ms": 4080000,
+      "title": "再读论文定义：多对一为什么不必然是宽依赖",
+      "cue_count": 63,
+      "first_cue": 1674,
+      "last_cue": 1736
+    },
+    {
+      "start": "68:00",
+      "end": "71:00",
+      "start_ms": 4080000,
+      "end_ms": 4260000,
+      "title": "争论没有消除定义差异，正文保留并校正",
+      "cue_count": 84,
+      "first_cue": 1737,
+      "last_cue": 1820
+    },
+    {
+      "start": "71:00",
+      "end": "74:00",
+      "start_ms": 4260000,
+      "end_ms": 4440000,
+      "title": "课后问答：流水线不是为每个函数单开并发任务",
+      "cue_count": 77,
+      "first_cue": 1821,
+      "last_cue": 1897
+    },
+    {
+      "start": "74:00",
+      "end": "76:00",
+      "start_ms": 4440000,
+      "end_ms": 4560000,
+      "title": "使用过 Spark 的学生追问 DAG 与 RDD",
+      "cue_count": 50,
+      "first_cue": 1898,
+      "last_cue": 1947
+    },
+    {
+      "start": "76:00",
+      "end": "78:00",
+      "start_ms": 4560000,
+      "end_ms": 4680000,
+      "title": "RDD 是分区集合，箭头是转换关系",
+      "cue_count": 57,
+      "first_cue": 1948,
+      "last_cue": 2004
+    },
+    {
+      "start": "78:00",
+      "end": "78:48",
+      "start_ms": 4680000,
+      "end_ms": 4728000,
+      "title": "最后的学习建议",
+      "cue_count": 22,
+      "first_cue": 2005,
+      "last_cue": 2026
+    }
+  ],
+  "paper_visual_review": {
+    "pdf_pages": 14,
+    "figures": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "tables": [
+      1,
+      2,
+      3
+    ],
+    "inspected_page_images": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "formula_pages": [
+      5
+    ],
+    "audio_or_classroom_frames": false
+  },
+  "version_mapping_evidence": {
+    "file": "schedule-2021.html",
+    "scope": "Lines229-230 checked:2021-04-29L16 exact outline/paper/FAQ/video links;inventory matches. Source URLs preserve schedule originals;redirect/canonical endpoints separate."
+  },
+  "documents": [
+    {
+      "file": "lectures/lec16/draft.zh.md",
+      "sha256": "a4ced485febb82978c524a5df34515084753bcc2c0d5dc9e8085d49a1f3c4dc8",
+      "status": "completed"
+    },
+    {
+      "file": "lectures/lec16/materials.zh.md",
+      "sha256": "fb17f5d1ca69e15b30a9e448d8e0cf9450d5e03c54359c54be18df209f3bb647",
+      "status": "completed"
+    },
+    {
+      "file": "lectures/lec16/notes.zh.md",
+      "sha256": "ba697ecd34ec3940078a34b311808460f52e9e5a4dd85bdee6ff157a74b4a1d9",
+      "status": "completed"
+    }
+  ],
+  "content_paths": [
+    "lectures/lec16/draft.zh.md",
+    "lectures/lec16/materials.zh.md",
+    "lectures/lec16/notes.zh.md"
+  ],
+  "lab_code_commit": "513cac0aef010750fc74688da8a395974a83cf7a",
+  "lab_tests": "not_run",
+  "update_ray": "not_started",
+  "validation": {
+    "source_hashes": "passed",
+    "caption_structure": "passed_with_retained_raw2000ms_tail_overrun",
+    "lossless_grouping": "passed",
+    "continuous_draft_timeline": "passed",
+    "markdown_local_structure": "passed",
+    "integration_contract": "videos[0] metadata object and sources-relative paths present; full check-p7 delegated to main agent.",
+    "build": "Not run by restricted worker.",
+    "experiments": "Not run",
+    "no_media_download": true,
+    "no_full_player_response_saved": true,
+    "no_signed_urls_saved": true,
+    "no_cookies_saved": true
+  },
+  "issues": [
+    "No audio/classroom-frame verification; ASR numbers/negations/board details remain uncertain. No invented breakout discussion or shell demo.",
+    "127 interval-union gaps total216290ms,max11000ms;environment pause near02min;raw final4730000ms exceeds4728000ms by2000ms,2 cues end after duration.",
+    "Video-specific CC Attribution exact version absent;paper full-translation permission unconfirmed.",
+    "Outline internal2021L16 title but Last-ModifiedMay4 afterApr29class;FAQ no-year heading/Apr30modified;PDF2012paper vsJan22,2021server snapshot date.",
+    "Narrow definition constrains parent fanout,not child input count;classroom65-71min disagreement unresolved in video but paperpp6-7 consistent and used for correction.",
+    "PageRank co-partitioned join does not eliminate contribution reduceByKey shuffle;only-final-collect claim51:45 corrected explicitly.",
+    "collect returns elements,count counts;classroom16-20min conflates them;Scala index3 is not a proof of three-piece split.",
+    "2012paper explicitly lacks scheduler-failure tolerance;57min classroom reconnect speculation/ASR uncertainty not a guarantee.",
+    "persist/cache,shuffle intermediate materialization,and durable checkpoint distinguished;RELIABLEp6vsREPLICATEp8 historical naming discrepancy retained;automatic checkpoint future work.",
+    "Paper alpha/N normalized PageRank vs2021outline0.15+0.85sum with initial1 scores distinguished;dangling-node handling not supplied by short example.",
+    "Figure11 graph81s vs prose80s retained;Figure9 single-machine256MB differs from100GB cluster tests;Figure14 hardware differs from default.",
+    "FaRM61-65min follow-up retained as classroom Q/A;not a new full protocol review or replacement for L15.",
+    "FAQ modern/deprecated and lecture product statements treated as historical;external linked papers/currentSpark/thesis not read. Ray remains future/uncompleted.",
+    "Fixed2026lab commit retained;no Spark execution,lab tests,shared-file writes,build,staging or commits."
+  ]
+}

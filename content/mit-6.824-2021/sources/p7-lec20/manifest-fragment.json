@@ -1,0 +1,2713 @@
+{
+  "course_id": "mit-6.824-2021",
+  "lecture_id": "lec20",
+  "batch": "P7",
+  "content_status": "completed_for_available_text_with_explicit_asr_gaps_and_audio_visual_limits",
+  "review_file": "p7-lec20/review.txt",
+  "acquisition_file": "p7-lec20/acquisition.json",
+  "sources": [
+    {
+      "id": "lec20-2021-l-blockstack.txt",
+      "url": "http://nil.csail.mit.edu/6.824/2021/notes/l-blockstack.txt",
+      "retrieved_at": "2026-11-09T13:30:35.451285+00:00",
+      "last_modified": "Tue, 18 May 2021 19:06:55 GMT",
+      "file": "p7-lec20/l-blockstack.txt",
+      "sha256": "f2f74bf8489ce9f2e8d7f13cf16f13ac8bcc9fbe143931d09cabcf6b8b05c65b",
+      "status": "reviewed",
+      "final_url": "http://nil.csail.mit.edu/6.824/2021/notes/l-blockstack.txt",
+      "reviewed_at": "2026-11-09T13:30:54.250049+00:00",
+      "scope": "All330 lines read. Explicit 6.8242021 Lecture20 Blockstack(2016) heading. Entire app/naming/storage/key management/discussion outline and two external reference entries read; external documents/code not read. Atlas/Gaia/Browser vocabulary is outline-specific, not backfilled into2016 paper. Last-Modified2021-05-18 19:06:55GMT may be later than class preparation.",
+      "license": {
+        "label": "CC BY3.0US",
+        "evidence_file": "home-2021.html",
+        "evidence_line": 55,
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "scope": "Course-authored text only; no extension to paper/video."
+      }
+    },
+    {
+      "id": "lec20-2021-blockstack-atc16.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/blockstack-atc16.pdf",
+      "retrieved_at": "2026-11-09T13:30:44.880634+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:42 GMT",
+      "file": "p7-lec20/blockstack-atc16.pdf",
+      "sha256": "bdaeaa2626696994c157f514362df6b15a84d0b4c739439269b564c30829d381",
+      "status": "reviewed",
+      "final_url": "http://nil.csail.mit.edu/6.824/2021/papers/blockstack-atc16.pdf",
+      "reviewed_at": "2026-11-09T13:30:54.250049+00:00",
+      "scope": "All15 PDF pages read via complete846-line layout extraction: cover, abstract, sections1-7, acknowledgements and53 bibliography entries; printed pages181-194. All8 figures and both SNV formulas checked on actual page images; no numbered tables. Cover and pages5,6,7,8,10,11,12 visually inspected. Other page text read in extraction, not separately image-reviewed. No bibliography-linked full texts read. Internal title Blockstack: A Global Naming and Storage System Secured by Blockchains, USENIX ATC2016; Last-Modified2021-01-22 is server snapshot date.",
+      "license": "Full translation permission unconfirmed; original Chinese analytical reading, no public reproduction of page images."
+    },
+    {
+      "id": "lec20-2021-blockstack-faq.txt",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/blockstack-faq.txt",
+      "retrieved_at": "2026-11-09T13:30:35.184416+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:42 GMT",
+      "file": "p7-lec20/blockstack-faq.txt",
+      "sha256": "2299dd0ef58c594abfbf729c62eba3a73e9c3c202f7c438278e08465d2a3c3da",
+      "status": "reviewed",
+      "final_url": "http://nil.csail.mit.edu/6.824/2021/papers/blockstack-faq.txt",
+      "reviewed_at": "2026-11-09T13:30:54.250049+00:00",
+      "scope": "All174 lines read, including CT, pricing, privacy, identity/recovery, SQL/groups/auctions/shared aggregates and Consistency Hashes. Heading has no year; opening refers to whitepaper and links2016 paper plus May2019 whitepaper despite2021 schedule assigning2016 PDF. Those external documents were not fetched. Last-Modified2021-01-22 09:21:42GMT.",
+      "license": {
+        "label": "CC BY3.0US",
+        "evidence_file": "home-2021.html",
+        "evidence_line": 55,
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "scope": "Course-authored text only; no extension to paper/video."
+      }
+    },
+    {
+      "id": "lec20-2021-metadata.json",
+      "url": "https://www.youtube.com/watch?v=DnyBPxo3B6I",
+      "retrieved_at": "2026-11-09T13:09:48.361810+00:00",
+      "last_modified": null,
+      "file": "p7-lec20/metadata.json",
+      "sha256": "5a033d5b25e8d6893fe5bcd1703ba1c1fa752261c026467427371bf22de7bf3a",
+      "status": "reviewed",
+      "last_modified_note": "Not exposed by yt-dlp; unknown.",
+      "reviewed_at": "2026-11-09T13:30:54.250049+00:00",
+      "scope": "Independent whitelist query: DnyBPxo3B6I; Lecture20: Blockstack;5383seconds/89:43; MIT6.824: Distributed Systems; UC_7WrbZTCODu1o_kfUMq88g; uploaded20210518; Creative Commons Attribution license(reuse allowed), exact version unspecified.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Independent video metadata; exact CC version absent."
+    },
+    {
+      "id": "lec20-2021-video.en-orig.json3",
+      "url": "https://www.youtube.com/watch?v=DnyBPxo3B6I",
+      "retrieved_at": "2026-11-09T13:09:48.361894+00:00",
+      "last_modified": null,
+      "file": "p7-lec20/video.en-orig.json3",
+      "sha256": "33adc66fe07a2565db0b030475188bfa7c5e8a045d7dfa6752b3cd5ca0c12514",
+      "status": "reviewed",
+      "last_modified_note": "Not exposed by yt-dlp; unknown.",
+      "reviewed_at": "2026-11-09T13:30:54.250049+00:00",
+      "scope": "All2363 original-language English ASR cue texts sequentially read through90 lossless minute groups/269lines in ranges1-100,101-200,201-269; includes public discussion and post-class questions. Normalized cues48:20-49:10 directly inspected after full read. No breakout session: lecturer explicitly chooses discussion. First80ms, last start5379440ms, end5384880ms,1880ms over integer duration. No audio/classroom-frame review; all available content organized into34 consecutive draft segments.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Independent video metadata; exact CC version absent.",
+      "language": "en-orig",
+      "caption_type": "original-language automatic English ASR"
+    }
+  ],
+  "derived_files": [
+    {
+      "id": "lec20-2021-derived-captions-captions.normalized.json",
+      "file": "p7-lec20/captions/captions.normalized.json",
+      "sha256": "166ab5a47865229f0cb68023eb6734eb92873888486154476214ce39bf7bad3a",
+      "status": "reviewed",
+      "scope": "All cue text read through lossless grouping;48:20-49:10 normalized cue objects directly checked; time structure programmatically checked.",
+      "derived_from": "p7-lec20/video.en-orig.json3",
+      "generated_at": "2026-11-09T13:09:59.089480+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-captions-reading-by-minute.txt",
+      "file": "p7-lec20/captions/reading-by-minute.txt",
+      "sha256": "b1e760cf39faab195b02ee5384682b6b45d28e833fa66c45b3301937fe017ec9",
+      "status": "reviewed",
+      "scope": "All269 lines/90 groups read sequentially; concatenation equals all2363 cues, not a filtered summary.",
+      "derived_from": "p7-lec20/video.en-orig.json3",
+      "generated_at": "2026-11-09T13:09:59.101005+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-captions-transcript.en.txt",
+      "file": "p7-lec20/captions/transcript.en.txt",
+      "sha256": "64429b78fc4f603f6b7e0b4c9e0b15ed94f0bf5c029b7e30def15955bff59e79",
+      "status": "reviewed",
+      "scope": "Same complete cue text read in grouping representation; this output not independently reread.",
+      "derived_from": "p7-lec20/video.en-orig.json3",
+      "generated_at": "2026-11-09T13:09:59.095001+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-captions-captions.en.vtt",
+      "file": "p7-lec20/captions/captions.en.vtt",
+      "sha256": "68f94fc722eb1d5014e17b843bbf1f7dbb47f305e7322f1da855db7ab5f6d73a",
+      "status": "fetched",
+      "scope": "Generated only; not played or independently line-read.",
+      "derived_from": "p7-lec20/video.en-orig.json3",
+      "generated_at": "2026-11-09T13:09:59.093122+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-blockstack-atc16.layout.txt",
+      "file": "p7-lec20/blockstack-atc16.layout.txt",
+      "sha256": "40dd2a776ac49c2f4f23e3b494a96fcda31347065f14539218af8baf61eead75",
+      "status": "reviewed",
+      "scope": "All846lines read sequentially in ranges1-380,381-760,761-846; dual-column continuations followed; cover, abstract, all sections and references included.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.145123+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-01.png",
+      "file": "p7-lec20/paper-pages/page-01.png",
+      "sha256": "c7da3daa3d88057bd7cf30f91985a87d6ab6337bc9c1cda5460a6b4ce83efb95",
+      "status": "reviewed",
+      "scope": "Actual cover: exact internal title, four authors, USENIX ATC2016 publication and open-access wording (not translation license).",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.198966+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-02.png",
+      "file": "p7-lec20/paper-pages/page-02.png",
+      "sha256": "6ed8d890110df3574c6e1830559486c080cc5fe72f639758cf215d0368dff4b8",
+      "status": "fetched",
+      "scope": "Rendered only; full page text read in layout extraction, image not independently inspected.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.245772+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-03.png",
+      "file": "p7-lec20/paper-pages/page-03.png",
+      "sha256": "dcf243538dbdafc6bf74167aab1078d3c4eb8c4e985d5da01ed3060986365beb",
+      "status": "fetched",
+      "scope": "Rendered only; full page text read in layout extraction, image not independently inspected.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.273374+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-04.png",
+      "file": "p7-lec20/paper-pages/page-04.png",
+      "sha256": "208e040e3da50d9f9470fcc4c7b947f9568691be52dcfd9e3710612ab31e12ff",
+      "status": "fetched",
+      "scope": "Rendered only; full page text read in layout extraction, image not independently inspected.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.301832+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-05.png",
+      "file": "p7-lec20/paper-pages/page-05.png",
+      "sha256": "6bcf23647f7568b5ba9af0eb4cdb89705ee1a133f48d4cbb24565da83b4ce2b3",
+      "status": "reviewed",
+      "scope": "Figure1 weekly/daily mining power percentages, Slush/F2Pool; security and51% qualifications.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.374555+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-06.png",
+      "file": "p7-lec20/paper-pages/page-06.png",
+      "sha256": "612ad70787dde1c27078a1a673c6e321ade069772fc08e23e32c98e5dd9aac61",
+      "status": "reviewed",
+      "scope": "Figure2(a) log1-CDF and50/90/99/99.9percentiles7/22/46/78min;(b) latency vs block height; selfish-mining-like caveat.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.413397+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-07.png",
+      "file": "p7-lec20/paper-pages/page-07.png",
+      "sha256": "0e22e425ee02270d27741f8e1f427f6138ea4130674bbf2ad53d317819a00548",
+      "status": "reviewed",
+      "scope": "Figure3 separate block-confirmation time and accepted transactions/target; merged-mining denominator.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.449997+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-08.png",
+      "file": "p7-lec20/paper-pages/page-08.png",
+      "sha256": "c23e71fac78eb23a943154cd4af537209f3d9214614a06d0889714ec26094d82",
+      "status": "reviewed",
+      "scope": "Figure4 all four layers, virtualchain processor, name histories and mutable/immutable paths.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.481761+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-09.png",
+      "file": "p7-lec20/paper-pages/page-09.png",
+      "sha256": "2063cac8f5714a3de41760f54705018d45a73ffc8ca82dc9b1783e51fb33dd31",
+      "status": "fetched",
+      "scope": "Rendered only; full page text read in layout extraction, image not independently inspected.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.510324+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-10.png",
+      "file": "p7-lec20/paper-pages/page-10.png",
+      "sha256": "91eb347cd0a72e26a7a70f02b48e5c6395d45589459f4f00dec893a48ab5a94e",
+      "status": "reviewed",
+      "scope": "Figure5 absent/preordered/registered/revoked, PREORDER/REGISTER/EXPIRE/UPDATE/TRANSFER/RENEW/REVOKE; both storage modes text.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.539733+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-11.png",
+      "file": "p7-lec20/paper-pages/page-11.png",
+      "sha256": "c885d691765c1de099ace47bc95b8f0daf23bb4e840bfee638636067cd42a69a",
+      "status": "reviewed",
+      "scope": "Figure6 geometric SNV verification; both CH(h),P_h equations; trusted hash precondition; Simple vs Simplified title/body discrepancy.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.572539+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-12.png",
+      "file": "p7-lec20/paper-pages/page-12.png",
+      "sha256": "807a0bb6f504ad00a4ebab817072de97ed3f8e39273d7b1a6f0bfbf1586f0346",
+      "status": "reviewed",
+      "scope": "Figures7-8: milliseconds and per-file components, excluded download,100MB performance vs prose2s claim; logarithmic transaction counts and three populations; migration and26.9percent denominator.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.621360+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-13.png",
+      "file": "p7-lec20/paper-pages/page-13.png",
+      "sha256": "90cb4cf25ee610b7c720b9de5001f3d4a56573da946cd9cbd3b88ccdad146388",
+      "status": "fetched",
+      "scope": "Rendered only; full page text read in layout extraction, image not independently inspected.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.648522+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-14.png",
+      "file": "p7-lec20/paper-pages/page-14.png",
+      "sha256": "03ed9b8ba1e71cd646b21850c90ff74da28eef8c1cf764df3955e3eef6ef9cdd",
+      "status": "fetched",
+      "scope": "Rendered only; full page text read in layout extraction, image not independently inspected.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.673504+00:00"
+    },
+    {
+      "id": "lec20-2021-derived-paper-pages-page-15.png",
+      "file": "p7-lec20/paper-pages/page-15.png",
+      "sha256": "3ffcecec7bd9272b584156fbabda3eaa828a82ce9424f8a39e41c808c55ea4fa",
+      "status": "fetched",
+      "scope": "Rendered only; full page text read in layout extraction, image not independently inspected.",
+      "derived_from": "p7-lec20/blockstack-atc16.pdf",
+      "generated_at": "2026-11-09T13:09:59.694827+00:00"
+    }
+  ],
+  "videos": [
+    {
+      "video_id": "DnyBPxo3B6I",
+      "url": "https://www.youtube.com/watch?v=DnyBPxo3B6I",
+      "metadata": {
+        "id": "DnyBPxo3B6I",
+        "title": "Lecture 20: Blockstack",
+        "duration": 5383,
+        "channel": "MIT 6.824: Distributed Systems",
+        "channel_id": "UC_7WrbZTCODu1o_kfUMq88g",
+        "uploader": "MIT 6.824: Distributed Systems",
+        "upload_date": "20210518",
+        "license": "Creative Commons Attribution license (reuse allowed)",
+        "webpage_url": "https://www.youtube.com/watch?v=DnyBPxo3B6I"
+      },
+      "metadata_file": "p7-lec20/metadata.json",
+      "normalized_caption_file": "p7-lec20/captions/captions.normalized.json",
+      "caption_time_structure": {
+        "cue_count": 2363,
+        "first_start_ms": 80,
+        "last_start_ms": 5379440,
+        "last_end_ms": 5384880,
+        "metadata_duration_seconds": 5383,
+        "starts_monotonic": true,
+        "ends_monotonic": true,
+        "negative_duration_count": 0,
+        "cues_ending_after_video": 2,
+        "tail_overrun_ms": 1880,
+        "tail_uncaptioned_ms": 0,
+        "overlapping_adjacent_cue_pairs": 2203,
+        "positive_uncovered_gap_count": 160,
+        "uncovered_ms_within_video": 413118,
+        "maximum_uncovered_gap_ms": 22240,
+        "all_uncovered_gaps": [
+          {
+            "start_ms": 0,
+            "end_ms": 80,
+            "duration_ms": 80
+          },
+          {
+            "start_ms": 32080,
+            "end_ms": 32399,
+            "duration_ms": 319
+          },
+          {
+            "start_ms": 47920,
+            "end_ms": 49280,
+            "duration_ms": 1360
+          },
+          {
+            "start_ms": 51920,
+            "end_ms": 53520,
+            "duration_ms": 1600
+          },
+          {
+            "start_ms": 158319,
+            "end_ms": 164879,
+            "duration_ms": 6560
+          },
+          {
+            "start_ms": 199840,
+            "end_ms": 202080,
+            "duration_ms": 2240
+          },
+          {
+            "start_ms": 311840,
+            "end_ms": 312960,
+            "duration_ms": 1120
+          },
+          {
+            "start_ms": 340960,
+            "end_ms": 342800,
+            "duration_ms": 1840
+          },
+          {
+            "start_ms": 374000,
+            "end_ms": 376400,
+            "duration_ms": 2400
+          },
+          {
+            "start_ms": 386800,
+            "end_ms": 386960,
+            "duration_ms": 160
+          },
+          {
+            "start_ms": 476800,
+            "end_ms": 477599,
+            "duration_ms": 799
+          },
+          {
+            "start_ms": 647839,
+            "end_ms": 654160,
+            "duration_ms": 6321
+          },
+          {
+            "start_ms": 719680,
+            "end_ms": 720079,
+            "duration_ms": 399
+          },
+          {
+            "start_ms": 789680,
+            "end_ms": 789760,
+            "duration_ms": 80
+          },
+          {
+            "start_ms": 848079,
+            "end_ms": 852560,
+            "duration_ms": 4481
+          },
+          {
+            "start_ms": 906720,
+            "end_ms": 906880,
+            "duration_ms": 160
+          },
+          {
+            "start_ms": 913839,
+            "end_ms": 921199,
+            "duration_ms": 7360
+          },
+          {
+            "start_ms": 957680,
+            "end_ms": 960959,
+            "duration_ms": 3279
+          },
+          {
+            "start_ms": 970320,
+            "end_ms": 970560,
+            "duration_ms": 240
+          },
+          {
+            "start_ms": 997839,
+            "end_ms": 1003279,
+            "duration_ms": 5440
+          },
+          {
+            "start_ms": 1039839,
+            "end_ms": 1061120,
+            "duration_ms": 21281
+          },
+          {
+            "start_ms": 1180880,
+            "end_ms": 1183679,
+            "duration_ms": 2799
+          },
+          {
+            "start_ms": 1222640,
+            "end_ms": 1222799,
+            "duration_ms": 159
+          },
+          {
+            "start_ms": 1230720,
+            "end_ms": 1233200,
+            "duration_ms": 2480
+          },
+          {
+            "start_ms": 1266000,
+            "end_ms": 1266960,
+            "duration_ms": 960
+          },
+          {
+            "start_ms": 1272720,
+            "end_ms": 1274080,
+            "duration_ms": 1360
+          },
+          {
+            "start_ms": 1362400,
+            "end_ms": 1366080,
+            "duration_ms": 3680
+          },
+          {
+            "start_ms": 1369200,
+            "end_ms": 1372320,
+            "duration_ms": 3120
+          },
+          {
+            "start_ms": 1501840,
+            "end_ms": 1502159,
+            "duration_ms": 319
+          },
+          {
+            "start_ms": 1532159,
+            "end_ms": 1536480,
+            "duration_ms": 4321
+          },
+          {
+            "start_ms": 1558320,
+            "end_ms": 1559440,
+            "duration_ms": 1120
+          },
+          {
+            "start_ms": 1572240,
+            "end_ms": 1572720,
+            "duration_ms": 480
+          },
+          {
+            "start_ms": 1576559,
+            "end_ms": 1577600,
+            "duration_ms": 1041
+          },
+          {
+            "start_ms": 1584480,
+            "end_ms": 1584960,
+            "duration_ms": 480
+          },
+          {
+            "start_ms": 1591200,
+            "end_ms": 1592799,
+            "duration_ms": 1599
+          },
+          {
+            "start_ms": 1603679,
+            "end_ms": 1606720,
+            "duration_ms": 3041
+          },
+          {
+            "start_ms": 1627840,
+            "end_ms": 1632880,
+            "duration_ms": 5040
+          },
+          {
+            "start_ms": 1641840,
+            "end_ms": 1642159,
+            "duration_ms": 319
+          },
+          {
+            "start_ms": 1673600,
+            "end_ms": 1675120,
+            "duration_ms": 1520
+          },
+          {
+            "start_ms": 1678880,
+            "end_ms": 1679200,
+            "duration_ms": 320
+          },
+          {
+            "start_ms": 1711840,
+            "end_ms": 1714720,
+            "duration_ms": 2880
+          },
+          {
+            "start_ms": 1719520,
+            "end_ms": 1719840,
+            "duration_ms": 320
+          },
+          {
+            "start_ms": 1730480,
+            "end_ms": 1734000,
+            "duration_ms": 3520
+          },
+          {
+            "start_ms": 1739840,
+            "end_ms": 1742320,
+            "duration_ms": 2480
+          },
+          {
+            "start_ms": 1812720,
+            "end_ms": 1814960,
+            "duration_ms": 2240
+          },
+          {
+            "start_ms": 1823840,
+            "end_ms": 1827440,
+            "duration_ms": 3600
+          },
+          {
+            "start_ms": 2040559,
+            "end_ms": 2041600,
+            "duration_ms": 1041
+          },
+          {
+            "start_ms": 2053280,
+            "end_ms": 2058000,
+            "duration_ms": 4720
+          },
+          {
+            "start_ms": 2063520,
+            "end_ms": 2064720,
+            "duration_ms": 1200
+          },
+          {
+            "start_ms": 2075839,
+            "end_ms": 2076480,
+            "duration_ms": 641
+          },
+          {
+            "start_ms": 2092639,
+            "end_ms": 2093119,
+            "duration_ms": 480
+          },
+          {
+            "start_ms": 2099119,
+            "end_ms": 2100839,
+            "duration_ms": 1720
+          },
+          {
+            "start_ms": 2220720,
+            "end_ms": 2221599,
+            "duration_ms": 879
+          },
+          {
+            "start_ms": 2233599,
+            "end_ms": 2233920,
+            "duration_ms": 321
+          },
+          {
+            "start_ms": 2265520,
+            "end_ms": 2266480,
+            "duration_ms": 960
+          },
+          {
+            "start_ms": 2273359,
+            "end_ms": 2275920,
+            "duration_ms": 2561
+          },
+          {
+            "start_ms": 2305680,
+            "end_ms": 2310839,
+            "duration_ms": 5159
+          },
+          {
+            "start_ms": 2313839,
+            "end_ms": 2321920,
+            "duration_ms": 8081
+          },
+          {
+            "start_ms": 2332720,
+            "end_ms": 2333680,
+            "duration_ms": 960
+          },
+          {
+            "start_ms": 2338800,
+            "end_ms": 2339040,
+            "duration_ms": 240
+          },
+          {
+            "start_ms": 2411839,
+            "end_ms": 2415680,
+            "duration_ms": 3841
+          },
+          {
+            "start_ms": 2419440,
+            "end_ms": 2419520,
+            "duration_ms": 80
+          },
+          {
+            "start_ms": 2504640,
+            "end_ms": 2505040,
+            "duration_ms": 400
+          },
+          {
+            "start_ms": 2523839,
+            "end_ms": 2524880,
+            "duration_ms": 1041
+          },
+          {
+            "start_ms": 2527599,
+            "end_ms": 2531280,
+            "duration_ms": 3681
+          },
+          {
+            "start_ms": 2542480,
+            "end_ms": 2543119,
+            "duration_ms": 639
+          },
+          {
+            "start_ms": 2556640,
+            "end_ms": 2558960,
+            "duration_ms": 2320
+          },
+          {
+            "start_ms": 2567520,
+            "end_ms": 2570319,
+            "duration_ms": 2799
+          },
+          {
+            "start_ms": 2579839,
+            "end_ms": 2582079,
+            "duration_ms": 2240
+          },
+          {
+            "start_ms": 2596000,
+            "end_ms": 2598640,
+            "duration_ms": 2640
+          },
+          {
+            "start_ms": 2652079,
+            "end_ms": 2655920,
+            "duration_ms": 3841
+          },
+          {
+            "start_ms": 2833440,
+            "end_ms": 2835200,
+            "duration_ms": 1760
+          },
+          {
+            "start_ms": 2908880,
+            "end_ms": 2909119,
+            "duration_ms": 239
+          },
+          {
+            "start_ms": 2928880,
+            "end_ms": 2940960,
+            "duration_ms": 12080
+          },
+          {
+            "start_ms": 2964880,
+            "end_ms": 2965040,
+            "duration_ms": 160
+          },
+          {
+            "start_ms": 2978880,
+            "end_ms": 2983040,
+            "duration_ms": 4160
+          },
+          {
+            "start_ms": 2988480,
+            "end_ms": 2990319,
+            "duration_ms": 1839
+          },
+          {
+            "start_ms": 3008800,
+            "end_ms": 3010160,
+            "duration_ms": 1360
+          },
+          {
+            "start_ms": 3069839,
+            "end_ms": 3071200,
+            "duration_ms": 1361
+          },
+          {
+            "start_ms": 3139839,
+            "end_ms": 3139920,
+            "duration_ms": 81
+          },
+          {
+            "start_ms": 3169359,
+            "end_ms": 3178240,
+            "duration_ms": 8881
+          },
+          {
+            "start_ms": 3181839,
+            "end_ms": 3185200,
+            "duration_ms": 3361
+          },
+          {
+            "start_ms": 3200640,
+            "end_ms": 3201760,
+            "duration_ms": 1120
+          },
+          {
+            "start_ms": 3231839,
+            "end_ms": 3233599,
+            "duration_ms": 1760
+          },
+          {
+            "start_ms": 3246480,
+            "end_ms": 3248319,
+            "duration_ms": 1839
+          },
+          {
+            "start_ms": 3275920,
+            "end_ms": 3276799,
+            "duration_ms": 879
+          },
+          {
+            "start_ms": 3318480,
+            "end_ms": 3318720,
+            "duration_ms": 240
+          },
+          {
+            "start_ms": 3399200,
+            "end_ms": 3402319,
+            "duration_ms": 3119
+          },
+          {
+            "start_ms": 3438480,
+            "end_ms": 3443839,
+            "duration_ms": 5359
+          },
+          {
+            "start_ms": 3461839,
+            "end_ms": 3464960,
+            "duration_ms": 3121
+          },
+          {
+            "start_ms": 3481440,
+            "end_ms": 3481680,
+            "duration_ms": 240
+          },
+          {
+            "start_ms": 3492480,
+            "end_ms": 3499119,
+            "duration_ms": 6639
+          },
+          {
+            "start_ms": 3503839,
+            "end_ms": 3504480,
+            "duration_ms": 641
+          },
+          {
+            "start_ms": 3532799,
+            "end_ms": 3535040,
+            "duration_ms": 2241
+          },
+          {
+            "start_ms": 3541280,
+            "end_ms": 3542160,
+            "duration_ms": 880
+          },
+          {
+            "start_ms": 3548960,
+            "end_ms": 3551680,
+            "duration_ms": 2720
+          },
+          {
+            "start_ms": 3563599,
+            "end_ms": 3564240,
+            "duration_ms": 641
+          },
+          {
+            "start_ms": 3575040,
+            "end_ms": 3581359,
+            "duration_ms": 6319
+          },
+          {
+            "start_ms": 3593119,
+            "end_ms": 3594160,
+            "duration_ms": 1041
+          },
+          {
+            "start_ms": 3608640,
+            "end_ms": 3609599,
+            "duration_ms": 959
+          },
+          {
+            "start_ms": 3615839,
+            "end_ms": 3628799,
+            "duration_ms": 12960
+          },
+          {
+            "start_ms": 3631119,
+            "end_ms": 3633599,
+            "duration_ms": 2480
+          },
+          {
+            "start_ms": 3717359,
+            "end_ms": 3718319,
+            "duration_ms": 960
+          },
+          {
+            "start_ms": 3721599,
+            "end_ms": 3724839,
+            "duration_ms": 3240
+          },
+          {
+            "start_ms": 3733920,
+            "end_ms": 3734400,
+            "duration_ms": 480
+          },
+          {
+            "start_ms": 3741839,
+            "end_ms": 3742799,
+            "duration_ms": 960
+          },
+          {
+            "start_ms": 3759680,
+            "end_ms": 3767359,
+            "duration_ms": 7679
+          },
+          {
+            "start_ms": 3783839,
+            "end_ms": 3785920,
+            "duration_ms": 2081
+          },
+          {
+            "start_ms": 3790000,
+            "end_ms": 3794319,
+            "duration_ms": 4319
+          },
+          {
+            "start_ms": 3821280,
+            "end_ms": 3822720,
+            "duration_ms": 1440
+          },
+          {
+            "start_ms": 3826400,
+            "end_ms": 3827280,
+            "duration_ms": 880
+          },
+          {
+            "start_ms": 3832799,
+            "end_ms": 3834160,
+            "duration_ms": 1361
+          },
+          {
+            "start_ms": 3839839,
+            "end_ms": 3840400,
+            "duration_ms": 561
+          },
+          {
+            "start_ms": 3883760,
+            "end_ms": 3883839,
+            "duration_ms": 79
+          },
+          {
+            "start_ms": 3928720,
+            "end_ms": 3930640,
+            "duration_ms": 1920
+          },
+          {
+            "start_ms": 3933680,
+            "end_ms": 3934640,
+            "duration_ms": 960
+          },
+          {
+            "start_ms": 3960000,
+            "end_ms": 3962240,
+            "duration_ms": 2240
+          },
+          {
+            "start_ms": 3965839,
+            "end_ms": 3968400,
+            "duration_ms": 2561
+          },
+          {
+            "start_ms": 4008240,
+            "end_ms": 4012319,
+            "duration_ms": 4079
+          },
+          {
+            "start_ms": 4051039,
+            "end_ms": 4052160,
+            "duration_ms": 1121
+          },
+          {
+            "start_ms": 4125440,
+            "end_ms": 4128000,
+            "duration_ms": 2560
+          },
+          {
+            "start_ms": 4163040,
+            "end_ms": 4164799,
+            "duration_ms": 1759
+          },
+          {
+            "start_ms": 4217840,
+            "end_ms": 4218239,
+            "duration_ms": 399
+          },
+          {
+            "start_ms": 4287840,
+            "end_ms": 4289920,
+            "duration_ms": 2080
+          },
+          {
+            "start_ms": 4310320,
+            "end_ms": 4310719,
+            "duration_ms": 399
+          },
+          {
+            "start_ms": 4337120,
+            "end_ms": 4338800,
+            "duration_ms": 1680
+          },
+          {
+            "start_ms": 4343840,
+            "end_ms": 4345760,
+            "duration_ms": 1920
+          },
+          {
+            "start_ms": 4386880,
+            "end_ms": 4387920,
+            "duration_ms": 1040
+          },
+          {
+            "start_ms": 4407040,
+            "end_ms": 4410400,
+            "duration_ms": 3360
+          },
+          {
+            "start_ms": 4421600,
+            "end_ms": 4421840,
+            "duration_ms": 240
+          },
+          {
+            "start_ms": 4434159,
+            "end_ms": 4434239,
+            "duration_ms": 80
+          },
+          {
+            "start_ms": 4452719,
+            "end_ms": 4452880,
+            "duration_ms": 161
+          },
+          {
+            "start_ms": 4490400,
+            "end_ms": 4494840,
+            "duration_ms": 4440
+          },
+          {
+            "start_ms": 4504480,
+            "end_ms": 4506960,
+            "duration_ms": 2480
+          },
+          {
+            "start_ms": 4539840,
+            "end_ms": 4545840,
+            "duration_ms": 6000
+          },
+          {
+            "start_ms": 4549760,
+            "end_ms": 4551600,
+            "duration_ms": 1840
+          },
+          {
+            "start_ms": 4554640,
+            "end_ms": 4559280,
+            "duration_ms": 4640
+          },
+          {
+            "start_ms": 4639920,
+            "end_ms": 4641920,
+            "duration_ms": 2000
+          },
+          {
+            "start_ms": 4651840,
+            "end_ms": 4674080,
+            "duration_ms": 22240
+          },
+          {
+            "start_ms": 4736719,
+            "end_ms": 4738480,
+            "duration_ms": 1761
+          },
+          {
+            "start_ms": 4759280,
+            "end_ms": 4760840,
+            "duration_ms": 1560
+          },
+          {
+            "start_ms": 4763840,
+            "end_ms": 4769840,
+            "duration_ms": 6000
+          },
+          {
+            "start_ms": 4805840,
+            "end_ms": 4810080,
+            "duration_ms": 4240
+          },
+          {
+            "start_ms": 4814320,
+            "end_ms": 4814560,
+            "duration_ms": 240
+          },
+          {
+            "start_ms": 4844880,
+            "end_ms": 4845199,
+            "duration_ms": 319
+          },
+          {
+            "start_ms": 4849440,
+            "end_ms": 4859600,
+            "duration_ms": 10160
+          },
+          {
+            "start_ms": 4865120,
+            "end_ms": 4869360,
+            "duration_ms": 4240
+          },
+          {
+            "start_ms": 4935679,
+            "end_ms": 4938159,
+            "duration_ms": 2480
+          },
+          {
+            "start_ms": 4959840,
+            "end_ms": 4966159,
+            "duration_ms": 6319
+          },
+          {
+            "start_ms": 4990560,
+            "end_ms": 4991520,
+            "duration_ms": 960
+          },
+          {
+            "start_ms": 5032080,
+            "end_ms": 5032159,
+            "duration_ms": 79
+          },
+          {
+            "start_ms": 5061280,
+            "end_ms": 5061360,
+            "duration_ms": 80
+          },
+          {
+            "start_ms": 5130800,
+            "end_ms": 5131040,
+            "duration_ms": 240
+          },
+          {
+            "start_ms": 5143520,
+            "end_ms": 5143600,
+            "duration_ms": 80
+          },
+          {
+            "start_ms": 5147120,
+            "end_ms": 5147199,
+            "duration_ms": 79
+          },
+          {
+            "start_ms": 5213760,
+            "end_ms": 5219920,
+            "duration_ms": 6160
+          },
+          {
+            "start_ms": 5290239,
+            "end_ms": 5290639,
+            "duration_ms": 400
+          },
+          {
+            "start_ms": 5306400,
+            "end_ms": 5306840,
+            "duration_ms": 440
+          },
+          {
+            "start_ms": 5345360,
+            "end_ms": 5346960,
+            "duration_ms": 1600
+          },
+          {
+            "start_ms": 5365840,
+            "end_ms": 5375600,
+            "duration_ms": 9760
+          }
+        ],
+        "draft_segment_count": 34,
+        "draft_start": "00:00",
+        "draft_end": "89:43",
+        "audio_reviewed": false,
+        "video_frames_reviewed": false,
+        "interpretation": "Interval-union gaps only, not silence detection. All2363 cue texts read sequentially using lossless minute grouping. Lecturer explicitly replaces breakout rooms with whole-class discussion around66-67min. 48:48.880-49:00.960 loses start of zone-file availability answer. Raw1880ms tail overrun retained."
+      },
+      "draft_segment_count": 34,
+      "draft_segments": [
+        {
+          "start": "00:00",
+          "end": "03:00",
+          "start_ms": 0,
+          "end_ms": 180000,
+          "title": "最后一篇论文：从去中心化存储走向应用",
+          "cue_count": 82,
+          "first_cue": 1,
+          "last_cue": 82
+        },
+        {
+          "start": "03:00",
+          "end": "05:00",
+          "start_ms": 180000,
+          "end_ms": 300000,
+          "title": "这次讨论没有预设唯一正确答案",
+          "cue_count": 61,
+          "first_cue": 83,
+          "last_cue": 143
+        },
+        {
+          "start": "05:00",
+          "end": "08:00",
+          "start_ms": 300000,
+          "end_ms": 480000,
+          "title": "传统网站把应用和数据放在同一个控制边界内",
+          "cue_count": 86,
+          "first_cue": 144,
+          "last_cue": 229
+        },
+        {
+          "start": "08:00",
+          "end": "11:00",
+          "start_ms": 480000,
+          "end_ms": 660000,
+          "title": "成功架构的代价：界面、访问规则和窥探",
+          "cue_count": 93,
+          "first_cue": 230,
+          "last_cue": 322
+        },
+        {
+          "start": "11:00",
+          "end": "14:00",
+          "start_ms": 660000,
+          "end_ms": 840000,
+          "title": "把分界移到应用与通用存储之间",
+          "cue_count": 86,
+          "first_cue": 323,
+          "last_cue": 408
+        },
+        {
+          "start": "14:00",
+          "end": "16:00",
+          "start_ms": 840000,
+          "end_ms": 960000,
+          "title": "两人共享待办清单的基本构想",
+          "cue_count": 48,
+          "first_cue": 409,
+          "last_cue": 456
+        },
+        {
+          "start": "16:00",
+          "end": "20:00",
+          "start_ms": 960000,
+          "end_ms": 1200000,
+          "title": "通用存储、秘密计算和密钥管理的困难",
+          "cue_count": 102,
+          "first_cue": 457,
+          "last_cue": 558
+        },
+        {
+          "start": "20:00",
+          "end": "23:00",
+          "start_ms": 1200000,
+          "end_ms": 1380000,
+          "title": "问答：拍卖为什么难，应用一定要在本机吗",
+          "cue_count": 83,
+          "first_cue": 559,
+          "last_cue": 641
+        },
+        {
+          "start": "23:00",
+          "end": "26:00",
+          "start_ms": 1380000,
+          "end_ms": 1560000,
+          "title": "名字连接用户、数据位置和公钥",
+          "cue_count": 76,
+          "first_cue": 642,
+          "last_cue": 717
+        },
+        {
+          "start": "26:00",
+          "end": "30:00",
+          "start_ms": 1560000,
+          "end_ms": 1800000,
+          "title": "三个愿望：全局唯一、可读、去中心化",
+          "cue_count": 89,
+          "first_cue": 718,
+          "last_cue": 806
+        },
+        {
+          "start": "30:00",
+          "end": "33:00",
+          "start_ms": 1800000,
+          "end_ms": 1980000,
+          "title": "利用有序日志决定名称登记先后",
+          "cue_count": 76,
+          "first_cue": 807,
+          "last_cue": 882
+        },
+        {
+          "start": "33:00",
+          "end": "35:00",
+          "start_ms": 1980000,
+          "end_ms": 2100000,
+          "title": "与复制状态机相似，但共识假设不同",
+          "cue_count": 52,
+          "first_cue": 883,
+          "last_cue": 934
+        },
+        {
+          "start": "35:00",
+          "end": "38:00",
+          "start_ms": 2100000,
+          "end_ms": 2280000,
+          "title": "可读名字并不自动解释真实身份",
+          "cue_count": 88,
+          "first_cue": 935,
+          "last_cue": 1022
+        },
+        {
+          "start": "38:00",
+          "end": "42:00",
+          "start_ms": 2280000,
+          "end_ms": 2520000,
+          "title": "为什么不能把整个待办清单放进区块链",
+          "cue_count": 115,
+          "first_cue": 1023,
+          "last_cue": 1137
+        },
+        {
+          "start": "42:00",
+          "end": "46:00",
+          "start_ms": 2520000,
+          "end_ms": 2760000,
+          "title": "分层图：从 Bitcoin 交易到名称数据库",
+          "cue_count": 99,
+          "first_cue": 1138,
+          "last_cue": 1236
+        },
+        {
+          "start": "46:00",
+          "end": "48:00",
+          "start_ms": 2760000,
+          "end_ms": 2880000,
+          "title": "哈希验证 zone file，公钥验证应用数据",
+          "cue_count": 56,
+          "first_cue": 1237,
+          "last_cue": 1292
+        },
+        {
+          "start": "48:00",
+          "end": "50:00",
+          "start_ms": 2880000,
+          "end_ms": 3000000,
+          "title": "问答：哈希还在，数据丢了怎么办",
+          "cue_count": 46,
+          "first_cue": 1293,
+          "last_cue": 1338
+        },
+        {
+          "start": "50:00",
+          "end": "52:00",
+          "start_ms": 3000000,
+          "end_ms": 3120000,
+          "title": "两种模式把“更新需要上链”放在不同位置",
+          "cue_count": 57,
+          "first_cue": 1339,
+          "last_cue": 1395
+        },
+        {
+          "start": "52:00",
+          "end": "55:00",
+          "start_ms": 3120000,
+          "end_ms": 3300000,
+          "title": "问答：只知道哈希如何找文件，改数据是否仍需等待",
+          "cue_count": 79,
+          "first_cue": 1396,
+          "last_cue": 1474
+        },
+        {
+          "start": "55:00",
+          "end": "58:00",
+          "start_ms": 3300000,
+          "end_ms": 3480000,
+          "title": "问答：版本号的局限与公钥替换攻击",
+          "cue_count": 77,
+          "first_cue": 1475,
+          "last_cue": 1551
+        },
+        {
+          "start": "58:00",
+          "end": "60:00",
+          "start_ms": 3480000,
+          "end_ms": 3600000,
+          "title": "名称注册为何要先承诺、再公开",
+          "cue_count": 44,
+          "first_cue": 1552,
+          "last_cue": 1595
+        },
+        {
+          "start": "60:00",
+          "end": "62:00",
+          "start_ms": 3600000,
+          "end_ms": 3720000,
+          "title": "问答：矿工抢跑与字典攻击",
+          "cue_count": 51,
+          "first_cue": 1596,
+          "last_cue": 1646
+        },
+        {
+          "start": "62:00",
+          "end": "65:00",
+          "start_ms": 3720000,
+          "end_ms": 3900000,
+          "title": "把名称、路由和签名串成共享应用",
+          "cue_count": 67,
+          "first_cue": 1647,
+          "last_cue": 1713
+        },
+        {
+          "start": "65:00",
+          "end": "67:00",
+          "start_ms": 3900000,
+          "end_ms": 4020000,
+          "title": "更新靠各自写文件，再由其他人重新读取",
+          "cue_count": 53,
+          "first_cue": 1714,
+          "last_cue": 1766
+        },
+        {
+          "start": "67:00",
+          "end": "69:00",
+          "start_ms": 4020000,
+          "end_ms": 4140000,
+          "title": "开放讨论：能否提供全球关系数据库接口",
+          "cue_count": 57,
+          "first_cue": 1767,
+          "last_cue": 1823
+        },
+        {
+          "start": "69:00",
+          "end": "71:00",
+          "start_ms": 4140000,
+          "end_ms": 4260000,
+          "title": "开放讨论：信任网、群组和全局名称",
+          "cue_count": 61,
+          "first_cue": 1824,
+          "last_cue": 1884
+        },
+        {
+          "start": "71:00",
+          "end": "73:30",
+          "start_ms": 4260000,
+          "end_ms": 4410000,
+          "title": "开放讨论：怎样只让指定的人解密",
+          "cue_count": 66,
+          "first_cue": 1885,
+          "last_cue": 1950
+        },
+        {
+          "start": "73:30",
+          "end": "76:00",
+          "start_ms": 4410000,
+          "end_ms": 4560000,
+          "title": "开放讨论：能否在性能与规模上竞争",
+          "cue_count": 64,
+          "first_cue": 1951,
+          "last_cue": 2014
+        },
+        {
+          "start": "76:00",
+          "end": "78:00",
+          "start_ms": 4560000,
+          "end_ms": 4680000,
+          "title": "开放讨论：可变数据的冗余究竟由谁负责",
+          "cue_count": 42,
+          "first_cue": 2015,
+          "last_cue": 2056
+        },
+        {
+          "start": "78:00",
+          "end": "80:00",
+          "start_ms": 4680000,
+          "end_ms": 4800000,
+          "title": "开放讨论：命名费用与更换底层链",
+          "cue_count": 53,
+          "first_cue": 2057,
+          "last_cue": 2109
+        },
+        {
+          "start": "80:00",
+          "end": "82:00",
+          "start_ms": 4800000,
+          "end_ms": 4920000,
+          "title": "图上 name history 的含义与正式结束",
+          "cue_count": 49,
+          "first_cue": 2110,
+          "last_cue": 2158
+        },
+        {
+          "start": "82:00",
+          "end": "84:30",
+          "start_ms": 4920000,
+          "end_ms": 5070000,
+          "title": "课后问答：项目展示与为何借用 Bitcoin",
+          "cue_count": 61,
+          "first_cue": 2159,
+          "last_cue": 2219
+        },
+        {
+          "start": "84:30",
+          "end": "86:30",
+          "start_ms": 5070000,
+          "end_ms": 5190000,
+          "title": "课后问答：URI 抽象与三角问题是否值得解决",
+          "cue_count": 56,
+          "first_cue": 2220,
+          "last_cue": 2275
+        },
+        {
+          "start": "86:30",
+          "end": "89:43",
+          "start_ms": 5190000,
+          "end_ms": 5383000,
+          "title": "课后问答：百年账本、checkpoint 与验证信任",
+          "cue_count": 88,
+          "first_cue": 2276,
+          "last_cue": 2363
+        }
+      ]
+    }
+  ],
+  "caption_time_structure": {
+    "cue_count": 2363,
+    "first_start_ms": 80,
+    "last_start_ms": 5379440,
+    "last_end_ms": 5384880,
+    "metadata_duration_seconds": 5383,
+    "starts_monotonic": true,
+    "ends_monotonic": true,
+    "negative_duration_count": 0,
+    "cues_ending_after_video": 2,
+    "tail_overrun_ms": 1880,
+    "tail_uncaptioned_ms": 0,
+    "overlapping_adjacent_cue_pairs": 2203,
+    "positive_uncovered_gap_count": 160,
+    "uncovered_ms_within_video": 413118,
+    "maximum_uncovered_gap_ms": 22240,
+    "all_uncovered_gaps": [
+      {
+        "start_ms": 0,
+        "end_ms": 80,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 32080,
+        "end_ms": 32399,
+        "duration_ms": 319
+      },
+      {
+        "start_ms": 47920,
+        "end_ms": 49280,
+        "duration_ms": 1360
+      },
+      {
+        "start_ms": 51920,
+        "end_ms": 53520,
+        "duration_ms": 1600
+      },
+      {
+        "start_ms": 158319,
+        "end_ms": 164879,
+        "duration_ms": 6560
+      },
+      {
+        "start_ms": 199840,
+        "end_ms": 202080,
+        "duration_ms": 2240
+      },
+      {
+        "start_ms": 311840,
+        "end_ms": 312960,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 340960,
+        "end_ms": 342800,
+        "duration_ms": 1840
+      },
+      {
+        "start_ms": 374000,
+        "end_ms": 376400,
+        "duration_ms": 2400
+      },
+      {
+        "start_ms": 386800,
+        "end_ms": 386960,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 476800,
+        "end_ms": 477599,
+        "duration_ms": 799
+      },
+      {
+        "start_ms": 647839,
+        "end_ms": 654160,
+        "duration_ms": 6321
+      },
+      {
+        "start_ms": 719680,
+        "end_ms": 720079,
+        "duration_ms": 399
+      },
+      {
+        "start_ms": 789680,
+        "end_ms": 789760,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 848079,
+        "end_ms": 852560,
+        "duration_ms": 4481
+      },
+      {
+        "start_ms": 906720,
+        "end_ms": 906880,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 913839,
+        "end_ms": 921199,
+        "duration_ms": 7360
+      },
+      {
+        "start_ms": 957680,
+        "end_ms": 960959,
+        "duration_ms": 3279
+      },
+      {
+        "start_ms": 970320,
+        "end_ms": 970560,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 997839,
+        "end_ms": 1003279,
+        "duration_ms": 5440
+      },
+      {
+        "start_ms": 1039839,
+        "end_ms": 1061120,
+        "duration_ms": 21281
+      },
+      {
+        "start_ms": 1180880,
+        "end_ms": 1183679,
+        "duration_ms": 2799
+      },
+      {
+        "start_ms": 1222640,
+        "end_ms": 1222799,
+        "duration_ms": 159
+      },
+      {
+        "start_ms": 1230720,
+        "end_ms": 1233200,
+        "duration_ms": 2480
+      },
+      {
+        "start_ms": 1266000,
+        "end_ms": 1266960,
+        "duration_ms": 960
+      },
+      {
+        "start_ms": 1272720,
+        "end_ms": 1274080,
+        "duration_ms": 1360
+      },
+      {
+        "start_ms": 1362400,
+        "end_ms": 1366080,
+        "duration_ms": 3680
+      },
+      {
+        "start_ms": 1369200,
+        "end_ms": 1372320,
+        "duration_ms": 3120
+      },
+      {
+        "start_ms": 1501840,
+        "end_ms": 1502159,
+        "duration_ms": 319
+      },
+      {
+        "start_ms": 1532159,
+        "end_ms": 1536480,
+        "duration_ms": 4321
+      },
+      {
+        "start_ms": 1558320,
+        "end_ms": 1559440,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 1572240,
+        "end_ms": 1572720,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 1576559,
+        "end_ms": 1577600,
+        "duration_ms": 1041
+      },
+      {
+        "start_ms": 1584480,
+        "end_ms": 1584960,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 1591200,
+        "end_ms": 1592799,
+        "duration_ms": 1599
+      },
+      {
+        "start_ms": 1603679,
+        "end_ms": 1606720,
+        "duration_ms": 3041
+      },
+      {
+        "start_ms": 1627840,
+        "end_ms": 1632880,
+        "duration_ms": 5040
+      },
+      {
+        "start_ms": 1641840,
+        "end_ms": 1642159,
+        "duration_ms": 319
+      },
+      {
+        "start_ms": 1673600,
+        "end_ms": 1675120,
+        "duration_ms": 1520
+      },
+      {
+        "start_ms": 1678880,
+        "end_ms": 1679200,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 1711840,
+        "end_ms": 1714720,
+        "duration_ms": 2880
+      },
+      {
+        "start_ms": 1719520,
+        "end_ms": 1719840,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 1730480,
+        "end_ms": 1734000,
+        "duration_ms": 3520
+      },
+      {
+        "start_ms": 1739840,
+        "end_ms": 1742320,
+        "duration_ms": 2480
+      },
+      {
+        "start_ms": 1812720,
+        "end_ms": 1814960,
+        "duration_ms": 2240
+      },
+      {
+        "start_ms": 1823840,
+        "end_ms": 1827440,
+        "duration_ms": 3600
+      },
+      {
+        "start_ms": 2040559,
+        "end_ms": 2041600,
+        "duration_ms": 1041
+      },
+      {
+        "start_ms": 2053280,
+        "end_ms": 2058000,
+        "duration_ms": 4720
+      },
+      {
+        "start_ms": 2063520,
+        "end_ms": 2064720,
+        "duration_ms": 1200
+      },
+      {
+        "start_ms": 2075839,
+        "end_ms": 2076480,
+        "duration_ms": 641
+      },
+      {
+        "start_ms": 2092639,
+        "end_ms": 2093119,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 2099119,
+        "end_ms": 2100839,
+        "duration_ms": 1720
+      },
+      {
+        "start_ms": 2220720,
+        "end_ms": 2221599,
+        "duration_ms": 879
+      },
+      {
+        "start_ms": 2233599,
+        "end_ms": 2233920,
+        "duration_ms": 321
+      },
+      {
+        "start_ms": 2265520,
+        "end_ms": 2266480,
+        "duration_ms": 960
+      },
+      {
+        "start_ms": 2273359,
+        "end_ms": 2275920,
+        "duration_ms": 2561
+      },
+      {
+        "start_ms": 2305680,
+        "end_ms": 2310839,
+        "duration_ms": 5159
+      },
+      {
+        "start_ms": 2313839,
+        "end_ms": 2321920,
+        "duration_ms": 8081
+      },
+      {
+        "start_ms": 2332720,
+        "end_ms": 2333680,
+        "duration_ms": 960
+      },
+      {
+        "start_ms": 2338800,
+        "end_ms": 2339040,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 2411839,
+        "end_ms": 2415680,
+        "duration_ms": 3841
+      },
+      {
+        "start_ms": 2419440,
+        "end_ms": 2419520,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 2504640,
+        "end_ms": 2505040,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 2523839,
+        "end_ms": 2524880,
+        "duration_ms": 1041
+      },
+      {
+        "start_ms": 2527599,
+        "end_ms": 2531280,
+        "duration_ms": 3681
+      },
+      {
+        "start_ms": 2542480,
+        "end_ms": 2543119,
+        "duration_ms": 639
+      },
+      {
+        "start_ms": 2556640,
+        "end_ms": 2558960,
+        "duration_ms": 2320
+      },
+      {
+        "start_ms": 2567520,
+        "end_ms": 2570319,
+        "duration_ms": 2799
+      },
+      {
+        "start_ms": 2579839,
+        "end_ms": 2582079,
+        "duration_ms": 2240
+      },
+      {
+        "start_ms": 2596000,
+        "end_ms": 2598640,
+        "duration_ms": 2640
+      },
+      {
+        "start_ms": 2652079,
+        "end_ms": 2655920,
+        "duration_ms": 3841
+      },
+      {
+        "start_ms": 2833440,
+        "end_ms": 2835200,
+        "duration_ms": 1760
+      },
+      {
+        "start_ms": 2908880,
+        "end_ms": 2909119,
+        "duration_ms": 239
+      },
+      {
+        "start_ms": 2928880,
+        "end_ms": 2940960,
+        "duration_ms": 12080
+      },
+      {
+        "start_ms": 2964880,
+        "end_ms": 2965040,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 2978880,
+        "end_ms": 2983040,
+        "duration_ms": 4160
+      },
+      {
+        "start_ms": 2988480,
+        "end_ms": 2990319,
+        "duration_ms": 1839
+      },
+      {
+        "start_ms": 3008800,
+        "end_ms": 3010160,
+        "duration_ms": 1360
+      },
+      {
+        "start_ms": 3069839,
+        "end_ms": 3071200,
+        "duration_ms": 1361
+      },
+      {
+        "start_ms": 3139839,
+        "end_ms": 3139920,
+        "duration_ms": 81
+      },
+      {
+        "start_ms": 3169359,
+        "end_ms": 3178240,
+        "duration_ms": 8881
+      },
+      {
+        "start_ms": 3181839,
+        "end_ms": 3185200,
+        "duration_ms": 3361
+      },
+      {
+        "start_ms": 3200640,
+        "end_ms": 3201760,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 3231839,
+        "end_ms": 3233599,
+        "duration_ms": 1760
+      },
+      {
+        "start_ms": 3246480,
+        "end_ms": 3248319,
+        "duration_ms": 1839
+      },
+      {
+        "start_ms": 3275920,
+        "end_ms": 3276799,
+        "duration_ms": 879
+      },
+      {
+        "start_ms": 3318480,
+        "end_ms": 3318720,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 3399200,
+        "end_ms": 3402319,
+        "duration_ms": 3119
+      },
+      {
+        "start_ms": 3438480,
+        "end_ms": 3443839,
+        "duration_ms": 5359
+      },
+      {
+        "start_ms": 3461839,
+        "end_ms": 3464960,
+        "duration_ms": 3121
+      },
+      {
+        "start_ms": 3481440,
+        "end_ms": 3481680,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 3492480,
+        "end_ms": 3499119,
+        "duration_ms": 6639
+      },
+      {
+        "start_ms": 3503839,
+        "end_ms": 3504480,
+        "duration_ms": 641
+      },
+      {
+        "start_ms": 3532799,
+        "end_ms": 3535040,
+        "duration_ms": 2241
+      },
+      {
+        "start_ms": 3541280,
+        "end_ms": 3542160,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 3548960,
+        "end_ms": 3551680,
+        "duration_ms": 2720
+      },
+      {
+        "start_ms": 3563599,
+        "end_ms": 3564240,
+        "duration_ms": 641
+      },
+      {
+        "start_ms": 3575040,
+        "end_ms": 3581359,
+        "duration_ms": 6319
+      },
+      {
+        "start_ms": 3593119,
+        "end_ms": 3594160,
+        "duration_ms": 1041
+      },
+      {
+        "start_ms": 3608640,
+        "end_ms": 3609599,
+        "duration_ms": 959
+      },
+      {
+        "start_ms": 3615839,
+        "end_ms": 3628799,
+        "duration_ms": 12960
+      },
+      {
+        "start_ms": 3631119,
+        "end_ms": 3633599,
+        "duration_ms": 2480
+      },
+      {
+        "start_ms": 3717359,
+        "end_ms": 3718319,
+        "duration_ms": 960
+      },
+      {
+        "start_ms": 3721599,
+        "end_ms": 3724839,
+        "duration_ms": 3240
+      },
+      {
+        "start_ms": 3733920,
+        "end_ms": 3734400,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 3741839,
+        "end_ms": 3742799,
+        "duration_ms": 960
+      },
+      {
+        "start_ms": 3759680,
+        "end_ms": 3767359,
+        "duration_ms": 7679
+      },
+      {
+        "start_ms": 3783839,
+        "end_ms": 3785920,
+        "duration_ms": 2081
+      },
+      {
+        "start_ms": 3790000,
+        "end_ms": 3794319,
+        "duration_ms": 4319
+      },
+      {
+        "start_ms": 3821280,
+        "end_ms": 3822720,
+        "duration_ms": 1440
+      },
+      {
+        "start_ms": 3826400,
+        "end_ms": 3827280,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 3832799,
+        "end_ms": 3834160,
+        "duration_ms": 1361
+      },
+      {
+        "start_ms": 3839839,
+        "end_ms": 3840400,
+        "duration_ms": 561
+      },
+      {
+        "start_ms": 3883760,
+        "end_ms": 3883839,
+        "duration_ms": 79
+      },
+      {
+        "start_ms": 3928720,
+        "end_ms": 3930640,
+        "duration_ms": 1920
+      },
+      {
+        "start_ms": 3933680,
+        "end_ms": 3934640,
+        "duration_ms": 960
+      },
+      {
+        "start_ms": 3960000,
+        "end_ms": 3962240,
+        "duration_ms": 2240
+      },
+      {
+        "start_ms": 3965839,
+        "end_ms": 3968400,
+        "duration_ms": 2561
+      },
+      {
+        "start_ms": 4008240,
+        "end_ms": 4012319,
+        "duration_ms": 4079
+      },
+      {
+        "start_ms": 4051039,
+        "end_ms": 4052160,
+        "duration_ms": 1121
+      },
+      {
+        "start_ms": 4125440,
+        "end_ms": 4128000,
+        "duration_ms": 2560
+      },
+      {
+        "start_ms": 4163040,
+        "end_ms": 4164799,
+        "duration_ms": 1759
+      },
+      {
+        "start_ms": 4217840,
+        "end_ms": 4218239,
+        "duration_ms": 399
+      },
+      {
+        "start_ms": 4287840,
+        "end_ms": 4289920,
+        "duration_ms": 2080
+      },
+      {
+        "start_ms": 4310320,
+        "end_ms": 4310719,
+        "duration_ms": 399
+      },
+      {
+        "start_ms": 4337120,
+        "end_ms": 4338800,
+        "duration_ms": 1680
+      },
+      {
+        "start_ms": 4343840,
+        "end_ms": 4345760,
+        "duration_ms": 1920
+      },
+      {
+        "start_ms": 4386880,
+        "end_ms": 4387920,
+        "duration_ms": 1040
+      },
+      {
+        "start_ms": 4407040,
+        "end_ms": 4410400,
+        "duration_ms": 3360
+      },
+      {
+        "start_ms": 4421600,
+        "end_ms": 4421840,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 4434159,
+        "end_ms": 4434239,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 4452719,
+        "end_ms": 4452880,
+        "duration_ms": 161
+      },
+      {
+        "start_ms": 4490400,
+        "end_ms": 4494840,
+        "duration_ms": 4440
+      },
+      {
+        "start_ms": 4504480,
+        "end_ms": 4506960,
+        "duration_ms": 2480
+      },
+      {
+        "start_ms": 4539840,
+        "end_ms": 4545840,
+        "duration_ms": 6000
+      },
+      {
+        "start_ms": 4549760,
+        "end_ms": 4551600,
+        "duration_ms": 1840
+      },
+      {
+        "start_ms": 4554640,
+        "end_ms": 4559280,
+        "duration_ms": 4640
+      },
+      {
+        "start_ms": 4639920,
+        "end_ms": 4641920,
+        "duration_ms": 2000
+      },
+      {
+        "start_ms": 4651840,
+        "end_ms": 4674080,
+        "duration_ms": 22240
+      },
+      {
+        "start_ms": 4736719,
+        "end_ms": 4738480,
+        "duration_ms": 1761
+      },
+      {
+        "start_ms": 4759280,
+        "end_ms": 4760840,
+        "duration_ms": 1560
+      },
+      {
+        "start_ms": 4763840,
+        "end_ms": 4769840,
+        "duration_ms": 6000
+      },
+      {
+        "start_ms": 4805840,
+        "end_ms": 4810080,
+        "duration_ms": 4240
+      },
+      {
+        "start_ms": 4814320,
+        "end_ms": 4814560,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 4844880,
+        "end_ms": 4845199,
+        "duration_ms": 319
+      },
+      {
+        "start_ms": 4849440,
+        "end_ms": 4859600,
+        "duration_ms": 10160
+      },
+      {
+        "start_ms": 4865120,
+        "end_ms": 4869360,
+        "duration_ms": 4240
+      },
+      {
+        "start_ms": 4935679,
+        "end_ms": 4938159,
+        "duration_ms": 2480
+      },
+      {
+        "start_ms": 4959840,
+        "end_ms": 4966159,
+        "duration_ms": 6319
+      },
+      {
+        "start_ms": 4990560,
+        "end_ms": 4991520,
+        "duration_ms": 960
+      },
+      {
+        "start_ms": 5032080,
+        "end_ms": 5032159,
+        "duration_ms": 79
+      },
+      {
+        "start_ms": 5061280,
+        "end_ms": 5061360,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 5130800,
+        "end_ms": 5131040,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 5143520,
+        "end_ms": 5143600,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 5147120,
+        "end_ms": 5147199,
+        "duration_ms": 79
+      },
+      {
+        "start_ms": 5213760,
+        "end_ms": 5219920,
+        "duration_ms": 6160
+      },
+      {
+        "start_ms": 5290239,
+        "end_ms": 5290639,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 5306400,
+        "end_ms": 5306840,
+        "duration_ms": 440
+      },
+      {
+        "start_ms": 5345360,
+        "end_ms": 5346960,
+        "duration_ms": 1600
+      },
+      {
+        "start_ms": 5365840,
+        "end_ms": 5375600,
+        "duration_ms": 9760
+      }
+    ],
+    "draft_segment_count": 34,
+    "draft_start": "00:00",
+    "draft_end": "89:43",
+    "audio_reviewed": false,
+    "video_frames_reviewed": false,
+    "interpretation": "Interval-union gaps only, not silence detection. All2363 cue texts read sequentially using lossless minute grouping. Lecturer explicitly replaces breakout rooms with whole-class discussion around66-67min. 48:48.880-49:00.960 loses start of zone-file availability answer. Raw1880ms tail overrun retained."
+  },
+  "draft_segments": [
+    {
+      "start": "00:00",
+      "end": "03:00",
+      "start_ms": 0,
+      "end_ms": 180000,
+      "title": "最后一篇论文：从去中心化存储走向应用",
+      "cue_count": 82,
+      "first_cue": 1,
+      "last_cue": 82
+    },
+    {
+      "start": "03:00",
+      "end": "05:00",
+      "start_ms": 180000,
+      "end_ms": 300000,
+      "title": "这次讨论没有预设唯一正确答案",
+      "cue_count": 61,
+      "first_cue": 83,
+      "last_cue": 143
+    },
+    {
+      "start": "05:00",
+      "end": "08:00",
+      "start_ms": 300000,
+      "end_ms": 480000,
+      "title": "传统网站把应用和数据放在同一个控制边界内",
+      "cue_count": 86,
+      "first_cue": 144,
+      "last_cue": 229
+    },
+    {
+      "start": "08:00",
+      "end": "11:00",
+      "start_ms": 480000,
+      "end_ms": 660000,
+      "title": "成功架构的代价：界面、访问规则和窥探",
+      "cue_count": 93,
+      "first_cue": 230,
+      "last_cue": 322
+    },
+    {
+      "start": "11:00",
+      "end": "14:00",
+      "start_ms": 660000,
+      "end_ms": 840000,
+      "title": "把分界移到应用与通用存储之间",
+      "cue_count": 86,
+      "first_cue": 323,
+      "last_cue": 408
+    },
+    {
+      "start": "14:00",
+      "end": "16:00",
+      "start_ms": 840000,
+      "end_ms": 960000,
+      "title": "两人共享待办清单的基本构想",
+      "cue_count": 48,
+      "first_cue": 409,
+      "last_cue": 456
+    },
+    {
+      "start": "16:00",
+      "end": "20:00",
+      "start_ms": 960000,
+      "end_ms": 1200000,
+      "title": "通用存储、秘密计算和密钥管理的困难",
+      "cue_count": 102,
+      "first_cue": 457,
+      "last_cue": 558
+    },
+    {
+      "start": "20:00",
+      "end": "23:00",
+      "start_ms": 1200000,
+      "end_ms": 1380000,
+      "title": "问答：拍卖为什么难，应用一定要在本机吗",
+      "cue_count": 83,
+      "first_cue": 559,
+      "last_cue": 641
+    },
+    {
+      "start": "23:00",
+      "end": "26:00",
+      "start_ms": 1380000,
+      "end_ms": 1560000,
+      "title": "名字连接用户、数据位置和公钥",
+      "cue_count": 76,
+      "first_cue": 642,
+      "last_cue": 717
+    },
+    {
+      "start": "26:00",
+      "end": "30:00",
+      "start_ms": 1560000,
+      "end_ms": 1800000,
+      "title": "三个愿望：全局唯一、可读、去中心化",
+      "cue_count": 89,
+      "first_cue": 718,
+      "last_cue": 806
+    },
+    {
+      "start": "30:00",
+      "end": "33:00",
+      "start_ms": 1800000,
+      "end_ms": 1980000,
+      "title": "利用有序日志决定名称登记先后",
+      "cue_count": 76,
+      "first_cue": 807,
+      "last_cue": 882
+    },
+    {
+      "start": "33:00",
+      "end": "35:00",
+      "start_ms": 1980000,
+      "end_ms": 2100000,
+      "title": "与复制状态机相似，但共识假设不同",
+      "cue_count": 52,
+      "first_cue": 883,
+      "last_cue": 934
+    },
+    {
+      "start": "35:00",
+      "end": "38:00",
+      "start_ms": 2100000,
+      "end_ms": 2280000,
+      "title": "可读名字并不自动解释真实身份",
+      "cue_count": 88,
+      "first_cue": 935,
+      "last_cue": 1022
+    },
+    {
+      "start": "38:00",
+      "end": "42:00",
+      "start_ms": 2280000,
+      "end_ms": 2520000,
+      "title": "为什么不能把整个待办清单放进区块链",
+      "cue_count": 115,
+      "first_cue": 1023,
+      "last_cue": 1137
+    },
+    {
+      "start": "42:00",
+      "end": "46:00",
+      "start_ms": 2520000,
+      "end_ms": 2760000,
+      "title": "分层图：从 Bitcoin 交易到名称数据库",
+      "cue_count": 99,
+      "first_cue": 1138,
+      "last_cue": 1236
+    },
+    {
+      "start": "46:00",
+      "end": "48:00",
+      "start_ms": 2760000,
+      "end_ms": 2880000,
+      "title": "哈希验证 zone file，公钥验证应用数据",
+      "cue_count": 56,
+      "first_cue": 1237,
+      "last_cue": 1292
+    },
+    {
+      "start": "48:00",
+      "end": "50:00",
+      "start_ms": 2880000,
+      "end_ms": 3000000,
+      "title": "问答：哈希还在，数据丢了怎么办",
+      "cue_count": 46,
+      "first_cue": 1293,
+      "last_cue": 1338
+    },
+    {
+      "start": "50:00",
+      "end": "52:00",
+      "start_ms": 3000000,
+      "end_ms": 3120000,
+      "title": "两种模式把“更新需要上链”放在不同位置",
+      "cue_count": 57,
+      "first_cue": 1339,
+      "last_cue": 1395
+    },
+    {
+      "start": "52:00",
+      "end": "55:00",
+      "start_ms": 3120000,
+      "end_ms": 3300000,
+      "title": "问答：只知道哈希如何找文件，改数据是否仍需等待",
+      "cue_count": 79,
+      "first_cue": 1396,
+      "last_cue": 1474
+    },
+    {
+      "start": "55:00",
+      "end": "58:00",
+      "start_ms": 3300000,
+      "end_ms": 3480000,
+      "title": "问答：版本号的局限与公钥替换攻击",
+      "cue_count": 77,
+      "first_cue": 1475,
+      "last_cue": 1551
+    },
+    {
+      "start": "58:00",
+      "end": "60:00",
+      "start_ms": 3480000,
+      "end_ms": 3600000,
+      "title": "名称注册为何要先承诺、再公开",
+      "cue_count": 44,
+      "first_cue": 1552,
+      "last_cue": 1595
+    },
+    {
+      "start": "60:00",
+      "end": "62:00",
+      "start_ms": 3600000,
+      "end_ms": 3720000,
+      "title": "问答：矿工抢跑与字典攻击",
+      "cue_count": 51,
+      "first_cue": 1596,
+      "last_cue": 1646
+    },
+    {
+      "start": "62:00",
+      "end": "65:00",
+      "start_ms": 3720000,
+      "end_ms": 3900000,
+      "title": "把名称、路由和签名串成共享应用",
+      "cue_count": 67,
+      "first_cue": 1647,
+      "last_cue": 1713
+    },
+    {
+      "start": "65:00",
+      "end": "67:00",
+      "start_ms": 3900000,
+      "end_ms": 4020000,
+      "title": "更新靠各自写文件，再由其他人重新读取",
+      "cue_count": 53,
+      "first_cue": 1714,
+      "last_cue": 1766
+    },
+    {
+      "start": "67:00",
+      "end": "69:00",
+      "start_ms": 4020000,
+      "end_ms": 4140000,
+      "title": "开放讨论：能否提供全球关系数据库接口",
+      "cue_count": 57,
+      "first_cue": 1767,
+      "last_cue": 1823
+    },
+    {
+      "start": "69:00",
+      "end": "71:00",
+      "start_ms": 4140000,
+      "end_ms": 4260000,
+      "title": "开放讨论：信任网、群组和全局名称",
+      "cue_count": 61,
+      "first_cue": 1824,
+      "last_cue": 1884
+    },
+    {
+      "start": "71:00",
+      "end": "73:30",
+      "start_ms": 4260000,
+      "end_ms": 4410000,
+      "title": "开放讨论：怎样只让指定的人解密",
+      "cue_count": 66,
+      "first_cue": 1885,
+      "last_cue": 1950
+    },
+    {
+      "start": "73:30",
+      "end": "76:00",
+      "start_ms": 4410000,
+      "end_ms": 4560000,
+      "title": "开放讨论：能否在性能与规模上竞争",
+      "cue_count": 64,
+      "first_cue": 1951,
+      "last_cue": 2014
+    },
+    {
+      "start": "76:00",
+      "end": "78:00",
+      "start_ms": 4560000,
+      "end_ms": 4680000,
+      "title": "开放讨论：可变数据的冗余究竟由谁负责",
+      "cue_count": 42,
+      "first_cue": 2015,
+      "last_cue": 2056
+    },
+    {
+      "start": "78:00",
+      "end": "80:00",
+      "start_ms": 4680000,
+      "end_ms": 4800000,
+      "title": "开放讨论：命名费用与更换底层链",
+      "cue_count": 53,
+      "first_cue": 2057,
+      "last_cue": 2109
+    },
+    {
+      "start": "80:00",
+      "end": "82:00",
+      "start_ms": 4800000,
+      "end_ms": 4920000,
+      "title": "图上 name history 的含义与正式结束",
+      "cue_count": 49,
+      "first_cue": 2110,
+      "last_cue": 2158
+    },
+    {
+      "start": "82:00",
+      "end": "84:30",
+      "start_ms": 4920000,
+      "end_ms": 5070000,
+      "title": "课后问答：项目展示与为何借用 Bitcoin",
+      "cue_count": 61,
+      "first_cue": 2159,
+      "last_cue": 2219
+    },
+    {
+      "start": "84:30",
+      "end": "86:30",
+      "start_ms": 5070000,
+      "end_ms": 5190000,
+      "title": "课后问答：URI 抽象与三角问题是否值得解决",
+      "cue_count": 56,
+      "first_cue": 2220,
+      "last_cue": 2275
+    },
+    {
+      "start": "86:30",
+      "end": "89:43",
+      "start_ms": 5190000,
+      "end_ms": 5383000,
+      "title": "课后问答：百年账本、checkpoint 与验证信任",
+      "cue_count": 88,
+      "first_cue": 2276,
+      "last_cue": 2363
+    }
+  ],
+  "paper_visual_review": {
+    "pdf_pages": 15,
+    "printed_pages": "181-194;PDFpage1 cover",
+    "figures": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "tables": [],
+    "formula_pages": [
+      11
+    ],
+    "inspected_page_images": [
+      1,
+      5,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12
+    ],
+    "audio_or_classroom_frames": false
+  },
+  "version_mapping_evidence": {
+    "file": "schedule-2021.html",
+    "lines": [
+      261,
+      262
+    ],
+    "scope": "2021-05-18 L20 matches inventory; exact2016 PDF, outline, FAQ and DnyBPxo3B6I links; all shared files read-only."
+  },
+  "content_paths": [
+    "lectures/lec20/draft.zh.md",
+    "lectures/lec20/materials.zh.md",
+    "lectures/lec20/notes.zh.md"
+  ],
+  "content_files": [
+    {
+      "file": "lectures/lec20/draft.zh.md",
+      "sha256": "7c3a8ab453e20bae1f8406a7b4878769d9b26ba62ab3a0914af3697866b6b8a5"
+    },
+    {
+      "file": "lectures/lec20/materials.zh.md",
+      "sha256": "21dc818327a6fc052e751050088b5f261060ec2b34ffeea94c4d420e264802dd"
+    },
+    {
+      "file": "lectures/lec20/notes.zh.md",
+      "sha256": "323365accaca13953fcbf4c42257abd26110065fc54f40a41ae8db5215bdd522"
+    }
+  ],
+  "lab_code_commit": "513cac0aef010750fc74688da8a395974a83cf7a",
+  "validation": {
+    "source_hashes": "passed",
+    "lossless_grouping": "passed",
+    "caption_structure": "passed_with_retained_raw_tail_overrun",
+    "continuous_draft_timeline": "passed",
+    "markdown_local_structure": "passed",
+    "build": "Not run by restricted worker; integrated check belongs to main agent.",
+    "experiments": "Not run",
+    "no_media_download": true,
+    "no_full_player_response_saved": true,
+    "no_signed_urls_saved": true
+  },
+  "issues": [
+    "No audio or classroom-frame review.160 positive caption union gaps413118ms total,max22240ms; not silence detection. Raw1880ms tail overrun retained.",
+    "No breakout: lecturer explicitly substitutes whole-class discussion.48:48.880-49:00.960 lacks start of availability answer; not reconstructed as speech.",
+    "Video CC Attribution exact version absent; paper full-translation permission unconfirmed.",
+    "2016 PDF is15pages with cover, not modern Stacks or2019 whitepaper.2021 outline uses Atlas/Gaia/Browser beyond2016 DHT/storage terminology; FAQ opening refers to whitepaper.",
+    "Lecture date vs outline Last-Modified same day does not prove pre-class snapshot. PDF/FAQ server date2021 is not publication date.",
+    "Name ownership, real-world identity, consensus ordering, integrity, freshness, availability and privacy explicitly separated.",
+    "Mutable version numbers do not prove latest state; immutable data freshness assumes current authentic naming state. No global transaction guarantee for chain-off mutable files.",
+    "Signing uses private key, not public key; public-key wording in ASR/paper corrected.51percent hash power does not forge signatures.",
+    "Preorder/register is commit-reveal, not transaction2PC; bare hash(name) dictionary issue and unspecified commitment encoding preserved.",
+    "SNV trusted starting consensus hash is a precondition; logarithmic proof queries not logarithmic complete-state reconstruction. Simple/Simplified naming discrepancy retained.",
+    "Figure7 excludes read download time;100MB encryption/read components do not support blanket2-second overhead claim.26.9percent inFigure8 concerns data-embedding transactions, not allBitcoin.",
+    "Namecoin selfish-mining-like observations do not prove malicious intent;2016 security/market/deployment claims not modern status.",
+    "Keybase/global-name classroom analogy not treated as verified product specification; Kerberos PKI usage qualified; nonce, URI schema and access-control implementation not invented.",
+    "End-of-class checkpoint/pruning suggestions are not a verified Bitcoin full-node protocol; headers alone insufficient for arbitrary state validation.",
+    "No external references, source code, modern product behavior or lab executions claimed; fixed2026 commit retained."
+  ]
+}

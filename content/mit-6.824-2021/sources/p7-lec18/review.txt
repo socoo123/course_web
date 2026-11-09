@@ -1,0 +1,97 @@
+P7 / L18 SUNDR 内容包独立审阅
+主线 MIT 6.824 Spring 2021；只写 lectures/lec18/ 与 sources/p7-lec18/。
+
+一、交付
+1. notes.zh.md：字节认证/授权/历史关系三层问题；读也是观察状态；三个不变量；向量不可任意max合并；信任与事务边界；8道自测。
+2. draft.zh.md：35个连续时间标题，00:00–91:04，覆盖全部可辨认课堂与课后问答。保留两次Zoom中断、分组缺口、ASR与现场简化校注。
+3. materials.zh.md：指定论文至§3.3.2，Figures1–5、日志图、组结构、VSL检查、时间戳盒子、2021/2026范围与真实教学差异；不做无授权全译。
+4. acquisition.json、metadata.json、英文原语言字幕原件、无损规范化字幕/分钟分组/逐cue文本、论文原件、p1–7提取文本/页面渲染、全文diff、manifest-fragment.json、validation.txt及三个复现脚本。
+无新增图片上线，无重复update-sundr，无共享文件修改。
+
+二、实际获取与网络恢复
+2021课表schedule-2021.html 240–242行和inventory lec18核对：2021-05-06 L18；notes/l-sundr.txt，papers/li-sundr.pdf，papers/sundr-faq.txt，视频FxwjSs_xSBM。
+所有来源首次主动获取成功。会话网络中断发生于编辑工具响应，不是字幕获取失败；恢复后保留已有原件与稿件。
+按用户重试要求完整获取流程合理重试一次，并补记final_url。第二次取得的三个书面来源、白名单元数据和原始字幕SHA-256全部与已读首次快照一致，无需将变化内容误记为已读。
+url保留课表实际http原链接，final_url记录urllib实际响应地址；本次三个文档未跳转。YouTube签名字幕传输URL不保存，final_url为null并说明。
+最后实际抓取时间详见acquisition.json（2026-11-09T13:28 UTC）；所有来源哈希逐文件校验。
+
+三、视频与全文阅读
+ID FxwjSs_xSBM；Lecture 18: Fork Consistency, SUNDR。
+频道 MIT 6.824: Distributed Systems；channel_id UC_7WrbZTCODu1o_kfUMq88g。
+上传20210506；时长5464秒=91:04。
+独立许可查询 Creative Commons Attribution license (reuse allowed)，没有具体版本。
+只保存id/title/duration/channel/channel_id/uploader/upload_date/license/webpage_url九字段；没有媒体、音轨、完整info、cookies或签名URL归档。
+英文en-orig自动字幕2149条全部顺序阅读，通过reading-by-minute.txt 1–145、146–266行，89个非空分钟组；分组串联与全部规范化cue文本严格相等，原cue与原json3事件也严格相等。
+另定点复核原cue：30:00–34:10（掉线）；42:50–50:05（分组）；60:50–64:20（黑屏）；87:30–89:10（不能无痕合并的否定）；90:30–末尾（结束时间）。
+逐cue带时文本只是生成归档，未声称用这另一种表示再全文读一遍。没有听音轨或看课堂视频帧。
+
+四、时间证据
+首条1280ms；末条起点5463840ms，结束5465920ms；整数时长5464000ms，超出1920ms，原件不裁剪。
+153个字幕区间并集间隙，累计686690ms，最长182720ms：46:15.839–49:18.559。
+另一个长分组空隙43:13.839–45:58.839，165秒；分组正文区间43:14–49:18，仅零星yes/so，不恢复小组讨论。
+首次Zoom问题正文30:22–33:20，随后屏幕恢复延续至34分钟；31:33.840–32:04.880无字幕31.040秒。
+第二次屏幕故障61:42–63:22，其中62:49.839–63:21.839空32秒。
+这些是文本覆盖空隙，不是音频静音；用户仍可能听到无ASR文字的声音，未作判断。
+35段连续、起止合法，覆盖全部cue起点；每条起点唯一映射一段。全部gap与每段cue索引在manifest.videos[0]及兼容顶层字段中。
+
+五、2021讲义与FAQ
+l-sundr.txt全文239行；内部标题6.824 2021 Lecture 18，正确；Last-Modified Thu, 06 May 2021 18:49:08 GMT。
+sundr-faq.txt全文54行，五题全部读；Last-Modified同上。保密、哈希成本/短日志、带外检测、Keybase历史采用、可信服务器失守均整合。
+2021讲义含last lecture on messaging复用残留，但实际前讲为Memcached，未造一讲messaging。
+6.858实验编号字幕疑似lab4，讲义lab5，未据此指示用户做旧实验。
+Canonical链接只核对讲义所列URL/标题（包含Ubuntu源码未受影响），未取正文；Debian课堂概括与论文确认的侵入、暂停、核查分开，不断言发行版已普遍感染。
+home-2021.html第55行CC BY 3.0 US链接定点核对，适用于2021课程自有文本，不扩展给论文或2026文本。
+
+六、论文准确范围与实际页面
+li-sundr.pdf共16页；内部题名Secure Untrusted Data Repository (SUNDR)，四作者Li/Krohn/Mazières/Shasha。
+2021 Last-Modified Fri, 22 Jan 2021 09:21:42 GMT。
+2021课表原词until Section 3.4：按到§3.4之前落实，完整读摘要、§1、§2、§3引言、§3.1、§3.2、§3.3引言、§3.3.1、§3.3.2。
+对应PDF p1–5和p6 §3.4标题之前，含Figure5及其末尾续行。这是有依据的exclusive解释，原文保留，不伪称课表写了through end of3.4。
+边界依据：p3列三个设计阶段；p4明确§3.3仍串行、§3.4才处理并发；2021讲义229–233行把完整update certificates留到论文；2026课表明确through the end of Section3.3.2。
+全文顺序读提取的p1–7各文件。p6–7超出指定边界的文字单列为额外局部核对：§3.4开头、§3.4.1、第7页§3.4.2内容；不等于读完§3.4。实际没有读取p8–16，因此后续并发、实现、评测、参考文献正文/表均未完成。
+实际视觉查看：
+ p2 Figure1客户端cache/security层与服务端block/consistency组件，脚注1/2的密钥与happens-before。
+ p3两组未编号正常/分叉日志图，每项用户/操作及前缀关系。
+ p4 §3.3/§3.3.1标题和所有权/句柄定义。
+ p5 Figures2/3用户/组i-table、目录路径、i-handle、签名version structure及z[p]、z[u]公式。
+ p6 Figures4/5实际向量(3,1)/(2,2)、change log，≤定义、VSL加z全序规则，§3.4准确起点；额外看其下并发引言与update certificate公式。
+ p7额外核对PVL版本递增与组比较公式、读写冲突等待及记录待定证据；不将此视为完整并发协议。
+p1仅文本全文读，虽已渲染并未另看图片；manifest将图像标fetched。其他p2–7图像标reviewed。指定范围内无编号表格；未声称全论文后半部图表已看。
+论文source.status=partial指全16页没有全读；scope.assigned_reading_complete=true单独指指定范围已读完，不混淆。
+
+七、2026既有快照对照
+只读复用update-2026-l-sundr.txt和update-2026-li-sundr.pdf及manifest.json原元数据。
+讲义306行全文读，全文diff543行也全文读。内部标题6.5840 2026 Lecture19，Last-Modified Tue, 28 Apr 2026 14:26:32 GMT。
+2026论文Last-Modified Tue, 27 Jan 2026 14:57:07 GMT；原retrieved_at为2026-11-08，未改成本次读取日期。
+两年PDF字节完全相同，SHA-256 b72c3e0b251a0a632fc823138a924e5cde76ff7dcba9b6eaf47480a675e1644d。
+同字节阅读范围继承本次论文阅读，不伪称又独立把另一份PDF全看一遍。
+真实差异：2026新增内容寻址/签名可变句柄基础展开；x.c/NEWS替代Zoobar；分叉三种拼接失败更显式；三用户向量表。
+2021的timestamp box、带外比较、所有权/组、并发提示并未全部保留到2026。无新协议修订，不建重复update。
+2026 through the end of Section3.3.2保持独立字段；2026 FAQ历史仅discovered，本次未取未读。
+
+八、关键技术校订
+1. 签名认证作者/授权，不自动认证全局新鲜度；哈希树需要可信根；恶意服务器仍能拒绝服务。
+2. 私钥签名/公钥验签，字幕“公钥签名”纠正；33分钟not-only句式，88分钟can/cannot merge否定据论文/前文校正，明确未回听不能断言ASR或口误来源。
+3. auth.py/bank.py/TechCash、Frangipani/Petal、SUNDR、Merkle统一专名；Zoobar不误写成ZooKeeper。
+4. 86分钟块大小字幕four five for96疑似4096，但Figure2偏移0K/8K不足以验证，保留疑点不定数。
+5. 纯fetch也加本人的版本，i-handle可不变；向量+句柄+签名是version structure，向量本身不是文件快照。
+6. VSL自身与自己的新z一起全序，且须保留自己的前一结构。不能只选最大向量或对不兼容向量取max重签。
+7. 任意多文件读取不是原子事务；只读例子的攻击前提为已完成改动被隐藏，不能扩大成真实并发下永不混读。
+8. 分叉检测不等于自动合并/共识，timestamp box可信且要检查近期更新，缺失不能唯一归因恶意。
+9. Serialized SUNDR不可直接撤锁，完整Concurrent SUNDR未读完；补读仅支持边界说明。
+10. SHA-1保留为历史选择，不作今日新系统安全建议；摘要性能结论不当作已读完整评测。
+
+九、复现与最小局部验收
+python3 content/mit-6.824-2021/sources/p7-lec18/acquire.py
+python3 content/mit-6.824-2021/sources/p7-lec18/prepare-reading.py
+python3 content/mit-6.824-2021/sources/p7-lec18/finalize.py
+git diff --check -- content/mit-6.824-2021/lectures/lec18 content/mit-6.824-2021/sources/p7-lec18
+finalize校验固定审阅哈希、白名单、原json3/规范化cue无损、分钟分组无损、时间单调/真实gap/overrun、35段映射、3份正文格式/路由/图片；不改共享索引。
+实际执行结果：finalize.py全部通过；限定上述两个目录的git diff --check通过。没有因通过后再扩大或重复验证。
+manifest.videos[0].metadata为对象；metadata_file及normalized_caption_file相对sources根；含caption_time_structure、draft_segment_count、draft_segments。
+全站check-p7与build由主agent做，本worker未运行build、未git add/commit。未下载媒体，未跑原型及实验。
+固定实验提交513cac0aef010750fc74688da8a395974a83cf7a，实验测试not_run，不把教程交付记为用户实验通过。
+
+十、保留边界
+全文字幕文本阅读不等于音画核验；分组/Zoom缺口不可补造；论文仅指定前缀完整；视频CC具体版本、论文全译权及2026讲义许可未独立确认；历史产品/攻击新闻未全面外部核验。
+不存在待重试的获取阻塞。最终校验结果见validation.txt；共享整合由主agent处理。

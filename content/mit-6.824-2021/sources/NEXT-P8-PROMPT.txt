@@ -1,0 +1,23 @@
+继续完成 MIT 6.824 中文课程 P8。先读取项目 AGENTS.md、technical-video-notes skill，以及 content/mit-6.824-2021/sources/PLAN.txt、status.json、manifest-2021.json、P7-REVIEW.txt、各 p7-*/review.txt、两个学期课表快照、schedule-inventory-2021.json 和 version-map-2021.json，确认 P1–P7 实际范围与未决边界。
+
+主线仍为 MIT 6.824 Spring 2021；本批 Updates 使用 MIT 6.5840 Spring 2026 官方课表对应的书面材料。实验固定 513cac0aef010750fc74688da8a395974a83cf7a，教程完成不代表用户实验通过，实验测试独立记录。只修改 content/。
+
+本批明确完成四个既有 Updates：update-paxos、update-go-patterns、update-verification、update-bft。允许四个独立专题 agent 并行；主 agent 负责共享来源、最终审阅与提交。2026 课表没有列这些讲次的视频，不造时间轴或课堂问答，不将讲义扩写称为视频译稿；只交 notes.zh.md 与必要的 materials.zh.md，不为了凑标签生成 draft。
+
+先逐项核对实际课表链接和既有本地快照哈希，不能把旧 manifest 的 fetched 当 reviewed。2026 无年份 URL 是动态地址；复用快照记录原抓取时间，重新获取则记录新时间、Last-Modified、字节差异、内部标题／年份。原件保存在 sources，用独立 p8-*/manifest-fragment.json 和 review.txt 记录准确全文／定点阅读范围。PDF 图表、公式和代码排版须实际查看对应页面。
+
+1. Paxos 对应 2026 L4：notes/l-paxos.txt、notes/paxos-code.html、papers/paxos-faq.txt、papers/paxos-simple.pdf。完整阅读并区分 promise、accept、chosen、learned、持久化、单实例与多实例；以多数交集和最小反例解释安全性，对照已完成的 2021 L5/L7 Raft，别把选主／活性条件省成“多数就安全”。伪代码静态核对不称为实现测试。
+
+2. Go patterns 对应 2026 L5：notes/Go-MIT6824-2026.pdf、papers/go-faq.txt，以及课表实际指向的 CACM 2022 The Go Programming Language and Environment（https://cacm.acm.org/magazines/2022/5/260357-the-go-programming-language-and-environment/fulltext）。先全文核对 2026 幻灯片并与已完成 2021 L10 的 78 页幻灯片／正文对照；与旧课相同的模式回链，只展开确实新增或改变的内容。外部文章单独核对可访问性与许可，失败如实记录并继续已获取部分；不要把 Go Tour 或已完成 L2/L10 重新生成一遍，不凭当前 Go 版本推测原讲内容。
+
+3. 验证对应 2026 L15（Upamanyu Sharma）：notes/l-ironfleet.txt、papers/ironfleet.pdf；该课表未列 FAQ，不猜造。全文精读，区分协议模型、实现 refinement、并发／网络假设、安全性与活性、可信计算基，以及实际验证的系统和局限。不将静态读论文写成运行 Dafny、证明器或实验成功；对照既有 RSM/Raft 不变量，不新增用户实验要求。
+
+4. BFT 对应 2026 L21（Derek Leung）：notes/l-bft.txt、notes/65840-pbft.pdf、papers/castro-practicalbft.pdf、papers/bft-faq.txt。完整阅读讲义／幻灯片／FAQ／1999 论文，核对认证假设、3f+1／2f+1 交集、normal case、prepared 与 committed-local、view change、checkpoint／状态转移和活性条件。与已完成 L18 SUNDR、L19 Bitcoin 区分成员准入、故障预算和一致性目标；不替换现代 BFT 或链协议。
+
+每篇 notes 提炼问题、机制、不变量、反例、权衡和自测；materials 放课外精读及书面独有内容。未获公开全文翻译许可的论文／外部文章用自主精读，不套课程网站许可；课程文字保留实际署名和许可。引用放页底，原始来源不得用 .md 后缀；简单自绘图按需，避免无必要图表和重复大段内容。
+
+主 agent 同步 course.json、公共资料、status、manifest/source_fragments、版本映射和 PLAN。P7 的 SUNDR 两年阅读边界、Bitcoin 双阅读及 Blockstack 2016 边界继续保留；FaRM 两条独立时间轴不合并；实验教程和实验通过状态不混淆。L6/L8 无新增实际来源继续待补。
+
+后续 P9 明确留给 update-lambda、update-ray 与 2021 L21 项目展示：Ray 对照 P7 Spark，不能因已读 Spark 标完成；L21 录像 bu41Qt9G5Qo 的项目展示与同日指定 AnalogicFS 论文／FAQ必须分开。P8 结束再生成可直接复制的 NEXT-P9-PROMPT.txt。
+
+执行最小必要来源哈希、路由／图片、元数据和状态一致性检查；git diff --check、npm run build 通过后提交并推送 GitHub。沿用既有归档：原始 PDF/HTML/字幕留本地，仅提交正文、必要获取／检查脚本、来源清单和 review，不无差别强制加入 sources。最后简报实际交付、真实缺口、检查结果和提交信息。

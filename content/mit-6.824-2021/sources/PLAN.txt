@@ -42,8 +42,8 @@ Chain Replication 和 SUNDR 已属 2021 主线，原两个同名 Updates 合并�
 当前清单：sources/schedule-inventory-2021.json。
 当前映射：sources/version-map-2021.json。
 2021 抓取：sources/manifest-2021.json；已保存并核对课表与 general.html。
-21 讲的链接已登记；L1/L2/L3/L4/L5/L7/L9/L10/L11/L12/L13/L14/L15/L17 已独立核对
-15条视频元数据（含L15两条）；L16/L18/L19/L20/L21待逐条核对。
+21 讲的链接已登记；除无视频的L6/L8及待处理的L21外，其余18讲已独立核对
+19条视频元数据（含L15两条）；L21项目展示待核对。视频CC标签具体版本仍未明。
 
 无 -2021 后缀的 manifest.json、schedule-inventory.json、version-map.json
 是迁移前 P0/P1 历史记录；其中 2020 来源不能冒充 2021 已抓取材料。
@@ -133,11 +133,31 @@ P6 案例：内容已完成，L11 Chain Replication / L12 Frangipani / L15 FaRM 
   2026 Chain Replication讲义全文及差异已对照；两年PDF字节相同，不另建重复Update。
   L11讲义保留2020标题且无指定FAQ；L15讲义/FAQ修改晚于首录像，详见来源记录。
   新增12份正文，无新增图；累计42份讲座正文、10份实验正文、4张SVG。实验测试未运行。
-P7 兴趣拓展：L16 Spark / L18 SUNDR / L19 Bitcoin / L20 Blockstack。
-  L18对照2026 SUNDR阅读，分别核对2021 until Section3.4和2026 through3.3.2。
-  L19论文与Nielsen阅读均需处理；L20以2016指定论文为准，不换现代Stacks资料。
+P7 兴趣拓展：内容已完成，L16 Spark / L18 SUNDR / L19 Bitcoin / L20 Blockstack。
+  四讲8701条字幕全部顺序文本阅读，30/35/33/34段，共132段；无音画核验。
+  原始末条超时2000/1920/1520/1880ms保留，L18两次Zoom故障和分组缺口明确，
+  L16/L19程序环境中断、L20 zone-file回答缺口保留；L20明确不用分组。
+  Spark论文14页/14图3表、Bitcoin白皮书9页/全部图式、Blockstack2016论文15页/
+  8图两公式完整已读/查看；四讲讲义/FAQ全文读。主agent全文审阅12份中文成品，
+  定点复核原始来源，具体与worker全文阅读分开记录于P7-REVIEW。
+  SUNDR两年讲义全文与差异已读，论文同字节；2021 until Section3.4按结构落实到
+  §3.4之前，2026 through the end of Section3.3.2分别保留。指定前缀完成，
+  额外第6-7页并发局部阅读不算完整§3.4；第8-16页未读，不生成重复Update。
+  Nielsen原站及变体404，用户要求重试后仍404；UBC2015合并PDF中的2013文章全文
+  精读、全部6图与可见公式核验，评论区缺失、原站最终版本未知、个别符号留白。
+  L20以2016 DHT设计为主，2021 Atlas/Gaia/Browser和FAQ白皮书背景单列。
+  新增12份正文，无新增图；累计54份讲座正文、10份实验正文、4张SVG。
+  论文全译许可未确认，采用自主精读。没有运行Spark、原型或任何实验测试。
   L21项目展示及六项剩余Updates留后续明确批次；L21的展示与AnalogicFS阅读分开。
   L6/L8 不补造无来源课堂内容；有新增真实材料时再处理。
+P8 专题增补：update-paxos / update-go-patterns / update-verification / update-bft。
+  对应2026 L4/L5/L15/L21；课表只列书面资料，无视频，不生成虚构课堂译稿。
+  Go patterns先对照已完成2021 L10，只展开实际差异；另精读2022指定文章。
+  Paxos包含伪代码/FAQ，BFT包含Derek Leung幻灯片/FAQ；IronFleet课表无FAQ。
+  可直接复制的任务入口为sources/NEXT-P8-PROMPT.txt。
+P9 平台与项目：update-lambda / update-ray / 2021 L21 Project demos。
+  Ray回链Spark但独立核验；L21录像bu41Qt9G5Qo与AnalogicFS论文/FAQ分开整理。
+  两批均沿用逐来源授权、快照版本、实际阅读范围与最小验证规则。
 
 2021 Lab 1/2/3/4 分别对应本路线 2026 Lab 1/3/4/5；2026 Lab 2 是新增桥接。
 这只是主题映射，不表示 API、子任务或测试兼容。
@@ -165,7 +185,7 @@ Ray、BFT。Go patterns 制作前对照 2021 L10，只展开真正有差异的�
 按计划执行下一批，仅改 content/，校验后提交并推送。
 执行偏好：按既定批次直接推进，获取字幕成功后继续制作，不停在“可以继续”的确认上。
 只有需要用户决策的真实阻塞才询问；字幕失败时按已有书面来源分支推进。
-最近完成批次：P6，2021 L11/L12/L15/L17；下一批P7为L16/L18/L19/L20。
+最近完成内容批次：P7，2021 L16/L18/L19/L20；下一批P8为四个2026书面专题。
 L15两条录像分别核对与保留时间轴；L21与六项剩余Updates留后续，L6/L8不补造课堂内容。
-可直接复制的P7提示词见 sources/NEXT-P7-PROMPT.txt；NEXT-P4/P5/P6-PROMPT保留历史入口。
-最新验证结果见 status.json.validation 与 sources/P6-REVIEW.txt。
+可直接复制的P8提示词见 sources/NEXT-P8-PROMPT.txt；NEXT-P4/P5/P6/P7-PROMPT保留历史入口。
+最新验证结果见 status.json.validation 与 sources/P7-REVIEW.txt。

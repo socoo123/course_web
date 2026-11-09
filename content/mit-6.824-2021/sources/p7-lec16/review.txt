@@ -1,0 +1,98 @@
+P7 / MIT 6.824 Spring 2021 L16 Spark — worker review
+日期：2026-11-09
+写入边界：content/mit-6.824-2021/lectures/lec16/ 与 sources/p7-lec16/。
+共享文件只读；没有git操作、全站build、Spark演示或实验执行。
+
+交付
+- lectures/lec16/draft.zh.md：30个连续时间段，00:00–78:48；完整可恢复课堂及55分钟以后全部问答。保留02分钟环境中断、61–65分钟FaRM插问、65–71分钟未解定义争论、最后DAG/RDD/scheduler学习建议。
+- lectures/lec16/notes.zh.md：权威/可重算状态、可重算不变量、三种图的粒度、父分区扇出判据、PageRank仍需聚合贡献、缓存成本推导、恢复边界、10题折叠答案；不重复课堂演示或整段代码。
+- lectures/lec16/materials.zh.md：14页论文全文自主精读，14图3表和公式；课堂未展开的逻辑回归、RDD接口、解释器闭包、内存管理、测量、表达能力与调试。无全译许可，不做全文翻译、不公开转载页面图片。
+- manifest-fragment.json：5项独立上游来源、20项衍生记录、全部字幕间隙、30段与cue索引对应、正文哈希、历史/实验/授权边界。
+- videos[0].metadata是白名单元数据对象；metadata_file=p7-lec16/metadata.json；normalized_caption_file=p7-lec16/captions/captions.normalized.json；draft_segment_count=30，含caption_time_structure与draft_segments。路径相对sources根，可直接供check-p7.py整合。
+- acquire.py、prepare-reading.py、finalize.py；acquisition.json只记录获取，manifest是最终阅读状态；validation.txt记录实际局部检查。
+- 无新课堂截图、自绘图或实验文件。
+
+已读任务输入与课表
+- 项目AGENTS、technical-video-notes skill、NEXT-P7-PROMPT、PLAN、schedule-inventory-2021。
+- lec17三份成品及p6-lec17 acquire/prepare-reading/finalize/review全文作为格式样本。
+- schedule-2021.html229–230行核对2021-04-29 L16，链接notes/l-spark.txt、papers/zaharia-spark.pdf、papers/spark-faq.txt、qXb5rDGqFdc；home-2021.html55行核对课程自有文字CC BY3.0US。
+- 主agent的check-p7.py只读核对字段契约，没有运行依赖共享整合状态的全批检查。
+
+获取与中断恢复
+- 三个官方文档和视频白名单/英文ASR在首次请求中均成功。本轮网络中断发生在响应/工具调用之间，并非源文件抓取失败；恢复后保留全部已抓取文件与正文，没有重复下载成功原件。
+- 为补齐最初未保留的响应终点信息，单独运行acquire.py --headers-only，对三文档各发一次HEAD。header-observations.json保存观察时间、final_url及Last-Modified；都无重定向，修改时间与原GET相同。未改变原文档bytes、GET retrieved_at或SHA256。
+- 源url保留2021课表原链接。视频url为https://youtu.be/qXb5rDGqFdc，request_url和final_url单列https://www.youtube.com/watch?v=qXb5rDGqFdc。文档final_url是另次HEAD观察，未伪称原GET头部原始存档。
+- 不保存cookies、完整info/player响应、带签名媒体URL，不下载音视频、片段或缩略图。
+
+独立视频元数据
+- id：qXb5rDGqFdc。
+- title：Lecture 16: Big Data: Spark。
+- duration：4728秒，78:48。
+- channel/uploader：MIT 6.824: Distributed Systems。
+- channel_id：UC_7WrbZTCODu1o_kfUMq88g。
+- upload_date：20210430，与2021-04-29课表日期相差一天，二者分开记录。
+- license：Creative Commons Attribution license (reuse allowed)，确切CC版本未提供。
+- 白名单仅id/title/duration/channel/channel_id/uploader/upload_date/license/webpage_url；视频/字幕Last-Modified未由yt-dlp暴露，保留null及说明，不推断日期。
+
+字幕全文读与定点复核：明确区别
+- 英文原语言自动字幕video.en-orig.json3；不是机器翻译字幕。
+- 全2026条非空cue按顺序完整阅读，规范化未去重、不删文本、不修原时间。阅读用79个非空分钟组，reading-by-minute.txt236行，按1–90、91–180、181–236完整读；拼接逐字等于全部规范化cue文本。
+- 时间文本transcript.en.txt的全部内容通过该无损分组读过，并未另外逐条重读该表示；VTT仅生成，没有播放。
+- 初次完整顺序阅读后，直接复核原始规范化cue的15:00–20:30 collect/count混用；51:00–52:20 only-final-collect错误结论；56:45–57:50 driver/scheduler含混问答。这些是定点复核，不冒充全部音画核验。
+- 首条0ms；末条开始4726640ms、结束4730000ms，相对4728000ms片长超2000ms；2条结束超过片长，原件未截断。
+- 起止时间均单调，负时长0，相邻重叠1898对；重叠是ASR时间表达，不是额外重复讲授。
+- 区间并集127处正间隙，共216290ms，最长11000ms，详尽起止保存于manifest。这里仅是字幕时间结构，不等于静音、漏讲或音频完整性检测。
+- 两个最长间隙为02:09.840–02:20.840及02:23.840–02:34.840；课堂环境出问题并检查，未猜具体故障操作。
+- 现有字幕没有分组讨论，不捏造分组内容；末尾学生正在继续确认DAG学习材料，字幕结束即止，不加无证据道别。
+- 所有cue开始时间恰落在30段之一，标题连续00:00–78:48；这只验证结构，不证明逐字译文或所有原始口语都已识别。
+- 未听音轨、未查课堂帧。white/wide、petition/partition、scanner/scheduler、patreon/PageRank、smart/Spark等按语境校订，实质技术矛盾另外说明。
+
+书面来源全文范围及版本
+1. l-spark.txt：219行全部读；内部标题6.8242021Lecture16。含完整PageRank Scala示例、五行边输入、本地执行输出、spark-shell命令、执行图/shuffle/缓存/恢复/总结。
+   Last-Modified Tue,04May2021 20:38:49GMT，晚于Apr29课堂，不能保证与课堂时点相同。
+   讲义命令和输出不出现在视频现有ASR，不称视频实际演示，也未运行它们。
+2. spark-faq.txt：135行全部读；标题Spark FAQ无学期号；Last-Modified Fri,30Apr2021 19:05:16GMT，晚于课堂。
+   包含应用、表达能力、不可变、能源、位置、容错、Scala、单扫描MapReduce对比、其他系统与hash分区；所有问答读过。外链Databricks/Naiad/SparkStreaming/FAWN/Piccolo/latestAPI未读。
+3. zaharia-spark.pdf：14页，实际题名Resilient Distributed Datasets:A Fault-Tolerant Abstraction for In-Memory Cluster Computing，NSDI2012，课表简称Spark(2012)。
+   Last-Modified Fri,22Jan2021 09:21:43GMT为服务器快照修改，不是发表日期。
+   布局文本1244行按1–360、361–720、721–1244顺序全部读，按每页双栏上下文衔接。摘要、§1–9、致谢、全部33项文献条目已读；这些外链文献正文未读。
+
+PDF实际页面核验范围
+- p1：实际题名、作者、摘要与论文身份；没有从可公开获取推导全文译权。
+- p3：Figure1日志lineage、精确collect/count代码和索引；Table1全部RDD/DSM比较行及注释。
+- p4：Figure2 driver/workers/RAM/input/tasks/results；闭包捕获脚注。
+- p5：Table2所有算子与动作类型；Figure3各轮ranks/contribs；逻辑回归梯度代码和PageRank alpha/N公式；变量与RDD不可变脚注。
+- p6：Table3五项接口；父分区扇出定义；RELIABLE flag；对齐join和贡献聚合的叙述。
+- p7：Figure4窄/宽的全部分区箭头，共分区join明确允许一个子分区两个父输入；Figure5三个stage及黑色缓存分区；join两窄/两宽/混合，shuffle物化，明确尚不容忍scheduler failure。
+- p8：Figure6对象引用与闭包捕获；三种存储表示，RDD级LRU同RDD例外；REPLICATE flag与p6不一致；自动checkpoint仍在研究。
+- p9：Figure7首次/后续及Figure8的25/50/100节点、逻辑回归/k-means、Hadoop/HadoopBinMem/Spark全部柱值、秒单位；正文25.3x/20.7x及概括up-to20x区别。
+- p10：Figure9单机256MB三种输入路径/文本与二进制；Figure10 PageRank30/60节点；Figure11第六轮故障图柱81s、正文80s；75节点/400tasks实验条件。
+- p11：Figure12内存比例与时间；Figure13两应用和误差线；Twitter 10^7指数；Figure14三种查询/三种尺寸/秒单位，以及100台m2.4xlarge不同于默认配置。
+- 全14图、3表及算法公式实际看页面。p2/p12/p13/p14仅生成图片，全文文字已读，没有标成额外图像核验；所有页面渲染均保存在本地sources，未放到公开正文。
+
+语义审阅与校注
+- 20–23及65–71分钟窄依赖争论：保留双方意见，不将学生的方向性问题误判成论文错字；以论文pp6–7和Figure4正确父扇出定义校正。窄不等于严格一对一，也不是绝对零网络。
+- PageRank源键同分区join只避免该join的重新分区，目标键贡献reduceByKey一般仍需shuffle；51:45讲师对“only final collect”肯定不能成为全迭代保证。
+- 16–20分钟collect/count混用分别标注；索引(3)不能解释成切三份取第三份。
+- stage/partition task/RDD lineage分开；pipeline不强行写成每个函数一个并行线程。逻辑回归每轮reduce action与纯transformation的PageRank链分开。
+- 普通persist/cache、shuffle物化、可靠checkpoint分开；不把“内存计算”说成永不落盘，不把cache当稳定存储。
+- Driver/scheduler问答讲师明确不知，ASR又含混；论文§5.1明确未容忍scheduler failures，不能给历史实现添加保证。
+- 论文PageRank alpha/N与讲义0.15+0.85sum、初值1、总和3区分；不补造一般图dangling处理。
+- checkpoint命名RELIABLE(p6)/REPLICATE(p8)均核验，原文差异保留；自动选点仍是研究方向，不套现代API。
+- Figure11图81/正文80秒作为近似差异保留；各性能图分母、硬件、首次/后续迭代不同，不宣传任意负载20倍。
+- 61–65分钟FaRM问答保留，讲师简述recovery角色不扩写成新正式协议，回链已有L15资料；没有重新审阅FaRM全论文。
+- RDD不可变不自动让非确定用户函数可重算，也不给外部扣款副作用exactly-once。notes相关公式/反例明确为自主推导。
+- FAQ/课堂DataFrame及产品流行度是历史描述，不假定当前状态；Ray仅后续学习关系，update-ray未完成。
+
+未决边界
+- ASR未音画校验，全部识别准确性、板书、现场实际程序运行无法证明；真实字幕间隙和末尾超时保留。
+- 视频确切CC版本未知；论文全文译权未确认。
+- 历史讲义/FAQ服务器修改晚于课堂；两checkpoint flag名称及Figure11近似数值未由外部资料统一。
+- 未读博士论文、FAQ外链、现代Spark/Ray代码；没有运行Spark，未把论文实验性能作为本地复现。
+- 固定2026实验commit513cac0aef010750fc74688da8a395974a83cf7a未改，实验测试未运行，也不声称用户实验完成。
+
+最小局部检查
+- finalize.py通过：5上游哈希、原课表url/独立metadata、2026cue时间结构、79组无损性、30段连续覆盖及每cue归属、3份Markdown头/围栏/行尾/本地路由/正文哈希。
+- 20项衍生文件均计算SHA256；HEAD记录独立标注生成/观察范围。所有原始获取文件在本地成功存在，无网络源阻塞。
+- 主agent负责共享元数据同步与check-p7/git diff/build；worker未运行全站build或任何git命令，未暂存或提交。
+- 本地sources通常被仓库忽略，主agent按既有归档策略选择脚本、fragment、review等，不需要无差别纳入原始PDF/字幕/渲染图。

@@ -1,0 +1,89 @@
+P7 阅读与整合审阅记录
+日期：2026-11-09
+主线：MIT 6.824 Spring 2021；实验：MIT 6.5840 Spring 2026。
+固定实验代码：513cac0aef010750fc74688da8a395974a83cf7a。
+
+一、前置核对与分工
+主agent完整读取项目AGENTS.md、technical-video-notes skill、NEXT-P7-PROMPT、PLAN、
+status、manifest-2021、P6-REVIEW、四份p6-*/review、schedule-inventory-2021和
+version-map-2021，确认P1–P6实际完成范围及来源边界。开始时main与origin/main一致，
+工作区干净。四个worker分别负责L16/L18/L19/L20，各自只写对应lecture与p7-lecNN目录；
+共享来源索引、元数据、公共资料、最终审阅和git由主agent负责。所有修改限content/。
+
+重读既有schedule-2021.html 225–297行，核对实际入口：
+L16：qXb5rDGqFdc；notes/l-spark.txt；papers/zaharia-spark.pdf；papers/spark-faq.txt。
+L18：FxwjSs_xSBM；notes/l-sundr.txt；papers/li-sundr.pdf；papers/sundr-faq.txt；
+     2021原文until Section 3.4。
+L19：yB6m8EjAqPU；notes/l-bitcoin.txt；papers/bitcoin.pdf；papers/bitcoin-faq.txt；
+     http://www.michaelnielsen.org/ddi/how-the-bitcoin-protocol-actually-works。
+L20：DnyBPxo3B6I；notes/l-blockstack.txt；papers/blockstack-atc16.pdf；
+     papers/blockstack-faq.txt，课表明确BlockStack (2016)。
+2021 schedule/general/home三份旧快照哈希与manifest逐一核对相同；主页55行仍为
+CC BY3.0 US，仅用于课程自有文字。本次复用快照，不声称重新下载整个课表／主页。
+
+主agent完整读取P6四讲的notes，用于衔接历史继承与服务权、日志与锁恢复、FaRM可变
+事务状态、Memcache回填资格／来源两项检查；没有因此重计P6原始论文全文阅读。
+另定点读取2026课表106–135、211–274行以核对SUNDR范围和后续批次实际入口：
+2026 SUNDR为through the end of Section 3.3.2。P8安排Paxos、Go patterns、
+IronFleet验证和BFT四个书面专题；P9留Lambda、Ray及2021 L21项目展示。
+2026验证课未列FAQ；上述Updates没有课表视频，不能造课堂时间轴。
+
+二、逐讲审阅
+逐讲全文阅读、页面查看、原始字幕时间边界和来源版本见各p7-lecNN/review.txt；
+主agent全文阅读L18、L20各三份中文正文及各自review，逐项读取两份manifest的所有
+上游source记录与视频元数据。以下是主agent额外定点复核，不冒充再次阅读全文字幕或论文：
+L18：PDF第6页提取文本及实际页面，核对Figures4/5、VSL加新z的全序条件、§3.4标题
+之前的准确结束位置；原始规范化字幕87:50–88:40核对can merge否定疑点。正文校注
+清楚保留了文本纠正依据与未回听边界，未把指定前缀完成写成全16页完成。
+L20：原始规范化字幕48:40–49:10，确认zone-file回答开头存在12.080秒缺口。
+另实际查看PDF第11/12页：Figure6与两条SNV公式、可信初始哈希；Figure7读写分量
+和省略下载的口径、100MB图与正文约2秒描述的差异；Figure8的26.9%分母。
+两讲未发现需改正文的实质错误；版本、字幕否定及性能口径疑点均已在成品明确。
+L16：主agent全文阅读三份中文正文和review，读取manifest全部上游source记录与视频
+元数据；实际查看PDF第5/6/7页，核对Table2/3、逻辑回归代码公式、PageRank公式、
+父分区扇出定义、Figure4共分区join与Figure5的stage/缓存及scheduler failure限制。
+另读规范化字幕51:40–52:10，确认only-final-collect问答确有错误肯定；正文没有
+删掉该段，也没有把校正包装成讲师原话。无需修改中文成品。Ray仍留P9。
+L19：主agent全文读取三份中文正文、review和manifest全部上游source记录/元数据，
+读取retry-result.json确认原站重试仍404；实际查看Nielsen PDF第1/6/10页，核对
+文章起止、合并快照中的无关文章、六次确认口径、连续六次中奖与总攻击概率的区别。
+实际查看白皮书第7页Poisson近似、求和/C代码及z的正文定义；原始规范化字幕
+69:30–70:00确认thousands per second疑点。正文已明确校注，不把错误吞吐当事实。
+所有12份中文正文已全文审阅，四份worker review已全文读；主agent未重新全文读
+四讲全部原始字幕、全部论文/FAQ，所以不将worker的全文阅读伪报为主agent二次全文读。
+
+三、实际获取、来源与版本边界
+四讲英文字幕和MIT文档均已获取；恢复主要续接网络中断时的编辑进度。L16为终点头信息
+另发HEAD，保留原GET时间；L18完整流程重试、L20文档复抓与已读字节相同。
+唯一仍blocked的原始入口是Nielsen：原HTTP、HTTPS变体404，用户要求重试后仍404。
+UBC第三方2015合并快照里的2013文章完整精读，原站最终修订、评论区与少量留白变量
+不能恢复；独立来源状态与URL未混淆。详情见p7-lec19/review及retry-result。
+SUNDR 2021 until Section3.4按论文结构解释为exclusive；2026 through the end of
+Section3.3.2原文独立保留。指定前缀完成，额外并发阅读仅第6-7页局部，8-16未读。
+两年PDF同SHA256，2026讲义完整对照并入lec18；2026 FAQ未取未读。
+Blockstack严格采用2016 ATC PDF，2021讲义Atlas/Gaia/Browser与FAQ白皮书残留单列。
+Spark后续Ray未读；所有现代产品、外链文献正文和演示/实验均不计完成。
+四条视频独立标CC Attribution，具体版本未知；2021课程自有文本沿CC BY3.0US，
+所有论文/Nielsen全译许可未确认，交自主精读，原页图留本地。无媒体、cookies或签名URL归档。
+
+四、共享整合
+同步course.json四讲时长、阅读和教学说明，resources增加专题路线、视频/缺口/阅读范围；
+status加入p7Captions、逐讲完成状态、来源覆盖与真实问题；version-map合并SUNDR对照。
+manifest-2021索引四个独立分片，不将acquisition获取状态当最终阅读状态。
+累计54份讲座正文、10份实验正文、4张SVG；本批12份正文、无新图。
+P8提示词已生成并核对2026课表12个相对来源链接；安排Paxos、Go patterns、验证、BFT，
+Go先对照2021 L10，均无课表视频。P9明确留Lambda、Ray及L21项目展示/独立AnalogicFS阅读。
+实验固定513cac0aef010750fc74688da8a395974a83cf7a，labTests=not_run，
+learnerLabCompletion=not_tracked；教程完成不代表实验运行或用户完成。
+
+五、整合最小验收
+python3 content/mit-6.824-2021/sources/check-p7.py：通过。
+覆盖12份P7正文及公共导航、JSON、全清单source id唯一性、P7上游和衍生文件哈希、
+实际课表URL、站内路由/目标、图片/SVG、围栏、元数据白名单与总数。
+字幕结构：L16 2026cue/30段/4728秒；L18 2149/35/5464；L19 2163/33/4964；
+L20 2363/34/5383，共8701cue/132段。每条起点恰归一段、时间轴连续、时长一致；
+原始末条2000/1920/1520/1880ms超时保留。不声称音画、逐词或翻译质量自动证明。
+git diff --check：通过。npm run build（tsc --noEmit + vite build）：通过。
+全站构建后只补记验收结果，并修正SUNDR准备脚本中旧的页码注释，中文正文无需改动。
+原始PDF/字幕/页面图/HTML保留本地；选择性提交正文、必要脚本、清单、审阅/校验记录
+和下一批提示词，不整体强制加入sources。最终提交号由git历史记录。

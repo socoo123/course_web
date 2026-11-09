@@ -1,0 +1,97 @@
+P7 / MIT 6.824 Spring 2021 L20 Blockstack — worker review
+日期：2026-11-09
+写入范围：content/mit-6.824-2021/lectures/lec20/ 与 sources/p7-lec20/。
+共享文件只读；未 git add/commit/push，未运行 build，未修改或运行实验。
+
+交付
+- lectures/lec20/draft.zh.md：34个连续时间段，00:00–89:43。按全部可恢复字幕顺序整理，覆盖中心化/去中心化对比、共享清单、命名三角、分层图解、注册抢跑、开放讨论、项目展示安排与课后账本问答。
+- lectures/lec20/notes.zh.md：五类信任问题；命名状态机与所有权不变量；认证链/可信起点；新鲜度与并发反例；承诺—揭示；控制权/加密/易用性；10道折叠答案自测。
+- lectures/lec20/materials.zh.md：完整2016论文自主精读，覆盖Namecoin运营经验、全部四层、名称状态机/定价、SNV公式与信任前提、全部图表位置、性能口径、迁移与相关工作、2021讲义/FAQ增补和版本差异。
+- sources/p7-lec20/manifest-fragment.json：5个独立来源、20个衍生文件、videos[0]白名单metadata对象、metadata_file与normalized_caption_file均相对sources根、caption_time_structure、draft_segment_count=34、draft_segments及逐段cue索引。
+- acquire.py：三个指定文档并行获取、英文原语言字幕、视频白名单字段；--documents-only可保留已成功的视频资料并重新抓文档。source.url保留课表原URL，final_url独立记录。
+- prepare-reading.py：调用skill normalize_captions.py；无损分钟分组、布局文本提取、15页渲染。依赖python3/yt-dlp/pdftotext/PyMuPDF及本机skill路径。
+- finalize.py：仅核验本讲来源SHA256、元数据白名单、字幕文本无损、时间结构、连续段落、路由/Markdown；生成manifest与validation.txt。
+- acquisition.json是抓取时状态，不替代最终manifest的审阅范围。
+- 无新增图片；PDF页图仅本地sources，不在公开正文嵌入。
+
+已读输入和课表绑定
+- 项目AGENTS.md、technical-video-notes skill、NEXT-P7-PROMPT.txt、PLAN.txt。
+- schedule-inventory-2021.json中lec20条目；schedule-2021.html第261–262行：2021-05-18 L20，notes/l-blockstack.txt、papers/blockstack-atc16.pdf、papers/blockstack-faq.txt、DnyBPxo3B6I。
+- lec17三份完整成品和p6-lec17的acquire/prepare-reading/finalize/review作为格式样本。
+- home-2021.html第55行课程自有内容CC BY3.0US许可；未套用于论文和视频。
+- 共享check-p7.py只读核对整合字段约定，未运行其全课程检查或修改共享文件。
+
+获取与网络恢复
+- 2026-11-09T13:09Z左右首次成功取得三个文档、视频元数据和英文字幕，未发生来源获取失败。
+- 会话网络中断发生在编辑工具响应；恢复后保留已落盘draft和所有来源，继续制作materials/notes。
+- 为按最新整合要求补充最终URL，13:30Z执行一次--documents-only合理复抓；三个来源均成功，SHA256与初次完全相同，final_url均等于原课表URL。没有重复下载视频字幕或媒体。
+- 元数据和字幕Last-Modified未由yt-dlp暴露，记录null及说明；未猜造时间。
+- 仅存白名单字段及字幕；没有完整info/player响应、cookie、签名媒体URL或音视频文件。
+
+独立视频元数据
+- ID：DnyBPxo3B6I；标题：Lecture 20: Blockstack。
+- 时长：5383秒 = 89:43；频道：MIT 6.824: Distributed Systems。
+- channel_id：UC_7WrbZTCODu1o_kfUMq88g；上传日期：20210518。
+- license：Creative Commons Attribution license (reuse allowed)，未提供具体CC版本。
+- metadata.json字段仅id/title/duration/channel/channel_id/uploader/upload_date/license/webpage_url。
+
+字幕完整阅读与定点复核区别
+- video.en-orig.json3：原语言英文自动字幕，不是机器翻译字幕。
+- 共2363条非空cue，规范化JSON/VTT/逐条英文文本均保留原始时间与文本。
+- reading-by-minute.txt共90个非空分钟组、269行；顺序读取1–100、101–200、201–269，未筛选关键词或用摘要替代全文。分组拼接逐字等于全部cue文本。
+- 全文读后另直接检查normalized cue对象48:20–49:10附近，核验zone-file可用性问答中断；这属于定点复核，不另冒充全cue JSON独立二次阅读。
+- 首条80ms；末条start5379440ms/end5384880ms；整数时长5383000ms，原始超时1880ms；共2条cue结束超过片长。正文标题收束89:43，不截原件。
+- 起止分别单调，负时长0，相邻重叠2203对。重叠是ASR格式，不解释成课堂重复讲授。
+- 字幕区间并集160处正间隙，共413118ms，最长22240ms；包含开始80ms。全部起止保存在manifest。
+- >=10秒间隙：17:19.839–17:41.120（21281ms，屏幕调整附近）；48:48.880–49:00.960（12080ms，zone-file回答开头不可恢复）；60:15.839–60:28.799（12960ms）；77:31.840–77:54.080（22240ms）；80:49.440–80:59.600（10160ms）。
+- 间隙不等于听音确认静音，不补造缺失回答。66–67分钟讲师明确不用breakout，而选择全班公开讨论；没有标成未恢复分组，更没有虚构组内发言。
+- 34段连续覆盖00:00–89:43；每条cue开始时间恰属于一段。结构校验不能证明ASR听准、全部口语均被识别或板书一致。
+- 未听音轨、未看课堂帧、未截视频图；专名、否定、公式、口头数字和未指明板书仍有文本来源边界。
+
+书面来源完整阅读
+1. l-blockstack.txt：330行全部读，内部标题6.8242021 Lecture20 Blockstack(2016)；含应用模型、命名、注册、存储、私钥、全部讨论题及末尾两项参考。
+   Last-Modified Tue,18 May2021 19:06:55GMT。与课堂同日，不证明课前原样；外链wire-format、学位论文和WEIS论文正文未读。
+2. blockstack-faq.txt：174行全部读，所有问答含CT、费用、用户体验、隐私、PKI身份/恢复、开发困难和Consistency Hashes。
+   内部标题无年份；开头仍谈whitepaper，链接2016论文及2019年5月白皮书。Last-Modified Fri,22 Jan2021 09:21:42GMT。没有跟随2019链接替换2021课表的2016指定阅读。
+3. blockstack-atc16.pdf：15页，PDF1会议封面，PDF2–15为印刷页181–194。内部题名Blockstack: A Global Naming and Storage System Secured by Blockchains，USENIX ATC2016，四作者Ali/Nelson/Shea/Freedman。
+   Last-Modified Fri,22 Jan2021 09:21:42GMT不是出版年份。
+   布局文本846行按1–380、381–760、761–846连续读完，按双栏续接理解。摘要、§1–7、致谢、53个参考条目全部读；未阅读参考条目指向的全文。
+   开放获取不能推定全文翻译许可；只交自主中文精读，无公开原图、无整篇译文。
+
+实际PDF页图核验（不等同全部页面图像逐页二次阅读）
+- PDF1：封面准确题名、作者、ATC2016及开放获取措辞。
+- PDF5：Figure1周/日算力占比、Slush与F2Pool；多数算力能力边界。
+- PDF6：Figure2左图log(1-CDF)、7/22/46/78分钟四分位点，右图区块高度及尖峰；selfish-mining-like限定。
+- PDF7：Figure3上半区块间时间、下半接受交易数及tx target；合并挖矿分母。
+- PDF8：Figure4四层、相关交易筛选、name history、mutable/immutable两条更新路径。
+- PDF10：Figure5全部状态及PREORDER/REGISTER/EXPIRE/REVOKE/UPDATE/TRANSFER/RENEW箭头；存储两模式和到期/续期文本。
+- PDF11：Figure6逐跳认证、两条SNV公式；可信初始哈希；标题Simple与正文Simplified差异。
+- PDF12：Figure7毫秒单位、1/10/100MB、含/不含加密及各分量、读图省略下载；Figure8对数交易数、三类交易、迁移流量和26.9%分母。
+- 全部8图和两个公式均实际看页面；论文无编号表格。其余页已生成图片，但只通过文本全文阅读，没有标为独立图像复核。
+
+关键准确性与未决边界
+- 2016主线固定Bitcoin/virtualchain/DHT/外部存储/SNV；2021讲义的Atlas/Gaia/Browser另行定位，未倒填至2016，也未使用现代Stacks资料。
+- 课堂命名三角的全局唯一，与论文§2“强所有权”措辞不同，明确保留；Zooko三角不包装为这里已证明的不可能性定理。
+- 名称可读/唯一不证明真实身份；控制权、密钥发现、签名完整性、新鲜度、可用性、隐私逐层区分。
+- Bitcoin排序不替代virtualchain授权与解释；51%算力不能直接伪造用户签名；上层软件差异仍可分叉。
+- mutable签名不证明最新；版本号只防已知回退，不能识别未知更新；immutable也以当前可信命名状态为前提。
+- zone-file哈希不保存丢失字节；公开文件可由任何人复制，只有授权者能有效更新名字认可的绑定。
+- ASR/paper以公钥签名的措辞校为私钥签名、公钥验证；未修写原始资料。
+- preorder/register是承诺—揭示，不是事务2PC；课堂hash(name)过简，字典攻击问题保留，未猜具体nonce/编码。
+- Namecoin36000块到期不套给Blockstack所有空间；零名称价格不等于零矿工费或免费存储。
+- SNV需要可信起点；几何查询的对数复杂度不意味着全数据库重建也对数。FAQ Consistency Hashes与论文consensus hash措辞/侧重点区分，未构造完整分叉恢复协议。
+- Figure7正文“约2秒CPU开销”与100MB图中部分开销不一致：100MB读含加密约12.886s，写总约16.852s/无加密9.033s/加密7.782s；不宣称所有CPU工作仅2s，未猜作者打算排除何项。
+- Figure7读图不含下载时间，不当端到端延迟；Figure8的26.9%是data-embedding交易，不是全部Bitcoin。
+- selfish-mining-like观测未证明恶意意图；2016算力/市场/用户量不是2026现状。
+- Kerberos被宽泛称PKI已校注；Keybase/联系人表/信任网混用不当作已核实产品规格；未阅读Keybase实现。
+- URI精确格式、每名URI数量、access-control实现、主密钥隔离实现未核验；lockbox是一般方案，不冒称2016协议。
+- 课末checkpoint/剪枝建议是讨论，不是已核验Bitcoin规则；区块头不等于完整状态验证。
+- 收费是否更便宜、全局可读名是否值得、去中心化能否竞争规模均保留课堂开放结论，不做无来源现状推断。
+- 实验固定MIT6.5840 Spring2026 commit513cac0aef010750fc74688da8a395974a83cf7a；未执行实验、不声称用户完成。
+
+局部验证
+- finalize.py通过：5个上游源哈希、20个衍生文件哈希、白名单metadata、2363条字幕与无损分组、34段连续时间、全部cue起点覆盖、Markdown头/围栏/行尾/课程路由与本地图片。
+- manifest.videos[0]包含主agent要求的metadata对象及相对sources根路径，并保留独立draft_segment_count、caption_time_structure、draft_segments。
+- git diff --check仅对本worker两个路径执行；新文件行尾已由finalize检查。
+- 未运行全站build或共享check-p7，主agent负责整合；未git add/commit/push。
+- 原始PDF/字幕/页图按既有策略本地保留；sources受gitignore忽略，主agent选择必要脚本、manifest/review归档，worker未强制暂存。

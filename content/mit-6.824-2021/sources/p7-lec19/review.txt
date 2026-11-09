@@ -1,0 +1,106 @@
+P7 / MIT 6.824 Spring 2021 L19 Bitcoin — worker review
+日期：2026-11-09
+允许写入：lectures/lec19/ 与 sources/p7-lec19/，相对于 content/mit-6.824-2021/。
+共享元数据/计划/状态只读；没有 git add/commit/push、全站 build 或实验执行。
+
+一、交付
+- lectures/lec19/draft.zh.md：33段，00:00–82:44连续时间轴，完整课堂、交易图解、提问与课后PoS/实验/压缩问答；程序崩溃间隙与ASR疑点保留。
+- lectures/lec19/notes.zh.md：授权/状态有效性/历史选择分离，UTXO两不变量，随机工作量、传播间隔推导、分区反例、信任边界，10道自测。
+- lectures/lec19/materials.zh.md：两份指定阅读自主精读。白皮书全部章节、Merkle/SPV、激励、隐私、概率公式与数值；Nielsen完整Infocoin演进、哈希例子、6幅图、3项作者问题、两份交易表示、找零/手续费与结论脚注。
+- sources/p7-lec19/manifest-fragment.json：7项来源记录（6个已获取并审阅文件+1个原站blocked记录）、25项衍生物、136处全部字幕并集间隙、33段字幕索引映射与videos[]完整兼容字段。
+- acquire.py / prepare-reading.py / retry-nielsen.py / finalize.py：获取、无损准备、一次指定重试、最小局部校验；全部通过patch编写，只写所属来源目录。
+- acquisition.json保留获取时证据；retry-result.json保留用户要求的一次重试；最终实际阅读范围以manifest为准。
+- 原字幕、PDF、布局文本、页面图像本地保留；没有新增正文图片。
+
+二、任务输入与2021映射
+- 已读项目AGENTS.md、technical-video-notes skill、NEXT-P7-PROMPT.txt、PLAN.txt、schedule-inventory-2021.json。
+- 已读既有lec17的notes/draft/materials全文及p6-lec17的acquire.py、prepare-reading.py、finalize.py、review.txt作样本；主agent负责共享P6/状态审阅。
+- schedule-2021.html249–250行直接核对：2021-05-11，L19 Peer-to-peer:Bitcoin；notes/l-bitcoin.txt、papers/bitcoin.pdf、papers/bitcoin-faq.txt、Nielsen原HTTP链接及yB6m8EjAqPU。
+- home-2021.html55行核对课程自有文本CC BY3.0US，不延伸到外部阅读/视频。
+- 主agent提供check-p7.py后只读其接口，finalize输出videos[0].metadata为9字段对象，metadata_file/normalized_caption_file相对sources，draft_segment_count=33；source.url保留课表链接，final_url独立记录。
+
+三、独立视频获取与许可
+- ID yB6m8EjAqPU；title原样为Lecture 19: Peer-to-Peeer: Bitcoin（含Peeer拼写）。
+- duration4964秒=82:44；channel MIT 6.824: Distributed Systems；channel_id UC_7WrbZTCODu1o_kfUMq88g；upload_date20210511。
+- 独立yt-dlp查询：Creative Commons Attribution license (reuse allowed)，精确CC版本未暴露。
+- 只保存id/title/duration/channel/channel_id/uploader/upload_date/license/webpage_url；metadata.json。
+- 英文原语言自动字幕video.en-orig.json3，不是翻译字幕。Last-Modified未由yt-dlp提供，明确null。
+- 没有下载视频、音轨、片段，没有保存完整info/player response、cookies或带签名媒体URL。
+
+四、字幕全文阅读与时间边界
+- 全部2163条非空cue，通过无损reading-by-minute.txt顺序全文读取：1–125行、126–248行；83个非空分钟组。
+- 拼接分组文本逐字等于全部normalized cue文本；不是按关键词筛选或摘要抽取。
+- 规范化JSON、VTT、逐条英文存档保留原始时间和ASR重复；VTT仅生成，未播放或另行逐行阅读。
+- 首条3520ms；末条开始4957040ms，结束4965520ms，相对整数片长4964000ms超出1520ms；仅1条结束超过片长，不截断原件。
+- 起点、终点均单调；负时长0；相邻重叠2027对。重叠不是额外课堂重复。
+- 字幕区间并集136处正间隙，共292866ms，最长11000ms；包含首端3520ms，不等于音频静音/漏讲检测。各处起止全部保存在manifest。
+- 全片无breakout宣布或分组内容证据，不制造分组缺口。
+- 74:44左右讲师说程序crashed；74:49.120–74:54.840空隙、74:57.840–75:08.840最大11s空隙，后恢复总结；42:48.960–42:57.280另有8.32s空隙。
+- 定点重新看normalized cues：08:00–09:00（sha-1）、69:00–70:00（thousandsTPS）、74:00–76:00（程序崩溃）、81:00–结束（压缩问答指代）。这是全文阅读后的定点复核，不称逐段音画核验。
+- 33段连续覆盖00:00–82:44，每条cue的开始恰落入一段；结构验证不证明ASR语义完美。
+- 78分钟Algorand随机化附近“attacker can ... win”疑似漏否定；无音轨，保留疑点。最后this/past指代不清，未把它强行解释为完整UTXO或SPV规格。
+
+五、官方文字与白皮书实际范围
+1. l-bitcoin.txt：286行全文，标题6.8242021Lecture19；所有问题提示与末尾参考条目已读，外链SoK/Script/OReilly正文未读。
+   Last-Modified Tue,11May2021 19:27:39GMT：课日同日，无法证明开课前后哪个修订。
+2. bitcoin-faq.txt：340行全部Q/A全文；标题6.824BitcoinFAQ无年份。Last-Modified同讲义。
+   保留12.5BTC、60+GB等旧条目；quantum、费用、矿池、经济/监管理由多是外链或猜测，不升级为当前事实。所有外链正文未读。
+3. bitcoin.pdf：9页全文（文本485行，摘要、§1–12及8项参考文献条目），文献所指作品未读。
+   内部题名Bitcoin:A Peer-to-Peer Electronic Cash System；课表2008；PDF创建2009-03-24；服务器Last-Modified Fri,22Jan2021 09:21:42GMT。三种日期分开。
+   全文/实际页未见明确翻译授权，故只交自主精读，未公开转载原页图片。
+
+白皮书实际页面核验（不是仅PDF转文本）
+- p2：所有权签名链与时间戳链两图；签名/验证箭头和哈希承诺职责。
+- p3：PoW区块图；六步网络流程尤其第五步valid/notalreadyspent；最长链和最大工作量上下文。
+- p4：Merkle裁剪前后图，Tx0–2移除、保留兄弟哈希；80*6*24*365=4204800字节/年，仅区块头。
+- p5：SPV头链+Merkle路径图与多输入输出图；包含证明弱于独立交易验证，通常两个输出不等于上限。
+- p6：隐私双模型一组图；p/q定义与分段追赶概率公式；高算力不允许无效签名/任意造币。
+- p7：lambda=zq/p、Poisson无限求和及有限和、C代码、收款新公钥/等待模型假设。
+- p8：q=.1、q=.3两组结果及P<.001阈值表（三组未编号列表）全部值；结论。
+- 共7组未编号图示，全部图式/公式/数值列表已看。p1/p9图像仅生成，完整文字由抽取阅读，不称另行图片审阅。
+
+六、Nielsen原站失败、合理重试与替代全文
+- 课表HTTP原链接首次404；HTTPSwww、HTTPS裸域名带尾斜杠两次合理变体也404。
+- 用户明确报告网络问题并要求重试后，2026-11-09T13:30:29.549555+00:00对课表原HTTP链接另试一次：最终跳转https://michaelnielsen.org/ddi/how-the-bitcoin-protocol-actually-works，仍HTTP404。未继续循环尝试。
+- 网络搜索定位UBC课程托管的同篇PDF：https://www.cs.ubc.ca/~bestchai/teaching/cs538b_2014w2/how-bitcoin-actually-works.pdf，成功获取。
+- manifest中此替代记录source.url仍为课表原HTTP链接，fetched_url/final_url指向UBC；另有原站blocked记录，不能说成原站恢复。
+- UBC Last-Modified Fri,27Mar2015 23:48:21GMT；PDFCreation/ModDate2015-03-27 23:44:01UTC；actualessay MichaelNielsen2013-12-06。文件生成/托管日期不等于文章发表或最终修订日期。
+- PDF10页为fivefilters合并导出，元数据title=PDFNewspaper/author=Unknown；第一页最上面是How the backpropagation algorithm works，接着Reinventing Explanation；实际Bitcoin题名/作者/日期在p1左栏下部。
+- Bitcoin正文从p1左栏下部，接右栏，完整p2–9，至p10左栏结尾及右栏Footnote；之后为另一篇神经网络公告。没有评论区；不声称读了评论或原站最终版本。
+- 全736行抽取文本依次按1–420、421–736阅读，理解按每页左栏到右栏延续；查看全部10实际页面。所有Bitcoin段落、3条Problems for the author、全部交易示例、结尾与脚注均读。
+- PDF同时夹带的其他文章文字在读取中可见，但不把这些无关内容计入本讲阅读要求；全文scope只指Bitcoin文章。
+- 独立检查PDF文本/页面，没有明确全文翻译许可；第三方教学托管不是作者授权，只交自主精读。
+
+Nielsen实际图式核验
+- p1：混合首页标题与Bitcoin实际题名/日期/起始位置。
+- p2：签名声明、序号、银行与共同账本正文，不含图式。
+- p3：PoW示例队列、数学图片h；p4全部nonce/哈希算例，x=4250及0000c3af…，16^10≈10^12。
+- p4少数独立变量在PDF自身留白（如给交易队列取名后的符号），不能称全恢复原站数学排版。关键可见公式已核对；抽取文本中更多数学图片缺失由实际页补看。
+- p5：单链、A/B分叉、B延长3幅图；10^-8最小单位、25BTC2013语境。
+- p6：Alice另起支付自己的攻击分叉图；1/100^6=10^-12是特定连续中奖事件，不是全部双花概率；6确认=付款块+5后继。
+- p7：2幅MultiBit钱包截图（0.06555555BTC/约70USD及收款地址），nonce顺序式、0.31900000及第一交易前半代码。
+- p8：第一交易余项及逐字段解释，genesis/coinbase省略、malleability承认；第二交易开始。
+- p9：完整3输入2输出例子（552字节、.01068000与4.00000000输出），找零.2→.15+.05及隐私结论。
+- p10：结论、未展开项、脚本、脚注与文章终点；区分后续无关文章。共6幅文章图全看，未公开复制到正文。
+
+七、关键语义与未决边界
+- 验证有效分支后才比较累计工作量，不让无效交易因算力多变有效；矿工/全节点/用户及hashpower多数与身份数分开。
+- 密钥失窃/伪造/双花三者分开；多数算力可重写自己的支付/影响包含，不因此获得别人的私钥。
+- 六次确认不是Raft式确定提交，不应覆盖长期分区或隔离；已知落后概率与未知攻击进度的Poisson近似分开；论文z和Nielsen六确认计数差异明示。
+- 单CPU月是期望示意，不是固定工作证据；十分钟是全网平均，不是上界；候选交易可变的课堂简化、有限nonce不保必有解已校注。
+- 08:29sha-1只保留ASR疑点并用“交易哈希”整理；69:40thousandsTPS与块容量量纲冲突，明确指出可能混CPU检查界，不报告虚假链上吞吐。
+- Coinbase是按规则发行新币，不是从预铸普通池转账；25/12.5/6.25不同历史资料数字不混用当前。
+- 时间戳检查窗口与调难周期课堂没有给精确规则；没有擅自写现代参数。
+- Soft/hard fork课堂泛化措辞校注为规则兼容性；学生关于BitcoinCash/股票拆分的价格类比不提升成守恒定律。
+- SPV包含、UTXO当前状态与历史bootstrap分离；结尾字幕this指代不确定，保留。
+- Nielsen作者问题未作为已证明2PC/nonce攻击；lock_time0不等于即时终局；展示JSON不是原始wire格式；公钥哈希不等于所有地址格式；交易签名模式/创世特殊处理不凭略述补全。
+- Selfish mining讲义提示不扩成普遍阈值或任意双花结论；外链研究、现代节点实现/升级/监管/币价未核验。
+
+八、最小验证与整合接口
+- finalize.py通过：6个上游文件哈希、7条记录/课表原链接、9字段元数据、2163条时间结构、无损分组、33段连续全片覆盖、Markdown头信息/行尾/围栏/本地路由/图片。
+- 25项衍生物哈希、来源和读取状态写入manifest；生成不等于独立阅读，VTT及白皮书p1/p9图像明确fetched。
+- videos[0]包含metadata对象、metadata_file=p7-lec19/metadata.json、normalized_caption_file=p7-lec19/captions/captions.normalized.json、caption_time_structure、draft_segment_count=33、draft_segments。
+- metadata与字幕Last-Modified未知留null；HTTP原站失败无file/sha256，不编造源文件；UBC快照有独立hash/url/retrieved_at/last_modified/scope。
+- git diff --check仅检查这两个worker目录；新文件行尾另由finalize实际读取检查。全站check-p7/build交主agent，不运行共享整合脚本。
+- 未改实验。固定实验MIT6.5840Spring2026/513cac0aef010750fc74688da8a395974a83cf7a；没有运行任何实验，不声称用户实验通过。
+- sources在.gitignore中；主agent按既有策略选择正文、脚本、manifest/review等提交，worker未强制暂存原始来源。
