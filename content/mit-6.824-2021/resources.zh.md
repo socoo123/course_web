@@ -1,6 +1,6 @@
 ---
 source: MIT 6.824 Spring 2021 官方课表与课程信息；MIT 6.5840 Spring 2026 官方课表、实验页与固定代码
-status: P5 内容完成：新增 2021 L13/L14、分片迁移桥接与 2026 Lab 5。来源和实际阅读范围见页底各批审阅记录；实验测试未运行。
+status: P6 内容完成：新增 2021 L11/L12/L15/L17 共 12 份正文，L15 两条录像分别保留时间轴，2026 链式复制阅读已并入 L11。来源和实际阅读范围见页底各批审阅记录；实验测试未运行。
 license: 本页为编者自主导航；外链论文、视频、讲义与实验要求分别核实许可。
 ---
 
@@ -32,7 +32,18 @@ license: 本页为编者自主导航；外链论文、视频、讲义与实验�
 
 Lab 5 基础部分实现分片迁移与控制器协调；跨分片事务和 2PC 属于开放扩展方向。分片配置变更不等于 Raft 成员变更。
 
-完成实验主线后，继续 L11 链式复制、L12 Frangipani、L15 FaRM、L17 Memcached；按兴趣读 L16 Spark、L18 SUNDR、L19 Bitcoin、L20 Blockstack 和 L21 项目展示。
+## 用四个案例检验不变量
+
+完成实验主线后，把“谁有权服务、何时可见、失败后凭什么继续”带到四个系统里：
+
+| 案例 | 先问的问题 | 与实验主线的连接 |
+|---|---|---|
+| [L11 链式复制](#/c/mit-6.824-2021/lec/lec11?v=notes) | 写入沿链前进时，为什么读尾节点；故障重配后如何保持顺序？ | 对照 Raft 多数提交与分片迁移中的服务权交接 |
+| [L12 Frangipani](#/c/mit-6.824-2021/lec/lec12?v=notes) | 把锁交给下一台文件服务器以前，脏缓存和日志分别要满足什么条件？ | 将互斥、缓存新鲜度、持久恢复分开推理 |
+| [L15 FaRM](#/c/mit-6.824-2021/lec/lec15?v=notes) | 不在执行期锁住所有读，提交前怎样排除冲突并保证故障后统一决定？ | 在 L13 事务与 L14 Spanner 之后比较 OCC、复制和原子提交 |
+| [L17 Memcached](#/c/mit-6.824-2021/lec/lec17?v=notes) | 数据库已更新，为什么缓存还会变旧；谁有资格回填？ | 区分缓存失效、回填许可与复制 KV 的线性一致性契约 |
+
+这些案例用于分析设计取舍；2026 实验接口仍以固定代码和实验指导为准。随后可按兴趣学习 L16 Spark、L18 SUNDR、L19 Bitcoin、L20 Blockstack 和 L21 项目展示。
 
 ## 固定版本与开发目录
 
@@ -98,7 +109,7 @@ go version
 | [Ray](#/c/mit-6.824-2021/lec/update-ray?v=notes) | L18 | 与 L16 Spark 衔接 |
 | [实用拜占庭容错](#/c/mit-6.824-2021/lec/update-bft?v=notes) | L21 | 从崩溃故障到恶意行为 |
 
-2026 课表没有为这些条目列视频；按书面材料制作。2026 L13 Chain Replication 的讲义与论文归入 2021 L11 的阅读对照；2026 L19 SUNDR 归入 2021 L18。2026 L10 Raft 问答作为 Lab 3 的补充入口。
+2026 课表没有为这些条目列视频；按书面材料制作。2026 L13 Chain Replication 的讲义差异集中于 [L11 课程资料 §7](#/c/mit-6.824-2021/lec/lec11?v=materials)，两年论文快照字节相同，论文只精读一次；2026 L19 SUNDR 归入 2021 L18。2026 L10 Raft 问答作为 Lab 3 的补充入口。
 
 **MapReduce (2004)** 由 [L1 课程资料](#/c/mit-6.824-2021/lec/lec01?v=materials)集中精读。**Raft extended (2014)** 由 [L5 课程资料](#/c/mit-6.824-2021/lec/lec05?v=materials)集中展开：L5 读至 §5 末，L7 读 §7 至末、跳过 §6；L7 不再建第二份论文正文。Lab 3 不实现成员变更，Lab 4 回看快照。论文的请求编号去重与免日志读是阅读主题，2026 实验仍以版本化 Put、实际索引和恢复契约为准。**事务**指定章节放 L13，**线性一致性**论文至 §3.1 放对应 Updates。
 
@@ -115,7 +126,7 @@ Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector �
 - MIT 6.824 Spring 2021：[官方课表](http://nil.csail.mit.edu/6.824/2021/schedule.html)、[课程信息](http://nil.csail.mit.edu/6.824/2021/general.html)。课程讲师 Frans Kaashoek；L10 嘉宾 Russ Cox。
 - L1：[2021 视频](https://www.youtube.com/watch?v=WtZ7pcRSkOA)。字幕与后续时间轴以该视频为准。
 - L15 FaRM：[上半场](https://www.youtube.com/watch?v=07xsfL5E8Ck)、[续集](https://www.youtube.com/watch?v=XwU4jKhBxws)。译稿须分别保留两段的时间轴。
-- 全部视频入口来自官方课表；登记见 `sources/schedule-inventory-2021.json`。以下十条分别查询元数据，频道均为 MIT 6.824: Distributed Systems，各自均标注 CC Attribution（具体版本未明确）：
+- 全部视频入口来自官方课表；登记见 `sources/schedule-inventory-2021.json`。下列视频分别查询元数据，频道均为 MIT 6.824: Distributed Systems，各自均标注 CC Attribution（具体版本未明确）：
 
 | 条目 | 实际视频标题 | 时长 / 上传日 | 已获取英文自动字幕 |
 |---|---|---|---|
@@ -127,8 +138,13 @@ Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector �
 | [L7](https://www.youtube.com/watch?v=h3JiQ_lnkE8) | Lecture 7: Fault Tolerance: Raft (2) | 108:46 / 2021-03-11 | 2732 条 |
 | [L9](https://www.youtube.com/watch?v=HYTDDLo2vSE) | Lecture 9: Zookeeper | 82:50 / 2021-03-18 | 2239 条，含课后问答 |
 | [L10](https://www.youtube.com/watch?v=IdCbMO0Ey9I) | Lecture 10: Guest Lecture on Go: Russ Cox | 95:27 / 2021-03-25 | 3145 条，含课后问答 |
+| [L11](https://www.youtube.com/watch?v=1uUcW-Mqg5o) | Lecture 11: Chain Replication | 94:19 / 2021-03-30 | 2360 条，36 段译述 |
+| [L12](https://www.youtube.com/watch?v=jPrUxfIcWWs) | Lecture 12: Cache Consistency: Frangipani | 87:58 / 2021-04-06 | 2198 条，33 段译述 |
 | [L13](https://www.youtube.com/watch?v=B6btpukqHpM) | Lecture 13: Distributed Transactions | 81:29 / 2021-04-08 | 1893 条，含课后问答 |
 | [L14](https://www.youtube.com/watch?v=ZulDvY429B8) | Lecture 14: Spanner | 97:09 / 2021-04-15 | 2326 条，含课后问答 |
+| [L15 第一条](https://www.youtube.com/watch?v=07xsfL5E8Ck) | Lecture 15: Optimistic Concurrency Control (FaRM) | 94:37 / 2021-04-27 | 2459 条，33 段译述 |
+| [L15 续集](https://www.youtube.com/watch?v=XwU4jKhBxws) | Lecture 15 continued: Optimistic Concurrency Control (FaRM) pt. 2 | 27:57 / 2021-04-30 | 711 条，12 段独立时间轴 |
+| [L17](https://www.youtube.com/watch?v=eYZg0YJtFEE) | Lecture 17: Cache Consistency: Memcached at Facebook | 104:15 / 2021-05-04 | 2535 条，38 段译述 |
 
 均保存并完整阅读英文自动字幕，未逐段回听或核对视频画面。L2/L3 分组讨论不在上传录像中；L4 的 42:18–50:00、L5 的 64:07–72:10 与 L7 的 61:16–69:32 保留分组活动及零散会务区间，无法恢复分组技术讨论。L4 末句未完成；L7 开头六秒无字幕，不据此断定静音。L5/L7 的提交判断、任期字段、批处理与匹配索引争论，以及 L10 幻灯片代码笔误，均在译稿单列校注。其余视频标题、时长、频道和许可仍待逐条核对。
 
@@ -186,3 +202,17 @@ P5 分片实验与迁移桥接见 `sources/P5-REVIEW.txt`、`sources/p5-lab5/rev
 L13 的全部 1893 条字幕整理为 29 段；开头 0.560 秒无字幕，末条超时 1.560 秒。136 处字幕并集间隙共 661.492 秒，其中 37:37.839–44:07.119 为分组期间无字幕。L14 的全部 2326 条字幕整理为 36 段；160 处间隙共 650.364 秒，末尾 1.160 秒无字幕，约 46:24–53:43 分组／会议切换不能恢复组内讨论。两讲均只做文本阅读，未听音轨或核验课堂画面；不将字幕空隙断定为静音。
 
 L13 指定 Chapter 9 五节与对应图表／公式页、2022 官方 Part II 勘误已读；没有通读全章 118 页。旧 OCW 入口出现重定向循环，实际使用[当前官方教材入口](https://ocw.mit.edu/courses/res-6-004-principles-of-computer-system-design-an-introduction-spring-2009/pages/online-textbook/)的 v5.0 PDF，不声称与 2021 字节一致；教材 PDF 自身为 CC BY-NC-SA 3.0 US，相关改写遵循该许可。2022 勘误属于后续核对。L14 Spanner 论文 14 页含附录 A、全部 6 图和 6 表已审阅，全文翻译许可未确认，采用自主精读。两讲讲义／FAQ 全文已读；L13 讲义／FAQ 修改于 2021-04-09，L14 讲义修改于 2021-04-30，均晚于对应视频上传日。详细边界见 `sources/p5-lec13/review.txt`、`sources/p5-lec14/review.txt`。
+
+P6 四讲见 `sources/P6-REVIEW.txt` 和各 `sources/p6-lecNN/review.txt`：五条录像的 10263 条英文字幕均按序文本阅读，整理为 152 段，包含可恢复的课后问答。L15 首条 00:00–94:37，续集另从 00:00–27:57；续集上传日不等于已核实拍摄日。没有音轨或课堂画面核验。
+
+| P6 录像 | 字幕并集间隙 | 原始末条超时 | 真实缺口 |
+|---|---|---|---|
+| L11 | 124 处，共 725.411 秒 | 0.840 秒 | 40:00–49:07 分组／返回期间讨论不能恢复 |
+| L12 | 147 处，共 653.148 秒 | 1.920 秒 | 约 66 分钟至 72:21.840 的分组讨论不能恢复 |
+| L15 第一条 | 156 处，共 301.245 秒 | 2.120 秒 | 课堂明确跳过分组；未虚构分组区间 |
+| L15 续集 | 48 处，共 93.038 秒 | 1.640 秒 | 开头 4.319 秒无字幕；只读验证／盲写追问未得到完整现场回答 |
+| L17 | 180 处，共 697.737 秒 | 1.800 秒 | 63:04–69:03 只有零星字幕，不能恢复组内讨论 |
+
+这些间隙不是静音检测；原始字幕时间保留，未裁掉超时来制造“全段无超时”。四篇论文完整阅读 14／14／17／14 页，全部图表由各讲 worker 实际查看；主审完整阅读中文成品并定点核对原始来源，具体范围分开记录。论文全文翻译许可均未确认，课程资料采用自主中文精读；外链文献正文、现代实现和实验没有因此记为已读或已运行。
+
+L11 的 2021 课表未列 FAQ，讲义内部保留 2020 标题；已有 2026 讲义全文及差异已读，两年论文 SHA-256 相同。L12 讲义与 L17 讲义／FAQ 的修改日与授课日相同，无法断定课前课后；L15 讲义修改于 2021-05-04、FAQ 修改于 2021-04-30，晚于首录像上传日。旧尾节点的服务权、Frangipani 迟到写、FaRM 恢复证据与 Memcache marker 的限制在各讲明确说明，不把后续阅读或编者分析补成课堂已说过的话。

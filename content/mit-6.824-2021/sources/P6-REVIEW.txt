@@ -1,0 +1,91 @@
+P6 阅读与整合审阅记录
+日期：2026-11-09
+主线：MIT 6.824 Spring 2021；实验固定 MIT 6.5840 Spring 2026。
+固定代码：513cac0aef010750fc74688da8a395974a83cf7a。
+
+一、任务与前置核对
+主agent先完整读取项目AGENTS.md及technical-video-notes skill、NEXT-P6-PROMPT、
+PLAN、status、manifest-2021、P5-REVIEW、四份p5-*/review、version-map-2021、
+schedule-inventory-2021，确认P1–P5完成边界。开始时main与origin/main一致，工作区干净。
+四个专责worker分别完整负责L11/L12/L15/L17；只写各自lecture目录及p6-lecNN来源目录。
+主agent负责公共资料、元数据、来源索引、计划、最终审阅与验证，所有写入限content/。
+
+主agent定点重读schedule-2021.html 165–279行，核对本批四讲与下一批讲次的实际入口：
+L11：1uUcW-Mqg5o，l-cr.txt，cr-osdi04.pdf；课表没有FAQ，不按命名猜造。
+L12：jPrUxfIcWWs，l-frangipani.txt，thekkath-frangipani.pdf，frangipani-faq.txt。
+L15：07xsfL5E8Ck与XwU4jKhBxws，l-farm.txt，farm-2015.pdf，farm-faq.txt。
+L17：eYZg0YJtFEE，l-memcached.txt，memcache-fb.pdf，memcache-faq.txt。
+home-2021.html第55行许可链接为CC BY3.0 US，仅用于课程自有书面资料。
+这次重读沿用本地既有快照，不冒称重新下载整张课表或主页。
+schedule/general/home三份既有快照SHA-256与manifest逐一核对一致。
+主agent完整重读既有L4/L5/L9/L13/L14 notes及迁移桥接§9–15，用于检查本批衔接：
+外部承诺与服务权、会话/旧角色屏障、并发控制/原子提交/复制的职责，以及冻结后的
+读写拒绝与跨组ErrMaybe。没有因此将旧论文或固定源码计为本次重复全文阅读。
+
+二、逐讲审阅
+
+L11：主agent完整读三份中文正文、review及manifest核心记录，定点核对规范化字幕
+77:00–81:30、84:00–91:00，实际查看论文PDF4/5/6及2026讲义195–220行。
+worker全文读2360条字幕、2021讲义131行、14页论文及2026讲义357行/差异486行；
+7图1表与公式实际核验。36段00:00–94:19，40:00–49:07分组区间不可恢复，
+末条超840ms保留。2021讲义残留2020标题，无指定FAQ；2026 FAQ未取未读。
+两年PDF逐字节相同；2026 tail租约仅作为后续阅读的设计要点，不冒充课堂完整解答。
+确认Hist前缀方向、Sent去重合并、旧tail服务权、Raft只读条件和单对象可组合性
+均已分清；没有把超时/Paxos配置唯一写成自动隔离旧服务者。未发现实质技术问题。
+
+L12：主agent完整读三份中文正文、review及manifest核心来源/派生物记录。
+独立视频jPrUxfIcWWs，Lecture12: Cache Consistency: Frangipani，87:58，
+MIT6.824:Distributed Systems，2021-04-06上传，CC Attribution标签具体版本未明。
+worker完整读2198条字幕，33段含课后问答；首1280ms，末5279920ms，超时1920ms。
+147处字幕区间并集间隙共653148ms；66分钟附近至72:21.840分组期间不可恢复讨论。
+主agent定点对照原始规范化字幕44:00–47:00、79:00–84:00、86:00–87:58，
+实际查看论文PDF5/7页面，确认日志序号/块版本、扇区假设、继承锁与迟到写漏洞。
+全文阅读由worker完成；不把主agent定点复核写成主agent全量重读原始来源。
+讲义337行、FAQ309行、14页论文全文、全部9图3表由worker读/看；外链Petal论文未读。
+讲义修改2021-04-06 20:48GMT，与授课同日但先后不明；论文全译许可未确认。
+未发现需修正的实质技术问题。元数据日志与普通文件内容、每块版本与租约身份、
+15秒余量与严格授权证明、课堂猜测日志格式与论文已述机制均有明确区分。
+没有课堂音画核验、没有实验运行或现代实现核查。
+
+L15：主agent完整读三份中文正文、review及manifest核心记录；实际查看论文PDF3/5/7/9，
+分别核对单对象原子读与暂时跨对象不一致、串行化点、两道提交证据屏障、precise
+membership和恢复投票。另对照第二录像14:00–18:00规范化原始字幕，确认只读验证/
+盲写追问未获完整现场续答，正文保留未决，不把编者反例补成讲师回答。
+worker全文读331行讲义、266行FAQ、17页论文含文献表，全部16图2表实际核验。
+两条元数据分别核对：07xsfL5E8Ck 94:37/2021-04-27上传，XwU4jKhBxws
+27:57/2021-04-30上传；后者实际录制日期未验证。2459/711条字幕全部文本阅读，
+33/12段分别从零开始；首条明确跳过分组，续集开头4319ms无字幕，原始尾部超时
+2120/1640ms保留。讲义/FAQ修改晚于首录像；论文译权和视频CC具体版本未明。
+确认成功读写事务在写锁齐备时串行化，validation证明历史；硬件ACK不等于primary
+已应用；回复门槛与truncate门槛不同。恢复commit-primary/commit-backup等证据
+没有压成普通多数投票。未发现需修正的实质技术问题；未运行论文基准或实验。
+
+L17：主agent完整读三份中文正文、review及manifest核心来源/派生物记录；定点对照
+71:00–84:00规范化字幕，实际查看PDF4/7/8。核对课堂put→delete自我纠正、学生对
+“回到过去”的质疑、warmup实际add/hold-off接口与remote marker的先后顺序及限制。
+worker完整读2535条字幕，38段00:00–104:15含全部可恢复课后问答；63:04–69:03
+分组期间只有孤立词。首320ms，末6256800ms，超1800ms；180间隙共697737ms，
+不是静音检测。独立元数据eYZg0YJtFEE，2021-05-04上传，CC Attribution版本未明。
+全文读讲义301行、FAQ179行、14页论文含37项文献条目，11图3表全部实际核验。
+讲义/FAQ同日修改，课前课后不明；外链论文和现代实现未读。回填token、十秒发放
+限速、两秒工程窗口与marker尽力保护分开；Gutter lease/marcher及统计口径未决处
+均保留。未发现实质技术问题。上述PDF查看不是课堂画面核验。
+
+三、共享整合与验证
+已同步course、公共资料、status、来源分片索引、版本映射和PLAN；L11合并2026
+阅读对照完成，不新增Update。P6新增12份正文，无新增图；累计42份讲座正文、
+10份实验正文、4张SVG。五条视频共10263条字幕、152段译述。
+来源原件/PDF页面/字幕留本地；提交正文、manifest、review和总检查脚本，沿用既有归档。
+python3 content/mit-6.824-2021/sources/check-p6.py已通过：12份正文、JSON、唯一来源ID、
+本批所有来源/派生哈希、课表实际URL、路由与目标文件、图片/SVG/围栏及数量一致。
+五条时间轴各自连续，每条cue起点恰归属一段，元数据与真实片长一致；原始末条
+超时保留。L15两条均从零开始，没有累加偏移。时间结构不是译文或音画核验。
+git diff --check通过；npm run build通过（tsc --noEmit + vite build，2691 modules）。
+主审未发现实质技术问题；整合时修正公共导航中L11阅读对照的小节号为§7。
+
+四、后续
+P7明确安排2021 L16 Spark、L18 SUNDR、L19 Bitcoin、L20 Blockstack，提示词见
+NEXT-P7-PROMPT.txt。L18对照2026 SUNDR实际阅读范围，L19处理论文与Nielsen两项阅读。
+独立只读reviewer对照2021/2026课表快照和版本映射核对该提示词，未发现实质错误。
+L21项目展示及六项尚未完成Updates留后续批次；Go patterns先对照2021 L10。
+L6/L8无新增实际来源继续待补。实验测试和Go编译不在本批执行范围，未运行。

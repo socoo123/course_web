@@ -1,0 +1,128 @@
+P6 / MIT 6.824 Spring 2021 L12 Frangipani — worker review
+Date: 2026-11-09
+Scope of writes: lectures/lec12/ and sources/p6-lec12/ only.
+Shared metadata/source indexes read only. No git staging/commit, full-site build or lab execution.
+
+DELIVERY
+- lectures/lec12/notes.zh.md: cache/lock invariants, cross-machine handoff ordering,
+  versioned recovery proof, crash-position table, delayed-write counterexample,
+  P3/P4/P5 and fixed 2026 lab connections, 8 self-test questions with answers.
+- lectures/lec12/draft.zh.md: 33 chronological sections, 00:00–87:58,
+  all intelligible teaching/examples/questions including post-class Q&A.
+- lectures/lec12/materials.zh.md: independent analytical reading covering paper
+  abstract and sections 1–11, implementation boundaries, all 9 figures / 3 tables,
+  FAQ-only details and classroom-vs-paper corrections. Not full translation.
+- manifest-fragment.json: 5 primary sources with globally lecture-prefixed IDs,
+  exact URL/retrieved_at/file relative to sources root/SHA256/Last-Modified/status/
+  actual review scope; derived files, all gap intervals, cue-to-section mapping.
+- acquire.py, prepare-reading.py, finalize.py: acquisition, lossless reading preparation,
+  PDF page rendering, local verification and final fragment generation.
+
+ACQUISITION / REPRODUCIBILITY
+python3 content/mit-6.824-2021/sources/p6-lec12/acquire.py
+python3 /Users/zy/.config/opencode/skills/technical-video-notes/scripts/normalize_captions.py \
+  content/mit-6.824-2021/sources/p6-lec12/video.en-orig.json3 \
+  content/mit-6.824-2021/sources/p6-lec12/captions
+python3 content/mit-6.824-2021/sources/p6-lec12/prepare-reading.py
+python3 content/mit-6.824-2021/sources/p6-lec12/finalize.py
+Dependencies: yt-dlp, pdftotext, Python PyMuPDF (fitz), existing skill normalizer.
+Acquisition saves only requested en-orig JSON3 and whitelisted metadata, no media,
+cookies, full info/player dump or signed download URLs. Do not rerun acquisition
+merely to validate existing snapshots; finalize checks stored SHA256 values.
+
+2021 MAPPING AND INDEPENDENT VIDEO CHECK
+Read complete schedule-inventory-2021.json, existing schedule-2021.html lines 189–192.
+L12 April 6, 2021 points to jPrUxfIcWWs, notes/l-frangipani.txt,
+papers/thekkath-frangipani.pdf, papers/frangipani-faq.txt.
+Video: Lecture 12: Cache Consistency: Frangipani; 5278 seconds = 87:58;
+MIT 6.824: Distributed Systems / UC_7WrbZTCODu1o_kfUMq88g;
+upload 20210406; Creative Commons Attribution license (reuse allowed).
+CC version is not provided. License/title/duration not inherited from another lecture.
+
+CAPTION READING AND REAL LIMITS
+2198 original-language automatic English cues, all texts read in order via exact
+minute grouping (257 lines in ranges 1–100,101–200,201–257; 86 nonempty minute groups).
+Grouping equality checked against complete normalized cue text, not selected keywords.
+First cue 00:01.280; last start 87:49.199, last end 87:59.920.
+Final end is 1920 ms beyond integer metadata duration; raw times remain unchanged.
+147 positive interval-union gaps within video, totaling 653148 ms.
+Largest gap 68:10.769–70:56.840 = 166071 ms. These are subtitle coverage gaps,
+not measured silence and not proof that ASR recognized all speech.
+Breakout discussed near 65–66 min; scheduling talk ends 66:19.839.
+Sparse labels: Music 68:07.590, action 70:56.840, so 71:38.840,
+Music 72:12.680. Return speech starts 72:21.840. No invented group discussion.
+Post-class includes record-atomicity clarification, prefix recovery explanation,
+2021 security-course planning (new experimental number not reliably identified),
+and the delayed old Petal write problem at 86:00–87:58.
+No audio listening or classroom-frame inspection. PDF page viewing is separate.
+
+DOCUMENT READING / VISUAL VERIFICATION
+l-frangipani.txt: all 337 lines.
+frangipani-faq.txt: all 309 lines, including snapshots, Petal log speculation,
+2PC comparison, false sharing and lock granularity.
+Paper: all 14 PDF pages / 1091 extracted layout lines (1–360,361–720,721–1091),
+abstract, sections 1–11, acknowledgments and all 37 bibliography entries.
+All extracted columns read in page order; no external bibliography texts read.
+Actual rendered pages viewed:
+1 title/authors/ACM copying notice;
+2 Figures 1–2 architecture/deployment;
+3 Figure 3 trusted-server export;
+4 Figure 4 layout plus 64KB half-open interval and capacity exponents;
+5 log sequence/end, atomic sector assumption, CRC context, block-version recovery;
+7 lease margin/timestamp and lease-ID repair proposals;
+9 Tables 1–2, units and cache anomaly;
+10 Table 3, Figures 5–6, time vs throughput;
+11 Figures 7–9, legends/axes/read-ahead/size effects.
+Other page PNGs rendered only; corresponding full text read, not image-inspected.
+Independent Petal paper, modern implementations, original source code not read.
+
+VERSION / PERMISSION QUESTIONS
+Outline heading is correctly 6.824 2021 Lecture 12. Last-Modified:
+  outline Tue, 06 Apr 2021 20:48:00 GMT (same day, could include later edits);
+  PDF Fri, 22 Jan 2021 09:21:43 GMT;
+  FAQ Fri, 22 Jan 2021 09:21:42 GMT.
+These are snapshot HTTP headers, not publication dates or immutable version guarantees.
+PDF actual title and three authors checked. Page 1 has ACM personal/classroom copy
+conditions and restrictions on server republication; public full-translation right
+unconfirmed, so materials is original analytical reading, no reproduced page images.
+Existing course homepage line 55 checked for CC BY 3.0 US, applying only to course
+authored text. Video independently has CC Attribution but unspecified version.
+
+IMPORTANT TECHNICAL CORRECTIONS / UNRESOLVED IMPLEMENTATION DETAILS
+1. Prototype Petal does not reject expired-lease writes on receipt. 15s margin is
+   practical mitigation, not an arbitrary-delay correctness proof. Paper proposes
+   receiving-side timestamp or lease-ID checks; not claimed implemented.
+2. Class checksum/commit-marker descriptions are possible WAL designs. Paper clearly
+   specifies per-512-byte log sequence numbers, sector old/new atomicity and CRC
+   damage handling, not an unambiguous per-record checksum/commit layout. Do not
+   convert instructor uncertainty into verified source-code behavior.
+3. Shared readers can cache together; exclusive-only lecture is a simplification.
+   busy->idle does not release distributed ownership. Lease is per client, associated
+   with all its locks. Recovery inherits old locks and exclusively locks the log.
+4. Versions are per 512B metadata block, not per workstation/global transaction.
+   Reused metadata blocks remain metadata, preserving version interpretation.
+5. Physical 128KB per-server circular log vs 1TB virtual aggregate reservation;
+   256 log slots. Classroom ambiguous TB utterance is not actual log capacity.
+6. Ordinary data not logged; fsync-related guarantees differ from coherence.
+   Temp-file + rename alone is not a fully specified durable-replacement protocol.
+7. Outline raw-disk bandwidth 336MB/s conflicts with listed 7*9*6=378; paper's
+   measured Petal 100MB/s read, 43MB/s replicated write are used, no guessed cause.
+8. FAQ's Petal internals/write absorption are partly conjectural. Backups, finer
+   locks, larger testbed and lease repairs include proposals, not all built features.
+9. Historical 2021 lab assignment not substituted for 2026 APIs; fixed commit stays
+   513cac0aef010750fc74688da8a395974a83cf7a. No complete lab answers or test claims.
+
+VALIDATION
+finalize.py checks source hashes, strict video metadata whitelist, monotonic cue
+starts/nonnegative durations, all raw overrun/gap statistics, lossless text grouping,
+33 continuous editorial intervals with exactly one placement per cue start,
+Markdown front matter/fences/trailing whitespace and local routes/images.
+Timeline structure does not prove semantic completeness; completeness claim is based
+on actual full sequential text reading described above. See validation.txt for output.
+Main agent handles shared-index integration, integrated build and git submission.
+Executed finalize.py successfully: 2198 cues, 33 sections, 147 gaps, 1920ms tail
+overrun reported, hashes/routes/grouping passed. Scoped git diff --check passed;
+new untracked Markdown whitespace is additionally checked directly by finalize.py.
+Repository ignore rules cover sources/p6-lec12 (confirmed with git check-ignore on
+manifest-fragment.json, review.txt and acquire.py). Main agent must explicitly
+include intended source metadata/scripts when integrating, per existing practice.

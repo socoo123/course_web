@@ -1,0 +1,165 @@
+P6 / MIT 6.824 Spring 2021 / L15 FaRM 完整内容包审阅记录
+日期：2026-11-09 UTC
+写入边界：仅 lectures/lec15/、sources/p6-lec15/；共享文件只读。
+
+一、交付与分工
+
+lectures/lec15/draft.zh.md：两条独立时间轴，第一录像33段、第二录像12段，共45段；### MM:SS–MM:SS 标题可匹配。
+lectures/lec15/notes.zh.md：并发控制／原子提交／复制三份契约，OCC共同点证明，混合读反例，写偏斜环证明，持久性双屏障，Spanner衔接及9题自测。
+lectures/lec15/materials.zh.md：2015论文全主题自主精读，接口、硬件、正常提交补充、成员、恢复、分配器、全部实验、相关工作及FAQ校订。
+sources/p6-lec15/manifest-fragment.json：七条原始sources，唯一id/url/retrieved_at/file/sha256/last_modified/status/scope；file相对sources根。
+manifest.videos[]：每条独立metadata、metadata_file、normalized_caption_file、caption_time_structure、draft_segment_count、draft_segments（含cue索引）。
+manifest.derived_files：规范化字幕、英文文本、无损分组、PDF提取及17页渲染；分别记录真实阅读/只生成状态。
+acquisition.json保留初始fetched状态；最终审阅状态以manifest为准。
+acquire.py、prepare-reading.py、finalize.py：获取、阅读准备、局部核验脚本。
+validation.txt：独立时间结构、哈希、路径等最小验证结果。
+未增加图示：短公式与表格足够承载推导。原论文图片只归档sources，未放入上线Markdown。
+
+二、只读前置依据
+
+AGENTS.md全文；technical-video-notes skill全部说明。
+NEXT-P6-PROMPT.txt、PLAN.txt、schedule-inventory-2021.json全文。
+lec14 notes/draft/materials三个完整文件；p5-lec14 acquire.py、prepare-reading.py、finalize.py、review.txt全文。
+schedule-2021.html line225明确列第一录像与video cont.，与inventory L15一致。
+home-2021.html line55许可链接检查；只用于课程自有讲义和FAQ，不覆盖外链论文。
+遵从后续整合约定，三种契约独立；execution暂时混合读、成功提交严格可串行化分开说明。
+没有将2020编号替换进2021；第二条上传日期不冒充实际拍摄日期。
+
+三、获取与来源
+
+脚本及正文均用patch编辑。urllib获取2021实际指定三文档；yt-dlp按两个视频ID分别查询裁剪元数据并取en-orig自动字幕。
+仅保留id/title/duration/channel/channel_id/uploader/upload_date/license/webpage_url，不保存完整info.json或播放器响应。
+yt-dlp stdout/stderr在内存处理；不归档带签名字幕下载地址，不保存cookie，不下载视频、音轨或片段。
+
+1. http://nil.csail.mit.edu/6.824/2021/notes/l-farm.txt
+   file: p6-lec15/l-farm.txt
+   retrieved_at: 2026-11-09T12:35:09.780771+00:00
+   Last-Modified: Tue, 04 May 2021 20:38:49 GMT
+   SHA-256: c66895a117e6d7572adc1948c396df59b0f7a70fe9cdb29f0cac8ca9dda29abf
+   全331行已读，标题6.824 2021 Lecture 15: FaRM, Optimistic Concurrency Control。
+   讲义修改晚于4月27日首录像／课表日期；不是当日不变版本证明。
+
+2. http://nil.csail.mit.edu/6.824/2021/papers/farm-faq.txt
+   file: p6-lec15/farm-faq.txt
+   retrieved_at: 2026-11-09T12:35:10.035008+00:00
+   Last-Modified: Fri, 30 Apr 2021 19:05:16 GMT
+   SHA-256: 9d82251ddbd7ba7434d7ed61a74934024032598265147455b06a50b2de3f5dc7
+   全266行全部问题已读，包括历史用途、发表动机、硬件、单对象与多对象不一致、截断、恢复、性能、Vertical Paxos。
+   修改晚于第一录像上传；Figure2倒数误当延迟校正，2014机制只标为FAQ转述，未读外链原论文。
+
+3. http://nil.csail.mit.edu/6.824/2021/papers/farm-2015.pdf
+   file: p6-lec15/farm-2015.pdf
+   retrieved_at: 2026-11-09T12:35:34.076232+00:00
+   Last-Modified: Fri, 22 Jan 2021 09:21:42 GMT
+   SHA-256: ac4ecb210538d99d6a66d10070352c8e1ce3030fc0c9fe47a9e71e7bbdfc7750
+   No compromises: distributed transactions with consistency, availability, and performance, SOSP2015。
+   PDF17页／印刷54–70，全文及全部16图2表已读／核验，详第五节。
+   首页个人或课堂复制许可不直接授予公开全译；正文自主精读，未转载页面。
+
+4–7. 两视频元数据／英文原语言ASR
+   原始sha256、逐文件精确retrieved_at见acquisition和manifest（四条独立记录），Last-Modified均null：yt-dlp未暴露，不用upload_date补造。
+   07xsfL5E8Ck.metadata.json SHA-256: 1c18b14f6a8c2f27120143dcbac3e4a26c7b0e76bd314a08262efd5ca2bb7dd1
+   07xsfL5E8Ck.en-orig.json3 SHA-256: 300d70f922daaf12480466fa82cdb7c879b72e4d5b6b4394ffe43152de5b9aa0
+   XwU4jKhBxws.metadata.json SHA-256: 37f317641e6acbd250cb7279318c1fb80ca2647628e900bead3b81466f87f586
+   XwU4jKhBxws.en-orig.json3 SHA-256: cf1b48ec37510b4d9466efe0629cf536259b101e25cd21baa14384719c2bb2ba
+
+四、两条视频独立核验与阅读
+
+A. https://www.youtube.com/watch?v=07xsfL5E8Ck
+title: Lecture 15: Optimistic Concurrency Control (FaRM)
+duration: 5677 seconds = 94:37
+channel/uploader: MIT 6.824: Distributed Systems
+channel_id: UC_7WrbZTCODu1o_kfUMq88g
+upload_date: 20210427
+license: Creative Commons Attribution license (reuse allowed)，本视频独立查询，具体版本缺失。
+metadata路径（相对sources）: p6-lec15/07xsfL5E8Ck.metadata.json
+原始字幕: p6-lec15/07xsfL5E8Ck.en-orig.json3
+规范化JSON: p6-lec15/07xsfL5E8Ck-captions/captions.normalized.json
+阅读文本: p6-lec15/07xsfL5E8Ck-captions/reading-by-minute.txt
+全2459条ASR已按序阅读，分组文本284行，分1–100、101–200、201–284三次读完，无损拼接断言通过。
+first_start_ms=0；last_start_ms=5672239；last_end_ms=5679120。
+原始末条比整数片长多2120ms；2条字幕end超时，0条start超时，不裁剪或平移原件。
+起点／终点单调，负时长0，相邻重叠2302对。
+字幕区间并集在片长内156个空隙，共301245ms，最大11000ms；逐个起止见manifest，不解释成静音。
+33段连续覆盖00:00–94:37，每条cue起点恰属一段；课堂约73分钟明确跳过breakout room，不虚构分组缺口。
+保留78分钟后的课后问答、严格可串行化长短事务追问，以及结尾上传幻灯片请求。
+
+B. https://www.youtube.com/watch?v=XwU4jKhBxws
+title: Lecture 15 continued: Optimistic Concurrency Control (FaRM) pt. 2
+duration: 1677 seconds = 27:57
+channel/uploader: MIT 6.824: Distributed Systems
+channel_id: UC_7WrbZTCODu1o_kfUMq88g
+upload_date: 20210430
+license: Creative Commons Attribution license (reuse allowed)，本视频独立查询，具体版本缺失。
+metadata路径（相对sources）: p6-lec15/XwU4jKhBxws.metadata.json
+原始字幕: p6-lec15/XwU4jKhBxws.en-orig.json3
+规范化JSON: p6-lec15/XwU4jKhBxws-captions/captions.normalized.json
+阅读文本: p6-lec15/XwU4jKhBxws-captions/reading-by-minute.txt
+全711条ASR已按序阅读，83行分组文本一次全文读完，无损拼接断言通过。
+first_start_ms=4319；last_start_ms=1675679；last_end_ms=1678640。
+开头4319ms没有字幕；原始末条超整数片长1640ms；2条end超时、0条start超时，原件不裁剪。
+起点／终点单调，负时长0，相邻重叠663对。
+字幕区间并集48处空隙，共93038ms，最大6760ms；逐个起止见manifest，不判断声音。
+12段连续覆盖00:00–27:57，每条cue起点恰属一段；不加第一录像时长作为偏移。
+保留14–18分钟只读验证／盲写未决追问，18分钟只读用途，故障证据及结尾Spark衔接。
+课堂提周二／周四，upload_date为4月30日；拍摄日期未独立验证，不编造。
+
+两条均未音轨核验、未看课堂帧；无损阅读只保证原有字幕文字未遗漏，不证明ASR无错或完整识别所有声音。
+英文VTT仅生成，未播放器回放。英文带时间txt为派生形式，不声称又独立通读一遍。
+第一／第二录像分区为##，每个时间段为###，不依赖会被隐藏的#标题区分录像。
+
+五、论文全文和实际页面阅读
+
+farm-2015.layout.txt全1090行，分1–350、351–700、701–1050、1051–1090顺序读完。
+双栏页按自然列顺序理解，不直接把横向跨栏文字拼成一句。
+覆盖摘要、§1引言、§2硬件、§3接口／配置、§4提交与复制、§5.1–5.5全部恢复、§6.1–6.5实验、§7相关工作、§8结论、致谢、40项文献表。
+未读文献表所指外链全文，特别是NSDI2014、Vertical Paxos，不把FAQ转述升级为新原文来源。
+
+实际打开查看的12个渲染页面（PDF页码；印刷页=PDF+53）：
+2：Figure1，J/GB与保存能量，历史成本计算。
+3：Figures2–3，吞吐而非延迟的纵轴、架构、配置元组、单对象原子／跨对象暂时不一致接口。
+4：Figure4，三种箭头、对象方块、序列化点在validation前、LOCK CAS、批量验证阈值4。
+5：Tables1–2，全日志／消息种类，序列化正确性、两条持久屏障、日志资源预留。
+6：f+1／2f+1副本与4P(2f+1)、Pw(f+3)、Pr公式；安全／进展假设和存活配置条件。
+7：Figure5，七步重配置，ZooKeeper条件更新、全部新成员确认、旧租约屏障。
+8：Figure6，七步事务恢复，region active边界，<c,m,t,l>事务ID和配置变更判断。
+11：Figures7–8，TATP／TPC-C吞吐延迟、p50／p99、单位及报告口径。
+12：Figure11，CM失效约110ms，图上config-commit97.4ms等事件标记。
+13：Figures9–10所有子图，实线吞吐／虚线累计region、不同时间尺度、TPC-C图标顺序疑点。
+14：Figures12–15，40次分布、18机相关故障、积极复制与前台干扰、TPC-C不同节流。
+15：Figure16，四个租约实现、误过期数与租期。
+其他PDF1、9、10、16、17页只生成图片、未独立看图；全文文本已读。manifest精确标为fetched而非图像reviewed。
+全部Figures1–16、Tables1–2均有实际查看，不用文本抽取替代图表核验。
+
+六、技术校订与未解决问题
+
+1. 不把吞吐与延迟倒数混用：课堂Spanner 10–100ms不是集群10–100TPS；FAQ Figure2的1/18us是错误倒数解释。
+2. TATP 140M/s是含大量单对象优化读的混合负载，不是140M完整跨片写事务；TPC-C报告new-order而非全混合事务数。
+3. 写侧原子CAS同时检查版本和锁，课堂test-and-set简写不能删掉版本比较。
+4. OCC仍有写锁，读集合验证不加读锁；单对象原子读不推出跨对象统一快照。
+5. 2015论文明确保证单对象原子、读已提交、重复读／读自己写语义，但execution允许跨对象暂时不一致；最后成功事务才严格可串行化。
+6. 全部写锁取得时是成功读写事务串行化点，validation是事后证明；每对象版本不是全局事务时间戳。
+7. 第一录像69–73、87–94分钟追问曾有混乱；保留现场暂缓及后来对重叠事务的澄清，并标注验证后并发写可以排在事务后面。
+8. 第一录像“回复前已应用”不作为协议事实；硬件ACK证明日志到达，不证明所有primary应用。后启动事务仍受锁／版本约束。
+9. 第二录像14–18分钟只读验证和盲写追问没有完整现场续答，不补造；notes给独立反例和串行化解释，materials给单对象特殊API。
+10. f+1副本容忍f份数据损失，不是f+1次失败；配置／ZooKeeper多数和每对象存活条件仍不可删。
+11. primary解锁可见前，全backup数据到达；应用成功前，至少一个primary也有commit证据。恢复所需数据与结果证据分开。
+12. truncate在全部primary ACK之后，备份对象在截断时更新；不把一个ACK的成功回复门槛当截断门槛。
+13. precise membership、旧日志drain、资源预留、连续故障前复制恢复证据，均为课外精读，不塞进课堂时间轴。
+14. 普通数据路径轮询不代表租约线程也禁用中断；论文短租约方案反而用高优先级中断、不绑核。
+15. Figure10标注data-rec-start65.3ms早于all-active69.4ms，与协议全局屏障文字存在观测／标注时刻疑点；真实记录，未凭空消解。
+16. 全量复制几十秒到数分钟，不与几十毫秒恢复吞吐混用；40次恢复分布也不保证所有故障50ms内完成。
+17. 2014缓存行原子／版本机制只作为FAQ陈述，未独立验证；硬件型号现状、价格和生产采用情况未更新为2026断言。
+18. 论文全文翻译许可未确认；视频独立CC标签均无具体版本；讲义／FAQ Last-Modified晚于首录像。
+19. 原始ASR末条超时、全部字幕间隙保留，未听音画是持续限制；不能声称每个专名／否定词均回听验证。
+20. 历史FaRM txCreate/txRead等不是固定2026实验API；不生成完整实验答案，不把用户实验记成通过。
+
+七、最小局部验收
+
+finalize.py通过：七条原始来源SHA-256、唯一ID、两条字幕起点单调／非负时长、无损阅读分组。
+两条时间轴分别00:00至94:37／27:57连续，每个cue起点恰属一个整理段；原始end超时单列，不裁剪。
+三份Markdown头信息、围栏、行末空白、站内lecture路径存在性及图片路径检查通过。
+git diff --check仅两个授权路径；脚本运行检查新文件内容，不依赖未暂存新文件会被git diff遍历。
+未执行npm run build，未运行实验／论文基准；全站整合交主agent。
+没有修改共享文件，没有git add/commit/push。
+归档整合注意：git check-ignore确认.gitignore第5行content/**/sources/忽略本来源目录；本地文件均已交付，主agent按既有来源归档策略决定纳入版本控制方式。

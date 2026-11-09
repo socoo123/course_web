@@ -1,0 +1,17 @@
+继续完成 MIT 6.824 中文课程 P7。先读取项目 AGENTS.md、technical-video-notes skill，以及 content/mit-6.824-2021/sources/PLAN.txt、status.json、manifest-2021.json、P6-REVIEW.txt、各 p6-*/review.txt、schedule-inventory-2021.json 与 version-map-2021.json，确认 P1–P6 的实际完成范围和来源边界。
+
+主线固定 MIT 6.824 Spring 2021；实验仍固定 MIT 6.5840 Spring 2026，代码提交 513cac0aef010750fc74688da8a395974a83cf7a。已有实验教程完成不代表用户实验通过，实验测试情况独立记录。只修改 content/。
+
+本批明确执行兴趣拓展的四讲：2021 L16 Spark、L18 SUNDR、L19 Bitcoin、L20 Blockstack。允许四个独立讲次 agent 并行；主 agent 管共享来源、元数据、最终审阅与提交。沿用既有成品格式，先核对2021官方课表的实际链接，不套2020编号或现代系统版本。
+
+逐视频主动获取原语言英文字幕，独立核对标题、时长、频道、上传日期、许可。L16 qXb5rDGqFdc；L18 FxwjSs_xSBM；L19 yB6m8EjAqPU；L20 DnyBPxo3B6I。按真实顺序完整整理现有讲授、例子、演示和问答，明确ASR疑点、真实字幕缺口与原始末条超时；不虚构分组内容，不把时间结构检查说成音画核验。不下载不必要的完整视频，不归档带签名媒体URL或cookies。
+
+逐讲全文核对课表实际链接的讲义、FAQ及指定阅读：L16 zaharia-spark.pdf；L18 li-sundr.pdf，2021课表原文 until Section 3.4，必须根据论文与讲义明确章节边界，不擅自把全篇算已读；L19 bitcoin.pdf 与 Michael Nielsen 的 How the Bitcoin protocol actually works 两份均处理，逐一确认可访问性和授权；L20 只以 blockstack-atc16.pdf（2016）为主，不能替换成新版Stacks资料。图表与公式实际查看PDF页面，逐来源记录实际阅读页码/章节、Last-Modified和内部标题差异。论文许可未确认时做自主精读，不套课程网站许可；获取失败如实记录并继续可完成部分。
+
+L18合并已有2026 SUNDR讲义/论文快照阅读对照，2026课表范围 through end of 3.3.2；分别保留两个范围，只展开确有差异，不新建重复 update-sundr。L16可提示与后续Ray的学习关系，但本批不把update-ray自动标完成。L19/L20着重区分信任假设、共识、命名/存储边界和原文时代的设计，不用无来源的现状推测补课堂。
+
+每讲notes提炼问题、机制、不变量、反例和自测；draft承载真实课堂时间顺序；materials承载课外精读。三份不重复大段展开；课堂截图只在draft，自绘图简单。引用页底；来源证据/原始抓取物放sources且不用.md后缀。独立manifest-fragment.json与review.txt记录全文阅读和定点核验的区别，主agent同步manifest/source_fragments、course.json、公共资料、status、版本映射与计划。
+
+P6已完成的Chain Replication、Frangipani、FaRM与Memcached可回链；FaRM两条真实时间轴必须继续保留。L6/L8无新增实际来源则继续待补。L21项目展示和六个尚未完成的Updates（Paxos、Go patterns、验证、Lambda、Ray、BFT）留后续明确批次；Go patterns先与已完成2021 L10对照，L21须区分项目展示与该日课表的AnalogicFS阅读。
+
+完成最小必要来源哈希、路由/图片、字幕时间结构与元数据一致性检查，git diff --check、npm run build通过后提交并推送GitHub。沿用既有来源归档策略：原始字幕/PDF/HTML本地保存，提交正文、必要获取/检查脚本、来源清单与review，不把整个sources目录无差别强制加入。最后生成下一批可直接复制的提示词，并简报交付、真实边界、检查结果与提交信息。

@@ -2,7 +2,7 @@
   "courseId": "mit-6.824-2021",
   "plannedAt": "2026-11-08",
   "updatedAt": "2026-11-09",
-  "phase": "P5_complete",
+  "phase": "P6_complete",
   "plan": "sources/PLAN.txt",
   "versions": {
     "lectures": "MIT 6.824 Spring 2021",
@@ -24,25 +24,26 @@
   "p3Review": "sources/P3-REVIEW.txt",
   "p4Review": "sources/P4-REVIEW.txt",
   "p5Review": "sources/P5-REVIEW.txt",
+  "p6Review": "sources/P6-REVIEW.txt",
   "artifacts": {
     "courseRegistration": "complete",
     "catalogMigration": "mit-6.824-2020 -> mit-6.824-2021; active",
-    "publicResources": "updated_for_2021_P5",
+    "publicResources": "updated_for_2021_P6",
     "mainlineEntries": 21,
     "updateEntries": 8,
     "labEntries": 5,
-    "lectureDocumentsCompleted": 30,
+    "lectureDocumentsCompleted": 42,
     "labDocumentsCompleted": 10,
     "lectureIllustrationsCompleted": 4
   },
   "sourceCoverage": {
-    "reviewed2021Pages": ["schedule", "general", "lec01-notes", "lec02-notes", "lec02-crawler", "lec02-kv", "lec02-condvar-six-examples", "lec03-notes-and-faq", "lec04-notes-and-faq", "lec05-notes-and-faq", "lec07-notes-and-faq", "lec09-notes-and-faq", "lec10-slides-78-pages", "lec13-notes-and-faq", "lec14-notes-and-faq", "home-license-link"],
+    "reviewed2021Pages": ["schedule", "general", "lec01-notes", "lec02-notes", "lec02-crawler", "lec02-kv", "lec02-condvar-six-examples", "lec03-notes-and-faq", "lec04-notes-and-faq", "lec05-notes-and-faq", "lec07-notes-and-faq", "lec09-notes-and-faq", "lec10-slides-78-pages", "lec11-notes-no-faq-listed", "lec12-notes-and-faq", "lec13-notes-and-faq", "lec14-notes-and-faq", "lec15-notes-and-faq", "lec17-notes-and-faq", "home-license-link"],
     "mainlineLecturesWithVideoLinks": 19,
     "mainlineVideoLinks": 20,
     "mainlineWithoutVideo": ["lec06", "lec08"],
     "splitVideos": { "lec15": ["07xsfL5E8Ck", "XwU4jKhBxws"] },
-    "videoMetadataFetched": ["lec01", "lec02", "lec03", "lec04", "lec05", "lec07", "lec09", "lec10", "lec13", "lec14"],
-    "mainlineVideoMetadataPending": "2021 videos except lec01/lec02/lec03/lec04/lec05/lec07/lec09/lec10/lec13/lec14; ten independently queried CC Attribution labels, exact versions unresolved",
+    "videoMetadataFetched": ["lec01", "lec02", "lec03", "lec04", "lec05", "lec07", "lec09", "lec10", "lec11", "lec12", "lec13", "lec14", "lec15", "lec17"],
+    "mainlineVideoMetadataPending": "lec16/lec18/lec19/lec20/lec21; fifteen independently queried videos including both lec15 recordings report CC Attribution labels, exact versions unresolved",
     "mainlineLectureInstructors": "Frans Kaashoek from 2021 general.html; Russ Cox guest at L10 from schedule and transcript introduction; no audio identity verification",
     "labRequirementsSnapshotted": ["mr", "kvsrv", "raft", "kvraft", "shardkv"],
     "labInterfaces": "P0-P4 reviews retained. P5 lab worker fully read20 pinned files/2804 lines including shardctrler/shardgrp/shardrpc, both Clerks, shardcfg, tests/models and Makefiles; main agent separately read8 complete bridge interface files and targeted migration/recovery test excerpts. Archive/member hashes verified; exact scopes in sources/p5-lab5/manifest-fragment.json and p5-bridge/manifest-fragment.json. No lab compilation or tests run",
@@ -55,6 +56,10 @@
     "goVersionNotes": "Targeted official reading: Go 1.22 loop semantics and Go 1.23 timer GC/module gating; not full documentation coverage",
     "transactionsReading": "Assigned Chapter9 v5.0 sections9.1.5/9.1.6/9.5.2/9.5.3/9.6.3 and related figures/formulas reviewed, not full118-page chapter. Current official OCW entry used after historical redirect loop, no2021 byte-equivalence claim; PDF own CC BY-NC-SA3.0 US. Full2022 PartII errata read as later correction, not classroom source. Full2021 notes309 lines/FAQ310 lines; both modified2021-04-09 after video upload",
     "spannerReading": "Complete assigned14-page paper including abstract,sections1-8,acknowledgements,42-item reference list and AppendixA; all6 figures/6 tables visually checked, plus formulas on PDF7/8/14. Full2021 notes305 lines/FAQ99 lines; notes modified2021-04-30 after lecture. External cited works and modern Cloud Spanner not reviewed; independent commentary, no full-translation permission claimed",
+    "chainReplicationReading": "Complete14-page paper,abstract,sections1-7,acknowledgements,6 endnotes and25 bibliography entries;all7 figures/1 table and invariant formulas visually checked. Full2021 outline131 lines retains2020 heading;no FAQ listed. Existing2026 outline357 lines and486-line diff read;2021/2026 PDF hashes identical. No2026 FAQ or external cited works read;comparison merged into lec11",
+    "frangipaniReading": "Complete14-page paper and all9 figures/3 tables;full337-line outline and309-line FAQ. Metadata-only logging,per-block versions,lock recovery and prototype delayed-write lease limitation distinguished. Notes modified on lecture day,before/after-class ordering unknown;Petal linked paper not read",
+    "farmReading": "Complete17-page2015 paper,abstract,sections1-8,acknowledgements and40 bibliography entries;all16 figures/2 tables visually checked. Full331-line outline and266-line FAQ,both modified after first video upload. Single-object atomic reads vs mixed execution states,successful strict serializability,commit evidence and recovery separated. External2014 FaRM/Vertical Paxos papers not read",
+    "memcacheReading": "Complete14-page2013 paper,abstract,sections1-9,acknowledgements and37 bibliography entries;all11 figures/3 tables and Little law checked on actual pages. Full301-line outline and179-line FAQ;modified on lecture day,ordering unknown. Token issuance vs revocation,warmup add/hold-off,remote-marker order/limits and inconsistent measurement wording preserved;external linked works and current implementations not read",
     "updatesVideo": "No video links on 2026 schedule; editorial bridge has no lecture video",
     "legacySources": "manifest.json, schedule-inventory.json and version-map.json retain pre-migration 2020/2026 source states; do not count them as 2021 coverage",
     "mapreduceReading": "Reused P1 independent commentary on 13-page OSDI 2004 paper, sections 1-8 and Appendix A; original 2020-hosted snapshot retained",
@@ -82,7 +87,8 @@
     "P3": "complete_2021_caption_based_and_pinned_2026_lab_guidance",
     "P4": "complete_2021_caption_based_and_pinned_2026_lab_guidance",
     "P5": "complete_2021_caption_based_and_pinned_2026_lab_guidance",
-    "P6": "not_started"
+    "P6": "complete_2021_caption_based_four_cases_five_videos_and_2026_chain_comparison",
+    "P7": "not_started"
   },
   "content": {
     "lectures": {
@@ -96,13 +102,13 @@
       "lec08": { "notes": "pending_sources", "draft": "no_video_listed", "materials": "not_planned_shared_lab_sources" },
       "lec09": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_explicit_ASR_gaps", "materials": "complete_independent_reading_14_pages_all_figures_tables" },
       "lec10": { "notes": "complete", "draft": "complete_caption_based_adaptation", "materials": "not_planned_classroom_slides_only" },
-      "lec11": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
-      "lec12": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec11": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_explicit_gaps_and_corrections", "materials": "complete_independent_reading_14_pages_and_2026_outline_comparison" },
+      "lec12": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_explicit_gaps_and_corrections", "materials": "complete_independent_reading_14_pages_all_figures_tables" },
       "lec13": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_explicit_gaps_and_corrections", "materials": "complete_assigned_five_sections_with_2022_errata" },
       "lec14": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_explicit_gaps_and_corrections", "materials": "complete_independent_reading_14_pages_including_appendix_all_figures_tables" },
-      "lec15": { "notes": "not_started", "draft": "not_started_two_videos", "materials": "not_started" },
+      "lec15": { "notes": "complete", "draft": "complete_caption_based_adaptation_two_separate_zero_based_timelines", "materials": "complete_independent_reading_17_pages_all_figures_tables" },
       "lec16": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
-      "lec17": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
+      "lec17": { "notes": "complete", "draft": "complete_caption_based_adaptation_with_explicit_gaps_and_corrections", "materials": "complete_independent_reading_14_pages_all_figures_tables" },
       "lec18": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
       "lec19": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
       "lec20": { "notes": "not_started", "draft": "not_started", "materials": "not_started" },
@@ -127,7 +133,7 @@
   "knownIssues": [
     { "id": "lab-command-widget-xv6", "status": "open_outside_content_scope", "location": "src/pages/Lab.tsx: Commands", "issue": "Generic widget uses xv6 commands; correct Go commands remain in resources and lab goals", "blocksNextBatch": false },
     { "id": "lec01-captions-2021", "status": "resolved", "issue": "English auto captions downloaded for WtZ7pcRSkOA; JSON3, normalized JSON, VTT and timestamped text saved locally; no user download needed", "blocks": [], "blocksNextBatch": false },
-    { "id": "video-licenses-2021", "status": "partial", "issue": "L1/L2/L3/L4/L5/L7/L9/L10/L13/L14 independently report Creative Commons Attribution license (reuse allowed); exact versions unresolved. Other 2021 videos remain unchecked", "blocksNextBatch": false },
+    { "id": "video-licenses-2021", "status": "partial", "issue": "L1/L2/L3/L4/L5/L7/L9/L10/L11/L12/L13/L14/L15(two videos)/L17 independently report Creative Commons Attribution license (reuse allowed); exact versions unresolved. L16/L18/L19/L20/L21 remain unchecked", "blocksNextBatch": false },
     { "id": "p2-audio-screen-review", "status": "text_review_only", "issue": "All L2/L10 captions read; no audio or video screen review. ASR ambiguities and slide errors marked in drafts; L2 breakout discussion absent from upload", "blocksNextBatch": false },
     { "id": "p3-written-heading-years", "status": "documented_source_difference", "issue": "L3/L4/L5/L7 notes fetched from actual 2021 schedule URLs retain 2020 internal headings. L4 notes and L5 FAQ have post-lecture Last-Modified dates. L7 notes/FAQ modified on upload day, before/after-class timing unknown. Raw files retained and separately compared with 2021 captions", "blocksNextBatch": false },
     { "id": "p3-caption-gaps", "status": "documented", "issue": "L3 breakout omitted from upload; L4 42:18-50:00, L5 64:07-72:10 and L7 61:16-69:32 cannot recover breakout technical discussion; L4 final utterance incomplete; L7 first six seconds uncaptioned. Original cue overhangs retained; no audio/screen verification", "blocksNextBatch": false },
@@ -136,7 +142,10 @@
     { "id": "p4-lec09-source-boundaries", "status": "documented", "issue": "2021-linked outline retains 2020 L8 header; FAQ modified on video-upload date, ordering unknown. Caption interval union has147 uncovered gaps including initial719ms, total259331ms; these are not assumed silence. Final cue overhang2159ms retained. No audio/frame review; lock recipes postponed in class, covered only as paper reading; sync timing assumptions and Read Lock goto3 annotation preserved", "blocksNextBatch": false },
     { "id": "lab-bridge-migration", "status": "resolved_P5", "issue": "Bridge sections9-15 cover service authority, Freeze/Install/Delete, persistent per-shard fences, current/next recovery, same-Num target arbitration through versioned KV and cross-group uncertainty; independent static review found no substantive defect. No lab tests run", "blocksNextBatch": false },
     { "id": "p5-lab-page-code-differences", "status": "documented", "issue": "HTML postdates pinned code; Freeze comment rejects Get/Puts; Static test typo, D startup hint and previous-year2024 wording corrected; full Lab4 regression needs separate rsm1. TestJoinLeave5B initial window is2ns; Shutdown5A disables snapshots; concurrent hot path uses one selected key. Exact static test coverage recorded, no execution claimed", "blocksNextBatch": false },
-    { "id": "p5-source-boundaries", "status": "documented", "issue": "L13/L14 all caption text reviewed, no audio/frame verification; breakout gaps and uncertain utterances retained. L13 notes/FAQ and L14 notes modified after respective uploads. Chapter9 current official PDF and2022 errata are later verified sources, not claimed2021 byte-identical; Spanner full14-page independent reading does not imply permission to translate entire paper", "blocksNextBatch": false }
+    { "id": "p5-source-boundaries", "status": "documented", "issue": "L13/L14 all caption text reviewed, no audio/frame verification; breakout gaps and uncertain utterances retained. L13 notes/FAQ and L14 notes modified after respective uploads. Chapter9 current official PDF and2022 errata are later verified sources, not claimed2021 byte-identical; Spanner full14-page independent reading does not imply permission to translate entire paper", "blocksNextBatch": false },
+    { "id": "p6-caption-boundaries", "status": "text_review_only", "issue": "All10263 cues across five recordings read;152 chronological sections,including separate L15 timelines. No audio/frame verification. L11/L12/L17 breakout discussion unavailable;L15 first recording explicitly skips breakout. Raw840/1920/2120/1640/1800ms end overruns retained;caption gaps not assumed silence", "blocksNextBatch": false },
+    { "id": "p6-written-versions-and-permissions", "status": "documented", "issue": "L11 outline retains2020 title;2021 schedule lists no FAQ. Existing2026 outline comparison complete,papers byte-identical;2026 FAQ not read. L15 notes/FAQ modified after first upload;L12 notes and L17 notes/FAQ same-day ordering unknown. Four papers fully read with all figures/tables inspected,public full-translation permission unconfirmed;independent analytical commentary delivered", "blocksNextBatch": false },
+    { "id": "p6-technical-open-questions", "status": "explicit_in_content", "issue": "L11 old-tail authority needs external fencing assumptions;L12 prototype delayed writes not fenced at Petal;L15 second-video readonly/blind-write Q&A unfinished and Figure10 recovery-label ordering unclear;L17 Gutter lease/marcher unresolved,marker eviction/concurrent cleanup and measurement-caption discrepancies retained. No modern implementation investigation or experiments claimed", "blocksNextBatch": false }
   ],
   "historicalIssues": [
     { "videoId": "cQP8WApzIQQ", "year": 2020, "captions": "HTTP 429 after one P1 retry", "log": "sources/lec01-caption-p1.log", "license": "CC Attribution label; historical version unresolved", "status": "retired_as_primary_video" }
@@ -160,7 +169,22 @@
     "lec13": { "videoId": "B6btpukqHpM", "durationSeconds": 4889, "cues": 1893, "firstStartMs": 560, "lastEndMs": 4890560, "draftSections": 29, "review": "all_text_cues_read_including_post_class_questions_no_audio_or_screen_review", "sources": "sources/p5-lec13/manifest-fragment.json", "gap": "136 uncovered caption-union intervals,total661492ms;37:37.839-44:07.119 breakout gap,initial560ms uncaptioned,final1560ms overhang retained. Not inferred silence" },
     "lec14": { "videoId": "ZulDvY429B8", "durationSeconds": 5829, "cues": 2326, "firstStartMs": 0, "lastEndMs": 5827840, "draftSections": 36, "review": "all_text_cues_read_including_post_class_questions_no_audio_or_screen_review", "sources": "sources/p5-lec14/manifest-fragment.json", "gap": "160 uncovered caption-union intervals,total650364ms;breakout/meeting interval around46:24-53:43 cannot recover group discussion;final1160ms uncaptioned,no overhang. Not inferred silence" }
   },
-  "validation": { "checkedAt": "2026-11-09", "contentIntegrity": "passed: check-p5.py;8 new documents plus expanded bridge;JSON,unique source IDs,P5 source/derived/archive-member hashes,registered routes and target documents,images,SVG XML,fences,video metadata and totals:30 lecture documents,10 lab documents,4 SVGs", "captionTimeline": "passed: L13 1893 cues/29 contiguous sections00:00-81:29,first560ms,last4890560ms;L14 2326 cues/36 sections00:00-97:09,first0ms,last5827840ms;starts monotonic,each cue start assigned once,raw timing retained. Structure checks do not establish translation accuracy or audio/frame coverage", "siteBuild": "passed: final integrated npm run build (tsc --noEmit + vite build),2620 modules,4.75s;includes all eight new P5 documents and expanded bridge", "labTests": "not_run", "goCompilation": "not_run" },
-  "gitDiffCheck": "passed: git diff --check and git diff --cached --check;27 staged files confined to content/mit-6.824-2021/",
-  "next": "P6: 2021 L11 Chain Replication,L12 Frangipani,L15 FaRM (two separate video timelines),L17 Memcached. Other interests/Updates remain later work. Full prompt: sources/NEXT-P6-PROMPT.txt."
+  "p6Captions": {
+    "lec11": { "sources": "sources/p6-lec11/manifest-fragment.json", "review": "all_text_cues_read_no_audio_or_frame_review", "gap": "124 caption-union gaps,total725411ms;40:00-49:07 breakout/return interval without recoverable group discussion;840ms overhang retained", "videos": [
+      { "videoId": "1uUcW-Mqg5o", "durationSeconds": 5659, "cues": 2360, "draftSections": 36, "firstStartMs": 0, "lastEndMs": 5659840, "normalizedCaptions": "sources/p6-lec11/captions/captions.normalized.json", "metadata": "sources/p6-lec11/metadata.json" }
+    ] },
+    "lec12": { "sources": "sources/p6-lec12/manifest-fragment.json", "review": "all_text_cues_read_no_audio_or_frame_review", "gap": "147 caption-union gaps,total653148ms;breakout around66:00-72:21.840 unavailable;first1280ms uncaptioned,1920ms overhang retained", "videos": [
+      { "videoId": "jPrUxfIcWWs", "durationSeconds": 5278, "cues": 2198, "draftSections": 33, "firstStartMs": 1280, "lastEndMs": 5279920, "normalizedCaptions": "sources/p6-lec12/captions/captions.normalized.json", "metadata": "sources/p6-lec12/metadata.json" }
+    ] },
+    "lec15": { "sources": "sources/p6-lec15/manifest-fragment.json", "review": "all_text_cues_read_two_independent_zero_based_timelines_no_audio_or_frame_review", "gap": "First:156 caption-union gaps,total301245ms,2120ms overhang;breakout explicitly skipped. Second:48 gaps,total93038ms,first4319ms uncaptioned,1640ms overhang;upload2021-04-30 not claimed filming date", "videos": [
+      { "videoId": "07xsfL5E8Ck", "durationSeconds": 5677, "cues": 2459, "draftSections": 33, "firstStartMs": 0, "lastEndMs": 5679120, "normalizedCaptions": "sources/p6-lec15/07xsfL5E8Ck-captions/captions.normalized.json", "metadata": "sources/p6-lec15/07xsfL5E8Ck.metadata.json" },
+      { "videoId": "XwU4jKhBxws", "durationSeconds": 1677, "cues": 711, "draftSections": 12, "firstStartMs": 4319, "lastEndMs": 1678640, "normalizedCaptions": "sources/p6-lec15/XwU4jKhBxws-captions/captions.normalized.json", "metadata": "sources/p6-lec15/XwU4jKhBxws.metadata.json" }
+    ] },
+    "lec17": { "sources": "sources/p6-lec17/manifest-fragment.json", "review": "all_text_cues_read_no_audio_or_frame_review", "gap": "180 caption-union gaps,total697737ms;63:04-69:03 breakout interval has only isolated words;first320ms uncaptioned,1800ms overhang retained", "videos": [
+      { "videoId": "eYZg0YJtFEE", "durationSeconds": 6255, "cues": 2535, "draftSections": 38, "firstStartMs": 320, "lastEndMs": 6256800, "normalizedCaptions": "sources/p6-lec17/captions/captions.normalized.json", "metadata": "sources/p6-lec17/metadata.json" }
+    ] }
+  },
+  "validation": { "checkedAt": "2026-11-09", "contentIntegrity": "passed: check-p6.py;12 new documents,JSON,unique source IDs,P6 source/derived hashes,actual schedule URLs,registered routes and target documents,images,SVG XML,fences,video metadata and totals:42 lecture documents,10 lab documents,4 SVGs", "captionTimeline": "passed: five independent timelines,L11 2360 cues/36 sections,L12 2198/33,L15 2459/33 plus711/12,L17 2535/38;10263 cues/152 sections total. Starts monotonic,each cue start assigned once,original end overruns preserved;L15 timelines each start at zero. Structure checks do not establish translation accuracy or audio/frame coverage", "siteBuild": "passed: integrated npm run build (tsc --noEmit + vite build),2691 modules;includes all12 new P6 documents and shared navigation", "labTests": "not_run", "goCompilation": "not_run" },
+  "gitDiffCheck": "passed: git diff --check;changes confined to content/mit-6.824-2021/",
+  "next": "P7: 2021 L16 Spark,L18 SUNDR with2026 reading comparison,L19 Bitcoin and Nielsen,L20 Blockstack2016. L21 and six pending Updates remain later work;L6/L8 await actual sources. Full prompt: sources/NEXT-P7-PROMPT.txt."
 }

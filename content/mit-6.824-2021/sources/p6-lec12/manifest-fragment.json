@@ -1,0 +1,1418 @@
+{
+  "course_id": "mit-6.824-2021",
+  "lecture_id": "lec12",
+  "batch": "P6",
+  "content_status": "completed_for_available_text_with_explicit_breakout_and_audio_visual_limits",
+  "review_file": "p6-lec12/review.txt",
+  "acquisition_file": "p6-lec12/acquisition.json",
+  "sources": [
+    {
+      "id": "lec12-2021-l-frangipani.txt",
+      "url": "http://nil.csail.mit.edu/6.824/2021/notes/l-frangipani.txt",
+      "retrieved_at": "2026-11-09T12:34:51.610846+00:00",
+      "last_modified": "Tue, 06 Apr 2021 20:48:00 GMT",
+      "file": "p6-lec12/l-frangipani.txt",
+      "sha256": "88bfd886871c8a0043d9fbb12812fe4e2fc818f57995f4338b4b2be1910ee7ee",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:50:08.978599+00:00",
+      "scope": "All 337 lines read. Heading 6.824 2021 Lecture 12 matches schedule. Last-Modified 2021-04-06 20:48 GMT is same day as class, not proof of unmodified class-start version. Covers coherence, atomicity, recovery, leases, performance, Petal notes and limitations. Log format explicitly guess-work; exclusive-lock simplification, missing idle wording, lease safety caveat, and 336 MB/s arithmetic discrepancy noted. Petal implementation claims not independently checked against its separate paper.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "evidence_file": "home-2021.html",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "scope": "Course-authored text only; existing homepage line 55 rechecked."
+      }
+    },
+    {
+      "id": "lec12-2021-thekkath-frangipani.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/thekkath-frangipani.pdf",
+      "retrieved_at": "2026-11-09T12:34:52.629688+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:43 GMT",
+      "file": "p6-lec12/thekkath-frangipani.pdf",
+      "sha256": "55451a1a44a93608f6ed2bd78e5f372d68e60e0b5b4dee1776afc7e38cc86cd0",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:50:08.978599+00:00",
+      "scope": "All 14 PDF pages, abstract, sections 1-11, acknowledgments and all 37 bibliography entries read through complete layout extraction, lines 1-360,361-720,721-1091, respecting page column order. All Figures 1-9 and Tables 1-3 viewed on actual rendered pages 2,3,4,9,10,11. Page 1 title/authors/ACM notice, page 4 allocation interval/powers, page 5 log sequence/version/sector assumptions and page 7 lease-margin/timestamp rules visually verified. No bibliography-linked full texts or historical source implementation read.",
+      "license": "ACM personal/classroom copying notice on page 1; public full-translation permission unconfirmed. Original analytical Chinese reading only."
+    },
+    {
+      "id": "lec12-2021-frangipani-faq.txt",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/frangipani-faq.txt",
+      "retrieved_at": "2026-11-09T12:34:51.860364+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:42 GMT",
+      "file": "p6-lec12/frangipani-faq.txt",
+      "sha256": "c31340c528d2a8166f73fdabefd22e0226c57a88b4491fddcd79b6a69ee62205",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:50:08.978599+00:00",
+      "scope": "All 309 lines read: GFS/security, log reclamation and speculative write absorption, deployment context, user-data durability/fsync, speculative Petal log details, epoch snapshot explanation, false sharing, old delete replay, lock granularity, 2PC comparison. Linked Petal paper and other external documents not read; replicated 2PC availability qualified by failure model.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "evidence_file": "home-2021.html",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "scope": "Course-authored text only; existing homepage line 55 rechecked."
+      }
+    },
+    {
+      "id": "lec12-2021-metadata.json",
+      "url": "https://www.youtube.com/watch?v=jPrUxfIcWWs",
+      "retrieved_at": "2026-11-09T12:34:53.864239+00:00",
+      "last_modified": null,
+      "file": "p6-lec12/metadata.json",
+      "sha256": "1519d4c1b618533377471036d96417269e63dba7998dd93a7c3f558003c4f645",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:50:08.978599+00:00",
+      "scope": "All whitelist fields independently acquired and read: jPrUxfIcWWs; Lecture 12: Cache Consistency: Frangipani; 5278 seconds (87:58); MIT 6.824: Distributed Systems; channel UC_7WrbZTCODu1o_kfUMq88g; upload 20210406; Creative Commons Attribution license (reuse allowed), version unspecified.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Queried for this video independently; specific version absent, not inherited from course website.",
+      "last_modified_note": "Not exposed by yt-dlp; unknown."
+    },
+    {
+      "id": "lec12-2021-video.en-orig.json3",
+      "url": "https://www.youtube.com/watch?v=jPrUxfIcWWs",
+      "retrieved_at": "2026-11-09T12:34:53.864326+00:00",
+      "last_modified": null,
+      "file": "p6-lec12/video.en-orig.json3",
+      "sha256": "9fcd555beff3d7141651530e8e11eabc09c912601d6c79c252058a58d65e0f6a",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:50:08.978599+00:00",
+      "scope": "All 2198 original-language English automatic cue texts read sequentially via lossless minute grouping, lines 1-100,101-200,201-257 (86 nonempty minute groups). Raw normalized cues around 65:50-73:00 inspected for breakout boundary. 33 Chinese editorial segments cover all intelligible lecture and Q&A including 84-86 minute course-planning discussion and final stale-write caveat. No audio or classroom-frame verification; first 1280ms, last start 5269199ms/end 5279920ms, tail overrun 1920ms. Breakout cannot be reconstructed.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Queried for this video independently; specific version absent, not inherited from course website.",
+      "last_modified_note": "Not exposed by yt-dlp; unknown.",
+      "language": "en-orig",
+      "caption_type": "original-language automatic English ASR"
+    }
+  ],
+  "derived_files": [
+    {
+      "id": "lec12-2021-derived-captions-captions.normalized.json",
+      "file": "p6-lec12/captions/captions.normalized.json",
+      "sha256": "1ab294405c80d8a5b0afcfcdd18fb9f5892a1055a2a8562cbc1c15f3fbf5ae25",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:02.695252+00:00",
+      "derived_from": "p6-lec12/video.en-orig.json3",
+      "scope": "All text read through lossless grouping; time structure checked; breakout cues directly rechecked."
+    },
+    {
+      "id": "lec12-2021-derived-captions-transcript.en.txt",
+      "file": "p6-lec12/captions/transcript.en.txt",
+      "sha256": "dde78cacbacc9aec0d0a56d80e4dc6d47ba3aef329e94299937a03372467ae43",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:02.700449+00:00",
+      "derived_from": "p6-lec12/video.en-orig.json3",
+      "scope": "Generated timed representation; text read through grouping, not independently reread here."
+    },
+    {
+      "id": "lec12-2021-derived-captions-captions.en.vtt",
+      "file": "p6-lec12/captions/captions.en.vtt",
+      "sha256": "29bcb8c8be122cfb8fd3bc63f08e004b45f767ecda0679ce182647d8cb8fab5e",
+      "status": "fetched",
+      "generated_at": "2026-11-09T12:35:02.698617+00:00",
+      "derived_from": "p6-lec12/video.en-orig.json3",
+      "scope": "Generated only; no player playback or separate line-by-line review."
+    },
+    {
+      "id": "lec12-2021-derived-captions-reading-by-minute.txt",
+      "file": "p6-lec12/captions/reading-by-minute.txt",
+      "sha256": "70c03a088e164f730c3b60ae2365b56257baadcb343da4186363899bb1de38db",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:06.721061+00:00",
+      "derived_from": "p6-lec12/video.en-orig.json3",
+      "scope": "All 257 lines / 86 minute groups read in three sequential ranges; all normalized cue text retained exactly."
+    },
+    {
+      "id": "lec12-2021-derived-frangipani.layout.txt",
+      "file": "p6-lec12/frangipani.layout.txt",
+      "sha256": "d204676e0427ae99bdffdcdb0fb2923d82db724b3c9e8560291ee016e4fd6f45",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:06.763182+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "All 1091 lines read; all figures/tables and relevant formulas checked against rendered pages."
+    },
+    {
+      "id": "lec12-2021-paper-page-01",
+      "file": "p6-lec12/paper-pages/page-01.png",
+      "sha256": "4d589f95cbaef0b65812fa03a0731487c778adf2ae817eedd6614999cfa87109",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:06.797980+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Title, authors, abstract and ACM copying notice."
+    },
+    {
+      "id": "lec12-2021-paper-page-02",
+      "file": "p6-lec12/paper-pages/page-02.png",
+      "sha256": "97eab09ad7c5b4db60fbcd7738b365210a42140955252bd10095fc12cde9dad6",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:06.828710+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Figures 1-2 and architecture/deployment distinction."
+    },
+    {
+      "id": "lec12-2021-paper-page-03",
+      "file": "p6-lec12/paper-pages/page-03.png",
+      "sha256": "6f989a5e09b6a4c39456e7a1910c82cc31aa58968fbd1768277f0289514b7d52",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:06.858925+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Figure 3, trusted-server export configuration."
+    },
+    {
+      "id": "lec12-2021-paper-page-04",
+      "file": "p6-lec12/paper-pages/page-04.png",
+      "sha256": "f902cd3a70ea76a03c0edd063c55b6f390815c0f59e9ba646acc55856056efad",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:06.887934+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Figure 4, sparse layout, half-open 64KB allocation interval and all powers/capacity limits."
+    },
+    {
+      "id": "lec12-2021-paper-page-05",
+      "file": "p6-lec12/paper-pages/page-05.png",
+      "sha256": "cf0a768ef7732be1f63cad98476bdf1610c2af2c0e5445cfaf1cae44fd1eb9d6",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:06.918483+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Log sequence numbers, redo condition, metadata reuse restriction, atomic-sector assumption and CRC context."
+    },
+    {
+      "id": "lec12-2021-paper-page-06",
+      "file": "p6-lec12/paper-pages/page-06.png",
+      "sha256": "96345d11207c78e3bbe2f05e8c6be422e59e89461414f63eac78da888b6eefae",
+      "status": "fetched",
+      "generated_at": "2026-11-09T12:35:06.948725+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Rendered only; full text read via extraction; image not separately inspected."
+    },
+    {
+      "id": "lec12-2021-paper-page-07",
+      "file": "p6-lec12/paper-pages/page-07.png",
+      "sha256": "d2a50aebc9c106f7c348da712703d6433a0ae8192446318e079cd5ca11e81d82",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:06.980005+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Lease margin 15s and proposed timestamp/lease-identifier storage checks, recovery conditions."
+    },
+    {
+      "id": "lec12-2021-paper-page-08",
+      "file": "p6-lec12/paper-pages/page-08.png",
+      "sha256": "d48b83111c18fa20563478bf67ef98d251bcd0e432e90b6a40666f10ec02d5be",
+      "status": "fetched",
+      "generated_at": "2026-11-09T12:35:07.011727+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Rendered only; full text read via extraction; image not separately inspected."
+    },
+    {
+      "id": "lec12-2021-paper-page-09",
+      "file": "p6-lec12/paper-pages/page-09.png",
+      "sha256": "576f6f887bc7efaab69cf7db3c7ecbb9636fb273473240fe645a7702a9fef19b",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:07.043232+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Tables 1-2 all rows, seconds units, unmount timing, test 5b cache anomaly."
+    },
+    {
+      "id": "lec12-2021-paper-page-10",
+      "file": "p6-lec12/paper-pages/page-10.png",
+      "sha256": "35265f9336ea866844022ce353e6c3ae0f1e7a183f5f87730225b84c533da8e6",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:07.073865+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Table 3 throughput/CPU; Figures 5-6 average completion time vs aggregate throughput, measured ranges and linear comparison."
+    },
+    {
+      "id": "lec12-2021-paper-page-11",
+      "file": "p6-lec12/paper-pages/page-11.png",
+      "sha256": "1385b8e6521ba8acd65ace81e2ddb5c241d11a2ff9fe6f10987db41c2a9db7fe",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:07.101424+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Figures 7-9: write saturation, read-ahead contention, 8/16/64KB data sizes, axis units and line legends."
+    },
+    {
+      "id": "lec12-2021-paper-page-12",
+      "file": "p6-lec12/paper-pages/page-12.png",
+      "sha256": "1d0a89671918bf6a8b287f31a1e53bf088edcbdb66d5d4c40065a198481dcc57",
+      "status": "fetched",
+      "generated_at": "2026-11-09T12:35:07.132968+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Rendered only; full text read via extraction; image not separately inspected."
+    },
+    {
+      "id": "lec12-2021-paper-page-13",
+      "file": "p6-lec12/paper-pages/page-13.png",
+      "sha256": "e55e42ddfc44a4e63a7e2e7edfb92f63596f7abbfa8958869ceafcc78ee0a84c",
+      "status": "fetched",
+      "generated_at": "2026-11-09T12:35:07.161061+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Rendered only; full text read via extraction; image not separately inspected."
+    },
+    {
+      "id": "lec12-2021-paper-page-14",
+      "file": "p6-lec12/paper-pages/page-14.png",
+      "sha256": "a536e7db6d31e22914a7b91010a5c4172b7cc22f02f0f5a465cc234cc0767381",
+      "status": "fetched",
+      "generated_at": "2026-11-09T12:35:07.188917+00:00",
+      "derived_from": "p6-lec12/thekkath-frangipani.pdf",
+      "scope": "Rendered only; full text read via extraction; image not separately inspected."
+    }
+  ],
+  "caption_time_structure": {
+    "cue_count": 2198,
+    "first_start_ms": 1280,
+    "last_start_ms": 5269199,
+    "last_end_ms": 5279920,
+    "metadata_duration_seconds": 5278,
+    "starts_monotonic": true,
+    "ends_monotonic": true,
+    "negative_duration_count": 0,
+    "cues_ending_after_video": 1,
+    "tail_overrun_ms": 1920,
+    "tail_uncaptioned_ms": 0,
+    "overlapping_adjacent_cue_pairs": 2051,
+    "positive_uncovered_gap_count": 147,
+    "uncovered_ms_within_video": 653148,
+    "maximum_uncovered_gap_ms": 166071,
+    "all_uncovered_gaps": [
+      {
+        "start_ms": 0,
+        "end_ms": 1280,
+        "duration_ms": 1280
+      },
+      {
+        "start_ms": 22880,
+        "end_ms": 29439,
+        "duration_ms": 6559
+      },
+      {
+        "start_ms": 68720,
+        "end_ms": 68880,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 76880,
+        "end_ms": 83360,
+        "duration_ms": 6480
+      },
+      {
+        "start_ms": 88320,
+        "end_ms": 92720,
+        "duration_ms": 4400
+      },
+      {
+        "start_ms": 171840,
+        "end_ms": 172720,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 297840,
+        "end_ms": 298639,
+        "duration_ms": 799
+      },
+      {
+        "start_ms": 355520,
+        "end_ms": 356080,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 415120,
+        "end_ms": 416080,
+        "duration_ms": 960
+      },
+      {
+        "start_ms": 432880,
+        "end_ms": 433199,
+        "duration_ms": 319
+      },
+      {
+        "start_ms": 441840,
+        "end_ms": 445120,
+        "duration_ms": 3280
+      },
+      {
+        "start_ms": 447840,
+        "end_ms": 449280,
+        "duration_ms": 1440
+      },
+      {
+        "start_ms": 455360,
+        "end_ms": 459520,
+        "duration_ms": 4160
+      },
+      {
+        "start_ms": 535839,
+        "end_ms": 537600,
+        "duration_ms": 1761
+      },
+      {
+        "start_ms": 549839,
+        "end_ms": 550560,
+        "duration_ms": 721
+      },
+      {
+        "start_ms": 579360,
+        "end_ms": 580399,
+        "duration_ms": 1039
+      },
+      {
+        "start_ms": 588240,
+        "end_ms": 588839,
+        "duration_ms": 599
+      },
+      {
+        "start_ms": 627200,
+        "end_ms": 627279,
+        "duration_ms": 79
+      },
+      {
+        "start_ms": 682800,
+        "end_ms": 682959,
+        "duration_ms": 159
+      },
+      {
+        "start_ms": 693519,
+        "end_ms": 700839,
+        "duration_ms": 7320
+      },
+      {
+        "start_ms": 802240,
+        "end_ms": 802399,
+        "duration_ms": 159
+      },
+      {
+        "start_ms": 861360,
+        "end_ms": 861680,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 931040,
+        "end_ms": 931279,
+        "duration_ms": 239
+      },
+      {
+        "start_ms": 972880,
+        "end_ms": 973600,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 983839,
+        "end_ms": 985600,
+        "duration_ms": 1761
+      },
+      {
+        "start_ms": 997839,
+        "end_ms": 1001519,
+        "duration_ms": 3680
+      },
+      {
+        "start_ms": 1090080,
+        "end_ms": 1090720,
+        "duration_ms": 640
+      },
+      {
+        "start_ms": 1161039,
+        "end_ms": 1162880,
+        "duration_ms": 1841
+      },
+      {
+        "start_ms": 1186720,
+        "end_ms": 1190000,
+        "duration_ms": 3280
+      },
+      {
+        "start_ms": 1199520,
+        "end_ms": 1201760,
+        "duration_ms": 2240
+      },
+      {
+        "start_ms": 1264480,
+        "end_ms": 1269679,
+        "duration_ms": 5199
+      },
+      {
+        "start_ms": 1277840,
+        "end_ms": 1287679,
+        "duration_ms": 9839
+      },
+      {
+        "start_ms": 1475360,
+        "end_ms": 1478960,
+        "duration_ms": 3600
+      },
+      {
+        "start_ms": 1482559,
+        "end_ms": 1483440,
+        "duration_ms": 881
+      },
+      {
+        "start_ms": 1512240,
+        "end_ms": 1512480,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 1519120,
+        "end_ms": 1519600,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 1560240,
+        "end_ms": 1560640,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 1564080,
+        "end_ms": 1564159,
+        "duration_ms": 79
+      },
+      {
+        "start_ms": 1567360,
+        "end_ms": 1567520,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 1623360,
+        "end_ms": 1623679,
+        "duration_ms": 319
+      },
+      {
+        "start_ms": 1636000,
+        "end_ms": 1639360,
+        "duration_ms": 3360
+      },
+      {
+        "start_ms": 1660559,
+        "end_ms": 1662240,
+        "duration_ms": 1681
+      },
+      {
+        "start_ms": 1769600,
+        "end_ms": 1772000,
+        "duration_ms": 2400
+      },
+      {
+        "start_ms": 1787279,
+        "end_ms": 1792240,
+        "duration_ms": 4961
+      },
+      {
+        "start_ms": 1829279,
+        "end_ms": 1829679,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 1832640,
+        "end_ms": 1834880,
+        "duration_ms": 2240
+      },
+      {
+        "start_ms": 1837200,
+        "end_ms": 1841120,
+        "duration_ms": 3920
+      },
+      {
+        "start_ms": 1874480,
+        "end_ms": 1876960,
+        "duration_ms": 2480
+      },
+      {
+        "start_ms": 1921840,
+        "end_ms": 1922159,
+        "duration_ms": 319
+      },
+      {
+        "start_ms": 1943200,
+        "end_ms": 1943519,
+        "duration_ms": 319
+      },
+      {
+        "start_ms": 1956799,
+        "end_ms": 1956880,
+        "duration_ms": 81
+      },
+      {
+        "start_ms": 1965760,
+        "end_ms": 1968559,
+        "duration_ms": 2799
+      },
+      {
+        "start_ms": 2035279,
+        "end_ms": 2036880,
+        "duration_ms": 1601
+      },
+      {
+        "start_ms": 2039760,
+        "end_ms": 2042399,
+        "duration_ms": 2639
+      },
+      {
+        "start_ms": 2083440,
+        "end_ms": 2084000,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 2112800,
+        "end_ms": 2113680,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 2154240,
+        "end_ms": 2156400,
+        "duration_ms": 2160
+      },
+      {
+        "start_ms": 2180320,
+        "end_ms": 2181599,
+        "duration_ms": 1279
+      },
+      {
+        "start_ms": 2202400,
+        "end_ms": 2203280,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 2206000,
+        "end_ms": 2208560,
+        "duration_ms": 2560
+      },
+      {
+        "start_ms": 2294160,
+        "end_ms": 2294240,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 2299839,
+        "end_ms": 2301200,
+        "duration_ms": 1361
+      },
+      {
+        "start_ms": 2307440,
+        "end_ms": 2309119,
+        "duration_ms": 1679
+      },
+      {
+        "start_ms": 2355839,
+        "end_ms": 2356960,
+        "duration_ms": 1121
+      },
+      {
+        "start_ms": 2380000,
+        "end_ms": 2380839,
+        "duration_ms": 839
+      },
+      {
+        "start_ms": 2383839,
+        "end_ms": 2390160,
+        "duration_ms": 6321
+      },
+      {
+        "start_ms": 2394160,
+        "end_ms": 2394560,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 2411839,
+        "end_ms": 2421440,
+        "duration_ms": 9601
+      },
+      {
+        "start_ms": 2499119,
+        "end_ms": 2503760,
+        "duration_ms": 4641
+      },
+      {
+        "start_ms": 2579839,
+        "end_ms": 2581920,
+        "duration_ms": 2081
+      },
+      {
+        "start_ms": 2614640,
+        "end_ms": 2614800,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 2621839,
+        "end_ms": 2623920,
+        "duration_ms": 2081
+      },
+      {
+        "start_ms": 2651280,
+        "end_ms": 2654880,
+        "duration_ms": 3600
+      },
+      {
+        "start_ms": 2738400,
+        "end_ms": 2738560,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 2806800,
+        "end_ms": 2811119,
+        "duration_ms": 4319
+      },
+      {
+        "start_ms": 2822640,
+        "end_ms": 2823520,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 2848640,
+        "end_ms": 2852240,
+        "duration_ms": 3600
+      },
+      {
+        "start_ms": 2890240,
+        "end_ms": 2892960,
+        "duration_ms": 2720
+      },
+      {
+        "start_ms": 2943839,
+        "end_ms": 2944960,
+        "duration_ms": 1121
+      },
+      {
+        "start_ms": 2958000,
+        "end_ms": 2958800,
+        "duration_ms": 800
+      },
+      {
+        "start_ms": 2971839,
+        "end_ms": 2974559,
+        "duration_ms": 2720
+      },
+      {
+        "start_ms": 2977920,
+        "end_ms": 2981599,
+        "duration_ms": 3679
+      },
+      {
+        "start_ms": 3005760,
+        "end_ms": 3006640,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 3035680,
+        "end_ms": 3036160,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 3108079,
+        "end_ms": 3108240,
+        "duration_ms": 161
+      },
+      {
+        "start_ms": 3125839,
+        "end_ms": 3126960,
+        "duration_ms": 1121
+      },
+      {
+        "start_ms": 3131680,
+        "end_ms": 3132400,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 3134720,
+        "end_ms": 3137040,
+        "duration_ms": 2320
+      },
+      {
+        "start_ms": 3155440,
+        "end_ms": 3156960,
+        "duration_ms": 1520
+      },
+      {
+        "start_ms": 3284400,
+        "end_ms": 3285839,
+        "duration_ms": 1439
+      },
+      {
+        "start_ms": 3340559,
+        "end_ms": 3342400,
+        "duration_ms": 1841
+      },
+      {
+        "start_ms": 3365440,
+        "end_ms": 3373680,
+        "duration_ms": 8240
+      },
+      {
+        "start_ms": 3391200,
+        "end_ms": 3391440,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 3424640,
+        "end_ms": 3431440,
+        "duration_ms": 6800
+      },
+      {
+        "start_ms": 3435920,
+        "end_ms": 3438799,
+        "duration_ms": 2879
+      },
+      {
+        "start_ms": 3443839,
+        "end_ms": 3444960,
+        "duration_ms": 1121
+      },
+      {
+        "start_ms": 3452480,
+        "end_ms": 3459440,
+        "duration_ms": 6960
+      },
+      {
+        "start_ms": 3521599,
+        "end_ms": 3524079,
+        "duration_ms": 2480
+      },
+      {
+        "start_ms": 3603920,
+        "end_ms": 3606000,
+        "duration_ms": 2080
+      },
+      {
+        "start_ms": 3647839,
+        "end_ms": 3648880,
+        "duration_ms": 1041
+      },
+      {
+        "start_ms": 3686799,
+        "end_ms": 3687040,
+        "duration_ms": 241
+      },
+      {
+        "start_ms": 3695520,
+        "end_ms": 3697359,
+        "duration_ms": 1839
+      },
+      {
+        "start_ms": 3709119,
+        "end_ms": 3711119,
+        "duration_ms": 2000
+      },
+      {
+        "start_ms": 3713839,
+        "end_ms": 3725200,
+        "duration_ms": 11361
+      },
+      {
+        "start_ms": 3817359,
+        "end_ms": 3820480,
+        "duration_ms": 3121
+      },
+      {
+        "start_ms": 3873039,
+        "end_ms": 3873200,
+        "duration_ms": 161
+      },
+      {
+        "start_ms": 3892799,
+        "end_ms": 3892960,
+        "duration_ms": 161
+      },
+      {
+        "start_ms": 3900799,
+        "end_ms": 3907440,
+        "duration_ms": 6641
+      },
+      {
+        "start_ms": 3911280,
+        "end_ms": 3914640,
+        "duration_ms": 3360
+      },
+      {
+        "start_ms": 3944400,
+        "end_ms": 3944960,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 3951839,
+        "end_ms": 3962000,
+        "duration_ms": 10161
+      },
+      {
+        "start_ms": 3968480,
+        "end_ms": 3972079,
+        "duration_ms": 3599
+      },
+      {
+        "start_ms": 3979839,
+        "end_ms": 4087590,
+        "duration_ms": 107751
+      },
+      {
+        "start_ms": 4090769,
+        "end_ms": 4256840,
+        "duration_ms": 166071
+      },
+      {
+        "start_ms": 4259840,
+        "end_ms": 4298840,
+        "duration_ms": 39000
+      },
+      {
+        "start_ms": 4301840,
+        "end_ms": 4332680,
+        "duration_ms": 30840
+      },
+      {
+        "start_ms": 4335719,
+        "end_ms": 4341840,
+        "duration_ms": 6121
+      },
+      {
+        "start_ms": 4344480,
+        "end_ms": 4351840,
+        "duration_ms": 7360
+      },
+      {
+        "start_ms": 4392320,
+        "end_ms": 4394560,
+        "duration_ms": 2240
+      },
+      {
+        "start_ms": 4447199,
+        "end_ms": 4447679,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 4473840,
+        "end_ms": 4474480,
+        "duration_ms": 640
+      },
+      {
+        "start_ms": 4477360,
+        "end_ms": 4477760,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 4498480,
+        "end_ms": 4504400,
+        "duration_ms": 5920
+      },
+      {
+        "start_ms": 4519600,
+        "end_ms": 4520480,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 4545199,
+        "end_ms": 4545840,
+        "duration_ms": 641
+      },
+      {
+        "start_ms": 4595840,
+        "end_ms": 4597920,
+        "duration_ms": 2080
+      },
+      {
+        "start_ms": 4615360,
+        "end_ms": 4617360,
+        "duration_ms": 2000
+      },
+      {
+        "start_ms": 4648080,
+        "end_ms": 4648840,
+        "duration_ms": 760
+      },
+      {
+        "start_ms": 4651840,
+        "end_ms": 4652320,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 4658000,
+        "end_ms": 4658080,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 4675199,
+        "end_ms": 4676239,
+        "duration_ms": 1040
+      },
+      {
+        "start_ms": 4681120,
+        "end_ms": 4683199,
+        "duration_ms": 2079
+      },
+      {
+        "start_ms": 4686400,
+        "end_ms": 4687280,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 4711840,
+        "end_ms": 4712080,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 4714960,
+        "end_ms": 4715120,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 4754320,
+        "end_ms": 4756000,
+        "duration_ms": 1680
+      },
+      {
+        "start_ms": 4791840,
+        "end_ms": 4793280,
+        "duration_ms": 1440
+      },
+      {
+        "start_ms": 4867280,
+        "end_ms": 4867360,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 4880719,
+        "end_ms": 4881920,
+        "duration_ms": 1201
+      },
+      {
+        "start_ms": 5004639,
+        "end_ms": 5007280,
+        "duration_ms": 2641
+      },
+      {
+        "start_ms": 5030239,
+        "end_ms": 5036719,
+        "duration_ms": 6480
+      },
+      {
+        "start_ms": 5039440,
+        "end_ms": 5041760,
+        "duration_ms": 2320
+      },
+      {
+        "start_ms": 5128880,
+        "end_ms": 5128960,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 5132719,
+        "end_ms": 5133920,
+        "duration_ms": 1201
+      },
+      {
+        "start_ms": 5243760,
+        "end_ms": 5243840,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 5262000,
+        "end_ms": 5262400,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 5267840,
+        "end_ms": 5269199,
+        "duration_ms": 1359
+      }
+    ],
+    "draft_segment_count": 33,
+    "draft_start": "00:00",
+    "draft_end": "87:58",
+    "audio_reviewed": false,
+    "video_frames_reviewed": false,
+    "interpretation": "Interval-union gaps are not silence detection. All 2198 cue texts read in order. Breakout transition around 66 minutes, sparse labels until return speech at 72:21.840; discussion unavailable. Raw tail retained, not clipped."
+  },
+  "draft_segments": [
+    {
+      "start": "00:00",
+      "end": "03:00",
+      "start_ms": 0,
+      "end_ms": 180000,
+      "title": "借一个文件系统学习三种反复出现的机制",
+      "cue_count": 71,
+      "first_cue": 1,
+      "last_cue": 71
+    },
+    {
+      "start": "03:00",
+      "end": "06:00",
+      "start_ms": 180000,
+      "end_ms": 360000,
+      "title": "把文件系统代码移到使用文件的机器上",
+      "cue_count": 92,
+      "first_cue": 72,
+      "last_cue": 163
+    },
+    {
+      "start": "06:00",
+      "end": "09:00",
+      "start_ms": 360000,
+      "end_ms": 540000,
+      "title": "工作负载决定这种分散设计是否值得",
+      "cue_count": 87,
+      "first_cue": 164,
+      "last_cue": 250
+    },
+    {
+      "start": "09:00",
+      "end": "11:00",
+      "start_ms": 540000,
+      "end_ms": 660000,
+      "title": "写回缓存与强一致性要同时成立",
+      "cue_count": 54,
+      "first_cue": 251,
+      "last_cue": 304
+    },
+    {
+      "start": "11:00",
+      "end": "14:00",
+      "start_ms": 660000,
+      "end_ms": 840000,
+      "title": "为什么 GFS、Frangipani 和 ZooKeeper 不可互换",
+      "cue_count": 89,
+      "first_cue": 305,
+      "last_cue": 393
+    },
+    {
+      "start": "14:00",
+      "end": "16:00",
+      "start_ms": 840000,
+      "end_ms": 960000,
+      "title": "问答：代码放在客户端，扩展性到底增加在哪里",
+      "cue_count": 65,
+      "first_cue": 394,
+      "last_cue": 458
+    },
+    {
+      "start": "16:00",
+      "end": "19:00",
+      "start_ms": 960000,
+      "end_ms": 1140000,
+      "title": "缓存带来的第一、第二个问题",
+      "cue_count": 84,
+      "first_cue": 459,
+      "last_cue": 542
+    },
+    {
+      "start": "19:00",
+      "end": "21:00",
+      "start_ms": 1140000,
+      "end_ms": 1260000,
+      "title": "第三个问题：机器在复杂操作中间崩溃",
+      "cue_count": 61,
+      "first_cue": 543,
+      "last_cue": 603
+    },
+    {
+      "start": "21:00",
+      "end": "24:00",
+      "start_ms": 1260000,
+      "end_ms": 1440000,
+      "title": "两张锁表与 sticky lock",
+      "cue_count": 74,
+      "first_cue": 604,
+      "last_cue": 677
+    },
+    {
+      "start": "24:00",
+      "end": "27:00",
+      "start_ms": 1440000,
+      "end_ms": 1620000,
+      "title": "先有锁，才有资格缓存",
+      "cue_count": 82,
+      "first_cue": 678,
+      "last_cue": 759
+    },
+    {
+      "start": "27:00",
+      "end": "30:00",
+      "start_ms": 1620000,
+      "end_ms": 1800000,
+      "title": "旧持有者写回之后，新持有者才能读取",
+      "cue_count": 91,
+      "first_cue": 760,
+      "last_cue": 850
+    },
+    {
+      "start": "30:00",
+      "end": "33:00",
+      "start_ms": 1800000,
+      "end_ms": 1980000,
+      "title": "问答：共享写会不会让缓存来回搬",
+      "cue_count": 79,
+      "first_cue": 851,
+      "last_cue": 929
+    },
+    {
+      "start": "33:00",
+      "end": "36:00",
+      "start_ms": 1980000,
+      "end_ms": 2160000,
+      "title": "revoke 要等正在执行的文件操作完成",
+      "cue_count": 79,
+      "first_cue": 930,
+      "last_cue": 1008
+    },
+    {
+      "start": "36:00",
+      "end": "39:00",
+      "start_ms": 2160000,
+      "end_ms": 2340000,
+      "title": "问答：多个锁、目录和死锁",
+      "cue_count": 83,
+      "first_cue": 1009,
+      "last_cue": 1091
+    },
+    {
+      "start": "39:00",
+      "end": "42:00",
+      "start_ms": 2340000,
+      "end_ms": 2520000,
+      "title": "写回不是随意把几块数据发出去",
+      "cue_count": 67,
+      "first_cue": 1092,
+      "last_cue": 1158
+    },
+    {
+      "start": "42:00",
+      "end": "44:00",
+      "start_ms": 2520000,
+      "end_ms": 2640000,
+      "title": "日志持久化后，恢复者可以补齐正式结构",
+      "cue_count": 53,
+      "first_cue": 1159,
+      "last_cue": 1211
+    },
+    {
+      "start": "44:00",
+      "end": "47:00",
+      "start_ms": 2640000,
+      "end_ms": 2820000,
+      "title": "问答：日志本身写一半怎么办",
+      "cue_count": 94,
+      "first_cue": 1212,
+      "last_cue": 1305
+    },
+    {
+      "start": "47:00",
+      "end": "50:00",
+      "start_ms": 2820000,
+      "end_ms": 3000000,
+      "title": "每台工作站一份日志，记录里面是什么",
+      "cue_count": 71,
+      "first_cue": 1306,
+      "last_cue": 1376
+    },
+    {
+      "start": "50:00",
+      "end": "52:00",
+      "start_ms": 3000000,
+      "end_ms": 3120000,
+      "title": "问答：“新字节”到底是哪类数据",
+      "cue_count": 55,
+      "first_cue": 1377,
+      "last_cue": 1431
+    },
+    {
+      "start": "52:00",
+      "end": "55:00",
+      "start_ms": 3120000,
+      "end_ms": 3300000,
+      "title": "十块文件内容不保证故障后全有或全无",
+      "cue_count": 86,
+      "first_cue": 1432,
+      "last_cue": 1517
+    },
+    {
+      "start": "55:00",
+      "end": "57:00",
+      "start_ms": 3300000,
+      "end_ms": 3420000,
+      "title": "元数据仍然必须一起恢复",
+      "cue_count": 52,
+      "first_cue": 1518,
+      "last_cue": 1569
+    },
+    {
+      "start": "57:00",
+      "end": "60:00",
+      "start_ms": 3420000,
+      "end_ms": 3600000,
+      "title": "超时不是死亡证明，租约要先到期",
+      "cue_count": 73,
+      "first_cue": 1570,
+      "last_cue": 1642
+    },
+    {
+      "start": "60:00",
+      "end": "62:00",
+      "start_ms": 3600000,
+      "end_ms": 3720000,
+      "title": "恢复完成，才允许重新授锁",
+      "cue_count": 52,
+      "first_cue": 1643,
+      "last_cue": 1694
+    },
+    {
+      "start": "62:00",
+      "end": "64:00",
+      "start_ms": 3720000,
+      "end_ms": 3840000,
+      "title": "可以恢复完整操作的前缀，不能应用半条操作",
+      "cue_count": 54,
+      "first_cue": 1695,
+      "last_cue": 1748
+    },
+    {
+      "start": "64:00",
+      "end": "66:00",
+      "start_ms": 3840000,
+      "end_ms": 3960000,
+      "title": "分组题：恢复旧删除会不会抹掉新创建",
+      "cue_count": 43,
+      "first_cue": 1749,
+      "last_cue": 1791
+    },
+    {
+      "start": "66:00",
+      "end": "72:22",
+      "start_ms": 3960000,
+      "end_ms": 4342000,
+      "title": "分组切换与无法恢复的讨论区间",
+      "cue_count": 10,
+      "first_cue": 1792,
+      "last_cue": 1801
+    },
+    {
+      "start": "72:22",
+      "end": "74:00",
+      "start_ms": 4342000,
+      "end_ms": 4440000,
+      "title": "返场：用块版本辨别旧操作是否早已完成",
+      "cue_count": 42,
+      "first_cue": 1802,
+      "last_cue": 1843
+    },
+    {
+      "start": "74:00",
+      "end": "77:00",
+      "start_ms": 4440000,
+      "end_ms": 4620000,
+      "title": "版本 10 的删除，不能覆盖版本 11 的创建",
+      "cue_count": 72,
+      "first_cue": 1844,
+      "last_cue": 1915
+    },
+    {
+      "start": "77:00",
+      "end": "79:00",
+      "start_ms": 4620000,
+      "end_ms": 4740000,
+      "title": "问答与主讲收束：版本不是整台机器的全局计数",
+      "cue_count": 57,
+      "first_cue": 1916,
+      "last_cue": 1972
+    },
+    {
+      "start": "79:00",
+      "end": "81:00",
+      "start_ms": 4740000,
+      "end_ms": 4860000,
+      "title": "课后问答：一条记录内多项更新如何完整写入",
+      "cue_count": 49,
+      "first_cue": 1973,
+      "last_cue": 2021
+    },
+    {
+      "start": "81:00",
+      "end": "84:00",
+      "start_ms": 4860000,
+      "end_ms": 5040000,
+      "title": "课后问答：为什么允许日志只留下前缀",
+      "cue_count": 77,
+      "first_cue": 2022,
+      "last_cue": 2098
+    },
+    {
+      "start": "84:00",
+      "end": "86:00",
+      "start_ms": 5040000,
+      "end_ms": 5160000,
+      "title": "课后问答：当时的安全课程安排",
+      "cue_count": 52,
+      "first_cue": 2099,
+      "last_cue": 2150
+    },
+    {
+      "start": "86:00",
+      "end": "87:58",
+      "start_ms": 5160000,
+      "end_ms": 5278000,
+      "title": "课后问答：旧写超过租约边界到达，真的会破坏一致性",
+      "cue_count": 48,
+      "first_cue": 2151,
+      "last_cue": 2198
+    }
+  ],
+  "paper_visual_review": {
+    "pdf_pages": 14,
+    "figures": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "tables": [
+      1,
+      2,
+      3
+    ],
+    "inspected_page_images": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      9,
+      10,
+      11
+    ],
+    "audio_or_classroom_frames": false
+  },
+  "version_mapping_evidence": {
+    "file": "schedule-2021.html",
+    "scope": "Lines 189-192 checked against complete schedule-inventory-2021.json: April 6, L12, jPrUxfIcWWs and all three assigned documents. Historical Lab4 assignment is not the fixed 2026 API. Shared files read only."
+  },
+  "content_paths": [
+    "lectures/lec12/draft.zh.md",
+    "lectures/lec12/materials.zh.md",
+    "lectures/lec12/notes.zh.md"
+  ],
+  "validation": {
+    "source_hashes": "passed",
+    "caption_structure": "passed_with_reported_raw_overrun",
+    "lossless_grouping": "passed",
+    "continuous_draft_timeline": "passed",
+    "markdown_local_structure": "passed",
+    "build": "Not run by restricted worker; main agent handles integration.",
+    "experiments": "Not run",
+    "no_media_download": true,
+    "no_full_player_response_saved": true,
+    "no_signed_urls_saved": true
+  },
+  "issues": [
+    "Breakout around 66:00-72:21.840 contains sparse captions, not recoverable discussion; not assumed silence.",
+    "147 subtitle interval-union gaps total 653148ms, maximum 166071ms; raw final cue exceeds duration by 1920ms.",
+    "No audio/classroom frames checked. ASR misrecognizes names, lease/log/lock, and experimental course number.",
+    "Video CC version absent; ACM paper public full-translation permission unconfirmed.",
+    "Outline modified same day as lecture at 20:48 GMT, may incorporate edits; PDF/FAQ January 2021 HTTP dates do not prove publication version immutability.",
+    "Record checksum/commit-marker schemes are classroom possibilities, not confirmed paper format; actual paper uses per-512B log sequence numbers and atomic-sector assumptions.",
+    "Prototype permits sufficiently delayed Petal writes after lease expiry. Timestamp/lease-ID receiving-side checks are proposed, not implemented claims.",
+    "Per-client 30s lease vs per-lock classroom simplification; shared read caches vs exclusive-only lecture model.",
+    "Actual log is 128KB per server; 1TB total virtual reservation split into 256 slots is not actual log size.",
+    "Outline 336MB/s raw disk arithmetic conflicts with 7*9*6=378; use paper measured Petal 100/43MB/s, no invented explanation.",
+    "Metadata recovery not user-data atomicity/durability; rename alone is not a persistent replacement recipe.",
+    "Independent Petal paper, referenced works, original source code and modern implementations not reviewed.",
+    "2026 experiments not run; historical interfaces not substituted for fixed 513cac0aef010750fc74688da8a395974a83cf7a APIs."
+  ]
+}

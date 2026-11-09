@@ -1,0 +1,100 @@
+P6 / MIT 6.824 Spring 2021 L17 Memcached — worker review
+日期：2026-11-09
+允许写入：lectures/lec17/ 与 sources/p6-lec17/，相对于 content/mit-6.824-2021/。
+共享课程元数据、计划、清单、状态均只读；没有 git 提交、推送、全站 build 或实验执行。
+
+交付
+- lectures/lec17/notes.zh.md：缓存保护后端的负载推导；回填资格/来源两项检查；lease不变量；跨地域顺序；P3复制、P4协调、P5事务/迁移的精确连接；9道折叠答案自测。
+- lectures/lec17/draft.zh.md：38段，00:00–104:15，全量字幕顺序，含所有可恢复的例子、课堂纠正及86分钟后的课后问答。63:04–69:03单列无法恢复的分组切换。
+- lectures/lec17/materials.zh.md：论文全篇自主精读。课堂模型以外的网络、池内批量复制、失效管道、warmup实际API、marker顺序/局限、单机CPU/内存/升级、全部图表和口径疑点。
+- sources/p6-lec17/manifest-fragment.json：5项独立来源、19项衍生文件、字幕区间并集全部间隙、38段与字幕索引覆盖、版本与授权边界、验证结果。
+- acquire.py：并行获取2021三个指定文档与独立视频白名单元数据/英文原语言ASR。
+- prepare-reading.py：调用已加载skill规范化脚本，生成无损按分钟分组、PDF布局文本及14页实际渲染；依赖python3、pdftotext、PyMuPDF及本机skill路径。
+- finalize.py：源文件SHA256、白名单元数据、无损分组、单调时间/原始超时、逐段覆盖、Markdown结构/本地路由核验；只在本worker来源目录输出manifest与validation。
+- acquisition.json是获取状态；最终阅读范围以manifest-fragment.json为准。
+
+已读输入与课表绑定
+- 项目AGENTS.md、technical-video-notes skill、sources/NEXT-P6-PROMPT.txt、PLAN.txt、schedule-inventory-2021.json。
+- 既有lec14三文件用作结构样本，p5-lec14/acquire.py、prepare-reading.py、finalize.py用作获取与核验样本。
+- schedule-2021.html第237–238行确认L17、指定视频eYZg0YJtFEE、l-memcached.txt、memcache-fb.pdf、memcache-faq.txt；与库存2021-05-04相符。
+- home-2021.html第55行核对课程自有文本CC BY 3.0 US；未将它套给视频或论文。
+- 对照P4 ZooKeeper notes及P5实验桥接标题/已有Spanner材料，建立站内链接；没有改写共享既有文章。
+
+独立视频元数据
+- ID：eYZg0YJtFEE。
+- title：Lecture 17: Cache Consistency: Memcached at Facebook。
+- duration：6255秒，104:15。
+- channel：MIT 6.824: Distributed Systems。
+- channel_id：UC_7WrbZTCODu1o_kfUMq88g。
+- upload_date：20210504。
+- license：Creative Commons Attribution license (reuse allowed)，具体CC版本未提供。
+- 仅保存id/title/duration/channel/channel_id/uploader/upload_date/license/webpage_url白名单，没有完整播放器响应、cookies、签名媒体URL或音视频文件。
+- Last-Modified未由yt-dlp暴露，以null及说明保存；不伪造日期。
+
+字幕真实阅读与时间边界
+- video.en-orig.json3为主动下载的英文原语言自动字幕，不是翻译字幕。
+- 2535条非空字幕，规范化JSON、VTT、逐条英文文本均保留原始时间与重复。
+- 阅读用reading-by-minute.txt，102个非空分钟组/305行；按1–105、106–210、211–305依次阅读全文。拼接逐字等于全部规范化cue文本，不是关键词筛选或摘要抽取。
+- 首条开始320ms；末条开始6253800ms，结束6256800ms；相对6255000ms片长超1800ms。共2条结束超过片长，不截断原件；译稿最后标题仍用104:15。
+- 开始与结束时间均单调；负时长0；相邻重叠2355对。重叠是原ASR表示，不在本文当作重复讲授或剪掉英语内容。
+- 区间并集180处正间隙，总697737ms，最长263000ms；包含开头320ms。每处具体起止保存在manifest，不等于实际静音或整段漏讲的音频检测。
+- 分组：62:55.920起邀请breakout，63:00.839–63:03.839有thank-you尾词；64:10.839–64:13.839仅next；68:36.839–68:39.839仅this；69:03.199开始问大家是否返回。中间67s/263s/23.360s等空隙，未虚构组内交流。
+- 79分钟左右的等待回答还有25s与14.480s间隙，保留在对应课堂段落，不补造讲授。
+- 38段连续覆盖00:00–104:15，所有cue开始时间恰落在一段内。结构通过不等于音画语义核验。
+- 全部处理仅文本，没有听音轨/查看课堂帧，因此专名、否定、口头数字、板书箭头仍存在ASR边界。未截图。
+
+书面来源：实际范围与版本
+1. l-memcached.txt：301行全文，标题6.824 2021 Lecture17，网站演进、缓存流程、分片/复制、各池、网络、三种竞争与备选更新策略全读。
+   Last-Modified Tue,04 May2021 20:38:49GMT：与讲课同日，不知道是课前还是课后更改，不能保证开课时原样。
+   末尾2020 CacheLib外链未读。
+2. memcache-faq.txt：179行全文，包含所有Q/A及两套八步stale-set/L1/L2示例；后续论文、MySQL8.0手册未读。
+   标题没有年份，Last-Modified同讲义；不能由路径推断所有描述都来自2021当日。
+3. memcache-fb.pdf：14页，印刷页385–398，Scaling Memcache at Facebook，NSDI2013。
+   Last-Modified Fri,22 Jan2021 09:21:42GMT是服务器快照时间，不是论文年份；课表Memcached at Facebook(2013)是简称。
+   完整布局文本1035行，依次读1–350、351–700、701–1035并按各页双栏延续关系理解。摘要、§1–9、致谢、37项文献条目全读，文献指向的论文正文未读。
+   论文全文翻译授权未确认，只交自主中文精读，不套CC课程许可，不把页面图像嵌入公开正文。
+
+PDF实际页面核验
+- PDF2：Figure1读写look-aside路径、Figure2 region/frontend/storage架构；marcher原文字样。
+- PDF3：Figure3，微秒，average-of-medians/average-of-p95，UDP直连与TCP经mcrouter的区别。
+- PDF4：Figure4窗口大小与调度等待，median/p95；L=lambda W；64位token绑定、delete撤销、10秒发放限速文字。
+- PDF5：Figure5，TB、日/周、low/high-churn及min/mean/max；pool内100键复制算例。
+- PDF6：Figure6日志失效管道、SQL携带键、批量mcrouter与重放。
+- PDF7：Table1全部A/B指标；hold-off/delete/add/数据库重取的真实步骤、两秒非绝对上界。
+- PDF8：先设rk，再写主数据库携带k/rk失效，再删本地k；regional pool、marker被逐出/并发清理的明确限制。
+- PDF9：Figure7/8，items/s不是网页请求数，版本/锁粒度/UDP-TCP/单get与10-key multiget；实验硬件与方法。
+- PDF10：Figure9不同服务器数量CDF；短命对象清理、共享内存升级与正文峰值措辞。
+- PDF11：Figure10值大小CDF；Figure11失效失败比例的对数轴、1秒到1天长尾、master/replica区别；§7.2统计口径。
+- PDF12：Table2/3所有行列单位与标题；7day标题对照上一页one-month说明。
+- 全部11图、3表及公式已核验。图片1/13/14仅生成，文字已通过抽取阅读，未将其标为另行图像核验。
+
+关键语义复核
+- Lease token是指定键/缓存实例的回填资格；默认10s是每键发放限速；delete撤销旧token。未将三者写成固定10秒排他锁、DB锁、全局版本或Spanner领导者租约。
+- 即使缓存无值，delete也需处理仍在进行的刷新token。FAQ的L2简图未交代限速互动，不宣称delete必然立即重发新token。
+- 对比锁权时只讨论职责，不混用其保证；P3/P4/P5用既有站内链接，未复制大段既有正文。
+- 课堂race1先误画put，73分钟自行更正为delete，译稿明确保留校注；学生对“回到过去”的质疑也保留，重点是新值长期不可见。
+- Warmup的新token仍可能从热cluster取到旧值；与旧token失效不是同一个反例。实际是两秒hold-off拒绝add，失败后从DB重取，热cluster失效超过两秒仍有窗口。
+- 课堂cold database口述/ASR疑点已校正为等热cluster失效；同region多frontend clusters共享storage cluster。
+- 跨region通过MySQL复制数据库，mcsqueal负责缓存失效，角色分开；正常副本数据应用先于当地失效。副本region的写者额外用marker引导立即重读。
+- Marker是单独rk，先于主库写建立，放regional pool；论文承认淘汰及并发写提前清理的问题。不会把read-own-writes愿望提升为任意故障的严格保证。
+- Cluster按需缓存副本、regional pool共享、跨region数据库复制分别表述，不宣称缓存间共识或整体线性一致KV。
+- Gutter快速过期而非普通失效，不宣称零陈旧；其并发lease细节讲师不知道，推测单列。
+- Figure11长尾到一天，FAQ亦承认，故“几秒”不是硬新鲜度界。
+- 课后Spanner每秒十/百的口头量级不能作全系统吞吐；按单串行请求流延迟理解并加限定。
+- 先前课号与历史缓存API不替换固定2026实验，实验测试未运行。
+
+未解决问题
+- 字幕未音画核验，分组交流不可恢复，末条原始超时未纠正。
+- 视频确切CC版本未知，论文全文译权未知。
+- marcher含义未明，课堂也明确不知道；只记录PDF原文。
+- §7.2最高四分钟平均值/一个月采集，与Table2标题七天平均不一致；不能断言单一统计口径。
+- Figure10附近文字称三个峰却只列两个位置，未猜造第三个。
+- token重新发放/崩溃与Gutter租约完整协议未由材料提供；后续Wormhole、按分片分主地域、当前软件行为没有额外核实。
+- 所有外链参考仅按条目阅读，没有将其算作全文阅读。
+
+最小验证
+- finalize.py已通过：5项上游源哈希、元数据白名单、无损字幕分组、2535条时间结构、38段连续覆盖、Markdown头信息/围栏/行尾/本地路由。
+- 原始超时明确保留，不以截断来伪造全字幕不超时。
+- git diff --check仅限本worker两个路径，另由脚本检查新文件行尾；未运行全站build，交由主agent整合验收。
+- 仓库.gitignore第5行忽略content/**/sources/，因此sources/p6-lec17产物在本地存在但不出现在普通git status；主agent按既有来源归档策略整合，worker未强制暂存。
+- 未运行任何实验，也未声称用户已完成实验。

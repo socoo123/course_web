@@ -20,13 +20,13 @@
     { "id": "lec08", "related_2026_lecture": 10, "context": "Different-year Raft lab Q&A; not interchangeable" },
     { "id": "lec09", "related_2026_lecture": 9, "context": "P4: actual 2021 video HYTDDLo2vSE, 82:50; all 2239 English ASR cues read, 32 chronological sections including post-class Q&A, no audio/frame review. Full 14-page ZooKeeper paper and 2021 notes/FAQ read; all figures/tables visually checked. Outline retains 2020 L8 heading; classroom postpones lock recipes, covered only as paper reading. ZooKeeper local reads are not the pinned 2026 KV read contract" },
     { "id": "lec10", "related_2026_lecture": 5, "context": "P2 reviewed actual 2021 captions and 78-page mit-6824-go-2021.pdf; 2026 patterns differences still to review, no other-year example package used" },
-    { "id": "lec11", "related_2026_lecture": 13 },
-    { "id": "lec12", "related_2026_lecture": null },
+    { "id": "lec11", "related_2026_lecture": 13, "context": "P6: actual2021 1uUcW-Mqg5o,94:19,2360 ASR cues/36 sections;40:00-49:07 breakout interval explicit,840ms tail overrun retained,no audio/frame review. Full2021 outline131 lines and14-page paper read,all7 figures/1 table viewed. Outline retains2020 heading;no FAQ listed. Full2026 outline357 lines and486-line diff reviewed;paper snapshots byte-identical. Tail lease is later reading guidance,not a complete partition-safe protocol or2021 classroom answer" },
+    { "id": "lec12", "related_2026_lecture": null, "context": "P6: actual2021 jPrUxfIcWWs,87:58,2198 ASR cues/33 sections including post-class Q&A;breakout gap explicit,1920ms tail overrun retained,no audio/frame review. Full337-line notes/309-line FAQ and14-page Frangipani paper read,all9 figures/3 tables viewed. Notes modified on class day,exact ordering unknown. Metadata-only logging,block-version replay and prototype delayed-write lease flaw distinguished;historical file/lock/Petal API not substituted for2026 labs" },
     { "id": "lec13", "related_2026_lecture": 11, "context": "P5: actual2021 video B6btpukqHpM,81:29,1893 ASR cues/29 sections including post-class Q&A;37:37.839-44:07.119 breakout caption gap preserved,no audio/frame review. Full2021 notes/FAQ and assigned five Chapter9 sections reviewed;PDF own BY-NC-SA3.0 US and2022 errata verified. Lecture2021Lab4 replicated controller assumptions are not2026Lab5 requirements;2PC not A-C" },
     { "id": "lec14", "related_2026_lecture": 12, "context": "P5: actual2021 video ZulDvY429B8,97:09,2326 ASR cues/36 sections including post-class Q&A; breakout/meeting gap around46:24-53:43 and final1160ms uncaptioned,no audio/frame review. Full2021 notes305 lines/FAQ99 lines and14-page Spanner paper including AppendixA reviewed,all6 figures/6 tables visually checked. Notes modified2021-04-30 after lecture; safe time,commit wait,buffered-write read semantics and lease proof separately checked;2PC not Lab5 A-C" },
-    { "id": "lec15", "related_2026_lecture": 14 },
+    { "id": "lec15", "related_2026_lecture": 14, "context": "P6: two independently checked2021 videos 07xsfL5E8Ck 94:37/2459 cues/33 sections and XwU4jKhBxws 27:57/711 cues/12 sections;both timelines start at zero. Raw2120/1640ms end overruns retained,no audio/frame review;second upload2021-04-30 not inferred recording date. Full331-line outline,266-line FAQ and17-page2015 paper read,all16 figures/2 tables viewed. Written snapshots modified after first upload. Execution may mix object states;successful commit strictly serializable. OCC,commit evidence,replication and membership separately explained;no2026 lab API substitution" },
     { "id": "lec16", "related_2026_lecture": 18, "context": "Spark versus Ray, related but different systems" },
-    { "id": "lec17", "related_2026_lecture": 16 },
+    { "id": "lec17", "related_2026_lecture": 16, "context": "P6: actual2021 eYZg0YJtFEE,104:15,2535 ASR cues/38 sections;63:04-69:03 breakout interval explicit,1800ms tail overrun retained,no audio/frame review. Full301-line notes,179-line FAQ and14-page2013 paper read,all11 figures/3 tables viewed. Notes/FAQ modified on lecture day,ordering unknown. Cache token,ten-second issuance limit,warmup hold-off and remote-marker limits distinguished;best-effort cache consistency is not2026 lab linearizable KV" },
     { "id": "lec18", "related_2026_lecture": 19, "context": "2021 reading until Section 3.4; 2026 through end of 3.3.2" },
     { "id": "lec19", "related_2026_lecture": 20 },
     { "id": "lec20", "related_2026_lecture": null },
@@ -43,7 +43,7 @@
     { "id": "update-bft", "official_2026_lecture": 21 }
   ],
   "merged_updates": [
-    { "old_id": "update-chain-replication", "owner": "lec11", "official_2026_lecture": 13, "reason": "Chain Replication already on 2021 mainline" },
+    { "old_id": "update-chain-replication", "owner": "lec11", "official_2026_lecture": 13, "reason": "Chain Replication already on 2021 mainline", "status": "P6 comparison complete: full2026 outline and diff read;2021/2026 paper SHA256 identical;2026 FAQ not fetched/read", "source_fragment": "p6-lec11/manifest-fragment.json" },
     { "old_id": "update-sundr", "owner": "lec18", "official_2026_lecture": 19, "reason": "SUNDR already on 2021 mainline" }
   ],
   "labs": [

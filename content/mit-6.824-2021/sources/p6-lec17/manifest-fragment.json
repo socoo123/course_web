@@ -1,0 +1,1643 @@
+{
+  "course_id": "mit-6.824-2021",
+  "lecture_id": "lec17",
+  "batch": "P6",
+  "content_status": "completed_for_available_text_with_explicit_breakout_and_audio_visual_limits",
+  "review_file": "p6-lec17/review.txt",
+  "acquisition_file": "p6-lec17/acquisition.json",
+  "sources": [
+    {
+      "id": "lec17-2021-l-memcached.txt",
+      "url": "http://nil.csail.mit.edu/6.824/2021/notes/l-memcached.txt",
+      "retrieved_at": "2026-11-09T12:35:24.669895+00:00",
+      "last_modified": "Tue, 04 May 2021 20:38:49 GMT",
+      "file": "p6-lec17/l-memcached.txt",
+      "sha256": "66ea3d2919aeae6c4a30e45cb3922a45a1c0721abac546f846639a92800faa13",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:50:58.260489+00:00",
+      "scope": "All 301 lines read. Explicit 6.824 2021 Lecture 17 title; website evolution, topology, partition/replication, pools, warmup, herd, Gutter, networking, all three races, alternate DB-driven updates. Last-Modified 2021-05-04 20:38:49 GMT matches lecture date but not proof of class-time snapshot. Linked CacheLib paper not read.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "evidence_file": "home-2021.html",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "scope": "Course-authored text only; existing homepage line55 checked. Does not cover external paper or video."
+      }
+    },
+    {
+      "id": "lec17-2021-memcache-fb.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/memcache-fb.pdf",
+      "retrieved_at": "2026-11-09T12:35:24.571640+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:42 GMT",
+      "file": "p6-lec17/memcache-fb.pdf",
+      "sha256": "d9d788538f999a0320da8f115edc3d4cf8f39aacbd6d8fe0ed9fedf82b395647",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:50:58.260489+00:00",
+      "scope": "All 14 PDF pages (printed pp385-398) read: abstract, sections 1-9, acknowledgements and all 37 bibliography entries. Extracted layout text all 1035 lines read sequentially in ranges 1-350,351-700,701-1035, following per-page column continuation. All Figures 1-11, Tables 1-3 and Little law formula visually checked on actual page renders. Page8 remote-marker order and explicit limits also inspected. No bibliography-linked full texts read. Title Scaling Memcache at Facebook, NSDI2013; server Last-Modified 2021-01-22 is snapshot date, not publication year.",
+      "license": "Full-translation permission unconfirmed; original Chinese analytical reading, no full translation or public page-image reproduction."
+    },
+    {
+      "id": "lec17-2021-memcache-faq.txt",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/memcache-faq.txt",
+      "retrieved_at": "2026-11-09T12:35:23.018207+00:00",
+      "last_modified": "Tue, 04 May 2021 20:38:49 GMT",
+      "file": "p6-lec17/memcache-faq.txt",
+      "sha256": "a0dca985b752140def39c0a94afc5bbcc70c8b8d26dbf3d583e7af497a01d9fd",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:50:58.260489+00:00",
+      "scope": "All 179 lines read. All questions, eight-step stale-set examples with L1/L2, herd, mcrouter, Gutter, regional pools, MySQL/cache integration, day-old tail, replication and look-aside definition. No year in heading; same Last-Modified as outline. Linked TAO/follow-on papers and MySQL 8.0 manual not read. FAQ lease renewal example does not specify ten-second issuance-rate interaction.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "evidence_file": "home-2021.html",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/",
+        "scope": "Course-authored text only; existing homepage line55 checked. Does not cover external paper or video."
+      }
+    },
+    {
+      "id": "lec17-2021-metadata.json",
+      "url": "https://www.youtube.com/watch?v=eYZg0YJtFEE",
+      "retrieved_at": "2026-11-09T12:35:25.192821+00:00",
+      "last_modified": null,
+      "file": "p6-lec17/metadata.json",
+      "sha256": "2f70e8d4f955036cfa955ba527db0878cd9c4ae739e9d27c1dd0205bb1162295",
+      "status": "reviewed",
+      "last_modified_note": "Not exposed by yt-dlp; unknown.",
+      "reviewed_at": "2026-11-09T12:50:58.260489+00:00",
+      "scope": "All independently acquired whitelisted fields checked: eYZg0YJtFEE; Lecture 17: Cache Consistency: Memcached at Facebook; 6255 seconds (104:15); MIT 6.824: Distributed Systems; channel UC_7WrbZTCODu1o_kfUMq88g; uploaded 20210504; Creative Commons Attribution license (reuse allowed), exact version absent.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Independent query for this video; exact CC version absent. Not inherited from course site."
+    },
+    {
+      "id": "lec17-2021-video.en-orig.json3",
+      "url": "https://www.youtube.com/watch?v=eYZg0YJtFEE",
+      "retrieved_at": "2026-11-09T12:35:25.192895+00:00",
+      "last_modified": null,
+      "file": "p6-lec17/video.en-orig.json3",
+      "sha256": "61f5888f9b2f7cd1d58c3d547894360e8f45260e492ca4f56152b784f9a14161",
+      "status": "reviewed",
+      "last_modified_note": "Not exposed by yt-dlp; unknown.",
+      "reviewed_at": "2026-11-09T12:50:58.260489+00:00",
+      "scope": "All 2535 English original-language automatic caption texts read in sequence through lossless minute grouping, reading-by-minute.txt lines1-105,106-210,211-305. Breakout raw normalized cues around 62:50-69:20 inspected. Complete available lecture including post-class questions through104:15 organized into 38 editorial segments. 102 nonempty minute groups; minutes65-67 have no cue starts. First320ms, final start6253800ms, final end6256800ms exceeds6255000ms duration by1800ms. No audio or classroom video-frame verification; group discussion not recovered.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Independent query for this video; exact CC version absent. Not inherited from course site.",
+      "language": "en-orig",
+      "caption_type": "original-language automatic English ASR"
+    }
+  ],
+  "derived_files": [
+    {
+      "id": "lec17-2021-derived-captions-captions.normalized.json",
+      "file": "p6-lec17/captions/captions.normalized.json",
+      "sha256": "8979af7ccf3c4c1f762c6982e973421457cce495c2d178b9a19152ecfc68bb93",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:31.986382+00:00",
+      "derived_from": "p6-lec17/video.en-orig.json3",
+      "scope": "Complete cue text read through lossless grouping; raw breakout cues directly inspected; timing structure checked."
+    },
+    {
+      "id": "lec17-2021-derived-captions-transcript.en.txt",
+      "file": "p6-lec17/captions/transcript.en.txt",
+      "sha256": "f2cbf6b0370c924c2df0ed1ec614ecf2b8d9dc1c5bd774323968fd0211baedf2",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:31.992445+00:00",
+      "derived_from": "p6-lec17/video.en-orig.json3",
+      "scope": "Generated timed text; all cue content read through lossless grouping, not separately reread in this representation."
+    },
+    {
+      "id": "lec17-2021-derived-captions-captions.en.vtt",
+      "file": "p6-lec17/captions/captions.en.vtt",
+      "sha256": "2683ad948a5a57d0d8cd5fd3722c628b398347d00953d739c85b7a643e15f1d0",
+      "status": "fetched",
+      "generated_at": "2026-11-09T12:35:31.990401+00:00",
+      "derived_from": "p6-lec17/video.en-orig.json3",
+      "scope": "Generated only; not played or independently line-read."
+    },
+    {
+      "id": "lec17-2021-derived-captions-reading-by-minute.txt",
+      "file": "p6-lec17/captions/reading-by-minute.txt",
+      "sha256": "88cc11fcf658647f5c35dc762e97dc74712c6424fb5933779aa93953a92066f1",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:31.999223+00:00",
+      "derived_from": "p6-lec17/video.en-orig.json3",
+      "scope": "All305 lines and102 nonempty minute groups read sequentially. Concatenation equals all2535 normalized cues."
+    },
+    {
+      "id": "lec17-2021-derived-memcache-fb.layout.txt",
+      "file": "p6-lec17/memcache-fb.layout.txt",
+      "sha256": "fb82248278b974f17ab8b85e6ad4472c248be1f041e337d534443e1623758fcf",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:32.048864+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "All1035 lines read, including bibliography; actual pages inspected for figures/tables/formula and protocol details."
+    },
+    {
+      "id": "lec17-2021-paper-page-01",
+      "file": "p6-lec17/paper-pages/page-01.png",
+      "sha256": "5beec1a6f3704e00421d78e028fe7225f2e5d8082e791071cde29980e81f273e",
+      "status": "fetched",
+      "generated_at": "2026-11-09T12:35:32.117711+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Rendered only; page text read in extraction, image not independently inspected."
+    },
+    {
+      "id": "lec17-2021-paper-page-02",
+      "file": "p6-lec17/paper-pages/page-02.png",
+      "sha256": "c04aa71b035a0e70ba241288da2a0228412b38917b482e7abed33b8d188a1bec",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:32.153872+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Figures1-2: look-aside read/write and master/replica region topology; actual marcher wording."
+    },
+    {
+      "id": "lec17-2021-paper-page-03",
+      "file": "p6-lec17/paper-pages/page-03.png",
+      "sha256": "0b2d6b2ec2ea7d7891f14a5a090eb2f85f7c1deb9a5e7f88d5dbe7d00d194ddb",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:32.183004+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Figure3: microseconds, average-of-medians and average-of-p95 categories; UDP direct vs TCP via proxy."
+    },
+    {
+      "id": "lec17-2021-paper-page-04",
+      "file": "p6-lec17/paper-pages/page-04.png",
+      "sha256": "faa929fb5a93606ee580b01209cdd20c371e118b544732f13b58f386b2e14e5d",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:32.213867+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Figure4 axes/percentiles and L=lambda*W formula; token binding/revocation vs ten-second issuance limit."
+    },
+    {
+      "id": "lec17-2021-paper-page-05",
+      "file": "p6-lec17/paper-pages/page-05.png",
+      "sha256": "29f5f0489f95761ba6ee12f8016e4faa76aa6e5adaa93d2327f99df5658b9a18",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:32.243800+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Figure5 daily/weekly churn, TB units and min/mean/max; pool-level replication example."
+    },
+    {
+      "id": "lec17-2021-paper-page-06",
+      "file": "p6-lec17/paper-pages/page-06.png",
+      "sha256": "20a6354ef541fb960af24867a34b61a5aee3dc6cf4eae169282bbe699014be14",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:32.277604+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Figure6 complete invalidation pipeline and log annotations; batching and replay."
+    },
+    {
+      "id": "lec17-2021-paper-page-07",
+      "file": "p6-lec17/paper-pages/page-07.png",
+      "sha256": "c9f97fc0ebfc888a5c8fbe32029935e99943d6fa4587a6c4b7360777865412f5",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:32.308190+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Table1 exact A/B units and metrics; warmup delete hold-off/add/refetch and two-second caveat."
+    },
+    {
+      "id": "lec17-2021-paper-page-08",
+      "file": "p6-lec17/paper-pages/page-08.png",
+      "sha256": "12a42e74622fc6ebcfb5472b61e6b58a732efc8720889e139c278d090798dc46",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:32.339165+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Remote marker set-before-master-write-before-local-delete ordering; separate rk in regional pool; concurrent deletion/eviction caveats; replication-before-invalidation."
+    },
+    {
+      "id": "lec17-2021-paper-page-09",
+      "file": "p6-lec17/paper-pages/page-09.png",
+      "sha256": "6fac5cead046a0bf6370d079f623b1b54dc055b2245693f927c3931a0203ea5a",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:32.369133+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Figures7-8 items/s (not requests/s), version/transport distinctions, single vs ten-key multiget; test conditions."
+    },
+    {
+      "id": "lec17-2021-paper-page-10",
+      "file": "p6-lec17/paper-pages/page-10.png",
+      "sha256": "816af17ab2fad59f66e5d7950599c937e25f94f6fa95b9d32a54daa73db64591",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:32.404946+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Figure9 cumulative distinct-server fanout; workload sizes, short-lived cache and shared-memory upgrades."
+    },
+    {
+      "id": "lec17-2021-paper-page-11",
+      "file": "p6-lec17/paper-pages/page-11.png",
+      "sha256": "87093064c8346efb93016873989866dcb4e02e3bac26358b25520e3a31ab02d5",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:32.434697+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Figures10-11 cumulative sizes vs log failure-fraction axes, master/replica paths and day-long tail; one-month sampling paragraph."
+    },
+    {
+      "id": "lec17-2021-paper-page-12",
+      "file": "p6-lec17/paper-pages/page-12.png",
+      "sha256": "ea3e5120f2989c5e458a9be6e20ddf466b367a7df4be8612f183ec5d93f9bbbd",
+      "status": "reviewed",
+      "generated_at": "2026-11-09T12:35:32.463379+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Tables2-3 all columns/units and pool rows; Table2 seven-day caption conflicts with preceding one-month peak-average description."
+    },
+    {
+      "id": "lec17-2021-paper-page-13",
+      "file": "p6-lec17/paper-pages/page-13.png",
+      "sha256": "ae1a1e9dd27894e94c37a95e89206270fd93109e4ebdcba0b9d4de0c831d1f03",
+      "status": "fetched",
+      "generated_at": "2026-11-09T12:35:32.495952+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Rendered only; page text read in extraction, image not independently inspected."
+    },
+    {
+      "id": "lec17-2021-paper-page-14",
+      "file": "p6-lec17/paper-pages/page-14.png",
+      "sha256": "1e23f78ec557bfa676fd6de177ed149c918288b5e99f5404278a32b81e4dcb58",
+      "status": "fetched",
+      "generated_at": "2026-11-09T12:35:32.512105+00:00",
+      "derived_from": "p6-lec17/memcache-fb.pdf",
+      "scope": "Rendered only; page text read in extraction, image not independently inspected."
+    }
+  ],
+  "caption_time_structure": {
+    "cue_count": 2535,
+    "first_start_ms": 320,
+    "last_start_ms": 6253800,
+    "last_end_ms": 6256800,
+    "metadata_duration_seconds": 6255,
+    "starts_monotonic": true,
+    "ends_monotonic": true,
+    "negative_duration_count": 0,
+    "cues_ending_after_video": 2,
+    "tail_overrun_ms": 1800,
+    "tail_uncaptioned_ms": 0,
+    "overlapping_adjacent_cue_pairs": 2355,
+    "positive_uncovered_gap_count": 180,
+    "uncovered_ms_within_video": 697737,
+    "maximum_uncovered_gap_ms": 263000,
+    "all_uncovered_gaps": [
+      {
+        "start_ms": 0,
+        "end_ms": 320,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 59840,
+        "end_ms": 61039,
+        "duration_ms": 1199
+      },
+      {
+        "start_ms": 73840,
+        "end_ms": 76159,
+        "duration_ms": 2319
+      },
+      {
+        "start_ms": 101840,
+        "end_ms": 102240,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 105200,
+        "end_ms": 108640,
+        "duration_ms": 3440
+      },
+      {
+        "start_ms": 227840,
+        "end_ms": 230000,
+        "duration_ms": 2160
+      },
+      {
+        "start_ms": 241840,
+        "end_ms": 245760,
+        "duration_ms": 3920
+      },
+      {
+        "start_ms": 267040,
+        "end_ms": 267199,
+        "duration_ms": 159
+      },
+      {
+        "start_ms": 345919,
+        "end_ms": 350880,
+        "duration_ms": 4961
+      },
+      {
+        "start_ms": 414800,
+        "end_ms": 420240,
+        "duration_ms": 5440
+      },
+      {
+        "start_ms": 431919,
+        "end_ms": 432160,
+        "duration_ms": 241
+      },
+      {
+        "start_ms": 474960,
+        "end_ms": 475360,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 512000,
+        "end_ms": 518959,
+        "duration_ms": 6959
+      },
+      {
+        "start_ms": 528640,
+        "end_ms": 529360,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 536160,
+        "end_ms": 542160,
+        "duration_ms": 6000
+      },
+      {
+        "start_ms": 547360,
+        "end_ms": 547760,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 592160,
+        "end_ms": 596160,
+        "duration_ms": 4000
+      },
+      {
+        "start_ms": 652800,
+        "end_ms": 654320,
+        "duration_ms": 1520
+      },
+      {
+        "start_ms": 703839,
+        "end_ms": 711600,
+        "duration_ms": 7761
+      },
+      {
+        "start_ms": 731839,
+        "end_ms": 733680,
+        "duration_ms": 1841
+      },
+      {
+        "start_ms": 760959,
+        "end_ms": 763440,
+        "duration_ms": 2481
+      },
+      {
+        "start_ms": 776160,
+        "end_ms": 777600,
+        "duration_ms": 1440
+      },
+      {
+        "start_ms": 789519,
+        "end_ms": 790079,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 815839,
+        "end_ms": 816399,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 889519,
+        "end_ms": 890079,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 902160,
+        "end_ms": 902480,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 905519,
+        "end_ms": 909199,
+        "duration_ms": 3680
+      },
+      {
+        "start_ms": 927839,
+        "end_ms": 935920,
+        "duration_ms": 8081
+      },
+      {
+        "start_ms": 977199,
+        "end_ms": 979360,
+        "duration_ms": 2161
+      },
+      {
+        "start_ms": 983839,
+        "end_ms": 987279,
+        "duration_ms": 3440
+      },
+      {
+        "start_ms": 1044880,
+        "end_ms": 1045199,
+        "duration_ms": 319
+      },
+      {
+        "start_ms": 1105760,
+        "end_ms": 1106840,
+        "duration_ms": 1080
+      },
+      {
+        "start_ms": 1123840,
+        "end_ms": 1128480,
+        "duration_ms": 4640
+      },
+      {
+        "start_ms": 1264640,
+        "end_ms": 1265440,
+        "duration_ms": 800
+      },
+      {
+        "start_ms": 1285520,
+        "end_ms": 1285600,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 1293200,
+        "end_ms": 1295120,
+        "duration_ms": 1920
+      },
+      {
+        "start_ms": 1383840,
+        "end_ms": 1384960,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 1453039,
+        "end_ms": 1454480,
+        "duration_ms": 1441
+      },
+      {
+        "start_ms": 1465760,
+        "end_ms": 1466080,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 1473840,
+        "end_ms": 1479440,
+        "duration_ms": 5600
+      },
+      {
+        "start_ms": 1491440,
+        "end_ms": 1491760,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 1547200,
+        "end_ms": 1547679,
+        "duration_ms": 479
+      },
+      {
+        "start_ms": 1582159,
+        "end_ms": 1582240,
+        "duration_ms": 81
+      },
+      {
+        "start_ms": 1586720,
+        "end_ms": 1588000,
+        "duration_ms": 1280
+      },
+      {
+        "start_ms": 1628400,
+        "end_ms": 1633120,
+        "duration_ms": 4720
+      },
+      {
+        "start_ms": 1635679,
+        "end_ms": 1638799,
+        "duration_ms": 3120
+      },
+      {
+        "start_ms": 1683840,
+        "end_ms": 1688240,
+        "duration_ms": 4400
+      },
+      {
+        "start_ms": 1712399,
+        "end_ms": 1713120,
+        "duration_ms": 721
+      },
+      {
+        "start_ms": 1788880,
+        "end_ms": 1790320,
+        "duration_ms": 1440
+      },
+      {
+        "start_ms": 1923360,
+        "end_ms": 1924559,
+        "duration_ms": 1199
+      },
+      {
+        "start_ms": 1928000,
+        "end_ms": 1928480,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 2061839,
+        "end_ms": 2062800,
+        "duration_ms": 961
+      },
+      {
+        "start_ms": 2065760,
+        "end_ms": 2065919,
+        "duration_ms": 159
+      },
+      {
+        "start_ms": 2078320,
+        "end_ms": 2083359,
+        "duration_ms": 5039
+      },
+      {
+        "start_ms": 2104640,
+        "end_ms": 2105359,
+        "duration_ms": 719
+      },
+      {
+        "start_ms": 2117839,
+        "end_ms": 2118320,
+        "duration_ms": 481
+      },
+      {
+        "start_ms": 2121839,
+        "end_ms": 2122079,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 2161200,
+        "end_ms": 2162000,
+        "duration_ms": 800
+      },
+      {
+        "start_ms": 2218720,
+        "end_ms": 2220960,
+        "duration_ms": 2240
+      },
+      {
+        "start_ms": 2237599,
+        "end_ms": 2239440,
+        "duration_ms": 1841
+      },
+      {
+        "start_ms": 2280320,
+        "end_ms": 2282839,
+        "duration_ms": 2519
+      },
+      {
+        "start_ms": 2425839,
+        "end_ms": 2425920,
+        "duration_ms": 81
+      },
+      {
+        "start_ms": 2461040,
+        "end_ms": 2461920,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 2533200,
+        "end_ms": 2535040,
+        "duration_ms": 1840
+      },
+      {
+        "start_ms": 2559520,
+        "end_ms": 2560640,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 2580240,
+        "end_ms": 2585760,
+        "duration_ms": 5520
+      },
+      {
+        "start_ms": 2596720,
+        "end_ms": 2602960,
+        "duration_ms": 6240
+      },
+      {
+        "start_ms": 2628319,
+        "end_ms": 2633119,
+        "duration_ms": 4800
+      },
+      {
+        "start_ms": 2637440,
+        "end_ms": 2639359,
+        "duration_ms": 1919
+      },
+      {
+        "start_ms": 2691839,
+        "end_ms": 2692640,
+        "duration_ms": 801
+      },
+      {
+        "start_ms": 2703359,
+        "end_ms": 2703440,
+        "duration_ms": 81
+      },
+      {
+        "start_ms": 2719839,
+        "end_ms": 2720079,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 2726960,
+        "end_ms": 2727119,
+        "duration_ms": 159
+      },
+      {
+        "start_ms": 2805599,
+        "end_ms": 2805839,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 2848800,
+        "end_ms": 2848880,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 2854960,
+        "end_ms": 2855680,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 2859839,
+        "end_ms": 2860880,
+        "duration_ms": 1041
+      },
+      {
+        "start_ms": 2866240,
+        "end_ms": 2866880,
+        "duration_ms": 640
+      },
+      {
+        "start_ms": 2887839,
+        "end_ms": 2888079,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 2894800,
+        "end_ms": 2895599,
+        "duration_ms": 799
+      },
+      {
+        "start_ms": 2909680,
+        "end_ms": 2911200,
+        "duration_ms": 1520
+      },
+      {
+        "start_ms": 2923280,
+        "end_ms": 2926839,
+        "duration_ms": 3559
+      },
+      {
+        "start_ms": 2936480,
+        "end_ms": 2936800,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 2943839,
+        "end_ms": 2944400,
+        "duration_ms": 561
+      },
+      {
+        "start_ms": 2995119,
+        "end_ms": 2995440,
+        "duration_ms": 321
+      },
+      {
+        "start_ms": 3013839,
+        "end_ms": 3017200,
+        "duration_ms": 3361
+      },
+      {
+        "start_ms": 3045040,
+        "end_ms": 3045920,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 3049839,
+        "end_ms": 3050640,
+        "duration_ms": 801
+      },
+      {
+        "start_ms": 3077680,
+        "end_ms": 3077760,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 3090559,
+        "end_ms": 3091920,
+        "duration_ms": 1361
+      },
+      {
+        "start_ms": 3130400,
+        "end_ms": 3134400,
+        "duration_ms": 4000
+      },
+      {
+        "start_ms": 3185680,
+        "end_ms": 3192839,
+        "duration_ms": 7159
+      },
+      {
+        "start_ms": 3195839,
+        "end_ms": 3202640,
+        "duration_ms": 6801
+      },
+      {
+        "start_ms": 3210240,
+        "end_ms": 3210400,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 3251839,
+        "end_ms": 3255119,
+        "duration_ms": 3280
+      },
+      {
+        "start_ms": 3282960,
+        "end_ms": 3285440,
+        "duration_ms": 2480
+      },
+      {
+        "start_ms": 3310880,
+        "end_ms": 3313520,
+        "duration_ms": 2640
+      },
+      {
+        "start_ms": 3316880,
+        "end_ms": 3316960,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 3335839,
+        "end_ms": 3336160,
+        "duration_ms": 321
+      },
+      {
+        "start_ms": 3383839,
+        "end_ms": 3385280,
+        "duration_ms": 1441
+      },
+      {
+        "start_ms": 3456079,
+        "end_ms": 3456400,
+        "duration_ms": 321
+      },
+      {
+        "start_ms": 3556880,
+        "end_ms": 3557119,
+        "duration_ms": 239
+      },
+      {
+        "start_ms": 3601839,
+        "end_ms": 3608640,
+        "duration_ms": 6801
+      },
+      {
+        "start_ms": 3672799,
+        "end_ms": 3674960,
+        "duration_ms": 2161
+      },
+      {
+        "start_ms": 3743119,
+        "end_ms": 3743520,
+        "duration_ms": 401
+      },
+      {
+        "start_ms": 3775440,
+        "end_ms": 3775920,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 3779760,
+        "end_ms": 3780839,
+        "duration_ms": 1079
+      },
+      {
+        "start_ms": 3783839,
+        "end_ms": 3850839,
+        "duration_ms": 67000
+      },
+      {
+        "start_ms": 3853839,
+        "end_ms": 4116839,
+        "duration_ms": 263000
+      },
+      {
+        "start_ms": 4119839,
+        "end_ms": 4143199,
+        "duration_ms": 23360
+      },
+      {
+        "start_ms": 4147839,
+        "end_ms": 4150239,
+        "duration_ms": 2400
+      },
+      {
+        "start_ms": 4171359,
+        "end_ms": 4171520,
+        "duration_ms": 161
+      },
+      {
+        "start_ms": 4361280,
+        "end_ms": 4362560,
+        "duration_ms": 1280
+      },
+      {
+        "start_ms": 4380640,
+        "end_ms": 4382080,
+        "duration_ms": 1440
+      },
+      {
+        "start_ms": 4391040,
+        "end_ms": 4395040,
+        "duration_ms": 4000
+      },
+      {
+        "start_ms": 4422159,
+        "end_ms": 4424239,
+        "duration_ms": 2080
+      },
+      {
+        "start_ms": 4437920,
+        "end_ms": 4439360,
+        "duration_ms": 1440
+      },
+      {
+        "start_ms": 4455840,
+        "end_ms": 4457440,
+        "duration_ms": 1600
+      },
+      {
+        "start_ms": 4477679,
+        "end_ms": 4481600,
+        "duration_ms": 3921
+      },
+      {
+        "start_ms": 4497840,
+        "end_ms": 4498080,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 4500960,
+        "end_ms": 4504000,
+        "duration_ms": 3040
+      },
+      {
+        "start_ms": 4563040,
+        "end_ms": 4563120,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 4583440,
+        "end_ms": 4585360,
+        "duration_ms": 1920
+      },
+      {
+        "start_ms": 4613280,
+        "end_ms": 4614080,
+        "duration_ms": 800
+      },
+      {
+        "start_ms": 4617199,
+        "end_ms": 4617520,
+        "duration_ms": 321
+      },
+      {
+        "start_ms": 4626719,
+        "end_ms": 4626960,
+        "duration_ms": 241
+      },
+      {
+        "start_ms": 4629920,
+        "end_ms": 4631840,
+        "duration_ms": 1920
+      },
+      {
+        "start_ms": 4646239,
+        "end_ms": 4646640,
+        "duration_ms": 401
+      },
+      {
+        "start_ms": 4683280,
+        "end_ms": 4686960,
+        "duration_ms": 3680
+      },
+      {
+        "start_ms": 4693840,
+        "end_ms": 4695679,
+        "duration_ms": 1839
+      },
+      {
+        "start_ms": 4715040,
+        "end_ms": 4718640,
+        "duration_ms": 3600
+      },
+      {
+        "start_ms": 4724640,
+        "end_ms": 4726960,
+        "duration_ms": 2320
+      },
+      {
+        "start_ms": 4749840,
+        "end_ms": 4774840,
+        "duration_ms": 25000
+      },
+      {
+        "start_ms": 4777840,
+        "end_ms": 4792320,
+        "duration_ms": 14480
+      },
+      {
+        "start_ms": 4800320,
+        "end_ms": 4801600,
+        "duration_ms": 1280
+      },
+      {
+        "start_ms": 4812960,
+        "end_ms": 4815440,
+        "duration_ms": 2480
+      },
+      {
+        "start_ms": 4830800,
+        "end_ms": 4831679,
+        "duration_ms": 879
+      },
+      {
+        "start_ms": 4864560,
+        "end_ms": 4865040,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 4867280,
+        "end_ms": 4869120,
+        "duration_ms": 1840
+      },
+      {
+        "start_ms": 4904480,
+        "end_ms": 4905120,
+        "duration_ms": 640
+      },
+      {
+        "start_ms": 4920239,
+        "end_ms": 4922400,
+        "duration_ms": 2161
+      },
+      {
+        "start_ms": 4992000,
+        "end_ms": 4993679,
+        "duration_ms": 1679
+      },
+      {
+        "start_ms": 5008880,
+        "end_ms": 5010400,
+        "duration_ms": 1520
+      },
+      {
+        "start_ms": 5031120,
+        "end_ms": 5034880,
+        "duration_ms": 3760
+      },
+      {
+        "start_ms": 5037199,
+        "end_ms": 5039199,
+        "duration_ms": 2000
+      },
+      {
+        "start_ms": 5063120,
+        "end_ms": 5064159,
+        "duration_ms": 1039
+      },
+      {
+        "start_ms": 5066880,
+        "end_ms": 5067920,
+        "duration_ms": 1040
+      },
+      {
+        "start_ms": 5071840,
+        "end_ms": 5072080,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 5080719,
+        "end_ms": 5081840,
+        "duration_ms": 1121
+      },
+      {
+        "start_ms": 5102239,
+        "end_ms": 5103440,
+        "duration_ms": 1201
+      },
+      {
+        "start_ms": 5138480,
+        "end_ms": 5138840,
+        "duration_ms": 360
+      },
+      {
+        "start_ms": 5179440,
+        "end_ms": 5180840,
+        "duration_ms": 1400
+      },
+      {
+        "start_ms": 5218880,
+        "end_ms": 5219520,
+        "duration_ms": 640
+      },
+      {
+        "start_ms": 5253840,
+        "end_ms": 5254080,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 5302560,
+        "end_ms": 5303679,
+        "duration_ms": 1119
+      },
+      {
+        "start_ms": 5382960,
+        "end_ms": 5387280,
+        "duration_ms": 4320
+      },
+      {
+        "start_ms": 5471920,
+        "end_ms": 5472239,
+        "duration_ms": 319
+      },
+      {
+        "start_ms": 5510800,
+        "end_ms": 5511520,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 5578719,
+        "end_ms": 5578800,
+        "duration_ms": 81
+      },
+      {
+        "start_ms": 5592560,
+        "end_ms": 5593360,
+        "duration_ms": 800
+      },
+      {
+        "start_ms": 5687840,
+        "end_ms": 5688960,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 5737520,
+        "end_ms": 5738320,
+        "duration_ms": 800
+      },
+      {
+        "start_ms": 5745520,
+        "end_ms": 5745920,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 5755360,
+        "end_ms": 5755600,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 5774239,
+        "end_ms": 5778560,
+        "duration_ms": 4321
+      },
+      {
+        "start_ms": 5821600,
+        "end_ms": 5821840,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 5850719,
+        "end_ms": 5851600,
+        "duration_ms": 881
+      },
+      {
+        "start_ms": 5861280,
+        "end_ms": 5862000,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 5875840,
+        "end_ms": 5878560,
+        "duration_ms": 2720
+      },
+      {
+        "start_ms": 5955760,
+        "end_ms": 5956880,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 6074960,
+        "end_ms": 6076000,
+        "duration_ms": 1040
+      },
+      {
+        "start_ms": 6087760,
+        "end_ms": 6088080,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 6129119,
+        "end_ms": 6131520,
+        "duration_ms": 2401
+      },
+      {
+        "start_ms": 6142000,
+        "end_ms": 6142880,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 6147360,
+        "end_ms": 6147520,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 6152080,
+        "end_ms": 6152400,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 6158560,
+        "end_ms": 6160840,
+        "duration_ms": 2280
+      },
+      {
+        "start_ms": 6169679,
+        "end_ms": 6171760,
+        "duration_ms": 2081
+      },
+      {
+        "start_ms": 6174000,
+        "end_ms": 6175040,
+        "duration_ms": 1040
+      },
+      {
+        "start_ms": 6226480,
+        "end_ms": 6228159,
+        "duration_ms": 1679
+      }
+    ],
+    "draft_segment_count": 38,
+    "draft_start": "00:00",
+    "draft_end": "104:15",
+    "audio_reviewed": false,
+    "video_frames_reviewed": false,
+    "interpretation": "Caption interval union only, not silence detection or proof of full ASR recognition. All 2535 cue texts read sequentially through lossless minute grouping. Breakout announcement near 62:56; only isolated next/this until return at 69:03.199. Raw times, including 1800ms tail overrun, retained."
+  },
+  "draft_segments": [
+    {
+      "start": "00:00",
+      "end": "03:00",
+      "start_ms": 0,
+      "end_ms": 180000,
+      "title": "一篇以规模和工程经验为中心的论文",
+      "cue_count": 75,
+      "first_cue": 1,
+      "last_cue": 75
+    },
+    {
+      "start": "03:00",
+      "end": "06:00",
+      "start_ms": 180000,
+      "end_ms": 360000,
+      "title": "网站起步：一台机器就能装下所有东西",
+      "cue_count": 80,
+      "first_cue": 76,
+      "last_cue": 155
+    },
+    {
+      "start": "06:00",
+      "end": "08:00",
+      "start_ms": 360000,
+      "end_ms": 480000,
+      "title": "多台无状态前端为什么容易扩容",
+      "cue_count": 60,
+      "first_cue": 156,
+      "last_cue": 215
+    },
+    {
+      "start": "08:00",
+      "end": "11:00",
+      "start_ms": 480000,
+      "end_ms": 660000,
+      "title": "第二个瓶颈：数据库分片带来新的协调成本",
+      "cue_count": 75,
+      "first_cue": 216,
+      "last_cue": 290
+    },
+    {
+      "start": "11:00",
+      "end": "14:00",
+      "start_ms": 660000,
+      "end_ms": 840000,
+      "title": "用旁路缓存承接大量读取",
+      "cue_count": 77,
+      "first_cue": 291,
+      "last_cue": 367
+    },
+    {
+      "start": "14:00",
+      "end": "17:00",
+      "start_ms": 840000,
+      "end_ms": 1020000,
+      "title": "缓存不只是加速器，还是数据库的负载屏障",
+      "cue_count": 74,
+      "first_cue": 368,
+      "last_cue": 441
+    },
+    {
+      "start": "17:00",
+      "end": "20:00",
+      "start_ms": 1020000,
+      "end_ms": 1200000,
+      "title": "“最终一致”之外，最想保住的是读到自己的写",
+      "cue_count": 83,
+      "first_cue": 442,
+      "last_cue": 524
+    },
+    {
+      "start": "20:00",
+      "end": "23:00",
+      "start_ms": 1200000,
+      "end_ms": 1380000,
+      "title": "数据库日志驱动失效，应用负责重新填入",
+      "cue_count": 73,
+      "first_cue": 525,
+      "last_cue": 597
+    },
+    {
+      "start": "23:00",
+      "end": "26:00",
+      "start_ms": 1380000,
+      "end_ms": 1560000,
+      "title": "一次页面读取往往拆成许多键查询",
+      "cue_count": 86,
+      "first_cue": 598,
+      "last_cue": 683
+    },
+    {
+      "start": "26:00",
+      "end": "29:00",
+      "start_ms": 1560000,
+      "end_ms": 1740000,
+      "title": "为什么写者还要自己发送 delete",
+      "cue_count": 77,
+      "first_cue": 684,
+      "last_cue": 760
+    },
+    {
+      "start": "29:00",
+      "end": "32:00",
+      "start_ms": 1740000,
+      "end_ms": 1920000,
+      "title": "两个写者的缓存更新可以倒序到达",
+      "cue_count": 87,
+      "first_cue": 761,
+      "last_cue": 847
+    },
+    {
+      "start": "32:00",
+      "end": "34:00",
+      "start_ms": 1920000,
+      "end_ms": 2040000,
+      "title": "既然前端会删，为什么还保留 mcsqueal",
+      "cue_count": 56,
+      "first_cue": 848,
+      "last_cue": 903
+    },
+    {
+      "start": "34:00",
+      "end": "38:00",
+      "start_ms": 2040000,
+      "end_ms": 2280000,
+      "title": "跨地域复制：读靠近用户，写集中到主地域",
+      "cue_count": 103,
+      "first_cue": 904,
+      "last_cue": 1006
+    },
+    {
+      "start": "38:00",
+      "end": "40:00",
+      "start_ms": 2280000,
+      "end_ms": 2400000,
+      "title": "问答：客户端固定联系哪台缓存服务器",
+      "cue_count": 53,
+      "first_cue": 1007,
+      "last_cue": 1059
+    },
+    {
+      "start": "40:00",
+      "end": "43:00",
+      "start_ms": 2400000,
+      "end_ms": 2580000,
+      "title": "问答：同步完成写，不代表异步副本已经追上",
+      "cue_count": 85,
+      "first_cue": 1060,
+      "last_cue": 1144
+    },
+    {
+      "start": "43:00",
+      "end": "46:00",
+      "start_ms": 2580000,
+      "end_ms": 2760000,
+      "title": "分片增加容量，复制解决热点",
+      "cue_count": 81,
+      "first_cue": 1145,
+      "last_cue": 1225
+    },
+    {
+      "start": "46:00",
+      "end": "49:00",
+      "start_ms": 2760000,
+      "end_ms": 2940000,
+      "title": "一个 region 内再划出多个 cluster",
+      "cue_count": 73,
+      "first_cue": 1226,
+      "last_cue": 1298
+    },
+    {
+      "start": "49:00",
+      "end": "52:00",
+      "start_ms": 2940000,
+      "end_ms": 3120000,
+      "title": "网络边界与 regional pool",
+      "cue_count": 80,
+      "first_cue": 1299,
+      "last_cue": 1378
+    },
+    {
+      "start": "52:00",
+      "end": "55:00",
+      "start_ms": 3120000,
+      "end_ms": 3300000,
+      "title": "冷集群为何可能把数据库压垮",
+      "cue_count": 74,
+      "first_cue": 1379,
+      "last_cue": 1452
+    },
+    {
+      "start": "55:00",
+      "end": "57:00",
+      "start_ms": 3300000,
+      "end_ms": 3420000,
+      "title": "从热集群预热，再看惊群问题",
+      "cue_count": 46,
+      "first_cue": 1453,
+      "last_cue": 1498
+    },
+    {
+      "start": "57:00",
+      "end": "60:00",
+      "start_ms": 3420000,
+      "end_ms": 3600000,
+      "title": "lease 的第一项职责：只让少数人负责回填",
+      "cue_count": 87,
+      "first_cue": 1499,
+      "last_cue": 1585
+    },
+    {
+      "start": "60:00",
+      "end": "63:04",
+      "start_ms": 3600000,
+      "end_ms": 3784000,
+      "title": "少数缓存机器失败时，先转向 Gutter",
+      "cue_count": 82,
+      "first_cue": 1586,
+      "last_cue": 1667
+    },
+    {
+      "start": "63:04",
+      "end": "69:03",
+      "start_ms": 3784000,
+      "end_ms": 4143000,
+      "title": "分组切换期间没有可恢复的讨论文本",
+      "cue_count": 2,
+      "first_cue": 1668,
+      "last_cue": 1669
+    },
+    {
+      "start": "69:03",
+      "end": "71:00",
+      "start_ms": 4143000,
+      "end_ms": 4260000,
+      "title": "返回后的回答：Gutter 小，额外失效流量很贵",
+      "cue_count": 56,
+      "first_cue": 1670,
+      "last_cue": 1725
+    },
+    {
+      "start": "71:00",
+      "end": "74:00",
+      "start_ms": 4260000,
+      "end_ms": 4440000,
+      "title": "第一种竞争：旧读的回填跑到 delete 后面",
+      "cue_count": 78,
+      "first_cue": 1726,
+      "last_cue": 1803
+    },
+    {
+      "start": "74:00",
+      "end": "76:00",
+      "start_ms": 4440000,
+      "end_ms": 4560000,
+      "title": "问答：这里的坏处究竟是“倒退”还是长期看不到新值",
+      "cue_count": 50,
+      "first_cue": 1804,
+      "last_cue": 1853
+    },
+    {
+      "start": "76:00",
+      "end": "79:00",
+      "start_ms": 4560000,
+      "end_ms": 4740000,
+      "title": "第二种竞争：冷集群从热集群抄来旧数据",
+      "cue_count": 51,
+      "first_cue": 1854,
+      "last_cue": 1904
+    },
+    {
+      "start": "79:00",
+      "end": "81:00",
+      "start_ms": 4740000,
+      "end_ms": 4860000,
+      "title": "两秒 hold-off 是预热期的工程缓冲",
+      "cue_count": 33,
+      "first_cue": 1905,
+      "last_cue": 1937
+    },
+    {
+      "start": "81:00",
+      "end": "84:00",
+      "start_ms": 4860000,
+      "end_ms": 5040000,
+      "title": "第三种竞争：本地数据库还没收到自己的跨地域写",
+      "cue_count": 71,
+      "first_cue": 1938,
+      "last_cue": 2008
+    },
+    {
+      "start": "84:00",
+      "end": "86:00",
+      "start_ms": 5040000,
+      "end_ms": 5160000,
+      "title": "课堂总结：性能扩展改变了必须处理的竞争",
+      "cue_count": 53,
+      "first_cue": 2009,
+      "last_cue": 2061
+    },
+    {
+      "start": "86:00",
+      "end": "89:00",
+      "start_ms": 5160000,
+      "end_ms": 5340000,
+      "title": "课后问答：为什么特别在意 remote marker",
+      "cue_count": 68,
+      "first_cue": 2062,
+      "last_cue": 2129
+    },
+    {
+      "start": "89:00",
+      "end": "92:00",
+      "start_ms": 5340000,
+      "end_ms": 5520000,
+      "title": "课后问答：论文中的 marcher，以及缓存失败后的读取",
+      "cue_count": 80,
+      "first_cue": 2130,
+      "last_cue": 2209
+    },
+    {
+      "start": "92:00",
+      "end": "95:00",
+      "start_ms": 5520000,
+      "end_ms": 5700000,
+      "title": "课后问答：Gutter 的并发回填边界没有得到完整答案",
+      "cue_count": 81,
+      "first_cue": 2210,
+      "last_cue": 2290
+    },
+    {
+      "start": "95:00",
+      "end": "96:00",
+      "start_ms": 5700000,
+      "end_ms": 5760000,
+      "title": "课后问答：为什么混用 UDP 与 TCP",
+      "cue_count": 27,
+      "first_cue": 2291,
+      "last_cue": 2317
+    },
+    {
+      "start": "96:00",
+      "end": "98:00",
+      "start_ms": 5760000,
+      "end_ms": 5880000,
+      "title": "课后问答：cluster 间并没有一套共识复制",
+      "cue_count": 48,
+      "first_cue": 2318,
+      "last_cue": 2365
+    },
+    {
+      "start": "98:00",
+      "end": "100:00",
+      "start_ms": 5880000,
+      "end_ms": 6000000,
+      "title": "课后问答：系统设计是不是不断添加一层",
+      "cue_count": 57,
+      "first_cue": 2366,
+      "last_cue": 2422
+    },
+    {
+      "start": "100:00",
+      "end": "102:00",
+      "start_ms": 6000000,
+      "end_ms": 6120000,
+      "title": "课后问答：所有写集中到主地域之后怎么办",
+      "cue_count": 58,
+      "first_cue": 2423,
+      "last_cue": 2480
+    },
+    {
+      "start": "102:00",
+      "end": "104:15",
+      "start_ms": 6120000,
+      "end_ms": 6255000,
+      "title": "最后的澄清：stale set 把短暂陈旧变成长期残留",
+      "cue_count": 55,
+      "first_cue": 2481,
+      "last_cue": 2535
+    }
+  ],
+  "paper_visual_review": {
+    "pdf_pages": 14,
+    "figures": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "tables": [
+      1,
+      2,
+      3
+    ],
+    "inspected_page_images": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "formula_pages": [
+      4
+    ],
+    "audio_or_classroom_frames": false
+  },
+  "version_mapping_evidence": {
+    "file": "schedule-2021.html",
+    "scope": "Existing lines237-238 checked against schedule-inventory-2021.json lec17: 2021-05-04 L17 and exact assigned video/outline/paper/FAQ links. Shared files read-only."
+  },
+  "content_paths": [
+    "lectures/lec17/draft.zh.md",
+    "lectures/lec17/materials.zh.md",
+    "lectures/lec17/notes.zh.md"
+  ],
+  "validation": {
+    "source_hashes": "passed",
+    "caption_structure": "passed_with_retained_raw_tail_overrun",
+    "lossless_grouping": "passed",
+    "continuous_draft_timeline": "passed",
+    "markdown_local_structure": "passed",
+    "build": "Not run by restricted worker; main agent handles integrated check.",
+    "experiments": "Not run",
+    "no_media_download": true,
+    "no_full_player_response_saved": true,
+    "no_signed_urls_saved": true
+  },
+  "issues": [
+    "No audio/classroom-frame verification; ASR-specific numbers, negations and diagram references remain uncertain.",
+    "Breakout announcement near62:56, return69:03.199. Only next/this fragments in between; no invented group discussion.",
+    "180 positive caption-union gaps total697737ms, maximum263000ms; not silence detection. Raw final end6256800ms retained (1800ms over metadata duration).",
+    "Video independent CC Attribution label lacks exact version; paper full-translation permission unconfirmed.",
+    "Outline2021L17 title, FAQ no-year title, both Last-Modified2021-05-04 20:38:49GMT; cannot prove unchanged class-time content. Paper2013 title vs2021 server modification date distinguished.",
+    "Token refill eligibility, per-key default10s issuance throttling and delete invalidation distinguished; not database lock or Spanner leader lease; unspecified renewal/crash semantics not invented.",
+    "Classroom race1 put/delete slip corrected by lecturer; no forced claim of observed time regression when example only proves prolonged stale caching.",
+    "Warmup classroom set generalized: paper uses add, two-second hold-off and DB refetch on failure; not a guaranteed network delay bound.",
+    "Classroom remote marker simplified: paper creates separate rk before master write, carries k/rk invalidations in SQL, then local delete. Regional-pool marker eviction and concurrent writer caveats retained.",
+    "MySQL database replication distinguished from mcsqueal invalidation; replica apply precedes normal local invalidation; per-cluster demand copies are not consensus replication.",
+    "Gutter short expiry/accepted stale reads retained. Lecturer speculation about replacement leases and Gutter concurrency is not presented as verified protocol.",
+    "marcher infrastructure wording confirmed on PDFp2; exact referent unresolved. Figure1/2 classroom numbering corrected.",
+    "Table2 seven-day caption vs section7.2 one-month highest-four-minute-average description unresolved. Response-size text says three peaks but gives two approximate positions; no invented third peak.",
+    "Figure11 day-long tail prevents a hard few-second staleness claim. Best-effort eventual consistency/read-own-write goal is not linearizable KV.",
+    "Spanner Q&A ten/hundred-per-second intuition not treated as aggregate system throughput. Region primary-per-shard and contemporary products remain unverified historical speculation.",
+    "No follow-on papers, modern code or labs executed; historical cache API does not replace fixed2026 experiment interfaces."
+  ]
+}

@@ -1,0 +1,88 @@
+P6 / L11 Chain Replication 完整内容包审阅
+主线：MIT 6.824 Spring 2021；只写 lectures/lec11/ 与 sources/p6-lec11/。
+
+一、交付
+- lectures/lec11/notes.zh.md：历史继承与服务权两个证明责任；前缀、Hist/Sent 推导；tail/中间故障；全链与多数证据；迁移衔接；8 道折叠答案自测。
+- lectures/lec11/draft.zh.md：36 个连续真实时间区间，00:00–94:19；涵盖 ZooKeeper 锁补讲、Go defer 更正、Chain Replication、分组切换与全部可辨认课后问答。
+- lectures/lec11/materials.zh.md：14 页论文自主精读，Hist/Sent、恢复、性能模拟、放置、2026 实际差异。不是全文翻译，不转载论文页面。
+- 本目录保存真实获取物、白名单元数据、ASR 原件与无损衍生文本、PDF/提取文本/页面渲染、差异文件、manifest-fragment.json、validation.txt、三个复现脚本。
+
+二、视频获取与真实阅读范围
+视频 ID：1uUcW-Mqg5o；标题 Lecture 11: Chain Replication。
+频道：MIT 6.824: Distributed Systems；UC_7WrbZTCODu1o_kfUMq88g。
+上传：20210330；时长 5659 秒 = 94:19。
+独立查询许可：Creative Commons Attribution license (reuse allowed)，具体版本未给出。
+yt-dlp 主动取得 en-orig 英文自动字幕。仅保存 id/title/duration/channel/channel_id/uploader/upload_date/license/webpage_url 白名单字段。
+未下载视频、音轨或片段，未保存完整播放器响应、cookie 或带签名媒体 URL。
+全部 2360 条 cue 通过 reading-by-minute.txt 顺序阅读；269 行分 1–130、131–269 完整读完，90 个非空分钟组。
+分组文本串接与全部规范化 cue 文本一致，未丢弃口头重复；正文则按中文阅读需要合并重复。
+另外检查 39:50–49:10 附近及 93:50 至末尾原始规范化 cue，以核实切换和末条时间。
+没有音轨回听或课堂视频帧核验；ASR 中人名、术语、否定及指图表达仍受这一边界限制。
+
+三、时间结构
+首条开始 0 ms；末条开始 5656159 ms，结束 5659840 ms。
+整数片长 5659000 ms；末条超出 840 ms，原件保留。正文最后标题截止整数片长，不据此修改 cue。
+字幕区间并集有 124 个正间隙，累计 725411 ms；最长 283061 ms，42:59.979–47:43.040。
+40:00–49:07 是分组安排/返回区间，40:39.839 后仅有零星发声/音乐标记；小组讨论无法恢复。
+这些是字幕区间空隙，不是音频静音检测；时间结构通过不能证明逐词转录正确。
+36 段均连续、非负、覆盖到 94:19；所有 cue 起点恰归属一段，映射与全间隙表写入 manifest。
+
+四、2021 官方书面材料
+schedule-2021.html 176–177 行与 inventory 核对：2021-03-30 L11，讲义 l-cr.txt，视频 1uUcW-Mqg5o，指定 cr-osdi04.pdf，有 Question，无 FAQ。
+本次取得 2021 l-cr.txt，全文 131 行已读；Last-Modified Mon, 29 Mar 2021 13:06:19 GMT。
+页首却写 6.824 2020 Lecture 11；作为实际 2021 课表链接的旧标题残留记录，不据此更换年份或录像。
+本次取得 2021 cr-osdi04.pdf，Last-Modified Fri, 22 Jan 2021 09:21:42 GMT。
+论文完整 14 页：摘要、§1–7、致谢、6 条尾注及25项文献表均已读。
+layout 文本全部 891 行，按 1–430、431–860、861–891 顺序读取，遵守页面分栏阅读关系。
+实际页面核验：
+  p2 Figure 1（Hist/Pending、T1/T2/T3）；p3 Figure 2（读写入口与回复）。
+  p4 前缀定义、传播不变量、tail 故障公式及英文 successor 方向笔误。
+  p5 Figure 3（删除内部节点四条消息）、Sent 定义和有序去重合并公式。
+  p6 扩链 Hist/Sent 公式与交接步骤。
+  p8 Figure 4 三个子图；p9 Figure 5、Table 1；p10 Figure 6 四个子图；p11 Figure 7 三个子图、对数轴/MTBU/置信区间。
+其他页的文字经提取完整阅读；渲染出来不等于该页图片另行目视审阅。manifest 分别标记。
+未读取文献表所指外链全文，未获取/运行原型代码。
+论文未确认全文翻译权，采用自主分析与局部公式说明；课程许可不扩展到论文。
+
+五、2026 对照
+只读复用已有 sources/update-2026-l-cr.txt、update-2026-cr-osdi04.pdf 和历史 manifest 的原抓取时间/Last-Modified。
+讲义全文357行已读，全文差异486行已读；真实新增：
+  P/B 不暴露未完成写、恢复同步、唯一角色、全故障恢复检查项、重试/条件更新；
+  旧角色拒绝以及 tail 读租约（解决2021末尾旧tail疑问的设计要点，非完整协议）；
+  反向ACK/Sent回收、慢少数与故障检测器取舍；
+  多小分片、随机放置/并行修复与论文§5图表解读；扩链快照后短冻结的补充思路。
+两年论文 PDF 字节完全相同，SHA-256：
+1a16a4c0f4ea53979d77ccfa54d18f98874d7a4ea602e061fd2d6e32e56b60ac
+2026 PDF Last-Modified 为 Tue, 27 Jan 2026 14:57:07 GMT，不能据日期不同称论文有修订。
+新增EBS采用者文字只作讲义差异，不主张已核验现行产品实现。
+历史manifest的2026 FAQ只处于discovered；本次未取、未读，也不是2021课表指定FAQ。
+全部在同一L11整合，没有生成新的Update，也未修改共享映射。
+
+六、技术核验与校注
+1. 全链传播才使tail拥有的更新已经经过当前链全体节点；Raft多数提交不等于全体已收。CFG成本不可从比较中删除。
+2. 原论文fail-stop/准确停止检测/受控重配是假设。超时不能证明对端已停；旧tail+旧客户端可共同持旧配置继续读，编号和Paxos配置唯一不足以单独堵住该反例。
+3. Hist后继是前驱的前缀；tail故障提升前驱只增加可见历史。Sent支持中间故障后补齐，ACK迟到会导致重叠，⊕不是拼接。
+4. FIFO只约束传输次序；重配重传需进度/序号；客户端业务重试需身份/结果或版本约束。非确定性和条件更新在head形成统一结果，不让滞后副本独立重判。
+5. 论文允许请求未完成、结果未知，非幂等更新不自动exactly-once。业务条件失败与操作执行结果未知严格分开，不替换2026 versioned Put/ErrMaybe契约。
+6. 线性一致性对单对象操作可组合；跨对象原子事务/一致快照不同。保留课堂84–87分钟犹豫，再给编者校注，不伪称讲师现场已作该结论。
+7. 77–79分钟Raft只读简答不完整：任期开始空日志不足以永久证明领导权。明确当前领导权与应用进度条件。
+8. ZooKeeper简单锁需处理exists安装前删除的竞态；顺序锁等的是现存直接前驱。锁失效不回滚外部状态；Go mutex也不提供持久事务原子性。末尾“goroutine崩溃整个应用必崩”限定为未恢复panic等情形，非任意goroutine退出。
+9. Figure 5纵轴为每客户端吞吐；Figure 6故障检测暂停被时间尺度掩盖，写变快因链缩短；Figure 7为任一对象不可用间隔MTBU及99%置信区间。
+10. §5.4的24小时MTBF在尾注6明确是不现实的加速模拟选择；p11的64 KBytes/10秒GFS对象说法可疑，不悄改或外推。
+11. 2021 any-replica read段没有完整跟踪协议，不包装成原论文支持任意副本强读或已讲CRAQ。2026节点编号残留笔误按角色关系明确化。
+12. 历史Lab3/4与本路线2026 Lab4/5仅主题联系。固定实验提交513cac0aef010750fc74688da8a395974a83cf7a，未改接口、未生成完整答案。
+
+七、复现与最小验证
+从仓库根执行（依赖yt-dlp、pdftotext、Python PyMuPDF）：
+python3 content/mit-6.824-2021/sources/p6-lec11/acquire.py
+python3 content/mit-6.824-2021/sources/p6-lec11/prepare-reading.py
+python3 content/mit-6.824-2021/sources/p6-lec11/finalize.py
+git diff --check -- content/mit-6.824-2021/lectures/lec11 content/mit-6.824-2021/sources/p6-lec11
+acquire会刷新抓取物；上游若改变，需重新人工核对范围，脚本时间/哈希检查不能替代新的内容审阅。
+finalize只生成本讲manifest和验证记录：来源哈希、白名单、全量分组无损、单调时间、原始超时、逐段覆盖及本地Markdown路由/结构。
+未运行全站build、论文实验、课程实验；未git提交或修改共享文件。整合与全站验证由主agent负责。
+
+八、仍然存在的边界
+没有音画核验；分组讨论不可恢复；视频CC具体版本与论文全文译权未明。
+原论文不提供完整任意网络分区/崩溃恢复/条件更新防重实现；2026讲义补充是设计要点，未实现验证。
+没有独立验证现代采用者、外链论文或2026 FAQ。以上边界均在正文头信息、校注或页底交代。

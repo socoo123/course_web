@@ -1,0 +1,1330 @@
+{
+  "course_id": "mit-6.824-2021",
+  "lecture_id": "lec11",
+  "batch": "P6",
+  "content_status": "completed_for_available_text_with_explicit_breakout_and_audio_visual_limits",
+  "review_file": "p6-lec11/review.txt",
+  "acquisition_file": "p6-lec11/acquisition.json",
+  "sources": [
+    {
+      "id": "lec11-2021-l-cr.txt",
+      "url": "http://nil.csail.mit.edu/6.824/2021/notes/l-cr.txt",
+      "retrieved_at": "2026-11-09T12:34:38.516663+00:00",
+      "last_modified": "Mon, 29 Mar 2021 13:06:19 GMT",
+      "file": "p6-lec11/l-cr.txt",
+      "sha256": "8d9e90d60fe868f38581f7d1287cb8c29267159ac07486ffcf54ff774afc9468",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:52:23.235652+00:00",
+      "scope": "All 131 lines read. Actual 2021 schedule-linked snapshot has a stale 6.824 2020 Lecture 11 heading; Last-Modified 2021-03-29. Compared in full against all 357 lines of existing 2026 lecture. No 2021 FAQ assigned or guessed. Incomplete any-replica read discussion not treated as a complete CRAQ protocol.",
+      "license": {
+        "label": "CC BY 3.0 US",
+        "evidence_file": "home-2021.html",
+        "evidence_scope": "Existing homepage line 55 checked; course-authored 2021 text only.",
+        "url": "https://creativecommons.org/licenses/by/3.0/us/"
+      }
+    },
+    {
+      "id": "lec11-2021-cr-osdi04.pdf",
+      "url": "http://nil.csail.mit.edu/6.824/2021/papers/cr-osdi04.pdf",
+      "retrieved_at": "2026-11-09T12:34:39.802201+00:00",
+      "last_modified": "Fri, 22 Jan 2021 09:21:42 GMT",
+      "file": "p6-lec11/cr-osdi04.pdf",
+      "sha256": "1a16a4c0f4ea53979d77ccfa54d18f98874d7a4ea602e061fd2d6e32e56b60ac",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:52:23.235652+00:00",
+      "scope": "Full 14-page paper read: abstract, sections 1–7, acknowledgements, six endnotes and all 25 bibliography entries. All 891 layout-text lines read sequentially (1–430,431–860,861–891). Figures 1–7, Table 1 and formulas visually checked on actual rendered pages 2,3,4,5,6,8,9,10,11. Other pages read as extracted text, not independently visually inspected. External referenced papers and prototype code not acquired. Prefix-direction typo, fail-stop/partition limits, pending/non-idempotent update semantics, Hist/Sent, simulation assumptions and endnote 6 incorporated.",
+      "license": "Full-translation permission unconfirmed; original Chinese analytical reading only."
+    },
+    {
+      "id": "lec11-2021-metadata.json",
+      "url": "https://www.youtube.com/watch?v=1uUcW-Mqg5o",
+      "retrieved_at": "2026-11-09T12:34:42.083348+00:00",
+      "last_modified": null,
+      "file": "p6-lec11/metadata.json",
+      "sha256": "a19de639e6910cb3b347802a602fa978392f6db23f51e10f08a4d70d36b7c9cd",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:52:23.235652+00:00",
+      "scope": "Independently obtained and checked all whitelist fields: 1uUcW-Mqg5o; Lecture 11: Chain Replication; 5659 seconds / 94:19; MIT 6.824: Distributed Systems; channel UC_7WrbZTCODu1o_kfUMq88g; upload 20210330; Creative Commons Attribution license (reuse allowed), specific version absent. No media download, full player response or signed media URL saved.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Video-specific whitelist query; version absent. Not inherited from course website.",
+      "last_modified_note": "Not exposed in whitelist metadata/subtitle acquisition; unknown."
+    },
+    {
+      "id": "lec11-2021-video.en-orig.json3",
+      "url": "https://www.youtube.com/watch?v=1uUcW-Mqg5o",
+      "retrieved_at": "2026-11-09T12:34:42.083463+00:00",
+      "last_modified": null,
+      "file": "p6-lec11/video.en-orig.json3",
+      "sha256": "2669ba0124b9ebedefa9de0e9483cb108bdf2ba962e46fec8a9182afbdc09e0c",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:52:23.235652+00:00",
+      "scope": "All 2360 original-language English automatic caption texts read in order via lossless minute grouping: 269 lines read as 1–130,131–269; 90 nonempty minute groups. Raw normalized cues around 39:50–49:10 and from 93:50 to end inspected for breakout/overrun. 36 editorial segments cover opening ZooKeeper/defer discussion, chain lecture, sparse breakout transition, and all intelligible post-class questions through 94:19. Not an audio or classroom-frame review. First cue 0ms, final end 5659840ms; raw overrun 840ms retained.",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "license_note": "Video-specific whitelist query; version absent. Not inherited from course website.",
+      "last_modified_note": "Not exposed in whitelist metadata/subtitle acquisition; unknown.",
+      "language": "en-orig",
+      "caption_type": "original-language English automatic ASR"
+    },
+    {
+      "url": "https://pdos.csail.mit.edu/6.824/notes/l-cr.txt",
+      "retrieved_at": "2026-11-08T12:48:18.460947+00:00",
+      "last_modified": "Thu, 02 Apr 2026 16:16:19 GMT",
+      "file": "update-2026-l-cr.txt",
+      "sha256": "12b6186c829185f6dfa6af9095c50466a4704bf0db5aa2f626eb7c813a95857b",
+      "id": "lec11-p6-comparison-2026-outline",
+      "upstream_manifest_id": "lec13-notes-1-2026",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:52:23.235652+00:00",
+      "scope": "All 357 lines of existing 2026 snapshot read; full diff against 2021 outline reviewed. Added P/B checklist, old-role rejection and tail lease, Sent/ACK details, repair/placement and simulation discussion. No associated 2026 FAQ acquired; legacy FAQ discovered status is not evidence for 2021 assignment.",
+      "acquisition_note": "Reused existing read-only snapshot and original retrieval timestamp; not refetched in P6.",
+      "license": "2026 outline permission not independently verified; paper full-translation permission unconfirmed. Comparison and analytical notes only."
+    },
+    {
+      "url": "https://pdos.csail.mit.edu/6.824/papers/cr-osdi04.pdf",
+      "retrieved_at": "2026-11-08T12:48:18.615573+00:00",
+      "last_modified": "Tue, 27 Jan 2026 14:57:07 GMT",
+      "file": "update-2026-cr-osdi04.pdf",
+      "sha256": "1a16a4c0f4ea53979d77ccfa54d18f98874d7a4ea602e061fd2d6e32e56b60ac",
+      "id": "lec11-p6-comparison-2026-paper",
+      "upstream_manifest_id": "lec13-reading-2-2026",
+      "status": "reviewed",
+      "reviewed_at": "2026-11-09T12:52:23.235652+00:00",
+      "scope": "Existing 2026 snapshot compared byte-for-byte and by SHA-256 to freshly retrieved 2021 PDF; identical. Full 14-page reading/visual scope of 2021 PDF therefore applies to these same bytes, not an independent second visual pass. No newer paper revision found.",
+      "acquisition_note": "Reused existing read-only snapshot and original retrieval timestamp; not refetched in P6.",
+      "license": "2026 outline permission not independently verified; paper full-translation permission unconfirmed. Comparison and analytical notes only."
+    }
+  ],
+  "derived_files": [
+    {
+      "id": "lec11-p6-derived-captions-captions.normalized.json",
+      "file": "p6-lec11/captions/captions.normalized.json",
+      "sha256": "a2793706840a204ba20d226c82b48752764dce1ed7dd2ead560c5a3a6a82cd32",
+      "status": "reviewed",
+      "scope": "All cue text read through lossless minute grouping; targeted raw cues and complete timeline checked.",
+      "derived_from": "p6-lec11/video.en-orig.json3"
+    },
+    {
+      "id": "lec11-p6-derived-captions-reading-by-minute.txt",
+      "file": "p6-lec11/captions/reading-by-minute.txt",
+      "sha256": "5af8a0f940304c42762eee69a5f832f090d09a257c67ac3c975aa070bbbec85e",
+      "status": "reviewed",
+      "scope": "All 269 lines sequentially read; equality of concatenated text to all 2360 normalized cues verified.",
+      "derived_from": "p6-lec11/video.en-orig.json3"
+    },
+    {
+      "id": "lec11-p6-derived-captions-transcript.en.txt",
+      "file": "p6-lec11/captions/transcript.en.txt",
+      "sha256": "470227c7104c5c9360ca843207c80977a5dd2e2ea4b3a122abb79c034092ecdc",
+      "status": "fetched",
+      "scope": "Generated timed text only; same cue text reviewed through minute grouping, not reread independently in this representation.",
+      "derived_from": "p6-lec11/video.en-orig.json3"
+    },
+    {
+      "id": "lec11-p6-derived-cr-osdi04.layout.txt",
+      "file": "p6-lec11/cr-osdi04.layout.txt",
+      "sha256": "b926eba17e313f0e0770fcfceb4d9fce7d1ed1acc5473085a5aca220c835bb2d",
+      "status": "reviewed",
+      "scope": "All 891 lines read, respecting page/column reading order; figures and formulas checked in rendered actual pages.",
+      "derived_from": "p6-lec11/cr-osdi04.pdf"
+    },
+    {
+      "id": "lec11-p6-derived-lecture-2021-2026.diff.txt",
+      "file": "p6-lec11/lecture-2021-2026.diff.txt",
+      "sha256": "f9d63bb37a9ce9bc204772fc66c946a93463ffcdf1695960b27e3f46e79693f2",
+      "status": "reviewed",
+      "scope": "All 486 diff lines read; both original outlines also read in full.",
+      "derived_from": "p6-lec11/l-cr.txt"
+    },
+    {
+      "id": "lec11-p6-paper-page-01",
+      "file": "p6-lec11/paper-pages/page-01.png",
+      "sha256": "78b101c26354740f455eacf7a3d28603a75eb09e7f57a7a90dda3786ac115fb3",
+      "status": "fetched",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Rendered only; full textual content read via extraction, image not separately inspected."
+    },
+    {
+      "id": "lec11-p6-paper-page-02",
+      "file": "p6-lec11/paper-pages/page-02.png",
+      "sha256": "2425b0e955fe96d0c1d1f1ccb0ac011dada363b3863eb120c6ef16bc2d80b976",
+      "status": "reviewed",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Figure 1: abstract Hist/Pending and T1–T3."
+    },
+    {
+      "id": "lec11-p6-paper-page-03",
+      "file": "p6-lec11/paper-pages/page-03.png",
+      "sha256": "9c802284af66d38779cb938a48e75746aa3157e93395f7844b7a50a76fd6382b",
+      "status": "reviewed",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Figure 2: head-to-tail data path and query/reply endpoints."
+    },
+    {
+      "id": "lec11-p6-paper-page-04",
+      "file": "p6-lec11/paper-pages/page-04.png",
+      "sha256": "3504b6b4f044860a97a9af6ad50005911a1068d62682b0ef13519b69284f054c",
+      "status": "reviewed",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Prefix notation and Update Propagation Invariant; tail deletion formulas; preceding English successor typo verified."
+    },
+    {
+      "id": "lec11-p6-paper-page-05",
+      "file": "p6-lec11/paper-pages/page-05.png",
+      "sha256": "1b541506c3f7e16684bd153d811404bad36ab57f2d7c8f1a5bcff79497f7a626",
+      "status": "reviewed",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Figure 3 four-message deletion sequence; Inprocess Requests Invariant and ordered union operator."
+    },
+    {
+      "id": "lec11-p6-paper-page-06",
+      "file": "p6-lec11/paper-pages/page-06.png",
+      "sha256": "1b6a390023d6dfee99d47fb303a12cd0cccc1eabbb706de4fdd54126ea19829f",
+      "status": "reviewed",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Tail-extension Hist/Sent equation and transition ordering."
+    },
+    {
+      "id": "lec11-p6-paper-page-07",
+      "file": "p6-lec11/paper-pages/page-07.png",
+      "sha256": "3cb7a6e282a1c33b552f818d18ac02018028a450de7fb96adc81b7cdf845b3f8",
+      "status": "fetched",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Rendered only; full textual content read via extraction, image not separately inspected."
+    },
+    {
+      "id": "lec11-p6-paper-page-08",
+      "file": "p6-lec11/paper-pages/page-08.png",
+      "sha256": "8ab9a9dda11417e6317e0218444bd70c5bc76a3faf20cfdeb03c51edd45eb1ac",
+      "status": "reviewed",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Figure 4 all three panels, axes, weak/chain/p-b curves."
+    },
+    {
+      "id": "lec11-p6-paper-page-09",
+      "file": "p6-lec11/paper-pages/page-09.png",
+      "sha256": "d1ecb6c9f9e428c5253fd6d91700c709b7955cebe486d5f81cc1f9f8d8ba2389",
+      "status": "reviewed",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Figure 5 per-client throughput axis; Table 1 all six settings, units and reboot time."
+    },
+    {
+      "id": "lec11-p6-paper-page-10",
+      "file": "p6-lec11/paper-pages/page-10.png",
+      "sha256": "c4c2a75f538337fd6af6b2d661b0940fcca3fdd5b9cb45e2183ad26dd6776f37",
+      "status": "reviewed",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Figure 6 all four panels, time axis, query/update throughput and failure time."
+    },
+    {
+      "id": "lec11-p6-paper-page-11",
+      "file": "p6-lec11/paper-pages/page-11.png",
+      "sha256": "e95ef66ee7350748d533351f2244a0da257b9e8e86fe9cd4c1024c7ed6c95d6c",
+      "status": "reviewed",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Figure 7 ring/rndseq/rndpar, log axes, MTBU days, replication factors and 99% intervals; simulation parameter text."
+    },
+    {
+      "id": "lec11-p6-paper-page-12",
+      "file": "p6-lec11/paper-pages/page-12.png",
+      "sha256": "fc6d992e0f80c83df2ce091e9867c340eae0aaf1b5833adfb3d394128b699cad",
+      "status": "fetched",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Rendered only; full textual content read via extraction, image not separately inspected."
+    },
+    {
+      "id": "lec11-p6-paper-page-13",
+      "file": "p6-lec11/paper-pages/page-13.png",
+      "sha256": "d22d5d0d7b02825309424fe78034960450473122687fb4e772070cc6767a38e5",
+      "status": "fetched",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Rendered only; full textual content read via extraction, image not separately inspected."
+    },
+    {
+      "id": "lec11-p6-paper-page-14",
+      "file": "p6-lec11/paper-pages/page-14.png",
+      "sha256": "12d947406c44884bd709170ed7d8f92b0a071e4a3e130e6cc71cc52868073c4e",
+      "status": "fetched",
+      "derived_from": "p6-lec11/cr-osdi04.pdf",
+      "scope": "Rendered only; full textual content read via extraction, image not separately inspected."
+    }
+  ],
+  "caption_time_structure": {
+    "cue_count": 2360,
+    "first_start_ms": 0,
+    "last_start_ms": 5656159,
+    "last_end_ms": 5659840,
+    "metadata_duration_seconds": 5659,
+    "starts_monotonic": true,
+    "negative_duration_count": 0,
+    "ends_monotonic": true,
+    "cues_ending_after_video": 2,
+    "overlapping_adjacent_cue_pairs": 2235,
+    "tail_overrun_ms": 840,
+    "tail_uncaptioned_ms": 0,
+    "positive_uncovered_gap_count": 124,
+    "uncovered_ms_within_video": 725411,
+    "maximum_uncovered_gap_ms": 283061,
+    "all_uncovered_gaps": [
+      {
+        "start_ms": 93439,
+        "end_ms": 96159,
+        "duration_ms": 2720
+      },
+      {
+        "start_ms": 148640,
+        "end_ms": 149840,
+        "duration_ms": 1200
+      },
+      {
+        "start_ms": 199840,
+        "end_ms": 200159,
+        "duration_ms": 319
+      },
+      {
+        "start_ms": 283840,
+        "end_ms": 289919,
+        "duration_ms": 6079
+      },
+      {
+        "start_ms": 341440,
+        "end_ms": 350840,
+        "duration_ms": 9400
+      },
+      {
+        "start_ms": 418160,
+        "end_ms": 420960,
+        "duration_ms": 2800
+      },
+      {
+        "start_ms": 427039,
+        "end_ms": 431280,
+        "duration_ms": 4241
+      },
+      {
+        "start_ms": 465840,
+        "end_ms": 467360,
+        "duration_ms": 1520
+      },
+      {
+        "start_ms": 483520,
+        "end_ms": 489280,
+        "duration_ms": 5760
+      },
+      {
+        "start_ms": 496479,
+        "end_ms": 496960,
+        "duration_ms": 481
+      },
+      {
+        "start_ms": 689839,
+        "end_ms": 690240,
+        "duration_ms": 401
+      },
+      {
+        "start_ms": 724399,
+        "end_ms": 728880,
+        "duration_ms": 4481
+      },
+      {
+        "start_ms": 775200,
+        "end_ms": 776160,
+        "duration_ms": 960
+      },
+      {
+        "start_ms": 794720,
+        "end_ms": 796800,
+        "duration_ms": 2080
+      },
+      {
+        "start_ms": 950560,
+        "end_ms": 951120,
+        "duration_ms": 560
+      },
+      {
+        "start_ms": 955839,
+        "end_ms": 957680,
+        "duration_ms": 1841
+      },
+      {
+        "start_ms": 976959,
+        "end_ms": 977440,
+        "duration_ms": 481
+      },
+      {
+        "start_ms": 997839,
+        "end_ms": 999759,
+        "duration_ms": 1920
+      },
+      {
+        "start_ms": 1054640,
+        "end_ms": 1054720,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 1167039,
+        "end_ms": 1169520,
+        "duration_ms": 2481
+      },
+      {
+        "start_ms": 1172720,
+        "end_ms": 1173520,
+        "duration_ms": 800
+      },
+      {
+        "start_ms": 1179840,
+        "end_ms": 1183280,
+        "duration_ms": 3440
+      },
+      {
+        "start_ms": 1224320,
+        "end_ms": 1227039,
+        "duration_ms": 2719
+      },
+      {
+        "start_ms": 1284400,
+        "end_ms": 1284799,
+        "duration_ms": 399
+      },
+      {
+        "start_ms": 1287760,
+        "end_ms": 1289520,
+        "duration_ms": 1760
+      },
+      {
+        "start_ms": 1365679,
+        "end_ms": 1366400,
+        "duration_ms": 721
+      },
+      {
+        "start_ms": 1381679,
+        "end_ms": 1381919,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 1393120,
+        "end_ms": 1393280,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 1410400,
+        "end_ms": 1412240,
+        "duration_ms": 1840
+      },
+      {
+        "start_ms": 1423120,
+        "end_ms": 1424799,
+        "duration_ms": 1679
+      },
+      {
+        "start_ms": 1447919,
+        "end_ms": 1450559,
+        "duration_ms": 2640
+      },
+      {
+        "start_ms": 1479440,
+        "end_ms": 1481600,
+        "duration_ms": 2160
+      },
+      {
+        "start_ms": 1512880,
+        "end_ms": 1512960,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 1524080,
+        "end_ms": 1526159,
+        "duration_ms": 2079
+      },
+      {
+        "start_ms": 1531520,
+        "end_ms": 1535360,
+        "duration_ms": 3840
+      },
+      {
+        "start_ms": 1539440,
+        "end_ms": 1540320,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 1564159,
+        "end_ms": 1565679,
+        "duration_ms": 1520
+      },
+      {
+        "start_ms": 1573039,
+        "end_ms": 1574480,
+        "duration_ms": 1441
+      },
+      {
+        "start_ms": 1588240,
+        "end_ms": 1590240,
+        "duration_ms": 2000
+      },
+      {
+        "start_ms": 1648799,
+        "end_ms": 1653840,
+        "duration_ms": 5041
+      },
+      {
+        "start_ms": 1686640,
+        "end_ms": 1692559,
+        "duration_ms": 5919
+      },
+      {
+        "start_ms": 1747600,
+        "end_ms": 1750960,
+        "duration_ms": 3360
+      },
+      {
+        "start_ms": 1773840,
+        "end_ms": 1774559,
+        "duration_ms": 719
+      },
+      {
+        "start_ms": 1777600,
+        "end_ms": 1778480,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 1781840,
+        "end_ms": 1787360,
+        "duration_ms": 5520
+      },
+      {
+        "start_ms": 1803840,
+        "end_ms": 1804799,
+        "duration_ms": 959
+      },
+      {
+        "start_ms": 1889440,
+        "end_ms": 1890159,
+        "duration_ms": 719
+      },
+      {
+        "start_ms": 1895679,
+        "end_ms": 1896399,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 1951840,
+        "end_ms": 1955440,
+        "duration_ms": 3600
+      },
+      {
+        "start_ms": 1980399,
+        "end_ms": 1981519,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 1986240,
+        "end_ms": 1986960,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 1997679,
+        "end_ms": 1998880,
+        "duration_ms": 1201
+      },
+      {
+        "start_ms": 2022960,
+        "end_ms": 2023039,
+        "duration_ms": 79
+      },
+      {
+        "start_ms": 2039039,
+        "end_ms": 2040159,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 2056879,
+        "end_ms": 2057440,
+        "duration_ms": 561
+      },
+      {
+        "start_ms": 2061839,
+        "end_ms": 2063599,
+        "duration_ms": 1760
+      },
+      {
+        "start_ms": 2099280,
+        "end_ms": 2100079,
+        "duration_ms": 799
+      },
+      {
+        "start_ms": 2196800,
+        "end_ms": 2198960,
+        "duration_ms": 2160
+      },
+      {
+        "start_ms": 2303280,
+        "end_ms": 2303599,
+        "duration_ms": 319
+      },
+      {
+        "start_ms": 2430160,
+        "end_ms": 2431680,
+        "duration_ms": 1520
+      },
+      {
+        "start_ms": 2439839,
+        "end_ms": 2534839,
+        "duration_ms": 95000
+      },
+      {
+        "start_ms": 2537839,
+        "end_ms": 2576860,
+        "duration_ms": 39021
+      },
+      {
+        "start_ms": 2579979,
+        "end_ms": 2863040,
+        "duration_ms": 283061
+      },
+      {
+        "start_ms": 2873839,
+        "end_ms": 2898839,
+        "duration_ms": 25000
+      },
+      {
+        "start_ms": 2901839,
+        "end_ms": 2940839,
+        "duration_ms": 39000
+      },
+      {
+        "start_ms": 2943839,
+        "end_ms": 2947119,
+        "duration_ms": 3280
+      },
+      {
+        "start_ms": 3021200,
+        "end_ms": 3022079,
+        "duration_ms": 879
+      },
+      {
+        "start_ms": 3027839,
+        "end_ms": 3028400,
+        "duration_ms": 561
+      },
+      {
+        "start_ms": 3041839,
+        "end_ms": 3043200,
+        "duration_ms": 1361
+      },
+      {
+        "start_ms": 3107119,
+        "end_ms": 3107440,
+        "duration_ms": 321
+      },
+      {
+        "start_ms": 3111839,
+        "end_ms": 3112880,
+        "duration_ms": 1041
+      },
+      {
+        "start_ms": 3298559,
+        "end_ms": 3300160,
+        "duration_ms": 1601
+      },
+      {
+        "start_ms": 3386559,
+        "end_ms": 3386720,
+        "duration_ms": 161
+      },
+      {
+        "start_ms": 3458160,
+        "end_ms": 3458319,
+        "duration_ms": 159
+      },
+      {
+        "start_ms": 3522480,
+        "end_ms": 3543040,
+        "duration_ms": 20560
+      },
+      {
+        "start_ms": 3583920,
+        "end_ms": 3584160,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 3653599,
+        "end_ms": 3654799,
+        "duration_ms": 1200
+      },
+      {
+        "start_ms": 3691680,
+        "end_ms": 3692000,
+        "duration_ms": 320
+      },
+      {
+        "start_ms": 3805599,
+        "end_ms": 3806079,
+        "duration_ms": 480
+      },
+      {
+        "start_ms": 3836400,
+        "end_ms": 3837280,
+        "duration_ms": 880
+      },
+      {
+        "start_ms": 3886480,
+        "end_ms": 3888720,
+        "duration_ms": 2240
+      },
+      {
+        "start_ms": 3890960,
+        "end_ms": 3892960,
+        "duration_ms": 2000
+      },
+      {
+        "start_ms": 3945039,
+        "end_ms": 3946799,
+        "duration_ms": 1760
+      },
+      {
+        "start_ms": 3954319,
+        "end_ms": 3956480,
+        "duration_ms": 2161
+      },
+      {
+        "start_ms": 3992240,
+        "end_ms": 3992400,
+        "duration_ms": 160
+      },
+      {
+        "start_ms": 3999440,
+        "end_ms": 4000720,
+        "duration_ms": 1280
+      },
+      {
+        "start_ms": 4029920,
+        "end_ms": 4030799,
+        "duration_ms": 879
+      },
+      {
+        "start_ms": 4037440,
+        "end_ms": 4043599,
+        "duration_ms": 6159
+      },
+      {
+        "start_ms": 4052799,
+        "end_ms": 4054400,
+        "duration_ms": 1601
+      },
+      {
+        "start_ms": 4063839,
+        "end_ms": 4064640,
+        "duration_ms": 801
+      },
+      {
+        "start_ms": 4112080,
+        "end_ms": 4114960,
+        "duration_ms": 2880
+      },
+      {
+        "start_ms": 4147839,
+        "end_ms": 4150480,
+        "duration_ms": 2641
+      },
+      {
+        "start_ms": 4162640,
+        "end_ms": 4167199,
+        "duration_ms": 4559
+      },
+      {
+        "start_ms": 4277840,
+        "end_ms": 4277920,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 4297040,
+        "end_ms": 4298840,
+        "duration_ms": 1800
+      },
+      {
+        "start_ms": 4301840,
+        "end_ms": 4303280,
+        "duration_ms": 1440
+      },
+      {
+        "start_ms": 4306159,
+        "end_ms": 4309440,
+        "duration_ms": 3281
+      },
+      {
+        "start_ms": 4346800,
+        "end_ms": 4348640,
+        "duration_ms": 1840
+      },
+      {
+        "start_ms": 4387360,
+        "end_ms": 4388080,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 4418159,
+        "end_ms": 4422320,
+        "duration_ms": 4161
+      },
+      {
+        "start_ms": 4469840,
+        "end_ms": 4470800,
+        "duration_ms": 960
+      },
+      {
+        "start_ms": 4473600,
+        "end_ms": 4480000,
+        "duration_ms": 6400
+      },
+      {
+        "start_ms": 4485520,
+        "end_ms": 4487840,
+        "duration_ms": 2320
+      },
+      {
+        "start_ms": 4626800,
+        "end_ms": 4634640,
+        "duration_ms": 7840
+      },
+      {
+        "start_ms": 4645040,
+        "end_ms": 4648640,
+        "duration_ms": 3600
+      },
+      {
+        "start_ms": 4724880,
+        "end_ms": 4725600,
+        "duration_ms": 720
+      },
+      {
+        "start_ms": 4770080,
+        "end_ms": 4771679,
+        "duration_ms": 1599
+      },
+      {
+        "start_ms": 4786239,
+        "end_ms": 4786960,
+        "duration_ms": 721
+      },
+      {
+        "start_ms": 4880239,
+        "end_ms": 4881360,
+        "duration_ms": 1121
+      },
+      {
+        "start_ms": 4889840,
+        "end_ms": 4893920,
+        "duration_ms": 4080
+      },
+      {
+        "start_ms": 4936480,
+        "end_ms": 4937600,
+        "duration_ms": 1120
+      },
+      {
+        "start_ms": 5038320,
+        "end_ms": 5038960,
+        "duration_ms": 640
+      },
+      {
+        "start_ms": 5093679,
+        "end_ms": 5097199,
+        "duration_ms": 3520
+      },
+      {
+        "start_ms": 5148159,
+        "end_ms": 5148239,
+        "duration_ms": 80
+      },
+      {
+        "start_ms": 5227120,
+        "end_ms": 5228159,
+        "duration_ms": 1039
+      },
+      {
+        "start_ms": 5283920,
+        "end_ms": 5285840,
+        "duration_ms": 1920
+      },
+      {
+        "start_ms": 5421120,
+        "end_ms": 5422480,
+        "duration_ms": 1360
+      },
+      {
+        "start_ms": 5465679,
+        "end_ms": 5467520,
+        "duration_ms": 1841
+      },
+      {
+        "start_ms": 5514560,
+        "end_ms": 5514800,
+        "duration_ms": 240
+      },
+      {
+        "start_ms": 5523199,
+        "end_ms": 5523520,
+        "duration_ms": 321
+      },
+      {
+        "start_ms": 5527360,
+        "end_ms": 5529040,
+        "duration_ms": 1680
+      },
+      {
+        "start_ms": 5549360,
+        "end_ms": 5549760,
+        "duration_ms": 400
+      },
+      {
+        "start_ms": 5566239,
+        "end_ms": 5566560,
+        "duration_ms": 321
+      },
+      {
+        "start_ms": 5594639,
+        "end_ms": 5600639,
+        "duration_ms": 6000
+      }
+    ],
+    "draft_segment_count": 36,
+    "draft_start": "00:00",
+    "draft_end": "94:19",
+    "audio_reviewed": false,
+    "video_frames_reviewed": false,
+    "interpretation": "Interval-union gaps are not silence detection. All original-language ASR cue texts read. Breakout transition 40:00–49:07 has sparse speech/markers; group discussion unavailable. Raw last cue overrun retained, not corrected to metadata duration."
+  },
+  "draft_segments": [
+    {
+      "start": "00:00",
+      "end": "02:00",
+      "start_ms": 0,
+      "end_ms": 120000,
+      "title": "测验、项目与一项旧课更正",
+      "cue_count": 50,
+      "first_cue": 1,
+      "last_cue": 50
+    },
+    {
+      "start": "02:00",
+      "end": "03:00",
+      "start_ms": 120000,
+      "end_ms": 180000,
+      "title": "defer 在函数返回时执行",
+      "cue_count": 29,
+      "first_cue": 51,
+      "last_cue": 79
+    },
+    {
+      "start": "03:00",
+      "end": "06:00",
+      "start_ms": 180000,
+      "end_ms": 360000,
+      "title": "ZooKeeper 怎样让协调服务得到很高的读吞吐",
+      "cue_count": 82,
+      "first_cue": 80,
+      "last_cue": 161
+    },
+    {
+      "start": "06:00",
+      "end": "09:00",
+      "start_ms": 360000,
+      "end_ms": 540000,
+      "title": "简单锁：创建一个临时节点，失败后等待删除通知",
+      "cue_count": 80,
+      "first_cue": 162,
+      "last_cue": 241
+    },
+    {
+      "start": "09:00",
+      "end": "12:00",
+      "start_ms": 540000,
+      "end_ms": 720000,
+      "title": "ephemeral 解决持有者消失，简单锁却有惊群问题",
+      "cue_count": 93,
+      "first_cue": 242,
+      "last_cue": 334
+    },
+    {
+      "start": "12:00",
+      "end": "16:00",
+      "start_ms": 720000,
+      "end_ms": 960000,
+      "title": "顺序临时节点让等待者排成一条队列",
+      "cue_count": 117,
+      "first_cue": 335,
+      "last_cue": 451
+    },
+    {
+      "start": "16:00",
+      "end": "18:00",
+      "start_ms": 960000,
+      "end_ms": 1080000,
+      "title": "问答：watch 装在哪里，会话怎样失效",
+      "cue_count": 55,
+      "first_cue": 452,
+      "last_cue": 506
+    },
+    {
+      "start": "18:00",
+      "end": "20:00",
+      "start_ms": 1080000,
+      "end_ms": 1200000,
+      "title": "锁被撤销，不等于临界区已经原子完成",
+      "cue_count": 57,
+      "first_cue": 507,
+      "last_cue": 563
+    },
+    {
+      "start": "20:00",
+      "end": "22:00",
+      "start_ms": 1200000,
+      "end_ms": 1320000,
+      "title": "soft lock：通常只执行一次，失败时允许重做",
+      "cue_count": 61,
+      "first_cue": 564,
+      "last_cue": 624
+    },
+    {
+      "start": "22:00",
+      "end": "25:00",
+      "start_ms": 1320000,
+      "end_ms": 1500000,
+      "title": "问答：不用 ephemeral 能模拟普通锁吗",
+      "cue_count": 77,
+      "first_cue": 625,
+      "last_cue": 701
+    },
+    {
+      "start": "25:00",
+      "end": "28:00",
+      "start_ms": 1500000,
+      "end_ms": 1680000,
+      "title": "两种复制状态机架构",
+      "cue_count": 79,
+      "first_cue": 702,
+      "last_cue": 780
+    },
+    {
+      "start": "28:00",
+      "end": "31:00",
+      "start_ms": 1680000,
+      "end_ms": 1860000,
+      "title": "配置状态很小，业务数据可能巨大",
+      "cue_count": 82,
+      "first_cue": 781,
+      "last_cue": 862
+    },
+    {
+      "start": "31:00",
+      "end": "34:00",
+      "start_ms": 1860000,
+      "end_ms": 2040000,
+      "title": "分离关注点，不是假定 leader 永远不失败",
+      "cue_count": 79,
+      "first_cue": 863,
+      "last_cue": 941
+    },
+    {
+      "start": "34:00",
+      "end": "37:00",
+      "start_ms": 2040000,
+      "end_ms": 2220000,
+      "title": "写从头进入，读和回复都在尾部",
+      "cue_count": 76,
+      "first_cue": 942,
+      "last_cue": 1017
+    },
+    {
+      "start": "37:00",
+      "end": "40:00",
+      "start_ms": 2220000,
+      "end_ms": 2400000,
+      "title": "为什么这条正常路径是线性一致的",
+      "cue_count": 97,
+      "first_cue": 1018,
+      "last_cue": 1114
+    },
+    {
+      "start": "40:00",
+      "end": "49:07",
+      "start_ms": 2400000,
+      "end_ms": 2947000,
+      "title": "分组切换：录像字幕不能恢复讨论",
+      "cue_count": 20,
+      "first_cue": 1115,
+      "last_cue": 1134
+    },
+    {
+      "start": "49:07",
+      "end": "51:00",
+      "start_ms": 2947000,
+      "end_ms": 3060000,
+      "title": "提前回复会让客户端读不到自己的已完成写",
+      "cue_count": 54,
+      "first_cue": 1135,
+      "last_cue": 1188
+    },
+    {
+      "start": "51:00",
+      "end": "53:00",
+      "start_ms": 3060000,
+      "end_ms": 3180000,
+      "title": "head 失败：可以丢掉只在旧头部出现的未完成写",
+      "cue_count": 50,
+      "first_cue": 1189,
+      "last_cue": 1238
+    },
+    {
+      "start": "53:00",
+      "end": "55:00",
+      "start_ms": 3180000,
+      "end_ms": 3300000,
+      "title": "为什么 S2 不能自己宣布成为 head",
+      "cue_count": 59,
+      "first_cue": 1239,
+      "last_cue": 1297
+    },
+    {
+      "start": "55:00",
+      "end": "57:00",
+      "start_ms": 3300000,
+      "end_ms": 3420000,
+      "title": "FIFO 假设与中间节点失败",
+      "cue_count": 54,
+      "first_cue": 1298,
+      "last_cue": 1351
+    },
+    {
+      "start": "57:00",
+      "end": "60:00",
+      "start_ms": 3420000,
+      "end_ms": 3600000,
+      "title": "tail 失败，以及没有收到回复的操作",
+      "cue_count": 72,
+      "first_cue": 1352,
+      "last_cue": 1423
+    },
+    {
+      "start": "60:00",
+      "end": "62:00",
+      "start_ms": 3600000,
+      "end_ms": 3720000,
+      "title": "与 Raft 日志恢复对比，为什么还要补回副本",
+      "cue_count": 64,
+      "first_cue": 1424,
+      "last_cue": 1487
+    },
+    {
+      "start": "62:00",
+      "end": "65:00",
+      "start_ms": 3720000,
+      "end_ms": 3900000,
+      "title": "扩链的切换屏障：先补齐旧历史，再开放新 tail",
+      "cue_count": 88,
+      "first_cue": 1488,
+      "last_cue": 1575
+    },
+    {
+      "start": "65:00",
+      "end": "68:00",
+      "start_ms": 3900000,
+      "end_ms": 4080000,
+      "title": "相对 Raft 的收益和代价",
+      "cue_count": 71,
+      "first_cue": 1576,
+      "last_cue": 1646
+    },
+    {
+      "start": "68:00",
+      "end": "71:00",
+      "start_ms": 4080000,
+      "end_ms": 4260000,
+      "title": "多条链交错放置，把多个物理服务器变成各自的 tail",
+      "cue_count": 79,
+      "first_cue": 1647,
+      "last_cue": 1725
+    },
+    {
+      "start": "71:00",
+      "end": "74:00",
+      "start_ms": 4260000,
+      "end_ms": 4440000,
+      "title": "问答：路由、负载与多个对象的链",
+      "cue_count": 84,
+      "first_cue": 1726,
+      "last_cue": 1809
+    },
+    {
+      "start": "74:00",
+      "end": "77:00",
+      "start_ms": 4440000,
+      "end_ms": 4620000,
+      "title": "总结两层架构",
+      "cue_count": 80,
+      "first_cue": 1810,
+      "last_cue": 1889
+    },
+    {
+      "start": "77:00",
+      "end": "79:00",
+      "start_ms": 4620000,
+      "end_ms": 4740000,
+      "title": "课后问答：leader 已有已提交数据，为什么 Raft 读还要多数确认",
+      "cue_count": 52,
+      "first_cue": 1890,
+      "last_cue": 1941
+    },
+    {
+      "start": "79:00",
+      "end": "81:30",
+      "start_ms": 4740000,
+      "end_ms": 4890000,
+      "title": "课后问答：用 100 与 110 说明追赶何时结束",
+      "cue_count": 67,
+      "first_cue": 1942,
+      "last_cue": 2008
+    },
+    {
+      "start": "81:30",
+      "end": "84:00",
+      "start_ms": 4890000,
+      "end_ms": 5040000,
+      "title": "课后问答：能不能换成树来缩短传播路径",
+      "cue_count": 64,
+      "first_cue": 2009,
+      "last_cue": 2072
+    },
+    {
+      "start": "84:00",
+      "end": "85:30",
+      "start_ms": 5040000,
+      "end_ms": 5130000,
+      "title": "课后问答：强一致性是针对哪个对象",
+      "cue_count": 38,
+      "first_cue": 2073,
+      "last_cue": 2110
+    },
+    {
+      "start": "85:30",
+      "end": "87:00",
+      "start_ms": 5130000,
+      "end_ms": 5220000,
+      "title": "课后问答：单对象操作的组合与多对象事务不是一回事",
+      "cue_count": 42,
+      "first_cue": 2111,
+      "last_cue": 2152
+    },
+    {
+      "start": "87:00",
+      "end": "89:00",
+      "start_ms": 5220000,
+      "end_ms": 5340000,
+      "title": "课后问答：更新传播不变量的前缀方向",
+      "cue_count": 51,
+      "first_cue": 2153,
+      "last_cue": 2203
+    },
+    {
+      "start": "89:00",
+      "end": "91:00",
+      "start_ms": 5340000,
+      "end_ms": 5460000,
+      "title": "课后问答：配置编号能防止旧 tail 继续回答吗",
+      "cue_count": 67,
+      "first_cue": 2204,
+      "last_cue": 2270
+    },
+    {
+      "start": "91:00",
+      "end": "92:00",
+      "start_ms": 5460000,
+      "end_ms": 5520000,
+      "title": "课后问答：事务将解决一起可见的问题",
+      "cue_count": 28,
+      "first_cue": 2271,
+      "last_cue": 2298
+    },
+    {
+      "start": "92:00",
+      "end": "94:19",
+      "start_ms": 5520000,
+      "end_ms": 5659000,
+      "title": "课后问答：Go 锁也不会回滚外部持久状态",
+      "cue_count": 62,
+      "first_cue": 2299,
+      "last_cue": 2360
+    }
+  ],
+  "paper_visual_review": {
+    "pdf_pages": 14,
+    "figures": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "tables": [
+      1
+    ],
+    "inspected_page_images": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "version_mapping_evidence": {
+    "file": "schedule-2021.html",
+    "scope": "Lines 176–177 checked: L11 outline, video 1uUcW-Mqg5o, cr-osdi04.pdf and Question; no FAQ. Inventory identifies date 2021-03-30. Outline heading is stale 2020, not a change of mainline year."
+  },
+  "version_comparison": {
+    "papers_identical_bytes": true,
+    "paper_sha256": "1a16a4c0f4ea53979d77ccfa54d18f98874d7a4ea602e061fd2d6e32e56b60ac",
+    "outline_diff": "p6-lec11/lecture-2021-2026.diff.txt",
+    "new_update_created": false,
+    "substantive_differences": [
+      "P/B correctness checklist and retry/conditional-update discussion",
+      "Explicit old-role rejection and tail read lease",
+      "Sent/ACK retention and recovery details",
+      "Parallel repair, random placement tradeoff and detailed simulation commentary"
+    ]
+  },
+  "content_paths": [
+    "lectures/lec11/draft.zh.md",
+    "lectures/lec11/materials.zh.md",
+    "lectures/lec11/notes.zh.md"
+  ],
+  "validation": {
+    "source_hashes": "passed",
+    "lossless_caption_grouping": "passed",
+    "caption_time_structure": "passed_with_preserved_raw_tail_overrun",
+    "draft_timeline": "passed",
+    "local_markdown_paths": "passed",
+    "audio_visual_review": "not performed",
+    "build": "Not run by restricted worker; main session integrates.",
+    "experiments": "Not run",
+    "no_media_download": true,
+    "no_full_player_response_saved": true,
+    "no_signed_urls_saved": true
+  },
+  "issues": [
+    "Breakout transition 40:00–49:07 sparse; no recoverable group discussion. All 124 interval gaps retained, not treated as silence.",
+    "Raw subtitle end 94:19.840 exceeds integer duration by 840ms; no clipping of original cues. No audio/frame verification.",
+    "2021 URL outline has stale 2020 heading. 2026 and 2021 paper bytes identical despite differing Last-Modified headers.",
+    "Paper full-translation permission and video-specific CC version unconfirmed; analytical reading and original paraphrase only.",
+    "Paper fail-stop assumptions do not prove safe arbitrary timeout removal under partitions; tail service authority remains necessary.",
+    "Prefix-direction English typo corrected against actual formula and message path. Hist/Sent ordered union is not concatenation.",
+    "Classroom Raft-local-read, cross-object linearizability, stale-tail/view-number and Go-lock statements are incomplete; editorial corrections separated from actual class.",
+    "2021 any-replica read paragraph lacks full protocol; no CRAQ reconstruction. No 2021 FAQ guessed; existing 2026 FAQ discovered entry not used.",
+    "Simulation 64 KBytes/10-second GFS object statement suspicious; not silently corrected or used for derived performance. 24-hour MTBF explicitly unrealistic in paper endnote 6.",
+    "2026 leases, modern adoption claims and paper prototype not independently implemented or tested; historical APIs do not replace pinned 2026 lab APIs."
+  ]
+}
