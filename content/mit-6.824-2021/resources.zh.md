@@ -1,6 +1,6 @@
 ---
 source: MIT 6.824 Spring 2021 官方课表与课程信息；MIT 6.5840 Spring 2026 官方课表、实验页与固定代码
-status: P7 内容完成：新增 2021 L16/L18/L19/L20 共 12 份正文与 132 段课堂译述，2026 SUNDR 对照并入 L18；Nielsen 原站 404，采用明确标记的 UBC 文章快照。来源和实际阅读范围见页底各批审阅记录；实验测试未运行。
+status: P8 已交付四个书面专题、八份正文；Go 两年幻灯片对照与 FAQ 完成，CACM 指定文章因 403 待补，该专题课程资料标为部分完成。累计 62 份讲座正文（61 完成、1 部分完成）、10 份实验正文；实验测试未运行。
 license: 本页为编者自主导航；外链论文、视频、讲义与实验要求分别核实许可。
 ---
 
@@ -115,14 +115,16 @@ go version
 |---|---|---|
 | [线性一致性](#/c/mit-6.824-2021/lec/update-linearizability?v=notes) | L8、Lab 2 | KV 与锁之前必读 |
 | [RSM、KV 与分片衔接](#/c/mit-6.824-2021/lec/update-lab-bridge?v=notes) | Lab 2–5；编者导读 | RSM、版本化 KV、快照，以及冻结／安装／删除、控制器恢复与并发目标选择 |
-| [Paxos](#/c/mit-6.824-2021/lec/update-paxos?v=notes) | L4 | 对照 L5/L7 Raft |
-| [Go 模式](#/c/mit-6.824-2021/lec/update-go-patterns?v=notes) | L5 Russ Cox | L2/L10 后核对差异 |
-| [验证](#/c/mit-6.824-2021/lec/update-verification?v=notes) | L15 IronFleet | 从不变量走向证明 |
+| [Paxos](#/c/mit-6.824-2021/lec/update-paxos?v=notes) | L4 | 对照 L5/L7 Raft：多数交集怎样继承旧决定，持久化与选主各负责什么 |
+| [Go 模式](#/c/mit-6.824-2021/lec/update-go-patterns?v=notes) | L5 Russ Cox | 对照 L10 幻灯片，已有模式回链；语言和工程环境的阅读集中于本专题资料 |
+| [验证](#/c/mit-6.824-2021/lec/update-verification?v=notes) | L15 IronFleet | 从 RSM 不变量走向协议模型、实现 refinement 和有条件的活性证明 |
 | [AWS Lambda](#/c/mit-6.824-2021/lec/update-lambda?v=notes) | L17 | 按需加载 |
 | [Ray](#/c/mit-6.824-2021/lec/update-ray?v=notes) | L18 | 与 L16 Spark 衔接 |
-| [实用拜占庭容错](#/c/mit-6.824-2021/lec/update-bft?v=notes) | L21 | 从崩溃故障到恶意行为 |
+| [实用拜占庭容错](#/c/mit-6.824-2021/lec/update-bft?v=notes) | L21 Derek Leung | 固定成员的恶意行为容错；把认证、prepared、提交、换届与检查点分开 |
 
 2026 课表没有为这些条目列视频；按书面材料制作。2026 L13 Chain Replication 的讲义差异集中于 [L11 课程资料 §7](#/c/mit-6.824-2021/lec/lec11?v=materials)，两年论文快照字节相同，论文只精读一次；2026 L19 SUNDR 的讲义差异集中于 [L18 课程资料 §7](#/c/mit-6.824-2021/lec/lec18?v=materials)，同样复用同字节论文，分别保留两年指定范围。2026 L10 Raft 问答作为 Lab 3 的补充入口。
+
+四个专题可以从三个问题串起来：**Paxos** 在换提案者时怎样保住已选值；**IronFleet** 怎样把协议层的论证一直连接到可执行代码；**PBFT** 在副本可能撒谎时，哪些证据仍可被下一届继承。**Go 模式** 则回到实现端，检查共享状态、通信与终止之间的责任。它们是理解上的拓展，不增加五个实验的提交要求。论文精读分别集中于各专题的课程资料，读完不代表已运行协议、证明器或实验。
 
 **MapReduce (2004)** 由 [L1 课程资料](#/c/mit-6.824-2021/lec/lec01?v=materials)集中精读。**Raft extended (2014)** 由 [L5 课程资料](#/c/mit-6.824-2021/lec/lec05?v=materials)集中展开：L5 读至 §5 末，L7 读 §7 至末、跳过 §6；L7 不再建第二份论文正文。Lab 3 不实现成员变更，Lab 4 回看快照。论文的请求编号去重与免日志读是阅读主题，2026 实验仍以版本化 Put、实际索引和恢复契约为准。**事务**指定章节放 L13，**线性一致性**论文至 §3.1 放对应 Updates。
 
@@ -191,7 +193,7 @@ Go 的共享工具入口为 A Tour of Go、The Go Memory Model、race detector �
 
 ### 实验与新版补充
 
-- MIT 6.5840 Spring 2026：[课表](https://pdos.csail.mit.edu/6.824/schedule.html)、[Go 环境](https://pdos.csail.mit.edu/6.824/labs/go.html)；无年份 URL 以 2026-11-08 快照固定。
+- MIT 6.5840 Spring 2026：[课表](https://pdos.csail.mit.edu/6.824/schedule.html)、[Go 环境](https://pdos.csail.mit.edu/6.824/labs/go.html)；课表与既有讲义采用 2026-11-08 快照，后续新增来源按各自实际抓取时间固定，无年份 URL 不保证长期不变。
 - 实验要求：[Lab 1](https://pdos.csail.mit.edu/6.824/labs/lab-mr.html)、[Lab 2](https://pdos.csail.mit.edu/6.824/labs/lab-kvsrv1.html)、[Lab 3](https://pdos.csail.mit.edu/6.824/labs/lab-raft1.html)、[Lab 4](https://pdos.csail.mit.edu/6.824/labs/lab-kvraft1.html)、[Lab 5](https://pdos.csail.mit.edu/6.824/labs/lab-shard1.html)。
 - Go：[Tour](https://go.dev/tour/)、[Memory Model](https://go.dev/ref/mem)、[Race Detector](https://go.dev/doc/articles/race_detector)。
 - Go 版本校注：[Go 1.22 语言变更](https://go.dev/doc/go1.22)、[Go 1.23 Timer Channel Changes](https://go.dev/wiki/Go123Timer)，已针对循环变量与 timer 回收规则读取；不等于已通读所有 Go 文档。
@@ -250,3 +252,11 @@ Spark 指定 RDD 论文完整 14 页、14 图、3 表和公式已读／查看；
 Bitcoin 白皮书完整 9 页及全部图式、公式已读／查看。Nielsen 原站重试仍 404，实际精读 [UBC 十页 PDF](https://www.cs.ubc.ca/~bestchai/teaching/cs538b_2014w2/how-bitcoin-actually-works.pdf) 中 2013 年文章的全部正文、作者问题、脚注及六幅图；这是 2015 年第三方合并快照，不含评论区，无法确认与原站最后修订逐字一致，少量变量在 PDF 自身留白。原 URL、替代 URL 和失败证据分别归档。
 
 Blockstack 完整 2016 ATC 论文 15 页、8 图及两条 SNV 公式已读／查看；2016 的 DHT 与 2021 讲义的 Atlas/Gaia/Browser 分别说明，FAQ 中白皮书和 2019 链接不替换指定版本。命名共识、链外数据的新鲜度／可用性、可信 SNV 起点及性能图口径分开解释。现代实现、外链文献全文与实验均未因此记为已验证。
+
+P8 四个书面专题见 `sources/P8-REVIEW.txt` 与各 `sources/p8-*/review.txt`。复用快照保留原获取时间与 SHA-256；新增抓取单独记录响应。2026 课表未列对应录像，因此正文采用笔记与课外精读。
+
+Paxos 完整读讲义 351 行、伪代码 40 行、FAQ 103 行及论文 14 页，实际查看 PDF 1、5–14 的公式、算法与多实例推演。IronFleet 完整读讲义 160 行与论文 17 页，并逐页核对全部 14 图、公式和代码；讲义修改时间晚于课表日期，原快照信息保留。后者的 reduction 充分性仍是纸面论证，论文未覆盖崩溃恢复、客户端库及成员重配置。两专题论文均为自主精读；静态审阅不代表运行协议、证明器或实验。
+
+Go 完整对照 2026 的 73 页与 2021 的 78 页幻灯片，分别定点查看 20／12 个代码页，新增共享 `done` 竞争与既有模式分开；FAQ 144 行全文已读。2026 PDF 创建和修改日期晚于课表日期。CACM 2022 指定文章的原入口、出版社现行入口及 DOI PDF 均返回 403，全文与独立许可尚未核验，课程资料只完成 FAQ，文章精读待补。
+
+PBFT 完整读讲义 342 行、FAQ 206 行、幻灯片 23 页与 1999 论文 14 页，两份 PDF 全页实际查看。讲义内部仍为 2024 L22；客户端模型、prepared／committed-local、FAQ 门槛错误及 MAC 证据边界已校注。原型当时未实现换主与重传，正常路径性能不代表故障恢复测试；论文和嘉宾幻灯片均采用自主精读。

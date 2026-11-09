@@ -1,0 +1,64 @@
+P8 Paxos worker review — 2026-11-09
+
+Write scope
+- lectures/update-paxos/notes.zh.md and materials.zh.md.
+- sources/p8-paxos/ preparation/check scripts, manifest fragment, review and local raw/derived files.
+- Shared files read-only; no staging/commit/push/build. No draft, video, time axis or invented classroom Q&A.
+
+Version and prerequisite reading
+- Read project AGENTS.md, technical-video-notes skill, NEXT-P8-PROMPT.txt.
+- Read existing lec05 notes lines 1–236 and lec07 notes lines 1–262 completely.
+- Read lec05 materials lines 1–460 completely, using especially §§2–5, 8 and 10 for comparison: strong-leader framing, Figure 2 state, current-term commit restriction, Figure 8/9 argument, stable storage, timing and client semantics.
+- Parent agent owns full PLAN/status/P7/inventory/version-map/two-year-schedule review. This worker does not claim to have independently read all those records.
+- Independently inspected schedule-2026 lines 106–125: L4 Feb 12 (rtm), notes/l-paxos.txt, notes/paxos-code.html, papers/paxos-faq.txt, papers/paxos-simple.pdf; no video in that row.
+- 2021 course remains the main course. This topic is a 2026 L4 written-material update; no renumbering of 2021 L5/L7. No lab source edits or additional user experiment requirements.
+
+Actual full source reading
+1. update-2026-l-paxos.txt, all 351 lines, internal title "6.5840 2026 Lecture 4: Fault-Tolerant Agreement, Paxos".
+   All pseudocode, normal path, concurrent proposals, identical-value/different-number trap, highest accepted number, accept threshold and threshold update, crash traces, RSM ending read.
+2. update-2026-paxos-code.html, all 40 source lines, both proposer/acceptor blocks; HTML <sub> notation read directly.
+   Internal block titles "Paxos Proposer" / "Paxos Acceptor"; no separate author/date. Duplicate printed line number 2 is source formatting, not another protocol step.
+3. Newly fetched paxos-faq.txt, all 103 lines, all seven questions/answers; title "Paxos FAQ", no internal year/author.
+   Retrieval 2026-11-09T13:46:58.802091+00:00; HTTP 200, final URL unchanged; Last-Modified Tue, 10 Feb 2026 19:00:35 GMT.
+   faq-response.json keeps the response's original fetched state. Reviewed is asserted separately in manifest-fragment only after reading.
+4. update-2026-paxos-simple.pdf: all 14 PDF pages, cover/abstract/contents, §§1, 2.1–2.5, 3, all references.
+   Cover: Leslie Lamport, Paxos Made Simple, 01 Nov 2001. PDF 4–14 = printed pages 1–11.
+   Extracted text read sequentially in full, 479 displayed lines including page markers.
+   Actual rendered pages viewed using image read: PDF 1 and 5–14. Not claiming image review of PDF 2–4.
+   PDF 5–9: P1, P2/P2a/P2b/P2c, P1a, induction indices, numbered prepare actions, Phase 1/Phase 2 lists.
+   PDF 10–11: progress n1/n2/n3 example, stable storage, role mapping, RSM definition.
+   PDF 12–14: command slots 135–140, no-op, alpha-1 pipeline gap, same ballot across instances, i+alpha configuration rule; bibliography checked as entries only.
+   No numbered figures or program code blocks in this PDF; algorithm is prose/list formatting. No paper screenshots published.
+
+Hash provenance and license evidence
+- Independently SHA-256 verified the three reused topic snapshots and home-2026 against manifest.json before reading the paper. Schedule snapshot hash also checked by local check.py.
+- Reused records keep original retrieved_at, Last-Modified, sha256, file and final_url; original_source_id recorded. No new download or byte-change claim for them.
+- New FAQ SHA-256 f93638f230c8ddad2bee4261ec51f867f0ce9a960bef73e20ab9da94b9918588; no earlier local FAQ bytes to compare (inventory previously discovered only).
+- home-2026 targeted title/year grep and lines 38–70, 76–102 read. rel=license line 61 points to CC BY 3.0 US.
+- Course-owned lecture text/pseudocode/FAQ credited to MIT 6.5840 course team, lecture to Robert Morris per rtm row; FAQ/pseudocode do not independently name an author.
+- Paper full-translation permission not established; autonomous Chinese close reading only. Site license not applied to paper or software implementations.
+
+Static algorithm review — not an implementation test
+- Compared the two source pseudocode versions: lecture is one attempt; HTML explicitly wraps retry loop. Both use unique n, prepare majority, maximum n_a inheritance, accept majority, persistent n_p/n_a/v_a; prepare > vs accept >=; accept updates n_p.
+- Hand-checked the chapter's A/B/C sequences, including: ignoring inherited value, wrong maximum, missing accept check, missing n_p update, and legal same-value/different-ballot non-decision. These are static reasoning traces, not executed schedules or model checking.
+- Separately checked loss of accepted pair, loss of promise, proposer ballot reuse across restart; no claim that arbitrary code passed crash tests.
+- Paper phase summary and broader accept destination wording are read together; course accept-all variant's threshold update preserved. No claim that every Paxos variant was formally verified.
+- Chosen is a historical fact; learner notification and applied are separate. Same-value acceptances in different ballots cannot be merged into one chosen certificate.
+- Majority availability does not by itself exclude endless proposer preemption. Stable distinguished proposer / successful communication assumptions stated.
+- FAQ "everyone" response termination example treated as sufficient, not necessary: majority evidence is sufficient for learner/proposer decision knowledge.
+- FAQ phase-3 leader comments are not used to infer behavior of real systems; stable-leader description is grounded in paper §§2.4–3.
+- Multi-instance notes distinguish slot from ballot, ordered application from out-of-order decisions, and prepared scope from unconditional skipping of phase 1.
+- Materials holds paper-specific P2 proof construction, learner fan-out, exact recovery example, batched phase 1, pipeline formula, brief configuration rule and performance limits. Notes holds core rules, failures, durability, liveness, Raft comparison and exercises.
+
+Unresolved / deliberately bounded claims
+- No video source exists in this assigned row; no video coverage claimed.
+- No full translation license established for paper. No standalone license for an executable Paxos implementation inferred from course pseudocode.
+- Did not follow FAQ links to Paxos Made Live or read the five bibliography works independently; no FLP proof/cost lower-bound reproduction.
+- Paper's short reconfiguration paragraph is not a complete dynamic-membership implementation or replacement for the skipped Raft §6.
+- No implementation, model checker, proof assistant, lab or benchmark executed. Static checking is not a proof of implementation correctness.
+- Parent agent integrates course.json/status/resources/manifests/versions and owns final build/commit. Raw originals, extracted text and rendered pages remain local; no forced git add.
+
+Minimal checks
+- PASS: python3 content/mit-6.824-2021/sources/p8-paxos/check.py checked six source hashes, retained snapshot metadata, FAQ response fields, unique source IDs, PDF read/visual page relation, two-page artifact set, Markdown whitespace/details/math blocks and local lecture route targets. Both Markdown pages passed.
+- PASS: git diff --check -- content/mit-6.824-2021/lectures/update-paxos content/mit-6.824-2021/sources/p8-paxos returned no output. New Markdown whitespace also explicitly checked by check.py because untracked files are outside normal git diff output.
+- No npm build by this worker. No git staging, commit or push.

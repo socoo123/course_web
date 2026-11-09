@@ -1,0 +1,54 @@
+{
+  "batch": "P8",
+  "reviewed_at": "2026-11-09",
+  "snapshot_policy": "Reuse existing snapshots after SHA256 verification; retrieved_at remains original GET time. No schedule or home page refetch in P8.",
+  "sources": [
+    {
+      "id": "p8-shared-schedule-2021",
+      "original_source_id": "schedule-2021",
+      "url": "http://nil.csail.mit.edu/6.824/2021/schedule.html",
+      "file": "schedule-2021.html",
+      "sha256": "d89f453171c5c03a4cd7aad8fc143ce7064a5df7791f4ec1f744bfdb9f1ba83f",
+      "retrieved_at": "2026-11-08T13:56:18.830391+00:00",
+      "last_modified": "Sun, 02 Jan 2022 22:13:51 GMT",
+      "status": "reviewed",
+      "scope": "Complete 297-line schedule read; mainline numbering, L6/L8 absence, separate L15 videos, SUNDR reading wording, Bitcoin double reading, Blockstack2016 and L21 demo/AnalogicFS distinction checked",
+      "internal_title": "6.824 Schedule: Spring 2021",
+      "license": "Course-owned text; original navigation links retained"
+    },
+    {
+      "id": "p8-shared-schedule-2026",
+      "original_source_id": "schedule-2026",
+      "url": "https://pdos.csail.mit.edu/6.824/schedule.html",
+      "file": "schedule-2026.html",
+      "sha256": "907861ca7e9d06d8c84051805a28308e391bb069684f166b0d74e07e48ac9e31",
+      "retrieved_at": "2026-11-08T12:09:28.821121+00:00",
+      "last_modified": "Thu, 14 May 2026 16:26:21 GMT",
+      "status": "reviewed",
+      "scope": "Complete 299-line schedule read; L4/L5/L15/L21 exact written-source links and instructors checked. No video links for these topics; no IronFleet FAQ. P9 L17/L18 links separately checked",
+      "internal_title": "6.5840 Schedule: Spring 2026",
+      "license": "Course-owned text under CC BY 3.0 US via home-2026; external sources separately assessed"
+    },
+    {
+      "id": "p8-shared-home-2026",
+      "original_source_id": "home-2026",
+      "url": "https://pdos.csail.mit.edu/6.824/index.html",
+      "file": "home-2026.html",
+      "sha256": "0e84bf9377933215c745734c742f29b40b34a7bd41e146717c8c661ac7c13856",
+      "retrieved_at": "2026-11-08T12:48:14.787990+00:00",
+      "last_modified": "Tue, 10 Feb 2026 19:00:35 GMT",
+      "status": "reviewed",
+      "scope": "Complete 102-line homepage read; line61 rel=license explicitly links CC BY 3.0 US, applicable to course-owned text, not external papers, guest slides or CACM article",
+      "internal_title": "6.5840 Home Page: Spring 2026",
+      "license": "https://creativecommons.org/licenses/by/3.0/us/"
+    }
+  ],
+  "scheduled_topics": [
+    { "id": "update-paxos", "lecture": 4, "instructor": "rtm", "links": ["notes/l-paxos.txt", "notes/paxos-code.html", "papers/paxos-faq.txt", "papers/paxos-simple.pdf"] },
+    { "id": "update-go-patterns", "lecture": 5, "instructor": "Russ Cox", "links": ["notes/Go-MIT6824-2026.pdf", "papers/go-faq.txt", "https://cacm.acm.org/magazines/2022/5/260357-the-go-programming-language-and-environment/fulltext"] },
+    { "id": "update-verification", "lecture": 15, "instructor": "Upamanyu Sharma", "links": ["notes/l-ironfleet.txt", "papers/ironfleet.pdf"] },
+    { "id": "update-bft", "lecture": 21, "instructor": "Derek Leung", "links": ["notes/l-bft.txt", "notes/65840-pbft.pdf", "papers/castro-practicalbft.pdf", "papers/bft-faq.txt"] }
+  ],
+  "lab_tests": "not_run",
+  "learner_completion": "not_tracked"
+}

@@ -1,0 +1,21 @@
+继续完成 MIT 6.824 中文课程 P9。先读项目 AGENTS.md、technical-video-notes skill、content/mit-6.824-2021/sources/PLAN.txt、status.json、manifest-2021.json、P8-REVIEW.txt、各 p8-*/review.txt、两个学期课表快照、schedule-inventory-2021.json 和 version-map-2021.json；按实际记录确认 P1–P8 覆盖与未决边界，不能把 fetched 当 reviewed。
+
+主线仍为 MIT 6.824 Spring 2021；Updates 使用 MIT 6.5840 Spring 2026 官方课表的书面材料。实验固定 513cac0aef010750fc74688da8a395974a83cf7a，教程与用户实验通过分开；只修改 content/。
+
+本批完成 update-lambda、update-ray、2021 lec21 项目展示。允许三个独立内容 agent 并行；主 agent 负责共享来源、最终审阅、元数据与提交。先逐项核对实际课表链接、既有快照哈希和抓取记录。2026 无年份 URL 是动态入口；复用保留原 retrieved_at，复抓记录新时间、Last-Modified、字节差异与内部标题／年份。原件放 sources，各专题交独立 p9-*/manifest-fragment.json 与 review.txt，准确区分全文和定点阅读。PDF 图表、公式、代码须实际查看对应页。
+
+1. update-lambda 对应 2026 L17，Marc Brooker：notes/mbrooker_cs_slides_2026.pdf 与 papers/atc23-brooker.pdf（On-demand Container Loading, 2023）。课表没有指定 FAQ 或视频，不猜造。完整阅读幻灯片与论文，核对启动路径、按需加载、工作集、缓存层次、去重、完整性与隔离边界、可用性与性能测量口径；区分论文方案、2026 幻灯片和今日 AWS 产品行为。仅交 notes.zh.md 与必要的 materials.zh.md，不生成 draft，不造课堂时间轴与问答；不声称实际运行 AWS 实验。
+
+2. update-ray 对应 2026 L18：notes/l-ray.txt、papers/ray.pdf、papers/ray-faq.txt。完整精读；课表标为 Ray (2021)，须以 PDF 内部题名／年份确认具体论文，不凭记忆换成另一篇 Ray 论文。对照已完成 2021 L16 Spark 的 notes/materials 与 sources/p7-lec16/review.txt，重点区分任务／actor、依赖与对象所有权、调度、分布式引用计数、lineage 和恢复边界（按实际论文内容展开）。Spark 的阅读不等于 Ray 完成。交 notes/materials，无课表视频则不生成 draft；不把静态阅读写成运行 Ray 或复现论文实验。
+
+3. 2021 lec21 对应官方 L21 Project demos，视频 bu41Qt9G5Qo：https://www.youtube.com/watch?v=bu41Qt9G5Qo。独立获取标题／频道／时长／上传时间／许可与英文原语言字幕，只归档白名单元数据，不存签名媒体 URL 或 cookies。按真实字幕逐段顺序阅读，区分每个项目、展示内容、评价与可恢复问答；字幕缺口、演示画面未核验、ASR 疑点如实保留。不要把项目展示写成普通理论课；draft 按真实时间，notes 提炼各项目的问题／机制／验证方法／边界，避免复述整段展示。未获取字幕则记录失败并走书面来源分支，不虚构时间轴。没有实际音画核对就明确只做字幕文本核对。
+
+同日指定阅读独立处理：http://nil.csail.mit.edu/6.824/2021/papers/katabi-analogicfs.pdf 与 papers/analogicfs-faq.txt。先确认论文实际身份、文体、论点与 FAQ 提示，再决定适当的中文自主精读方式；不预设它是已实现且可信的常规系统设计。写在 lec21/materials.zh.md，与展示录像严格分开，不能因课表同日就把论文内容补成视频讲过。未获公开全文翻译许可的论文用自主精读；课程自有文本保留实际署名与许可。
+
+三份材料各司其职：notes 为问题、推导、不变量、反例、权衡、自测；draft 为真实课堂展示的顺序整理；materials 为课外阅读和书面独有内容。引用放页底，原始来源不用 .md 后缀，简单自绘图按需，避免重复和无必要图表。
+
+同步 course.json、公共资料、status、manifest/source_fragments、版本映射与 PLAN。保留 P7 的 SUNDR 两年范围、Nielsen 原站／替代快照与 Blockstack 2016 边界；FaRM 两条时间轴继续分开；保留 P8 的真实访问、版本、许可与静态审阅边界。L6/L8 没有新增真实来源继续待补，不以本批完成宣称所有课堂来源完整。实验测试仍独立记录，不增加用户实验要求。
+
+P8 遗留：Go 的 2026/2021 幻灯片对照与 FAQ 已完成；CACM 2022 The Go Programming Language and Environment 的原入口、出版社现行入口及 DOI PDF 均 403，文章全文与独立许可未核验。保留 update-go-patterns/materials 的 partial 状态，不反复盲重试、不据搜索摘要补写；获得合法可读全文后再独立补精读及许可记录。统计当前为 62 份已发布讲座正文（61 完成、1 部分完成），10 份实验正文。
+
+完成后做最小必要来源哈希、路由／图片、元数据／状态一致性检查；git diff --check、npm run build 通过后提交并推送 GitHub。沿用归档：原始 PDF/HTML/字幕/页图留本地，仅提交正文、必要获取／检查脚本、来源清单和 review，不无差别强制加入 sources。P9 结束按实际缺口更新后续计划，不自动开启无关专题。最后简报交付、真实缺口、检查与提交信息。

@@ -1,0 +1,143 @@
+P8 / update-bft — worker reading and delivery record
+Date: 2026-11-09
+Allowed writes: lectures/update-bft/ and sources/p8-bft/ only, under content/mit-6.824-2021.
+
+1. Deliverables
+- notes.zh.md: fixed-membership Byzantine RSM vs SUNDR/Bitcoin; authentication model;
+  3f+1/2f+1 derivation; ordinary path; exact prepared/committed/committed-local predicates;
+  minimal missing-COMMIT counterexample; inherited evidence across views/checkpoints;
+  liveness conditions, design costs, eight self-tests.
+- materials.zh.md: autonomous reading of the full 1999 paper; message/proof fields;
+  exact NEW-VIEW construction; checkpoint/state-transfer and watermark roles; all four
+  optimization topics; nondeterminism; library/BFS implementation; both benchmark
+  denominators and original prototype incompleteness; teaching-text corrections.
+- manifest-fragment.json: four upstream sources, unique p8-bft-* IDs; relative-to-sources
+  file paths, actual hashes and response metadata, full reading and visual ranges.
+- prepare.py, contact-sheets.py, finalize.py: narrowly scoped preparation/check scripts,
+  authored using patch. validation.txt records the completed local check.
+No shared index or metadata modification, no draft, no published original-page images.
+
+2. Inputs actually read
+- Project AGENTS.md and technical-video-notes skill; NEXT-P8-PROMPT full 23 lines.
+- PLAN.txt 1–180, status.json 1–120, complete P7-REVIEW.txt.
+- Complete existing lec18/notes.zh.md (193 lines), lec19/notes.zh.md (239 lines), and
+  their p7-lec18/p7-lec19 review.txt records (97/106 lines). These provide prior scope:
+  SUNDR assigned prefix through 3.3.2, not complete concurrent SUNDR; Bitcoin probability
+  and open-membership distinctions, no new claim that those raw sources were reread.
+- manifest.json BFT entries 1979–2032; independent file hash verification of three
+  reused originals. Main agent owns full two-year schedule and nine-snapshot audit.
+- Targeted schedule-2026.html lines 264–265: L21 Derek Leung, actual four source links;
+  home-2026.html line 61: CC BY 3.0 US course-home license link.
+- p8-paxos/manifest-fragment.json 1–65 read only for integration field conventions.
+
+3. Acquisition and immutable reuse
+prepare.py was run once, before changing extraction order from sorted text to native
+PDF reading order. Its network action fetched only the FAQ, not the reused files.
+Three old files match manifest.json SHA256 independently:
+  update-2026-l-bft.txt
+    8ba9633dffa0e8a64277d97e45b9f2e436720f9715fa6e10c1f1401eee4d7767
+    retrieved_at 2026-11-08T12:48:24.651125+00:00
+    Last-Modified Tue, 27 Jan 2026 14:57:07 GMT
+  update-2026-65840-pbft.pdf
+    bf4e53fb84775b14b9bfa23946d6a69d591d3dabcd3555c99185283d580359d4
+    retrieved_at 2026-11-08T12:48:25.700113+00:00
+    Last-Modified Thu, 07 May 2026 19:55:55 GMT
+  update-2026-castro-practicalbft.pdf
+    4072e5923a9d113bde62aebfb16f040893c8512ee0c6f7df7ef6ba038882fb51
+    retrieved_at 2026-11-08T12:48:26.964714+00:00
+    Last-Modified Tue, 27 Jan 2026 14:57:07 GMT
+Original times, hashes, Last-Modified and final_url copied verbatim; no new fetch claimed.
+FAQ actual GET: https://pdos.csail.mit.edu/6.824/papers/bft-faq.txt
+  HTTP 200, final_url identical to requested URL; no redirect inferred.
+  retrieved_at 2026-11-09T13:47:43.622522+00:00
+  Last-Modified Tue, 27 Jan 2026 14:57:07 GMT
+  SHA256 f28f37745781b4e3b5dfddc956cdd7678c6cddb3e8bcd263832b93204c4ad9a0
+The final manifest's reviewed state records subsequent human reading, whereas
+acquisition.json retains original fetched status. No acquisition blocker occurred.
+
+4. Complete text reading versus visual inspection
+- l-bft.txt: all 342 lines, including ASCII traces and bibliography URLs.
+- bft-faq.txt: all 206 lines, every question/answer and external pointer.
+- 65840-pbft.pdf: all 23 pages, all 323 lines of initial extracted slides.txt.
+  Actual rendered pages 1–23 viewed in six four-page contact sheets, with final sheet
+  containing pages 21–23. No slide figures are hidden by extraction; sparse pages
+  14/16/17/18 are prompts, not a complete board derivation. Signature notation p12,
+  quorum formulas p15, view-change p19 and full-RSM/checkpoint p20 checked visually.
+- castro-practicalbft.pdf: entire 14-page paper. Initially read sorted extraction
+  lines 1–457 (pages 1–8 and start of 9), which interleaved columns and lost symbols.
+  Then regenerated native reading-order extraction and read all 1944 lines in two
+  contiguous reads 1–1369 and 1370–1944. This is full abstract, sections 1–9,
+  acknowledgments, bibliography entries 1–37, not only keyword-selected passages.
+  All 14 actual rendered pages viewed independently using image read:
+    p1 title/authors/1999 venue, abstract and floor((n-1)/3) bound;
+    p2 authentication/system/client assumptions and service properties;
+    p3 delay(t), n-2f>f, membership/primary formula and request/reply fields;
+    p4 exact pre-prepare/prepare/commit formatting and prepared predicate;
+    p5 committed predicates, Figure1 arrows, checkpoint proof and H=h+k;
+    p6 all VIEW-CHANGE/NEW-VIEW fields, highest-view rule, no-op and state transfer;
+    p7 cross-view intersection, liveness timers and nondeterminism;
+    p8 tentative/read-only thresholds and MAC-vector/cost expressions;
+    p9 Figure2 BFS architecture, upcall identifiers, explicit unimplemented paths;
+    p10 COW state/digest incremental update, experimental scope;
+    p11 Table1 full values/units/relative-overhead denominators;
+    p12 Tables2–3 full phase/total values, strict vs r/o-lookup caveat;
+    p13 related-work Phalanx bounds/formula, no-expulsion argument, conclusions;
+    p14 future witness/state-copy claims, acknowledgments, bibliography layout.
+  All two figures and all three tables checked on actual pages, not inferred from text.
+Local rendered originals/contact sheets/text are reading aids, not public course images.
+
+5. Technical decisions and corrections incorporated
+- Internal outline title remains 6.5840 2024 Lecture22; slides say Lecture21. Their
+  2026-link relationship does not establish a new 2026 authorship date for all content.
+- Slides11/13 and outline simplify clients as honest; paper3 explicitly protects
+  correct clients despite arbitrary numbers of faulty clients. Access control and
+  authorized malicious application actions remain separate.
+- Slides12 Verify-ok shorthand is conditioned on the correct node's trusted key,
+  not a proof that any authenticated sender is honest.
+- Exact prepared proof = primary pre-prepare + 2f distinct backup prepares + request;
+  committed = f+1 correct prepared; committed-local adds 2f+1 matching commits.
+  Commit sender has prepared, but need not itself have committed locally.
+- Both quorum intersections written explicitly; general N and q not confused with
+  the minimal N=3f+1 formula. Bounds scoped to original model/guarantees.
+- Missing-COMMIT counterexample distinguishes sending a prepare from collecting a
+  prepared certificate; new-view cannot safely omit an already client-completed result.
+- New view gathers 2f other reports plus own, chooses highest old-view proof per
+  slot, uses certified checkpoint and no-op holes, and redoes normal phases. Backups
+  verify the proof and selection rather than trusting the new primary's signature.
+- Faulty members are not expelled by view changes; timing assumptions and rotating
+  primary required for progress. No claim that eventual delivery alone or a correct
+  primary immediately supplies bounded termination.
+- FAQ84–93 '2f+1 good replicas have committed' corrected: at least f+1 correct
+  replicas are prepared. FAQ's FLP/one-third shorthand not generalized to all models.
+- Stable checkpoint changes evidence representation, not committed history. State
+  content and certified digest must be connected. Lagging-correct-node transfer is
+  not a protocol for cleaning compromised machines under arbitrary mobile attacks.
+- MAC optimization requires protocol changes; external proof/technical report and
+  dissertation unreviewed. MD5/RSA parameters retained only as historical context.
+- Paper6.1 explicitly says view changes/retransmissions not yet implemented; all
+  normal-case evaluation quoted as paper results, not personally reproduced results.
+- Tables1–3 read together: 309% null write overhead vs 26% BFS-nr and 3% NFS-std
+  Andrew totals, changed lookup semantics, non-equivalent BFS-nr stability guarantee.
+- Intro's simultaneous fault wording and FAQ lifetime-fault boundary distinguished;
+  proactive recovery and BASE are later external topics, not completed here.
+
+6. Authorization and remaining boundaries
+Course-owned text attributed to MIT course team under CC BY3.0US, from actual home
+link; guest slides separately attributed via schedule to Derek Leung; paper to
+Miguel Castro/Barbara Liskov, OSDI1999. No full-translation permission found for
+guest slides or external paper, so delivery is original Chinese explanation and
+short locator quotations. Original-page images retained locally only.
+No video listed: no fabricated classroom chronology, board trace, or audience Q&A.
+Slide17 recovery example absent from written detail is an explicit unrecoverable
+classroom boundary, not silently supplied from another modern BFT protocol.
+No external linked dissertation, technical proof/MAC reports, proactive recovery,
+BASE, Zyzzyva, Stellar, Hyperledger, Algorand, or Baudet et al. paper was fetched/read.
+1999 article's omissions remain omissions; no full verified implementation delivered.
+No PBFT/BFS, model checker, cryptographic implementation, lab, or experiment executed.
+Main agent handles shared source aggregation, two-year mapping, git/build and final audit.
+
+7. Minimal local verification
+finalize.py checks the four upstream hashes, immutable reused metadata, exact text
+line counts, actual four schedule hrefs, unique local source IDs, both Markdown
+headers/HTML-details/fences/trailing whitespace, and all used local lecture routes.
+Actual result is in validation.txt. No git command or site build run by this worker.

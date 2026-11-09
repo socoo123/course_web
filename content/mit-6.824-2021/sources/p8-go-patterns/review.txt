@@ -1,0 +1,118 @@
+P8 Go patterns 阅读与差异记录
+日期：2026-11-09
+主线 MIT 6.824 Spring 2021；本专题为 MIT 6.5840 Spring 2026 L5。
+worker 只写 lectures/update-go-patterns/ 与 sources/p8-go-patterns/。
+
+一、前置材料与分工边界
+已读根 AGENTS、technical-video-notes skill、NEXT-P8-PROMPT；定点读取 PLAN、status、
+P7-REVIEW，确认旧 L2/L10 已完成、Go Tour 共用、无2026视频、实验不运行。
+主agent已负责两年课表整体与共享历史索引的核验；worker不声称再次全文阅读P7所有
+原始材料及四份worker review。worker另读2026课表120-132行，核对真实L5三个URL，
+嘉宾Russ Cox、2月19日。已有L10 notes与draft（含课后问答）全文读；L2 notes全文读。
+主agent随后仅将L10 notes“尚未对照”改成Update回链；该导航变更不属于幻灯片差异。
+本分片不记录可并发编辑的本地正文哈希。
+
+二、快照与全文阅读
+2026：复用 update-2026-Go-MIT6824-2026.pdf，独立计算SHA256
+a8764e0ed6400ec2f912a499ce3f74c60e4bd0fac084960cbcbf1aa7eedcefd2，吻合manifest。
+原抓取时间2026-11-08T12:48:18.088490+00:00保留，没有重新抓取PDF。
+Last-Modified Sun, 22 Feb 2026 11:57:29 GMT；PDF title MIT6824-2026.key，
+author Russ Cox，内部首页MIT6.5840 / Spring2026，creation/modification均
+20260220010856Z。此快照在2月19日课后生成，不能称当天投影逐字记录。
+全部73页文本顺序读取（slides-2026.txt 1-1730行）；PDF原件保留，提取文件不上线。
+
+2021：复用 mit-6824-go-2021.pdf，独立计算SHA256
+174126684c0b69a1073b5fad8982885665b4ee40f653289e6c01107cd19f6367，吻合manifest-2021。
+原抓取时间2026-11-08T14:22:43.753145+00:00保留。Last-Modified Fri, 26 Mar
+2021 20:18:58 GMT。PDF title MIT6824 2021.key，author Russ Cox，creation/mod
+20210325185047Z。完整读既有mit-6824-go-2021.txt全部1722行，对照本次逐页提取。
+全部78页，包括重复的1/2标题页以及78 BLANK CODE；不是只读旧notes替代PDF。
+
+FAQ：真实课表URL https://pdos.csail.mit.edu/6.824/papers/go-faq.txt。
+HTTP200；144行全文读，共10个Q（不是Go官方FAQ的全文）。Last-Modified
+Tue, 27 Jan 2026 14:57:07 GMT。抓取时间、SHA与final_url见分片。
+FAQ没有独立作者/日期头，不能把2026部署时间当每条回答撰写时间。
+它链接go2017的ownership愿望、2010演讲、声明语法文章及Go官方FAQ；这些外链未读。
+
+三、实际查看PDF页面（只渲染不等于查看；下列均通过read图像实际查看）
+2026物理页：12,14,15,16,17,33,39,41,44,45,46,47,49,58,63,64,68,70,71,73。
+2021物理页：15,17,34,40,41,44,47,52,67,74,75,77。
+页面检查范围：代码作用域/两栏改写、完成计数与两种race箭头、timer删除线、helper
+逻辑运算符、接口名字/通道方向、总结清单。没有视频截图，没有将这些原页图上线。
+2026第45/46页race报告右侧在原PDF中有裁切，辨认到的冲突足够核对读写/写写两类；
+不补造被裁切的报告尾部。第58页提示框覆盖部分声明，整体修改由文本及邻页交叉理解。
+
+四、两年完整主题对照与真实改动
+2021 1-3 ->2026 1-2：标题/并发与并行，删除重复标题页并改学期/课号。
+2021 4-20 ->2026 3-19：同一解析器/执行栈/pprof序言；函数名readChar/readString/
+quoteReader/ProcessChar逐步改成read/parse/quoter/Write，不是新模式。
+  2021 13-15内层c:=遮蔽外层c；2026 12-14改c=。视觉复核2021 15及2026 12/14。
+  2021 17只展示NeedMoreInput；2026 16明确错误状态SyntaxError及完成Done的发送。
+  旧draft11-13分钟已含讲者口头补充，因此只算新版PDF补全，不算新发明的退出原则。
+  2026 17将100次循环改整数range，诊断示例意图不变。
+2021 21-36 ->2026 20-35：发布订阅API、慢消费者三选择、mutex到状态owner、nil
+输出与排空一致；2021 34的&&在2026 33改||，确认旧L10校注而非重讲整个模式。
+2021 37-62 ->2026 36-58：调度器整体保留。
+  2021 41-46旧闭包循环变量竞争/参数/遮蔽修正组在2026删除，改整数range和逐迭代变量。
+  2021 47-50背压/回收空闲服务器对应2026 40-43，删掉重复task:=task。
+  2026 44-46真正增加共享done整数+Gosched等待及读写/写写两类race；2026 47改成
+  完成channel并新增communication提示。正确“一worker一确认”结构2021 51已存在，
+  notes明确新的是错误演变而不是把完成channel模式称首次出现。
+  2021 52-62对应2026 48-58：动态worker、任务完成计数、死锁、select/分派goroutine/
+  buffer三解法、重试后才close、结束接入goroutine，仍旧模式回链。
+2021 63-69 ->2026 59-65：复制客户端机制不变；循环改range，去除id:=id。
+  2021 67 Stop提示在2026 63被划掉并注明fixed in Go1.23，实际代码仍有defer Stop。
+  2021 77总结有Stop，2026 73删去，不能据此说Stop函数无用或RPC会自动取消。
+2021 70-75 ->2026 66-71：协议复用器结构不变；2026 70单页Tag修成ReadTag，
+  2026 71并排版仍残留Tag，未宣称全面修复。
+2021 76-78 ->2026 72-73：保留Hints页，清单加通信句、删Stop句/旧链接/末尾空白代码页。
+
+五、仍存在的片段问题与解释边界
+2026 15的Init receiver q而内部r.state；16 parse receiver为quoteReader而主体类型
+quoter，read返回int但传rune；终止状态命名与前一页也有变化，不默默拼可编译程序。
+2026 28/30/34/35取消分支仍有c/r不一致、35 h=缺声明等继承片段问题（文本核对，
+这些页未另视觉全查，因此不把它们列为已执行的编译诊断）。
+2026 49实际可见for range numTask却使用task，且沿用对channel双变量range片段；
+动态servers上for range与固定slice上for range的等待含义不相同。过渡页不能拼实现。
+2026 68/69 pending map[int64]chan<- Msg与make(map[int64]chan Msg)类型不同，
+展示Init未初始化send。70更正ReadTag，71仍Tag，已实际看页面。旧L10也已提示该类问题。
+新版并未提供parser中途EOF/取消或复用器失败重连/停止全协议。不是生产库或实验答案。
+固定worker完成证明只保证每个worker发送前的任务结束，不声称最后receive与所有
+goroutine物理退出同一时刻。调度Gosched、close工作输入不能代替反方向完成确认。
+L2已展开n++丢更新、所有权、条件变量，本页回链，避免又写一份基础课。
+
+六、CACM获取失败与独立许可核验
+实际课表原始入口（完整保留在sources[].url）：
+https://cacm.acm.org/magazines/2022/5/260357-the-go-programming-language-and-environment/fulltext
+requests GET HTTP403，保存cacm-original.html（错误页，不是文章）。
+搜索发现同一出版社新入口，题名、5位作者、2022/65(5)/70-78/DOI一致：
+https://cacm.acm.org/research/the-go-programming-language-and-environment/
+GET403；去尾斜线版本GET403，webfetch也403。分别保留请求/终点URL及错误响应SHA。
+搜索发现官方DOI PDF入口 https://dl.acm.org/doi/epdf/10.1145/3488716，GET403，
+保存.response，不冒充可读PDF。合理尝试到此停止；没有绕验证码、登录或反复循环。
+另查询作者旧首页及papers列表，只有较早论文，没有找到该文同文入口；研究机构推测
+题名路径404，不作为取得的文章来源。搜索预览可见文章目录及CC BY4.0说明，但未取得
+完整原页，故只是书目信息/许可线索，未据搜索摘录拼成“全文精读”。
+指定文章全文、文章代码/图表/脚注及自身许可核验仍blocked；materials只完成FAQ。
+没有把官方FAQ或GoTour当成CACM文章替代品。
+
+课程网站：独立复读home-2026.html 58-62行的rel=license，CC BY3.0 US，仅用于
+课程自有文字FAQ。两版Russ Cox PDF文本/元数据/所看页面未找到独立许可，不套网站CC。
+外部CACM也不套网站CC。两篇中文均为自主重组/短语引用；原页图及整套代码不上线。
+FAQ“effectively call-by-reference”在materials校注为值复制/底层对象共享，回链L2。
+FAQ分号描述是简化规则，明确不将struct字段声明与复合字面量混淆；不宣称已读整个规范。
+
+七、补充来源的定点阅读
+复用并核对旧Go1.22 release与Go1.23 timer快照哈希，原时间保留。
+Go1.22 HTML461-491：循环变量、整数range、未来rangefunc预览；只用前两项解释差异。
+Go1.23 timer HTML447-473：GC、同步timer语义、go.mod及GODEBUG门槛；不计全文迁移文档。
+Go官方页面自身全文再利用许可未在本次页面核实，仅自主解释，不复制原文长段。
+
+八、交付与局部核验
+lectures/update-go-patterns/notes.zh.md：已核实两年幻灯片差异、机制、不变量、反例、
+权衡、自测；旧模式回链。materials.zh.md：FAQ书面独有讨论与CACM明确缺口。
+不生成draft，无2026视频/虚构问答/时间轴；正文中的时间仅指向已存在2021译稿。
+manifest-fragment.json逐来源唯一p8-go-* ID；复用项original_source_id，PDF精确页码，
+所有原件/错误响应SHA，原抓取时间/final_url/Last-Modified完整记录。
+原件、提取文本/JSON、rendered页面图留本地，未git暂存；共享状态/整站检查交主agent。
+局部核验结果见local-check.txt。未运行Go、race detector、任何实验测试，也未build或git。

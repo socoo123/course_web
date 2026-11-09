@@ -1,0 +1,91 @@
+P8 update-verification review — 2026-11-09
+
+Assignment and boundaries
+- Only lectures/update-verification/ and sources/p8-verification/ written.
+- Read root AGENTS.md, technical-video-notes skill, NEXT-P8-PROMPT.txt in full.
+- Shared historical status, two-year schedules and nine-snapshot audit delegated to parent per task; this worker independently hashes its four reused sources and checks the 2026 L15 entry.
+- Deliverables: notes.zh.md (concepts, invariants, counterexamples, Raft/RSM bridge, self-tests), materials.zh.md (independent full-paper reading). No draft, video timeline, invented classroom Q&A, new lab requirements or lab solutions.
+
+Source reading scope and provenance
+1. update-2026-l-ironfleet.txt / original lec15-notes-1-2026
+   Full lines 1-160, including sort.dfy at 126-160, static reading.
+   Internal title: 6.5840 2026 Lecture 15: Verification: IronFleet.
+   No personal author byline in the text; scheduled instructor Upamanyu Sharma established separately from schedule entry.
+   Retrieved 2026-11-08T12:48:19.410749+00:00, Last-Modified Fri, 08 May 2026 13:20:20 GMT.
+   SHA256 ad9f5d2a8115fe7f1dabcfce4ba788516c215a05763ed8427a6f5007a25f7342.
+   Modified after the April 9 scheduled lecture; not represented as an unchanged lecture-day script.
+   Outline's demo and 10min Q&A labels do not supply actual demo outcomes or Q&A content. No reconstruction attempted.
+2. update-2026-ironfleet.pdf / original lec15-reading-2-2026
+   Full PDF pages 1-17: abstract; sections 1-10 and all subsections; acknowledgments; bibliography entries 1-72. No appendix.
+   Text extraction plus actual read of every rendered page pages/01.png through pages/17.png at 1.5 scale.
+   Internal title IronFleet: Proving Practical Distributed Systems Correct, SOSP '15, October 4-7, 2015, Microsoft Research authors.
+   Retrieved 2026-11-08T12:48:19.488718+00:00, Last-Modified Mon, 09 Feb 2026 18:50:56 GMT.
+   SHA256 a780f9b0ac2676e0153952a96f8a5a2d9b1afd9b4386e802d3fc485f3f8d5fb9.
+   Server modification date does not change publication year or establish a revision date.
+3. home-2026.html / original home-2026
+   Full 102 lines read, use scoped to 2026 identification and line 61 rel=license CC BY 3.0 US for course-owned text.
+   Retrieved 2026-11-08T12:48:14.787990+00:00, Last-Modified Tue, 10 Feb 2026 19:00:35 GMT.
+   SHA256 0e84bf9377933215c745734c742f29b40b34a7bd41e146717c8c661ac7c13856.
+4. schedule-2026.html / original schedule-2026
+   Targeted lines 211-220; central evidence 216-218: April 9 L15 Upamanyu Sharma; actual notes and paper links and Question link, no FAQ or video in this entry.
+   Retrieved 2026-11-08T12:09:28.821121+00:00, Last-Modified Thu, 14 May 2026 16:26:21 GMT.
+   SHA256 907861ca7e9d06d8c84051805a28308e391bb069684f166b0d74e07e48ac9e31.
+   The Question page was not fetched or read. It is not a FAQ and no contents are attributed to it.
+
+Reuse integrity
+- prepare.py independently computed SHA256 against shared manifest.json before reading; all four matched.
+- No source was refetched. All original retrieved_at and last_modified values preserved exactly; original_source_id retained.
+- Prior fetched status of notes/paper was not treated as review. New fragment reviewed status reflects the reading described here.
+- Shared original source bytes and metadata are unmodified. Rendered PNGs and extracted TXT files remain local; no paper images published in Markdown.
+
+Visual inspection coverage (PDF page numbers)
+- p1 title/authors/2015 conference/rights notice, abstract and introduction.
+- p2 Figure 1 zero/one/multiple abstract steps, Figure 2 halve pre/postcondition code.
+- p3 Figure 3 three-layer refinement, temporal operators, assumptions.
+- p4 Figures 4-5 lock specification and simplified host-transition code.
+- p5 Figure 6 witness-producing invariant lemma, protocol/spec and concrete implementation discussion.
+- p6 Figure 7 reduction interleaving, HRef/IRef/PRef expressions and paper-only reduction qualification.
+- p7 Figure 8 main-loop/journal/reduction obligation code; Figure 9 lock fairness quantifiers; clock-related reduction restrictions.
+- p8 temporal formula, always-enabled fairness, scheduler F/n, all three WF1 requirements, bounded/delayed variants.
+- p9 Figure 10 simplified proposal predicate, agreement vs one abstract application step, implementation refinements.
+- p10 Figure 11 complete high-level IronKV state-machine code, IronRSL F/Delta/B/E assumptions including 10B/F+1 rate bound, delegation/reliable transfer and range representation.
+- p11 generic libraries, message ghost history, functional-to-imperative refinement and automation successes.
+- p12 Figure 12 full statistics table, trusted high-level specs 85/34 SLOC; total 1400/5114/39253 SLOC and 395 minutes; implementation-only 3.6:1 ratio, 3.7 person-years.
+- p13 Figure 13 throughput/latency with log y-axis and batching legend; Figure 14 Get/Set payload columns and throughput units; benchmark setup, limitations and future work.
+- p14 related-work limits, conclusion, acknowledgments.
+- p15-17 all bibliography entries 1-72, not the cited works themselves.
+
+Existing-course comparison scope
+- Read lectures/lec05/notes.zh.md full 236 lines: majority evidence, leader uniqueness vs committed prefix, four completion stages, request identity, conditional liveness.
+- Read lectures/lec07/notes.zh.md full 262 lines: durable commitments, snapshot/applied frontier, replay equivalence, correct client result association, restart boundaries.
+- Read lectures/update-lab-bridge/notes.zh.md full 327 lines: deterministic DoOp, Submit identity, versioned Put/ErrMaybe, snapshot cuts, shard ownership and delayed RPC barriers.
+- These notes are comparison inputs, not a fresh audit of Raft paper, lab requirements, source code or tests. No shared note files changed.
+
+Important interpretation decisions
+- Actual case studies are IronRSL (MultiPaxos RSM) and IronKV (sharding for throughput), not a verified Raft implementation or one automatically composed verified service.
+- Safety network model permits delay/drop/duplication/reordering but assumes packet integrity and trustworthy source addresses; no Byzantine guarantee.
+- Imperative host implementations are single-threaded. Distributed concurrency remains and is handled using protocol reasoning plus constrained reduction.
+- Satisfying reduction-enabling I/O obligations is machine checked in the paper; proving these obligations sufficient for reduction remains informal/paper-only.
+- IronRSL state transfer after disconnection is not post-crash recovery. No verified client library, member reconfiguration or disk-restart model claimed.
+- IronRSL client-reply liveness distinguished from IronKV reliable-transmission liveness; all five IronRSL assumptions retained, including client network path, rate bound, memory and overflow limits.
+- Exactly-once transmission component delivery is not generalized to arbitrary client exactly-once operation semantics.
+- Paper p6 §3.5 defines PRef(IRef(.)), then reverses the order once in SpecRelation. Materials notes this as a type/order-consistency typo, using definitions rather than silently reproducing it.
+- Figure 5 is explicitly simplified, and does not itself establish a complete replay-safe lock implementation. Figure 6 is illustrative proof code; no code snippet has been executed.
+- Abstract/§5 call IronKV lease-based, while §5.2 explains delegation, reliable transfer and compact ranges without a complete timed lease protocol. No lease timeout/recovery details inferred.
+- Model checking can prove a finite model; testing finite configurations does not establish an arbitrary unbounded system. Related-work comparisons are limited to paper's 2015 descriptions, not asserted as 2026 project capabilities.
+
+License and publication
+- Actual instructor attribution comes from schedule entry; course-owned text license evidence comes from home-2026, kept as separate fragment sources.
+- PDF p1 permits personal/classroom copies with notice and citation, while broader republication requires permission; no public full Chinese translation license established.
+- Both Markdown files are independently organized explanations/commentary. Original paper figures not republished. Course homepage CC not applied to paper or external code.
+
+Unresolved/excluded boundaries
+- No actual 2026 classroom video or FAQ listed; no video content created. Lecture demo outcome and actual Q&A unknown.
+- No independent reading of cited bibliography works, no artifact/source implementation audit, no current Dafny compatibility check.
+- No Dafny/Z3/prover run, no lab tests, no benchmark reproduction. Author-reported verification/performance never represented as our own execution.
+- No blockers for the assigned written topic; above limitations are explicit scope boundaries.
+
+Local validation
+- check.py checks unique p8-verification-* ids, required metadata, all source hashes, exact original provenance fields, full read/visual page arrays, retained renders, Markdown delimiters and whitespace, and internal lecture/lab ids against shared course.json.
+- Executed python3 content/mit-6.824-2021/sources/p8-verification/check.py: PASS; notes 214 lines, materials 259 lines; four original hashes/timestamps match; 17 page renders retained and review arrays complete; routes/markup/whitespace valid.
+- No git commands or site build; parent performs integration checks/build.

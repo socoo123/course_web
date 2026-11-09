@@ -1,0 +1,182 @@
+{
+  "topic": "update-bft",
+  "course_context": "MIT 6.824 Spring 2021 main course; MIT 6.5840 Spring 2026 L21 (Derek Leung) written-material update",
+  "sources": [
+    {
+      "url": "https://pdos.csail.mit.edu/6.824/notes/l-bft.txt",
+      "final_url": "https://pdos.csail.mit.edu/6.824/notes/l-bft.txt",
+      "file": "update-2026-l-bft.txt",
+      "sha256": "8ba9633dffa0e8a64277d97e45b9f2e436720f9715fa6e10c1f1401eee4d7767",
+      "retrieved_at": "2026-11-08T12:48:24.651125+00:00",
+      "last_modified": "Tue, 27 Jan 2026 14:57:07 GMT",
+      "id": "p8-bft-notes",
+      "original_source_id": "lec21-notes-1-2026",
+      "status": "reviewed",
+      "scope": "Full text lines 1–342, including all ASCII traces and reference list. Internal title remains 6.5840 2024 Lecture 22; linked by 2026 L21. Lecture design stages are pedagogical simplifications, compared with paper definitions.",
+      "license": "MIT course-owned text, CC BY 3.0 US from home-2026.html line 61; attributed to MIT 6.5840 course team. No individually named author in this text.",
+      "read_pages": [],
+      "visual_pages": [],
+      "read_lines": [
+        [
+          1,
+          342
+        ]
+      ],
+      "reused_snapshot": true
+    },
+    {
+      "url": "https://pdos.csail.mit.edu/6.824/notes/65840-pbft.pdf",
+      "final_url": "https://pdos.csail.mit.edu/6.824/notes/65840-pbft.pdf",
+      "file": "update-2026-65840-pbft.pdf",
+      "sha256": "bf4e53fb84775b14b9bfa23946d6a69d591d3dabcd3555c99185283d580359d4",
+      "retrieved_at": "2026-11-08T12:48:25.700113+00:00",
+      "last_modified": "Thu, 07 May 2026 19:55:55 GMT",
+      "id": "p8-bft-slides",
+      "original_source_id": "lec21-notes-2-2026",
+      "status": "reviewed",
+      "scope": "Complete 23-page PDF, text and actual rendered pages 1–23. Internal Lecture 21; Derek Leung attribution from 2026 schedule. Includes assumptions, digital-signature notation, quorum formulas, recovery prompts, view rotation and optimization list. Page 17 contains only a recovery-example prompt; no board trace or video reconstructed.",
+      "license": "Independent full-translation/republication permission not established for guest slides. Derek Leung attributed from course schedule. Course-site CC is not automatically applied. Original commentary only, no page images published.",
+      "read_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "visual_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "read_lines": [],
+      "reused_snapshot": true
+    },
+    {
+      "url": "https://pdos.csail.mit.edu/6.824/papers/castro-practicalbft.pdf",
+      "final_url": "https://pdos.csail.mit.edu/6.824/papers/castro-practicalbft.pdf",
+      "file": "update-2026-castro-practicalbft.pdf",
+      "sha256": "4072e5923a9d113bde62aebfb16f040893c8512ee0c6f7df7ef6ba038882fb51",
+      "retrieved_at": "2026-11-08T12:48:26.964714+00:00",
+      "last_modified": "Tue, 27 Jan 2026 14:57:07 GMT",
+      "id": "p8-bft-paper",
+      "original_source_id": "lec21-reading-3-2026",
+      "status": "reviewed",
+      "scope": "Complete 14-page OSDI 1999 paper: abstract, sections 1–9, acknowledgments and all 37 bibliography entries. All actual pages 1–14 viewed, including Figures 1–2, Tables 1–3, message formats, predicates, bounds and implementation formulas. Cited technical proofs, MAC protocol report, dissertation and later systems not read.",
+      "license": "Miguel Castro and Barbara Liskov, Practical Byzantine Fault Tolerance, OSDI 1999. Full-translation permission not established; autonomous Chinese reading commentary, no original PDF pages published. Course-site CC not applied.",
+      "read_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "visual_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "read_lines": [],
+      "reused_snapshot": true
+    },
+    {
+      "url": "https://pdos.csail.mit.edu/6.824/papers/bft-faq.txt",
+      "final_url": "https://pdos.csail.mit.edu/6.824/papers/bft-faq.txt",
+      "file": "p8-bft/bft-faq.txt",
+      "sha256": "f28f37745781b4e3b5dfddc956cdd7678c6cddb3e8bcd263832b93204c4ad9a0",
+      "retrieved_at": "2026-11-09T13:47:43.622522+00:00",
+      "last_modified": "Tue, 27 Jan 2026 14:57:07 GMT",
+      "id": "p8-bft-faq",
+      "inventory_source_id": "lec21-faq-4-2026",
+      "http_status": 200,
+      "status": "reviewed",
+      "scope": "Full text lines 1–206, all questions and answers. Corrected threshold wording at lines 84–93 using paper section 4.2; scoped FLP/one-third wording and lifetime fault bound. All external linked works remain unread.",
+      "license": "MIT course-owned FAQ, CC BY 3.0 US from home-2026.html line 61; attributed to MIT 6.5840 course team. Does not cover linked papers.",
+      "read_pages": [],
+      "visual_pages": [],
+      "read_lines": [
+        [
+          1,
+          206
+        ]
+      ],
+      "reused_snapshot": false
+    }
+  ],
+  "video_status": "No video listed by the 2026 schedule; no draft, invented timestamps or classroom dialogue.",
+  "artifacts": [
+    "lectures/update-bft/notes.zh.md",
+    "lectures/update-bft/materials.zh.md"
+  ],
+  "review": "p8-bft/review.txt",
+  "validation": "p8-bft/validation.txt",
+  "local_only": [
+    "p8-bft/bft-faq.txt",
+    "p8-bft/acquisition.json",
+    "p8-bft/paper.txt",
+    "p8-bft/slides.txt",
+    "p8-bft/rendered/"
+  ],
+  "execution": {
+    "prototype": "not_run",
+    "lab_tests": "not_run",
+    "build": "delegated_to_main_agent"
+  }
+}

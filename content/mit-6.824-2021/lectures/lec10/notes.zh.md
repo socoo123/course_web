@@ -98,7 +98,7 @@ $$
 - **timer**：Go 1.23 引入新的 timer channel 实现，未引用且未停止的 timer 可以被回收；默认启用与主模块 `go` 版本相关，并受 `GODEBUG=asynctimerchan` 影响。本实验模块固定 `go 1.22`，不要只看本机 Go 可执行文件版本就推断其 timer 行为。
 - **泛型与库**：课堂谈的是当时的提案和期望，不把其中关于未来 `slices.Map` 等设想写成当前标准库 API。
 
-本批未制作 2026 Go patterns 对照；这里仅对影响学习的两项工具链变化做有来源的校注。
+这里仅对影响学习的两项工具链变化做有来源的校注；2026 幻灯片相对本讲的差异与新增指定阅读，见 [Go patterns 增补](#/c/mit-6.824-2021/lec/update-go-patterns?v=notes)。
 
 ## 8. 自测
 

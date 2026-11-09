@@ -5,7 +5,7 @@
   "versions": [
     { "label": "课程 / 视频", "value": "MIT 6.824 Spring 2021" },
     { "label": "实验", "value": "MIT 6.5840 Spring 2026 · 513cac0aef01" },
-    { "label": "Updates", "value": "2026 对照 2021 · 2026-11-08 快照" }
+    { "label": "Updates", "value": "2026 对照 2021 · 逐来源固定快照" }
   ],
   "intro": "在会丢消息、会宕机的机器上构建可靠服务：从 MapReduce 与 RPC 入门，掌握复制、Raft、线性一致性和分片迁移，再阅读经典系统案例。主线采用 2021 年视频并保留官方讲次，动手部分统一采用 2026 年五个 Go 实验；Updates 衔接新版接口与专题。建议先按公共资料中的实验路线学习，再拓展案例。",
   "links": [
@@ -37,12 +37,12 @@
     { "id": "lec21", "num": "21", "title": "项目展示", "titleEn": "Project demos", "video": { "label": "2021 L21", "youtube": "https://www.youtube.com/watch?v=bu41Qt9G5Qo" }, "readings": ["AnalogicFS experience paper"], "note": "项目展示录像，按展示内容整理，不视为普通授课。", "optional": true },
     { "id": "update-linearizability", "num": "增补", "title": "Updates · 线性一致性与版本化 KV", "titleEn": "Consistency and Linearizability", "readings": ["2026 L8 讲义与 linearizability FAQ", "Herlihy / Wing：Linearizability (1990)，§1–§3.1", "2026 Lab 2 的 Get / versioned Put / ErrMaybe"], "lab": "kvsrv", "core": true, "isNew": true, "note": "桥接必读；笔记讲历史判断，课程资料精读论文。对应 2026 L8，课表未提供视频。" },
     { "id": "update-lab-bridge", "num": "增补", "title": "Updates · RSM、KV 与分片实验衔接", "titleEn": "2026 Lab Interface Bridge", "readings": ["2026 Lab 4–5 与固定提交的 RSM、版本化 KV、Persister、shardctrler/shardgrp/shardrpc 接口", "共享 Raft 论文 §7（见 L5 课程资料）"], "lab": "kvraft", "core": true, "isNew": true, "note": "编者跨版本导读，无独立官方讲次；连接 RSM/KV/快照与分片服务权、控制器恢复、并发配置变更。" },
-    { "id": "update-paxos", "num": "增补", "title": "Updates · Paxos", "titleEn": "Paxos", "readings": ["2026 L4 讲义与伪代码", "Paxos Made Simple"], "optional": true, "isNew": true, "note": "对应 2026 L4；与 2021 L5/L7 Raft 对照。" },
-    { "id": "update-go-patterns", "num": "增补", "title": "Updates · Go 编程模式", "titleEn": "Go patterns", "readings": ["Russ Cox：Go-MIT6824-2026.pdf", "The Go Programming Language and Environment (2022)"], "optional": true, "isNew": true, "note": "对应 2026 L5 嘉宾课；衔接 2021 L2/L10，制作前核对超出旧课的内容。" },
-    { "id": "update-verification", "num": "增补", "title": "Updates · 分布式系统验证", "titleEn": "Verification of distributed systems", "readings": ["2026 L15 讲义", "IronFleet (2015)"], "optional": true, "isNew": true, "note": "2026 L15，Upamanyu Sharma。" },
+    { "id": "update-paxos", "num": "增补", "title": "Updates · Paxos", "titleEn": "Paxos", "readings": ["2026 L4 讲义、伪代码与 FAQ", "Leslie Lamport：Paxos Made Simple (2001)"], "optional": true, "isNew": true, "note": "对应 2026 L4 书面材料；区分 promise、accept、chosen、learned，以多数交集和反例对照 L5/L7 Raft。" },
+    { "id": "update-go-patterns", "num": "增补", "title": "Updates · Go 编程模式", "titleEn": "Go patterns", "readings": ["Russ Cox：Go-MIT6824-2026.pdf，与 2021 L10 幻灯片对照；2026 FAQ", "The Go Programming Language and Environment (CACM 2022)"], "optional": true, "isNew": true, "note": "对应 2026 L5 书面材料；已有并发模式回链 L10，新增和修改部分单独分析。" },
+    { "id": "update-verification", "num": "增补", "title": "Updates · 分布式系统验证", "titleEn": "Verification of distributed systems", "readings": ["2026 L15 讲义（Upamanyu Sharma）", "IronFleet: Proving Practical Distributed Systems Correct (2015)"], "optional": true, "isNew": true, "note": "从协议不变量到实现 refinement，区分安全性、活性与可信计算基；课表无视频或 FAQ。" },
     { "id": "update-lambda", "num": "增补", "title": "Updates · AWS Lambda", "titleEn": "AWS Lambda", "readings": ["2026 L17 Marc Brooker 幻灯片", "On-demand Container Loading (2023)"], "optional": true, "isNew": true },
     { "id": "update-ray", "num": "增补", "title": "Updates · Ray", "titleEn": "Ray", "readings": ["2026 L18 讲义", "Ray (2021，按课表标注)"], "optional": true, "isNew": true, "note": "与 2021 L16 Spark 衔接。" },
-    { "id": "update-bft", "num": "增补", "title": "Updates · 实用拜占庭容错", "titleEn": "Practical Byzantine Fault Tolerance", "readings": ["2026 L21 讲义与 Derek Leung 幻灯片", "Practical BFT (1999)"], "optional": true, "isNew": true }
+    { "id": "update-bft", "num": "增补", "title": "Updates · 实用拜占庭容错", "titleEn": "Practical Byzantine Fault Tolerance", "readings": ["2026 L21 讲义、Derek Leung 幻灯片与 FAQ", "Castro / Liskov：Practical Byzantine Fault Tolerance (1999)"], "optional": true, "isNew": true, "note": "固定成员下的认证、法定人数、提交与换届；对照 SUNDR 的分叉约束和 Bitcoin 的开放成员模型。仅书面材料。" }
   ],
   "labs": [
     {

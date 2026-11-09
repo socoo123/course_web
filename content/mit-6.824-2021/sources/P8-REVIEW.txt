@@ -1,0 +1,79 @@
+P8 书面专题整合审阅
+日期：2026-11-09
+主线 MIT 6.824 Spring 2021；Updates 为 MIT 6.5840 Spring 2026 书面材料。
+实验固定 513cac0aef010750fc74688da8a395974a83cf7a。
+
+一、前置核对与分工
+主 agent 完整读取 AGENTS、technical-video-notes skill、NEXT-P8-PROMPT、PLAN、
+status、manifest-2021、P7-REVIEW、四份 p7-*/review、两年课表与当前 inventory/map。
+确认 P1–P7 的实际阅读与视频边界，未把旧 fetched 当作已精读。
+起始工作区干净，main 与 fetch 后的 origin/main 一致。
+用户明确允许四个独立 worker，分别负责 update-paxos/go-patterns/verification/bft
+及对应 p8-专题来源目录；主 agent 负责共享来源、审阅、整合和 git。
+
+两年课表及主页的具体检查见 p8-shared/review.txt。九份旧专题快照、两年课表与
+2026 主页 SHA256 均与历史清单一致，复用原 GET 时间，没有重抓后冒用旧日期。
+2026 L4/L5/L15/L21 的 13 个实际书面入口逐项核对；没有课表视频，IronFleet 无 FAQ。
+课程自有文字沿主页 CC BY 3.0 US；论文、嘉宾幻灯片、CACM 文章独立核对许可。
+
+二、逐专题审阅
+逐专题全文阅读、PDF 实际页面检查、精确版本及未决边界见各 p8-*/review.txt
+和 manifest-fragment.json。主 agent 的中文成品审阅与原始来源定点复核在此分开记录。
+
+Paxos
+- worker 全文读351行讲义、40行伪代码、103行FAQ和14页论文；实际查看PDF1、5–14。
+- 主 agent 全文审阅notes 275行、materials 179行及完整manifest/review；另全文读40行
+  原始伪代码，实际查看论文PDF7、13、14，核对P2c、批量prepare、流水线和成员指定公式。
+- 静态逐步核对三节点反例，特别是accept不推进n_p以及不同ballot同值不可合票。
+  prepare > / accept >=、持久化先于成功回复、chosen与learned、单实例与日志位置均保留。
+- 论文采用自主精读；外链文献未通读，未执行实现、模型检查或证明器。未发现需修改的实质问题。
+
+IronFleet
+- worker 全文读160行讲义与17页论文，并实际查看全部17页（Figure1–14、公式与代码）。
+- 主 agent 全文审阅notes 214行、materials 259行及完整manifest/review；实际查看PDF6、10、13，
+  核对映射组合顺序笔误、reduction纸面论证、五组活性条件、IronKV传输语义及性能/未覆盖边界。
+- 协议到规格和实现到协议分开；IronRSL为MultiPaxos，IronKV为分片服务，未混为已验证Raft。
+  reduction结构条件机器检查不等于其充分性定理机器证明；状态追赶不等于崩溃恢复。
+- 讲义Last-Modified晚于课表日期，保留原快照；无FAQ/视频，未运行Dafny、系统或实验。
+  未发现需修改的实质问题。
+
+Go patterns
+- worker 全文读2026 PDF73页、2021 PDF78页、既有L10 notes/draft与L2 notes，FAQ144行。
+  分别实际查看20/12个代码页，精确清单见分片；没有把旧课正文当成两年PDF已读证据。
+- 主 agent 全文审阅notes160行、materials74行及完整manifest/review；实际查看2026
+  PDF33、44、47、63和2021 PDF34，确认helper &&→||、done/Gosched和完成channel、timer删除线。
+- 新增的是共享完成计数反例，完成channel方案2021已存在；旧模式回链，Go1.22/1.23
+  边界沿已有官方文档校注。幻灯片残留片段问题不称为编译诊断或运行失败。
+- CACM原入口、出版社现行两种路径和DOI PDF均403；错误响应单独保存。未获取文章
+  全文/代码/图表，也未完成独立许可核验；搜索CC BY4.0仅为线索。materials明确partial。
+  按用户允许的来源失败分支交付已有材料，不以FAQ替代文章，不重复盲重试。
+
+PBFT
+- worker 全文读342行讲义、206行FAQ、23页幻灯片与14页论文，实际查看两份PDF全部页面。
+- 主 agent 全文审阅notes257行、materials236行及完整manifest/review；实际查看论文PDF5、9、12，
+  核对committed/committed-local、检查点门槛、原型缺少换主/重传及Andrew两种比较分母；
+  另读原FAQ74–101行，确认84–93行的错误门槛已在中文资料明确校正。
+- prepared证据与发出prepare分开；commit使至少f+1正确副本持有准备证书，换主继承
+  和客户端f+1普通回复门槛保持完整。静态核对缺少commit的四节点反例，无实质修改。
+- 讲义2024 L22旧标题、教学诚实客户端简化与论文模型、MAC外链细节、未实现的恢复路径
+  和原论文正常路径评测分别保留；未运行PBFT或实验。
+
+三、整合与后续
+本批限定四个 Updates 的 notes/materials；不生成课堂 draft、时间轴或问答。
+共8份新正文，其中7份完成、Go materials部分完成；累计62份讲座正文（61完成、1部分），
+10份实验正文、4张SVG。status的published/complete/partial分别计数，CACM403单列knownIssue。
+共享索引以五个 p8-* 分片纳入 manifest-2021，旧 manifest 保留获取时历史状态。
+后续 NEXT-P9-PROMPT.txt 已按课表链接生成：Lambda、Ray、2021 L21 展示与独立
+AnalogicFS 阅读。不能因已读 Spark 就标 Ray 完成。
+P7 的 SUNDR 范围、Nielsen 原站／UBC 替代及 Blockstack2016 边界继续保留；
+FaRM 两条录像继续分开；L6/L8 无新增真实来源继续待补。
+实验测试未运行，用户实验完成不追踪；静态伪代码／论文审阅不代表协议测试或运行证明器。
+
+四、最小验收
+PASS python3 content/mit-6.824-2021/sources/check-p8.py：8份新正文、所有P8来源哈希与
+复用时间、全局唯一来源ID、13个实际课表入口、路由/图片、SVG XML、JSON/状态和计数。
+检查器按实际交付允许唯一的Go materials partial，且要求对应CACM源确为blocked/403。
+PASS npm run build：tsc --noEmit与vite build均通过，8份正文及公共导航纳入构建。
+PASS git diff --check及git diff --cached --check；暂存清单44个文件全部位于
+content/mit-6.824-2021/，包含8份新正文、共享索引和选择性来源记录，无原始PDF/HTML/页图。
+原始 PDF/HTML/字幕/页图保留本地；只选择正文、必要脚本、来源清单和审阅记录提交。

@@ -2,7 +2,7 @@
   "courseId": "mit-6.824-2021",
   "plannedAt": "2026-11-08",
   "updatedAt": "2026-11-09",
-  "phase": "P7_complete",
+  "phase": "P8_complete_with_CACM_gap",
   "plan": "sources/PLAN.txt",
   "versions": {
     "lectures": "MIT 6.824 Spring 2021",
@@ -26,18 +26,21 @@
   "p5Review": "sources/P5-REVIEW.txt",
   "p6Review": "sources/P6-REVIEW.txt",
   "p7Review": "sources/P7-REVIEW.txt",
+  "p8Review": "sources/P8-REVIEW.txt",
   "plannedBatches": {
     "P8": { "lectures": ["update-paxos", "update-go-patterns", "update-verification", "update-bft"], "prompt": "sources/NEXT-P8-PROMPT.txt", "scope": "2026 written sources; compare Go patterns with completed2021 L10 before expanding; no lecture video listed" },
-    "P9": { "lectures": ["update-lambda", "update-ray", "lec21"], "scope": "Ray compared with Spark;2021 project-demo video and assigned AnalogicFS reading remain distinct" }
+    "P9": { "lectures": ["update-lambda", "update-ray", "lec21"], "prompt": "sources/NEXT-P9-PROMPT.txt", "scope": "Ray compared with Spark;2021 project-demo video and assigned AnalogicFS reading remain distinct" }
   },
   "artifacts": {
     "courseRegistration": "complete",
     "catalogMigration": "mit-6.824-2020 -> mit-6.824-2021; active",
-    "publicResources": "updated_for_2021_P7",
+    "publicResources": "updated_for_2021_P8",
     "mainlineEntries": 21,
     "updateEntries": 8,
     "labEntries": 5,
-    "lectureDocumentsCompleted": 54,
+    "lectureDocumentsCompleted": 61,
+    "lectureDocumentsPublished": 62,
+    "lectureDocumentsPartial": 1,
     "labDocumentsCompleted": 10,
     "lectureIllustrationsCompleted": 4
   },
@@ -69,6 +72,10 @@
     "sundrReading": "2021 until Section3.4 interpreted as exclusive based on paper structure;2026 through the end of Section3.3.2 separately preserved. Assigned prefix complete:PDF1-5 and6 before3.4,Figures1-5;extra6-7 concurrency reading partial,8-16 unread. Full2021 outline239/FAQ54 lines and2026 outline306/543-line diff read;PDF SHA256 identical. Comparison merged at lec18;2026 FAQ not read",
     "bitcoinReading": "Complete9-page whitepaper,sections1-12 and8 bibliography entries;all7 diagram groups,formulas/code/numerical lists visually checked. Full286-line outline/340-line FAQ,stale reward and chain-size values annotated. Nielsen original404 after variants and one requested retry;complete2013 essay in UBC10-page2015 merged PDF read,all6 figures/visible formulas viewed;unrelated adjacent articles not counted,comments absent,original final revision unverified. Both readings independent commentary,full-translation permission unconfirmed",
     "blockstackReading": "Complete15-page ATC2016 PDF including cover,sections1-7,acknowledgements and53 bibliography entries;all8 figures/two SNV formulas visually checked. Full330-line outline/174-line FAQ;2016 DHT separated from2021 Atlas/Gaia/Browser andFAQ2019 whitepaper link. SNV trusted anchor,mutable freshness andFigure7 CPU wording discrepancy retained;no modern Stacks review",
+    "paxosReading": "Complete351-line outline,40-line pseudocode,103-line FAQ and14-page Paxos Made Simple;PDF1 and5-14 visually checked. Promise/accept/chosen/learned,highest accepted ballot,persistence,progress andmulti-instance recovery separated;static checking only,no implementation/model tests",
+    "verificationReading": "Complete160-line outline and17-page SOSP2015 IronFleet paper,all pages/Figures1-14/formulas/code visually checked. Protocol/implementation refinement,reduction paper-only sufficiency,conditional liveness,TCB andunverified crash recovery/client/reconfiguration boundaries retained;no proof-tool execution",
+    "goPatternsReading": "Full2026 73-page and2021 78-page slide texts compared with existing L10 notes/draft;20/12 selected code pages visually checked. Full144-line FAQ read;new done/Gosched race example,loop/parser/helper/timer changes separated from reused patterns. CACM2022 original,current publisher variants andDOI PDF return403;article unread andlicense unverified;materials partial",
+    "bftReading": "Complete342-line outline,206-line FAQ,23-page slides and14-page OSDI1999 paper;all37 PDF pages visually checked including2 figures/3 tables. Outline retains2024 L22 title;client assumptions,FAQ commit-threshold error,MAC proof boundary,unimplemented prototype view-change/retransmission andbenchmark denominators annotated;no prototype execution",
     "updatesVideo": "No video links on 2026 schedule; editorial bridge has no lecture video",
     "legacySources": "manifest.json, schedule-inventory.json and version-map.json retain pre-migration 2020/2026 source states; do not count them as 2021 coverage",
     "mapreduceReading": "Reused P1 independent commentary on 13-page OSDI 2004 paper, sections 1-8 and Appendix A; original 2020-hosted snapshot retained",
@@ -97,7 +104,8 @@
     "P4": "complete_2021_caption_based_and_pinned_2026_lab_guidance",
     "P5": "complete_2021_caption_based_and_pinned_2026_lab_guidance",
     "P6": "complete_2021_caption_based_four_cases_five_videos_and_2026_chain_comparison",
-    "P7": "complete_2021_caption_based_four_topics_2026_SUNDR_comparison_and_Nielsen_substitute"
+    "P7": "complete_2021_caption_based_four_topics_2026_SUNDR_comparison_and_Nielsen_substitute",
+    "P8": "delivered_four_written_topics_eight_documents_with_Go_CACM_article_blocked_403"
   },
   "content": {
     "lectures": {
@@ -124,12 +132,12 @@
       "lec21": { "notes": "not_started", "draft": "not_started_project_demos", "materials": "not_started" },
       "update-linearizability": { "notes": "complete", "draft": "no_video_listed", "materials": "complete_independent_reading_through_3.1" },
       "update-lab-bridge": { "notes": "complete_RSM_and_migration", "rsm": "complete_with_versioned_KV_and_snapshot_contract", "migration": "complete_P5", "draft": "not_applicable", "materials": "not_planned_shared_lab_sources" },
-      "update-paxos": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" },
-      "update-go-patterns": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" },
-      "update-verification": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" },
+      "update-paxos": { "notes": "complete_written_source_analysis", "draft": "no_video_listed", "materials": "complete_independent_reading_14_pages" },
+      "update-go-patterns": { "notes": "complete_slide_comparison", "draft": "no_video_listed", "materials": "partial_FAQ_complete_CACM_article_blocked" },
+      "update-verification": { "notes": "complete_written_source_analysis", "draft": "no_video_listed", "materials": "complete_independent_reading_17_pages_all_figures_code" },
       "update-lambda": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" },
       "update-ray": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" },
-      "update-bft": { "notes": "not_started", "draft": "no_video_listed", "materials": "not_started" }
+      "update-bft": { "notes": "complete_written_source_analysis", "draft": "no_video_listed", "materials": "complete_independent_reading_14_pages_and_teaching_source_comparison" }
     },
     "labs": {
       "mr": { "zh": "complete", "guide": "complete", "en": "not_published" },
@@ -157,7 +165,9 @@
     { "id": "p6-technical-open-questions", "status": "explicit_in_content", "issue": "L11 old-tail authority needs external fencing assumptions;L12 prototype delayed writes not fenced at Petal;L15 second-video readonly/blind-write Q&A unfinished and Figure10 recovery-label ordering unclear;L17 Gutter lease/marcher unresolved,marker eviction/concurrent cleanup and measurement-caption discrepancies retained. No modern implementation investigation or experiments claimed", "blocksNextBatch": false },
     { "id": "p7-caption-boundaries", "status": "text_review_only", "issue": "All8701 cues read across four recordings,132 chronological sections,no audio/frame review. L18 Zoom andbreakout gaps,L16 environment andL19 program interruptions,L20 zone-file answer gap retained. Raw2000/1920/1520/1880ms overruns preserved;gaps not assumed silence. L16 narrow-dependency/shuffle/collect/count andL19 throughput/hash/negation uncertainties explicitly annotated", "blocksNextBatch": false },
     { "id": "p7-nielsen-original", "status": "original_blocked_substitute_reviewed", "issue": "Original page andHTTPS variants404;one user-requested retry still404. Complete Bitcoin essay in UBC2015 ten-page merged PDF read with all6 figures/visible formulas. Original latest revision andcomments unavailable;some isolated symbols blank inPDF. Original URL andsubstitute fetched/final URL separately recorded;no full-translation permission inferred", "blocksNextBatch": false },
-    { "id": "p7-written-versions-and-scope", "status": "documented", "issue": "Spark notes/FAQ postdate class;upload next day. SUNDR assigned prefix complete,extra concurrency partial,PDF8-16 unread;2021/2026 ranges retained,PDF bytes identical. Blockstack2016 DHT distinguished from2021 Atlas/Gaia andFAQ whitepaper references;SNV anchor andFigure7 CPU mismatch retained. Papers independent commentary,not licensed full translations;external works/modern implementations/experiments not reviewed", "blocksNextBatch": false }
+    { "id": "p7-written-versions-and-scope", "status": "documented", "issue": "Spark notes/FAQ postdate class;upload next day. SUNDR assigned prefix complete,extra concurrency partial,PDF8-16 unread;2021/2026 ranges retained,PDF bytes identical. Blockstack2016 DHT distinguished from2021 Atlas/Gaia andFAQ whitepaper references;SNV anchor andFigure7 CPU mismatch retained. Papers independent commentary,not licensed full translations;external works/modern implementations/experiments not reviewed", "blocksNextBatch": false },
+    { "id": "p8-go-cacm-article", "status": "blocked_HTTP403", "issue": "Original2026 scheduled CACM2022 URL,current publisher slash/non-slash variants andDOI epdf return403. Error responses andprovenance retained. Article text/figures/code andfull license not reviewed;search CC BY4.0 hint unconfirmed. Go materials contains completed FAQ only andremains partial;do not substitute Tour orsearch snippets", "blocksNextBatch": false },
+    { "id": "p8-written-versions-and-proof-boundaries", "status": "documented", "issue": "No2026 video forfour topics. Go PDF generated afterscheduled class;IronFleet outline modified afterclass;BFT outline internally2024 L22. Independent paper/guest-slide commentary,not licensed full translations. IronFleet reduction sufficiency remains informal;PBFT prototype lacks view changes/retransmissions. Static source reasoning not Go/protocol/prover/lab execution", "blocksNextBatch": false }
   ],
   "historicalIssues": [
     { "videoId": "cQP8WApzIQQ", "year": 2020, "captions": "HTTP 429 after one P1 retry", "log": "sources/lec01-caption-p1.log", "license": "CC Attribution label; historical version unresolved", "status": "retired_as_primary_video" }
@@ -210,7 +220,7 @@
       { "videoId": "DnyBPxo3B6I", "durationSeconds": 5383, "cues": 2363, "draftSections": 34, "firstStartMs": 80, "lastEndMs": 5384880, "normalizedCaptions": "sources/p7-lec20/captions/captions.normalized.json", "metadata": "sources/p7-lec20/metadata.json" }
     ] }
   },
-  "validation": { "checkedAt": "2026-11-09", "contentIntegrity": "passed: check-p7.py;12 new documents,shared navigation,JSON,unique source IDs,P7 source/derived hashes,actual schedule URLs,registered routes/targets,images,SVG XML,fences,whitelist video metadata andtotals:54 lecture documents,10 lab documents,4 SVGs", "captionTimeline": "passed: L16 2026 cues/30 sections,L18 2149/35,L19 2163/33,L20 2363/34;8701 cues/132 sections. Starts monotonic,each cue start assigned exactly once,continuous zero-based timelines andmetadata durations agree;raw2000/1920/1520/1880ms end overruns retained. Structure is not audio/frame or translation-accuracy verification", "siteBuild": "passed: integrated npm run build (tsc --noEmit + vite build);all12 P7 documents andshared metadata/navigation included", "labTests": "not_run", "goCompilation": "not_run" },
+  "validation": { "checkedAt": "2026-11-09", "contentIntegrity": "passed: check-p8.py;8 new documents,shared navigation,JSON,unique source IDs,P8 source hashes/original timestamps,13 exact schedule URLs,registered routes/targets,images,SVG XML,fences andstate consistency. Totals:62 published lecture documents(61 complete,1 partial),10 lab documents,4 SVGs;CACM403 gap retained", "captionTimeline": "P8 not applicable:no videos ornew timelines. P7 prior result retained in P7-REVIEW andp7Captions;FaRM two separate timelines unchanged", "siteBuild": "passed: npm run build (tsc --noEmit + vite build);all8 P8 documents andshared metadata/navigation included", "labTests": "not_run", "goCompilation": "not_run", "protocolOrProofExecution": "not_run" },
   "gitDiffCheck": "passed: git diff --check;changes confined to content/mit-6.824-2021/",
-  "next": "P8: update-paxos,update-go-patterns,update-verification,update-bft;written2026 sources only,Go patterns first compared with2021 L10. P9: update-lambda,update-ray and2021 lec21 project demos plus separate AnalogicFS reading. L6/L8 await actual sources. Full prompt: sources/NEXT-P8-PROMPT.txt."
+  "next": "P9: update-lambda,update-ray and2021 lec21 project demos plus separate AnalogicFS reading. Preserve P8 CACM403 gap;complete article only when a legitimate full-text source becomes available,no repeated blind retries. L6/L8 await actual sources. Full prompt: sources/NEXT-P9-PROMPT.txt."
 }

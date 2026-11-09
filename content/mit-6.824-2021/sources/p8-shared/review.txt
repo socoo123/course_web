@@ -1,0 +1,34 @@
+P8 共享来源核对
+日期：2026-11-09。
+
+主 agent 已完整读取项目 AGENTS.md、technical-video-notes skill、NEXT-P8-PROMPT、
+PLAN、status、manifest-2021、P7-REVIEW、四份 p7-*/review、两年课表、
+schedule-inventory-2021 和 version-map-2021，确认 P1–P7 的范围及保留边界。
+起始工作区干净，origin 为 https://github.com/socoo123/course_web.git。
+用户的 P8 提示词明确允许四个独立专题 agent 并行；四 worker 仅写各自 lecture
+与 p8-专题 sources，主 agent 负责共享索引、整合审阅和提交。
+
+完整读取 schedule-2021.html 297 行、schedule-2026.html 299 行，逐项核对
+2026 L4/L5/L15/L21 的 13 个书面来源入口（12 个相对链接、1 个 CACM 外链）。
+L15 讲师 Upamanyu Sharma，无 FAQ；L21 Derek Leung，有单独 slides 与 FAQ。
+四讲均无课表视频，故只交 notes/materials，不生成 draft 或虚构课堂时间轴。
+P9 的 2026 L17 Lambda / L18 Ray 与 2021 L21 展示/AnalogicFS 链接亦按实际课表核对。
+
+复用并用 SHA256 核验两年课表、home-2026 和九个已获取的 P8 讲义/幻灯片/论文快照：
+update-2026-l-paxos.txt、update-2026-paxos-code.html、update-2026-paxos-simple.pdf、
+update-2026-Go-MIT6824-2026.pdf、update-2026-l-ironfleet.txt、update-2026-ironfleet.pdf、
+update-2026-l-bft.txt、update-2026-65840-pbft.pdf、update-2026-castro-practicalbft.pdf。
+全部与既有 manifest 记录一致。第一次核验脚本遇到历史记录 file=null 而退出，
+修正空值处理后完整核验通过；没有改写原始快照。
+P8 不重新下载课表/主页，保留原 GET 时间及 Last-Modified，不能标成本次重新抓取。
+各专题完整阅读状态由独立 manifest-fragment 登记，旧 manifest 的 fetched 保留历史意义。
+
+home-2026.html 全部 102 行已读，第 61 行 rel=license 指向 CC BY 3.0 US；
+只用于课程自有文字，外部论文、嘉宾幻灯片与 CACM 文章单独核对许可。
+共享来源精确哈希和原获取时间见本目录 manifest-fragment.json。
+
+P7 边界继续有效：SUNDR 两年指定范围各自保留，额外并发阅读不算全论文；
+Nielsen 原站 404 与 UBC 替代快照分开；Blockstack 用 2016 论文，2021 增补分列。
+FaRM 两条录像独立从零计时；L6/L8 无新增实际来源继续待补。
+实验固定 513cac0aef010750fc74688da8a395974a83cf7a；labTests=not_run，
+learnerLabCompletion=not_tracked。最终整合审阅及验证见 ../P8-REVIEW.txt。
