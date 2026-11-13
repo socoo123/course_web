@@ -184,11 +184,11 @@ npm run build
 
 - 用户要求中文课程不能只提供教材导读，先试一讲的页内视频与课堂内容，不批量铺开。
 - `Lecture.video` 新增可选 `embed`、`language` 与 `checkpoints`；只在D2L LEC1配置。`embed: true`且有YouTube或B站链接时，默认进入“课程视频”，`?v=notes`仍直接阅读旧笔记。中文视频的稿件标签显示“课堂整理”，不改文件协议或伪造`draft.zh.md`。
-- 播放器优先YouTube（`youtube-nocookie.com`隐私增强域），没有YouTube链接时仍支持B站；点击后才连接选定平台，不自动播放。切换材料或讲次会卸载。原站链接和B站备用入口处理网络/平台限制；不把iframe加载或看完视频等同于学习完成。
+- 组件支持YouTube隐私增强域与B站，点击后才连接选定平台，不自动播放；切换材料或讲次会卸载。提供者能力不等于来源合格，LEC1当前只使用官方课表链接的B站视频。不把iframe加载或看完视频等同于学习完成。
 - 第1讲导览依据实际抽查画面，只有定位点和简短改写，未转写音频、未完整审读口述，不冒充讲稿；来源与验收记录在`content/d2l-pytorch-2021/sources/video-pilot-lec01.json`。不发布课堂截图或媒体。
 - 讲座页头/来源区补齐已有B站链接；其他讲次仍维持阅读优先，MIT的YouTube入口和“中文译稿”保持。
 - 真实浏览器确认：初始不请求B站，点击可加载并播放，时间实际推进；切换笔记卸载iframe；390px无整页横向溢出，明暗主题可读，非试点讲次与MIT正常。本次是界面试点，不推进P4内容批次。
 
-- 用户随后要求改用YouTube：LEC1配置`ih2SgBk8TRc`，实际核对五个画面定位点与原B站导览一致，未据此推断全片逐句相同。未登录的原站及嵌入播放器均实际推进播放，360px手机无页面横向溢出；不能外推所有视频免登录。
-- 字幕核查不仅依赖静态reader：原站CC显示不可用，播放器响应字幕轨为0；`yt-dlp2026.08.19 --ignore-config --no-playlist --skip-download --list-subs --js-runtimes node`分别报告该视频无自动字幕和人工字幕。只记录此上传当前状态，不声称YouTube或B站普遍不能抓字幕，不伪造讲稿。最新证据见`sources/youtube-pilot-lec01.json`。
+- **已撤回的YouTube试验**：曾为LEC1配置`ih2SgBk8TRc`，只核对标题、画面和播放，却未由作者控制的入口确认上传者身份。用户指出并非李沐本人账号后，已删除该课程链接，恢复官方课表链接的B站视频；前述播放成功不构成来源合格。`sources/youtube-pilot-lec01.json`标记撤回，仅保留历史记录。
+- 该非本人上传的CC不可用/字幕轨为0及yt-dlp无字幕结果仍是当次观测，但不能代表李沐本人账号。此前推荐的另外两条YouTube课程链接一并撤回，不把“能播放/没字幕”混同“官方来源”。本人GitHub置顶`mli/paper-reading`，其视频`5MGq7dSOghY`的oEmbed归属`@mu_li`，这是已核实的频道身份链；本课程逐讲映射尚未核定。纠错证据见`sources/video-source-correction.json`。
 

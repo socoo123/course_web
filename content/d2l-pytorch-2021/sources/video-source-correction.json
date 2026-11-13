@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-13",
+  "reason": "User reported non-author uploader; earlier same-name/title/frame checks were insufficient identity verification.",
+  "rejectedVideo": "ih2SgBk8TRc",
+  "rejectedChannelId": "UCef6AUosRYdnnakdCa_4r6Q",
+  "restoredVideo": "BV1oX4y137bC",
+  "authorityChain": [
+    {
+      "url": "http://www.cs.cmu.edu/~muli/",
+      "relation": "Author homepage links github.com/mli"
+    },
+    {
+      "url": "https://github.com/mli",
+      "relation": "Author profile pins mli/paper-reading"
+    },
+    {
+      "url": "https://github.com/mli/paper-reading",
+      "relation": "README explicitly links YouTube video5MGq7dSOghY"
+    },
+    {
+      "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D5MGq7dSOghY&format=json",
+      "relation": "author_url resolves to https://www.youtube.com/@mu_li"
+    }
+  ],
+  "officialChannel": "https://www.youtube.com/@mu_li",
+  "restoredCourseAuthority": "https://courses.d2l.ai/zh-v2/",
+  "sourceBoundary": "Course schedule directly links the restored Bilibili lecture. A verified author channel does not by itself verify a matching D2L course upload.",
+  "checks": [
+    {
+      "name": "restored-source-entry",
+      "links": [
+        {
+          "label": "自修大学",
+          "href": "http://127.0.0.1:5310/#/"
+        },
+        {
+          "label": "D2L D2L",
+          "href": "http://127.0.0.1:5310/#/c/d2l-pytorch-2021"
+        },
+        {
+          "label": "课程目录",
+          "href": "http://127.0.0.1:5310/#/"
+        },
+        {
+          "label": "在B站打开08:09",
+          "href": "https://www.bilibili.com/video/BV1oX4y137bC"
+        },
+        {
+          "label": "对应实验 · Lab 1 不适用：编者阶段练习，非官方Git分支",
+          "href": "http://127.0.0.1:5310/#/c/d2l-pytorch-2021/lab/tensor-autograd"
+        },
+        {
+          "label": "在B站打开",
+          "href": "https://www.bilibili.com/video/BV1oX4y137bC"
+        }
+      ],
+      "iframesBeforeLoad": 0,
+      "loadButton": "加载B站播放器"
+    },
+    {
+      "name": "restored-official-schedule-playback",
+      "url": "https://player.bilibili.com/player.html?bvid=BV1oX4y137bC&page=1&autoplay=0&danmaku=0",
+      "currentTime": 0.517328,
+      "paused": false
+    }
+  ],
+  "browserErrors": {
+    "entries": [],
+    "nextSeq": 5,
+    "dropped": 0
+  },
+  "channelLookup": {
+    "search": {
+      "url": "https://www.youtube.com/@mu_li/search?query=%E8%AF%BE%E7%A8%8B%E5%AE%89%E6%8E%92",
+      "result": "yt-dlp flat channel search completed with no printed entries"
+    },
+    "playlists": {
+      "url": "https://www.youtube.com/@mu_li/playlists",
+      "limit": 15,
+      "returned": [
+        {
+          "id": "PLFXJ6jwg0qW_tSwANhBcfTY7d1Rv3rWDI",
+          "title": "动手用AI"
+        },
+        {
+          "id": "PLFXJ6jwg0qW-7UM8iUTj3qKqdhbQULP5I",
+          "title": "论文精读"
+        }
+      ]
+    },
+    "boundary": "These bounded checks did not establish a matching course upload. They are not evidence that the channel never hosted the course."
+  },
+  "decision": "Restore official-schedule Bilibili source; preserve generic YouTube player support but no unverified D2L mapping. Withdraw all three earlier YouTube recommendations.",
+  "withdrawnRecommendations": [
+    "ih2SgBk8TRc",
+    "h9HsaC4jGIQ",
+    "dHtkJ0hJ-kI"
+  ],
+  "legalBoundary": "Uploader identity correction; no independent finding about copyright authorization or legal infringement.",
+  "browser": "Actual managed Chromium, localhost Vite, restored Bilibili iframe advanced to0.517328s; tab closed; not a deployment check.",
+  "userClarification": "User also noted that the verified personal channel does not show this D2L course. Do not equate author-channel verification with a verified official YouTube course release; no further confirmation probe was run.",
+  "status": "corrected_non_author_course_entry_removed",
+  "build": {
+    "command": "npm run build",
+    "exitCode": 0,
+    "wallSeconds": 7.93
+  }
+}

@@ -53,8 +53,8 @@
     "announcements": "课程公告已读取并留存，用于核对三次实际课程竞赛。",
     "license": "固定根LICENSE与setup.py字段分开。P3 copyright均1；lec15 no_reprint=0、lec16–21=1，均非开放转录许可；Ames公开可取不等于可再分发，加州数据受竞赛规则约束。",
     "videoMetadata": "lec01–lec21：21BV/69P已取得；lec22–lec73未取得。",
-    "captions": "P1 18P + P2 28P + P3 23P B站公开player均成功空列表。LEC1 YouTube ih2SgBk8TRc原站CC不可用、captionTracks=0；yt-dlp2026.08.19 --list-subs分别报告无自动字幕和人工字幕。未取得字幕正文，不外推全站。",
-    "videoOrAudioReview": "lec01_bilibili_sampled_frames_at_0_45_120_210_300_390_465_seconds; youtube_guide_points_45_120_210_300_465_visually_cross_checked; no_audio_transcription_or_full_classroom_review; other_lectures_not_reviewed",
+    "captions": "P1 18P + P2 28P + P3 23P B站公开player均成功空列表。此前YouTube ih2SgBk8TRc无字幕的检测属于已撤下的非本人上传，不能用于判断李沐本人频道或本课程官方上传的字幕状态。",
+    "videoOrAudioReview": "lec01_approved_Bilibili_sampled_frames_at_0_45_120_210_300_390_465_seconds_only; non_author_YouTube_trial_withdrawn_as_source; no_audio_transcription_or_full_classroom_review; other_lectures_not_reviewed",
     "slidesAndNotebooks": "links_indexed_not_downloaded",
     "courseExperiments": "P1/P2原证据保留；P3 13笔记片段、MLP/模块/卷积独立机制、32/128合成四组各300轮、真实Ames257样本3折及1460行refit/1459内存导出通过。未执行全部学生配置、Fashion MLP、完整5折/干预重训、GPU/MPS、旧Notebook或加州竞赛。"
   },
@@ -66,8 +66,8 @@
         "materials": "not_required",
         "sourceManifest": "sources/p1-lec01/manifest-fragment.json",
         "videoMetadata": "acquired_all_parts",
-        "videoContent": "pilot_sampled_frames_bilibili_and_youtube_no_complete_spoken_content_review",
-        "verification": "P1_textbook_notes_unchanged; initial_Bilibili_pilot:sources/video-pilot-lec01.json; current_YouTube_player_and_caption_probe:sources/youtube-pilot-lec01.json; full_draft_not_created"
+        "videoContent": "approved_Bilibili_sampled_frames_only_no_complete_spoken_content_review",
+        "verification": "P1_textbook_notes_unchanged; approved_video:sources/video-pilot-lec01.json; source_correction:sources/video-source-correction.json; youtube-pilot-lec01.json_is_withdrawn_history_not_source_approval; full_draft_not_created"
       },
       "lec02": {
         "notes": "verified_editorial_textbook_guide_not_video_notes",
@@ -593,7 +593,7 @@
     {
       "id": "bilibili-video-button",
       "status": "fixed_with_single_lecture_embed_pilot",
-      "issue": "讲座页头与页底支持视频原链接；仅LEC1启用嵌入播放器，优先YouTube并留B站备用。五个导览画面定位点跨平台核对；当前YouTube上传也无可取字幕，完整课堂稿未生成。其他讲次与MIT保持阅读优先。",
+      "issue": "仅LEC1启用页内视频，已撤下非本人YouTube上传并恢复官方课表链接的B站视频。已通过作者GitHub自链确认@mu_li本人频道，但本课程逐讲YouTube映射未核定。完整课堂稿仍未生成，其他讲次与MIT保持阅读优先。",
       "blocksCurrentPhase": false
     },
     {

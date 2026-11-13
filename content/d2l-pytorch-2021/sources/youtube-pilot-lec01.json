@@ -3,7 +3,18 @@
   "videoId": "ih2SgBk8TRc",
   "source": "https://www.youtube.com/watch?v=ih2SgBk8TRc",
   "bilibiliBackup": "https://www.bilibili.com/video/BV1oX4y137bC",
-  "scope": "lec01 pilot only; no bulk replacement or transcript fabrication",
+  "scope": "WITHDRAWN: experimental third-party upload; retained only as an audit record, not an approved classroom source",
+  "sourceCorrection": {
+    "reason": "User identified the selected uploader as not Li Mu's own account. The agent had checked title/frames/playback but failed to establish uploader identity through an author-controlled link.",
+    "decision": "Remove ih2SgBk8TRc from live course metadata; restore the Bilibili video linked by the official course schedule.",
+    "withdrawnRecommendations": ["ih2SgBk8TRc", "h9HsaC4jGIQ", "dHtkJ0hJ-kI"],
+    "authorControlledEntry": "https://github.com/mli/paper-reading",
+    "authorLinkedVideo": "https://www.youtube.com/watch?v=5MGq7dSOghY",
+    "resolvedAuthorChannel": "https://www.youtube.com/@mu_li",
+    "identityEvidence": "Author GitHub profile pins paper-reading; its README links 5MGq7dSOghY; YouTube oEmbed resolves that video to @mu_li.",
+    "captionBoundary": "The old empty-track result concerns this withdrawn upload only; it says nothing about the author's official course uploads.",
+    "legalBoundary": "No conclusion about copyright authorization or infringement is made solely from the uploader identity."
+  },
   "checks": [
     {
       "name": "before-load",
@@ -94,7 +105,7 @@
   },
   "browser": "Managed Chromium signed out; actual local Vite surface; desktop1440 dark, mobile360 light; not a deployment check.",
   "playbackBoundary": "Signed-out watch page and embedded player both advanced during this check; no guarantee for other networks, age-restricted videos or future platform policy.",
-  "status": "passed_youtube_player_caption_absence_confirmed_for_this_upload",
+  "status": "withdrawn_source_identity_failed_not_an_approved_course_source",
   "build": {
     "command": "npm run build",
     "exitCode": 0,
