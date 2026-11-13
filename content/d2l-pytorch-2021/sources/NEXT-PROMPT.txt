@@ -25,3 +25,7 @@ cnn-architectures四任务按course/practice-plan原样保留：1模块/自定�
 收尾更新status、p4清单、PLAN和本交接，删除临时脚本，主agent提交推送后返回提交链接与下一批提示词。P3后剩余正文lec22–lec73共52讲、9项实验，已做21讲draft仍阻塞。xv6命令框、not_required标签为既有UI限制，本内容任务不改src，不为消标签造重复文件。
 
 P3后的视频界面试点已按用户最新要求结束：嵌入画质不满足需求，不再折腾播放器。已删除课程视频标签、LectureVideo组件、video.embed/checkpoints及画面导览；默认课程笔记，LEC页头只保留原站链接与已记录时长（LEC1官方B站BV1oX4y137bC，08:09），新标签页打开。video.language及中文“课堂整理”标签保留，未创建draft。sources/video-pilot-lec01.json、youtube-pilot-lec01.json、video-source-correction.json均为历史证据，不代表现在还有嵌入功能。此前推荐的非本人YouTube上传ih2SgBk8TRc/h9HsaC4jGIQ/dHtkJ0hJ-kI已撤回，不能重新引入；@mu_li本人频道身份不等于本课程有官方YouTube发布。后续以作者/课程官网原始入口为准，确认不到则停止并告知用户，可放弃课程，不无限搜索或拿转载补位。不要在内容批次重新加播放器。
+
+后续每批必须遵守根AGENTS.md“讲次视频入口（生成时必做）”：由主agent在course.json同步维护本批各讲video.bilibili、video.duration和时长口径label，让LEC开头显示官方B站入口与时长，不能只更新公共资料。LEC1–21已有官方入口；此次复用P2/P3保存的video-metadata.json补齐LEC8–21全部分P合计时长，不重新请求字幕或媒体。下一批LEC22–29依真实元数据补齐，不猜时长、不换转载；逐页验收页头链接和时长，维持外链观看而非嵌入。
+
+本次视频入口验收：真实Chromium逐页核对LEC1–21的页头官方链接、时长、新标签目标与无iframe，全部通过；LEC21实际打开B站且本站笔记保留，390px/1440px页头截图正常。整页移动端检查另发现未改动的LEC2/5/6横向溢出（390px视口下scrollWidth为432/412/571px），已记入status.json，不能宣称全21页手机布局通过。本地验证不是线上部署或B站全片播放验证。

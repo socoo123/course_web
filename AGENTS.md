@@ -61,11 +61,21 @@ content/
 
 - `intro`：写给学习者的一段课程介绍。**不要写抓取进度、覆盖率、缺口**——这些写进 `status.json` 或各文件的 `status` 头信息。
 - `versions[]`：`{label, value}`，如 学期、教材版本。
-- `lectures[]`：`id`、`num`（"1" 或 "选读"）、`title`、`titleEn`，可选 `video{label,youtube,duration}`、`readings[]`（指定阅读）、`lab`（对应实验 id）、`note`、`core`、`isNew`、`optional`。
+- `lectures[]`：`id`、`num`（"1" 或 "选读"）、`title`、`titleEn`，可选 `video{label,youtube,bilibili,duration,language}`、`readings[]`（指定阅读）、`lab`（对应实验 id）、`note`、`core`、`isNew`、`optional`。
 - `labs[]`：`id`、`num`、`title`、`titleEn`、`stars`(1–5)、`hours`、`branch`、`url`、`goal`、`tasks[]{id,title,titleEn?,grade?}`。
 - 可选：`links[]`、`resources[]`、`workflow[]`（没写 `resources.zh.md` 时用来兜底展示）；`weeks[]`（只用来给讲座排序和显示“第 N 周”，不展示课表）。
 
 新增课程：在 `catalog.json` 的 `courses` 加卡片（`status: active|planned|done`，`accent` 填浅/深两套 RGB 三元组），并放进某个 `tracks[].courses`。
+
+### 讲次视频入口（生成时必做）
+
+- 新增或补写有课堂视频的讲次时，同步在 `course.json` 的对应 `lectures[].video` 配置原站链接与已核实的时长，不能只把链接放在公共资料或页底。页面会在 LEC 开头自动显示观看入口，不要向三份 Markdown 重复插入按钮。
+- 《动手学深度学习》使用官方课表 `https://courses.d2l.ai/zh-v2/` 指向的 B 站视频，填写 `video.bilibili`；复用已保存的来源证据。其他课程有经官方确认的 B 站入口才添加，否则保留官方原站（如 YouTube），不拿转载凑数。
+- 作者身份、课程年份、讲次和分 P 必须对应；昵称、标题、画面相似，或作者拥有某平台账号，都不能证明该上传是官方课程。
+- `video.duration` 必须来自对应视频的已核实元数据或播放器，使用 `MM:SS` 或 `H:MM:SS`。多 P 的整组时长须汇总真实分 P，并在 `video.label` 标明“全 N P 合计”；单 P 时长不能冒充整讲时长，未核实的时长不能猜填。
+- 默认阅读课程笔记，原站链接在新标签页打开；不恢复“课程视频”标签、嵌入播放器或自动播放。视频入口是页头导航，正文引用仍按下节放在页底。
+- 找不到可信入口或核不实时长时，在 `status.json` 或来源清单明确记录缺口并告知用户，不反复搜索、不伪造链接或数值。无课堂视频的选读内容不强造入口。
+- 每批交付前，逐讲检查已生成页面的页头链接、目标讲次及显示时长；实际点击代表性入口确认新标签打开、笔记页保留，并检查手机布局。仅写好元数据不算页面验收。
 
 ## Markdown 写法
 
