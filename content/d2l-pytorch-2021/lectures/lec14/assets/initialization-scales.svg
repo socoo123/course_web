@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 500" role="img" aria-labelledby="title desc">
+  <title id="title">初始化中的前向与反向尺度折中</title>
+  <desc id="desc">线性层四个输入两个输出，独立零均值近似下前向方差倍率是4s平方，反向是2s平方。Xavier取权重方差三分之一，两个倍率分别为三分之四和三分之二，无法同时精确为1。ReLU的fan-in初始化取方差二分之一，线性二阶矩放大两倍，再由ReLU约减半。</desc>
+  <style>@media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <g font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" fill="currentColor" font-size="18">
+    <text x="25" y="34" font-size="23" font-weight="700">控制随机差异，也控制每一层的累加尺度</text>
+    <g stroke="currentColor" stroke-width="2" fill="none">
+      <rect x="25" y="90" width="220" height="95" rx="8"/>
+      <rect x="350" y="90" width="220" height="95" rx="8"/>
+      <rect x="675" y="90" width="220" height="95" rx="8"/>
+      <path d="M245 135 H340 M570 135 H665" marker-end="url(#arrow)"/>
+      <path d="M785 185 V225 H135 V195" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+      <path d="M25 273 H895"/>
+      <rect x="25" y="298" width="410" height="110" rx="8"/>
+      <rect x="485" y="298" width="410" height="110" rx="8"/>
+      <path d="M25 436 H895"/>
+    </g>
+    <text x="44" y="124">输入：4个分量</text><text x="44" y="158">每个方差 q = 1</text>
+    <text x="370" y="124">W 形状 (2, 4)</text><text x="370" y="158">权重方差 s²</text>
+    <text x="695" y="124">输出：2个分量</text><text x="695" y="158">每个方差 4s²</text>
+    <text x="258" y="117" font-size="15">前向</text><text x="586" y="117" font-size="15">求和</text>
+    <text x="265" y="254">反向梯度方差的近似倍率：2s²</text>
+    <text x="44" y="330" font-weight="700">Xavier（gain = 1）</text>
+    <text x="44" y="363">s² = 2 / (4 + 2) = 1/3</text>
+    <text x="44" y="394">前向 ×4/3；反向 ×2/3：折中</text>
+    <text x="504" y="330" font-weight="700">Kaiming（ReLU，fan-in）</text>
+    <text x="504" y="363">s² = 2 / 4 = 1/2</text>
+    <text x="504" y="394">线性二阶矩 ×2 → ReLU约 ×1/2</text>
+    <text x="27" y="463">近似前提：独立性、对称性与合适的输入尺度；训练后不保证成立</text>
+    <text x="27" y="490" font-size="15">自拟手算图：ReLU输出均值非零，二阶矩减半不等于方差恰好减半。</text>
+  </g>
+</svg>

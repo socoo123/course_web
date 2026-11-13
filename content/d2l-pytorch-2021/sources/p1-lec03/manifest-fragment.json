@@ -1,0 +1,82 @@
+{
+  "lectureId": "lec03",
+  "acquiredAt": "2026-11-13",
+  "bookVersion": {
+    "repository": "d2l-ai/d2l-zh",
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "boundary": "当前中文第二版固定源码，不是2021视频同期快照"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_installation/index.md",
+      "file": "book-source.txt",
+      "sha256": "3d4a4c86a2307ba7f976a377c1c932c6b4e741287a9e6f948e121a4d1c0c9802",
+      "readScope": "安装全文；重点使用环境隔离、PyTorch分支、Notebook与CPU/GPU边界；其他框架命令不是本课安装建议。",
+      "license": "固定提交仓库Apache-2.0；见共享许可证据，不含第三方图授权外推"
+    },
+    {
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV18p4y1h7Dr",
+      "file": "video-metadata.json",
+      "sha256": "6b0873b1d76d3cb69adf072b91d3957652fdceddfbb8dbb533a2574820887908",
+      "hashScope": "本地精简证据文件字节；不是远端原始响应hash"
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "cid": 313098817,
+      "title": "安装",
+      "durationSeconds": 966,
+      "url": "https://www.bilibili.com/video/BV18p4y1h7Dr?p=1",
+      "subtitleRequest": {
+        "url": "https://api.bilibili.com/x/player/v2?bvid=BV18p4y1h7Dr&cid=313098817",
+        "code": 0,
+        "message": "OK",
+        "need_login_subtitle": false,
+        "subtitles": [],
+        "interpretation": "本次未登录公开请求未返回字幕轨；不能证明其他时间、账号或内嵌画面没有字幕。"
+      }
+    },
+    {
+      "page": 2,
+      "cid": 315210492,
+      "title": "安装 QA",
+      "durationSeconds": 231,
+      "url": "https://www.bilibili.com/video/BV18p4y1h7Dr?p=2",
+      "subtitleRequest": {
+        "url": "https://api.bilibili.com/x/player/v2?bvid=BV18p4y1h7Dr&cid=315210492",
+        "code": 0,
+        "message": "OK",
+        "need_login_subtitle": false,
+        "subtitles": [],
+        "interpretation": "本次未登录公开请求未返回字幕轨；不能证明其他时间、账号或内嵌画面没有字幕。"
+      }
+    }
+  ],
+  "licenseBoundary": "原创投稿标记不是开放转载许可。未发现视频开放许可；不下载媒体，不转录，不从教材补造课堂。教材仓库许可不外推到视频。",
+  "outputs": {
+    "notes": {
+      "status": "written",
+      "path": "lectures/lec03/notes.zh.md",
+      "nature": "教材导读／编者笔记；未核实视频内容"
+    },
+    "draft": {
+      "status": "blocked",
+      "reason": "全部P公开player字幕数组为空；替代官方来源未获得可核实匹配字幕；未访问音视频内容，故不生成。"
+    },
+    "materials": {
+      "status": "not_required",
+      "reason": "必要概念已在notes合理改写并链接官方中文材料；不另做重复中文教材。"
+    }
+  },
+  "gaps": [
+    "课堂讲解、演示和QA未核实",
+    "没有实质内容时间轴，只有API分P边界",
+    "未运行代码或网站验证"
+  ],
+  "verification": {
+    "metadata": "已读view与逐P player/v2响应",
+    "notesAndSvg": "written_not_render_verified",
+    "buildTests": "not_run_by_assignment"
+  }
+}

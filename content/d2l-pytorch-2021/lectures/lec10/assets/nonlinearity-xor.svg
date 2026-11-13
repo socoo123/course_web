@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" role="img" aria-labelledby="title desc">
+  <title id="title">两层线性可合并，ReLU让XOR可表示</title>
+  <desc id="desc">上部展示无激活的两层仿射变换可合并成X乘W1W2加b1W2加b2。下部展示两个ReLU隐藏特征h1为x1减x2的正部，h2为x2减x1的正部，四个布尔输入的隐藏值与和分别得到XOR标签0、1、1、0。这是人工构造的表示能力例子而非训练结果。</desc>
+  <style>@media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></marker></defs>
+  <g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="18">
+    <text x="24" y="34" font-size="23" font-weight="700">隐藏层之间要有非线性，否则仍可合并</text>
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="24" y="66" width="235" height="74" rx="8"/>
+      <rect x="332" y="66" width="235" height="74" rx="8"/>
+      <rect x="640" y="66" width="235" height="74" rx="8"/>
+      <path d="M259 103 H324" marker-end="url(#arrow)"/>
+      <path d="M567 103 H632" marker-end="url(#arrow)"/>
+      <path d="M24 216 H875"/>
+    </g>
+    <text x="43" y="97">输入 X：(N, d)</text><text x="43" y="124">每行一个样本</text>
+    <text x="351" y="97">H = XW₁ + b₁</text><text x="351" y="124">没有激活</text>
+    <text x="659" y="97">Z = HW₂ + b₂</text><text x="659" y="124">输出：(N, C)</text>
+    <text x="25" y="184" font-size="21">合并：Z = X(W₁W₂) + (b₁W₂ + b₂)，仍为仿射函数</text>
+    <text x="25" y="254" font-size="21" font-weight="700">自拟XOR：先提取“两个输入不同”的非线性特征</text>
+    <text x="25" y="290">h₁ = ReLU(x₁ − x₂)；h₂ = ReLU(x₂ − x₁)；q = h₁ + h₂</text>
+    <g fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M25 317 H875 M25 358 H875 M25 402 H875 M25 446 H875 M25 490 H875 M25 534 H875"/>
+      <path d="M25 317 V534 M242 317 V534 M458 317 V534 M674 317 V534 M875 317 V534"/>
+    </g>
+    <text x="58" y="345" font-weight="700">输入 (x₁, x₂)</text>
+    <text x="311" y="345" font-weight="700">h₁</text><text x="527" y="345" font-weight="700">h₂</text><text x="724" y="345" font-weight="700">q / XOR</text>
+    <text x="85" y="388">(0, 0)</text><text x="315" y="388">0</text><text x="531" y="388">0</text><text x="748" y="388">0</text>
+    <text x="85" y="432">(1, 0)</text><text x="315" y="432">1</text><text x="531" y="432">0</text><text x="748" y="432">1</text>
+    <text x="85" y="476">(0, 1)</text><text x="315" y="476">0</text><text x="531" y="476">1</text><text x="748" y="476">1</text>
+    <text x="85" y="520">(1, 1)</text><text x="315" y="520">0</text><text x="531" y="520">0</text><text x="748" y="520">0</text>
+    <text x="25" y="565" font-size="16">人工构造说明“存在可表示的参数”，不保证随机初始化后SGD一定学到。</text>
+  </g>
+</svg>

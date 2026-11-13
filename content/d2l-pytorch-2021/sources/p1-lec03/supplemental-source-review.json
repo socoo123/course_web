@@ -1,0 +1,13 @@
+{
+  "lectureId": "lec03",
+  "reviewedAt": "2026-11-13",
+  "nature": "编者环境概念补充；不是课堂字幕或旧版兼容性验证",
+  "sources": [
+    {"url": "https://docs.python.org/3/library/venv.html", "readScope": "开头概述、Creating virtual environments、How venvs work；未读取后续API全文", "usedFor": "环境包目录隔离、解释器归属、激活修改PATH而非改变已有进程", "versionBoundary": "读取时页面标为Python 3.15.2；只采用基本原理，不将该版本视为课程验证版"},
+    {"url": "https://docs.jupyter.org/en/latest/projects/architecture/content-architecture.html", "readScope": "全文；重点IPython Kernel、Notebook format、Notebook Interface", "usedFor": "浏览器/服务器/内核/文件职责；自绘图关系", "versionBoundary": "当前官方文档，不是2021课堂操作证据"},
+    {"url": "https://docs.pytorch.org/docs/2.15/notes/mps.html", "discoveredFrom": "https://docs.pytorch.org/docs/stable/notes/mps.html", "readScope": "MPS backend及Double-precision types全文", "usedFor": "MPS与CUDA不同、设备与类型支持存在边界", "versionBoundary": "当前2.15文档；没有将其系统版本要求或API验证外推给本课基础环境"},
+    {"url": "https://zh.d2l.ai/chapter_installation/index.html", "readScope": "全文及PyTorch分支", "usedFor": "辅助核对固定源码的中文网页呈现与历史版本边界"}
+  ],
+  "execution": "未执行安装、Notebook、GPU或代码测试；固定命令与实际验证由主agent在公共资料统一提供",
+  "reuse": "仅合理改写概念，未复制外部图像或整篇文档。必要链接直接置于notes文末，不另生成materials。"
+}

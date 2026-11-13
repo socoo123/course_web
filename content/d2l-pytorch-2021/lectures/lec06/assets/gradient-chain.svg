@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-labelledby="title desc">
+  <title id="title">链式法则：前向求值与反向敏感度</title>
+  <desc id="desc">自拟算例，a等于1、b等于2，经u等于a加2b得到5，再经L等于u平方除2得到12.5。反向先得dL除du等于5，再乘局部导数1和2得到参数梯度5和10。</desc>
+  <style>@media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/></marker></defs>
+  <g font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" fill="currentColor" font-size="19">
+    <text x="28" y="33" font-weight="700">前向：先算数值</text>
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="30" y="65" width="135" height="55" rx="8"/>
+      <rect x="30" y="155" width="135" height="55" rx="8"/>
+      <rect x="310" y="108" width="180" height="62" rx="8"/>
+      <rect x="620" y="108" width="150" height="62" rx="8"/>
+      <path d="M165 93 L305 125" marker-end="url(#arrow)"/>
+      <path d="M165 182 L305 151" marker-end="url(#arrow)"/>
+      <path d="M490 139 L613 139" marker-end="url(#arrow)"/>
+    </g>
+    <text x="68" y="100">a = 1</text><text x="68" y="191">b = 2</text>
+    <text x="329" y="135">u = a + 2b</text><text x="369" y="159">= 5</text>
+    <text x="641" y="135">L = u² / 2</text><text x="661" y="159">= 12.5</text>
+    <text x="205" y="80" font-size="16">∂u/∂a = 1</text><text x="205" y="207" font-size="16">∂u/∂b = 2</text>
+    <text x="514" y="117" font-size="16">dL/du = u</text>
+    <text x="28" y="260" font-weight="700">反向：局部导数 × 下游敏感度</text>
+    <path d="M735 286 L58 286" fill="none" stroke="currentColor" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="45" y="323">∂L/∂a = 1 × 5 = 5</text><text x="310" y="323">∂L/∂b = 2 × 5 = 10</text><text x="624" y="323">dL/du = 5</text>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 440" role="img" aria-labelledby="title desc">
+  <title id="title">自动求导的三类状态</title>
+  <desc id="desc">参数x经前向构建图得到损失L，反向把梯度累加到x.grad并通常释放保存的中间值。清梯度不会重建图；更新参数后需要重新前向。图、梯度、参数是三个不同状态。</desc>
+  <style>@media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/></marker></defs>
+  <g font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" fill="currentColor" font-size="18">
+    <text x="24" y="32" font-size="22" font-weight="700">前向记录关系，反向累加梯度；二者不是参数更新</text>
+    <g stroke="currentColor" stroke-width="2" fill="none">
+      <rect x="25" y="77" width="155" height="85" rx="8"/>
+      <rect x="286" y="77" width="240" height="85" rx="8"/>
+      <rect x="641" y="77" width="170" height="85" rx="8"/>
+      <path d="M180 120 L278 120" marker-end="url(#arrow)"/>
+      <path d="M526 120 L633 120" marker-end="url(#arrow)"/>
+      <rect x="25" y="250" width="205" height="90" rx="8"/>
+      <path d="M725 162 L725 230 L127 230 L127 242" marker-end="url(#arrow)"/>
+      <path d="M56 250 L56 170" marker-end="url(#arrow)"/>
+    </g>
+    <text x="49" y="108">叶参数 x</text><text x="49" y="137">值：[1, 2]</text>
+    <text x="301" y="109">u = 3x₀ − x₁ = 1</text><text x="310" y="138">本次图 / 保存数据</text>
+    <text x="657" y="110">L = u² / 2</text><text x="669" y="139">标量：0.5</text>
+    <text x="205" y="103" font-size="16">前向</text><text x="550" y="103" font-size="16">前向</text>
+    <text x="372" y="214">反向：链式法则 → 梯度累加</text>
+    <text x="45" y="281">x.grad 缓冲</text><text x="45" y="310">本次贡献：[3, −1]</text>
+    <text x="69" y="189" font-size="15">更新参数</text><text x="69" y="209" font-size="15">使用 no_grad</text>
+    <text x="283" y="278">① 清梯度：None 或清零已有缓冲</text>
+    <text x="283" y="309">② 旧图：保存数据通常在反向后释放</text>
+    <text x="283" y="340">③ 下一轮：以当前参数重新前向</text>
+    <path d="M25 367 L811 367" fill="none" stroke="currentColor"/>
+    <text x="26" y="398" font-weight="700">清梯度 ≠ 重建图；backward ≠ 参数更新</text>
+    <text x="26" y="425" font-size="16">编者自拟算例。图中数值为解析推算，不是运行截图。</text>
+  </g>
+</svg>

@@ -1,0 +1,1485 @@
+{
+  "courseId": "d2l-pytorch-2021",
+  "preparedAt": "2026-11-13",
+  "status": "planning-only-no-lab-body",
+  "practiceCount": 12,
+  "classification": "12个编者整合阶段练习；不是官方编号Lab，也不声称官方提供这些组合后的验收。",
+  "labs": [
+    {
+      "id": "tensor-autograd",
+      "num": 1,
+      "title": "张量、数据与自动求导",
+      "titleEn": "Tensors, Data and Autograd",
+      "stars": 2,
+      "hours": "短周期，多次小实验",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_preliminaries/autograd.html",
+      "goal": "把形状、广播、按轴归约和链式法则落实为可解释的PyTorch代码。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "tensor-autograd-1",
+          "title": "用小矩阵演示索引、广播、reshape、矩阵乘法与按轴求和，逐步写出输入/输出形状。"
+        },
+        {
+          "id": "tensor-autograd-2",
+          "title": "构建含缺失值的表格预处理与训练/验证划分，解释为何预处理统计量只从训练集拟合。"
+        },
+        {
+          "id": "tensor-autograd-3",
+          "title": "对标量与向量小函数手算梯度，再对照autograd；比较梯度累积、清零与detach。"
+        },
+        {
+          "id": "tensor-autograd-4",
+          "title": "用教材概率小实验补期望/条件概率，不以证明题或整门数学课为前置。"
+        }
+      ]
+    },
+    {
+      "id": "linear-training",
+      "num": 2,
+      "title": "从零训练循环与线性模型",
+      "titleEn": "Training Loop and Linear Models",
+      "stars": 2,
+      "hours": "中等，需反复调试",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_linear-networks/linear-regression-scratch.html",
+      "goal": "独立写出数据批处理、前向、损失、反向、更新与评估循环，并与高层API对应。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "linear-training-1",
+          "title": "实现合成数据线性回归，比较从零SGD与nn.Linear/优化器版本。"
+        },
+        {
+          "id": "linear-training-2",
+          "title": "完成Fashion-MNIST softmax分类，说明交叉熵、稳定计算与batch维度。"
+        },
+        {
+          "id": "linear-training-3",
+          "title": "区分train/eval与梯度记录；仅在训练集更新参数，记录训练/验证损失和分类准确率。"
+        },
+        {
+          "id": "linear-training-4",
+          "title": "选官方小节习题改变batch size或学习率，复现实验配置并解释失败曲线。"
+        }
+      ]
+    },
+    {
+      "id": "mlp-generalization",
+      "num": 3,
+      "title": "MLP、泛化与房价基线",
+      "titleEn": "MLP, Generalization and House Prices",
+      "stars": 3,
+      "hours": "中等至较长，包含对照实验",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/kaggle-house-price.html",
+      "goal": "从MLP到可靠验证，理解正则化并建立房价任务的可复现基线。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "mlp-generalization-1",
+          "title": "比较MLP从零与简洁实现，追踪激活函数、初始化和梯度。"
+        },
+        {
+          "id": "mlp-generalization-2",
+          "title": "用小数据展示欠拟合/过拟合，分别改变权重衰减与Dropout，报告训练/验证差异。"
+        },
+        {
+          "id": "mlp-generalization-3",
+          "title": "依据教材房价案例建立预处理、K折验证与预测导出，避免泄漏；自定实验不是官方评分。"
+        },
+        {
+          "id": "mlp-generalization-4",
+          "title": "将相同工作流迁移到2021加州房价历史竞赛；说明它与教材Ames房价不是同一数据集，记录数据可用性。"
+        }
+      ]
+    },
+    {
+      "id": "cnn-architectures",
+      "num": 4,
+      "title": "模块工程、卷积与现代CNN",
+      "titleEn": "Modules, Convolutions and Modern CNNs",
+      "stars": 4,
+      "hours": "较长，按网络家族分段",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/lenet.html",
+      "goal": "用统一模块与训练接口理解从LeNet到ResNet的全部课程CNN路线。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "cnn-architectures-1",
+          "title": "实现层/块、自定义层、参数管理、保存/加载与设备迁移。"
+        },
+        {
+          "id": "cnn-architectures-2",
+          "title": "手算并程序核对卷积、填充、步幅、多通道与池化的输出形状和参数量。"
+        },
+        {
+          "id": "cnn-architectures-3",
+          "title": "训练LeNet小基线；对AlexNet、VGG、NiN、GoogLeNet逐层跟踪形状，保留每个网络的机制和最小前向实验。"
+        },
+        {
+          "id": "cnn-architectures-4",
+          "title": "比较BatchNorm训练/推理与残差连接；选小型ResNet完成训练、保存后恢复预测并记录配置。"
+        }
+      ]
+    },
+    {
+      "id": "training-performance",
+      "num": 5,
+      "title": "计算性能与多设备训练",
+      "titleEn": "Performance and Multi-device Training",
+      "stars": 3,
+      "hours": "中等；多设备部分依资源安排",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_computational-performance/hardware.html",
+      "goal": "测量训练瓶颈并解释数据并行和梯度聚合，不把概念推演当作多GPU实测。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "training-performance-1",
+          "title": "分别测量数据加载、前向、反向和更新，记录设备/版本/batch size；异步设备计时显式同步。"
+        },
+        {
+          "id": "training-performance-2",
+          "title": "比较小批量设置对吞吐与内存的影响，不在不同设备间直接套用加速比。"
+        },
+        {
+          "id": "training-performance-3",
+          "title": "按教材多GPU从零与简洁实现理解数据划分、梯度求和与参数同步；有多GPU才运行扩展实验。"
+        },
+        {
+          "id": "training-performance-4",
+          "title": "用小张量推演多worker梯度聚合和参数服务器通信；解释CPU/GPU/专有硬件及分布式通信瓶颈。"
+        }
+      ]
+    },
+    {
+      "id": "cv-transfer",
+      "num": 6,
+      "title": "视觉迁移与分类竞赛实践",
+      "titleEn": "Vision Transfer and Classification",
+      "stars": 3,
+      "hours": "较长，含数据准备与误差分析",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_computer-vision/fine-tuning.html",
+      "goal": "将增广、微调和正确验证用于分类，完整保留课程树叶竞赛与两项教材实战。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "cv-transfer-1",
+          "title": "比较训练增广与确定性验证变换，检查标签映射与预处理一致性。"
+        },
+        {
+          "id": "cv-transfer-2",
+          "title": "对预训练模型比较冻结特征与微调，建立不泄漏验证集的树叶分类基线。"
+        },
+        {
+          "id": "cv-transfer-3",
+          "title": "分别走通教材CIFAR-10与狗品种案例的数据接口、损失、验证和预测导出；小数据调试不能冒充全量竞赛训练。"
+        },
+        {
+          "id": "cv-transfer-4",
+          "title": "记录混淆样本、类不均衡或过拟合，阅读课程树叶竞赛总结并提出下一轮实验；不要求复现获奖方案。"
+        }
+      ]
+    },
+    {
+      "id": "cv-dense-prediction",
+      "num": 7,
+      "title": "检测、分割与风格迁移",
+      "titleEn": "Detection, Segmentation and Style Transfer",
+      "stars": 4,
+      "hours": "较长，分成三个子阶段",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_computer-vision/ssd.html",
+      "goal": "建立分类以外的完整视觉任务链，并保留2021牛仔行头检测历史竞赛映射。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "cv-dense-prediction-1",
+          "title": "实现/检查边界框、IoU、锚框匹配、NMS与多尺度预测；用示例解释R-CNN、SSD和课程YOLO介绍的不同设计。"
+        },
+        {
+          "id": "cv-dense-prediction-2",
+          "title": "完成教材小型SSD检测训练和可视化，再设计牛仔行头竞赛数据适配与离线验证；规则/数据不可访问时明确不能声称完成竞赛复现。"
+        },
+        {
+          "id": "cv-dense-prediction-3",
+          "title": "加载分割样本并检查像素标签，对照转置卷积的形状与FCN输出，训练一个可复现小规模分割基线。"
+        },
+        {
+          "id": "cv-dense-prediction-4",
+          "title": "运行单张图像风格迁移，解释内容/风格损失与优化图像而不是训练分类器的区别。"
+        }
+      ]
+    },
+    {
+      "id": "recurrent-language-model",
+      "num": 8,
+      "title": "RNN、GRU与LSTM语言模型",
+      "titleEn": "Recurrent Language Models",
+      "stars": 4,
+      "hours": "较长，重在逐步调试",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/rnn-scratch.html",
+      "goal": "理解语言建模、状态传递与门控网络，为后续注意力模型保留可比较基线。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "recurrent-language-model-1",
+          "title": "处理教材文本、词表与随机/顺序采样，检查输入目标错位与跨批隐状态。"
+        },
+        {
+          "id": "recurrent-language-model-2",
+          "title": "从零实现RNN并对照简洁实现；记录交叉熵/困惑度、梯度裁剪和生成结果。"
+        },
+        {
+          "id": "recurrent-language-model-3",
+          "title": "比较小规模GRU与LSTM；对深层/双向网络做形状与可用信息检查。"
+        },
+        {
+          "id": "recurrent-language-model-4",
+          "title": "解释时间反向传播与detach边界；识别双向模型在自回归预测中使用未来信息的问题。"
+        }
+      ]
+    },
+    {
+      "id": "seq2seq-attention",
+      "num": 9,
+      "title": "Seq2Seq、翻译与注意力",
+      "titleEn": "Seq2Seq and Attention",
+      "stars": 4,
+      "hours": "较长，分数据与模型两段",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_attention-mechanisms/bahdanau-attention.html",
+      "goal": "实现可解释的小型翻译链路，从编码器瓶颈理解注意力。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "seq2seq-attention-1",
+          "title": "建立双语词表、padding、有效长度与mask，区分teacher forcing训练和逐词推理。"
+        },
+        {
+          "id": "seq2seq-attention-2",
+          "title": "完成seq2seq基线并解释贪心与束搜索；在小例上比较搜索行为，不保证束宽越大越好。"
+        },
+        {
+          "id": "seq2seq-attention-3",
+          "title": "实现核回归注意力小例、加性/点积打分与masked softmax，检查padding权重。"
+        },
+        {
+          "id": "seq2seq-attention-4",
+          "title": "加入Bahdanau注意力，对相同固定验证样本比较基线与注意力模型并绘制对齐权重。"
+        }
+      ]
+    },
+    {
+      "id": "transformer",
+      "num": 10,
+      "title": "从注意力到Transformer",
+      "titleEn": "Transformer Implementation",
+      "stars": 4,
+      "hours": "较长，分组件与端到端",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_attention-mechanisms/transformer.html",
+      "goal": "能追踪多头注意力的每个张量维度，完成小型Transformer训练与自回归推理。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "transformer-1",
+          "title": "逐步实现/解释Q/K/V投影、多头拆合、位置编码、残差与前馈层。"
+        },
+        {
+          "id": "transformer-2",
+          "title": "核对padding与causal mask；构造未来词变化不影响此前位置输出的局部检查。"
+        },
+        {
+          "id": "transformer-3",
+          "title": "以教材翻译任务完成小型编码器-解码器Transformer训练，保存恢复并在固定样本推理。"
+        },
+        {
+          "id": "transformer-4",
+          "title": "比较训练与增量生成的输入/状态处理，估算序列长度增加的注意力计算与内存成本。"
+        }
+      ]
+    },
+    {
+      "id": "bert-pretrain-finetune",
+      "num": 11,
+      "title": "BERT预训练与自然语言推断",
+      "titleEn": "BERT Pretraining and Fine-tuning",
+      "stars": 4,
+      "hours": "较长，分数据目标与迁移",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert-pretraining.html",
+      "goal": "理解双向预训练目标、输入构造与下游微调，并区分其与CS336自回归语言建模。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "bert-pretrain-finetune-1",
+          "title": "构造词元/片段/位置输入、MLM预测位置和NSP标签，核对padding不进入错误损失。"
+        },
+        {
+          "id": "bert-pretrain-finetune-2",
+          "title": "训练小型教材BERT，分别记录MLM/NSP损失；明确这是教学规模而非工业预训练复现。"
+        },
+        {
+          "id": "bert-pretrain-finetune-3",
+          "title": "按教材自然语言推断数据流程完成预训练权重加载/分类头微调，解释标签、训练验证划分与序列/词元级任务接口。"
+        },
+        {
+          "id": "bert-pretrain-finetune-4",
+          "title": "报告数据、词表和权重来源及限制，比较冻结编码器与微调的取舍，解释双向BERT不能直接当作因果生成模型。"
+        }
+      ]
+    },
+    {
+      "id": "optimization-capstone",
+      "num": 12,
+      "title": "优化回顾与全课程工程总结",
+      "titleEn": "Optimization and Course Capstone",
+      "stars": 3,
+      "hours": "中等至较长，复用已有项目",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_optimization/index.html",
+      "goal": "回到课程最后的优化总览，用已有模型整理可复现工程能力，再衔接CS336。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "optimization-capstone-1",
+          "title": "在同一小模型/数据划分上比较SGD、动量和Adam，固定比较条件并记录曲线；其余算法作为教材对照，不声称视频逐节覆盖。"
+        },
+        {
+          "id": "optimization-capstone-2",
+          "title": "检查学习率调度、数值稳定性与优化器状态保存；恢复训练时同时恢复模型和优化器。"
+        },
+        {
+          "id": "optimization-capstone-3",
+          "title": "整理MLP/CNN/CV/RNN/Attention/BERT的任务、输入形状、损失、评估与资源限制，完成课程总结视频学习。"
+        },
+        {
+          "id": "optimization-capstone-4",
+          "title": "输出自己的CS336准备清单：训练循环、token/mask、Transformer、性能测量与数据评估；论文阅读不是此阶段验收。"
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "labId": "tensor-autograd",
+      "nature": "editorial-integrated-practice",
+      "numbering": "站内编者阶段序号；非官方Lab编号",
+      "difficulty": "stars为编者相对难度，不是官方评分或成绩",
+      "sourceSections": [
+        {
+          "number": "2.1",
+          "title": "数据操作",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/ndarray.html"
+        },
+        {
+          "number": "2.2",
+          "title": "数据预处理",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/pandas.html"
+        },
+        {
+          "number": "2.3",
+          "title": "线性代数",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/linear-algebra.html"
+        },
+        {
+          "number": "2.4",
+          "title": "微积分",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/calculus.html"
+        },
+        {
+          "number": "2.5",
+          "title": "自动微分",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/autograd.html"
+        },
+        {
+          "number": "2.6",
+          "title": "概率",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/probability.html"
+        },
+        {
+          "number": "2.7",
+          "title": "查阅文档",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/lookup-api.html"
+        }
+      ],
+      "exercisePolicy": "优先选这些官方小节的习题与PyTorch notebook；本轮只索引目录及课堂notebook链接，未下载/逐题核对练习全文。任务组合与验收描述为编者设计。",
+      "officialScheduleVideos": [
+        "https://www.bilibili.com/video/BV1CV411Y7i4",
+        "https://www.bilibili.com/video/BV1CV411Y7i4?p=3",
+        "https://www.bilibili.com/video/BV1eK4y1U7Qy",
+        "https://www.bilibili.com/video/BV1eZ4y1w7PY",
+        "https://www.bilibili.com/video/BV1KA411N7Px"
+      ],
+      "officialClassNotebookLinks": [
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/ndarray.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/pandas.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/linear-algebra.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/autograd.slides.html"
+      ],
+      "recommendedPrerequisiteModules": [
+        "orientation",
+        "foundations"
+      ],
+      "resources": {
+        "cpu": "CPU足够完成全部小实验；GPU不是前置。",
+        "gpu": "GPU可用于设备迁移观察，不设性能验收。"
+      },
+      "evidenceToKeep": [
+        "环境与数据来源/版本",
+        "形状或局部正确性检查",
+        "实际执行的训练/验证结果与配置",
+        "失败分析及未执行范围"
+      ],
+      "grading": "无官方grade分值；不设虚构官方通过阈值。"
+    },
+    {
+      "labId": "linear-training",
+      "nature": "editorial-integrated-practice",
+      "numbering": "站内编者阶段序号；非官方Lab编号",
+      "difficulty": "stars为编者相对难度，不是官方评分或成绩",
+      "sourceSections": [
+        {
+          "number": "3.1",
+          "title": "线性回归",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/linear-regression.html"
+        },
+        {
+          "number": "3.2",
+          "title": "线性回归的从零开始实现",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/linear-regression-scratch.html"
+        },
+        {
+          "number": "3.3",
+          "title": "线性回归的简洁实现",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/linear-regression-concise.html"
+        },
+        {
+          "number": "3.4",
+          "title": "softmax回归",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/softmax-regression.html"
+        },
+        {
+          "number": "3.5",
+          "title": "图像分类数据集",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/image-classification-dataset.html"
+        },
+        {
+          "number": "3.6",
+          "title": "softmax回归的从零开始实现",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/softmax-regression-scratch.html"
+        },
+        {
+          "number": "3.7",
+          "title": "softmax回归的简洁实现",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/softmax-regression-concise.html"
+        }
+      ],
+      "exercisePolicy": "优先选这些官方小节的习题与PyTorch notebook；本轮只索引目录及课堂notebook链接，未下载/逐题核对练习全文。任务组合与验收描述为编者设计。",
+      "officialScheduleVideos": [
+        "https://www.bilibili.com/video/BV1PX4y1g7KC",
+        "https://www.bilibili.com/video/BV1PX4y1g7KC?p=3",
+        "https://www.bilibili.com/video/BV1PX4y1g7KC?p=4",
+        "https://www.bilibili.com/video/BV1K64y1Q7wu",
+        "https://www.bilibili.com/video/BV1K64y1Q7wu?p=3",
+        "https://www.bilibili.com/video/BV1K64y1Q7wu?p=4",
+        "https://www.bilibili.com/video/BV1K64y1Q7wu?p=5"
+      ],
+      "officialClassNotebookLinks": [
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/linear-regression.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/linear-regression-scratch.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/linear-regression-concise.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/image-classification-dataset.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/softmax-regression-scratch.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/softmax-regression-concise.slides.html"
+      ],
+      "recommendedPrerequisiteModules": [
+        "foundations",
+        "linear"
+      ],
+      "resources": {
+        "cpu": "CPU可完成基线；小数据先调通，完整运行耗时取决于机器。",
+        "gpu": "GPU只加速，不要求特定型号或指标。"
+      },
+      "evidenceToKeep": [
+        "环境与数据来源/版本",
+        "形状或局部正确性检查",
+        "实际执行的训练/验证结果与配置",
+        "失败分析及未执行范围"
+      ],
+      "grading": "无官方grade分值；不设虚构官方通过阈值。"
+    },
+    {
+      "labId": "mlp-generalization",
+      "nature": "editorial-integrated-practice",
+      "numbering": "站内编者阶段序号；非官方Lab编号",
+      "difficulty": "stars为编者相对难度，不是官方评分或成绩",
+      "sourceSections": [
+        {
+          "number": "4.1",
+          "title": "多层感知机",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/mlp.html"
+        },
+        {
+          "number": "4.2",
+          "title": "多层感知机的从零开始实现",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/mlp-scratch.html"
+        },
+        {
+          "number": "4.3",
+          "title": "多层感知机的简洁实现",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/mlp-concise.html"
+        },
+        {
+          "number": "4.4",
+          "title": "模型选择、欠拟合和过拟合",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/underfit-overfit.html"
+        },
+        {
+          "number": "4.5",
+          "title": "权重衰减",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/weight-decay.html"
+        },
+        {
+          "number": "4.6",
+          "title": "暂退法（Dropout）",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/dropout.html"
+        },
+        {
+          "number": "4.7",
+          "title": "前向传播、反向传播和计算图",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/backprop.html"
+        },
+        {
+          "number": "4.8",
+          "title": "数值稳定性和模型初始化",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/numerical-stability-and-init.html"
+        },
+        {
+          "number": "4.10",
+          "title": "实战Kaggle比赛：预测房价",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/kaggle-house-price.html"
+        }
+      ],
+      "exercisePolicy": "优先选这些官方小节的习题与PyTorch notebook；本轮只索引目录及课堂notebook链接，未下载/逐题核对练习全文。任务组合与验收描述为编者设计。",
+      "officialScheduleVideos": [
+        "https://www.bilibili.com/video/BV1hh411U7gn?p=2",
+        "https://www.bilibili.com/video/BV1hh411U7gn?p=3",
+        "https://www.bilibili.com/video/BV1kX4y1g7jp?p=2",
+        "https://www.bilibili.com/video/BV1UK4y1o7dy",
+        "https://www.bilibili.com/video/BV1Y5411c7aY",
+        "https://www.bilibili.com/video/BV1u64y1i75a",
+        "https://www.bilibili.com/video/BV1NK4y1P7Tu"
+      ],
+      "officialClassNotebookLinks": [
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/mlp.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/mlp-scratch.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/mlp-concise.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/underfit-overfit.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/weight-decay.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/dropout.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/numerical-stability-and-init.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/kaggle-house-price.slides.html"
+      ],
+      "recommendedPrerequisiteModules": [
+        "linear",
+        "mlp"
+      ],
+      "resources": {
+        "cpu": "MLP和房价基线可在CPU完成；缩小超参搜索而非删验证。",
+        "gpu": "GPU为可选加速；不以历史榜单排名验收。"
+      },
+      "evidenceToKeep": [
+        "环境与数据来源/版本",
+        "形状或局部正确性检查",
+        "实际执行的训练/验证结果与配置",
+        "失败分析及未执行范围"
+      ],
+      "grading": "无官方grade分值；不设虚构官方通过阈值。"
+    },
+    {
+      "labId": "cnn-architectures",
+      "nature": "editorial-integrated-practice",
+      "numbering": "站内编者阶段序号；非官方Lab编号",
+      "difficulty": "stars为编者相对难度，不是官方评分或成绩",
+      "sourceSections": [
+        {
+          "number": "5.1",
+          "title": "层和块",
+          "url": "https://zh.d2l.ai/chapter_deep-learning-computation/model-construction.html"
+        },
+        {
+          "number": "5.2",
+          "title": "参数管理",
+          "url": "https://zh.d2l.ai/chapter_deep-learning-computation/parameters.html"
+        },
+        {
+          "number": "5.4",
+          "title": "自定义层",
+          "url": "https://zh.d2l.ai/chapter_deep-learning-computation/custom-layer.html"
+        },
+        {
+          "number": "5.5",
+          "title": "读写文件",
+          "url": "https://zh.d2l.ai/chapter_deep-learning-computation/read-write.html"
+        },
+        {
+          "number": "5.6",
+          "title": "GPU",
+          "url": "https://zh.d2l.ai/chapter_deep-learning-computation/use-gpu.html"
+        },
+        {
+          "number": "6.1",
+          "title": "从全连接层到卷积",
+          "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/why-conv.html"
+        },
+        {
+          "number": "6.2",
+          "title": "图像卷积",
+          "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/conv-layer.html"
+        },
+        {
+          "number": "6.3",
+          "title": "填充和步幅",
+          "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/padding-and-strides.html"
+        },
+        {
+          "number": "6.4",
+          "title": "多输入多输出通道",
+          "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/channels.html"
+        },
+        {
+          "number": "6.5",
+          "title": "汇聚层",
+          "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/pooling.html"
+        },
+        {
+          "number": "6.6",
+          "title": "卷积神经网络（LeNet）",
+          "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/lenet.html"
+        },
+        {
+          "number": "7.1",
+          "title": "深度卷积神经网络（AlexNet）",
+          "url": "https://zh.d2l.ai/chapter_convolutional-modern/alexnet.html"
+        },
+        {
+          "number": "7.2",
+          "title": "使用块的网络（VGG）",
+          "url": "https://zh.d2l.ai/chapter_convolutional-modern/vgg.html"
+        },
+        {
+          "number": "7.3",
+          "title": "网络中的网络（NiN）",
+          "url": "https://zh.d2l.ai/chapter_convolutional-modern/nin.html"
+        },
+        {
+          "number": "7.4",
+          "title": "含并行连结的网络（GoogLeNet）",
+          "url": "https://zh.d2l.ai/chapter_convolutional-modern/googlenet.html"
+        },
+        {
+          "number": "7.5",
+          "title": "批量规范化",
+          "url": "https://zh.d2l.ai/chapter_convolutional-modern/batch-norm.html"
+        },
+        {
+          "number": "7.6",
+          "title": "残差网络（ResNet）",
+          "url": "https://zh.d2l.ai/chapter_convolutional-modern/resnet.html"
+        }
+      ],
+      "exercisePolicy": "优先选这些官方小节的习题与PyTorch notebook；本轮只索引目录及课堂notebook链接，未下载/逐题核对练习全文。任务组合与验收描述为编者设计。",
+      "officialScheduleVideos": [
+        "https://www.bilibili.com/video/BV1AK4y1P7vs",
+        "https://www.bilibili.com/video/BV1AK4y1P7vs?p=2",
+        "https://www.bilibili.com/video/BV1AK4y1P7vs?p=3",
+        "https://www.bilibili.com/video/BV1AK4y1P7vs?p=4",
+        "https://www.bilibili.com/video/BV1z5411c7C1",
+        "https://www.bilibili.com/video/BV1L64y1m7Nh",
+        "https://www.bilibili.com/video/BV1L64y1m7Nh?p=2",
+        "https://www.bilibili.com/video/BV1Th411U7UN",
+        "https://www.bilibili.com/video/BV1MB4y1F7of",
+        "https://www.bilibili.com/video/BV1EV411j7nX",
+        "https://www.bilibili.com/video/BV1t44y1r7ct/",
+        "https://www.bilibili.com/video/BV1h54y1L7oe/",
+        "https://www.bilibili.com/video/BV1Ao4y117Pd/",
+        "https://www.bilibili.com/video/BV1Uv411G71b/",
+        "https://www.bilibili.com/video/BV1b5411g7Xo/",
+        "https://www.bilibili.com/video/BV1X44y1r77r/",
+        "https://www.bilibili.com/video/BV1bV41177ap/"
+      ],
+      "officialClassNotebookLinks": [
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/model-construction.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/parameters.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/custom-layer.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/read-write.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/use-gpu.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/conv-layer.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/padding-and-strides.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/channels.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/pooling.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/lenet.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/alexnet.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/vgg.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/nin.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/googlenet.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/batch-norm.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/resnet.slides.html"
+      ],
+      "recommendedPrerequisiteModules": [
+        "mlp",
+        "cnn"
+      ],
+      "resources": {
+        "cpu": "CPU完成形状、前向与小LeNet；大型CNN完整训练不设CPU硬性时限。",
+        "gpu": "完整CNN对照建议GPU；缩小通道/图像/样本须标为编者缩小版，不称原架构复现。"
+      },
+      "evidenceToKeep": [
+        "环境与数据来源/版本",
+        "形状或局部正确性检查",
+        "实际执行的训练/验证结果与配置",
+        "失败分析及未执行范围"
+      ],
+      "grading": "无官方grade分值；不设虚构官方通过阈值。"
+    },
+    {
+      "labId": "training-performance",
+      "nature": "editorial-integrated-practice",
+      "numbering": "站内编者阶段序号；非官方Lab编号",
+      "difficulty": "stars为编者相对难度，不是官方评分或成绩",
+      "sourceSections": [
+        {
+          "number": "5.6",
+          "title": "GPU",
+          "url": "https://zh.d2l.ai/chapter_deep-learning-computation/use-gpu.html"
+        },
+        {
+          "number": "12.2",
+          "title": "异步计算",
+          "url": "https://zh.d2l.ai/chapter_computational-performance/async-computation.html"
+        },
+        {
+          "number": "12.3",
+          "title": "自动并行",
+          "url": "https://zh.d2l.ai/chapter_computational-performance/auto-parallelism.html"
+        },
+        {
+          "number": "12.4",
+          "title": "硬件",
+          "url": "https://zh.d2l.ai/chapter_computational-performance/hardware.html"
+        },
+        {
+          "number": "12.5",
+          "title": "多GPU训练",
+          "url": "https://zh.d2l.ai/chapter_computational-performance/multiple-gpus.html"
+        },
+        {
+          "number": "12.6",
+          "title": "多GPU的简洁实现",
+          "url": "https://zh.d2l.ai/chapter_computational-performance/multiple-gpus-concise.html"
+        },
+        {
+          "number": "12.7",
+          "title": "参数服务器",
+          "url": "https://zh.d2l.ai/chapter_computational-performance/parameterserver.html"
+        }
+      ],
+      "exercisePolicy": "优先选这些官方小节的习题与PyTorch notebook；本轮只索引目录及课堂notebook链接，未下载/逐题核对练习全文。任务组合与验收描述为编者设计。",
+      "officialScheduleVideos": [
+        "https://www.bilibili.com/video/BV1z5411c7C1",
+        "https://www.bilibili.com/video/BV1TU4y1j7Wd/",
+        "https://www.bilibili.com/video/BV1vU4y1V7rd/",
+        "https://www.bilibili.com/video/BV1MQ4y1R7Qg",
+        "https://www.bilibili.com/video/BV1jU4y1G7iu"
+      ],
+      "officialClassNotebookLinks": [
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/use-gpu.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computational-performance/multiple-gpus.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computational-performance/multiple-gpus-concise.slides.html"
+      ],
+      "recommendedPrerequisiteModules": [
+        "cnn",
+        "performance"
+      ],
+      "resources": {
+        "cpu": "CPU可完成计时和聚合推演，报告单设备实测；不能宣称已验证多GPU吞吐。",
+        "gpu": "多GPU实测需要实际多设备环境；无此资源则标记未执行，保留概念学习。"
+      },
+      "evidenceToKeep": [
+        "环境与数据来源/版本",
+        "形状或局部正确性检查",
+        "实际执行的训练/验证结果与配置",
+        "失败分析及未执行范围"
+      ],
+      "grading": "无官方grade分值；不设虚构官方通过阈值。"
+    },
+    {
+      "labId": "cv-transfer",
+      "nature": "editorial-integrated-practice",
+      "numbering": "站内编者阶段序号；非官方Lab编号",
+      "difficulty": "stars为编者相对难度，不是官方评分或成绩",
+      "sourceSections": [
+        {
+          "number": "13.1",
+          "title": "图像增广",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/image-augmentation.html"
+        },
+        {
+          "number": "13.2",
+          "title": "微调",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/fine-tuning.html"
+        },
+        {
+          "number": "13.13",
+          "title": "实战 Kaggle 比赛：图像分类 (CIFAR-10)",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/kaggle-cifar10.html"
+        },
+        {
+          "number": "13.14",
+          "title": "实战Kaggle比赛：狗的品种识别（ImageNet Dogs）",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/kaggle-dog.html"
+        }
+      ],
+      "exercisePolicy": "优先选这些官方小节的习题与PyTorch notebook；本轮只索引目录及课堂notebook链接，未下载/逐题核对练习全文。任务组合与验收描述为编者设计。",
+      "officialScheduleVideos": [
+        "https://www.bilibili.com/video/BV17y4y1g76q",
+        "https://www.bilibili.com/video/BV1Sb4y1d7CR",
+        "https://www.bilibili.com/video/BV1Gy4y1M7Cu",
+        "https://www.bilibili.com/video/BV1j5411T7wx"
+      ],
+      "officialClassNotebookLinks": [
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/image-augmentation.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/fine-tuning.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/kaggle-cifar10.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/kaggle-dog.slides.html"
+      ],
+      "recommendedPrerequisiteModules": [
+        "cnn",
+        "performance",
+        "cv"
+      ],
+      "resources": {
+        "cpu": "CPU可做接口、变换与小样本冻结特征实验；全量微调可能较慢。",
+        "gpu": "较大CNN微调建议GPU；预训练权重/竞赛数据须先核对许可与下载条件，不承诺现时可得。"
+      },
+      "evidenceToKeep": [
+        "环境与数据来源/版本",
+        "形状或局部正确性检查",
+        "实际执行的训练/验证结果与配置",
+        "失败分析及未执行范围"
+      ],
+      "grading": "无官方grade分值；不设虚构官方通过阈值。"
+    },
+    {
+      "labId": "cv-dense-prediction",
+      "nature": "editorial-integrated-practice",
+      "numbering": "站内编者阶段序号；非官方Lab编号",
+      "difficulty": "stars为编者相对难度，不是官方评分或成绩",
+      "sourceSections": [
+        {
+          "number": "13.3",
+          "title": "目标检测和边界框",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/bounding-box.html"
+        },
+        {
+          "number": "13.4",
+          "title": "锚框",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/anchor.html"
+        },
+        {
+          "number": "13.5",
+          "title": "多尺度目标检测",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/multiscale-object-detection.html"
+        },
+        {
+          "number": "13.6",
+          "title": "目标检测数据集",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/object-detection-dataset.html"
+        },
+        {
+          "number": "13.7",
+          "title": "单发多框检测（SSD）",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/ssd.html"
+        },
+        {
+          "number": "13.8",
+          "title": "区域卷积神经网络（R-CNN）系列",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/rcnn.html"
+        },
+        {
+          "number": "13.9",
+          "title": "语义分割和数据集",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/semantic-segmentation-and-dataset.html"
+        },
+        {
+          "number": "13.10",
+          "title": "转置卷积",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/transposed-conv.html"
+        },
+        {
+          "number": "13.11",
+          "title": "全卷积网络",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/fcn.html"
+        },
+        {
+          "number": "13.12",
+          "title": "风格迁移",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/neural-style.html"
+        }
+      ],
+      "exercisePolicy": "优先选这些官方小节的习题与PyTorch notebook；本轮只索引目录及课堂notebook链接，未下载/逐题核对练习全文。任务组合与验收描述为编者设计。",
+      "officialScheduleVideos": [
+        "https://www.bilibili.com/video/BV1Lh411Y7LX?p=2",
+        "https://www.bilibili.com/video/BV1Lh411Y7LX?p=3",
+        "https://www.bilibili.com/video/BV1aB4y1K7za",
+        "https://www.bilibili.com/video/BV1Db4y1C71g",
+        "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=1",
+        "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=2",
+        "https://www.bilibili.com/video/BV1BK4y1M7Rd?p=2",
+        "https://www.bilibili.com/video/BV17o4y1X7Jn/",
+        "https://www.bilibili.com/video/BV1CM4y1K7r7/",
+        "https://www.bilibili.com/video/BV1af4y1L7Zu/",
+        "https://www.bilibili.com/video/BV1Eh41167GN/"
+      ],
+      "officialClassNotebookLinks": [
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/bounding-box.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/object-detection-dataset.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/anchor.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/multiscale-object-detection.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/ssd.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/semantic-segmentation-and-dataset.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/transposed-conv.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/fcn.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/neural-style.slides.html"
+      ],
+      "recommendedPrerequisiteModules": [
+        "cnn",
+        "cv"
+      ],
+      "resources": {
+        "cpu": "CPU能完成几何运算、形状核对与小样本前向；完整检测/分割/风格优化通常较慢。",
+        "gpu": "GPU建议用于三类任务的实际训练/优化；不要求同时加载大模型，不编造显存门槛。"
+      },
+      "evidenceToKeep": [
+        "环境与数据来源/版本",
+        "形状或局部正确性检查",
+        "实际执行的训练/验证结果与配置",
+        "失败分析及未执行范围"
+      ],
+      "grading": "无官方grade分值；不设虚构官方通过阈值。"
+    },
+    {
+      "labId": "recurrent-language-model",
+      "nature": "editorial-integrated-practice",
+      "numbering": "站内编者阶段序号；非官方Lab编号",
+      "difficulty": "stars为编者相对难度，不是官方评分或成绩",
+      "sourceSections": [
+        {
+          "number": "8.1",
+          "title": "序列模型",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/sequence.html"
+        },
+        {
+          "number": "8.2",
+          "title": "文本预处理",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/text-preprocessing.html"
+        },
+        {
+          "number": "8.3",
+          "title": "语言模型和数据集",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/language-models-and-dataset.html"
+        },
+        {
+          "number": "8.4",
+          "title": "循环神经网络",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/rnn.html"
+        },
+        {
+          "number": "8.5",
+          "title": "循环神经网络的从零开始实现",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/rnn-scratch.html"
+        },
+        {
+          "number": "8.6",
+          "title": "循环神经网络的简洁实现",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/rnn-concise.html"
+        },
+        {
+          "number": "8.7",
+          "title": "通过时间反向传播",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/bptt.html"
+        },
+        {
+          "number": "9.1",
+          "title": "门控循环单元（GRU）",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/gru.html"
+        },
+        {
+          "number": "9.2",
+          "title": "长短期记忆网络（LSTM）",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/lstm.html"
+        },
+        {
+          "number": "9.3",
+          "title": "深度循环神经网络",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/deep-rnn.html"
+        },
+        {
+          "number": "9.4",
+          "title": "双向循环神经网络",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/bi-rnn.html"
+        }
+      ],
+      "exercisePolicy": "优先选这些官方小节的习题与PyTorch notebook；本轮只索引目录及课堂notebook链接，未下载/逐题核对练习全文。任务组合与验收描述为编者设计。",
+      "officialScheduleVideos": [
+        "https://www.bilibili.com/video/BV1L44y1m768/",
+        "https://www.bilibili.com/video/BV1Fo4y1Q79L/",
+        "https://www.bilibili.com/video/BV1ZX4y1F7K3/",
+        "https://www.bilibili.com/video/BV1D64y1z7CA/",
+        "https://www.bilibili.com/video/BV1kq4y1H7sw/",
+        "https://www.bilibili.com/video/BV1kq4y1H7sw?p=2",
+        "https://www.bilibili.com/video/BV1mf4y157N2/",
+        "https://www.bilibili.com/video/BV1JU4y1H7PC/",
+        "https://www.bilibili.com/video/BV1JM4y1T7N4/",
+        "https://www.bilibili.com/video/BV12X4y1c71W/"
+      ],
+      "officialClassNotebookLinks": [
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/sequence.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/text-preprocessing.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/language-models-and-dataset.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/rnn-scratch.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/rnn-concise.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/gru.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/lstm.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/deep-rnn.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/bi-rnn.slides.html"
+      ],
+      "recommendedPrerequisiteModules": [
+        "linear",
+        "rnn"
+      ],
+      "resources": {
+        "cpu": "CPU可训练缩小文本/隐层基线，必须记录缩小范围。",
+        "gpu": "GPU可加速长序列/较大隐藏层；不要求大语料或大模型。"
+      },
+      "evidenceToKeep": [
+        "环境与数据来源/版本",
+        "形状或局部正确性检查",
+        "实际执行的训练/验证结果与配置",
+        "失败分析及未执行范围"
+      ],
+      "grading": "无官方grade分值；不设虚构官方通过阈值。"
+    },
+    {
+      "labId": "seq2seq-attention",
+      "nature": "editorial-integrated-practice",
+      "numbering": "站内编者阶段序号；非官方Lab编号",
+      "difficulty": "stars为编者相对难度，不是官方评分或成绩",
+      "sourceSections": [
+        {
+          "number": "9.5",
+          "title": "机器翻译与数据集",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/machine-translation-and-dataset.html"
+        },
+        {
+          "number": "9.6",
+          "title": "编码器-解码器架构",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/encoder-decoder.html"
+        },
+        {
+          "number": "9.7",
+          "title": "序列到序列学习（seq2seq）",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/seq2seq.html"
+        },
+        {
+          "number": "9.8",
+          "title": "束搜索",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/beam-search.html"
+        },
+        {
+          "number": "10.1",
+          "title": "注意力提示",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/attention-cues.html"
+        },
+        {
+          "number": "10.2",
+          "title": "注意力汇聚：Nadaraya-Watson 核回归",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/nadaraya-waston.html"
+        },
+        {
+          "number": "10.3",
+          "title": "注意力评分函数",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/attention-scoring-functions.html"
+        },
+        {
+          "number": "10.4",
+          "title": "Bahdanau 注意力",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/bahdanau-attention.html"
+        }
+      ],
+      "exercisePolicy": "优先选这些官方小节的习题与PyTorch notebook；本轮只索引目录及课堂notebook链接，未下载/逐题核对练习全文。任务组合与验收描述为编者设计。",
+      "officialScheduleVideos": [
+        "https://www.bilibili.com/video/BV1H64y1s7TH/",
+        "https://www.bilibili.com/video/BV1c54y1E7YP/",
+        "https://www.bilibili.com/video/BV16g411L7FG/",
+        "https://www.bilibili.com/video/BV1B44y1C7m1/",
+        "https://www.bilibili.com/video/BV1264y1i7R1/",
+        "https://www.bilibili.com/video/BV1Tb4y167rb/",
+        "https://www.bilibili.com/video/BV1v44y1C7Tg/"
+      ],
+      "officialClassNotebookLinks": [
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/machine-translation-and-dataset.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/encoder-decoder.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/seq2seq.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/nadaraya-waston.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/attention-scoring-functions.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/bahdanau-attention.slides.html"
+      ],
+      "recommendedPrerequisiteModules": [
+        "rnn",
+        "seq2seq"
+      ],
+      "resources": {
+        "cpu": "CPU完成小数据/小隐层功能实验；训练质量受规模和时间限制。",
+        "gpu": "GPU用于更充分训练；译文示例与离线指标都保留，不编造质量达标线。"
+      },
+      "evidenceToKeep": [
+        "环境与数据来源/版本",
+        "形状或局部正确性检查",
+        "实际执行的训练/验证结果与配置",
+        "失败分析及未执行范围"
+      ],
+      "grading": "无官方grade分值；不设虚构官方通过阈值。"
+    },
+    {
+      "labId": "transformer",
+      "nature": "editorial-integrated-practice",
+      "numbering": "站内编者阶段序号；非官方Lab编号",
+      "difficulty": "stars为编者相对难度，不是官方评分或成绩",
+      "sourceSections": [
+        {
+          "number": "10.3",
+          "title": "注意力评分函数",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/attention-scoring-functions.html"
+        },
+        {
+          "number": "10.5",
+          "title": "多头注意力",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/multihead-attention.html"
+        },
+        {
+          "number": "10.6",
+          "title": "自注意力和位置编码",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/self-attention-and-positional-encoding.html"
+        },
+        {
+          "number": "10.7",
+          "title": "Transformer",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/transformer.html"
+        }
+      ],
+      "exercisePolicy": "优先选这些官方小节的习题与PyTorch notebook；本轮只索引目录及课堂notebook链接，未下载/逐题核对练习全文。任务组合与验收描述为编者设计。",
+      "officialScheduleVideos": [
+        "https://www.bilibili.com/video/BV1Tb4y167rb/",
+        "https://www.bilibili.com/video/BV19o4y1m7mo/",
+        "https://www.bilibili.com/video/BV1Kq4y1H7FL/"
+      ],
+      "officialClassNotebookLinks": [
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/attention-scoring-functions.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/self-attention-and-positional-encoding.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/transformer.slides.html"
+      ],
+      "recommendedPrerequisiteModules": [
+        "seq2seq",
+        "transformer"
+      ],
+      "resources": {
+        "cpu": "CPU可完成组件和极小训练；完整质量对照建议更合适算力。",
+        "gpu": "GPU不是理解前置；数据/层数缩小要明确，不宣称复现大模型。"
+      },
+      "evidenceToKeep": [
+        "环境与数据来源/版本",
+        "形状或局部正确性检查",
+        "实际执行的训练/验证结果与配置",
+        "失败分析及未执行范围"
+      ],
+      "grading": "无官方grade分值；不设虚构官方通过阈值。"
+    },
+    {
+      "labId": "bert-pretrain-finetune",
+      "nature": "editorial-integrated-practice",
+      "numbering": "站内编者阶段序号；非官方Lab编号",
+      "difficulty": "stars为编者相对难度，不是官方评分或成绩",
+      "sourceSections": [
+        {
+          "number": "14.8",
+          "title": "来自Transformers的双向编码器表示（BERT）",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert.html"
+        },
+        {
+          "number": "14.9",
+          "title": "用于预训练BERT的数据集",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert-dataset.html"
+        },
+        {
+          "number": "14.10",
+          "title": "预训练BERT",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert-pretraining.html"
+        },
+        {
+          "number": "15.4",
+          "title": "自然语言推断与数据集",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html"
+        },
+        {
+          "number": "15.6",
+          "title": "针对序列级和词元级应用微调BERT",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-applications/finetuning-bert.html"
+        },
+        {
+          "number": "15.7",
+          "title": "自然语言推断：微调BERT",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-bert.html"
+        }
+      ],
+      "exercisePolicy": "优先选这些官方小节的习题与PyTorch notebook；本轮只索引目录及课堂notebook链接，未下载/逐题核对练习全文。任务组合与验收描述为编者设计。",
+      "officialScheduleVideos": [
+        "https://www.bilibili.com/video/BV1yU4y1E7Ns/",
+        "https://www.bilibili.com/video/BV1yU4y1E7Ns?p=2",
+        "https://www.bilibili.com/video/BV1yU4y1E7Ns?p=3",
+        "https://www.bilibili.com/video/BV15L4y1v7ts",
+        "https://www.bilibili.com/video/BV15L4y1v7ts?p=2",
+        "https://www.bilibili.com/video/BV15L4y1v7ts?p=3"
+      ],
+      "officialClassNotebookLinks": [
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-pretraining/bert.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-pretraining/bert-dataset.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-pretraining/bert-pretraining.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.slides.html",
+        "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-applications/natural-language-inference-bert.slides.html"
+      ],
+      "recommendedPrerequisiteModules": [
+        "transformer",
+        "bert"
+      ],
+      "resources": {
+        "cpu": "CPU完成数据构造、损失检查与极小模型；完整预训练和微调不设CPU完成时限。",
+        "gpu": "GPU建议用于训练；可拆开小模型预训练与官方可用权重微调，未执行大规模训练须明确。"
+      },
+      "evidenceToKeep": [
+        "环境与数据来源/版本",
+        "形状或局部正确性检查",
+        "实际执行的训练/验证结果与配置",
+        "失败分析及未执行范围"
+      ],
+      "grading": "无官方grade分值；不设虚构官方通过阈值。"
+    },
+    {
+      "labId": "optimization-capstone",
+      "nature": "editorial-integrated-practice",
+      "numbering": "站内编者阶段序号；非官方Lab编号",
+      "difficulty": "stars为编者相对难度，不是官方评分或成绩",
+      "sourceSections": [
+        {
+          "number": "11.1",
+          "title": "优化和深度学习",
+          "url": "https://zh.d2l.ai/chapter_optimization/optimization-intro.html"
+        },
+        {
+          "number": "11.2",
+          "title": "凸性",
+          "url": "https://zh.d2l.ai/chapter_optimization/convexity.html"
+        },
+        {
+          "number": "11.3",
+          "title": "梯度下降",
+          "url": "https://zh.d2l.ai/chapter_optimization/gd.html"
+        },
+        {
+          "number": "11.4",
+          "title": "随机梯度下降",
+          "url": "https://zh.d2l.ai/chapter_optimization/sgd.html"
+        },
+        {
+          "number": "11.5",
+          "title": "小批量随机梯度下降",
+          "url": "https://zh.d2l.ai/chapter_optimization/minibatch-sgd.html"
+        },
+        {
+          "number": "11.6",
+          "title": "动量法",
+          "url": "https://zh.d2l.ai/chapter_optimization/momentum.html"
+        },
+        {
+          "number": "11.7",
+          "title": "AdaGrad算法",
+          "url": "https://zh.d2l.ai/chapter_optimization/adagrad.html"
+        },
+        {
+          "number": "11.8",
+          "title": "RMSProp算法",
+          "url": "https://zh.d2l.ai/chapter_optimization/rmsprop.html"
+        },
+        {
+          "number": "11.9",
+          "title": "Adadelta",
+          "url": "https://zh.d2l.ai/chapter_optimization/adadelta.html"
+        },
+        {
+          "number": "11.10",
+          "title": "Adam算法",
+          "url": "https://zh.d2l.ai/chapter_optimization/adam.html"
+        },
+        {
+          "number": "11.11",
+          "title": "学习率调度器",
+          "url": "https://zh.d2l.ai/chapter_optimization/lr-scheduler.html"
+        }
+      ],
+      "exercisePolicy": "优先选这些官方小节的习题与PyTorch notebook；本轮只索引目录及课堂notebook链接，未下载/逐题核对练习全文。任务组合与验收描述为编者设计。",
+      "officialScheduleVideos": [],
+      "officialClassNotebookLinks": [],
+      "recommendedPrerequisiteModules": [
+        "linear",
+        "performance",
+        "transformer",
+        "bert",
+        "optimization-summary"
+      ],
+      "resources": {
+        "cpu": "复用小模型可CPU完成；不以公平跨设备性能排行为目标。",
+        "gpu": "GPU可复用已有实验；不增加新的大模型训练或硬件采购要求。"
+      },
+      "evidenceToKeep": [
+        "环境与数据来源/版本",
+        "形状或局部正确性检查",
+        "实际执行的训练/验证结果与配置",
+        "失败分析及未执行范围"
+      ],
+      "grading": "无官方grade分值；不设虚构官方通过阈值。"
+    }
+  ],
+  "officialHistoricalCompetitions": [
+    {
+      "id": "california-house-prices-2021",
+      "title": "预测2020加州房价",
+      "nature": "official-historical-course-competition",
+      "labIds": [
+        "mlp-generalization"
+      ],
+      "url": "https://www.kaggle.com/c/california-house-prices/overview",
+      "launchVideo": "https://www.bilibili.com/video/BV1NK4y1P7Tu?p=2",
+      "summaryVideo": "https://www.bilibili.com/video/BV15Q4y1o7vc",
+      "scheduleDates": {
+        "launch": "2021-04-18",
+        "summary": "2021-05-15"
+      },
+      "historicalDeadlineEvidence": {
+        "date": "2021-05-09",
+        "timeAsPublished": "中午12:00（公告称与Kaggle显示时间相同）",
+        "source": "https://courses.d2l.ai/zh-v2/announcements.html",
+        "note": "第五周延期、第六周确认；不推断网站当前时区或现时提交状态。"
+      },
+      "distinction": "教材4.10的Ames房价是另一项比赛，不得混为课程加州房价。",
+      "sourceUrls": [
+        "https://courses.d2l.ai/zh-v2/",
+        "https://courses.d2l.ai/zh-v2/announcements.html"
+      ],
+      "currentAcceptance": "历史截止日、奖品和榜单不作现时验收；以合规取得的数据、固定本地划分、可复现基线和误差分析学习。未核实当前下载/提交可用性；无法取得数据时不得标记已复现该竞赛。"
+    },
+    {
+      "id": "classify-leaves-2021",
+      "title": "树叶分类",
+      "nature": "official-historical-course-competition",
+      "labIds": [
+        "cnn-architectures",
+        "cv-transfer"
+      ],
+      "url": "https://www.kaggle.com/c/classify-leaves",
+      "launchVideo": "https://www.bilibili.com/video/BV1z64y1o7iz/",
+      "summaryVideo": "https://www.bilibili.com/video/BV1by4y1K7SE",
+      "scheduleDates": {
+        "launch": "2021-05-30",
+        "summary": "2021-06-27"
+      },
+      "historicalDeadlineEvidence": {
+        "date": null,
+        "note": "已读公告仅确认第十六周已结束；本轮未核实精确截止日，不编造。"
+      },
+      "distinction": "课表“图片分类”经第十一周公告确认为树叶分类；不是教材CIFAR-10或狗品种比赛。",
+      "sourceUrls": [
+        "https://courses.d2l.ai/zh-v2/",
+        "https://courses.d2l.ai/zh-v2/announcements.html"
+      ],
+      "currentAcceptance": "历史截止日、奖品和榜单不作现时验收；以合规取得的数据、固定本地划分、可复现基线和误差分析学习。未核实当前下载/提交可用性；无法取得数据时不得标记已复现该竞赛。"
+    },
+    {
+      "id": "cowboy-detection-2021",
+      "title": "牛仔行头检测",
+      "nature": "official-historical-course-competition",
+      "labIds": [
+        "cv-dense-prediction"
+      ],
+      "url": "https://competitions.codalab.org/competitions/33573#results",
+      "launchVideo": "https://www.bilibili.com/video/BV1F64y1x7xP/",
+      "summaryVideo": "https://www.bilibili.com/video/BV13b4y1m7y8",
+      "scheduleDates": {
+        "launch": "2021-07-11",
+        "summary": "2021-08-15"
+      },
+      "historicalDeadlineEvidence": {
+        "date": null,
+        "note": "第二十二周公告确认已结束；8月15日前提交代码到Kaggle是获奖赠书资格步骤，不是比赛截止日。"
+      },
+      "distinction": "第十八周公告明称第三次竞赛；结果链接为Codalab，未抓取榜单或数据。",
+      "sourceUrls": [
+        "https://courses.d2l.ai/zh-v2/",
+        "https://courses.d2l.ai/zh-v2/announcements.html"
+      ],
+      "currentAcceptance": "历史截止日、奖品和榜单不作现时验收；以合规取得的数据、固定本地划分、可复现基线和误差分析学习。未核实当前下载/提交可用性；无法取得数据时不得标记已复现该竞赛。"
+    }
+  ],
+  "textbookCompetitionCases": [
+    {
+      "section": "4.10",
+      "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/kaggle-house-price.html",
+      "competitionLinks": [
+        "https://www.kaggle.com/c/house-prices-advanced-regression-techniques"
+      ],
+      "nature": "official-textbook-case-not-extra-course-competition",
+      "labIds": [
+        "mlp-generalization"
+      ]
+    },
+    {
+      "section": "13.13",
+      "url": "https://zh.d2l.ai/chapter_computer-vision/kaggle-cifar10.html",
+      "competitionLinks": [
+        "https://www.kaggle.com/c/cifar-10"
+      ],
+      "nature": "official-textbook-case-not-extra-course-competition",
+      "labIds": [
+        "cv-transfer"
+      ]
+    },
+    {
+      "section": "13.14",
+      "url": "https://zh.d2l.ai/chapter_computer-vision/kaggle-dog.html",
+      "competitionLinks": [
+        "https://www.kaggle.com/c/dog-breed-identification"
+      ],
+      "nature": "official-textbook-case-not-extra-course-competition",
+      "labIds": [
+        "cv-transfer"
+      ]
+    }
+  ],
+  "competitionCountDiscrepancy": {
+    "plannedInCourseIntroduction": 4,
+    "confirmedInFinalScheduleAndAnnouncements": 3,
+    "policy": "保留官方摘要四次计划与最终可证实三次的差异；不杜撰第四次，不把教材比赛案例充作第四次。"
+  },
+  "commonConstraints": [
+    "不推定学习者机器有CUDA、NVIDIA GPU、多GPU或可用云预算；先CPU小例，再按真实资源安排训练。",
+    "Apple Silicon/MPS与CUDA不是同一后端；课程CUDA示例不能直接照搬。本轮未验证任一安装组合。",
+    "缩小数据/模型用于功能理解须记录；不能把小例称为全量复现，也不能用概念推演代替已完成GPU训练。",
+    "本轮不创建实验正文、逐讲笔记或脚手架；后续多agent并行生成并由主agent统一整合。"
+  ],
+  "uiNotice": "站点通用xv6命令框（git checkout、make qemu、make grade）不适用这些D2L编者练习。branch只是内容说明，不是可执行分支名；后续按具体PyTorch notebook/脚本运行，不改src。",
+  "sourceScope": "课表、教材目录、安装说明、三篇教材竞赛页和官方公告已读取；视频字幕、完整习题、notebook、竞赛规则/数据/现时榜单未获取。"
+}

@@ -1,0 +1,104 @@
+{
+  "lectureId": "lec06",
+  "acquiredAt": "2026-11-13T08:41:05.981118+00:00",
+  "sources": [
+    {
+      "kind": "video_metadata",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1eZ4y1w7PY",
+      "path": "video-metadata.json",
+      "sha256": "c5fa37ef4c090e058dfdb3472e9500cf83d05b438e588fb9f3ea8dd933f81b85",
+      "hashScope": "saved_minimized_evidence",
+      "retrievedAt": "2026-11-13T08:41:05.981118+00:00"
+    },
+    {
+      "kind": "textbook_source",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_preliminaries/calculus.md",
+      "path": "calculus-source.txt",
+      "sha256": "afbb49d0908ae9d23f12572e83044ed736d6aa4fc4a6754d76c183f24334a87d",
+      "retrievedAt": "2026-11-13T08:41:05.981118+00:00",
+      "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+      "version": "当前中文第二版固定master提交，不是2021快照",
+      "readScope": "完整中文源码；实现只取PyTorch分支概念，不复制整段示例"
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "cid": 313590482,
+      "part": "矩阵计算",
+      "duration": 758
+    },
+    {
+      "page": 2,
+      "cid": 315218355,
+      "part": "矩阵计算 QA",
+      "duration": 117
+    }
+  ],
+  "subtitleRequests": [
+    {
+      "page": 1,
+      "cid": 313590482,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1eZ4y1w7PY&cid=313590482",
+      "retrievedAt": "2026-11-13T08:41:05.981118+00:00",
+      "responseSha256": "cb71d5122259c8793c244a16425e6d673562fb2599d93d9b558eaa47140f066e",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": false,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 2,
+      "cid": 315218355,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1eZ4y1w7PY&cid=315218355",
+      "retrievedAt": "2026-11-13T08:41:05.981118+00:00",
+      "responseSha256": "cfd715d012281ee966b6cab0522ea39a1ee096d4fd79bbefe3f81e51f929dc79",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": false,
+      "subtitles": [],
+      "status": "empty_public_list"
+    }
+  ],
+  "license": {
+    "copyright": 1,
+    "noReprint": 1,
+    "interpretation": "平台原创与禁止转载标志；不是开放许可，未发现视频全文转录/翻译再发布授权。只保留元数据，独立改写教材导读。"
+  },
+  "textbookLicense": {
+    "name": "Apache-2.0",
+    "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/LICENSE",
+    "scope": "仓库许可由共享准备核实，不外推视频或第三方图"
+  },
+  "outputs": {
+    "notes": {
+      "status": "written",
+      "path": "lectures/lec06/notes.zh.md",
+      "type": "教材导读/编者笔记",
+      "videoContentVerified": false
+    },
+    "draft": {
+      "status": "blocked",
+      "reason": "所有P公开字幕列表为空，未获取音视频内容；无真实时间轴，不生成占位稿"
+    },
+    "materials": {
+      "status": "not_required",
+      "reason": "必要教材与API补充已在notes定点引用，不另做重复阅读稿"
+    },
+    "assets": {
+      "status": "written",
+      "path": "lectures/lec06/assets/gradient-chain.svg"
+    }
+  },
+  "gaps": [
+    "课堂讲解和QA内容未核实",
+    "无逐段视频时间线",
+    "代码与公式数值待主agent统一验证"
+  ],
+  "verification": {
+    "build": "not_run_by_worker",
+    "numeric": "not_run_by_worker",
+    "browser": "not_run_by_worker"
+  }
+}

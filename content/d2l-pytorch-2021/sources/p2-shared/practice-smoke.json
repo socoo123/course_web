@@ -1,0 +1,155 @@
+{
+  "date": "2026-11-13",
+  "status": "passed",
+  "environment": {
+    "python": "3.11.8",
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "device": "cpu",
+    "threads": 1,
+    "pythonExecutable": "/tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python"
+  },
+  "scriptSha256": "ea3abb54a7ff612534141bb3d503d4312110db00408589e52583dd6f9c0632e9",
+  "checks": {
+    "fashion_mnist_cpu": {
+      "fullTrainCount": 60000,
+      "splitSeed": 2021,
+      "modelSeed": 2022,
+      "shuffleSeed": 2023,
+      "split": {
+        "trainPool": 55000,
+        "validationPool": 5000
+      },
+      "trainSubset": 257,
+      "validationSubset": 73,
+      "batchSize": 64,
+      "trainBatchSizes": [
+        64,
+        64,
+        64,
+        64,
+        1
+      ],
+      "validationBatchSizes": [
+        64,
+        9
+      ],
+      "trainClassCounts": [
+        27,
+        25,
+        20,
+        28,
+        29,
+        23,
+        31,
+        38,
+        13,
+        23
+      ],
+      "validationClassCounts": [
+        8,
+        5,
+        6,
+        8,
+        7,
+        8,
+        6,
+        7,
+        10,
+        8
+      ],
+      "shuffle": true,
+      "numWorkers": 0,
+      "lr": 0.01,
+      "model": "Flatten + Linear(784,10)",
+      "initialization": "seed2022; Linear constructed, then normal_(weight,0,0.01), zeros_(bias)",
+      "loss": "CrossEntropyLoss(logits,long_targets), mean; epoch metrics weighted by examples",
+      "initialTrain": {
+        "loss": 2.3038710091364525,
+        "accuracy": 0.06614785992217899,
+        "count": 257
+      },
+      "epochs": [
+        {
+          "epoch": 1,
+          "train": {
+            "loss": 2.2351969874786497,
+            "accuracy": 0.0933852140077821,
+            "count": 257
+          },
+          "validation": {
+            "loss": 2.3089365240645736,
+            "accuracy": 0.1232876712328767,
+            "count": 73
+          }
+        },
+        {
+          "epoch": 2,
+          "train": {
+            "loss": 2.2508507582000257,
+            "accuracy": 0.12062256809338522,
+            "count": 257
+          },
+          "validation": {
+            "loss": 2.444455238237773,
+            "accuracy": 0.0821917808219178,
+            "count": 73
+          }
+        },
+        {
+          "epoch": 3,
+          "train": {
+            "loss": 2.0471377493342535,
+            "accuracy": 0.22957198443579765,
+            "count": 257
+          },
+          "validation": {
+            "loss": 2.2091079607401807,
+            "accuracy": 0.2054794520547945,
+            "count": 73
+          }
+        },
+        {
+          "epoch": 4,
+          "train": {
+            "loss": 1.9277632347804563,
+            "accuracy": 0.3968871595330739,
+            "count": 257
+          },
+          "validation": {
+            "loss": 2.1244807831228596,
+            "accuracy": 0.273972602739726,
+            "count": 73
+          }
+        },
+        {
+          "epoch": 5,
+          "train": {
+            "loss": 1.9741059662303109,
+            "accuracy": 0.22568093385214008,
+            "count": 257
+          },
+          "validation": {
+            "loss": 2.118220028811938,
+            "accuracy": 0.1780821917808219,
+            "count": 73
+          }
+        }
+      ],
+      "trainIndicesSha256": "391e5bf8b657d9fcd394865a2bd6d5e12ef8097b41f3c9cf4f51407a4d44eff5",
+      "validationIndicesSha256": "29ea389328bc621792145e29a2df3d49bc4d53df34fba7a9c88a19fbddbe0e99",
+      "testSetEvaluated": false,
+      "validationParametersAndGradientsUnchanged": true,
+      "validationBatch32": {
+        "loss": 2.118220133324192,
+        "accuracy": 0.1780821917808219,
+        "count": 73
+      },
+      "scope": "5 epochs / 25 updates, genuine-data small CPU baseline; not all student tasks or full-data reproduction"
+    }
+  },
+  "boundary": "Independent mechanism checks and a real-data small CPU training smoke, not full answers, official notebook execution, GPU, MPS, or full-course compatibility."
+}

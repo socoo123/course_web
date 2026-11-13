@@ -1,0 +1,352 @@
+{
+  "labId": "linear-training",
+  "lectureId": null,
+  "capturedAt": "2026-11-13",
+  "kind": "editorial-integrated-practice-not-official-numbered-lab",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "bookVersionBoundary": "当前中文第二版固定源码，非2021快照；保存全文源码但只阅读标出的节选，PyTorch分支",
+  "bookSources": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_linear-networks/linear-regression.md",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/linear-regression.txt",
+      "sha256": "47a51fcd59cb40ace26726f87ed73aa91abe1d895d9d8738f191a42df6de7f75",
+      "bytes": 25457,
+      "section": "3.1",
+      "reviewedScope": "线性模型、平方损失、解析解、SGD、预测；未审阅矢量化计时/概率推导/其余正文",
+      "reviewedLineRanges": [
+        "38-213"
+      ],
+      "readingExtent": "excerpts",
+      "framework": "PyTorch and framework-independent text/code only"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_linear-networks/linear-regression-scratch.md",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/linear-regression-scratch.txt",
+      "sha256": "9a9754268d7cd4889b67d08c001227f627cc84a228d0a4469e5913c97a1c5955",
+      "bytes": 16137,
+      "section": "3.2",
+      "reviewedScope": "合成数据、批处理、参数、仿射模型、半平方、SGD、训练及练习；只解读PyTorch及通用分支",
+      "reviewedLineRanges": [
+        "46-74",
+        "112-194",
+        "212-270",
+        "292-349",
+        "396-411"
+      ],
+      "readingExtent": "excerpts",
+      "framework": "PyTorch and framework-independent text/code only"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_linear-networks/linear-regression-concise.md",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/linear-regression-concise.txt",
+      "sha256": "9a387ad205b9c00729e7e31b0a1d563f869df2c5ca2e36748c64797722044439",
+      "bytes": 18784,
+      "section": "3.3",
+      "reviewedScope": "TensorDataset/DataLoader、Linear、初始化、MSE归约、SGD、训练、练习；PyTorch分支，不完整审阅其他框架",
+      "reviewedLineRanges": [
+        "70-79",
+        "114-166",
+        "197-236",
+        "284-305",
+        "325-358",
+        "377-415",
+        "502-516"
+      ],
+      "readingExtent": "excerpts",
+      "framework": "PyTorch and framework-independent text/code only"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_linear-networks/softmax-regression.md",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/softmax-regression.txt",
+      "sha256": "f4cb4e6a80f2de4e76e9ec65d5fd18874f497b6087e07ccf124125a1f952f89d",
+      "bytes": 17385,
+      "section": "3.4",
+      "reviewedScope": "分类/架构/参数量、softmax、小批量、交叉熵与导数、预测评估；未读信息论主体或习题扩展",
+      "reviewedLineRanges": [
+        "23-248",
+        "295-308"
+      ],
+      "readingExtent": "excerpts",
+      "framework": "PyTorch and framework-independent text/code only"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_linear-networks/image-classification-dataset.md",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/image-classification-dataset.txt",
+      "sha256": "3f727377bfb080202b2004f0b3315df872d3095f4e1ef49fd1d985b33fe0e7a4",
+      "bytes": 13675,
+      "section": "3.5",
+      "reviewedScope": "FashionMNIST/ToTensor、标签和形状、小批量、整合加载器、练习；PyTorch分支，未完整读可视化/其他框架",
+      "reviewedLineRanges": [
+        "51-69",
+        "88-150",
+        "212-244",
+        "277-315",
+        "372-382"
+      ],
+      "readingExtent": "excerpts",
+      "framework": "PyTorch and framework-independent text/code only"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_linear-networks/softmax-regression-scratch.md",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/softmax-regression-scratch.txt",
+      "sha256": "6d7444e65eefbfcfa68083c8cda0ec344b24e1387e899a156519314986dfe329",
+      "bytes": 22485,
+      "section": "3.6",
+      "reviewedScope": "形状和初始化、softmax、标签索引、accuracy、evaluate_accuracy、train_epoch_ch3、稳定性练习；PyTorch/通用分支；未读完整Animator/后续预测代码",
+      "reviewedLineRanges": [
+        "45-81",
+        "99-219",
+        "244-328",
+        "372-430",
+        "613-623"
+      ],
+      "readingExtent": "excerpts",
+      "framework": "PyTorch and framework-independent text/code only"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_linear-networks/softmax-regression-concise.md",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/softmax-regression-concise.txt",
+      "sha256": "1c0a9ac43552272e03461eed376095e98479225e737d4916bb3c7f542dd5e0da",
+      "bytes": 7302,
+      "section": "3.7",
+      "reviewedScope": "初始化、稳定性、融合交叉熵、SGD、训练、练习；PyTorch/通用分支，不声称全文/其他框架审阅",
+      "reviewedLineRanges": [
+        "47-209"
+      ],
+      "readingExtent": "excerpts",
+      "framework": "PyTorch and framework-independent text/code only"
+    }
+  ],
+  "additionalSources": [
+    {
+      "url": "https://raw.githubusercontent.com/zalandoresearch/fashion-mnist/master/README.md",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/fashion-mnist-README.txt",
+      "sha256": "bdf17df9bd8b40c09165c7068b8532032094e0015b54ac09233d0ff8397181ea",
+      "bytes": 22711,
+      "reviewedScope": "README data description, Get the Data table/MD5, labels, official GitHub data location and MIT license; benchmark/linked papers not used"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zalandoresearch/fashion-mnist/master/LICENSE",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/fashion-mnist-LICENSE.txt",
+      "sha256": "13ef4788476d292858fa60eb9a5f74aeca5c65770bc885ccaa05823a17ef7be1",
+      "bytes": 1109,
+      "reviewedScope": "Full MIT license, Copyright 2017 Zalando SE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pytorch/vision/v0.20.1/torchvision/datasets/mnist.py",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/torchvision-mnist-v0.20.1.py.txt",
+      "sha256": "ca65c60897e9d15dd82ec306c35e4e7ebcbefcdc266ef6979e9d77789ebb1900",
+      "bytes": 21718,
+      "reviewedScope": "MNIST __init__/_load_data/__getitem__/raw_folder/_check_exists/download and FashionMNIST subclass lines84-129,138-228; other dataset classes not reviewed"
+    },
+    {
+      "url": "https://docs.pytorch.org/vision/0.20/generated/torchvision.datasets.FashionMNIST.html",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/fashionmnist-api.html.txt",
+      "sha256": "b64d642913e11cd087b58089cee4e55c28cc314c54a290abdd6b924f92f4b29b",
+      "bytes": 40463,
+      "reviewedScope": "FashionMNIST constructor parameters, train flag, root/raw path, download and transform contract",
+      "snapshotFormat": "raw HTML; reader text was reviewed separately"
+    },
+    {
+      "url": "https://docs.pytorch.org/vision/0.20/generated/torchvision.transforms.ToTensor.html",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/totensor-api.html.txt",
+      "sha256": "a6f81f3cd782b211ff02011764fb0f3fc07aec0a0b9042abc9189b6ff44a0344",
+      "bytes": 33730,
+      "reviewedScope": "ToTensor input PIL/uint8, shape CxHxW and scaling contract",
+      "snapshotFormat": "raw HTML; reader text was reviewed separately"
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.5/generated/torch.nn.CrossEntropyLoss.html",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/crossentropy-api.html.txt",
+      "sha256": "a9b4bb5e35f136c36f6ac3475f76150ab122796e86478380cf62d095e38934eb",
+      "bytes": 137379,
+      "reviewedScope": "CrossEntropyLoss logits, class-index targets, reductions, no weighting/ignored labels in this lab",
+      "snapshotFormat": "raw HTML; reader text was reviewed separately"
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.5/notes/autograd.html",
+      "localPath": "content/d2l-pytorch-2021/sources/p2-linear-training/autograd-api.html.txt",
+      "sha256": "beb1d5cf280311453c38c23a01191385b40c5a5f26c8bddf3274af5b7d799e87",
+      "bytes": 402997,
+      "reviewedScope": "Locally disabling gradient computation: Setting requires_grad, Grad Modes, Default/No-grad/Inference/Evaluation Mode; not complex or multithreading sections",
+      "snapshotFormat": "raw HTML; reader text was reviewed separately"
+    }
+  ],
+  "videoMetadataPath": null,
+  "videoBoundary": "本实验不是视频转录，不重复取得或声称审阅视频；LEC8/9 owner持有各BV全部P元数据，讲授/演示/QA不作为本实验依据",
+  "planningInputs": [
+    "sources/NEXT-PROMPT.txt",
+    "sources/PLAN.txt",
+    "sources/p1-shared/book-version.json",
+    "sources/practice-plan.json:37-65,430-505,1477-1482",
+    "sources/book-inventory.json:431-604",
+    "sources/outline-plan.json:156-173,215-284",
+    "sources/schedule-inventory.json:209-257"
+  ],
+  "taskSourceMapping": [
+    {
+      "taskId": "linear-training-1",
+      "bookSections": [
+        "3.1",
+        "3.2",
+        "3.3"
+      ],
+      "officialExerciseAnchors": [
+        "3.2 练习第5项reshape与第7项尾batch",
+        "3.3 练习第1项sum/mean"
+      ],
+      "editorialAdditions": [
+        "1000样本800/200划分",
+        "初值与批次配对、半平方统一、一步参数/梯度比较",
+        "B64尾32，40epoch lr0.03，参数误差目标0.05"
+      ]
+    },
+    {
+      "taskId": "linear-training-2",
+      "bookSections": [
+        "3.4",
+        "3.5",
+        "3.6",
+        "3.7"
+      ],
+      "officialExerciseAnchors": [
+        "3.6 练习第1-3项softmax/交叉熵稳定性"
+      ],
+      "editorialAdditions": [
+        "真实官方train中拆55000/5000并取257/73基础子集",
+        "种子/数据MD5/SHA256与测试集隔离",
+        "B64 lr0.1五轮，稳定logits极端小例；不设全量准确率门槛"
+      ]
+    },
+    {
+      "taskId": "linear-training-3",
+      "bookSections": [
+        "3.5",
+        "3.6"
+      ],
+      "apiSources": [
+        "PyTorch2.5 Autograd mechanics evaluation/no-grad",
+        "PyTorch2.5 CrossEntropyLoss reductions"
+      ],
+      "editorialAdditions": [
+        "train/eval×grad/no_grad四格",
+        "训练集独占更新与验证标签干预",
+        "冻结模型重评训练/验证loss和accuracy",
+        "尾batch统计与固定73验证样本B64/B32不变性"
+      ]
+    },
+    {
+      "taskId": "linear-training-4",
+      "bookSections": [
+        "3.2",
+        "3.7"
+      ],
+      "officialExerciseAnchors": [
+        "3.2 练习第6项不同学习率（必做改编）",
+        "3.7 练习第1项超参数（可选真实数据扩展）"
+      ],
+      "editorialAdditions": [
+        "两样本一维回归确定失败夹具，lr0.25对3.0，8次更新，记录step0-8",
+        "同初值重跑失败曲线，控制变量与step/epoch区别"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "path": "labs/linear-training/lab.zh.md",
+      "status": "written",
+      "role": "四任务规格/输入输出/验收；不是已执行报告"
+    },
+    {
+      "path": "labs/linear-training/guide.zh.md",
+      "status": "written",
+      "role": "独立路线/不变量/排错/分级提示，无完整解答"
+    }
+  ],
+  "omittedProducts": {
+    "lab.en.md": "not_required:没有真实英文实验原文，不造译文",
+    "student_solution": "not_provided:AI不代完整作业",
+    "dataset_images_or_archives": "not_published:只存来源、校验与运行结果"
+  },
+  "status": {
+    "sourceReview": "acquired-and-excerpts-reviewed",
+    "writing": "written",
+    "workerRuntimeExecution": "not_run",
+    "buildLintTestsFormatterBrowser": "not_run_by_worker",
+    "sharedVerificationAuthority": "主agent sources/p2-shared 与课程公共资料；本fragment不预称通过",
+    "mainVerification": "CPU real-data baseline and selected mechanisms passed; not all student tasks",
+    "siteVerification": "sources/p2-manifest.json"
+  },
+  "runtimeBoundary": {
+    "baseline": "Python3.11.8 torch2.5.1 numpy1.26.4 pandas2.2.3",
+    "newDependency": "torchvision0.20.1由主agent核实安装及CPU执行；实验owner不安装",
+    "notRequired": [
+      "d2l",
+      "Jupyter",
+      "matplotlib",
+      "CUDA",
+      "MPS"
+    ],
+    "datasetMethod": "官方GitHub HTTPS raw四gzip，校验后预置cache，FashionMNIST(download=False)；主agent已报告获取校验成功，结果归sources/p2-shared/dataset-acquisition.json；没有声称默认HTTP S3成功或失败"
+  },
+  "unexecutedCodeInventory": [
+    {
+      "location": "lab.zh.md task1",
+      "scope": "学习者自行编写合成数据生成、两套一步对照与40epoch完整回归训练；无完整代码块交付"
+    },
+    {
+      "location": "lab.zh.md task2",
+      "scope": "学习者自行编写真实257/73五轮softmax训练、稳定极端logits局部核对、样本输出；worker未运行"
+    },
+    {
+      "location": "lab.zh.md task3",
+      "scope": "四格前向、诊断backward、评估状态快照、验证标签干预、尾batch累计器与B64/B32评估；worker未运行"
+    },
+    {
+      "location": "lab.zh.md task4",
+      "scope": "两样本float64 lr0.25/3.0八步失败曲线与重跑；worker未运行"
+    },
+    {
+      "location": "lab.zh.md 完整规模扩展",
+      "scope": "55000/5000完整训练、最终10000测试、可选真实数据batch/lr对照、GPU/CUDA/MPS均未运行"
+    },
+    {
+      "location": [
+        "sources/p2-linear-training/linear-regression.txt",
+        "sources/p2-linear-training/linear-regression-scratch.txt",
+        "sources/p2-linear-training/linear-regression-concise.txt",
+        "sources/p2-linear-training/softmax-regression.txt",
+        "sources/p2-linear-training/image-classification-dataset.txt",
+        "sources/p2-linear-training/softmax-regression-scratch.txt",
+        "sources/p2-linear-training/softmax-regression-concise.txt"
+      ],
+      "scope": "七份归档教材中的全部代码均未执行；历史Notebook未取得/未运行；归档不是可运行环境承诺"
+    }
+  ],
+  "mainAgentVerificationScenarios": [
+    "CPU真实FashionMNIST四官方gzip MD5/IDX/ToTensor与索引257/73，B64尾1/9",
+    "回归同初值一个batch与尾batch的预测/梯度/更新等价；不是完整作业训练",
+    "logits [[1000,0,-1000],[0,0,0]] labels[2,1] 稳定CE有限且与框架一致",
+    "冻结分类器train/eval×grad/no_grad四格、评估参数/grad不变、训练才更新",
+    "尾batch统计量B[4,1] meanloss[1,5] correct[3,0]；固定73验证样本不同评估B不变",
+    "两样本X[-1,1], y[-2,2], w=b=0, float64, halfMSE, B2，lr0.25与3.0八步局部失败夹具（不提供学生解答）"
+  ],
+  "gaps": [
+    "原视频讲授/演示/QA没有作为本实验核实依据",
+    "原课Notebook未运行",
+    "worker未执行训练/测试/构建/浏览器；主agent验收结果需按真实执行范围记录"
+  ],
+  "licenseBoundary": {
+    "book": "固定仓库根Apache-2.0；setup.py字段MIT-0不外推",
+    "dataset": "Fashion-MNIST官方仓库MIT，2017 Zalando SE；独立于教材许可",
+    "video": "无开放许可断言；不外推教材或数据授权",
+    "editorial": "自主改写规格与工程提示，不复制第三方图片或完整课堂解答"
+  },
+  "mainRuntimeEvidence": {
+    "firstAttempt": "sources/p2-shared/first-runtime-attempt.json",
+    "correctedBaseline": "sources/p2-shared/practice-smoke.json",
+    "dataset": "sources/p2-shared/dataset-acquisition.json",
+    "baselineCorrection": "Small-subset task2 learning rate changed from0.1 to0.01 after end-loss acceptance assertion failed; same data and assertions retained.",
+    "unexecutedBoundary": "40-epoch paired regression task, full validation-label intervention retraining, full-data training/test evaluation, old notebooks, GPU/MPS"
+  }
+}

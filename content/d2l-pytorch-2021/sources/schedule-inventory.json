@@ -1,0 +1,5781 @@
+{
+  "schemaVersion": 1,
+  "courseId": "d2l-pytorch-2021",
+  "preparedOn": "2026-11-13",
+  "source": {
+    "url": "https://courses.d2l.ai/zh-v2/",
+    "title": "动手学深度学习课程：课程安排",
+    "snapshot": "schedule-2021.html",
+    "snapshotBytes": 58557,
+    "sha256": "3fc5e07b7c175c41a1aa0488eb13119837c5c1b6e50940f9ba49b74498c34959",
+    "year": 2021,
+    "scope": "页面“课程安排”下全部五个module；不是教材目录，也不是B站标题编号。",
+    "status": "基于本地完整官方HTML快照解析；仅HTML已在本slice读取，链接目标未抓取或验证。",
+    "sourceCaveats": [
+      "页面保留“目前日程安排为暂定安排，会根据实际进度进行调整”的说明。",
+      "页面课程摘要曾计划四次竞赛；最终课表实际列出三次课程竞赛的发布和总结，不虚构第四次。",
+      "页面顶部写明课程结束、所有视频均上传B站；本索引仅证明课表存在入口，不证明当前链接可播放。"
+    ]
+  },
+  "grouping": {
+    "rule": "按原课表首次出现顺序，将同一BV上传ID的所有行和P分段合并为一站内讲次，lec01起连续编号；同BV所有日期、标题与链接逐行保留。",
+    "numbering": "course.json的num和lecNN只用于站内编排，不能声称是官方讲次号或视频标题编号。",
+    "firstVideo": "course.json仅展示组内第一个真实B站入口；完整P分段见rows[].links.video，未填YouTube或时长。",
+    "missingVideo": "本快照无无video教学行；如存在应关联相关站内讲次或独立编组，不可删除。",
+    "breaks": "休课行独立记录于breaks，不生成lecture。",
+    "editorialMetadata": "中文整合标题、英文标题、阅读范围及学习目标由本站编排，不声称来自视频字幕；原始官方topic完整保留。",
+    "curriculum": "所有教学与竞赛讲授均属于完整主线，CNN、RNN和CV不因后续CS336路线而降为可选。"
+  },
+  "completeness": {
+    "moduleCount": 5,
+    "datedScheduleBlocks": 45,
+    "rawScheduleEntryCount": 114,
+    "teachingRowCount": 103,
+    "videoEntryCount": 103,
+    "uniqueBvidCount": 73,
+    "lectureCount": 73,
+    "rowsWithoutVideo": 0,
+    "breakRowCount": 11,
+    "competitionRelatedRowCount": 9,
+    "competitionRelatedLectureCount": 8,
+    "courseCompetitionAnnouncementRowCount": 3,
+    "courseCompetitionReviewRowCount": 3,
+    "textbookCompetitionExampleRowCount": 3,
+    "interpretation": "103个原始教学行（含9个竞赛/比赛相关行），全部有视频；另11个休课行。9行竞赛相关=3次课程竞赛发布+3次总结+3个教材Kaggle示例，其中房价示例与发布同属一个BV。重复入口未去重；计数为解析结果，不冒称官方讲次。",
+    "linkCounts": {
+      "book": 84,
+      "slides": 72,
+      "notebook": 72,
+      "video": 103
+    },
+    "modules": [
+      {
+        "name": "深度学习基础",
+        "teachingRowCount": 30,
+        "breakRowCount": 2
+      },
+      {
+        "name": "卷积神经网络",
+        "teachingRowCount": 19,
+        "breakRowCount": 5
+      },
+      {
+        "name": "计算机视觉",
+        "teachingRowCount": 26,
+        "breakRowCount": 2
+      },
+      {
+        "name": "循环神经网络",
+        "teachingRowCount": 14,
+        "breakRowCount": 2
+      },
+      {
+        "name": "注意力机制",
+        "teachingRowCount": 14,
+        "breakRowCount": 0
+      }
+    ]
+  },
+  "linkPolicy": {
+    "href": "原始HTML href属性，原相对路径、尾斜杠和查询参数保留。",
+    "url": "仅以官方课表URL解析相对地址；不替换历史zh-v2教材域名。现用中文第二版入口为https://zh.d2l.ai/，版本差异留待后续核对。",
+    "p": "原查询参数p的字符串值；未带p时为null，不推断P1，不重编号。rawQuery保留完整查询串。",
+    "acquisition": "book/slides/notebook/video均是来源入口索引，不代表内容已下载；本轮不抓取视频、字幕、逐讲正文、课件和notebook。"
+  },
+  "lectures": [
+    {
+      "lectureId": "lec01",
+      "bvid": "BV1oX4y137bC",
+      "firstVideo": "https://www.bilibili.com/video/BV1oX4y137bC",
+      "dates": [
+        "3月20日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "课程安排"
+      ],
+      "rowIds": [
+        "row001"
+      ]
+    },
+    {
+      "lectureId": "lec02",
+      "bvid": "BV1J54y187f9",
+      "firstVideo": "https://www.bilibili.com/video/BV1J54y187f9",
+      "dates": [
+        "3月20日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "深度学习介绍"
+      ],
+      "rowIds": [
+        "row002"
+      ]
+    },
+    {
+      "lectureId": "lec03",
+      "bvid": "BV18p4y1h7Dr",
+      "firstVideo": "https://www.bilibili.com/video/BV18p4y1h7Dr",
+      "dates": [
+        "3月20日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "安装"
+      ],
+      "rowIds": [
+        "row003"
+      ]
+    },
+    {
+      "lectureId": "lec04",
+      "bvid": "BV1CV411Y7i4",
+      "firstVideo": "https://www.bilibili.com/video/BV1CV411Y7i4",
+      "dates": [
+        "3月20日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "数据操作",
+        "数据预处理"
+      ],
+      "rowIds": [
+        "row004",
+        "row005"
+      ]
+    },
+    {
+      "lectureId": "lec05",
+      "bvid": "BV1eK4y1U7Qy",
+      "firstVideo": "https://www.bilibili.com/video/BV1eK4y1U7Qy",
+      "dates": [
+        "3月21日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "线性代数",
+        "[补充] 按特定轴求和"
+      ],
+      "rowIds": [
+        "row006",
+        "row007"
+      ]
+    },
+    {
+      "lectureId": "lec06",
+      "bvid": "BV1eZ4y1w7PY",
+      "firstVideo": "https://www.bilibili.com/video/BV1eZ4y1w7PY",
+      "dates": [
+        "3月21日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "矩阵计算"
+      ],
+      "rowIds": [
+        "row008"
+      ]
+    },
+    {
+      "lectureId": "lec07",
+      "bvid": "BV1KA411N7Px",
+      "firstVideo": "https://www.bilibili.com/video/BV1KA411N7Px",
+      "dates": [
+        "3月21日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "自动求导"
+      ],
+      "rowIds": [
+        "row009"
+      ]
+    },
+    {
+      "lectureId": "lec08",
+      "bvid": "BV1PX4y1g7KC",
+      "firstVideo": "https://www.bilibili.com/video/BV1PX4y1g7KC",
+      "dates": [
+        "3月27日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "线性回归",
+        "基础优化方法",
+        "线性回归的从零开始实现",
+        "线性回归的简洁实现"
+      ],
+      "rowIds": [
+        "row010",
+        "row011",
+        "row012",
+        "row013"
+      ]
+    },
+    {
+      "lectureId": "lec09",
+      "bvid": "BV1K64y1Q7wu",
+      "firstVideo": "https://www.bilibili.com/video/BV1K64y1Q7wu",
+      "dates": [
+        "3月28日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "Softmax 回归",
+        "损失函数",
+        "图像分类数据集",
+        "Softmax 回归的从零开始实现",
+        "Softmax 回归的简洁实现"
+      ],
+      "rowIds": [
+        "row014",
+        "row015",
+        "row016",
+        "row017",
+        "row018"
+      ]
+    },
+    {
+      "lectureId": "lec10",
+      "bvid": "BV1hh411U7gn",
+      "firstVideo": "https://www.bilibili.com/video/BV1hh411U7gn",
+      "dates": [
+        "4月10日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "感知机",
+        "多层感知机",
+        "多层感知机的从零开始实现",
+        "多层感知机的简洁实现"
+      ],
+      "rowIds": [
+        "row019",
+        "row020",
+        "row021",
+        "row022"
+      ]
+    },
+    {
+      "lectureId": "lec11",
+      "bvid": "BV1kX4y1g7jp",
+      "firstVideo": "https://www.bilibili.com/video/BV1kX4y1g7jp",
+      "dates": [
+        "4月11日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "模型选择",
+        "欠拟合和过拟合"
+      ],
+      "rowIds": [
+        "row023",
+        "row024"
+      ]
+    },
+    {
+      "lectureId": "lec12",
+      "bvid": "BV1UK4y1o7dy",
+      "firstVideo": "https://www.bilibili.com/video/BV1UK4y1o7dy",
+      "dates": [
+        "4月17日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "权重衰减"
+      ],
+      "rowIds": [
+        "row025"
+      ]
+    },
+    {
+      "lectureId": "lec13",
+      "bvid": "BV1Y5411c7aY",
+      "firstVideo": "https://www.bilibili.com/video/BV1Y5411c7aY",
+      "dates": [
+        "4月17日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "Dropout"
+      ],
+      "rowIds": [
+        "row026"
+      ]
+    },
+    {
+      "lectureId": "lec14",
+      "bvid": "BV1u64y1i75a",
+      "firstVideo": "https://www.bilibili.com/video/BV1u64y1i75a",
+      "dates": [
+        "4月18日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "数值稳定性",
+        "模型初始化和激活函数"
+      ],
+      "rowIds": [
+        "row027",
+        "row028"
+      ]
+    },
+    {
+      "lectureId": "lec15",
+      "bvid": "BV1NK4y1P7Tu",
+      "firstVideo": "https://www.bilibili.com/video/BV1NK4y1P7Tu",
+      "dates": [
+        "4月18日"
+      ],
+      "modules": [
+        "深度学习基础"
+      ],
+      "topics": [
+        "实战 Kaggle 比赛：预测房价",
+        "竞赛 预测房价"
+      ],
+      "rowIds": [
+        "row029",
+        "row030"
+      ]
+    },
+    {
+      "lectureId": "lec16",
+      "bvid": "BV1AK4y1P7vs",
+      "firstVideo": "https://www.bilibili.com/video/BV1AK4y1P7vs",
+      "dates": [
+        "4月24日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "模型构造",
+        "参数管理",
+        "自定义层",
+        "读写文件"
+      ],
+      "rowIds": [
+        "row031",
+        "row032",
+        "row033",
+        "row034"
+      ]
+    },
+    {
+      "lectureId": "lec17",
+      "bvid": "BV1z5411c7C1",
+      "firstVideo": "https://www.bilibili.com/video/BV1z5411c7C1",
+      "dates": [
+        "4月24日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "GPU"
+      ],
+      "rowIds": [
+        "row035"
+      ]
+    },
+    {
+      "lectureId": "lec18",
+      "bvid": "BV15Q4y1o7vc",
+      "firstVideo": "https://www.bilibili.com/video/BV15Q4y1o7vc",
+      "dates": [
+        "5月15日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "预测房价竞赛总结"
+      ],
+      "rowIds": [
+        "row036"
+      ]
+    },
+    {
+      "lectureId": "lec19",
+      "bvid": "BV1L64y1m7Nh",
+      "firstVideo": "https://www.bilibili.com/video/BV1L64y1m7Nh",
+      "dates": [
+        "5月15日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "从全连接层到卷积",
+        "图像卷积"
+      ],
+      "rowIds": [
+        "row037",
+        "row038"
+      ]
+    },
+    {
+      "lectureId": "lec20",
+      "bvid": "BV1Th411U7UN",
+      "firstVideo": "https://www.bilibili.com/video/BV1Th411U7UN",
+      "dates": [
+        "5月16日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "填充和步幅"
+      ],
+      "rowIds": [
+        "row039"
+      ]
+    },
+    {
+      "lectureId": "lec21",
+      "bvid": "BV1MB4y1F7of",
+      "firstVideo": "https://www.bilibili.com/video/BV1MB4y1F7of",
+      "dates": [
+        "5月16日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "多输入多输出通道"
+      ],
+      "rowIds": [
+        "row040"
+      ]
+    },
+    {
+      "lectureId": "lec22",
+      "bvid": "BV1EV411j7nX",
+      "firstVideo": "https://www.bilibili.com/video/BV1EV411j7nX",
+      "dates": [
+        "5月22日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "池化层"
+      ],
+      "rowIds": [
+        "row041"
+      ]
+    },
+    {
+      "lectureId": "lec23",
+      "bvid": "BV1t44y1r7ct",
+      "firstVideo": "https://www.bilibili.com/video/BV1t44y1r7ct/",
+      "dates": [
+        "5月22日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "卷积神经网络（LeNet）"
+      ],
+      "rowIds": [
+        "row042"
+      ]
+    },
+    {
+      "lectureId": "lec24",
+      "bvid": "BV1h54y1L7oe",
+      "firstVideo": "https://www.bilibili.com/video/BV1h54y1L7oe/",
+      "dates": [
+        "5月23日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "深度卷积神经网络（AlexNet）"
+      ],
+      "rowIds": [
+        "row043"
+      ]
+    },
+    {
+      "lectureId": "lec25",
+      "bvid": "BV1Ao4y117Pd",
+      "firstVideo": "https://www.bilibili.com/video/BV1Ao4y117Pd/",
+      "dates": [
+        "5月23日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "使用块的网络（VGG）"
+      ],
+      "rowIds": [
+        "row044"
+      ]
+    },
+    {
+      "lectureId": "lec26",
+      "bvid": "BV1Uv411G71b",
+      "firstVideo": "https://www.bilibili.com/video/BV1Uv411G71b/",
+      "dates": [
+        "5月29日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "网络中的网络（NiN）"
+      ],
+      "rowIds": [
+        "row045"
+      ]
+    },
+    {
+      "lectureId": "lec27",
+      "bvid": "BV1b5411g7Xo",
+      "firstVideo": "https://www.bilibili.com/video/BV1b5411g7Xo/",
+      "dates": [
+        "5月29日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "含并行连结的网络（GoogLeNet）"
+      ],
+      "rowIds": [
+        "row046"
+      ]
+    },
+    {
+      "lectureId": "lec28",
+      "bvid": "BV1X44y1r77r",
+      "firstVideo": "https://www.bilibili.com/video/BV1X44y1r77r/",
+      "dates": [
+        "5月30日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "批量归一化"
+      ],
+      "rowIds": [
+        "row047"
+      ]
+    },
+    {
+      "lectureId": "lec29",
+      "bvid": "BV1bV41177ap",
+      "firstVideo": "https://www.bilibili.com/video/BV1bV41177ap/",
+      "dates": [
+        "5月30日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "残差网络（ResNet）"
+      ],
+      "rowIds": [
+        "row048"
+      ]
+    },
+    {
+      "lectureId": "lec30",
+      "bvid": "BV1z64y1o7iz",
+      "firstVideo": "https://www.bilibili.com/video/BV1z64y1o7iz/",
+      "dates": [
+        "5月30日"
+      ],
+      "modules": [
+        "卷积神经网络"
+      ],
+      "topics": [
+        "竞赛 图片分类"
+      ],
+      "rowIds": [
+        "row049"
+      ]
+    },
+    {
+      "lectureId": "lec31",
+      "bvid": "BV1TU4y1j7Wd",
+      "firstVideo": "https://www.bilibili.com/video/BV1TU4y1j7Wd/",
+      "dates": [
+        "6月5日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "硬件：CPU和GPU"
+      ],
+      "rowIds": [
+        "row050"
+      ]
+    },
+    {
+      "lectureId": "lec32",
+      "bvid": "BV1VV41147PC",
+      "firstVideo": "https://www.bilibili.com/video/BV1VV41147PC/",
+      "dates": [
+        "6月6日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "更多的专有硬件"
+      ],
+      "rowIds": [
+        "row051"
+      ]
+    },
+    {
+      "lectureId": "lec33",
+      "bvid": "BV1vU4y1V7rd",
+      "firstVideo": "https://www.bilibili.com/video/BV1vU4y1V7rd/",
+      "dates": [
+        "6月6日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "多GPU训练"
+      ],
+      "rowIds": [
+        "row052"
+      ]
+    },
+    {
+      "lectureId": "lec34",
+      "bvid": "BV1MQ4y1R7Qg",
+      "firstVideo": "https://www.bilibili.com/video/BV1MQ4y1R7Qg",
+      "dates": [
+        "6月19日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "多GPU训练的实现"
+      ],
+      "rowIds": [
+        "row053"
+      ]
+    },
+    {
+      "lectureId": "lec35",
+      "bvid": "BV1jU4y1G7iu",
+      "firstVideo": "https://www.bilibili.com/video/BV1jU4y1G7iu",
+      "dates": [
+        "6月19日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "分布式训练"
+      ],
+      "rowIds": [
+        "row054"
+      ]
+    },
+    {
+      "lectureId": "lec36",
+      "bvid": "BV17y4y1g76q",
+      "firstVideo": "https://www.bilibili.com/video/BV17y4y1g76q",
+      "dates": [
+        "6月20日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "图像增广"
+      ],
+      "rowIds": [
+        "row055"
+      ]
+    },
+    {
+      "lectureId": "lec37",
+      "bvid": "BV1Sb4y1d7CR",
+      "firstVideo": "https://www.bilibili.com/video/BV1Sb4y1d7CR",
+      "dates": [
+        "6月20日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "微调"
+      ],
+      "rowIds": [
+        "row056"
+      ]
+    },
+    {
+      "lectureId": "lec38",
+      "bvid": "BV1Gy4y1M7Cu",
+      "firstVideo": "https://www.bilibili.com/video/BV1Gy4y1M7Cu",
+      "dates": [
+        "6月26日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "实战 Kaggle 比赛：图像分类（CIFAR-10）"
+      ],
+      "rowIds": [
+        "row057"
+      ]
+    },
+    {
+      "lectureId": "lec39",
+      "bvid": "BV1j5411T7wx",
+      "firstVideo": "https://www.bilibili.com/video/BV1j5411T7wx",
+      "dates": [
+        "6月26日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "实战 Kaggle 比赛：狗的品种识别（ImageNet Dogs）"
+      ],
+      "rowIds": [
+        "row058"
+      ]
+    },
+    {
+      "lectureId": "lec40",
+      "bvid": "BV1Lh411Y7LX",
+      "firstVideo": "https://www.bilibili.com/video/BV1Lh411Y7LX",
+      "dates": [
+        "6月27日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "物体检测",
+        "边缘框实现",
+        "物体检测数据集"
+      ],
+      "rowIds": [
+        "row059",
+        "row060",
+        "row061"
+      ]
+    },
+    {
+      "lectureId": "lec41",
+      "bvid": "BV1aB4y1K7za",
+      "firstVideo": "https://www.bilibili.com/video/BV1aB4y1K7za",
+      "dates": [
+        "6月27日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "锚框"
+      ],
+      "rowIds": [
+        "row062"
+      ]
+    },
+    {
+      "lectureId": "lec42",
+      "bvid": "BV1by4y1K7SE",
+      "firstVideo": "https://www.bilibili.com/video/BV1by4y1K7SE",
+      "dates": [
+        "6月27日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "竞赛 树叶分类竞赛总结"
+      ],
+      "rowIds": [
+        "row063"
+      ]
+    },
+    {
+      "lectureId": "lec43",
+      "bvid": "BV1Db4y1C71g",
+      "firstVideo": "https://www.bilibili.com/video/BV1Db4y1C71g",
+      "dates": [
+        "7月3日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "区域卷积神经网络（R-CNNs）",
+        "单发多框检测（SSD）",
+        "你只看一次（YOLO）"
+      ],
+      "rowIds": [
+        "row064",
+        "row065",
+        "row066"
+      ]
+    },
+    {
+      "lectureId": "lec44",
+      "bvid": "BV1ZX4y1c7Sw",
+      "firstVideo": "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=1",
+      "dates": [
+        "7月4日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "多尺度物体检测实现",
+        "SSD 实现"
+      ],
+      "rowIds": [
+        "row067",
+        "row068"
+      ]
+    },
+    {
+      "lectureId": "lec45",
+      "bvid": "BV1BK4y1M7Rd",
+      "firstVideo": "https://www.bilibili.com/video/BV1BK4y1M7Rd",
+      "dates": [
+        "7月10日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "语义分割",
+        "语义分割数据集"
+      ],
+      "rowIds": [
+        "row069",
+        "row070"
+      ]
+    },
+    {
+      "lectureId": "lec46",
+      "bvid": "BV17o4y1X7Jn",
+      "firstVideo": "https://www.bilibili.com/video/BV17o4y1X7Jn/",
+      "dates": [
+        "7月10日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "转置卷积"
+      ],
+      "rowIds": [
+        "row071"
+      ]
+    },
+    {
+      "lectureId": "lec47",
+      "bvid": "BV1CM4y1K7r7",
+      "firstVideo": "https://www.bilibili.com/video/BV1CM4y1K7r7/",
+      "dates": [
+        "7月10日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "转置卷积是一种卷积"
+      ],
+      "rowIds": [
+        "row072"
+      ]
+    },
+    {
+      "lectureId": "lec48",
+      "bvid": "BV1af4y1L7Zu",
+      "firstVideo": "https://www.bilibili.com/video/BV1af4y1L7Zu/",
+      "dates": [
+        "7月11日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "全连接卷积神经网络（FCN）"
+      ],
+      "rowIds": [
+        "row073"
+      ]
+    },
+    {
+      "lectureId": "lec49",
+      "bvid": "BV1Eh41167GN",
+      "firstVideo": "https://www.bilibili.com/video/BV1Eh41167GN/",
+      "dates": [
+        "7月11日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "样式迁移"
+      ],
+      "rowIds": [
+        "row074"
+      ]
+    },
+    {
+      "lectureId": "lec50",
+      "bvid": "BV1F64y1x7xP",
+      "firstVideo": "https://www.bilibili.com/video/BV1F64y1x7xP/",
+      "dates": [
+        "7月11日"
+      ],
+      "modules": [
+        "计算机视觉"
+      ],
+      "topics": [
+        "竞赛 目标检测"
+      ],
+      "rowIds": [
+        "row075"
+      ]
+    },
+    {
+      "lectureId": "lec51",
+      "bvid": "BV1L44y1m768",
+      "firstVideo": "https://www.bilibili.com/video/BV1L44y1m768/",
+      "dates": [
+        "7月17日"
+      ],
+      "modules": [
+        "循环神经网络"
+      ],
+      "topics": [
+        "序列模型"
+      ],
+      "rowIds": [
+        "row076"
+      ]
+    },
+    {
+      "lectureId": "lec52",
+      "bvid": "BV1Fo4y1Q79L",
+      "firstVideo": "https://www.bilibili.com/video/BV1Fo4y1Q79L/",
+      "dates": [
+        "7月17日"
+      ],
+      "modules": [
+        "循环神经网络"
+      ],
+      "topics": [
+        "文本预处理"
+      ],
+      "rowIds": [
+        "row077"
+      ]
+    },
+    {
+      "lectureId": "lec53",
+      "bvid": "BV1ZX4y1F7K3",
+      "firstVideo": "https://www.bilibili.com/video/BV1ZX4y1F7K3/",
+      "dates": [
+        "7月18日"
+      ],
+      "modules": [
+        "循环神经网络"
+      ],
+      "topics": [
+        "语言模型和数据集"
+      ],
+      "rowIds": [
+        "row078"
+      ]
+    },
+    {
+      "lectureId": "lec54",
+      "bvid": "BV1D64y1z7CA",
+      "firstVideo": "https://www.bilibili.com/video/BV1D64y1z7CA/",
+      "dates": [
+        "7月18日"
+      ],
+      "modules": [
+        "循环神经网络"
+      ],
+      "topics": [
+        "循环神经网络"
+      ],
+      "rowIds": [
+        "row079"
+      ]
+    },
+    {
+      "lectureId": "lec55",
+      "bvid": "BV1kq4y1H7sw",
+      "firstVideo": "https://www.bilibili.com/video/BV1kq4y1H7sw/",
+      "dates": [
+        "7月24日"
+      ],
+      "modules": [
+        "循环神经网络"
+      ],
+      "topics": [
+        "循环神经网络的从零开始实现",
+        "循环神经网络的简洁实现"
+      ],
+      "rowIds": [
+        "row080",
+        "row081"
+      ]
+    },
+    {
+      "lectureId": "lec56",
+      "bvid": "BV1mf4y157N2",
+      "firstVideo": "https://www.bilibili.com/video/BV1mf4y157N2/",
+      "dates": [
+        "7月25日"
+      ],
+      "modules": [
+        "循环神经网络"
+      ],
+      "topics": [
+        "门控循环单元（GRU）"
+      ],
+      "rowIds": [
+        "row082"
+      ]
+    },
+    {
+      "lectureId": "lec57",
+      "bvid": "BV1JU4y1H7PC",
+      "firstVideo": "https://www.bilibili.com/video/BV1JU4y1H7PC/",
+      "dates": [
+        "7月25日"
+      ],
+      "modules": [
+        "循环神经网络"
+      ],
+      "topics": [
+        "长短期记忆网络（LSTM）"
+      ],
+      "rowIds": [
+        "row083"
+      ]
+    },
+    {
+      "lectureId": "lec58",
+      "bvid": "BV1JM4y1T7N4",
+      "firstVideo": "https://www.bilibili.com/video/BV1JM4y1T7N4/",
+      "dates": [
+        "7月25日"
+      ],
+      "modules": [
+        "循环神经网络"
+      ],
+      "topics": [
+        "深层循环神经网络"
+      ],
+      "rowIds": [
+        "row084"
+      ]
+    },
+    {
+      "lectureId": "lec59",
+      "bvid": "BV12X4y1c71W",
+      "firstVideo": "https://www.bilibili.com/video/BV12X4y1c71W/",
+      "dates": [
+        "7月25日"
+      ],
+      "modules": [
+        "循环神经网络"
+      ],
+      "topics": [
+        "双向循环神经网络"
+      ],
+      "rowIds": [
+        "row085"
+      ]
+    },
+    {
+      "lectureId": "lec60",
+      "bvid": "BV1H64y1s7TH",
+      "firstVideo": "https://www.bilibili.com/video/BV1H64y1s7TH/",
+      "dates": [
+        "8月7日"
+      ],
+      "modules": [
+        "循环神经网络"
+      ],
+      "topics": [
+        "机器翻译与数据集"
+      ],
+      "rowIds": [
+        "row086"
+      ]
+    },
+    {
+      "lectureId": "lec61",
+      "bvid": "BV1c54y1E7YP",
+      "firstVideo": "https://www.bilibili.com/video/BV1c54y1E7YP/",
+      "dates": [
+        "8月7日"
+      ],
+      "modules": [
+        "循环神经网络"
+      ],
+      "topics": [
+        "编码器-解码器结构"
+      ],
+      "rowIds": [
+        "row087"
+      ]
+    },
+    {
+      "lectureId": "lec62",
+      "bvid": "BV16g411L7FG",
+      "firstVideo": "https://www.bilibili.com/video/BV16g411L7FG/",
+      "dates": [
+        "8月7日"
+      ],
+      "modules": [
+        "循环神经网络"
+      ],
+      "topics": [
+        "序列到序列学习（seq2seq）"
+      ],
+      "rowIds": [
+        "row088"
+      ]
+    },
+    {
+      "lectureId": "lec63",
+      "bvid": "BV1B44y1C7m1",
+      "firstVideo": "https://www.bilibili.com/video/BV1B44y1C7m1/",
+      "dates": [
+        "8月7日"
+      ],
+      "modules": [
+        "循环神经网络"
+      ],
+      "topics": [
+        "束搜索"
+      ],
+      "rowIds": [
+        "row089"
+      ]
+    },
+    {
+      "lectureId": "lec64",
+      "bvid": "BV1264y1i7R1",
+      "firstVideo": "https://www.bilibili.com/video/BV1264y1i7R1/",
+      "dates": [
+        "8月8日"
+      ],
+      "modules": [
+        "注意力机制"
+      ],
+      "topics": [
+        "注意力机制"
+      ],
+      "rowIds": [
+        "row090"
+      ]
+    },
+    {
+      "lectureId": "lec65",
+      "bvid": "BV1Tb4y167rb",
+      "firstVideo": "https://www.bilibili.com/video/BV1Tb4y167rb/",
+      "dates": [
+        "8月8日"
+      ],
+      "modules": [
+        "注意力机制"
+      ],
+      "topics": [
+        "注意力分数"
+      ],
+      "rowIds": [
+        "row091"
+      ]
+    },
+    {
+      "lectureId": "lec66",
+      "bvid": "BV1v44y1C7Tg",
+      "firstVideo": "https://www.bilibili.com/video/BV1v44y1C7Tg/",
+      "dates": [
+        "8月8日"
+      ],
+      "modules": [
+        "注意力机制"
+      ],
+      "topics": [
+        "使用注意力机制的seq2seq"
+      ],
+      "rowIds": [
+        "row092"
+      ]
+    },
+    {
+      "lectureId": "lec67",
+      "bvid": "BV19o4y1m7mo",
+      "firstVideo": "https://www.bilibili.com/video/BV19o4y1m7mo/",
+      "dates": [
+        "8月14日"
+      ],
+      "modules": [
+        "注意力机制"
+      ],
+      "topics": [
+        "自注意力和位置编码"
+      ],
+      "rowIds": [
+        "row093"
+      ]
+    },
+    {
+      "lectureId": "lec68",
+      "bvid": "BV1Kq4y1H7FL",
+      "firstVideo": "https://www.bilibili.com/video/BV1Kq4y1H7FL/",
+      "dates": [
+        "8月14日"
+      ],
+      "modules": [
+        "注意力机制"
+      ],
+      "topics": [
+        "Transformer"
+      ],
+      "rowIds": [
+        "row094"
+      ]
+    },
+    {
+      "lectureId": "lec69",
+      "bvid": "BV1yU4y1E7Ns",
+      "firstVideo": "https://www.bilibili.com/video/BV1yU4y1E7Ns/",
+      "dates": [
+        "8月15日"
+      ],
+      "modules": [
+        "注意力机制"
+      ],
+      "topics": [
+        "BERT",
+        "BERT预训练数据集",
+        "预训练BERT"
+      ],
+      "rowIds": [
+        "row095",
+        "row096",
+        "row097"
+      ]
+    },
+    {
+      "lectureId": "lec70",
+      "bvid": "BV15L4y1v7ts",
+      "firstVideo": "https://www.bilibili.com/video/BV15L4y1v7ts",
+      "dates": [
+        "8月15日"
+      ],
+      "modules": [
+        "注意力机制"
+      ],
+      "topics": [
+        "微调BERT",
+        "自然语言推理和数据集",
+        "自然语言推理：微调BERT"
+      ],
+      "rowIds": [
+        "row098",
+        "row099",
+        "row100"
+      ]
+    },
+    {
+      "lectureId": "lec71",
+      "bvid": "BV13b4y1m7y8",
+      "firstVideo": "https://www.bilibili.com/video/BV13b4y1m7y8",
+      "dates": [
+        "8月15日"
+      ],
+      "modules": [
+        "注意力机制"
+      ],
+      "topics": [
+        "竞赛 目标检测总结"
+      ],
+      "rowIds": [
+        "row101"
+      ]
+    },
+    {
+      "lectureId": "lec72",
+      "bvid": "BV1bP4y1p7Gq",
+      "firstVideo": "https://www.bilibili.com/video/BV1bP4y1p7Gq",
+      "dates": [
+        "8月21日"
+      ],
+      "modules": [
+        "注意力机制"
+      ],
+      "topics": [
+        "优化算法"
+      ],
+      "rowIds": [
+        "row102"
+      ]
+    },
+    {
+      "lectureId": "lec73",
+      "bvid": "BV1AL4y1Y7gu",
+      "firstVideo": "https://www.bilibili.com/video/BV1AL4y1Y7gu",
+      "dates": [
+        "8月21日"
+      ],
+      "modules": [
+        "注意力机制"
+      ],
+      "topics": [
+        "课程总结和进阶学习"
+      ],
+      "rowIds": [
+        "row103"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "rowId": "row001",
+      "sourceOrder": 1,
+      "date": "3月20日",
+      "module": "深度学习基础",
+      "title": "课程安排",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_1.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_1.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1oX4y137bC",
+            "url": "https://www.bilibili.com/video/BV1oX4y137bC",
+            "bvid": "BV1oX4y137bC",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec01",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月20日",
+        "topicLabel": "课程安排",
+        "moduleTopicIndex": 1
+      }
+    },
+    {
+      "rowId": "row002",
+      "sourceOrder": 2,
+      "date": "3月20日",
+      "module": "深度学习基础",
+      "title": "深度学习介绍",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_introduction/index.html",
+            "url": "https://zh-v2.d2l.ai/chapter_introduction/index.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_2.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_2.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1J54y187f9",
+            "url": "https://www.bilibili.com/video/BV1J54y187f9",
+            "bvid": "BV1J54y187f9",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec02",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月20日",
+        "topicLabel": "深度学习介绍",
+        "moduleTopicIndex": 2
+      }
+    },
+    {
+      "rowId": "row003",
+      "sourceOrder": 3,
+      "date": "3月20日",
+      "module": "深度学习基础",
+      "title": "安装",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_installation/index.html",
+            "url": "https://zh-v2.d2l.ai/chapter_installation/index.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_3.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_3.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV18p4y1h7Dr",
+            "url": "https://www.bilibili.com/video/BV18p4y1h7Dr",
+            "bvid": "BV18p4y1h7Dr",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec03",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月20日",
+        "topicLabel": "安装",
+        "moduleTopicIndex": 3
+      }
+    },
+    {
+      "rowId": "row004",
+      "sourceOrder": 4,
+      "date": "3月20日",
+      "module": "深度学习基础",
+      "title": "数据操作",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_preliminaries/ndarray.html",
+            "url": "https://zh-v2.d2l.ai/chapter_preliminaries/ndarray.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_4.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_4.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_preliminaries/ndarray.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/ndarray.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1CV411Y7i4",
+            "url": "https://www.bilibili.com/video/BV1CV411Y7i4",
+            "bvid": "BV1CV411Y7i4",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec04",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月20日",
+        "topicLabel": "数据操作",
+        "moduleTopicIndex": 4
+      }
+    },
+    {
+      "rowId": "row005",
+      "sourceOrder": 5,
+      "date": "3月20日",
+      "module": "深度学习基础",
+      "title": "数据预处理",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_preliminaries/pandas.html",
+            "url": "https://zh-v2.d2l.ai/chapter_preliminaries/pandas.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_preliminaries/pandas.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/pandas.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1CV411Y7i4?p=3",
+            "url": "https://www.bilibili.com/video/BV1CV411Y7i4?p=3",
+            "bvid": "BV1CV411Y7i4",
+            "rawQuery": "p=3",
+            "p": "3"
+          }
+        ]
+      },
+      "lectureId": "lec04",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月20日",
+        "topicLabel": "数据预处理",
+        "moduleTopicIndex": 5
+      }
+    },
+    {
+      "rowId": "row006",
+      "sourceOrder": 6,
+      "date": "3月21日",
+      "module": "深度学习基础",
+      "title": "线性代数",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_preliminaries/linear-algebra.html",
+            "url": "https://zh-v2.d2l.ai/chapter_preliminaries/linear-algebra.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_5.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_5.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_preliminaries/linear-algebra.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/linear-algebra.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1eK4y1U7Qy",
+            "url": "https://www.bilibili.com/video/BV1eK4y1U7Qy",
+            "bvid": "BV1eK4y1U7Qy",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec05",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月21日",
+        "topicLabel": "线性代数",
+        "moduleTopicIndex": 6
+      }
+    },
+    {
+      "rowId": "row007",
+      "sourceOrder": 7,
+      "date": "3月21日",
+      "module": "深度学习基础",
+      "title": "[补充] 按特定轴求和",
+      "links": {
+        "book": [],
+        "slides": [],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1eK4y1U7Qy?p=3",
+            "url": "https://www.bilibili.com/video/BV1eK4y1U7Qy?p=3",
+            "bvid": "BV1eK4y1U7Qy",
+            "rawQuery": "p=3",
+            "p": "3"
+          }
+        ]
+      },
+      "lectureId": "lec05",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月21日",
+        "topicLabel": "[补充] 按特定轴求和",
+        "moduleTopicIndex": 7
+      }
+    },
+    {
+      "rowId": "row008",
+      "sourceOrder": 8,
+      "date": "3月21日",
+      "module": "深度学习基础",
+      "title": "矩阵计算",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_preliminaries/calculus.html",
+            "url": "https://zh-v2.d2l.ai/chapter_preliminaries/calculus.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_6.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_6.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1eZ4y1w7PY",
+            "url": "https://www.bilibili.com/video/BV1eZ4y1w7PY",
+            "bvid": "BV1eZ4y1w7PY",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec06",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月21日",
+        "topicLabel": "矩阵计算",
+        "moduleTopicIndex": 8
+      }
+    },
+    {
+      "rowId": "row009",
+      "sourceOrder": 9,
+      "date": "3月21日",
+      "module": "深度学习基础",
+      "title": "自动求导",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_preliminaries/autograd.html",
+            "url": "https://zh-v2.d2l.ai/chapter_preliminaries/autograd.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_7.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_7.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_preliminaries/autograd.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/autograd.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1KA411N7Px",
+            "url": "https://www.bilibili.com/video/BV1KA411N7Px",
+            "bvid": "BV1KA411N7Px",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec07",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月21日",
+        "topicLabel": "自动求导",
+        "moduleTopicIndex": 9
+      }
+    },
+    {
+      "rowId": "row010",
+      "sourceOrder": 10,
+      "date": "3月27日",
+      "module": "深度学习基础",
+      "title": "线性回归",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression.html",
+            "url": "https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_8.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_8.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_linear-networks/linear-regression.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/linear-regression.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1PX4y1g7KC",
+            "url": "https://www.bilibili.com/video/BV1PX4y1g7KC",
+            "bvid": "BV1PX4y1g7KC",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec08",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月27日",
+        "topicLabel": "线性回归",
+        "moduleTopicIndex": 10
+      }
+    },
+    {
+      "rowId": "row011",
+      "sourceOrder": 11,
+      "date": "3月27日",
+      "module": "深度学习基础",
+      "title": "基础优化方法",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_9.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_9.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1PX4y1g7KC?p=2",
+            "url": "https://www.bilibili.com/video/BV1PX4y1g7KC?p=2",
+            "bvid": "BV1PX4y1g7KC",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec08",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月27日",
+        "topicLabel": "基础优化方法",
+        "moduleTopicIndex": 11
+      }
+    },
+    {
+      "rowId": "row012",
+      "sourceOrder": 12,
+      "date": "3月27日",
+      "module": "深度学习基础",
+      "title": "线性回归的从零开始实现",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression-scratch.html",
+            "url": "https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression-scratch.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_linear-networks/linear-regression-scratch.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/linear-regression-scratch.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1PX4y1g7KC?p=3",
+            "url": "https://www.bilibili.com/video/BV1PX4y1g7KC?p=3",
+            "bvid": "BV1PX4y1g7KC",
+            "rawQuery": "p=3",
+            "p": "3"
+          }
+        ]
+      },
+      "lectureId": "lec08",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月27日",
+        "topicLabel": "线性回归的从零开始实现",
+        "moduleTopicIndex": 12
+      }
+    },
+    {
+      "rowId": "row013",
+      "sourceOrder": 13,
+      "date": "3月27日",
+      "module": "深度学习基础",
+      "title": "线性回归的简洁实现",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression-concise.html",
+            "url": "https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression-concise.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_linear-networks/linear-regression-concise.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/linear-regression-concise.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1PX4y1g7KC?p=4",
+            "url": "https://www.bilibili.com/video/BV1PX4y1g7KC?p=4",
+            "bvid": "BV1PX4y1g7KC",
+            "rawQuery": "p=4",
+            "p": "4"
+          }
+        ]
+      },
+      "lectureId": "lec08",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月27日",
+        "topicLabel": "线性回归的简洁实现",
+        "moduleTopicIndex": 13
+      }
+    },
+    {
+      "rowId": "row014",
+      "sourceOrder": 14,
+      "date": "3月28日",
+      "module": "深度学习基础",
+      "title": "Softmax 回归",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression.html",
+            "url": "https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_10.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_10.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1K64y1Q7wu",
+            "url": "https://www.bilibili.com/video/BV1K64y1Q7wu",
+            "bvid": "BV1K64y1Q7wu",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec09",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月28日",
+        "topicLabel": "Softmax 回归",
+        "moduleTopicIndex": 14
+      }
+    },
+    {
+      "rowId": "row015",
+      "sourceOrder": 15,
+      "date": "3月28日",
+      "module": "深度学习基础",
+      "title": "损失函数",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_11.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_11.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1K64y1Q7wu?p=2",
+            "url": "https://www.bilibili.com/video/BV1K64y1Q7wu?p=2",
+            "bvid": "BV1K64y1Q7wu",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec09",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月28日",
+        "topicLabel": "损失函数",
+        "moduleTopicIndex": 15
+      }
+    },
+    {
+      "rowId": "row016",
+      "sourceOrder": 16,
+      "date": "3月28日",
+      "module": "深度学习基础",
+      "title": "图像分类数据集",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_linear-networks/image-classification-dataset.html",
+            "url": "https://zh-v2.d2l.ai/chapter_linear-networks/image-classification-dataset.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_linear-networks/image-classification-dataset.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/image-classification-dataset.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1K64y1Q7wu?p=3",
+            "url": "https://www.bilibili.com/video/BV1K64y1Q7wu?p=3",
+            "bvid": "BV1K64y1Q7wu",
+            "rawQuery": "p=3",
+            "p": "3"
+          }
+        ]
+      },
+      "lectureId": "lec09",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月28日",
+        "topicLabel": "图像分类数据集",
+        "moduleTopicIndex": 16
+      }
+    },
+    {
+      "rowId": "row017",
+      "sourceOrder": 17,
+      "date": "3月28日",
+      "module": "深度学习基础",
+      "title": "Softmax 回归的从零开始实现",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression-scratch.html",
+            "url": "https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression-scratch.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_linear-networks/softmax-regression-scratch.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/softmax-regression-scratch.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1K64y1Q7wu?p=4",
+            "url": "https://www.bilibili.com/video/BV1K64y1Q7wu?p=4",
+            "bvid": "BV1K64y1Q7wu",
+            "rawQuery": "p=4",
+            "p": "4"
+          }
+        ]
+      },
+      "lectureId": "lec09",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月28日",
+        "topicLabel": "Softmax 回归的从零开始实现",
+        "moduleTopicIndex": 17
+      }
+    },
+    {
+      "rowId": "row018",
+      "sourceOrder": 18,
+      "date": "3月28日",
+      "module": "深度学习基础",
+      "title": "Softmax 回归的简洁实现",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression-concise.html",
+            "url": "https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression-concise.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_linear-networks/softmax-regression-concise.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/softmax-regression-concise.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1K64y1Q7wu?p=5",
+            "url": "https://www.bilibili.com/video/BV1K64y1Q7wu?p=5",
+            "bvid": "BV1K64y1Q7wu",
+            "rawQuery": "p=5",
+            "p": "5"
+          }
+        ]
+      },
+      "lectureId": "lec09",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "3月28日",
+        "topicLabel": "Softmax 回归的简洁实现",
+        "moduleTopicIndex": 18
+      }
+    },
+    {
+      "rowId": "row019",
+      "sourceOrder": 21,
+      "date": "4月10日",
+      "module": "深度学习基础",
+      "title": "感知机",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_12.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_12.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1hh411U7gn",
+            "url": "https://www.bilibili.com/video/BV1hh411U7gn",
+            "bvid": "BV1hh411U7gn",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec10",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "4月10日",
+        "topicLabel": "感知机",
+        "moduleTopicIndex": 19
+      }
+    },
+    {
+      "rowId": "row020",
+      "sourceOrder": 22,
+      "date": "4月10日",
+      "module": "深度学习基础",
+      "title": "多层感知机",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/mlp.html",
+            "url": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/mlp.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_13.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_13.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_multilayer-perceptrons/mlp.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/mlp.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1hh411U7gn?p=2",
+            "url": "https://www.bilibili.com/video/BV1hh411U7gn?p=2",
+            "bvid": "BV1hh411U7gn",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec10",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "4月10日",
+        "topicLabel": "多层感知机",
+        "moduleTopicIndex": 20
+      }
+    },
+    {
+      "rowId": "row021",
+      "sourceOrder": 23,
+      "date": "4月10日",
+      "module": "深度学习基础",
+      "title": "多层感知机的从零开始实现",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/mlp-scratch.html",
+            "url": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/mlp-scratch.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_multilayer-perceptrons/mlp-scratch.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/mlp-scratch.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1hh411U7gn?p=3",
+            "url": "https://www.bilibili.com/video/BV1hh411U7gn?p=3",
+            "bvid": "BV1hh411U7gn",
+            "rawQuery": "p=3",
+            "p": "3"
+          }
+        ]
+      },
+      "lectureId": "lec10",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "4月10日",
+        "topicLabel": "多层感知机的从零开始实现",
+        "moduleTopicIndex": 21
+      }
+    },
+    {
+      "rowId": "row022",
+      "sourceOrder": 24,
+      "date": "4月10日",
+      "module": "深度学习基础",
+      "title": "多层感知机的简洁实现",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/mlp-concise.html",
+            "url": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/mlp-concise.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_multilayer-perceptrons/mlp-concise.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/mlp-concise.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1hh411U7gn?p=3",
+            "url": "https://www.bilibili.com/video/BV1hh411U7gn?p=3",
+            "bvid": "BV1hh411U7gn",
+            "rawQuery": "p=3",
+            "p": "3"
+          }
+        ]
+      },
+      "lectureId": "lec10",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "4月10日",
+        "topicLabel": "多层感知机的简洁实现",
+        "moduleTopicIndex": 22
+      }
+    },
+    {
+      "rowId": "row023",
+      "sourceOrder": 25,
+      "date": "4月11日",
+      "module": "深度学习基础",
+      "title": "模型选择",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_14.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_14.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1kX4y1g7jp",
+            "url": "https://www.bilibili.com/video/BV1kX4y1g7jp",
+            "bvid": "BV1kX4y1g7jp",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec11",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "4月11日",
+        "topicLabel": "模型选择",
+        "moduleTopicIndex": 23
+      }
+    },
+    {
+      "rowId": "row024",
+      "sourceOrder": 26,
+      "date": "4月11日",
+      "module": "深度学习基础",
+      "title": "欠拟合和过拟合",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/underfit-overfit.html",
+            "url": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/underfit-overfit.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_15.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_15.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_multilayer-perceptrons/underfit-overfit.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/underfit-overfit.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1kX4y1g7jp?p=2",
+            "url": "https://www.bilibili.com/video/BV1kX4y1g7jp?p=2",
+            "bvid": "BV1kX4y1g7jp",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec11",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "4月11日",
+        "topicLabel": "欠拟合和过拟合",
+        "moduleTopicIndex": 24
+      }
+    },
+    {
+      "rowId": "row025",
+      "sourceOrder": 27,
+      "date": "4月17日",
+      "module": "深度学习基础",
+      "title": "权重衰减",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/weight-decay.html",
+            "url": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/weight-decay.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_16.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_16.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_multilayer-perceptrons/weight-decay.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/weight-decay.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1UK4y1o7dy",
+            "url": "https://www.bilibili.com/video/BV1UK4y1o7dy",
+            "bvid": "BV1UK4y1o7dy",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec12",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "4月17日",
+        "topicLabel": "权重衰减",
+        "moduleTopicIndex": 25
+      }
+    },
+    {
+      "rowId": "row026",
+      "sourceOrder": 28,
+      "date": "4月17日",
+      "module": "深度学习基础",
+      "title": "Dropout",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/dropout.html",
+            "url": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/dropout.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_17.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_17.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_multilayer-perceptrons/dropout.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/dropout.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Y5411c7aY",
+            "url": "https://www.bilibili.com/video/BV1Y5411c7aY",
+            "bvid": "BV1Y5411c7aY",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec13",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "4月17日",
+        "topicLabel": "Dropout",
+        "moduleTopicIndex": 26
+      }
+    },
+    {
+      "rowId": "row027",
+      "sourceOrder": 29,
+      "date": "4月18日",
+      "module": "深度学习基础",
+      "title": "数值稳定性",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/numerical-stability-and-init.html",
+            "url": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/numerical-stability-and-init.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_18.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_18.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_multilayer-perceptrons/numerical-stability-and-init.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/numerical-stability-and-init.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1u64y1i75a",
+            "url": "https://www.bilibili.com/video/BV1u64y1i75a",
+            "bvid": "BV1u64y1i75a",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec14",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "4月18日",
+        "topicLabel": "数值稳定性",
+        "moduleTopicIndex": 27
+      }
+    },
+    {
+      "rowId": "row028",
+      "sourceOrder": 30,
+      "date": "4月18日",
+      "module": "深度学习基础",
+      "title": "模型初始化和激活函数",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_19.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_19.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1u64y1i75a?p=2",
+            "url": "https://www.bilibili.com/video/BV1u64y1i75a?p=2",
+            "bvid": "BV1u64y1i75a",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec14",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "4月18日",
+        "topicLabel": "模型初始化和激活函数",
+        "moduleTopicIndex": 28
+      }
+    },
+    {
+      "rowId": "row029",
+      "sourceOrder": 31,
+      "date": "4月18日",
+      "module": "深度学习基础",
+      "title": "实战 Kaggle 比赛：预测房价",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/kaggle-house-price.html",
+            "url": "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/kaggle-house-price.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_multilayer-perceptrons/kaggle-house-price.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/kaggle-house-price.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1NK4y1P7Tu",
+            "url": "https://www.bilibili.com/video/BV1NK4y1P7Tu",
+            "bvid": "BV1NK4y1P7Tu",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec15",
+      "kind": "textbook-competition-example",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "4月18日",
+        "topicLabel": "实战 Kaggle 比赛：预测房价",
+        "moduleTopicIndex": 29
+      }
+    },
+    {
+      "rowId": "row030",
+      "sourceOrder": 32,
+      "date": "4月18日",
+      "module": "深度学习基础",
+      "title": "竞赛 预测房价",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-0_20.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_20.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1NK4y1P7Tu?p=2",
+            "url": "https://www.bilibili.com/video/BV1NK4y1P7Tu?p=2",
+            "bvid": "BV1NK4y1P7Tu",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec15",
+      "kind": "course-competition-announcement",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "深度学习基础",
+        "dateLabel": "4月18日",
+        "topicLabel": "竞赛 预测房价",
+        "moduleTopicIndex": 30
+      }
+    },
+    {
+      "rowId": "row031",
+      "sourceOrder": 33,
+      "date": "4月24日",
+      "module": "卷积神经网络",
+      "title": "模型构造",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_deep-learning-computation/model-construction.html",
+            "url": "https://zh-v2.d2l.ai/chapter_deep-learning-computation/model-construction.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_deep-learning-computation/model-construction.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/model-construction.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1AK4y1P7vs",
+            "url": "https://www.bilibili.com/video/BV1AK4y1P7vs",
+            "bvid": "BV1AK4y1P7vs",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec16",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "4月24日",
+        "topicLabel": "模型构造",
+        "moduleTopicIndex": 1
+      }
+    },
+    {
+      "rowId": "row032",
+      "sourceOrder": 34,
+      "date": "4月24日",
+      "module": "卷积神经网络",
+      "title": "参数管理",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_deep-learning-computation/parameters.html",
+            "url": "https://zh-v2.d2l.ai/chapter_deep-learning-computation/parameters.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_deep-learning-computation/parameters.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/parameters.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1AK4y1P7vs?p=2",
+            "url": "https://www.bilibili.com/video/BV1AK4y1P7vs?p=2",
+            "bvid": "BV1AK4y1P7vs",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec16",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "4月24日",
+        "topicLabel": "参数管理",
+        "moduleTopicIndex": 2
+      }
+    },
+    {
+      "rowId": "row033",
+      "sourceOrder": 35,
+      "date": "4月24日",
+      "module": "卷积神经网络",
+      "title": "自定义层",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_deep-learning-computation/custom-layer.html",
+            "url": "https://zh-v2.d2l.ai/chapter_deep-learning-computation/custom-layer.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_deep-learning-computation/custom-layer.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/custom-layer.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1AK4y1P7vs?p=3",
+            "url": "https://www.bilibili.com/video/BV1AK4y1P7vs?p=3",
+            "bvid": "BV1AK4y1P7vs",
+            "rawQuery": "p=3",
+            "p": "3"
+          }
+        ]
+      },
+      "lectureId": "lec16",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "4月24日",
+        "topicLabel": "自定义层",
+        "moduleTopicIndex": 3
+      }
+    },
+    {
+      "rowId": "row034",
+      "sourceOrder": 36,
+      "date": "4月24日",
+      "module": "卷积神经网络",
+      "title": "读写文件",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_deep-learning-computation/read-write.html",
+            "url": "https://zh-v2.d2l.ai/chapter_deep-learning-computation/read-write.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_deep-learning-computation/read-write.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/read-write.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1AK4y1P7vs?p=4",
+            "url": "https://www.bilibili.com/video/BV1AK4y1P7vs?p=4",
+            "bvid": "BV1AK4y1P7vs",
+            "rawQuery": "p=4",
+            "p": "4"
+          }
+        ]
+      },
+      "lectureId": "lec16",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "4月24日",
+        "topicLabel": "读写文件",
+        "moduleTopicIndex": 4
+      }
+    },
+    {
+      "rowId": "row035",
+      "sourceOrder": 37,
+      "date": "4月24日",
+      "module": "卷积神经网络",
+      "title": "GPU",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_deep-learning-computation/use-gpu.html",
+            "url": "https://zh-v2.d2l.ai/chapter_deep-learning-computation/use-gpu.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_deep-learning-computation/use-gpu.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/use-gpu.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1z5411c7C1",
+            "url": "https://www.bilibili.com/video/BV1z5411c7C1",
+            "bvid": "BV1z5411c7C1",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec17",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "4月24日",
+        "topicLabel": "GPU",
+        "moduleTopicIndex": 5
+      }
+    },
+    {
+      "rowId": "row036",
+      "sourceOrder": 43,
+      "date": "5月15日",
+      "module": "卷积神经网络",
+      "title": "预测房价竞赛总结",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_1.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_1.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV15Q4y1o7vc",
+            "url": "https://www.bilibili.com/video/BV15Q4y1o7vc",
+            "bvid": "BV15Q4y1o7vc",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec18",
+      "kind": "course-competition-review",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月15日",
+        "topicLabel": "预测房价竞赛总结",
+        "moduleTopicIndex": 6
+      }
+    },
+    {
+      "rowId": "row037",
+      "sourceOrder": 44,
+      "date": "5月15日",
+      "module": "卷积神经网络",
+      "title": "从全连接层到卷积",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/why-conv.html",
+            "url": "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/why-conv.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_2.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_2.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1L64y1m7Nh",
+            "url": "https://www.bilibili.com/video/BV1L64y1m7Nh",
+            "bvid": "BV1L64y1m7Nh",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec19",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月15日",
+        "topicLabel": "从全连接层到卷积",
+        "moduleTopicIndex": 7
+      }
+    },
+    {
+      "rowId": "row038",
+      "sourceOrder": 45,
+      "date": "5月15日",
+      "module": "卷积神经网络",
+      "title": "图像卷积",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/conv-layer.html",
+            "url": "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/conv-layer.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_3.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_3.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_convolutional-neural-networks/conv-layer.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/conv-layer.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1L64y1m7Nh?p=2",
+            "url": "https://www.bilibili.com/video/BV1L64y1m7Nh?p=2",
+            "bvid": "BV1L64y1m7Nh",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec19",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月15日",
+        "topicLabel": "图像卷积",
+        "moduleTopicIndex": 8
+      }
+    },
+    {
+      "rowId": "row039",
+      "sourceOrder": 46,
+      "date": "5月16日",
+      "module": "卷积神经网络",
+      "title": "填充和步幅",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/padding-and-strides.html",
+            "url": "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/padding-and-strides.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_4.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_4.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_convolutional-neural-networks/padding-and-strides.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/padding-and-strides.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Th411U7UN",
+            "url": "https://www.bilibili.com/video/BV1Th411U7UN",
+            "bvid": "BV1Th411U7UN",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec20",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月16日",
+        "topicLabel": "填充和步幅",
+        "moduleTopicIndex": 9
+      }
+    },
+    {
+      "rowId": "row040",
+      "sourceOrder": 47,
+      "date": "5月16日",
+      "module": "卷积神经网络",
+      "title": "多输入多输出通道",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/channels.html",
+            "url": "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/channels.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_5.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_5.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_convolutional-neural-networks/channels.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/channels.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1MB4y1F7of",
+            "url": "https://www.bilibili.com/video/BV1MB4y1F7of",
+            "bvid": "BV1MB4y1F7of",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec21",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月16日",
+        "topicLabel": "多输入多输出通道",
+        "moduleTopicIndex": 10
+      }
+    },
+    {
+      "rowId": "row041",
+      "sourceOrder": 48,
+      "date": "5月22日",
+      "module": "卷积神经网络",
+      "title": "池化层",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/pooling.html",
+            "url": "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/pooling.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_6.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_6.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_convolutional-neural-networks/pooling.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/pooling.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1EV411j7nX",
+            "url": "https://www.bilibili.com/video/BV1EV411j7nX",
+            "bvid": "BV1EV411j7nX",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec22",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月22日",
+        "topicLabel": "池化层",
+        "moduleTopicIndex": 11
+      }
+    },
+    {
+      "rowId": "row042",
+      "sourceOrder": 49,
+      "date": "5月22日",
+      "module": "卷积神经网络",
+      "title": "卷积神经网络（LeNet）",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/lenet.html",
+            "url": "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/lenet.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_7.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_7.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_convolutional-neural-networks/lenet.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/lenet.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1t44y1r7ct/",
+            "url": "https://www.bilibili.com/video/BV1t44y1r7ct/",
+            "bvid": "BV1t44y1r7ct",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec23",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月22日",
+        "topicLabel": "卷积神经网络（LeNet）",
+        "moduleTopicIndex": 12
+      }
+    },
+    {
+      "rowId": "row043",
+      "sourceOrder": 50,
+      "date": "5月23日",
+      "module": "卷积神经网络",
+      "title": "深度卷积神经网络（AlexNet）",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_convolutional-modern/alexnet.html",
+            "url": "https://zh-v2.d2l.ai/chapter_convolutional-modern/alexnet.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_8.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_8.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_convolutional-modern/alexnet.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/alexnet.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1h54y1L7oe/",
+            "url": "https://www.bilibili.com/video/BV1h54y1L7oe/",
+            "bvid": "BV1h54y1L7oe",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec24",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月23日",
+        "topicLabel": "深度卷积神经网络（AlexNet）",
+        "moduleTopicIndex": 13
+      }
+    },
+    {
+      "rowId": "row044",
+      "sourceOrder": 51,
+      "date": "5月23日",
+      "module": "卷积神经网络",
+      "title": "使用块的网络（VGG）",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_convolutional-modern/vgg.html",
+            "url": "https://zh-v2.d2l.ai/chapter_convolutional-modern/vgg.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_9.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_9.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_convolutional-modern/vgg.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/vgg.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Ao4y117Pd/",
+            "url": "https://www.bilibili.com/video/BV1Ao4y117Pd/",
+            "bvid": "BV1Ao4y117Pd",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec25",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月23日",
+        "topicLabel": "使用块的网络（VGG）",
+        "moduleTopicIndex": 14
+      }
+    },
+    {
+      "rowId": "row045",
+      "sourceOrder": 52,
+      "date": "5月29日",
+      "module": "卷积神经网络",
+      "title": "网络中的网络（NiN）",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_convolutional-modern/nin.html",
+            "url": "https://zh-v2.d2l.ai/chapter_convolutional-modern/nin.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_10.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_10.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_convolutional-modern/nin.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/nin.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Uv411G71b/",
+            "url": "https://www.bilibili.com/video/BV1Uv411G71b/",
+            "bvid": "BV1Uv411G71b",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec26",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月29日",
+        "topicLabel": "网络中的网络（NiN）",
+        "moduleTopicIndex": 15
+      }
+    },
+    {
+      "rowId": "row046",
+      "sourceOrder": 53,
+      "date": "5月29日",
+      "module": "卷积神经网络",
+      "title": "含并行连结的网络（GoogLeNet）",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_convolutional-modern/googlenet.html",
+            "url": "https://zh-v2.d2l.ai/chapter_convolutional-modern/googlenet.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_11.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_11.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_convolutional-modern/googlenet.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/googlenet.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1b5411g7Xo/",
+            "url": "https://www.bilibili.com/video/BV1b5411g7Xo/",
+            "bvid": "BV1b5411g7Xo",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec27",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月29日",
+        "topicLabel": "含并行连结的网络（GoogLeNet）",
+        "moduleTopicIndex": 16
+      }
+    },
+    {
+      "rowId": "row047",
+      "sourceOrder": 54,
+      "date": "5月30日",
+      "module": "卷积神经网络",
+      "title": "批量归一化",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_convolutional-modern/batch-norm.html",
+            "url": "https://zh-v2.d2l.ai/chapter_convolutional-modern/batch-norm.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_12.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_12.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_convolutional-modern/batch-norm.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/batch-norm.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1X44y1r77r/",
+            "url": "https://www.bilibili.com/video/BV1X44y1r77r/",
+            "bvid": "BV1X44y1r77r",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec28",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月30日",
+        "topicLabel": "批量归一化",
+        "moduleTopicIndex": 17
+      }
+    },
+    {
+      "rowId": "row048",
+      "sourceOrder": 55,
+      "date": "5月30日",
+      "module": "卷积神经网络",
+      "title": "残差网络（ResNet）",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_convolutional-modern/resnet.html",
+            "url": "https://zh-v2.d2l.ai/chapter_convolutional-modern/resnet.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_13.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_13.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_convolutional-modern/resnet.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/resnet.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1bV41177ap/",
+            "url": "https://www.bilibili.com/video/BV1bV41177ap/",
+            "bvid": "BV1bV41177ap",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec29",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月30日",
+        "topicLabel": "残差网络（ResNet）",
+        "moduleTopicIndex": 18
+      }
+    },
+    {
+      "rowId": "row049",
+      "sourceOrder": 56,
+      "date": "5月30日",
+      "module": "卷积神经网络",
+      "title": "竞赛 图片分类",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-1_14.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-1_14.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1z64y1o7iz/",
+            "url": "https://www.bilibili.com/video/BV1z64y1o7iz/",
+            "bvid": "BV1z64y1o7iz",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec30",
+      "kind": "course-competition-announcement",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "卷积神经网络",
+        "dateLabel": "5月30日",
+        "topicLabel": "竞赛 图片分类",
+        "moduleTopicIndex": 19
+      }
+    },
+    {
+      "rowId": "row050",
+      "sourceOrder": 57,
+      "date": "6月5日",
+      "module": "计算机视觉",
+      "title": "硬件：CPU和GPU",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computational-performance/hardware.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computational-performance/hardware.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_1.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_1.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1TU4y1j7Wd/",
+            "url": "https://www.bilibili.com/video/BV1TU4y1j7Wd/",
+            "bvid": "BV1TU4y1j7Wd",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec31",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月5日",
+        "topicLabel": "硬件：CPU和GPU",
+        "moduleTopicIndex": 1
+      }
+    },
+    {
+      "rowId": "row051",
+      "sourceOrder": 58,
+      "date": "6月6日",
+      "module": "计算机视觉",
+      "title": "更多的专有硬件",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_2.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_2.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1VV41147PC/",
+            "url": "https://www.bilibili.com/video/BV1VV41147PC/",
+            "bvid": "BV1VV41147PC",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec32",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月6日",
+        "topicLabel": "更多的专有硬件",
+        "moduleTopicIndex": 2
+      }
+    },
+    {
+      "rowId": "row052",
+      "sourceOrder": 59,
+      "date": "6月6日",
+      "module": "计算机视觉",
+      "title": "多GPU训练",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computational-performance/multiple-gpus.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computational-performance/multiple-gpus.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_3.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_3.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computational-performance/multiple-gpus.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computational-performance/multiple-gpus.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1vU4y1V7rd/",
+            "url": "https://www.bilibili.com/video/BV1vU4y1V7rd/",
+            "bvid": "BV1vU4y1V7rd",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec33",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月6日",
+        "topicLabel": "多GPU训练",
+        "moduleTopicIndex": 3
+      }
+    },
+    {
+      "rowId": "row053",
+      "sourceOrder": 62,
+      "date": "6月19日",
+      "module": "计算机视觉",
+      "title": "多GPU训练的实现",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computational-performance/multiple-gpus-concise.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computational-performance/multiple-gpus-concise.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computational-performance/multiple-gpus-concise.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computational-performance/multiple-gpus-concise.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1MQ4y1R7Qg",
+            "url": "https://www.bilibili.com/video/BV1MQ4y1R7Qg",
+            "bvid": "BV1MQ4y1R7Qg",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec34",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月19日",
+        "topicLabel": "多GPU训练的实现",
+        "moduleTopicIndex": 4
+      }
+    },
+    {
+      "rowId": "row054",
+      "sourceOrder": 63,
+      "date": "6月19日",
+      "module": "计算机视觉",
+      "title": "分布式训练",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computational-performance/parameterserver.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computational-performance/parameterserver.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_4.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_4.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1jU4y1G7iu",
+            "url": "https://www.bilibili.com/video/BV1jU4y1G7iu",
+            "bvid": "BV1jU4y1G7iu",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec35",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月19日",
+        "topicLabel": "分布式训练",
+        "moduleTopicIndex": 5
+      }
+    },
+    {
+      "rowId": "row055",
+      "sourceOrder": 64,
+      "date": "6月20日",
+      "module": "计算机视觉",
+      "title": "图像增广",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/image-augmentation.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/image-augmentation.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_5.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_5.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/image-augmentation.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/image-augmentation.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV17y4y1g76q",
+            "url": "https://www.bilibili.com/video/BV17y4y1g76q",
+            "bvid": "BV17y4y1g76q",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec36",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月20日",
+        "topicLabel": "图像增广",
+        "moduleTopicIndex": 6
+      }
+    },
+    {
+      "rowId": "row056",
+      "sourceOrder": 65,
+      "date": "6月20日",
+      "module": "计算机视觉",
+      "title": "微调",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/fine-tuning.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/fine-tuning.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_6.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_6.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/fine-tuning.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/fine-tuning.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Sb4y1d7CR",
+            "url": "https://www.bilibili.com/video/BV1Sb4y1d7CR",
+            "bvid": "BV1Sb4y1d7CR",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec37",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月20日",
+        "topicLabel": "微调",
+        "moduleTopicIndex": 7
+      }
+    },
+    {
+      "rowId": "row057",
+      "sourceOrder": 66,
+      "date": "6月26日",
+      "module": "计算机视觉",
+      "title": "实战 Kaggle 比赛：图像分类（CIFAR-10）",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/kaggle-cifar10.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/kaggle-cifar10.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/kaggle-cifar10.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/kaggle-cifar10.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Gy4y1M7Cu",
+            "url": "https://www.bilibili.com/video/BV1Gy4y1M7Cu",
+            "bvid": "BV1Gy4y1M7Cu",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec38",
+      "kind": "textbook-competition-example",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月26日",
+        "topicLabel": "实战 Kaggle 比赛：图像分类（CIFAR-10）",
+        "moduleTopicIndex": 8
+      }
+    },
+    {
+      "rowId": "row058",
+      "sourceOrder": 67,
+      "date": "6月26日",
+      "module": "计算机视觉",
+      "title": "实战 Kaggle 比赛：狗的品种识别（ImageNet Dogs）",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/kaggle-dog.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/kaggle-dog.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/kaggle-dog.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/kaggle-dog.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1j5411T7wx",
+            "url": "https://www.bilibili.com/video/BV1j5411T7wx",
+            "bvid": "BV1j5411T7wx",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec39",
+      "kind": "textbook-competition-example",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月26日",
+        "topicLabel": "实战 Kaggle 比赛：狗的品种识别（ImageNet Dogs）",
+        "moduleTopicIndex": 9
+      }
+    },
+    {
+      "rowId": "row059",
+      "sourceOrder": 68,
+      "date": "6月27日",
+      "module": "计算机视觉",
+      "title": "物体检测",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_7.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_7.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Lh411Y7LX",
+            "url": "https://www.bilibili.com/video/BV1Lh411Y7LX",
+            "bvid": "BV1Lh411Y7LX",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec40",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月27日",
+        "topicLabel": "物体检测",
+        "moduleTopicIndex": 10
+      }
+    },
+    {
+      "rowId": "row060",
+      "sourceOrder": 69,
+      "date": "6月27日",
+      "module": "计算机视觉",
+      "title": "边缘框实现",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/bounding-box.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/bounding-box.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/bounding-box.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/bounding-box.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Lh411Y7LX?p=2",
+            "url": "https://www.bilibili.com/video/BV1Lh411Y7LX?p=2",
+            "bvid": "BV1Lh411Y7LX",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec40",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月27日",
+        "topicLabel": "边缘框实现",
+        "moduleTopicIndex": 11
+      }
+    },
+    {
+      "rowId": "row061",
+      "sourceOrder": 70,
+      "date": "6月27日",
+      "module": "计算机视觉",
+      "title": "物体检测数据集",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/object-detection-dataset.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/object-detection-dataset.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/object-detection-dataset.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/object-detection-dataset.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Lh411Y7LX?p=3",
+            "url": "https://www.bilibili.com/video/BV1Lh411Y7LX?p=3",
+            "bvid": "BV1Lh411Y7LX",
+            "rawQuery": "p=3",
+            "p": "3"
+          }
+        ]
+      },
+      "lectureId": "lec40",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月27日",
+        "topicLabel": "物体检测数据集",
+        "moduleTopicIndex": 12
+      }
+    },
+    {
+      "rowId": "row062",
+      "sourceOrder": 71,
+      "date": "6月27日",
+      "module": "计算机视觉",
+      "title": "锚框",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/anchor.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/anchor.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_8.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_8.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/anchor.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/anchor.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1aB4y1K7za",
+            "url": "https://www.bilibili.com/video/BV1aB4y1K7za",
+            "bvid": "BV1aB4y1K7za",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec41",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月27日",
+        "topicLabel": "锚框",
+        "moduleTopicIndex": 13
+      }
+    },
+    {
+      "rowId": "row063",
+      "sourceOrder": 72,
+      "date": "6月27日",
+      "module": "计算机视觉",
+      "title": "竞赛 树叶分类竞赛总结",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_9.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_9.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1by4y1K7SE",
+            "url": "https://www.bilibili.com/video/BV1by4y1K7SE",
+            "bvid": "BV1by4y1K7SE",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec42",
+      "kind": "course-competition-review",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "6月27日",
+        "topicLabel": "竞赛 树叶分类竞赛总结",
+        "moduleTopicIndex": 14
+      }
+    },
+    {
+      "rowId": "row064",
+      "sourceOrder": 73,
+      "date": "7月3日",
+      "module": "计算机视觉",
+      "title": "区域卷积神经网络（R-CNNs）",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/rcnn.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/rcnn.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_10.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_10.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Db4y1C71g",
+            "url": "https://www.bilibili.com/video/BV1Db4y1C71g",
+            "bvid": "BV1Db4y1C71g",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec43",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "7月3日",
+        "topicLabel": "区域卷积神经网络（R-CNNs）",
+        "moduleTopicIndex": 15
+      }
+    },
+    {
+      "rowId": "row065",
+      "sourceOrder": 74,
+      "date": "7月3日",
+      "module": "计算机视觉",
+      "title": "单发多框检测（SSD）",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_11.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_11.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Db4y1C71g",
+            "url": "https://www.bilibili.com/video/BV1Db4y1C71g",
+            "bvid": "BV1Db4y1C71g",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec43",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "7月3日",
+        "topicLabel": "单发多框检测（SSD）",
+        "moduleTopicIndex": 16
+      }
+    },
+    {
+      "rowId": "row066",
+      "sourceOrder": 75,
+      "date": "7月3日",
+      "module": "计算机视觉",
+      "title": "你只看一次（YOLO）",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_12.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_12.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Db4y1C71g",
+            "url": "https://www.bilibili.com/video/BV1Db4y1C71g",
+            "bvid": "BV1Db4y1C71g",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec43",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "7月3日",
+        "topicLabel": "你只看一次（YOLO）",
+        "moduleTopicIndex": 17
+      }
+    },
+    {
+      "rowId": "row067",
+      "sourceOrder": 76,
+      "date": "7月4日",
+      "module": "计算机视觉",
+      "title": "多尺度物体检测实现",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/multiscale-object-detection.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/multiscale-object-detection.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/multiscale-object-detection.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/multiscale-object-detection.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=1",
+            "url": "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=1",
+            "bvid": "BV1ZX4y1c7Sw",
+            "rawQuery": "p=1",
+            "p": "1"
+          }
+        ]
+      },
+      "lectureId": "lec44",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "7月4日",
+        "topicLabel": "多尺度物体检测实现",
+        "moduleTopicIndex": 18
+      }
+    },
+    {
+      "rowId": "row068",
+      "sourceOrder": 77,
+      "date": "7月4日",
+      "module": "计算机视觉",
+      "title": "SSD 实现",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/ssd.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/ssd.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/ssd.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/ssd.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=2",
+            "url": "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=2",
+            "bvid": "BV1ZX4y1c7Sw",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec44",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "7月4日",
+        "topicLabel": "SSD 实现",
+        "moduleTopicIndex": 19
+      }
+    },
+    {
+      "rowId": "row069",
+      "sourceOrder": 78,
+      "date": "7月10日",
+      "module": "计算机视觉",
+      "title": "语义分割",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_13.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_13.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1BK4y1M7Rd",
+            "url": "https://www.bilibili.com/video/BV1BK4y1M7Rd",
+            "bvid": "BV1BK4y1M7Rd",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec45",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "7月10日",
+        "topicLabel": "语义分割",
+        "moduleTopicIndex": 20
+      }
+    },
+    {
+      "rowId": "row070",
+      "sourceOrder": 79,
+      "date": "7月10日",
+      "module": "计算机视觉",
+      "title": "语义分割数据集",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/semantic-segmentation-and-dataset.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/semantic-segmentation-and-dataset.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/semantic-segmentation-and-dataset.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/semantic-segmentation-and-dataset.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1BK4y1M7Rd?p=2",
+            "url": "https://www.bilibili.com/video/BV1BK4y1M7Rd?p=2",
+            "bvid": "BV1BK4y1M7Rd",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec45",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "7月10日",
+        "topicLabel": "语义分割数据集",
+        "moduleTopicIndex": 21
+      }
+    },
+    {
+      "rowId": "row071",
+      "sourceOrder": 80,
+      "date": "7月10日",
+      "module": "计算机视觉",
+      "title": "转置卷积",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/transposed-conv.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/transposed-conv.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_14.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_14.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/transposed-conv.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/transposed-conv.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV17o4y1X7Jn/",
+            "url": "https://www.bilibili.com/video/BV17o4y1X7Jn/",
+            "bvid": "BV17o4y1X7Jn",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec46",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "7月10日",
+        "topicLabel": "转置卷积",
+        "moduleTopicIndex": 22
+      }
+    },
+    {
+      "rowId": "row072",
+      "sourceOrder": 81,
+      "date": "7月10日",
+      "module": "计算机视觉",
+      "title": "转置卷积是一种卷积",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/transposed-conv.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/transposed-conv.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_15.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_15.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/transposed-conv.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/transposed-conv.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1CM4y1K7r7/",
+            "url": "https://www.bilibili.com/video/BV1CM4y1K7r7/",
+            "bvid": "BV1CM4y1K7r7",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec47",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "7月10日",
+        "topicLabel": "转置卷积是一种卷积",
+        "moduleTopicIndex": 23
+      }
+    },
+    {
+      "rowId": "row073",
+      "sourceOrder": 82,
+      "date": "7月11日",
+      "module": "计算机视觉",
+      "title": "全连接卷积神经网络（FCN）",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/fcn.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/fcn.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_16.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_16.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/fcn.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/fcn.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1af4y1L7Zu/",
+            "url": "https://www.bilibili.com/video/BV1af4y1L7Zu/",
+            "bvid": "BV1af4y1L7Zu",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec48",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "7月11日",
+        "topicLabel": "全连接卷积神经网络（FCN）",
+        "moduleTopicIndex": 24
+      }
+    },
+    {
+      "rowId": "row074",
+      "sourceOrder": 83,
+      "date": "7月11日",
+      "module": "计算机视觉",
+      "title": "样式迁移",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_computer-vision/neural-style.html",
+            "url": "https://zh-v2.d2l.ai/chapter_computer-vision/neural-style.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_17.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_17.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_computer-vision/neural-style.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/neural-style.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Eh41167GN/",
+            "url": "https://www.bilibili.com/video/BV1Eh41167GN/",
+            "bvid": "BV1Eh41167GN",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec49",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "7月11日",
+        "topicLabel": "样式迁移",
+        "moduleTopicIndex": 25
+      }
+    },
+    {
+      "rowId": "row075",
+      "sourceOrder": 84,
+      "date": "7月11日",
+      "module": "计算机视觉",
+      "title": "竞赛 目标检测",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-2_18.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-2_18.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1F64y1x7xP/",
+            "url": "https://www.bilibili.com/video/BV1F64y1x7xP/",
+            "bvid": "BV1F64y1x7xP",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec50",
+      "kind": "course-competition-announcement",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "计算机视觉",
+        "dateLabel": "7月11日",
+        "topicLabel": "竞赛 目标检测",
+        "moduleTopicIndex": 26
+      }
+    },
+    {
+      "rowId": "row076",
+      "sourceOrder": 85,
+      "date": "7月17日",
+      "module": "循环神经网络",
+      "title": "序列模型",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/sequence.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/sequence.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-3_1.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-3_1.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_recurrent-neural-networks/sequence.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/sequence.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1L44y1m768/",
+            "url": "https://www.bilibili.com/video/BV1L44y1m768/",
+            "bvid": "BV1L44y1m768",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec51",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "7月17日",
+        "topicLabel": "序列模型",
+        "moduleTopicIndex": 1
+      }
+    },
+    {
+      "rowId": "row077",
+      "sourceOrder": 86,
+      "date": "7月17日",
+      "module": "循环神经网络",
+      "title": "文本预处理",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/text-preprocessing.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/text-preprocessing.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_recurrent-neural-networks/text-preprocessing.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/text-preprocessing.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Fo4y1Q79L/",
+            "url": "https://www.bilibili.com/video/BV1Fo4y1Q79L/",
+            "bvid": "BV1Fo4y1Q79L",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec52",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "7月17日",
+        "topicLabel": "文本预处理",
+        "moduleTopicIndex": 2
+      }
+    },
+    {
+      "rowId": "row078",
+      "sourceOrder": 87,
+      "date": "7月18日",
+      "module": "循环神经网络",
+      "title": "语言模型和数据集",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/language-models-and-dataset.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/language-models-and-dataset.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-3_2.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-3_2.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_recurrent-neural-networks/language-models-and-dataset.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/language-models-and-dataset.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1ZX4y1F7K3/",
+            "url": "https://www.bilibili.com/video/BV1ZX4y1F7K3/",
+            "bvid": "BV1ZX4y1F7K3",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec53",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "7月18日",
+        "topicLabel": "语言模型和数据集",
+        "moduleTopicIndex": 3
+      }
+    },
+    {
+      "rowId": "row079",
+      "sourceOrder": 88,
+      "date": "7月18日",
+      "module": "循环神经网络",
+      "title": "循环神经网络",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/rnn.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/rnn.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-3_3.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-3_3.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1D64y1z7CA/",
+            "url": "https://www.bilibili.com/video/BV1D64y1z7CA/",
+            "bvid": "BV1D64y1z7CA",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec54",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "7月18日",
+        "topicLabel": "循环神经网络",
+        "moduleTopicIndex": 4
+      }
+    },
+    {
+      "rowId": "row080",
+      "sourceOrder": 89,
+      "date": "7月24日",
+      "module": "循环神经网络",
+      "title": "循环神经网络的从零开始实现",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/rnn-scratch.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/rnn-scratch.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_recurrent-neural-networks/rnn-scratch.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/rnn-scratch.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1kq4y1H7sw/",
+            "url": "https://www.bilibili.com/video/BV1kq4y1H7sw/",
+            "bvid": "BV1kq4y1H7sw",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec55",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "7月24日",
+        "topicLabel": "循环神经网络的从零开始实现",
+        "moduleTopicIndex": 5
+      }
+    },
+    {
+      "rowId": "row081",
+      "sourceOrder": 90,
+      "date": "7月24日",
+      "module": "循环神经网络",
+      "title": "循环神经网络的简洁实现",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/rnn-concise.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/rnn-concise.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_recurrent-neural-networks/rnn-concise.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/rnn-concise.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1kq4y1H7sw?p=2",
+            "url": "https://www.bilibili.com/video/BV1kq4y1H7sw?p=2",
+            "bvid": "BV1kq4y1H7sw",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec55",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "7月24日",
+        "topicLabel": "循环神经网络的简洁实现",
+        "moduleTopicIndex": 6
+      }
+    },
+    {
+      "rowId": "row082",
+      "sourceOrder": 91,
+      "date": "7月25日",
+      "module": "循环神经网络",
+      "title": "门控循环单元（GRU）",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-modern/gru.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-modern/gru.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-3_4.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-3_4.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_recurrent-modern/gru.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/gru.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1mf4y157N2/",
+            "url": "https://www.bilibili.com/video/BV1mf4y157N2/",
+            "bvid": "BV1mf4y157N2",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec56",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "7月25日",
+        "topicLabel": "门控循环单元（GRU）",
+        "moduleTopicIndex": 7
+      }
+    },
+    {
+      "rowId": "row083",
+      "sourceOrder": 92,
+      "date": "7月25日",
+      "module": "循环神经网络",
+      "title": "长短期记忆网络（LSTM）",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-modern/lstm.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-modern/lstm.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-3_5.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-3_5.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_recurrent-modern/lstm.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/lstm.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1JU4y1H7PC/",
+            "url": "https://www.bilibili.com/video/BV1JU4y1H7PC/",
+            "bvid": "BV1JU4y1H7PC",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec57",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "7月25日",
+        "topicLabel": "长短期记忆网络（LSTM）",
+        "moduleTopicIndex": 8
+      }
+    },
+    {
+      "rowId": "row084",
+      "sourceOrder": 93,
+      "date": "7月25日",
+      "module": "循环神经网络",
+      "title": "深层循环神经网络",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-modern/deep-rnn.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-modern/deep-rnn.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-3_6.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-3_6.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_recurrent-modern/deep-rnn.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/deep-rnn.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1JM4y1T7N4/",
+            "url": "https://www.bilibili.com/video/BV1JM4y1T7N4/",
+            "bvid": "BV1JM4y1T7N4",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec58",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "7月25日",
+        "topicLabel": "深层循环神经网络",
+        "moduleTopicIndex": 9
+      }
+    },
+    {
+      "rowId": "row085",
+      "sourceOrder": 94,
+      "date": "7月25日",
+      "module": "循环神经网络",
+      "title": "双向循环神经网络",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-modern/bi-rnn.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-modern/bi-rnn.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-3_7.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-3_7.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_recurrent-modern/bi-rnn.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/bi-rnn.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV12X4y1c71W/",
+            "url": "https://www.bilibili.com/video/BV12X4y1c71W/",
+            "bvid": "BV12X4y1c71W",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec59",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "7月25日",
+        "topicLabel": "双向循环神经网络",
+        "moduleTopicIndex": 10
+      }
+    },
+    {
+      "rowId": "row086",
+      "sourceOrder": 97,
+      "date": "8月7日",
+      "module": "循环神经网络",
+      "title": "机器翻译与数据集",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-modern/machine-translation-and-dataset.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-modern/machine-translation-and-dataset.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_recurrent-modern/machine-translation-and-dataset.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/machine-translation-and-dataset.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1H64y1s7TH/",
+            "url": "https://www.bilibili.com/video/BV1H64y1s7TH/",
+            "bvid": "BV1H64y1s7TH",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec60",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "8月7日",
+        "topicLabel": "机器翻译与数据集",
+        "moduleTopicIndex": 11
+      }
+    },
+    {
+      "rowId": "row087",
+      "sourceOrder": 98,
+      "date": "8月7日",
+      "module": "循环神经网络",
+      "title": "编码器-解码器结构",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-modern/encoder-decoder.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-modern/encoder-decoder.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-3_8.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-3_8.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_recurrent-modern/encoder-decoder.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/encoder-decoder.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1c54y1E7YP/",
+            "url": "https://www.bilibili.com/video/BV1c54y1E7YP/",
+            "bvid": "BV1c54y1E7YP",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec61",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "8月7日",
+        "topicLabel": "编码器-解码器结构",
+        "moduleTopicIndex": 12
+      }
+    },
+    {
+      "rowId": "row088",
+      "sourceOrder": 99,
+      "date": "8月7日",
+      "module": "循环神经网络",
+      "title": "序列到序列学习（seq2seq）",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-modern/seq2seq.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-modern/seq2seq.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-3_9.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-3_9.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_recurrent-modern/seq2seq.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/seq2seq.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV16g411L7FG/",
+            "url": "https://www.bilibili.com/video/BV16g411L7FG/",
+            "bvid": "BV16g411L7FG",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec62",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "8月7日",
+        "topicLabel": "序列到序列学习（seq2seq）",
+        "moduleTopicIndex": 13
+      }
+    },
+    {
+      "rowId": "row089",
+      "sourceOrder": 100,
+      "date": "8月7日",
+      "module": "循环神经网络",
+      "title": "束搜索",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_recurrent-modern/beam-search.html",
+            "url": "https://zh-v2.d2l.ai/chapter_recurrent-modern/beam-search.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-3_10.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-3_10.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1B44y1C7m1/",
+            "url": "https://www.bilibili.com/video/BV1B44y1C7m1/",
+            "bvid": "BV1B44y1C7m1",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec63",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "循环神经网络",
+        "dateLabel": "8月7日",
+        "topicLabel": "束搜索",
+        "moduleTopicIndex": 14
+      }
+    },
+    {
+      "rowId": "row090",
+      "sourceOrder": 101,
+      "date": "8月8日",
+      "module": "注意力机制",
+      "title": "注意力机制",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_attention-mechanisms/nadaraya-waston.html",
+            "url": "https://zh-v2.d2l.ai/chapter_attention-mechanisms/nadaraya-waston.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-4_1.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-4_1.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_attention-mechanisms/nadaraya-waston.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/nadaraya-waston.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1264y1i7R1/",
+            "url": "https://www.bilibili.com/video/BV1264y1i7R1/",
+            "bvid": "BV1264y1i7R1",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec64",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月8日",
+        "topicLabel": "注意力机制",
+        "moduleTopicIndex": 1
+      }
+    },
+    {
+      "rowId": "row091",
+      "sourceOrder": 102,
+      "date": "8月8日",
+      "module": "注意力机制",
+      "title": "注意力分数",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_attention-mechanisms/attention-scoring-functions.html",
+            "url": "https://zh-v2.d2l.ai/chapter_attention-mechanisms/attention-scoring-functions.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-4_2.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-4_2.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_attention-mechanisms/attention-scoring-functions.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/attention-scoring-functions.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Tb4y167rb/",
+            "url": "https://www.bilibili.com/video/BV1Tb4y167rb/",
+            "bvid": "BV1Tb4y167rb",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec65",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月8日",
+        "topicLabel": "注意力分数",
+        "moduleTopicIndex": 2
+      }
+    },
+    {
+      "rowId": "row092",
+      "sourceOrder": 103,
+      "date": "8月8日",
+      "module": "注意力机制",
+      "title": "使用注意力机制的seq2seq",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_attention-mechanisms/bahdanau-attention.html",
+            "url": "https://zh-v2.d2l.ai/chapter_attention-mechanisms/bahdanau-attention.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-4_3.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-4_3.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_attention-mechanisms/bahdanau-attention.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/bahdanau-attention.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1v44y1C7Tg/",
+            "url": "https://www.bilibili.com/video/BV1v44y1C7Tg/",
+            "bvid": "BV1v44y1C7Tg",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec66",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月8日",
+        "topicLabel": "使用注意力机制的seq2seq",
+        "moduleTopicIndex": 3
+      }
+    },
+    {
+      "rowId": "row093",
+      "sourceOrder": 104,
+      "date": "8月14日",
+      "module": "注意力机制",
+      "title": "自注意力和位置编码",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_attention-mechanisms/self-attention-and-positional-encoding.html",
+            "url": "https://zh-v2.d2l.ai/chapter_attention-mechanisms/self-attention-and-positional-encoding.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-4_4.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-4_4.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_attention-mechanisms/self-attention-and-positional-encoding.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/self-attention-and-positional-encoding.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV19o4y1m7mo/",
+            "url": "https://www.bilibili.com/video/BV19o4y1m7mo/",
+            "bvid": "BV19o4y1m7mo",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec67",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月14日",
+        "topicLabel": "自注意力和位置编码",
+        "moduleTopicIndex": 4
+      }
+    },
+    {
+      "rowId": "row094",
+      "sourceOrder": 105,
+      "date": "8月14日",
+      "module": "注意力机制",
+      "title": "Transformer",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_attention-mechanisms/transformer.html",
+            "url": "https://zh-v2.d2l.ai/chapter_attention-mechanisms/transformer.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-4_5.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-4_5.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_attention-mechanisms/transformer.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/transformer.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1Kq4y1H7FL/",
+            "url": "https://www.bilibili.com/video/BV1Kq4y1H7FL/",
+            "bvid": "BV1Kq4y1H7FL",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec68",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月14日",
+        "topicLabel": "Transformer",
+        "moduleTopicIndex": 5
+      }
+    },
+    {
+      "rowId": "row095",
+      "sourceOrder": 106,
+      "date": "8月15日",
+      "module": "注意力机制",
+      "title": "BERT",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_natural-language-processing-pretraining/bert.html",
+            "url": "https://zh-v2.d2l.ai/chapter_natural-language-processing-pretraining/bert.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-4_6.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-4_6.pdf"
+          }
+        ],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_natural-language-processing-pretraining/bert.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-pretraining/bert.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1yU4y1E7Ns/",
+            "url": "https://www.bilibili.com/video/BV1yU4y1E7Ns/",
+            "bvid": "BV1yU4y1E7Ns",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec69",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月15日",
+        "topicLabel": "BERT",
+        "moduleTopicIndex": 6
+      }
+    },
+    {
+      "rowId": "row096",
+      "sourceOrder": 107,
+      "date": "8月15日",
+      "module": "注意力机制",
+      "title": "BERT预训练数据集",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_natural-language-processing-pretraining/bert-dataset.html",
+            "url": "https://zh-v2.d2l.ai/chapter_natural-language-processing-pretraining/bert-dataset.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_natural-language-processing-pretraining/bert-dataset.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-pretraining/bert-dataset.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1yU4y1E7Ns?p=2",
+            "url": "https://www.bilibili.com/video/BV1yU4y1E7Ns?p=2",
+            "bvid": "BV1yU4y1E7Ns",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec69",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月15日",
+        "topicLabel": "BERT预训练数据集",
+        "moduleTopicIndex": 7
+      }
+    },
+    {
+      "rowId": "row097",
+      "sourceOrder": 108,
+      "date": "8月15日",
+      "module": "注意力机制",
+      "title": "预训练BERT",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_natural-language-processing-pretraining/bert-pretraining.html",
+            "url": "https://zh-v2.d2l.ai/chapter_natural-language-processing-pretraining/bert-pretraining.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_natural-language-processing-pretraining/bert-pretraining.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-pretraining/bert-pretraining.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1yU4y1E7Ns?p=3",
+            "url": "https://www.bilibili.com/video/BV1yU4y1E7Ns?p=3",
+            "bvid": "BV1yU4y1E7Ns",
+            "rawQuery": "p=3",
+            "p": "3"
+          }
+        ]
+      },
+      "lectureId": "lec69",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月15日",
+        "topicLabel": "预训练BERT",
+        "moduleTopicIndex": 8
+      }
+    },
+    {
+      "rowId": "row098",
+      "sourceOrder": 109,
+      "date": "8月15日",
+      "module": "注意力机制",
+      "title": "微调BERT",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_natural-language-processing-applications/finetuning-bert.html",
+            "url": "https://zh-v2.d2l.ai/chapter_natural-language-processing-applications/finetuning-bert.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-4_7.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-4_7.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV15L4y1v7ts",
+            "url": "https://www.bilibili.com/video/BV15L4y1v7ts",
+            "bvid": "BV15L4y1v7ts",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec70",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月15日",
+        "topicLabel": "微调BERT",
+        "moduleTopicIndex": 9
+      }
+    },
+    {
+      "rowId": "row099",
+      "sourceOrder": 110,
+      "date": "8月15日",
+      "module": "注意力机制",
+      "title": "自然语言推理和数据集",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html",
+            "url": "https://zh-v2.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV15L4y1v7ts?p=2",
+            "url": "https://www.bilibili.com/video/BV15L4y1v7ts?p=2",
+            "bvid": "BV15L4y1v7ts",
+            "rawQuery": "p=2",
+            "p": "2"
+          }
+        ]
+      },
+      "lectureId": "lec70",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月15日",
+        "topicLabel": "自然语言推理和数据集",
+        "moduleTopicIndex": 10
+      }
+    },
+    {
+      "rowId": "row100",
+      "sourceOrder": 111,
+      "date": "8月15日",
+      "module": "注意力机制",
+      "title": "自然语言推理：微调BERT",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-bert.html",
+            "url": "https://zh-v2.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-bert.html"
+          }
+        ],
+        "slides": [],
+        "notebook": [
+          {
+            "href": "assets/notebooks/chapter_natural-language-processing-applications/natural-language-inference-bert.slides.html",
+            "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-applications/natural-language-inference-bert.slides.html"
+          }
+        ],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV15L4y1v7ts?p=3",
+            "url": "https://www.bilibili.com/video/BV15L4y1v7ts?p=3",
+            "bvid": "BV15L4y1v7ts",
+            "rawQuery": "p=3",
+            "p": "3"
+          }
+        ]
+      },
+      "lectureId": "lec70",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月15日",
+        "topicLabel": "自然语言推理：微调BERT",
+        "moduleTopicIndex": 11
+      }
+    },
+    {
+      "rowId": "row101",
+      "sourceOrder": 112,
+      "date": "8月15日",
+      "module": "注意力机制",
+      "title": "竞赛 目标检测总结",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-4_1.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-4_1.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV13b4y1m7y8",
+            "url": "https://www.bilibili.com/video/BV13b4y1m7y8",
+            "bvid": "BV13b4y1m7y8",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec71",
+      "kind": "course-competition-review",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月15日",
+        "topicLabel": "竞赛 目标检测总结",
+        "moduleTopicIndex": 12
+      }
+    },
+    {
+      "rowId": "row102",
+      "sourceOrder": 113,
+      "date": "8月21日",
+      "module": "注意力机制",
+      "title": "优化算法",
+      "links": {
+        "book": [
+          {
+            "href": "https://zh-v2.d2l.ai/chapter_optimization/index.html",
+            "url": "https://zh-v2.d2l.ai/chapter_optimization/index.html"
+          }
+        ],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-4_2.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-4_2.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1bP4y1p7Gq",
+            "url": "https://www.bilibili.com/video/BV1bP4y1p7Gq",
+            "bvid": "BV1bP4y1p7Gq",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec72",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月21日",
+        "topicLabel": "优化算法",
+        "moduleTopicIndex": 13
+      }
+    },
+    {
+      "rowId": "row103",
+      "sourceOrder": 114,
+      "date": "8月21日",
+      "module": "注意力机制",
+      "title": "课程总结和进阶学习",
+      "links": {
+        "book": [],
+        "slides": [
+          {
+            "href": "assets/pdfs/part-4_3.pdf",
+            "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-4_3.pdf"
+          }
+        ],
+        "notebook": [],
+        "video": [
+          {
+            "href": "https://www.bilibili.com/video/BV1AL4y1Y7gu",
+            "url": "https://www.bilibili.com/video/BV1AL4y1Y7gu",
+            "bvid": "BV1AL4y1Y7gu",
+            "rawQuery": "",
+            "p": null
+          }
+        ]
+      },
+      "lectureId": "lec73",
+      "kind": "teaching",
+      "evidence": {
+        "snapshot": "schedule-2021.html",
+        "moduleHeading": "注意力机制",
+        "dateLabel": "8月21日",
+        "topicLabel": "课程总结和进阶学习",
+        "moduleTopicIndex": 14
+      }
+    }
+  ],
+  "breaks": [
+    {
+      "sourceOrder": 19,
+      "date": "4月3日",
+      "module": "深度学习基础",
+      "title": "休课"
+    },
+    {
+      "sourceOrder": 20,
+      "date": "4月4日",
+      "module": "深度学习基础",
+      "title": "休课"
+    },
+    {
+      "sourceOrder": 38,
+      "date": "4月25日",
+      "module": "卷积神经网络",
+      "title": "休课"
+    },
+    {
+      "sourceOrder": 39,
+      "date": "5月1日",
+      "module": "卷积神经网络",
+      "title": "休课"
+    },
+    {
+      "sourceOrder": 40,
+      "date": "5月2日",
+      "module": "卷积神经网络",
+      "title": "休课"
+    },
+    {
+      "sourceOrder": 41,
+      "date": "5月8日",
+      "module": "卷积神经网络",
+      "title": "休课"
+    },
+    {
+      "sourceOrder": 42,
+      "date": "5月9日",
+      "module": "卷积神经网络",
+      "title": "休课"
+    },
+    {
+      "sourceOrder": 60,
+      "date": "6月12日",
+      "module": "计算机视觉",
+      "title": "休课"
+    },
+    {
+      "sourceOrder": 61,
+      "date": "6月13日",
+      "module": "计算机视觉",
+      "title": "休课"
+    },
+    {
+      "sourceOrder": 95,
+      "date": "7月31日",
+      "module": "循环神经网络",
+      "title": "休课"
+    },
+    {
+      "sourceOrder": 96,
+      "date": "8月1日",
+      "module": "循环神经网络",
+      "title": "休课"
+    }
+  ],
+  "repeatedLinks": [
+    {
+      "kind": "video",
+      "url": "https://www.bilibili.com/video/BV1hh411U7gn?p=3",
+      "rowIds": [
+        "row021",
+        "row022"
+      ],
+      "lectureIds": [
+        "lec10"
+      ],
+      "assessment": "疑似分段重复或共用入口；仅记录源链接，未观看视频，不判断正确P段，不自动改写。"
+    },
+    {
+      "kind": "video",
+      "url": "https://www.bilibili.com/video/BV1Db4y1C71g",
+      "rowIds": [
+        "row064",
+        "row065",
+        "row066"
+      ],
+      "lectureIds": [
+        "lec43"
+      ],
+      "assessment": "疑似分段重复或共用入口；仅记录源链接，未观看视频，不判断正确P段，不自动改写。"
+    },
+    {
+      "kind": "book",
+      "url": "https://zh-v2.d2l.ai/chapter_computer-vision/transposed-conv.html",
+      "rowIds": [
+        "row071",
+        "row072"
+      ],
+      "lectureIds": [
+        "lec46",
+        "lec47"
+      ],
+      "assessment": "转置卷积的两次讲授共用教材/代码入口；作为共享来源保留，不据此合并不同BV。"
+    },
+    {
+      "kind": "notebook",
+      "url": "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/transposed-conv.slides.html",
+      "rowIds": [
+        "row071",
+        "row072"
+      ],
+      "lectureIds": [
+        "lec46",
+        "lec47"
+      ],
+      "assessment": "转置卷积的两次讲授共用教材/代码入口；作为共享来源保留，不据此合并不同BV。"
+    },
+    {
+      "kind": "slides",
+      "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-4_1.pdf",
+      "rowIds": [
+        "row090",
+        "row101"
+      ],
+      "lectureIds": [
+        "lec64",
+        "lec71"
+      ],
+      "assessment": "不同主题复用同一PDF路径；尚未获取PDF核对，不能确定是共享材料还是源站链接错误。"
+    },
+    {
+      "kind": "slides",
+      "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-4_2.pdf",
+      "rowIds": [
+        "row091",
+        "row102"
+      ],
+      "lectureIds": [
+        "lec65",
+        "lec72"
+      ],
+      "assessment": "不同主题复用同一PDF路径；尚未获取PDF核对，不能确定是共享材料还是源站链接错误。"
+    },
+    {
+      "kind": "slides",
+      "url": "https://courses.d2l.ai/zh-v2/assets/pdfs/part-4_3.pdf",
+      "rowIds": [
+        "row092",
+        "row103"
+      ],
+      "lectureIds": [
+        "lec66",
+        "lec73"
+      ],
+      "assessment": "不同主题复用同一PDF路径；尚未获取PDF核对，不能确定是共享材料还是源站链接错误。"
+    }
+  ],
+  "followUpBoundary": "后续视频/字幕获取与逐讲内容生成须多agent并行分工，主agent整合并核对原链接异常；本轮只交付课表规划和源索引，不创建notes/draft/materials或实验正文。"
+}

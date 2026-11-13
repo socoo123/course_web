@@ -1,0 +1,23 @@
+继续 content/d2l-pytorch-2021，下一批范围为 LEC15–21 和 mlp-generalization 实验。先读 status.json、sources/PLAN.txt、sources/p2-manifest.json、sources/p1-shared/book-version.json、resources.zh.md，再读对应 schedule-inventory / book-inventory / outline-plan / practice-plan。必须读取 skill://technical-video-notes，只改content/。
+
+交付约定（用户2026-11-13追加，覆盖旧“不提交、不推送”）：每批写完，主agent汇总、统一验收、提交并推送本批内容到现有GitHub仓库 https://github.com/socoo123/course_web 的main，再给用户下一批可直接使用的提示词。子agent不提交推送；不夹带无关改动，不改src。main推送会触发已有Pages工作流。sources默认被gitignore，本次为可恢复接力显式保存课程索引、版本、来源原件和验收记录；今后只按明确清单保存必要证据，不能提交数据集、虚拟环境、模型权重、临时验收脚本或凭据。
+
+用户目标不变：工程路线、数学遗忘、无精力刷论文；完整学李沐2021中文PyTorch课程后再学CS336，不删CNN/RNN/CV，不增加整门前置课。基础/硬件扩展/历史竞赛分开，AI不代写完整实验答案。
+
+已验收不重做：LEC1–14的14份教材导读notes与14张自绘SVG；tensor-autograd与linear-training各有lab.zh.md/guide.zh.md，两项均保留原四任务。P1证据在p1-manifest，P2在p2-manifest及p2-shared。它们不是视频课堂笔记；14BV共46P元数据已核实，公开player字幕均成功空列表，未下载/观看音视频、未核实演示与QA。draft持续阻塞且不建占位；materials为not_required，必要中文教材定位在notes。UI仍显示待生成是现有限制，不为消标签造重复文。
+
+P2来源关键点：新增7BV/28P共27416秒；LEC10真实4P依次感知机/多层感知机/代码实现/QA，原课表两种实现仍共?p=3，不改到P4；仅元数据无法判定P3内部覆盖与起止时间。全部copyright=1；LEC8–10 no_reprint=1，LEC11–14=0，0不代表开放转录许可。公共资料保留103原课表入口并增加46真实分P入口。
+
+教材继续固定 d2l-ai/d2l-zh e6b18ccea71451a55fcd861d7b96fddf2587b09a，当前中文第二版源码，非2021教材快照。P2讲次已审读3.1–3.7、4.1–4.6与4.8全文并重点解读PyTorch；实验只声明manifest中节选范围。4.7、4.9及后续不能冒称已读。原始源码用.txt存sources，不用.md；中文不重译。根LICENSE Apache-2.0与setup.py包字段MIT-0分别记录，不外推视频/数据/第三方图片。
+
+P2实际环境：macOS arm64、Python3.11.8、torch2.5.1、torchvision0.20.1、numpy1.26.4、pandas2.2.3，CPU；未安装d2l/Jupyter。P1临时环境已消失，P2新建过隔离环境，恢复时先查真实可用性，不假设/tmp仍在。P2依赖完整快照及命令在p2-shared/runtime-verification.json、runtime-freeze.txt、install.log。不能把旧d2l依赖直接混装。
+
+P2验证范围：12个笔记片段实际执行并匹配解析预期；独立回归一步SGD、稳定CE、尾批、模式/梯度、L2、Dropout、标量梯度和两样本失败夹具通过。真实Fashion-MNIST四gzip由官方GitHub HTTPS raw下载、核对MD5/IDX后放运行时cache，以download=False读取；未尝试旧S3镜像，不声称它成功或失效。官方训练池拆55000/5000候选，再取257/73，B64、lr0.01、5轮25更新；训练损失2.303871→1.974106，验证损失2.118220、13/73正确，仅是小基线。初稿lr0.1未通过末轮损失下降断言，保留first-runtime-attempt.json；只调整基础学习率、保持数据和验收后通过。未完成40轮两套回归作业、验证标签干预完整重训、全量训练/测试、旧Notebook、GPU/CUDA/MPS。数据、模型和临时验收脚本未发布。
+
+下一批必须多agent并行（不是工具并行）：建议A拥有lec15–lec18及sources/p3-lec15–18，B拥有lec19–lec21及sources/p3-lec19–21，C拥有labs/mlp-generalization及sources/p3-mlp-generalization。每讲notes/draft/materials同一owner；主agent独占course/status/resources/共享清单。先核实各BV全部P和字幕，再生成有证据内容。LEC15/18要区分教材Ames房价与2021加州房价竞赛；LEC17按真实硬件说明CPU/CUDA/MPS边界，不把无GPU实测说成完成。实验四任务以course/practice-plan为准，全部保留，历史竞赛独立标扩展。
+
+既有空字幕接口不要反复刷；仅出现合法可取得、视频身份/分P/时间轴匹配的新课堂来源时补draft。不绕登录风控，不默认下载媒体，不用教材或搜索摘要伪造讲授、时间码和QA。
+
+质量与统一验收：frontmatter含source/video(适用时)/license/status，正文从学习内容开始，来源与缺口页底。公式$$独占行；P2手机长公式已改aligned逐行，勿恢复超宽一行。SVG通过img加载，使用currentColor后备和prefers-color-scheme深色反相，无背景/脚本，title/desc齐全。图片懒加载，浏览器验证要先滚入视口再等加载，不因未滚动而误判损坏。子agent不跑build/lint/tests/formatter；主agent整合后统一CPU场景、npm run build及真实浏览器验收图/公式/来源/标签/实验/移动端，关闭验证tab。网站构建与实验运行分别记录。遇失败保留证据并修正原因，不弱化验收。
+
+收尾：更新status、批次源清单、PLAN与本交接，删除临时脚本，主agent提交推送后返回提交链接及下一批提示词。剩余完整范围为lec15–lec73共59讲与10项实验；已有lec01–14的draft仍阻塞，不以文件数或构建成功宣称课堂全部完成。只改content；B站按钮、xv6命令框、not_required标签限制仍不改src。

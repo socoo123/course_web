@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 485" role="img" aria-labelledby="title desc">
+  <title id="title">Dropout的训练分支、期望和推理路径</title>
+  <desc id="desc">固定激活h等于3，丢弃概率四分之一。训练时四分之一概率输出0，四分之三概率输出4，均值3，方差3；推理时恒等输出3。经过平方非线性后，训练平均输出12，不等于推理输出9。</desc>
+  <style>@media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <g font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" fill="currentColor" font-size="18">
+    <text x="24" y="34" font-size="23" font-weight="700">p 是丢弃概率；训练已缩放，推理不再缩放</text>
+    <g stroke="currentColor" stroke-width="2" fill="none">
+      <rect x="25" y="143" width="150" height="75" rx="8"/>
+      <rect x="365" y="82" width="210" height="65" rx="8"/>
+      <rect x="365" y="215" width="210" height="65" rx="8"/>
+      <rect x="670" y="143" width="205" height="95" rx="8"/>
+      <path d="M175 180 H230 V114 H355 M230 180 V247 H355" marker-end="url(#arrow)"/>
+      <path d="M575 114 H630 V173 H660 M575 247 H630 V208 H660" marker-end="url(#arrow)"/>
+      <path d="M100 218 V335 H660" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+      <rect x="670" y="305" width="205" height="60" rx="8"/>
+      <path d="M25 390 H875"/>
+    </g>
+    <text x="60" y="174">固定激活</text><text x="68" y="203" font-weight="700">h = 3</text>
+    <text x="250" y="96" font-size="16">概率 1/4</text><text x="250" y="273" font-size="16">概率 3/4</text>
+    <text x="390" y="122">丢弃：输出 0</text>
+    <text x="382" y="254">保留：3 / 0.75 = 4</text>
+    <text x="692" y="180">训练均值 = 3</text><text x="692" y="215">训练方差 = 3</text>
+    <text x="250" y="327">eval：恒等映射</text><text x="702" y="342">推理输出 = 3</text>
+    <text x="27" y="421" font-weight="700">注意：保持激活期望，不等于保持非线性后的期望</text>
+    <text x="27" y="450">接平方函数：训练 E[h̃²] = 12；推理 h² = 9</text>
+    <text x="27" y="477" font-size="15">自拟解析例；p = 1 必须单独置零，不能代入除以 1 − p 的公式。</text>
+  </g>
+</svg>

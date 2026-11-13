@@ -1,0 +1,136 @@
+{
+  "lectureId": "lec07",
+  "acquiredAt": "2026-11-13T08:41:05.981587+00:00",
+  "sources": [
+    {
+      "kind": "video_metadata",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1KA411N7Px",
+      "path": "video-metadata.json",
+      "sha256": "cde54c65bec38b212a70d291e90847f90f7f7868acbca9fdd6a6b7c0e962d077",
+      "hashScope": "saved_minimized_evidence",
+      "retrievedAt": "2026-11-13T08:41:05.981587+00:00"
+    },
+    {
+      "kind": "textbook_source",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_preliminaries/autograd.md",
+      "path": "autograd-source.txt",
+      "sha256": "76cf9deb47500edb7b3c97af09a1e41dface5e5671658b2e68909fdbf60c53ec",
+      "retrievedAt": "2026-11-13T08:41:05.981587+00:00",
+      "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+      "version": "当前中文第二版固定master提交，不是2021快照",
+      "readScope": "完整中文源码；实现只取PyTorch分支概念，不复制整段示例"
+    }
+  ],
+  "supplementalReferences": {
+    "readOn": "2026-11-13",
+    "role": "编者API补充，非视频指定阅读；仅改写必要机制，未归档整页文档",
+    "version": "PyTorch 2.5",
+    "urls": [
+      "https://docs.pytorch.org/docs/2.5/notes/autograd.html",
+      "https://docs.pytorch.org/docs/2.5/generated/torch.Tensor.backward.html",
+      "https://docs.pytorch.org/docs/2.5/generated/torch.Tensor.detach.html",
+      "https://docs.pytorch.org/docs/2.5/generated/torch.Tensor.retain_grad.html",
+      "https://docs.pytorch.org/docs/2.5/generated/torch.optim.Optimizer.zero_grad.html",
+      "https://docs.pytorch.org/docs/2.5/generated/torch.no_grad.html"
+    ],
+    "readScope": "mechanics的计算图、叶张量、grad modes、原地操作相关节；五个API正文。未把复杂数或并发章节当作必读。"
+  },
+  "pages": [
+    {
+      "page": 1,
+      "cid": 313590656,
+      "part": "自动求导",
+      "duration": 700
+    },
+    {
+      "page": 2,
+      "cid": 315208016,
+      "part": "自动求导实现",
+      "duration": 402
+    },
+    {
+      "page": 3,
+      "cid": 315230365,
+      "part": "自动求导 QA",
+      "duration": 365
+    }
+  ],
+  "subtitleRequests": [
+    {
+      "page": 1,
+      "cid": 313590656,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1KA411N7Px&cid=313590656",
+      "retrievedAt": "2026-11-13T08:41:05.981587+00:00",
+      "responseSha256": "13f0144faeaac79df7140f7c8b1dbd23dd71b53e71f24d648c0ae3f9da8127a7",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": false,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 2,
+      "cid": 315208016,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1KA411N7Px&cid=315208016",
+      "retrievedAt": "2026-11-13T08:41:05.981587+00:00",
+      "responseSha256": "c100a24ab622c907f6236f870db56082632ca923eb83be7ac5d847b4fe512ee7",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": false,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 3,
+      "cid": 315230365,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1KA411N7Px&cid=315230365",
+      "retrievedAt": "2026-11-13T08:41:05.981587+00:00",
+      "responseSha256": "897140812f0c12ca73f0644cb72d165030405e96cdf36bb517d694ae05bcefec",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": false,
+      "subtitles": [],
+      "status": "empty_public_list"
+    }
+  ],
+  "license": {
+    "copyright": 1,
+    "noReprint": 1,
+    "interpretation": "平台原创与禁止转载标志；不是开放许可，未发现视频全文转录/翻译再发布授权。只保留元数据，独立改写教材导读。"
+  },
+  "textbookLicense": {
+    "name": "Apache-2.0",
+    "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/LICENSE",
+    "scope": "仓库许可由共享准备核实，不外推视频或第三方图"
+  },
+  "outputs": {
+    "notes": {
+      "status": "written",
+      "path": "lectures/lec07/notes.zh.md",
+      "type": "教材导读/编者笔记",
+      "videoContentVerified": false
+    },
+    "draft": {
+      "status": "blocked",
+      "reason": "所有P公开字幕列表为空，未获取音视频内容；无真实时间轴，不生成占位稿"
+    },
+    "materials": {
+      "status": "not_required",
+      "reason": "必要教材与API补充已在notes定点引用，不另做重复阅读稿"
+    },
+    "assets": {
+      "status": "written",
+      "path": "lectures/lec07/assets/autograd-lifecycle.svg"
+    }
+  },
+  "gaps": [
+    "课堂讲解和QA内容未核实",
+    "无逐段视频时间线",
+    "代码与公式数值待主agent统一验证"
+  ],
+  "verification": {
+    "build": "not_run_by_worker",
+    "numeric": "not_run_by_worker",
+    "browser": "not_run_by_worker"
+  }
+}

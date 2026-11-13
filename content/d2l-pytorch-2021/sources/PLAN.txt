@@ -1,0 +1,82 @@
+动手学深度学习 · PyTorch 2021：课程整理与后续生成交接
+
+一、用户已经确定的学习目标（2026-11-13）
+1. 用户走工程路线，不以算法研究或论文复现为目标，当前事情多，没有精力持续刷论文。
+2. 数学已遗忘，需要在课程内部补回向量/矩阵、梯度/链式法则、概率等；不得再次扩张成先修完线性代数、微积分、概率、CS229、CS224N的前置清单。
+3. 用户希望一门课程从头到尾学完。完整学习李沐《动手学深度学习》PyTorch中文课程，再学习CS336；不要为了“性价比”删掉CNN、计算机视觉、RNN、seq2seq、BERT或课程结尾。
+4. 完整学习课程与做完所有竞赛/大规模训练不同：保留全课程与官方竞赛入口，实践明确基础/硬件扩展/历史竞赛的性质，用户可选择适合自己的实验。不将历史排名、截止日期当作今天的必需目标。
+5. AI作为助教：解释符号、维度、设计取舍、数值例子和排错；实践指导给思路、验收和常见坑，不代写完整答案。
+6. 用户明确要求：后续实际抓课、生成内容必须使用多agent并行，不得退化为单agent串行。工具调用并行不等于多agent。
+
+二、P0规划阶段边界（已完成；不是后续正文生成禁令）
+P0只完成网站课程注册、完整课表、公共资料与内容大纲、实践目录和可恢复的源索引/交接。P1按下述多agent合同开始小批次抓取与正文生成，初始范围为lec01–lec07及tensor-autograd。全课仍为73讲，不以首批样本替代后续课程。sources/中不用.md后缀，避免上线。
+
+三、固定版本与入口
+courseId：d2l-pytorch-2021。
+课程主线：https://courses.d2l.ai/zh-v2/，2021中文PyTorch课程。
+教材：中文第二版 https://zh.d2l.ai/；历史课表的 https://zh-v2.d2l.ai/ 链接按原样保留。不要静默改用内容/编号不同的英文新版。
+元数据：../course.json。
+课表原快照：schedule-2021.html；逐行与讲次映射：schedule-inventory.json。
+教材目录与许可：book-inventory.json；教材/视频覆盖边界与大纲：outline-plan.json。
+实践来源与性质：practice-plan.json。
+状态入口：../status.json。
+公共资料：../resources.zh.md。
+上述索引是规划和导航证据，不表示已看过视频、全文教材或运行实验。
+
+四、后续多agent执行合同
+主agent先读AGENTS.md已注入内容、status.json、本文件与上述索引；真正处理视频内容前读取skill://technical-video-notes，沿用站内6.824的来源审计与非重复文档习惯。
+A. 共享准备由主agent完成：固定命名/版本、确认每讲视频ID和分P、确定已完成范围、派发互不重叠的讲次或实验目录。
+B. 先并行核实不同讲次组的真实视频元数据、分P页列表、可用字幕和授权；另一路可核对教材/练习的固定版本与运行环境。至少两个独立可执行slice使用task agents。只在真依赖处串行。
+C. 来源确认后，按连续讲次组并行生成，每个agent拥有自己的lectures/<id>/及对应sources子目录；实验agent拥有自己的labs/<id>/。同一讲三份文件尽量同一owner，避免重复和术语分裂。先做基础组与一个实践的质量样本，再按同一合同扩大，不以样本替代全课。
+D. 只有主agent改catalog.json、course.json、resources.zh.md、status.json以及共享清单。子agent交付来源覆盖/实际产出/缺口/验证证据，主agent合并与交叉检查。不要让多个agent同时改同一个索引。
+E. 每个agent中途不跑build/lint/formatter；主agent每批整合完成后统一构建并实际检查页面。实验代码若真的运行，另外记录运行环境、输入规模和观察结果，不能拿网站构建通过当实验通过。
+F. 抓取失败先用官方可达入口/合法字幕来源排查；不绕过登录、付费、风控，不归档cookies、token、带签名媒体URL。真实不可达项记录阻塞，继续独立可做的讲次。不得用教材或搜索摘要伪造视频讲授。
+
+五、视频与内容范围
+1. lec编号是站内编排编号，不冒充官方标题中的讲次编号。同一BV的不同P保留独立时间轴，查真实页列表后再判定重复/缺失。课表重复链接、重用P号和疑似错配PPT先记录，不凭标题猜地址。
+2. 中文视频不是英文视频：draft.zh.md沿站点命名沿用“中文译稿”标签，但正文明确为“中文课堂逐段整理”，不声称翻译或逐字稿。包含可辨认讲解、演示和问答；无字幕时不得编造时间码。未观看音视频与仅审阅字幕必须区分。
+3. notes.zh.md讲核心问题、必要数学、形状推演、设计取舍、实现陷阱和自测，不按视频顺序复述，不复制整段课堂演示代码。数学先定义符号、给小数值例子再抽象，不要求额外论文。
+4. materials.zh.md只承载课堂外确有必要的独立阅读。教材本来就是中文，不做“中文再翻译”；优先链接官方指定章节，必要内容在许可允许范围内整理并标明性质。课上已逐项讲过的PPT不能再写一份重复资料。没有独立阅读则状态标not_required，不为凑齐三个标签写空壳。
+5. 不自动展开每章参考文献，也不把CS336研究论文加入本课必读。明确“原课讲授”“教材补充”“编者解释”的边界。
+6. 课堂截图仅放draft；notes需要图时用assets/*.svg自绘。引用、视频、许可、状态信息放frontmatter或文末引用节；来源必须实际读取并核实，不假称全文审阅。
+7. 图、教材、代码、视频许可分别核实；不要把代码许可扩张到书文或把教材许可扩张到视频。
+
+六、实践正文合同
+lab.zh.md说明任务来源、目标、输入输出、约束和可观察验收；原文已经中文的习题注明改编整理，编者练习不得冒充官方Lab。guide.zh.md只给实现路线、排查方式、关键不变量和边界，不给完整解答。没有真实英文原文，不生成lab.en.md。
+基础算例先保证CPU能运行；GPU/多GPU练习、完整竞赛训练单独标硬件要求。不把CUDA支持等同于Apple MPS；性能测量注明设备、精度、同步、热身、输入规模。旧notebook与当前Python/PyTorch/d2l包兼容性须实际检查再给安装命令，不能猜固定依赖版本。未运行时不得写“已验证可运行”。
+课内模型先跑通、解释机制，再加工程观测；不把追榜、全量BERT预训练或大规模训练设为入门门槛。
+
+七、现有网站限制（内容范围内处理）
+Lecture.video类型包含bilibili，但src/pages/Lecture.tsx的按钮和引用目前只将youtube渲染为链接。本轮不改src；公共资料完整课表提供可点击B站链接。后续不得把B站地址塞进youtube字段伪装平台。
+Lab.tsx的常用命令固定输出git checkout / make qemu / make grade，仅适用于xv6，不适用本课。公共资料与实验goal必须显式提醒忽略此框，不伪造D2L分支或grade命令。后续如获用户单独授权可做UI修复，本内容任务不改src。
+
+八、每批验收与恢复
+- 对照inventory确认全部分P和指定教材范围，保存真实抓取状态与日期；核对时长、时间轴、术语、公式、链接和跨讲复用。
+- 更新status.json：planned/acquired/written/verified分开；未取得字幕、未授权材料、未运行代码分别记录，不用一个complete掩盖缺口。
+- 不以“文件非空”或“生成数量”证明教学质量。检查用户能否按资料解释机制并独立完成小实践。
+- 主agent运行npm run build，再用真实浏览器打开课程首页、代表讲次/实验，检查链接、标签、目录和图；关闭验证用tab。
+- 只修改content/，保持用户已有更改。用户于2026-11-13追加交付约定：每批写完后，主agent负责汇总、统一验收、提交并推送本批内容到现有GitHub仓库，再提供下一批可直接使用的提示词；子agent不得提交或推送。此约定替代先前“不提交、不推送”的限制。不夹带无关改动；若课程注册或已验收前批尚未入库，作为发布前置一并保存，不重做其内容。
+- 完成本批后把精确剩余讲次/阻塞/下一批并行分工写入status与交接，便于再次清理上下文。
+
+九、P1实际结果（2026-11-13）
+- 多agent分工：Orientation拥有lec01–03；TensorNotes拥有lec04–05；CalculusNotes拥有lec06–07；TensorPractice拥有tensor-autograd。主agent完成共享版本、环境、索引、数值和页面验收。
+- 生成7份教材导读notes、7张SVG及1项实践的说明/指导，共9份新Markdown；不生成无来源draft或重复materials。全课73讲/12实践不变。
+- 已核实7BV全部18P，共9956秒，包含课表未单列的实现与QA。18个公开player请求均成功且字幕列表为空。未下载/观看媒体，不知道实际讲授与QA，不猜时间线；元数据不等于课堂内容覆盖。
+- 中文教材固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a；版本/许可/安装约束证据见p1-shared/book-version.json。四份原始inventory仍保留P0规划快照语义，实际获取以p1-manifest.json和status为准。
+- CPU实测：Python3.11.8/torch2.5.1/numpy1.26.4/pandas2.2.3，macOS arm64；8个笔记片段、指定解析小例与独立实践机制烟测通过。依赖下载首次300秒超时，复用缓存后安装成功。没有运行d2l、torchvision、Notebook、GPU、完整学生作业或模型训练。
+- npm run build一次通过；真实Chromium验收七讲图示、公式、页底来源、折叠自测、缺稿标签及实验双标签、公共资料。修复LEC5多行$$围栏和七图外链SVG深色对比度；SVG主题仅在content内处理。1440px桌面与390px移动端所查页面无横向溢出。浏览器验收使用Vite开发服务，非部署测试。
+- 证据：p1-manifest.json、p1-shared/content-check.json、practice-smoke.json、notes-smoke.json、runtime-verification.json、runtime-freeze.txt、browser-check.json、build.log。临时烟测脚本已删除；不提供学生完整答案。
+- 剩余：lec08–lec73的66讲笔记/视频抓取及11项实践正文；lec01–07的draft持续阻塞，materials为not_required。下一批连续分工lec08–10、lec11–14、linear-training，特别核实lec10同P3歧义。不要重做已验收笔记。
+- 页面仍有三项内容任务外限制：B站按钮未渲染；xv6命令框不适用；not_required材料仍显示待生成。公共资料和正文已明确，不修改src，不用空壳文件掩盖限制。
+
+十、P2实际结果（2026-11-13）
+- 多agent并行：LinearMlpNotes负责lec08–10；GeneralizationNotes负责lec11–14；LinearPractice负责linear-training。主agent汇总共享状态、数值、构建和页面验收。已验收P1笔记/实验未重做。
+- 新增7份教材导读notes、7张自绘SVG及linear-training实验说明/指导。全部四任务保留，无完整学生解答。累计14份notes/14图/4份实验文档，73讲/12实践/48任务不变。
+- 新核实7BV/28P=27416秒，公开player均成功空列表；未下载/观看媒体，无演示或QA核实，不造draft或时间码。materials为not_required。LEC10真实P3“代码实现”、P4“QA”，两课表实现入口仍共P3，内部覆盖仍阻塞；不是发现“错链到P4”。LEC11–14的no_reprint=0，不等于开放授权。
+- 固定教材3.1–3.7、4.1–4.6及4.8已审读，PyTorch为实现主线；实验保留精确节选范围。4.7/4.9及后续未读，不外推全书。28项manifest原件哈希、7SVG XML/本地引用、正文公式围栏及四任务检查通过。
+- P2新建隔离CPU环境：Python3.11.8/torch2.5.1/torchvision0.20.1/numpy1.26.4/pandas2.2.3，macOS arm64。12个独立笔记片段输出匹配解析预期；前置机制断言通过。初稿Fashion小基线lr0.1未满足末轮训练损失低于初始值，实际损失值未在失败前保存，不编造；保留失败记录，改lr0.01后只复验失败场景及后续尚未运行片段，验收条件未削弱。
+- 真实Fashion-MNIST官方四gzip的MD5/IDX核验通过，只存运行时cache，download=False读取。固定257训练/73验证、B64、5epochs25updates；训练损失2.303871→1.974106，末轮验证2.118220/13正确。验证参数与既有梯度不变，B32/B64评估一致。测试集只核文件头，不参与训练或调参；没有声称完成全部学生作业、全量训练、旧Notebook、GPU/MPS或默认S3下载。
+- npm run build一次通过（tsc + Vite5.4.21，2936modules，5.57s）。真实Chromium验收7张图、公式、页底来源、折叠答案、缺稿标签及实验双标签；修复5讲390px长公式横向溢出，代表暗色图可读，公共资料149视频入口。首次懒加载图未滚动即等待导致工具超时，重开tab并滚入视口后正常；最终tab无错误，不能把此记录外推为部署验收。
+- 证据见sources/p2-manifest.json与p2-shared的content-check/browser-check/practice-smoke/notes-smoke/runtime-verification/dataset-acquisition/first-runtime-attempt、runtime-freeze及build.log。临时验收脚本已删除；不提交数据集、虚拟环境或模型权重。
+- 本轮用户追加每批由主agent汇总验收、提交推送GitHub，再给下一批提示词。课程注册与P0/P1内容原先尚未入库，作为发布前置一并保存，不重做；只提交content内本课程和catalog注册，不改src。必要sources索引/原件/证据按明确清单保存以支持下次接力，不能盲目强制添加运行时大文件或凭据。
+- 下一批lec15–21 + mlp-generalization：A负责lec15–18，B负责lec19–21，C负责实验。保留全课剩余lec15–73的59讲/10实验；已有14讲draft继续阻塞。房价章节要区分Ames教材案例与2021加州竞赛，GPU按实际设备验证。

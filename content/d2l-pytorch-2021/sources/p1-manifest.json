@@ -1,0 +1,513 @@
+{
+  "schemaVersion": 1,
+  "batch": "P1",
+  "courseId": "d2l-pytorch-2021",
+  "date": "2026-11-13",
+  "scope": "lec01–lec07 + tensor-autograd first quality batch; all 73 lectures remain in curriculum",
+  "parallelOwners": {
+    "Orientation": [
+      "lec01",
+      "lec02",
+      "lec03"
+    ],
+    "TensorNotes": [
+      "lec04",
+      "lec05"
+    ],
+    "CalculusNotes": [
+      "lec06",
+      "lec07"
+    ],
+    "TensorPractice": [
+      "tensor-autograd"
+    ]
+  },
+  "bookVersion": "sources/p1-shared/book-version.json",
+  "lectures": [
+    {
+      "lectureId": "lec01",
+      "metadata": "sources/p1-lec01/video-metadata.json",
+      "sourceFragment": "sources/p1-lec01/manifest-fragment.json",
+      "bvid": "BV1oX4y137bC",
+      "title": "01 课程安排【动手学深度学习v2】",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI"
+      },
+      "publishedAtUTC": "2021-03-20T20:38:07+00:00",
+      "durationSeconds": 488,
+      "pages": [
+        {
+          "page": 1,
+          "cid": 313097645,
+          "title": "课程安排",
+          "durationSeconds": 488,
+          "url": "https://www.bilibili.com/video/BV1oX4y137bC?p=1",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1oX4y137bC&cid=313097645",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        }
+      ],
+      "acquired": {
+        "videoMetadata": true,
+        "textbookSource": true,
+        "captions": false,
+        "media": false
+      },
+      "written": {
+        "notes": "lectures/lec01/notes.zh.md",
+        "draft": null,
+        "materials": null
+      },
+      "verified": {
+        "contentReview": true,
+        "browser": true,
+        "runtime": "shared_environment_or_concept_only"
+      },
+      "notesBasis": "editorial_textbook_guide_not_video_transcript",
+      "materialsStatus": "not_required",
+      "videoReuseLicense": "not_established_no_reprint_1"
+    },
+    {
+      "lectureId": "lec02",
+      "metadata": "sources/p1-lec02/video-metadata.json",
+      "sourceFragment": "sources/p1-lec02/manifest-fragment.json",
+      "bvid": "BV1J54y187f9",
+      "title": "02 深度学习介绍【动手学深度学习v2】",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI"
+      },
+      "publishedAtUTC": "2021-03-20T21:19:41+00:00",
+      "durationSeconds": 1377,
+      "pages": [
+        {
+          "page": 1,
+          "cid": 313098241,
+          "title": "深度学习介绍",
+          "durationSeconds": 814,
+          "url": "https://www.bilibili.com/video/BV1J54y187f9?p=1",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1J54y187f9&cid=313098241",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        },
+        {
+          "page": 2,
+          "cid": 315208857,
+          "title": "深度学习介绍 QA",
+          "durationSeconds": 563,
+          "url": "https://www.bilibili.com/video/BV1J54y187f9?p=2",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1J54y187f9&cid=315208857",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        }
+      ],
+      "acquired": {
+        "videoMetadata": true,
+        "textbookSource": true,
+        "captions": false,
+        "media": false
+      },
+      "written": {
+        "notes": "lectures/lec02/notes.zh.md",
+        "draft": null,
+        "materials": null
+      },
+      "verified": {
+        "contentReview": true,
+        "browser": true,
+        "runtime": "shared_environment_or_concept_only"
+      },
+      "notesBasis": "editorial_textbook_guide_not_video_transcript",
+      "materialsStatus": "not_required",
+      "videoReuseLicense": "not_established_no_reprint_1"
+    },
+    {
+      "lectureId": "lec03",
+      "metadata": "sources/p1-lec03/video-metadata.json",
+      "sourceFragment": "sources/p1-lec03/manifest-fragment.json",
+      "bvid": "BV18p4y1h7Dr",
+      "title": "03 安装【动手学深度学习v2】",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI"
+      },
+      "publishedAtUTC": "2021-03-20T21:42:11+00:00",
+      "durationSeconds": 1197,
+      "pages": [
+        {
+          "page": 1,
+          "cid": 313098817,
+          "title": "安装",
+          "durationSeconds": 966,
+          "url": "https://www.bilibili.com/video/BV18p4y1h7Dr?p=1",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV18p4y1h7Dr&cid=313098817",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        },
+        {
+          "page": 2,
+          "cid": 315210492,
+          "title": "安装 QA",
+          "durationSeconds": 231,
+          "url": "https://www.bilibili.com/video/BV18p4y1h7Dr?p=2",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV18p4y1h7Dr&cid=315210492",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        }
+      ],
+      "acquired": {
+        "videoMetadata": true,
+        "textbookSource": true,
+        "captions": false,
+        "media": false
+      },
+      "written": {
+        "notes": "lectures/lec03/notes.zh.md",
+        "draft": null,
+        "materials": null
+      },
+      "verified": {
+        "contentReview": true,
+        "browser": true,
+        "runtime": "shared_environment_or_concept_only"
+      },
+      "notesBasis": "editorial_textbook_guide_not_video_transcript",
+      "materialsStatus": "not_required",
+      "videoReuseLicense": "not_established_no_reprint_1"
+    },
+    {
+      "lectureId": "lec04",
+      "metadata": "sources/p1-lec04/video-metadata.json",
+      "sourceFragment": "sources/p1-lec04/manifest-fragment.json",
+      "bvid": "BV1CV411Y7i4",
+      "title": "04 数据操作 + 数据预处理【动手学深度学习v2】",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI"
+      },
+      "publishedAtUTC": "2021-03-20T21:05:25+00:00",
+      "durationSeconds": 2058,
+      "pages": [
+        {
+          "page": 1,
+          "cid": 313098862,
+          "title": "数据操作",
+          "durationSeconds": 281,
+          "url": "https://www.bilibili.com/video/BV1CV411Y7i4?p=1",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1CV411Y7i4&cid=313098862",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        },
+        {
+          "page": 2,
+          "cid": 315213848,
+          "title": "数据操作实现",
+          "durationSeconds": 875,
+          "url": "https://www.bilibili.com/video/BV1CV411Y7i4?p=2",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1CV411Y7i4&cid=315213848",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        },
+        {
+          "page": 3,
+          "cid": 315243179,
+          "title": "数据预处理实现",
+          "durationSeconds": 446,
+          "url": "https://www.bilibili.com/video/BV1CV411Y7i4?p=3",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1CV411Y7i4&cid=315243179",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        },
+        {
+          "page": 4,
+          "cid": 315221402,
+          "title": "数据操作 QA",
+          "durationSeconds": 456,
+          "url": "https://www.bilibili.com/video/BV1CV411Y7i4?p=4",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1CV411Y7i4&cid=315221402",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        }
+      ],
+      "acquired": {
+        "videoMetadata": true,
+        "textbookSource": true,
+        "captions": false,
+        "media": false
+      },
+      "written": {
+        "notes": "lectures/lec04/notes.zh.md",
+        "draft": null,
+        "materials": null
+      },
+      "verified": {
+        "contentReview": true,
+        "browser": true,
+        "runtime": "eight_published_blocks_and_selected_numeric_examples"
+      },
+      "notesBasis": "editorial_textbook_guide_not_video_transcript",
+      "materialsStatus": "not_required",
+      "videoReuseLicense": "not_established_no_reprint_1"
+    },
+    {
+      "lectureId": "lec05",
+      "metadata": "sources/p1-lec05/video-metadata.json",
+      "sourceFragment": "sources/p1-lec05/manifest-fragment.json",
+      "bvid": "BV1eK4y1U7Qy",
+      "title": "05 线性代数【动手学深度学习v2】",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI"
+      },
+      "publishedAtUTC": "2021-03-20T21:20:08+00:00",
+      "durationSeconds": 2494,
+      "pages": [
+        {
+          "page": 1,
+          "cid": 313099180,
+          "title": "线性代数",
+          "durationSeconds": 543,
+          "url": "https://www.bilibili.com/video/BV1eK4y1U7Qy?p=1",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1eK4y1U7Qy&cid=313099180",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        },
+        {
+          "page": 2,
+          "cid": 315218005,
+          "title": "线性代数实现",
+          "durationSeconds": 771,
+          "url": "https://www.bilibili.com/video/BV1eK4y1U7Qy?p=2",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1eK4y1U7Qy&cid=315218005",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        },
+        {
+          "page": 3,
+          "cid": 315221013,
+          "title": "按特定轴求和",
+          "durationSeconds": 451,
+          "url": "https://www.bilibili.com/video/BV1eK4y1U7Qy?p=3",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1eK4y1U7Qy&cid=315221013",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        },
+        {
+          "page": 4,
+          "cid": 315224660,
+          "title": "线性代数 QA",
+          "durationSeconds": 729,
+          "url": "https://www.bilibili.com/video/BV1eK4y1U7Qy?p=4",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1eK4y1U7Qy&cid=315224660",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        }
+      ],
+      "acquired": {
+        "videoMetadata": true,
+        "textbookSource": true,
+        "captions": false,
+        "media": false
+      },
+      "written": {
+        "notes": "lectures/lec05/notes.zh.md",
+        "draft": null,
+        "materials": null
+      },
+      "verified": {
+        "contentReview": true,
+        "browser": true,
+        "runtime": "eight_published_blocks_and_selected_numeric_examples"
+      },
+      "notesBasis": "editorial_textbook_guide_not_video_transcript",
+      "materialsStatus": "not_required",
+      "videoReuseLicense": "not_established_no_reprint_1"
+    },
+    {
+      "lectureId": "lec06",
+      "metadata": "sources/p1-lec06/video-metadata.json",
+      "sourceFragment": "sources/p1-lec06/manifest-fragment.json",
+      "bvid": "BV1eZ4y1w7PY",
+      "title": "06 矩阵计算【动手学深度学习v2】",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI"
+      },
+      "publishedAtUTC": "2021-03-21T23:47:10+00:00",
+      "durationSeconds": 875,
+      "pages": [
+        {
+          "page": 1,
+          "cid": 313590482,
+          "title": "矩阵计算",
+          "durationSeconds": 758,
+          "url": "https://www.bilibili.com/video/BV1eZ4y1w7PY?p=1",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1eZ4y1w7PY&cid=313590482",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        },
+        {
+          "page": 2,
+          "cid": 315218355,
+          "title": "矩阵计算 QA",
+          "durationSeconds": 117,
+          "url": "https://www.bilibili.com/video/BV1eZ4y1w7PY?p=2",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1eZ4y1w7PY&cid=315218355",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        }
+      ],
+      "acquired": {
+        "videoMetadata": true,
+        "textbookSource": true,
+        "captions": false,
+        "media": false
+      },
+      "written": {
+        "notes": "lectures/lec06/notes.zh.md",
+        "draft": null,
+        "materials": null
+      },
+      "verified": {
+        "contentReview": true,
+        "browser": true,
+        "runtime": "eight_published_blocks_and_selected_numeric_examples"
+      },
+      "notesBasis": "editorial_textbook_guide_not_video_transcript",
+      "materialsStatus": "not_required",
+      "videoReuseLicense": "not_established_no_reprint_1"
+    },
+    {
+      "lectureId": "lec07",
+      "metadata": "sources/p1-lec07/video-metadata.json",
+      "sourceFragment": "sources/p1-lec07/manifest-fragment.json",
+      "bvid": "BV1KA411N7Px",
+      "title": "07 自动求导【动手学深度学习v2】",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI"
+      },
+      "publishedAtUTC": "2021-03-21T23:47:09+00:00",
+      "durationSeconds": 1467,
+      "pages": [
+        {
+          "page": 1,
+          "cid": 313590656,
+          "title": "自动求导",
+          "durationSeconds": 700,
+          "url": "https://www.bilibili.com/video/BV1KA411N7Px?p=1",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1KA411N7Px&cid=313590656",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        },
+        {
+          "page": 2,
+          "cid": 315208016,
+          "title": "自动求导实现",
+          "durationSeconds": 402,
+          "url": "https://www.bilibili.com/video/BV1KA411N7Px?p=2",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1KA411N7Px&cid=315208016",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        },
+        {
+          "page": 3,
+          "cid": 315230365,
+          "title": "自动求导 QA",
+          "durationSeconds": 365,
+          "url": "https://www.bilibili.com/video/BV1KA411N7Px?p=3",
+          "subtitleRequestUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1KA411N7Px&cid=315230365",
+          "subtitleResponseCode": 0,
+          "subtitleCount": 0,
+          "captionStatus": "empty_public_list",
+          "contentReviewed": false
+        }
+      ],
+      "acquired": {
+        "videoMetadata": true,
+        "textbookSource": true,
+        "captions": false,
+        "media": false
+      },
+      "written": {
+        "notes": "lectures/lec07/notes.zh.md",
+        "draft": null,
+        "materials": null
+      },
+      "verified": {
+        "contentReview": true,
+        "browser": true,
+        "runtime": "eight_published_blocks_and_selected_numeric_examples"
+      },
+      "notesBasis": "editorial_textbook_guide_not_video_transcript",
+      "materialsStatus": "not_required",
+      "videoReuseLicense": "not_established_no_reprint_1"
+    }
+  ],
+  "lab": {
+    "labId": "tensor-autograd",
+    "sourceFragment": "sources/p1-tensor-autograd/manifest-fragment.json",
+    "written": [
+      "labs/tensor-autograd/lab.zh.md",
+      "labs/tensor-autograd/guide.zh.md"
+    ],
+    "execution": "passed_independent_cpu_mechanism_smoke_not_student_solution"
+  },
+  "counts": {
+    "bvids": 7,
+    "parts": 18,
+    "durationSeconds": 9956,
+    "notes": 7,
+    "drafts": 0,
+    "materials": 0,
+    "labDocuments": 2
+  },
+  "boundary": "公开字幕空列表不证明没有烧录字幕；未观看音视频、未整理QA、不猜时间码。根许可证不外推视频。",
+  "verification": {
+    "content": "sources/p1-shared/content-check.json",
+    "runtime": "sources/p1-shared/runtime-verification.json",
+    "build": "sources/p1-shared/build.log",
+    "browser": "sources/p1-shared/browser-check.json",
+    "status": "passed_with_video_gaps",
+    "reviewFixes": [
+      "lec06/lec07 date label corrected to UTC+8",
+      "SVG external-image theme contrast and variable fallbacks",
+      "lec05 multiline display-math fences"
+    ]
+  }
+}

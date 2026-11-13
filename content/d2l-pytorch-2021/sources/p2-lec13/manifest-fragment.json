@@ -1,0 +1,198 @@
+{
+  "lectureId": "lec13",
+  "acquiredAt": "2026-11-13T09:16:40.654787+00:00",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "bookVersionBoundary": "当前中文第二版固定源码，非2021教材快照",
+  "bookSources": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/dropout.md",
+      "localPath": "sources/p2-lec13/book-dropout.txt",
+      "sha256": "6beb8adc1f1448146751f71a4d22b78a3548ff7493d42e375767cd8287a7105b",
+      "reviewedScope": "4.6全文（1–549行）：过拟合、扰动、缩放、训练推理、从零与简洁实现、小结和练习；重点PyTorch的p=0/1分支、掩码及self.training；未运行Fashion-MNIST。",
+      "branch": "PyTorch重点；共享文字全文，非其他框架执行结果"
+    }
+  ],
+  "videoMetadataPath": "sources/p2-lec13/video-metadata.json",
+  "pages": [
+    {
+      "page": 1,
+      "cid": 325656869,
+      "part": "丢弃法",
+      "duration": 719
+    },
+    {
+      "page": 2,
+      "cid": 325657525,
+      "part": "代码实现",
+      "duration": 736
+    },
+    {
+      "page": 3,
+      "cid": 325666689,
+      "part": "QA",
+      "duration": 1492
+    }
+  ],
+  "subtitleRequests": [
+    {
+      "page": 1,
+      "cid": 325656869,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1Y5411c7aY&cid=325656869",
+      "retrievedAt": "2026-11-13T09:16:40.751815+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 2,
+      "cid": 325657525,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1Y5411c7aY&cid=325657525",
+      "retrievedAt": "2026-11-13T09:16:40.941888+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 3,
+      "cid": 325666689,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1Y5411c7aY&cid=325666689",
+      "retrievedAt": "2026-11-13T09:16:41.128734+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    }
+  ],
+  "license": {
+    "copyright": 1,
+    "noReprint": 0,
+    "interpretation": "copyright=1为平台原创标志；no_reprint=0只表示该禁止转载标志未置位，0也不代表开放许可，未发现视频全文转录再发布授权。"
+  },
+  "textbookLicense": {
+    "name": "Apache-2.0",
+    "evidencePath": "sources/p1-shared/book-version.json",
+    "boundary": "固定仓库根许可与setup.py包MIT-0字段分别记录；均不外推视频或第三方素材"
+  },
+  "supplementalReferences": {
+    "readOn": "2026-11-13",
+    "entries": [
+      {
+        "url": "https://pytorch.org/docs/2.5/generated/torch.nn.Dropout.html",
+        "reviewedScope": "API正文、训练缩放、推理恒等、参数与输入输出形状",
+        "role": "编者必要API补充，非视频指定阅读"
+      }
+    ],
+    "paperTasksAdded": false
+  },
+  "outputs": {
+    "notes": {
+      "status": "written_cpu_and_browser_checked",
+      "path": "lectures/lec13/notes.zh.md",
+      "type": "教材导读/编者笔记",
+      "videoContentVerified": false
+    },
+    "draft": {
+      "status": "blocked",
+      "reason": "全部分P公开player字幕成功返回空列表；未下载/观看媒体，缺真实课堂时间轴，不建占位稿"
+    },
+    "materials": {
+      "status": "not_required",
+      "reason": "必要教材和API范围已在notes页底定位，无须独立重复阅读文件"
+    },
+    "assets": {
+      "status": "written_browser_checked",
+      "path": "lectures/lec13/assets/dropout-expectation.svg",
+      "type": "编者自绘SVG，非课堂截图"
+    }
+  },
+  "gaps": [
+    "所有分P公开字幕列表为空；未观看音视频，讲授/演示/QA与时间轴未核实；空列表不证明其他字幕不存在。",
+    "draft持续阻塞，不创建占位；materials不需要另文。",
+    "教材完整训练、历史Notebook、完整学生作业与GPU/CUDA/MPS均未运行；小机制验证不可外推。"
+  ],
+  "handCalculations": [
+    "h=3,p=.25：输出0/4概率.25/.75，均值3、方差3、二阶矩12",
+    "非线性平方后的平均12不等于均值平方9",
+    "h=2,p=.5：0/4各半，均值2、方差4",
+    "p=1是全置零边界，非零输入不保持期望"
+  ],
+  "planningEvidence": {
+    "scheduleInventory": "sources/schedule-inventory.json",
+    "bookInventory": "sources/book-inventory.json",
+    "outlinePlan": "sources/outline-plan.json",
+    "practicePlan": "sources/practice-plan.json",
+    "reviewedPractice": "linear-training任务边界；不代写完整实验"
+  },
+  "scopeBoundary": "仅本讲lectures与sources/p2目录；不修改共享索引，不提交推送",
+  "codeChecks": [
+    {
+      "block": 1,
+      "section": "2. 为什么保留下来的数要除以1-p",
+      "mechanism": "穷举标量Dropout分布",
+      "expected": {
+        "mean": 3.0,
+        "variance": 3.0,
+        "secondMoment": 12.0
+      },
+      "path": "lectures/lec13/notes.zh.md",
+      "status": "passed_cpu_by_main",
+      "runtime": "CPU/PyTorch; no d2l, torchvision, datasets or GPU required",
+      "evidence": "sources/p2-shared/notes-smoke.json"
+    },
+    {
+      "block": 2,
+      "section": "4. 边界要单独想，不能让公式除以零",
+      "mechanism": "确定掩码局部梯度及nn.Dropout端点/评估",
+      "expected": {
+        "maskedOutput": [
+          4.0,
+          0.0
+        ],
+        "inputGradient": [
+          2.0,
+          0.0
+        ],
+        "p0Train": [
+          1.0,
+          -2.0
+        ],
+        "p1Train": [
+          0.0,
+          0.0
+        ],
+        "p075Eval": [
+          1.0,
+          -2.0
+        ],
+        "signedZeroIgnored": true
+      },
+      "path": "lectures/lec13/notes.zh.md",
+      "status": "passed_cpu_by_main",
+      "runtime": "CPU/PyTorch; no d2l, torchvision, datasets or GPU required",
+      "evidence": "sources/p2-shared/notes-smoke.json"
+    }
+  ],
+  "workerVerification": {
+    "build": "not_run_by_worker",
+    "numeric": "not_run_by_worker",
+    "browser": "not_run_by_worker",
+    "lint": "not_run_by_worker",
+    "formatter": "not_run_by_worker"
+  },
+  "verification": {
+    "content": "reviewed_by_main",
+    "cpu": "published_independent_blocks_executed_and_outputs_matched",
+    "browser": "desktop_1440_and_mobile_390_checked; formula_overflow_repaired_where_needed",
+    "siteBuildAndSourceChecks": "authoritative result in sources/p2-manifest.json",
+    "evidence": [
+      "sources/p2-shared/notes-smoke.json",
+      "sources/p2-shared/browser-check.json",
+      "sources/p2-shared/content-check.json"
+    ]
+  }
+}

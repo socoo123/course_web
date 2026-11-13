@@ -1,0 +1,175 @@
+{
+  "date": "2026-11-13",
+  "browser": "managed Chromium",
+  "server": "Vite development, not deployed site",
+  "pages": [
+    {
+      "route": "lab/linear-training",
+      "views": [
+        "zh",
+        "guide"
+      ],
+      "allFourTaskIds": true,
+      "guideDetailsOpened": true,
+      "englishTabAbsent": true,
+      "mathErrors": 0,
+      "desktopOverflow": false,
+      "xv6WarningPresent": true,
+      "mobileViewport": [
+        390,
+        844
+      ],
+      "mobileOverflow": false
+    },
+    {
+      "route": "lec/lec09",
+      "desktop": {
+        "math": 44,
+        "mathErrors": [],
+        "sourceAtBottom": "引用与来源",
+        "overflow": false,
+        "details": 1
+      },
+      "mobile": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mathErrors": 0,
+        "wideMath": []
+      }
+    },
+    {
+      "route": "lec/lec10",
+      "desktop": {
+        "math": 59,
+        "mathErrors": [],
+        "sourceAtBottom": "引用与来源",
+        "overflow": false,
+        "details": 1
+      },
+      "mobile": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mathErrors": 0,
+        "wideMath": []
+      }
+    },
+    {
+      "route": "lec/lec11",
+      "desktop": {
+        "math": 33,
+        "mathErrors": [],
+        "sourceAtBottom": "引用与来源",
+        "overflow": false,
+        "details": 4
+      },
+      "mobile": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mathErrors": 0,
+        "wideMath": []
+      }
+    },
+    {
+      "route": "lec/lec12",
+      "desktop": {
+        "math": 54,
+        "mathErrors": [],
+        "sourceAtBottom": "引用与来源",
+        "overflow": false,
+        "details": 4
+      },
+      "mobile": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mathErrors": 0,
+        "wideMath": []
+      }
+    },
+    {
+      "route": "lec/lec13",
+      "desktop": {
+        "math": 45,
+        "mathErrors": [],
+        "sourceAtBottom": "引用与来源",
+        "overflow": false,
+        "details": 4
+      },
+      "mobile": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mathErrors": 0
+      }
+    },
+    {
+      "route": "lec/lec14",
+      "desktop": {
+        "math": 59,
+        "mathErrors": [],
+        "sourceAtBottom": "引用与来源",
+        "overflow": false,
+        "details": 4
+      },
+      "mobile": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mathErrors": 0,
+        "wideMath": []
+      }
+    },
+    {
+      "route": "lec/lec08",
+      "desktop": {
+        "math": 49,
+        "mathErrors": [],
+        "sourceAtBottom": "引用与来源",
+        "overflow": false,
+        "details": 1
+      },
+      "mobile": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mathErrors": 0
+      }
+    },
+    {
+      "route": "resources",
+      "mobile": {
+        "videoLinks": 149,
+        "overflow": false,
+        "heads": [
+          "这门课要学到什么",
+          "三类内容怎样配合",
+          "全课内容大纲",
+          "完整课表",
+          "数学忘了怎样继续",
+          "实践的统一约定",
+          "学完后怎样衔接 CS336",
+          "引用与来源"
+        ],
+        "p2Environment": true
+      }
+    }
+  ],
+  "darkChecks": [
+    "lec14",
+    "lec08"
+  ],
+  "missingTabs": {
+    "lecture": "lec14",
+    "draft": "missing path shown, intentionally blocked",
+    "materials": "missing path shown despite not_required; existing UI limitation"
+  },
+  "diagnosticLimits": [
+    "First image wait did not scroll lazy image into view; browser tool timed out and killed tab. Reopened; actual screenshots thereafter.",
+    "Development server, not deployment validation."
+  ],
+  "repairs": [
+    "Five lecture pages overflowed at390px from combined display equations; split only those expressions into aligned lines, rechecked corresponding pages."
+  ],
+  "status": "passed_after_content_formula_repairs",
+  "finalTabErrors": {
+    "entries": [],
+    "dropped": 0
+  },
+  "visualReview": "Seven SVGs visually inspected on actual lecture pages; lec08/lec14 dark contrast; 390px formula and page layout; lab task2 desktop and guide mobile; source section and missing tabs."
+}

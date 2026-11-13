@@ -1,0 +1,2830 @@
+{
+  "courseId": "d2l-pytorch-2021",
+  "capturedAt": "2026-11-13",
+  "edition": {
+    "language": "zh-CN",
+    "name": "《动手学深度学习》中文第二版在线版",
+    "documentationVersion": "2.0.0",
+    "frameworkSelection": "PyTorch",
+    "url": "https://zh.d2l.ai/",
+    "historicalCourseBookHost": "https://zh-v2.d2l.ai/",
+    "versionBoundary": "2021课表链接当时的zh-v2站点；本目录是本次抓取的当前中文二版网页，不是2021全书版本快照。现代英文版新增章节或首页第二卷作者介绍不等于当前中文目录已包含相应章节。"
+  },
+  "scope": {
+    "chapterCount": 16,
+    "sectionCount": 129,
+    "captured": "首页完整目录HTML、课程公告和仓库许可证文本；元数据摘录及映射",
+    "notFetched": [
+      "全书正文",
+      "notebook全集或zip",
+      "PDF全书",
+      "视频/字幕",
+      "竞赛数据集/榜单内容",
+      "各节练习题全文"
+    ],
+    "coverageMethod": "以官方课表reading URL的路径匹配当前中文二版目录；保留原始zh-v2链接。无独立链接不等于录像绝未涉及；章节总览不等于逐小节覆盖。"
+  },
+  "sources": [
+    {
+      "url": "https://zh.d2l.ai/",
+      "snapshot": "book-directory.html",
+      "sha256": "788191c52aa15d0c79391b2c7a5b59cf30e8b4ed0e6c890eb1dd5bc165557a0c"
+    },
+    {
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "snapshot": "schedule-2021.html",
+      "sha256": "3fc5e07b7c175c41a1aa0488eb13119837c5c1b6e50940f9ba49b74498c34959"
+    },
+    {
+      "url": "https://courses.d2l.ai/zh-v2/announcements.html",
+      "snapshot": "course-announcements.html",
+      "sha256": "18e6d6161eb9f5df71ee4ae1678978d9cf440034d4327fbb18747d78da619ded"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/master/LICENSE",
+      "snapshot": "book-repository-LICENSE.txt",
+      "sha256": "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a"
+    }
+  ],
+  "frontMatter": [
+    {
+      "title": "前言",
+      "url": "https://zh.d2l.ai/chapter_preface/index.html"
+    },
+    {
+      "title": "安装",
+      "url": "https://zh.d2l.ai/chapter_installation/index.html"
+    },
+    {
+      "title": "符号",
+      "url": "https://zh.d2l.ai/chapter_notation/index.html"
+    },
+    {
+      "title": "参考文献",
+      "url": "https://zh.d2l.ai/chapter_references/zreferences.html"
+    }
+  ],
+  "chapters": [
+    {
+      "number": "1",
+      "title": "引言",
+      "url": "https://zh.d2l.ai/chapter_introduction/index.html",
+      "sections": [
+        {
+          "number": "1.1",
+          "title": "日常生活中的机器学习",
+          "url": "https://zh.d2l.ai/chapter_introduction/index.html#id2",
+          "videoCoverage": {
+            "status": "parent_page_linked_not_individual_video",
+            "note": "引言页的内部小节；课表只链接整章，不能推定每个小节逐一讲解。",
+            "scheduleEvidence": [
+              {
+                "title": "深度学习介绍",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1J54y187f9"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_introduction/index.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "1.2",
+          "title": "机器学习中的关键组件",
+          "url": "https://zh.d2l.ai/chapter_introduction/index.html#id3",
+          "videoCoverage": {
+            "status": "parent_page_linked_not_individual_video",
+            "note": "引言页的内部小节；课表只链接整章，不能推定每个小节逐一讲解。",
+            "scheduleEvidence": [
+              {
+                "title": "深度学习介绍",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1J54y187f9"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_introduction/index.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "1.3",
+          "title": "各种机器学习问题",
+          "url": "https://zh.d2l.ai/chapter_introduction/index.html#id8",
+          "videoCoverage": {
+            "status": "parent_page_linked_not_individual_video",
+            "note": "引言页的内部小节；课表只链接整章，不能推定每个小节逐一讲解。",
+            "scheduleEvidence": [
+              {
+                "title": "深度学习介绍",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1J54y187f9"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_introduction/index.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "1.4",
+          "title": "起源",
+          "url": "https://zh.d2l.ai/chapter_introduction/index.html#id19",
+          "videoCoverage": {
+            "status": "parent_page_linked_not_individual_video",
+            "note": "引言页的内部小节；课表只链接整章，不能推定每个小节逐一讲解。",
+            "scheduleEvidence": [
+              {
+                "title": "深度学习介绍",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1J54y187f9"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_introduction/index.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "1.5",
+          "title": "深度学习的发展",
+          "url": "https://zh.d2l.ai/chapter_introduction/index.html#id22",
+          "videoCoverage": {
+            "status": "parent_page_linked_not_individual_video",
+            "note": "引言页的内部小节；课表只链接整章，不能推定每个小节逐一讲解。",
+            "scheduleEvidence": [
+              {
+                "title": "深度学习介绍",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1J54y187f9"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_introduction/index.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "1.6",
+          "title": "深度学习的成功案例",
+          "url": "https://zh.d2l.ai/chapter_introduction/index.html#id40",
+          "videoCoverage": {
+            "status": "parent_page_linked_not_individual_video",
+            "note": "引言页的内部小节；课表只链接整章，不能推定每个小节逐一讲解。",
+            "scheduleEvidence": [
+              {
+                "title": "深度学习介绍",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1J54y187f9"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_introduction/index.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "1.7",
+          "title": "特点",
+          "url": "https://zh.d2l.ai/chapter_introduction/index.html#id47",
+          "videoCoverage": {
+            "status": "parent_page_linked_not_individual_video",
+            "note": "引言页的内部小节；课表只链接整章，不能推定每个小节逐一讲解。",
+            "scheduleEvidence": [
+              {
+                "title": "深度学习介绍",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1J54y187f9"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_introduction/index.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "1.8",
+          "title": "小结",
+          "url": "https://zh.d2l.ai/chapter_introduction/index.html#id50",
+          "videoCoverage": {
+            "status": "parent_page_linked_not_individual_video",
+            "note": "引言页的内部小节；课表只链接整章，不能推定每个小节逐一讲解。",
+            "scheduleEvidence": [
+              {
+                "title": "深度学习介绍",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1J54y187f9"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_introduction/index.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "1.9",
+          "title": "练习",
+          "url": "https://zh.d2l.ai/chapter_introduction/index.html#id51",
+          "videoCoverage": {
+            "status": "parent_page_linked_not_individual_video",
+            "note": "引言页的内部小节；课表只链接整章，不能推定每个小节逐一讲解。",
+            "scheduleEvidence": [
+              {
+                "title": "深度学习介绍",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1J54y187f9"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_introduction/index.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        }
+      ],
+      "moduleIds": [
+        "orientation"
+      ],
+      "videoCoverage": {
+        "status": "official_schedule_reading_link",
+        "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+        "scheduleEvidence": [
+          {
+            "title": "深度学习介绍",
+            "videos": [
+              "https://www.bilibili.com/video/BV1J54y187f9"
+            ],
+            "readings": [
+              "https://zh-v2.d2l.ai/chapter_introduction/index.html"
+            ],
+            "notebooks": []
+          }
+        ]
+      }
+    },
+    {
+      "number": "2",
+      "title": "预备知识",
+      "url": "https://zh.d2l.ai/chapter_preliminaries/index.html",
+      "sections": [
+        {
+          "number": "2.1",
+          "title": "数据操作",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/ndarray.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "数据操作",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1CV411Y7i4"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_preliminaries/ndarray.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/ndarray.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "2.2",
+          "title": "数据预处理",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/pandas.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "数据预处理",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1CV411Y7i4?p=3"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_preliminaries/pandas.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/pandas.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "2.3",
+          "title": "线性代数",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/linear-algebra.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "线性代数",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1eK4y1U7Qy"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_preliminaries/linear-algebra.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/linear-algebra.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "2.4",
+          "title": "微积分",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/calculus.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "矩阵计算",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1eZ4y1w7PY"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_preliminaries/calculus.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "2.5",
+          "title": "自动微分",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/autograd.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "自动求导",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1KA411N7Px"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_preliminaries/autograd.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/autograd.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "2.6",
+          "title": "概率",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/probability.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "2.7",
+          "title": "查阅文档",
+          "url": "https://zh.d2l.ai/chapter_preliminaries/lookup-api.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        }
+      ],
+      "moduleIds": [
+        "foundations"
+      ],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    },
+    {
+      "number": "3",
+      "title": "线性神经网络",
+      "url": "https://zh.d2l.ai/chapter_linear-networks/index.html",
+      "sections": [
+        {
+          "number": "3.1",
+          "title": "线性回归",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/linear-regression.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "线性回归",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1PX4y1g7KC"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/linear-regression.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "3.2",
+          "title": "线性回归的从零开始实现",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/linear-regression-scratch.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "线性回归的从零开始实现",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1PX4y1g7KC?p=3"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression-scratch.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/linear-regression-scratch.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "3.3",
+          "title": "线性回归的简洁实现",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/linear-regression-concise.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "线性回归的简洁实现",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1PX4y1g7KC?p=4"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression-concise.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/linear-regression-concise.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "3.4",
+          "title": "softmax回归",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/softmax-regression.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "Softmax 回归",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1K64y1Q7wu"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "3.5",
+          "title": "图像分类数据集",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/image-classification-dataset.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "图像分类数据集",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1K64y1Q7wu?p=3"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_linear-networks/image-classification-dataset.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/image-classification-dataset.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "3.6",
+          "title": "softmax回归的从零开始实现",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/softmax-regression-scratch.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "Softmax 回归的从零开始实现",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1K64y1Q7wu?p=4"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression-scratch.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/softmax-regression-scratch.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "3.7",
+          "title": "softmax回归的简洁实现",
+          "url": "https://zh.d2l.ai/chapter_linear-networks/softmax-regression-concise.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "Softmax 回归的简洁实现",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1K64y1Q7wu?p=5"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression-concise.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/softmax-regression-concise.slides.html"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "moduleIds": [
+        "linear"
+      ],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    },
+    {
+      "number": "4",
+      "title": "多层感知机",
+      "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/index.html",
+      "sections": [
+        {
+          "number": "4.1",
+          "title": "多层感知机",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/mlp.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "多层感知机",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1hh411U7gn?p=2"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/mlp.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/mlp.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "4.2",
+          "title": "多层感知机的从零开始实现",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/mlp-scratch.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "多层感知机的从零开始实现",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1hh411U7gn?p=3"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/mlp-scratch.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/mlp-scratch.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "4.3",
+          "title": "多层感知机的简洁实现",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/mlp-concise.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "多层感知机的简洁实现",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1hh411U7gn?p=3"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/mlp-concise.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/mlp-concise.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "4.4",
+          "title": "模型选择、欠拟合和过拟合",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/underfit-overfit.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "欠拟合和过拟合",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1kX4y1g7jp?p=2"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/underfit-overfit.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/underfit-overfit.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "4.5",
+          "title": "权重衰减",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/weight-decay.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "权重衰减",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1UK4y1o7dy"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/weight-decay.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/weight-decay.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "4.6",
+          "title": "暂退法（Dropout）",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/dropout.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "Dropout",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1Y5411c7aY"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/dropout.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/dropout.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "4.7",
+          "title": "前向传播、反向传播和计算图",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/backprop.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "4.8",
+          "title": "数值稳定性和模型初始化",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/numerical-stability-and-init.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "数值稳定性",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1u64y1i75a"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/numerical-stability-and-init.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/numerical-stability-and-init.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "4.9",
+          "title": "环境和分布偏移",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/environment.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "4.10",
+          "title": "实战Kaggle比赛：预测房价",
+          "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/kaggle-house-price.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "实战 Kaggle 比赛：预测房价",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1NK4y1P7Tu"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/kaggle-house-price.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/kaggle-house-price.slides.html"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "moduleIds": [
+        "mlp"
+      ],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    },
+    {
+      "number": "5",
+      "title": "深度学习计算",
+      "url": "https://zh.d2l.ai/chapter_deep-learning-computation/index.html",
+      "sections": [
+        {
+          "number": "5.1",
+          "title": "层和块",
+          "url": "https://zh.d2l.ai/chapter_deep-learning-computation/model-construction.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "4月24日",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1AK4y1P7vs"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_deep-learning-computation/model-construction.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/model-construction.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "5.2",
+          "title": "参数管理",
+          "url": "https://zh.d2l.ai/chapter_deep-learning-computation/parameters.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "参数管理",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1AK4y1P7vs?p=2"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_deep-learning-computation/parameters.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/parameters.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "5.3",
+          "title": "延后初始化",
+          "url": "https://zh.d2l.ai/chapter_deep-learning-computation/deferred-init.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "5.4",
+          "title": "自定义层",
+          "url": "https://zh.d2l.ai/chapter_deep-learning-computation/custom-layer.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "自定义层",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1AK4y1P7vs?p=3"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_deep-learning-computation/custom-layer.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/custom-layer.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "5.5",
+          "title": "读写文件",
+          "url": "https://zh.d2l.ai/chapter_deep-learning-computation/read-write.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "读写文件",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1AK4y1P7vs?p=4"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_deep-learning-computation/read-write.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/read-write.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "5.6",
+          "title": "GPU",
+          "url": "https://zh.d2l.ai/chapter_deep-learning-computation/use-gpu.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "GPU",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1z5411c7C1"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_deep-learning-computation/use-gpu.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/use-gpu.slides.html"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "moduleIds": [
+        "cnn"
+      ],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    },
+    {
+      "number": "6",
+      "title": "卷积神经网络",
+      "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/index.html",
+      "sections": [
+        {
+          "number": "6.1",
+          "title": "从全连接层到卷积",
+          "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/why-conv.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "从全连接层到卷积",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1L64y1m7Nh"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/why-conv.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "6.2",
+          "title": "图像卷积",
+          "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/conv-layer.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "图像卷积",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1L64y1m7Nh?p=2"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/conv-layer.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/conv-layer.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "6.3",
+          "title": "填充和步幅",
+          "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/padding-and-strides.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "填充和步幅",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1Th411U7UN"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/padding-and-strides.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/padding-and-strides.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "6.4",
+          "title": "多输入多输出通道",
+          "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/channels.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "多输入多输出通道",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1MB4y1F7of"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/channels.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/channels.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "6.5",
+          "title": "汇聚层",
+          "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/pooling.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "池化层",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1EV411j7nX"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/pooling.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/pooling.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "6.6",
+          "title": "卷积神经网络（LeNet）",
+          "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/lenet.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "卷积神经网络（LeNet）",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1t44y1r7ct/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/lenet.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/lenet.slides.html"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "moduleIds": [
+        "cnn"
+      ],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    },
+    {
+      "number": "7",
+      "title": "现代卷积神经网络",
+      "url": "https://zh.d2l.ai/chapter_convolutional-modern/index.html",
+      "sections": [
+        {
+          "number": "7.1",
+          "title": "深度卷积神经网络（AlexNet）",
+          "url": "https://zh.d2l.ai/chapter_convolutional-modern/alexnet.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "深度卷积神经网络（AlexNet）",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1h54y1L7oe/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_convolutional-modern/alexnet.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/alexnet.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "7.2",
+          "title": "使用块的网络（VGG）",
+          "url": "https://zh.d2l.ai/chapter_convolutional-modern/vgg.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "使用块的网络（VGG）",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1Ao4y117Pd/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_convolutional-modern/vgg.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/vgg.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "7.3",
+          "title": "网络中的网络（NiN）",
+          "url": "https://zh.d2l.ai/chapter_convolutional-modern/nin.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "网络中的网络（NiN）",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1Uv411G71b/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_convolutional-modern/nin.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/nin.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "7.4",
+          "title": "含并行连结的网络（GoogLeNet）",
+          "url": "https://zh.d2l.ai/chapter_convolutional-modern/googlenet.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "含并行连结的网络（GoogLeNet）",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1b5411g7Xo/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_convolutional-modern/googlenet.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/googlenet.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "7.5",
+          "title": "批量规范化",
+          "url": "https://zh.d2l.ai/chapter_convolutional-modern/batch-norm.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "批量归一化",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1X44y1r77r/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_convolutional-modern/batch-norm.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/batch-norm.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "7.6",
+          "title": "残差网络（ResNet）",
+          "url": "https://zh.d2l.ai/chapter_convolutional-modern/resnet.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "残差网络（ResNet）",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1bV41177ap/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_convolutional-modern/resnet.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/resnet.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "7.7",
+          "title": "稠密连接网络（DenseNet）",
+          "url": "https://zh.d2l.ai/chapter_convolutional-modern/densenet.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        }
+      ],
+      "moduleIds": [
+        "cnn"
+      ],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    },
+    {
+      "number": "8",
+      "title": "循环神经网络",
+      "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/index.html",
+      "sections": [
+        {
+          "number": "8.1",
+          "title": "序列模型",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/sequence.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "7月17日",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1L44y1m768/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/sequence.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/sequence.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "8.2",
+          "title": "文本预处理",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/text-preprocessing.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "文本预处理",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1Fo4y1Q79L/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/text-preprocessing.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/text-preprocessing.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "8.3",
+          "title": "语言模型和数据集",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/language-models-and-dataset.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "语言模型和数据集",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1ZX4y1F7K3/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/language-models-and-dataset.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/language-models-and-dataset.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "8.4",
+          "title": "循环神经网络",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/rnn.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "循环神经网络",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1D64y1z7CA/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/rnn.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "8.5",
+          "title": "循环神经网络的从零开始实现",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/rnn-scratch.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "循环神经网络的从零开始实现",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1kq4y1H7sw/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/rnn-scratch.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/rnn-scratch.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "8.6",
+          "title": "循环神经网络的简洁实现",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/rnn-concise.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "循环神经网络的简洁实现",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1kq4y1H7sw?p=2"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/rnn-concise.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/rnn-concise.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "8.7",
+          "title": "通过时间反向传播",
+          "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/bptt.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        }
+      ],
+      "moduleIds": [
+        "rnn"
+      ],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    },
+    {
+      "number": "9",
+      "title": "现代循环神经网络",
+      "url": "https://zh.d2l.ai/chapter_recurrent-modern/index.html",
+      "sections": [
+        {
+          "number": "9.1",
+          "title": "门控循环单元（GRU）",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/gru.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "门控循环单元（GRU）",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1mf4y157N2/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-modern/gru.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/gru.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "9.2",
+          "title": "长短期记忆网络（LSTM）",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/lstm.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "长短期记忆网络（LSTM）",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1JU4y1H7PC/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-modern/lstm.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/lstm.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "9.3",
+          "title": "深度循环神经网络",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/deep-rnn.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "深层循环神经网络",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1JM4y1T7N4/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-modern/deep-rnn.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/deep-rnn.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "9.4",
+          "title": "双向循环神经网络",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/bi-rnn.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "双向循环神经网络",
+                "videos": [
+                  "https://www.bilibili.com/video/BV12X4y1c71W/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-modern/bi-rnn.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/bi-rnn.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "9.5",
+          "title": "机器翻译与数据集",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/machine-translation-and-dataset.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "机器翻译与数据集",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1H64y1s7TH/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-modern/machine-translation-and-dataset.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/machine-translation-and-dataset.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "9.6",
+          "title": "编码器-解码器架构",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/encoder-decoder.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "编码器-解码器结构",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1c54y1E7YP/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-modern/encoder-decoder.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/encoder-decoder.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "9.7",
+          "title": "序列到序列学习（seq2seq）",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/seq2seq.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "序列到序列学习（seq2seq）",
+                "videos": [
+                  "https://www.bilibili.com/video/BV16g411L7FG/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-modern/seq2seq.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/seq2seq.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "9.8",
+          "title": "束搜索",
+          "url": "https://zh.d2l.ai/chapter_recurrent-modern/beam-search.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "束搜索",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1B44y1C7m1/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_recurrent-modern/beam-search.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        }
+      ],
+      "moduleIds": [
+        "rnn",
+        "seq2seq"
+      ],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    },
+    {
+      "number": "10",
+      "title": "注意力机制",
+      "url": "https://zh.d2l.ai/chapter_attention-mechanisms/index.html",
+      "sections": [
+        {
+          "number": "10.1",
+          "title": "注意力提示",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/attention-cues.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "10.2",
+          "title": "注意力汇聚：Nadaraya-Watson 核回归",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/nadaraya-waston.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "8月8日",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1264y1i7R1/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_attention-mechanisms/nadaraya-waston.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/nadaraya-waston.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "10.3",
+          "title": "注意力评分函数",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/attention-scoring-functions.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "注意力分数",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1Tb4y167rb/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_attention-mechanisms/attention-scoring-functions.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/attention-scoring-functions.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "10.4",
+          "title": "Bahdanau 注意力",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/bahdanau-attention.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "使用注意力机制的seq2seq",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1v44y1C7Tg/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_attention-mechanisms/bahdanau-attention.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/bahdanau-attention.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "10.5",
+          "title": "多头注意力",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/multihead-attention.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "10.6",
+          "title": "自注意力和位置编码",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/self-attention-and-positional-encoding.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "自注意力和位置编码",
+                "videos": [
+                  "https://www.bilibili.com/video/BV19o4y1m7mo/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_attention-mechanisms/self-attention-and-positional-encoding.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/self-attention-and-positional-encoding.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "10.7",
+          "title": "Transformer",
+          "url": "https://zh.d2l.ai/chapter_attention-mechanisms/transformer.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "Transformer",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1Kq4y1H7FL/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_attention-mechanisms/transformer.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/transformer.slides.html"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "moduleIds": [
+        "seq2seq",
+        "transformer"
+      ],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    },
+    {
+      "number": "11",
+      "title": "优化算法",
+      "url": "https://zh.d2l.ai/chapter_optimization/index.html",
+      "sections": [
+        {
+          "number": "11.1",
+          "title": "优化和深度学习",
+          "url": "https://zh.d2l.ai/chapter_optimization/optimization-intro.html",
+          "videoCoverage": {
+            "status": "chapter_overview_only",
+            "note": "课程末尾“优化算法”链接第11章总页；未列本节独立录像，不能把全章各算法细节标成已逐节讲授。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "11.2",
+          "title": "凸性",
+          "url": "https://zh.d2l.ai/chapter_optimization/convexity.html",
+          "videoCoverage": {
+            "status": "chapter_overview_only",
+            "note": "课程末尾“优化算法”链接第11章总页；未列本节独立录像，不能把全章各算法细节标成已逐节讲授。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "11.3",
+          "title": "梯度下降",
+          "url": "https://zh.d2l.ai/chapter_optimization/gd.html",
+          "videoCoverage": {
+            "status": "chapter_overview_only",
+            "note": "课程末尾“优化算法”链接第11章总页；未列本节独立录像，不能把全章各算法细节标成已逐节讲授。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "11.4",
+          "title": "随机梯度下降",
+          "url": "https://zh.d2l.ai/chapter_optimization/sgd.html",
+          "videoCoverage": {
+            "status": "chapter_overview_only",
+            "note": "课程末尾“优化算法”链接第11章总页；未列本节独立录像，不能把全章各算法细节标成已逐节讲授。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "11.5",
+          "title": "小批量随机梯度下降",
+          "url": "https://zh.d2l.ai/chapter_optimization/minibatch-sgd.html",
+          "videoCoverage": {
+            "status": "chapter_overview_only",
+            "note": "课程末尾“优化算法”链接第11章总页；未列本节独立录像，不能把全章各算法细节标成已逐节讲授。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "11.6",
+          "title": "动量法",
+          "url": "https://zh.d2l.ai/chapter_optimization/momentum.html",
+          "videoCoverage": {
+            "status": "chapter_overview_only",
+            "note": "课程末尾“优化算法”链接第11章总页；未列本节独立录像，不能把全章各算法细节标成已逐节讲授。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "11.7",
+          "title": "AdaGrad算法",
+          "url": "https://zh.d2l.ai/chapter_optimization/adagrad.html",
+          "videoCoverage": {
+            "status": "chapter_overview_only",
+            "note": "课程末尾“优化算法”链接第11章总页；未列本节独立录像，不能把全章各算法细节标成已逐节讲授。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "11.8",
+          "title": "RMSProp算法",
+          "url": "https://zh.d2l.ai/chapter_optimization/rmsprop.html",
+          "videoCoverage": {
+            "status": "chapter_overview_only",
+            "note": "课程末尾“优化算法”链接第11章总页；未列本节独立录像，不能把全章各算法细节标成已逐节讲授。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "11.9",
+          "title": "Adadelta",
+          "url": "https://zh.d2l.ai/chapter_optimization/adadelta.html",
+          "videoCoverage": {
+            "status": "chapter_overview_only",
+            "note": "课程末尾“优化算法”链接第11章总页；未列本节独立录像，不能把全章各算法细节标成已逐节讲授。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "11.10",
+          "title": "Adam算法",
+          "url": "https://zh.d2l.ai/chapter_optimization/adam.html",
+          "videoCoverage": {
+            "status": "chapter_overview_only",
+            "note": "课程末尾“优化算法”链接第11章总页；未列本节独立录像，不能把全章各算法细节标成已逐节讲授。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "11.11",
+          "title": "学习率调度器",
+          "url": "https://zh.d2l.ai/chapter_optimization/lr-scheduler.html",
+          "videoCoverage": {
+            "status": "chapter_overview_only",
+            "note": "课程末尾“优化算法”链接第11章总页；未列本节独立录像，不能把全章各算法细节标成已逐节讲授。",
+            "scheduleEvidence": []
+          }
+        }
+      ],
+      "moduleIds": [
+        "optimization-summary"
+      ],
+      "videoCoverage": {
+        "status": "official_schedule_reading_link",
+        "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+        "scheduleEvidence": [
+          {
+            "title": "优化算法",
+            "videos": [
+              "https://www.bilibili.com/video/BV1bP4y1p7Gq"
+            ],
+            "readings": [
+              "https://zh-v2.d2l.ai/chapter_optimization/index.html"
+            ],
+            "notebooks": []
+          }
+        ]
+      }
+    },
+    {
+      "number": "12",
+      "title": "计算性能",
+      "url": "https://zh.d2l.ai/chapter_computational-performance/index.html",
+      "sections": [
+        {
+          "number": "12.1",
+          "title": "编译器和解释器",
+          "url": "https://zh.d2l.ai/chapter_computational-performance/hybridize.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "12.2",
+          "title": "异步计算",
+          "url": "https://zh.d2l.ai/chapter_computational-performance/async-computation.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "12.3",
+          "title": "自动并行",
+          "url": "https://zh.d2l.ai/chapter_computational-performance/auto-parallelism.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "12.4",
+          "title": "硬件",
+          "url": "https://zh.d2l.ai/chapter_computational-performance/hardware.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "6月5日",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1TU4y1j7Wd/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computational-performance/hardware.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "12.5",
+          "title": "多GPU训练",
+          "url": "https://zh.d2l.ai/chapter_computational-performance/multiple-gpus.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "多GPU训练",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1vU4y1V7rd/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computational-performance/multiple-gpus.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computational-performance/multiple-gpus.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "12.6",
+          "title": "多GPU的简洁实现",
+          "url": "https://zh.d2l.ai/chapter_computational-performance/multiple-gpus-concise.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "多GPU训练的实现",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1MQ4y1R7Qg"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computational-performance/multiple-gpus-concise.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computational-performance/multiple-gpus-concise.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "12.7",
+          "title": "参数服务器",
+          "url": "https://zh.d2l.ai/chapter_computational-performance/parameterserver.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "分布式训练",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1jU4y1G7iu"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computational-performance/parameterserver.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        }
+      ],
+      "moduleIds": [
+        "performance"
+      ],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    },
+    {
+      "number": "13",
+      "title": "计算机视觉",
+      "url": "https://zh.d2l.ai/chapter_computer-vision/index.html",
+      "sections": [
+        {
+          "number": "13.1",
+          "title": "图像增广",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/image-augmentation.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "图像增广",
+                "videos": [
+                  "https://www.bilibili.com/video/BV17y4y1g76q"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/image-augmentation.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/image-augmentation.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "13.2",
+          "title": "微调",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/fine-tuning.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "微调",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1Sb4y1d7CR"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/fine-tuning.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/fine-tuning.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "13.3",
+          "title": "目标检测和边界框",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/bounding-box.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "边缘框实现",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1Lh411Y7LX?p=2"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/bounding-box.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/bounding-box.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "13.4",
+          "title": "锚框",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/anchor.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "锚框",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1aB4y1K7za"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/anchor.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/anchor.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "13.5",
+          "title": "多尺度目标检测",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/multiscale-object-detection.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "多尺度物体检测实现",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=1"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/multiscale-object-detection.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/multiscale-object-detection.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "13.6",
+          "title": "目标检测数据集",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/object-detection-dataset.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "物体检测数据集",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1Lh411Y7LX?p=3"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/object-detection-dataset.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/object-detection-dataset.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "13.7",
+          "title": "单发多框检测（SSD）",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/ssd.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "SSD 实现",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=2"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/ssd.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/ssd.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "13.8",
+          "title": "区域卷积神经网络（R-CNN）系列",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/rcnn.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "区域卷积神经网络（R-CNNs）",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1Db4y1C71g"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/rcnn.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "13.9",
+          "title": "语义分割和数据集",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/semantic-segmentation-and-dataset.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "语义分割数据集",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1BK4y1M7Rd?p=2"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/semantic-segmentation-and-dataset.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/semantic-segmentation-and-dataset.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "13.10",
+          "title": "转置卷积",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/transposed-conv.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "转置卷积",
+                "videos": [
+                  "https://www.bilibili.com/video/BV17o4y1X7Jn/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/transposed-conv.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/transposed-conv.slides.html"
+                ]
+              },
+              {
+                "title": "转置卷积是一种卷积",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1CM4y1K7r7/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/transposed-conv.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/transposed-conv.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "13.11",
+          "title": "全卷积网络",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/fcn.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "全连接卷积神经网络（FCN）",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1af4y1L7Zu/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/fcn.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/fcn.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "13.12",
+          "title": "风格迁移",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/neural-style.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "样式迁移",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1Eh41167GN/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/neural-style.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/neural-style.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "13.13",
+          "title": "实战 Kaggle 比赛：图像分类 (CIFAR-10)",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/kaggle-cifar10.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "实战 Kaggle 比赛：图像分类（CIFAR-10）",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1Gy4y1M7Cu"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/kaggle-cifar10.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/kaggle-cifar10.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "13.14",
+          "title": "实战Kaggle比赛：狗的品种识别（ImageNet Dogs）",
+          "url": "https://zh.d2l.ai/chapter_computer-vision/kaggle-dog.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "实战 Kaggle 比赛：狗的品种识别（ImageNet Dogs）",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1j5411T7wx"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_computer-vision/kaggle-dog.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/kaggle-dog.slides.html"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "moduleIds": [
+        "cv"
+      ],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    },
+    {
+      "number": "14",
+      "title": "自然语言处理：预训练",
+      "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/index.html",
+      "sections": [
+        {
+          "number": "14.1",
+          "title": "词嵌入（word2vec）",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/word2vec.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "14.2",
+          "title": "近似训练",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/approx-training.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "14.3",
+          "title": "用于预训练词嵌入的数据集",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/word-embedding-dataset.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "14.4",
+          "title": "预训练word2vec",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/word2vec-pretraining.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "14.5",
+          "title": "全局向量的词嵌入（GloVe）",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/glove.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "14.6",
+          "title": "子词嵌入",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/subword-embedding.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "14.7",
+          "title": "词的相似性和类比任务",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/similarity-analogy.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "14.8",
+          "title": "来自Transformers的双向编码器表示（BERT）",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "BERT",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1yU4y1E7Ns/"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_natural-language-processing-pretraining/bert.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-pretraining/bert.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "14.9",
+          "title": "用于预训练BERT的数据集",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert-dataset.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "BERT预训练数据集",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1yU4y1E7Ns?p=2"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_natural-language-processing-pretraining/bert-dataset.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-pretraining/bert-dataset.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "14.10",
+          "title": "预训练BERT",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert-pretraining.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "预训练BERT",
+                "videos": [
+                  "https://www.bilibili.com/video/BV1yU4y1E7Ns?p=3"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_natural-language-processing-pretraining/bert-pretraining.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-pretraining/bert-pretraining.slides.html"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "moduleIds": [
+        "bert"
+      ],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    },
+    {
+      "number": "15",
+      "title": "自然语言处理：应用",
+      "url": "https://zh.d2l.ai/chapter_natural-language-processing-applications/index.html",
+      "sections": [
+        {
+          "number": "15.1",
+          "title": "情感分析及数据集",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-applications/sentiment-analysis-and-dataset.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "15.2",
+          "title": "情感分析：使用循环神经网络",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-applications/sentiment-analysis-rnn.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "15.3",
+          "title": "情感分析：使用卷积神经网络",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-applications/sentiment-analysis-cnn.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "15.4",
+          "title": "自然语言推断与数据集",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "自然语言推理和数据集",
+                "videos": [
+                  "https://www.bilibili.com/video/BV15L4y1v7ts?p=2"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.slides.html"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "number": "15.5",
+          "title": "自然语言推断：使用注意力",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-attention.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "15.6",
+          "title": "针对序列级和词元级应用微调BERT",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-applications/finetuning-bert.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "微调BERT",
+                "videos": [
+                  "https://www.bilibili.com/video/BV15L4y1v7ts"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_natural-language-processing-applications/finetuning-bert.html"
+                ],
+                "notebooks": []
+              }
+            ]
+          }
+        },
+        {
+          "number": "15.7",
+          "title": "自然语言推断：微调BERT",
+          "url": "https://zh.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-bert.html",
+          "videoCoverage": {
+            "status": "official_schedule_reading_link",
+            "note": "课表在此主题列有本教材链接及视频；只证明对应关系，不证明录像逐字覆盖教材全文。",
+            "scheduleEvidence": [
+              {
+                "title": "自然语言推理：微调BERT",
+                "videos": [
+                  "https://www.bilibili.com/video/BV15L4y1v7ts?p=3"
+                ],
+                "readings": [
+                  "https://zh-v2.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-bert.html"
+                ],
+                "notebooks": [
+                  "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-applications/natural-language-inference-bert.slides.html"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "moduleIds": [
+        "bert"
+      ],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    },
+    {
+      "number": "16",
+      "title": "附录：深度学习工具",
+      "url": "https://zh.d2l.ai/chapter_appendix-tools-for-deep-learning/index.html",
+      "sections": [
+        {
+          "number": "16.1",
+          "title": "使用Jupyter Notebook",
+          "url": "https://zh.d2l.ai/chapter_appendix-tools-for-deep-learning/jupyter.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "16.2",
+          "title": "使用Amazon SageMaker",
+          "url": "https://zh.d2l.ai/chapter_appendix-tools-for-deep-learning/sagemaker.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "16.3",
+          "title": "使用Amazon EC2实例",
+          "url": "https://zh.d2l.ai/chapter_appendix-tools-for-deep-learning/aws.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "16.4",
+          "title": "选择服务器和GPU",
+          "url": "https://zh.d2l.ai/chapter_appendix-tools-for-deep-learning/selecting-servers-gpus.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "16.5",
+          "title": "为本书做贡献",
+          "url": "https://zh.d2l.ai/chapter_appendix-tools-for-deep-learning/contributing.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        },
+        {
+          "number": "16.6",
+          "title": "d2l API 文档",
+          "url": "https://zh.d2l.ai/chapter_appendix-tools-for-deep-learning/d2l.html",
+          "videoCoverage": {
+            "status": "no_individual_schedule_link",
+            "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+            "scheduleEvidence": []
+          }
+        }
+      ],
+      "moduleIds": [],
+      "videoCoverage": {
+        "status": "no_individual_schedule_link",
+        "note": "官方课表未给此页独立视频/阅读链接；作为教材补习或拓展。相关概念可能嵌入其他录像，尚未取字幕核实。",
+        "scheduleEvidence": []
+      }
+    }
+  ],
+  "license": {
+    "repositoryLicense": "Apache-2.0",
+    "evidenceUrl": "https://github.com/d2l-ai/d2l-zh/blob/master/LICENSE",
+    "snapshot": "book-repository-LICENSE.txt",
+    "scope": "已核实中文源码仓库根LICENSE；保留许可、版权/归属声明并标注改动。此事实不外推到B站视频、字幕、第三方图片、竞赛数据或纸质书出版物。",
+    "textReusePolicy": "本轮只保存必要目录/许可/公告源索引与编者规划。后续转载正文或图表前核对对应文件、网页和第三方声明；不以“可免费阅读”等同所有媒体可再发布。",
+    "mutableSource": "master是动态地址；本次许可文本已保存并计算哈希，未声称固定到Git提交。"
+  },
+  "runtimeVersionEvidence": {
+    "url": "https://zh.d2l.ai/chapter_installation/index.html",
+    "observedValues": {
+      "python": "3.9",
+      "torch": "1.12.0",
+      "torchvision": "0.13.0",
+      "d2l": "0.17.6"
+    },
+    "notebookArchiveLinked": "https://zh-v2.d2l.ai/d2l-zh-2.0.0.zip",
+    "archiveDownloaded": false,
+    "warning": "网页标称2.0.0是教材文档版本，不等于d2l Python包版本；这些安装页历史组合不是为当前机器验证的安装建议。后续实施时分离历史复现与现代兼容环境，记录Python/PyTorch/torchvision/d2l/设备版本；本轮不安装、不测试、不推定用户GPU。"
+  },
+  "notableBookSupplements": [
+    {
+      "sections": [
+        "2.6",
+        "2.7"
+      ],
+      "reason": "概率与文档查阅用作补习，课表未单列。"
+    },
+    {
+      "sections": [
+        "4.7",
+        "4.9",
+        "5.3",
+        "7.7",
+        "8.7"
+      ],
+      "reason": "反向传播、分布偏移、延后初始化、DenseNet、BPTT未单列；部分概念可能包含在相关视频，待字幕核对。"
+    },
+    {
+      "sections": [
+        "10.1",
+        "10.5"
+      ],
+      "reason": "注意力提示和多头注意力无独立课表链接；多头注意力服务Transformer学习，不能虚构独立讲次。"
+    },
+    {
+      "sections": [
+        "12.1",
+        "12.2",
+        "12.3"
+      ],
+      "reason": "编译、异步计算、自动并行可辅助性能实践，不冒充2021独立录像。"
+    },
+    {
+      "sections": [
+        "14.1",
+        "14.2",
+        "14.3",
+        "14.4",
+        "14.5",
+        "14.6",
+        "14.7",
+        "15.1",
+        "15.2",
+        "15.3",
+        "15.5"
+      ],
+      "reason": "word2vec/GloVe/子词、情感分析、基于注意力的推断等为教材额外内容，课程明确列BERT路径。"
+    },
+    {
+      "sections": [
+        "16"
+      ],
+      "reason": "工具附录作Jupyter/API/资源选择参考；不要求云付费或额外硬件。"
+    }
+  ]
+}

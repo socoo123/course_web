@@ -1,0 +1,186 @@
+{
+  "lectureId": "lec14",
+  "acquiredAt": "2026-11-13T09:16:40.811888+00:00",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "bookVersionBoundary": "当前中文第二版固定源码，非2021教材快照",
+  "bookSources": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/numerical-stability-and-init.md",
+      "localPath": "sources/p2-lec14/book-numerical-stability-and-init.txt",
+      "sha256": "76b818db998c26362aeba1e50b10e9b1b54c1d2c952edfb8c048c8aee0cab376",
+      "reviewedScope": "4.8全文（1–299行）：连乘梯度、sigmoid、对称性、默认与Xavier初始化、额外阅读边界、小结与练习；重点PyTorch导数和矩阵乘积分支。未读取或引用4.7原文、未将其列为独立指定课节。",
+      "branch": "PyTorch重点；共享文字全文，非其他框架执行结果"
+    }
+  ],
+  "videoMetadataPath": "sources/p2-lec14/video-metadata.json",
+  "pages": [
+    {
+      "page": 1,
+      "cid": 326162337,
+      "part": "数值稳定性",
+      "duration": 921
+    },
+    {
+      "page": 2,
+      "cid": 326162532,
+      "part": "模型初始化和激活函数",
+      "duration": 1443
+    },
+    {
+      "page": 3,
+      "cid": 326162451,
+      "part": "QA",
+      "duration": 1349
+    }
+  ],
+  "subtitleRequests": [
+    {
+      "page": 1,
+      "cid": 326162337,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1u64y1i75a&cid=326162337",
+      "retrievedAt": "2026-11-13T09:16:41.007108+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 2,
+      "cid": 326162532,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1u64y1i75a&cid=326162532",
+      "retrievedAt": "2026-11-13T09:16:41.206982+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 3,
+      "cid": 326162451,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1u64y1i75a&cid=326162451",
+      "retrievedAt": "2026-11-13T09:16:41.321264+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    }
+  ],
+  "license": {
+    "copyright": 1,
+    "noReprint": 0,
+    "interpretation": "copyright=1为平台原创标志；no_reprint=0只表示该禁止转载标志未置位，0也不代表开放许可，未发现视频全文转录再发布授权。"
+  },
+  "textbookLicense": {
+    "name": "Apache-2.0",
+    "evidencePath": "sources/p1-shared/book-version.json",
+    "boundary": "固定仓库根许可与setup.py包MIT-0字段分别记录；均不外推视频或第三方素材"
+  },
+  "supplementalReferences": {
+    "readOn": "2026-11-13",
+    "entries": [
+      {
+        "url": "https://pytorch.org/docs/2.5/nn.init.html",
+        "reviewedScope": "calculate_gain、xavier_uniform_/normal_、kaiming_uniform_/normal_及fan-in/out转置约定；未审阅全部初始化API",
+        "role": "编者必要API补充，非视频指定阅读"
+      }
+    ],
+    "paperTasksAdded": false
+  },
+  "outputs": {
+    "notes": {
+      "status": "written_cpu_and_browser_checked",
+      "path": "lectures/lec14/notes.zh.md",
+      "type": "教材导读/编者笔记",
+      "videoContentVerified": false
+    },
+    "draft": {
+      "status": "blocked",
+      "reason": "全部分P公开player字幕成功返回空列表；未下载/观看媒体，缺真实课堂时间轴，不建占位稿"
+    },
+    "materials": {
+      "status": "not_required",
+      "reason": "必要教材和API范围已在notes页底定位，无须独立重复阅读文件"
+    },
+    "assets": {
+      "status": "written_browser_checked",
+      "path": "lectures/lec14/assets/initialization-scales.svg",
+      "type": "编者自绘SVG，非课堂截图"
+    }
+  },
+  "gaps": [
+    "所有分P公开字幕列表为空；未观看音视频，讲授/演示/QA与时间轴未核实；空列表不证明其他字幕不存在。",
+    "draft持续阻塞，不创建占位；materials不需要另文。",
+    "教材完整训练、历史Notebook、完整学生作业与GPU/CUDA/MPS均未运行；小机制验证不可外推。"
+  ],
+  "handCalculations": [
+    "4输入2输出Xavier：方差1/3、标准差sqrt(1/3)、均匀边界±1、前向倍率4/3与反向2/3",
+    "ReLU fan-in=4：权重方差1/2；线性二阶矩2，ReLU后约1",
+    "10个sigmoid局部最大导数连乘4^-10=9.5367431640625e-7，未包含权重放大"
+  ],
+  "planningEvidence": {
+    "scheduleInventory": "sources/schedule-inventory.json",
+    "bookInventory": "sources/book-inventory.json",
+    "outlinePlan": "sources/outline-plan.json",
+    "practicePlan": "sources/practice-plan.json",
+    "reviewedPractice": "linear-training任务边界；不代写完整实验"
+  },
+  "scopeBoundary": "仅本讲lectures与sources/p2目录；不修改共享索引，不提交推送",
+  "codeChecks": [
+    {
+      "block": 1,
+      "section": "2. 链式法则为什么容易让前层学不动",
+      "mechanism": "20次标量连乘梯度与稳定logsumexp",
+      "expected": {
+        "factor05Gradient": 9.5367431640625e-07,
+        "factor2Gradient": 1048576.0,
+        "logsumexp": 1001.3132616875,
+        "logsumexpAbsoluteTolerance": 1e-09
+      },
+      "path": "lectures/lec14/notes.zh.md",
+      "status": "passed_cpu_by_main",
+      "runtime": "CPU/PyTorch; no d2l, torchvision, datasets or GPU required",
+      "evidence": "sources/p2-shared/notes-smoke.json"
+    },
+    {
+      "block": 2,
+      "section": "3. 对称性：两个神经元为什么不能一直是复制品",
+      "mechanism": "两个完整对称隐藏单元的同梯度",
+      "expected": {
+        "loss": 0.5,
+        "inputWeightGradient": [
+          -1.0,
+          -1.0
+        ],
+        "outputWeightGradient": [
+          0.0,
+          0.0
+        ]
+      },
+      "path": "lectures/lec14/notes.zh.md",
+      "status": "passed_cpu_by_main",
+      "runtime": "CPU/PyTorch; no d2l, torchvision, datasets or GPU required",
+      "evidence": "sources/p2-shared/notes-smoke.json"
+    }
+  ],
+  "workerVerification": {
+    "build": "not_run_by_worker",
+    "numeric": "not_run_by_worker",
+    "browser": "not_run_by_worker",
+    "lint": "not_run_by_worker",
+    "formatter": "not_run_by_worker"
+  },
+  "verification": {
+    "content": "reviewed_by_main",
+    "cpu": "published_independent_blocks_executed_and_outputs_matched",
+    "browser": "desktop_1440_and_mobile_390_checked; formula_overflow_repaired_where_needed",
+    "siteBuildAndSourceChecks": "authoritative result in sources/p2-manifest.json",
+    "evidence": [
+      "sources/p2-shared/notes-smoke.json",
+      "sources/p2-shared/browser-check.json",
+      "sources/p2-shared/content-check.json"
+    ]
+  }
+}

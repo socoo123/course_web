@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550" role="img" aria-labelledby="title desc">
+  <title id="title">分类形状与稳定交叉熵路径</title>
+  <desc id="desc">Fashion-MNIST批图像N乘1乘28乘28展平为N乘784，线性层得到N乘10的logits。训练直接将logits和N形状的long标签送入交叉熵。softmax仅作为概率展示支路。自拟三类分数0、log2、log3加任意公共常数后，概率仍为六分之一、三分之一、二分之一。</desc>
+  <style>@media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></marker></defs>
+  <g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="18">
+    <text x="24" y="34" font-size="23" font-weight="700">训练接收logits，不把概率再当logits</text>
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="24" y="65" width="225" height="78" rx="8"/>
+      <rect x="335" y="65" width="220" height="78" rx="8"/>
+      <rect x="643" y="65" width="232" height="78" rx="8"/>
+      <path d="M249 104 H327" marker-end="url(#arrow)"/>
+      <path d="M555 104 H635" marker-end="url(#arrow)"/>
+      <path d="M756 143 V193" marker-end="url(#arrow)"/>
+      <rect x="609" y="202" width="266" height="90" rx="8"/>
+      <path d="M643 130 H583 V326 H315" marker-end="url(#arrow)"/>
+      <rect x="24" y="285" width="282" height="70" rx="8"/>
+      <path d="M434 245 H601" marker-end="url(#arrow)"/>
+      <path d="M24 385 H875"/>
+    </g>
+    <text x="42" y="96">图像：(N, 1, 28, 28)</text><text x="42" y="124">单通道、未resize</text>
+    <text x="353" y="96">展平：(N, 784)</text><text x="353" y="124">只展平非批轴</text>
+    <text x="661" y="96">logits：(N, 10)</text><text x="661" y="124">线性输出，不限正负</text>
+    <text x="266" y="91" font-size="15">flatten</text><text x="569" y="91" font-size="15">Linear</text>
+    <text x="629" y="231" font-weight="700">CrossEntropyLoss</text>
+    <text x="629" y="259">稳定logsumexp − zᵧ</text><text x="629" y="282" font-size="15">none归约输出：(N,)</text>
+    <text x="274" y="237">标签：(N,) long</text><text x="274" y="267">每项为0–9类别索引</text>
+    <text x="42" y="314">展示概率：(N, 10)</text><text x="42" y="341">softmax(dim=1)，每行和1</text>
+    <text x="330" y="359" font-size="16">概率支路不再接入CE</text>
+    <text x="25" y="422" font-size="21" font-weight="700">自拟三类例：每行公共平移不改概率</text>
+    <text x="25" y="458">[0, log2, log3] → [1, 2, 3] ÷ 6 → [1/6, 1/3, 1/2]</text>
+    <text x="25" y="490">加a后指数都乘eᵃ，分子分母抵消；按类别轴归一化。</text>
+    <text x="25" y="527" font-size="16">减最大值防指数上溢；直接logsumexp还避免先得到0概率再取log。</text>
+  </g>
+</svg>

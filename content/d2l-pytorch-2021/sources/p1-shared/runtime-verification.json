@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-13",
+  "environment": {
+    "python": "3.11.8",
+    "torch": "2.5.1",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "device": "cpu"
+  },
+  "environmentCreatedWith": "python3 -m venv /tmp/d2l-p1-runtime.KGlyjU/venv",
+  "installedWith": "uv pip install --python /tmp/d2l-p1-runtime.KGlyjU/venv/bin/python torch==2.5.1 numpy==1.26.4 pandas==2.2.3",
+  "installAttempts": [
+    {
+      "result": "timeout",
+      "deadlineSeconds": 300,
+      "stage": "resolved; wheel downloads incomplete"
+    },
+    {
+      "result": "passed",
+      "deadlineSeconds": 1200,
+      "cacheReused": true
+    }
+  ],
+  "practiceCommand": "/tmp/d2l-p1-runtime.KGlyjU/venv/bin/python content/d2l-pytorch-2021/sources/p1-tensor-autograd/smoke.py",
+  "practiceScriptSha256": "08fd0051c40e0fa7497b2c71914721d31ba2955b2d9abda001ff2598ad6dfc3e",
+  "practiceEvidence": "practice-smoke.json",
+  "noteEvidence": "notes-smoke.json",
+  "lock": "runtime-freeze.txt",
+  "scriptDisposition": "temporary_smoke_script_removed_after_acceptance",
+  "scope": "机制烟测与8个笔记代码块，不是完整学生作业或旧Notebook复现。"
+}

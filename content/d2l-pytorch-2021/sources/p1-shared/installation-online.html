@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>安装 &#8212; 动手学深度学习 2.0.0 documentation</title>
+
+    <link rel="stylesheet" href="../_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/d2l.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/d2l.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="符号" href="../chapter_notation/index.html" />
+    <link rel="prev" title="前言" href="../chapter_preface/index.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">安装</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="../search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="../_sources/chapter_installation/index.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://zh-v2.d2l.ai/d2l-zh.pdf">
+                  <i class="fas fa-file-pdf"></i>
+                  MXNet
+              </a>
+          
+              <a  class="mdl-navigation__link" href="https://zh-v2.d2l.ai/d2l-zh-pytorch.pdf">
+                  <i class="fas fa-file-pdf"></i>
+                  PyTorch
+              </a>
+          
+              <a  class="mdl-navigation__link" href="https://zh-v2.d2l.ai/d2l-zh.zip">
+                  <i class="fas fa-download"></i>
+                  Jupyter 记事本
+              </a>
+          
+              <a  class="mdl-navigation__link" href="https://courses.d2l.ai/zh-v2/">
+                  <i class="fas fa-user-graduate"></i>
+                  课程
+              </a>
+          
+              <a  class="mdl-navigation__link" href="https://github.com/d2l-ai/d2l-zh">
+                  <i class="fab fa-github"></i>
+                  GitHub
+              </a>
+          
+              <a  class="mdl-navigation__link" href="https://d2l.ai">
+                  <i class="fas fa-external-link-alt"></i>
+                  English
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="../index.html">
+              <img class="logo" src="../_static/logo-with-text.png" alt="动手学深度学习"/>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapter_preface/index.html">前言</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_notation/index.html">符号</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_introduction/index.html">1. 引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_preliminaries/index.html">2. 预备知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/ndarray.html">2.1. 数据操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/pandas.html">2.2. 数据预处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/linear-algebra.html">2.3. 线性代数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/calculus.html">2.4. 微积分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/autograd.html">2.5. 自动微分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/probability.html">2.6. 概率</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/lookup-api.html">2.7. 查阅文档</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_linear-networks/index.html">3. 线性神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression.html">3.1. 线性回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression-scratch.html">3.2. 线性回归的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression-concise.html">3.3. 线性回归的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression.html">3.4. softmax回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/image-classification-dataset.html">3.5. 图像分类数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression-scratch.html">3.6. softmax回归的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression-concise.html">3.7. softmax回归的简洁实现</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_multilayer-perceptrons/index.html">4. 多层感知机</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/mlp.html">4.1. 多层感知机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/mlp-scratch.html">4.2. 多层感知机的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/mlp-concise.html">4.3. 多层感知机的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/underfit-overfit.html">4.4. 模型选择、欠拟合和过拟合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/weight-decay.html">4.5. 权重衰减</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/dropout.html">4.6. 暂退法（Dropout）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/backprop.html">4.7. 前向传播、反向传播和计算图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/numerical-stability-and-init.html">4.8. 数值稳定性和模型初始化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/environment.html">4.9. 环境和分布偏移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/kaggle-house-price.html">4.10. 实战Kaggle比赛：预测房价</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_deep-learning-computation/index.html">5. 深度学习计算</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/model-construction.html">5.1. 层和块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/parameters.html">5.2. 参数管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/deferred-init.html">5.3. 延后初始化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/custom-layer.html">5.4. 自定义层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/read-write.html">5.5. 读写文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/use-gpu.html">5.6. GPU</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_convolutional-neural-networks/index.html">6. 卷积神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/why-conv.html">6.1. 从全连接层到卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/conv-layer.html">6.2. 图像卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/padding-and-strides.html">6.3. 填充和步幅</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/channels.html">6.4. 多输入多输出通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/pooling.html">6.5. 汇聚层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/lenet.html">6.6. 卷积神经网络（LeNet）</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_convolutional-modern/index.html">7. 现代卷积神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/alexnet.html">7.1. 深度卷积神经网络（AlexNet）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/vgg.html">7.2. 使用块的网络（VGG）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/nin.html">7.3. 网络中的网络（NiN）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/googlenet.html">7.4. 含并行连结的网络（GoogLeNet）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/batch-norm.html">7.5. 批量规范化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/resnet.html">7.6. 残差网络（ResNet）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/densenet.html">7.7. 稠密连接网络（DenseNet）</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_recurrent-neural-networks/index.html">8. 循环神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/sequence.html">8.1. 序列模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/text-preprocessing.html">8.2. 文本预处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/language-models-and-dataset.html">8.3. 语言模型和数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn.html">8.4. 循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn-scratch.html">8.5. 循环神经网络的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn-concise.html">8.6. 循环神经网络的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/bptt.html">8.7. 通过时间反向传播</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_recurrent-modern/index.html">9. 现代循环神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/gru.html">9.1. 门控循环单元（GRU）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/lstm.html">9.2. 长短期记忆网络（LSTM）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/deep-rnn.html">9.3. 深度循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/bi-rnn.html">9.4. 双向循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/machine-translation-and-dataset.html">9.5. 机器翻译与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/encoder-decoder.html">9.6. 编码器-解码器架构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/seq2seq.html">9.7. 序列到序列学习（seq2seq）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/beam-search.html">9.8. 束搜索</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_attention-mechanisms/index.html">10. 注意力机制</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/attention-cues.html">10.1. 注意力提示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/nadaraya-waston.html">10.2. 注意力汇聚：Nadaraya-Watson 核回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/attention-scoring-functions.html">10.3. 注意力评分函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/bahdanau-attention.html">10.4. Bahdanau 注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/multihead-attention.html">10.5. 多头注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/self-attention-and-positional-encoding.html">10.6. 自注意力和位置编码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/transformer.html">10.7. Transformer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_optimization/index.html">11. 优化算法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/optimization-intro.html">11.1. 优化和深度学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/convexity.html">11.2. 凸性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/gd.html">11.3. 梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/sgd.html">11.4. 随机梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/minibatch-sgd.html">11.5. 小批量随机梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/momentum.html">11.6. 动量法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adagrad.html">11.7. AdaGrad算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">11.8. RMSProp算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adadelta.html">11.9. Adadelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">11.10. Adam算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/lr-scheduler.html">11.11. 学习率调度器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_computational-performance/index.html">12. 计算性能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/hybridize.html">12.1. 编译器和解释器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/async-computation.html">12.2. 异步计算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/auto-parallelism.html">12.3. 自动并行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/hardware.html">12.4. 硬件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/multiple-gpus.html">12.5. 多GPU训练</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/multiple-gpus-concise.html">12.6. 多GPU的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/parameterserver.html">12.7. 参数服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_computer-vision/index.html">13. 计算机视觉</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/image-augmentation.html">13.1. 图像增广</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/fine-tuning.html">13.2. 微调</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/bounding-box.html">13.3. 目标检测和边界框</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/anchor.html">13.4. 锚框</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/multiscale-object-detection.html">13.5. 多尺度目标检测</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/object-detection-dataset.html">13.6. 目标检测数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/ssd.html">13.7. 单发多框检测（SSD）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/rcnn.html">13.8. 区域卷积神经网络（R-CNN）系列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/semantic-segmentation-and-dataset.html">13.9. 语义分割和数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/transposed-conv.html">13.10. 转置卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/fcn.html">13.11. 全卷积网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/neural-style.html">13.12. 风格迁移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-cifar10.html">13.13. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-dog.html">13.14. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/index.html">14. 自然语言处理：预训练</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/word2vec.html">14.1. 词嵌入（word2vec）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/approx-training.html">14.2. 近似训练</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/word-embedding-dataset.html">14.3. 用于预训练词嵌入的数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/word2vec-pretraining.html">14.4. 预训练word2vec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/glove.html">14.5. 全局向量的词嵌入（GloVe）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/subword-embedding.html">14.6. 子词嵌入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/similarity-analogy.html">14.7. 词的相似性和类比任务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/bert.html">14.8. 来自Transformers的双向编码器表示（BERT）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/bert-dataset.html">14.9. 用于预训练BERT的数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/bert-pretraining.html">14.10. 预训练BERT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-applications/index.html">15. 自然语言处理：应用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-and-dataset.html">15.1. 情感分析及数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-rnn.html">15.2. 情感分析：使用循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.3. 情感分析：使用卷积神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.4. 自然语言推断与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.5. 自然语言推断：使用注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.6. 针对序列级和词元级应用微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.7. 自然语言推断：微调BERT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">16. 附录：深度学习工具</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/jupyter.html">16.1. 使用Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/sagemaker.html">16.2. 使用Amazon SageMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/aws.html">16.3. 使用Amazon EC2实例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/selecting-servers-gpus.html">16.4. 选择服务器和GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/contributing.html">16.5. 为本书做贡献</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/d2l.html">16.6. <code class="docutils literal notranslate"><span class="pre">d2l</span></code> API 文档</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_references/zreferences.html">参考文献</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="../_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="../index.html">
+              <img class="logo" src="../_static/logo-with-text.png" alt="动手学深度学习"/>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapter_preface/index.html">前言</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_notation/index.html">符号</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_introduction/index.html">1. 引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_preliminaries/index.html">2. 预备知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/ndarray.html">2.1. 数据操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/pandas.html">2.2. 数据预处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/linear-algebra.html">2.3. 线性代数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/calculus.html">2.4. 微积分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/autograd.html">2.5. 自动微分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/probability.html">2.6. 概率</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/lookup-api.html">2.7. 查阅文档</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_linear-networks/index.html">3. 线性神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression.html">3.1. 线性回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression-scratch.html">3.2. 线性回归的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression-concise.html">3.3. 线性回归的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression.html">3.4. softmax回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/image-classification-dataset.html">3.5. 图像分类数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression-scratch.html">3.6. softmax回归的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression-concise.html">3.7. softmax回归的简洁实现</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_multilayer-perceptrons/index.html">4. 多层感知机</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/mlp.html">4.1. 多层感知机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/mlp-scratch.html">4.2. 多层感知机的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/mlp-concise.html">4.3. 多层感知机的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/underfit-overfit.html">4.4. 模型选择、欠拟合和过拟合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/weight-decay.html">4.5. 权重衰减</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/dropout.html">4.6. 暂退法（Dropout）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/backprop.html">4.7. 前向传播、反向传播和计算图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/numerical-stability-and-init.html">4.8. 数值稳定性和模型初始化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/environment.html">4.9. 环境和分布偏移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_multilayer-perceptrons/kaggle-house-price.html">4.10. 实战Kaggle比赛：预测房价</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_deep-learning-computation/index.html">5. 深度学习计算</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/model-construction.html">5.1. 层和块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/parameters.html">5.2. 参数管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/deferred-init.html">5.3. 延后初始化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/custom-layer.html">5.4. 自定义层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/read-write.html">5.5. 读写文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/use-gpu.html">5.6. GPU</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_convolutional-neural-networks/index.html">6. 卷积神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/why-conv.html">6.1. 从全连接层到卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/conv-layer.html">6.2. 图像卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/padding-and-strides.html">6.3. 填充和步幅</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/channels.html">6.4. 多输入多输出通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/pooling.html">6.5. 汇聚层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/lenet.html">6.6. 卷积神经网络（LeNet）</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_convolutional-modern/index.html">7. 现代卷积神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/alexnet.html">7.1. 深度卷积神经网络（AlexNet）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/vgg.html">7.2. 使用块的网络（VGG）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/nin.html">7.3. 网络中的网络（NiN）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/googlenet.html">7.4. 含并行连结的网络（GoogLeNet）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/batch-norm.html">7.5. 批量规范化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/resnet.html">7.6. 残差网络（ResNet）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/densenet.html">7.7. 稠密连接网络（DenseNet）</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_recurrent-neural-networks/index.html">8. 循环神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/sequence.html">8.1. 序列模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/text-preprocessing.html">8.2. 文本预处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/language-models-and-dataset.html">8.3. 语言模型和数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn.html">8.4. 循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn-scratch.html">8.5. 循环神经网络的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn-concise.html">8.6. 循环神经网络的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/bptt.html">8.7. 通过时间反向传播</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_recurrent-modern/index.html">9. 现代循环神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/gru.html">9.1. 门控循环单元（GRU）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/lstm.html">9.2. 长短期记忆网络（LSTM）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/deep-rnn.html">9.3. 深度循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/bi-rnn.html">9.4. 双向循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/machine-translation-and-dataset.html">9.5. 机器翻译与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/encoder-decoder.html">9.6. 编码器-解码器架构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/seq2seq.html">9.7. 序列到序列学习（seq2seq）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/beam-search.html">9.8. 束搜索</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_attention-mechanisms/index.html">10. 注意力机制</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/attention-cues.html">10.1. 注意力提示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/nadaraya-waston.html">10.2. 注意力汇聚：Nadaraya-Watson 核回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/attention-scoring-functions.html">10.3. 注意力评分函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/bahdanau-attention.html">10.4. Bahdanau 注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/multihead-attention.html">10.5. 多头注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/self-attention-and-positional-encoding.html">10.6. 自注意力和位置编码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/transformer.html">10.7. Transformer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_optimization/index.html">11. 优化算法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/optimization-intro.html">11.1. 优化和深度学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/convexity.html">11.2. 凸性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/gd.html">11.3. 梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/sgd.html">11.4. 随机梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/minibatch-sgd.html">11.5. 小批量随机梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/momentum.html">11.6. 动量法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adagrad.html">11.7. AdaGrad算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">11.8. RMSProp算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adadelta.html">11.9. Adadelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">11.10. Adam算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/lr-scheduler.html">11.11. 学习率调度器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_computational-performance/index.html">12. 计算性能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/hybridize.html">12.1. 编译器和解释器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/async-computation.html">12.2. 异步计算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/auto-parallelism.html">12.3. 自动并行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/hardware.html">12.4. 硬件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/multiple-gpus.html">12.5. 多GPU训练</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/multiple-gpus-concise.html">12.6. 多GPU的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computational-performance/parameterserver.html">12.7. 参数服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_computer-vision/index.html">13. 计算机视觉</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/image-augmentation.html">13.1. 图像增广</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/fine-tuning.html">13.2. 微调</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/bounding-box.html">13.3. 目标检测和边界框</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/anchor.html">13.4. 锚框</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/multiscale-object-detection.html">13.5. 多尺度目标检测</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/object-detection-dataset.html">13.6. 目标检测数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/ssd.html">13.7. 单发多框检测（SSD）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/rcnn.html">13.8. 区域卷积神经网络（R-CNN）系列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/semantic-segmentation-and-dataset.html">13.9. 语义分割和数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/transposed-conv.html">13.10. 转置卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/fcn.html">13.11. 全卷积网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/neural-style.html">13.12. 风格迁移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-cifar10.html">13.13. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-dog.html">13.14. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/index.html">14. 自然语言处理：预训练</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/word2vec.html">14.1. 词嵌入（word2vec）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/approx-training.html">14.2. 近似训练</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/word-embedding-dataset.html">14.3. 用于预训练词嵌入的数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/word2vec-pretraining.html">14.4. 预训练word2vec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/glove.html">14.5. 全局向量的词嵌入（GloVe）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/subword-embedding.html">14.6. 子词嵌入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/similarity-analogy.html">14.7. 词的相似性和类比任务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/bert.html">14.8. 来自Transformers的双向编码器表示（BERT）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/bert-dataset.html">14.9. 用于预训练BERT的数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/bert-pretraining.html">14.10. 预训练BERT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-applications/index.html">15. 自然语言处理：应用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-and-dataset.html">15.1. 情感分析及数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-rnn.html">15.2. 情感分析：使用循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.3. 情感分析：使用卷积神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.4. 自然语言推断与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.5. 自然语言推断：使用注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.6. 针对序列级和词元级应用微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.7. 自然语言推断：微调BERT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">16. 附录：深度学习工具</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/jupyter.html">16.1. 使用Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/sagemaker.html">16.2. 使用Amazon SageMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/aws.html">16.3. 使用Amazon EC2实例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/selecting-servers-gpus.html">16.4. 选择服务器和GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/contributing.html">16.5. 为本书做贡献</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/d2l.html">16.6. <code class="docutils literal notranslate"><span class="pre">d2l</span></code> API 文档</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_references/zreferences.html">参考文献</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="chap-installation">
+<span id="id1"></span><h1>安装<a class="headerlink" href="#chap-installation" title="Permalink to this heading">¶</a></h1>
+<p>我们需要配置一个环境来运行 Python、Jupyter
+Notebook、相关库以及运行本书所需的代码，以快速入门并获得动手学习经验。</p>
+<div class="section" id="miniconda">
+<h2>安装 Miniconda<a class="headerlink" href="#miniconda" title="Permalink to this heading">¶</a></h2>
+<p>最简单的方法就是安装依赖Python
+3.x的<a class="reference external" href="https://conda.io/en/latest/miniconda.html">Miniconda</a>。
+如果已安装conda，则可以跳过以下步骤。访问Miniconda网站，根据Python3.x版本确定适合的版本。</p>
+<p>如果我们使用macOS，假设Python版本是3.9（我们的测试版本），将下载名称包含字符串“MacOSX”的bash脚本，并执行以下操作：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 以Intel处理器为例，文件名可能会更改</span>
+sh<span class="w"> </span>Miniconda3-py39_4.12.0-MacOSX-x86_64.sh<span class="w"> </span>-b
+</pre></div>
+</div>
+<p>如果我们使用Linux，假设Python版本是3.9（我们的测试版本），将下载名称包含字符串“Linux”的bash脚本，并执行以下操作：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 文件名可能会更改</span>
+sh<span class="w"> </span>Miniconda3-py39_4.12.0-Linux-x86_64.sh<span class="w"> </span>-b
+</pre></div>
+</div>
+<p>接下来，初始化终端Shell，以便我们可以直接运行<code class="docutils literal notranslate"><span class="pre">conda</span></code>。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~/miniconda3/bin/conda<span class="w"> </span>init
+</pre></div>
+</div>
+<p>现在关闭并重新打开当前的shell。并使用下面的命令创建一个新的环境：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>d2l<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9<span class="w"> </span>-y
+</pre></div>
+</div>
+<p>现在激活 <code class="docutils literal notranslate"><span class="pre">d2l</span></code> 环境：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>d2l
+</pre></div>
+</div>
+</div>
+<div class="section" id="d2l">
+<h2>安装深度学习框架和<code class="docutils literal notranslate"><span class="pre">d2l</span></code>软件包<a class="headerlink" href="#d2l" title="Permalink to this heading">¶</a></h2>
+<p>在安装深度学习框架之前，请先检查计算机上是否有可用的GPU。
+例如可以查看计算机是否装有NVIDIA
+GPU并已安装<a class="reference external" href="https://developer.nvidia.com/cuda-downloads">CUDA</a>。
+如果机器没有任何GPU，没有必要担心，因为CPU在前几章完全够用。
+但是，如果想流畅地学习全部章节，请提早获取GPU并且安装深度学习框架的GPU版本。</p>
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect"><div class="mdl-tabs__tab-bar text"><a href="#mxnet-1-0" onclick="tagClick('mxnet'); return false;" class="mdl-tabs__tab is-active">mxnet</a><a href="#pytorch-1-1" onclick="tagClick('pytorch'); return false;" class="mdl-tabs__tab ">pytorch</a><a href="#tensorflow-1-2" onclick="tagClick('tensorflow'); return false;" class="mdl-tabs__tab ">tensorflow</a><a href="#paddle-1-3" onclick="tagClick('paddle'); return false;" class="mdl-tabs__tab ">paddle</a></div><div class="mdl-tabs__panel is-active" id="mxnet-1-0"><p>安装MXNet的GPU版本，首先需要知道已安装的CUDA版本。
+（可以通过运行<code class="docutils literal notranslate"><span class="pre">nvcc</span> <span class="pre">--version</span></code>或<code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">/usr/local/cuda/version.txt</span></code>来检验。）
+假设已安装CUDA 10.1版本，请执行以下命令：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 对于Linux和macOS用户</span>
+pip<span class="w"> </span>install<span class="w"> </span>mxnet-cu101<span class="o">==</span><span class="m">1</span>.7.0
+
+<span class="c1"># 对于Windows用户</span>
+pip<span class="w"> </span>install<span class="w"> </span>mxnet-cu101<span class="o">==</span><span class="m">1</span>.7.0<span class="w"> </span>-f<span class="w"> </span>https://dist.mxnet.io/python
+</pre></div>
+</div>
+<p>可以根据CUDA版本更改如上<code class="docutils literal notranslate"><span class="pre">mxnet-cu101</span></code>的最后一位数字， 例如：CUDA
+10.0是<code class="docutils literal notranslate"><span class="pre">cu100</span></code>， CUDA 9.0是<code class="docutils literal notranslate"><span class="pre">cu90</span></code>。</p>
+<p>如果机器没有NVIDIA GPU或CUDA，可以按如下方式MXNet的CPU版本：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">mxnet</span><span class="o">==</span><span class="m">1</span>.7.0.post1
+</pre></div>
+</div>
+</div><div class="mdl-tabs__panel " id="pytorch-1-1"><p>我们可以按如下方式安装PyTorch的CPU或GPU版本：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.12.0
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.13.0
+</pre></div>
+</div>
+</div><div class="mdl-tabs__panel " id="tensorflow-1-2"><p>我们可以按如下方式安装TensorFlow的CPU或GPU版本：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.8.0
+pip<span class="w"> </span>install<span class="w"> </span>tensorflow-probability<span class="o">==</span><span class="m">0</span>.16.0
+</pre></div>
+</div>
+</div><div class="mdl-tabs__panel " id="paddle-1-3"><p>安装PaddlePaddle的GPU版本，首先需要知道已安装的CUDA版本。
+（可以通过运行<code class="docutils literal notranslate"><span class="pre">nvcc</span> <span class="pre">--version</span></code>或<code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">/usr/local/cuda/version.txt</span></code>来检验。）
+假设已安装CUDA 11.2版本，请执行以下命令：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>paddlepaddle-gpu<span class="o">==</span><span class="m">2</span>.3.2.post112<span class="w"> </span>-f<span class="w"> </span>https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
+</pre></div>
+</div>
+<p>如果机器没有NVIDIA GPU或CUDA，可以按如下方式PaddlePaddle的CPU版本：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">paddlepaddle</span><span class="o">==</span><span class="m">2</span>.3.2<span class="w"> </span>-i<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple
+</pre></div>
+</div>
+</div></div><p>我们的下一步是安装<code class="docutils literal notranslate"><span class="pre">d2l</span></code>包，以方便调取本书中经常使用的函数和类：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">d2l</span><span class="o">==</span><span class="m">0</span>.17.6
+</pre></div>
+</div>
+</div>
+<div class="section" id="d2l-notebook">
+<h2>下载 D2L Notebook<a class="headerlink" href="#d2l-notebook" title="Permalink to this heading">¶</a></h2>
+<p>接下来，需要下载这本书的代码。 可以点击本书HTML页面顶部的“Jupyter
+记事本”选项下载后解压代码，或者可以按照如下方式进行下载：</p>
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect"><div class="mdl-tabs__tab-bar text"><a href="#mxnet-3-0" onclick="tagClick('mxnet'); return false;" class="mdl-tabs__tab is-active">mxnet</a><a href="#pytorch-3-1" onclick="tagClick('pytorch'); return false;" class="mdl-tabs__tab ">pytorch</a><a href="#tensorflow-3-2" onclick="tagClick('tensorflow'); return false;" class="mdl-tabs__tab ">tensorflow</a><a href="#paddle-3-3" onclick="tagClick('paddle'); return false;" class="mdl-tabs__tab ">paddle</a></div><div class="mdl-tabs__panel is-active" id="mxnet-3-0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>d2l-zh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>d2l-zh
+curl<span class="w"> </span>https://zh-v2.d2l.ai/d2l-zh-2.0.0.zip<span class="w"> </span>-o<span class="w"> </span>d2l-zh.zip
+unzip<span class="w"> </span>d2l-zh.zip<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>d2l-zh.zip
+<span class="nb">cd</span><span class="w"> </span>mxnet
+</pre></div>
+</div>
+<p>注意：如果没有安装<code class="docutils literal notranslate"><span class="pre">unzip</span></code>，则可以通过运行<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">unzip</span></code>进行安装。</p>
+</div><div class="mdl-tabs__panel " id="pytorch-3-1"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>d2l-zh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>d2l-zh
+curl<span class="w"> </span>https://zh-v2.d2l.ai/d2l-zh-2.0.0.zip<span class="w"> </span>-o<span class="w"> </span>d2l-zh.zip
+unzip<span class="w"> </span>d2l-zh.zip<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>d2l-zh.zip
+<span class="nb">cd</span><span class="w"> </span>pytorch
+</pre></div>
+</div>
+<p>注意：如果没有安装<code class="docutils literal notranslate"><span class="pre">unzip</span></code>，则可以通过运行<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">unzip</span></code>进行安装。</p>
+</div><div class="mdl-tabs__panel " id="tensorflow-3-2"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>d2l-zh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>d2l-zh
+curl<span class="w"> </span>https://zh-v2.d2l.ai/d2l-zh-2.0.0.zip<span class="w"> </span>-o<span class="w"> </span>d2l-zh.zip
+unzip<span class="w"> </span>d2l-zh.zip<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>d2l-zh.zip
+<span class="nb">cd</span><span class="w"> </span>tensorflow
+</pre></div>
+</div>
+<p>注意：如果没有安装<code class="docutils literal notranslate"><span class="pre">unzip</span></code>，则可以通过运行<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">unzip</span></code>进行安装。</p>
+</div><div class="mdl-tabs__panel " id="paddle-3-3"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>d2l-zh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>d2l-zh
+curl<span class="w"> </span>https://zh-v2.d2l.ai/d2l-zh-2.0.0.zip<span class="w"> </span>-o<span class="w"> </span>d2l-zh.zip
+unzip<span class="w"> </span>d2l-zh.zip<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>d2l-zh.zip
+<span class="nb">cd</span><span class="w"> </span>paddle
+</pre></div>
+</div>
+<p>注意：如果没有安装<code class="docutils literal notranslate"><span class="pre">unzip</span></code>，则可以通过运行<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">unzip</span></code>进行安装。</p>
+</div></div><p>安装完成后我们可以通过运行以下命令打开Jupyter笔记本（在Window系统的命令行窗口中运行以下命令前，需先将当前路径定位到刚下载的本书代码解压后的目录）：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>notebook
+</pre></div>
+</div>
+<p>现在可以在Web浏览器中打开<a class="reference external" href="http://localhost:8888">http://localhost:8888</a>（通常会自动打开）。
+由此，我们可以运行这本书中每个部分的代码。
+在运行书籍代码、更新深度学习框架或<code class="docutils literal notranslate"><span class="pre">d2l</span></code>软件包之前，请始终执行<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">d2l</span></code>以激活运行时环境。
+要退出环境，请运行<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code>。</p>
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect"><div class="mdl-tabs__tab-bar text"><a href="#mxnet-5-0" onclick="tagClick('mxnet'); return false;" class="mdl-tabs__tab is-active">mxnet</a><a href="#pytorch-5-1" onclick="tagClick('pytorch'); return false;" class="mdl-tabs__tab ">pytorch</a><a href="#tensorflow-5-2" onclick="tagClick('tensorflow'); return false;" class="mdl-tabs__tab ">tensorflow</a><a href="#paddle-5-3" onclick="tagClick('paddle'); return false;" class="mdl-tabs__tab ">paddle</a></div><div class="mdl-tabs__panel is-active" id="mxnet-5-0"><p><a class="reference external" href="https://discuss.d2l.ai/t/2082">Discussions</a></p>
+</div><div class="mdl-tabs__panel " id="pytorch-5-1"><p><a class="reference external" href="https://discuss.d2l.ai/t/2083">Discussions</a></p>
+</div><div class="mdl-tabs__panel " id="tensorflow-5-2"><p><a class="reference external" href="https://discuss.d2l.ai/t/2084">Discussions</a></p>
+</div><div class="mdl-tabs__panel " id="paddle-5-3"><p><a class="reference external" href="https://discuss.d2l.ai/t/11679">Discussions</a></p>
+</div></div></div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">安装</a><ul>
+<li><a class="reference internal" href="#miniconda">安装 Miniconda</a></li>
+<li><a class="reference internal" href="#d2l">安装深度学习框架和<code class="docutils literal notranslate"><span class="pre">d2l</span></code>软件包</a></li>
+<li><a class="reference internal" href="#d2l-notebook">下载 D2L Notebook</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="../chapter_preface/index.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>前言</div>
+         </div>
+     </a>
+     <a id="button-next" href="../chapter_notation/index.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>符号</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

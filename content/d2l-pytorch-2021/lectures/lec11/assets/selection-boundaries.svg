@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 490" role="img" aria-labelledby="title desc">
+  <title id="title">模型选择中的信息边界</title>
+  <desc id="desc">先按任务切分训练、验证和测试数据。只有训练集拟合预处理状态和模型参数；冻结的预处理变换可应用到验证和测试。验证用于选配置，测试在配置锁定后评估，不能把测试统计量回传给训练。</desc>
+  <style>@media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <g font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" fill="currentColor" font-size="18">
+    <text x="25" y="34" font-size="23" font-weight="700">先划分，再拟合：预处理统计量也是模型状态</text>
+    <g stroke="currentColor" stroke-width="2" fill="none">
+      <rect x="25" y="75" width="235" height="75" rx="8"/>
+      <rect x="333" y="75" width="235" height="75" rx="8"/>
+      <rect x="640" y="75" width="235" height="75" rx="8"/>
+      <rect x="25" y="210" width="235" height="95" rx="8"/>
+      <rect x="333" y="210" width="235" height="95" rx="8"/>
+      <rect x="640" y="210" width="235" height="95" rx="8"/>
+      <path d="M142 150 V200 M450 150 V200 M757 150 V200" marker-end="url(#arrow)"/>
+      <path d="M260 265 H324 M568 265 H631" marker-end="url(#arrow)"/>
+      <path d="M450 305 V355 H142 V315" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+      <path d="M25 390 H875"/>
+    </g>
+    <text x="110" y="105" font-weight="700">训练集</text><text x="58" y="133">拟合参数与预处理状态</text>
+    <text x="418" y="105" font-weight="700">验证集</text><text x="358" y="133">只变换，用于配置选择</text>
+    <text x="725" y="105" font-weight="700">测试集</text><text x="673" y="133">只变换，最后评估</text>
+    <text x="44" y="239">例：训练数据 [0, 2]</text><text x="44" y="283">μ = 1，σ = 1</text>
+    <text x="353" y="239">验证输入 10 → 9</text><text x="353" y="283">使用冻结的 μ、σ</text>
+    <text x="660" y="239">配置锁定之后</text><text x="660" y="283">评估整个冻结流水线</text>
+    <text x="273" y="247" font-size="15">应用</text><text x="580" y="247" font-size="15">锁定</text>
+    <text x="180" y="379" font-size="16">验证选择：改变配置后，重新拟合训练流程</text>
+    <text x="27" y="423" font-weight="700">禁止：先用全数据求均值 / 选特征，再划分训练与验证</text>
+    <text x="27" y="454">公平曲线：同一参数快照、同一模式、同一数据损失口径</text>
+    <text x="27" y="479" font-size="15">编者自拟信息流与手算例；不是课堂截图或训练记录。</text>
+  </g>
+</svg>

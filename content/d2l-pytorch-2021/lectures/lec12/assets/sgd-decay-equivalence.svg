@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img" aria-labelledby="title desc">
+  <title id="title">普通SGD中L2惩罚与乘法衰减的同一步更新</title>
+  <desc id="desc">旧权重为2和负1，数据梯度为0.5和负0.5，学习率0.1，lambda为0.2。路线一把惩罚梯度加进数据梯度后更新；路线二把旧权重乘0.98后减去0.1倍数据梯度，两者都得到1.91和负0.93。此等价不直接适用于Adam或AdamW。</desc>
+  <style>@media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <g font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" fill="currentColor" font-size="18">
+    <text x="24" y="34" font-size="22" font-weight="700">同一旧参数点、同一数据梯度：两条等价路线</text>
+    <text x="25" y="72">w = [2, −1]　 g = [0.5, −0.5]　 η = 0.1　 λ = 0.2</text>
+    <g stroke="currentColor" stroke-width="2" fill="none">
+      <rect x="25" y="110" width="365" height="155" rx="8"/>
+      <rect x="510" y="110" width="365" height="155" rx="8"/>
+      <rect x="278" y="314" width="345" height="66" rx="8"/>
+      <path d="M208 265 V347 H268 M693 265 V347 H633" marker-end="url(#arrow)"/>
+      <path d="M25 406 H875"/>
+    </g>
+    <text x="44" y="143" font-weight="700">A：把 L2 加进目标</text>
+    <text x="44" y="180">惩罚梯度 λw = [0.4, −0.2]</text>
+    <text x="44" y="216">总梯度 g + λw = [0.9, −0.7]</text>
+    <text x="44" y="247">w⁺ = w − η(g + λw)</text>
+    <text x="529" y="143" font-weight="700">B：缩小旧权重，再减数据项</text>
+    <text x="529" y="180">倍率 1 − ηλ = 0.98</text>
+    <text x="529" y="216">衰减后 [1.96, −0.98]</text>
+    <text x="529" y="247">再减 ηg = [0.05, −0.05]</text>
+    <text x="323" y="355" font-size="23" font-weight="700">w⁺ = [1.91, −0.93]</text>
+    <text x="27" y="434">前提：普通无动量SGD；损失归约、惩罚系数和参数集合一致</text>
+    <text x="27" y="460" font-size="16">不是Adam/AdamW等价图；自拟解析算例，不是已运行实验。</text>
+  </g>
+</svg>

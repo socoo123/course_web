@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 510" role="img" aria-labelledby="title desc">
+  <title id="title">从残差到一次SGD更新，分母使用实际批长</title>
+  <desc id="desc">两条记录x为1和2、y为2和3，初始w与b为0。半平方平均损失3.25，梯度w为负4、b为负2.5，学习率0.1更新到w为0.4、b为0.25，损失1.40625。五条记录批大小配置2时实际批长为2、2、1，尾批次不能继续除2。</desc>
+  <style>@media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></marker></defs>
+  <g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="18">
+    <text x="24" y="34" font-size="23" font-weight="700">归一化只做一次，分母是当前实际样本数</text>
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="24" y="65" width="235" height="130" rx="8"/>
+      <rect x="333" y="65" width="235" height="130" rx="8"/>
+      <rect x="641" y="65" width="235" height="130" rx="8"/>
+      <path d="M259 130 H325" marker-end="url(#arrow)"/>
+      <path d="M568 130 H633" marker-end="url(#arrow)"/>
+      <path d="M24 264 H876"/>
+    </g>
+    <text x="42" y="96" font-weight="700">前向：w = b = 0</text>
+    <text x="42" y="126">x = [1, 2]，y = [2, 3]</text>
+    <text x="42" y="155">残差 r = [−2, −3]</text>
+    <text x="42" y="182">L = (4 + 9) / 4 = 3.25</text>
+    <text x="351" y="96" font-weight="700">反向：按 N = 2 平均</text>
+    <text x="351" y="126">∂L/∂w = (−2 − 6) / 2</text>
+    <text x="351" y="155">             = −4</text>
+    <text x="351" y="182">∂L/∂b = −5 / 2 = −2.5</text>
+    <text x="659" y="96" font-weight="700">更新：η = 0.1</text>
+    <text x="659" y="126">w = 0.4，b = 0.25</text>
+    <text x="659" y="155">预测 [0.65, 1.05]</text>
+    <text x="659" y="182">新 L = 1.40625</text>
+    <text x="25" y="233">半平方平均损失：L = Σ r² / (2N)；原始MSE没有分母里的2</text>
+    <text x="25" y="301" font-size="21" font-weight="700">5条样本，配置batch_size = 2，不丢尾批次</text>
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="26" y="325" width="230" height="70" rx="8"/>
+      <rect x="334" y="325" width="230" height="70" rx="8"/>
+      <rect x="642" y="325" width="230" height="70" rx="8"/>
+      <path d="M256 360 H326" marker-end="url(#arrow)"/>
+      <path d="M564 360 H634" marker-end="url(#arrow)"/>
+    </g>
+    <text x="47" y="353">第1批：2条</text><text x="47" y="380">梯度和 ÷ 2</text>
+    <text x="355" y="353">第2批：2条</text><text x="355" y="380">梯度和 ÷ 2</text>
+    <text x="663" y="353">尾批：1条</text><text x="663" y="380">梯度和 ÷ 1，而非2</text>
+    <text x="26" y="435" font-weight="700">sum反向 → 更新时除N；mean反向 → 更新时不再除N</text>
+    <text x="26" y="475" font-size="16">编者自拟解析例子；图不是训练日志，不代表已执行完整训练。</text>
+  </g>
+</svg>

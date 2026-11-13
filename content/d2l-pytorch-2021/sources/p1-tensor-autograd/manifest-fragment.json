@@ -1,0 +1,197 @@
+{
+  "labId": "tensor-autograd",
+  "batch": "p1",
+  "preparedAt": "2026-11-13",
+  "nature": "editorial-integrated-practice-not-official-lab",
+  "taskIds": [
+    "tensor-autograd-1",
+    "tensor-autograd-2",
+    "tensor-autograd-3",
+    "tensor-autograd-4"
+  ],
+  "taskSource": {
+    "file": "practice-plan-excerpt.json",
+    "original": "../practice-plan.json",
+    "originalSha256": "52728031fcc0c224fcb5316008c23ad5d4f0e7cb4bf4c881e73fc534d6ed53ba",
+    "scope": "完整首项四任务及其provenance；lookup-api仅原计划导航，未声称本次已读取该节"
+  },
+  "book": {
+    "repository": "https://github.com/d2l-ai/d2l-zh",
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "edition": "当前中文第二版固定提交，不是2021快照",
+    "framework": "PyTorch，原始源码保留其他框架tab但正文只指导PyTorch",
+    "sources": [
+      {
+        "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_preliminaries/ndarray.md",
+        "repositoryPath": "chapter_preliminaries/ndarray.md",
+        "file": "ndarray.txt",
+        "httpStatus": 200,
+        "bytes": 21293,
+        "sha256": "3755c96ce9a2c625398460d1025e335bc957cc87a7b8e8a85b550c458e9c7351",
+        "fetchedAt": "2026-11-13T08:40:24.082995+00:00"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_preliminaries/pandas.md",
+        "repositoryPath": "chapter_preliminaries/pandas.md",
+        "file": "pandas.txt",
+        "httpStatus": 200,
+        "bytes": 4484,
+        "sha256": "0d9e0d95193380ce6260591fab76a651cf4cc9c287886e883d94efc067d8f5a8",
+        "fetchedAt": "2026-11-13T08:40:24.220148+00:00"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_preliminaries/linear-algebra.md",
+        "repositoryPath": "chapter_preliminaries/linear-algebra.md",
+        "file": "linear-algebra.txt",
+        "httpStatus": 200,
+        "bytes": 31868,
+        "sha256": "ee341ac1c6c050238360e8f0ac3f592209e52497792cd0dec669d79edee8f6ef",
+        "fetchedAt": "2026-11-13T08:40:24.144653+00:00"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_preliminaries/calculus.md",
+        "repositoryPath": "chapter_preliminaries/calculus.md",
+        "file": "calculus.txt",
+        "httpStatus": 200,
+        "bytes": 12937,
+        "sha256": "afbb49d0908ae9d23f12572e83044ed736d6aa4fc4a6754d76c183f24334a87d",
+        "fetchedAt": "2026-11-13T08:40:23.879742+00:00"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_preliminaries/autograd.md",
+        "repositoryPath": "chapter_preliminaries/autograd.md",
+        "file": "autograd.txt",
+        "httpStatus": 200,
+        "bytes": 10624,
+        "sha256": "76cf9deb47500edb7b3c97af09a1e41dface5e5671658b2e68909fdbf60c53ec",
+        "fetchedAt": "2026-11-13T08:40:24.397053+00:00"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_preliminaries/probability.md",
+        "repositoryPath": "chapter_preliminaries/probability.md",
+        "file": "probability.txt",
+        "httpStatus": 200,
+        "bytes": 22686,
+        "sha256": "4be0c0ea1e801bc346480d373dae628259b650b640f46d6cea610a83a3f0c5cd",
+        "fetchedAt": "2026-11-13T08:40:24.611730+00:00"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/LICENSE",
+        "repositoryPath": "LICENSE",
+        "file": "LICENSE.txt",
+        "httpStatus": 200,
+        "bytes": 11357,
+        "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+        "fetchedAt": "2026-11-13T08:40:23.921667+00:00"
+      }
+    ],
+    "readCoverage": "六份中文源码正文与练习完整读取；不下载其引用图片、论文或媒体"
+  },
+  "acquisition": {
+    "directoryDiscovery": "https://github.com/d2l-ai/d2l-zh/tree/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_preliminaries",
+    "failedDiscovery": {
+      "url": "https://api.github.com/repos/d2l-ai/d2l-zh/git/trees/e6b18ccea71451a55fcd861d7b96fddf2587b09a?recursive=1",
+      "httpStatus": 403,
+      "resolution": "使用标准公开GitHub目录页定位文件；固定raw链接均HTTP200"
+    },
+    "mediaDownloaded": false,
+    "credentialsSaved": false
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "evidence": "LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/LICENSE",
+    "attribution": "阿斯顿·张、扎卡里 C. 立顿、李沐、亚历山大 J. 斯莫拉及d2l-ai/d2l-zh贡献者",
+    "rawModification": "原始字节不变，仅以.txt后缀存档；保留所有源码内归属与链接",
+    "boundary": "根许可用于该固定仓库源码，不扩张到B站视频、字幕、第三方图片、纸质出版物或竞赛数据；本批没有复制图像或转录视频"
+  },
+  "adaptation": [
+    {
+      "taskId": "tensor-autograd-1",
+      "sections": [
+        "2.1 ndarray",
+        "2.3 linear-algebra"
+      ],
+      "changes": "自拟非方阵、广播与矩阵运算输入，增加形状预测、非法广播及归约不变量验收"
+    },
+    {
+      "taskId": "tensor-autograd-2",
+      "sections": [
+        "2.2 pandas"
+      ],
+      "changes": "自拟六行表；训练验证隔离、冻结均值词表、未知类别及验证干预测试为编者工程新增，不冒称原节原题"
+    },
+    {
+      "taskId": "tensor-autograd-3",
+      "sections": [
+        "2.4 calculus",
+        "2.5 autograd"
+      ],
+      "changes": "改编小函数与输入；明确手算、加权非标量反传、重新建图、梯度快照、清零与detach的观察要求"
+    },
+    {
+      "taskId": "tensor-autograd-4",
+      "sections": [
+        "2.6 probability"
+      ],
+      "changes": "自拟确定序列与事件，改用CPU显式生成器抽样及前缀统计，不要求绘图、证明或误差单调下降"
+    }
+  ],
+  "outputs": {
+    "lab.zh.md": {
+      "path": "../../labs/tensor-autograd/lab.zh.md",
+      "status": "written",
+      "role": "输入输出约束、四任务、可观察验收"
+    },
+    "guide.zh.md": {
+      "path": "../../labs/tensor-autograd/guide.zh.md",
+      "status": "written",
+      "role": "实现路线、不变量和排查，不提供完整解答"
+    },
+    "lab.en.md": {
+      "status": "not_required",
+      "reason": "无真实英文原文，本批基于中文源码自主改编"
+    }
+  },
+  "runtime": {
+    "device": "cpu",
+    "dependencies": [
+      "torch",
+      "numpy",
+      "pandas"
+    ],
+    "d2lRequired": false,
+    "notebookRequired": false,
+    "downloadsRequired": false,
+    "environmentCommands": "仅公共资料提供；本agent未安装依赖",
+    "studentTasksExecuted": false
+  },
+  "smoke": {
+    "scriptDisposition": "temporary_smoke.py_removed_after_main_acceptance",
+    "status": "passed_by_main_agent",
+    "executedByAuthor": false,
+    "executedBy": "main_agent",
+    "evidence": "../p1-shared/practice-smoke.json",
+    "runtimeEvidence": "../p1-shared/runtime-verification.json",
+    "purpose": "主agent验收用独立小数据机制烟测，不是学生解答或官方grader",
+    "coverage": [
+      "非方阵归约广播/reshape/点积一致性",
+      "训练数值状态冻结/显式类别列与float32转换",
+      "梯度累积清零/独立图/同前向不同detach梯度/加权反传",
+      "CPU固定种子/前缀计数/经验期望/条件概率分母与空条件"
+    ],
+    "exclusions": [
+      "不复刻全部学生输入和答案",
+      "不证明学生四项完成",
+      "不验证GPU、MPS、旧Notebook或全量模型训练"
+    ],
+    "handoff": "独立CPU机制烟测已通过；环境、实际命令、脚本hash和stdout已保存；临时脚本已删除，不将机制烟测当成学生任务完成。"
+  },
+  "verification": {
+    "testsRun": true,
+    "buildRun": true,
+    "formatterRun": false,
+    "publicationCheck": "passed_main_agent_browser",
+    "remaining": []
+  }
+}

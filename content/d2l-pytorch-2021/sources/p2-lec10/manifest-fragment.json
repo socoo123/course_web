@@ -1,0 +1,236 @@
+{
+  "lectureId": "lec10",
+  "batch": "P2",
+  "acquiredAt": "2026-11-13",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "textbookVersion": "当前中文第二版固定源码，非2021快照",
+  "bookSources": [
+    {
+      "lectureId": "lec10",
+      "section": "4.1",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/mlp.md",
+      "localPath": "sources/p2-lec10/book-mlp.txt",
+      "sha256": "6afa89376dbf1dcee189b2e7960206ccd6cc1b967ad73764ca32f59fdf4dda42",
+      "bytes": 19693,
+      "reviewedScope": "固定源码全文已实际读取（含正文、习题与框架分支）；正文技术解释以PyTorch及通用分支为准。未执行任何源码/Notebook，不声称审阅了视频。",
+      "frameworkUsed": "PyTorch and shared/all branches"
+    },
+    {
+      "lectureId": "lec10",
+      "section": "4.2",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/mlp-scratch.md",
+      "localPath": "sources/p2-lec10/book-mlp-scratch.txt",
+      "sha256": "e529db5015c200502246050ecec30404030116c3b3eecbace7f0c5841b0c5e1d",
+      "bytes": 7846,
+      "reviewedScope": "固定源码全文已实际读取（含正文、习题与框架分支）；正文技术解释以PyTorch及通用分支为准。未执行任何源码/Notebook，不声称审阅了视频。",
+      "frameworkUsed": "PyTorch and shared/all branches"
+    },
+    {
+      "lectureId": "lec10",
+      "section": "4.3",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/mlp-concise.md",
+      "localPath": "sources/p2-lec10/book-mlp-concise.txt",
+      "sha256": "789da80109966d29250fff6d498c298de0fc33d9600699a56a8929e24f46dc44",
+      "bytes": 3862,
+      "reviewedScope": "固定源码全文已实际读取（含正文、习题与框架分支）；正文技术解释以PyTorch及通用分支为准。未执行任何源码/Notebook，不声称审阅了视频。",
+      "frameworkUsed": "PyTorch and shared/all branches"
+    }
+  ],
+  "videoMetadataPath": "sources/p2-lec10/video-metadata.json",
+  "video": {
+    "bvid": "BV1hh411U7gn",
+    "videoUrl": "https://www.bilibili.com/video/BV1hh411U7gn",
+    "metadataStatus": "acquired_all_pages",
+    "pageCount": 4,
+    "pages": [
+      {
+        "page": 1,
+        "cid": 322558120,
+        "title": "感知机",
+        "durationSeconds": 832,
+        "url": "https://www.bilibili.com/video/BV1hh411U7gn?p=1"
+      },
+      {
+        "page": 2,
+        "cid": 322559403,
+        "title": "多层感知机",
+        "durationSeconds": 1359,
+        "url": "https://www.bilibili.com/video/BV1hh411U7gn?p=2"
+      },
+      {
+        "page": 3,
+        "cid": 322560011,
+        "title": "代码实现",
+        "durationSeconds": 506,
+        "url": "https://www.bilibili.com/video/BV1hh411U7gn?p=3"
+      },
+      {
+        "page": 4,
+        "cid": 322567213,
+        "title": "QA",
+        "durationSeconds": 1608,
+        "url": "https://www.bilibili.com/video/BV1hh411U7gn?p=4"
+      }
+    ],
+    "subtitleStatus": "all_public_player_requests_success_empty",
+    "contentVerified": false,
+    "license": {
+      "copyright": 1,
+      "noReprint": 1,
+      "openLicenseFound": false,
+      "boundary": "平台原创/禁止转载标志不等于开放许可；根Apache-2.0与setup MIT-0均不外推视频"
+    }
+  },
+  "scheduleRows": [
+    {
+      "rowId": "row019",
+      "title": "感知机",
+      "videos": [
+        "https://www.bilibili.com/video/BV1hh411U7gn"
+      ]
+    },
+    {
+      "rowId": "row020",
+      "title": "多层感知机",
+      "videos": [
+        "https://www.bilibili.com/video/BV1hh411U7gn?p=2"
+      ]
+    },
+    {
+      "rowId": "row021",
+      "title": "多层感知机的从零开始实现",
+      "videos": [
+        "https://www.bilibili.com/video/BV1hh411U7gn?p=3"
+      ]
+    },
+    {
+      "rowId": "row022",
+      "title": "多层感知机的简洁实现",
+      "videos": [
+        "https://www.bilibili.com/video/BV1hh411U7gn?p=3"
+      ]
+    }
+  ],
+  "supplementalSources": [
+    {
+      "url": "https://docs.pytorch.org/docs/2.5/generated/torch.nn.Linear.html",
+      "version": "PyTorch 2.5",
+      "reviewedScope": "API主体：公式/参数/输入输出形状；Linear默认初始化，MSE全部元素mean，CE索引/概率target及归约（按对应API使用）。",
+      "role": "编者定点API补充；不是视频指定阅读或额外论文必读",
+      "readOn": "2026-11-13"
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.5/generated/torch.nn.CrossEntropyLoss.html",
+      "version": "PyTorch 2.5",
+      "reviewedScope": "API主体：公式/参数/输入输出形状；Linear默认初始化，MSE全部元素mean，CE索引/概率target及归约（按对应API使用）。",
+      "role": "编者定点API补充；不是视频指定阅读或额外论文必读",
+      "readOn": "2026-11-13"
+    }
+  ],
+  "coverageTopics": [
+    "感知机及误分类更新：明确编者解释",
+    "XOR不可线性分离的证明与两ReLU构造",
+    "含偏置两层线性合并",
+    "ReLU/sigmoid/tanh及局部梯度通道",
+    "784→256→10形状/参数量/两种MLP实现权重转置",
+    "原课表两个P3入口保留与映射缺口"
+  ],
+  "outputs": {
+    "notes": {
+      "path": "lectures/lec10/notes.zh.md",
+      "status": "written_cpu_and_browser_checked",
+      "nature": "textbook_reading_guide_editorial_notes",
+      "videoContentVerified": false
+    },
+    "assets": [
+      {
+        "path": "lectures/lec10/assets/nonlinearity-xor.svg",
+        "status": "written_browser_checked",
+        "nature": "original_editorial_svg"
+      }
+    ],
+    "draft": {
+      "path": null,
+      "status": "blocked",
+      "reason": "无真实可核实课堂内容来源，未建占位。"
+    },
+    "materials": {
+      "path": null,
+      "status": "not_required",
+      "reason": "所需教材/API已在notes定点引用；没有必要独立阅读，不另造重复资料。"
+    }
+  },
+  "license": {
+    "textbook": "Apache-2.0",
+    "textbookLicenseUrl": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/LICENSE",
+    "setupPackageField": "MIT-0 (separate package metadata)",
+    "video": "copyright=1/no_reprint=1; no open reuse license found",
+    "editorial": "自主讲解、自拟短例、自绘图；没有复制课堂截图或全文字幕",
+    "boundary": "仓库与setup许可不外推视频、数据或第三方素材"
+  },
+  "gaps": [
+    "所有分P公开字幕列表为空；未观看音视频，讲授/演示/QA与时间轴未核实；空列表不证明其他字幕不存在。",
+    "draft持续阻塞，不创建占位；materials不需要另文。",
+    "教材完整训练、历史Notebook、完整学生作业与GPU/CUDA/MPS均未运行；小机制验证不可外推。"
+  ],
+  "otherUnexecuted": [
+    "固定教材4.1, 4.2, 4.3全部训练/绘图/数据下载示例与Notebook",
+    "完整学生作业、模型训练与调参实验",
+    "GPU、CUDA、MPS与性能测试"
+  ],
+  "scheduleAmbiguity": {
+    "originalRows": [
+      "row021",
+      "row022"
+    ],
+    "originalUrl": "https://www.bilibili.com/video/BV1hh411U7gn?p=3",
+    "observed": "P3标题为代码实现，P4标题为QA；共4P。",
+    "conclusion": "两课表入口原样保留。不能仅由标题判定P3是否包含两实现或各自时间段，不能将简洁实现改到P4。"
+  },
+  "editorialBoundary": "感知机算法与XOR证明是明确编者解释；4.1–4.3不是感知机独立章节来源，未伪称视频内容。",
+  "codeChecks": [
+    {
+      "path": "lectures/lec10/notes.zh.md",
+      "language": "python",
+      "ordinal": 1,
+      "section": "4. 用两颗ReLU构造一个可手算的XOR",
+      "purpose": "人工构造XOR，非随机训练结果",
+      "expected": "H=[[0,0],[1,0],[0,1],[0,0]]；预测[0,1,1,0]",
+      "status": "passed_cpu_by_main",
+      "evidence": "sources/p2-shared/notes-smoke.json"
+    },
+    {
+      "path": "lectures/lec10/notes.zh.md",
+      "language": "python",
+      "ordinal": 2,
+      "section": "6. Fashion-MNIST上的MLP：结构改变，训练协议不变",
+      "purpose": "避开折点的2→2→1手写与模块前向/全部四组参数梯度对照",
+      "expected": "手写输出[2,2]；前向及四组参数梯度allclose共5项均True",
+      "status": "passed_cpu_by_main",
+      "evidence": "sources/p2-shared/notes-smoke.json"
+    }
+  ],
+  "workerVerification": {
+    "status": "pending_main",
+    "workerRanTests": false,
+    "workerRanBuild": false,
+    "workerRanFormatter": false,
+    "workerRanSmoke": false,
+    "requestedMainChecks": [
+      "按unexecutedCode逐块独立CPU执行并核对解析预期",
+      "SVG解析/图片引用/数学公式与details真实浏览器显示",
+      "数据契约不以玩具张量执行替代真实数据任务"
+    ]
+  },
+  "verification": {
+    "content": "reviewed_by_main",
+    "cpu": "published_independent_blocks_executed_and_outputs_matched",
+    "browser": "desktop_1440_and_mobile_390_checked; formula_overflow_repaired_where_needed",
+    "siteBuildAndSourceChecks": "authoritative result in sources/p2-manifest.json",
+    "evidence": [
+      "sources/p2-shared/notes-smoke.json",
+      "sources/p2-shared/browser-check.json",
+      "sources/p2-shared/content-check.json"
+    ]
+  }
+}

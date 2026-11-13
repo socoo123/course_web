@@ -1,0 +1,38 @@
+{
+  "capturedAt": "2026-11-13",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "commitEvidence": {
+    "command": "git ls-remote https://github.com/d2l-ai/d2l-zh.git refs/heads/master",
+    "output": "e6b18ccea71451a55fcd861d7b96fddf2587b09a refs/heads/master",
+    "githubApiAttempt": "HTTP 403; used public git ref endpoint"
+  },
+  "editionBoundary": "当前中文第二版源码固定提交；不是2021教材快照，也不声明当前网页构建精确等于此提交。",
+  "licenseBoundary": "固定仓库LICENSE为Apache-2.0；仅涵盖其适用源码，不外推B站视频/字幕、第三方图片或数据。本站正文为自主讲解与练习改编，不重译中文教材。",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/LICENSE",
+      "snapshot": "book-LICENSE.txt",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "bytes": 11357
+    },
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/INFO.md",
+      "snapshot": "book-INFO.txt",
+      "sha256": "cbded8407700d65a771a235c7def31a78fc0b6ffd86fed7da6506eaa1445c6aa",
+      "bytes": 2151
+    },
+    {
+      "url": "https://zh.d2l.ai/chapter_installation/index.html",
+      "snapshot": "installation-online.html",
+      "sha256": "c86bc54f765d50639765afd8dd632019a51bb92945a737c61c6f27b2a3e6a18d",
+      "bytes": 65081
+    },
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/setup.py",
+      "snapshot": "book-setup.py.txt",
+      "sha256": "b7161e0f560e2b0657d136ad604750334efb4e8922b01c0142b1462a9270b324",
+      "bytes": 513
+    }
+  ],
+  "runtimeBoundary": "固定提交的setup.py要求numpy1.21.5/pandas1.2.4，且setup包许可字段为MIT-0；与根LICENSE记录分开。本批使用独立现代CPU基础环境，不安装d2l包，不宣称2021 Notebook全量兼容。"
+}

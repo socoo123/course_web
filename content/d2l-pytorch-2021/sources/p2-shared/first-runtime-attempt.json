@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-13",
+  "command": "/tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python content/d2l-pytorch-2021/sources/p2-shared/smoke.py",
+  "status": "failed",
+  "failure": "AssertionError at smoke.py line 187: epochs[-1]['train']['loss'] < initial_train['loss']",
+  "scenario": "Fashion-MNIST 257 train / 73 validation; CPU; 5 epochs; B64 including final B1; model seed2022, shuffle seed2023, normal weight std0.01, zero bias; SGD lr0.1",
+  "actualLossValues": "not captured before process exit; do not invent values",
+  "priorAssertionsCompleted": [
+    "linear half-MSE analytical gradient and matching manual/nn.Linear SGD update",
+    "stable CE logsumexp equivalence, common-shift invariance and analytic gradient",
+    "uneven batch metric weighting",
+    "eval/no_grad separation, immutable parameters, dropout endpoints and enumerated expectation",
+    "L2 ordinary SGD one-step equivalence",
+    "20-layer scalar chain gradients",
+    "two-sample half-MSE learning-rate fixture: lr0.25 decreases, lr3.0 diverges over8updates",
+    "real Fashion-MNIST shape/dtype/range, disjoint split, B1/B9 tails, finite training gradients and evaluation losses, immutable validation parameters/gradients"
+  ],
+  "priorAssertionsEvidence": "The sequential script reached line187 without earlier assertion failure; intermediate numerical records were not persisted.",
+  "change": "Use lr0.01 as the conservative small-subset baseline, keep all acceptance assertions. Retry only the failed Fashion-MNIST scenario and subsequent not-yet-run notes blocks; do not rerun preceding successful mechanisms.",
+  "scope": "Baseline configuration correction, not weakening the acceptance test. Full student assignment and full-data training remain unexecuted."
+}

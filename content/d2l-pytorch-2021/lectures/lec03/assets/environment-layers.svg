@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 510" role="img" aria-labelledby="title desc">
+  <title id="title">Notebook界面、服务器、内核和计算设备的分层</title>
+  <desc id="desc">浏览器通过服务器与Notebook文件和内核交互。内核使用某个Python解释器及其依赖，在CPU或受支持加速设备上执行。脚本可以直接使用解释器，不需要浏览器和Notebook服务器。</desc>
+  <style>
+    :root { --accent: currentColor; --border: currentColor; --muted: currentColor; }
+    @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }
+  </style>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="var(--accent)"/></marker></defs>
+  <g font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="currentColor" text-anchor="middle">
+    <text x="440" y="33" font-size="22">窗口能打开，不等于代码环境正确</text>
+    <g stroke="var(--border)" stroke-width="2" fill="none"><rect x="30" y="70" width="215" height="82" rx="8"/><rect x="325" y="70" width="220" height="82" rx="8"/><rect x="625" y="70" width="225" height="82" rx="8"/><rect x="325" y="210" width="220" height="82" rx="8"/><rect x="30" y="330" width="215" height="82" rx="8"/><rect x="325" y="330" width="220" height="82" rx="8"/><rect x="625" y="330" width="225" height="82" rx="8"/></g>
+    <g font-size="20"><text x="137" y="104">浏览器界面</text><text x="435" y="104">Notebook服务器</text><text x="737" y="104">.ipynb 文件</text><text x="435" y="244">kernel进程</text><text x="137" y="364">Python脚本</text><text x="435" y="364">解释器与依赖</text><text x="737" y="364">计算设备</text></g>
+    <g font-size="16" fill="var(--muted)"><text x="137" y="132">编辑与显示</text><text x="435" y="132">通信、保存与加载</text><text x="737" y="132">代码、说明与旧输出</text><text x="435" y="273">执行代码、持有变量</text><text x="137" y="392">本批基础路线</text><text x="435" y="392">环境 A 不等于环境 B</text><text x="737" y="392">CPU / CUDA / MPS</text></g>
+    <g fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow)"><path d="M245 111 H318"/><path d="M545 111 H618"/><path d="M435 152 V203"/><path d="M435 292 V323"/><path d="M245 371 H318"/><path d="M545 371 H618"/></g>
+    <text x="510" y="185" font-size="15">代码请求</text>
+    <text x="440" y="453" font-size="18">终端激活环境，不会自动切换已经运行的kernel</text>
+    <text x="440" y="488" font-size="16" fill="var(--muted)">简化职责图；实际通信会返回执行结果。脚本路线可绕过上方Notebook组件。</text>
+  </g>
+</svg>

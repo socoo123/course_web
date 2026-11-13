@@ -1,0 +1,181 @@
+{
+  "lectureId": "lec12",
+  "acquiredAt": "2026-11-13T09:16:40.813608+00:00",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "bookVersionBoundary": "当前中文第二版固定源码，非2021教材快照",
+  "bookSources": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/weight-decay.md",
+      "localPath": "sources/p2-lec12/book-weight-decay.txt",
+      "sha256": "799474bb070da33742f6f4564a78e466ebee6e0ea8230f705cc79faa0c8934c8",
+      "reviewedScope": "4.5全文（1–532行）：范数与衰减推导、高维回归、从零实现与简洁实现、小结和练习；重点PyTorch的L2广播、sum/batch归约、MSE约定与参数分组；其他框架不作为PyTorch结果。",
+      "branch": "PyTorch重点；共享文字全文，非其他框架执行结果"
+    }
+  ],
+  "videoMetadataPath": "sources/p2-lec12/video-metadata.json",
+  "pages": [
+    {
+      "page": 1,
+      "cid": 325655483,
+      "part": "权重衰退",
+      "duration": 782
+    },
+    {
+      "page": 2,
+      "cid": 325680074,
+      "part": "代码实现",
+      "duration": 754
+    },
+    {
+      "page": 3,
+      "cid": 325655537,
+      "part": "QA",
+      "duration": 695
+    }
+  ],
+  "subtitleRequests": [
+    {
+      "page": 1,
+      "cid": 325655483,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1UK4y1o7dy&cid=325655483",
+      "retrievedAt": "2026-11-13T09:16:41.009465+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 2,
+      "cid": 325680074,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1UK4y1o7dy&cid=325680074",
+      "retrievedAt": "2026-11-13T09:16:41.199111+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 3,
+      "cid": 325655537,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1UK4y1o7dy&cid=325655537",
+      "retrievedAt": "2026-11-13T09:16:41.319994+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    }
+  ],
+  "license": {
+    "copyright": 1,
+    "noReprint": 0,
+    "interpretation": "copyright=1为平台原创标志；no_reprint=0只表示该禁止转载标志未置位，0也不代表开放许可，未发现视频全文转录再发布授权。"
+  },
+  "textbookLicense": {
+    "name": "Apache-2.0",
+    "evidencePath": "sources/p1-shared/book-version.json",
+    "boundary": "固定仓库根许可与setup.py包MIT-0字段分别记录；均不外推视频或第三方素材"
+  },
+  "supplementalReferences": {
+    "readOn": "2026-11-13",
+    "entries": [
+      {
+        "url": "https://pytorch.org/docs/2.5/generated/torch.optim.SGD.html",
+        "reviewedScope": "更新伪代码、参数与相关说明；不含全部状态钩子API，不声称读过所链论文",
+        "role": "编者必要API补充，非视频指定阅读"
+      },
+      {
+        "url": "https://pytorch.org/docs/2.5/generated/torch.optim.Adam.html",
+        "reviewedScope": "更新伪代码、参数与相关说明；不含全部状态钩子API，不声称读过所链论文",
+        "role": "编者必要API补充，非视频指定阅读"
+      },
+      {
+        "url": "https://pytorch.org/docs/2.5/generated/torch.optim.AdamW.html",
+        "reviewedScope": "更新伪代码、参数与相关说明；不含全部状态钩子API，不声称读过所链论文",
+        "role": "编者必要API补充，非视频指定阅读"
+      }
+    ],
+    "paperTasksAdded": false
+  },
+  "outputs": {
+    "notes": {
+      "status": "written_cpu_and_browser_checked",
+      "path": "lectures/lec12/notes.zh.md",
+      "type": "教材导读/编者笔记",
+      "videoContentVerified": false
+    },
+    "draft": {
+      "status": "blocked",
+      "reason": "全部分P公开player字幕成功返回空列表；未下载/观看媒体，缺真实课堂时间轴，不建占位稿"
+    },
+    "materials": {
+      "status": "not_required",
+      "reason": "必要教材和API范围已在notes页底定位，无须独立重复阅读文件"
+    },
+    "assets": {
+      "status": "written_browser_checked",
+      "path": "lectures/lec12/assets/sgd-decay-equivalence.svg",
+      "type": "编者自绘SVG，非课堂截图"
+    }
+  },
+  "gaps": [
+    "所有分P公开字幕列表为空；未观看音视频，讲授/演示/QA与时间轴未核实；空列表不证明其他字幕不存在。",
+    "draft持续阻塞，不创建占位；materials不需要另文。",
+    "教材完整训练、历史Notebook、完整学生作业与GPU/CUDA/MPS均未运行；小机制验证不可外推。"
+  ],
+  "handCalculations": [
+    "w=[3,4],lambda=.2：L2惩罚2.5，梯度[.6,.8]",
+    "无数据梯度w=2,eta=.1,lambda=.2：下一步1.96",
+    "半MSE变普通MSE：同时lambda翻倍、SGD学习率减半可保持同一步"
+  ],
+  "planningEvidence": {
+    "scheduleInventory": "sources/schedule-inventory.json",
+    "bookInventory": "sources/book-inventory.json",
+    "outlinePlan": "sources/outline-plan.json",
+    "practicePlan": "sources/practice-plan.json",
+    "reviewedPractice": "linear-training任务边界；不代写完整实验"
+  },
+  "scopeBoundary": "仅本讲lectures与sources/p2目录；不修改共享索引，不提交推送",
+  "codeChecks": [
+    {
+      "block": 1,
+      "section": "3. 最容易悄悄改变实验的，是mean和sum",
+      "mechanism": "显式L2与torch.optim.SGD无动量weight_decay单步等价",
+      "expected": {
+        "explicitL2Weights": [
+          1.91,
+          -0.93
+        ],
+        "optimizerWeights": [
+          1.91,
+          -0.93
+        ],
+        "absoluteTolerance": 1e-12
+      },
+      "path": "lectures/lec12/notes.zh.md",
+      "status": "passed_cpu_by_main",
+      "runtime": "CPU/PyTorch; no d2l, torchvision, datasets or GPU required",
+      "evidence": "sources/p2-shared/notes-smoke.json"
+    }
+  ],
+  "workerVerification": {
+    "build": "not_run_by_worker",
+    "numeric": "not_run_by_worker",
+    "browser": "not_run_by_worker",
+    "lint": "not_run_by_worker",
+    "formatter": "not_run_by_worker"
+  },
+  "verification": {
+    "content": "reviewed_by_main",
+    "cpu": "published_independent_blocks_executed_and_outputs_matched",
+    "browser": "desktop_1440_and_mobile_390_checked; formula_overflow_repaired_where_needed",
+    "siteBuildAndSourceChecks": "authoritative result in sources/p2-manifest.json",
+    "evidence": [
+      "sources/p2-shared/notes-smoke.json",
+      "sources/p2-shared/browser-check.json",
+      "sources/p2-shared/content-check.json"
+    ]
+  }
+}

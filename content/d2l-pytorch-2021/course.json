@@ -1,0 +1,1573 @@
+{
+  "id": "d2l-pytorch-2021",
+  "year": 2021,
+  "instructors": [
+    "李沐"
+  ],
+  "versions": [
+    {
+      "label": "课程 / 视频",
+      "value": "动手学深度学习 · PyTorch中文课程2021 · 官方课表2021年3月20日至8月21日"
+    },
+    {
+      "label": "教材",
+      "value": "《动手学深度学习》中文第二版 · PyTorch；正文固定源码e6b18ccea714，非2021教材快照；历史zh-v2链接保留"
+    },
+    {
+      "label": "站内编排",
+      "value": "按73个唯一BV上传归组，完整保留103行教学与竞赛入口；不是官方讲次编号"
+    }
+  ],
+  "intro": "从张量与数学回顾出发，完整学习李沐的 PyTorch 中文课程：掌握线性模型、MLP、CNN、计算性能与分布式训练、计算机视觉、RNN、注意力、Transformer 和 BERT，再用优化与课程总结贯通训练流程。以模型原理、动手实现和工程取舍为主线，数学在课程中逐步补回，不增加必读论文；保留全课与竞赛案例，为后续学习 CS336 建立基础。",
+  "links": [
+    {
+      "label": "2021官方课程安排",
+      "url": "https://courses.d2l.ai/zh-v2/"
+    },
+    {
+      "label": "《动手学深度学习》中文第二版",
+      "url": "https://zh.d2l.ai/"
+    },
+    {
+      "label": "课表历史教材入口（版本核对用）",
+      "url": "https://zh-v2.d2l.ai/"
+    }
+  ],
+  "lectures": [
+    {
+      "id": "lec01",
+      "lab": "tensor-autograd",
+      "num": "1",
+      "title": "课程安排",
+      "titleEn": "Course Organization",
+      "video": {
+        "label": "2021课程 · 1P · 分P入口见公共资料",
+        "duration": "08:08",
+        "bilibili": "https://www.bilibili.com/video/BV1oX4y137bC"
+      },
+      "readings": [
+        "官方课程安排与学习方式（课表无单独教材链接）。"
+      ],
+      "note": "学习目标：建立从课程视频、教材到PyTorch实践的学习闭环，明确全课范围与学习方式。 本组原课表主题：课程安排。站内按同一BV上传编组，日期：2021年3月20日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec02",
+      "lab": "tensor-autograd",
+      "num": "2",
+      "title": "深度学习介绍",
+      "titleEn": "Introduction to Deep Learning",
+      "video": {
+        "label": "2021课程 · 全2P合计 · 含QA",
+        "duration": "22:57",
+        "bilibili": "https://www.bilibili.com/video/BV1J54y187f9"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：引言—深度学习介绍（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：认识数据、模型、目标函数与优化算法之间的关系，建立深度学习应用全景。 本组原课表主题：深度学习介绍。站内按同一BV上传编组，日期：2021年3月20日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec03",
+      "lab": "tensor-autograd",
+      "num": "3",
+      "title": "环境安装",
+      "titleEn": "Environment Setup",
+      "video": {
+        "label": "2021课程 · 全2P合计 · 含QA",
+        "duration": "19:57",
+        "bilibili": "https://www.bilibili.com/video/BV18p4y1h7Dr"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：安装—安装（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解课程所需的Python、PyTorch与notebook环境，区分环境准备和模型训练。 本组原课表主题：安装。站内按同一BV上传编组，日期：2021年3月20日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec04",
+      "lab": "tensor-autograd",
+      "num": "4",
+      "title": "数据操作与预处理",
+      "titleEn": "Data Manipulation and Preprocessing",
+      "video": {
+        "label": "2021课程 · 全4P合计 · 含实现与QA",
+        "duration": "34:18",
+        "bilibili": "https://www.bilibili.com/video/BV1CV411Y7i4"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：预备知识—数据操作、数据预处理（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：掌握张量形状、索引、广播和数据表预处理，能追踪输入数据流。 本组原课表主题：数据操作；数据预处理。站内按同一BV上传编组，日期：2021年3月20日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec05",
+      "lab": "tensor-autograd",
+      "num": "5",
+      "title": "线性代数与按轴求和",
+      "titleEn": "Linear Algebra and Axis-wise Reduction",
+      "video": {
+        "label": "2021课程 · 全4P合计 · 含补充与QA",
+        "duration": "41:34",
+        "bilibili": "https://www.bilibili.com/video/BV1eK4y1U7Qy"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：预备知识—线性代数（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：[补充] 按特定轴求和（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：复习向量、矩阵、范数和按轴归约，用张量形状理解线性代数操作。 本组原课表主题：线性代数；[补充] 按特定轴求和。站内按同一BV上传编组，日期：2021年3月21日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec06",
+      "lab": "tensor-autograd",
+      "num": "6",
+      "title": "矩阵计算与微积分",
+      "titleEn": "Matrix Calculus",
+      "video": {
+        "label": "2021课程 · 全2P合计 · 含QA",
+        "duration": "14:35",
+        "bilibili": "https://www.bilibili.com/video/BV1eZ4y1w7PY"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：预备知识—矩阵计算（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：补回导数、梯度与链式法则，能解释模型训练中的矩阵求导。 本组原课表主题：矩阵计算。站内按同一BV上传编组，日期：2021年3月21日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec07",
+      "lab": "tensor-autograd",
+      "num": "7",
+      "title": "自动求导",
+      "titleEn": "Automatic Differentiation",
+      "video": {
+        "label": "2021课程 · 全3P合计 · 含实现与QA",
+        "duration": "24:27",
+        "bilibili": "https://www.bilibili.com/video/BV1KA411N7Px"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：预备知识—自动求导（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解计算图、梯度累积与计算图分离，用自动求导连接数学与代码。 本组原课表主题：自动求导。站内按同一BV上传编组，日期：2021年3月21日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec08",
+      "lab": "linear-training",
+      "num": "8",
+      "title": "线性回归与基础优化：从零到简洁实现",
+      "titleEn": "Linear Regression and Basic Optimization",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1PX4y1g7KC"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：线性神经网络—线性回归、线性回归的从零开始实现、线性回归的简洁实现（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：基础优化方法（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：串起模型、平方损失、小批量梯度下降及训练循环，对照从零实现和框架接口。 本组原课表主题：线性回归；基础优化方法；线性回归的从零开始实现；线性回归的简洁实现。站内按同一BV上传编组，日期：2021年3月27日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec09",
+      "lab": "linear-training",
+      "num": "9",
+      "title": "Softmax回归、损失函数与图像分类实现",
+      "titleEn": "Softmax Regression and Image Classification",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1K64y1Q7wu"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：线性神经网络—Softmax 回归、图像分类数据集、Softmax 回归的从零开始实现、Softmax 回归的简洁实现（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：损失函数（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：理解多分类概率与交叉熵，完成从数据集到训练、评估的分类流程。 本组原课表主题：Softmax 回归；损失函数；图像分类数据集；Softmax 回归的从零开始实现；Softmax 回归的简洁实现。站内按同一BV上传编组，日期：2021年3月28日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec10",
+      "lab": "mlp-generalization",
+      "num": "10",
+      "title": "感知机与多层感知机：原理及实现",
+      "titleEn": "Perceptrons and Multilayer Perceptrons",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1hh411U7gn"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—多层感知机、多层感知机的从零开始实现、多层感知机的简洁实现（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：感知机（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：理解非线性激活与隐藏层的作用，对照多层感知机的从零和简洁实现。 本组原课表主题：感知机；多层感知机；多层感知机的从零开始实现；多层感知机的简洁实现。站内按同一BV上传编组，日期：2021年4月10日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。 原课表两种MLP实现共用?p=3；P2核实真实P3为“代码实现”、P4为“QA”，保留两个原链接。没有字幕/音视频内容证据，不能判定P3是否包含两种实现，也不能猜改为P4。",
+      "core": true
+    },
+    {
+      "id": "lec11",
+      "lab": "mlp-generalization",
+      "num": "11",
+      "title": "模型选择、欠拟合与过拟合",
+      "titleEn": "Model Selection, Underfitting and Overfitting",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1kX4y1g7jp"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—欠拟合和过拟合（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：模型选择（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：区分训练、验证与测试用途，依据学习曲线判断容量和数据问题。 本组原课表主题：模型选择；欠拟合和过拟合。站内按同一BV上传编组，日期：2021年4月11日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec12",
+      "lab": "mlp-generalization",
+      "num": "12",
+      "title": "权重衰减",
+      "titleEn": "Weight Decay",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1UK4y1o7dy"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—权重衰减（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解L2正则化与参数更新的联系，观察正则化强度对泛化的影响。 本组原课表主题：权重衰减。站内按同一BV上传编组，日期：2021年4月17日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec13",
+      "lab": "mlp-generalization",
+      "num": "13",
+      "title": "暂退法（Dropout）",
+      "titleEn": "Dropout",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1Y5411c7aY"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—Dropout（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解训练期随机失活和推理期行为，区分Dropout与权重衰减的作用。 本组原课表主题：Dropout。站内按同一BV上传编组，日期：2021年4月17日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec14",
+      "lab": "mlp-generalization",
+      "num": "14",
+      "title": "数值稳定性、初始化与激活函数",
+      "titleEn": "Numerical Stability, Initialization and Activations",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1u64y1i75a"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—数值稳定性（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：模型初始化和激活函数（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：理解梯度消失和爆炸的来源，把初始化与激活函数选择联系起来。 本组原课表主题：数值稳定性；模型初始化和激活函数。站内按同一BV上传编组，日期：2021年4月18日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec15",
+      "lab": "mlp-generalization",
+      "num": "15",
+      "title": "房价预测实战与竞赛安排",
+      "titleEn": "House Price Prediction and Competition",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1NK4y1P7Tu"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—实战 Kaggle 比赛：预测房价（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：竞赛 预测房价（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：建立表格数据回归基线，理解特征处理、交叉验证、评估指标与提交流程。 本组原课表主题：实战 Kaggle 比赛：预测房价；竞赛 预测房价。站内按同一BV上传编组，日期：2021年4月18日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec16",
+      "lab": "cnn-architectures",
+      "num": "16",
+      "title": "模型构造、参数管理、自定义层与文件读写",
+      "titleEn": "Model Construction, Parameters, Custom Layers and Serialization",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1AK4y1P7vs"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：深度学习计算—模型构造、参数管理、自定义层、读写文件（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：掌握模块组合、参数访问、自定义层和模型存取，形成可复用的PyTorch工程基础。 本组原课表主题：模型构造；参数管理；自定义层；读写文件。站内按同一BV上传编组，日期：2021年4月24日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec17",
+      "lab": "cnn-architectures",
+      "num": "17",
+      "title": "GPU使用",
+      "titleEn": "Using GPUs",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1z5411c7C1"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：深度学习计算—GPU（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解设备放置及数据和模型迁移，识别CPU与GPU混用问题。 本组原课表主题：GPU。站内按同一BV上传编组，日期：2021年4月24日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec18",
+      "lab": "mlp-generalization",
+      "num": "18",
+      "title": "房价预测竞赛总结",
+      "titleEn": "House Price Competition Review",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV15Q4y1o7vc"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—实战Kaggle比赛：预测房价（编者关联，用于复盘；该课表行无教材链接）。"
+      ],
+      "note": "学习目标：围绕房价预测复盘特征、验证与模型选择，区分线下改进与排行榜波动。 本组原课表主题：预测房价竞赛总结。站内按同一BV上传编组，日期：2021年5月15日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec19",
+      "lab": "cnn-architectures",
+      "num": "19",
+      "title": "从全连接层到卷积与图像卷积",
+      "titleEn": "From Dense Layers to Convolutions",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1L64y1m7Nh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：卷积神经网络—从全连接层到卷积、图像卷积（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解局部性、平移性质与参数共享，能说明卷积核如何作用于图像。 本组原课表主题：从全连接层到卷积；图像卷积。站内按同一BV上传编组，日期：2021年5月15日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec20",
+      "lab": "cnn-architectures",
+      "num": "20",
+      "title": "填充与步幅",
+      "titleEn": "Padding and Stride",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1Th411U7UN"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：卷积神经网络—填充和步幅（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：根据卷积核、填充和步幅推算输出形状，理解空间分辨率的变化。 本组原课表主题：填充和步幅。站内按同一BV上传编组，日期：2021年5月16日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec21",
+      "lab": "cnn-architectures",
+      "num": "21",
+      "title": "多输入多输出通道",
+      "titleEn": "Multiple Input and Output Channels",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1MB4y1F7of"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：卷积神经网络—多输入多输出通道（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：追踪多通道卷积的张量维度与参数量，理解1×1卷积的作用。 本组原课表主题：多输入多输出通道。站内按同一BV上传编组，日期：2021年5月16日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec22",
+      "lab": "cnn-architectures",
+      "num": "22",
+      "title": "池化层",
+      "titleEn": "Pooling",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1EV411j7nX"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：卷积神经网络—池化层（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解池化的窗口操作与降采样，区分池化层和可学习卷积层。 本组原课表主题：池化层。站内按同一BV上传编组，日期：2021年5月22日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec23",
+      "lab": "cnn-architectures",
+      "num": "23",
+      "title": "卷积神经网络：LeNet",
+      "titleEn": "Convolutional Neural Networks: LeNet",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1t44y1r7ct/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：卷积神经网络—卷积神经网络（LeNet）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：串联卷积、池化与分类头，掌握基础CNN的训练流程。 本组原课表主题：卷积神经网络（LeNet）。站内按同一BV上传编组，日期：2021年5月22日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec24",
+      "lab": "cnn-architectures",
+      "num": "24",
+      "title": "深度卷积神经网络：AlexNet",
+      "titleEn": "Deep Convolutional Neural Networks: AlexNet",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1h54y1L7oe/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络—深度卷积神经网络（AlexNet）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解更深网络、激活与正则化的组合，分析图像尺寸和计算量变化。 本组原课表主题：深度卷积神经网络（AlexNet）。站内按同一BV上传编组，日期：2021年5月23日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec25",
+      "lab": "cnn-architectures",
+      "num": "25",
+      "title": "使用块的网络：VGG",
+      "titleEn": "Networks Using Blocks: VGG",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1Ao4y117Pd/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络—使用块的网络（VGG）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：用重复卷积块组织网络，分析深度、通道和计算成本之间的关系。 本组原课表主题：使用块的网络（VGG）。站内按同一BV上传编组，日期：2021年5月23日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec26",
+      "lab": "cnn-architectures",
+      "num": "26",
+      "title": "网络中的网络：NiN",
+      "titleEn": "Network in Network",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1Uv411G71b/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络—网络中的网络（NiN）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解1×1卷积和全局平均池化如何替代部分全连接结构。 本组原课表主题：网络中的网络（NiN）。站内按同一BV上传编组，日期：2021年5月29日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec27",
+      "lab": "cnn-architectures",
+      "num": "27",
+      "title": "含并行连接的网络：GoogLeNet",
+      "titleEn": "Networks with Parallel Concatenations: GoogLeNet",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1b5411g7Xo/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络—含并行连结的网络（GoogLeNet）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解Inception多分支结构及通道拼接，追踪不同感受野的特征融合。 本组原课表主题：含并行连结的网络（GoogLeNet）。站内按同一BV上传编组，日期：2021年5月29日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec28",
+      "lab": "cnn-architectures",
+      "num": "28",
+      "title": "批量归一化",
+      "titleEn": "Batch Normalization",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1X44y1r77r/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络—批量归一化（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：区分训练与推理时统计量，理解归一化层的参数和使用位置。 本组原课表主题：批量归一化。站内按同一BV上传编组，日期：2021年5月30日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec29",
+      "lab": "cnn-architectures",
+      "num": "29",
+      "title": "残差网络：ResNet",
+      "titleEn": "Residual Networks: ResNet",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1bV41177ap/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络—残差网络（ResNet）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：解释残差连接、形状匹配与深层网络训练，构建残差块的结构直觉。 本组原课表主题：残差网络（ResNet）。站内按同一BV上传编组，日期：2021年5月30日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec30",
+      "lab": "cv-transfer",
+      "num": "30",
+      "title": "图片分类竞赛安排",
+      "titleEn": "Image Classification Competition",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1z64y1o7iz/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络、计算机视觉—图像增广与微调（编者关联；该课表行无教材链接）。"
+      ],
+      "note": "学习目标：将CNN知识迁移到图片分类任务，规划数据划分、基线、改进和结果记录。 本组原课表主题：竞赛 图片分类。站内按同一BV上传编组，日期：2021年5月30日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec31",
+      "lab": "training-performance",
+      "num": "31",
+      "title": "计算硬件：CPU与GPU",
+      "titleEn": "Computational Hardware: CPUs and GPUs",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1TU4y1j7Wd/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算性能—硬件：CPU和GPU（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解计算、内存和数据搬运的性能约束，用硬件视角定位训练瓶颈。 本组原课表主题：硬件：CPU和GPU。站内按同一BV上传编组，日期：2021年6月5日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec32",
+      "lab": "training-performance",
+      "num": "32",
+      "title": "更多专用硬件",
+      "titleEn": "More Specialized Hardware",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1VV41147PC/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算性能—硬件（编者关联；专用硬件以本讲课件主题为准，课表无单独教材链接）。"
+      ],
+      "note": "学习目标：认识深度学习专用硬件的设计取舍，不把课程硬件介绍当作个人设备要求。 本组原课表主题：更多的专有硬件。站内按同一BV上传编组，日期：2021年6月6日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec33",
+      "lab": "training-performance",
+      "num": "33",
+      "title": "多GPU训练原理",
+      "titleEn": "Multi-GPU Training",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1vU4y1V7rd/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算性能—多GPU训练（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解数据并行、梯度聚合及同步开销，建立多设备训练的执行模型。 本组原课表主题：多GPU训练。站内按同一BV上传编组，日期：2021年6月6日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec34",
+      "lab": "training-performance",
+      "num": "34",
+      "title": "多GPU训练实现",
+      "titleEn": "Implementing Multi-GPU Training",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1MQ4y1R7Qg"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算性能—多GPU训练的实现（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：把数据并行原理映射到框架实现，分析设备数、批量大小与通信的关系。 本组原课表主题：多GPU训练的实现。站内按同一BV上传编组，日期：2021年6月19日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec35",
+      "lab": "training-performance",
+      "num": "35",
+      "title": "分布式训练",
+      "titleEn": "Distributed Training",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1jU4y1G7iu"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算性能—分布式训练（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解跨机器参数同步与参数服务器，区分计算扩展收益和通信开销。 本组原课表主题：分布式训练。站内按同一BV上传编组，日期：2021年6月19日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec36",
+      "lab": "cv-transfer",
+      "num": "36",
+      "title": "图像增广",
+      "titleEn": "Image Augmentation",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV17y4y1g76q"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—图像增广（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：区分训练与评估数据变换，用增广表达任务不变性并防止验证集污染。 本组原课表主题：图像增广。站内按同一BV上传编组，日期：2021年6月20日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec37",
+      "lab": "cv-transfer",
+      "num": "37",
+      "title": "微调",
+      "titleEn": "Fine-Tuning",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1Sb4y1d7CR"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—微调（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解预训练参数复用、分类头替换和分层学习率，形成迁移学习流程。 本组原课表主题：微调。站内按同一BV上传编组，日期：2021年6月20日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec38",
+      "lab": "cv-transfer",
+      "num": "38",
+      "title": "Kaggle实战：CIFAR-10图像分类",
+      "titleEn": "Kaggle Image Classification: CIFAR-10",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1Gy4y1M7Cu"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—实战 Kaggle 比赛：图像分类（CIFAR-10）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：整合图像增广、网络训练与验证，建立可复现的分类竞赛流程。 本组原课表主题：实战 Kaggle 比赛：图像分类（CIFAR-10）。站内按同一BV上传编组，日期：2021年6月26日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec39",
+      "lab": "cv-transfer",
+      "num": "39",
+      "title": "Kaggle实战：狗的品种识别",
+      "titleEn": "Kaggle Dog Breed Identification",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1j5411T7wx"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—实战 Kaggle 比赛：狗的品种识别（ImageNet Dogs）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：将预训练图像模型用于细粒度分类，比较特征提取和端到端微调。 本组原课表主题：实战 Kaggle 比赛：狗的品种识别（ImageNet Dogs）。站内按同一BV上传编组，日期：2021年6月26日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec40",
+      "lab": "cv-dense-prediction",
+      "num": "40",
+      "title": "目标检测、边界框与数据集",
+      "titleEn": "Object Detection, Bounding Boxes and Datasets",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1Lh411Y7LX"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—边缘框实现、物体检测数据集（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：物体检测（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：区分分类与定位，掌握边界框表示、标注和检测数据读取。 本组原课表主题：物体检测；边缘框实现；物体检测数据集。站内按同一BV上传编组，日期：2021年6月27日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec41",
+      "lab": "cv-dense-prediction",
+      "num": "41",
+      "title": "锚框",
+      "titleEn": "Anchor Boxes",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1aB4y1K7za"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—锚框（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解锚框生成、交并比、匹配与预测后处理，追踪检测目标的构造。 本组原课表主题：锚框。站内按同一BV上传编组，日期：2021年6月27日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec42",
+      "lab": "cv-transfer",
+      "num": "42",
+      "title": "树叶分类竞赛总结",
+      "titleEn": "Leaf Classification Competition Review",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1by4y1K7SE"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—图像增广、微调、图像分类实战（编者关联，用于竞赛复盘；该课表行无教材链接）。"
+      ],
+      "note": "学习目标：复盘分类竞赛中的数据、迁移学习和验证策略，形成有证据的实验记录。 本组原课表主题：竞赛 树叶分类竞赛总结。站内按同一BV上传编组，日期：2021年6月27日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec43",
+      "lab": "cv-dense-prediction",
+      "num": "43",
+      "title": "目标检测架构：R-CNN、SSD与YOLO",
+      "titleEn": "Detection Architectures: R-CNN, SSD and YOLO",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1Db4y1C71g"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—区域卷积神经网络（R-CNNs）（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：单发多框检测（SSD）、你只看一次（YOLO）（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：对比两阶段与单阶段检测的工作流，理解候选区域、多尺度与密集预测。 本组原课表主题：区域卷积神经网络（R-CNNs）；单发多框检测（SSD）；你只看一次（YOLO）。站内按同一BV上传编组，日期：2021年7月3日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。 原课表R-CNN、SSD、YOLO三行使用同一无p链接，未自行补分段。",
+      "core": true
+    },
+    {
+      "id": "lec44",
+      "lab": "cv-dense-prediction",
+      "num": "44",
+      "title": "多尺度检测与SSD实现",
+      "titleEn": "Multi-scale Detection and SSD Implementation",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=1"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—多尺度物体检测实现、SSD 实现（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：追踪多尺度特征、锚框、分类和框回归的连接，理解SSD训练与预测流程。 本组原课表主题：多尺度物体检测实现；SSD 实现。站内按同一BV上传编组，日期：2021年7月4日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec45",
+      "lab": "cv-dense-prediction",
+      "num": "45",
+      "title": "语义分割与数据集",
+      "titleEn": "Semantic Segmentation and Datasets",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1BK4y1M7Rd"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—语义分割数据集（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：语义分割（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：区分像素级分割与目标检测，理解掩码标注、数据处理和输出形状。 本组原课表主题：语义分割；语义分割数据集。站内按同一BV上传编组，日期：2021年7月10日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec46",
+      "lab": "cv-dense-prediction",
+      "num": "46",
+      "title": "转置卷积",
+      "titleEn": "Transposed Convolution",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV17o4y1X7Jn/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—转置卷积（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解可学习上采样及输出形状，区分转置卷积与求逆运算。 本组原课表主题：转置卷积。站内按同一BV上传编组，日期：2021年7月10日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec47",
+      "lab": "cv-dense-prediction",
+      "num": "47",
+      "title": "转置卷积的卷积视角",
+      "titleEn": "Transposed Convolution as Convolution",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1CM4y1K7r7/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—转置卷积是一种卷积（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：从矩阵与卷积两种视角解释转置卷积，巩固上下采样的运算关系。 本组原课表主题：转置卷积是一种卷积。站内按同一BV上传编组，日期：2021年7月10日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec48",
+      "lab": "cv-dense-prediction",
+      "num": "48",
+      "title": "全卷积网络：FCN",
+      "titleEn": "Fully Convolutional Networks",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1af4y1L7Zu/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—全连接卷积神经网络（FCN）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：组合预训练特征提取与上采样构建像素级预测，理解全卷积网络结构。 本组原课表主题：全连接卷积神经网络（FCN）。站内按同一BV上传编组，日期：2021年7月11日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec49",
+      "lab": "cv-dense-prediction",
+      "num": "49",
+      "title": "样式迁移",
+      "titleEn": "Neural Style Transfer",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1Eh41167GN/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—样式迁移（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解内容损失、样式损失和图像优化，区分优化输入与训练模型参数。 本组原课表主题：样式迁移。站内按同一BV上传编组，日期：2021年7月11日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec50",
+      "lab": "cv-dense-prediction",
+      "num": "50",
+      "title": "目标检测竞赛安排",
+      "titleEn": "Object Detection Competition",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1F64y1x7xP/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—边界框、锚框、目标检测数据集、SSD（编者关联；该课表行无教材链接）。"
+      ],
+      "note": "学习目标：将检测数据、模型、评估与提交串成实践流程，建立检测任务基线。 本组原课表主题：竞赛 目标检测。站内按同一BV上传编组，日期：2021年7月11日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec51",
+      "lab": "recurrent-language-model",
+      "num": "51",
+      "title": "序列模型",
+      "titleEn": "Sequence Models",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1L44y1m768/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：循环神经网络—序列模型（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解时间依赖、自回归预测和多步预测误差，为序列学习建立问题定义。 本组原课表主题：序列模型。站内按同一BV上传编组，日期：2021年7月17日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec52",
+      "lab": "recurrent-language-model",
+      "num": "52",
+      "title": "文本预处理",
+      "titleEn": "Text Preprocessing",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1Fo4y1Q79L/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：循环神经网络—文本预处理（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：掌握分词、词表和索引化，追踪原始文本到序列张量的转换。 本组原课表主题：文本预处理。站内按同一BV上传编组，日期：2021年7月17日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec53",
+      "lab": "recurrent-language-model",
+      "num": "53",
+      "title": "语言模型与数据集",
+      "titleEn": "Language Models and Datasets",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1ZX4y1F7K3/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：循环神经网络—语言模型和数据集（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解条件概率分解、序列采样与困惑度，建立语言模型的数据流。 本组原课表主题：语言模型和数据集。站内按同一BV上传编组，日期：2021年7月18日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec54",
+      "lab": "recurrent-language-model",
+      "num": "54",
+      "title": "循环神经网络原理",
+      "titleEn": "Recurrent Neural Networks",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1D64y1z7CA/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：循环神经网络—循环神经网络（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解隐藏状态递推和跨时间参数共享，分析序列长度与梯度传播。 本组原课表主题：循环神经网络。站内按同一BV上传编组，日期：2021年7月18日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec55",
+      "lab": "recurrent-language-model",
+      "num": "55",
+      "title": "循环神经网络：从零到简洁实现",
+      "titleEn": "RNN Implementations from Scratch and with APIs",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1kq4y1H7sw/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：循环神经网络—循环神经网络的从零开始实现、循环神经网络的简洁实现（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：实现状态传递、训练与文本生成，理解梯度裁剪并对照框架RNN接口。 本组原课表主题：循环神经网络的从零开始实现；循环神经网络的简洁实现。站内按同一BV上传编组，日期：2021年7月24日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec56",
+      "lab": "recurrent-language-model",
+      "num": "56",
+      "title": "门控循环单元：GRU",
+      "titleEn": "Gated Recurrent Units",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1mf4y157N2/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—门控循环单元（GRU）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解更新门与重置门对信息流的控制，追踪门控状态计算。 本组原课表主题：门控循环单元（GRU）。站内按同一BV上传编组，日期：2021年7月25日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec57",
+      "lab": "recurrent-language-model",
+      "num": "57",
+      "title": "长短期记忆网络：LSTM",
+      "titleEn": "Long Short-Term Memory Networks",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1JU4y1H7PC/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—长短期记忆网络（LSTM）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解记忆元和各门的作用，对比LSTM与GRU的结构取舍。 本组原课表主题：长短期记忆网络（LSTM）。站内按同一BV上传编组，日期：2021年7月25日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec58",
+      "lab": "recurrent-language-model",
+      "num": "58",
+      "title": "深层循环神经网络",
+      "titleEn": "Deep Recurrent Neural Networks",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1JM4y1T7N4/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—深层循环神经网络（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解多层状态传递和张量形状，区分时间展开与网络深度。 本组原课表主题：深层循环神经网络。站内按同一BV上传编组，日期：2021年7月25日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec59",
+      "lab": "recurrent-language-model",
+      "num": "59",
+      "title": "双向循环神经网络",
+      "titleEn": "Bidirectional Recurrent Neural Networks",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV12X4y1c71W/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—双向循环神经网络（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解双向上下文与因果生成的区别，判断模型适用场景。 本组原课表主题：双向循环神经网络。站内按同一BV上传编组，日期：2021年7月25日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec60",
+      "lab": "seq2seq-attention",
+      "num": "60",
+      "title": "机器翻译与数据集",
+      "titleEn": "Machine Translation and Datasets",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1H64y1s7TH/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—机器翻译与数据集（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：处理源语言与目标语言序列，理解词表、填充、有效长度与批量组织。 本组原课表主题：机器翻译与数据集。站内按同一BV上传编组，日期：2021年8月7日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec61",
+      "lab": "seq2seq-attention",
+      "num": "61",
+      "title": "编码器—解码器结构",
+      "titleEn": "Encoder-Decoder Architecture",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1c54y1E7YP/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—编码器-解码器结构（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解表示压缩和条件生成接口，为seq2seq和注意力建立共同结构。 本组原课表主题：编码器-解码器结构。站内按同一BV上传编组，日期：2021年8月7日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec62",
+      "lab": "seq2seq-attention",
+      "num": "62",
+      "title": "序列到序列学习",
+      "titleEn": "Sequence-to-Sequence Learning",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV16g411L7FG/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—序列到序列学习（seq2seq）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：串联编码器、解码器和训练目标，区分训练输入与自回归推理。 本组原课表主题：序列到序列学习（seq2seq）。站内按同一BV上传编组，日期：2021年8月7日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec63",
+      "lab": "seq2seq-attention",
+      "num": "63",
+      "title": "束搜索",
+      "titleEn": "Beam Search",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1B44y1C7m1/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—束搜索（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解候选序列扩展、分数与搜索宽度，比较贪心搜索和束搜索的取舍。 本组原课表主题：束搜索。站内按同一BV上传编组，日期：2021年8月7日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec64",
+      "lab": "seq2seq-attention",
+      "num": "64",
+      "title": "注意力机制",
+      "titleEn": "Attention Mechanisms",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1264y1i7R1/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：注意力机制—注意力机制（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：从查询、键和值理解加权汇聚，建立注意力的非参数与参数化直觉。 本组原课表主题：注意力机制。站内按同一BV上传编组，日期：2021年8月8日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。 本行幻灯片链接在课表其他主题中复用，源索引已登记，内容尚未核对。",
+      "core": true
+    },
+    {
+      "id": "lec65",
+      "lab": "seq2seq-attention",
+      "num": "65",
+      "title": "注意力评分函数",
+      "titleEn": "Attention Scoring Functions",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1Tb4y167rb/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：注意力机制—注意力分数（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：比较加性注意力和缩放点积注意力，理解掩码与权重归一化。 本组原课表主题：注意力分数。站内按同一BV上传编组，日期：2021年8月8日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。 本行幻灯片链接在课表其他主题中复用，源索引已登记，内容尚未核对。",
+      "core": true
+    },
+    {
+      "id": "lec66",
+      "lab": "seq2seq-attention",
+      "num": "66",
+      "title": "带注意力的seq2seq",
+      "titleEn": "Sequence-to-Sequence Learning with Attention",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1v44y1C7Tg/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：注意力机制—使用注意力机制的seq2seq（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：将注意力接入编码器—解码器，理解动态上下文和对齐权重。 本组原课表主题：使用注意力机制的seq2seq。站内按同一BV上传编组，日期：2021年8月8日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。 本行幻灯片链接在课表其他主题中复用，源索引已登记，内容尚未核对。",
+      "core": true
+    },
+    {
+      "id": "lec67",
+      "lab": "transformer",
+      "num": "67",
+      "title": "自注意力与位置编码",
+      "titleEn": "Self-Attention and Positional Encoding",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV19o4y1m7mo/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：注意力机制—自注意力和位置编码（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解序列内部交互及位置信息注入，分析并行性与序列长度成本。 本组原课表主题：自注意力和位置编码。站内按同一BV上传编组，日期：2021年8月14日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec68",
+      "lab": "transformer",
+      "num": "68",
+      "title": "Transformer架构与实现",
+      "titleEn": "Transformer Architecture and Implementation",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1Kq4y1H7FL/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：注意力机制—Transformer（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：串联多头注意力、前馈层、残差和归一化，掌握编码器及解码器的掩码边界。 本组原课表主题：Transformer。站内按同一BV上传编组，日期：2021年8月14日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec69",
+      "lab": "bert-pretrain-finetune",
+      "num": "69",
+      "title": "BERT、预训练数据与训练",
+      "titleEn": "BERT, Pretraining Data and Training",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1yU4y1E7Ns/"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：自然语言处理：预训练—BERT、BERT预训练数据集、预训练BERT（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解双向表示、预训练任务与样本构造，连接BERT结构、数据与训练流程。 本组原课表主题：BERT；BERT预训练数据集；预训练BERT。站内按同一BV上传编组，日期：2021年8月15日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec70",
+      "lab": "bert-pretrain-finetune",
+      "num": "70",
+      "title": "BERT微调与自然语言推理",
+      "titleEn": "BERT Fine-Tuning and Natural Language Inference",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV15L4y1v7ts"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：自然语言处理：应用—微调BERT、自然语言推理和数据集、自然语言推理：微调BERT（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：将预训练表示接入句对分类任务，串联NLI数据处理、任务头与微调。 本组原课表主题：微调BERT；自然语言推理和数据集；自然语言推理：微调BERT。站内按同一BV上传编组，日期：2021年8月15日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec71",
+      "lab": "cv-dense-prediction",
+      "num": "71",
+      "title": "目标检测竞赛总结",
+      "titleEn": "Object Detection Competition Review",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV13b4y1m7y8"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—目标检测相关小节（编者关联，用于竞赛复盘；该课表行无教材链接）。"
+      ],
+      "note": "学习目标：围绕检测任务复盘数据、指标和模型改进，整理可复用的实验方法。 本组原课表主题：竞赛 目标检测总结。站内按同一BV上传编组，日期：2021年8月15日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。 本行幻灯片链接在课表其他主题中复用，源索引已登记，内容尚未核对。",
+      "core": true
+    },
+    {
+      "id": "lec72",
+      "lab": "optimization-capstone",
+      "num": "72",
+      "title": "优化算法",
+      "titleEn": "Optimization Algorithms",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1bP4y1p7Gq"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：优化算法—优化算法（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：整理梯度下降、动量与自适应方法的更新思路，理解优化器超参数和训练表现。 本组原课表主题：优化算法。站内按同一BV上传编组，日期：2021年8月21日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。 本行幻灯片链接在课表其他主题中复用，源索引已登记，内容尚未核对。",
+      "core": true
+    },
+    {
+      "id": "lec73",
+      "lab": "optimization-capstone",
+      "num": "73",
+      "title": "课程总结与进阶学习",
+      "titleEn": "Course Review and Further Study",
+      "video": {
+        "label": "2021课程 · 首个课表入口",
+        "bilibili": "https://www.bilibili.com/video/BV1AL4y1Y7gu"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：复盘本课覆盖的预备知识、MLP、CNN、计算性能、CV、RNN、注意力与BERT章节（编者复盘范围；该课表行无教材链接）。"
+      ],
+      "note": "学习目标：回顾MLP、CNN、RNN、注意力、CV与NLP全链路，整理后续CS336所需基础及知识缺口。 本组原课表主题：课程总结和进阶学习。站内按同一BV上传编组，日期：2021年8月21日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。 本行幻灯片链接在课表其他主题中复用，源索引已登记，内容尚未核对。",
+      "core": true
+    }
+  ],
+  "labs": [
+    {
+      "id": "tensor-autograd",
+      "num": 1,
+      "title": "张量、数据与自动求导",
+      "titleEn": "Tensors, Data and Autograd",
+      "stars": 2,
+      "hours": "短周期，多次小实验",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_preliminaries/autograd.html",
+      "goal": "把形状、广播、按轴归约和链式法则落实为可解释的PyTorch代码。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "tensor-autograd-1",
+          "title": "用小矩阵演示索引、广播、reshape、矩阵乘法与按轴求和，逐步写出输入/输出形状。"
+        },
+        {
+          "id": "tensor-autograd-2",
+          "title": "构建含缺失值的表格预处理与训练/验证划分，解释为何预处理统计量只从训练集拟合。"
+        },
+        {
+          "id": "tensor-autograd-3",
+          "title": "对标量与向量小函数手算梯度，再对照autograd；比较梯度累积、清零与detach。"
+        },
+        {
+          "id": "tensor-autograd-4",
+          "title": "用教材概率小实验补期望/条件概率，不以证明题或整门数学课为前置。"
+        }
+      ]
+    },
+    {
+      "id": "linear-training",
+      "num": 2,
+      "title": "从零训练循环与线性模型",
+      "titleEn": "Training Loop and Linear Models",
+      "stars": 2,
+      "hours": "中等，需反复调试",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_linear-networks/linear-regression-scratch.html",
+      "goal": "独立写出数据批处理、前向、损失、反向、更新与评估循环，并与高层API对应。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "linear-training-1",
+          "title": "实现合成数据线性回归，比较从零SGD与nn.Linear/优化器版本。"
+        },
+        {
+          "id": "linear-training-2",
+          "title": "完成Fashion-MNIST softmax分类，说明交叉熵、稳定计算与batch维度。"
+        },
+        {
+          "id": "linear-training-3",
+          "title": "区分train/eval与梯度记录；仅在训练集更新参数，记录训练/验证损失和分类准确率。"
+        },
+        {
+          "id": "linear-training-4",
+          "title": "选官方小节习题改变batch size或学习率，复现实验配置并解释失败曲线。"
+        }
+      ]
+    },
+    {
+      "id": "mlp-generalization",
+      "num": 3,
+      "title": "MLP、泛化与房价基线",
+      "titleEn": "MLP, Generalization and House Prices",
+      "stars": 3,
+      "hours": "中等至较长，包含对照实验",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/kaggle-house-price.html",
+      "goal": "从MLP到可靠验证，理解正则化并建立房价任务的可复现基线。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "mlp-generalization-1",
+          "title": "比较MLP从零与简洁实现，追踪激活函数、初始化和梯度。"
+        },
+        {
+          "id": "mlp-generalization-2",
+          "title": "用小数据展示欠拟合/过拟合，分别改变权重衰减与Dropout，报告训练/验证差异。"
+        },
+        {
+          "id": "mlp-generalization-3",
+          "title": "依据教材房价案例建立预处理、K折验证与预测导出，避免泄漏；自定实验不是官方评分。"
+        },
+        {
+          "id": "mlp-generalization-4",
+          "title": "将相同工作流迁移到2021加州房价历史竞赛；说明它与教材Ames房价不是同一数据集，记录数据可用性。"
+        }
+      ]
+    },
+    {
+      "id": "cnn-architectures",
+      "num": 4,
+      "title": "模块工程、卷积与现代CNN",
+      "titleEn": "Modules, Convolutions and Modern CNNs",
+      "stars": 4,
+      "hours": "较长，按网络家族分段",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/lenet.html",
+      "goal": "用统一模块与训练接口理解从LeNet到ResNet的全部课程CNN路线。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "cnn-architectures-1",
+          "title": "实现层/块、自定义层、参数管理、保存/加载与设备迁移。"
+        },
+        {
+          "id": "cnn-architectures-2",
+          "title": "手算并程序核对卷积、填充、步幅、多通道与池化的输出形状和参数量。"
+        },
+        {
+          "id": "cnn-architectures-3",
+          "title": "训练LeNet小基线；对AlexNet、VGG、NiN、GoogLeNet逐层跟踪形状，保留每个网络的机制和最小前向实验。"
+        },
+        {
+          "id": "cnn-architectures-4",
+          "title": "比较BatchNorm训练/推理与残差连接；选小型ResNet完成训练、保存后恢复预测并记录配置。"
+        }
+      ]
+    },
+    {
+      "id": "training-performance",
+      "num": 5,
+      "title": "计算性能与多设备训练",
+      "titleEn": "Performance and Multi-device Training",
+      "stars": 3,
+      "hours": "中等；多设备部分依资源安排",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_computational-performance/hardware.html",
+      "goal": "测量训练瓶颈并解释数据并行和梯度聚合，不把概念推演当作多GPU实测。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "training-performance-1",
+          "title": "分别测量数据加载、前向、反向和更新，记录设备/版本/batch size；异步设备计时显式同步。"
+        },
+        {
+          "id": "training-performance-2",
+          "title": "比较小批量设置对吞吐与内存的影响，不在不同设备间直接套用加速比。"
+        },
+        {
+          "id": "training-performance-3",
+          "title": "按教材多GPU从零与简洁实现理解数据划分、梯度求和与参数同步；有多GPU才运行扩展实验。"
+        },
+        {
+          "id": "training-performance-4",
+          "title": "用小张量推演多worker梯度聚合和参数服务器通信；解释CPU/GPU/专有硬件及分布式通信瓶颈。"
+        }
+      ]
+    },
+    {
+      "id": "cv-transfer",
+      "num": 6,
+      "title": "视觉迁移与分类竞赛实践",
+      "titleEn": "Vision Transfer and Classification",
+      "stars": 3,
+      "hours": "较长，含数据准备与误差分析",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_computer-vision/fine-tuning.html",
+      "goal": "将增广、微调和正确验证用于分类，完整保留课程树叶竞赛与两项教材实战。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "cv-transfer-1",
+          "title": "比较训练增广与确定性验证变换，检查标签映射与预处理一致性。"
+        },
+        {
+          "id": "cv-transfer-2",
+          "title": "对预训练模型比较冻结特征与微调，建立不泄漏验证集的树叶分类基线。"
+        },
+        {
+          "id": "cv-transfer-3",
+          "title": "分别走通教材CIFAR-10与狗品种案例的数据接口、损失、验证和预测导出；小数据调试不能冒充全量竞赛训练。"
+        },
+        {
+          "id": "cv-transfer-4",
+          "title": "记录混淆样本、类不均衡或过拟合，阅读课程树叶竞赛总结并提出下一轮实验；不要求复现获奖方案。"
+        }
+      ]
+    },
+    {
+      "id": "cv-dense-prediction",
+      "num": 7,
+      "title": "检测、分割与风格迁移",
+      "titleEn": "Detection, Segmentation and Style Transfer",
+      "stars": 4,
+      "hours": "较长，分成三个子阶段",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_computer-vision/ssd.html",
+      "goal": "建立分类以外的完整视觉任务链，并保留2021牛仔行头检测历史竞赛映射。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "cv-dense-prediction-1",
+          "title": "实现/检查边界框、IoU、锚框匹配、NMS与多尺度预测；用示例解释R-CNN、SSD和课程YOLO介绍的不同设计。"
+        },
+        {
+          "id": "cv-dense-prediction-2",
+          "title": "完成教材小型SSD检测训练和可视化，再设计牛仔行头竞赛数据适配与离线验证；规则/数据不可访问时明确不能声称完成竞赛复现。"
+        },
+        {
+          "id": "cv-dense-prediction-3",
+          "title": "加载分割样本并检查像素标签，对照转置卷积的形状与FCN输出，训练一个可复现小规模分割基线。"
+        },
+        {
+          "id": "cv-dense-prediction-4",
+          "title": "运行单张图像风格迁移，解释内容/风格损失与优化图像而不是训练分类器的区别。"
+        }
+      ]
+    },
+    {
+      "id": "recurrent-language-model",
+      "num": 8,
+      "title": "RNN、GRU与LSTM语言模型",
+      "titleEn": "Recurrent Language Models",
+      "stars": 4,
+      "hours": "较长，重在逐步调试",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/rnn-scratch.html",
+      "goal": "理解语言建模、状态传递与门控网络，为后续注意力模型保留可比较基线。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "recurrent-language-model-1",
+          "title": "处理教材文本、词表与随机/顺序采样，检查输入目标错位与跨批隐状态。"
+        },
+        {
+          "id": "recurrent-language-model-2",
+          "title": "从零实现RNN并对照简洁实现；记录交叉熵/困惑度、梯度裁剪和生成结果。"
+        },
+        {
+          "id": "recurrent-language-model-3",
+          "title": "比较小规模GRU与LSTM；对深层/双向网络做形状与可用信息检查。"
+        },
+        {
+          "id": "recurrent-language-model-4",
+          "title": "解释时间反向传播与detach边界；识别双向模型在自回归预测中使用未来信息的问题。"
+        }
+      ]
+    },
+    {
+      "id": "seq2seq-attention",
+      "num": 9,
+      "title": "Seq2Seq、翻译与注意力",
+      "titleEn": "Seq2Seq and Attention",
+      "stars": 4,
+      "hours": "较长，分数据与模型两段",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_attention-mechanisms/bahdanau-attention.html",
+      "goal": "实现可解释的小型翻译链路，从编码器瓶颈理解注意力。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "seq2seq-attention-1",
+          "title": "建立双语词表、padding、有效长度与mask，区分teacher forcing训练和逐词推理。"
+        },
+        {
+          "id": "seq2seq-attention-2",
+          "title": "完成seq2seq基线并解释贪心与束搜索；在小例上比较搜索行为，不保证束宽越大越好。"
+        },
+        {
+          "id": "seq2seq-attention-3",
+          "title": "实现核回归注意力小例、加性/点积打分与masked softmax，检查padding权重。"
+        },
+        {
+          "id": "seq2seq-attention-4",
+          "title": "加入Bahdanau注意力，对相同固定验证样本比较基线与注意力模型并绘制对齐权重。"
+        }
+      ]
+    },
+    {
+      "id": "transformer",
+      "num": 10,
+      "title": "从注意力到Transformer",
+      "titleEn": "Transformer Implementation",
+      "stars": 4,
+      "hours": "较长，分组件与端到端",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_attention-mechanisms/transformer.html",
+      "goal": "能追踪多头注意力的每个张量维度，完成小型Transformer训练与自回归推理。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "transformer-1",
+          "title": "逐步实现/解释Q/K/V投影、多头拆合、位置编码、残差与前馈层。"
+        },
+        {
+          "id": "transformer-2",
+          "title": "核对padding与causal mask；构造未来词变化不影响此前位置输出的局部检查。"
+        },
+        {
+          "id": "transformer-3",
+          "title": "以教材翻译任务完成小型编码器-解码器Transformer训练，保存恢复并在固定样本推理。"
+        },
+        {
+          "id": "transformer-4",
+          "title": "比较训练与增量生成的输入/状态处理，估算序列长度增加的注意力计算与内存成本。"
+        }
+      ]
+    },
+    {
+      "id": "bert-pretrain-finetune",
+      "num": 11,
+      "title": "BERT预训练与自然语言推断",
+      "titleEn": "BERT Pretraining and Fine-tuning",
+      "stars": 4,
+      "hours": "较长，分数据目标与迁移",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert-pretraining.html",
+      "goal": "理解双向预训练目标、输入构造与下游微调，并区分其与CS336自回归语言建模。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "bert-pretrain-finetune-1",
+          "title": "构造词元/片段/位置输入、MLM预测位置和NSP标签，核对padding不进入错误损失。"
+        },
+        {
+          "id": "bert-pretrain-finetune-2",
+          "title": "训练小型教材BERT，分别记录MLM/NSP损失；明确这是教学规模而非工业预训练复现。"
+        },
+        {
+          "id": "bert-pretrain-finetune-3",
+          "title": "按教材自然语言推断数据流程完成预训练权重加载/分类头微调，解释标签、训练验证划分与序列/词元级任务接口。"
+        },
+        {
+          "id": "bert-pretrain-finetune-4",
+          "title": "报告数据、词表和权重来源及限制，比较冻结编码器与微调的取舍，解释双向BERT不能直接当作因果生成模型。"
+        }
+      ]
+    },
+    {
+      "id": "optimization-capstone",
+      "num": 12,
+      "title": "优化回顾与全课程工程总结",
+      "titleEn": "Optimization and Course Capstone",
+      "stars": 3,
+      "hours": "中等至较长，复用已有项目",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_optimization/index.html",
+      "goal": "回到课程最后的优化总览，用已有模型整理可复现工程能力，再衔接CS336。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "optimization-capstone-1",
+          "title": "在同一小模型/数据划分上比较SGD、动量和Adam，固定比较条件并记录曲线；其余算法作为教材对照，不声称视频逐节覆盖。"
+        },
+        {
+          "id": "optimization-capstone-2",
+          "title": "检查学习率调度、数值稳定性与优化器状态保存；恢复训练时同时恢复模型和优化器。"
+        },
+        {
+          "id": "optimization-capstone-3",
+          "title": "整理MLP/CNN/CV/RNN/Attention/BERT的任务、输入形状、损失、评估与资源限制，完成课程总结视频学习。"
+        },
+        {
+          "id": "optimization-capstone-4",
+          "title": "输出自己的CS336准备清单：训练循环、token/mask、Transformer、性能测量与数据评估；论文阅读不是此阶段验收。"
+        }
+      ]
+    }
+  ]
+}

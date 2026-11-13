@@ -1,0 +1,106 @@
+{
+  "lab": {
+    "id": "tensor-autograd",
+    "num": 1,
+    "title": "张量、数据与自动求导",
+    "titleEn": "Tensors, Data and Autograd",
+    "stars": 2,
+    "hours": "短周期，多次小实验",
+    "branch": "不适用：编者阶段练习，非官方Git分支",
+    "url": "https://zh.d2l.ai/chapter_preliminaries/autograd.html",
+    "goal": "把形状、广播、按轴归约和链式法则落实为可解释的PyTorch代码。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+    "tasks": [
+      {
+        "id": "tensor-autograd-1",
+        "title": "用小矩阵演示索引、广播、reshape、矩阵乘法与按轴求和，逐步写出输入/输出形状。"
+      },
+      {
+        "id": "tensor-autograd-2",
+        "title": "构建含缺失值的表格预处理与训练/验证划分，解释为何预处理统计量只从训练集拟合。"
+      },
+      {
+        "id": "tensor-autograd-3",
+        "title": "对标量与向量小函数手算梯度，再对照autograd；比较梯度累积、清零与detach。"
+      },
+      {
+        "id": "tensor-autograd-4",
+        "title": "用教材概率小实验补期望/条件概率，不以证明题或整门数学课为前置。"
+      }
+    ]
+  },
+  "provenance": {
+    "labId": "tensor-autograd",
+    "nature": "editorial-integrated-practice",
+    "numbering": "站内编者阶段序号；非官方Lab编号",
+    "difficulty": "stars为编者相对难度，不是官方评分或成绩",
+    "sourceSections": [
+      {
+        "number": "2.1",
+        "title": "数据操作",
+        "url": "https://zh.d2l.ai/chapter_preliminaries/ndarray.html"
+      },
+      {
+        "number": "2.2",
+        "title": "数据预处理",
+        "url": "https://zh.d2l.ai/chapter_preliminaries/pandas.html"
+      },
+      {
+        "number": "2.3",
+        "title": "线性代数",
+        "url": "https://zh.d2l.ai/chapter_preliminaries/linear-algebra.html"
+      },
+      {
+        "number": "2.4",
+        "title": "微积分",
+        "url": "https://zh.d2l.ai/chapter_preliminaries/calculus.html"
+      },
+      {
+        "number": "2.5",
+        "title": "自动微分",
+        "url": "https://zh.d2l.ai/chapter_preliminaries/autograd.html"
+      },
+      {
+        "number": "2.6",
+        "title": "概率",
+        "url": "https://zh.d2l.ai/chapter_preliminaries/probability.html"
+      },
+      {
+        "number": "2.7",
+        "title": "查阅文档",
+        "url": "https://zh.d2l.ai/chapter_preliminaries/lookup-api.html"
+      }
+    ],
+    "exercisePolicy": "优先选这些官方小节的习题与PyTorch notebook；本轮只索引目录及课堂notebook链接，未下载/逐题核对练习全文。任务组合与验收描述为编者设计。",
+    "officialScheduleVideos": [
+      "https://www.bilibili.com/video/BV1CV411Y7i4",
+      "https://www.bilibili.com/video/BV1CV411Y7i4?p=3",
+      "https://www.bilibili.com/video/BV1eK4y1U7Qy",
+      "https://www.bilibili.com/video/BV1eZ4y1w7PY",
+      "https://www.bilibili.com/video/BV1KA411N7Px"
+    ],
+    "officialClassNotebookLinks": [
+      "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/ndarray.slides.html",
+      "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/pandas.slides.html",
+      "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/linear-algebra.slides.html",
+      "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/autograd.slides.html"
+    ],
+    "recommendedPrerequisiteModules": [
+      "orientation",
+      "foundations"
+    ],
+    "resources": {
+      "cpu": "CPU足够完成全部小实验；GPU不是前置。",
+      "gpu": "GPU可用于设备迁移观察，不设性能验收。"
+    },
+    "evidenceToKeep": [
+      "环境与数据来源/版本",
+      "形状或局部正确性检查",
+      "实际执行的训练/验证结果与配置",
+      "失败分析及未执行范围"
+    ],
+    "grading": "无官方grade分值；不设虚构官方通过阈值。"
+  },
+  "origin": "../practice-plan.json",
+  "originSha256": "52728031fcc0c224fcb5316008c23ad5d4f0e7cb4bf4c881e73fc534d6ed53ba",
+  "capturedAt": "2026-11-13T08:48:36.032223+00:00"
+}

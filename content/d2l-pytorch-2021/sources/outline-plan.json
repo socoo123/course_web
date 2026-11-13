@@ -1,0 +1,1490 @@
+{
+  "courseId": "d2l-pytorch-2021",
+  "preparedAt": "2026-11-13",
+  "scope": "规划与源索引；尚未获取字幕、逐讲笔记或实验正文",
+  "sourceUrls": [
+    "https://courses.d2l.ai/zh-v2/",
+    "https://zh.d2l.ai/"
+  ],
+  "ordering": "按2021实际课表学习：基础→CNN→计算性能/CV→RNN→Attention/Transformer/BERT→优化与总结；教材目录顺序不同。",
+  "learningPolicy": [
+    "全部官方课表条目保留，包括CNN、CV、RNN与竞赛总结；工程目标不构成删课理由。",
+    "每主题采用直觉→最小公式/形状→PyTorch实现→小实验→错误分析；数学忘记时就地补习，不先刷完整数学课。",
+    "教材习题选做服务理解；无需刷论文，引用只用于可追溯性。",
+    "先完成CPU可运行小例；较大训练留作GPU阶段，不把无GPU概念演练宣称完整训练。"
+  ],
+  "modules": [
+    {
+      "id": "orientation",
+      "title": "课程导论与环境",
+      "nature": "编者学习模块；不是官方讲次编号",
+      "bookChapters": [
+        "1"
+      ],
+      "officialScheduleTopics": [
+        "课程安排",
+        "深度学习介绍",
+        "安装"
+      ],
+      "scheduleEvidence": [
+        {
+          "title": "深度学习介绍",
+          "videos": [
+            "https://www.bilibili.com/video/BV1J54y187f9"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_introduction/index.html"
+          ],
+          "notebooks": []
+        },
+        {
+          "title": "安装",
+          "videos": [
+            "https://www.bilibili.com/video/BV18p4y1h7Dr"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_installation/index.html"
+          ],
+          "notebooks": []
+        }
+      ],
+      "outcomes": [
+        "理解数据、模型、目标函数与训练过程的关系；按官方课表完整学习，不删CNN/CV/RNN。",
+        "建立隔离的PyTorch学习环境；记录依赖而不照抄过时安装命令。"
+      ],
+      "justInTimeMath": [
+        "Python数组、函数与类"
+      ],
+      "practiceIds": [
+        "tensor-autograd"
+      ]
+    },
+    {
+      "id": "foundations",
+      "title": "张量、线性代数与自动微分",
+      "nature": "编者学习模块；不是官方讲次编号",
+      "bookChapters": [
+        "2"
+      ],
+      "officialScheduleTopics": [
+        "数据操作",
+        "数据预处理",
+        "线性代数",
+        "[补充] 按特定轴求和",
+        "矩阵计算",
+        "自动求导"
+      ],
+      "scheduleEvidence": [
+        {
+          "title": "数据操作",
+          "videos": [
+            "https://www.bilibili.com/video/BV1CV411Y7i4"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_preliminaries/ndarray.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/ndarray.slides.html"
+          ]
+        },
+        {
+          "title": "数据预处理",
+          "videos": [
+            "https://www.bilibili.com/video/BV1CV411Y7i4?p=3"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_preliminaries/pandas.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/pandas.slides.html"
+          ]
+        },
+        {
+          "title": "线性代数",
+          "videos": [
+            "https://www.bilibili.com/video/BV1eK4y1U7Qy"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_preliminaries/linear-algebra.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/linear-algebra.slides.html"
+          ]
+        },
+        {
+          "title": "[补充] 按特定轴求和",
+          "videos": [
+            "https://www.bilibili.com/video/BV1eK4y1U7Qy?p=3"
+          ],
+          "readings": [],
+          "notebooks": []
+        },
+        {
+          "title": "矩阵计算",
+          "videos": [
+            "https://www.bilibili.com/video/BV1eZ4y1w7PY"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_preliminaries/calculus.html"
+          ],
+          "notebooks": []
+        },
+        {
+          "title": "自动求导",
+          "videos": [
+            "https://www.bilibili.com/video/BV1KA411N7Px"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_preliminaries/autograd.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/autograd.slides.html"
+          ]
+        }
+      ],
+      "outcomes": [
+        "形状、广播、索引、按轴归约与缺失值处理。",
+        "用小矩阵理解点积、矩阵乘法、导数、梯度和链式法则；先手算小例子再用autograd。"
+      ],
+      "justInTimeMath": [
+        "向量/矩阵、求和、导数、链式法则；概率2.6为教材补习，不冒充独立录像"
+      ],
+      "practiceIds": [
+        "tensor-autograd"
+      ]
+    },
+    {
+      "id": "linear",
+      "title": "线性模型、损失与训练循环",
+      "nature": "编者学习模块；不是官方讲次编号",
+      "bookChapters": [
+        "3"
+      ],
+      "officialScheduleTopics": [
+        "线性回归",
+        "基础优化方法",
+        "线性回归的从零开始实现",
+        "线性回归的简洁实现",
+        "Softmax 回归",
+        "损失函数",
+        "图像分类数据集",
+        "Softmax 回归的从零开始实现",
+        "Softmax 回归的简洁实现"
+      ],
+      "scheduleEvidence": [
+        {
+          "title": "线性回归",
+          "videos": [
+            "https://www.bilibili.com/video/BV1PX4y1g7KC"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/linear-regression.slides.html"
+          ]
+        },
+        {
+          "title": "基础优化方法",
+          "videos": [
+            "https://www.bilibili.com/video/BV1PX4y1g7KC?p=2"
+          ],
+          "readings": [],
+          "notebooks": []
+        },
+        {
+          "title": "线性回归的从零开始实现",
+          "videos": [
+            "https://www.bilibili.com/video/BV1PX4y1g7KC?p=3"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression-scratch.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/linear-regression-scratch.slides.html"
+          ]
+        },
+        {
+          "title": "线性回归的简洁实现",
+          "videos": [
+            "https://www.bilibili.com/video/BV1PX4y1g7KC?p=4"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression-concise.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/linear-regression-concise.slides.html"
+          ]
+        },
+        {
+          "title": "Softmax 回归",
+          "videos": [
+            "https://www.bilibili.com/video/BV1K64y1Q7wu"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression.html"
+          ],
+          "notebooks": []
+        },
+        {
+          "title": "损失函数",
+          "videos": [
+            "https://www.bilibili.com/video/BV1K64y1Q7wu?p=2"
+          ],
+          "readings": [],
+          "notebooks": []
+        },
+        {
+          "title": "图像分类数据集",
+          "videos": [
+            "https://www.bilibili.com/video/BV1K64y1Q7wu?p=3"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_linear-networks/image-classification-dataset.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/image-classification-dataset.slides.html"
+          ]
+        },
+        {
+          "title": "Softmax 回归的从零开始实现",
+          "videos": [
+            "https://www.bilibili.com/video/BV1K64y1Q7wu?p=4"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression-scratch.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/softmax-regression-scratch.slides.html"
+          ]
+        },
+        {
+          "title": "Softmax 回归的简洁实现",
+          "videos": [
+            "https://www.bilibili.com/video/BV1K64y1Q7wu?p=5"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression-concise.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/softmax-regression-concise.slides.html"
+          ]
+        }
+      ],
+      "outcomes": [
+        "手写到nn.Module的线性回归与softmax分类；数据划分、小批量、梯度更新和评估。",
+        "解释平方损失、交叉熵与数值稳定性；识别训练/验证混淆。"
+      ],
+      "justInTimeMath": [
+        "期望、对数、概率归一化、梯度下降"
+      ],
+      "practiceIds": [
+        "linear-training"
+      ]
+    },
+    {
+      "id": "mlp",
+      "title": "MLP、泛化与房价实践",
+      "nature": "编者学习模块；不是官方讲次编号",
+      "bookChapters": [
+        "4"
+      ],
+      "officialScheduleTopics": [
+        "感知机",
+        "多层感知机",
+        "多层感知机的从零开始实现",
+        "多层感知机的简洁实现",
+        "模型选择",
+        "欠拟合和过拟合",
+        "权重衰减",
+        "Dropout",
+        "数值稳定性",
+        "模型初始化和激活函数",
+        "实战 Kaggle 比赛：预测房价",
+        "竞赛 预测房价",
+        "预测房价竞赛总结"
+      ],
+      "scheduleEvidence": [
+        {
+          "title": "感知机",
+          "videos": [
+            "https://www.bilibili.com/video/BV1hh411U7gn"
+          ],
+          "readings": [],
+          "notebooks": []
+        },
+        {
+          "title": "多层感知机",
+          "videos": [
+            "https://www.bilibili.com/video/BV1hh411U7gn?p=2"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/mlp.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/mlp.slides.html"
+          ]
+        },
+        {
+          "title": "多层感知机的从零开始实现",
+          "videos": [
+            "https://www.bilibili.com/video/BV1hh411U7gn?p=3"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/mlp-scratch.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/mlp-scratch.slides.html"
+          ]
+        },
+        {
+          "title": "多层感知机的简洁实现",
+          "videos": [
+            "https://www.bilibili.com/video/BV1hh411U7gn?p=3"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/mlp-concise.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/mlp-concise.slides.html"
+          ]
+        },
+        {
+          "title": "模型选择",
+          "videos": [
+            "https://www.bilibili.com/video/BV1kX4y1g7jp"
+          ],
+          "readings": [],
+          "notebooks": []
+        },
+        {
+          "title": "欠拟合和过拟合",
+          "videos": [
+            "https://www.bilibili.com/video/BV1kX4y1g7jp?p=2"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/underfit-overfit.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/underfit-overfit.slides.html"
+          ]
+        },
+        {
+          "title": "权重衰减",
+          "videos": [
+            "https://www.bilibili.com/video/BV1UK4y1o7dy"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/weight-decay.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/weight-decay.slides.html"
+          ]
+        },
+        {
+          "title": "Dropout",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Y5411c7aY"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/dropout.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/dropout.slides.html"
+          ]
+        },
+        {
+          "title": "数值稳定性",
+          "videos": [
+            "https://www.bilibili.com/video/BV1u64y1i75a"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/numerical-stability-and-init.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/numerical-stability-and-init.slides.html"
+          ]
+        },
+        {
+          "title": "模型初始化和激活函数",
+          "videos": [
+            "https://www.bilibili.com/video/BV1u64y1i75a?p=2"
+          ],
+          "readings": [],
+          "notebooks": []
+        },
+        {
+          "title": "实战 Kaggle 比赛：预测房价",
+          "videos": [
+            "https://www.bilibili.com/video/BV1NK4y1P7Tu"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_multilayer-perceptrons/kaggle-house-price.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_multilayer-perceptrons/kaggle-house-price.slides.html"
+          ]
+        },
+        {
+          "title": "竞赛 预测房价",
+          "videos": [
+            "https://www.bilibili.com/video/BV1NK4y1P7Tu?p=2"
+          ],
+          "readings": [],
+          "notebooks": []
+        },
+        {
+          "title": "预测房价竞赛总结",
+          "videos": [
+            "https://www.bilibili.com/video/BV15Q4y1o7vc"
+          ],
+          "readings": [],
+          "notebooks": []
+        }
+      ],
+      "outcomes": [
+        "激活函数、反向传播直觉、初始化、欠拟合/过拟合、权重衰减和Dropout。",
+        "房价交叉验证与泄漏防范；区分教材房价案例与2021加州房价竞赛。"
+      ],
+      "justInTimeMath": [
+        "复合函数求导、范数、方差；只补解决当前问题所需数学"
+      ],
+      "practiceIds": [
+        "mlp-generalization"
+      ]
+    },
+    {
+      "id": "cnn",
+      "title": "模块工程与完整CNN演进",
+      "nature": "编者学习模块；不是官方讲次编号",
+      "bookChapters": [
+        "5",
+        "6",
+        "7"
+      ],
+      "officialScheduleTopics": [
+        "模型构造",
+        "参数管理",
+        "自定义层",
+        "读写文件",
+        "GPU",
+        "从全连接层到卷积",
+        "图像卷积",
+        "填充和步幅",
+        "多输入多输出通道",
+        "池化层",
+        "卷积神经网络（LeNet）",
+        "深度卷积神经网络（AlexNet）",
+        "使用块的网络（VGG）",
+        "网络中的网络（NiN）",
+        "含并行连结的网络（GoogLeNet）",
+        "批量归一化",
+        "残差网络（ResNet）",
+        "竞赛 图片分类"
+      ],
+      "scheduleEvidence": [
+        {
+          "title": "参数管理",
+          "videos": [
+            "https://www.bilibili.com/video/BV1AK4y1P7vs?p=2"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_deep-learning-computation/parameters.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/parameters.slides.html"
+          ]
+        },
+        {
+          "title": "自定义层",
+          "videos": [
+            "https://www.bilibili.com/video/BV1AK4y1P7vs?p=3"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_deep-learning-computation/custom-layer.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/custom-layer.slides.html"
+          ]
+        },
+        {
+          "title": "读写文件",
+          "videos": [
+            "https://www.bilibili.com/video/BV1AK4y1P7vs?p=4"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_deep-learning-computation/read-write.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/read-write.slides.html"
+          ]
+        },
+        {
+          "title": "GPU",
+          "videos": [
+            "https://www.bilibili.com/video/BV1z5411c7C1"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_deep-learning-computation/use-gpu.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_deep-learning-computation/use-gpu.slides.html"
+          ]
+        },
+        {
+          "title": "从全连接层到卷积",
+          "videos": [
+            "https://www.bilibili.com/video/BV1L64y1m7Nh"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/why-conv.html"
+          ],
+          "notebooks": []
+        },
+        {
+          "title": "图像卷积",
+          "videos": [
+            "https://www.bilibili.com/video/BV1L64y1m7Nh?p=2"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/conv-layer.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/conv-layer.slides.html"
+          ]
+        },
+        {
+          "title": "填充和步幅",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Th411U7UN"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/padding-and-strides.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/padding-and-strides.slides.html"
+          ]
+        },
+        {
+          "title": "多输入多输出通道",
+          "videos": [
+            "https://www.bilibili.com/video/BV1MB4y1F7of"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/channels.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/channels.slides.html"
+          ]
+        },
+        {
+          "title": "池化层",
+          "videos": [
+            "https://www.bilibili.com/video/BV1EV411j7nX"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/pooling.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/pooling.slides.html"
+          ]
+        },
+        {
+          "title": "卷积神经网络（LeNet）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1t44y1r7ct/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_convolutional-neural-networks/lenet.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-neural-networks/lenet.slides.html"
+          ]
+        },
+        {
+          "title": "深度卷积神经网络（AlexNet）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1h54y1L7oe/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_convolutional-modern/alexnet.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/alexnet.slides.html"
+          ]
+        },
+        {
+          "title": "使用块的网络（VGG）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Ao4y117Pd/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_convolutional-modern/vgg.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/vgg.slides.html"
+          ]
+        },
+        {
+          "title": "网络中的网络（NiN）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Uv411G71b/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_convolutional-modern/nin.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/nin.slides.html"
+          ]
+        },
+        {
+          "title": "含并行连结的网络（GoogLeNet）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1b5411g7Xo/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_convolutional-modern/googlenet.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/googlenet.slides.html"
+          ]
+        },
+        {
+          "title": "批量归一化",
+          "videos": [
+            "https://www.bilibili.com/video/BV1X44y1r77r/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_convolutional-modern/batch-norm.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/batch-norm.slides.html"
+          ]
+        },
+        {
+          "title": "残差网络（ResNet）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1bV41177ap/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_convolutional-modern/resnet.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_convolutional-modern/resnet.slides.html"
+          ]
+        },
+        {
+          "title": "竞赛 图片分类",
+          "videos": [
+            "https://www.bilibili.com/video/BV1z64y1o7iz/"
+          ],
+          "readings": [],
+          "notebooks": []
+        }
+      ],
+      "outcomes": [
+        "层/块、参数、保存加载和设备管理；卷积、通道、填充/步幅、池化的形状推导。",
+        "完整学习LeNet、AlexNet、VGG、NiN、GoogLeNet、BatchNorm和ResNet，不因后续CS336删去。"
+      ],
+      "justInTimeMath": [
+        "离散卷积、参数量、感受野、均值与方差"
+      ],
+      "practiceIds": [
+        "cnn-architectures",
+        "cv-transfer"
+      ]
+    },
+    {
+      "id": "performance",
+      "title": "硬件、多GPU与分布式训练",
+      "nature": "编者学习模块；不是官方讲次编号",
+      "bookChapters": [
+        "12"
+      ],
+      "officialScheduleTopics": [
+        "硬件：CPU和GPU",
+        "更多的专有硬件",
+        "多GPU训练",
+        "多GPU训练的实现",
+        "分布式训练"
+      ],
+      "scheduleEvidence": [
+        {
+          "title": "更多的专有硬件",
+          "videos": [
+            "https://www.bilibili.com/video/BV1VV41147PC/"
+          ],
+          "readings": [],
+          "notebooks": []
+        },
+        {
+          "title": "多GPU训练",
+          "videos": [
+            "https://www.bilibili.com/video/BV1vU4y1V7rd/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computational-performance/multiple-gpus.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computational-performance/multiple-gpus.slides.html"
+          ]
+        },
+        {
+          "title": "多GPU训练的实现",
+          "videos": [
+            "https://www.bilibili.com/video/BV1MQ4y1R7Qg"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computational-performance/multiple-gpus-concise.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computational-performance/multiple-gpus-concise.slides.html"
+          ]
+        },
+        {
+          "title": "分布式训练",
+          "videos": [
+            "https://www.bilibili.com/video/BV1jU4y1G7iu"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computational-performance/parameterserver.html"
+          ],
+          "notebooks": []
+        }
+      ],
+      "outcomes": [
+        "理解CPU/GPU/专有硬件、带宽、吞吐和显存；测量而非猜测瓶颈。",
+        "数据并行、梯度聚合、参数服务器；无多GPU时保留概念与通信推演，不伪造加速比。"
+      ],
+      "justInTimeMath": [
+        "吞吐、延迟、带宽与计算量估算"
+      ],
+      "practiceIds": [
+        "training-performance"
+      ]
+    },
+    {
+      "id": "cv",
+      "title": "视觉迁移、检测、分割与风格迁移",
+      "nature": "编者学习模块；不是官方讲次编号",
+      "bookChapters": [
+        "13"
+      ],
+      "officialScheduleTopics": [
+        "图像增广",
+        "微调",
+        "实战 Kaggle 比赛：图像分类（CIFAR-10）",
+        "实战 Kaggle 比赛：狗的品种识别（ImageNet Dogs）",
+        "物体检测",
+        "边缘框实现",
+        "物体检测数据集",
+        "锚框",
+        "竞赛 树叶分类竞赛总结",
+        "区域卷积神经网络（R-CNNs）",
+        "单发多框检测（SSD）",
+        "你只看一次（YOLO）",
+        "多尺度物体检测实现",
+        "SSD 实现",
+        "语义分割",
+        "语义分割数据集",
+        "转置卷积",
+        "转置卷积是一种卷积",
+        "全连接卷积神经网络（FCN）",
+        "样式迁移",
+        "竞赛 目标检测"
+      ],
+      "scheduleEvidence": [
+        {
+          "title": "图像增广",
+          "videos": [
+            "https://www.bilibili.com/video/BV17y4y1g76q"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/image-augmentation.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/image-augmentation.slides.html"
+          ]
+        },
+        {
+          "title": "微调",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Sb4y1d7CR"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/fine-tuning.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/fine-tuning.slides.html"
+          ]
+        },
+        {
+          "title": "实战 Kaggle 比赛：图像分类（CIFAR-10）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Gy4y1M7Cu"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/kaggle-cifar10.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/kaggle-cifar10.slides.html"
+          ]
+        },
+        {
+          "title": "实战 Kaggle 比赛：狗的品种识别（ImageNet Dogs）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1j5411T7wx"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/kaggle-dog.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/kaggle-dog.slides.html"
+          ]
+        },
+        {
+          "title": "物体检测",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Lh411Y7LX"
+          ],
+          "readings": [],
+          "notebooks": []
+        },
+        {
+          "title": "边缘框实现",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Lh411Y7LX?p=2"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/bounding-box.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/bounding-box.slides.html"
+          ]
+        },
+        {
+          "title": "物体检测数据集",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Lh411Y7LX?p=3"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/object-detection-dataset.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/object-detection-dataset.slides.html"
+          ]
+        },
+        {
+          "title": "锚框",
+          "videos": [
+            "https://www.bilibili.com/video/BV1aB4y1K7za"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/anchor.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/anchor.slides.html"
+          ]
+        },
+        {
+          "title": "竞赛 树叶分类竞赛总结",
+          "videos": [
+            "https://www.bilibili.com/video/BV1by4y1K7SE"
+          ],
+          "readings": [],
+          "notebooks": []
+        },
+        {
+          "title": "区域卷积神经网络（R-CNNs）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Db4y1C71g"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/rcnn.html"
+          ],
+          "notebooks": []
+        },
+        {
+          "title": "单发多框检测（SSD）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Db4y1C71g"
+          ],
+          "readings": [],
+          "notebooks": []
+        },
+        {
+          "title": "你只看一次（YOLO）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Db4y1C71g"
+          ],
+          "readings": [],
+          "notebooks": []
+        },
+        {
+          "title": "多尺度物体检测实现",
+          "videos": [
+            "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=1"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/multiscale-object-detection.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/multiscale-object-detection.slides.html"
+          ]
+        },
+        {
+          "title": "SSD 实现",
+          "videos": [
+            "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=2"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/ssd.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/ssd.slides.html"
+          ]
+        },
+        {
+          "title": "语义分割",
+          "videos": [
+            "https://www.bilibili.com/video/BV1BK4y1M7Rd"
+          ],
+          "readings": [],
+          "notebooks": []
+        },
+        {
+          "title": "语义分割数据集",
+          "videos": [
+            "https://www.bilibili.com/video/BV1BK4y1M7Rd?p=2"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/semantic-segmentation-and-dataset.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/semantic-segmentation-and-dataset.slides.html"
+          ]
+        },
+        {
+          "title": "转置卷积",
+          "videos": [
+            "https://www.bilibili.com/video/BV17o4y1X7Jn/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/transposed-conv.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/transposed-conv.slides.html"
+          ]
+        },
+        {
+          "title": "转置卷积是一种卷积",
+          "videos": [
+            "https://www.bilibili.com/video/BV1CM4y1K7r7/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/transposed-conv.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/transposed-conv.slides.html"
+          ]
+        },
+        {
+          "title": "全连接卷积神经网络（FCN）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1af4y1L7Zu/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/fcn.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/fcn.slides.html"
+          ]
+        },
+        {
+          "title": "样式迁移",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Eh41167GN/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_computer-vision/neural-style.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_computer-vision/neural-style.slides.html"
+          ]
+        },
+        {
+          "title": "竞赛 目标检测",
+          "videos": [
+            "https://www.bilibili.com/video/BV1F64y1x7xP/"
+          ],
+          "readings": [],
+          "notebooks": []
+        }
+      ],
+      "outcomes": [
+        "增广、迁移学习与图像分类；保留树叶分类竞赛及CIFAR-10/狗品种教材案例。",
+        "边界框、IoU、锚框、NMS、R-CNN/SSD/YOLO；分割、转置卷积、FCN和风格迁移；保留目标检测竞赛。"
+      ],
+      "justInTimeMath": [
+        "坐标变换、交并比、卷积尺寸、Gram矩阵的直觉"
+      ],
+      "practiceIds": [
+        "cv-transfer",
+        "cv-dense-prediction"
+      ]
+    },
+    {
+      "id": "rnn",
+      "title": "语言模型与循环网络",
+      "nature": "编者学习模块；不是官方讲次编号",
+      "bookChapters": [
+        "8",
+        "9"
+      ],
+      "officialScheduleTopics": [
+        "序列模型",
+        "文本预处理",
+        "语言模型和数据集",
+        "循环神经网络",
+        "循环神经网络的从零开始实现",
+        "循环神经网络的简洁实现",
+        "门控循环单元（GRU）",
+        "长短期记忆网络（LSTM）",
+        "深层循环神经网络",
+        "双向循环神经网络"
+      ],
+      "scheduleEvidence": [
+        {
+          "title": "文本预处理",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Fo4y1Q79L/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/text-preprocessing.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/text-preprocessing.slides.html"
+          ]
+        },
+        {
+          "title": "语言模型和数据集",
+          "videos": [
+            "https://www.bilibili.com/video/BV1ZX4y1F7K3/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/language-models-and-dataset.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/language-models-and-dataset.slides.html"
+          ]
+        },
+        {
+          "title": "循环神经网络",
+          "videos": [
+            "https://www.bilibili.com/video/BV1D64y1z7CA/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/rnn.html"
+          ],
+          "notebooks": []
+        },
+        {
+          "title": "循环神经网络的从零开始实现",
+          "videos": [
+            "https://www.bilibili.com/video/BV1kq4y1H7sw/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/rnn-scratch.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/rnn-scratch.slides.html"
+          ]
+        },
+        {
+          "title": "循环神经网络的简洁实现",
+          "videos": [
+            "https://www.bilibili.com/video/BV1kq4y1H7sw?p=2"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/rnn-concise.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-neural-networks/rnn-concise.slides.html"
+          ]
+        },
+        {
+          "title": "门控循环单元（GRU）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1mf4y157N2/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_recurrent-modern/gru.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/gru.slides.html"
+          ]
+        },
+        {
+          "title": "长短期记忆网络（LSTM）",
+          "videos": [
+            "https://www.bilibili.com/video/BV1JU4y1H7PC/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_recurrent-modern/lstm.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/lstm.slides.html"
+          ]
+        },
+        {
+          "title": "深层循环神经网络",
+          "videos": [
+            "https://www.bilibili.com/video/BV1JM4y1T7N4/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_recurrent-modern/deep-rnn.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/deep-rnn.slides.html"
+          ]
+        },
+        {
+          "title": "双向循环神经网络",
+          "videos": [
+            "https://www.bilibili.com/video/BV12X4y1c71W/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_recurrent-modern/bi-rnn.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/bi-rnn.slides.html"
+          ]
+        }
+      ],
+      "outcomes": [
+        "序列采样、词表、条件概率、困惑度；RNN从零与简洁实现、隐状态和梯度裁剪。",
+        "GRU/LSTM、深层/双向RNN；区分可访问未来信息的任务与自回归任务。"
+      ],
+      "justInTimeMath": [
+        "条件概率、链式法则、时间展开与梯度范数"
+      ],
+      "practiceIds": [
+        "recurrent-language-model"
+      ]
+    },
+    {
+      "id": "seq2seq",
+      "title": "机器翻译、编解码与注意力",
+      "nature": "编者学习模块；不是官方讲次编号",
+      "bookChapters": [
+        "9",
+        "10"
+      ],
+      "officialScheduleTopics": [
+        "机器翻译与数据集",
+        "编码器-解码器结构",
+        "序列到序列学习（seq2seq）",
+        "束搜索",
+        "注意力机制",
+        "注意力分数",
+        "使用注意力机制的seq2seq"
+      ],
+      "scheduleEvidence": [
+        {
+          "title": "机器翻译与数据集",
+          "videos": [
+            "https://www.bilibili.com/video/BV1H64y1s7TH/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_recurrent-modern/machine-translation-and-dataset.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/machine-translation-and-dataset.slides.html"
+          ]
+        },
+        {
+          "title": "编码器-解码器结构",
+          "videos": [
+            "https://www.bilibili.com/video/BV1c54y1E7YP/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_recurrent-modern/encoder-decoder.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/encoder-decoder.slides.html"
+          ]
+        },
+        {
+          "title": "序列到序列学习（seq2seq）",
+          "videos": [
+            "https://www.bilibili.com/video/BV16g411L7FG/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_recurrent-modern/seq2seq.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_recurrent-modern/seq2seq.slides.html"
+          ]
+        },
+        {
+          "title": "束搜索",
+          "videos": [
+            "https://www.bilibili.com/video/BV1B44y1C7m1/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_recurrent-modern/beam-search.html"
+          ],
+          "notebooks": []
+        },
+        {
+          "title": "注意力分数",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Tb4y167rb/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_attention-mechanisms/attention-scoring-functions.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/attention-scoring-functions.slides.html"
+          ]
+        },
+        {
+          "title": "使用注意力机制的seq2seq",
+          "videos": [
+            "https://www.bilibili.com/video/BV1v44y1C7Tg/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_attention-mechanisms/bahdanau-attention.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/bahdanau-attention.slides.html"
+          ]
+        }
+      ],
+      "outcomes": [
+        "变长序列、padding/mask、teacher forcing、编码器-解码器、贪心/束搜索。",
+        "核回归的注意力直觉、加性/点积打分与Bahdanau注意力；从张量形状理解计算。"
+      ],
+      "justInTimeMath": [
+        "条件分布、加权平均、softmax、长度归一化"
+      ],
+      "practiceIds": [
+        "seq2seq-attention"
+      ]
+    },
+    {
+      "id": "transformer",
+      "title": "自注意力与Transformer",
+      "nature": "编者学习模块；不是官方讲次编号",
+      "bookChapters": [
+        "10"
+      ],
+      "officialScheduleTopics": [
+        "自注意力和位置编码",
+        "Transformer"
+      ],
+      "scheduleEvidence": [
+        {
+          "title": "自注意力和位置编码",
+          "videos": [
+            "https://www.bilibili.com/video/BV19o4y1m7mo/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_attention-mechanisms/self-attention-and-positional-encoding.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/self-attention-and-positional-encoding.slides.html"
+          ]
+        },
+        {
+          "title": "Transformer",
+          "videos": [
+            "https://www.bilibili.com/video/BV1Kq4y1H7FL/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_attention-mechanisms/transformer.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_attention-mechanisms/transformer.slides.html"
+          ]
+        }
+      ],
+      "outcomes": [
+        "自注意力、位置编码、多头注意力、前馈层、残差和归一化；分别理解编码器/解码器mask。",
+        "小规模翻译模型的训练/推理；为CS336自回归Transformer实现建立基础，而非将BERT等同GPT。"
+      ],
+      "justInTimeMath": [
+        "矩阵乘法、注意力复杂度、正弦位置编码的基本直觉"
+      ],
+      "practiceIds": [
+        "transformer"
+      ]
+    },
+    {
+      "id": "bert",
+      "title": "BERT预训练与NLP迁移",
+      "nature": "编者学习模块；不是官方讲次编号",
+      "bookChapters": [
+        "14",
+        "15"
+      ],
+      "officialScheduleTopics": [
+        "BERT",
+        "BERT预训练数据集",
+        "预训练BERT",
+        "微调BERT",
+        "自然语言推理和数据集",
+        "自然语言推理：微调BERT",
+        "竞赛 目标检测总结"
+      ],
+      "scheduleEvidence": [
+        {
+          "title": "BERT",
+          "videos": [
+            "https://www.bilibili.com/video/BV1yU4y1E7Ns/"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_natural-language-processing-pretraining/bert.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-pretraining/bert.slides.html"
+          ]
+        },
+        {
+          "title": "BERT预训练数据集",
+          "videos": [
+            "https://www.bilibili.com/video/BV1yU4y1E7Ns?p=2"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_natural-language-processing-pretraining/bert-dataset.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-pretraining/bert-dataset.slides.html"
+          ]
+        },
+        {
+          "title": "预训练BERT",
+          "videos": [
+            "https://www.bilibili.com/video/BV1yU4y1E7Ns?p=3"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_natural-language-processing-pretraining/bert-pretraining.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-pretraining/bert-pretraining.slides.html"
+          ]
+        },
+        {
+          "title": "微调BERT",
+          "videos": [
+            "https://www.bilibili.com/video/BV15L4y1v7ts"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_natural-language-processing-applications/finetuning-bert.html"
+          ],
+          "notebooks": []
+        },
+        {
+          "title": "自然语言推理和数据集",
+          "videos": [
+            "https://www.bilibili.com/video/BV15L4y1v7ts?p=2"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.slides.html"
+          ]
+        },
+        {
+          "title": "自然语言推理：微调BERT",
+          "videos": [
+            "https://www.bilibili.com/video/BV15L4y1v7ts?p=3"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-bert.html"
+          ],
+          "notebooks": [
+            "https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_natural-language-processing-applications/natural-language-inference-bert.slides.html"
+          ]
+        },
+        {
+          "title": "竞赛 目标检测总结",
+          "videos": [
+            "https://www.bilibili.com/video/BV13b4y1m7y8"
+          ],
+          "readings": [],
+          "notebooks": []
+        }
+      ],
+      "outcomes": [
+        "BERT输入、MLM/NSP、数据构造、预训练循环；微调接口与自然语言推断。",
+        "区分预训练目标、下游标签与评估；词向量/情感分析等教材额外节不冒充本课录像。"
+      ],
+      "justInTimeMath": [
+        "条件概率、交叉熵、多任务损失"
+      ],
+      "practiceIds": [
+        "bert-pretrain-finetune"
+      ]
+    },
+    {
+      "id": "optimization-summary",
+      "title": "优化算法、课程总结与CS336衔接",
+      "nature": "编者学习模块；不是官方讲次编号",
+      "bookChapters": [
+        "11"
+      ],
+      "officialScheduleTopics": [
+        "优化算法",
+        "课程总结和进阶学习"
+      ],
+      "scheduleEvidence": [
+        {
+          "title": "优化算法",
+          "videos": [
+            "https://www.bilibili.com/video/BV1bP4y1p7Gq"
+          ],
+          "readings": [
+            "https://zh-v2.d2l.ai/chapter_optimization/index.html"
+          ],
+          "notebooks": []
+        },
+        {
+          "title": "课程总结和进阶学习",
+          "videos": [
+            "https://www.bilibili.com/video/BV1AL4y1Y7gu"
+          ],
+          "readings": [],
+          "notebooks": []
+        }
+      ],
+      "outcomes": [
+        "回到课程最后的优化总览，比较SGD、动量与自适应优化思想；教材细节按需深化。",
+        "总结完整模型谱系与工程流程；CS336准备目标是独立写训练循环、mask、Transformer并诊断性能与数据问题，不强制论文阅读。"
+      ],
+      "justInTimeMath": [
+        "梯度、学习率、指数移动平均；凸性等教材推导按需补习"
+      ],
+      "practiceIds": [
+        "optimization-capstone"
+      ]
+    }
+  ],
+  "bookOnlyPolicy": "book-inventory.json中无独立课表链接的章节仍完整收录；它们是补习或扩展，不自动扩充官方视频课表。",
+  "cs336Readiness": [
+    "可独立实现数据批处理、自动求导训练循环、交叉熵、保存恢复和验证。",
+    "能解释序列mask、teacher forcing、自回归与双向预训练区别，追踪多头注意力张量维度。",
+    "能测量吞吐/显存，理解并行训练与优化器取舍；后续CS336再系统学习分词、大规模语言模型训练、数据与评估。"
+  ],
+  "futureParallelGeneration": {
+    "required": true,
+    "unit": "以官方视频入口/上传ID和模块划分互不重叠的获取及生成任务；重复BV与P链接先由主agent建立共享源缓存",
+    "contract": [
+      "主agent先固定字幕/书籍版本、许可和原始源索引；不得用教材自动冒充讲稿。",
+      "多个agent并行抓取与生成，逐讲保存来源边界、缺字幕状态和编者补充标记。",
+      "练习agent引用本计划的provenance与官方习题，不生成不存在的官方Lab编号。",
+      "主agent最终整合跨讲链接、术语与练习依赖并统一验证。"
+    ]
+  }
+}

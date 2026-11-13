@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" role="img" aria-labelledby="title desc">
+  <title id="title">从接触知识到独立解释的学习闭环</title>
+  <desc id="desc">先提出问题，预测小例结果，独立实现，比较预期与观察，再解释差异。解释不通时返回问题，只改变一个因素重新尝试。</desc>
+  <style>
+    :root { --accent: currentColor; --border: currentColor; --muted: currentColor; }
+    @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }
+  </style>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="var(--accent)"/></marker></defs>
+  <g font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="currentColor" text-anchor="middle">
+    <text x="440" y="35" font-size="22">每次只解决一个可观察的问题</text>
+    <g stroke="var(--border)" stroke-width="2" fill="none">
+      <rect x="20" y="80" width="145" height="100" rx="10"/><rect x="193" y="80" width="145" height="100" rx="10"/>
+      <rect x="366" y="80" width="145" height="100" rx="10"/><rect x="539" y="80" width="145" height="100" rx="10"/>
+      <rect x="712" y="80" width="145" height="100" rx="10"/>
+    </g>
+    <g font-size="20"><text x="92" y="118">提出问题</text><text x="265" y="118">先做预测</text><text x="438" y="118">独立实现</text><text x="611" y="118">核对观察</text><text x="784" y="118">解释差异</text></g>
+    <g font-size="15" fill="var(--muted)"><text x="92" y="151">输入与输出</text><text x="265" y="151">形状与小数值</text><text x="438" y="151">最小必要操作</text><text x="611" y="151">预期 ≠ 实际？</text><text x="784" y="151">回到机制</text></g>
+    <g fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow)">
+      <path d="M165 130 H188"/><path d="M338 130 H361"/><path d="M511 130 H534"/><path d="M684 130 H707"/>
+      <path d="M784 185 V240 H92 V188"/>
+    </g>
+    <text x="440" y="275" font-size="18">不能解释 → 缩小例子、一次只改变一个因素</text>
+    <text x="440" y="310" font-size="16" fill="var(--muted)">能换一个输入仍说明原因，才比“播放完成”更接近掌握</text>
+  </g>
+</svg>
