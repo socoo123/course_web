@@ -2,7 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Icon } from "../components/Icon";
 import { LectureBadges } from "../components/bits";
-import { DocView, MaterialTabs, PrevNext, ReaderShell, Toc, useView, type MaterialTab, type RefExtra, type TocItem } from "../components/Reader";
+import { LectureVideo } from "../components/LectureVideo";
+import { DocView, MaterialTabs, PrevNext, ReaderShell, References, Toc, useView, type MaterialTab, type RefExtra, type TocItem } from "../components/Reader";
 import { findLab, getCourse, lectureDir, lectureMaterials, weekOfLecture } from "../lib/content";
 import { orderedLectures } from "../lib/courseStats";
 import { recordVisit, toggleLecture, useCourseProgress } from "../lib/progress";
@@ -25,9 +26,12 @@ export default function Lecture() {
   }, [courseId, lec]);
 
   const m = lectureMaterials(courseId, lecId);
+  const inPageVideo = !!(lec?.video?.embed && lec.video.bilibili);
+  const draftLabel = lec?.video?.language === "zh" ? "课堂整理" : LECTURE_MATERIALS.draft.label;
   const tabs: MaterialTab[] = [
+    ...(inPageVideo ? [{ id: "video", label: "课程视频", icon: "play" as const, ready: true }] : []),
     { id: "notes", label: LECTURE_MATERIALS.notes.label, icon: "pen", ready: m.notes },
-    { id: "draft", label: LECTURE_MATERIALS.draft.label, icon: "lang", ready: m.draft },
+    { id: "draft", label: draftLabel, icon: "lang", ready: m.draft },
     { id: "materials", label: LECTURE_MATERIALS.materials.label, icon: "book", ready: m.materials },
   ];
   const [view, setView] = useView(tabs);
@@ -38,6 +42,7 @@ export default function Lecture() {
   const week = weekOfLecture(detail, lec.id);
   const lab = lec.lab ? findLab(detail, lec.lab) : undefined;
   const done = !!p.lectures[lec.id];
+  const videoUrl = lec.video?.youtube ?? lec.video?.bilibili;
 
   const list = orderedLectures(detail);
   const i = list.findIndex((l) => l.id === lec.id);
@@ -47,8 +52,8 @@ export default function Lecture() {
   if (lec.video)
     extraRefs.push({
       label: "视频",
-      content: lec.video.youtube ? (
-        <a href={lec.video.youtube} target="_blank" rel="noreferrer" className="underline decoration-line-strong underline-offset-2 hover:text-course">
+      content: videoUrl ? (
+        <a href={videoUrl} target="_blank" rel="noreferrer" className="underline decoration-line-strong underline-offset-2 hover:text-course">
           {lec.video.label}
           {lec.video.duration ? ` · ${lec.video.duration}` : ""}
         </a>
@@ -58,6 +63,11 @@ export default function Lecture() {
     });
   if (lec.readings?.length) extraRefs.push({ label: "指定阅读", content: lec.readings.join("；") });
   if (lec.note) extraRefs.push({ label: "备注", content: lec.note });
+  if (lec.video?.checkpoints?.length)
+    extraRefs.push({
+      label: "导览范围",
+      content: "依据原视频所列时间点的课堂画面作简要改写；未逐句核验口述或问答，不是完整讲稿，时间点不代表章节边界。",
+    });
 
   const header = (
     <header className="pb-6 pt-8 lg:pt-10">
@@ -74,11 +84,11 @@ export default function Lecture() {
       <h1 className="mt-3 font-serif text-[30px] font-bold leading-tight text-ink sm:text-[34px]">{lec.title}</h1>
       <p className="mt-1 text-[15px] text-ink-3">{lec.titleEn}</p>
       <div className="mt-5 flex flex-wrap gap-2">
-        {lec.video?.youtube && (
-          <a href={lec.video.youtube} target="_blank" rel="noreferrer" className="btn">
+        {videoUrl && (
+          <a href={videoUrl} target="_blank" rel="noreferrer" className="btn">
             <Icon name="play" className="h-3.5 w-3.5 text-course" />
-            看视频
-            {lec.video.duration && <span className="font-mono text-xs text-ink-3">{lec.video.duration}</span>}
+            {lec.video?.bilibili && !lec.video.youtube ? "在B站打开" : "看视频"}
+            {lec.video?.duration && <span className="font-mono text-xs text-ink-3">{lec.video.duration}</span>}
           </a>
         )}
         {lab && (
@@ -107,13 +117,40 @@ export default function Lecture() {
   );
 
   const current = view as LectureMaterial;
+  const videoToc: TocItem[] = [
+    { id: "watch-video", text: "课程视频", level: 2 },
+    ...(lec.video?.checkpoints?.length ? [{ id: "watch-guide", text: "课堂导览", level: 2 }] : []),
+    { id: "references", text: "引用与来源", level: 2 },
+  ];
 
   return (
-    <ReaderShell course={course} detail={detail} active={{ kind: "lecture", id: lec.id }} crumb={tag(lec)} header={header} rail={<Toc items={toc} />}>
+    <ReaderShell course={course} detail={detail} active={{ kind: "lecture", id: lec.id }} crumb={tag(lec)} header={header} rail={<Toc items={view === "video" ? videoToc : toc} />}>
       <MaterialTabs tabs={tabs} view={view} onChange={setView} right={markButton} />
-      <div className="max-w-prose">
-        <DocView key={view} path={dir + LECTURE_MATERIALS[current].file} what={LECTURE_MATERIALS[current].label} onToc={onToc} extraRefs={extraRefs} />
-      </div>
+      {view === "video" && lec.video ? (
+        <>
+          <LectureVideo key={`${courseId}/${lec.id}`} video={lec.video} title={lec.title} />
+          <div className="max-w-prose"><References extra={extraRefs} /></div>
+        </>
+      ) : (
+        <div className="max-w-prose">
+          <DocView
+            key={view}
+            path={dir + LECTURE_MATERIALS[current].file}
+            what={current === "draft" ? draftLabel : LECTURE_MATERIALS[current].label}
+            onToc={onToc}
+            extraRefs={extraRefs}
+            missing={current === "draft" && inPageVideo ? (
+              <section className="mt-8 rounded-2xl border border-line bg-surface p-6">
+                <h2 className="font-serif text-xl font-semibold text-ink">完整课堂整理尚未就绪</h2>
+                <p className="mt-3 text-sm leading-7 text-ink-2">
+                  这里应按讲授顺序整理解释、演示和问答，而不是重复教材笔记。当前可先看原课和已核实的画面导览。
+                </p>
+                <button type="button" className="btn mt-4" onClick={() => setView("video")}>看课程视频与导览</button>
+              </section>
+            ) : undefined}
+          />
+        </div>
+      )}
       <PrevNext prev={link(list[i - 1])} next={link(list[i + 1])} />
     </ReaderShell>
   );

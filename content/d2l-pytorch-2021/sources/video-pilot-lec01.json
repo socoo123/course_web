@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-13",
+  "scope": "D2L lec01 only: opt-in embedded player and frame-based guide; external Bilibili links also exposed on existing lecture pages",
+  "video": {
+    "bvid": "BV1oX4y137bC",
+    "source": "https://www.bilibili.com/video/BV1oX4y137bC",
+    "playerDurationSeconds": 489,
+    "previousApiDurationSeconds": 488,
+    "review": "Browser seeking and visual inspection of frames; no audio transcription or complete media review; no source screenshots republished",
+    "frames": [
+      {
+        "time": 0,
+        "title": "课程安排"
+      },
+      {
+        "time": 45,
+        "title": "目标"
+      },
+      {
+        "time": 120,
+        "title": "内容"
+      },
+      {
+        "time": 210,
+        "title": "形式"
+      },
+      {
+        "time": 300,
+        "title": "你将学到什么"
+      },
+      {
+        "time": 390,
+        "title": "你将学到什么"
+      },
+      {
+        "time": 465,
+        "title": "资源"
+      }
+    ],
+    "captions": "Existing public subtitle result remains empty; HTML video textTracks also empty. No repeat request to old empty API."
+  },
+  "checks": [
+    {
+      "name": "initial-render",
+      "selectedTab": "课程视频",
+      "iframes": 0,
+      "thirdPartyResources": 0,
+      "guideItems": 5,
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "name": "embedded-playback",
+      "before": {
+        "time": 0,
+        "paused": true,
+        "duration": 489,
+        "ready": 4
+      },
+      "playing": {
+        "time": 0.505172,
+        "paused": false,
+        "ready": 4
+      }
+    },
+    {
+      "name": "switch-to-notes",
+      "iframes": 0,
+      "selectedTab": "课程笔记",
+      "notesVisible": true
+    },
+    {
+      "name": "honest-draft-empty-state",
+      "visible": true
+    },
+    {
+      "name": "return-to-video",
+      "selectedTab": "课程视频",
+      "iframes": 0
+    },
+    {
+      "name": "mobile-dark",
+      "width": 390,
+      "scroll": 390,
+      "iframeWidth": 356,
+      "theme": "dark",
+      "externalLinks": [
+        "https://www.bilibili.com/video/BV1oX4y137bC"
+      ]
+    },
+    {
+      "name": "non-pilot-fallback",
+      "selectedTab": "课程笔记",
+      "tabCount": 3,
+      "iframes": 0,
+      "headerVideo": [
+        "https://www.bilibili.com/video/BV1J54y187f9"
+      ]
+    },
+    {
+      "name": "mit-unchanged",
+      "selectedTab": "课程笔记",
+      "tabs": [
+        "课程笔记",
+        "中文译稿",
+        "课程资料"
+      ],
+      "iframes": 0,
+      "headerVideo": [
+        "https://youtu.be/L6YqHxYHa7A"
+      ]
+    }
+  ],
+  "browser": "Actual managed Chromium on Vite dev server; desktop1440 and mobile390; light and dark surfaces reviewed; not a deployment check.",
+  "browserErrors": {
+    "entries": [],
+    "nextSeq": 5,
+    "dropped": 0
+  },
+  "automationNote": "Initial embedded play click ran before Bilibili controls had mounted despite video readiness. Waited for the real play control, then observed time advance0.505172s with paused=false. No application patch was needed.",
+  "status": "passed_single_lecture_pilot",
+  "build": {
+    "command": "npm run build",
+    "exitCode": 0,
+    "wallSeconds": 7.41,
+    "scope": "tsc --noEmit and Vite production build; no deployment assertion"
+  }
+}
