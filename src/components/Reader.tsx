@@ -411,7 +411,7 @@ export function ReaderShell({
     setDrawer(false);
   }, [activeKey]);
 
-  const crumbs = [{ label: `${course.school} ${course.code}`, to: crumb ? `/c/${course.id}` : undefined }, ...(crumb ? [{ label: crumb }] : [])];
+  const crumbs = [{ label: course.title, to: crumb ? `/c/${course.id}` : undefined }, ...(crumb ? [{ label: crumb }] : [])];
 
   return (
     <div data-course style={courseStyle(course)} className="min-h-screen">

@@ -128,7 +128,7 @@ function ResourcesFallback({ course, detail }: { course: CourseSummary; detail: 
 function Planned({ course }: { course: CourseSummary }) {
   return (
     <div data-course style={courseStyle(course)} className="min-h-screen">
-      <TopBar crumbs={[{ label: `${course.school} ${course.code}` }]} />
+      <TopBar crumbs={[{ label: course.title }]} />
       <main className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
         <div className="flex items-center gap-2">
           <SchoolBadge school={course.school} />
