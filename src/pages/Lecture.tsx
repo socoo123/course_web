@@ -26,7 +26,7 @@ export default function Lecture() {
   }, [courseId, lec]);
 
   const m = lectureMaterials(courseId, lecId);
-  const inPageVideo = !!(lec?.video?.embed && lec.video.bilibili);
+  const inPageVideo = !!(lec?.video?.embed && (lec.video.youtube || lec.video.bilibili));
   const draftLabel = lec?.video?.language === "zh" ? "课堂整理" : LECTURE_MATERIALS.draft.label;
   const tabs: MaterialTab[] = [
     ...(inPageVideo ? [{ id: "video", label: "课程视频", icon: "play" as const, ready: true }] : []),
@@ -87,7 +87,7 @@ export default function Lecture() {
         {videoUrl && (
           <a href={videoUrl} target="_blank" rel="noreferrer" className="btn">
             <Icon name="play" className="h-3.5 w-3.5 text-course" />
-            {lec.video?.bilibili && !lec.video.youtube ? "在B站打开" : "看视频"}
+            {lec.video?.youtube ? "在YouTube打开" : "在B站打开"}
             {lec.video?.duration && <span className="font-mono text-xs text-ink-3">{lec.video.duration}</span>}
           </a>
         )}

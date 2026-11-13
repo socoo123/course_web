@@ -1,0 +1,103 @@
+{
+  "date": "2026-11-13",
+  "videoId": "ih2SgBk8TRc",
+  "source": "https://www.youtube.com/watch?v=ih2SgBk8TRc",
+  "bilibiliBackup": "https://www.bilibili.com/video/BV1oX4y137bC",
+  "scope": "lec01 pilot only; no bulk replacement or transcript fabrication",
+  "checks": [
+    {
+      "name": "before-load",
+      "iframes": 0,
+      "thirdPartyResources": 0,
+      "links": [
+        {
+          "label": "在YouTube打开",
+          "href": "https://www.youtube.com/watch?v=ih2SgBk8TRc"
+        },
+        {
+          "label": "B站备用",
+          "href": "https://www.bilibili.com/video/BV1oX4y137bC"
+        }
+      ],
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "name": "youtube-embedded-playback",
+      "url": "https://www.youtube-nocookie.com/embed/ih2SgBk8TRc?autoplay=0&playsinline=1&rel=0",
+      "time": 0.511806,
+      "paused": false,
+      "duration": 488.841,
+      "ready": 4
+    },
+    {
+      "name": "switch-material-unloads-video",
+      "iframes": 0,
+      "selected": "课程笔记"
+    },
+    {
+      "name": "mobile-light",
+      "width": 360,
+      "scroll": 360,
+      "iframeWidth": 326,
+      "iframeHeight": 200,
+      "theme": ""
+    },
+    {
+      "name": "mobile-before-user-play",
+      "time": 0,
+      "paused": true
+    }
+  ],
+  "watchPage": {
+    "title": "01 课程安排【动手学深度学习v2】",
+    "author": "跟李沐学AI",
+    "channelId": "UCef6AUosRYdnnakdCa_4r6Q",
+    "duration": "489",
+    "playability": "OK",
+    "captionTrackCount": 0,
+    "captionTracks": [],
+    "captionControl": "Subtitles/closed captions unavailable",
+    "signedOut": true,
+    "actualVideo": {
+      "currentTime": 40.446827,
+      "paused": false,
+      "duration": 488.841,
+      "ready": 4
+    }
+  },
+  "captionProbe": {
+    "tool": "yt-dlp",
+    "version": "2026.08.19",
+    "command": "yt-dlp --ignore-config --no-playlist --skip-download --list-subs --js-runtimes node https://www.youtube.com/watch?v=ih2SgBk8TRc",
+    "exitCode": 0,
+    "result": [
+      "ih2SgBk8TRc has no automatic captions",
+      "ih2SgBk8TRc has no subtitles"
+    ],
+    "boundary": "No cookies, login, audio/video download or access-control bypass. No subtitle body was obtainable for this video at this check; not a claim about all YouTube or Bilibili videos."
+  },
+  "frameMatch": {
+    "checkedSeconds": [
+      45,
+      120,
+      210,
+      300,
+      465
+    ],
+    "result": "Each YouTube frame matches the existing guide topic: goals, curriculum, class format, what/how/why, resources. Timing not generalized beyond these points; no transcript inferred."
+  },
+  "browserErrors": {
+    "entries": [],
+    "nextSeq": 5,
+    "dropped": 0
+  },
+  "browser": "Managed Chromium signed out; actual local Vite surface; desktop1440 dark, mobile360 light; not a deployment check.",
+  "playbackBoundary": "Signed-out watch page and embedded player both advanced during this check; no guarantee for other networks, age-restricted videos or future platform policy.",
+  "status": "passed_youtube_player_caption_absence_confirmed_for_this_upload",
+  "build": {
+    "command": "npm run build",
+    "exitCode": 0,
+    "wallSeconds": 7.26
+  }
+}

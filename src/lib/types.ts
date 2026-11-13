@@ -39,7 +39,7 @@ export interface Lecture {
     bilibili?: string;
     duration?: string;
     language?: "zh" | "en";
-    /** 按讲启用站内B站播放器，不自动扩展到整门课。 */
+    /** 按讲启用站内播放器，优先YouTube；不自动扩展到整门课。 */
     embed?: boolean;
     /** 实际核对过的画面定位点，不是完整讲稿或章节起止。 */
     checkpoints?: { time: string; title: string; summary: string }[];

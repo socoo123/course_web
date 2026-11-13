@@ -4,9 +4,17 @@ import { Icon } from "./Icon";
 
 export function LectureVideo({ video, title }: { video: NonNullable<Lecture["video"]>; title: string }) {
   const [loaded, setLoaded] = useState(false);
+  const youtube = video.youtube ? new URL(video.youtube) : undefined;
+  const youtubeId = youtube?.hostname === "youtu.be" ? youtube.pathname.slice(1) : youtube?.searchParams.get("v");
   const bvid = video.bilibili?.match(/\/video\/(BV[0-9A-Za-z]+)/)?.[1];
   const page = video.bilibili ? new URL(video.bilibili).searchParams.get("p") ?? "1" : "1";
-  const params = new URLSearchParams({ bvid: bvid ?? "", page, autoplay: "0", danmaku: "0" });
+  const provider = youtubeId ? "YouTube" : "B站";
+  const originalUrl = youtubeId ? video.youtube : video.bilibili;
+  const embedUrl = youtubeId
+    ? `https://www.youtube-nocookie.com/embed/${encodeURIComponent(youtubeId)}?autoplay=0&playsinline=1&rel=0`
+    : bvid
+      ? `https://player.bilibili.com/player.html?${new URLSearchParams({ bvid, page, autoplay: "0", danmaku: "0" })}`
+      : undefined;
 
   return (
     <div className="pt-8">
@@ -16,11 +24,11 @@ export function LectureVideo({ video, title }: { video: NonNullable<Lecture["vid
           <span className="text-sm text-ink-3">先看课，再用笔记复习</span>
         </div>
         <div className="overflow-hidden rounded-2xl border border-line bg-surface">
-          {loaded && bvid ? (
+          {loaded && embedUrl ? (
             <iframe
-              src={`https://player.bilibili.com/player.html?${params}`}
-              title={`${title} · B站课程视频`}
-              className="block aspect-video w-full border-0"
+              src={embedUrl}
+              title={`${title} · ${provider}课程视频`}
+              className="block aspect-video min-h-[200px] w-full border-0"
               allow="fullscreen; picture-in-picture; encrypted-media"
               allowFullScreen
               referrerPolicy="strict-origin-when-cross-origin"
@@ -31,17 +39,22 @@ export function LectureVideo({ video, title }: { video: NonNullable<Lecture["vid
               <Icon name="play" className="mb-4 h-8 w-8 text-course" />
               <p className="font-serif text-xl font-semibold text-ink">{title}</p>
               <p className="mt-2 text-sm text-ink-3">{video.label}{video.duration ? ` · ${video.duration}` : ""}</p>
-              {bvid && (
+              {embedUrl && (
                 <button type="button" onClick={() => setLoaded(true)} className="btn mt-5">
-                  加载B站播放器
+                  加载{provider}播放器
                 </button>
               )}
-              <p className="mt-3 max-w-sm text-xs leading-6 text-ink-3">点击后连接B站；不自动播放，不把观看结束当作学会。</p>
+              <p className="mt-3 max-w-sm text-xs leading-6 text-ink-3">点击后连接{provider}；不自动播放，不把观看结束当作学会。</p>
             </div>
           )}
           <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line px-4 py-3 text-xs leading-6 text-ink-3">
-            <span>无法播放、需要登录或想切换清晰度时，请打开原站。</span>
-            <a href={video.bilibili} target="_blank" rel="noreferrer" className="shrink-0 font-medium text-course underline underline-offset-4">在B站打开</a>
+            <span>播放受网络或平台限制时，可打开原站{youtubeId && video.bilibili ? "或B站备用入口" : ""}。</span>
+            <div className="flex flex-wrap gap-x-4 gap-y-1">
+              <a href={originalUrl} target="_blank" rel="noreferrer" className="font-medium text-course underline underline-offset-4">在{provider}打开</a>
+              {youtubeId && video.bilibili && (
+                <a href={video.bilibili} target="_blank" rel="noreferrer" className="font-medium text-course underline underline-offset-4">B站备用</a>
+              )}
+            </div>
           </div>
         </div>
       </section>
