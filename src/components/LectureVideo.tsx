@@ -13,7 +13,7 @@ export function LectureVideo({ video, title }: { video: NonNullable<Lecture["vid
   const embedUrl = youtubeId
     ? `https://www.youtube-nocookie.com/embed/${encodeURIComponent(youtubeId)}?autoplay=0&playsinline=1&rel=0`
     : bvid
-      ? `https://player.bilibili.com/player.html?${new URLSearchParams({ bvid, page, autoplay: "0", danmaku: "0" })}`
+      ? `https://player.bilibili.com/player.html?${new URLSearchParams({ bvid, p: page, autoplay: "0", danmaku: "0" })}`
       : undefined;
 
   return (
@@ -48,9 +48,13 @@ export function LectureVideo({ video, title }: { video: NonNullable<Lecture["vid
             </div>
           )}
           <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line px-4 py-3 text-xs leading-6 text-ink-3">
-            <span>播放受网络或平台限制时，可打开原站{youtubeId && video.bilibili ? "或B站备用入口" : ""}。</span>
+            <span>
+              {youtubeId
+                ? `播放受网络或平台限制时，可打开原站${video.bilibili ? "或B站备用入口" : ""}。`
+                : "页内播放请点播放器左下角的播放键。「进入哔哩哔哩，观看更高清」会打开B站；清晰度、登录等提示由B站控制。"}
+            </span>
             <div className="flex flex-wrap gap-x-4 gap-y-1">
-              <a href={originalUrl} target="_blank" rel="noreferrer" className="font-medium text-course underline underline-offset-4">在{provider}打开</a>
+              <a href={originalUrl} target="_blank" rel="noreferrer" className="font-medium text-course underline underline-offset-4">原站备用（{provider}）</a>
               {youtubeId && video.bilibili && (
                 <a href={video.bilibili} target="_blank" rel="noreferrer" className="font-medium text-course underline underline-offset-4">B站备用</a>
               )}

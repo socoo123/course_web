@@ -84,7 +84,7 @@ export default function Lecture() {
       <h1 className="mt-3 font-serif text-[30px] font-bold leading-tight text-ink sm:text-[34px]">{lec.title}</h1>
       <p className="mt-1 text-[15px] text-ink-3">{lec.titleEn}</p>
       <div className="mt-5 flex flex-wrap gap-2">
-        {videoUrl && (
+        {videoUrl && !inPageVideo && (
           <a href={videoUrl} target="_blank" rel="noreferrer" className="btn">
             <Icon name="play" className="h-3.5 w-3.5 text-course" />
             {lec.video?.youtube ? "在YouTube打开" : "在B站打开"}
