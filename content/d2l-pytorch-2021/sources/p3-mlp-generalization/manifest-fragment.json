@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 1,
+  "batch": "P3",
+  "labId": "mlp-generalization",
+  "owner": "MlpPractice",
+  "date": "2026-11-13",
+  "sourceCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "written": [
+    "labs/mlp-generalization/lab.zh.md",
+    "labs/mlp-generalization/guide.zh.md"
+  ],
+  "sourceRecords": [
+    {
+      "kind": "fixed_textbook_source",
+      "identity": "d2l-ai/d2l-zh Chinese second edition, not a 2021 snapshot",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/mlp-scratch.md",
+      "snapshot": "sources/p2-lec10/book-mlp-scratch.txt",
+      "sha256": "e529db5015c200502246050ecec30404030116c3b3eecbace7f0c5841b0c5e1d",
+      "bytes": 7846,
+      "readDate": "2026-11-13",
+      "actualReadLineRanges": [
+        [
+          45,
+          90
+        ],
+        [
+          113,
+          178
+        ]
+      ],
+      "scope": "参数形状、PyTorch参数、ReLU与前向",
+      "license": "Root repository LICENSE Apache-2.0; not extended to datasets/videos/third-party figures",
+      "acquisition": "reused accepted P2 snapshot without network refetch",
+      "execution": "not_run_by_worker"
+    },
+    {
+      "kind": "fixed_textbook_source",
+      "identity": "d2l-ai/d2l-zh Chinese second edition, not a 2021 snapshot",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/mlp-concise.md",
+      "snapshot": "sources/p2-lec10/book-mlp-concise.txt",
+      "sha256": "789da80109966d29250fff6d498c298de0fc33d9600699a56a8929e24f46dc44",
+      "bytes": 3862,
+      "readDate": "2026-11-13",
+      "actualReadLineRanges": [
+        [
+          35,
+          98
+        ]
+      ],
+      "scope": "Sequential及初始化；PyTorch训练配置开头",
+      "license": "Root repository LICENSE Apache-2.0; not extended to datasets/videos/third-party figures",
+      "acquisition": "reused accepted P2 snapshot without network refetch",
+      "execution": "not_run_by_worker"
+    },
+    {
+      "kind": "fixed_textbook_source",
+      "identity": "d2l-ai/d2l-zh Chinese second edition, not a 2021 snapshot",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/underfit-overfit.md",
+      "snapshot": "sources/p2-lec11/book-underfit-overfit.txt",
+      "sha256": "b21c784ece1d264eb654b9bdd699c24ad885f8b7b7967361a28e1fb02c6bd43e",
+      "bytes": 27494,
+      "readDate": "2026-11-13",
+      "actualReadLineRanges": [
+        [
+          153,
+          257
+        ]
+      ],
+      "scope": "验证、K折、欠拟合/过拟合及容量",
+      "license": "Root repository LICENSE Apache-2.0; not extended to datasets/videos/third-party figures",
+      "acquisition": "reused accepted P2 snapshot without network refetch",
+      "execution": "not_run_by_worker"
+    },
+    {
+      "kind": "fixed_textbook_source",
+      "identity": "d2l-ai/d2l-zh Chinese second edition, not a 2021 snapshot",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/weight-decay.md",
+      "snapshot": "sources/p2-lec12/book-weight-decay.txt",
+      "sha256": "799474bb070da33742f6f4564a78e466ebee6e0ea8230f705cc79faa0c8934c8",
+      "bytes": 22035,
+      "readDate": "2026-11-13",
+      "actualReadLineRanges": [
+        [
+          25,
+          109
+        ]
+      ],
+      "scope": "惩罚目标、梯度、SGD与偏置",
+      "license": "Root repository LICENSE Apache-2.0; not extended to datasets/videos/third-party figures",
+      "acquisition": "reused accepted P2 snapshot without network refetch",
+      "execution": "not_run_by_worker"
+    },
+    {
+      "kind": "fixed_textbook_source",
+      "identity": "d2l-ai/d2l-zh Chinese second edition, not a 2021 snapshot",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/dropout.md",
+      "snapshot": "sources/p2-lec13/book-dropout.txt",
+      "sha256": "6beb8adc1f1448146751f71a4d22b78a3548ff7493d42e375767cd8287a7105b",
+      "bytes": 21308,
+      "readDate": "2026-11-13",
+      "actualReadLineRanges": [
+        [
+          65,
+          111
+        ],
+        [
+          142,
+          161
+        ]
+      ],
+      "scope": "随机失活、期望、推理与PyTorch局部函数",
+      "license": "Root repository LICENSE Apache-2.0; not extended to datasets/videos/third-party figures",
+      "acquisition": "reused accepted P2 snapshot without network refetch",
+      "execution": "not_run_by_worker"
+    },
+    {
+      "kind": "fixed_textbook_source",
+      "identity": "d2l-ai/d2l-zh Chinese second edition, not a 2021 snapshot",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/numerical-stability-and-init.md",
+      "snapshot": "sources/p2-lec14/book-numerical-stability-and-init.txt",
+      "sha256": "76b818db998c26362aeba1e50b10e9b1b54c1d2c952edfb8c048c8aee0cab376",
+      "bytes": 13285,
+      "readDate": "2026-11-13",
+      "actualReadLineRanges": [
+        [
+          14,
+          57
+        ],
+        [
+          167,
+          277
+        ]
+      ],
+      "scope": "链式法则、对称性、Xavier假设",
+      "license": "Root repository LICENSE Apache-2.0; not extended to datasets/videos/third-party figures",
+      "acquisition": "reused accepted P2 snapshot without network refetch",
+      "execution": "not_run_by_worker"
+    },
+    {
+      "kind": "fixed_textbook_source",
+      "identity": "d2l-ai/d2l-zh Chinese second edition, not a 2021 snapshot",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/backprop.md",
+      "snapshot": "sources/p3-mlp-generalization/book-backprop.txt",
+      "sha256": "e6b31815c5106ba82553a7656e1cc73aa0a82650aba527714cd2cc490981faa4",
+      "bytes": 9420,
+      "readDate": "2026-11-13",
+      "actualReadLineRanges": [
+        [
+          1,
+          183
+        ]
+      ],
+      "scope": "全文阅读：前向、正则化、反向链式法则、训练内存、练习",
+      "license": "Root repository LICENSE Apache-2.0; not extended to datasets/videos/third-party figures",
+      "acquisition": "public HTTPS GET saved as .txt",
+      "execution": "not_run_by_worker"
+    },
+    {
+      "kind": "fixed_textbook_source",
+      "identity": "d2l-ai/d2l-zh Chinese second edition, not a 2021 snapshot",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/kaggle-house-price.md",
+      "snapshot": "sources/p3-mlp-generalization/book-kaggle-house-price.txt",
+      "sha256": "196f674457f1f8d16b2db189bbf38c3eabe7c994ef235983cee29b7db08c899b",
+      "bytes": 25087,
+      "readDate": "2026-11-13",
+      "actualReadLineRanges": [
+        [
+          1,
+          632
+        ]
+      ],
+      "scope": "全文阅读，重点PyTorch；数据URL/hash、拼接处理、原价格MSE/logRMSE、整除K折、导出和练习",
+      "license": "Root repository LICENSE Apache-2.0; not extended to datasets/videos/third-party figures",
+      "acquisition": "public HTTPS GET saved as .txt",
+      "execution": "not_run_by_worker"
+    },
+    {
+      "kind": "course_announcement",
+      "url": "https://courses.d2l.ai/zh-v2/announcements.html",
+      "snapshot": "sources/course-announcements.html",
+      "sha256": "18e6d6161eb9f5df71ee4ae1678978d9cf440034d4327fbb18747d78da619ded",
+      "readDate": "2026-11-13",
+      "actualReadScope": "第四周、第五周、第六周；live reader public text cross-check; HTML snapshot is a single line",
+      "license": "No open license established; factual paraphrase only",
+      "acquisition": "existing snapshot reused; public text read, no video fetching"
+    }
+  ],
+  "metadata": {
+    "bookAcquisition": "sources/p3-mlp-generalization/book-acquisition.json",
+    "amesAccess": "sources/p3-mlp-generalization/ames-access.json",
+    "californiaAccess": "sources/p3-mlp-generalization/california-access.json",
+    "sourceIdentity": "2021 course announcements and current fixed Chinese second-edition source distinguished",
+    "videoPartsAndDuration": "not applicable to editorial lab; no video fetched or viewed; existing schedule inventory only",
+    "authorization": "Public source inspection; dataset access and source copyright separately recorded; no Kaggle login/rule acceptance/download/upload"
+  },
+  "taskIds": [
+    "mlp-generalization-1",
+    "mlp-generalization-2",
+    "mlp-generalization-3",
+    "mlp-generalization-4"
+  ],
+  "statuses": {
+    "lab": "written_editorial_four_task_contract",
+    "guide": "written_routes_invariants_diagnostics_not_end_to_end_solution",
+    "labEn": "not_planned_no_English_original",
+    "draft": "not_applicable_lab_not_video_transcript",
+    "materials": "not_applicable_no_duplicate_document",
+    "workerNumericalExecution": "not_performed",
+    "mainIndependentCPU": "reported_passed_by_Main_see_shared_evidence_not_full_student_tasks",
+    "californiaTraining": "blocked_data_access_not_executed"
+  },
+  "retainedFiles": [
+    "book-acquisition.json",
+    "book-backprop.txt",
+    "book-kaggle-house-price.txt",
+    "ames-access.json",
+    "california-access.json",
+    "manifest-fragment.json"
+  ],
+  "editorialChangesFromBook": [
+    "Fold-local fitting instead of concatenated training/test preprocessing",
+    "Explicit unknown/missing categorical tokens, all-missing/constant numeric handling and ddof0",
+    "OOF tail coverage and pooled sum-squared-error aggregation rather than averaging fold RMSE",
+    "Linear log-price target rather than original raw-price MSE baseline",
+    "California temporal split awareness based on public Description; separate schema and access conditions"
+  ],
+  "analyticExpectedValues": [
+    {
+      "case": "scalar ReLU half squared loss",
+      "input": {
+        "x": 2,
+        "w1": 0.5,
+        "b1": 0,
+        "w2": 3,
+        "b2": 0,
+        "y": 1
+      },
+      "expected": {
+        "a": 1,
+        "h": 1,
+        "prediction": 3,
+        "loss": 2,
+        "gradW1": 12,
+        "gradB1": 6,
+        "gradW2": 2,
+        "gradB2": 2
+      },
+      "note": "ordinary one-sample MSE doubles loss and gradients"
+    },
+    {
+      "case": "SGD coupled weight decay",
+      "input": {
+        "w": 2,
+        "dataGradient": 0.5,
+        "lr": 0.1,
+        "lambda": 0.2
+      },
+      "expectedWeight": 1.91
+    },
+    {
+      "case": "inverted dropout fixed mask",
+      "input": {
+        "h": [
+          2,
+          4
+        ],
+        "dropProbability": 0.5,
+        "mask": [
+          1,
+          0
+        ]
+      },
+      "expectedOutput": [
+        4,
+        0
+      ],
+      "expectationAcrossAllFourMasks": [
+        2,
+        4
+      ]
+    },
+    {
+      "case": "fold-local preprocessing fixture",
+      "training": {
+        "A": [
+          2,
+          4
+        ],
+        "B": [
+          5,
+          5
+        ],
+        "C": [
+          null,
+          null
+        ],
+        "category": [
+          "red",
+          null
+        ]
+      },
+      "validation": {
+        "A": [
+          null,
+          100
+        ],
+        "B": [
+          5,
+          7
+        ],
+        "C": [
+          null,
+          9
+        ],
+        "category": [
+          "blue",
+          "red"
+        ]
+      },
+      "expectedTransformedNumeric": {
+        "A": [
+          0,
+          97
+        ],
+        "B": [
+          0,
+          2
+        ],
+        "C": [
+          0,
+          9
+        ]
+      },
+      "expectedValidationCategory": [
+        "__UNK__",
+        "red"
+      ],
+      "ddof": 0
+    },
+    {
+      "case": "OOF remainder",
+      "n": 11,
+      "k": 3,
+      "expectedSizes": [
+        4,
+        4,
+        3
+      ],
+      "coverageCountPerSample": 1
+    },
+    {
+      "case": "pooled logRMSE",
+      "logErrors": [
+        0,
+        0,
+        3
+      ],
+      "foldSizes": [
+        2,
+        1
+      ],
+      "sumSquaredErrors": 9,
+      "count": 3,
+      "expected": "sqrt(3)",
+      "incorrectArithmeticMeanFoldRMSE": 1.5
+    }
+  ],
+  "suggestedMinimalCPU": {
+    "localMLPEquivalence": {
+      "dtype": "float64",
+      "batch": 3,
+      "shape": [
+        2,
+        3,
+        1
+      ],
+      "activation": "ReLU away from zero",
+      "loss": "mean MSE",
+      "optimizer": "SGD",
+      "lr": 0.05,
+      "checks": [
+        "copied weights and biases, with Linear transpose",
+        "prediction, gradients, one update within 1e-10"
+      ]
+    },
+    "generalization": {
+      "seed": 17,
+      "trainN": 32,
+      "validationN": 128,
+      "features": 20,
+      "target": "x0**2+0.5*x1+independent Normal(0,0.1**2)",
+      "models": [
+        "linear",
+        "20-64-1 ReLU"
+      ],
+      "optimizer": "SGD no momentum",
+      "lr": 0.03,
+      "batchSize": 16,
+      "epochs": 300,
+      "pairedMLPConditions": [
+        {
+          "weightDecay": 0,
+          "dropout": 0
+        },
+        {
+          "weightDecay": 0.01,
+          "decayBias": false,
+          "dropout": 0
+        },
+        {
+          "weightDecay": 0,
+          "dropout": 0.2
+        }
+      ],
+      "assertions": "finite outputs and logs, paired state and shuffle, evaluation nonmutation; do not assert monotone loss or Dropout wins"
+    },
+    "ames": {
+      "seed": 17,
+      "sampleN": 257,
+      "folds": 3,
+      "foldSizes": [
+        86,
+        86,
+        85
+      ],
+      "preprocessing": "train-fold only, mean impute, ddof0 after impute, all missing fill0, zero std1, MISSING+UNK category vocabulary",
+      "model": "Linear(D,1) predicts natural log price",
+      "initialization": "zero weight, bias mean(log y_train_fold)",
+      "optimizer": "Adam",
+      "lr": 0.03,
+      "batchSize": 64,
+      "epochs": 30,
+      "weightDecay": 0,
+      "finalRefitN": 1460,
+      "exportRows": 1459,
+      "exportColumns": [
+        "Id",
+        "SalePrice"
+      ],
+      "baseline": "train-fold mean(log y)",
+      "assertions": [
+        "OOF coverage exactly1 including remainder",
+        "pooled logRMSE using SSE/count",
+        "new model and optimizer per fold",
+        "fold-only preprocessing",
+        "Id alignment, positive finite prices",
+        "no test fitting or tuning"
+      ]
+    },
+    "california": "No training without authorized data; record actual file hashes/schema; use reliable chronological holdout if available; suggested first authorized CPU pilot max2048 earlier training/max512 later validation, linear log-price, Adam.03 B64 30 epochs; not Ames or sklearn substitute"
+  },
+  "mainReportedVerification": {
+    "provenance": "Main direct handoff 2026-11-13; worker did not execute these checks",
+    "evidence": [
+      "sources/p3-shared/mechanism-smoke.json",
+      "sources/p3-shared/practice-smoke.json",
+      "sources/p3-shared/dataset-acquisition.json"
+    ],
+    "actualMLP": "B4,3-4-2,float64 classification CE,SGD0.03,26 parameters; not proposed 2-3-1 regression",
+    "generalizationUpdatesEach": 600,
+    "finalTrainValidationMSE": {
+      "linear": [
+        0.703466,
+        5.352504
+      ],
+      "mlp": [
+        4.883e-07,
+        3.099671
+      ],
+      "weightDecay": [
+        0.000252483,
+        3.050435
+      ],
+      "dropout": [
+        0.006647642,
+        2.934348
+      ]
+    },
+    "amesOOFLogRMSE": 0.1764610996,
+    "amesConstantBaselineLogRMSE": 0.4077828291,
+    "foldFeatureCounts": [
+      321,
+      324,
+      316
+    ],
+    "foldUpdatesEach": 90,
+    "finalRefitFeatureCount": 373,
+    "finalRefitUpdates": 690,
+    "export": "1459 aligned Id/SalePrice, positive finite, CSV in memory only, not published/uploaded"
+  },
+  "notExecuted": [
+    "Worker ran no numerical course code, build, tests, lint or formatter",
+    "Full student four-task submissions",
+    "Recommended 2-3-1 MLP regression equivalence fixture",
+    "Real Fashion-MNIST MLP training",
+    "Full Ames 5-fold student assignment",
+    "All validation-label intervention retraining",
+    "Old notebooks/d2l package",
+    "CUDA/MPS/GPU",
+    "California dataset training or Kaggle submissions"
+  ],
+  "mainRemainingChecks": [
+    "content rendering and source links",
+    "document task coverage and source checksums",
+    "build/browser/mobile verification under Main ownership"
+  ],
+  "retentionBoundary": "Only content files; no datasets, model weights, credentials, media, signed URLs or temporary scripts retained"
+}

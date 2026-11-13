@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 590" role="img" aria-labelledby="title desc">
+  <title id="title">计算路径与注册状态是两条契约</title>
+  <desc id="desc">模型中的参数和持久缓冲区默认进入状态字典并随设备迁移，普通张量属性不会。状态字典加架构可恢复预测，但恢复训练还需要优化器动量、步数及随机数据状态。共享权重的两个使用路径累积到同一参数梯度。</desc>
+  <style>:root { color: #1f2937; } @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <g font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" fill="currentColor" font-size="19">
+    <text x="25" y="35" font-size="24" font-weight="700">能前向计算，不代表能被模型管理</text>
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="25" y="80" width="245" height="110" rx="9"/>
+      <rect x="318" y="80" width="245" height="110" rx="9"/>
+      <rect x="610" y="80" width="245" height="110" rx="9" stroke-dasharray="7 5"/>
+      <rect x="170" y="270" width="425" height="95" rx="9"/>
+      <path d="M148 190 V235 H290 V260 M440 190 V260" marker-end="url(#arrow)"/>
+      <path d="M25 407 H855"/>
+      <rect x="25" y="440" width="380" height="110" rx="9"/>
+      <rect x="475" y="440" width="380" height="110" rx="9"/>
+    </g>
+    <text x="43" y="112" font-weight="700">Parameter</text><text x="43" y="145">在 parameters() 中</text><text x="43" y="175">训练需进入计算图</text>
+    <text x="336" y="112" font-weight="700">持久 buffer</text><text x="336" y="145">不是优化参数</text><text x="336" y="175">仍属于模型状态</text>
+    <text x="628" y="112" font-weight="700">普通 Tensor 属性</text><text x="628" y="145">不自动存入状态</text><text x="628" y="175">不随模块自动迁移</text>
+    <text x="182" y="310" font-weight="700">state_dict：参数 + 持久缓冲区</text><text x="190" y="344">浅层引用字典，不是冻结的历史快照</text>
+    <text x="625" y="282" font-size="18">非持久 buffer：</text><text x="625" y="312" font-size="18">迁移，但不保存</text>
+    <text x="27" y="393">共享参数：多个计算路径 → 梯度相加 → 同一参数更新</text>
+    <text x="45" y="472" font-weight="700">恢复预测</text><text x="45" y="505">结构 + 状态 + 预处理</text><text x="45" y="535">另设 eval，推理关闭梯度图</text>
+    <text x="495" y="472" font-weight="700">恢复训练还需要</text><text x="495" y="505">优化器 + 步数 + 学习率状态</text><text x="495" y="535">随机状态、采样进度与模式</text>
+    <text x="27" y="580" font-size="16">编者重绘；weights_only=True 限制加载类型，不是来源真实性或安全沙箱保证。</text>
+  </g>
+</svg>

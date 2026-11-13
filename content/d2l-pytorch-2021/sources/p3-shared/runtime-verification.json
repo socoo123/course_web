@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-13",
+  "environmentEvidence": "environment.json",
+  "dependencies": "runtime-freeze.txt",
+  "installation": "Reused the existing P2 isolated environment after actual imports; no reinstall or d2l/Jupyter installation.",
+  "device": "cpu",
+  "backendBoundary": "CUDA unavailable; MPS built/available detection only, no MPS computations.",
+  "mechanismEvidence": "mechanism-smoke.json",
+  "practiceEvidence": "practice-smoke.json",
+  "datasetEvidence": "dataset-acquisition.json",
+  "commands": [
+    "/tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python content/d2l-pytorch-2021/sources/p3-shared/smoke-mechanisms.py",
+    "/tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python content/d2l-pytorch-2021/sources/p3-shared/smoke-practice.py",
+    "/tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python content/d2l-pytorch-2021/sources/p3-shared/check-notes.py"
+  ],
+  "executedScriptSha256": {
+    "smoke-mechanisms.py": "9bb8729d213d6ae699c188c483f0b72c1a9d2df89e5b118e76888946ea084600",
+    "smoke-practice.py": "b135d63517df631cd5e4254b20031c3de0297fa289d12cce34d0590041ece7c7",
+    "check-notes.py": "cba43232ef97ae60aa915f324e1b5954882d648decbb042108e56f37936d0a5b"
+  },
+  "status": "passed_13_note_blocks_and_independent_CPU_scenarios",
+  "scriptDisposition": "All five temporary acceptance scripts removed before commit; their hashes retained. Dataset remains only in runtime cache; weights and prediction CSV were in memory. Duplicate console logs removed; structured results preserved.",
+  "notExecuted": [
+    "full student task submissions",
+    "recommended 2-3-1 regression-equivalence fixture",
+    "real Fashion-MNIST MLP task",
+    "full Ames5fold selection",
+    "validation-label intervention full retraining",
+    "CUDA/MPS computation",
+    "old notebooks",
+    "California data training",
+    "Kaggle submission"
+  ],
+  "notesEvidence": "notes-smoke.json",
+  "notesBlocks": 13,
+  "acceptanceScriptSha256": {
+    "smoke-mechanisms.py": "9bb8729d213d6ae699c188c483f0b72c1a9d2df89e5b118e76888946ea084600",
+    "smoke-practice.py": "b135d63517df631cd5e4254b20031c3de0297fa289d12cce34d0590041ece7c7",
+    "check-notes.py": "cba43232ef97ae60aa915f324e1b5954882d648decbb042108e56f37936d0a5b",
+    "check-content.py": "4083c714ba21a008914fa0ff4ece40d413192d7dfc412e3359a407efeff29a9f",
+    "check-sources.py": "0bf85b48f399db1c01f4ff66907c326557e5794d5ccfca71a3fbbbe4b35708c9"
+  }
+}

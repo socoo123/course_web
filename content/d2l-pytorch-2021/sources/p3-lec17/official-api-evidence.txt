@@ -1,0 +1,33 @@
+Retrieved/read: 2026-11-13
+Nature: selected short official-documentation excerpts, not full snapshots; no claim that D2L license covers these pages.
+
+URL: https://docs.pytorch.org/docs/2.5/notes/mps.html
+Read scope: full MPS backend article body, including is_available/is_built checks and tensor/module placement example.
+Selected quotations:
+“mps device enables high-performance training on GPU for MacOS devices with Metal programming framework.”
+“if not torch.backends.mps.is_available():”
+“if not torch.backends.mps.is_built():”
+“model.to(mps_device)”
+
+URL: https://docs.pytorch.org/docs/2.5/generated/torch.Tensor.to.html
+Read scope: full Tensor.to API description, dtype/device/copy behavior and examples.
+Selected quotation:
+“If the self Tensor already has the correct torch.dtype and torch.device, then self is returned. Otherwise, the returned tensor is a copy of self with the desired torch.dtype and torch.device.”
+
+URL: https://docs.pytorch.org/docs/2.5/generated/torch.nn.Module.html#torch.nn.Module.to
+Read scope: Module.to and cuda/eval descriptions; exact selected excerpts are also retained in ../p3-lec16/official-api-evidence.txt.
+Selected quotations:
+“Move and/or cast the parameters and buffers.”
+“This method modifies the module in-place.”
+
+URL: https://docs.pytorch.org/docs/2.5/generated/torch.cuda.synchronize.html
+Read scope: full synchronize API description and device parameter.
+Selected quotation:
+“Wait for all kernels in all streams on a CUDA device to complete.”
+
+URL: https://docs.pytorch.org/docs/2.5/generated/torch.mps.synchronize.html
+Read scope: full synchronize API description.
+Selected quotation:
+“Waits for all kernels in all streams on a MPS device to complete.”
+
+Runtime boundary reported by Main: sources/p3-shared/environment.json, macOS26.3.1-arm64 Python3.11.8 torch2.5.1; CUDA unavailable/count0, torch.version.cuda null; MPS built/available true. Detection is not an MPS computation or performance verification. This worker executes no course code and provides no GPU timing results.

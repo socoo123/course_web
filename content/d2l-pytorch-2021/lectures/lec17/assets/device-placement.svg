@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 530" role="img" aria-labelledby="title desc">
+  <title id="title">单设备计算路径与不同后端的证据边界</title>
+  <desc id="desc">CPU读取批次后把输入和标签放在明确选择的后端，模型参数和缓冲区也在同一后端。汇总日志才回CPU。CPU、CUDA、MPS分别选择，探测可用不等于执行正确。张量to返回值要接收，模块to迁移注册状态。</desc>
+  <style>:root { color: #1f2937; } @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <g font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" fill="currentColor" font-size="19">
+    <text x="25" y="35" font-size="24" font-weight="700">先明确 device，再谈正确性与速度</text>
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="25" y="85" width="230" height="150" rx="9"/>
+      <rect x="375" y="85" width="480" height="150" rx="9"/>
+      <path d="M255 155 H365" marker-end="url(#arrow)"/>
+      <path d="M615 235 V280 H140 V245" marker-end="url(#arrow)"/>
+      <path d="M25 330 H855"/>
+      <rect x="25" y="360" width="250" height="100" rx="9"/>
+      <rect x="315" y="360" width="250" height="100" rx="9"/>
+      <rect x="605" y="360" width="250" height="100" rx="9"/>
+    </g>
+    <text x="45" y="121" font-weight="700">CPU 读取 / 预处理</text><text x="45" y="160">输入 X、标签 y</text><text x="45" y="201">按批准备，不按层往返</text>
+    <text x="273" y="136" font-size="16">批次放置</text>
+    <text x="395" y="121" font-weight="700">明确选择一个后端</text><text x="395" y="158">X、y、参数 W/b、buffer 同设备</text><text x="395" y="197">前向 → 损失 → 反向 → 更新</text>
+    <text x="280" y="270" font-size="17">汇总日志 / 最终结果</text>
+    <text x="27" y="313">Tensor.to：接收返回值；Module.to：迁移已注册状态。</text>
+    <text x="45" y="396" font-weight="700">CPU</text><text x="45" y="433">本批实际计算路径</text>
+    <text x="335" y="396" font-weight="700">CUDA</text><text x="335" y="433">本批无可用设备</text>
+    <text x="625" y="396" font-weight="700">MPS</text><text x="625" y="433">探测可用，未执行</text>
+    <text x="27" y="496">可用性探测 ≠ 数值验证 ≠ 正确同步后的性能测量</text>
+    <text x="27" y="522" font-size="15">编者自绘；不展示虚构GPU耗时，不把CPU回退当GPU验收。</text>
+  </g>
+</svg>

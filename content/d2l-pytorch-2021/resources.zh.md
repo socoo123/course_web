@@ -1,6 +1,6 @@
 ---
 source: 李沐《动手学深度学习》2021 中文课程官方课表；《动手学深度学习》中文第二版
-status: 已生成并验收LEC1–14教材导读、自绘图及前两项实验说明/指导；14个BV共46P公开字幕均为空，未观看音视频，课堂稿持续阻塞。P2新增真实Fashion-MNIST CPU小基线与12段笔记代码核对，不等于全课或全部作业完成。
+status: 已验收LEC1–21教材导读、自绘图及前三项实验说明/指导；21个BV共69P公开字幕均为空，未观看音视频，课堂稿持续阻塞。P3新增13段笔记代码、CPU机制/泛化对照与真实Ames小型K折及导出验证，不等于全课或全部作业完成。
 license: 本页为编者自主课程导航；教材、代码、视频分别按原始许可处理，视频授权不由教材许可推定。
 ---
 
@@ -223,6 +223,22 @@ uv pip install --python .venv-d2l/bin/python torch==2.5.1 torchvision==0.20.1 nu
 
 **没有执行**两条完整40轮回归作业、验证标签干预的完整重训、教材Notebook、55000/5000全量训练、10000测试集评估或GPU/CUDA/MPS。运行日志不能替学习者完成四个任务。完整环境、首轮失败及修正结果分别见 `sources/p2-shared/runtime-freeze.txt`、`first-runtime-attempt.json`、`practice-smoke.json`、`notes-smoke.json`、`dataset-acquisition.json`；临时验收脚本不作为答案发布。
 
+#### 第三批：模块、卷积与 MLP／房价流程
+
+继续使用上面的隔离 CPU 环境，没有重装或混入旧版 `d2l`。本次实际探测 **CUDA 不可用、MPS 已构建且可用**；全部验收仍显式选择 CPU，不能把后端可用性探测写成 MPS 运算、训练或加速比验证。
+
+主 agent 独立运行了以下场景；这些是编者的验证证据，不是学生作业答案：
+
+- 同权重 MLP 的张量实现与 `nn.Module` 实现：前向、梯度和一步 SGD 一致；参数共享的梯度累积、buffer 注册、模型与优化器状态恢复均有数值核对。仅恢复权重后重新创建动量优化器，下一步与连续训练不同。
+- 卷积：用非对称核区分互相关与翻转卷积；核对非对称填充、步幅、多输入通道求和，以及 1×1 卷积与逐位置矩阵乘法的一致性。
+- 合成泛化对照：固定 32 训练／128 验证、20 特征；线性模型与 64 隐藏单元 MLP，以及单独改变权重衰减或 Dropout 的配对实验。每组 SGD、B16、300 轮／600 次更新；大模型训练误差很低并不代表验证误差低，正则化也不保证在任意种子或数据上胜出。
+- Ames 房价：官方 HTTPS 两份 CSV 下载后核对教材 SHA1；从 1460 条有标签记录固定抽取 257 条，K=3 的验证折大小为 86／86／85，折内拟合预处理，每折重建线性 log-price 模型与 Adam。每折 B64、30 轮／90 次更新，pooled OOF logRMSE 为 **0.176461**，折内常量均值基线为 **0.407783**；这不是 Kaggle 分数。
+- 再用全部 1460 条有标签记录拟合一次同配置小模型，30 轮／690 次更新；只在内存导出 1459 行 `Id,SalePrice`，验证正有限价格与原始测试 Id 顺序。没有测试标签评估、排行榜提交、多模型调优或完整竞赛复现。
+
+折内预处理包含训练均值插补、总体标准差（`ddof=0`）、常量／全缺失列回退，以及独立的缺失与未知类别；OOF 每条样本恰好出现一次。**教材 Ames 与 2021 加州房价不是同一数据集**；加州历史竞赛的访问与迁移边界见[第三项实验](#/c/d2l-pytorch-2021/lab/mlp-generalization?v=zh)，不能把 Ames 或 sklearn 的 California Housing 当作完成了它。
+
+本批没有运行 CUDA/MPS、旧 Notebook 或全部学生任务。数据只保存在运行时缓存，不随站点发布；模型、预测 CSV、临时验收脚本也不作为解答发布。精确配置、每折数值与数据哈希见 `sources/p3-shared/environment.json`、`mechanism-smoke.json`、`practice-smoke.json`、`dataset-acquisition.json`。
+
 
 ## 学完后怎样衔接 CS336
 
@@ -268,9 +284,25 @@ LEC 8–14 共 **7 个 BV、28P**。标准公开 player 请求均成功但字幕
 
 LEC 10 的两种实现仍保留原课表的同一个 `?p=3`。真实列表显示 P3 为“代码实现”、P4 为“QA”，没有单列另一实现；仅凭标题无法核实 P3 内是否讲了两种实现，更无法划定各自时间段，**不能猜改到 P4**。本批 `copyright=1`；LEC 8–10 的 `no_reprint=1`，LEC 11–14 为 0。两种标志值都不是开放转录授权。
 
+### 第三批已核实的全部分 P
+
+LEC 15–21 共 **7 个 BV、23P、17122 秒**。逐 P 公开字幕请求全部成功且列表为空；没有下载或观看音视频，不据分 P 标题推测讲授顺序、演示或问答。元数据的时长不是课堂主题时间轴，仍不生成无依据的 draft。
+
+| 讲次 | 真实分 P 与时长 |
+|---|---|
+| LEC 15 | [P1 实战 Kaggle 比赛：预测房价 · 14:30](https://www.bilibili.com/video/BV1NK4y1P7Tu?p=1)；[P2 课程竞赛：加州2020年房价预测 · 08:39](https://www.bilibili.com/video/BV1NK4y1P7Tu?p=2)；[P3 QA · 03:21](https://www.bilibili.com/video/BV1NK4y1P7Tu?p=3) |
+| LEC 16 | [P1 模型构造 · 13:27](https://www.bilibili.com/video/BV1AK4y1P7vs?p=1)；[P2 参数管理 · 17:20](https://www.bilibili.com/video/BV1AK4y1P7vs?p=2)；[P3 自定义层 · 05:28](https://www.bilibili.com/video/BV1AK4y1P7vs?p=3)；[P4 读写文件 · 06:03](https://www.bilibili.com/video/BV1AK4y1P7vs?p=4)；[P5 QA · 10:51](https://www.bilibili.com/video/BV1AK4y1P7vs?p=5) |
+| LEC 17 | [P1 使用 GPU · 13:34](https://www.bilibili.com/video/BV1z5411c7C1?p=1)；[P2 购买 GPU · 08:54](https://www.bilibili.com/video/BV1z5411c7C1?p=2)；[P3 QA · 08:03](https://www.bilibili.com/video/BV1z5411c7C1?p=3) |
+| LEC 18 | [P1 竞赛总结 · 16:39](https://www.bilibili.com/video/BV15Q4y1o7vc?p=1)；[P2 QA · 26:03](https://www.bilibili.com/video/BV15Q4y1o7vc?p=2) |
+| LEC 19 | [P1 从全连接到卷积 · 15:00](https://www.bilibili.com/video/BV1L64y1m7Nh?p=1)；[P2 卷积层 · 11:02](https://www.bilibili.com/video/BV1L64y1m7Nh?p=2)；[P3 代码 · 10:08](https://www.bilibili.com/video/BV1L64y1m7Nh?p=3)；[P4 QA · 07:44](https://www.bilibili.com/video/BV1L64y1m7Nh?p=4) |
+| LEC 20 | [P1 填充和步幅 · 14:08](https://www.bilibili.com/video/BV1Th411U7UN?p=1)；[P2 代码实现 · 05:05](https://www.bilibili.com/video/BV1Th411U7UN?p=2)；[P3 QA · 23:57](https://www.bilibili.com/video/BV1Th411U7UN?p=3) |
+| LEC 21 | [P1 多输入输出通道 · 19:34](https://www.bilibili.com/video/BV1MB4y1F7of?p=1)；[P2 代码实现 · 06:36](https://www.bilibili.com/video/BV1MB4y1F7of?p=2)；[P3 QA · 19:16](https://www.bilibili.com/video/BV1MB4y1F7of?p=3) |
+
+LEC 17 的“购买 GPU”和七讲全部 QA 入口均保留，不因课表未单列就删除；没有观看时不提供所谓课堂购买建议或竞赛获奖方法。本批均为 `copyright=1`；LEC 15 的 `no_reprint=0`，LEC 16–21 为 1，都不能据此推定开放转录许可。
+
 ### 全课视频入口
 
-以下链接逐项保留课表中的 BV 与分 P 参数。未写 `p` 的原始链接标作「入口」，不推定它覆盖整组内容。LEC 1–14 的真实全部分 P 已列于上方两表；其余讲次尚待逐 P 核对。当前单讲页面尚无 B 站播放按钮，请从这里进入。
+以下链接逐项保留课表中的 BV 与分 P 参数。未写 `p` 的原始链接标作「入口」，不推定它覆盖整组内容。LEC 1–21 的真实全部分 P 已列于上方三表；其余讲次尚待逐 P 核对。当前单讲页面尚无 B 站播放按钮，请从这里进入。
 
 | 站内讲次 | 原课表视频入口 |
 |---|---|

@@ -80,3 +80,18 @@ Lab.tsx的常用命令固定输出git checkout / make qemu / make grade，仅适
 - 证据见sources/p2-manifest.json与p2-shared的content-check/browser-check/practice-smoke/notes-smoke/runtime-verification/dataset-acquisition/first-runtime-attempt、runtime-freeze及build.log。临时验收脚本已删除；不提交数据集、虚拟环境或模型权重。
 - 本轮用户追加每批由主agent汇总验收、提交推送GitHub，再给下一批提示词。课程注册与P0/P1内容原先尚未入库，作为发布前置一并保存，不重做；只提交content内本课程和catalog注册，不改src。必要sources索引/原件/证据按明确清单保存以支持下次接力，不能盲目强制添加运行时大文件或凭据。
 - 下一批lec15–21 + mlp-generalization：A负责lec15–18，B负责lec19–21，C负责实验。保留全课剩余lec15–73的59讲/10实验；已有14讲draft继续阻塞。房价章节要区分Ames教材案例与2021加州竞赛，GPU按实际设备验证。
+
+十一、P3实际结果（2026-11-13）
+- 多agent并行：HouseModuleNotes负责lec15–18，ConvolutionNotes负责lec19–21，MlpPractice负责mlp-generalization；主agent整合共享资料、状态、数值、来源、构建、浏览器与提交发布。未重做已验收的14讲或前两实验。
+- 新增7份教材导读notes、7张自绘SVG、实验说明/指导；实验四任务完整保留，无完整学生答案。累计21份notes/21图/6份实验文档，73讲/12实践/48任务不变。
+- 新核实7BV/23P=17122秒；公开player每P一次，全部成功空字幕。LEC17包含使用GPU/购买GPU/QA，不漏未在课表单列的入口；未下载观看媒体，不编造课堂采购建议、竞赛优胜方法、演示或QA。draft持续阻塞，materials为not_required。累计21BV/69P，公共资料172视频入口=103原课表+69真实分P。
+- 固定教材新增实际阅读4.7、4.10、5.1/5.2/5.4/5.5/5.6、6.1–6.4全文；实验前批章节只声明精确节选。4.9、5.3及后续仍未读。现代PyTorch2.5模块/序列化/设备API与当前checkpoint教程单独留阅读范围与短引，不混称2021课堂材料。主agent34项来源hash核对通过。
+- 13段笔记Python代码全部执行、输出匹配解析预期；独立MLP等价、Parameter/buffer、共享梯度、模型+优化器恢复、非对称核/填充/步幅、多通道和1×1矩阵乘机制通过。固定5.4源码MyLinear.forward的.data用法与本站可训练写法明确区分。
+- P3复用P2隔离环境：Python3.11.8/torch2.5.1/vision0.20.1/numpy1.26.4/pandas2.2.3，macOS arm64、CPU单线程。CUDA不可用；MPS built/available为true，只探测未执行。未装d2l/Jupyter，不承诺旧Notebook兼容。
+- 合成泛化对照32训练/128验证、d20，线性与64隐藏单元MLP，以及单独wd=.01或Dropout=.2，SGD .03/B16/300轮，各600更新。末轮train/val MSE：线性.703466/5.352504；MLP约4.883e-7/3.099671；衰减.000252483/3.050435；Dropout.006647642/2.934348。配对初值与数据顺序一致；不要求正则化一定赢或每轮单调下降。
+- Ames官方HTTPS两CSV新下载后核教材SHA1；数据仅运行时cache。seed17取257、K3验证86/86/85，每折训练非缺失值均值/std(ddof0)与类别词表fit，常量/全缺失与未知类别显式处理；零权重+均值log-price偏置、Adam .03/B64/30轮，每折90更新。OOF每样本恰一次，logRMSE .1764610996 vs折内常量基线 .4077828291；验证不改参数或既有梯度。
+- 随后全部1460行refit同配置小线性log-price模型，30轮690更新、373特征，内存导出1459行Id/SalePrice并核正有限与原Id顺序。CSV未保存发布、未上传Kaggle。不是完整5折选型、全部干预重训、Fashion MLP作业、全量调优或学生任务完成。
+- 加州公开Kaggle页面实读确认host=d2lcourse、2020售房、测试晚于训练/私榜晚于公榜、log价格RMSE与Id/Sold Price。Data页列三文件/89.8MB/83columns，需登录接受规则，许可Subject to Competition Rules；本批未登录/下载/训练。Ames、该竞赛、sklearn California Housing不能替换身份。
+- 真实Chromium验收七图、公式、自测、页底来源、缺稿与实验双标签、1440桌面/390移动端；七图暗色与代表浅色可读。修复LEC21横排矩阵与实验正文40字符SHA1溢出，后者移页底滚动表。保留工具选择器诊断：article不存在、隐藏H1文本等待、数字开头ID需属性选择器；一次pptr pageerror来自验收器非法选择器，不是站点应用错误。验证tab已关闭，非部署验收。
+- npm run build一次通过：tsc --noEmit + Vite5.4.21，2952modules，5.59s。证据见p3-manifest与p3-shared的source-check/content-check/browser-check/notes-smoke/mechanism-smoke/practice-smoke/environment/runtime-verification/dataset-acquisition/runtime-freeze/build.log。临时验收脚本移除，不提交数据、权重、CSV或凭据。
+- 下一批LEC22–29与cnn-architectures：A22–25、B26–29、C实验；纳入ResNet以覆盖完整四任务。剩余lec22–73共52讲、9实验，21讲draft仍阻塞。前置模块/卷积笔记与P3证据复用，不重写。主agent提交推送main后交下一提示词，仍只改content。

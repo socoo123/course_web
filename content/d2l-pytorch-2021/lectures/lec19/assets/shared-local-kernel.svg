@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 510" role="img" aria-labelledby="title desc">
+  <title id="title">一个局部核在四个窗口共享</title>
+  <desc id="desc">输入三乘三矩阵为1到9，核为第一行1和2、第二行0和负1。互相关的左上窗口结果为0，完整输出为0、2、6、8。将核高宽翻转得到负1、0、2、1，左上结果变成12；固定核下互相关与数学卷积不同。共享核不等于输出不变。</desc>
+  <style>:root { color: #18212b; } @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="22">
+    <text x="24" y="36" font-size="26" font-weight="700">局部窗口滑动，核参数不换</text>
+    <text x="45" y="82">输入 X</text><text x="320" y="82">共享核 K</text><text x="600" y="82">输出 Y</text>
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M30 105 H225 V300 H30 Z M95 105 V300 M160 105 V300 M30 170 H225 M30 235 H225"/>
+      <rect x="34" y="109" width="122" height="122" stroke-width="4" rx="5"/>
+      <path d="M315 110 H445 V240 H315 Z M380 110 V240 M315 175 H445"/>
+      <path d="M590 110 H720 V240 H590 Z M655 110 V240 M590 175 H720"/>
+      <path d="M245 174 H295 M465 174 H570" marker-end="url(#arrow)"/>
+      <path d="M24 330 H750"/>
+      <rect x="30" y="362" width="260" height="100" rx="8"/>
+      <path d="M310 411 H380" marker-end="url(#arrow)"/>
+    </g>
+    <g text-anchor="middle">
+      <text x="62" y="147">1</text><text x="127" y="147">2</text><text x="192" y="147">3</text>
+      <text x="62" y="212">4</text><text x="127" y="212">5</text><text x="192" y="212">6</text>
+      <text x="62" y="277">7</text><text x="127" y="277">8</text><text x="192" y="277">9</text>
+      <text x="347" y="152">1</text><text x="412" y="152">2</text><text x="347" y="217">0</text><text x="412" y="217">−1</text>
+      <text x="622" y="152" font-weight="700">0</text><text x="687" y="152">2</text><text x="622" y="217">6</text><text x="687" y="217">8</text>
+    </g>
+    <text x="300" y="278" font-size="20">左上：1 + 4 + 0 − 5 = 0</text>
+    <text x="300" y="308" font-size="18">其余窗口：同一个 K，不同的输入</text>
+    <text x="50" y="397">翻转高、宽两轴</text><text x="50" y="438">K′ = [−1, 0; 2, 1]</text>
+    <text x="400" y="395">左上：−1 + 0 + 8 + 5</text><text x="400" y="437" font-weight="700">= 12，不再是 0</text>
+    <text x="25" y="496" font-size="19">自拟示例 · 共享权重带来等变结构，不是无条件平移不变</text>
+  </g>
+</svg>

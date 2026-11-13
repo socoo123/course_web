@@ -1,0 +1,37 @@
+Retrieved/read: 2026-11-13
+Nature: selected short official-documentation excerpts, not full snapshots; editorial use, no claim that D2L license covers these pages.
+
+URL: https://docs.pytorch.org/docs/2.5/generated/torch.nn.Module.html
+Read scope: introduction; apply/cuda/eval; load_state_dict; named_parameters; register_buffer; state_dict; to.
+Selected quotations:
+“Submodules assigned in this way will be registered”
+“whether to remove the duplicated parameters in the result. Defaults to True.”
+“Buffers, by default, are persistent and will be saved alongside parameters.”
+“The returned object is a shallow copy. It contains references to the module’s parameters and buffers.”
+“Move and/or cast the parameters and buffers.”
+“This method modifies the module in-place.”
+
+URL: https://docs.pytorch.org/docs/2.5/generated/torch.nn.ModuleList.html
+Read scope: class description, example, append/extend/insert.
+Selected quotation:
+“ModuleList can be indexed like a regular Python list, but modules it contains are properly registered, and will be visible by all Module methods.”
+
+URL: https://docs.pytorch.org/docs/2.5/generated/torch.load.html
+Read scope: full load API definition, map_location, weights_only, warning and examples.
+Selected quotations:
+“weights_only=False” (2.5 signature)
+“Indicates whether unpickler should be restricted to loading only tensors, primitive types, dictionaries and any types added via torch.serialization.add_safe_globals().”
+“Only load data you trust”.
+
+URL: https://docs.pytorch.org/docs/2.5/notes/serialization.html
+Read scope: Saving and loading tensors; Saving and loading tensors preserves views; Saving and loading torch.nn.Modules; serialized file format; C++/ScriptModules introduction (not adopted in notes).
+Selected quotation:
+“A module’s state dict contains all of its parameters and persistent buffers”.
+
+URL: https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html
+Read scope: What is a state_dict; Saving & Loading Model for Inference; Saving & Loading a General Checkpoint for Inference and/or Resuming Training. Current unpinned tutorial, not a 2021 source or a 2.5-versioned tutorial. Page reports Last Updated Jun 26, 2025.
+Selected quotations:
+“It is important to also save the optimizer’s state_dict, as this contains buffers and parameters that are updated as the model trains.”
+“If you wish to resuming training, call model.train() to ensure these layers are in training mode.”
+
+Editorial boundary: RNG/data-order/preprocessing state are additional reproducibility checklist items, not a claim of complete deterministic continuation from the tutorial's minimal checkpoint. Parameter sharing must also be reconstructed in model code. No quoted example was executed by this worker.

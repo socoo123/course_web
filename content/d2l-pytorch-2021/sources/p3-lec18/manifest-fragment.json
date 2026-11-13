@@ -1,0 +1,179 @@
+{
+  "lectureId": "lec18",
+  "acquiredAt": "2026-11-13T09:54:44.693328+00:00",
+  "writtenAt": "2026-11-13T10:10:37.086666+00:00",
+  "status": "written_not_verified_by_worker",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "bookVersionBoundary": "当前中文第二版固定源码，不是2021快照",
+  "bookSources": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/kaggle-house-price.md",
+      "snapshot": "sources/p3-lec15/book-kaggle-house-price.txt",
+      "sha256": "196f674457f1f8d16b2db189bbf38c3eabe7c994ef235983cee29b7db08c899b",
+      "bytes": 25087,
+      "section": "4.10",
+      "readRange": {
+        "lines": [
+          1,
+          632
+        ],
+        "scope": "全文实际阅读，重点解释PyTorch分支；其他框架不作为PyTorch实现依据"
+      },
+      "retrievedAt": "2026-11-13T09:54:45.094403+00:00",
+      "relationship": "编者关联：2021课表本行没有教材链接；复用LEC15已读同一固定原件"
+    }
+  ],
+  "videoMetadataPath": "sources/p3-lec18/video-metadata.json",
+  "metadata": {
+    "title": "18 预测房价竞赛总结【动手学深度学习v2】",
+    "owner": {
+      "mid": 1567748478,
+      "name": "跟李沐学AI"
+    },
+    "publishedAt": "2021-05-15T17:57:40+00:00",
+    "durationSeconds": 2562,
+    "pageCount": 2,
+    "apiCode": 0
+  },
+  "pages": [
+    {
+      "page": 1,
+      "cid": 339186268,
+      "part": "竞赛总结",
+      "duration": 999
+    },
+    {
+      "page": 2,
+      "cid": 339188344,
+      "part": "QA",
+      "duration": 1563
+    }
+  ],
+  "subtitleRequests": [
+    {
+      "page": 1,
+      "cid": 339186268,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV15Q4y1o7vc&cid=339186268",
+      "retrievedAt": "2026-11-13T09:54:45.000998+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 2,
+      "cid": 339188344,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV15Q4y1o7vc&cid=339188344",
+      "retrievedAt": "2026-11-13T09:54:45.120111+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    }
+  ],
+  "license": {
+    "copyright": 1,
+    "noReprint": 1,
+    "interpretation": "平台原创/禁止转载标志不等于开放许可；未发现全文转录再发布授权。"
+  },
+  "authorization": {
+    "publicMetadataAccess": "unauthenticated public API",
+    "transcriptionPermission": "not_obtained",
+    "mediaDownloaded": false
+  },
+  "textbookLicense": {
+    "repository": "Apache-2.0",
+    "setupPackageField": "MIT-0",
+    "evidence": "sources/p1-shared/book-version.json",
+    "boundary": "不外推视频、数据或第三方图片；本文为自主讲解/练习改编"
+  },
+  "sourceRecords": [
+    {
+      "path": "sources/p3-lec18/video-metadata.json",
+      "sha256": "833a511bede7e31e18f2a84cfe8cac1b31c4aadb284ca6abdc7d510b6cb016cd",
+      "bytes": 2000,
+      "nature": "filtered metadata or selected short evidence; no media/data/cookies"
+    },
+    {
+      "path": "sources/p3-lec18/competition-context.json",
+      "sha256": "5392f265bc1375ea879f8dab71fdf287c993b2bfabf55f0b30e96fa4bc0f70a2",
+      "bytes": 3128,
+      "nature": "filtered metadata or selected short evidence; no media/data/cookies"
+    }
+  ],
+  "supplementalReferences": [],
+  "outputs": {
+    "notes": {
+      "status": "written",
+      "path": "lectures/lec18/notes.zh.md",
+      "type": "教材导读/编者复盘方法",
+      "videoContentVerified": false
+    },
+    "draft": {
+      "status": "blocked",
+      "reason": "每P公开player字幕均成功空列表；无可靠课堂文本/时间轴且无开放转录授权，不创建占位文件"
+    },
+    "materials": {
+      "status": "not_required",
+      "reason": "必要中文教材和API定位已放notes，无独立非重复阅读需求"
+    },
+    "assets": {
+      "status": "written",
+      "path": "lectures/lec18/assets/review-evidence-chain.svg",
+      "type": "编者自绘SVG，非课堂截图"
+    }
+  },
+  "written": [
+    "lectures/lec18/notes.zh.md",
+    "lectures/lec18/assets/review-evidence-chain.svg"
+  ],
+  "codeChecks": [
+    {
+      "block": 1,
+      "mechanism": "不等长折的OOF汇总与平均折RMSE差异",
+      "runtime": "Python standard library",
+      "expected": {
+        "stdout": "0.208167 0.220711",
+        "pooled": "sqrt(0.13/3)",
+        "meanFold": "(sqrt(0.02)+0.3)/2",
+        "absoluteTolerance": 1e-12
+      },
+      "status": "not_run_by_worker",
+      "path": "lectures/lec18/notes.zh.md",
+      "expectedBasis": "解析手算，不是执行结果"
+    }
+  ],
+  "minimumCpuAcceptance": [
+    "Run single pure-math notes block.",
+    "Check California/Ames identity, Id/Sold Price versus Id/SalePrice, public access gate and temporal description; no historical ranking or submission requirement."
+  ],
+  "planningEvidence": {
+    "scheduleInventory": "sources/schedule-inventory.json",
+    "bookInventory": "sources/book-inventory.json",
+    "outlinePlan": "sources/outline-plan.json",
+    "practicePlan": "sources/practice-plan.json",
+    "course": "course.json",
+    "handoff": "sources/NEXT-PROMPT.txt"
+  },
+  "gaps": [
+    "未下载/观看音视频；未核实课堂讲解、演示或QA",
+    "没有可靠课堂来源，不造时间码/逐段稿",
+    "代码预期为手算；子agent不执行代码/构建/浏览器验收"
+  ],
+  "workerVerification": {
+    "build": "not_run_by_worker",
+    "numeric": "not_run_by_worker",
+    "browser": "not_run_by_worker",
+    "lint": "not_run_by_worker",
+    "formatter": "not_run_by_worker"
+  },
+  "scopeBoundary": "仅本讲lectures与sources/p3-lec目录；不改共享索引，不提交/推送",
+  "competitionEvidence": {
+    "localRecord": "sources/p3-lec18/competition-context.json",
+    "acquiredBy": "MlpPractice",
+    "workerReadOriginal": "sources/p3-mlp-generalization/california-access.json",
+    "boundary": "加州公开页面规则已读；数据需登录同意规则，本批未下载/提交；Ames结果不是加州复现"
+  }
+}

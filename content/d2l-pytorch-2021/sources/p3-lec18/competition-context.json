@@ -1,0 +1,67 @@
+{
+  "recordedAt": "2026-11-13T10:10:37.086666+00:00",
+  "nature": "Read-only reuse of this batch factual browser acquisition, not a second browser visit",
+  "acquiredBy": "MlpPractice",
+  "workerReadPath": "sources/p3-mlp-generalization/california-access.json",
+  "videoNotCovered": true,
+  "competitionEvidence": {
+    "accessedAt": "2026-11-13",
+    "identity": {
+      "title": "California House Prices",
+      "host": "d2lcourse",
+      "year": 2021
+    },
+    "sources": [
+      {
+        "url": "https://courses.d2l.ai/zh-v2/announcements.html",
+        "localSnapshot": "../course-announcements.html",
+        "readScope": "第四周、第五周、第六周公告",
+        "result": "2020加州房价课程竞赛；延期至2021年5月9日；不是教材Ames"
+      },
+      {
+        "url": "https://www.kaggle.com/competitions/california-house-prices/data",
+        "method": "static reader followed by unauthenticated Chromium DOM inspection",
+        "result": "Static reader only exposed metadata; rendered public Data page exposed file descriptions and rule gate",
+        "filesListed": [
+          "train.csv",
+          "test.csv",
+          "sample_submission.csv"
+        ],
+        "displayedSize": "89.8 MB",
+        "displayedColumns": 83,
+        "fieldsExplicitlyDescribed": {
+          "Id": "house ID",
+          "Sold Price": "price this house was sold",
+          "Summary": "seller summary"
+        },
+        "accessNotice": "To see this data you need to agree to the competition rules. Please sign in or register to accept the rules.",
+        "license": "Subject to Competition Rules"
+      },
+      {
+        "url": "https://www.kaggle.com/competitions/california-house-prices/overview",
+        "method": "unauthenticated Chromium rendered DOM",
+        "readScope": "Description, Evaluation, Submission File Format, Citation, Start/Close",
+        "startDateDisplayed": "2021-03-20",
+        "closeDateDisplayed": "2021-05-09",
+        "descriptionFacts": [
+          "Houses sold in California in 2020",
+          "Test houses sold after training houses",
+          "Private leaderboard houses sold after public leaderboard houses"
+        ],
+        "metric": "RMSE between logarithm of prediction and logarithm of observed sales price; no log1p stated in Evaluation",
+        "submissionColumns": [
+          "Id",
+          "Sold Price"
+        ],
+        "lateSubmissionControl": "disabled in unauthenticated observed session"
+      }
+    ],
+    "authorization": "Public page inspection only; no login, rule acceptance, dataset download or submission. Public metadata is not permission to redistribute competition files.",
+    "datasetAvailableToThisRun": false,
+    "trainingExecuted": false,
+    "videoFetched": false,
+    "browserTabClosed": true,
+    "retention": "Filtered factual metadata only; no cookies, tokens, signed URLs, full page HTML or data rows retained. No raw dataset checksum available because bytes were not acquired."
+  },
+  "boundary": "Ames textbook case is separate; no California dataset bytes, training, submission, winner claims or classroom transcription."
+}

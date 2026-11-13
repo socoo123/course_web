@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 610" role="img" aria-labelledby="title desc">
+  <title id="title">非对称填充的窗口起点与步幅相位</title>
+  <desc id="desc">三行四列输入1到12，左填一列零下填一行零后变为四行五列。二乘三全一核以步幅二在填充坐标0、0，0、2，2、0，2、2起步，结果为14、30、19、33。下方一维长度一的核以步幅二取1、3、5；输入右移一格变为取0、2、4，不是输出的一格平移。</desc>
+  <style>:root { color: #18212b; } @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="22">
+    <text x="24" y="35" font-size="25" font-weight="700">左填 1、下填 1；窗口每次走 2 格</text>
+    <text x="28" y="76" font-size="18">填充后的 X：虚线框为左上 2×3 窗口</text>
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M30 95 H355 V355 H30 Z M95 95 V355 M160 95 V355 M225 95 V355 M290 95 V355 M30 160 H355 M30 225 H355 M30 290 H355"/>
+      <rect x="34" y="99" width="187" height="122" rx="5" stroke-width="4" stroke-dasharray="9 5"/>
+      <path d="M380 210 H460" marker-end="url(#arrow)"/>
+      <path d="M500 130 H670 V290 H500 Z M585 130 V290 M500 210 H670"/>
+      <path d="M24 393 H762"/>
+      <rect x="28" y="451" width="280" height="54" rx="6"/>
+      <rect x="28" y="520" width="280" height="54" rx="6"/>
+      <path d="M328 479 H400 M328 548 H400" marker-end="url(#arrow)"/>
+    </g>
+    <g text-anchor="middle">
+      <text x="62" y="137">0</text><text x="127" y="137">1</text><text x="192" y="137">2</text><text x="257" y="137">3</text><text x="322" y="137">4</text>
+      <text x="62" y="202">0</text><text x="127" y="202">5</text><text x="192" y="202">6</text><text x="257" y="202">7</text><text x="322" y="202">8</text>
+      <text x="62" y="267">0</text><text x="127" y="267">9</text><text x="192" y="267">10</text><text x="257" y="267">11</text><text x="322" y="267">12</text>
+      <text x="62" y="332">0</text><text x="127" y="332">0</text><text x="192" y="332">0</text><text x="257" y="332">0</text><text x="322" y="332">0</text>
+      <text x="542" y="180">14</text><text x="627" y="180">30</text><text x="542" y="260">19</text><text x="627" y="260">33</text>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="3"><circle cx="40" cy="105" r="5"/><circle cx="170" cy="105" r="5"/><circle cx="40" cy="235" r="5"/><circle cx="170" cy="235" r="5"/></g>
+    <text x="478" y="105">全 1 核求窗口和</text>
+    <text x="420" y="329" font-size="18">四个小圆：四个窗口的起点</text>
+    <text x="420" y="360" font-size="18">填充位置不是新的真实像素</text>
+    <text x="28" y="430" font-size="23" font-weight="700">stride 2 选定一个采样相位</text>
+    <text x="43" y="486">1, 2, 3, 4, 5, 6</text><text x="425" y="486">1, 3, 5</text>
+    <text x="43" y="555">0, 1, 2, 3, 4, 5</text><text x="425" y="555">0, 2, 4 ≠ 0, 1, 3</text>
+    <text x="30" y="600" font-size="18">自拟示例 · 下行输入右移 1 格，并非输出右移 1 格</text>
+  </g>
+</svg>

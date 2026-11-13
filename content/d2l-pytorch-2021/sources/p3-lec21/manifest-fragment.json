@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 1,
+  "lectureId": "lec21",
+  "batch": "P3",
+  "acquiredAt": "2026-11-13T09:54:55.608357+00:00",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "bookVersionBoundary": "当前中文第二版固定源码，非2021教材快照；不声明在线构建精确等于该提交",
+  "written": [
+    "lectures/lec21/notes.zh.md",
+    "lectures/lec21/assets/channel-sum-stack.svg",
+    "sources/p3-lec21/video-metadata.json",
+    "sources/p3-lec21/book-sources.json",
+    "sources/p3-lec21/book-channels.txt",
+    "sources/p3-lec21/manifest-fragment.json"
+  ],
+  "bookSections": [
+    "6.4"
+  ],
+  "bookSources": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-neural-networks/channels.md",
+      "snapshot": "sources/p3-lec21/book-channels.txt",
+      "sha256": "3073268e0fcd19e24c064d9b27cca8bc5be0a111df46a1d237a13fe736f4685f",
+      "bytes": 9350,
+      "lines": 195,
+      "retrievedAt": "2026-11-13T09:54:56.870128+00:00",
+      "readRange": {
+        "linesInclusive": [
+          1,
+          195
+        ],
+        "coverage": "全文实际阅读：正文、全部代码分支、小结与习题；实现解读以PyTorch及共享代码为准；未执行任何教材代码",
+        "pytorchOrSharedImplementationLines": [
+          [
+            30,
+            34
+          ],
+          [
+            44,
+            49
+          ],
+          [
+            63,
+            70
+          ],
+          [
+            80,
+            100
+          ],
+          [
+            126,
+            144
+          ],
+          [
+            152,
+            157
+          ]
+        ],
+        "focusLines": [
+          [
+            10,
+            22
+          ],
+          [
+            72,
+            78
+          ],
+          [
+            103,
+            124
+          ],
+          [
+            159,
+            179
+          ]
+        ]
+      }
+    }
+  ],
+  "sourceRecords": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-neural-networks/channels.md",
+      "snapshot": "sources/p3-lec21/book-channels.txt",
+      "sha256": "3073268e0fcd19e24c064d9b27cca8bc5be0a111df46a1d237a13fe736f4685f",
+      "bytes": 9350,
+      "lines": 195,
+      "retrievedAt": "2026-11-13T09:54:56.870128+00:00",
+      "readRange": {
+        "linesInclusive": [
+          1,
+          195
+        ],
+        "coverage": "全文实际阅读：正文、全部代码分支、小结与习题；实现解读以PyTorch及共享代码为准；未执行任何教材代码",
+        "pytorchOrSharedImplementationLines": [
+          [
+            30,
+            34
+          ],
+          [
+            44,
+            49
+          ],
+          [
+            63,
+            70
+          ],
+          [
+            80,
+            100
+          ],
+          [
+            126,
+            144
+          ],
+          [
+            152,
+            157
+          ]
+        ],
+        "focusLines": [
+          [
+            10,
+            22
+          ],
+          [
+            72,
+            78
+          ],
+          [
+            103,
+            124
+          ],
+          [
+            159,
+            179
+          ]
+        ]
+      }
+    },
+    {
+      "snapshot": "sources/p3-lec21/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1MB4y1F7of",
+      "sha256": "c54a1fd42ef92ed2801d9e5852e7f55a06ef88b4e135af786fcd623cf195151c",
+      "bytes": 2519,
+      "kind": "filtered_video_metadata_and_per_page_player_subtitle_results",
+      "rawPlayerResponseStored": false,
+      "readRange": "全部筛选元数据，所有分P；未阅读字幕正文（空列表）"
+    }
+  ],
+  "videoMetadataPath": "sources/p3-lec21/video-metadata.json",
+  "videoIdentity": {
+    "bvid": "BV1MB4y1F7of",
+    "aid": 588058788,
+    "title": "21 卷积层里的多输入多输出通道【动手学深度学习v2】",
+    "owner": {
+      "mid": 1567748478,
+      "name": "跟李沐学AI"
+    },
+    "publishedAt": "2021-05-16T16:31:36+00:00",
+    "durationSeconds": 2726
+  },
+  "pages": [
+    {
+      "page": 1,
+      "cid": 339699427,
+      "part": "多输入输出通道",
+      "duration": 1174
+    },
+    {
+      "page": 2,
+      "cid": 339709745,
+      "part": "代码实现",
+      "duration": 396
+    },
+    {
+      "page": 3,
+      "cid": 339711414,
+      "part": "QA",
+      "duration": 1156
+    }
+  ],
+  "subtitleRequests": [
+    {
+      "page": 1,
+      "cid": 339699427,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1MB4y1F7of&cid=339699427",
+      "retrievedAt": "2026-11-13T09:54:55.967320+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": false,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 2,
+      "cid": 339709745,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1MB4y1F7of&cid=339709745",
+      "retrievedAt": "2026-11-13T09:54:56.134492+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": false,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 3,
+      "cid": 339711414,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1MB4y1F7of&cid=339711414",
+      "retrievedAt": "2026-11-13T09:54:56.335494+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": false,
+      "subtitles": [],
+      "status": "empty_public_list"
+    }
+  ],
+  "license": {
+    "copyright": 1,
+    "noReprint": 1,
+    "interpretation": "平台原创/禁止转载标志不是开放许可；未取得全文转录再发布授权。"
+  },
+  "authorization": {
+    "publicMetadataAccess": "unauthenticated public API",
+    "transcriptReuse": "not_granted",
+    "mediaDownloaded": false
+  },
+  "textbookLicense": {
+    "repository": "Apache-2.0",
+    "licenseEvidence": "sources/p1-shared/book-LICENSE.txt",
+    "licenseSha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "packageMetadata": "setup.py字段MIT-0，与根LICENSE分开记录",
+    "packageEvidence": "sources/p1-shared/book-setup.py.txt",
+    "boundary": "不外推视频、字幕、第三方图片或数据；本文为自主改写，图为自绘，未复制教材图片"
+  },
+  "outputs": {
+    "notes": {
+      "path": "lectures/lec21/notes.zh.md",
+      "status": "written_textbook_guide",
+      "videoContentVerified": false
+    },
+    "assets": [
+      {
+        "path": "lectures/lec21/assets/channel-sum-stack.svg",
+        "nature": "editorial_original",
+        "source": "教材概念基础上的编者自拟小例；非截图或第三方图复制"
+      }
+    ],
+    "draft": {
+      "status": "blocked_no_reliable_classroom_source",
+      "fileWritten": false,
+      "reason": "所有分P公开字幕成功空列表；未下载或观看音视频，未取得转录再发布授权；不建占位"
+    },
+    "materials": {
+      "status": "not_required",
+      "fileWritten": false,
+      "reason": "无独立中文阅读需拆篇；教材定位与补充边界已经内联于notes，不复制第三份"
+    }
+  },
+  "planningEvidence": {
+    "schedule": "sources/schedule-inventory.json",
+    "book": "sources/book-inventory.json",
+    "outline": "sources/outline-plan.json",
+    "practice": "sources/practice-plan.json",
+    "registration": "course.json",
+    "handoff": "sources/NEXT-PROMPT.txt",
+    "relevantLab": "cnn-architectures（仅保留关联，未修改实验）"
+  },
+  "codeChecks": [
+    {
+      "id": "lec21-channel-reduction",
+      "pythonBlock": 1,
+      "expected": {
+        "weightShape": [
+          2,
+          2,
+          1,
+          2
+        ],
+        "outputShape": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "parameters": 10,
+        "output": [
+          [
+            [
+              22,
+              33
+            ],
+            [
+              55,
+              66
+            ]
+          ],
+          [
+            [
+              10,
+              20
+            ],
+            [
+              40,
+              50
+            ]
+          ]
+        ],
+        "splitChannelsEqualsBuiltin": true
+      },
+      "atol": 0,
+      "scope": "Cin各自相关后求和、偏置每Cout一次、合并已有通道轴",
+      "executionStatus": "not_run_by_worker",
+      "notePath": "lectures/lec21/notes.zh.md"
+    },
+    {
+      "id": "lec21-pointwise-matrix",
+      "pythonBlock": 2,
+      "expected": {
+        "output": [
+          [
+            [
+              22,
+              43
+            ],
+            [
+              64,
+              85
+            ]
+          ],
+          [
+            [
+              9,
+              18
+            ],
+            [
+              27,
+              36
+            ]
+          ],
+          [
+            [
+              4,
+              9
+            ],
+            [
+              14,
+              19
+            ]
+          ]
+        ],
+        "matrixEqualsConvolution": true
+      },
+      "atol": 0,
+      "scope": "1x1通道仿射变换与矩阵乘加偏置完全一致的可精确表示小例",
+      "executionStatus": "not_run_by_worker",
+      "notePath": "lectures/lec21/notes.zh.md"
+    }
+  ],
+  "minimumCpuAcceptance": {
+    "dependency": "独立CPU PyTorch；不需要d2l、数据集或模型权重",
+    "steps": [
+      "按notes代码围栏顺序分别独立执行2个python片段，不能依赖别讲变量",
+      "将实际输出与codeChecks对应解析预期逐项对照，浮点更新使用注明容差",
+      "保留输出/环境与失败证据；不要将通用机制烟测当作这两个片段已执行"
+    ],
+    "notRequired": [
+      "原教材随机训练或整套Notebook",
+      "GPU/CUDA/MPS",
+      "数据集下载"
+    ]
+  },
+  "workerVerification": {
+    "numericalCodeExecuted": false,
+    "buildLintTestsFormatterRun": false,
+    "browserRun": false,
+    "sourceReading": "完成上述全范围实际阅读；公开API新BV元数据及每P字幕请求已采集",
+    "mainIndependentMechanismEvidence": "sources/p3-shared/mechanism-smoke.json 由主agent另行报告；不是本notes片段执行证据"
+  },
+  "gaps": [
+    "无课堂逐段时间线、演示和QA证据，不据分P标题猜测讲授内容",
+    "公开空字幕结果不证明烧录字幕或其他合法访问条件下字幕不存在",
+    "视频授权与接口可访问性分开；不绕登录或下载媒体"
+  ],
+  "scopeBoundary": "仅本讲lectures与sources/p3目录；不改共享清单，不提交推送，不运行数值代码或build/lint/tests/formatter"
+}

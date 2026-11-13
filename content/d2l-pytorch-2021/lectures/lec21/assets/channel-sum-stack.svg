@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 530" role="img" aria-labelledby="title desc">
+  <title id="title">输入通道求和，输出通道堆叠</title>
+  <desc id="desc">在同一左上位置，输入通道零的窗口为1、2，通道一为10、20。输出通道零的两个核为1、0和0、1，响应分别1和20，加偏置1得到22。输出通道一的核为负1、1和1、0，响应分别1和10，加偏置负1得到10。22与10保留为两个输出通道，不再相加。普通卷积的权重轴顺序为输出通道、输入通道、核高、核宽。</desc>
+  <style>:root { color: #18212b; } @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="21">
+    <text x="24" y="36" font-size="26" font-weight="700">同一空间位置：输入求和，输出保留</text>
+    <text x="32" y="81">输入窗口</text><text x="298" y="81">独立的两套核组</text><text x="625" y="81">输出通道</text>
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="25" y="115" width="185" height="75" rx="8"/>
+      <rect x="25" y="255" width="185" height="75" rx="8"/>
+      <rect x="285" y="110" width="260" height="125" rx="8"/>
+      <rect x="285" y="275" width="260" height="125" rx="8"/>
+      <rect x="625" y="138" width="140" height="70" rx="8"/>
+      <rect x="625" y="303" width="140" height="70" rx="8"/>
+      <path d="M210 145 H270 M210 290 L240 290 V205 H270 M210 165 L230 165 V305 H270 M210 310 L250 310 V370 H270" marker-end="url(#arrow)"/>
+      <path d="M545 173 H610 M545 338 H610" marker-end="url(#arrow)"/>
+      <path d="M775 138 H785 V373 H775 M25 430 H775"/>
+    </g>
+    <text x="42" y="145">输入 c = 0</text><text x="42" y="177">[1, 2]</text>
+    <text x="42" y="285">输入 c = 1</text><text x="42" y="317">[10, 20]</text>
+    <text x="302" y="142">[1, 0] → 1</text><text x="302" y="176">[0, 1] → 20</text><text x="302" y="215" font-weight="700">求和 + 偏置 1 = 22</text>
+    <text x="302" y="307">[−1, 1] → 1</text><text x="302" y="341">[1, 0] → 10</text><text x="302" y="380" font-weight="700">求和 − 1 = 10</text>
+    <text x="645" y="166">o = 0</text><text x="645" y="195" font-weight="700">22</text>
+    <text x="645" y="331">o = 1</text><text x="645" y="360" font-weight="700">10</text>
+    <text x="584" y="405" font-size="18">堆叠，不求 22 + 10</text>
+    <text x="30" y="465">权重形状：(Cout, Cin, kh, kw) = (2, 2, 1, 2)</text>
+    <text x="30" y="500" font-size="20">自拟示例 · 每个输出通道一个偏置；不同样本不相加</text>
+  </g>
+</svg>

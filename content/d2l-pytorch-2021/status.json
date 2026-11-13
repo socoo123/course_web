@@ -2,7 +2,7 @@
   "courseId": "d2l-pytorch-2021",
   "plannedAt": "2026-11-13",
   "updatedAt": "2026-11-13",
-  "phase": "P2_linear_models_verified_video_drafts_blocked",
+  "phase": "P3_mlp_modules_convolutions_verified_video_drafts_blocked",
   "plan": "sources/PLAN.txt",
   "nextPrompt": "sources/NEXT-PROMPT.txt",
   "scheduleInventory": "sources/schedule-inventory.json",
@@ -15,7 +15,7 @@
     "math": "数学遗忘，随课用符号、形状和小例补回；不增加独立前置课程清单。",
     "aiRole": "助教解释与排错，不代写完整实践答案。",
     "parallelAgentsRequired": true,
-    "currentScope": "P1–P2已完成lec01–lec14教材导读与两项实践说明/指导的来源、CPU及页面验收；下一批lec15–lec21与mlp-generalization。73讲与12实践完整保留。",
+    "currentScope": "P1–P3已完成lec01–lec21教材导读与三项实践说明/指导；下一批lec22–lec29与cnn-architectures。73讲、12实践、48任务完整保留。",
     "delivery": "每批完成后主agent汇总验收、提交推送到现有GitHub仓库，再给下一批提示词；只改content，不夹带无关改动。用户新指示覆盖旧交接不提交不推送。"
   },
   "versions": {
@@ -25,11 +25,11 @@
     "framework": "PyTorch",
     "snapshotDate": "2026-11-13",
     "numbering": "73个唯一BV按课表首现顺序分组；不是官方视频标题编号",
-    "practiceRuntime": "P1–P2 CPU only: Python3.11.8 / torch2.5.1 / numpy1.26.4 / pandas2.2.3; P2 adds torchvision0.20.1; macOS arm64; no d2l/Jupyter or GPU"
+    "practiceRuntime": "P1–P3 CPU: Python3.11.8 / torch2.5.1 / numpy1.26.4 / pandas2.2.3; P2/P3 torchvision0.20.1; macOS arm64; no d2l/Jupyter. P3 CUDA unavailable, MPS built/available detected but not executed."
   },
   "artifacts": {
     "catalogRegistration": "complete",
-    "publicResources": "full_timetable_plus_46_verified_parts_and_p1_p2_cpu_setup",
+    "publicResources": "full_timetable_plus_69_verified_parts_and_p1_p2_p3_cpu_setup",
     "lectureEntries": 73,
     "officialTeachingRows": 103,
     "breakRows": 11,
@@ -37,26 +37,26 @@
     "practiceTasks": 48,
     "textbookChapters": 16,
     "textbookSections": 129,
-    "lectureDocumentsPublished": 14,
-    "labDocumentsPublished": 4,
+    "lectureDocumentsPublished": 21,
+    "labDocumentsPublished": 6,
     "bodyPlaceholdersCreated": 0,
-    "lectureNotesPublished": 14,
+    "lectureNotesPublished": 21,
     "lectureDraftsPublished": 0,
     "lectureMaterialsPublished": 0,
-    "selfDrawnSvgs": 14,
-    "videoBvidsAcquired": 14,
-    "videoPartsAcquired": 46
+    "selfDrawnSvgs": 21,
+    "videoBvidsAcquired": 21,
+    "videoPartsAcquired": 69
   },
   "sourceCoverage": {
     "schedule": "完整官方课表HTML已保存并逐行登记，含重复链接/分P参数/休课。",
-    "book": "P1阅读范围保持；P2固定源码3.1–3.7、4.1–4.6与4.8全文审阅并重点解读PyTorch；实验只声明其精确节选范围。4.7/4.9及后续仍未读，不外推全书。",
+    "book": "P1/P2阅读范围保留；P3新增4.7、4.10、5.1/5.2/5.4/5.5/5.6、6.1–6.4全文并重点解释PyTorch，实验复用前批原件仅声明精确节选。4.9、5.3及后续未读，不外推全书。",
     "announcements": "课程公告已读取并留存，用于核对三次实际课程竞赛。",
-    "license": "固定根LICENSE与setup.py字段分开。P1和P2 lec08–10 no_reprint=1，lec11–14为0；copyright均1，均无已确认视频开放许可。",
-    "videoMetadata": "lec01–lec14：14BV/46P已取得；lec15–lec73未取得。",
-    "captions": "P1 18P + P2 28P公开player均成功空列表；没有字幕正文，未重复访问P1空接口。",
+    "license": "固定根LICENSE与setup.py字段分开。P3 copyright均1；lec15 no_reprint=0、lec16–21=1，均非开放转录许可；Ames公开可取不等于可再分发，加州数据受竞赛规则约束。",
+    "videoMetadata": "lec01–lec21：21BV/69P已取得；lec22–lec73未取得。",
+    "captions": "P1 18P + P2 28P + P3 23P公开player均成功空列表；没有字幕正文，不重复请求前批空接口。",
     "videoOrAudioReview": "not_performed",
     "slidesAndNotebooks": "links_indexed_not_downloaded",
-    "courseExperiments": "P1原证据保留；P2 12笔记片段、独立机制断言和真实Fashion257/73 CPU小基线5epochs25updates。初稿lr0.1未过末轮损失断言，改lr0.01保留验收条件后通过。未完成全部学生作业、旧Notebook、GPU或全量训练。"
+    "courseExperiments": "P1/P2原证据保留；P3 13笔记片段、MLP/模块/卷积独立机制、32/128合成四组各300轮、真实Ames257样本3折及1460行refit/1459内存导出通过。未执行全部学生配置、Fashion MLP、完整5折/干预重训、GPU/MPS、旧Notebook或加州竞赛。"
   },
   "content": {
     "lectures": {
@@ -187,39 +187,67 @@
         "verification": "P2_source_content_CPU_browser_build_passed; runtime_scope_in_sources/p2-shared/runtime-verification.json"
       },
       "lec15": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_video_notes",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p3-lec15/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts",
+        "videoContent": "not_reviewed",
+        "verification": "P3_source_CPU_browser_passed; sources/p3-manifest.json"
       },
       "lec16": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_video_notes",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p3-lec16/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts",
+        "videoContent": "not_reviewed",
+        "verification": "P3_source_CPU_browser_passed; sources/p3-manifest.json"
       },
       "lec17": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_video_notes",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p3-lec17/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts",
+        "videoContent": "not_reviewed",
+        "verification": "P3_CPU_numeric_and_backend_detection_passed_no_GPU_execution; sources/p3-manifest.json"
       },
       "lec18": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_video_notes",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p3-lec18/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts",
+        "videoContent": "not_reviewed",
+        "verification": "P3_editorial_review_method_not_classroom_summary; source_CPU_browser_passed; sources/p3-manifest.json"
       },
       "lec19": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_video_notes",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p3-lec19/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts",
+        "videoContent": "not_reviewed",
+        "verification": "P3_source_CPU_browser_passed; sources/p3-manifest.json"
       },
       "lec20": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_video_notes",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p3-lec20/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts",
+        "videoContent": "not_reviewed",
+        "verification": "P3_source_CPU_browser_passed; sources/p3-manifest.json"
       },
       "lec21": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_video_notes",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p3-lec21/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts",
+        "videoContent": "not_reviewed",
+        "verification": "P3_source_CPU_browser_passed_after_mobile_matrix_layout_fix; sources/p3-manifest.json"
       },
       "lec22": {
         "notes": "planned",
@@ -498,10 +526,12 @@
         "sourceManifest": "sources/p2-linear-training/manifest-fragment.json"
       },
       "mlp-generalization": {
-        "zh": "planned_editorial_practice_spec",
-        "guide": "planned",
+        "zh": "verified_editorial_four_task_practice_spec",
+        "guide": "verified_routes_invariants_no_full_solution",
         "en": "not_planned_no_english_original",
-        "execution": "not_run"
+        "execution": "passed_independent_CPU_mechanisms_synthetic_comparisons_and_real_Ames_small_Kfold_refit_export_not_full_student_tasks",
+        "sourceManifest": "sources/p3-mlp-generalization/manifest-fragment.json",
+        "historicalCompetition": "public_rules_verified_California_data_requires_login_and_acceptance_not_downloaded_or_trained"
       },
       "cnn-architectures": {
         "zh": "planned_editorial_practice_spec",
@@ -586,8 +616,8 @@
     },
     {
       "id": "runtime-version",
-      "status": "p1_p2_cpu_verified_full_course_not_verified",
-      "issue": "P2新增torchvision0.20.1与真实Fashion小基线；d2l/Jupyter、旧Notebook、GPU与全课依赖仍未验证。lr0.1首轮失败证据保留，基础起点改0.01。",
+      "status": "p1_p2_p3_cpu_verified_full_course_not_verified",
+      "issue": "P3复用P2环境完成13笔记片段、泛化对照与Ames流程；CUDA不可用，MPS探测可用但未执行。d2l/Jupyter、旧Notebook、GPU与全课依赖仍未验证。",
       "blocksCurrentPhase": false
     },
     {
@@ -599,7 +629,7 @@
     {
       "id": "materials-not-required-ui",
       "status": "documented_outside_content_scope",
-      "issue": "lec01–14 materials为not_required，页面仍显示待生成；公共资料说明，不创建重复材料，不改src。",
+      "issue": "lec01–21 materials为not_required，页面仍显示待生成；公共资料说明，不创建重复材料，不改src。",
       "blocksCurrentPhase": false
     },
     {
@@ -607,32 +637,38 @@
       "status": "blocked_video_drafts",
       "issue": "lec08–14共28P公开player均成功但字幕列表为空；未观看媒体，不生成课堂稿或QA。no_reprint=0也不是开放授权。",
       "blocksCurrentPhase": false
+    },
+    {
+      "id": "p3-public-captions-empty",
+      "status": "blocked_video_drafts",
+      "issue": "lec15–21共23P公开player均成功空列表；未观看媒体，不生成课堂稿/QA或片内时间轴。LEC17购买GPU入口保留，不编造采购建议。",
+      "blocksCurrentPhase": false
+    },
+    {
+      "id": "california-historical-data-access",
+      "status": "public_metadata_verified_data_not_acquired",
+      "issue": "公开Data/Evaluation可读，数据须登录接受竞赛规则；本批未下载/训练/提交，不用Ames或sklearn California Housing替代历史竞赛。",
+      "blocksCurrentPhase": false
     }
   ],
   "nextExecution": {
     "entry": "sources/NEXT-PROMPT.txt",
     "parallelism": "必须task多agent；连续讲次组/独立实验目录，主agent独占共享索引。",
-    "firstWork": "先读P1/P2验收结果，不重做lec01–14或两项已验收实验；继续lec15–21与mlp-generalization。既有draft仅获得合法新字幕/课堂来源后补。",
+    "firstWork": "先读P1/P2/P3验收结果，不重做lec01–21或三项已验收实验；继续lec22–29与cnn-architectures。已有draft仅获得合法新课堂来源后补。",
     "initialLectureIds": [
-      "lec15",
-      "lec16",
-      "lec17",
-      "lec18",
-      "lec19",
-      "lec20",
-      "lec21"
+      "lec22",
+      "lec23",
+      "lec24",
+      "lec25",
+      "lec26",
+      "lec27",
+      "lec28",
+      "lec29"
     ],
     "initialPracticeIds": [
-      "mlp-generalization"
+      "cnn-architectures"
     ],
     "remainingLectureNotes": [
-      "lec15",
-      "lec16",
-      "lec17",
-      "lec18",
-      "lec19",
-      "lec20",
-      "lec21",
       "lec22",
       "lec23",
       "lec24",
@@ -700,13 +736,19 @@
       "lec11",
       "lec12",
       "lec13",
-      "lec14"
+      "lec14",
+      "lec15",
+      "lec16",
+      "lec17",
+      "lec18",
+      "lec19",
+      "lec20",
+      "lec21"
     ],
     "laterWaves": "按原课表连续批次推进，不删除CNN/CV/RNN或历史竞赛。",
     "scopeRules": "sources/PLAN.txt",
     "beforeGeneratingVideoContent": "读取skill://technical-video-notes；先核实全部分P，字幕为空不伪造稿。",
     "remainingPracticeIds": [
-      "mlp-generalization",
       "cnn-architectures",
       "training-performance",
       "cv-transfer",
@@ -719,7 +761,7 @@
     ],
     "afterEachBatch": "主agent汇总、验收、提交推送GitHub并交付下一段提示词；只提交本批与必要发布前置内容。"
   },
-  "batchManifest": "sources/p2-manifest.json",
+  "batchManifest": "sources/p3-manifest.json",
   "bookVersion": "sources/p1-shared/book-version.json",
   "planningVerification": {
     "metadataAndLinks": "passed_2026-11-13：73讲/103源行/12练习/48任务/16章/129小节；完整课表视频链接多重集逐项一致，所有站内路由和交接路径可解析，4份源快照哈希一致；只发布公共资料Markdown，无逐讲/实验占位正文。",
@@ -728,14 +770,15 @@
     "courseExperiments": "not_run_planning_only"
   },
   "verification": {
-    "metadataAndLinks": "passed P2:7BV/28P=27416s;28原件hash;7SVG XML/local images;9Markdown;4labtasks;全73讲12实践48任务保持。",
-    "build": "passed npm run build; tsc --noEmit + Vite5.4.21; sources/p2-shared/build.log",
-    "browserSmoke": "passed actual Chromium;7SVG/公式/来源/缺稿与实验标签；修复5讲390px长公式溢出；1440desktop/390mobile及代表暗色图。首次懒加载等待超时重开tab，最终tab错误为空；非部署验收。",
-    "courseExperiments": "passed_scope_limited:12笔记片段、独立机制及真实Fashion257/73小基线，lr0.01、5epochs25updates；保留lr0.1首次失败，不声明全量或全部学生作业。",
-    "evidence": "sources/p2-manifest.json"
+    "metadataAndLinks": "passed P3:7BV/23P=17122s;34来源hash核对;7SVG XML/local images;9Markdown;实验四任务完整;全73讲12实践48任务保持。",
+    "build": "passed npm run build; tsc --noEmit + Vite5.4.21;2952modules;5.59s;sources/p3-shared/build.log",
+    "browserSmoke": "passed actual Chromium;7SVG/公式/来源/自测/缺稿与实验双标签；1440desktop/390mobile，七图暗色和lec18浅色。修复lec21横排矩阵与实验SHA1溢出；保留一次验收器非法CSS选择器的pptr错误，不是应用错误；tab已关闭，非部署验收。",
+    "courseExperiments": "passed_scope_limited:13笔记片段、独立MLP/模块/卷积机制、32/128泛化四对照；Ames257的3折OOF0.1764610996，1460refit/1459内存导出。非全部学生任务、完整5折、GPU/MPS或加州训练。",
+    "evidence": "sources/p3-manifest.json"
   },
   "batchManifests": [
     "sources/p1-manifest.json",
-    "sources/p2-manifest.json"
+    "sources/p2-manifest.json",
+    "sources/p3-manifest.json"
   ]
 }

@@ -1,0 +1,253 @@
+{
+  "date": "2026-11-13",
+  "device": "cpu",
+  "threads": 1,
+  "scope": "Independent workflow smoke, not complete student work or California competition reproduction.",
+  "syntheticGeneralization": {
+    "dataSeed": 17,
+    "initializationSeed": 18,
+    "dropoutSeed": 19,
+    "orderSeed": 20,
+    "train": 32,
+    "validation": 128,
+    "features": 20,
+    "target": "x0^2 + 0.5*x1 + N(0,0.1^2)",
+    "epochs": 300,
+    "batchSize": 16,
+    "optimizer": "SGD",
+    "lr": 0.03,
+    "pairedMlpInitializationAndOrder": true,
+    "results": [
+      {
+        "model": "linear",
+        "dropout": 0.0,
+        "weightDecayWeightsOnly": 0.0,
+        "initialTrainMSE": 4.219610691070557,
+        "history": [
+          {
+            "epoch": 1,
+            "trainMSE": 3.1037051677703857,
+            "validationMSE": 3.5169365406036377
+          },
+          {
+            "epoch": 30,
+            "trainMSE": 0.7641212344169617,
+            "validationMSE": 4.618563652038574
+          },
+          {
+            "epoch": 100,
+            "trainMSE": 0.717997670173645,
+            "validationMSE": 5.059537887573242
+          },
+          {
+            "epoch": 300,
+            "trainMSE": 0.7034662365913391,
+            "validationMSE": 5.352504253387451
+          }
+        ],
+        "weightL2": 1.681354493931942,
+        "updates": 600
+      },
+      {
+        "model": "mlp",
+        "dropout": 0.0,
+        "weightDecayWeightsOnly": 0.0,
+        "initialTrainMSE": 3.9502367973327637,
+        "history": [
+          {
+            "epoch": 1,
+            "trainMSE": 2.5995428562164307,
+            "validationMSE": 2.6600544452667236
+          },
+          {
+            "epoch": 30,
+            "trainMSE": 0.08984529972076416,
+            "validationMSE": 2.9540493488311768
+          },
+          {
+            "epoch": 100,
+            "trainMSE": 0.002270146505907178,
+            "validationMSE": 3.0940029621124268
+          },
+          {
+            "epoch": 300,
+            "trainMSE": 4.883329438598594e-07,
+            "validationMSE": 3.0996711254119873
+          }
+        ],
+        "weightL2": 5.247367244166136,
+        "updates": 600
+      },
+      {
+        "model": "weight_decay",
+        "dropout": 0.0,
+        "weightDecayWeightsOnly": 0.01,
+        "initialTrainMSE": 3.9502367973327637,
+        "history": [
+          {
+            "epoch": 1,
+            "trainMSE": 2.5999643802642822,
+            "validationMSE": 2.6602721214294434
+          },
+          {
+            "epoch": 30,
+            "trainMSE": 0.09322534501552582,
+            "validationMSE": 2.9450790882110596
+          },
+          {
+            "epoch": 100,
+            "trainMSE": 0.0032508973963558674,
+            "validationMSE": 3.0714502334594727
+          },
+          {
+            "epoch": 300,
+            "trainMSE": 0.00025248306337744,
+            "validationMSE": 3.0504353046417236
+          }
+        ],
+        "weightL2": 4.588002950138583,
+        "updates": 600
+      },
+      {
+        "model": "dropout",
+        "dropout": 0.2,
+        "weightDecayWeightsOnly": 0.0,
+        "initialTrainMSE": 3.9502367973327637,
+        "history": [
+          {
+            "epoch": 1,
+            "trainMSE": 2.5527355670928955,
+            "validationMSE": 2.648608446121216
+          },
+          {
+            "epoch": 30,
+            "trainMSE": 0.11918073892593384,
+            "validationMSE": 2.948028802871704
+          },
+          {
+            "epoch": 100,
+            "trainMSE": 0.025236809626221657,
+            "validationMSE": 2.823512077331543
+          },
+          {
+            "epoch": 300,
+            "trainMSE": 0.006647641770541668,
+            "validationMSE": 2.9343478679656982
+          }
+        ],
+        "weightL2": 5.065931758264365,
+        "updates": 600
+      }
+    ],
+    "acceptance": "Finite losses and lower final train MSE; no requirement that regularization wins or each epoch improves."
+  },
+  "preprocessFixture": {
+    "trainingMean": {
+      "num": 2.0,
+      "constant": 5.0,
+      "all_missing": 0.0
+    },
+    "trainingStdDDoF0": {
+      "num": 1.0,
+      "constant": 1.0,
+      "all_missing": 1.0
+    },
+    "validationEncoded": [
+      [
+        99.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "unseenCategory": "__UNK__",
+    "missingCategory": "__MISSING__",
+    "validationDidNotMutateFitState": true,
+    "pooledLogRMSEForResiduals003": 1.7320508075688772,
+    "incorrectMeanFoldRMSE": 1.5
+  },
+  "amesSmallKfold": {
+    "selectedRows": 257,
+    "samplingSeed": 17,
+    "sampledIdSha256": "01199f71607e5dd4fd7e83ffa39b51e12b5e3c505940012ede81a5ad9f75cdc9",
+    "foldSizes": [
+      86,
+      86,
+      85
+    ],
+    "K": 3,
+    "epochs": 30,
+    "batchSize": 64,
+    "optimizer": "Adam",
+    "lr": 0.03,
+    "target": "log(SalePrice)",
+    "numericImputation": "training mean; all missing -> 0",
+    "numericScale": "training observed std(ddof=0); zero/all-missing -> 1",
+    "categoryFit": "training fold only, explicit MISSING and UNK",
+    "IdAndTargetExcluded": true,
+    "foldModelsAndOptimizersReinitialized": true,
+    "folds": [
+      {
+        "fold": 0,
+        "train": 171,
+        "validation": 86,
+        "encodedFeatures": 321,
+        "initialTrainLogMSE": 0.15679511427879333,
+        "finalTrainLogMSE": 0.0016118056373670697,
+        "updates": 90,
+        "validationLogRMSE": 0.14881925496737058,
+        "baselineLogRMSE": 0.4238755604671722
+      },
+      {
+        "fold": 1,
+        "train": 171,
+        "validation": 86,
+        "encodedFeatures": 324,
+        "initialTrainLogMSE": 0.18400715291500092,
+        "finalTrainLogMSE": 0.0014098340179771185,
+        "updates": 90,
+        "validationLogRMSE": 0.17972234750562044,
+        "baselineLogRMSE": 0.35320078858616943
+      },
+      {
+        "fold": 2,
+        "train": 172,
+        "validation": 85,
+        "encodedFeatures": 316,
+        "initialTrainLogMSE": 0.15018118917942047,
+        "finalTrainLogMSE": 0.0021140403114259243,
+        "updates": 90,
+        "validationLogRMSE": 0.1976369926005574,
+        "baselineLogRMSE": 0.44132802299026425
+      }
+    ],
+    "pooledOOFLogRMSE": 0.17646109960497902,
+    "pooledConstantBaselineLogRMSE": 0.4077828291228824,
+    "OOFCoverageExactlyOnce": true,
+    "validationParametersAndGradientsUnchanged": true
+  },
+  "amesExportSmoke": {
+    "trainingRows": 1460,
+    "testRows": 1459,
+    "encodedFeatures": 373,
+    "epochs": 30,
+    "batchSize": 64,
+    "initialTrainLogMSE": 0.15945251286029816,
+    "finalTrainLogMSE": 0.03300562500953674,
+    "updates": 690,
+    "columns": [
+      "Id",
+      "SalePrice"
+    ],
+    "originalTestIdOrderPreserved": true,
+    "finitePositivePrices": true,
+    "csvSha256": "8a54a232cee8e6feca0d79393a2b880e5d430edf1614503d9ab02258790c000c",
+    "csvStored": false,
+    "uploadedToKaggle": false,
+    "scope": "One small linear-log baseline full-row refit to exercise export contract, not full tuning or competition reproduction."
+  },
+  "californiaExecution": "not_run; access evidence recorded separately by source owner; no data substituted with Ames or sklearn California Housing",
+  "status": "passed"
+}
