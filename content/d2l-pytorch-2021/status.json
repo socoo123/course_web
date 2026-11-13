@@ -67,7 +67,7 @@
         "sourceManifest": "sources/p1-lec01/manifest-fragment.json",
         "videoMetadata": "acquired_all_parts",
         "videoContent": "approved_Bilibili_sampled_frames_only_no_complete_spoken_content_review",
-        "verification": "P1_textbook_notes_unchanged; approved_video:sources/video-pilot-lec01.json; source_correction:sources/video-source-correction.json; youtube-pilot-lec01.json_is_withdrawn_history_not_source_approval; full_draft_not_created"
+        "verification": "P1_textbook_notes_unchanged; historical_Bilibili_sample:sources/video-pilot-lec01.json; source_correction:sources/video-source-correction.json; youtube-pilot-lec01.json_is_withdrawn_history_not_source_approval; embed_pilot_removed_at_user_request_header_external_link_and_duration_only; full_draft_not_created"
       },
       "lec02": {
         "notes": "verified_editorial_textbook_guide_not_video_notes",
@@ -592,8 +592,8 @@
   "knownIssues": [
     {
       "id": "bilibili-video-button",
-      "status": "fixed_with_single_lecture_embed_pilot",
-      "issue": "仅LEC1启用页内视频，已撤下非本人YouTube上传并恢复官方课表链接的B站视频。已通过作者GitHub自链确认@mu_li本人频道，但本课程逐讲YouTube映射未核定。完整课堂稿仍未生成，其他讲次与MIT保持阅读优先。",
+      "status": "fixed_with_header_external_link_and_duration",
+      "issue": "按用户要求结束嵌入试点，删除课程视频标签、播放器及专用配置；讲次页头保留官方原站链接和已记录时长，默认阅读笔记。LEC1为官方课表链接的B站视频08:09。中文课堂整理标签保留但完整稿仍未生成；不再恢复嵌入播放器或寻找转载替代。",
       "blocksCurrentPhase": false
     },
     {
