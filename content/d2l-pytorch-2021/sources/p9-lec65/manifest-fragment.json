@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "batch": "P9",
+  "lectureId": "lec65",
+  "generatedAt": "2026-11-14",
+  "owner": "P9Lec64to66",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "diagram": "original_svg_written_pending_main_browser_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "sections": [
+      "10.3"
+    ],
+    "editionBoundary": "Current pinned Chinese second edition, not2021 snapshot",
+    "numberingCorrection": "LEC64 kernel regression=10.2 (+10.1 cues); LEC65=10.3; LEC66=10.4. Previous 10.1–10.3 handoff omitted Bahdanau 10.4. Main notified."
+  },
+  "scheduleDate": "2021-08-08",
+  "publishedAt": "2021-08-12T02:10:12+00:00",
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1Tb4y167rb/",
+    "label": "官方 B站视频（全 3 P 合计）",
+    "duration": "30:47",
+    "language": "zh",
+    "durationSeconds": 1847,
+    "pageCount": 3,
+    "allPages": [
+      {
+        "cid": 385255705,
+        "page": 1,
+        "part": "注意力分数",
+        "duration": 645
+      },
+      {
+        "cid": 385266581,
+        "page": 2,
+        "part": "代码",
+        "duration": 920
+      },
+      {
+        "cid": 385267673,
+        "page": 3,
+        "part": "QA",
+        "duration": 282
+      }
+    ],
+    "authorMid": 1567748478,
+    "authorName": "跟李沐学AI",
+    "title": "65 注意力分数【动手学深度学习v2】",
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 3
+  },
+  "sources": [
+    {
+      "path": "sources/p9-lec65/book-attention-scoring-functions.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_attention-mechanisms/attention-scoring-functions.md",
+      "sha256": "7c864b6d8c42d6d512beadc3cd74eead80eac19e37a5ef9adadea350ae6e1f64",
+      "bytes": 23836,
+      "actualReadRange": "full lines 1–589, including prose, all framework tabs, examples and exercises; PyTorch used for implementation discussion",
+      "usage": "independent paraphrase; no copied book images"
+    },
+    {
+      "path": "sources/p9-lec65/schedule-evidence.json",
+      "sha256": "f39968ab846166fe9a3e17311e63f30fbe36e060c4d61dd8c879db5ffa4daa42",
+      "bytes": 1489,
+      "actualReadRange": "all fields",
+      "usage": "exact row090/091/092 from already acquired official schedule inventory"
+    },
+    {
+      "path": "sources/p9-lec65/video-metadata.json",
+      "sha256": "bb013b059ff99e72c03cf073c9830b1c1ec500321dd9a6d962d854649f457e99",
+      "bytes": 1557,
+      "actualReadRange": "all fields",
+      "usage": "filtered real view fields and one caption request per CID; no media review"
+    }
+  ],
+  "sourceIndex": "sources/p9-lec65/source-index.json",
+  "generatedFiles": [
+    "lectures/lec65/notes.zh.md",
+    "lectures/lec65/assets/attention-scoring.svg",
+    "sources/p9-lec65/source-index.json"
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "id": "stable-masked-softmax",
+      "input": {
+        "scores": [
+          1000,
+          1000,
+          2000
+        ],
+        "validLength": 2,
+        "values": [
+          2,
+          4,
+          100
+        ]
+      },
+      "expected": "weights=[0.5,0.5,0], output=3, finite forward/backward, padded-score gradient0; changing masked score to -2000 unchanged; zero length rejected"
+    },
+    {
+      "id": "mask-axis",
+      "input": {
+        "scoresShape": [
+          2,
+          2,
+          4
+        ],
+        "scores": "all zero",
+        "validLengths": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "expected": "rows [1,0,0,0], [1/3,1/3,1/3,0], [1/2,1/2,0,0], [1/4,1/4,1/4,1/4]; row sums1"
+    },
+    {
+      "id": "additive-heterogeneous",
+      "input": {
+        "Q": [
+          2,
+          3,
+          5
+        ],
+        "K": [
+          2,
+          4,
+          7
+        ],
+        "V": [
+          2,
+          4,
+          8
+        ],
+        "attentionHidden": 6,
+        "bias": false
+      },
+      "expected": "scores shape[2,3,4], output[2,3,8], scoring parameters78, finite gradients; identical valid keys give uniform valid weights in eval"
+    },
+    {
+      "id": "scaled-dot",
+      "input": {
+        "q": [
+          2,
+          0,
+          0,
+          0
+        ],
+        "keys": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "values": [
+          2,
+          6
+        ],
+        "validLength": 2
+      },
+      "expected": "scores[1,0]; weights[e/(e+1),1/(e+1)]; output(2e+6)/(e+1)"
+    }
+  ],
+  "workerExecution": {
+    "sourceAcquisition": "performed: pinned originals, real Bilibili view, one public caption request per page",
+    "numeric": "not_run",
+    "tests": "not_run",
+    "build": "not_run",
+    "lint": "not_run",
+    "formatter": "not_run",
+    "browser": "not_run",
+    "git": "not_run"
+  },
+  "limits": [
+    "No classroom draft, timestamps within pages, QA contents, media screenshots or transcript fabricated.",
+    "No training, translated output, BLEU, GPU timing or attention heatmap claimed.",
+    "Source valid lengths must affect encoder terminal state as well as attention.",
+    "Only assigned lecture and source directories written. Main owns numerical/browser/build verification."
+  ]
+}

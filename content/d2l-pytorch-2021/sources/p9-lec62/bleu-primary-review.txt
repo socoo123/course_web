@@ -1,0 +1,13 @@
+Captured: 2026-11-14
+Primary source: Kishore Papineni, Salim Roukos, Todd Ward, Wei-Jing Zhu (2002), BLEU: a Method for Automatic Evaluation of Machine Translation, ACL pp.311–318.
+URL: https://aclanthology.org/P02-1040/
+Read PDF: https://aclanthology.org/P02-1040.pdf
+Reading scope: PDF text was returned for all eight pages. Notes substantively use section 2.1 (clipped counts, per-sentence counting then corpus aggregation), 2.2.2 (corpus brevity penalty and closest reference length), and 2.3 (positive weights summing to one; baseline N=4 and uniform 1/N). No replication of sections 3–5 experiments is claimed.
+Exact short quotations:
+"BLEU uses the average logarithm with uniform weights, which is equivalent to using the geometric mean of the modified n-gram precisions."
+"In our baseline, we use N = 4 and uniform weights w_n = 1/N."
+(The second equation is normalized to plain-text mathematical notation from PDF extraction.)
+Editorial mathematical review:
+Standard corpus BLEU_N = BP * exp(sum_n w_n log p_n), with sum_n w_n=1. Baseline w_n=1/N. Corpus counts are first clipped sentence by sentence, then summed; n-grams do not cross sentence boundaries. Corpus BLEU is not the arithmetic mean of sentence BLEUs.
+Pinned textbook 9.7 code instead multiplies p_n ** (0.5 ** n); it is an explicitly distinct teaching variant. The textbook prose describing the original paper as p_n^(1/n) is not the primary paper's baseline. Its claim that higher n receives larger weight does not match the coefficient 2^(-n) in log space.
+No full paper text/images redistributed in this excerpt. No actual model BLEU calculated by this worker. Numeric toy example for Main: ref a b c d, pred a b x d, p1=3/4,p2=1/3,BP=1; standard equal-weight BLEU2=.5, textbook k2 approx .6580.

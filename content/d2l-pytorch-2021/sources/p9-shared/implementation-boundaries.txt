@@ -1,0 +1,17 @@
+P9 main-agent supplemental reading, 2026-11-14
+
+Fixed textbook commit e6b18ccea71451a55fcd861d7b96fddf2587b09a.
+https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_recurrent-modern/seq2seq.md
+Read main mathematical encoder/decoder contract and PyTorch branches for encoder, decoder, loss, training, prediction and BLEU; not other framework branches as an execution claim. Worker stores fixed source snapshot.
+PyTorch Seq2SeqEncoder.forward ignores *args and runs all padded steps. The bounded P9 model uses pack_padded_sequence so encoder terminal state excludes padding.
+PyTorch Seq2SeqDecoder.forward constructs context=state[-1].repeat(X.shape[0],1,1) anew on each call. Whole-sequence teacher forcing keeps the original context for that call, while tokenwise calls feed updated state. P9 retains immutable encoder context separately from evolving decoder hidden; this is an explicit editorial repair, not literal execution of the original predict helper.
+MaskedSoftmaxCELoss returns (unweighted_loss*weights).mean(dim=1). P9 instead divides sum of valid target NLL by number of valid target tokens, including EOS. The original mean over padded width followed by token counting is not reported as equivalent.
+Textbook BLEU uses weights 1/2**n; P9 diagnostic corpus BLEU-2 uses uniform weights1/2, fixed order2 and no smoothing, separately documented from sentence-level smoothed effective-order values.
+
+https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_attention-mechanisms/bahdanau-attention.md
+Read introduction, model and PyTorch Seq2SeqAttentionDecoder. Query is previous decoder hidden; keys/values are encoder outputs; context precedes current GRU update. This is textbook Bahdanau-style implementation, not full original paper architecture or training replication.
+
+https://docs.pytorch.org/docs/2.5/generated/torch.nn.utils.rnn.pack_padded_sequence.html
+Read API body for input, lengths, batch_first and enforce_sorted. Explicit2.5 URL returned version2.5 documentation.
+Short excerpts: "lengths ... must be on the CPU if provided as a tensor"; "For unsorted sequences, use enforce_sorted = False."
+P9 uses batch_first=True, CPU lengths, enforce_sorted=False; no ONNX, CUDA or MPS execution claim.

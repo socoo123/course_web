@@ -1,0 +1,92 @@
+{
+  "all_mask_contract": "rejected zero source length; source EOS makes legal sequences nonempty",
+  "stable_mask": {
+    "weights": [
+      [
+        [
+          0.2689414322376251,
+          0.7310585975646973,
+          0.0
+        ]
+      ],
+      [
+        [
+          1.0,
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "masked_gradient": 0.0
+  },
+  "kernel": {
+    "weights": [
+      0.2740686237812042,
+      0.45186275243759155,
+      0.2740686237812042
+    ],
+    "pooled": 4.096274375915527
+  },
+  "additive_dot_shapes": {
+    "additive": [
+      2,
+      3,
+      5
+    ],
+    "context": [
+      2,
+      3,
+      7
+    ]
+  },
+  "teacher_forcing_and_loss": {
+    "decoder_input": [
+      [
+        2,
+        4,
+        5,
+        3
+      ],
+      [
+        2,
+        6,
+        3,
+        1
+      ]
+    ],
+    "valid_tokens_including_EOS": 5,
+    "CE": 2.079441547393799,
+    "padding_gradient_zero": true
+  },
+  "beam_parent_gather": {
+    "parents": [
+      1,
+      1,
+      0
+    ],
+    "hidden_cell_axis": 1,
+    "memory_length_axis": 0,
+    "all_reordered": true
+  },
+  "beam_scores": {
+    "completed_logprob": {
+      "A EOS": -1.203972804325936,
+      "B EOS": -1.0216512475319812
+    },
+    "length_normalization_reverses_raw_order": true,
+    "EOS_probability_included": true
+  },
+  "bleu_contract": {
+    "corpus": "uniform BLEU-2; no smoothing; fixed order2; count aggregation before precision; one reference; 0..1 scale",
+    "sentence": "diagnostic BLEU-2; add-one bigram smoothing only; effective order=min(2,candidate_length); empty=0",
+    "tokenization": "same lowercase/punctuation-space normalization; whitespace tokens; no detokenization; remove EOS/BOS/PAD from generated display; preserve UNK; raw reference tokens NOT vocabulary-mapped",
+    "sanity": "exact bigram=1; exact one token fixed-order=0, effective-order=1; empty=0"
+  },
+  "encoder_padding_and_decoder_prefix": {
+    "packed_encoder_ignores_pad_identity": true,
+    "naive_last_padded_state_differs": true,
+    "immutable_context": true,
+    "whole_and_step_teacher_forcing_equal": true,
+    "future_decoder_token_cannot_affect_prior_logits": true
+  }
+}

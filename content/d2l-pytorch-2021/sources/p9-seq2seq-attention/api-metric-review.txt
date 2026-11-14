@@ -1,0 +1,11 @@
+Capture date: 2026-11-14
+Editorial review notes, not source code/full-paper redistribution.
+
+https://docs.pytorch.org/docs/2.5/generated/torch.nn.utils.rnn.pack_padded_sequence.html
+Read whole API entry: input T x B x * or B x T x * depending on batch_first; tensor lengths on CPU; enforce_sorted=False for unsorted sequences. Packing is a route to prevent padded time steps from corrupting encoder final state.
+
+Kishore Papineni, Salim Roukos, Todd Ward, Wei-Jing Zhu (2002). BLEU: a Method for Automatic Evaluation of Machine Translation. https://aclanthology.org/P02-1040.pdf
+Read tool-extracted complete 8-page paper; lab uses section2.1.1 sentencewise clipped counts aggregated over corpus, section2.3 uniform n-gram weights and corpus brevity penalty. Original typical maximum order4; lab intentionally chooses order2 for short-sentence smoke, not a standard BLEU4 benchmark. No entire PDF retained in repository.
+
+https://raw.githubusercontent.com/mjpost/sacrebleu/v2.5.1/README.md
+Read rendered lines1-300: Scoring, Version Signatures, smoothing/tokenizer options, Languages & Preprocessing. Library tokenization/smoothing/version must be reported if used. This phase's Main uses explicit custom BLEU2 contract instead, not a sacreBLEU measurement. Reading does not establish installation or numerical verification.

@@ -1,0 +1,207 @@
+{
+  "reserved_EOS_examples": [
+    [
+      [
+        "a",
+        "b",
+        "EOS",
+        "PAD"
+      ],
+      3
+    ],
+    [
+      [
+        "a",
+        "b",
+        "c",
+        "EOS"
+      ],
+      4
+    ],
+    [
+      [
+        "EOS",
+        "PAD",
+        "PAD",
+        "PAD"
+      ],
+      1
+    ]
+  ],
+  "zero_pad_recurrence": [
+    2.0,
+    3.0,
+    1.5,
+    0.75
+  ],
+  "shapes_H4": {
+    "hidden": [
+      2,
+      2,
+      4
+    ],
+    "context": [
+      2,
+      4
+    ],
+    "concat": [
+      1,
+      2,
+      7
+    ],
+    "logits": [
+      2,
+      1,
+      7
+    ]
+  },
+  "shapes_H6": {
+    "hidden": [
+      2,
+      2,
+      6
+    ],
+    "context": [
+      2,
+      6
+    ],
+    "concat": [
+      4,
+      2,
+      9
+    ],
+    "logits": [
+      2,
+      4,
+      9
+    ]
+  },
+  "loss_denominators": {
+    "total": 3.0,
+    "tokens": 5,
+    "token_mean": 0.6,
+    "sentence_mean": 0.65,
+    "book_width_then_tokens": 0.15,
+    "guide_two_batches_token_mean": 2.3333333333333335,
+    "wrong_batch_mean": 2.5
+  },
+  "BLEU_formula_counterexample": {
+    "equal2": 0.5,
+    "textbook_variant": 0.6580370064762462
+  },
+  "global_topk": {
+    "probabilities": [
+      [
+        0.06,
+        0.06,
+        0.48
+      ],
+      [
+        0.24,
+        0.12,
+        0.04000000000000001
+      ]
+    ],
+    "flat": [
+      2,
+      3
+    ],
+    "parent": [
+      0,
+      1
+    ],
+    "token": [
+      2,
+      0
+    ]
+  },
+  "parent101": {
+    "hidden_cell_cache_reordered": true,
+    "duplicate_children_independent_mutation": true
+  },
+  "complete_finite_tree": {
+    "all_paths": [
+      {
+        "tokens": [
+          "A",
+          "EOS"
+        ],
+        "p": 0.3,
+        "finished": true
+      },
+      {
+        "tokens": [
+          "A",
+          "C"
+        ],
+        "p": 0.18,
+        "finished": false
+      },
+      {
+        "tokens": [
+          "A",
+          "D"
+        ],
+        "p": 0.12,
+        "finished": false
+      },
+      {
+        "tokens": [
+          "B",
+          "EOS"
+        ],
+        "p": 0.36000000000000004,
+        "finished": true
+      },
+      {
+        "tokens": [
+          "B",
+          "C"
+        ],
+        "p": 0.024,
+        "finished": false
+      },
+      {
+        "tokens": [
+          "B",
+          "D"
+        ],
+        "p": 0.016,
+        "finished": false
+      }
+    ],
+    "greedy": [
+      "A",
+      "EOS"
+    ],
+    "greedy_probability": 0.3,
+    "best_complete": {
+      "tokens": [
+        "B",
+        "EOS"
+      ],
+      "p": 0.36000000000000004,
+      "finished": true
+    },
+    "scope": "synthetic oracle, not real translation"
+  },
+  "length_normalization_alpha1": {
+    "raw": [
+      -2,
+      -3
+    ],
+    "lengths": [
+      2,
+      4
+    ],
+    "normalized": [
+      -1,
+      -0.75
+    ]
+  },
+  "reused_passes": [
+    "mechanism-smoke teacher-forcing and valid token masks",
+    "runtime two-model forward/real inference",
+    "notes64-66 source-padding/context/query timing/EOS/max-step controls"
+  ]
+}

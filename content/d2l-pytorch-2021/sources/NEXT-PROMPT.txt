@@ -1,47 +1,53 @@
-继续 content/d2l-pytorch-2021 的P9：LEC60–66和seq2seq-attention实验。先读已注入AGENTS.md、status.json、sources/PLAN.txt、sources/p8-manifest.json、sources/p1-shared/book-version.json、resources.zh.md及相关schedule/book/outline/practice inventories；必须读skill://technical-video-notes。只改content/。
+继续content/d2l-pytorch-2021的P10：LEC67–70 + transformer、bert-pretrain-finetune两个实验。先读已注入AGENTS.md、本交接、status.json、sources/PLAN.txt、sources/p9-manifest.json、p1-shared/book-version.json、resources.zh.md及相关schedule/book/outline/practice inventories；必须读skill://technical-video-notes。只改content/。
 
-并行合同：必须task多agent。A拥有lectures/lec60–63及各自sources/p9-lec60–63；B拥有lec64–66及对应sources；C拥有labs/seq2seq-attention及sources/p9-seq2seq-attention。主agent独占course/status/resources/共享manifest/PLAN/NEXT-PROMPT，统一必要数值、真实浏览器和一次最终build，提交推送现有https://github.com/socoo123/course_web的main，再给下一批提示词。子agent不跑数值/tests/build/lint/formatter，不提交。
+并行合同：必须task多agent。A拥有lectures/lec67–68及对应sources/p10-lec67–68；B拥有lec69–70及对应sources；C拥有labs/transformer及sources/p10-transformer；D拥有labs/bert-pretrain-finetune及对应sources。主agent独占course/status/resources/共享manifest/PLAN/NEXT-PROMPT，统一必要数值、真实浏览器与一次最终build，提交推送现有https://github.com/socoo123/course_web的main，再给下一批提示词。子agent不跑数值/tests/build/lint/formatter、不提交；共享依赖由主agent先约定。
 
-P1–P8已验收LEC1–59教材导读、59张自绘SVG与前八实验说明/指导；P8新增九讲和recurrent-language-model，四任务完整保留。最终状态及证据见status与p8-manifest。不要重做已验内容。73讲/12实验/48任务不变；下一批从LEC60开始，剩余LEC60–73共14讲、四实验。已有59讲课堂稿缺口不能用教材或占位文件掩盖，materials不重译中文教材。
+已验收P1–P9：LEC1–66教材导读、67张机制示意+1张真实注意力观测图、前九实验双文档。73讲/12实验/48任务不变；不要重做。仍剩LEC67–73七讲、transformer/bert-pretrain-finetune/optimization-capstone三个实验。P10完成前两实验后，P11保留LEC71目标检测总结、72优化、73课程总结及optimization-capstone；牛仔与LEC71课堂缺口独立保留。
 
-学习目标：完整中文PyTorch工程路线，数学随课补，之后CS336；不删CNN/CV/RNN，不另加前置课或必读论文。实验给合同、思路、不变量和局部提示，不给完整答案。机制、真实小数据训练、历史竞赛执行、硬件扩展分层记账，不能互相冒充。
+学习目标：完整中文PyTorch工程路线，数学随课补，然后CS336；不删CNN/CV/RNN/优化/课程总结，不另加前置课或必读论文。实验每项四任务全部保留，只给合同、思路、不变量、局部提示，不交完整解答。机制、真实小数据训练、预训练迁移、历史竞赛和硬件实测分别记账。
 
-P9连续主题：60机器翻译与数据集，61编码器—解码器，62seq2seq，63束搜索，64注意力机制，65注意力评分，66带注意力的seq2seq。完整保留七讲，不能把结构讲次或搜索删成链接。明确基础seq2seq与注意力模型的差别；编解码状态与有效长度、训练与推理信息边界分别讲。
+P10主题与教材：LEC67自注意力与位置编码，LEC68 Transformer架构/实现；多头注意力10.5是所需教材补充，10.6/10.7对应后两节。LEC69完整保留BERT结构、预训练数据、预训练三主题（14.8–14.10）；LEC70完整保留微调、NLI数据、NLI微调（15.6、15.4、15.7，按课表顺序）。不把整章所有词向量/情感分析小节冒称视频覆盖，也不删同BV的多主题。
 
-seq2seq-attention的course.json/practice-plan四任务完整保留。先核真实翻译语料身份、下载校验、来源及使用/署名条件；不可把Time Machine、随机token或自造句子当真实双语训练。核实际语料包与原始发布方关系，不因教材有下载URL就宣称任意再分发。只在合法访问条件内获取，记录固定划分；先按句对划分再训练侧拟合词表，重复句对跨分段问题按实际数据处理，不以验证/测试词表泄漏提高指标。
+Transformer：明确Q/K/V投影与多头拆合、位置编码训练/增量偏移、残差/LayerNorm/FFN维度；区分encoder源padding、decoder目标causal+padding、cross-attention源mask。未来目标变化不应影响更早logits；推理只读源和自己历史，不读取真实目标/长度。缓存属于每层每候选，重排/位置偏移与全前缀生成对照；不无故扩成通用推理系统。保存恢复需要实际模型/优化器等状态证明，不以只加载权重代替继续训练。
 
-词表区分源/目标与unk/pad/bos/eos；清洗、截断、EOS被截断的策略、有效长度、padding mask必须明确。teacher forcing以BOS+左移目标作为解码输入，不把当前目标原样泄漏；推理不读取真实目标或其长度。损失只按有效目标token统计，包含EOS与否写清楚。源padding在注意力中不可见；masked softmax数值和全mask输入按明确合同处理，不无理由添加复杂兜底。
+BERT：区分双向编码与自回归生成；MLM候选位置/特殊符号排除/替换策略、只在被选有效位置计损失、NSP句对构造及负样本身份/划分、两任务各自分母。微调说明CLS序列级与token级任务、句对segment、PAD可见性、标签映射；不能拿随机权重称预训练迁移。真实预训练语料、NLI数据、预训练权重及对应词表/config分别核身份、许可/署名/下载hash和使用限制，不绕登录或接受条款；不要仅凭教材URL或代码许可推断第三方授权。小运行不冒充工业BERT或GPU基准。
 
-基础编码器—解码器与加性/点积注意力按形状推进；若比较真实小模型，固定相同划分和预算，区分参数规模。自回归解码的终止/EOS/最大长度、贪心与beam状态重排、累积log概率与长度归一化必须一致。BLEU要说明分词、n-gram、平滑、短句与语料/句级聚合，不拿某一句分数冒充语料评测。真实翻译输出和分数只从实际日志取；合成mask/beam机制不能冒充训练或质量。不要把本批扩大为完整翻译系统或GPU基准。
+视频：沿官方课表BV逐讲核作者mid1567748478、2021年份、全部分P与真实总时长，不能只核课表列出的P。多P video.label写“全 N P 合计”，单P不能冒充整讲；课表日期和上传日期分字段。入口只放页头原站新tab，默认笔记，不恢复播放器/课程视频标签，不用未核转载。旧入口不改。
 
-视频仍沿官方课表BV逐讲核完整全部分P、作者、年份与真实时长；多P label注明“全 N P 合计”，单P不能冒充整讲。视频入口只在页头配置原站新tab，默认笔记，不恢复播放器或课程视频标签，不用未核转载。已验收旧入口不改。课表日期和上传日期分字段；分P清单不是片内主题时间轴。
+字幕：旧空列表不重刷，新讲每P一次；空列表不证明无烧录字幕。无可靠合法课堂内容就不造draft、QA、演示或片内时间码。P9新增7BV/15P=9745秒，累计66BV/182P，公开285链接；60 10:16单P、61 06:17全2P、62 48:46全3P、63 11:44单P、64 23:58全2P、65 30:47全3P、66 30:37全3P。66讲课堂稿仍阻塞，教材导读不是课堂整理；materials不重复翻译中文教材。
 
-旧公开字幕空列表不重刷。新讲每P查询一次即可；空结果不证明无烧录字幕。未取得可靠合法课堂内容前，不写draft、QA、课堂演示或猜时间码。教材导读与课堂整理分开；只在作者/年份/BV/分P/时间匹配的新课堂来源到位后补稿。P8新核9BV/25P=19880秒，累计59BV/167P；逐讲时长见p8-manifest及video-metadata，LEC55的P2原名确为“简介实现”。
+教材固定d2l-ai/d2l-zh提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，当前中文第二版而非2021快照。P9新增实际范围9.5–9.8与10.1–10.4，纠正旧交接10.1–10.3漏掉10.4 Bahdanau。全文/节选范围以worker清单为准；根Apache-2.0/setup.py MIT-0与视频、语料、图片、权重各自条件分开。
 
-教材固定d2l-ai/d2l-zh提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，当前中文第二版而非2021快照。P8新增8.1–8.7与9.1–9.4，全文/节选范围以逐讲和实验清单为准。P9继续9.5–9.8与10.1–10.3，其他小节按当前问题补，不扩为额外研究路线。根Apache-2.0、setup.py MIT-0、视频/语料/图片/权重独立核条件。
+复用P9英法语料时不要重下重训旧模型：教材2019镜像/tmp/d2l-p9-corpus-cache/fra-eng.zip，3420152B，SHA1 94646ad1522d915e7b0f9296181140edcf86a4f5，167130行两列缺逐句作者，仅作身份核对。真实训练用/tmp/d2l-p9-corpus-cache/manythings-fra-eng.zip（2026-02-13），8242175B，SHA256 9e35994767f7307dc1fa9d5efcc36681f3756a1bdaaa02c1381b3eb11461261e，240521行三列。当前文件不是教材旧hash；先确认缓存仍在，再复用证据，不假定永久存在。
 
-数值环境可复用/tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python，先确认存在。P8实测Python3.11.8/torch2.5.1、Apple M2 Max/macOS26.3.1、CPU1线程float32；CUDA0，MPS仅探测，无d2l/Jupyter。此前torchvision0.20.1/numpy1.26.4/pandas2.2.3/Pillow13.0.0是旧批实测，不需要重装。GPU/吞吐只报真硬件实测，不外推旧Notebook兼容。临时完整数值脚本只作内存subprocess输入，不随课程公开答案。
+ManyThings/Charles Kelly筛选Tatoeba句子；两包_about全文已读。包说明一般CC-BY2.0，当前第三列与Tatoeba条款指CC BY2.0 France；公开句子保留句主/ID、ManyThings/Tatoeba、许可链接与修改说明，不给参考作者冒署模型输出。数据可能有错；不发布句库全文、权重或完整答案脚本。详见p9-shared/corpus-acquisition.json与实验source-index。
 
-P8语料：教材S3 timemachine.txt实取178979bytes，SHA1 090b5e7e70c295757f55df93cb0a180b9691891a；H.G.Wells《The Time Machine》。镜像首行[1898]不当初版年份；PG35现版带不同页首/Unicode/许可，不是同一文件。PG标美国公版，当地法律仍适用，S3无独立许可声明；不提交语料全文。完整hash、缓存位置、条款范围见p8-shared/corpus-acquisition.json及实验来源。
+P9固定划分：NBSP/narrowNBSP→空格，lower，在,.!?前(前字符非空格)插空格，split空白/单空格join；保留重音/撇号。规范化完整句对去重保留首条署名，164条重复→240357唯一对。按完整规范化源句group，SHA256('p9-v1'+实际TAB U+0009+source)前8hex转int%100：<80 train，<90 val，否则test；同源多译不跨段。候选池192038/24326/23993，各自按原文件顺序，取前512train/64val；短句偏差明确，测试只统计、不评分。
 
-P8清洗：逐行[^A-Za-z]+换单空格、strip/lower、去空行，2848行按[0,2278)/[2278,2563)/[2563,2848)切训练/验证/测试，段内直接flatten不加行间空格，明确粘词局限。完整训练段137058字符fit词表28项（含unk），再取8192训练/2048验证字符；不是仅8192fit，但未用验证/测试拟合。测试封存；语料已用于小训练，不回退成“全未下载/运行”。
+只这512训练对的截断前tokenfit独立源/目标词表，minfreq1、频数降序+Unicode同频字典序，大小156/429；unk/pad/bos/eos=0/1/2/3。最多11普通token+EOS、右pad到12；有效长含EOS，选中句无截断，val OOV源54/目标65。train/val有效目标1919/269。完整line IDs、各段hash、vocab hash在p9-shared/split-provenance.json。Transformer若沿用比较必须同数据/评估口径，不能加验证词表提高分数。
 
-P8三模型均单层单向one-hot/H32，seed2028、Adam.01、B8/T32最后T31、clip1、15轮480步，各轮8184训练pairs；固定连续行流offset0，每轮清状态、每批detach，LSTM h/c同时处理。eval B1分别8191/2047目标，训练CE初始→最终：RNN3.341018→1.795380、GRU3.367360→1.529916、LSTM3.343963→1.711273；验证CE/PPL分别2.400769/11.031656、2.410723/11.142019、2.318238/10.157759。不是同参数量排名或完整教材训练。
+P9真实训练：单层单向E32/H32，packed encoder，baseline固定context独立于mutable hidden；Bahdanau旧hidden作query→context→当前GRU。两模型seed2029、shuffle2030、Adam.005、B32、clip1、20轮320步。参数48621/50701，trainCE6.071833→1.425564 /6.067042→1.211597；val4.304012/4.157927。实际10/8步触发裁剪；B32/B17验证CE差<4e-9、参数/buffers/grads不变。不是等参数排名或原Notebook逐字复现。
 
-P8生成固定前缀time traveller、greedy40新token，真实输出重复短词；不挑种子或伪写文本。三次真实训练preclip范数均小于1，未触发缩放；合成[3,4,12]单独验证13→1。token加权NLL后exp，不平均batch困惑度。验证不改参数/buffers/既有梯度；B1连续状态只换chunk31/64，CE差≤1.17e-10；改变B会改变上下文，不外推任意batch指标不变。
+注意教材差异：原encoder额外长度参数未消费；原基础decoder每次context=state[-1]，逐token时会变化。P9显式用packed源终态+独立固定context。原MaskedSoftmaxCELoss按padding宽mean后日志再除token，不等标准tokenNLL；本站累积有效目标NLL/有效目标数，EOS计入PAD不计。teacher forcing BOS+Y[:-1]，当前目标不得泄漏。
 
-P8机制证据可直接复用：采样X/Y错位与行身份、time-major展平；scratch/API RNN前向/梯度/SGD对照中API bias_hh=0并冻结，否则双bias会导致有效更新两倍；detach留数值切历史；GRU教材reset-before和PyTorch reset-after不普遍等价；深层/双向形状；未来token扰动影响较早反向表示。双向仅做形状/泄漏检查，没有当因果语言模型训练或生成。精确数值见p8-shared/mechanism-smoke.json和language-model-smoke.json。
+P9搜索：width1 greedy、width3 beam，原始logprob剪枝共享active/finished总容量K；EOS项不再扩展、分数长度冻结并占槽。最终保留池有完成项则只在完成项按S/L^.6选，否则标max_steps_unfinished；L含EOS不含BOS、max12。log_softmax后禁BOS/PAD但不重归一化，UNK允许。实际torch2.5.1 CPU topk返回序+稳定合并，未验证跨设备同分顺序。首4样本独立greedy=beam1。完整父hidden/cell/cache重排另有合成证据。
 
-牛仔竞赛仍独立阻塞：官方公告↔CodaLab33573↔Kaggle cowboyoutfits身份已核，host Joshua Z. Zhang，五类ID87/1034/131/318/588、AP0.50:0.95。CodaLab明确教育/非商用/不另用途再分发；Kaggle文件需登录接受规则，未完成。Data image_id与starter Version1 id、starter像素xyxy与评分端合同仍待真实文件/scorer核查，不擅自改为COCO xywh。未下载/训练/评分/提交；LEC71课堂总结保持未核，不编造获奖方案。
+BLEU合同：clean空白分词、小写保留标点、单参考、语料BLEU2均匀权重、无平滑、固定阶2、0..1；逐句裁剪后汇总计数与总长BP，不跨句ngram、不平均句级分数。参考用完整clean词，不映射UNK也不按训练长度截断。同源多译仍逐句对评估，不声称多参考基准。句级诊断才是bigram add1/effective-order；教材2^-n幂次非本指标。greedy .114977/.105344，beam3 .096055/.091091，attention/beam没有更好。
 
-P7真实banana/VOC/预训练R18/VGG19/两图风格等已验记录保留，不因新批改为全未执行；不重下载重训旧视觉数据。树叶P5身份/匿名访问、加州P3身份及CIFAR/Dogs教材案例仍见旧manifest；本批不执行这些竞赛。公开Kaggle Rules模板不是自动授权，也不能仅因平台名推定全面禁止本地学习；不绕登录、规则或下载限制。
+固定首val行58 i try . / j'essaye .（CK#20776/nimfeo#1133630），baseline je suis malheureux .，attention je suis parti .，均错译。真实图5预测步×4源有效位置，含双方EOS、8PAD权重0；后几步偏源EOS，不证明正确对齐。完整输出/计数/权重见p9-shared/seq2seq-smoke.json，不能手改好看译文，不挑seed。模型未保存checkpoint，不假称可直接加载P9已训权重。
 
-页面约定：学习内容开头，来源/许可/缺口放frontmatter与页底；正文标题避开来源/许可/参考等自动移页底词。公共资料路由#/c/d2l-pytorch-2021，没有/resources；实验说明?v=zh，不是?v=lab；站内不用相对notes.zh.md。公式$$独占行，手机长式分行；自绘SVG有title/desc且深浅可读，课堂截图只放真实draft。数字表不再复制成一张数字图。
+数值环境复用/tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python，先确认存在。P9 Python3.11.8/torch2.5.1、Apple M2 Max/macOS26.3.1、CPU1线程float32；CUDA0，MPS仅探测，无d2l/Jupyter/性能测量。旧torchvision/numpy等版本只属此前实测，不重装或外推旧Notebook兼容。数值脚本仅临时内存subprocess输入，不随站点发布完整答案。
 
-页面验收逐讲页头官方链接/目标讲次/显示时长、默认笔记、图明暗/公式/自测/页底、1440桌面/390手机；实际点击代表视频入口确认新tab且笔记保留，实验双标签实点。按钮DOM同时含“在B站打开”和时长，不能精确等于短文案；图片先滚入视口再等加载。隐藏MathML/可滚动表格不等于整页溢出；以document.scrollWidth和截图为准。外链SVG改后禁缓存刷新。
+P9机制证据可复用：有效长度/预留EOS、固定context与逐步等价、源padding身份/宽度、目标未来不可见、mask稳定性/全mask拒绝、有效loss/PAD零梯度、核权重/非零w导数与留一、加性异维78参数/缩放点积、Bahdanau旧query、beam父hidden/cell/cache重排、EOS立即/上限未完成、完整概率树与BLEU差异。未做全部学生变体、learned-kernel短训练、测试/GPU；不能将要求误记已验。
 
-P8初次另启Vite失败，因为5310已有服务；随后复用现有正确课程预览，不重启或杀用户服务。后续先核已有端口是否提供本项目；不要把ready.port探到旧监听者当新服务启动成功。最终浏览器和构建细节见p8-shared/browser-check.json、build.log；本地验收不是GitHub Pages部署或全片播放验收。旧xv6命令框、not_required资料仍待生成、LEC2/5/6旧手机溢出不属本content批，不宣称全课页面均验过。
+牛仔竞赛仍独立阻塞：官方公告↔CodaLab33573↔Kaggle cowboyoutfits身份已核，host Joshua Z.Zhang、五类87/1034/131/318/588、AP0.50:0.95。CodaLab教育/非商用/不另用途再分发；Kaggle登录接受规则尚未完成。Data image_id与starter id、像素xyxy与评分端合同未核，不擅改COCO xywh。未下载/训练/评分/提交；LEC71课堂总结未核，不编获奖方案。
 
-sources默认gitignore。按manifest显式保存小索引、固定原件.txt、筛选metadata、数值/browser JSON与build.log，不盲目强加压缩包/CSV/权重/环境/cookies。worker生成hash/未运行历史不改写，最终hash以主agentcontent-check为准。主agent收尾更新status、p9-manifest、PLAN与本交接，提交推送main并提供提交链接和下一批提示词。
+P7真实banana/VOC/预训练R18/VGG19/两图风格、P8真实TimeMachine三模型均保留已执行记录；不回退成“全未运行”，也不因P10重复下载训练旧数据。树叶P5、加州P3、CIFAR/Dogs教材案例条件各见旧manifest；不绕登录/规则限制，不拿别的数据替代原竞赛。
 
-P8最终验收：43项本批来源快照hash、12Markdown/9SVG/137本地路由、既有114正文图文件不变；九讲页头/默认笔记/图明暗/自测/页底/1440桌面390手机及实验双标签通过，LEC54实点新tab保留笔记。LEC56反例矩阵长式409px拆行后390；LEC54单bias参数数纠正为21（库双bias加头23），只重验失败项及其后未执行项。唯一公开Python片段state=(h.detach(),c.detach())已执行。无应用pageerror、验证tab已关；build仅一次通过：3038modules、5.80s。精确诊断见p8-shared；不是线上Pages或全片播放验收。
+页面：学习内容在开头，来源/许可/缺口在frontmatter/页底；正文标题避开来源/许可/参考等自动移页底词。公共资料路由#/c/d2l-pytorch-2021，无/resources；实验?v=zh|guide。$$独占行，长式分行；长hash放滚动表、长JSON路径放text代码框。自绘SVG title/desc、明暗可读；路径不要穿过无关框而误导数据依赖，真实图不能叫已保存checkpoint。课堂截图只放有来源draft。
+
+验收逐讲页头官方目标/全部分P时长、默认笔记、明暗图/公式/自测/页底、1440桌面390手机；代表入口实点新tab且原笔记保留，实验双标签实点。B站DOM文字含时长，不能精确等于“在B站打开”；懒加载图片先滚入视口。全页overflow以document.scrollWidth为准，隐藏MathML/可滚动表不算。外链SVG修改后禁缓存刷新；5310已有正确预览，先核服务再复用，不抢占/杀用户服务。
+
+P9最终：44项来源快照hash，10Markdown/9SVG/120站内路由及134既有文件不变通过；七讲页头/图/公式/1440/390、实验双标签/两图、公共285链接通过。LEC65/66页底hash423/409→390、guide长JSON路径564→390已修，信息图源状态线绕过CE框；无应用pageerror、tab已关。build仅一次通过：3056modules、5.36s，见p9-shared/build.log。非GitHub Pages或全片播放验收；旧xv6命令框/not_required UI/LEC2/5/6旧手机溢出不在本content范围。
+
+sources默认gitignore；只按manifest保存小索引、固定原件.txt、筛选metadata、必要JSON与build.log，不盲目强加语料/压缩包/PDF/权重/环境/cookies。worker原始hash/未运行记录不改写，最终以main content-check为准。完成P10后更新status/p10-manifest/PLAN/本交接，提交推送main，再给下一批提示词和提交链接。

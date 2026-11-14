@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="640" viewBox="0 0 540 640" role="img" aria-labelledby="title desc">
+<title id="title">先划分句对，再只用训练数据拟合词表</title>
+<desc id="desc">规范化句对按重复组划分训练验证测试，只有训练源句和训练目标句用于建立两套词表，验证测试只使用词表转换。最后预留EOS并padding，输出源目标及长度。</desc>
+<style>text{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;fill:#172554;font-size:20px}.small{font-size:17px}.box{fill:#eff6ff;stroke:#2563eb;stroke-width:2}.green{fill:#ecfdf5;stroke:#047857;stroke-width:2}.warn{fill:#fff7ed;stroke:#b45309;stroke-width:2}.line{fill:none;stroke:#334155;stroke-width:2.5;marker-end:url(#arrow)}</style><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#334155"/></marker></defs>
+<rect width="540" height="640" rx="12" fill="#ffffff"/>
+<text x="24" y="37" font-weight="700">句对身份贯穿整个数据流</text>
+<rect class="box" x="45" y="65" width="450" height="70" rx="8"/><text x="65" y="94">源句 ↔ 目标句 ↔ 原行号/署名</text><text class="small" x="65" y="120">确定性规范化；相同句对归为一组</text>
+<path class="line" d="M270 135 V167"/>
+<rect class="box" x="45" y="173" width="450" height="55" rx="8"/><text x="75" y="207">按组固定 train / valid / test</text>
+<path class="line" d="M165 228 V267 M395 228 V267"/>
+<rect class="green" x="30" y="273" width="260" height="108" rx="8"/><text x="48" y="302">仅 train 可以 fit</text><text x="48" y="335">源词表 Vs</text><text x="48" y="364">目标词表 Vt（独立）</text>
+<rect class="warn" x="315" y="273" width="195" height="108" rx="8"/><text x="332" y="305">valid / test</text><text x="332" y="339">只能 transform</text><text class="small" x="332" y="365">新词 → UNK</text>
+<path class="line" d="M290 326 H309 M160 381 V418 H270 V441 M412 381 V418 H270"/>
+<rect class="box" x="45" y="447" width="450" height="78" rx="8"/><text x="66" y="478">截普通词 → EOS → PAD</text><text class="small" x="66" y="507">有效长度含EOS、不含PAD，且不超宽度</text>
+<path class="line" d="M270 525 V555"/>
+<text x="67" y="590">批量输出：X, X_len, Y, Y_len</text><text class="small" x="56" y="622">语料小训练 ≠ 合成字母例；二者分别记账</text>
+</svg>

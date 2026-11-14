@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "batch": "P9",
+  "lectureId": "lec64",
+  "generatedAt": "2026-11-14",
+  "owner": "P9Lec64to66",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "diagram": "original_svg_written_pending_main_browser_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "sections": [
+      "10.1",
+      "10.2"
+    ],
+    "editionBoundary": "Current pinned Chinese second edition, not2021 snapshot",
+    "numberingCorrection": "LEC64 kernel regression=10.2 (+10.1 cues); LEC65=10.3; LEC66=10.4. Previous 10.1–10.3 handoff omitted Bahdanau 10.4. Main notified."
+  },
+  "scheduleDate": "2021-08-08",
+  "publishedAt": "2021-08-11T02:09:17+00:00",
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1264y1i7R1/",
+    "label": "官方 B站视频（全 2 P 合计）",
+    "duration": "23:58",
+    "language": "zh",
+    "durationSeconds": 1438,
+    "pageCount": 2,
+    "allPages": [
+      {
+        "cid": 385255191,
+        "page": 1,
+        "part": "注意力机制",
+        "duration": 838
+      },
+      {
+        "cid": 385260280,
+        "page": 2,
+        "part": "代码",
+        "duration": 600
+      }
+    ],
+    "authorMid": 1567748478,
+    "authorName": "跟李沐学AI",
+    "title": "64 注意力机制【动手学深度学习v2】",
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 2
+  },
+  "sources": [
+    {
+      "path": "sources/p9-lec64/book-attention-cues.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_attention-mechanisms/attention-cues.md",
+      "sha256": "471641027282391759402551e3f3edd17ce26a85cdd654df1700ca0da653eebd",
+      "bytes": 8268,
+      "actualReadRange": "full lines 1–192, including prose, all framework tabs, examples and exercises; PyTorch used for implementation discussion",
+      "usage": "independent paraphrase; no copied book images"
+    },
+    {
+      "path": "sources/p9-lec64/book-nadaraya-waston.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_attention-mechanisms/nadaraya-waston.md",
+      "sha256": "66e0483427bdb9748fb997113d67dade1aaa09ba4e67b5e29835e272ac126301",
+      "bytes": 25663,
+      "actualReadRange": "full lines 1–703, including prose, all framework tabs, examples and exercises; PyTorch used for implementation discussion",
+      "usage": "independent paraphrase; no copied book images"
+    },
+    {
+      "path": "sources/p9-lec64/schedule-evidence.json",
+      "sha256": "919f5843d9c4780545dfea84de961e099220a8cd86ee1f03a45151526b8fc6cc",
+      "bytes": 1441,
+      "actualReadRange": "all fields",
+      "usage": "exact row090/091/092 from already acquired official schedule inventory"
+    },
+    {
+      "path": "sources/p9-lec64/video-metadata.json",
+      "sha256": "9dc02b575a5eb9ca0f6d56581876b423913273b9026ad123cd1771620db1ca18",
+      "bytes": 1276,
+      "actualReadRange": "all fields",
+      "usage": "filtered real view fields and one caption request per CID; no media review"
+    }
+  ],
+  "sourceIndex": "sources/p9-lec64/source-index.json",
+  "generatedFiles": [
+    "lectures/lec64/notes.zh.md",
+    "lectures/lec64/assets/kernel-attention.svg",
+    "sources/p9-lec64/source-index.json"
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "id": "nw-symmetric",
+      "input": {
+        "keys": [
+          0,
+          2
+        ],
+        "values": [
+          2,
+          6
+        ],
+        "query": 1,
+        "w": 1
+      },
+      "expected": "weights=[0.5,0.5], output=4; paired permutation unchanged; adding 3 to values adds 3 to output"
+    },
+    {
+      "id": "nw-bandwidth",
+      "input": {
+        "keys": [
+          0,
+          2
+        ],
+        "values": [
+          2,
+          6
+        ],
+        "query": 0,
+        "w": [
+          0,
+          1,
+          -1
+        ]
+      },
+      "expected": "w=0 output4; w=±1 output=(2+6exp(-2))/(1+exp(-2)); w sign does not matter; exact w=0 parameter gradient zero"
+    },
+    {
+      "id": "nw-leave-one-out",
+      "input": "three unique training pairs; use each training input as query",
+      "expected": "each query has exactly two paired keys/values excluding its own index; validation queries use training-only keys/values"
+    }
+  ],
+  "workerExecution": {
+    "sourceAcquisition": "performed: pinned originals, real Bilibili view, one public caption request per page",
+    "numeric": "not_run",
+    "tests": "not_run",
+    "build": "not_run",
+    "lint": "not_run",
+    "formatter": "not_run",
+    "browser": "not_run",
+    "git": "not_run"
+  },
+  "limits": [
+    "No classroom draft, timestamps within pages, QA contents, media screenshots or transcript fabricated.",
+    "No training, translated output, BLEU, GPU timing or attention heatmap claimed.",
+    "Source valid lengths must affect encoder terminal state as well as attention.",
+    "Only assigned lecture and source directories written. Main owns numerical/browser/build verification."
+  ]
+}

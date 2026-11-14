@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="640" viewBox="0 0 540 640" role="img" aria-labelledby="title desc">
+<title id="title">束搜索父索引同步收集所有状态</title>
+<desc id="desc">父beam的hidden cell与缓存按新候选父索引1 0 1重排，父1复制成两个分支。完成候选进入EOS集合不再扩展，活动候选继续，达到最大长度仍未完成则标记截断。</desc>
+<style>text{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;fill:#172554;font-size:20px}.small{font-size:17px}.box{fill:#eff6ff;stroke:#2563eb;stroke-width:2}.green{fill:#ecfdf5;stroke:#047857;stroke-width:2}.warn{fill:#fff7ed;stroke:#b45309;stroke-width:2}.line{fill:none;stroke:#334155;stroke-width:2.5;marker-end:url(#arrow)}</style><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#334155"/></marker></defs>
+<rect width="540" height="640" rx="12" fill="#ffffff"/>
+<text x="22" y="37" font-weight="700">选子节点，也要带走父节点状态</text>
+<rect class="box" x="30" y="65" width="480" height="91" rx="8"/><text x="48" y="96">父beam： 0　　　 1　　　 2</text><text x="48" y="128">状态： (H₀,C₀) (H₁,C₁) (H₂,C₂)</text><path class="line" d="M270 156 V187"/>
+<rect class="warn" x="30" y="193" width="480" height="75" rx="8"/><text x="48" y="225">全局top-k → 父索引 [1, 0, 1]</text><text class="small" x="48" y="252">顺序会变，同一父节点还可能重复出现</text><path class="line" d="M270 268 V299"/>
+<rect class="box" x="30" y="305" width="480" height="127" rx="8"/><text x="48" y="337">hidden： H₁　　 H₀　　 H₁</text><text x="48" y="369">cell：　 C₁　　 C₀　　 C₁</text><text x="48" y="401">历史/缓存：也按 [1, 0, 1] 收集</text><text class="small" x="48" y="424">收集本步更新后的状态，下一步再消费新词</text>
+<path class="line" d="M155 432 V469 M388 432 V469"/>
+<rect class="green" x="25" y="475" width="235" height="103" rx="8"/><text x="43" y="506">新词是EOS</text><text x="43" y="538">进入完成集合</text><text class="small" x="43" y="565">不再更新分数/长度</text>
+<rect class="box" x="280" y="475" width="235" height="103" rx="8"/><text x="298" y="506">新词非EOS</text><text x="298" y="538">携带状态继续</text><text class="small" x="298" y="565">不读真实目标长度</text>
+<text class="small" x="31" y="620">到最大步数还没EOS：truncated，不伪造结束</text>
+</svg>

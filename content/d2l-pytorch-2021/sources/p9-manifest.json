@@ -1,0 +1,730 @@
+{
+  "schemaVersion": 1,
+  "batch": "P9",
+  "courseId": "d2l-pytorch-2021",
+  "date": "2026-11-14",
+  "scope": "LEC60–66 + seq2seq-attention; content only; acceptedLEC1–59 and eight previous labs unchanged",
+  "parallelOwners": {
+    "P9Lec60to63": [
+      "lec60",
+      "lec61",
+      "lec62",
+      "lec63"
+    ],
+    "P9Lec64to66": [
+      "lec64",
+      "lec65",
+      "lec66"
+    ],
+    "P9Seq2seqLab": [
+      "seq2seq-attention"
+    ]
+  },
+  "mainResponsibilities": [
+    "shared indices",
+    "numerical and real data verification",
+    "actual browser and one final build",
+    "status handoff commit push main"
+  ],
+  "bookVersion": "sources/p1-shared/book-version.json",
+  "newTextbookReadScope": [
+    "9.5",
+    "9.6",
+    "9.7",
+    "9.8",
+    "10.1_editorial_supplement",
+    "10.2",
+    "10.3",
+    "10.4"
+  ],
+  "readBoundary": "Exact full/selected source read ranges remain in worker manifests; current fixed second edition not2021 snapshot. Previous handoff10.1–10.3 omitted10.4 Bahdanau; corrected. BLEU paper§2 and PyTorch2.5 packing are editorial references, not extra required readings.",
+  "lectures": [
+    {
+      "id": "lec60",
+      "bvid": "BV1H64y1s7TH",
+      "parts": [
+        {
+          "page": 1,
+          "cid": 384691473,
+          "part": "机器翻译数据集",
+          "duration": 616
+        }
+      ],
+      "totalSeconds": 616,
+      "duration": "10:16",
+      "scheduleDate": "2021-08-07",
+      "publishedAt": "2021-08-08T01:19:47+00:00",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI"
+      },
+      "captionRequests": 1,
+      "headerFields": {
+        "label": "2021课程 · 官方B站 · 单P",
+        "bilibili": "https://www.bilibili.com/video/BV1H64y1s7TH/",
+        "duration": "10:16",
+        "language": "中文"
+      },
+      "manifest": "sources/p9-lec60/manifest-fragment.json",
+      "notes": "lectures/lec60/notes.zh.md"
+    },
+    {
+      "id": "lec61",
+      "bvid": "BV1c54y1E7YP",
+      "parts": [
+        {
+          "page": 1,
+          "cid": 384691545,
+          "part": "编码器-解码器架构",
+          "duration": 213
+        },
+        {
+          "page": 2,
+          "cid": 384693376,
+          "part": "代码",
+          "duration": 164
+        }
+      ],
+      "totalSeconds": 377,
+      "duration": "06:17",
+      "scheduleDate": "2021-08-07",
+      "publishedAt": "2021-08-08T06:00:17+00:00",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI"
+      },
+      "captionRequests": 2,
+      "headerFields": {
+        "label": "2021课程 · 官方B站 · 全 2 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1c54y1E7YP/",
+        "duration": "06:17",
+        "language": "中文"
+      },
+      "manifest": "sources/p9-lec61/manifest-fragment.json",
+      "notes": "lectures/lec61/notes.zh.md"
+    },
+    {
+      "id": "lec62",
+      "bvid": "BV16g411L7FG",
+      "parts": [
+        {
+          "page": 1,
+          "cid": 385253874,
+          "part": "Seq2Seq",
+          "duration": 755
+        },
+        {
+          "page": 2,
+          "cid": 385256109,
+          "part": "代码",
+          "duration": 1647
+        },
+        {
+          "page": 3,
+          "cid": 385264314,
+          "part": "QA",
+          "duration": 524
+        }
+      ],
+      "totalSeconds": 2926,
+      "duration": "48:46",
+      "scheduleDate": "2021-08-07",
+      "publishedAt": "2021-08-09T02:04:01+00:00",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI"
+      },
+      "captionRequests": 3,
+      "headerFields": {
+        "label": "2021课程 · 官方B站 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV16g411L7FG/",
+        "duration": "48:46",
+        "language": "中文"
+      },
+      "manifest": "sources/p9-lec62/manifest-fragment.json",
+      "notes": "lectures/lec62/notes.zh.md"
+    },
+    {
+      "id": "lec63",
+      "bvid": "BV1B44y1C7m1",
+      "parts": [
+        {
+          "page": 1,
+          "cid": 385254837,
+          "part": "束搜索",
+          "duration": 704
+        }
+      ],
+      "totalSeconds": 704,
+      "duration": "11:44",
+      "scheduleDate": "2021-08-07",
+      "publishedAt": "2021-08-10T02:07:19+00:00",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI"
+      },
+      "captionRequests": 1,
+      "headerFields": {
+        "label": "2021课程 · 官方B站 · 单P",
+        "bilibili": "https://www.bilibili.com/video/BV1B44y1C7m1/",
+        "duration": "11:44",
+        "language": "中文"
+      },
+      "manifest": "sources/p9-lec63/manifest-fragment.json",
+      "notes": "lectures/lec63/notes.zh.md"
+    },
+    {
+      "id": "lec64",
+      "bvid": "BV1264y1i7R1",
+      "parts": [
+        {
+          "cid": 385255191,
+          "page": 1,
+          "part": "注意力机制",
+          "duration": 838
+        },
+        {
+          "cid": 385260280,
+          "page": 2,
+          "part": "代码",
+          "duration": 600
+        }
+      ],
+      "totalSeconds": 1438,
+      "duration": "23:58",
+      "scheduleDate": "2021-08-08",
+      "publishedAt": "2021-08-11T02:09:17+00:00",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI",
+        "face": "https://i0.hdslb.com/bfs/face/15afabcda93279a5ab2f736513ad112e836a9701.jpg"
+      },
+      "captionRequests": 2,
+      "headerFields": {
+        "label": "2021课程 · 官方B站 · 全 2 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1264y1i7R1/",
+        "duration": "23:58",
+        "language": "中文"
+      },
+      "manifest": "sources/p9-lec64/manifest-fragment.json",
+      "notes": "lectures/lec64/notes.zh.md"
+    },
+    {
+      "id": "lec65",
+      "bvid": "BV1Tb4y167rb",
+      "parts": [
+        {
+          "cid": 385255705,
+          "page": 1,
+          "part": "注意力分数",
+          "duration": 645
+        },
+        {
+          "cid": 385266581,
+          "page": 2,
+          "part": "代码",
+          "duration": 920
+        },
+        {
+          "cid": 385267673,
+          "page": 3,
+          "part": "QA",
+          "duration": 282
+        }
+      ],
+      "totalSeconds": 1847,
+      "duration": "30:47",
+      "scheduleDate": "2021-08-08",
+      "publishedAt": "2021-08-12T02:10:12+00:00",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI",
+        "face": "https://i0.hdslb.com/bfs/face/15afabcda93279a5ab2f736513ad112e836a9701.jpg"
+      },
+      "captionRequests": 3,
+      "headerFields": {
+        "label": "2021课程 · 官方B站 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1Tb4y167rb/",
+        "duration": "30:47",
+        "language": "中文"
+      },
+      "manifest": "sources/p9-lec65/manifest-fragment.json",
+      "notes": "lectures/lec65/notes.zh.md"
+    },
+    {
+      "id": "lec66",
+      "bvid": "BV1v44y1C7Tg",
+      "parts": [
+        {
+          "cid": 385256207,
+          "page": 1,
+          "part": "使用注意力机制的seq2seq",
+          "duration": 615
+        },
+        {
+          "cid": 385261079,
+          "page": 2,
+          "part": "代码",
+          "duration": 796
+        },
+        {
+          "cid": 385264671,
+          "page": 3,
+          "part": "QA",
+          "duration": 426
+        }
+      ],
+      "totalSeconds": 1837,
+      "duration": "30:37",
+      "scheduleDate": "2021-08-08",
+      "publishedAt": "2021-08-13T02:10:04+00:00",
+      "owner": {
+        "mid": 1567748478,
+        "name": "跟李沐学AI",
+        "face": "https://i0.hdslb.com/bfs/face/15afabcda93279a5ab2f736513ad112e836a9701.jpg"
+      },
+      "captionRequests": 3,
+      "headerFields": {
+        "label": "2021课程 · 官方B站 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1v44y1C7Tg/",
+        "duration": "30:37",
+        "language": "中文"
+      },
+      "manifest": "sources/p9-lec66/manifest-fragment.json",
+      "notes": "lectures/lec66/notes.zh.md"
+    }
+  ],
+  "lab": {
+    "id": "seq2seq-attention",
+    "manifest": "sources/p9-seq2seq-attention/manifest-fragment.json",
+    "sourceIndex": "sources/p9-seq2seq-attention/source-index.json",
+    "verificationContract": "sources/p9-seq2seq-attention/verification-contract.json",
+    "tasks": [
+      "seq2seq-attention-1",
+      "seq2seq-attention-2",
+      "seq2seq-attention-3",
+      "seq2seq-attention-4"
+    ],
+    "answers": "routes/invariants/local hints, no complete solution",
+    "figures": [
+      "labs/seq2seq-attention/assets/information-boundary.svg",
+      "labs/seq2seq-attention/assets/observed-alignment.svg"
+    ]
+  },
+  "counts": {
+    "bvids": 7,
+    "parts": 15,
+    "durationSeconds": 9745,
+    "notes": 7,
+    "lectureSvgs": 7,
+    "labDocuments": 2,
+    "labSvgs": 2,
+    "schematicSvgs": 8,
+    "observedRuntimePlots": 1,
+    "drafts": 0,
+    "materials": 0
+  },
+  "cumulativeCounts": {
+    "lectureNotes": 66,
+    "labDocuments": 18,
+    "schematicSvgs": 67,
+    "observedRuntimePlots": 1,
+    "totalSvgs": 68,
+    "bvids": 66,
+    "parts": 182,
+    "classroomDrafts": 0,
+    "materials": 0
+  },
+  "videoBoundary": "Official schedule/author mid1567748478/year2021/all15P durations checked; caption API once perP all empty. No audio/video content review, classroom timelines or QA invented; empty API does not exclude burned-in captions. Header-only external navigation, no player.",
+  "corpus": {
+    "acquisition": "sources/p9-shared/corpus-acquisition.json",
+    "splitProvenance": "sources/p9-shared/split-provenance.json",
+    "identity": "2019 textbook S3 two-column mirror verified separately; real training current ManyThings2026-02-13 Tatoeba English/French three-column with per-sentence attribution",
+    "rights": "CC BY2.0FR sentence owners/IDs, publisher and Tatoeba credit/license/modification disclosure; four short audit examples only; no full corpus or weights redistributed",
+    "fit": "normalized source group stable hash split; pair dedup164; train/val/test192038/24326/23993; first512/64 selected; vocab156/429 fit only selected train before truncation; test not evaluated",
+    "bias": "publisher length ordering -> short sentence smoke, not representative MT benchmark"
+  },
+  "verification": {
+    "source": "passed44 unique P9 snapshot hashes; sources/p9-shared/source-check.json",
+    "video": "passed all7 header fields/all15P sums; sources/p9-shared/video-check.json",
+    "content": "passed10Markdown/9SVG/120local routes; plot values match actual log; prior134published files/all labs/nonP9 lecture metadata unchanged; sources/p9-shared/content-check.json",
+    "numeric": "passed finite synthetic mechanisms/paper examples and two real small models; no rerun of successful real training",
+    "browser": "passed actual Chromium7default notes/headers/figures in light-dark contexts/math/selftests/footer; desktop1440/mobile390; lab2tabs/2figures and public285links; LEC66 actual newtab retains notes; no app errors/tabs closed",
+    "browserEvidence": "sources/p9-shared/browser-check.json",
+    "build": "passed npm run build once: tsc --noEmit + Vite5.4.21,3056modules,5.36s",
+    "buildEvidence": "sources/p9-shared/build.log",
+    "deployment": "not_checked_local_preview_not_Pages_or_full_video_playback"
+  },
+  "runtimeBoundary": {
+    "environment": {
+      "python": "3.11.8",
+      "torch": "2.5.1",
+      "platform": "macOS-26.3.1-arm64-arm-64bit",
+      "chip": "Apple M2 Max",
+      "device": "cpu",
+      "threads": 1,
+      "dtype": "float32",
+      "cuda_count": 0,
+      "mps_available_detected_only": true,
+      "performance_measured": false
+    },
+    "baseSummary": "sources/p9-shared/runtime-verification.json",
+    "mechanisms": "sources/p9-shared/mechanism-smoke.json",
+    "paperAndAdditionalEdges": [
+      "sources/p9-shared/notes60-63-smoke.json",
+      "sources/p9-shared/notes64-66-smoke.json"
+    ],
+    "realRun": "sources/p9-shared/seq2seq-smoke.json",
+    "realConfig": {
+      "embed": 32,
+      "hidden": 32,
+      "layers": 1,
+      "bidirectional": false,
+      "seed_per_model": 2029,
+      "shuffle_seed": 2030,
+      "batch": 32,
+      "epochs": 20,
+      "steps_per_model": 320,
+      "optimizer": "Adam",
+      "lr": 0.005,
+      "global_clip_norm": 1.0,
+      "encoder": "packed GRU incl source EOS; no pad contamination",
+      "baseline_context": "immutable encoder final state separately retained across decoder calls; not literal textbook helper inference",
+      "attention": "additive32; query previous decoder state, memory all valid encoder outputs incl EOS; before dropout(no dropout used)",
+      "loss": "valid target token mean incl EOS; epoch mixed losses separate from final frozen evaluation",
+      "search": "width1 greedy or beam3; raw cumulative logprob pruning over shared active+finished pool; finished unchanged; final rank S/length**.6 preferring completed if any, else marked unfinished; length includes EOS/excludes BOS; max12; logsoftmax over full vocab then prohibit BOS/PAD without renormalization; UNK allowed",
+      "fairness": "same data/order/hyperparameters and matching common initial weights, attention has extra params; not equal-capacity comparison",
+      "BLEU": {
+        "corpus": "uniform BLEU-2; no smoothing; fixed order2; count aggregation before precision; one reference; 0..1 scale",
+        "sentence": "diagnostic BLEU-2; add-one bigram smoothing only; effective order=min(2,candidate_length); empty=0",
+        "tokenization": "same lowercase/punctuation-space normalization; whitespace tokens; no detokenization; remove EOS/BOS/PAD from generated display; preserve UNK; raw reference tokens NOT vocabulary-mapped",
+        "sanity": "exact bigram=1; exact one token fixed-order=0, effective-order=1; empty=0"
+      },
+      "not_run": [
+        "test evaluation",
+        "GPU/MPS",
+        "old d2l notebooks",
+        "full student solution variants",
+        "full MT benchmark"
+      ]
+    },
+    "actualTiePolicy": "PyTorch2.5.1 CPU topk return order, followed by stable Python descending-score pool sort; no cross-device tie-order guarantee, learner contract recommended explicit tie rule",
+    "models": {
+      "baseline": {
+        "parameters": 48621,
+        "initial_train": {
+          "nll_sum": 11651.84722328186,
+          "tokens": 1919,
+          "CE": 6.071832841731037
+        },
+        "final_train": {
+          "nll_sum": 2735.656512292102,
+          "tokens": 1919,
+          "CE": 1.425563581184003
+        },
+        "validation": {
+          "nll_sum": 1157.779221930541,
+          "tokens": 269,
+          "CE": 4.304011977436955
+        },
+        "max_preclip_norm": 1.3870539665222168,
+        "clipped_steps": 10,
+        "greedy_corpus_BLEU2": {
+          "score": 0.11497687886617135,
+          "matches": [
+            62,
+            6
+          ],
+          "totals": [
+            192,
+            128
+          ],
+          "candidate_length": 192,
+          "reference_length": 205
+        },
+        "beam3_corpus_BLEU2": {
+          "score": 0.09605487901337122,
+          "matches": [
+            62,
+            4
+          ],
+          "totals": [
+            154,
+            90
+          ],
+          "candidate_length": 154,
+          "reference_length": 205
+        }
+      },
+      "attention": {
+        "parameters": 50701,
+        "initial_train": {
+          "nll_sum": 11642.654264450073,
+          "tokens": 1919,
+          "CE": 6.067042347290293
+        },
+        "final_train": {
+          "nll_sum": 2325.054626691155,
+          "tokens": 1919,
+          "CE": 1.2115969915013836
+        },
+        "validation": {
+          "nll_sum": 1118.4822516161948,
+          "tokens": 269,
+          "CE": 4.15792658593381
+        },
+        "max_preclip_norm": 1.4132616519927979,
+        "clipped_steps": 8,
+        "greedy_corpus_BLEU2": {
+          "score": 0.1053443780876239,
+          "matches": [
+            61,
+            5
+          ],
+          "totals": [
+            178,
+            114
+          ],
+          "candidate_length": 178,
+          "reference_length": 205
+        },
+        "beam3_corpus_BLEU2": {
+          "score": 0.09109148208607486,
+          "matches": [
+            56,
+            4
+          ],
+          "totals": [
+            162,
+            98
+          ],
+          "candidate_length": 162,
+          "reference_length": 205
+        }
+      }
+    },
+    "quality": "Fixed first validation source i try . mistranslated by both; attention/beam not better corpusBLEU. Actual attention mass on punctuation/EOS is not correct alignment. No post-hoc successful sample selection.",
+    "notExecuted": [
+      "all student solution variants",
+      "learned-kernel full short training",
+      "test evaluation",
+      "full MT benchmark",
+      "GPU/MPS or performance measurement",
+      "old d2l/Jupyter notebooks",
+      "historical competition/LEC71 classroom review"
+    ],
+    "publication": "Transient in-memory subprocess programs only; no complete solution scripts/checkpoints/corpus published; model not saved for later loading"
+  },
+  "mainIntegrationChanges": [
+    "Fixed textbook and helper boundary explicit: packed source, immutable context, token-weighted loss, uniform corpusBLEU distinct from textbook.",
+    "LEC65/66 footer hashes shortened with full fixed URLs retained; mobile423/409->390.",
+    "Lab hashes moved to scrollable table; guide longJSON pointer moved to text block,564->390.",
+    "Information diagram source-state route bypasses loss box; plot identifies final model, not saved checkpoint.",
+    "Lab real tie-order boundary clarified; worker source/generation hashes remain historical."
+  ],
+  "diagnostics": "sources/p9-shared/diagnostics.json; additional actual surface repairs recorded in browser-check and PLAN",
+  "competitionBoundary": "Cowboy identity/public terms remain verified but authenticated files/scorer and LEC71 classroom methods unverified; no competition execution. Earlier P7/P8 real runs preserved.",
+  "remaining": {
+    "lectureNotes": [
+      "lec67",
+      "lec68",
+      "lec69",
+      "lec70",
+      "lec71",
+      "lec72",
+      "lec73"
+    ],
+    "practiceIds": [
+      "transformer",
+      "bert-pretrain-finetune",
+      "optimization-capstone"
+    ],
+    "blockedDraftIds": [
+      "lec01",
+      "lec02",
+      "lec03",
+      "lec04",
+      "lec05",
+      "lec06",
+      "lec07",
+      "lec08",
+      "lec09",
+      "lec10",
+      "lec11",
+      "lec12",
+      "lec13",
+      "lec14",
+      "lec15",
+      "lec16",
+      "lec17",
+      "lec18",
+      "lec19",
+      "lec20",
+      "lec21",
+      "lec22",
+      "lec23",
+      "lec24",
+      "lec25",
+      "lec26",
+      "lec27",
+      "lec28",
+      "lec29",
+      "lec30",
+      "lec31",
+      "lec32",
+      "lec33",
+      "lec34",
+      "lec35",
+      "lec36",
+      "lec37",
+      "lec38",
+      "lec39",
+      "lec40",
+      "lec41",
+      "lec42",
+      "lec43",
+      "lec44",
+      "lec45",
+      "lec46",
+      "lec47",
+      "lec48",
+      "lec49",
+      "lec50",
+      "lec51",
+      "lec52",
+      "lec53",
+      "lec54",
+      "lec55",
+      "lec56",
+      "lec57",
+      "lec58",
+      "lec59",
+      "lec60",
+      "lec61",
+      "lec62",
+      "lec63",
+      "lec64",
+      "lec65",
+      "lec66"
+    ],
+    "nextBatch": "P10 LEC67–70 + transformer and bert-pretrain-finetune; A67–68/B69–70/C transformer/D BERT lab",
+    "later": "P11 LEC71–73 + optimization-capstone"
+  },
+  "deliveryPolicy": {
+    "branch": "main",
+    "remote": "https://github.com/socoo123/course_web",
+    "contentOnly": true,
+    "sourceArtifacts": [
+      "sources/p9-lec60/book-machine-translation-and-dataset.txt",
+      "sources/p9-lec60/corpus-publisher-terms-excerpt.txt",
+      "sources/p9-lec60/manifest-fragment.json",
+      "sources/p9-lec60/schedule-evidence.json",
+      "sources/p9-lec60/schedule-excerpt.txt",
+      "sources/p9-lec60/source-index.json",
+      "sources/p9-lec60/video-metadata.json",
+      "sources/p9-lec61/book-encoder-decoder.txt",
+      "sources/p9-lec61/manifest-fragment.json",
+      "sources/p9-lec61/schedule-evidence.json",
+      "sources/p9-lec61/schedule-excerpt.txt",
+      "sources/p9-lec61/source-index.json",
+      "sources/p9-lec61/video-metadata.json",
+      "sources/p9-lec62/bleu-primary-review.txt",
+      "sources/p9-lec62/book-seq2seq.txt",
+      "sources/p9-lec62/manifest-fragment.json",
+      "sources/p9-lec62/schedule-evidence.json",
+      "sources/p9-lec62/schedule-excerpt.txt",
+      "sources/p9-lec62/source-index.json",
+      "sources/p9-lec62/video-metadata.json",
+      "sources/p9-lec63/book-beam-search.txt",
+      "sources/p9-lec63/manifest-fragment.json",
+      "sources/p9-lec63/schedule-evidence.json",
+      "sources/p9-lec63/schedule-excerpt.txt",
+      "sources/p9-lec63/source-index.json",
+      "sources/p9-lec63/video-metadata.json",
+      "sources/p9-lec64/book-attention-cues.txt",
+      "sources/p9-lec64/book-nadaraya-waston.txt",
+      "sources/p9-lec64/manifest-fragment.json",
+      "sources/p9-lec64/schedule-evidence.json",
+      "sources/p9-lec64/source-index.json",
+      "sources/p9-lec64/video-metadata.json",
+      "sources/p9-lec65/book-attention-scoring-functions.txt",
+      "sources/p9-lec65/manifest-fragment.json",
+      "sources/p9-lec65/schedule-evidence.json",
+      "sources/p9-lec65/source-index.json",
+      "sources/p9-lec65/video-metadata.json",
+      "sources/p9-lec66/book-bahdanau-attention.txt",
+      "sources/p9-lec66/manifest-fragment.json",
+      "sources/p9-lec66/schedule-evidence.json",
+      "sources/p9-lec66/source-index.json",
+      "sources/p9-lec66/video-metadata.json",
+      "sources/p9-seq2seq-attention/api-metric-review.txt",
+      "sources/p9-seq2seq-attention/book-attention-scoring-functions.txt",
+      "sources/p9-seq2seq-attention/book-bahdanau-attention.txt",
+      "sources/p9-seq2seq-attention/book-beam-search.txt",
+      "sources/p9-seq2seq-attention/book-encoder-decoder.txt",
+      "sources/p9-seq2seq-attention/book-machine-translation-and-dataset.txt",
+      "sources/p9-seq2seq-attention/book-nadaraya-waston.txt",
+      "sources/p9-seq2seq-attention/book-seq2seq.txt",
+      "sources/p9-seq2seq-attention/cc-by-fr-excerpt.txt",
+      "sources/p9-seq2seq-attention/corpus-acquisition.json",
+      "sources/p9-seq2seq-attention/manifest-fragment.json",
+      "sources/p9-seq2seq-attention/publisher-archive-about.txt",
+      "sources/p9-seq2seq-attention/publisher-terms-excerpt.txt",
+      "sources/p9-seq2seq-attention/source-index.json",
+      "sources/p9-seq2seq-attention/tatoeba-terms-excerpt.txt",
+      "sources/p9-seq2seq-attention/textbook-archive-about.txt",
+      "sources/p9-seq2seq-attention/verification-contract.json",
+      "sources/p9-shared/browser-check.json",
+      "sources/p9-shared/build.log",
+      "sources/p9-shared/content-check.json",
+      "sources/p9-shared/corpus-acquisition.json",
+      "sources/p9-shared/diagnostics.json",
+      "sources/p9-shared/environment.json",
+      "sources/p9-shared/implementation-boundaries.txt",
+      "sources/p9-shared/mechanism-smoke.json",
+      "sources/p9-shared/notes60-63-smoke.json",
+      "sources/p9-shared/notes64-66-smoke.json",
+      "sources/p9-shared/runtime-verification.json",
+      "sources/p9-shared/seq2seq-smoke.json",
+      "sources/p9-shared/source-check.json",
+      "sources/p9-shared/split-provenance.json",
+      "sources/p9-shared/video-check.json"
+    ],
+    "publicationArtifacts": [
+      "lectures/lec60/notes.zh.md",
+      "lectures/lec61/notes.zh.md",
+      "lectures/lec62/notes.zh.md",
+      "lectures/lec63/notes.zh.md",
+      "lectures/lec64/notes.zh.md",
+      "lectures/lec65/notes.zh.md",
+      "lectures/lec66/notes.zh.md",
+      "labs/seq2seq-attention/lab.zh.md",
+      "labs/seq2seq-attention/guide.zh.md",
+      "lectures/lec60/assets/translation-data-contract.svg",
+      "lectures/lec61/assets/encoder-decoder-boundary.svg",
+      "lectures/lec62/assets/seq2seq-context-and-shift.svg",
+      "lectures/lec63/assets/beam-parent-state.svg",
+      "lectures/lec64/assets/kernel-attention.svg",
+      "lectures/lec65/assets/attention-scoring.svg",
+      "lectures/lec66/assets/bahdanau-step.svg",
+      "labs/seq2seq-attention/assets/information-boundary.svg",
+      "labs/seq2seq-attention/assets/observed-alignment.svg"
+    ],
+    "sharedFiles": [
+      "course.json",
+      "status.json",
+      "resources.zh.md",
+      "sources/PLAN.txt",
+      "sources/NEXT-PROMPT.txt",
+      "sources/p9-manifest.json"
+    ],
+    "excluded": [
+      "raw corpus archives/full sentences",
+      "weights/checkpoints",
+      "full answer programs",
+      "environments/cookies/tokens",
+      "unrelated prior files"
+    ],
+    "commitPush": "main performs after final manifest and handoff; no second remote"
+  }
+}

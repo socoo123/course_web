@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "batch": "P9",
+  "lectureId": "lec66",
+  "generatedAt": "2026-11-14",
+  "owner": "P9Lec64to66",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "diagram": "original_svg_written_pending_main_browser_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "sections": [
+      "10.4"
+    ],
+    "editionBoundary": "Current pinned Chinese second edition, not2021 snapshot",
+    "numberingCorrection": "LEC64 kernel regression=10.2 (+10.1 cues); LEC65=10.3; LEC66=10.4. Previous 10.1–10.3 handoff omitted Bahdanau 10.4. Main notified."
+  },
+  "scheduleDate": "2021-08-08",
+  "publishedAt": "2021-08-13T02:10:04+00:00",
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1v44y1C7Tg/",
+    "label": "官方 B站视频（全 3 P 合计）",
+    "duration": "30:37",
+    "language": "zh",
+    "durationSeconds": 1837,
+    "pageCount": 3,
+    "allPages": [
+      {
+        "cid": 385256207,
+        "page": 1,
+        "part": "使用注意力机制的seq2seq",
+        "duration": 615
+      },
+      {
+        "cid": 385261079,
+        "page": 2,
+        "part": "代码",
+        "duration": 796
+      },
+      {
+        "cid": 385264671,
+        "page": 3,
+        "part": "QA",
+        "duration": 426
+      }
+    ],
+    "authorMid": 1567748478,
+    "authorName": "跟李沐学AI",
+    "title": "66 使用注意力机制的seq2seq【动手学深度学习v2】",
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 3
+  },
+  "sources": [
+    {
+      "path": "sources/p9-lec66/book-bahdanau-attention.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_attention-mechanisms/bahdanau-attention.md",
+      "sha256": "d2bfc5b6194be32eff8395a754431d32cf2f6a34b19e959dca521dfb3bc12599",
+      "bytes": 19692,
+      "actualReadRange": "full lines 1–461, including prose, all framework tabs, examples and exercises; PyTorch used for implementation discussion",
+      "usage": "independent paraphrase; no copied book images"
+    },
+    {
+      "path": "sources/p9-lec66/schedule-evidence.json",
+      "sha256": "f2b9cf2b29a47c7af7bc6c39a887b604490db5a058169502a49d6523795f42bb",
+      "bytes": 1485,
+      "actualReadRange": "all fields",
+      "usage": "exact row090/091/092 from already acquired official schedule inventory"
+    },
+    {
+      "path": "sources/p9-lec66/video-metadata.json",
+      "sha256": "f0cc90b3e8005d4306f9d33b7f03b8c154dffe4d6c4448b56ddd32c3c78ec68e",
+      "bytes": 1589,
+      "actualReadRange": "all fields",
+      "usage": "filtered real view fields and one caption request per CID; no media review"
+    }
+  ],
+  "sourceIndex": "sources/p9-lec66/source-index.json",
+  "generatedFiles": [
+    "lectures/lec66/notes.zh.md",
+    "lectures/lec66/assets/bahdanau-step.svg",
+    "sources/p9-lec66/source-index.json"
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "id": "bahdanau-context",
+      "input": {
+        "memory": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            100,
+            100
+          ]
+        ],
+        "scores": [
+          0,
+          "log(3)",
+          999
+        ],
+        "validLength": 2
+      },
+      "expected": "weights[0.25,0.75,0], context[0.25,1.5]; illustrative manually supplied scores, not learned alignment"
+    },
+    {
+      "id": "bahdanau-order",
+      "input": "instrument one decoder step in eval with distinct previous and next state",
+      "expected": "attention query equals previous top-layer hidden; context computed before GRU; GRU receives context concatenated with previous target embedding; all layers carried"
+    },
+    {
+      "id": "bahdanau-chunk-invariance",
+      "input": "eval/dropout0; fixed source memory/source lengths and BOS+shifted teacher-forcing input; compare whole sequence versus single-token calls",
+      "expected": "matching logits and final all-layer hidden within float tolerance; memory and source lengths unchanged"
+    },
+    {
+      "id": "source-padding-invariance",
+      "input": "same valid source tokens/EOS; alter tokens beyond valid length and separately append right padding columns",
+      "expected": "length-aware encoder valid outputs and terminal state, decoder logits and greedy outputs unchanged; attention padding weights0; do not test only attention mask"
+    },
+    {
+      "id": "information-boundary",
+      "input": "alter future target suffix while retaining source and prefix; inspect decoding API; reorder two beam parents",
+      "expected": "earlier teacher-forced logits unchanged; infer accepts no target or true target length; all-layer hidden/memory/length ancestry reorder together; EOS termination and accumulated log probability explicit"
+    }
+  ],
+  "workerExecution": {
+    "sourceAcquisition": "performed: pinned originals, real Bilibili view, one public caption request per page",
+    "numeric": "not_run",
+    "tests": "not_run",
+    "build": "not_run",
+    "lint": "not_run",
+    "formatter": "not_run",
+    "browser": "not_run",
+    "git": "not_run"
+  },
+  "limits": [
+    "No classroom draft, timestamps within pages, QA contents, media screenshots or transcript fabricated.",
+    "No training, translated output, BLEU, GPU timing or attention heatmap claimed.",
+    "Source valid lengths must affect encoder terminal state as well as attention.",
+    "Only assigned lecture and source directories written. Main owns numerical/browser/build verification."
+  ]
+}

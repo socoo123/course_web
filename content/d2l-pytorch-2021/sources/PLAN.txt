@@ -168,3 +168,20 @@ Lab.tsx的常用命令固定输出git checkout / make qemu / make grade，仅适
 - Chromium逐讲默认笔记/官方页头/明暗SVG/公式/自测/页底，1440桌面/390手机及实验双标签实点通过；LEC54实点新tab且笔记保留，缺稿状态真实，公共270链接。LEC56长反例矩阵导致409px，拆成两公式后390px；LEC52/实验长hash移页底滚动表。无应用错误，tab关闭。初启Vite因5310占用失败，复用已有正确预览；一次验收器闭包参数遗漏与一次锚点保护拒绝均已据输出修正，不是应用故障。
 - npm run build仅一次通过：tsc --noEmit + Vite5.4.21，3038modules，5.80s，见p8-shared/build.log。12Markdown/9SVG XML/137本地路由与四任务合同检查通过；source/content/video/browser及runtime证据见p8-manifest。全部程序为临时subprocess输入，不留完整答案、语料、权重、凭据或运行环境。
 - 牛仔竞赛认证文件/评分合同及LEC71课堂总结保持未核，不用文本小训练替代任何竞赛。P7真实视觉小运行与旧竞赛条件保持原状态。下一批P9：LEC60–66 + seq2seq-attention，A60–63、B64–66、C实验；剩余14讲/四实验。主agent提交推送main后给下一提示词。
+
+十七、P9实际结果（2026-11-14）
+- 并行A=P9Lec60to63、B=P9Lec64to66、C=P9Seq2seqLab；主agent独占共享索引，统一数值/真实浏览器/一次最终构建与提交发布。只改content；已验收LEC1–59和前八实验134个正文/图文件、全部lab元数据及非P9讲次元数据保持。
+- 新增7份教材导读、7张讲次图、seq2seq-attention双文档、1张实验信息边界图及1张真实注意力图。累计66讲notes/18实验文档/67张自主机制图+1张观测图；73讲12实验48任务不变。四任务完整、无完整解答；66讲课堂稿缺口保留，materials不创建重复占位。
+- 新核7BV/15P=9745秒，mid1567748478、2021上传，每P公开字幕一次成功空列表。60单P10:16，61全2P06:17，62全3P48:46，63单P11:44，64全2P23:58，65全3P30:47，66全3P30:37。累计66BV/182P，公共285链接；课表/上传日期分开。未审阅媒体，不编QA/片内时间码，空字幕不证明无烧录字幕。
+- 固定教材新增9.5–9.8与10.1–10.4；纠正旧交接10.1–10.3漏掉10.4 Bahdanau。原件全文/节选范围见worker清单；BLEU原论文§2与PyTorch2.5 packing为编者补充，不增加必读论文。44项P9来源快照hash通过，旧inventory/version不重复验算。
+- 真实取教材2019 fra-eng包3420152B，SHA1匹配94646ad1522d915e7b0f9296181140edcf86a4f5；167130行两列缺逐句署名。实际训练改用ManyThings2026-02-13带署名包8242175B、240521行三列，SHA256 9e35994767f7307dc1fa9d5efcc36681f3756a1bdaaa02c1381b3eb11461261e；不是旧镜像同hash。ManyThings/Tatoeba及CC BY2.0FR条件实读，公开四个短审计句对保留句主/ID、许可/修改说明；语料全文和权重不发布。
+- 清洗NBSP/narrowNBSP、lower、,.!?前空格与空白分词；规范化句对去重164，余240357。按完整清洗源句SHA256('p9-v1'+TAB+source)前8hex整数模100分80/10/10桶，train192038/val24326/test23993，同源多译不跨桶；按文件顺序取512/64，短句偏差明确。只512训练截断前tokenfit，minfreq1、频数降序+Unicode同频排序，双词表156/429；测试只划分统计、不评分。
+- unk/pad/bos/eos=0/1/2/3；最多11普通token+EOS再pad至12，长度含EOS。选中数据未触发截断，验证OOV源54/目标65；目标有效token训练1919/验证269。teacher forcing BOS+Y[:-1]；推理无目标/真实长度，源长度控制packed GRU和attention。固定context单独保留，显式修正教材跨forward时context重建差异；损失用有效token总NLL/数量，不沿教材mean(width)再除token日志。
+- 环境Python3.11.8/torch2.5.1、Apple M2 Max/macOS26.3.1、CPU1线程float32、CUDA0，MPS只探测。单层单向E32/H32基线48621参数、加性注意力50701参数；seed2029/shuffle2030、Adam.005、B32、20轮各320步、clip1。固定重评trainCE基线6.071833→1.425564/attention6.067042→1.211597，val4.304012/4.157927。实际10/8步触发裁剪，验证B32/B17差<4e-9且不改参数/buffers/grads。
+- 语料BLEU2采用clean空白分词、单参考、两阶等权、无平滑、固定阶2、0..1；逐句裁剪后汇总计数与总长BP，参考不映射UNK、不按训练长度截断。greedy .114977/.105344，beam3 .096055/.091091，未支持attention或beam更好。句级仅诊断bigram add1+effective-order，不平均成语料分数。
+- beam总容量K，共享active/finished池raw logprob剪枝，结束项冻结且占槽；最终优先已完成集合按S/L^.6选，否则标未完成，L含EOS不含BOS、最大12。log_softmax后禁BOS/PAD不重归一化，UNK允许。实测torch2.5.1 CPU topk返回序后稳定合并，未验证跨设备同分顺序；独立greedy与beam1固定首四样本一致。
+- 固定首val原行58 i try . / j'essaye .（CK#20776/nimfeo#1133630）；基线生成je suis malheureux .，attention生成je suis parti .，均错译。真实图展示5个预测步×4个源有效位置，含双方EOS；后几步集中源EOS，不是正确对齐证明。没有挑好样本或手写替换译文。
+- 合成核验覆盖数据/EOS、padding终态/宽度、fixed-context逐步等价、目标未来不影响此前、有效loss梯度、稳定mask及全mask拒绝、异维加性78参数/点积/核带宽梯度与留一、Bahdanau旧query时序、父hidden/cell/cache重排与重复父独立写入、完整有限概率树、EOS冻结/长度归一化/BLEU差异。七讲纸面例通过，公开Python整块代码0；程序只作临时subprocess输入，不保存学生答案。
+- Chromium逐讲默认笔记/官方页头/明暗可读图/公式/自测/页底，1440桌面390手机、实验双标签及两图通过，LEC66实点新tab保留笔记。修65/66页底hash溢出423/409→390、guide JSON指针564→390；lab SHA入滚动表，信息图源状态箭头绕过CE框，观测图改称末轮模型而非已保存checkpoint。改SVG禁缓存刷新；无应用错误，验证tab关闭，非Pages/全片播放验收。
+- npm run build仅一次通过：tsc --noEmit+Vite5.4.21，3056modules，5.36s。10Markdown/9SVG XML/120本地路由/真实图数值及四任务保留检查通过；最终hash以p9-shared/content-check为准，worker生成hash/未运行记录保留历史。一次video字段行号错误已按工具诊断修复；一次status尾逗号保护拒绝，重新读取后原子更新，未触发额外build。
+- 牛仔认证文件/评分端及LEC71课堂总结保持未核；P7/P8真实小运行不回退。下一批P10 LEC67–70+transformer/bert-pretrain-finetune：A67–68、B69–70、C transformer、D BERT实验；之后P11 LEC71–73+optimization-capstone。剩余7讲、3实验，主agent提交推送main后给下一提示词。

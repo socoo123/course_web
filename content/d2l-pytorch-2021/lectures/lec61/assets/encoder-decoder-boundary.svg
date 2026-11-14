@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="660" viewBox="0 0 540 660" role="img" aria-labelledby="title desc">
+<title id="title">固定源条件与变化的解码状态</title>
+<desc id="desc">源ID和有效长度经过编码器生成固定context和初始化hidden，解码器每步接收上一目标词元，返回logits与新hidden。训练使用上一真实词元，推理只用上一预测词元。</desc>
+<style>text{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;fill:#172554;font-size:20px}.small{font-size:17px}.box{fill:#eff6ff;stroke:#2563eb;stroke-width:2}.green{fill:#ecfdf5;stroke:#047857;stroke-width:2}.warn{fill:#fff7ed;stroke:#b45309;stroke-width:2}.line{fill:none;stroke:#334155;stroke-width:2.5;marker-end:url(#arrow)}</style><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#334155"/></marker></defs>
+<rect width="540" height="660" rx="12" fill="#ffffff"/>
+<text x="25" y="38" font-weight="700">接口相连，信息边界不混淆</text>
+<rect class="box" x="55" y="68" width="430" height="56" rx="8"/><text x="80" y="103">完整源 X ＋ 源有效长度</text><path class="line" d="M270 124 V151"/>
+<rect class="box" x="55" y="157" width="430" height="67" rx="8"/><text x="80" y="187">Encoder</text><text class="small" x="80" y="211">有效终态，而不是PAD后的最后状态</text>
+<path class="line" d="M160 224 V257 M382 224 V257"/>
+<rect class="green" x="30" y="263" width="235" height="80" rx="8"/><text x="48" y="294">固定 context C</text><text class="small" x="48" y="322">每一步仍是同一源信息</text>
+<rect class="box" x="285" y="263" width="225" height="80" rx="8"/><text x="301" y="294">init_state</text><text class="small" x="301" y="322">构造初始 hidden S₀</text>
+<path class="line" d="M146 343 V370 H270 V395 M397 343 V370 H270"/>
+<rect class="box" x="55" y="401" width="430" height="72" rx="8"/><text x="77" y="431">Decoder：上一词 ＋ C ＋ S</text><text class="small" x="77" y="458">返回目标logits ＋ 新hidden</text>
+<path class="line" d="M270 473 V502"/>
+<rect class="green" x="30" y="508" width="480" height="99" rx="8"/><text x="47" y="538">训练：BOS → 上一真实目标词元</text><text x="47" y="568">生成：BOS → 上一预测词元</text><text class="small" x="47" y="594">生成不接收真实目标，也不接收其长度</text>
+<text class="small" x="45" y="635">hidden会变；context不变；LSTM还需cell</text>
+</svg>

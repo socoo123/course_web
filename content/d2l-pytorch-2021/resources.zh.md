@@ -1,6 +1,6 @@
 ---
 source: 李沐《动手学深度学习》2021 中文课程官方课表；《动手学深度学习》中文第二版
-status: 已完成LEC1–59学习笔记、自绘图及前八项实验说明/指导；59BV共167P元数据已核，公开字幕为空，课堂稿持续阻塞。P8完成真实教材文本上的有限CPU RNN/GRU/LSTM小训练，生成重复、不宣称质量达标；双向只做形状与泄漏检查。牛仔竞赛认证访问、评分端格式及LEC71课堂总结仍未核。
+status: 已完成LEC1–66学习笔记及前九项实验说明/指导；66BV共182P元数据已核，公开字幕为空，课堂稿持续阻塞。P9完成真实带署名英法语料上的有限CPU基线/注意力训练，固定样本仍错译，attention与beam未提高BLEU；未测GPU或宣称翻译质量达标。牛仔竞赛认证访问、评分端格式及LEC71课堂总结仍未核。
 license: 本页为编者自主课程导航；教材、代码、视频分别按原始许可处理，视频授权不由教材许可推定。
 ---
 
@@ -329,6 +329,29 @@ VOC直接读取PNG调色板索引，保留`255`为忽略标签；图像与掩码
 
 这些是有限语料流程与机制验收，不是全部学生任务、教材500轮训练、GPU性能或模型质量达标。[第八项实验](#/c/d2l-pytorch-2021/lab/recurrent-language-model?v=zh)仍要求学习者独立实现四任务。完整划分、逐轮指标、原始生成与环境见`sources/p8-shared/`的`corpus-acquisition.json`、`language-model-smoke.json`和`mechanism-smoke.json`；不发布语料全文、权重或完整答案脚本。
 
+#### 第九批：英法翻译与注意力
+
+本批使用 **ManyThings 2026-02-13 英法句对包**做真实小训练：240,521行，每行包含英语、法语和逐句署名。教材S3的2019包另行核验，只有两列、缺逐句作者；二者不是同一文件，不混用校验值。当前包保留署名，原始数据不随站点发布。
+
+先替换两种不换行空格、转小写、在`,.!?`前补空格并按空白分词；规范化句对去重164条，保留首条署名。用**规范化源句**分组，确保同源多译不会跨训练/验证/测试：对`p9-v1`、一个制表符和源句拼接后求SHA256，前8位十六进制转整数再模100；小于80、80–89、90–99分别进入训练、验证、测试。三个候选池为192,038／24,326／23,993对；各池保留原文件顺序，只选前512训练、前64验证，测试不参与拟合、调参或评分。发布者原文件按短句优先排序，**这个小子集不是代表性翻译基准**。
+
+源/目标词表分别只在选中的512训练对上拟合，大小156／429；截断前统计、最低频数1。`unk/pad/bos/eos`分别为0/1/2/3；两边最多保留11个词再加EOS，右侧填充至12，有效长度含EOS。所选短句没有实际触发截断；验证源/目标分别有54／65个OOV，不能把验证词加入词表消除它们。
+
+两模型都是单层单向GRU、嵌入32、隐藏32，CPU单线程float32；初始化seed2029、shuffle seed2030，B32、Adam学习率0.005、全局梯度范数阈值1、20轮各320步。编码器按有效长度打包，不让padding污染终态。基线独立保存固定编码器上下文与可变解码状态；注意力每步用前一解码状态查询有效源位置，再更新GRU。前者修正了固定教材helper逐次调用时上下文随状态变化的边界，不冒称原Notebook逐字复现。
+
+| 模型 | 参数量 | 初始→末轮训练CE | 验证CE | 贪心语料BLEU-2 | beam3语料BLEU-2 |
+|---|---:|---:|---:|---:|---:|
+| 固定上下文seq2seq | 48,621 | 6.071833→1.425564 | 4.304012 | 0.114977 | 0.096055 |
+| 加性注意力seq2seq | 50,701 | 6.067042→1.211597 | 4.157927 | 0.105344 | 0.091091 |
+
+CE是冻结模型重评时的有效目标token负对数概率总和除以数量，训练/验证各1,919／269个，**包含EOS、不含PAD**；不是批均值平均，也不是教材按填充宽度取mean后的量。训练输入为BOS加左移目标；推理接口没有真实目标或目标长度，最大生成12步，EOS即停止。真实训练分别有10／8步触发梯度缩放。验证改B17后CE差小于4×10⁻⁹，参数、buffers和既有梯度均不变。
+
+表中BLEU为**0–1刻度、语料级BLEU-2、两阶均匀权重、不平滑、固定阶数2、每对一个参考**；先合计截断匹配数与候选n-gram数，再求精确率和整体短句惩罚。分词沿用上述清洗，不再去标点；参考保留真实词，不先映射为`unk`。句级诊断另用二元add-one平滑和有效阶数，不能与此表混比，更不能平均句级分数充当语料分数。同源多译在同一划分中仍逐句对评价，没有聚合成多参考基准。
+
+beam宽3按累积原始log概率剪枝，已结束候选冻结；最后在保留的已结束候选中按`S / L^0.6`排序，若没有则明确标注达到上限仍未结束，L含EOS、不含BOS。禁止生成BOS/PAD但不重新归一化原模型概率，允许UNK。这个搜索合同不保证全局最优；本次注意力与beam的BLEU**都没有优于相应基线**，固定首条验证句也被两个模型错译。真实译文、逐句署名及注意力图放在[第九项实验](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=guide)，不挑好结果，也不把热图当作正确对齐的证明。
+
+合成验收另覆盖稳定masked softmax、全mask非空合同、padding零梯度、Q/K/V形状、teacher forcing错位、固定上下文逐步一致性、beam父状态重排和BLEU短句边界；它们不是翻译质量证据。完整配置、逐轮指标与划分见`sources/p9-shared/`，未执行测试集、GPU/MPS、性能测量、全量训练或全部学生作业，不发布完整答案脚本或权重。
+
 ## 学完后怎样衔接 CS336
 
 用三个问题自查：能否不依赖整段答案写出小模型训练循环；能否逐步解释 Attention 的形状与 mask；能否解释模型的参数、梯度、优化器状态和激活为何占用内存。
@@ -592,3 +615,24 @@ LEC55的P2平台标题确为“简介实现”，保留原元数据；教学主�
 
 - P8教材导读新增[8.1–8.7](https://zh.d2l.ai/chapter_recurrent-neural-networks/index.html)、[9.1–9.4](https://zh.d2l.ai/chapter_recurrent-modern/index.html)，固定源码全文或精确节选范围见逐讲/实验manifest；不声称全书已读。现代接口另核[PyTorch v2.5.1循环层源码](https://github.com/pytorch/pytorch/blob/v2.5.1/torch/nn/modules/rnn.py)，与当前在线文档版本分开。
 - 语料为[教材S3镜像](https://d2l-data.s3-accelerate.amazonaws.com/timemachine.txt)，已核178979字节与教材SHA1。作品身份对应[Project Gutenberg #35](https://www.gutenberg.org/ebooks/35)，但当前PG文件204384字节、包装与标点不同，不能替换后沿用原位置/hash。PG标美国公版；当地法律及[PG许可/商标条件](https://www.gutenberg.org/license)仍适用。S3首行的`[1898]`不当作初版年份，镜像无独立许可声明，教材Apache-2.0不能代替小说的使用条件；本站不发布全文。
+
+### 第九批已核实的全部分 P
+
+LEC60–66共 **7个BV、15P、9,745秒**。均为官方课表对应的作者“跟李沐学AI”（mid1567748478）2021上传；页头已配置完整时长，单P与全P合计分开。每P公开字幕请求一次均成功空列表；未审阅音视频，空结果不排除烧录字幕，不能以教材导读冒充课堂稿。下表为分P边界，不是片内主题时间轴。
+
+| 讲次 | 全部真实分P | 页头口径 |
+|---|---|---|
+| LEC60 | [P1 机器翻译数据集 · 10:16](https://www.bilibili.com/video/BV1H64y1s7TH?p=1) | 单P10:16 |
+| LEC61 | [P1 编码器-解码器架构 · 03:33](https://www.bilibili.com/video/BV1c54y1E7YP?p=1)；[P2 代码 · 02:44](https://www.bilibili.com/video/BV1c54y1E7YP?p=2) | 全2P合计06:17 |
+| LEC62 | [P1 Seq2Seq · 12:35](https://www.bilibili.com/video/BV16g411L7FG?p=1)；[P2 代码 · 27:27](https://www.bilibili.com/video/BV16g411L7FG?p=2)；[P3 QA · 08:44](https://www.bilibili.com/video/BV16g411L7FG?p=3) | 全3P合计48:46 |
+| LEC63 | [P1 束搜索 · 11:44](https://www.bilibili.com/video/BV1B44y1C7m1?p=1) | 单P11:44 |
+| LEC64 | [P1 注意力机制 · 13:58](https://www.bilibili.com/video/BV1264y1i7R1?p=1)；[P2 代码 · 10:00](https://www.bilibili.com/video/BV1264y1i7R1?p=2) | 全2P合计23:58 |
+| LEC65 | [P1 注意力分数 · 10:45](https://www.bilibili.com/video/BV1Tb4y167rb?p=1)；[P2 代码 · 15:20](https://www.bilibili.com/video/BV1Tb4y167rb?p=2)；[P3 QA · 04:42](https://www.bilibili.com/video/BV1Tb4y167rb?p=3) | 全3P合计30:47 |
+| LEC66 | [P1 使用注意力机制的seq2seq · 10:15](https://www.bilibili.com/video/BV1v44y1C7Tg?p=1)；[P2 代码 · 13:16](https://www.bilibili.com/video/BV1v44y1C7Tg?p=2)；[P3 QA · 07:06](https://www.bilibili.com/video/BV1v44y1C7Tg?p=3) | 全3P合计30:37 |
+
+课表60–63为8月7日、64–66为8月8日；实际上传60/61为8月8日、62为8月9日、63–66为8月10–13日。copyright=1、no_reprint=1不授予全文转录许可。逐讲cid、时间及请求记录见`sources/p9-lec60`至`p9-lec66`；牛仔竞赛及LEC71依赖不因本批完成而改变。
+
+- P9固定教材新增[9.5–9.8](https://zh.d2l.ai/chapter_recurrent-modern/index.html)与[10.1–10.4](https://zh.d2l.ai/chapter_attention-mechanisms/index.html)。10.1是编者提示补充，10.2核回归、10.3评分、**10.4 Bahdanau**分别对应LEC64–66；此前交接写10.1–10.3漏掉了10.4，现已更正。具体全文/节选范围见逐讲与实验清单。
+- 数据由[ManyThings/Charles Kelly](https://www.manythings.org/anki/)筛选[Tatoeba](https://tatoeba.org/en/terms_of_use)句子；本次实际训练包为2026-02-13带署名版本，不是教材2019 S3镜像。文本的[CC BY 2.0 France](https://creativecommons.org/licenses/by/2.0/fr/deed.en)与包内一般CC-BY2.0链接分别记录；公开例子保留句主、句子ID、发布方与许可，并说明清洗修改。包hash、原始说明与使用边界见[实验说明页底](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=zh)，不以代码许可替代数据条件。
+- [PyTorch 2.5 packed sequence文档](https://docs.pytorch.org/docs/2.5/generated/torch.nn.utils.rnn.pack_padded_sequence.html)用于有效源终态实现。[Papineni等2002 BLEU论文](https://aclanthology.org/P02-1040/)的实际阅读范围见LEC62/实验来源；指标补读不是新增必修论文。
+

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 492" role="img" aria-labelledby="title desc">
+<title id="title">真实小训练固定首条验证句的Bahdanau权重</title>
+<desc id="desc">ManyThings2026英法包第58行，源句i try点号，参考j’essaye点号。注意力模型贪心输出je suis parti点号再EOS，译错。五行预测词对四列有效源词，后几步集中于源EOS。来自主agent真实训练日志，不是人工对齐。</desc>
+<style>.bg{fill:#f8fafc}.text{fill:#0f172a;font-family:system-ui,-apple-system,"PingFang SC",sans-serif;font-size:19px}.small{font-size:15px}.cell{fill:#0369a1}.num{font-family:system-ui,sans-serif;font-size:17px;fill:#0f172a}.hi{fill:white}@media(prefers-color-scheme:dark){.bg{fill:#0f172a}.text{fill:#f1f5f9}.cell{fill:#38bdf8}.num{fill:#f1f5f9}.hi{fill:#082f49}}</style>
+<rect class="bg" width="620" height="492" rx="12"/>
+<text class="text" x="24" y="34">真实权重不等于正确翻译</text>
+<text class="text small" x="24" y="60">ManyThings 2026 · 原始行58 · greedy · 20轮末模型</text>
+<text class="text small" x="24" y="85">列：源token（含EOS）　行：实际预测token（含EOS）</text>
+<text class="text" text-anchor="middle" x="204" y="121">i</text>
+<text class="text" text-anchor="middle" x="310" y="121">try</text>
+<text class="text" text-anchor="middle" x="416" y="121">.</text>
+<text class="text" text-anchor="middle" x="522" y="121">&lt;eos&gt;</text>
+<text class="text" text-anchor="end" x="139" y="167">je</text>
+<rect class="cell" x="153" y="136" width="102" height="48" rx="3" fill-opacity="0.345293"/>
+<text class="num" text-anchor="middle" x="204" y="166">0.296</text>
+<rect class="cell" x="259" y="136" width="102" height="48" rx="3" fill-opacity="0.209794"/>
+<text class="num" text-anchor="middle" x="310" y="166">0.150</text>
+<rect class="cell" x="365" y="136" width="102" height="48" rx="3" fill-opacity="0.528194"/>
+<text class="num" text-anchor="middle" x="416" y="166">0.493</text>
+<rect class="cell" x="471" y="136" width="102" height="48" rx="3" fill-opacity="0.126719"/>
+<text class="num" text-anchor="middle" x="522" y="166">0.061</text>
+<text class="text" text-anchor="end" x="139" y="219">suis</text>
+<rect class="cell" x="153" y="188" width="102" height="48" rx="3" fill-opacity="0.070489"/>
+<text class="num" text-anchor="middle" x="204" y="218">0.001</text>
+<rect class="cell" x="259" y="188" width="102" height="48" rx="3" fill-opacity="0.070241"/>
+<text class="num" text-anchor="middle" x="310" y="218">0.000</text>
+<rect class="cell" x="365" y="188" width="102" height="48" rx="3" fill-opacity="0.886738"/>
+<text class="num hi" text-anchor="middle" x="416" y="218">0.878</text>
+<rect class="cell" x="471" y="188" width="102" height="48" rx="3" fill-opacity="0.182532"/>
+<text class="num" text-anchor="middle" x="522" y="218">0.121</text>
+<text class="text" text-anchor="end" x="139" y="271">parti</text>
+<rect class="cell" x="153" y="240" width="102" height="48" rx="3" fill-opacity="0.072383"/>
+<text class="num" text-anchor="middle" x="204" y="270">0.003</text>
+<rect class="cell" x="259" y="240" width="102" height="48" rx="3" fill-opacity="0.071104"/>
+<text class="num" text-anchor="middle" x="310" y="270">0.001</text>
+<rect class="cell" x="365" y="240" width="102" height="48" rx="3" fill-opacity="0.158259"/>
+<text class="num" text-anchor="middle" x="416" y="270">0.095</text>
+<rect class="cell" x="471" y="240" width="102" height="48" rx="3" fill-opacity="0.908254"/>
+<text class="num hi" text-anchor="middle" x="522" y="270">0.901</text>
+<text class="text" text-anchor="end" x="139" y="323">.</text>
+<rect class="cell" x="153" y="292" width="102" height="48" rx="3" fill-opacity="0.070538"/>
+<text class="num" text-anchor="middle" x="204" y="322">0.001</text>
+<rect class="cell" x="259" y="292" width="102" height="48" rx="3" fill-opacity="0.070413"/>
+<text class="num" text-anchor="middle" x="310" y="322">0.000</text>
+<rect class="cell" x="365" y="292" width="102" height="48" rx="3" fill-opacity="0.085794"/>
+<text class="num" text-anchor="middle" x="416" y="322">0.017</text>
+<rect class="cell" x="471" y="292" width="102" height="48" rx="3" fill-opacity="0.983256"/>
+<text class="num hi" text-anchor="middle" x="522" y="322">0.982</text>
+<text class="text" text-anchor="end" x="139" y="375">&lt;eos&gt;</text>
+<rect class="cell" x="153" y="344" width="102" height="48" rx="3" fill-opacity="0.070141"/>
+<text class="num" text-anchor="middle" x="204" y="374">0.000</text>
+<rect class="cell" x="259" y="344" width="102" height="48" rx="3" fill-opacity="0.070119"/>
+<text class="num" text-anchor="middle" x="310" y="374">0.000</text>
+<rect class="cell" x="365" y="344" width="102" height="48" rx="3" fill-opacity="0.088529"/>
+<text class="num" text-anchor="middle" x="416" y="374">0.020</text>
+<rect class="cell" x="471" y="344" width="102" height="48" rx="3" fill-opacity="0.981212"/>
+<text class="num hi" text-anchor="middle" x="522" y="374">0.980</text>
+<text class="text small" x="24" y="421">颜色越深/亮权重越高；显示值四舍五入至3位。</text>
+<text class="text small" x="24" y="445">未显示的8列PAD权重均为0；不是把非零列裁掉。</text>
+<text class="text small" x="24" y="470">Tatoeba #20776 CK / #1133630 nimfeo · CC BY 2.0 FR</text>
+</svg>

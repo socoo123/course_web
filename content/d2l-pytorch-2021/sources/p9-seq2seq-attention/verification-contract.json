@@ -1,0 +1,224 @@
+{
+  "phase": "P9",
+  "labId": "seq2seq-attention",
+  "owner": "P9Seq2seqLab",
+  "workerExecution": {
+    "numerical": false,
+    "training": false,
+    "tests": false,
+    "browser": false,
+    "build": false
+  },
+  "purpose": "Contracts and local hints, not a complete solution. Main owns numerical verification; existing successful Main checks must not be rerun merely for this fragment.",
+  "taskIds": [
+    "seq2seq-attention-1",
+    "seq2seq-attention-2",
+    "seq2seq-attention-3",
+    "seq2seq-attention-4"
+  ],
+  "data": {
+    "archive": "publisherCurrent in corpus-acquisition.json",
+    "parse": "3 TAB fields source,target,attribution; third field metadata only",
+    "normalize": "NBSP/narrow NBSP to ASCII space, lower, insert space before ,.!? if preceding char is not space, split whitespace, join single space; preserve accents/apostrophes",
+    "dedup": "normalized full(source,target), keep first line and attribution",
+    "groupSplit": "normalized source SHA256(UTF8(\"p9-v1\\t\" + source)) first8 hex -> integer %100; <80 train,<90 val,else test; salt uses actual TAB not literal backslash+t",
+    "order": "original file order within split; first512 train/first64 val",
+    "vocab": "independent source/target fit only selected512 pre-truncation tokens; minfreq1; descending frequency then Unicode lexical",
+    "specialIds": {
+      "unk": 0,
+      "pad": 1,
+      "bos": 2,
+      "eos": 3
+    },
+    "truncate": "first11 content tokens + EOS; right-pad to12; effective lengths include EOS",
+    "test": "partitioned and counted only, not evaluated",
+    "requiredEvidence": [
+      "hash/bytes/member/date/terms",
+      "duplicate count and source/pair cross-split nonoverlap",
+      "split/subset counts, line IDs and hashes",
+      "vocabulary hashes/sizes/fit scope",
+      "validation source/target OOV",
+      "source/target truncated count; nonempty effective lengths",
+      "public displayed sample attribution plus modification notice"
+    ]
+  },
+  "realRun": {
+    "models": [
+      "fixed encoder-context GRU seq2seq",
+      "Bahdanau additive attention GRU seq2seq"
+    ],
+    "E": 32,
+    "H": 32,
+    "layers": 1,
+    "bidirectional": false,
+    "dropout": 0,
+    "seedPerModel": 2029,
+    "shuffleSeed": 2030,
+    "epochs": 20,
+    "batch": 32,
+    "optimizer": "Adam",
+    "lr": 0.005,
+    "globalGradientClip": 1,
+    "trainingLoss": "sum masked token CE / number valid target tokens including EOS",
+    "reportCE": "frozen eval sumNLL/sumTokens; not unweighted mean of batches",
+    "fairness": "same samples, vocabularies, order and update budget; report different parameter counts; Main also matches common initial weights",
+    "encoder": "packing must affect terminal hidden, not only attention mask",
+    "baselineState": "immutable encoder context plus mutable decoder hidden; fixed context remains differentiable during training",
+    "inferenceInputs": "source IDs, effective source lengths, generated history ONLY",
+    "maxGeneration": 12,
+    "excludeCandidates": [
+      "BOS",
+      "PAD"
+    ],
+    "candidatePolicy": "full-vocabulary log_softmax then candidate exclusion, no renormalization; UNK allowed",
+    "search": {
+      "widths": [
+        1,
+        3
+      ],
+      "prune": "raw accumulated logprob shared active+finished pool; finished unchanged",
+      "final": "prefer finished if pool contains any; otherwise mark unfinished",
+      "rank": "sumLogProb / length**0.6; length includes EOS excludes BOS",
+      "ties": "stable deterministic order; record implementation",
+      "state": "parent gather every dynamic state, memory/source identity/length, context, history, attention history; same parent may produce multiple children"
+    },
+    "corpusMetric": {
+      "name": "BLEU2",
+      "scale": "0..1",
+      "orders": [
+        1,
+        2
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ],
+      "smoothing": "none",
+      "effectiveOrder": false,
+      "referencesPerPair": 1,
+      "tokenizer": "normalized whitespace; already lowercase",
+      "reference": "full raw normalized tokens, NOT vocab-mapped and NOT truncated",
+      "aggregation": "clip per sentence then sum matches/totals; corpus BP using summed candidate/ref lengths",
+      "emptyAndMissingOrder": "0; empty hypothesis still contributes reference length"
+    },
+    "sentenceDiagnostic": "BLEU2; bigram add1 only; effective order min(2,candidateLength); unigram unsmoothed; empty0; never average as corpus metric",
+    "fixedVisualization": "first selected validation sample, original line58; no post-result selection; use exact same greedy forward weights; source EOS included, PAD excluded in figure but verified zero in underlying log",
+    "prohibitedClaims": [
+      "attention must beat baseline",
+      "beam must improve BLEU",
+      "synthetic kernel curve is translation training",
+      "equal H is equal parameter capacity",
+      "CPU smoke implies GPU throughput",
+      "short512/64 sample represents full MT quality"
+    ]
+  },
+  "mechanismCases": [
+    {
+      "id": "M1-data",
+      "checks": [
+        "dedup/group before split/fit",
+        "unknown validation word maps0 without vocab growth",
+        "source/target vocab separate",
+        "length after truncation preserves EOS",
+        "target input BOS+Y[:-1]"
+      ]
+    },
+    {
+      "id": "M2-padding",
+      "checks": [
+        "padded input identity/length extension does not change effective encoder terminal state",
+        "attention PAD key/value changes do not affect pooled output",
+        "naive padded-last-state counterexample distinguished"
+      ]
+    },
+    {
+      "id": "M3-state",
+      "checks": [
+        "eval whole vs step teacher forcing logits equal with immutable encoder context",
+        "changing future decoder input cannot affect earlier logits",
+        "generation does not accept target or target length"
+      ]
+    },
+    {
+      "id": "M4-loss",
+      "checks": [
+        "target PAD gradient0; EOS counts",
+        "token sum/count unaffected by added padding",
+        "validation batch repartition metric stable within float32 tolerance",
+        "eval does not change parameters/buffers/existing gradients"
+      ]
+    },
+    {
+      "id": "M5-attention",
+      "checks": [
+        "Gaussian scalar weights and pooled result",
+        "additive Dq!=Dk shape; dot equal d and sqrt(d)",
+        "source-length vector and per-query length matrix mask semantics",
+        "legal row sum1, PAD weights0, finite gradients",
+        "zero-length/all-mask rejected before softmax; no fake uniform fallback",
+        "dropout disabled for normalization/image checks"
+      ]
+    },
+    {
+      "id": "M6-beam",
+      "checks": [
+        "same parent duplicated and permuted; all state axes correct, LSTM h/c if extension tested",
+        "EOS logprob included once; ended paths frozen",
+        "length normalization can reverse ordering",
+        "greedy equals width1",
+        "tiny finite-tree exhaustive oracle as student search verification, separate from real training"
+      ]
+    },
+    {
+      "id": "M7-metric",
+      "checks": [
+        "exact bigram pair gives corpus1",
+        "exact singleton gives fixed2 corpus0 but diagnostic1",
+        "empty gives0",
+        "counts sentence-clipped then aggregated, not mean sentence BLEU",
+        "reference unknown words remain raw strings"
+      ]
+    },
+    {
+      "id": "M8-kernel-extension",
+      "checks": [
+        "nonzero-w gradient",
+        "leave-one-out removes diagonal key/value rather than zeroing values",
+        "short learned-w training and separate query plot recorded as synthetic regression only"
+      ],
+      "executionBoundary": "student task requirement; shared Main mechanism log currently demonstrates fixed kernel weights/output, not this entire learned-kernel training task"
+    }
+  ],
+  "observedMainEvidence": {
+    "status": "Main reported passed and worker read evidence; worker did not execute checks",
+    "files": [
+      "../p9-shared/runtime-verification.json",
+      "../p9-shared/mechanism-smoke.json",
+      "../p9-shared/seq2seq-smoke.json",
+      "../p9-shared/split-provenance.json"
+    ],
+    "readScope": {
+      "runtime-verification.json": "whole",
+      "mechanism-smoke.json": "whole",
+      "split-provenance.json": "top-level plus visible config; long line-ID/vocab nested fields not read wholesale",
+      "seq2seq-smoke.json": "config; baseline first sample lines165-220; attention parameters/evals/epochs/metric/first attention matrix lines512-735; numeric first-sample text also supplied by Main"
+    },
+    "notRunByWorker": [
+      "all numerical/training/tests/build/browser"
+    ],
+    "notClaimedComplete": [
+      "all student solution variants",
+      "test-set evaluation",
+      "GPU/MPS benchmark",
+      "old notebook full compatibility",
+      "learned-kernel training by this worker"
+    ]
+  },
+  "mainContentAcceptance": [
+    "both lab tabs actual route #/c/d2l-pytorch-2021/lab/seq2seq-attention?v=zh|guide",
+    "four original task IDs/titles preserved",
+    "SVG title/desc and light/dark readable; actual observed vs schematic distinguished",
+    "local figure files resolve; mobile formulas/figures no page-wide overflow",
+    "source snapshots and fragment hashes integrated; no raw corpus/checkpoint/full solution committed"
+  ]
+}

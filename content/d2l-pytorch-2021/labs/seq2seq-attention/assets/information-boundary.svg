@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" role="img" aria-labelledby="title desc">
+<title id="title">训练、自由生成与离线评分的信息边界</title><desc id="desc">源序列和源长度进入编码器。训练使用BOS与左移目标；自由生成只使用BOS和预测历史。参考只进入训练历史及离线评分，不进入自由生成。自绘机制图，不是模型运行结果。</desc>
+<style>.bg{fill:#f8fafc}.box{fill:#e0f2fe;stroke:#0369a1}.green{fill:#dcfce7;stroke:#166534}.warn{fill:#fff7ed;stroke:#9a3412}.text{fill:#0f172a;font-family:system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;font-size:19px}.small{font-size:16px}.line{stroke:#334155;stroke-width:2;fill:none}.label{font-weight:650}@media(prefers-color-scheme:dark){.bg{fill:#0f172a}.box{fill:#12364a;stroke:#7dd3fc}.green{fill:#123b29;stroke:#86efac}.warn{fill:#44271b;stroke:#fdba74}.text{fill:#f1f5f9}.line{stroke:#cbd5e1}}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#64748b"/></marker></defs>
+<rect class="bg" width="760" height="500" rx="14"/>
+<text class="text label" x="28" y="36">同一个解码器，不同的历史输入</text>
+<rect class="box" x="28" y="60" width="300" height="72" rx="8"/><text class="text" x="48" y="89">源序列 + 源有效长度</text><text class="text small" x="48" y="115">长度同时决定编码终态与key mask</text>
+<path class="line" d="M328 96H412" marker-end="url(#arrow)"/>
+<rect class="box" x="418" y="60" width="310" height="72" rx="8"/><text class="text" x="440" y="89">编码器 → 源状态</text><text class="text small" x="440" y="115">固定context / 注意力memory</text>
+<path class="line" d="M573 132V157H200V179" marker-end="url(#arrow)"/>
+<path class="line" d="M573 157H744V330H734" marker-end="url(#arrow)"/>
+<rect class="green" x="28" y="185" width="300" height="82" rx="8"/><text class="text label" x="48" y="213">训练：teacher forcing</text><text class="text small" x="48" y="243">BOS + 左移目标 → 预测当前目标</text>
+<rect class="green" x="418" y="185" width="310" height="65" rx="8"/><text class="text" x="440" y="223">仅有效目标CE，含EOS</text>
+<path class="line" d="M328 222H412" marker-end="url(#arrow)"/>
+<rect class="box" x="418" y="289" width="310" height="83" rx="8"/><text class="text label" x="440" y="318">自由生成：逐词解码</text><text class="text small" x="440" y="346">BOS + 自己预测的历史</text>
+<rect class="warn" x="28" y="301" width="300" height="71" rx="8"/><text class="text" x="48" y="329">参考译文 / 参考长度</text><text class="text small" x="48" y="354">不得传入自由生成接口</text>
+<path class="line" d="M573 372V406" marker-end="url(#arrow)"/>
+<path class="line" d="M178 372V440H412" marker-end="url(#arrow)"/>
+<rect class="green" x="418" y="412" width="310" height="62" rx="8"/><text class="text" x="440" y="450">离线评分：生成 vs 参考</text>
+<text class="text small" x="28" y="478">自拟信息通路；不是翻译结果或训练截图。</text>
+</svg>

@@ -1,0 +1,1459 @@
+{
+  "config": {
+    "embed": 32,
+    "hidden": 32,
+    "layers": 1,
+    "bidirectional": false,
+    "seed_per_model": 2029,
+    "shuffle_seed": 2030,
+    "batch": 32,
+    "epochs": 20,
+    "steps_per_model": 320,
+    "optimizer": "Adam",
+    "lr": 0.005,
+    "global_clip_norm": 1.0,
+    "encoder": "packed GRU incl source EOS; no pad contamination",
+    "baseline_context": "immutable encoder final state separately retained across decoder calls; not literal textbook helper inference",
+    "attention": "additive32; query previous decoder state, memory all valid encoder outputs incl EOS; before dropout(no dropout used)",
+    "loss": "valid target token mean incl EOS; epoch mixed losses separate from final frozen evaluation",
+    "search": "width1 greedy or beam3; raw cumulative logprob pruning over shared active+finished pool; finished unchanged; final rank S/length**.6 preferring completed if any, else marked unfinished; length includes EOS/excludes BOS; max12; logsoftmax over full vocab then prohibit BOS/PAD without renormalization; UNK allowed",
+    "fairness": "same data/order/hyperparameters and matching common initial weights, attention has extra params; not equal-capacity comparison",
+    "BLEU": {
+      "corpus": "uniform BLEU-2; no smoothing; fixed order2; count aggregation before precision; one reference; 0..1 scale",
+      "sentence": "diagnostic BLEU-2; add-one bigram smoothing only; effective order=min(2,candidate_length); empty=0",
+      "tokenization": "same lowercase/punctuation-space normalization; whitespace tokens; no detokenization; remove EOS/BOS/PAD from generated display; preserve UNK; raw reference tokens NOT vocabulary-mapped",
+      "sanity": "exact bigram=1; exact one token fixed-order=0, effective-order=1; empty=0"
+    },
+    "not_run": [
+      "test evaluation",
+      "GPU/MPS",
+      "old d2l notebooks",
+      "full student solution variants",
+      "full MT benchmark"
+    ]
+  },
+  "models": {
+    "baseline": {
+      "parameters": 48621,
+      "initial_train": {
+        "nll_sum": 11651.84722328186,
+        "tokens": 1919,
+        "CE": 6.071832841731037
+      },
+      "final_train": {
+        "nll_sum": 2735.656512292102,
+        "tokens": 1919,
+        "CE": 1.425563581184003
+      },
+      "validation": {
+        "nll_sum": 1157.779221930541,
+        "tokens": 269,
+        "CE": 4.304011977436955
+      },
+      "val_batch17_CE": 4.304011980982214,
+      "eval_parameters_buffers_gradients_unchanged": true,
+      "max_preclip_norm": 1.3870539665222168,
+      "clipped_steps": 10,
+      "epochs": [
+        {
+          "epoch": 1,
+          "online_mixed_model_CE": 4.957053640039095
+        },
+        {
+          "epoch": 2,
+          "online_mixed_model_CE": 3.5047408804693467
+        },
+        {
+          "epoch": 3,
+          "online_mixed_model_CE": 3.1772135571538316
+        },
+        {
+          "epoch": 4,
+          "online_mixed_model_CE": 3.014082555350939
+        },
+        {
+          "epoch": 5,
+          "online_mixed_model_CE": 2.886331574425466
+        },
+        {
+          "epoch": 6,
+          "online_mixed_model_CE": 2.774918040325705
+        },
+        {
+          "epoch": 7,
+          "online_mixed_model_CE": 2.6637520250214486
+        },
+        {
+          "epoch": 8,
+          "online_mixed_model_CE": 2.5558231664610878
+        },
+        {
+          "epoch": 9,
+          "online_mixed_model_CE": 2.441791878356062
+        },
+        {
+          "epoch": 10,
+          "online_mixed_model_CE": 2.3359741755062835
+        },
+        {
+          "epoch": 11,
+          "online_mixed_model_CE": 2.2247158754199603
+        },
+        {
+          "epoch": 12,
+          "online_mixed_model_CE": 2.1306179125325917
+        },
+        {
+          "epoch": 13,
+          "online_mixed_model_CE": 2.035611914880399
+        },
+        {
+          "epoch": 14,
+          "online_mixed_model_CE": 1.9466338231169569
+        },
+        {
+          "epoch": 15,
+          "online_mixed_model_CE": 1.8572504746699983
+        },
+        {
+          "epoch": 16,
+          "online_mixed_model_CE": 1.778873815011464
+        },
+        {
+          "epoch": 17,
+          "online_mixed_model_CE": 1.7003767564868504
+        },
+        {
+          "epoch": 18,
+          "online_mixed_model_CE": 1.6285938396734447
+        },
+        {
+          "epoch": 19,
+          "online_mixed_model_CE": 1.5605796533634322
+        },
+        {
+          "epoch": 20,
+          "online_mixed_model_CE": 1.4972614336078438
+        }
+      ],
+      "greedy_corpus_BLEU2": {
+        "score": 0.11497687886617135,
+        "matches": [
+          62,
+          6
+        ],
+        "totals": [
+          192,
+          128
+        ],
+        "candidate_length": 192,
+        "reference_length": 205
+      },
+      "beam3_corpus_BLEU2": {
+        "score": 0.09605487901337122,
+        "matches": [
+          62,
+          4
+        ],
+        "totals": [
+          154,
+          90
+        ],
+        "candidate_length": 154,
+        "reference_length": 205
+      },
+      "fixed_first4_validation_samples": [
+        {
+          "line": 58,
+          "source": "i try .",
+          "reference": "j'essaye .",
+          "attribution": "CC-BY 2.0 (France) Attribution: tatoeba.org #20776 (CK) & #1133630 (nimfeo)",
+          "source_tokens_encoded": [
+            "i",
+            "try",
+            ".",
+            "<eos>"
+          ],
+          "greedy": {
+            "ids": [
+              6,
+              7,
+              310,
+              5,
+              3
+            ],
+            "score": -4.695630229078233,
+            "finished": true,
+            "attention": [],
+            "normalized_score": -1.7877709960676245,
+            "termination": "EOS"
+          },
+          "greedy_text": "je suis malheureux .",
+          "beam3": {
+            "ids": [
+              6,
+              7,
+              310,
+              5,
+              3
+            ],
+            "score": -4.695630348287523,
+            "finished": true,
+            "attention": [],
+            "normalized_score": -1.7877710414542711,
+            "termination": "EOS"
+          },
+          "beam3_text": "je suis malheureux .",
+          "sentence_smoothed_effective_BLEU2": {
+            "score": 0.25,
+            "matches": [
+              1,
+              0
+            ],
+            "totals": [
+              4,
+              3
+            ],
+            "candidate_length": 4,
+            "reference_length": 2
+          }
+        },
+        {
+          "line": 80,
+          "source": "sorry ?",
+          "reference": "pardon ?",
+          "attribution": "CC-BY 2.0 (France) Attribution: tatoeba.org #9020701 (Rawrren) & #9675 (sacredceltic)",
+          "source_tokens_encoded": [
+            "<unk>",
+            "?",
+            "<eos>"
+          ],
+          "greedy": {
+            "ids": [
+              142,
+              284,
+              13,
+              3
+            ],
+            "score": -3.7406925410032272,
+            "finished": true,
+            "attention": [],
+            "normalized_score": -1.628230999343985,
+            "termination": "EOS"
+          },
+          "greedy_text": "suis-je grosse ?",
+          "beam3": {
+            "ids": [
+              156,
+              13,
+              3
+            ],
+            "score": -3.133542224764824,
+            "finished": true,
+            "attention": [],
+            "normalized_score": -1.6209245440593938,
+            "termination": "EOS"
+          },
+          "beam3_text": "vraiment ?",
+          "sentence_smoothed_effective_BLEU2": {
+            "score": 0.3333333333333333,
+            "matches": [
+              1,
+              0
+            ],
+            "totals": [
+              3,
+              2
+            ],
+            "candidate_length": 3,
+            "reference_length": 2
+          }
+        },
+        {
+          "line": 185,
+          "source": "be nice .",
+          "reference": "sois gentil !",
+          "attribution": "CC-BY 2.0 (France) Attribution: tatoeba.org #1916314 (CK) & #2077412 (sacredceltic)",
+          "source_tokens_encoded": [
+            "be",
+            "<unk>",
+            ".",
+            "<eos>"
+          ],
+          "greedy": {
+            "ids": [
+              10,
+              28,
+              4,
+              3
+            ],
+            "score": -3.85998120252043,
+            "finished": true,
+            "attention": [],
+            "normalized_score": -1.6801544050833057,
+            "termination": "EOS"
+          },
+          "greedy_text": "soyez calme !",
+          "beam3": {
+            "ids": [
+              10,
+              28,
+              4,
+              3
+            ],
+            "score": -3.8599809566512704,
+            "finished": true,
+            "attention": [],
+            "normalized_score": -1.680154298062538,
+            "termination": "EOS"
+          },
+          "beam3_text": "soyez calme !",
+          "sentence_smoothed_effective_BLEU2": {
+            "score": 0.3333333333333333,
+            "matches": [
+              1,
+              0
+            ],
+            "totals": [
+              3,
+              2
+            ],
+            "candidate_length": 3,
+            "reference_length": 3
+          }
+        },
+        {
+          "line": 186,
+          "source": "be nice .",
+          "reference": "sois gentille !",
+          "attribution": "CC-BY 2.0 (France) Attribution: tatoeba.org #1916314 (CK) & #2077413 (sacredceltic)",
+          "source_tokens_encoded": [
+            "be",
+            "<unk>",
+            ".",
+            "<eos>"
+          ],
+          "greedy": {
+            "ids": [
+              10,
+              28,
+              4,
+              3
+            ],
+            "score": -3.85998120252043,
+            "finished": true,
+            "attention": [],
+            "normalized_score": -1.6801544050833057,
+            "termination": "EOS"
+          },
+          "greedy_text": "soyez calme !",
+          "beam3": {
+            "ids": [
+              10,
+              28,
+              4,
+              3
+            ],
+            "score": -3.8599809566512704,
+            "finished": true,
+            "attention": [],
+            "normalized_score": -1.680154298062538,
+            "termination": "EOS"
+          },
+          "beam3_text": "soyez calme !",
+          "sentence_smoothed_effective_BLEU2": {
+            "score": 0.3333333333333333,
+            "matches": [
+              1,
+              0
+            ],
+            "totals": [
+              3,
+              2
+            ],
+            "candidate_length": 3,
+            "reference_length": 3
+          }
+        }
+      ],
+      "greedy_all64_predictions": [
+        "je suis malheureux .",
+        "suis-je grosse ?",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "rentre .",
+        "rentre .",
+        "rentre .",
+        "rentre .",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "salut .",
+        "je suis tom .",
+        "je suis tom .",
+        "détends-toi !",
+        "détends-toi !",
+        "à terre !",
+        "à terre !",
+        "à terre !",
+        "à terre !",
+        "je peux y aller ?",
+        "je peux y aller ?",
+        "à terre !",
+        "à terre !",
+        "dégage !",
+        "dégage !",
+        "à terre !",
+        "à terre !",
+        "à terre !",
+        "à terre !",
+        "à terre !",
+        "je suis parti .",
+        "je suis parti .",
+        "je suis parti .",
+        "je suis parti .",
+        "je suis tom .",
+        "je suis tom .",
+        "je suis tom .",
+        "à terre !",
+        "c'est pas .",
+        "à terre !",
+        "je suis tom .",
+        "attends .",
+        "nous avons été battues .",
+        "nous avons été battues .",
+        "nous avons été battues .",
+        "salut .",
+        "salut .",
+        "attends .",
+        "attends .",
+        "à terre !",
+        "à terre !",
+        "attends .",
+        "salut !",
+        "salut !",
+        "à terre !",
+        "à terre !",
+        "à terre !",
+        "à terre !"
+      ],
+      "beam3_all64_predictions": [
+        "je suis malheureux .",
+        "vraiment ?",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "entre !",
+        "entre !",
+        "entre !",
+        "entre !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "décampe !",
+        "décampe !",
+        "détends-toi !",
+        "détends-toi !",
+        "à terre !",
+        "à terre !",
+        "dégage !",
+        "dégage !",
+        "je ?",
+        "je ?",
+        "attends .",
+        "attends .",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "je suis parti .",
+        "je suis parti .",
+        "je suis parti .",
+        "je suis parti .",
+        "je suis tom .",
+        "je suis tom .",
+        "je suis tom .",
+        "attends .",
+        "attendez .",
+        "dégage !",
+        "je suis tom .",
+        "attends .",
+        "nous .",
+        "nous .",
+        "nous .",
+        "salut .",
+        "salut .",
+        "attends .",
+        "attends .",
+        "dégage !",
+        "dégage !",
+        "attends .",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !"
+      ]
+    },
+    "attention": {
+      "parameters": 50701,
+      "initial_train": {
+        "nll_sum": 11642.654264450073,
+        "tokens": 1919,
+        "CE": 6.067042347290293
+      },
+      "final_train": {
+        "nll_sum": 2325.054626691155,
+        "tokens": 1919,
+        "CE": 1.2115969915013836
+      },
+      "validation": {
+        "nll_sum": 1118.4822516161948,
+        "tokens": 269,
+        "CE": 4.15792658593381
+      },
+      "val_batch17_CE": 4.157926589022062,
+      "eval_parameters_buffers_gradients_unchanged": true,
+      "max_preclip_norm": 1.4132616519927979,
+      "clipped_steps": 8,
+      "epochs": [
+        {
+          "epoch": 1,
+          "online_mixed_model_CE": 5.053367675934812
+        },
+        {
+          "epoch": 2,
+          "online_mixed_model_CE": 3.5196957005971172
+        },
+        {
+          "epoch": 3,
+          "online_mixed_model_CE": 3.1760013255913346
+        },
+        {
+          "epoch": 4,
+          "online_mixed_model_CE": 3.017076563790883
+        },
+        {
+          "epoch": 5,
+          "online_mixed_model_CE": 2.885133758342595
+        },
+        {
+          "epoch": 6,
+          "online_mixed_model_CE": 2.763798884131158
+        },
+        {
+          "epoch": 7,
+          "online_mixed_model_CE": 2.6365517804291394
+        },
+        {
+          "epoch": 8,
+          "online_mixed_model_CE": 2.5058150744942123
+        },
+        {
+          "epoch": 9,
+          "online_mixed_model_CE": 2.365041030358296
+        },
+        {
+          "epoch": 10,
+          "online_mixed_model_CE": 2.2328005242372564
+        },
+        {
+          "epoch": 11,
+          "online_mixed_model_CE": 2.1023814232050286
+        },
+        {
+          "epoch": 12,
+          "online_mixed_model_CE": 1.9867288796012759
+        },
+        {
+          "epoch": 13,
+          "online_mixed_model_CE": 1.8735640839571177
+        },
+        {
+          "epoch": 14,
+          "online_mixed_model_CE": 1.7740201533322162
+        },
+        {
+          "epoch": 15,
+          "online_mixed_model_CE": 1.6708867039314048
+        },
+        {
+          "epoch": 16,
+          "online_mixed_model_CE": 1.5830355815370065
+        },
+        {
+          "epoch": 17,
+          "online_mixed_model_CE": 1.4980603781649615
+        },
+        {
+          "epoch": 18,
+          "online_mixed_model_CE": 1.4208596393008828
+        },
+        {
+          "epoch": 19,
+          "online_mixed_model_CE": 1.3482985128447174
+        },
+        {
+          "epoch": 20,
+          "online_mixed_model_CE": 1.2831811537279894
+        }
+      ],
+      "greedy_corpus_BLEU2": {
+        "score": 0.1053443780876239,
+        "matches": [
+          61,
+          5
+        ],
+        "totals": [
+          178,
+          114
+        ],
+        "candidate_length": 178,
+        "reference_length": 205
+      },
+      "beam3_corpus_BLEU2": {
+        "score": 0.09109148208607486,
+        "matches": [
+          56,
+          4
+        ],
+        "totals": [
+          162,
+          98
+        ],
+        "candidate_length": 162,
+        "reference_length": 205
+      },
+      "fixed_first4_validation_samples": [
+        {
+          "line": 58,
+          "source": "i try .",
+          "reference": "j'essaye .",
+          "attribution": "CC-BY 2.0 (France) Attribution: tatoeba.org #20776 (CK) & #1133630 (nimfeo)",
+          "source_tokens_encoded": [
+            "i",
+            "try",
+            ".",
+            "<eos>"
+          ],
+          "greedy": {
+            "ids": [
+              6,
+              7,
+              122,
+              5,
+              3
+            ],
+            "score": -4.1353788413107395,
+            "finished": true,
+            "attention": [
+              [
+                0.2960144281387329,
+                0.1503157764673233,
+                0.49268150329589844,
+                0.06098829582333565,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0005262590711936355,
+                0.00025908727548085153,
+                0.8782126307487488,
+                0.12100198119878769,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.002562256995588541,
+                0.0011868252186104655,
+                0.09490225464105606,
+                0.9013487100601196,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0005783914239145815,
+                0.0004439483745954931,
+                0.016982410103082657,
+                0.9819952249526978,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0001510845177108422,
+                0.00012840854469686747,
+                0.019923122599720955,
+                0.9797974228858948,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "normalized_score": -1.5744660438686993,
+            "termination": "EOS"
+          },
+          "greedy_text": "je suis parti .",
+          "beam3": {
+            "ids": [
+              6,
+              7,
+              122,
+              5,
+              3
+            ],
+            "score": -4.13537884503603,
+            "finished": true,
+            "attention": [
+              [
+                0.2960144281387329,
+                0.1503157764673233,
+                0.49268150329589844,
+                0.06098829582333565,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0005262590711936355,
+                0.00025908727548085153,
+                0.8782126307487488,
+                0.12100198119878769,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.002562256995588541,
+                0.0011868252186104655,
+                0.09490227699279785,
+                0.9013487100601196,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.000578391132876277,
+                0.0004439481708686799,
+                0.01698240078985691,
+                0.9819952249526978,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0001510845177108422,
+                0.00012840854469686747,
+                0.019923126325011253,
+                0.9797974228858948,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "normalized_score": -1.5744660452870318,
+            "termination": "EOS"
+          },
+          "beam3_text": "je suis parti .",
+          "sentence_smoothed_effective_BLEU2": {
+            "score": 0.25,
+            "matches": [
+              1,
+              0
+            ],
+            "totals": [
+              4,
+              3
+            ],
+            "candidate_length": 4,
+            "reference_length": 2
+          }
+        },
+        {
+          "line": 80,
+          "source": "sorry ?",
+          "reference": "pardon ?",
+          "attribution": "CC-BY 2.0 (France) Attribution: tatoeba.org #9020701 (Rawrren) & #9675 (sacredceltic)",
+          "source_tokens_encoded": [
+            "<unk>",
+            "?",
+            "<eos>"
+          ],
+          "greedy": {
+            "ids": [
+              80,
+              33,
+              13,
+              3
+            ],
+            "score": -6.699564281851053,
+            "finished": true,
+            "attention": [
+              [
+                0.1260465681552887,
+                0.7636749148368835,
+                0.11027847230434418,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.3238392472267151,
+                0.025253061205148697,
+                0.6509076952934265,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.1478274017572403,
+                0.0005897191585972905,
+                0.8515828251838684,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.07920530438423157,
+                0.0005054632783867419,
+                0.9202892780303955,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "normalized_score": -2.916154729702014,
+            "termination": "EOS"
+          },
+          "greedy_text": "ah bon ?",
+          "beam3": {
+            "ids": [
+              228,
+              13,
+              3
+            ],
+            "score": -4.2739702090620995,
+            "finished": true,
+            "attention": [
+              [
+                0.1260465681552887,
+                0.7636749148368835,
+                0.11027847230434418,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.3238392472267151,
+                0.025253061205148697,
+                0.6509076952934265,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.05240613594651222,
+                0.000902474217582494,
+                0.9466913938522339,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "normalized_score": -2.210847250659708,
+            "termination": "EOS"
+          },
+          "beam3_text": "compris ?",
+          "sentence_smoothed_effective_BLEU2": {
+            "score": 0.3333333333333333,
+            "matches": [
+              1,
+              0
+            ],
+            "totals": [
+              3,
+              2
+            ],
+            "candidate_length": 3,
+            "reference_length": 2
+          }
+        },
+        {
+          "line": 185,
+          "source": "be nice .",
+          "reference": "sois gentil !",
+          "attribution": "CC-BY 2.0 (France) Attribution: tatoeba.org #1916314 (CK) & #2077412 (sacredceltic)",
+          "source_tokens_encoded": [
+            "be",
+            "<unk>",
+            ".",
+            "<eos>"
+          ],
+          "greedy": {
+            "ids": [
+              10,
+              28,
+              4,
+              3
+            ],
+            "score": -2.5695169446989894,
+            "finished": true,
+            "attention": [
+              [
+                0.8872780799865723,
+                0.05010824650526047,
+                0.03168395906686783,
+                0.03092973120510578,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.035594627261161804,
+                0.43982863426208496,
+                0.26821738481521606,
+                0.25635936856269836,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.001173896249383688,
+                0.19486497342586517,
+                0.37794461846351624,
+                0.42601653933525085,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0006150843692012131,
+                0.05962294340133667,
+                0.38534116744995117,
+                0.5544207692146301,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "normalized_score": -1.1184472118033206,
+            "termination": "EOS"
+          },
+          "greedy_text": "soyez calme !",
+          "beam3": {
+            "ids": [
+              10,
+              28,
+              4,
+              3
+            ],
+            "score": -2.569516691379249,
+            "finished": true,
+            "attention": [
+              [
+                0.8872780799865723,
+                0.05010824650526047,
+                0.03168395906686783,
+                0.03092973120510578,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0355946384370327,
+                0.43982863426208496,
+                0.26821738481521606,
+                0.25635936856269836,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0011738964822143316,
+                0.19486483931541443,
+                0.3779447078704834,
+                0.426016628742218,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0006150843692012131,
+                0.059622932225465775,
+                0.38534116744995117,
+                0.5544207692146301,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "normalized_score": -1.1184471015394994,
+            "termination": "EOS"
+          },
+          "beam3_text": "soyez calme !",
+          "sentence_smoothed_effective_BLEU2": {
+            "score": 0.3333333333333333,
+            "matches": [
+              1,
+              0
+            ],
+            "totals": [
+              3,
+              2
+            ],
+            "candidate_length": 3,
+            "reference_length": 3
+          }
+        },
+        {
+          "line": 186,
+          "source": "be nice .",
+          "reference": "sois gentille !",
+          "attribution": "CC-BY 2.0 (France) Attribution: tatoeba.org #1916314 (CK) & #2077413 (sacredceltic)",
+          "source_tokens_encoded": [
+            "be",
+            "<unk>",
+            ".",
+            "<eos>"
+          ],
+          "greedy": {
+            "ids": [
+              10,
+              28,
+              4,
+              3
+            ],
+            "score": -2.5695169446989894,
+            "finished": true,
+            "attention": [
+              [
+                0.8872780799865723,
+                0.05010824650526047,
+                0.03168395906686783,
+                0.03092973120510578,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.035594627261161804,
+                0.43982863426208496,
+                0.26821738481521606,
+                0.25635936856269836,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.001173896249383688,
+                0.19486497342586517,
+                0.37794461846351624,
+                0.42601653933525085,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0006150843692012131,
+                0.05962294340133667,
+                0.38534116744995117,
+                0.5544207692146301,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "normalized_score": -1.1184472118033206,
+            "termination": "EOS"
+          },
+          "greedy_text": "soyez calme !",
+          "beam3": {
+            "ids": [
+              10,
+              28,
+              4,
+              3
+            ],
+            "score": -2.569516691379249,
+            "finished": true,
+            "attention": [
+              [
+                0.8872780799865723,
+                0.05010824650526047,
+                0.03168395906686783,
+                0.03092973120510578,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0355946384370327,
+                0.43982863426208496,
+                0.26821738481521606,
+                0.25635936856269836,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0011738964822143316,
+                0.19486483931541443,
+                0.3779447078704834,
+                0.426016628742218,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0006150843692012131,
+                0.059622932225465775,
+                0.38534116744995117,
+                0.5544207692146301,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "normalized_score": -1.1184471015394994,
+            "termination": "EOS"
+          },
+          "beam3_text": "soyez calme !",
+          "sentence_smoothed_effective_BLEU2": {
+            "score": 0.3333333333333333,
+            "matches": [
+              1,
+              0
+            ],
+            "totals": [
+              3,
+              2
+            ],
+            "candidate_length": 3,
+            "reference_length": 3
+          }
+        }
+      ],
+      "greedy_all64_predictions": [
+        "je suis parti .",
+        "ah bon ?",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "à plus .",
+        "à plus .",
+        "à plus .",
+        "à plus .",
+        "c'est pas possible !",
+        "c'est pas possible !",
+        "c'est pas possible !",
+        "c'est pas possible !",
+        "dégage !",
+        "je suis !",
+        "je suis !",
+        "dégage !",
+        "dégage !",
+        "courage !",
+        "courage !",
+        "dégage !",
+        "dégage !",
+        "ah bon ?",
+        "ah bon ?",
+        "attends !",
+        "attends !",
+        "dégage !",
+        "dégage !",
+        "décampe !",
+        "décampe !",
+        "décampe !",
+        "décampe !",
+        "décampe !",
+        "je suis parti .",
+        "je suis parti .",
+        "je suis parti .",
+        "je suis parti .",
+        "je suis gras .",
+        "je suis gras .",
+        "je suis gras .",
+        "tire !",
+        "attendez !",
+        "à terre !",
+        "je suis malheureux .",
+        "il est est parti .",
+        "il court .",
+        "il court .",
+        "il court .",
+        "salut !",
+        "salut !",
+        "à terre !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "à terre !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !"
+      ],
+      "beam3_all64_predictions": [
+        "je suis parti .",
+        "compris ?",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "soyez calme !",
+        "aidez-nous !",
+        "aidez-nous !",
+        "aidez-nous !",
+        "aidez-nous !",
+        "attendez .",
+        "attendez .",
+        "attendez .",
+        "attendez .",
+        "dégage !",
+        "j'ai te faire foutre !",
+        "j'ai te faire foutre !",
+        "dégage !",
+        "dégage !",
+        "courage !",
+        "courage !",
+        "dégage !",
+        "dégage !",
+        "ah bon ?",
+        "ah bon ?",
+        "attends !",
+        "attends !",
+        "dégage !",
+        "dégage !",
+        "décampe !",
+        "décampe !",
+        "décampe !",
+        "décampe !",
+        "décampe !",
+        "je suis parti .",
+        "je suis parti .",
+        "je suis parti .",
+        "je suis parti .",
+        "je suis gras .",
+        "je suis gras .",
+        "je suis gras .",
+        "attendez .",
+        "allez !",
+        "réveille-toi !",
+        "je suis malheureux .",
+        "attendez .",
+        "joignez-vous .",
+        "joignez-vous .",
+        "joignez-vous .",
+        "salut !",
+        "salut !",
+        "à terre !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "à terre !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !",
+        "dégage !"
+      ]
+    }
+  }
+}

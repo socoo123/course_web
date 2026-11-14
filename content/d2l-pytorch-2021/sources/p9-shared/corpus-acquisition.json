@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-14",
+  "textbookMirror": {
+    "url": "https://d2l-data.s3-accelerate.amazonaws.com/fra-eng.zip",
+    "cache": "/tmp/d2l-p9-corpus-cache/fra-eng.zip",
+    "bytes": 3420152,
+    "sha1": "94646ad1522d915e7b0f9296181140edcf86a4f5",
+    "sha256": "fa96382b2c8b609e1662654c1e6e6baeb8d30b3bf63dfb4a5a261cc36347df13",
+    "aboutMember": "fra-eng/_about.txt",
+    "aboutDate": "2019-04-07",
+    "rows": 167130,
+    "fields": 2,
+    "usage": "identity and textbook checksum verification only; not used for P9 training; individual sentence owner field missing"
+  },
+  "realTrainingCorpus": {
+    "url": "https://www.manythings.org/anki/fra-eng.zip",
+    "cache": "/tmp/d2l-p9-corpus-cache/manythings-fra-eng.zip",
+    "bytes": 8242175,
+    "sha1": "e11256f7c7f592e3f224ff7bb6c5430b3efbbbfb",
+    "sha256": "9e35994767f7307dc1fa9d5efcc36681f3756a1bdaaa02c1381b3eb11461261e",
+    "aboutMember": "_about.txt",
+    "aboutDate": "2026-02-13",
+    "textMember": "fra.txt",
+    "textBytes": 36202401,
+    "textSha256": "5fb8a159269e50d5de145ace082aa89da55b988969cf0cd61a4fb7e7aae84548",
+    "rows": 240521,
+    "fields": ["English", "French", "per-sentence license, Tatoeba IDs and owners"],
+    "checksumBoundary": "local identity hash recorded after real acquisition; no publisher-supplied checksum claimed; not the textbook2019 bytes",
+    "execution": "selected512/64 source-group fixed split used for two real small CPU models; split-provenance.json and seq2seq-smoke.json"
+  },
+  "identity": "ManyThings/Charles Kelly selection of Tatoeba sentences_detailed.csv; current publisher page and both package about files directly read. English/French paired sentences, not Time Machine or generated token data.",
+  "conditions": {
+    "publisher": "https://www.manythings.org/anki/",
+    "tatoebaTerms": "https://tatoeba.org/en/terms_of_use",
+    "license": "https://creativecommons.org/licenses/by/2.0/fr/",
+    "licenseRead": "https://creativecommons.org/licenses/by/2.0/fr/deed.en",
+    "details": "Both _about files link generic CC-BY2.0 and credit ManyThings/Tatoeba. Current third column and Tatoeba terms6.2 identify CC-BY2.0 France for textual sentences; per-sentence owners/IDs retained. Credit authors and providers, link license and disclose modifications when publishing examples; no endorsement implied. Code Apache license is not the corpus license. Audio or unrelated works not covered by this text-data check.",
+    "quality": "Publisher and Tatoeba warn of possible errors; native-speaker/proofreading filters do not guarantee translation correctness.",
+    "publication": "No dataset archive/full corpus/weights redistributed. Four short audit pairs retain original third-column attribution; normalization to lowercase and punctuation-separated whitespace disclosed. Generated model output is reported verbatim, not presented as correct reference translation."
+  },
+  "workerEvidence": "sources/p9-seq2seq-attention source-index and acquisition evidence retain download history and original statements",
+  "mainReadScope": "Both complete package _about.txt files; ManyThings page; Tatoeba terms through6.6 and CC-BY2.0FR deed. Not a claim to review every sentence or original contributor rights."
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="640" viewBox="0 0 540 640" role="img" aria-labelledby="title desc">
+<title id="title">seq2seq固定context与左右移目标</title>
+<desc id="desc">源有效终态生成固定context C，解码hidden逐步更新。训练输入BOS u v与标签u v EOS错位，生成输入来自自己的预测，不能读真实目标。</desc>
+<style>text{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;fill:#172554;font-size:20px}.small{font-size:17px}.box{fill:#eff6ff;stroke:#2563eb;stroke-width:2}.green{fill:#ecfdf5;stroke:#047857;stroke-width:2}.warn{fill:#fff7ed;stroke:#b45309;stroke-width:2}.line{fill:none;stroke:#334155;stroke-width:2.5;marker-end:url(#arrow)}</style><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#334155"/></marker></defs>
+<rect width="540" height="640" rx="12" fill="#ffffff"/>
+<text x="23" y="37" font-weight="700">同一模型，两种目标前缀</text>
+<rect class="green" x="40" y="65" width="460" height="75" rx="8"/><text x="58" y="96">源有效终态 → 固定 C</text><text class="small" x="58" y="124">C独立保存，不从更新后的hidden重建</text>
+<path class="line" d="M270 140 V174"/>
+<rect class="box" x="40" y="180" width="460" height="85" rx="8"/><text x="58" y="212">Sₜ = GRU([目标embedding; C], Sₜ₋₁)</text><text class="small" x="58" y="244">S每步更新，线性头产生目标词表logits</text>
+<text x="40" y="309" font-weight="700">训练 / teacher forcing</text>
+<rect class="box" x="40" y="326" width="460" height="100" rx="8"/><text x="59" y="357">输入： BOS　　 u　　　 v</text><text x="59" y="390">标签： u　　　 v　　　 EOS</text><text class="small" x="59" y="416">只看过去真实词元；EOS计损失，PAD不计</text>
+<text x="40" y="466" font-weight="700">自回归生成</text>
+<rect class="green" x="40" y="485" width="460" height="100" rx="8"/><text x="59" y="518">BOS → 预测₁ → 预测₂ → …</text><text x="59" y="550">预测EOS结束；到上限标记截断</text><text class="small" x="59" y="576">真实目标仅在生成之后进入评分器</text>
+<text class="small" x="40" y="623">验等价：相同真实前缀的整段与逐步调用</text>
+</svg>
