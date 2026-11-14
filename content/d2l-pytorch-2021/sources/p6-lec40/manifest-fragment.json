@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "batch": "P6",
+  "lectureId": "lec40",
+  "generatedAt": "2026-11-14",
+  "owner": "P6Lec40to42",
+  "scope": "Only owned lecture and source directories; no shared index edits, no tests/build/formatter, no commit.",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required",
+    "diagram": "original_svg_written_pending_browser_acceptance"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "editionBoundary": "Current Chinese second-edition pinned source, not 2021 full-book snapshot.",
+    "sections": [
+      "13.3",
+      "13.6"
+    ],
+    "versionEvidenceReused": "sources/p1-shared/book-version.json",
+    "licenseBoundary": "Repository root Apache-2.0 and setup.py MIT-0 package field separate; no extrapolation to videos, third-party photos or dataset rights."
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1Lh411Y7LX/",
+    "label": "官方 B站视频（全 4 P 合计）",
+    "duration": "35:40",
+    "durationSeconds": 2140,
+    "pageCount": 4,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 360492982,
+        "part": "物体检测",
+        "duration": 696
+      },
+      {
+        "page": 2,
+        "cid": 360494934,
+        "part": "边缘框实现",
+        "duration": 229
+      },
+      {
+        "page": 3,
+        "cid": 360495626,
+        "part": "数据集",
+        "duration": 586
+      },
+      {
+        "page": 4,
+        "cid": 360497382,
+        "part": "QA",
+        "duration": 629
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 4,
+    "permission": "No open transcript republication permission; no media reviewed/downloaded."
+  },
+  "scheduleDate": "2021-06-27",
+  "publishedAt": "2021-06-27T07:17:34+00:00",
+  "sources": [
+    {
+      "path": "sources/p6-lec40/schedule-evidence.json",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "70938e0723c6818f1c0b504797fe90572d6c392e0432ee2cc9ea23a190084f28",
+      "bytes": 4722,
+      "readScope": "Official schedule rows for lec40, parsed exact BV-containing HTML dl blocks; linked PDF/notebook not reviewed.",
+      "reused": false
+    },
+    {
+      "path": "sources/p6-lec40/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Lh411Y7LX",
+      "sha256": "473764abef5e16d94775e2a287364cd7c4488e6943e2cc3ba5d14085ef2bbe5e",
+      "bytes": 3087,
+      "readScope": "Filtered public view response: identity, author, publication, all pages/durations, copyright/no_reprint; one public player request per page, filtered result only.",
+      "reused": false
+    },
+    {
+      "path": "sources/p6-lec40/book-bounding-box.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/bounding-box.md",
+      "sha256": "ea72bd220a6d9bf62a5521272bd472065fe3ae54df90019900b516b0cf336404",
+      "bytes": 5410,
+      "readScope": {
+        "lines": "1-158",
+        "coverage": "Full chapter source: prose, all displayed framework branches, examples, summary and exercises. Pedagogical/implementation claims derive from common text and PyTorch branch; no framework executed."
+      },
+      "reused": false
+    },
+    {
+      "path": "sources/p6-lec40/book-object-detection-dataset.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/object-detection-dataset.md",
+      "sha256": "e18c1e1694a30ddea48b98d175d093f4debbd4e0fc81726e4503948eb6fd1a17",
+      "bytes": 10723,
+      "readScope": {
+        "lines": "1-279",
+        "coverage": "Full chapter source: prose, all displayed framework branches, examples, summary and exercises. Pedagogical/implementation claims derive from common text and PyTorch branch; no framework executed."
+      },
+      "reused": false
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "lectures/lec40/notes.zh.md",
+      "sha256": "9b2d34fa76ad41a2f400728813584daa1149589350ecc1a39db6bd9c2c68ed58",
+      "bytes": 10278
+    },
+    {
+      "path": "lectures/lec40/assets/box-transform.svg",
+      "sha256": "85ce321917dbed75637e0a64c7f2f303953db1b0771e4c6763d17d8a0cd3178f",
+      "bytes": 2406
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "name": "corner_center_normalize_flip",
+      "input": {
+        "box": [
+          20,
+          10,
+          100,
+          50
+        ],
+        "W": 200,
+        "H": 100
+      },
+      "expected": {
+        "center": [
+          60,
+          30,
+          80,
+          40
+        ],
+        "normalized": [
+          0.1,
+          0.1,
+          0.5,
+          0.5
+        ],
+        "horizontalFlip": [
+          100,
+          10,
+          180,
+          50
+        ],
+        "flipTwice": "original box"
+      }
+    },
+    {
+      "name": "rectangular_denormalization",
+      "input": {
+        "box": [
+          0.1,
+          0.2,
+          0.6,
+          0.8
+        ],
+        "W": 300,
+        "H": 100
+      },
+      "expected": [
+        30,
+        20,
+        180,
+        80
+      ]
+    },
+    {
+      "name": "class_not_coordinate",
+      "input": {
+        "classId": 2,
+        "divisor": 256
+      },
+      "expectedWrongFloat": 0.0078125,
+      "required": "preserve classId 2; normalize coordinates only"
+    }
+  ],
+  "workerExecution": {
+    "numericalTestsRun": false,
+    "testsBuildLintFormatterRun": false,
+    "browserRun": false,
+    "trainingRun": false,
+    "datasetDownload": false,
+    "mediaReview": false,
+    "gitCommitPush": false
+  },
+  "mainVerificationBoundary": "Main reports independent CPU acceptance in sources/p6-shared/notes-smoke.json and detection-smoke.json; worker has not rerun or independently inspected those outputs. Final main manifest authoritative.",
+  "limits": [
+    "No classroom transcript, internal topic timestamps, demonstrations or QA invented.",
+    "No dense-prediction lab or detection training delivered.",
+    "No cookies, signed media URLs, IP metadata, weights or dataset copies retained.",
+    "Source hashes record generation state; final content hashes/acceptance belong to main."
+  ]
+}

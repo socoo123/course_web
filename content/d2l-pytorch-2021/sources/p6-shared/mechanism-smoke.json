@@ -1,0 +1,113 @@
+{
+  "environment": {
+    "python": "3.11.8",
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "pillow": "13.0.0",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "chip": "Apple M2 Max",
+    "threads": 1,
+    "device": "cpu",
+    "cuda_count": 0,
+    "mps_available_detected_only": true
+  },
+  "boundary": "Synthetic mechanism proof only; no pretrained parameters, image dataset, competition execution, GPU or performance timing.",
+  "augmentation": {
+    "validation_shape": [
+      3,
+      224,
+      224
+    ],
+    "repeated_validation_maxdiff": 0.0,
+    "same_seed_train_equal": true,
+    "different_seed_train_changed": true,
+    "uint8_128_normalized": [
+      0.07406462728977203,
+      0.20518219470977783,
+      0.4264925718307495
+    ],
+    "crop_square_side_synthetic_example": 70.71067811865476,
+    "red_channel_half_normalized": 0.06550218340611359,
+    "preprocess": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+    "weight_enum_metadata_only": "ResNet18_Weights.IMAGENET1K_V1",
+    "weight_url_metadata_only": "https://download.pytorch.org/models/resnet18-f37072fd.pth"
+  },
+  "frozen_features": {
+    "backbone_parameters_and_buffers_unchanged": true,
+    "backbone_grads_absent": true,
+    "head_max_update": 0.00032466650009155273,
+    "loss": 1.0968314409255981
+  },
+  "negative_control_requires_grad_false_train_mode": {
+    "BN_running_mean_changed": true,
+    "maxdiff": 0.004549376200884581
+  },
+  "fine_tuning": {
+    "backbone_and_head_updated": true,
+    "SGD_group_oracle_maxdiff": 0.0,
+    "BN_buffers_fixed_policy": true,
+    "eval_batch3_and5": [
+      [
+        1.096524429321289,
+        2
+      ],
+      [
+        1.096524429321289,
+        2
+      ]
+    ],
+    "eval_state_grads_unchanged": true,
+    "head_512_to176_parameters": 90288,
+    "scalar_group_steps": [
+      -0.0002,
+      -0.002
+    ]
+  },
+  "schemas_and_loss": {
+    "synthetic_ids_kept": [
+      "1",
+      "10",
+      "2"
+    ],
+    "lexical_order_not_row_number": [
+      1,
+      10,
+      2
+    ],
+    "validation_mapping_reused": [
+      2,
+      0
+    ],
+    "probability_column_order": [
+      "oak",
+      "birch",
+      "maple"
+    ],
+    "probability_rows": [
+      [
+        0.09003057317038045,
+        0.6652409557748218,
+        0.2447284710547976
+      ],
+      [
+        0.6652409557748218,
+        0.2447284710547976,
+        0.09003057317038045
+      ],
+      [
+        0.2447284710547976,
+        0.09003057317038045,
+        0.6652409557748218
+      ]
+    ],
+    "true_probability_logloss": [
+      0.5108256237659907,
+      0.10536051565782628
+    ],
+    "same_argmax_not_same_logloss": true,
+    "submission_written": false
+  }
+}

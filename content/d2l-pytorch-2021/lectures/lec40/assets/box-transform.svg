@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="510" viewBox="0 0 880 510" role="img" aria-labelledby="title desc">
+<title id="title">连续坐标框与水平翻转</title>
+<desc id="desc">宽200高100的图像内，原框20,10,100,50的中心为60,30；水平翻转后框为100,10,180,50。镜像轴为x等于100，类别和框宽高不变。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#475569"/></marker></defs>
+<rect width="880" height="510" rx="14" fill="#f8fafc"/>
+<g font-family="system-ui, 'Noto Sans SC', sans-serif" fill="#0f172a">
+<text x="36" y="38" font-size="24" font-weight="700">先确定坐标，再同步变换图像与框</text>
+<text x="36" y="68" font-size="17">连续边界坐标：右−左是宽，下−上是高，不加 1</text>
+<rect x="80" y="115" width="720" height="280" fill="#fff" stroke="#64748b" stroke-width="2"/>
+<path d="M80 115 H830 M80 115 V422" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+<text x="54" y="104" font-size="16">0</text><text x="810" y="105" font-size="16">x →</text><text x="35" y="418" font-size="16">y ↓</text>
+<text x="769" y="418" font-size="16">W=200</text><text x="20" y="386" font-size="16">100</text>
+<line x1="440" y1="115" x2="440" y2="395" stroke="#64748b" stroke-width="2" stroke-dasharray="7 6"/>
+<rect x="152" y="143" width="288" height="112" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+<rect x="440" y="143" width="288" height="112" fill="#ffedd5" stroke="#c2410c" stroke-width="3"/>
+<circle cx="296" cy="199" r="5" fill="#1d4ed8"/>
+<path d="M284 199 H308 M296 187 V211" stroke="#1d4ed8" stroke-width="2"/>
+<text x="166" y="171" font-size="19" fill="#1e40af">原框：20,10 → 100,50</text>
+<text x="170" y="235" font-size="18" fill="#1e40af">中心 (60,30)</text>
+<text x="455" y="175" font-size="19" fill="#9a3412">翻转：100,10 → 180,50</text>
+<text x="485" y="225" font-size="18" fill="#9a3412">宽 80，高 40 不变</text>
+<path d="M296 280 Q440 350 584 280" stroke="#475569" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<text x="352" y="364" font-size="17">镜像轴 x=100</text>
+<rect x="36" y="442" width="808" height="45" rx="8" fill="#e2e8f0"/>
+<text x="56" y="471" font-size="19">新左端 = W − 旧右端；新右端 = W − 旧左端；类别不变</text>
+</g></svg>

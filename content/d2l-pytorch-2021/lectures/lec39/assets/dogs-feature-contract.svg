@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 530" role="img" aria-labelledby="title desc">
+<title id="title">教材1000维与替代512维路径</title><desc id="desc">固定教材PyTorch保留源模型1000维logits后接256和120维头。显式去掉源fc才能形成512维替代路径。最后按类别名重排120列概率。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#a9c8f5"/></marker></defs>
+<style>text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:#f4f7fc;font-size:20px} .small{font-size:17px;fill:#d4e1f3} .box{fill:#20344f;stroke:#8aafd9;stroke-width:2} .train{fill:#153e3b;stroke:#63d8bd;stroke-width:2} .warn{fill:#47351e;stroke:#f3c879;stroke-width:2} .edge{fill:none;stroke:#a9c8f5;stroke-width:3;marker-end:url(#arrow)}</style>
+<rect width="760" height="530" rx="16" fill="#101d30"/>
+<text x="30" y="43">先明确特征截取位置，再声明模型接口</text>
+<text class="small" x="45" y="89">固定教材 PyTorch 路径</text>
+<rect class="box" x="45" y="110" width="210" height="80" rx="10"/><text x="66" y="144">完整ResNet-34</text><text class="small" x="90" y="172">保留源 fc</text>
+<path class="edge" d="M255 150H295"/>
+<rect class="train" x="300" y="110" width="160" height="80" rx="10"/><text x="329" y="144">1000 logits</text><text class="small" x="323" y="172">不是512特征</text>
+<path class="edge" d="M460 150H500"/>
+<rect class="train" x="505" y="110" width="210" height="80" rx="10"/><text x="531" y="144">256 → 120</text><text class="small" x="534" y="172">训练新的分类头</text>
+<text class="small" x="45" y="245">编者替代设计（必须显式改结构）</text>
+<rect class="box" x="45" y="265" width="210" height="80" rx="10"/><text x="66" y="299">去掉源 fc</text><text class="small" x="66" y="327">保留池化后表示</text>
+<path class="edge" d="M255 305H295"/>
+<rect class="warn" x="300" y="265" width="160" height="80" rx="10"/><text x="327" y="300">512特征</text><text class="small" x="321" y="328">不是原例配置</text>
+<path class="edge" d="M460 305H500"/>
+<rect class="train" x="505" y="265" width="210" height="80" rx="10"/><text x="531" y="300">256 → 120</text><text class="small" x="533" y="328">头输入也要修改</text>
+<rect class="warn" x="45" y="395" width="670" height="105" rx="10"/><text x="82" y="433">导出：每张图120个概率，类别维总和约为1</text><text class="small" x="80" y="471">列顺序按犬种名称对齐；ID必须来自实际测试样本</text>
+</svg>

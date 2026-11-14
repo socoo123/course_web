@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "batch": "P6",
+  "lectureId": "lec42",
+  "generatedAt": "2026-11-14",
+  "owner": "P6Lec40to42",
+  "scope": "Only owned lecture and source directories; no shared index edits, no tests/build/formatter, no commit.",
+  "kind": "editorial_competition_review_framework_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required",
+    "diagram": "original_svg_written_pending_browser_acceptance"
+  },
+  "book": null,
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1by4y1K7SE/",
+    "label": "官方 B站视频",
+    "duration": "26:29",
+    "durationSeconds": 1589,
+    "pageCount": 1,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 363602710,
+        "part": "树叶分类竞赛",
+        "duration": 1589
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 1,
+    "permission": "No open transcript republication permission; no media reviewed/downloaded."
+  },
+  "scheduleDate": "2021-06-27",
+  "publishedAt": "2021-07-03T07:54:06+00:00",
+  "sources": [
+    {
+      "path": "sources/p6-lec42/schedule-evidence.json",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "eb51e85fcc86ca5456543e4449590c3205cd5905fb0c354cf36b93855db45e00",
+      "bytes": 1650,
+      "readScope": "Official schedule rows for lec42, parsed exact BV-containing HTML dl blocks; linked PDF/notebook not reviewed.",
+      "reused": false
+    },
+    {
+      "path": "sources/p6-lec42/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1by4y1K7SE",
+      "sha256": "8bac07c3144333d532469b1b8a3a2ae5969b331196934d3993b7d03d94c876a2",
+      "bytes": 1631,
+      "readScope": "Filtered public view response: identity, author, publication, all pages/durations, copyright/no_reprint; one public player request per page, filtered result only.",
+      "reused": false
+    },
+    {
+      "path": "sources/p5-lec30/announcement-evidence.txt",
+      "url": "https://courses.d2l.ai/zh-v2/announcements.html",
+      "sha256": "7e2b450bf99dd35b2deed26838d366b2c8e1dd0d5d040767e09c560ce5bf45de",
+      "bytes": 721,
+      "readScope": "Full retained evidence, lines1-8: weeks11/16 identity links; no team methods or ranks.",
+      "reused": true
+    },
+    {
+      "path": "sources/p5-lec30/kaggle-evidence.txt",
+      "url": "https://www.kaggle.com/competitions/classify-leaves",
+      "sha256": "1772b2e0f2de98ea8d226951759a23d035ab1e5f9bd2581927212429051cfc7c",
+      "bytes": 3003,
+      "readScope": "Full retained evidence, lines1-109: anonymous Overview/Data/Rules and access observation, no CSV or images.",
+      "reused": true
+    },
+    {
+      "path": "sources/p5-manifest.json",
+      "url": null,
+      "sha256": "b96cef7bcf989e8bab530dadf68d773fb3e2c444001202e9b8d2d254bfb61e73",
+      "bytes": 14607,
+      "readScope": "competition object only: identity, host, displayed dates, class/data counts, metric, access/rights limits.",
+      "reused": true
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "lectures/lec42/notes.zh.md",
+      "sha256": "b0157ca36531e3ae38ec48375ffb94f72e396d83390627f7ebea2e8b5a444d8f",
+      "bytes": 11843
+    },
+    {
+      "path": "lectures/lec42/assets/paired-review.svg",
+      "sha256": "24dedb5e22706c022fef7f38f416397670e5feafcbb287b4868f7e74c11b73a4",
+      "bytes": 2937
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "name": "paired_errors",
+      "input": {
+        "bothCorrect": 12,
+        "AOnlyCorrect": 3,
+        "BOnlyCorrect": 4,
+        "bothWrong": 1
+      },
+      "expected": {
+        "N": 20,
+        "correctA": 15,
+        "correctB": 16,
+        "accuracyA": 0.75,
+        "accuracyB": 0.8,
+        "absolutePercentagePointGain": 5,
+        "relativeAccuracyGain": "1/15",
+        "relativeErrorReduction": 0.2,
+        "oracleUpperBound": 0.95
+      },
+      "boundary": "Hypothetical, not actual competition or ensemble results."
+    },
+    {
+      "name": "micro_macro",
+      "input": {
+        "correct": [
+          8,
+          1
+        ],
+        "support": [
+          10,
+          2
+        ]
+      },
+      "expected": {
+        "microAccuracy": 0.75,
+        "macroRecall": 0.65
+      },
+      "boundary": "Macro recall diagnostic does not replace official accuracy."
+    }
+  ],
+  "workerExecution": {
+    "numericalTestsRun": false,
+    "testsBuildLintFormatterRun": false,
+    "browserRun": false,
+    "trainingRun": false,
+    "datasetDownload": false,
+    "mediaReview": false,
+    "gitCommitPush": false
+  },
+  "mainVerificationBoundary": "Main reports independent CPU acceptance in sources/p6-shared/notes-smoke.json and detection-smoke.json; worker has not rerun or independently inspected those outputs. Final main manifest authoritative.",
+  "limits": [
+    "No classroom transcript, internal topic timestamps, demonstrations or QA invented.",
+    "No dense-prediction lab or detection training delivered.",
+    "No cookies, signed media URLs, IP metadata, weights or dataset copies retained.",
+    "Source hashes record generation state; final content hashes/acceptance belong to main."
+  ],
+  "competitionBoundary": {
+    "identity": "Classify Leaves",
+    "host": "Mu Li",
+    "classes": 176,
+    "trainingImages": 18353,
+    "testImages": 8800,
+    "access": "P5 anonymous page evidence reused; Rules generic template; authenticated download/join/late submission and image redistribution unverified; no restrictions bypassed.",
+    "classroomContent": "Unavailable; no teacher recommendations, winning-team method, rank, score or GPU benchmark asserted.",
+    "task4Boundary": "Editorial reasoning can be studied now; actual official technical-summary content reading remains unfulfilled without reliable source."
+  }
+}

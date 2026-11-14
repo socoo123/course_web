@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 530" role="img" aria-labelledby="title desc">
+<title id="title">预测必须与真实ID同行</title><desc id="desc">图像进入分类器，ID独立保留，预测再与ID连接。不能按样本数重新生成ID，也不能将unknown目录标签当真值。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#a9c8f5"/></marker></defs>
+<style>text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:#f4f7fc;font-size:20px} .small{font-size:17px;fill:#d4e1f3} .box{fill:#20344f;stroke:#8aafd9;stroke-width:2} .train{fill:#153e3b;stroke:#63d8bd;stroke-width:2} .warn{fill:#47351e;stroke:#f3c879;stroke-width:2} .edge{fill:none;stroke:#a9c8f5;stroke-width:3;marker-end:url(#arrow)}</style>
+<rect width="760" height="530" rx="16" fill="#101d30"/>
+<text x="30" y="43">身份信息不能在张量化时丢掉</text>
+<rect class="box" x="45" y="80" width="670" height="65" rx="10"/><text x="100" y="120">实际样本：(1.png) → (10.png) → (2.png)</text>
+<path class="edge" d="M200 145V200"/><path class="edge" d="M565 145V200"/>
+<rect class="train" x="45" y="205" width="300" height="80" rx="10"/><text x="112" y="239">图像 → 张量</text><text class="small" x="102" y="268">模型输出10维logits</text>
+<rect class="box" x="415" y="205" width="300" height="80" rx="10"/><text x="480" y="239">保留实际ID</text><text class="small" x="465" y="268">1，10，2（字符串序）</text>
+<path class="edge" d="M195 285V330"/><path class="edge" d="M565 285V330"/>
+<rect class="train" x="45" y="335" width="300" height="65" rx="10"/><text x="88" y="376">argmax → 类别名</text>
+<rect class="box" x="415" y="335" width="300" height="65" rx="10"/><text x="465" y="376">ID随预测一起传递</text>
+<path class="edge" d="M195 400L320 445"/><path class="edge" d="M565 400L440 445"/>
+<rect class="warn" x="155" y="450" width="450" height="55" rx="10"/><text x="195" y="485">按ID对齐 → 导出 id,label</text>
+</svg>

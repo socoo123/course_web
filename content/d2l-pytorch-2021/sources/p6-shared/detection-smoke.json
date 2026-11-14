@@ -1,0 +1,151 @@
+{
+  "bbox_center": [
+    [
+      30.0,
+      40.0,
+      40.0,
+      40.0
+    ],
+    [
+      1.0,
+      1.0,
+      2.0,
+      2.0
+    ]
+  ],
+  "iou": 0.14285714285714285,
+  "rectangular_anchors": {
+    "shape": [
+      1,
+      24,
+      4
+    ],
+    "first_center": [
+      [
+        0.1666666716337204,
+        0.25
+      ]
+    ],
+    "pixel_ratios": [
+      1.0,
+      0.9999999403953552,
+      1.9999998807907104,
+      0.49999991059303284
+    ],
+    "unclipped": true
+  },
+  "forced_matching_below_half": {
+    "max_iou": [
+      0.3913043439388275,
+      0.3913043439388275,
+      0.0
+    ],
+    "map": [
+      0,
+      1,
+      -1
+    ],
+    "class_targets": [
+      [
+        1,
+        2,
+        0
+      ]
+    ],
+    "mask": [
+      [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "background_regression_gradient_zero": true
+  },
+  "offset": {
+    "encoded": [
+      [
+        2.5,
+        2.5,
+        4.999997499590334e-06,
+        4.999997499590334e-06
+      ],
+      [
+        2.5,
+        2.5,
+        4.999997499590334e-06,
+        4.999997499590334e-06
+      ]
+    ],
+    "decode_max_abs_error_eps1e_6": 1.000000000139778e-06,
+    "zero_offsets_identity": true
+  },
+  "NMS": {
+    "class_agnostic_keep": [
+      0,
+      2
+    ],
+    "classwise_keep": [
+      0,
+      1,
+      2
+    ],
+    "textbook_cross_class_kept_count": 1
+  },
+  "boundary": "Exact pinned CPU functions with d2l tensor aliases bound to torch; no d2l install/Notebook, data download or detector training; input GT nonempty, valid positive-area boxes.",
+  "readAndExecutionRanges": [
+    [
+      "bbox",
+      75,
+      94
+    ],
+    [
+      "anchor",
+      107,
+      143
+    ],
+    [
+      "anchor",
+      331,
+      350
+    ],
+    [
+      "anchor",
+      441,
+      463
+    ],
+    [
+      "anchor",
+      515,
+      522
+    ],
+    [
+      "anchor",
+      567,
+      597
+    ],
+    [
+      "anchor",
+      721,
+      728
+    ],
+    [
+      "anchor",
+      767,
+      779
+    ],
+    [
+      "anchor",
+      841,
+      871
+    ]
+  ]
+}

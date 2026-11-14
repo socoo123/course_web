@@ -1,0 +1,183 @@
+Source: https://raw.githubusercontent.com/pytorch/vision/v0.20.1/docs/source/models.rst
+Ranges: [{"startLine": 11, "endLineExclusive": 191}]
+
+General information on pre-trained weights
+==========================================
+
+TorchVision offers pre-trained weights for every provided architecture, using
+the PyTorch :mod:`torch.hub`. Instancing a pre-trained model will download its
+weights to a cache directory. This directory can be set using the `TORCH_HOME`
+environment variable. See :func:`torch.hub.load_state_dict_from_url` for details.
+
+.. note::
+
+    The pre-trained models provided in this library may have their own licenses or
+    terms and conditions derived from the dataset used for training. It is your
+    responsibility to determine whether you have permission to use the models for
+    your use case.
+
+.. note ::
+    Backward compatibility is guaranteed for loading a serialized
+    ``state_dict`` to the model created using old PyTorch version.
+    On the contrary, loading entire saved models or serialized
+    ``ScriptModules`` (serialized using older versions of PyTorch)
+    may not preserve the historic behaviour. Refer to the following
+    `documentation
+    <https://pytorch.org/docs/stable/notes/serialization.html#id6>`_
+
+
+Initializing pre-trained models
+-------------------------------
+
+As of v0.13, TorchVision offers a new `Multi-weight support API
+<https://pytorch.org/blog/introducing-torchvision-new-multi-weight-support-api/>`_
+for loading different weights to the existing model builder methods:
+
+.. code:: python
+
+    from torchvision.models import resnet50, ResNet50_Weights
+
+    # Old weights with accuracy 76.130%
+    resnet50(weights=ResNet50_Weights.IMAGENET1K_V1)
+
+    # New weights with accuracy 80.858%
+    resnet50(weights=ResNet50_Weights.IMAGENET1K_V2)
+
+    # Best available weights (currently alias for IMAGENET1K_V2)
+    # Note that these weights may change across versions
+    resnet50(weights=ResNet50_Weights.DEFAULT)
+
+    # Strings are also supported
+    resnet50(weights="IMAGENET1K_V2")
+
+    # No weights - random initialization
+    resnet50(weights=None)
+
+
+Migrating to the new API is very straightforward. The following method calls between the 2 APIs are all equivalent:
+
+.. code:: python
+
+    from torchvision.models import resnet50, ResNet50_Weights
+
+    # Using pretrained weights:
+    resnet50(weights=ResNet50_Weights.IMAGENET1K_V1)
+    resnet50(weights="IMAGENET1K_V1")
+    resnet50(pretrained=True)  # deprecated
+    resnet50(True)  # deprecated
+
+    # Using no weights:
+    resnet50(weights=None)
+    resnet50()
+    resnet50(pretrained=False)  # deprecated
+    resnet50(False)  # deprecated
+
+Note that the ``pretrained`` parameter is now deprecated, using it will emit warnings and will be removed on v0.15.
+
+Using the pre-trained models
+----------------------------
+
+Before using the pre-trained models, one must preprocess the image
+(resize with right resolution/interpolation, apply inference transforms,
+rescale the values etc). There is no standard way to do this as it depends on
+how a given model was trained. It can vary across model families, variants or
+even weight versions. Using the correct preprocessing method is critical and
+failing to do so may lead to decreased accuracy or incorrect outputs.
+
+All the necessary information for the inference transforms of each pre-trained
+model is provided on its weights documentation. To simplify inference, TorchVision
+bundles the necessary preprocessing transforms into each model weight. These are
+accessible via the ``weight.transforms`` attribute:
+
+.. code:: python
+
+    # Initialize the Weight Transforms
+    weights = ResNet50_Weights.DEFAULT
+    preprocess = weights.transforms()
+
+    # Apply it to the input image
+    img_transformed = preprocess(img)
+
+
+Some models use modules which have different training and evaluation
+behavior, such as batch normalization. To switch between these modes, use
+``model.train()`` or ``model.eval()`` as appropriate. See
+:meth:`~torch.nn.Module.train` or :meth:`~torch.nn.Module.eval` for details.
+
+.. code:: python
+
+    # Initialize model
+    weights = ResNet50_Weights.DEFAULT
+    model = resnet50(weights=weights)
+
+    # Set model to eval mode
+    model.eval()
+
+Listing and retrieving available models
+---------------------------------------
+
+As of v0.14, TorchVision offers a new mechanism which allows listing and
+retrieving models and weights by their names. Here are a few examples on how to
+use them:
+
+.. code:: python
+
+    # List available models
+    all_models = list_models()
+    classification_models = list_models(module=torchvision.models)
+
+    # Initialize models
+    m1 = get_model("mobilenet_v3_large", weights=None)
+    m2 = get_model("quantized_mobilenet_v3_large", weights="DEFAULT")
+
+    # Fetch weights
+    weights = get_weight("MobileNet_V3_Large_QuantizedWeights.DEFAULT")
+    assert weights == MobileNet_V3_Large_QuantizedWeights.DEFAULT
+
+    weights_enum = get_model_weights("quantized_mobilenet_v3_large")
+    assert weights_enum == MobileNet_V3_Large_QuantizedWeights
+
+    weights_enum2 = get_model_weights(torchvision.models.quantization.mobilenet_v3_large)
+    assert weights_enum == weights_enum2
+
+Here are the available public functions to retrieve models and their corresponding weights:
+
+.. currentmodule:: torchvision.models
+.. autosummary::
+    :toctree: generated/
+    :template: function.rst
+
+    get_model
+    get_model_weights
+    get_weight
+    list_models
+
+Using models from Hub
+---------------------
+
+Most pre-trained models can be accessed directly via PyTorch Hub without having TorchVision installed:
+
+.. code:: python
+
+    import torch
+
+    # Option 1: passing weights param as string
+    model = torch.hub.load("pytorch/vision", "resnet50", weights="IMAGENET1K_V2")
+
+    # Option 2: passing weights param as enum
+    weights = torch.hub.load("pytorch/vision", "get_weight", weights="ResNet50_Weights.IMAGENET1K_V2")
+    model = torch.hub.load("pytorch/vision", "resnet50", weights=weights)
+
+You can also retrieve all the available weights of a specific model via PyTorch Hub by doing:
+
+.. code:: python
+
+    import torch
+
+    weight_enum = torch.hub.load("pytorch/vision", "get_model_weights", name="resnet50")
+    print([weight for weight in weight_enum])
+
+The only exception to the above are the detection models included on
+:mod:`torchvision.models.detection`. These models require TorchVision
+to be installed because they depend on custom C++ operators.
+

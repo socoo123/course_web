@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "phase": "P6",
+  "lectureId": "lec36",
+  "generatedAt": "2026-11-14",
+  "ownership": [
+    "lectures/lec36",
+    "sources/p6-lec36"
+  ],
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "bookVersionBoundary": "当前中文第二版固定源码；不是2021全书快照；原中文不重译materials",
+  "textbookSection": "13.1",
+  "sources": [
+    {
+      "path": "content/d2l-pytorch-2021/sources/p6-lec36/book-image-augmentation.txt",
+      "sha256": "d654b8d39e4b78a316dee137b50e0af8f39f0c23a94ce32788784999f5ec0afd",
+      "bytes": 21112,
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/image-augmentation.md",
+      "readRange": "full source lines1–556; all prose, examples, PyTorch code, summary/exercises; other framework tabs read only as context, not executed",
+      "snapshotKind": "verbatim fixed-commit original"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p6-lec36/schedule-evidence.txt",
+      "sha256": "c6672977e55eaeb69294fbaf1205bd3f7a8f71ddd4dc30203277b431dac4a6c8",
+      "bytes": 651,
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "readRange": "UTF-8 decoded characters [32585,33098) of existing schedule-2021.html",
+      "snapshotKind": "verbatim bounded HTML item with provenance header"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p6-lec36/torchvision-transforms-v0.20.1-excerpt.txt",
+      "sha256": "183c1f73bf5d6be610612693c0337da4bd805ea02d1415ce619ee9f2f4eae79d",
+      "bytes": 11933,
+      "url": "https://raw.githubusercontent.com/pytorch/vision/v0.20.1/torchvision/transforms/transforms.py",
+      "readRange": [
+        {
+          "startLine": 107,
+          "endLineExclusive": 143
+        },
+        {
+          "startLine": 283,
+          "endLineExclusive": 361
+        },
+        {
+          "startLine": 847,
+          "endLineExclusive": 985
+        }
+      ],
+      "snapshotKind": "official source excerpt with original lines"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p6-lec36/video-metadata.json",
+      "sha256": "68180364a24de395c49fa87ada3c22b77df18bb43be21a6f367b2d2b4323b7c8",
+      "bytes": 2259,
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV17y4y1g76q",
+      "readRange": "view identity/title/publication/owner/authorization fields/all pages; each listed player URL once",
+      "snapshotKind": "selected API fields only, no signed response"
+    }
+  ],
+  "reusedSources": [],
+  "sharedPlanningEvidence": [
+    {
+      "path": "content/d2l-pytorch-2021/sources/schedule-inventory.json",
+      "sha256": "89bb850c79609eb5f4cd405c5d23bfd283be6f63398c20700acdc7a059ddd041",
+      "bytes": 166778,
+      "readRange": "lines3594–3763 (four assigned rows)",
+      "role": "reused existing evidence, not new remote acquisition"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/book-inventory.json",
+      "sha256": "4574d457af12d10b718ffb7f6166bb6caa09c6b728d32fe5726f8ef9fe06fb6c",
+      "bytes": 117019,
+      "readRange": "lines2055–2110 and2344–2395 (13.1/13.2/13.13/13.14 mappings)",
+      "role": "reused existing evidence, not new remote acquisition"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/outline-plan.json",
+      "sha256": "a31dece725d404e49a72210603050ded445bf5a2ed3a1001508b29c90c5c74a4",
+      "bytes": 51104,
+      "readRange": "lines768–844 (CV module and four assigned mappings)",
+      "role": "reused existing evidence, not new remote acquisition"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/practice-plan.json",
+      "sha256": "52728031fcc0c224fcb5316008c23ad5d4f0e7cb4bf4c881e73fc534d6ed53ba",
+      "bytes": 68717,
+      "readRange": "lines153–181 and811–850 (cv-transfer contract/mapping)",
+      "role": "reused existing evidence, not new remote acquisition"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p1-shared/book-version.json",
+      "sha256": "dbb78240eaaa8b292eeb14b56b0de7e4673f7201348e057c2475c06c5e7f7bb4",
+      "bytes": 1997,
+      "readRange": "full",
+      "role": "reused existing evidence, not new remote acquisition"
+    }
+  ],
+  "video": {
+    "bvid": "BV17y4y1g76q",
+    "ownerMid": 1567748478,
+    "publicationYear": 2021,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 356993232,
+        "part": "数据增广",
+        "duration": 769
+      },
+      {
+        "page": 2,
+        "cid": 356996025,
+        "part": "代码",
+        "duration": 1181
+      },
+      {
+        "page": 3,
+        "cid": 356999447,
+        "part": "QA",
+        "duration": 1350
+      }
+    ],
+    "durationSeconds": 3300,
+    "duration": "55:00",
+    "suggestedLabel": "2021课程 · 全 3 P 合计",
+    "bilibili": "https://www.bilibili.com/video/BV17y4y1g76q/",
+    "subtitleStatus": "each public player request succeeded with empty list",
+    "subtitleRequestCount": 3,
+    "draft": "blocked; no transcript or guessed topic timestamps",
+    "mediaDownloaded": false,
+    "contentVerified": false,
+    "numberingBoundary": "site lecture numbering follows inventory; uploaded title may use another number"
+  },
+  "outputs": [
+    {
+      "path": "content/d2l-pytorch-2021/lectures/lec36/notes.zh.md",
+      "sha256": "1917050f216d9a71eab43cebf3b4c752a18c544a7907a28da19a29e96a0ddfed",
+      "bytes": 10036,
+      "origin": "editorial original, not classroom transcript or copied textbook image"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/lectures/lec36/assets/augmentation-contract.svg",
+      "sha256": "3671cf5b167bf2f5e5eaf5b1701156ef4d2cdfe61c6747c09f62df03e9b5e8c9",
+      "bytes": 2181,
+      "origin": "editorial original, not classroom transcript or copied textbook image"
+    }
+  ],
+  "licenseBoundary": {
+    "book": "Apache-2.0 per reused pinned root LICENSE; setup.py MIT-0 field separate",
+    "video": "copyright=1/no_reprint=1; not open transcript permission",
+    "weights": "official TorchVision warns model-specific/data-derived terms; no downloaded checkpoint or fabricated checkpoint hash",
+    "images": "CIFAR/Dogs/ImageNet/Leaves rights independent; no image redistribution permission inferred",
+    "editorial": "original prose/examples/SVG, no classroom screenshot or textbook third-party image copied"
+  },
+  "numericalVerificationRequested": [
+    {
+      "id": "crop-area",
+      "setup": "original width200 height100, area fraction.25 aspect ratio1",
+      "expected": "area5000; ideal side sqrt5000≈70.710678 before integer rounding; not50×25"
+    },
+    {
+      "id": "augmentation-contract",
+      "setup": "synthetic RGB image; separate training and validation transforms",
+      "expected": "CHW and batch BCHW; deterministic validation repeated equal; split original IDs before augmentation; ToTensor float input not assumed uint8 scaled"
+    }
+  ],
+  "verification": {
+    "workerRanTests": false,
+    "workerRanNumericalChecks": false,
+    "workerRanBuild": false,
+    "workerRanBrowser": false,
+    "reason": "main owns unified verification; this worker only acquired/read sources, authored files and computed requested provenance hashes",
+    "mainReportedSharedEvidence": "Main reported sources/p6-shared/mechanism-smoke.json for selected synthetic checks; not executed or independently re-read by this worker",
+    "specificChecksStatus": "requested above; do not interpret as this worker execution",
+    "dataDownloaded": false,
+    "weightsDownloaded": false,
+    "realTraining": "not run",
+    "competitionSubmission": "not performed",
+    "gpuThroughput": "not measured"
+  },
+  "excluded": [
+    "draft without reliable transcript",
+    "duplicate Chinese materials",
+    "complete student training solution",
+    "dataset/model checkpoint/prediction files",
+    "cookies/tokens/signed player response",
+    "imagined classroom QA or winning solution"
+  ],
+  "gaps": [
+    "No reliable matching transcript/audio/video reviewed; public subtitle empty list does not rule out burned-in subtitles.",
+    "Current authenticated Kaggle download/join/late-submission and image redistribution permissions not verified; do not bypass restrictions.",
+    "Weight-specific intended-use permission not established; code license is not weight/data license."
+  ]
+}

@@ -1,0 +1,25 @@
+Source: https://raw.githubusercontent.com/pytorch/vision/v0.20.1/torchvision/models/resnet.py
+Lines: 312–333
+
+class ResNet18_Weights(WeightsEnum):
+    IMAGENET1K_V1 = Weights(
+        url="https://download.pytorch.org/models/resnet18-f37072fd.pth",
+        transforms=partial(ImageClassification, crop_size=224),
+        meta={
+            **_COMMON_META,
+            "num_params": 11689512,
+            "recipe": "https://github.com/pytorch/vision/tree/main/references/classification#resnet",
+            "_metrics": {
+                "ImageNet-1K": {
+                    "acc@1": 69.758,
+                    "acc@5": 89.078,
+                }
+            },
+            "_ops": 1.814,
+            "_file_size": 44.661,
+            "_docs": """These weights reproduce closely the results of the paper using a simple training recipe.""",
+        },
+    )
+    DEFAULT = IMAGENET1K_V1
+
+

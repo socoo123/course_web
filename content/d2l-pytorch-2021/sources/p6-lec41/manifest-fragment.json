@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "batch": "P6",
+  "lectureId": "lec41",
+  "generatedAt": "2026-11-14",
+  "owner": "P6Lec40to42",
+  "scope": "Only owned lecture and source directories; no shared index edits, no tests/build/formatter, no commit.",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required",
+    "diagram": "original_svg_written_pending_browser_acceptance"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "editionBoundary": "Current Chinese second-edition pinned source, not 2021 full-book snapshot.",
+    "sections": [
+      "13.4"
+    ],
+    "versionEvidenceReused": "sources/p1-shared/book-version.json",
+    "licenseBoundary": "Repository root Apache-2.0 and setup.py MIT-0 package field separate; no extrapolation to videos, third-party photos or dataset rights."
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1aB4y1K7za/",
+    "label": "官方 B站视频（全 3 P 合计）",
+    "duration": "52:53",
+    "durationSeconds": 3173,
+    "pageCount": 3,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 360496513,
+        "part": "锚框",
+        "duration": 1087
+      },
+      {
+        "page": 2,
+        "cid": 360505070,
+        "part": "代码",
+        "duration": 1401
+      },
+      {
+        "page": 3,
+        "cid": 360509177,
+        "part": "QA",
+        "duration": 685
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 3,
+    "permission": "No open transcript republication permission; no media reviewed/downloaded."
+  },
+  "scheduleDate": "2021-06-27",
+  "publishedAt": "2021-06-27T07:30:25+00:00",
+  "sources": [
+    {
+      "path": "sources/p6-lec41/schedule-evidence.json",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "691afecc7f13b9f1bcf9fcef488743b6943a63402c5854ac9cbdf8af7aec3c96",
+      "bytes": 2114,
+      "readScope": "Official schedule rows for lec41, parsed exact BV-containing HTML dl blocks; linked PDF/notebook not reviewed.",
+      "reused": false
+    },
+    {
+      "path": "sources/p6-lec41/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1aB4y1K7za",
+      "sha256": "e40042b325e7e3812fb9ec235b8d3cf928663be9e66ae1aeec7f79b5b738d506",
+      "bytes": 2566,
+      "readScope": "Filtered public view response: identity, author, publication, all pages/durations, copyright/no_reprint; one public player request per page, filtered result only.",
+      "reused": false
+    },
+    {
+      "path": "sources/p6-lec41/book-anchor.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/anchor.md",
+      "sha256": "1cb67153f8751bc3712f1200d231d6b1bf0726e776dee6b0f077196b118690da",
+      "bytes": 48329,
+      "readScope": {
+        "lines": "1-1019",
+        "coverage": "Full chapter source: prose, all displayed framework branches, examples, summary and exercises. Pedagogical/implementation claims derive from common text and PyTorch branch; no framework executed."
+      },
+      "reused": false
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "lectures/lec41/notes.zh.md",
+      "sha256": "f227bc513c0db102f1ddd4f35f6934664683af21258256580e41657b3e3ed79b",
+      "bytes": 12292
+    },
+    {
+      "path": "lectures/lec41/assets/anchor-supervision.svg",
+      "sha256": "238b709c0b344ef9367bd0721379c8aa9c5463f937b0c5aab66e69e0c17057a5",
+      "bytes": 3606
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "name": "rectangular_anchor_count",
+      "input": {
+        "H": 2,
+        "W": 4,
+        "sizeCount": 2,
+        "ratioCount": 3,
+        "s": 0.5,
+        "r": 1
+      },
+      "expected": {
+        "count": 32,
+        "normalizedWidth": 0.25,
+        "normalizedHeight": 0.5,
+        "shape": [
+          1,
+          32,
+          4
+        ]
+      }
+    },
+    {
+      "name": "iou",
+      "input": [
+        [
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          0,
+          3,
+          2
+        ]
+      ],
+      "expected": "1/3; identical=1; touching/disjoint=0 for valid positive-area boxes"
+    },
+    {
+      "name": "hypothetical_matching_matrix",
+      "input": {
+        "matrix": [
+          [
+            0.8,
+            0.1
+          ],
+          [
+            0.6,
+            0.2
+          ],
+          [
+            0.1,
+            0.4
+          ],
+          [
+            0.2,
+            0.1
+          ]
+        ],
+        "threshold": 0.5,
+        "gtClassIds": [
+          0,
+          1
+        ]
+      },
+      "expected": {
+        "map": [
+          0,
+          0,
+          1,
+          -1
+        ],
+        "classes": [
+          1,
+          1,
+          2,
+          0
+        ],
+        "maskSum": 12
+      },
+      "boundary": "Hypothetical matrix supplied to isolate matching logic, not claimed realizable image geometry."
+    },
+    {
+      "name": "offset_theory_and_source_eps",
+      "input": {
+        "anchorCenter": [
+          0.4,
+          0.5
+        ],
+        "anchorWH": [
+          0.2,
+          0.4
+        ],
+        "gtCenter": [
+          0.5,
+          0.5
+        ],
+        "gtWH": [
+          0.4,
+          0.2
+        ],
+        "eps": 1e-06
+      },
+      "expected": {
+        "idealOffset": [
+          "5",
+          "0",
+          "5*ln(2)",
+          "-5*ln(2)"
+        ],
+        "sourceRoundTripWHError": "eps * anchorWH",
+        "zeroPredictedOffsets": "decode to original anchors; source encode of identical boxes has nonzero wh terms"
+      }
+    },
+    {
+      "name": "nms_boundary",
+      "input": {
+        "boxes": [
+          [
+            0,
+            0,
+            2,
+            2
+          ],
+          [
+            0.5,
+            0,
+            2.5,
+            2
+          ],
+          [
+            3,
+            0,
+            5,
+            2
+          ]
+        ],
+        "scores": [
+          0.9,
+          0.8,
+          0.7
+        ]
+      },
+      "expected": {
+        "iouAB": 0.6,
+        "keepAt0.5": [
+          0,
+          2
+        ],
+        "keepAt0.6": [
+          0,
+          1,
+          2
+        ]
+      },
+      "additionalBoundary": "D2L helper is class-agnostic; class-aware variant must be independently labeled."
+    },
+    {
+      "name": "empty_ground_truth",
+      "expected": "caller filters padding; G=0 gives all background and zero regression mask; source helper not claimed empty-safe"
+    }
+  ],
+  "workerExecution": {
+    "numericalTestsRun": false,
+    "testsBuildLintFormatterRun": false,
+    "browserRun": false,
+    "trainingRun": false,
+    "datasetDownload": false,
+    "mediaReview": false,
+    "gitCommitPush": false
+  },
+  "mainVerificationBoundary": "Main reports independent CPU acceptance in sources/p6-shared/notes-smoke.json and detection-smoke.json; worker has not rerun or independently inspected those outputs. Final main manifest authoritative.",
+  "limits": [
+    "No classroom transcript, internal topic timestamps, demonstrations or QA invented.",
+    "No dense-prediction lab or detection training delivered.",
+    "No cookies, signed media URLs, IP metadata, weights or dataset copies retained.",
+    "Source hashes record generation state; final content hashes/acceptance belong to main."
+  ]
+}

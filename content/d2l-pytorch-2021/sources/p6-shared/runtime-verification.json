@@ -1,0 +1,44 @@
+{
+  "status": "passed_finite_CPU_scope",
+  "environment": {
+    "python": "3.11.8",
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "pillow": "13.0.0",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "chip": "Apple M2 Max",
+    "threads": 1,
+    "device": "cpu",
+    "cuda_count": 0,
+    "mps_available_detected_only": true
+  },
+  "evidence": [
+    "sources/p6-shared/mechanism-smoke.json",
+    "sources/p6-shared/transfer-contract-smoke.json",
+    "sources/p6-shared/detection-smoke.json",
+    "sources/p6-shared/notes-smoke.json",
+    "sources/p6-shared/classification-notes-smoke.json"
+  ],
+  "executed": [
+    "synthetic uint8 RGB augmentation and exact normalization",
+    "deterministic validation, fixed-seed examples, frozen train vocabulary and ID/probability column permutation",
+    "random Conv+BN backbone frozen state/negative train-mode BN control/fine-tune groups/eval state preservation",
+    "random complete torchvision ResNet18 replacement head forward",
+    "float64 CE oracle and separate synthetic 10/120/176-class schemas",
+    "fixed textbook bounding/anchor PyTorch helpers via torch tensor aliases, valid nonempty ground-truth inputs",
+    "all authored detection and paired-review paper examples",
+    "CIFAR split/loss examples and Dogs two standalone random head parameter/shape checks plus probability-loss examples"
+  ],
+  "notExecuted": [
+    "real small-image-data training",
+    "pretrained weight download/loading/training",
+    "Leaves/CIFAR10/Dogs actual CSV or image processing, training, submission",
+    "GPU/MPS or timing benchmark",
+    "d2l installation, old Notebook, full student tasks",
+    "LEC42 teacher/winner summary"
+  ],
+  "sourceBoundary": "Sources reviewed independently; weight metadata and transforms do not establish independent weight-use terms. Actual competition access/redistribution remains unverified. Numeric scripts existed only as transient subprocess -c input, not published solutions."
+}

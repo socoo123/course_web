@@ -1,0 +1,77 @@
+{
+  "random_resnet18": {
+    "input": [
+      2,
+      3,
+      224,
+      224
+    ],
+    "output": [
+      2,
+      176
+    ],
+    "head_parameters": 90288,
+    "total_parameters": 11266800,
+    "finite": true,
+    "pretrained_weights_loaded": false
+  },
+  "CE_oracle": {
+    "observed": 0.3465735902799726,
+    "expected": 0.34657359027997264
+  },
+  "antialias": true,
+  "schemas": {
+    "cifar": {
+      "classes": 10,
+      "reference_ids": [
+        "1",
+        "2",
+        "10"
+      ],
+      "joined_row_indices": [
+        2,
+        0,
+        1
+      ],
+      "export_kind": "label_lookup_from_argmax",
+      "probability_sum_maxerr": 2.220446049250313e-16,
+      "boundary": "synthetic schema only; not actual competition CSV/image/schema acceptance"
+    },
+    "dogs": {
+      "classes": 120,
+      "reference_ids": [
+        "1",
+        "2",
+        "10"
+      ],
+      "joined_row_indices": [
+        2,
+        0,
+        1
+      ],
+      "export_kind": "all_named_probabilities",
+      "probability_sum_maxerr": 1.1102230246251565e-16,
+      "boundary": "synthetic schema only; not actual competition CSV/image/schema acceptance"
+    },
+    "leaves": {
+      "classes": 176,
+      "reference_ids": [
+        "1",
+        "2",
+        "10"
+      ],
+      "joined_row_indices": [
+        2,
+        0,
+        1
+      ],
+      "export_kind": "label_lookup_from_argmax",
+      "probability_sum_maxerr": 2.220446049250313e-16,
+      "boundary": "synthetic schema only; not actual competition CSV/image/schema acceptance"
+    }
+  },
+  "optimizer_group_coverage": true,
+  "real_small_data_training": "not_run",
+  "competitions": "not_run",
+  "boundary": "CPU random network and synthetic tensor/schema checks, no pretrained parameters or external datasets."
+}

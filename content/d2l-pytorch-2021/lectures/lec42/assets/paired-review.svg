@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="680" viewBox="0 0 860 680" role="img" aria-labelledby="title desc">
+<title id="title">用配对错误提出下一轮可证伪假设</title>
+<desc id="desc">同一验证ID上的模型A与B预测按样本配对，分出修复与退步两路。分别检查输入、标签和条件后提出解释，再做单因素对照。更高总分不能自动说明原因。</desc>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#475569"/></marker></defs>
+<rect width="860" height="680" rx="14" fill="#f8fafc"/>
+<g font-family="system-ui, 'Noto Sans SC', sans-serif" fill="#0f172a">
+<text x="30" y="40" font-size="25" font-weight="700">不是收集技巧，而是解释取舍</text>
+<text x="30" y="72" font-size="18" fill="#475569">编者假设流程；不代表教师、获奖团队或真实竞赛结果</text>
+<rect x="220" y="100" width="420" height="70" rx="10" fill="#e2e8f0" stroke="#475569"/>
+<text x="257" y="130" font-size="20">固定验证 ID + 真值 + 类别词表</text>
+<text x="302" y="155" font-size="17">A/B 预测先按身份对齐</text>
+<path d="M330 170 V200 H225 V227 M530 170 V200 H635 V227" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<rect x="60" y="227" width="330" height="130" rx="10" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+<text x="90" y="265" font-size="23" fill="#065f46">修复：A 错 → B 对</text>
+<text x="90" y="300" font-size="18">变化帮到了哪些样本？</text>
+<text x="90" y="330" font-size="18">是否集中在某种条件？</text>
+<rect x="470" y="227" width="330" height="130" rx="10" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+<text x="500" y="265" font-size="23" fill="#9a3412">退步：A 对 → B 错</text>
+<text x="500" y="300" font-size="18">变化伤害了哪些样本？</text>
+<text x="500" y="330" font-size="18">是否是标签或管线故障？</text>
+<path d="M225 357 V387 H430 V415 M635 357 V387 H430" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<rect x="140" y="415" width="580" height="80" rx="10" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="180" y="448" font-size="21" fill="#1e40af">提出能被推翻的解释，不把净涨分当原因</text>
+<text x="215" y="478" font-size="18">两者都错的样本：保留为共同失败线索</text>
+<path d="M430 495 V532" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<rect x="140" y="532" width="580" height="80" rx="10" fill="#fff" stroke="#475569" stroke-width="2"/>
+<text x="181" y="566" font-size="21">下一轮：保持划分与预算，改变一个因素</text>
+<text x="230" y="596" font-size="18">记录结果、代价与未执行范围</text>
+<text x="145" y="650" font-size="18" fill="#475569">总分只概括净变化；可信经验需要可追踪的样本和对照</text>
+</g></svg>

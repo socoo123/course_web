@@ -2,7 +2,7 @@
   "courseId": "d2l-pytorch-2021",
   "plannedAt": "2026-11-13",
   "updatedAt": "2026-11-14",
-  "phase": "P5_training_performance_verified_video_drafts_blocked",
+  "phase": "P6_cv_transfer_mechanisms_verified_real_training_and_video_drafts_blocked",
   "plan": "sources/PLAN.txt",
   "nextPrompt": "sources/NEXT-PROMPT.txt",
   "scheduleInventory": "sources/schedule-inventory.json",
@@ -15,7 +15,7 @@
     "math": "数学遗忘，随课用符号、形状和小例补回；不增加独立前置课程清单。",
     "aiRole": "助教解释与排错，不代写完整实践答案。",
     "parallelAgentsRequired": true,
-    "currentScope": "P1–P5已完成lec01–lec35学习笔记、自绘图及五项实践说明/指导；LEC30为官方竞赛来源导读而非课堂复述。下一批lec36–lec42与cv-transfer。73讲、12实践、48任务完整保留。",
+    "currentScope": "P1–P6已完成lec01–lec42学习笔记、自绘图及六项实践说明/指导；LEC30和LEC42为官方来源导读/编者复盘框架，不是课堂总结。下一批lec43–lec50与cv-dense-prediction。73讲、12实践、48任务完整保留。",
     "delivery": "每批完成后主agent汇总验收、提交推送到现有GitHub仓库，再给下一批提示词；只改content，不夹带无关改动。用户新指示覆盖旧交接不提交不推送。"
   },
   "versions": {
@@ -25,11 +25,11 @@
     "framework": "PyTorch",
     "snapshotDate": "2026-11-13",
     "numbering": "73个唯一BV按课表首现顺序分组；不是官方视频标题编号",
-    "practiceRuntime": "P5复用Python3.11.8 / torch2.5.1 / torchvision0.20.1 / numpy1.26.4 / pandas2.2.3；实测Apple M2 Max、macOS26.3.1、CPU1线程，无d2l/Jupyter。CUDA设备0；MPS可用仅探测，未执行。"
+    "practiceRuntime": "P6复用Python3.11.8 / torch2.5.1 / torchvision0.20.1 / numpy1.26.4 / pandas2.2.3 / Pillow13.0.0；Apple M2 Max、macOS26.3.1、CPU1线程。无d2l/Jupyter，CUDA0，MPS仅探测未执行。"
   },
   "artifacts": {
     "catalogRegistration": "complete",
-    "publicResources": "full_timetable_plus_105_verified_parts_and_P1_to_P5_CPU_evidence",
+    "publicResources": "full_timetable_plus_123_verified_parts_and_P1_to_P6_bounded_CPU_evidence",
     "lectureEntries": 73,
     "officialTeachingRows": 103,
     "breakRows": 11,
@@ -37,26 +37,26 @@
     "practiceTasks": 48,
     "textbookChapters": 16,
     "textbookSections": 129,
-    "lectureDocumentsPublished": 35,
-    "labDocumentsPublished": 10,
+    "lectureDocumentsPublished": 42,
+    "labDocumentsPublished": 12,
     "bodyPlaceholdersCreated": 0,
-    "lectureNotesPublished": 35,
+    "lectureNotesPublished": 42,
     "lectureDraftsPublished": 0,
     "lectureMaterialsPublished": 0,
-    "selfDrawnSvgs": 35,
-    "videoBvidsAcquired": 35,
-    "videoPartsAcquired": 105
+    "selfDrawnSvgs": 42,
+    "videoBvidsAcquired": 42,
+    "videoPartsAcquired": 123
   },
   "sourceCoverage": {
     "schedule": "完整官方课表HTML已保存并逐行登记，含重复链接/分P参数/休课。",
-    "book": "P1–P4已读范围保留；P5新增12.4–12.7，12.2为计时补充，逐讲/实验manifest列精确范围。LEC32的12.4仅编者关联。4.9、5.3、7.7、12.1/12.3及其他未读内容不冒称覆盖。",
+    "book": "P1–P5已读范围保留；P6新增13.1、13.2、13.3、13.4、13.6、13.13、13.14，精确实读范围见逐讲/实验manifest。LEC42不以教材替代课堂。13.5、13.7–13.12及此前4.9/5.3/7.7/12.1/12.3等未读范围不冒称覆盖。",
     "announcements": "课程公告已读取并留存，用于核对三次实际课程竞赛。",
-    "license": "固定根LICENSE与setup.py字段分开。P5六讲copyright=1/no_reprint=1，非开放转录许可；PyTorch与竞赛数据许可另记。Classify Leaves数据页仅Subject to Competition Rules，详细再分发权未核实。",
-    "videoMetadata": "lec01–lec35：35BV/105P已取得；P5新增6BV/12P=15677秒，单P或全2/3P页头时长已核实。lec36–lec73未取得。",
-    "captions": "P1 18P + P2 28P + P3 23P + P4 24P + P5 12P公开player均成功空列表；P5每P一次。旧空接口不重刷，未重新引入非本人转载。",
+    "license": "固定根LICENSE与setup.py字段分开。P6七讲copyright=1/no_reprint=1，非开放转录许可；torchvision代码BSD不等于权重或图片授权。树叶沿用P5未核访问/再分发边界，CIFAR/Dogs图片与预训练权重使用条件独立核查，未下载。",
+    "videoMetadata": "lec01–lec42：42BV/123P已取得；P6新增7BV/18P=17071秒，全部单P/全P页头时长核实。LEC40全部4P，LEC42课表6月27日与上传7月3日分别记录。lec43–lec73未取得。",
+    "captions": "P1 18P + P2 28P + P3 23P + P4 24P + P5 12P + P6 18P公开player均成功空列表；P6每P一次。旧空接口不重刷，不重新引入非本人转载；空列表不证明无烧录字幕。",
     "videoOrAudioReview": "lec01_approved_Bilibili_sampled_frames_at_0_45_120_210_300_390_465_seconds_only; non_author_YouTube_trial_withdrawn_as_source; no_audio_transcription_or_full_classroom_review; other_lectures_not_reviewed",
     "slidesAndNotebooks": "links_indexed_not_downloaded",
-    "courseExperiments": "P5：CPU单线程合成MLP分阶段计时，B16/64/128各10热身+30测量，RSS口径明确；等/不等分片梯度与一步SGD、错误mean反例、六讲算术、逻辑三worker PS协议及独立两步训练正确性通过。无CUDA/MPS、多GPU/跨机通信或真实竞赛训练，不等于全部学生任务。"
+    "courseExperiments": "P6：CPU合成图增广/确定验证、uint8归一化、冻结/解冻与BN状态反例、分组SGD、验证不改状态、ID和概率列对齐、随机完整ResNet18的176类前向、Dogs两种随机头、纸面CE/划分及检测几何/匹配/mask/offset/NMS通过。未下载权重或图像，未做真实小数据训练、预训练训练、三竞赛执行或GPU性能；不等于学生任务完成。"
   },
   "content": {
     "lectures": {
@@ -376,39 +376,67 @@
         "verification": "P5_logical_PS_and_root_ring_scaling_arithmetic_source_browser_build_passed; no_network_execution"
       },
       "lec36": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_video_notes",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p6-lec36/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts_header_sum_verified",
+        "videoContent": "not_reviewed",
+        "verification": "P6_source_synthetic_augmentation_arithmetic_browser_build_passed"
       },
       "lec37": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_video_notes",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p6-lec37/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts_header_sum_verified",
+        "videoContent": "not_reviewed",
+        "verification": "P6_random_backbone_freeze_BN_finetune_groups_preprocess_and_shape_passed_no_pretrained_training"
       },
       "lec38": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_video_notes",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p6-lec38/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts_header_sum_verified",
+        "videoContent": "not_reviewed",
+        "verification": "P6_synthetic_ID_schema_CE_split_examples_source_browser_build_passed_no_real_CIFAR_execution"
       },
       "lec39": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_video_notes",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p6-lec39/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts_header_sum_verified",
+        "videoContent": "not_reviewed",
+        "verification": "P6_1000_vs512_random_heads_probabilities_columns_CE_source_browser_build_passed_no_Dogs_training"
       },
       "lec40": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_video_notes",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p6-lec40/manifest-fragment.json",
+        "videoMetadata": "acquired_all_4_parts_header_sum_verified",
+        "videoContent": "not_reviewed",
+        "verification": "P6_bbox_coordinate_flip_normalization_source_browser_build_passed_actual_header_popup_retained_notes"
       },
       "lec41": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_video_notes",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p6-lec41/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts_header_sum_verified",
+        "videoContent": "not_reviewed",
+        "verification": "P6_CPU_fixed_helpers_anchor_IoU_matching_mask_offset_eps_NMS_and_paper_examples_source_browser_build_passed"
       },
       "lec42": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_review_framework_not_teacher_or_winner_summary",
+        "draft": "blocked_public_subtitles_empty_no_reliable_classroom_source",
+        "materials": "not_required",
+        "sourceManifest": "sources/p6-lec42/manifest-fragment.json",
+        "videoMetadata": "acquired_single_part_header_duration_verified",
+        "videoContent": "not_reviewed_no_competition_methods_or_scores_claimed",
+        "verification": "P6_reused_P5_identity_access_hypothetical_paired_error_and_micro_macro_arithmetic_source_browser_build_passed"
       },
       "lec43": {
         "notes": "planned",
@@ -604,10 +632,12 @@
         "sourceManifest": "sources/p5-training-performance/manifest-fragment.json"
       },
       "cv-transfer": {
-        "zh": "planned_editorial_practice_spec",
-        "guide": "planned",
+        "zh": "verified_editorial_four_task_practice_spec",
+        "guide": "verified_routes_invariants_no_full_solution",
         "en": "not_planned_no_english_original",
-        "execution": "not_run"
+        "execution": "passed_synthetic_CPU_mechanisms_random_ResNet18_and_schema_checks_real_small_data_pretrained_training_and_competitions_not_run",
+        "sourceManifest": "sources/p6-cv-transfer/manifest-fragment.json",
+        "blocked": "Leaves_authenticated_access_image_redistribution_and_weight_terms_unverified; CIFAR_Dogs_actual_files_unread; LEC42_classroom_summary_unavailable"
       },
       "cv-dense-prediction": {
         "zh": "planned_editorial_practice_spec",
@@ -651,7 +681,7 @@
     {
       "id": "bilibili-video-button",
       "status": "fixed_with_header_external_link_and_duration",
-      "issue": "LEC1–35页头保留官方B站外链与核实时长，多P注明全P合计；默认笔记，无iframe。P5逐页核对六讲，LEC34实际点击在新标签打开B站且笔记保留。未核验全片播放或线上部署，不找转载替代。",
+      "issue": "LEC1–42页头保留官方B站外链与核实时长，多P注明全P合计；默认笔记，无iframe。P6逐页核对七讲，LEC40实际点击新标签打开B站且笔记保留。未核验全片播放或线上部署，不找转载替代。",
       "blocksCurrentPhase": false
     },
     {
@@ -680,8 +710,8 @@
     },
     {
       "id": "runtime-version",
-      "status": "p1_to_p5_cpu_verified_full_course_not_verified",
-      "issue": "P5复用环境完成合成MLP计时、分片梯度/更新、逻辑PS及六讲纸面算例；CUDA0，MPS仅探测。d2l/Jupyter、旧Notebook、真实GPU/网络与全课依赖未验证。",
+      "status": "p1_to_p6_bounded_cpu_verified_full_course_not_verified",
+      "issue": "P6复用环境核合成迁移机制、随机完整ResNet18前向、两种Dogs随机头和检测几何；未加载预训练权重、未做真实小数据训练或三项竞赛。CUDA0，MPS仅探测；d2l/Jupyter、旧Notebook、全课依赖与GPU未验证。",
       "blocksCurrentPhase": false
     },
     {
@@ -693,7 +723,7 @@
     {
       "id": "materials-not-required-ui",
       "status": "documented_outside_content_scope",
-      "issue": "lec01–35 materials为not_required，页面仍显示待生成；公共资料说明，不创建重复材料，不改src。",
+      "issue": "lec01–42 materials为not_required，页面仍显示待生成；公共资料说明，不创建重复材料，不改src。",
       "blocksCurrentPhase": false
     },
     {
@@ -727,6 +757,18 @@
       "blocksCurrentPhase": false
     },
     {
+      "id": "p6-public-captions-empty",
+      "status": "blocked_video_drafts_and_leaf_classroom_review",
+      "issue": "lec36–42共18P每P一次公开请求成功空列表，未观看音视频。LEC40全部4P保留；LEC42只写编者复盘框架，不编造教师、获奖方案、成绩或时间轴。",
+      "blocksCurrentPhase": false
+    },
+    {
+      "id": "p6-data-and-pretrained-rights",
+      "status": "sources_verified_actual_use_and_competition_execution_not_verified",
+      "issue": "原始CIFAR官方页/适配器与ResNet18/34权重枚举和预处理已读；Kaggle CIFAR/Dogs静态页只有元信息。未下载tiny、竞赛CSV/图像或权重，不能以代码许可推断其使用/再分发权。本批只做合成机制，未做真实小训练；过去Fashion不计本实验完成。",
+      "blocksCurrentPhase": false
+    },
+    {
       "id": "california-historical-data-access",
       "status": "public_metadata_verified_data_not_acquired",
       "issue": "公开Data/Evaluation可读，数据须登录接受竞赛规则；本批未下载/训练/提交，不用Ames或sklearn California Housing替代历史竞赛。",
@@ -736,27 +778,21 @@
   "nextExecution": {
     "entry": "sources/NEXT-PROMPT.txt",
     "parallelism": "必须task多agent；连续讲次组/独立实验目录，主agent独占共享索引。",
-    "firstWork": "先读P1–P5验收，不重做lec01–35及五项已验收实验；继续lec36–42与cv-transfer。已有draft仅在取得合法可靠的新课堂来源后补。LEC30树叶竞赛来源直接复用，不将模板规则当明确下载许可。",
+    "firstWork": "先读P1–P6验收，不重做lec01–42及六项已验收实验；继续lec43–50与cv-dense-prediction。复用40/41几何与P6预处理/权重边界；核牛仔行头竞赛身份与数据访问，LEC71真实课堂总结依赖保留，不编造方案。已有draft只在合法可靠新课堂来源到位后补。",
     "initialLectureIds": [
-      "lec36",
-      "lec37",
-      "lec38",
-      "lec39",
-      "lec40",
-      "lec41",
-      "lec42"
+      "lec43",
+      "lec44",
+      "lec45",
+      "lec46",
+      "lec47",
+      "lec48",
+      "lec49",
+      "lec50"
     ],
     "initialPracticeIds": [
-      "cv-transfer"
+      "cv-dense-prediction"
     ],
     "remainingLectureNotes": [
-      "lec36",
-      "lec37",
-      "lec38",
-      "lec39",
-      "lec40",
-      "lec41",
-      "lec42",
       "lec43",
       "lec44",
       "lec45",
@@ -824,13 +860,19 @@
       "lec32",
       "lec33",
       "lec34",
-      "lec35"
+      "lec35",
+      "lec36",
+      "lec37",
+      "lec38",
+      "lec39",
+      "lec40",
+      "lec41",
+      "lec42"
     ],
     "laterWaves": "按原课表连续批次推进，不删除CNN/CV/RNN或历史竞赛。",
     "scopeRules": "sources/PLAN.txt",
     "beforeGeneratingVideoContent": "读取skill://technical-video-notes；先核实全部分P，字幕为空不伪造稿。",
     "remainingPracticeIds": [
-      "cv-transfer",
       "cv-dense-prediction",
       "recurrent-language-model",
       "seq2seq-attention",
@@ -840,7 +882,7 @@
     ],
     "afterEachBatch": "主agent汇总、验收、提交推送GitHub并交付下一段提示词；只提交本批与必要发布前置内容。"
   },
-  "batchManifest": "sources/p5-manifest.json",
+  "batchManifest": "sources/p6-manifest.json",
   "bookVersion": "sources/p1-shared/book-version.json",
   "planningVerification": {
     "metadataAndLinks": "passed_2026-11-13：73讲/103源行/12练习/48任务/16章/129小节；完整课表视频链接多重集逐项一致，所有站内路由和交接路径可解析，4份源快照哈希一致；只发布公共资料Markdown，无逐讲/实验占位正文。",
@@ -849,17 +891,18 @@
     "courseExperiments": "not_run_planning_only"
   },
   "verification": {
-    "metadataAndLinks": "passed P5:6BV/12P=15677s；38项来源hash；9Markdown（含公共资料）/6SVG XML与本地路由；73讲12实验48任务保持；全部页头单P/全P时长正确。",
-    "build": "passed npm run build once；tsc --noEmit与Vite5.4.21生产构建成功，2984modules，5.51s；sources/p5-shared/build.log",
-    "browserSmoke": "passed actual Chromium；六讲逐页官方入口/时长、默认笔记、图/公式/自测/页底来源、1440桌面/390手机及六图明暗；实验双标签、缺稿、208公共视频入口。LEC34实际外链新tab且笔记保留。修复lab RSS代码489px溢出和3处公共资料404路由；无应用错误，tab关闭，非部署/全片播放验收。",
-    "courseExperiments": "passed_scope_limited:CPU合成MLP50890参数，B16/64/128各10热身+30测量，四段与整步计时/RSS；float64加权梯度与SGD差≤2.23e-16/2.78e-17，错误mean差.104568；六讲算术、三worker逻辑PS与两步更新检查。GPU/MPS/网络均未运行；无公开Python整块代码（0块），不虚称代码块执行数量。",
-    "evidence": "sources/p5-manifest.json"
+    "metadataAndLinks": "passed P6:7BV/18P=17071s；41项唯一来源hash；10Markdown（含公共资料）/7SVG XML与本地路由；73讲12实验48任务保持；全部单P/全P页头时长正确。",
+    "build": "passed npm run build once；tsc --noEmit与Vite5.4.21生产构建成功，3000modules，5.34s；sources/p6-shared/build.log",
+    "browserSmoke": "passed actual Chromium；七讲默认笔记/官方页头/图明暗/公式/自测/页底来源、1440桌面/390手机；实验双标签、公共资料根链接、缺稿状态、226公共B站入口。LEC40实际新tab且笔记保留。修正正文来源/许可关键词标题被移入页底的问题；无应用错误，验证tab关闭。非部署或全片播放验收。",
+    "courseExperiments": "passed finite CPU scope：合成图变换、冻结/解冻/BN反例/分组SGD/eval不改状态、随机完整ResNet18新头90288参数、Dogs两种随机头、三类schema、CE/划分/配对误差；固定教材几何函数与纸面例。未运行真实小数据训练、预训练权重、三竞赛或GPU；公开Python代码块0，不发布完整答案。",
+    "evidence": "sources/p6-manifest.json"
   },
   "batchManifests": [
     "sources/p1-manifest.json",
     "sources/p2-manifest.json",
     "sources/p3-manifest.json",
     "sources/p4-manifest.json",
-    "sources/p5-manifest.json"
+    "sources/p5-manifest.json",
+    "sources/p6-manifest.json"
   ]
 }

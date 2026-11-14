@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 530" role="img" aria-labelledby="title desc">
+<title id="title">先分组划分，再增广</title><desc id="desc">同一原图先分入训练或验证。训练可随机变换，验证固定变换，两个集合禁止同源交叉。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#a9c8f5"/></marker></defs>
+<style>text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:#f4f7fc;font-size:20px} .small{font-size:17px;fill:#d4e1f3} .box{fill:#20344f;stroke:#8aafd9;stroke-width:2} .train{fill:#153e3b;stroke:#63d8bd;stroke-width:2} .warn{fill:#47351e;stroke:#f3c879;stroke-width:2} .edge{fill:none;stroke:#a9c8f5;stroke-width:3;marker-end:url(#arrow)}</style>
+<rect width="760" height="530" rx="16" fill="#101d30"/>
+<text x="30" y="43">先划分身份，再生成视图</text>
+<rect class="box" x="260" y="72" width="240" height="75" rx="10"/><text x="293" y="103">原始图像 + 原图ID</text><text class="small" x="299" y="130">同对象连拍按组隔离</text>
+<path class="edge" d="M310 147L180 205"/><path class="edge" d="M450 147L580 205"/>
+<rect class="train" x="50" y="210" width="265" height="70" rx="10"/><text x="115" y="253">训练ID集合</text>
+<rect class="box" x="445" y="210" width="265" height="70" rx="10"/><text x="510" y="253">验证ID集合</text>
+<path class="edge" d="M180 280V320"/><path class="edge" d="M580 280V320"/>
+<rect class="train" x="50" y="325" width="265" height="83" rx="10"/><text x="87" y="358">随机裁剪 / 翻转 / 改色</text><text class="small" x="96" y="389">必须保留类别证据</text>
+<rect class="box" x="445" y="325" width="265" height="83" rx="10"/><text x="486" y="358">固定变换 / 标准化</text><text class="small" x="487" y="389">重复评价同一输入合同</text>
+<path d="M340 235L420 255M420 235L340 255" stroke="#ffb2a5" stroke-width="4"/><text class="small" x="325" y="290">不共享原图</text>
+<rect class="warn" x="50" y="445" width="660" height="55" rx="9"/><text x="79" y="480">同一张图的20个视图 ≠ 20个独立采集样本</text>
+</svg>

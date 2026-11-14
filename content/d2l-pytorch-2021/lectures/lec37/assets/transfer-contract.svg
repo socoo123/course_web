@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 530" role="img" aria-labelledby="title desc">
+<title id="title">预训练表示与目标分类头</title><desc id="desc">源模型的骨干迁移到目标模型，源1000类头不直接作为目标标签。固定特征和微调分别控制骨干更新，并独立控制BN状态。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#a9c8f5"/></marker></defs>
+<style>text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:#f4f7fc;font-size:20px} .small{font-size:17px;fill:#d4e1f3} .box{fill:#20344f;stroke:#8aafd9;stroke-width:2} .train{fill:#153e3b;stroke:#63d8bd;stroke-width:2} .warn{fill:#47351e;stroke:#f3c879;stroke-width:2} .edge{fill:none;stroke:#a9c8f5;stroke-width:3;marker-end:url(#arrow)}</style>
+<rect width="760" height="530" rx="16" fill="#101d30"/>
+<text x="30" y="43">迁移参数，也迁移输入规范</text>
+<rect class="box" x="45" y="75" width="300" height="80" rx="10"/><text x="88" y="108">源数据 → 预训练骨干</text><text class="small" x="101" y="137">权重版本 + 预处理</text>
+<rect class="warn" x="425" y="75" width="290" height="80" rx="10"/><text x="476" y="110">源1000类分类头</text><text class="small" x="465" y="138">不继承目标标签语义</text>
+<path class="edge" d="M195 155V203"/>
+<rect class="train" x="45" y="208" width="300" height="82" rx="10"/><text x="105" y="243">目标骨干 hφ</text><text class="small" x="106" y="271">例如512维表示</text>
+<path class="edge" d="M345 250H417"/>
+<rect class="train" x="425" y="208" width="290" height="82" rx="10"/><text x="485" y="243">新目标头 gψ</text><text class="small" x="490" y="271">随机初始化 C 类</text>
+<path class="edge" d="M195 290V338"/><path class="edge" d="M570 290V338"/>
+<rect class="box" x="45" y="343" width="300" height="95" rx="10"/><text x="89" y="376">冻结：参数不更新</text><text x="89" y="407">微调：小步更新</text>
+<rect class="box" x="425" y="343" width="290" height="95" rx="10"/><text x="465" y="377">新头：持续训练</text><text class="small" x="459" y="408">参数必须在优化器里</text>
+<text x="49" y="487" fill="#ffe3ac">BN运行统计与梯度开关不同：固定表示还需固定状态</text>
+</svg>

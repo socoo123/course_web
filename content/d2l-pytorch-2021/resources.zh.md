@@ -1,6 +1,6 @@
 ---
 source: 李沐《动手学深度学习》2021 中文课程官方课表；《动手学深度学习》中文第二版
-status: 已完成LEC1–35学习笔记、自绘图及前五项实验说明/指导；其中LEC30为官方竞赛来源导读，其他笔记不冒充课堂整理。35个BV共105P公开字幕均为空，完整课堂稿持续阻塞。页头官方入口与核实时长按全部分P合计；CPU性能微基准、梯度与通信预算推演不等于真实多GPU实测或学生作业完成。
+status: 已完成LEC1–42学习笔记、自绘图及前六项实验说明/指导；LEC30与LEC42为官方来源导读/编者复盘框架，不冒充课堂总结。42个BV共123P公开字幕均为空，完整课堂稿持续阻塞。页头使用官方入口和单P/全P核实时长；P6只验收合成迁移机制、随机模型形状与检测几何，不虚称真实小数据训练、预训练效果或竞赛完成。
 license: 本页为编者自主课程导航；教材、代码、视频分别按原始许可处理，视频授权不由教材许可推定。
 ---
 
@@ -275,6 +275,14 @@ LeNet在此极小配置下仍接近随机分类水平，不能把“损失下降
 
 本批CUDA设备数为0；MPS仅探测可用，未执行。补充核对了六讲纸面算例、三逻辑worker的同轮收齐/一次更新/重复与旧轮拒绝、遗漏不更新和到达顺序一致性，以及独立的两步MLP参数变化；均非网络执行。没有重训P4模型、运行分布式进程组或完成学生全部任务；[第五项实验](#/c/d2l-pytorch-2021/lab/training-performance?v=zh)仍要求学习者自行实现并记录。数值范围见 `sources/p5-shared/environment.json`、`mechanism-smoke.json`、`supplement-smoke.json`、`special-hardware-smoke.json`。
 
+#### 第六批：视觉迁移机制与执行边界
+
+复用同一 CPU 单线程环境，实际核对了自制 RGB 图像的随机训练变换与确定验证变换、uint8 到浮点数的缩放、权重枚举指定的归一化，以及固定标签表和按真实 ID 关联预测。这里调用了 `ResNet18_Weights` 的 `IMAGENET1K_V1` 预处理配置，**没有下载或加载预训练参数**；配置可用不等于权重使用许可已核实。
+
+独立随机初始化的 Conv＋BatchNorm 小骨干验证了：冻结参数并设为 eval 后，更新分类头不改变骨干参数或 BN buffers；只关闭梯度却保留 train 模式，BN 统计仍会改变。显式解冻后，骨干与分类头按各自学习率更新；验证不改变参数、buffers 或已有梯度。完整随机初始化 ResNet-18 的 176 类头包含 90,288 个参数，合成输入的输出形状为 `[2,176]`。这些只证明机制与形状，不证明树叶识别效果。
+
+本批**没有执行真实小数据训练、预训练迁移训练或任何竞赛下载、训练、提交**。CIFAR-10、Dogs、树叶三种输出接口仅在各自类别规模的合成张量上核对；不能因此称真实数据接口已经走通。树叶复用 P5 的身份与匿名访问证据，登录后条件及图片再分发权仍未核实；教材小样本包的校验值也不是图片授权。LEC42 仅提供编者复盘框架，不编造课堂总结或获奖方案。四项任务及各层级证据要求见[第六项实验](#/c/d2l-pytorch-2021/lab/cv-transfer?v=zh)，数值范围见 `sources/p6-shared/mechanism-smoke.json` 与 `transfer-contract-smoke.json`；此前 Fashion 小训练不算本实验完成。
+
 ## 学完后怎样衔接 CS336
 
 用三个问题自查：能否不依赖整段答案写出小模型训练循环；能否逐步解释 Attention 的形状与 mask；能否解释模型的参数、梯度、优化器状态和激活为何占用内存。
@@ -367,9 +375,25 @@ LEC 30–35共 **6个BV、12P、15677秒**，均为官方课表指向作者“�
 
 六讲均为 `copyright=1`、`no_reprint=1`，不是开放转录许可。LEC30竞赛说明与LEC32硬件补充不冒充教材指定章节或课堂内容；树叶比赛与CIFAR-10、狗品种教材案例分别处理。空字幕接口不证明不存在烧录字幕。
 
+### 第六批已核实的全部分 P
+
+LEC36–42 共 **7个BV、18P、17071秒**，均由官方课表绑定到“跟李沐学AI”的2021上传。LEC40真实4P，检测、边界框、数据和QA全部保留；LEC42课表日期为6月27日，实际上传日期为7月3日，两者不混写。18次公开字幕请求均成功但列表为空，未审阅音视频，以下是分P文件清单而非课堂主题时间轴。
+
+| 讲次 | 真实分 P 与时长 |
+|---|---|
+| LEC 36 | [P1 数据增广 · 12:49](https://www.bilibili.com/video/BV17y4y1g76q?p=1)；[P2 代码 · 19:41](https://www.bilibili.com/video/BV17y4y1g76q?p=2)；[P3 QA · 22:30](https://www.bilibili.com/video/BV17y4y1g76q?p=3) |
+| LEC 37 | [P1 微调 · 13:53](https://www.bilibili.com/video/BV1Sb4y1d7CR?p=1)；[P2 代码 · 08:55](https://www.bilibili.com/video/BV1Sb4y1d7CR?p=2)；[P3 QA · 11:33](https://www.bilibili.com/video/BV1Sb4y1d7CR?p=3) |
+| LEC 38 | [P1 Kaggle Cifar10 · 27:57](https://www.bilibili.com/video/BV1Gy4y1M7Cu?p=1)；[P2 QA · 17:46](https://www.bilibili.com/video/BV1Gy4y1M7Cu?p=2) |
+| LEC 39 | [P1 Kaggle ImageNet Dog · 19:09](https://www.bilibili.com/video/BV1j5411T7wx?p=1)；[P2 QA · 15:16](https://www.bilibili.com/video/BV1j5411T7wx?p=2) |
+| LEC 40 | [P1 物体检测 · 11:36](https://www.bilibili.com/video/BV1Lh411Y7LX?p=1)；[P2 边缘框实现 · 03:49](https://www.bilibili.com/video/BV1Lh411Y7LX?p=2)；[P3 数据集 · 09:46](https://www.bilibili.com/video/BV1Lh411Y7LX?p=3)；[P4 QA · 10:29](https://www.bilibili.com/video/BV1Lh411Y7LX?p=4) |
+| LEC 41 | [P1 锚框 · 18:07](https://www.bilibili.com/video/BV1aB4y1K7za?p=1)；[P2 代码 · 23:21](https://www.bilibili.com/video/BV1aB4y1K7za?p=2)；[P3 QA · 11:25](https://www.bilibili.com/video/BV1aB4y1K7za?p=3) |
+| LEC 42 | [P1 树叶分类竞赛 · 26:29](https://www.bilibili.com/video/BV1by4y1K7SE?p=1) |
+
+七讲的 `copyright=1`、`no_reprint=1` 不是开放转录许可。LEC42没有可靠课堂内容来源，笔记仅为编者复盘框架，不记录未经核实的教师建议、团队方案或成绩。
+
 ### 全课视频入口
 
-以下链接逐项保留课表中的 BV 与分 P 参数。未写 `p` 的原始链接标作「入口」，不推定它覆盖整组内容。LEC 1–35 的真实全部分 P 已列于上方五表；其余讲次尚待逐 P 核对。讲次页头提供原站链接与已记录时长；点击后在新标签页观看，本站保留笔记。嵌入播放器与“课程视频”标签已按用户要求移除。曾误接入的非本人YouTube上传也已撤下，不以转载替代官方课表来源。
+以下链接逐项保留课表中的 BV 与分 P 参数。未写 `p` 的原始链接标作「入口」，不推定它覆盖整组内容。LEC 1–42 的真实全部分 P 已列于上方六表；其余讲次尚待逐 P 核对。讲次页头提供原站链接与已记录时长；点击后在新标签页观看，本站保留笔记。嵌入播放器与“课程视频”标签已按用户要求移除。曾误接入的非本人YouTube上传也已撤下，不以转载替代官方课表来源。
 
 | 站内讲次 | 原课表视频入口 |
 |---|---|
@@ -482,3 +506,4 @@ LEC 30–35共 **6个BV、12P、15677秒**，均为官方课表指向作者“�
 - [固定中文源码仓库 LICENSE](https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/LICENSE)为 Apache-2.0；辅助包 `setup.py` 的包许可字段另列 MIT-0，不混为单一授权结论。以上均不外推至 B 站视频、字幕、第三方图片、竞赛数据或纸质出版物。本站讲解、例子与练习为编者整理或改编，不复制中文教材全文。
 - 教材目录、公告、固定源码许可和安装说明已留存来源快照；章节实际阅读范围见逐讲来源。没有因此声称已读全书、取得录像再发布许可或验证全部 Notebook。
 
+- P6视觉预处理与权重边界：[TorchVision0.20模型通则](https://docs.pytorch.org/vision/0.20/models.html)、[ResNet-18 V1推理规范](https://docs.pytorch.org/vision/0.20/models/generated/torchvision.models.resnet18.html)。实际读取范围、固定v0.20.1源码与独立数据条款见各讲/实验来源清单；权重未下载，不把框架代码许可当作权重授权。
