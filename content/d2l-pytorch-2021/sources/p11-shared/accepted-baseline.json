@@ -1,0 +1,1774 @@
+{
+  "date": "2026-11-14",
+  "files": {
+    "content/d2l-pytorch-2021/lectures/lec22/notes.zh.md": "8b2dc79a3baab54e76d2e9dd2235db0a78b62f537969b0123ecf42ca76034814",
+    "content/d2l-pytorch-2021/lectures/lec22/assets/pooling-boundaries.svg": "46f536f28e11c3df32a4dd02c5cc4a7fa80adebf94110b00eafa183056da73a9",
+    "content/d2l-pytorch-2021/lectures/lec25/notes.zh.md": "4eb2a2786faa216d9b875b8cd4198027fb54dbbd90bccdd6367d46058b43a4cc",
+    "content/d2l-pytorch-2021/lectures/lec25/assets/vgg-blocks.svg": "41e0a4d9f5e798ec11ed2da0e747e1c2a94893691164f0303459539f1f97d4f1",
+    "content/d2l-pytorch-2021/lectures/lec13/notes.zh.md": "ccc2d5f3d593f544bd5c18f91a2f66421cd0de945414dc23af40c69505098deb",
+    "content/d2l-pytorch-2021/lectures/lec13/assets/dropout-expectation.svg": "65b3131711432da585099aaa3541bf061b513d4a3856ebd44aa0634e5e971bb3",
+    "content/d2l-pytorch-2021/lectures/lec14/notes.zh.md": "800d1101d78889e09b1d78ea41a370e57fd0d434287a86caaff874c64625038a",
+    "content/d2l-pytorch-2021/lectures/lec14/assets/initialization-scales.svg": "f650289b21dc33aab7f9be7d57172c717084961dd762535eb57a12647060e849",
+    "content/d2l-pytorch-2021/lectures/lec40/notes.zh.md": "9b2d34fa76ad41a2f400728813584daa1149589350ecc1a39db6bd9c2c68ed58",
+    "content/d2l-pytorch-2021/lectures/lec40/assets/box-transform.svg": "85ce321917dbed75637e0a64c7f2f303953db1b0771e4c6763d17d8a0cd3178f",
+    "content/d2l-pytorch-2021/lectures/lec47/notes.zh.md": "4bf533fc074c87ff98110dd1884002c0418e68cea50d2db9e0d60c0843cb42f7",
+    "content/d2l-pytorch-2021/lectures/lec47/assets/convolution-adjoint.svg": "aa44768aac223befed3cfc5361f8fd517cc9ed6784791e49a8aa5abcd272457e",
+    "content/d2l-pytorch-2021/lectures/lec49/notes.zh.md": "a3a9231d42fdab18b9cff88f97c80c05425f217b47b85151acc57e601dcfefa1",
+    "content/d2l-pytorch-2021/lectures/lec49/assets/style-optimization.svg": "6821c520e681c5bcd53a3949d5332a40f4c788abdcb8e450e60893663d68a6da",
+    "content/d2l-pytorch-2021/lectures/lec15/notes.zh.md": "6a9a2daebe3d7443db81ad2a578bb93c78be7e2a32cd8e6c2242d6726ebc3d2f",
+    "content/d2l-pytorch-2021/lectures/lec15/assets/fold-local-pipeline.svg": "81cf31dd03664aa61b984f0b202a8b8a04fccfbca6fa2b663c3a31b38e298cb0",
+    "content/d2l-pytorch-2021/lectures/lec12/notes.zh.md": "1f54dbfcc806764df4851b8a4b002444049896c8dc25a02825c7b0c187f047ee",
+    "content/d2l-pytorch-2021/lectures/lec12/assets/sgd-decay-equivalence.svg": "874ccdb522950e7ddc8164a53192de652f7c28f8447e1f06bd71ca6eeedd2b8d",
+    "content/d2l-pytorch-2021/lectures/lec24/notes.zh.md": "e681036a4bbe37816e0e3c4311b605042490d98822ab862bb6b9807f23740f20",
+    "content/d2l-pytorch-2021/lectures/lec24/assets/alexnet-path.svg": "d703c95801f57c932e57bddd1dbd7cf2d3476d8b56b2298d3426431b950ad3c5",
+    "content/d2l-pytorch-2021/lectures/lec23/notes.zh.md": "d11f737ca862d786f83e1cea6abf16ed721481264808b5f91895eeee7be20213",
+    "content/d2l-pytorch-2021/lectures/lec23/assets/lenet-shapes.svg": "3d41878310801fb1e674de878f7f61250a86b9ab19a75520b026565ae925df58",
+    "content/d2l-pytorch-2021/lectures/lec48/notes.zh.md": "cc21142c1aae4e18075453d4e167272c171951fe3886a21dfd5e24384fa5e373",
+    "content/d2l-pytorch-2021/lectures/lec48/assets/fcn-pixel-contract.svg": "dc40cd943bda88f5b2e2313455251edfc56d70fcd437341d44872680a1a1f1a5",
+    "content/d2l-pytorch-2021/lectures/lec70/notes.zh.md": "5029ea939c9e6aca4ad9e1ab0f54506ce182391e493faad8bf9c78c0ad30b2b2",
+    "content/d2l-pytorch-2021/lectures/lec70/assets/bert-transfer-heads.svg": "d6f229ab28b20befd89853414136d31540e5de1e76480454b9d03706aa4941fb",
+    "content/d2l-pytorch-2021/lectures/lec46/notes.zh.md": "4889892ddd996812e18d5fa4070d4d83c23b7e18b0f586eda7c32a1aef7a8449",
+    "content/d2l-pytorch-2021/lectures/lec46/assets/transpose-scatter.svg": "eb56b3d2a5f568f292bc9e45e2caff70c13327be29ad9ad98ef0873505cf1915",
+    "content/d2l-pytorch-2021/lectures/lec41/notes.zh.md": "c51f896211d501583494a938d643d7c6a364f7fa866dd56125a58e86bf3de212",
+    "content/d2l-pytorch-2021/lectures/lec41/assets/anchor-supervision.svg": "238b709c0b344ef9367bd0721379c8aa9c5463f937b0c5aab66e69e0c17057a5",
+    "content/d2l-pytorch-2021/lectures/lec63/notes.zh.md": "3bc12d2e1ffed4264db54d90dd9b10b8da32770f11abfc498ee805314da24bf1",
+    "content/d2l-pytorch-2021/lectures/lec63/assets/beam-parent-state.svg": "4797cd72f54cf7dd84f1bae06eb1ee35dce50f0c856f871d7533d269c8a6e3ab",
+    "content/d2l-pytorch-2021/lectures/lec64/notes.zh.md": "4c2fc87c0bd1b1477ae8be8f10dc519b2e1240cf580f038127296f3aebb6638f",
+    "content/d2l-pytorch-2021/lectures/lec64/assets/kernel-attention.svg": "f0a518048aa02fa56ee9780eee733345793ea674b8a2f8d325d4638e89721e29",
+    "content/d2l-pytorch-2021/lectures/lec52/notes.zh.md": "36841b2813bd217ccc5e51c3f74926e47d53f4654a471f745f08f0994d14bcb3",
+    "content/d2l-pytorch-2021/lectures/lec52/assets/vocabulary-boundary.svg": "57fc441221168b4f5f5ed5603cc3007a6b279fb2813c64acbb436b5239b60b55",
+    "content/d2l-pytorch-2021/lectures/lec55/notes.zh.md": "be0441d5252af0d6efd296c85a3dff0262c3e7722f0232860d5aef674a90c7b3",
+    "content/d2l-pytorch-2021/lectures/lec55/assets/rnn-state-boundary.svg": "20e9e7d0dcb49e2fe148879778e73bf1fa60d1a01c592e98f4e2960466198f91",
+    "content/d2l-pytorch-2021/lectures/lec01/notes.zh.md": "725b787686ed0714c96c8c62400af817866001432555ea67d2e5b9b87ecb50e8",
+    "content/d2l-pytorch-2021/lectures/lec01/assets/learning-loop.svg": "53d8a6fa46ed70acfc516873b67f466ec117c5f9f36fdcc2f42241d3519017b9",
+    "content/d2l-pytorch-2021/lectures/lec06/notes.zh.md": "c7f5d788e94c649374b40d5281ff98d810847ec9145c324aa1cb7f1a061235b4",
+    "content/d2l-pytorch-2021/lectures/lec06/assets/gradient-chain.svg": "ee50ea6d0ae3a151e5c8a56bf206bfb4ca81b3c6cbca4d57ec0f085a69179a6a",
+    "content/d2l-pytorch-2021/lectures/lec39/notes.zh.md": "7bd5f0b229d795b3d687268580cabe824656dae8af62162f23837cca371e3e03",
+    "content/d2l-pytorch-2021/lectures/lec39/assets/dogs-feature-contract.svg": "41510e673addf1ec39e636279650c82528822af230d15eb395c559cd90d5a6d5",
+    "content/d2l-pytorch-2021/lectures/lec30/notes.zh.md": "b3fe89c0ef360bf155bc675be941530e2fc737d5cb406cee55232dee12d8c387",
+    "content/d2l-pytorch-2021/lectures/lec30/assets/competition-boundary.svg": "dfa62ad6da4d7fad854090c562dbfdd49238ff93642cd227e661112cb452010e",
+    "content/d2l-pytorch-2021/lectures/lec37/notes.zh.md": "a30419f1b29f231ebdd6d90566f44f08a1a320aac8c6a6dd0b4d587cdadbac89",
+    "content/d2l-pytorch-2021/lectures/lec37/assets/transfer-contract.svg": "be1dcecce1426abd647f93ecccf1d71299be48243b0d13d725f62907cbc4d4ec",
+    "content/d2l-pytorch-2021/lectures/lec08/notes.zh.md": "3f7fcedf3683289de73fb29ebc1ca4773827b1bb3e8a53d27aca580a0778215a",
+    "content/d2l-pytorch-2021/lectures/lec08/assets/sgd-normalization.svg": "39ee854432e4bc92499a82f027169c2e72b1ba5a2cc8831d97a621d51df85d39",
+    "content/d2l-pytorch-2021/lectures/lec54/notes.zh.md": "1117ccf5e27af896b6b81074a38aaaf1e30160595d21eafbb6e1fc2265b07722",
+    "content/d2l-pytorch-2021/lectures/lec54/assets/rnn-bptt.svg": "fa64c9f8e653b955bbf1899fac958a6a461c99a20f10f256b68657b9f6ff02fa",
+    "content/d2l-pytorch-2021/lectures/lec53/notes.zh.md": "0c09624e2f1a1534ec054d346aca989c1b1381caf34f36b76e5cd8964cbcd79c",
+    "content/d2l-pytorch-2021/lectures/lec53/assets/sampling-state.svg": "209713e741129c8d430e2843474a526f24b0344bfb381fdcaba6a6f5388d05b7",
+    "content/d2l-pytorch-2021/lectures/lec65/notes.zh.md": "f7dd358c1d21bb49c6c314313cf0466340467ca9d091536ba1808075d8838493",
+    "content/d2l-pytorch-2021/lectures/lec65/assets/attention-scoring.svg": "17988bf1409217f462ad9a9c882cb308aaba52373aa18c6cd4c12d59b61800b1",
+    "content/d2l-pytorch-2021/lectures/lec62/notes.zh.md": "35279e6f77d74a35d3452b2a50a3758c823cba245edb60de93cb2eda7ea7833e",
+    "content/d2l-pytorch-2021/lectures/lec62/assets/seq2seq-context-and-shift.svg": "d3c23bd0977c19b5a135b9b9eaa504d25d1e6ef6b11f10abd7795ef4757a66da",
+    "content/d2l-pytorch-2021/lectures/lec36/notes.zh.md": "1917050f216d9a71eab43cebf3b4c752a18c544a7907a28da19a29e96a0ddfed",
+    "content/d2l-pytorch-2021/lectures/lec36/assets/augmentation-contract.svg": "3671cf5b167bf2f5e5eaf5b1701156ef4d2cdfe61c6747c09f62df03e9b5e8c9",
+    "content/d2l-pytorch-2021/lectures/lec09/notes.zh.md": "9e078896827ed882f0d19f29ca76e9e384db5c6a198858013087ff208566239e",
+    "content/d2l-pytorch-2021/lectures/lec09/assets/logits-cross-entropy.svg": "7deaedf6d0f37dbf3140e99a6412a49549928c6f2ef5fa0a63b01d8f98dad155",
+    "content/d2l-pytorch-2021/lectures/lec31/notes.zh.md": "8793d8e6bd5df689285887eff056d957db5f625356aef87000e611db59af17c5",
+    "content/d2l-pytorch-2021/lectures/lec31/assets/data-path.svg": "207219ed00c3790221cdea717a59374ea81fd4cc6be4281c72273ff86d7747ec",
+    "content/d2l-pytorch-2021/lectures/lec07/notes.zh.md": "c4fb1b1f1a12c1177eb3f28c4cd1448f4ab368dae9ecbc4302f3524b697b1999",
+    "content/d2l-pytorch-2021/lectures/lec07/assets/autograd-lifecycle.svg": "8db794c9d0c77d9efb5a95e7fcb8e1407aaf56a7564e2f20334e55fea9f5eddb",
+    "content/d2l-pytorch-2021/lectures/lec38/notes.zh.md": "4f4a15c17cda905473d6bfb586fb0f1ef548c1777345874002b13528844f0e59",
+    "content/d2l-pytorch-2021/lectures/lec38/assets/cifar-id-contract.svg": "761f7c41da2a8f183ff20b2bc168eee0dade548832b8b5168da34d5c80ce782a",
+    "content/d2l-pytorch-2021/lectures/lec44/notes.zh.md": "99d52f55f5a8f2920f5299fa576b05bf8dd56c3744c8f9b6b2e329bf179a6e16",
+    "content/d2l-pytorch-2021/lectures/lec44/assets/ssd-contract.svg": "3c884ef705a3f5fbe4feee0c285b13690ee7f54d2dd69799ac6a721e291a94ff",
+    "content/d2l-pytorch-2021/lectures/lec43/notes.zh.md": "93ba0656ee9725f853f7d78c2786c2d484f0eec6282c7e8c29a0b4d64909f47d",
+    "content/d2l-pytorch-2021/lectures/lec43/assets/detector-routes.svg": "b867b53e418b22ceb3d7808f56333c603e017c5a391a142a086d24661441f3e3",
+    "content/d2l-pytorch-2021/lectures/lec19/notes.zh.md": "f8e5ddc33ff72a0ba0a3eabd2e541dce15a6ec90a26954d5503fc610521fb57a",
+    "content/d2l-pytorch-2021/lectures/lec19/assets/shared-local-kernel.svg": "db6a75b3902ae0f12c6c68412452c6ec586f5509bcb74811db38815b8765ad75",
+    "content/d2l-pytorch-2021/lectures/lec26/notes.zh.md": "43cba8df53a62435b0aec74acba3894bd2484551559550585b4b842a079a65aa",
+    "content/d2l-pytorch-2021/lectures/lec26/assets/nin-channel-gap.svg": "18bd7fc902da485858bfde22ec56a46ed630fac7076280f03797db96cc9fc8b8",
+    "content/d2l-pytorch-2021/lectures/lec21/notes.zh.md": "a86a75aa7a3271291c8ce3b4808beaf68487441f21ca8c34e483ba4d03489301",
+    "content/d2l-pytorch-2021/lectures/lec21/assets/channel-sum-stack.svg": "feca745da6c280c5578fee7773947b290c9e776aabcf006f4ae8970d1630fdb2",
+    "content/d2l-pytorch-2021/lectures/lec28/notes.zh.md": "36e3e2d52d97bd1756ea828c96b135259522314d49ff041c4f91b6c0e452dbe4",
+    "content/d2l-pytorch-2021/lectures/lec28/assets/batchnorm-state.svg": "4353cb50903209d1711a2b0b2b62dd64f422f21ca763e7291b1574edd8a36c03",
+    "content/d2l-pytorch-2021/lectures/lec17/notes.zh.md": "d2f35f108d829dfa71395b311eaf6046f90247194b889b0c2e36d748ce66bca6",
+    "content/d2l-pytorch-2021/lectures/lec17/assets/device-placement.svg": "dc9b6961a0ad80989ebb5592299229b0a85045b4fa68c0ea80bde8e27580f9f5",
+    "content/d2l-pytorch-2021/lectures/lec10/notes.zh.md": "057dedbbbb95bd3d01f4e87efdaf4db5afb984e01b77d6ff0c5b3ce820464181",
+    "content/d2l-pytorch-2021/lectures/lec10/assets/nonlinearity-xor.svg": "cfac30dbfeba4de384ad9fe578d3d6f9c15314ea2182095f42756d7a1e2d050a",
+    "content/d2l-pytorch-2021/lectures/lec42/notes.zh.md": "b0157ca36531e3ae38ec48375ffb94f72e396d83390627f7ebea2e8b5a444d8f",
+    "content/d2l-pytorch-2021/lectures/lec42/assets/paired-review.svg": "24dedb5e22706c022fef7f38f416397670e5feafcbb287b4868f7e74c11b73a4",
+    "content/d2l-pytorch-2021/lectures/lec45/notes.zh.md": "e805df9a91cdb6398db79a9d301cbb8e977d4b3adb6883d00162f881d0d0ca88",
+    "content/d2l-pytorch-2021/lectures/lec45/assets/segmentation-label-contract.svg": "8a69867c309c44f73d0dfa66db5458433226311278aa88a556a23189064b234d",
+    "content/d2l-pytorch-2021/lectures/lec11/notes.zh.md": "24e2b6d672af3bc89325304b7cf090a8a137b4ce2a512b4bf4ce18264f226de4",
+    "content/d2l-pytorch-2021/lectures/lec11/assets/selection-boundaries.svg": "8b15a7b02355ade95c01187227f6a529b7d946ae72b6c93aa583af71124bd121",
+    "content/d2l-pytorch-2021/lectures/lec29/notes.zh.md": "95a44a1959edb8a3db0f5594daae721b26ee7189ee380b9a1dc4825a95dfedf5",
+    "content/d2l-pytorch-2021/lectures/lec29/assets/residual-projection.svg": "f42c2f59326eb1106446f78be576c242623198aa9de529523b474ac3d0bf4380",
+    "content/d2l-pytorch-2021/lectures/lec16/notes.zh.md": "00c560f1b288d0150f5ab5a80ba3bc0a5ed9a508f9541be3bc0d2b98659ebc14",
+    "content/d2l-pytorch-2021/lectures/lec16/assets/module-state-boundaries.svg": "912f9e90a9a0bc80fa830f6d43d9b0de0d628951011c0d9d06aeadef4c4c4789",
+    "content/d2l-pytorch-2021/lectures/lec20/notes.zh.md": "b4525412413230b70a832a73f40771f8c948c8436b4aa6e86730fd28d19c2c9a",
+    "content/d2l-pytorch-2021/lectures/lec20/assets/padding-stride-phase.svg": "e9fd220687a390de515ee02c57ad62fb35fd23c6fae3ea89564dc762d9cad36b",
+    "content/d2l-pytorch-2021/lectures/lec18/notes.zh.md": "528799c514485b74f0c3d36735f965d1ef4fb89675ed171d81a893632c8b7928",
+    "content/d2l-pytorch-2021/lectures/lec18/assets/review-evidence-chain.svg": "185399f1cf035035ecbec8aa5a726a6b024e160e338831f322636972bbc99140",
+    "content/d2l-pytorch-2021/lectures/lec27/notes.zh.md": "506de3e800d3da3b01012f09a798d42701fe35826e8d923fab4a2182030329be",
+    "content/d2l-pytorch-2021/lectures/lec27/assets/inception-branches.svg": "ff5e5da30373d98c63997033df2adf17b81a6fa97e688088fb67adf3ff1b51b5",
+    "content/d2l-pytorch-2021/lectures/lec05/notes.zh.md": "743130a5eedde8933d659e6f1ef1637f617897958f6739adf2eaf985d8f1a9c9",
+    "content/d2l-pytorch-2021/lectures/lec05/assets/matrix-contraction.svg": "93a2e373ab300fed106a15530eff338a65aee4be8abc1b10426592185b831f76",
+    "content/d2l-pytorch-2021/lectures/lec02/notes.zh.md": "93d7881684b1d46d87102affc18fbfbb0f258cb641a438ec58581411604fac33",
+    "content/d2l-pytorch-2021/lectures/lec02/assets/training-boundary.svg": "51df35f5e5a8b6ab7f4348cff44b73b79f4ff29697400b3d838fce9612123bf9",
+    "content/d2l-pytorch-2021/lectures/lec34/notes.zh.md": "6e1b449cdc1de474d4d67caa7084b5c1c698af75ad7c684de794893c35436fd9",
+    "content/d2l-pytorch-2021/lectures/lec34/assets/dp-ddp-contract.svg": "eacce78fdc2d08db0bb5fd74ce05ec7276d6cdc23cdb8ee7d553e530fa734b43",
+    "content/d2l-pytorch-2021/lectures/lec33/notes.zh.md": "cb0778688fdcf8c4af31865105208668df15cb10ef3dc3ccaf7eea418e2f8acf",
+    "content/d2l-pytorch-2021/lectures/lec33/assets/shards-and-gradient.svg": "1ed91b13b3356aaa3bd3c379b9ae986520ff3d437ddd6698cd6c58c31713ec97",
+    "content/d2l-pytorch-2021/lectures/lec58/notes.zh.md": "c33de759b5ad44efd39847fcde1aca08d11235cad417f8b7d8b5fffe7d43f15c",
+    "content/d2l-pytorch-2021/lectures/lec58/assets/deep-rnn-axes.svg": "81ea0b02ad1b2706836d2876fe029d8eff188e71764608e255d6cdb4ed3ed9e8",
+    "content/d2l-pytorch-2021/lectures/lec67/notes.zh.md": "7229fa5481173eef6e1bdc0539b1ada0834e659727e5aae5a4a4aeeb7d4850c3",
+    "content/d2l-pytorch-2021/lectures/lec67/assets/heads-position.svg": "8d7020b1ba67a0caede44766e762e5145f18b6e8744ebc9164948d669b10b09b",
+    "content/d2l-pytorch-2021/lectures/lec60/notes.zh.md": "79579fa67bcea804c076ae43549f1e8218df6a0f726c41e7475dc0472a432313",
+    "content/d2l-pytorch-2021/lectures/lec60/assets/translation-data-contract.svg": "0db5bb8d924433ed979689ee0046181ee31a0017a67090b22b95139ca3bfb7c9",
+    "content/d2l-pytorch-2021/lectures/lec69/notes.zh.md": "777112a60b55fb522a33be061a2af38aafdca145d44a1fd2f7207736a9e78dce",
+    "content/d2l-pytorch-2021/lectures/lec69/assets/bert-two-objectives.svg": "c0cdaabd057b7c33191350de24d0a892ce0d9fec9441605bea3e1cb949b53a8e",
+    "content/d2l-pytorch-2021/lectures/lec56/notes.zh.md": "d0421fe7b8cdc1321a5fe54dc581e194d33ff53b622e807d083b5d9ff1e777f5",
+    "content/d2l-pytorch-2021/lectures/lec56/assets/gru-reset-order.svg": "01bd90d7c7d3055f9cf24df9eb4f843fcf088e8ffad4259a2570b1c38c50c874",
+    "content/d2l-pytorch-2021/lectures/lec51/notes.zh.md": "e63c8b30e9acd19b3af149071777ff90f19620bbac00904c09b8e7e104702955",
+    "content/d2l-pytorch-2021/lectures/lec51/assets/forecast-boundary.svg": "8d4dba267ec96be02b0344ac88076a5990870adf949bb1ca699175e2f95a521a",
+    "content/d2l-pytorch-2021/lectures/lec32/notes.zh.md": "8f24922d3e6261d4cdabf157d759b558d7bae713d8aaef6ee65cd286189d95c4",
+    "content/d2l-pytorch-2021/lectures/lec32/assets/matrix-dataflow.svg": "81a86007a76165ef7bebf8648626a36311afbcdc4fc636f27861d7749e7f71e0",
+    "content/d2l-pytorch-2021/lectures/lec35/notes.zh.md": "565fcb3b985cf86bcbf974573433ea8ca2406d8b2729565481e2bb2ffd20d62e",
+    "content/d2l-pytorch-2021/lectures/lec35/assets/ps-and-ring.svg": "ba6def228f728e33b5dcd9e0101c24cf1ecca5910810a9439dc291550ec9c4bc",
+    "content/d2l-pytorch-2021/lectures/lec03/notes.zh.md": "96e540639434131e25112408b7afd9c83a78be06286a5f433561203da027b576",
+    "content/d2l-pytorch-2021/lectures/lec03/assets/environment-layers.svg": "480254de77b6bd016eb91ecbd7f2c0e5a20b45d56c6c2820213348eb4e9e9309",
+    "content/d2l-pytorch-2021/lectures/lec04/notes.zh.md": "b001dba2beb78195bb13436cc9fb2bd65c336e432dc730479bb30bf7450db0bf",
+    "content/d2l-pytorch-2021/lectures/lec04/assets/broadcast-reduce.svg": "e8df7d70ab5dce77cad65ded3553e02f7d37409a660a2a15fa57745a0e5450b2",
+    "content/d2l-pytorch-2021/lectures/lec50/notes.zh.md": "46272d8ebbb1eeccbe4e98cf7a31d63746560c6797d65429c762455804e54c6a",
+    "content/d2l-pytorch-2021/lectures/lec50/assets/competition-contract.svg": "4ee311e153e7c5f4f343176cb9e6941137dd41f24f36b2d47ea5e1bde6b972b9",
+    "content/d2l-pytorch-2021/lectures/lec68/notes.zh.md": "dcc58095ed60b54bf4bf268bc2fb0d2b17691e719b1df2ec61fbbd6d2a715ed0",
+    "content/d2l-pytorch-2021/lectures/lec68/assets/projected-cache.svg": "ab1bdd43edab3c172535a72ef155fe9a52f98a3fd700f08b27c927c5853efb44",
+    "content/d2l-pytorch-2021/lectures/lec68/assets/three-masks.svg": "9653c6356f01d286f240dc813ceffa81fb32824642c21e64d835de88ecfe51d8",
+    "content/d2l-pytorch-2021/lectures/lec57/notes.zh.md": "6d26d86fd6f03c03a46193ee50744ddc6bbb41d9ad0118bfb0e6a1adcbb814f4",
+    "content/d2l-pytorch-2021/lectures/lec57/assets/lstm-two-states.svg": "0b59a66cb116c3e34bd242a7d8425e60a4965a04ef38e86478b30d71bdaddb78",
+    "content/d2l-pytorch-2021/lectures/lec61/notes.zh.md": "3a31e4285648f1fd51f0d22df3cacbd8109885140f51245a3cf38176b1cb4db2",
+    "content/d2l-pytorch-2021/lectures/lec61/assets/encoder-decoder-boundary.svg": "f3514487d1051d844ff423f0e2207efc668487d03978381a5b6e83877ea1382e",
+    "content/d2l-pytorch-2021/lectures/lec59/notes.zh.md": "3a9b6dbaa4b55085e0f3e4af27710b1794d9be7444c3a416d36c35ed1d9082ff",
+    "content/d2l-pytorch-2021/lectures/lec59/assets/birnn-information-boundary.svg": "168bf7c7ab9f6525cb1f2f5f2b6df4a633d0f034ef32a4a009db676326ed20bc",
+    "content/d2l-pytorch-2021/lectures/lec66/notes.zh.md": "5dad7474038c4ad238c6c9b9b593e86dc30d4de39865875940f0cb7921c10d9c",
+    "content/d2l-pytorch-2021/lectures/lec66/assets/bahdanau-step.svg": "16ffae6ade9c75cf42d7d53b3c14baa1a433a245251d2b1bd336394cb76136e8",
+    "content/d2l-pytorch-2021/labs/linear-training/lab.zh.md": "22775c526555c5375ecf8b2807cb9ea98928c4ffa27ed1da592fceafd2857630",
+    "content/d2l-pytorch-2021/labs/linear-training/guide.zh.md": "2ee989eda8d97fbeebbe580a621ff3cd28c05f9a96a281cb7a0e12fcd9247595",
+    "content/d2l-pytorch-2021/labs/seq2seq-attention/lab.zh.md": "89665dce454d98bf3d410ef065b128c6183f08473f88c563aa9cd0e373a45920",
+    "content/d2l-pytorch-2021/labs/seq2seq-attention/guide.zh.md": "bbc3a9e0446c2fab9ceaee7641bc6d6a03243aefc5ed5d68454e3f83d6b86da9",
+    "content/d2l-pytorch-2021/labs/seq2seq-attention/assets/information-boundary.svg": "0da9917f5c94b724121cfb461eed8c7a89e7abd80c2c488bfc59af1f63b553b7",
+    "content/d2l-pytorch-2021/labs/seq2seq-attention/assets/observed-alignment.svg": "188bbc6d5ea82d95b791329b836217731d40ce8d0016624fe45e1977bb437814",
+    "content/d2l-pytorch-2021/labs/cv-dense-prediction/lab.zh.md": "11872ad1c527b107b9aa8223a9500967e20ec437bf43500ac4d5a10e9c7f1d3f",
+    "content/d2l-pytorch-2021/labs/cv-dense-prediction/guide.zh.md": "3b8c2ad354573d4b08d939c58436de7961297559f2acab2f75e6c7fb1616aa64",
+    "content/d2l-pytorch-2021/labs/recurrent-language-model/lab.zh.md": "0a5ac0905988c49f8c8974c9c282944b18ed75ee0f60487fb39b6d363a451622",
+    "content/d2l-pytorch-2021/labs/recurrent-language-model/guide.zh.md": "c06002dae7f31645e5f32529a3af476eacda7a1d297e312dab9456171be95609",
+    "content/d2l-pytorch-2021/labs/transformer/lab.zh.md": "4b86728d2533e54a9f38ef385ef5d4d2081773c7713ccc70472ee992be66aaad",
+    "content/d2l-pytorch-2021/labs/transformer/guide.zh.md": "22061b594dbc96134b6f5b70575027e42052d51398ee3f8a7ce6d98b47385a3a",
+    "content/d2l-pytorch-2021/labs/transformer/assets/mask-and-cache.svg": "76be4ca6f1fec002d81aaaf78f46e331891aa11e80fc59b2ae0c2ff373482c03",
+    "content/d2l-pytorch-2021/labs/bert-pretrain-finetune/lab.zh.md": "d050a19b9f5f96c1bb572c1f28e4fad7572e793b0bb778c966f3c03ec7d97e35",
+    "content/d2l-pytorch-2021/labs/bert-pretrain-finetune/guide.zh.md": "99954c6014174eaa28c5e0b6a42abea5d315d1564493cbfb8c35a762701d514a",
+    "content/d2l-pytorch-2021/labs/bert-pretrain-finetune/assets/bert-objectives.svg": "cf7cefe639f24568c080d92931805eca94f21e070d4008d44deb0a620d9cc49f",
+    "content/d2l-pytorch-2021/labs/cnn-architectures/lab.zh.md": "5f3a6c1a118b77e041b73012ed7613337ba557b58ae0e91b6407a9b79d3ee9c9",
+    "content/d2l-pytorch-2021/labs/cnn-architectures/guide.zh.md": "41d1518f3d7185c34f9deac48fe417263d4119208784002c563f6c1d7f6d6160",
+    "content/d2l-pytorch-2021/labs/training-performance/lab.zh.md": "303a5cad9e549e46d4eb77497b39039a17ff94d7f8ea00422a20225f134766f5",
+    "content/d2l-pytorch-2021/labs/training-performance/guide.zh.md": "c1cdf4c648093439693009c9301e06577c2aa152d6fde39cb99d6559acf122af",
+    "content/d2l-pytorch-2021/labs/mlp-generalization/lab.zh.md": "050fb7661bdceef93f4883c5330bba089687237b93a728bbe5be5f99dfd58194",
+    "content/d2l-pytorch-2021/labs/mlp-generalization/guide.zh.md": "d2c4b9e1b28fc6e89c47a86724f278ac2df9eb5ef4b0cc45b1b6e4cd97ac4d9f",
+    "content/d2l-pytorch-2021/labs/tensor-autograd/lab.zh.md": "da859e0cb2851b765acee1dcc4a395896e61e3bad11b365fa1aa2b8171e34208",
+    "content/d2l-pytorch-2021/labs/tensor-autograd/guide.zh.md": "c6e359a32938e2cfc50574b923304735d3af9f3c2c6a712e4c2d739655fd98bd",
+    "content/d2l-pytorch-2021/labs/cv-transfer/lab.zh.md": "3de939200c7a555a8fcf08b9ac7c9063862c1839755859a040b06ba868cdf3cf",
+    "content/d2l-pytorch-2021/labs/cv-transfer/guide.zh.md": "332d99d921a67bb8bd146554a78daa2518161e7a239a78c3565471c52e03484a"
+  },
+  "nonP11Lectures": [
+    {
+      "id": "lec01",
+      "lab": "tensor-autograd",
+      "num": "1",
+      "title": "课程安排",
+      "titleEn": "Course Organization",
+      "video": {
+        "label": "2021课程 · 课程安排",
+        "duration": "08:09",
+        "bilibili": "https://www.bilibili.com/video/BV1oX4y137bC",
+        "language": "zh"
+      },
+      "readings": [
+        "官方课程安排与学习方式（课表无单独教材链接）。"
+      ],
+      "note": "学习目标：建立从课程视频、教材到PyTorch实践的学习闭环，明确全课范围与学习方式。 本组原课表主题：课程安排。站内按同一BV上传编组，日期：2021年3月20日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec02",
+      "lab": "tensor-autograd",
+      "num": "2",
+      "title": "深度学习介绍",
+      "titleEn": "Introduction to Deep Learning",
+      "video": {
+        "label": "2021课程 · 全2P合计 · 含QA",
+        "duration": "22:57",
+        "bilibili": "https://www.bilibili.com/video/BV1J54y187f9"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：引言—深度学习介绍（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：认识数据、模型、目标函数与优化算法之间的关系，建立深度学习应用全景。 本组原课表主题：深度学习介绍。站内按同一BV上传编组，日期：2021年3月20日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec03",
+      "lab": "tensor-autograd",
+      "num": "3",
+      "title": "环境安装",
+      "titleEn": "Environment Setup",
+      "video": {
+        "label": "2021课程 · 全2P合计 · 含QA",
+        "duration": "19:57",
+        "bilibili": "https://www.bilibili.com/video/BV18p4y1h7Dr"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：安装—安装（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解课程所需的Python、PyTorch与notebook环境，区分环境准备和模型训练。 本组原课表主题：安装。站内按同一BV上传编组，日期：2021年3月20日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec04",
+      "lab": "tensor-autograd",
+      "num": "4",
+      "title": "数据操作与预处理",
+      "titleEn": "Data Manipulation and Preprocessing",
+      "video": {
+        "label": "2021课程 · 全4P合计 · 含实现与QA",
+        "duration": "34:18",
+        "bilibili": "https://www.bilibili.com/video/BV1CV411Y7i4"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：预备知识—数据操作、数据预处理（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：掌握张量形状、索引、广播和数据表预处理，能追踪输入数据流。 本组原课表主题：数据操作；数据预处理。站内按同一BV上传编组，日期：2021年3月20日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec05",
+      "lab": "tensor-autograd",
+      "num": "5",
+      "title": "线性代数与按轴求和",
+      "titleEn": "Linear Algebra and Axis-wise Reduction",
+      "video": {
+        "label": "2021课程 · 全4P合计 · 含补充与QA",
+        "duration": "41:34",
+        "bilibili": "https://www.bilibili.com/video/BV1eK4y1U7Qy"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：预备知识—线性代数（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：[补充] 按特定轴求和（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：复习向量、矩阵、范数和按轴归约，用张量形状理解线性代数操作。 本组原课表主题：线性代数；[补充] 按特定轴求和。站内按同一BV上传编组，日期：2021年3月21日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec06",
+      "lab": "tensor-autograd",
+      "num": "6",
+      "title": "矩阵计算与微积分",
+      "titleEn": "Matrix Calculus",
+      "video": {
+        "label": "2021课程 · 全2P合计 · 含QA",
+        "duration": "14:35",
+        "bilibili": "https://www.bilibili.com/video/BV1eZ4y1w7PY"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：预备知识—矩阵计算（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：补回导数、梯度与链式法则，能解释模型训练中的矩阵求导。 本组原课表主题：矩阵计算。站内按同一BV上传编组，日期：2021年3月21日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec07",
+      "lab": "tensor-autograd",
+      "num": "7",
+      "title": "自动求导",
+      "titleEn": "Automatic Differentiation",
+      "video": {
+        "label": "2021课程 · 全3P合计 · 含实现与QA",
+        "duration": "24:27",
+        "bilibili": "https://www.bilibili.com/video/BV1KA411N7Px"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：预备知识—自动求导（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解计算图、梯度累积与计算图分离，用自动求导连接数学与代码。 本组原课表主题：自动求导。站内按同一BV上传编组，日期：2021年3月21日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec08",
+      "lab": "linear-training",
+      "num": "8",
+      "title": "线性回归与基础优化：从零到简洁实现",
+      "titleEn": "Linear Regression and Basic Optimization",
+      "video": {
+        "label": "2021课程 · 全5P合计",
+        "duration": "69:44",
+        "bilibili": "https://www.bilibili.com/video/BV1PX4y1g7KC"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：线性神经网络—线性回归、线性回归的从零开始实现、线性回归的简洁实现（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：基础优化方法（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：串起模型、平方损失、小批量梯度下降及训练循环，对照从零实现和框架接口。 本组原课表主题：线性回归；基础优化方法；线性回归的从零开始实现；线性回归的简洁实现。站内按同一BV上传编组，日期：2021年3月27日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec09",
+      "lab": "linear-training",
+      "num": "9",
+      "title": "Softmax回归、损失函数与图像分类实现",
+      "titleEn": "Softmax Regression and Image Classification",
+      "video": {
+        "label": "2021课程 · 全6P合计",
+        "duration": "80:06",
+        "bilibili": "https://www.bilibili.com/video/BV1K64y1Q7wu"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：线性神经网络—Softmax 回归、图像分类数据集、Softmax 回归的从零开始实现、Softmax 回归的简洁实现（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：损失函数（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：理解多分类概率与交叉熵，完成从数据集到训练、评估的分类流程。 本组原课表主题：Softmax 回归；损失函数；图像分类数据集；Softmax 回归的从零开始实现；Softmax 回归的简洁实现。站内按同一BV上传编组，日期：2021年3月28日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec10",
+      "lab": "mlp-generalization",
+      "num": "10",
+      "title": "感知机与多层感知机：原理及实现",
+      "titleEn": "Perceptrons and Multilayer Perceptrons",
+      "video": {
+        "label": "2021课程 · 全4P合计",
+        "duration": "71:45",
+        "bilibili": "https://www.bilibili.com/video/BV1hh411U7gn"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—多层感知机、多层感知机的从零开始实现、多层感知机的简洁实现（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：感知机（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：理解非线性激活与隐藏层的作用，对照多层感知机的从零和简洁实现。 本组原课表主题：感知机；多层感知机；多层感知机的从零开始实现；多层感知机的简洁实现。站内按同一BV上传编组，日期：2021年4月10日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。 原课表两种MLP实现共用?p=3；P2核实真实P3为“代码实现”、P4为“QA”，保留两个原链接。没有字幕/音视频内容证据，不能判定P3是否包含两种实现，也不能猜改为P4。",
+      "core": true
+    },
+    {
+      "id": "lec11",
+      "lab": "mlp-generalization",
+      "num": "11",
+      "title": "模型选择、欠拟合与过拟合",
+      "titleEn": "Model Selection, Underfitting and Overfitting",
+      "video": {
+        "label": "2021课程 · 全4P合计",
+        "duration": "87:10",
+        "bilibili": "https://www.bilibili.com/video/BV1kX4y1g7jp"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—欠拟合和过拟合（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：模型选择（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：区分训练、验证与测试用途，依据学习曲线判断容量和数据问题。 本组原课表主题：模型选择；欠拟合和过拟合。站内按同一BV上传编组，日期：2021年4月11日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec12",
+      "lab": "mlp-generalization",
+      "num": "12",
+      "title": "权重衰减",
+      "titleEn": "Weight Decay",
+      "video": {
+        "label": "2021课程 · 全3P合计",
+        "duration": "37:11",
+        "bilibili": "https://www.bilibili.com/video/BV1UK4y1o7dy"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—权重衰减（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解L2正则化与参数更新的联系，观察正则化强度对泛化的影响。 本组原课表主题：权重衰减。站内按同一BV上传编组，日期：2021年4月17日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec13",
+      "lab": "mlp-generalization",
+      "num": "13",
+      "title": "暂退法（Dropout）",
+      "titleEn": "Dropout",
+      "video": {
+        "label": "2021课程 · 全3P合计",
+        "duration": "49:07",
+        "bilibili": "https://www.bilibili.com/video/BV1Y5411c7aY"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—Dropout（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解训练期随机失活和推理期行为，区分Dropout与权重衰减的作用。 本组原课表主题：Dropout。站内按同一BV上传编组，日期：2021年4月17日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec14",
+      "lab": "mlp-generalization",
+      "num": "14",
+      "title": "数值稳定性、初始化与激活函数",
+      "titleEn": "Numerical Stability, Initialization and Activations",
+      "video": {
+        "label": "2021课程 · 全3P合计",
+        "duration": "61:53",
+        "bilibili": "https://www.bilibili.com/video/BV1u64y1i75a"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—数值稳定性（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：模型初始化和激活函数（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：理解梯度消失和爆炸的来源，把初始化与激活函数选择联系起来。 本组原课表主题：数值稳定性；模型初始化和激活函数。站内按同一BV上传编组，日期：2021年4月18日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec15",
+      "lab": "mlp-generalization",
+      "num": "15",
+      "title": "房价预测实战与竞赛安排",
+      "titleEn": "House Price Prediction and Competition",
+      "video": {
+        "label": "2021课程 · 全3P合计",
+        "duration": "26:30",
+        "bilibili": "https://www.bilibili.com/video/BV1NK4y1P7Tu"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—实战 Kaggle 比赛：预测房价（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：竞赛 预测房价（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：建立表格数据回归基线，理解特征处理、交叉验证、评估指标与提交流程。 本组原课表主题：实战 Kaggle 比赛：预测房价；竞赛 预测房价。站内按同一BV上传编组，日期：2021年4月18日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec16",
+      "lab": "cnn-architectures",
+      "num": "16",
+      "title": "模型构造、参数管理、自定义层与文件读写",
+      "titleEn": "Model Construction, Parameters, Custom Layers and Serialization",
+      "video": {
+        "label": "2021课程 · 全5P合计",
+        "duration": "53:09",
+        "bilibili": "https://www.bilibili.com/video/BV1AK4y1P7vs"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：深度学习计算—模型构造、参数管理、自定义层、读写文件（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：掌握模块组合、参数访问、自定义层和模型存取，形成可复用的PyTorch工程基础。 本组原课表主题：模型构造；参数管理；自定义层；读写文件。站内按同一BV上传编组，日期：2021年4月24日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec17",
+      "lab": "cnn-architectures",
+      "num": "17",
+      "title": "GPU使用",
+      "titleEn": "Using GPUs",
+      "video": {
+        "label": "2021课程 · 全3P合计",
+        "duration": "30:31",
+        "bilibili": "https://www.bilibili.com/video/BV1z5411c7C1"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：深度学习计算—GPU（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解设备放置及数据和模型迁移，识别CPU与GPU混用问题。 本组原课表主题：GPU。站内按同一BV上传编组，日期：2021年4月24日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec18",
+      "lab": "mlp-generalization",
+      "num": "18",
+      "title": "房价预测竞赛总结",
+      "titleEn": "House Price Competition Review",
+      "video": {
+        "label": "2021课程 · 全2P合计",
+        "duration": "42:42",
+        "bilibili": "https://www.bilibili.com/video/BV15Q4y1o7vc"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：多层感知机—实战Kaggle比赛：预测房价（编者关联，用于复盘；该课表行无教材链接）。"
+      ],
+      "note": "学习目标：围绕房价预测复盘特征、验证与模型选择，区分线下改进与排行榜波动。 本组原课表主题：预测房价竞赛总结。站内按同一BV上传编组，日期：2021年5月15日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec19",
+      "lab": "cnn-architectures",
+      "num": "19",
+      "title": "从全连接层到卷积与图像卷积",
+      "titleEn": "From Dense Layers to Convolutions",
+      "video": {
+        "label": "2021课程 · 全4P合计",
+        "duration": "43:54",
+        "bilibili": "https://www.bilibili.com/video/BV1L64y1m7Nh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：卷积神经网络—从全连接层到卷积、图像卷积（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解局部性、平移性质与参数共享，能说明卷积核如何作用于图像。 本组原课表主题：从全连接层到卷积；图像卷积。站内按同一BV上传编组，日期：2021年5月15日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec20",
+      "lab": "cnn-architectures",
+      "num": "20",
+      "title": "填充与步幅",
+      "titleEn": "Padding and Stride",
+      "video": {
+        "label": "2021课程 · 全3P合计",
+        "duration": "43:10",
+        "bilibili": "https://www.bilibili.com/video/BV1Th411U7UN"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：卷积神经网络—填充和步幅（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：根据卷积核、填充和步幅推算输出形状，理解空间分辨率的变化。 本组原课表主题：填充和步幅。站内按同一BV上传编组，日期：2021年5月16日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec21",
+      "lab": "cnn-architectures",
+      "num": "21",
+      "title": "多输入多输出通道",
+      "titleEn": "Multiple Input and Output Channels",
+      "video": {
+        "label": "2021课程 · 全3P合计",
+        "duration": "45:26",
+        "bilibili": "https://www.bilibili.com/video/BV1MB4y1F7of"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：卷积神经网络—多输入多输出通道（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：追踪多通道卷积的张量维度与参数量，理解1×1卷积的作用。 本组原课表主题：多输入多输出通道。站内按同一BV上传编组，日期：2021年5月16日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec22",
+      "lab": "cnn-architectures",
+      "num": "22",
+      "title": "池化层",
+      "titleEn": "Pooling",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1EV411j7nX",
+        "duration": "27:07",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：卷积神经网络—池化层（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解池化的窗口操作与降采样，区分池化层和可学习卷积层。 本组原课表主题：池化层。站内按同一BV上传编组，日期：2021年5月22日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec23",
+      "lab": "cnn-architectures",
+      "num": "23",
+      "title": "卷积神经网络：LeNet",
+      "titleEn": "Convolutional Neural Networks: LeNet",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1t44y1r7ct/",
+        "duration": "1:00:26",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：卷积神经网络—卷积神经网络（LeNet）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：串联卷积、池化与分类头，掌握基础CNN的训练流程。 本组原课表主题：卷积神经网络（LeNet）。站内按同一BV上传编组，日期：2021年5月22日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec24",
+      "lab": "cnn-architectures",
+      "num": "24",
+      "title": "深度卷积神经网络：AlexNet",
+      "titleEn": "Deep Convolutional Neural Networks: AlexNet",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1h54y1L7oe/",
+        "duration": "1:02:01",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络—深度卷积神经网络（AlexNet）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解更深网络、激活与正则化的组合，分析图像尺寸和计算量变化。 本组原课表主题：深度卷积神经网络（AlexNet）。站内按同一BV上传编组，日期：2021年5月23日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec25",
+      "lab": "cnn-architectures",
+      "num": "25",
+      "title": "使用块的网络：VGG",
+      "titleEn": "Networks Using Blocks: VGG",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1Ao4y117Pd/",
+        "duration": "20:43",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络—使用块的网络（VGG）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：用重复卷积块组织网络，分析深度、通道和计算成本之间的关系。 本组原课表主题：使用块的网络（VGG）。站内按同一BV上传编组，日期：2021年5月23日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec26",
+      "lab": "cnn-architectures",
+      "num": "26",
+      "title": "网络中的网络：NiN",
+      "titleEn": "Network in Network",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1Uv411G71b/",
+        "duration": "37:38",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络—网络中的网络（NiN）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解1×1卷积和全局平均池化如何替代部分全连接结构。 本组原课表主题：网络中的网络（NiN）。站内按同一BV上传编组，日期：2021年5月29日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec27",
+      "lab": "cnn-architectures",
+      "num": "27",
+      "title": "含并行连接的网络：GoogLeNet",
+      "titleEn": "Networks with Parallel Concatenations: GoogLeNet",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1b5411g7Xo/",
+        "duration": "50:42",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络—含并行连结的网络（GoogLeNet）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解Inception多分支结构及通道拼接，追踪不同感受野的特征融合。 本组原课表主题：含并行连结的网络（GoogLeNet）。站内按同一BV上传编组，日期：2021年5月29日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec28",
+      "lab": "cnn-architectures",
+      "num": "28",
+      "title": "批量归一化",
+      "titleEn": "Batch Normalization",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1X44y1r77r/",
+        "duration": "46:11",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络—批量归一化（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：区分训练与推理时统计量，理解归一化层的参数和使用位置。 本组原课表主题：批量归一化。站内按同一BV上传编组，日期：2021年5月30日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec29",
+      "lab": "cnn-architectures",
+      "num": "29",
+      "title": "残差网络：ResNet",
+      "titleEn": "Residual Networks: ResNet",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1bV41177ap/",
+        "duration": "34:09",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络—残差网络（ResNet）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：解释残差连接、形状匹配与深层网络训练，构建残差块的结构直觉。 本组原课表主题：残差网络（ResNet）。站内按同一BV上传编组，日期：2021年5月30日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec30",
+      "lab": "cv-transfer",
+      "num": "30",
+      "title": "图片分类竞赛安排",
+      "titleEn": "Image Classification Competition",
+      "video": {
+        "label": "2021课程 · 单 P",
+        "bilibili": "https://www.bilibili.com/video/BV1z64y1o7iz/",
+        "duration": "06:37",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代卷积神经网络、计算机视觉—图像增广与微调（编者关联；该课表行无教材链接）。"
+      ],
+      "note": "学习目标：将CNN知识迁移到图片分类任务，规划数据划分、基线、改进和结果记录。 本组原课表主题：竞赛 图片分类。站内按同一BV上传编组，日期：2021年5月30日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec31",
+      "lab": "training-performance",
+      "num": "31",
+      "title": "计算硬件：CPU与GPU",
+      "titleEn": "Computational Hardware: CPUs and GPUs",
+      "video": {
+        "label": "2021课程 · 全 2 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1TU4y1j7Wd/",
+        "duration": "1:32:09",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算性能—硬件：CPU和GPU（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解计算、内存和数据搬运的性能约束，用硬件视角定位训练瓶颈。 本组原课表主题：硬件：CPU和GPU。站内按同一BV上传编组，日期：2021年6月5日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec32",
+      "lab": "training-performance",
+      "num": "32",
+      "title": "更多专用硬件",
+      "titleEn": "More Specialized Hardware",
+      "video": {
+        "label": "2021课程 · 全 2 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1VV41147PC/",
+        "duration": "1:06:37",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算性能—硬件（编者关联；专用硬件以本讲课件主题为准，课表无单独教材链接）。"
+      ],
+      "note": "学习目标：认识深度学习专用硬件的设计取舍，不把课程硬件介绍当作个人设备要求。 本组原课表主题：更多的专有硬件。站内按同一BV上传编组，日期：2021年6月6日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec33",
+      "lab": "training-performance",
+      "num": "33",
+      "title": "多GPU训练原理",
+      "titleEn": "Multi-GPU Training",
+      "video": {
+        "label": "2021课程 · 全 2 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1vU4y1V7rd/",
+        "duration": "10:55",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算性能—多GPU训练（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解数据并行、梯度聚合及同步开销，建立多设备训练的执行模型。 本组原课表主题：多GPU训练。站内按同一BV上传编组，日期：2021年6月6日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec34",
+      "lab": "training-performance",
+      "num": "34",
+      "title": "多GPU训练实现",
+      "titleEn": "Implementing Multi-GPU Training",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1MQ4y1R7Qg",
+        "duration": "54:14",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算性能—多GPU训练的实现（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：把数据并行原理映射到框架实现，分析设备数、批量大小与通信的关系。 本组原课表主题：多GPU训练的实现。站内按同一BV上传编组，日期：2021年6月19日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec35",
+      "lab": "training-performance",
+      "num": "35",
+      "title": "分布式训练",
+      "titleEn": "Distributed Training",
+      "video": {
+        "label": "2021课程 · 全 2 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1jU4y1G7iu",
+        "duration": "30:45",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算性能—分布式训练（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解跨机器参数同步与参数服务器，区分计算扩展收益和通信开销。 本组原课表主题：分布式训练。站内按同一BV上传编组，日期：2021年6月19日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec36",
+      "lab": "cv-transfer",
+      "num": "36",
+      "title": "图像增广",
+      "titleEn": "Image Augmentation",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV17y4y1g76q",
+        "duration": "55:00",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—图像增广（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：区分训练与评估数据变换，用增广表达任务不变性并防止验证集污染。 本组原课表主题：图像增广。站内按同一BV上传编组，日期：2021年6月20日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec37",
+      "lab": "cv-transfer",
+      "num": "37",
+      "title": "微调",
+      "titleEn": "Fine-Tuning",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1Sb4y1d7CR",
+        "duration": "34:21",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—微调（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解预训练参数复用、分类头替换和分层学习率，形成迁移学习流程。 本组原课表主题：微调。站内按同一BV上传编组，日期：2021年6月20日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec38",
+      "lab": "cv-transfer",
+      "num": "38",
+      "title": "Kaggle实战：CIFAR-10图像分类",
+      "titleEn": "Kaggle Image Classification: CIFAR-10",
+      "video": {
+        "label": "2021课程 · 全 2 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1Gy4y1M7Cu",
+        "duration": "45:43",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—实战 Kaggle 比赛：图像分类（CIFAR-10）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：整合图像增广、网络训练与验证，建立可复现的分类竞赛流程。 本组原课表主题：实战 Kaggle 比赛：图像分类（CIFAR-10）。站内按同一BV上传编组，日期：2021年6月26日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec39",
+      "lab": "cv-transfer",
+      "num": "39",
+      "title": "Kaggle实战：狗的品种识别",
+      "titleEn": "Kaggle Dog Breed Identification",
+      "video": {
+        "label": "2021课程 · 全 2 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1j5411T7wx",
+        "duration": "34:25",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—实战 Kaggle 比赛：狗的品种识别（ImageNet Dogs）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：将预训练图像模型用于细粒度分类，比较特征提取和端到端微调。 本组原课表主题：实战 Kaggle 比赛：狗的品种识别（ImageNet Dogs）。站内按同一BV上传编组，日期：2021年6月26日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec40",
+      "lab": "cv-dense-prediction",
+      "num": "40",
+      "title": "目标检测、边界框与数据集",
+      "titleEn": "Object Detection, Bounding Boxes and Datasets",
+      "video": {
+        "label": "2021课程 · 全 4 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1Lh411Y7LX",
+        "duration": "35:40",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—边缘框实现、物体检测数据集（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：物体检测（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：区分分类与定位，掌握边界框表示、标注和检测数据读取。 本组原课表主题：物体检测；边缘框实现；物体检测数据集。站内按同一BV上传编组，日期：2021年6月27日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec41",
+      "lab": "cv-dense-prediction",
+      "num": "41",
+      "title": "锚框",
+      "titleEn": "Anchor Boxes",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1aB4y1K7za",
+        "duration": "52:53",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—锚框（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解锚框生成、交并比、匹配与预测后处理，追踪检测目标的构造。 本组原课表主题：锚框。站内按同一BV上传编组，日期：2021年6月27日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec42",
+      "lab": "cv-transfer",
+      "num": "42",
+      "title": "树叶分类竞赛总结",
+      "titleEn": "Leaf Classification Competition Review",
+      "video": {
+        "label": "2021课程 · 单 P",
+        "bilibili": "https://www.bilibili.com/video/BV1by4y1K7SE",
+        "duration": "26:29",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—图像增广、微调、图像分类实战（编者关联，用于竞赛复盘；该课表行无教材链接）。"
+      ],
+      "note": "学习目标：复盘分类竞赛中的数据、迁移学习和验证策略，形成有证据的实验记录。 本组原课表主题：竞赛 树叶分类竞赛总结。站内按同一BV上传编组，日期：2021年6月27日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec43",
+      "lab": "cv-dense-prediction",
+      "num": "43",
+      "title": "目标检测架构：R-CNN、SSD与YOLO",
+      "titleEn": "Detection Architectures: R-CNN, SSD and YOLO",
+      "video": {
+        "label": "2021课程 · 全 2 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1Db4y1C71g",
+        "duration": "58:29",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—区域卷积神经网络（R-CNNs）（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：单发多框检测（SSD）、你只看一次（YOLO）（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：对比两阶段与单阶段检测的工作流，理解候选区域、多尺度与密集预测。 本组原课表主题：区域卷积神经网络（R-CNNs）；单发多框检测（SSD）；你只看一次（YOLO）。站内按同一BV上传编组，课表日期：2021年7月3日；编号不是官方视频标题编号。真实分P为P1目标检测42:05、P2 QA16:24，并非三个模型各一个P；未核实P1内部的主题时间界线，不能猜分段。原课表三个同BV入口保留。",
+      "core": true
+    },
+    {
+      "id": "lec44",
+      "lab": "cv-dense-prediction",
+      "num": "44",
+      "title": "多尺度检测与SSD实现",
+      "titleEn": "Multi-scale Detection and SSD Implementation",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=1",
+        "duration": "1:29:43",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—多尺度物体检测实现、SSD 实现（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：追踪多尺度特征、锚框、分类和框回归的连接，理解SSD训练与预测流程。 本组原课表主题：多尺度物体检测实现；SSD 实现。站内按同一BV上传编组，日期：2021年7月4日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec45",
+      "lab": "cv-dense-prediction",
+      "num": "45",
+      "title": "语义分割与数据集",
+      "titleEn": "Semantic Segmentation and Datasets",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1BK4y1M7Rd",
+        "duration": "55:10",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—语义分割数据集（课表所链小节；原始链接见源索引）。",
+        "同组课件主题：语义分割（课表未单列教材链接；随同组阅读，不增设必读论文）。"
+      ],
+      "note": "学习目标：区分像素级分割与目标检测，理解掩码标注、数据处理和输出形状。 本组原课表主题：语义分割；语义分割数据集。站内按同一BV上传编组，日期：2021年7月10日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec46",
+      "lab": "cv-dense-prediction",
+      "num": "46",
+      "title": "转置卷积",
+      "titleEn": "Transposed Convolution",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV17o4y1X7Jn/",
+        "duration": "31:58",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—转置卷积（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解可学习上采样及输出形状，区分转置卷积与求逆运算。 本组原课表主题：转置卷积。站内按同一BV上传编组，日期：2021年7月10日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec47",
+      "lab": "cv-dense-prediction",
+      "num": "47",
+      "title": "转置卷积的卷积视角",
+      "titleEn": "Transposed Convolution as Convolution",
+      "video": {
+        "label": "2021课程 · 单 P",
+        "bilibili": "https://www.bilibili.com/video/BV1CM4y1K7r7/",
+        "duration": "09:39",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—转置卷积是一种卷积（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：从矩阵与卷积两种视角解释转置卷积，巩固上下采样的运算关系。 本组原课表主题：转置卷积是一种卷积。站内按同一BV上传编组，日期：2021年7月10日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec48",
+      "lab": "cv-dense-prediction",
+      "num": "48",
+      "title": "全卷积网络：FCN",
+      "titleEn": "Fully Convolutional Networks",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1af4y1L7Zu/",
+        "duration": "26:55",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—全连接卷积神经网络（FCN）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：组合预训练特征提取与上采样构建像素级预测，理解全卷积网络结构。 本组原课表主题：全连接卷积神经网络（FCN）。站内按同一BV上传编组，日期：2021年7月11日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec49",
+      "lab": "cv-dense-prediction",
+      "num": "49",
+      "title": "样式迁移",
+      "titleEn": "Neural Style Transfer",
+      "video": {
+        "label": "2021课程 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1Eh41167GN/",
+        "duration": "32:48",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—样式迁移（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解内容损失、样式损失和图像优化，区分优化输入与训练模型参数。 本组原课表主题：样式迁移。站内按同一BV上传编组，日期：2021年7月11日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec50",
+      "lab": "cv-dense-prediction",
+      "num": "50",
+      "title": "目标检测竞赛安排",
+      "titleEn": "Object Detection Competition",
+      "video": {
+        "label": "2021课程 · 单 P",
+        "bilibili": "https://www.bilibili.com/video/BV1F64y1x7xP/",
+        "duration": "11:04",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：计算机视觉—边界框、锚框、目标检测数据集、SSD（编者关联；该课表行无教材链接）。"
+      ],
+      "note": "学习目标：将检测数据、模型、评估与提交串成实践流程，建立检测任务基线。 本组原课表主题：竞赛 目标检测。站内按同一BV上传编组，日期：2021年7月11日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec51",
+      "lab": "recurrent-language-model",
+      "num": "51",
+      "title": "序列模型",
+      "titleEn": "Sequence Models",
+      "video": {
+        "label": "官方 B站视频（全 3 P 合计）",
+        "bilibili": "https://www.bilibili.com/video/BV1L44y1m768/",
+        "duration": "54:11",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：循环神经网络—序列模型（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解时间依赖、自回归预测和多步预测误差，为序列学习建立问题定义。 本组原课表主题：序列模型。站内按同一BV上传编组，日期：2021年7月17日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec52",
+      "lab": "recurrent-language-model",
+      "num": "52",
+      "title": "文本预处理",
+      "titleEn": "Text Preprocessing",
+      "video": {
+        "label": "官方 B站视频（全 2 P 合计）",
+        "bilibili": "https://www.bilibili.com/video/BV1Fo4y1Q79L/",
+        "duration": "20:30",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：循环神经网络—文本预处理（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：掌握分词、词表和索引化，追踪原始文本到序列张量的转换。 本组原课表主题：文本预处理。站内按同一BV上传编组，日期：2021年7月17日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec53",
+      "lab": "recurrent-language-model",
+      "num": "53",
+      "title": "语言模型与数据集",
+      "titleEn": "Language Models and Datasets",
+      "video": {
+        "label": "官方 B站视频（全 3 P 合计）",
+        "bilibili": "https://www.bilibili.com/video/BV1ZX4y1F7K3/",
+        "duration": "51:13",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：循环神经网络—语言模型和数据集（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解条件概率分解、序列采样与困惑度，建立语言模型的数据流。 本组原课表主题：语言模型和数据集。站内按同一BV上传编组，日期：2021年7月18日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec54",
+      "lab": "recurrent-language-model",
+      "num": "54",
+      "title": "循环神经网络原理",
+      "titleEn": "Recurrent Neural Networks",
+      "video": {
+        "label": "官方 B站视频（全 2 P 合计）",
+        "bilibili": "https://www.bilibili.com/video/BV1D64y1z7CA/",
+        "duration": "34:04",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：循环神经网络—循环神经网络（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解隐藏状态递推和跨时间参数共享，分析序列长度与梯度传播。 本组原课表主题：循环神经网络。站内按同一BV上传编组，日期：2021年7月18日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec55",
+      "lab": "recurrent-language-model",
+      "num": "55",
+      "title": "循环神经网络：从零到简洁实现",
+      "titleEn": "RNN Implementations from Scratch and with APIs",
+      "video": {
+        "label": "官方 B站视频（全 3 P 合计）",
+        "bilibili": "https://www.bilibili.com/video/BV1kq4y1H7sw/",
+        "duration": "1:26:25",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：循环神经网络—循环神经网络的从零开始实现、循环神经网络的简洁实现（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：实现状态传递、训练与文本生成，理解梯度裁剪并对照框架RNN接口。 本组原课表主题：循环神经网络的从零开始实现；循环神经网络的简洁实现。站内按同一BV上传编组，日期：2021年7月24日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec56",
+      "lab": "recurrent-language-model",
+      "num": "56",
+      "title": "门控循环单元：GRU",
+      "titleEn": "Gated Recurrent Units",
+      "video": {
+        "label": "官方 B站视频（全 3 P 合计）",
+        "bilibili": "https://www.bilibili.com/video/BV1mf4y157N2/",
+        "duration": "39:49",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—门控循环单元（GRU）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解更新门与重置门对信息流的控制，追踪门控状态计算。 本组原课表主题：门控循环单元（GRU）。站内按同一BV上传编组，日期：2021年7月25日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec57",
+      "lab": "recurrent-language-model",
+      "num": "57",
+      "title": "长短期记忆网络：LSTM",
+      "titleEn": "Long Short-Term Memory Networks",
+      "video": {
+        "label": "官方 B站视频（全 3 P 合计）",
+        "bilibili": "https://www.bilibili.com/video/BV1JU4y1H7PC/",
+        "duration": "17:55",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—长短期记忆网络（LSTM）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解记忆元和各门的作用，对比LSTM与GRU的结构取舍。 本组原课表主题：长短期记忆网络（LSTM）。站内按同一BV上传编组，日期：2021年7月25日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec58",
+      "lab": "recurrent-language-model",
+      "num": "58",
+      "title": "深层循环神经网络",
+      "titleEn": "Deep Recurrent Neural Networks",
+      "video": {
+        "label": "官方 B站视频（全 3 P 合计）",
+        "bilibili": "https://www.bilibili.com/video/BV1JM4y1T7N4/",
+        "duration": "13:19",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—深层循环神经网络（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解多层状态传递和张量形状，区分时间展开与网络深度。 本组原课表主题：深层循环神经网络。站内按同一BV上传编组，日期：2021年7月25日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec59",
+      "lab": "recurrent-language-model",
+      "num": "59",
+      "title": "双向循环神经网络",
+      "titleEn": "Bidirectional Recurrent Neural Networks",
+      "video": {
+        "label": "官方 B站视频（全 3 P 合计）",
+        "bilibili": "https://www.bilibili.com/video/BV12X4y1c71W/",
+        "duration": "13:54",
+        "language": "zh"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—双向循环神经网络（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解双向上下文与因果生成的区别，判断模型适用场景。 本组原课表主题：双向循环神经网络。站内按同一BV上传编组，日期：2021年7月25日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec60",
+      "lab": "seq2seq-attention",
+      "num": "60",
+      "title": "机器翻译与数据集",
+      "titleEn": "Machine Translation and Datasets",
+      "video": {
+        "label": "2021课程 · 官方B站 · 单P",
+        "bilibili": "https://www.bilibili.com/video/BV1H64y1s7TH/",
+        "duration": "10:16",
+        "language": "中文"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—机器翻译与数据集（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：处理源语言与目标语言序列，理解词表、填充、有效长度与批量组织。 本组原课表主题：机器翻译与数据集。站内按同一BV上传编组，日期：2021年8月7日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec61",
+      "lab": "seq2seq-attention",
+      "num": "61",
+      "title": "编码器—解码器结构",
+      "titleEn": "Encoder-Decoder Architecture",
+      "video": {
+        "label": "2021课程 · 官方B站 · 全 2 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1c54y1E7YP/",
+        "duration": "06:17",
+        "language": "中文"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—编码器-解码器结构（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解表示压缩和条件生成接口，为seq2seq和注意力建立共同结构。 本组原课表主题：编码器-解码器结构。站内按同一BV上传编组，日期：2021年8月7日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec62",
+      "lab": "seq2seq-attention",
+      "num": "62",
+      "title": "序列到序列学习",
+      "titleEn": "Sequence-to-Sequence Learning",
+      "video": {
+        "label": "2021课程 · 官方B站 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV16g411L7FG/",
+        "duration": "48:46",
+        "language": "中文"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—序列到序列学习（seq2seq）（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：串联编码器、解码器和训练目标，区分训练输入与自回归推理。 本组原课表主题：序列到序列学习（seq2seq）。站内按同一BV上传编组，日期：2021年8月7日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec63",
+      "lab": "seq2seq-attention",
+      "num": "63",
+      "title": "束搜索",
+      "titleEn": "Beam Search",
+      "video": {
+        "label": "2021课程 · 官方B站 · 单P",
+        "bilibili": "https://www.bilibili.com/video/BV1B44y1C7m1/",
+        "duration": "11:44",
+        "language": "中文"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：现代循环神经网络—束搜索（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解候选序列扩展、分数与搜索宽度，比较贪心搜索和束搜索的取舍。 本组原课表主题：束搜索。站内按同一BV上传编组，日期：2021年8月7日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec64",
+      "lab": "seq2seq-attention",
+      "num": "64",
+      "title": "注意力机制",
+      "titleEn": "Attention Mechanisms",
+      "video": {
+        "label": "2021课程 · 官方B站 · 全 2 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1264y1i7R1/",
+        "duration": "23:58",
+        "language": "中文"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：注意力机制—注意力机制（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：从查询、键和值理解加权汇聚，建立注意力的非参数与参数化直觉。 本组原课表主题：注意力机制。站内按同一BV上传编组，日期：2021年8月8日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。 本行幻灯片链接在课表其他主题中复用，源索引已登记，内容尚未核对。",
+      "core": true
+    },
+    {
+      "id": "lec65",
+      "lab": "seq2seq-attention",
+      "num": "65",
+      "title": "注意力评分函数",
+      "titleEn": "Attention Scoring Functions",
+      "video": {
+        "label": "2021课程 · 官方B站 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1Tb4y167rb/",
+        "duration": "30:47",
+        "language": "中文"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：注意力机制—注意力分数（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：比较加性注意力和缩放点积注意力，理解掩码与权重归一化。 本组原课表主题：注意力分数。站内按同一BV上传编组，日期：2021年8月8日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。 本行幻灯片链接在课表其他主题中复用，源索引已登记，内容尚未核对。",
+      "core": true
+    },
+    {
+      "id": "lec66",
+      "lab": "seq2seq-attention",
+      "num": "66",
+      "title": "带注意力的seq2seq",
+      "titleEn": "Sequence-to-Sequence Learning with Attention",
+      "video": {
+        "label": "2021课程 · 官方B站 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1v44y1C7Tg/",
+        "duration": "30:37",
+        "language": "中文"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：注意力机制—使用注意力机制的seq2seq（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：将注意力接入编码器—解码器，理解动态上下文和对齐权重。 本组原课表主题：使用注意力机制的seq2seq。站内按同一BV上传编组，日期：2021年8月8日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。 本行幻灯片链接在课表其他主题中复用，源索引已登记，内容尚未核对。",
+      "core": true
+    },
+    {
+      "id": "lec67",
+      "lab": "transformer",
+      "num": "67",
+      "title": "自注意力与位置编码",
+      "titleEn": "Self-Attention and Positional Encoding",
+      "video": {
+        "label": "2021课程 · 官方B站 · 全 3 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV19o4y1m7mo/",
+        "duration": "37:44",
+        "language": "中文"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：注意力机制—自注意力和位置编码（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解序列内部交互及位置信息注入，分析并行性与序列长度成本。 本组原课表主题：自注意力和位置编码。站内按同一BV上传编组，日期：2021年8月14日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec68",
+      "lab": "transformer",
+      "num": "68",
+      "title": "Transformer架构与实现",
+      "titleEn": "Transformer Architecture and Implementation",
+      "video": {
+        "label": "2021课程 · 官方B站 · 全 4 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1Kq4y1H7FL/",
+        "duration": "51:53",
+        "language": "中文"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：注意力机制—Transformer（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：串联多头注意力、前馈层、残差和归一化，掌握编码器及解码器的掩码边界。 本组原课表主题：Transformer。站内按同一BV上传编组，日期：2021年8月14日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec69",
+      "lab": "bert-pretrain-finetune",
+      "num": "69",
+      "title": "BERT、预训练数据与训练",
+      "titleEn": "BERT, Pretraining Data and Training",
+      "video": {
+        "label": "2021课程 · 官方B站 · 全 5 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV1yU4y1E7Ns/",
+        "duration": "57:14",
+        "language": "中文"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：自然语言处理：预训练—BERT、BERT预训练数据集、预训练BERT（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：理解双向表示、预训练任务与样本构造，连接BERT结构、数据与训练流程。 本组原课表主题：BERT；BERT预训练数据集；预训练BERT。站内按同一BV上传编组，日期：2021年8月15日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    },
+    {
+      "id": "lec70",
+      "lab": "bert-pretrain-finetune",
+      "num": "70",
+      "title": "BERT微调与自然语言推理",
+      "titleEn": "BERT Fine-Tuning and Natural Language Inference",
+      "video": {
+        "label": "2021课程 · 官方B站 · 全 4 P 合计",
+        "bilibili": "https://www.bilibili.com/video/BV15L4y1v7ts",
+        "duration": "31:26",
+        "language": "中文"
+      },
+      "readings": [
+        "《动手学深度学习》第二版：自然语言处理：应用—微调BERT、自然语言推理和数据集、自然语言推理：微调BERT（课表所链小节；原始链接见源索引）。"
+      ],
+      "note": "学习目标：将预训练表示接入句对分类任务，串联NLI数据处理、任务头与微调。 本组原课表主题：微调BERT；自然语言推理和数据集；自然语言推理：微调BERT。站内按同一BV上传编组，日期：2021年8月15日；编号不是官方视频标题编号，完整P段入口与逐行来源见 sources/schedule-inventory.json。",
+      "core": true
+    }
+  ],
+  "labs": [
+    {
+      "id": "tensor-autograd",
+      "num": 1,
+      "title": "张量、数据与自动求导",
+      "titleEn": "Tensors, Data and Autograd",
+      "stars": 2,
+      "hours": "短周期，多次小实验",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_preliminaries/autograd.html",
+      "goal": "把形状、广播、按轴归约和链式法则落实为可解释的PyTorch代码。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "tensor-autograd-1",
+          "title": "用小矩阵演示索引、广播、reshape、矩阵乘法与按轴求和，逐步写出输入/输出形状。"
+        },
+        {
+          "id": "tensor-autograd-2",
+          "title": "构建含缺失值的表格预处理与训练/验证划分，解释为何预处理统计量只从训练集拟合。"
+        },
+        {
+          "id": "tensor-autograd-3",
+          "title": "对标量与向量小函数手算梯度，再对照autograd；比较梯度累积、清零与detach。"
+        },
+        {
+          "id": "tensor-autograd-4",
+          "title": "用教材概率小实验补期望/条件概率，不以证明题或整门数学课为前置。"
+        }
+      ]
+    },
+    {
+      "id": "linear-training",
+      "num": 2,
+      "title": "从零训练循环与线性模型",
+      "titleEn": "Training Loop and Linear Models",
+      "stars": 2,
+      "hours": "中等，需反复调试",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_linear-networks/linear-regression-scratch.html",
+      "goal": "独立写出数据批处理、前向、损失、反向、更新与评估循环，并与高层API对应。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "linear-training-1",
+          "title": "实现合成数据线性回归，比较从零SGD与nn.Linear/优化器版本。"
+        },
+        {
+          "id": "linear-training-2",
+          "title": "完成Fashion-MNIST softmax分类，说明交叉熵、稳定计算与batch维度。"
+        },
+        {
+          "id": "linear-training-3",
+          "title": "区分train/eval与梯度记录；仅在训练集更新参数，记录训练/验证损失和分类准确率。"
+        },
+        {
+          "id": "linear-training-4",
+          "title": "选官方小节习题改变batch size或学习率，复现实验配置并解释失败曲线。"
+        }
+      ]
+    },
+    {
+      "id": "mlp-generalization",
+      "num": 3,
+      "title": "MLP、泛化与房价基线",
+      "titleEn": "MLP, Generalization and House Prices",
+      "stars": 3,
+      "hours": "中等至较长，包含对照实验",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/kaggle-house-price.html",
+      "goal": "从MLP到可靠验证，理解正则化并建立房价任务的可复现基线。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "mlp-generalization-1",
+          "title": "比较MLP从零与简洁实现，追踪激活函数、初始化和梯度。"
+        },
+        {
+          "id": "mlp-generalization-2",
+          "title": "用小数据展示欠拟合/过拟合，分别改变权重衰减与Dropout，报告训练/验证差异。"
+        },
+        {
+          "id": "mlp-generalization-3",
+          "title": "依据教材房价案例建立预处理、K折验证与预测导出，避免泄漏；自定实验不是官方评分。"
+        },
+        {
+          "id": "mlp-generalization-4",
+          "title": "将相同工作流迁移到2021加州房价历史竞赛；说明它与教材Ames房价不是同一数据集，记录数据可用性。"
+        }
+      ]
+    },
+    {
+      "id": "cnn-architectures",
+      "num": 4,
+      "title": "模块工程、卷积与现代CNN",
+      "titleEn": "Modules, Convolutions and Modern CNNs",
+      "stars": 4,
+      "hours": "较长，按网络家族分段",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/lenet.html",
+      "goal": "用统一模块与训练接口理解从LeNet到ResNet的全部课程CNN路线。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "cnn-architectures-1",
+          "title": "实现层/块、自定义层、参数管理、保存/加载与设备迁移。"
+        },
+        {
+          "id": "cnn-architectures-2",
+          "title": "手算并程序核对卷积、填充、步幅、多通道与池化的输出形状和参数量。"
+        },
+        {
+          "id": "cnn-architectures-3",
+          "title": "训练LeNet小基线；对AlexNet、VGG、NiN、GoogLeNet逐层跟踪形状，保留每个网络的机制和最小前向实验。"
+        },
+        {
+          "id": "cnn-architectures-4",
+          "title": "比较BatchNorm训练/推理与残差连接；选小型ResNet完成训练、保存后恢复预测并记录配置。"
+        }
+      ]
+    },
+    {
+      "id": "training-performance",
+      "num": 5,
+      "title": "计算性能与多设备训练",
+      "titleEn": "Performance and Multi-device Training",
+      "stars": 3,
+      "hours": "中等；多设备部分依资源安排",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_computational-performance/hardware.html",
+      "goal": "测量训练瓶颈并解释数据并行和梯度聚合，不把概念推演当作多GPU实测。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "training-performance-1",
+          "title": "分别测量数据加载、前向、反向和更新，记录设备/版本/batch size；异步设备计时显式同步。"
+        },
+        {
+          "id": "training-performance-2",
+          "title": "比较小批量设置对吞吐与内存的影响，不在不同设备间直接套用加速比。"
+        },
+        {
+          "id": "training-performance-3",
+          "title": "按教材多GPU从零与简洁实现理解数据划分、梯度求和与参数同步；有多GPU才运行扩展实验。"
+        },
+        {
+          "id": "training-performance-4",
+          "title": "用小张量推演多worker梯度聚合和参数服务器通信；解释CPU/GPU/专有硬件及分布式通信瓶颈。"
+        }
+      ]
+    },
+    {
+      "id": "cv-transfer",
+      "num": 6,
+      "title": "视觉迁移与分类竞赛实践",
+      "titleEn": "Vision Transfer and Classification",
+      "stars": 3,
+      "hours": "较长，含数据准备与误差分析",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_computer-vision/fine-tuning.html",
+      "goal": "将增广、微调和正确验证用于分类，完整保留课程树叶竞赛与两项教材实战。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "cv-transfer-1",
+          "title": "比较训练增广与确定性验证变换，检查标签映射与预处理一致性。"
+        },
+        {
+          "id": "cv-transfer-2",
+          "title": "对预训练模型比较冻结特征与微调，建立不泄漏验证集的树叶分类基线。"
+        },
+        {
+          "id": "cv-transfer-3",
+          "title": "分别走通教材CIFAR-10与狗品种案例的数据接口、损失、验证和预测导出；小数据调试不能冒充全量竞赛训练。"
+        },
+        {
+          "id": "cv-transfer-4",
+          "title": "记录混淆样本、类不均衡或过拟合，阅读课程树叶竞赛总结并提出下一轮实验；不要求复现获奖方案。"
+        }
+      ]
+    },
+    {
+      "id": "cv-dense-prediction",
+      "num": 7,
+      "title": "检测、分割与风格迁移",
+      "titleEn": "Detection, Segmentation and Style Transfer",
+      "stars": 4,
+      "hours": "较长，分成三个子阶段",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_computer-vision/ssd.html",
+      "goal": "建立分类以外的完整视觉任务链，并保留2021牛仔行头检测历史竞赛映射。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "cv-dense-prediction-1",
+          "title": "实现/检查边界框、IoU、锚框匹配、NMS与多尺度预测；用示例解释R-CNN、SSD和课程YOLO介绍的不同设计。"
+        },
+        {
+          "id": "cv-dense-prediction-2",
+          "title": "完成教材小型SSD检测训练和可视化，再设计牛仔行头竞赛数据适配与离线验证；规则/数据不可访问时明确不能声称完成竞赛复现。"
+        },
+        {
+          "id": "cv-dense-prediction-3",
+          "title": "加载分割样本并检查像素标签，对照转置卷积的形状与FCN输出，训练一个可复现小规模分割基线。"
+        },
+        {
+          "id": "cv-dense-prediction-4",
+          "title": "运行单张图像风格迁移，解释内容/风格损失与优化图像而不是训练分类器的区别。"
+        }
+      ]
+    },
+    {
+      "id": "recurrent-language-model",
+      "num": 8,
+      "title": "RNN、GRU与LSTM语言模型",
+      "titleEn": "Recurrent Language Models",
+      "stars": 4,
+      "hours": "较长，重在逐步调试",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/rnn-scratch.html",
+      "goal": "理解语言建模、状态传递与门控网络，为后续注意力模型保留可比较基线。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "recurrent-language-model-1",
+          "title": "处理教材文本、词表与随机/顺序采样，检查输入目标错位与跨批隐状态。"
+        },
+        {
+          "id": "recurrent-language-model-2",
+          "title": "从零实现RNN并对照简洁实现；记录交叉熵/困惑度、梯度裁剪和生成结果。"
+        },
+        {
+          "id": "recurrent-language-model-3",
+          "title": "比较小规模GRU与LSTM；对深层/双向网络做形状与可用信息检查。"
+        },
+        {
+          "id": "recurrent-language-model-4",
+          "title": "解释时间反向传播与detach边界；识别双向模型在自回归预测中使用未来信息的问题。"
+        }
+      ]
+    },
+    {
+      "id": "seq2seq-attention",
+      "num": 9,
+      "title": "Seq2Seq、翻译与注意力",
+      "titleEn": "Seq2Seq and Attention",
+      "stars": 4,
+      "hours": "较长，分数据与模型两段",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_attention-mechanisms/bahdanau-attention.html",
+      "goal": "实现可解释的小型翻译链路，从编码器瓶颈理解注意力。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "seq2seq-attention-1",
+          "title": "建立双语词表、padding、有效长度与mask，区分teacher forcing训练和逐词推理。"
+        },
+        {
+          "id": "seq2seq-attention-2",
+          "title": "完成seq2seq基线并解释贪心与束搜索；在小例上比较搜索行为，不保证束宽越大越好。"
+        },
+        {
+          "id": "seq2seq-attention-3",
+          "title": "实现核回归注意力小例、加性/点积打分与masked softmax，检查padding权重。"
+        },
+        {
+          "id": "seq2seq-attention-4",
+          "title": "加入Bahdanau注意力，对相同固定验证样本比较基线与注意力模型并绘制对齐权重。"
+        }
+      ]
+    },
+    {
+      "id": "transformer",
+      "num": 10,
+      "title": "从注意力到Transformer",
+      "titleEn": "Transformer Implementation",
+      "stars": 4,
+      "hours": "较长，分组件与端到端",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_attention-mechanisms/transformer.html",
+      "goal": "能追踪多头注意力的每个张量维度，完成小型Transformer训练与自回归推理。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "transformer-1",
+          "title": "逐步实现/解释Q/K/V投影、多头拆合、位置编码、残差与前馈层。"
+        },
+        {
+          "id": "transformer-2",
+          "title": "核对padding与causal mask；构造未来词变化不影响此前位置输出的局部检查。"
+        },
+        {
+          "id": "transformer-3",
+          "title": "以教材翻译任务完成小型编码器-解码器Transformer训练，保存恢复并在固定样本推理。"
+        },
+        {
+          "id": "transformer-4",
+          "title": "比较训练与增量生成的输入/状态处理，估算序列长度增加的注意力计算与内存成本。"
+        }
+      ]
+    },
+    {
+      "id": "bert-pretrain-finetune",
+      "num": 11,
+      "title": "BERT预训练与自然语言推断",
+      "titleEn": "BERT Pretraining and Fine-tuning",
+      "stars": 4,
+      "hours": "较长，分数据目标与迁移",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert-pretraining.html",
+      "goal": "理解双向预训练目标、输入构造与下游微调，并区分其与CS336自回归语言建模。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "bert-pretrain-finetune-1",
+          "title": "构造词元/片段/位置输入、MLM预测位置和NSP标签，核对padding不进入错误损失。"
+        },
+        {
+          "id": "bert-pretrain-finetune-2",
+          "title": "训练小型教材BERT，分别记录MLM/NSP损失；明确这是教学规模而非工业预训练复现。"
+        },
+        {
+          "id": "bert-pretrain-finetune-3",
+          "title": "按教材自然语言推断数据流程完成预训练权重加载/分类头微调，解释标签、训练验证划分与序列/词元级任务接口。"
+        },
+        {
+          "id": "bert-pretrain-finetune-4",
+          "title": "报告数据、词表和权重来源及限制，比较冻结编码器与微调的取舍，解释双向BERT不能直接当作因果生成模型。"
+        }
+      ]
+    },
+    {
+      "id": "optimization-capstone",
+      "num": 12,
+      "title": "优化回顾与全课程工程总结",
+      "titleEn": "Optimization and Course Capstone",
+      "stars": 3,
+      "hours": "中等至较长，复用已有项目",
+      "branch": "不适用：编者阶段练习，非官方Git分支",
+      "url": "https://zh.d2l.ai/chapter_optimization/index.html",
+      "goal": "回到课程最后的优化总览，用已有模型整理可复现工程能力，再衔接CS336。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "tasks": [
+        {
+          "id": "optimization-capstone-1",
+          "title": "在同一小模型/数据划分上比较SGD、动量和Adam，固定比较条件并记录曲线；其余算法作为教材对照，不声称视频逐节覆盖。"
+        },
+        {
+          "id": "optimization-capstone-2",
+          "title": "检查学习率调度、数值稳定性与优化器状态保存；恢复训练时同时恢复模型和优化器。"
+        },
+        {
+          "id": "optimization-capstone-3",
+          "title": "整理MLP/CNN/CV/RNN/Attention/BERT的任务、输入形状、损失、评估与资源限制，完成课程总结视频学习。"
+        },
+        {
+          "id": "optimization-capstone-4",
+          "title": "输出自己的CS336准备清单：训练循环、token/mask、Transformer、性能测量与数据评估；论文阅读不是此阶段验收。"
+        }
+      ]
+    }
+  ]
+}

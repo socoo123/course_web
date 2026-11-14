@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="760" viewBox="0 0 720 760" role="img" aria-labelledby="title desc">
+  <title id="title">检测复盘：从冻结预测到可追查的改进</title>
+  <desc id="desc">先固定数据、类别、坐标和评估器合同，再冻结同一组验证预测。将失败分为接口、定位、类别、重复和漏检，使用同划分同预算的配对实验，保留有效范围和未核接口。原竞赛数据和评分端仍是独立门槛。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#46627e" stroke-width="1.6"/></marker>
+  </defs>
+  <rect width="720" height="760" rx="18" fill="#f3f6fb"/>
+  <g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#142c43">
+    <text x="360" y="40" text-anchor="middle" font-size="25" font-weight="700">检测复盘：让结论能被追查</text>
+    <rect x="34" y="62" width="652" height="96" rx="12" fill="#e4edf9" stroke="#46627e" stroke-width="2"/>
+    <text x="56" y="94" font-size="22" font-weight="700">① 固定任务合同</text>
+    <text x="56" y="124" font-size="20">文件身份 · 类别ID · 坐标反变换 · scorer参数</text>
+    <path d="M360 158 V188" stroke="#46627e" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="34" y="194" width="652" height="90" rx="12" fill="#e1f2e9" stroke="#377154" stroke-width="2"/>
+    <text x="56" y="226" font-size="22" font-weight="700">② 冻结验证预测</text>
+    <text x="56" y="257" font-size="20">同一划分，保留NMS前后框、分数与图像ID</text>
+    <path d="M360 284 V314" stroke="#46627e" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="34" y="320" width="652" height="158" rx="12" fill="#fff2d9" stroke="#906620" stroke-width="2"/>
+    <text x="56" y="352" font-size="22" font-weight="700">③ 分解失败，不从总AP猜原因</text>
+    <text x="56" y="385" font-size="20">接口：ID / 类别 / xyxy与xywh / 缩放</text>
+    <text x="56" y="418" font-size="20">预测：定位 · 错类 · 重复框 · 漏检</text>
+    <text x="56" y="451" font-size="20">统计：逐类/尺度支持数，固定失败样例规则</text>
+    <path d="M360 478 V508" stroke="#46627e" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="34" y="514" width="652" height="96" rx="12" fill="#e4edf9" stroke="#46627e" stroke-width="2"/>
+    <text x="56" y="546" font-size="22" font-weight="700">④ 做配对改动，报告有效范围</text>
+    <text x="56" y="579" font-size="20">控制初值/预算/评估；不把一次小运行当排名</text>
+    <rect x="34" y="638" width="652" height="92" rx="12" fill="#fff" stroke="#906620" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="56" y="670" font-size="21" font-weight="700">边界：会复盘 ≠ 已复现原竞赛</text>
+    <text x="56" y="702" font-size="19">认证文件、评分端与获奖课堂内容仍须独立核验</text>
+  </g>
+</svg>

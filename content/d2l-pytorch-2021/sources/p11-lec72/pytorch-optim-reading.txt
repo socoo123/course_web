@@ -1,0 +1,7 @@
+Source: https://docs.pytorch.org/docs/2.5/optim.html
+Accessed: 2026-11-14
+Nature: bounded reading record, not a full page snapshot or classroom source.
+Read scope: How to use an optimizer (constructing, per-parameter options, step and closures); base Optimizer parameter-order warning; algorithm/implementation lists; How to adjust learning rate (including scheduler ordering, epoch example, chaining, and scheduler list). Stopped before Weight Averaging (SWA and EMA) section; do not claim later sections read.
+Short original excerpt: "Learning rate scheduling should be applied after optimizer’s update"
+Editorial extraction: optimizer owns state and parameter groups; parameter order must be deterministic and consistent; scheduler clock must match the loop; ReduceLROnPlateau depends on validation measurements, unlike a fixed-clock schedule. The documentation's performance implementation discussion is not measured hardware evidence for this project.
+Version boundary: modern PyTorch2.5 API reading, separate from 2021 lectures and the fixed current Chinese second-edition textbook. No full tutorial copied or translated.

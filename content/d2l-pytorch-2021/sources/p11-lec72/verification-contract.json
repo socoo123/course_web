@@ -1,0 +1,14 @@
+{
+  "lectureId": "lec72",
+  "executedByWorker": false,
+  "executionStatus": "not_run_by_worker; requested_main_acceptance",
+  "checks": [
+    {"id":"quadratic-gd-stability","input":{"objective":"0.5*x*x","x0":1,"steps":3,"learningRates":[0.5,2,2.5]},"expected":{"trajectoriesIncludingInitial":[[1,0.5,0.25,0.125],[1,-1,1,-1],[1,-1.5,2.25,-3.375]]},"assertions":["Convergence condition for positive curvature lambda is 0<eta*lambda<2; equality 2 is not convergence for nonzero initial value"]},
+    {"id":"momentum-versus-sgd","input":{"theta0":1,"gradients":[2,2],"lr":0.1,"beta":0.9,"initialVelocity":0,"dampening":0,"nesterov":false,"weightDecay":0},"expected":{"sgdParameters":[0.8,0.6],"momentumVelocities":[2,3.8],"momentumParameters":[0.8,0.42]},"assertions":["These are prescribed identical gradients, not gradients recomputed from one objective","Momentum convention has no (1-beta) factor on current gradient"]},
+    {"id":"adam-first-step-bias","input":{"theta0":1,"gradient":2,"lr":0.1,"beta1":0.9,"beta2":0.999,"epsilon":0,"scope":"Nonzero scalar gradient arithmetic only; production epsilon stays positive"},"expected":{"firstMoment":0.2,"secondMoment":0.004,"correctedFirst":2,"correctedSecond":4,"theta1":0.9,"uncorrectedUpdateExpression":"0.1*0.2/sqrt(0.004)"},"assertions":["Uncorrected update is approximately 0.316227766, not 0.1","Adam second moment is not the central variance"]},
+    {"id":"adagrad-rmsprop-history","input":{"gradients":[2,0],"gamma":0.9,"initialSecondMoment":0},"expected":{"adagradHistory":[4,4],"rmspropHistory":[0.4,0.36]},"assertions":["AdaGrad nondecreasing accumulator differs from forgetting EMA"]},
+    {"id":"scheduler-used-lr","input":{"optimizer":"SGD","initialLr":0.1,"scheduler":"StepLR","stepSize":2,"gamma":0.5,"clock":"one scheduler.step after each optimizer update","updates":5},"expected":{"usedLearningRates":[0.1,0.1,0.05,0.05,0.025]},"assertions":["Record lr before the parameter update, not the post-scheduler next lr","Restore optimizer and scheduler together"]},
+    {"id":"stable-ce-and-weighted-mean","input":{"logits":[1000,1000],"target":0,"batchMeans":[1,3],"batchSizes":[2,1]},"expected":{"crossEntropyExpression":"log(2)","weightedMeanExpression":"5/3","wrongUnweightedBatchMean":2},"assertions":["Stable cross entropy finite; direct float32 exp(1000) overflows","A finite loss does not prove shape or label correctness"]}
+  ],
+  "integrationContract": "Main owns paired real Fashion MLP, actual scheduler, stability and disk cross-process restore checks. Notes link lab; do not duplicate runtime results. Save model/buffers, optimizer moments/step/group settings, scheduler clock, actual RNGs and current permutation/cursor. Worker did not run numerical code, build, tests, lint or formatters."
+}

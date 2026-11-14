@@ -1,51 +1,31 @@
-继续content/d2l-pytorch-2021的P11：LEC71–73 + optimization-capstone实验。先读已注入AGENTS.md、本交接、status.json、sources/PLAN.txt、sources/p10-manifest.json、p1-shared/book-version.json、resources.zh.md和相关schedule/book/outline/practice inventories；必须读skill://technical-video-notes。只改content/。
+维护content/d2l-pytorch-2021。先读已注入AGENTS.md、status.json、sources/p11-manifest.json、sources/PLAN.txt、本交接及skill://technical-video-notes。只改content/；课程仍73讲、12实验、48任务，不重做已验收正文或旧训练，不自动扩充课程、前置课或必读论文。
 
-并行合同：必须task多agent。A拥有lectures/lec71及sources/p11-lec71；B拥有lec72–73及对应sources；C拥有labs/optimization-capstone及sources/p11-optimization-capstone。主agent独占course/status/resources/共享manifest/PLAN/NEXT-PROMPT，统一必要数值、真实浏览器与一次最终build，提交推送现有https://github.com/socoo123/course_web的main，再交后续维护提示词。子agent不跑数值/tests/build/lint/formatter、不提交。
+P1–P11全课教材/官方来源导读及十二实验双文档已编排完成；不表示全部课堂看完、学生作业完成、竞赛完成或GPU扩展完成。实际元数据、数值、页面和构建验收以p11-manifest与p11-shared最终记录为准。逐讲notes与课堂draft独立，中文教材materials不重译，不创建凑标签的空壳。
 
-已验收P1–P10：LEC1–70教材导读，前十一实验双文档，74张自主机制图+1张真实观测图。73讲/12实验/48任务不变，不重做已有内容。只剩LEC71目标检测竞赛总结、LEC72优化算法、LEC73课程总结及第十二实验；课堂稿、历史竞赛、硬件扩展独立记账，不用一个complete掩盖。
+下一轮先按用户指定维护问题行动；未指定时，仅梳理status的真实缺口与可用新证据，不重复请求已失败的字幕接口，不重新训练已验模型。若同时有两个以上独立实质内容切片，继续task多agent：各自独占讲次/实验及sources子目录，主agent独占共享索引、状态、整合与统一验收；子agent不跑数值/tests/build/lint/formatter、不提交。
 
-学习目标：完整中文PyTorch工程路线，数学随课补，再衔接CS336；不删CNN/CV/RNN/优化/课程总结，不另加前置课或必读论文。所有实验只给合同、路线、不变量与局部提示，不发布完整答案脚本。
+课堂维护：只有新取得的可信字幕、合法可访问音视频或用户提供材料，才推进对应draft。核官方作者/年份/BV/cid/全P及真实时长；无课堂依据不造主题时间轴、演示、QA、赢家方法或教师总结。既有P1–P9共182P字幕成功空列表；P10七P成功空、九P HTTP412未知；P11五P成功空，共194P空/9P受限未知、73BV/203P。空列表或412均不证明无烧录字幕。LEC1仅历史抽帧，不等于课堂审阅。课程总结视频的学习任务仍保留待本人完成。
 
-P11实验四任务原文在course/practice-plan：1同一小模型/数据划分比较SGD、动量、Adam，固定条件与曲线，其他优化算法作教材对照不冒称视频逐节覆盖；2学习率调度/数值稳定性/模型和优化器状态恢复；3完整MLP/CNN/CV/RNN/Attention/BERT任务、形状、损失、评估、资源总结，课程总结视频内容未核就不得填已完成观看；4自主CS336准备清单（训练循环、token/mask、Transformer、性能、数据评估），论文阅读非此阶段验收。
+官方课表https://courses.d2l.ai/zh-v2/；教材固定d2l-ai/d2l-zh提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，当前中文第二版，非2021全书快照。P11 LEC72按课表整章入口读11.1–11.11，不声称视频逐节覆盖。LEC71/73无独立教材指定章节，为官方来源/自主复盘导读。历史课表与实际上传日期分开；LEC10/43/69等链接歧义继续保留。
 
-P11官方BV按已有课表：LEC71 BV13b4y1m7y8；72 BV1bP4y1p7Gq；73 BV1AL4y1Y7gu。逐讲核mid1567748478、2021年份、全部P、真实合计时长；课表/上传日期分开。多P页头label写全 N P 合计，不能以单P冒充整讲。无字幕不造主题时间轴、QA、获奖方法或课堂总结；notes可明确为教材/官方来源导读，materials不重译中文教材。
+牛仔竞赛仍单独阻塞：官方公告↔CodaLab33573↔Kaggle cowboyoutfits身份已核，host Joshua Z. Zhang；外部五类87/1034/131/318/588、AP0.50:0.95。CodaLab教育/非商用/不得另用途再分发；Kaggle登录接受规则未完成。Data image_id与starter id、starter像素xyxy与评分端约定待真实认证文件/scorer核实，不擅改COCO xywh。未下载/训练/评分/提交；LEC71未审课堂，不编获奖方案。复用P7证据，不拿banana/VOC或合成评估替代竞赛。
 
-字幕状态不是统一空列表：旧182P成功空列表不重刷。P10新16P各一次，LEC67–68的7P成功空列表；69–70的9P HTTP412访问受限、有无字幕未知，不再重试。两者均不证明无烧录字幕。LEC69课表p2/p3标签与当前P2结构代码/P3数据代码/P4训练代码错位，三主题与全5P保留。累计70BV/198P，公共301个B站链接。
+optimization-capstone四任务不可删：同小模型/划分/初值/采样/预算比较SGD、动量、Adam并记录曲线；学习率调度、稳定性与完整恢复；全模型谱系工程总结且真实记录课程总结视频学习；自主CS336准备清单（训练循环、token/mask、Transformer、性能、数据评估）。只给合同/路线/不变量/局部提示，无完整答案。
 
-P10视频总时长：67全3P37:44；68全4P51:53；69全5P57:14；70全4P31:26；合计10697秒。67/68课表8月14日、69/70课表8月15日，上传分别8月16–19日。页头原站新tab、默认笔记、不嵌播放器；旧入口不改。
+P11实际新配对运行：复用官方Fashion缓存，seed2021生成全60000条随机排列，排列前5000为验证候选并取前73、其余55000为训练候选并取前257；不是原IDX连续ID范围。新MLP784→32 ReLU Dropout.1→10，Xavier权重/零bias、25450参数；init2041/shuffle2042/dropout2043，CPU单线程float32，B64尾1，12轮60更新。三算法均lr.01、无wd无clip；动量.9、Adam(.9,.999)/eps1e-8；StepLR每完成20update×.5、optimizer.step后scheduler.step。相同数值LR但未分别调优，不是通用排名。初始trainCE2.330402；末轮SGD train/val1.775362/1.895593且21/73，动量1.070096/1.264549且43/73，Adam.597773/.803188且49/73。完整曲线/样本ID/梯度hash见p11-shared/optimization-smoke.json。
 
-教材固定d2l-ai/d2l-zh提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，当前中文第二版，不是2021全书快照。P10新增10.5补充/10.6/10.7、14.8–14.10、15.6/15.4/15.7；全文/精确PyTorch节选以worker source-index为准。源码Apache-2.0、setup.py MIT-0与视频、数据、权重许可分开。LEC72按实际指定优化范围读，不因为课表链接整章就宣称课堂逐节讲完。
+三个优化器均实际torch.save到临时磁盘step23（epoch4,cursor192），新进程weights_only加载后续22步至45，与连续训练每批ID/loss/梯度/LR以及model/optimizer/scheduler/CPU RNG/显式shuffle RNG/perm/cursor/epoch/global_step全部相同；跨换轮和step40衰减。无Python/NumPy随机操作、worker、增强或AMP，保存点已完成更新/调度/清梯度。Adam漏optimizer（包括当前LR）、scheduler、CPU RNG、采样游标反例均不同，前者不是只隔离Adam矩的因果对照。临时checkpoint全部删除，不留可复用模型或完整答案脚本。大logits稳定CE与朴素溢出另属合成机制，不说实际训练爆炸。
 
-不要为P11重复下载或重训旧模型。P9/P10自训模型均未持久保存：Transformer只在BytesIO中真实序列化/反序列化证明续训，不是下一批可直接加载的checkpoint。若capstone需比较优化器，先用已经可达的数据与小模型约定一组新的有限配对运行，固定同初值/数据/预算、明确学习率取舍，不拿不同随机起点做胜负结论。磁盘/跨进程续训若要声称已验，必须实际做；模型、优化器、调度器、CPU及实际使用RNG、采样进度都按运行合同恢复。
+不要假定P9/P10留下可加载自训checkpoint：P9无持久权重；P10 Transformer仅BytesIO真实序列化验证下一步，WikiText小模型和派生BERT也未保存。P11新增磁盘/跨进程证明只属于自己的小MLP，不反写为旧模型跨进程已验。若用户要新的恢复实验，先明确可用资产与有限运行合同。
 
-数值环境/tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python先确认存在；P10 Python3.11.8/torch2.5.1，Apple M2 Max/macOS26.3.1，CPU1线程float32；CUDA0，MPS仅探测，未运行GPU或性能基准。未装d2l/Jupyter，不外推2021Notebook兼容。P10 pyarrow多次TLS截断未装且未放过hash失败；实际读Parquet用/tmp/d2l-p10-parquet-reader的Bun1.4.4/hyparquet1.33.0，ignore-scripts安装，BigInt标签显式转整数。不要重复失败安装；P11不需要Parquet可不引入它。
+旧证据不可回退：真实Fashion/Ames/banana/VOC/TimeMachine/英法GRU/Transformer/WikiText小训，既有R18/VGG19/BERT权重迁移与CPU微基准已做的边界保留；合成机制、真实小训练、预训练迁移、硬件实测分别记账。未做GPU/MPS计算或多GPU/网络基准；P5是合成数据CPU短微基准，不是全硬件排名。树叶/加州/CIFAR/Dogs条件复用旧manifest，不绕登录、不替换数据身份。
 
-P9翻译语料缓存仍在/tmp/d2l-p9-corpus-cache：2019 fra-eng.zip只核身份，真实训练manythings-fra-eng.zip为2026-02-13带署名包；SHA2569e35994767f7307dc1fa9d5efcc36681f3756a1bdaaa02c1381b3eb11461261e。P9来源/许可和split-provenance原件复用，Tatoeba句主/ID、CC BY2.0 France及清洗说明不可丢；不发布句库。
+缓存先查存在，再复用；无必要不下载或重装：
+- Python /tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python：Python3.11.8/torch2.5.1，Fashion训练gzip在同目录data/FashionMNIST/raw；官方MD5与原件证据见p2-shared，P11只读训练集，未读官方测试集。
+- P9 /tmp/d2l-p9-corpus-cache：实际训练ManyThings2026-02-13带署名英法包，而非2019两列教材包；固定512/64/train-only词表156/429、清洗/同源分桶/署名/CC BY2.0FR见p9-shared与实验来源，不发布句库。
+- P10 /tmp/d2l-p10-corpus-cache：Salesforce非raw WikiText、Stanford SNLI固定revision Parquet及教材bert.small。pyarrow下载TLS失败未安装；已有/tmp/d2l-p10-parquet-reader的Bun/hyparquet读取器，非必要不引入。具体hash/标签转换/词表ID/配置见p10-bert-pretrain-finetune/asset-audit.json。
+- WikiText许可版本冲突、SNLI CC BY-SA4.0、bert.small权重/词表无独立LICENSE/config的边界不消除；代码许可不授予数据/权重再分发。
 
-P9固定合同：NBSP/narrowNBSP转空格、lower、,.!?前补空格、空白split/join，保留重音/撇号；规范化完整句对去重保留首署名。完整源句按SHA256('p9-v1'+实际TAB+source)前8hex整数模100，<80 train/<90 val/其余test，候选192038/24326/23993，顺序取512/64，测试不评分。仅选中train截断前fit词表156/429，minfreq1、频数降序/Unicode同频；unk/pad/bos/eos0/1/2/3，最多11普通词+EOS右pad12；有效目标1919/269。完整行ID/hash见p9-shared/split-provenance.json。
+页面维护：引用/许可/状态放frontmatter或页底；正文标题不要误含“来源/参考”等被自动收底词。$$独占行，长公式拆行，hash放滚动表，SVG带title/desc且明暗可读。公共资料路由#/c/d2l-pytorch-2021；讲次/lec/<id>?v=notes，实验/lab/<id>?v=zh|guide。页头原站新tab、默认笔记、不嵌入播放器；有视频的改动逐讲检查链接/全P时长，并实点代表入口确认笔记保留和手机布局。xv6通用命令框不适用、not_required材料仍显示待生成、旧LEC2/5/6手机溢出是独立已知UI问题，不擅自改src或重做前批正文。
 
-P10真实Transformer：2enc2dec、d32/h4/ff64、postnorm、正余弦、dropout.1、74861参数；seed2029/shuffle2030、Adam.005/B32/clip1/20轮320更新。trainCE5.879510→.574303、val4.462685；greedy同P9语料BLEU2 .121069。首val行58 i try . / j'essaye .（CK#20776/nimfeo#1133630）生成j'ai pleuré .，仍错译；242步触发裁剪。不是等参数排名。
-
-Transformer推理只接源与自己历史，不读真实目标/长度。三mask分开；每层每候选projected selfKV、位置offset、chunkcausal、重复父[2,0,2]独立写、fullprefix对照通过，最大差<7e-7。crossKV实际每步重算，无性能优化声明。160步后BytesIO990380B恢复模型/Adam/CPU及shuffle RNG，下一批/loss/grads/优化器/参数相同；只权重+空Adam反例差.010352。未验磁盘/跨进程/任意多步，不把学生全任务打勾。证据p10-shared/transformer-smoke.json。
-
-BERT四项资产分开核：WikiText/SNLI原ZIP未取得，明确采用publisher Parquet，不能套教材旧hash。Salesforce wikitext-2-v1非raw revision b08601e04326c79dfdd32d625aee71d232d685c3；Stanford SNLI plain_text revision cdb5c3d5eed6ead6e5a341c8e56e669bb666725b。两者train/validation在/tmp/d2l-p10-corpus-cache，均核LFS SHA256；test未下载。详细hash/身份/失败历史见p10-bert-pretrain-finetune/asset-audit.json，解码本地cache不是另一数据集。
-
-WikiText卡头CC BY-SA3.0/GFDL与正文4.0冲突未消除，不授予无条件再分发；SNLI卡CC BY-SA4.0，保留Stanford/Bowman等署名。原Parquet只有premise/hypothesis/label，无binaryparse/pairID，按split/row/textSHA追踪；HF标签0蕴涵/1中性/2矛盾→教材0/2/1，全split缺标785/158排除。数据卡有蕴涵方向文字错误，以premise蕴涵hypothesis为准。
-
-教材bert.small.torch.zip已取得，SHA1c72329e68a732bef0452e4b96a1c341c8910f81f匹配；本地成员bert.small.torch/pretrained.params与vocab.json配对，词表60005，unk/pad/mask/cls/sep0/1/2/3/4。无独立LICENSE/config，结构依据固定loader并核参数：H256/FFN512/4头2层/maxpos512/postnorm/ReLU，实际dropout.2（调用.1被helper覆盖）；lower+空白不是WordPiece。只本地教材有限用途，不推断商用/再分发，完整预训练数据和与SNLI重合未核。
-
-BERT工程差异：位置Parameter直接切片，不用.data；MLM逐槽unreduced CE与同形状flatten权重，避免先mean或Nx1广播外积；候选/随机池排除特殊ID，按普通候选15%、80/10/10，选中但未改变也算loss；NSP在原split不同文档取负，排除A/真后继同文本，正例同段相邻；两个分母独立。BERT双向不能直接作为因果生成模型。
-
-P10真实WikiText小训：顶层文章629/60，前64/16相邻basepair各加一个负例→128/32；选中train截断前fit minfreq2词表708，32宽，114/128与29/32截断，偏差高；固定mask一次，监督472/83。d32/2层/4头/FFN64、66438参数、seed2035/shuffle2036、Adam.003/B16/clip1、10轮80更新。trainMLM6.740114→4.152513、NSP.722930→.175329，val5.298478/1.609197，不称学好关系或工业BERT。原有UNK与小词表OOV未分开计数。
-
-独立真实预训练迁移：严格weights_only加载全部key/tensor后SNLI64/32，max32，train/val各7对截断、OOV150/60，所选前提交叠0。冻结encoder+pooler只训771参数 vs全微调16613635；同头seed2037/shuffle2038、Adam1e-4/B8/2轮各16步。valCE1.095402/1.121991、13/32与14/32，后者多对一条但CE更差，不构成质量排名。固定首8预测/标签与完整证据见p10-shared/bert-smoke.json。没有持久保存派生BERT权重。
-
-牛仔竞赛仍独立阻塞：官方公告↔CodaLab33573↔Kaggle cowboyoutfits身份已核，host Joshua Z.Zhang、五类87/1034/131/318/588、AP0.50:0.95。CodaLab教育/非商用/不另用途再分发；Kaggle需登录接受规则，未完成。Data image_id与starter id、像素xyxy与评分端未核，不擅改COCO xywh。未下载/训练/评分/提交；LEC71课堂未核，不能编获奖方案，公开来源导读与课堂总结分开。
-
-旧批真实Fashion/Ames/banana/VOC/预训练R18/VGG19/两图风格/TimeMachine/英法GRU运行历史全部保留，不回退全未运行；树叶/加州/CIFAR/Dogs条件见旧manifest，不绕登录或用别的数据冒充竞赛。
-
-页面：正文学习内容开头，来源/许可/缺口放frontmatter或页底；标题避开自动收底关键词。公共资料路由#/c/d2l-pytorch-2021；讲次/lec/<id>?v=notes，实验/lab/<id>?v=zh|guide。$$独占行，长式分行，长hash用滚动表/长JSON路径用text块。SVG有title/desc、明暗可读；课堂截图只放有可靠来源draft。
-
-P10主验：39项源hash，9Markdown/7SVG/115站内路由，152已验收文件不变。实际Chromium四讲默认笔记/页头目标与时长/明暗图/公式/自测/页底、1440桌面390手机；双实验双标签，公共301链接；LEC69实点新tab且笔记保留。修69嵌入公式391→390和Transformer实验公式420→390。无应用pageerror、验证tab关闭；非Pages/全片播放。浏览器用tab.emulate定视口，raw setViewport后的helper可能回到旧emulate值；缺稿真实文字是中文译稿还没生成，不猜尚未。5310原预览服务存在，先核再复用，不抢占或杀用户服务。
-
-最终构建结果见status.verification.build与p10-shared/build.log；只运行一次最终npm run build。来源默认gitignore，只显式保存小JSON、固定原件.txt和build.log；worker原始hash/未执行记录不改写，主最终content-check为准。临时完整程序仅内存stdin，无解答脚本随提交。P11完成后更新status/manifest/PLAN/交接，提交推送main，说明课程笔记完成与课堂/竞赛/扩展缺口的区别，再提供下一步提示词。
+验收用已有5310预览先确认再复用，不抢占/杀用户服务。实际浏览器tab.emulate定视口，验证用tab结束关闭。只有内容变更需要时运行必要数值、相应页面与一次最终npm run build；不为维护状态重跑旧训练或全套验收。保存真实失败与边界。sources默认gitignore，仅显式加入小JSON/固定原件.txt/build.log，不提交数据、权重、凭据、环境或答案脚本。主agent按用户授权更新status/manifest/PLAN/本交接，提交推送现有github.com/socoo123/course_web的main，交付区分“文档完成”和“学习/课堂/竞赛/硬件仍未完成”。

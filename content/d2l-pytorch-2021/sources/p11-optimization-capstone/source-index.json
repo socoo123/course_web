@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11",
+  "labId": "optimization-capstone",
+  "capturedAt": "2026-11-14",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "bookBoundary": "Current Chinese second edition fixed source, not a2021 whole-book snapshot. Worker read practice-plan optimization11.1-11.11 inventory, not new full chapter source; formulas and implementation conventions independently grounded in reviewed PyTorch APIs.",
+  "skillRead": "skill://technical-video-notes",
+  "archive": "api-review.txt",
+  "archiveType": "Editorial review with short quotations and exact scope; NOT a full original page snapshot; no fabricated source-byte digests.",
+  "sources": [
+    {"url": "https://docs.pytorch.org/docs/2.5/optim.html", "version": "2.5", "scope": "Constructing optimizer, per-parameter options, step, deterministic parameter order, algorithm summary and LR scheduling order/table; reader first300/563 lines. SWA/EMA not used.", "use": "Comparison controls and scheduler ordering"},
+    {"url": "https://docs.pytorch.org/docs/2.5/generated/torch.optim.SGD.html", "version": "2.5", "scope": "Signature, update pseudocode, parameter definitions, LR-outside-momentum-buffer and initial buffer note; load_state_dict. Reader first300/447 lines, later state_dict body not read here.", "use": "SGD versus momentum, two-step local hint"},
+    {"url": "https://docs.pytorch.org/docs/2.5/generated/torch.optim.Adam.html", "version": "2.5", "scope": "Signature, update pseudocode, betas/eps/weight_decay/flags, state_dict entries and ordered parameter-ID mapping note; first300/424 reader lines.", "use": "Moments,bias correction,step and parameter-group restoration"},
+    {"url": "https://docs.pytorch.org/docs/2.5/generated/torch.optim.Optimizer.load_state_dict.html", "version": "2.5", "scope": "Method description and state_dict parameter", "use": "Optimizer checkpoint API"},
+    {"url": "https://docs.pytorch.org/docs/2.5/generated/torch.optim.lr_scheduler.StepLR.html", "version": "2.5", "scope": "Signature, epoch example, get_last_lr,state_dict/load_state_dict,step", "use": "Separate scheduler state and explicit call unit"},
+    {"url": "https://docs.pytorch.org/docs/2.5/notes/randomness.html", "version": "2.5", "scope": "Reproducibility limits; torch/Python/NumPy RNG including independent generators; CUDA benchmarking/determinism; DataLoader seeding", "use": "Actual RNG inventory, environment limitations; current permutation/cursor is editorial extension, not a DataLoader exact-resume promise"},
+    {"url": "https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html", "requestedURL": "https://pytorch.org/tutorials/beginner/saving_loading_models.html", "version": "Current tutorial; not pinned2.5", "author": "Matthew Inkawhich", "scope": "What is state_dict; inference and general checkpoint examples; reference-vs-copy caution; full-module pickle limitation; train/eval guidance. First300/475 reader lines; later warmstarting/cross-device sections not used.", "use": "Independent initial snapshot, model+optimizer training checkpoint, explicit weights_only trusted-local load"},
+    {"url": "https://docs.pytorch.org/docs/2.5/generated/torch.nn.CrossEntropyLoss.html", "version": "2.5", "scope": "Logits input, integer/probability targets,reduction,ignore_index,shapes and examples", "use": "Classification contract and denominator distinction"},
+    {"url": "https://docs.pytorch.org/docs/2.5/generated/torch.logsumexp.html", "version": "2.5", "scope": "Numerical stabilization,axis/keepdim and example", "use": "Max-shift stability explanation"}
+  ],
+  "reusedEvidence": [
+    {"path": "sources/practice-plan.json", "readRangesInclusive": [[327,355],[1272,1355]], "scope": "Exact original four tasks and provenance; unchanged"},
+    {"path": "course.json", "scope": "Task IDs and exact titles read via grep; Main owns file"},
+    {"path": "sources/schedule-inventory.json", "scope": "LEC72/73 entry and optimization chapter linkage via grep; no classroom review"},
+    {"path": "sources/book-inventory.json", "scope": "Optimization section inventory and chapter_overview_only caveat via grep"},
+    {"path": "sources/outline-plan.json", "scope": "Optimization-summary and CS336 readiness outcomes via grep; preserve complete CNN/CV/RNN route"},
+    {"path": "sources/p1-shared/book-version.json", "scope": "Whole file: fixed source and license/version boundary"},
+    {"path": "sources/NEXT-PROMPT.txt", "scope": "Whole handoff: accepted evidence and exclusions"},
+    {"path": "status.json", "readRangesInclusive": [[730,813]], "scope": "Prior lab evidence classifications and capstone planned state at read time; Main owns later updates"},
+    {"path": "sources/p10-manifest.json", "readRangesInclusive": [[204,252],[262,344]], "scope": "Actual prior lab runs, resume scope and exclusions; declaration view also read"},
+    {"path": "sources/p2-linear-training/fashion-mnist-README.txt", "originalURL": "https://github.com/zalandoresearch/fashion-mnist", "readRangesInclusive": [[1,95]], "scope": "28x28 grayscale10classes,60000/10000 original splits, official download MD5 and labels; reuse archive, no new fetch"},
+    {"path": "sources/p2-linear-training/fashion-mnist-LICENSE.txt", "scope": "Whole7 lines; MIT copyright2017 Zalando SE"},
+    {"path": "sources/p2-shared/dataset-acquisition.json", "scope": "Whole file; actual GitHub HTTPS source, cache location, IDX headers, file hashes, test downloaded/header-only historical boundary; worker did not reacquire data"},
+    {"path": "sources/p4-shared/practice-smoke.json", "readRangesInclusive": [[3,59]], "scope": "257/73,splitseed2021,ID digests,class counts and no test; old model/optimizer config not reused as a new run. Main clarified first5000 refers to shuffled permutation positions."},
+    {"path": "sources/p3-shared/runtime-verification.json", "scope": "Whole file; actual old Ames/mechanism evidence and exclusions; did not reread raw dataset"},
+    {"path": "sources/p5-shared/runtime-verification.json", "scope": "Whole file; real finite CPU timing versus no GPU/network or convergence claim"},
+    {"path": "sources/p7-shared/runtime-verification.json", "scope": "Whole file; banana/VOC/style real runs, pretrained transfer boundaries and unresolved cowboy/classroom gaps"},
+    {"path": "sources/p10-transformer/source-index.json", "readRangesInclusive": [[66,159]], "scope": "Prior provenance/reading boundaries; did not recompute copied digests or reread full corpus/prediction records"},
+    {"path": "sources/p11-shared/optimization-smoke.json", "scope": "Declaration view; environment/data identity/contract, all13 curves per algorithm plus first/last logged steps extracted with jq; complete resume,counterexamples,mechanisms11938-12074. Not all per-batch IDs or raw12074 lines reread. Main execution is external to worker.", "mainClarification": "seed2021 torch.randperm60000; val=indices[:73], train=indices[5000:5257]; CPU dropout plus explicit shuffleGenerator only; same numericLR and shared StepLR; temporary disk checkpoints deleted"}
+  ],
+  "dataIdentityReused": {
+    "trainImagesMD5": "8d4fb7e6c68d591d4c3dfef9ec88bf0d",
+    "trainLabelsMD5": "25c81989df183df01b3e8a0aad5dffbe",
+    "workerRehashedData": false,
+    "mainEvidenceRecheckedMD5": true,
+    "redistribution": "No dataset or weights copied into public content; other prior assets retain their own license boundaries"
+  },
+  "classroomBoundary": "No audio/video/transcript read by worker; no draft, classroom timestamps/QA/screenshots, winner methods or learned-course-summary claim.",
+  "workerExecuted": "Reading, small existing-JSON field extraction and authoring only; no numerical run,training,tests,build,lint,formatter,browser,commit or push.",
+  "mainEvidenceIntegration": "Actual P11 Main output added to public guide, kept distinct from worker initial not-run record and personal task completion."
+}

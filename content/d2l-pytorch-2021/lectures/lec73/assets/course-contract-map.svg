@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 610" role="img" aria-labelledby="title desc">
+<title id="title">按输出对象与可见信息选择模型合同</title>
+<desc id="desc">先确定输出是整例标签、空间对象还是序列，再分别核对输入形状、损失与评估。序列还要分清因果生成和双向编码。所有任务最终汇合到数据隔离、更新恢复、资源测量三个工程约束。</desc>
+<style>svg{background:#f8fafc;color:#172033}text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:currentColor;font-size:22px}.head{font-size:28px;font-weight:700}.small{font-size:19px}.node{fill:#e3eef9;stroke:#3c6489;stroke-width:2}.end{fill:#e5f3eb;stroke:#3f765b;stroke-width:2}.line{fill:none;stroke:#476880;stroke-width:3;marker-end:url(#a)}@media(prefers-color-scheme:dark){svg{background:#101827;color:#e7edf7}.node{fill:#223b53;stroke:#88bce6}.end{fill:#203d32;stroke:#85c4a2}.line{stroke:#b2cce1}}</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#6487a4"/></marker></defs>
+<text x="410" y="40" text-anchor="middle" class="head">先定任务合同，再选模型名称</text>
+<rect x="225" y="65" width="370" height="65" rx="12" class="node"/><text x="410" y="105" text-anchor="middle">推理时预测什么、能看什么？</text>
+<path d="M410 130V153H145V177M410 153V177M410 153H675V177" class="line"/>
+<rect x="25" y="185" width="240" height="220" rx="12" class="node"/><text x="145" y="222" text-anchor="middle">整例标签 / 数值</text><text x="145" y="263" text-anchor="middle">MLP · CNN · 编码器</text><text x="145" y="303" text-anchor="middle" class="small">每例一个监督出口</text><text x="145" y="342" text-anchor="middle" class="small">CE / 回归损失</text><text x="145" y="378" text-anchor="middle" class="small">准确率 / RMSE 等</text>
+<rect x="290" y="185" width="240" height="220" rx="12" class="node"/><text x="410" y="222" text-anchor="middle">空间对象 / 像素</text><text x="410" y="263" text-anchor="middle">检测 · 分割 · 风格</text><text x="410" y="303" text-anchor="middle" class="small">框 / 像素 / 优化图像</text><text x="410" y="342" text-anchor="middle" class="small">匹配 / ignore / 特征</text><text x="410" y="378" text-anchor="middle" class="small">AP / mIoU / 视觉检查</text>
+<rect x="555" y="185" width="240" height="220" rx="12" class="node"/><text x="675" y="222" text-anchor="middle">序列与上下文</text><text x="675" y="263" text-anchor="middle">RNN · Transformer</text><text x="675" y="303" text-anchor="middle" class="small">因果生成 ≠ 双向BERT</text><text x="675" y="342" text-anchor="middle" class="small">token / 槽 / 句级分母</text><text x="675" y="378" text-anchor="middle" class="small">NLL / BLEU / 下游指标</text>
+<path d="M145 405V440H410V465M675 405V440H410M410 405V440" class="line"/>
+<rect x="65" y="474" width="690" height="95" rx="12" class="end"/><text x="410" y="513" text-anchor="middle">数据隔离 · 有效监督 · 完整状态恢复</text><text x="410" y="547" text-anchor="middle">资源估算与硬件实测分开记账</text>
+<text x="410" y="595" text-anchor="middle" class="small">自主综合图 · 不表示课堂顺序或算法排名</text>
+</svg>

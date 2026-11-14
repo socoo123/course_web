@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 570" role="img" aria-labelledby="title desc">
+<title id="title">一次优化更新依赖哪些状态</title>
+<desc id="desc">当前批次与参数计算梯度，梯度和动量或二次矩历史共同形成更新方向，学习率时钟确定尺度。检查点要同时保存参数、优化器、调度器、随机状态及当前采样位置。</desc>
+<style>svg{background:#f8fafc;color:#172033}text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:currentColor;font-size:21px}.box{fill:#e0edf8;stroke:#315d83;stroke-width:2}.state{fill:#e6f4ed;stroke:#357354;stroke-width:2}.arrow{fill:none;stroke:#36536b;stroke-width:3;marker-end:url(#arrow)}.small{font-size:18px}.head{font-size:27px;font-weight:700}@media(prefers-color-scheme:dark){svg{background:#101827;color:#e7edf7}.box{fill:#223b53;stroke:#84bce8}.state{fill:#203e34;stroke:#81c7a0}.arrow{stroke:#b6ccdf}}</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#6487a4"/></marker></defs>
+<text x="380" y="42" text-anchor="middle" class="head">参数只是训练状态的一部分</text>
+<rect x="35" y="76" width="300" height="92" rx="12" class="box"/><text x="185" y="113" text-anchor="middle">本批数据 + 当前参数</text><text x="185" y="143" text-anchor="middle" class="small">前向 → 有效损失 → 反向</text>
+<rect x="425" y="76" width="300" height="92" rx="12" class="state"/><text x="575" y="113" text-anchor="middle">采样与随机状态</text><text x="575" y="143" text-anchor="middle" class="small">排列 / 游标 / Dropout RNG</text>
+<path d="M425 122H340" class="arrow"/>
+<rect x="35" y="218" width="300" height="92" rx="12" class="box"/><text x="185" y="257" text-anchor="middle">本步梯度 g</text><text x="185" y="286" text-anchor="middle" class="small">与每个参数同形状</text>
+<rect x="425" y="218" width="300" height="92" rx="12" class="state"/><text x="575" y="257" text-anchor="middle">历史状态</text><text x="575" y="286" text-anchor="middle" class="small">动量 / 平方量 / 更新计数</text>
+<path d="M185 168V211" class="arrow"/>
+<path d="M575 310V357H300V370" class="arrow"/>
+<path d="M185 310V370" class="arrow"/>
+<rect x="35" y="377" width="300" height="92" rx="12" class="box"/><text x="185" y="415" text-anchor="middle">更新方向 × 本步学习率</text><text x="185" y="445" text-anchor="middle" class="small">得到新参数，同时更新历史</text>
+<rect x="425" y="377" width="300" height="92" rx="12" class="state"/><text x="575" y="415" text-anchor="middle">调度器时钟</text><text x="575" y="445" text-anchor="middle" class="small">epoch ≠ update；下一 lr</text>
+<path d="M425 421H342" class="arrow"/>
+<text x="380" y="518" text-anchor="middle">恢复训练：各状态必须属于同一个更新边界</text>
+<text x="380" y="547" text-anchor="middle" class="small">自主机制图 · 非实测训练曲线</text>
+</svg>

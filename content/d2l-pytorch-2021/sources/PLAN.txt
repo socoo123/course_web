@@ -200,3 +200,18 @@ Lab.tsx的常用命令固定输出git checkout / make qemu / make grade，仅适
 - 39来源hash、9Markdown/7SVG/115站内路由/八任务原文检查通过。Chromium四讲页头/默认笔记/图/公式/自测/页底、1440/390、双实验双标签与公共301入口通过；LEC69新tab保留笔记。修嵌入公式391→390与Transformer公式420→390；无应用pageerror，tab关闭。工具点击/视口/错误等待词与下载诊断留证，不外推Pages或全片播放。
 - 最终一次构建结果见status.verification.build与p10-shared/build.log；本批完整清单p10-manifest。worker生成hash/未运行历史保留，主最终hash见content-check。无语料、模型、环境、完整脚本或凭据随提交。
 - 牛仔认证数据/评分端及LEC71课堂未核，P1–P9真实小运行不回退。下一批P11仅LEC71–73+optimization-capstone，A71、B72–73、C实验；SGD/动量/Adam配对、调度/稳定性/完整状态恢复、全模型谱系复盘与CS336清单四任务全部保留，视频无源不得冒称已看完。
+
+十九、P11实际结果（2026-11-14）
+- 并行A=P11Lec71、B=P11Lec72to73、C=P11Capstone；主agent独占共享索引，复用数据/历史证据，负责数值、真实浏览器、一次最终构建及提交推送。只改content，不重做LEC1–70或前十一实验。
+- LEC71为官方竞赛来源导读与自主复盘框架，不是课堂或获奖方法总结。牛仔认证文件、scorer、Data image_id/starter id及像素xyxy适配缺口仍未核，未下载/训练/评分/提交。独立有理数例核IoU2/3、AP50=253/303、AP75=51/101、十档均值193/303；未执行pycocotools或原评分器。
+- LEC72手算核二次函数学习率稳定区间、SGD/动量两步、Adam偏差校正、AdaGrad/RMSProp历史量、StepLR实际更新顺序和稳定CE/加权分母；LEC73核MLP形状/参数、注意力显式分数张量空间和有效token归约。均为有限机制，未重跑旧模型，不等于课堂已学完。
+- 复用P2官方Fashion训练gzip并核MD5；seed2021的60000条随机排列，前5000验证候选取73、其余55000训练候选取257，未读官方测试。新MLP784→32 ReLU Dropout.1→10、25450参数、Xavier/零bias；init2041/shuffle2042/dropout2043，CPU1线程float32、B64尾1、12轮60更新。SGD/动量.9/Adam(.9,.999),eps1e-8全部同lr.01、无wd无clip，每20完成更新StepLR减半。相同数值LR不等于各自最优设置，不作一般排名。
+- 三模型同初值、完整批次序列；初始trainCE2.330402。末轮SGD train/val1.775362/1.895593且21/73，动量1.070096/1.264549且43/73，Adam.597773/.803188且49/73。完整每轮曲线和批次原ID/梯度hash见p11-shared/optimization-smoke.json，正文仅给合同和结果，不发布完整程序。
+- 三优化器实际磁盘保存step23（epoch4,cursor192）并在新进程加载，续22步至45；每批ID/loss/梯度/LR及model/optimizer/scheduler/CPU-RNG/shuffle-RNG/perm/cursor/epoch/global_step完全一致，跨换轮与step40衰减。无worker/增强/AMP，Python/NumPy随机流未用；清梯度后保存。临时磁盘文件已销毁，P9/P10无持久自训checkpoint的历史不改写。
+- Adam遗漏optimizer（含当前LR）、scheduler、CPU RNG、sampler cursor反例参数差均非零；第一个不冒称只隔离Adam矩。大logits稳定CE.3132616579/有限梯度与朴素exp非有限另属合成机制，不声称真实训练爆炸。环境Python3.11.8/torch2.5.1、Apple M2 Max/macOS26.3.1，CUDA0/MPS只探测，无本批硬件基准。
+- 新增三讲notes、实验双文档、四张自主机制SVG；累计73讲导读、24实验文档、78机制图+1观测图。73讲/12实验/48任务不变，前70讲/前十一实验167文件和既有元数据保持；课堂draft仍0，个人作业与课程总结视频学习不标完成。
+- 官方新增3BV/5P=5710秒：71单P23:58，72全2P43:17，73全2P27:55；均mid1567748478/2021上传，课表与上传分别登记。5P各一次字幕成功空列表，累计194P空/9P HTTP412未知，73BV/203P/公共306链接；两种状态都不排除烧录字幕。
+- 来源33文件留指纹，24项已声明hash匹配；6Markdown/4SVG XML/142本地路由/四原任务及13行曲线一致性通过。LEC72实际读固定11.1–11.11全章，但不声称视频逐节覆盖；两份收尾PDF提取不全，不据此造课堂。
+- Chromium三讲页头/默认笔记/明暗可读SVG/公式/自测/页底、1440桌面390手机、实验双标签与公共306链接通过。LEC71实点原站新tab且笔记保留；修LEC72历史状态断连箭头后截图复验，无应用pageerror，验证tab已关。非Pages部署或全片播放验收。
+- npm run build仅一次通过：tsc --noEmit + Vite5.4.21，3080modules，6.94s；日志p11-shared/build.log。数值/来源/页面/内容最终证据见p11-manifest，worker未执行历史保留；临时脚本仅stdin、临时checkpoint销毁，不发布数据/权重/凭据或答案。
+- 主线内容编排完成，下一步转证据驱动维护：不重复已失败字幕、不重训旧模型；新可信课堂材料才补draft，认证文件/scorer才补竞赛，实际设备才补硬件记录。状态与NEXT-PROMPT分别保留全课文档完成及课堂/竞赛/个人学习/GPU未完成边界；主agent按用户要求提交推送main。

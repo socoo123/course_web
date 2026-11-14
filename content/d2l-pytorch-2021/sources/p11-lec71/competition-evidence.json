@@ -1,0 +1,21 @@
+{
+  "reviewedAt": "2026-11-14",
+  "method": "Read existing P7 captured public primary-source evidence; no competition endpoint refreshed, no login or download attempted.",
+  "identityChain": [
+    {"snapshot": "sources/p7-lec50/announcement-evidence.txt", "claim": "Official week18 launch BV1F64y1x7xP and week22 results CodaLab33573."},
+    {"snapshot": "sources/p7-cv-dense-prediction/kaggle-overview.txt", "claim": "CowBoy Outfits Detection / cowboyoutfits; host Joshua Z. Zhang; actual historical submission and winner determination at CodaLab final phase."},
+    {"snapshot": "sources/p7-cv-dense-prediction/codalab-public-clauses.txt", "claim": "CodaLab33573 evaluation says pycocotools mAP; education/noncommercial/no redistribution for other purposes."}
+  ],
+  "categories": {"belt": 87, "sunglasses": 1034, "boot": 131, "cowboy_hat": 318, "jacket": 588},
+  "primaryMetric": "AP 0.50:0.95",
+  "historicalDeadlineUTC": "2021-08-07T04:00:00Z",
+  "awardCodeDeadlineBoundary": "August15 code upload in course announcement concerns signed-book eligibility, not scoring deadline.",
+  "unresolved": [
+    {"snapshot": "sources/p7-cv-dense-prediction/kaggle-data.txt", "claim": "Data description says valid.csv/test.csv image_id,file_name; authenticated actual files not read."},
+    {"snapshot": "sources/p7-cv-dense-prediction/kaggle-starter-excerpt.txt", "claim": "Host starter Version1 reads row['id']; exports pixel xmin,ymin,xmax,ymax. Training COCO loader does not establish submission xywh."},
+    {"snapshot": "sources/p7-cv-dense-prediction/kaggle-rules.txt", "claim": "Anonymous generic template; signed-in complete rules and data authorization not established."},
+    {"claim": "Actual deployed scorer/version/adapter, maxDets, ignore/crowd and category selection unverified."}
+  ],
+  "notExecuted": ["authentication or accepting rules", "original competition files/images acquisition", "scorer execution", "cowboy training", "competition AP scoring", "submission", "classroom or winner-method review"],
+  "classroomBoundary": "Video metadata does not prove content; no winner names, methods or performance inferred from announcement, host starter or video title."
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11",
+  "labId": "optimization-capstone",
+  "workerExecutedNumerics": false,
+  "workerExecutedTestsBuildLintFormatter": false,
+  "workerExecution": "Source reading, provenance extraction, document/SVG authoring only. Initial numerical status not_run retained; later actual Main evidence integrated separately.",
+  "originalTaskIds": ["optimization-capstone-1", "optimization-capstone-2", "optimization-capstone-3", "optimization-capstone-4"],
+  "mainNumericalEvidence": "sources/p11-shared/optimization-smoke.json",
+  "mainNumericalStatus": "Read actual evidence supplied by Main; finite paired CPU small training and disk cross-process continuation observed, not all student tasks.",
+  "task1": {
+    "requiredControls": ["same model, initial parameter snapshot and buffers", "exact same train/validation IDs and preprocessing", "paired complete epoch permutations and batch boundaries", "paired actual stochastic RNG streams including dropout", "same update count and samples exposed", "same dtype/device/threads/evaluation schedule", "documented regularization, clipping and scheduler policy"],
+    "lrPolicy": "Main used same numeric initial0.01 LR and common update-based StepLR; no per-optimizer tuning or quality ranking claim. Student equal-budget search is an alternative contract, not a requirement to rerun Main.",
+    "data": "Reuse original Fashion-MNIST official training gzip; indices=seed2021 torch.randperm60000; indices[:5000] val candidates and indices[5000:] train candidates; selected val=indices[:73],train=indices[5000:5257]. No official test scoring.",
+    "outputs": ["run configuration and identity evidence", "initial plus aligned intermediate and final train-evalCE/valCE/accuracy points", "lrUsed versus nextLR", "unfavorable/nonmonotonic points retained", "limited conclusion, no universal optimizer winner"],
+    "mainObserved": "MLP784-32-10/ReLU/Dropout.1,25450parameters,init2041/shuffle2042/dropout2043,B64+tail1,12epochs60updates each; all13 curve points published as table."
+  },
+  "task2": {
+    "scheduler": "Explicit unit and after-optimizer ordering. Main step_size20/gamma.5 per update common to all3; no extra unscheduled run required.",
+    "stability": ["large finite logits stable CE and gradient versus naive nonfinite path", "sample-weighted or valid-token-weighted denominator; finite loss/gradient/state/parameter checks", "synthetic instability separate from observed real training; no suppressing NaN"],
+    "checkpointState": ["model parameters/buffers and config", "optimizer per-parameter state/step and param_groups/currentLR with stable parameter order", "scheduler state/config/unit", "torch CPU RNG and explicit shuffle Generator", "all other actually consumed RNGs only if used", "current permutation,cursor,epoch,global_step,tail policy", "data/config identity and environment", "conditional AMP scaler, gradient accumulation, EMA, early stopping and metric accumulators when enabled"],
+    "resumeBoundary": "After completed update+scheduler+zero_grad, before next batch/stochastic forward; no pending gradients in actual Main run.",
+    "diskProof": "Actual torch.save disk, independent process weights_only=True load, no parent model objects/BytesIO substitution. Main all3 savedstep23/epoch4/cursor192 ->22updates through45, crossed epoch and40 scheduler boundary; batch/loss/gradient/LR and complete state exactly equal, max parameter difference0.",
+    "counterexampleCaveat": "Main Adam omissions of whole optimizer, scheduler, CPU RNG, cursor each diverged. Whole optimizer omission also loses currentLR, not an isolated Adam-moments effect.",
+    "notClaimed": ["Python/NumPy RNG restoration: unused", "CUDA/MPS execution", "AMP/multiworker/distributed resume", "cross-version/device bitwise equivalence", "arbitrary horizon continuation", "persisted reusable checkpoint: temporary files deleted"]
+  },
+  "task3": {
+    "requiredRows": ["MLP and generalization", "CNN classification", "CV transfer", "CV detection", "CV segmentation and style", "RNN/GRU/LSTM", "Attention/seq2seq", "Transformer", "BERT", "performance"],
+    "rowFields": ["task", "input/output axes", "loss unit and denominator", "evaluation and leakage boundary", "actual evidence layer", "failure case", "resource limit", "personal remaining skill"],
+    "videoIndependent": "Course-summary video learning remains unreviewed; engineering map or metadata checks never set watched/learned complete.",
+    "reusePolicy": "Preserve P1-P10 real Fashion/Ames/banana/VOC/TimeMachine/translation/Transformer/BERT and pretrained transfer records; do not retrain, edit accepted evidence, or assume P9/P10 persisted checkpoints.",
+    "competitionBoundary": "Cowboy authenticated files/scorer/image_id-vs-id/xyxy unresolved; no winner methods or competition completion invented."
+  },
+  "task4": {
+    "requiredAreas": ["independent training loop and restoration", "token/target shift/padding/causal masks", "Transformer axes and full-prefix/incremental distinction", "honest performance measurement", "data split/dedup/train-only vocabulary/license/evaluation"],
+    "readiness": "Personal evidence plus independent/needs_hint/not_done/resource_blocked status and concrete next action; editorial checklist, not official CS336 prerequisite or paper-reading route."
+  },
+  "mainFinalChecksRequested": ["exact four task strings retained in lab document", "JSON/source links and public internal lab routes", "SVG parsing,title/desc,relative asset reference,light/dark readability", "mobile formulas and scrollable data tables at390px", "actual browser zh/guide tabs and source footers", "compare published rounded result table to existing Main JSON without rerunning numerics", "one final build after all workers"],
+  "publication": "No complete solution scripts, datasets, trained/pretrained weights, cookies or signed media; sources only small txt/json; source worker retains not-run attribution."
+}

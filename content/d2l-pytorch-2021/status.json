@@ -2,7 +2,7 @@
   "courseId": "d2l-pytorch-2021",
   "plannedAt": "2026-11-13",
   "updatedAt": "2026-11-14",
-  "phase": "P10_real_Transformer_BERT_CPU_browser_build_verified_classroom_blocked",
+  "phase": "P11_full_course_guides_and_lab_documents_verified_classroom_competition_GPU_gaps_preserved",
   "plan": "sources/PLAN.txt",
   "nextPrompt": "sources/NEXT-PROMPT.txt",
   "scheduleInventory": "sources/schedule-inventory.json",
@@ -15,7 +15,7 @@
     "math": "数学遗忘，随课用符号、形状和小例补回；不增加独立前置课程清单。",
     "aiRole": "助教解释与排错，不代写完整实践答案。",
     "parallelAgentsRequired": true,
-    "currentScope": "P1–P10已写LEC1–70教材导读与前十一实验；课堂缺口与竞赛独立保留。P11仅余LEC71–73及optimization-capstone；73讲12实验48任务不变。",
+    "currentScope": "P1–P11已写全部73讲教材/官方来源导读与十二实验双文档，73讲12实验48任务不变。课堂整理、个人学习/作业、历史竞赛和GPU扩展独立记账；不等于全书129小节全部审读。",
     "delivery": "每批完成后主agent汇总验收、提交推送到现有GitHub仓库，再给下一批提示词；只改content，不夹带无关改动。用户新指示覆盖旧交接不提交不推送。"
   },
   "versions": {
@@ -25,11 +25,11 @@
     "framework": "PyTorch",
     "snapshotDate": "2026-11-13",
     "numbering": "73个唯一BV按课表首现顺序分组；不是官方视频标题编号",
-    "practiceRuntime": "P10实测Python3.11.8/torch2.5.1、Apple M2 Max/macOS26.3.1、CPU单线程float32；Bun1.4.4/hyparquet1.33.0读已核Parquet，pyarrow未安装。真实Transformer320步、WikiText小预训练80步、SNLI两迁移对照各16步，验证仍弱；无GPU/MPS运算或性能基准，不承诺旧Notebook兼容。"
+    "practiceRuntime": "P11复用Python3.11.8/torch2.5.1、Apple M2 Max/macOS26.3.1、CPU单线程float32；新Fashion小MLP三优化器各60步，同初值/批次/LR/调度，实际磁盘新进程续22步完全一致。旧真实训练/预训练迁移/CPU微基准保留；无GPU/MPS计算或旧Notebook兼容承诺。"
   },
   "artifacts": {
     "catalogRegistration": "complete",
-    "publicResources": "full_timetable_plus_198_verified_parts_and_P1_to_P10_bounded_evidence",
+    "publicResources": "full_timetable_plus_203_verified_parts_and_P1_to_P11_bounded_evidence",
     "lectureEntries": 73,
     "officialTeachingRows": 103,
     "breakRows": 11,
@@ -37,28 +37,28 @@
     "practiceTasks": 48,
     "textbookChapters": 16,
     "textbookSections": 129,
-    "lectureDocumentsPublished": 70,
-    "labDocumentsPublished": 22,
+    "lectureDocumentsPublished": 73,
+    "labDocumentsPublished": 24,
     "bodyPlaceholdersCreated": 0,
-    "lectureNotesPublished": 70,
+    "lectureNotesPublished": 73,
     "lectureDraftsPublished": 0,
     "lectureMaterialsPublished": 0,
-    "selfDrawnSvgs": 74,
-    "videoBvidsAcquired": 70,
-    "videoPartsAcquired": 198,
+    "selfDrawnSvgs": 78,
+    "videoBvidsAcquired": 73,
+    "videoPartsAcquired": 203,
     "observedRuntimePlots": 1,
-    "totalPublishedSvgs": 75
+    "totalPublishedSvgs": 79
   },
   "sourceCoverage": {
     "schedule": "完整官方课表HTML已保存并逐行登记，含重复链接/分P参数/休课。",
-    "book": "P1–P9已读范围保留；P10新增10.5补充/10.6/10.7、14.8–14.10、15.6/15.4/15.7；全文或精确PyTorch节选见worker源索引。固定当前中文第二版不是2021全书快照；不冒称整个词向量/情感分析章视频覆盖，不新增必读论文。",
+    "book": "P1–P10已读范围保留；P11新增固定优化11.1–11.11全文/代码，课表整章链接不证明视频逐节讲完。LEC71/73为公开来源与自主复盘，精确复用阅读见源索引。当前中文第二版不是2021全书快照，不声明全书129小节全部读完，不新增必读论文。",
     "announcements": "课程公告已读取并留存，用于核对三次实际课程竞赛。",
-    "license": "教材Apache-2.0/setup MIT-0独立；P10视频copyright1/no_reprint1不授权全文转录。P9署名英法条件复用；WikiText publisher卡metadata3.0/GFDL与正文4.0冲突保留，SNLI卡CC BY-SA4.0；教材权重/同包词表无独立许可/config，不推断开放再分发权，原文/数据/权重不发布。",
-    "videoMetadata": "LEC1–70共70BV/198P；P10新增4BV/16P=10697秒，页头按全P总时长，课表日期与上传日期分开。LEC69课表p2/p3标签与当前P2结构代码/P3数据代码/P4训练代码错位，主题全部保留。LEC71–73未取得。",
-    "captions": "P1–P9的182P成功空字幕历史保留，不重刷；P10新16P各一次，LEC67/68的7P成功空列表，LEC69/70的9P HTTP412访问受限、字幕有无未知。两者都不排除烧录字幕，不造课堂稿/QA/片内时间线。",
+    "license": "教材Apache-2.0/setup MIT-0独立；P11视频copyright1/no_reprint1不授权全文转录。Fashion原许可/缓存身份复用；P9署名语料及P10 WikiText许可冲突/SNLI条件/教材权重无独立许可边界保留，不发布原文、数据、权重或完整答案。",
+    "videoMetadata": "LEC1–73全部73BV/203P；P11新增3BV/5P=5710秒，71单P23:58、72全2P43:17、73全2P27:55。作者mid1567748478、2021上传；课表/上传日期独立。LEC10/43/69既有链接歧义保留，不以元数据冒充课堂审阅。",
+    "captions": "P1–P9的182P、P10的7P、P11的5P均历史一次请求成功空列表，累计194P；P10另9P HTTP412访问受限、字幕有无未知。旧接口不重刷，两类都不排除烧录字幕，不造课堂稿/QA/片内时间线。",
     "videoOrAudioReview": "lec01_approved_Bilibili_sampled_frames_at_0_45_120_210_300_390_465_seconds_only; non_author_YouTube_trial_withdrawn_as_source; no_audio_transcription_or_full_classroom_review; other_lectures_not_reviewed",
-    "slidesAndNotebooks": "课程slides/Notebook链接登记但未执行；P7另审读官方host牛仔行头Starter Kit Version1代码及历史输出用于核接口，不冒称本次运行。",
-    "courseExperiments": "P10有限组件/位置/mask/缓存/MLM归约/NSP身份/NLI标签与手算通过；Transformer复用P9固定512/64，74861参数320步，真实BytesIO模型/Adam/RNG恢复下一步一致，首句仍错译。WikiText128/32、708词表、66438参数80步；独立已下载bert.small严格加载后SNLI64/32冻结和全微调各16步，验证13/32与14/32且全微调CE更差。未测测试/GPU或全部学生变体，P1–P9历史保留。"
+    "slidesAndNotebooks": "课程slides/Notebook链接登记但未执行；P7审读官方host牛仔Starter Kit Version1用于核接口。P11两份收尾PDF提取不完整，未据此声称全文阅读或补齐课堂。",
+    "courseExperiments": "P11三讲有限纸例、float64三优化器两步和稳定CE通过；真实缓存Fashion257/73新MLP25450参数，三优化器各60更新，同初值/顺序/数值LR及StepLR。三组step23磁盘保存、新进程续22步至45，batch/loss/grad/LR及完整state一致；Adam漏optimizer(含LR)/scheduler/CPU RNG/cursor反例不同。旧证据保留，无旧模型重训、官方test/GPU或全部学生任务声明。"
   },
   "content": {
     "lectures": {
@@ -693,19 +693,31 @@
         "verification": "P10_source_finite_numeric_and_actual_browser; implementation_differences_explicit"
       },
       "lec71": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_official_source_guide_not_classroom",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p11-lec71/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts_header_total_configured",
+        "videoContent": "not_reviewed_no_winner_method_claim",
+        "verification": "P11_source_finite_AP_mechanism_actual_header_mobile_browser_and_final_build_passed"
       },
       "lec72": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_fixed_textbook_optimization_guide_not_classroom",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p11-lec72/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts_header_total_configured",
+        "videoContent": "not_reviewed_no_per_section_video_coverage_claim",
+        "verification": "P11_source_finite_numeric_actual_header_mobile_browser_and_final_build_passed"
       },
       "lec73": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_full_course_synthesis_not_classroom",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p11-lec73/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts_header_total_configured",
+        "videoContent": "not_reviewed_course_summary_video_learning_not_complete",
+        "verification": "P11_source_finite_numeric_actual_header_mobile_browser_and_final_build_passed"
       }
     },
     "labs": {
@@ -806,10 +818,15 @@
         "notExecuted": "industrial_BERT; full_corpus; official_test; GPU_MPS_timing; full_student_variants; reusable_checkpoint_persistence"
       },
       "optimization-capstone": {
-        "zh": "planned_editorial_practice_spec",
-        "guide": "planned",
+        "zh": "verified_editorial_four_task_practice_spec",
+        "guide": "verified_routes_invariants_and_real_observations_no_full_solution",
         "en": "not_planned_no_english_original",
-        "execution": "not_run"
+        "execution": "passed_finite_CPU_mechanisms_and_three_paired_Fashion_MLP_60updates_disk_cross_process_resume22updates_not_all_student_tasks",
+        "sourceManifest": "sources/p11-optimization-capstone/manifest-fragment.json",
+        "evidence": "sources/p11-shared/optimization-smoke.json",
+        "courseSummaryVideoLearning": "not_completed_no_classroom_review",
+        "checkpointRetention": "all_temporary_P11_checkpoints_deleted_P9_P10_no_persisted_selftrained_checkpoint",
+        "qualityBoundary": "same_numeric_LR_not_individually_tuned_single_small_split_no_general_ranking_no_test_GPU_or_competition_execution"
       }
     }
   },
@@ -817,7 +834,7 @@
     {
       "id": "bilibili-video-button",
       "status": "fixed_with_header_external_link_and_duration",
-      "issue": "LEC1–70官方页头/时长已配置；P10逐页核四讲全部分P，默认笔记，新tab入口不嵌播放器；移动布局与代表点击结果见p10-shared/browser-check。非全片播放或Pages部署验收。",
+      "issue": "LEC1–73官方页头/整讲时长已配置；P11新增3BV/5P逐讲核作者/年份/真实时长，默认笔记，新tab入口不嵌播放器；实际页面记录见p11-shared/browser-check。非全片播放或Pages部署验收。",
       "blocksCurrentPhase": false
     },
     {
@@ -846,8 +863,8 @@
     },
     {
       "id": "runtime-version",
-      "status": "p1_to_p10_bounded_CPU_verified_full_course_not_verified",
-      "issue": "P10机制、真实Transformer/WikiText小训练与教材权重SNLI迁移已执行，数据/配置/差结果分开记录。hyparquet实际读取，pyarrow安装失败未使用。CUDA0、MPS仅探测，无GPU/硬件基准/d2l/Jupyter/旧Notebook兼容承诺，旧批历史不回退。",
+      "status": "p1_to_p11_bounded_CPU_verified_full_course_execution_not_claimed",
+      "issue": "P11新配对MLP和三个优化器磁盘跨进程恢复通过；旧训练/迁移与CPU短微基准证据保留。CUDA0、MPS只探测，无GPU/多GPU/网络实测、d2l/Jupyter或旧Notebook兼容承诺。",
       "blocksCurrentPhase": false
     },
     {
@@ -859,7 +876,7 @@
     {
       "id": "materials-not-required-ui",
       "status": "documented_outside_content_scope",
-      "issue": "LEC1–70 materials为not_required，页面仍显示待生成；不为凑标签创建重复中文材料，不改src。",
+      "issue": "LEC1–73 materials为not_required，页面仍显示待生成；不为凑标签创建重复中文材料，不改src。",
       "blocksCurrentPhase": false
     },
     {
@@ -975,25 +992,27 @@
       "status": "finite_training_and_transfer_verified_not_full_quality",
       "issue": "Transformer固定首句错译，只有self投影KV缓存/cross重算；BytesIO续训验下一步无持久文件。WikiText高截断与固定mask，NSP验证弱；SNLI64/32有限微调不构成基准、下载权重完整训练历史未证实。测试/GPU未运行。",
       "blocksCurrentPhase": false
+    },
+    {
+      "id": "p11-classroom-and-personal-learning",
+      "status": "documents_verified_classroom_and_personal_completion_not_claimed",
+      "issue": "71–73共5P字幕一次查询均成功空列表，未审阅课堂；LEC71无获奖方案依据，LEC73视频学习仍是学生任务。全部73讲导读与12实验双文档完成，不等于课堂稿、个人作业或全书129小节审阅完成。",
+      "blocksCurrentPhase": false
+    },
+    {
+      "id": "p11-paired-training-and-checkpoint-boundary",
+      "status": "finite_CPU_disk_cross_process_verified_not_general_ranking",
+      "issue": "三优化器同数值LR/同初值顺序60步，非各自调优排名；磁盘step23→45新进程续22步通过，临时checkpoint已删除。Adam漏整个optimizer反例同时丢当前LR，不只隔离矩。P9/P10无持久自训权重历史不变；无官方test/GPU/竞赛执行。",
+      "blocksCurrentPhase": false
     }
   ],
   "nextExecution": {
     "entry": "sources/NEXT-PROMPT.txt",
-    "parallelism": "必须task多agent：A LEC71竞赛总结来源导读；B LEC72–73优化与课程总结；C optimization-capstone四任务；主agent共享索引与统一验收。",
-    "firstWork": "先读P10交接/manifest，不重做LEC1–70或前十一实验。完整保留目标检测总结、优化与课程收尾；LEC71课堂未核不能编获奖方案。复用已有数据/运行记录，不把未持久化P9/P10权重当现成checkpoint，不重训旧模型。",
-    "initialLectureIds": [
-      "lec71",
-      "lec72",
-      "lec73"
-    ],
-    "initialPracticeIds": [
-      "optimization-capstone"
-    ],
-    "remainingLectureNotes": [
-      "lec71",
-      "lec72",
-      "lec73"
-    ],
+    "parallelism": "维护有两个以上独立实质切片时继续task多agent，各自独占讲次/实验目录；主agent负责共享索引与统一验收。",
+    "firstWork": "先读P11交接/manifest，按用户指定的维护问题处理。已有73讲教材/官方来源导读和十二实验文档不重做、不重训旧模型；仅新可信证据可推进课堂、竞赛或硬件缺口。",
+    "initialLectureIds": [],
+    "initialPracticeIds": [],
+    "remainingLectureNotes": [],
     "blockedDraftIds": [
       "lec01",
       "lec02",
@@ -1064,17 +1083,27 @@
       "lec67",
       "lec68",
       "lec69",
-      "lec70"
+      "lec70",
+      "lec71",
+      "lec72",
+      "lec73"
     ],
-    "laterWaves": "P11完成剩余教材导读与第十二实验后，全课课堂稿/历史竞赛/GPU扩展仍独立记账，不用一个complete掩盖。",
+    "laterWaves": "课程导读与实验文档编排结束；课堂整理、个人学习/作业、历史竞赛认证文件/scorer和GPU扩展分别维护，不以一个complete掩盖。",
     "scopeRules": "sources/PLAN.txt",
     "beforeGeneratingVideoContent": "先读skill://technical-video-notes；逐讲核官方BV全部分P/作者年份/真实总时长，无字幕不造课堂稿。",
-    "remainingPracticeIds": [
-      "optimization-capstone"
-    ],
+    "remainingPracticeIds": [],
     "afterEachBatch": "主agent统一必要数值、真实浏览器及一次最终build，更新状态交接，提交推送现有main并给下一提示词；只改content。"
   },
-  "batchManifest": "sources/p10-manifest.json",
+  "completionLedger": {
+    "courseTextbookAndOfficialSourceGuides": "complete_73_of_73_not_all_129_book_sections",
+    "labDocumentation": "complete_12_of_12_pairs_48_tasks_retained_no_full_answers",
+    "classroomDrafts": "0_published_73_blocked_no_complete_classroom_review",
+    "personalLearningAndAssignments": "not_certified_including_course_summary_video",
+    "historicalCompetitions": "authenticated_files_scorers_and_execution_still_unresolved_per_issue",
+    "hardwareExtensions": "prior_CPU_microbenchmark_preserved_GPU_MPS_multidevice_network_not_run",
+    "futureWork": "evidence_driven_maintenance_not_new_content_batch"
+  },
+  "batchManifest": "sources/p11-manifest.json",
   "bookVersion": "sources/p1-shared/book-version.json",
   "planningVerification": {
     "metadataAndLinks": "passed_2026-11-13：73讲/103源行/12练习/48任务/16章/129小节；完整课表视频链接多重集逐项一致，所有站内路由和交接路径可解析，4份源快照哈希一致；只发布公共资料Markdown，无逐讲/实验占位正文。",
@@ -1083,11 +1112,11 @@
     "courseExperiments": "not_run_planning_only"
   },
   "verification": {
-    "metadataAndLinks": "passed P10:4BV/16P=10697s；39项来源hash；9Markdown/7SVG/115本地路由。73讲12实验48任务不变；前66讲/前九实验152文件、所有lab及非P10讲次元数据保持。",
-    "build": "passed npm run build once; tsc --noEmit + Vite5.4.21,3071modules,11.06s; sources/p10-shared/build.log",
-    "browserSmoke": "passed actual Chromium四讲默认笔记/全部官方页头/明暗图/公式/自测/页底、1440桌面390手机；双实验双标签实点、公共301链接。LEC69实点原站新tab且笔记保留。修69嵌入公式391→390、Transformer实验公式420→390；无应用pageerror，验证tab关闭；非Pages/全片播放。",
-    "courseExperiments": "passed有限CPU手算/组件/mask/position/cache/MLM/NSP/NLI；真实Transformer320步+序列化恢复、WikiText80步、独立教材权重SNLI两对照各16步。明确弱验证/错译、高截断/格式与许可局限；不是全部学生任务或硬件基准。",
-    "evidence": "sources/p10-manifest.json"
+    "metadataAndLinks": "passed P11:3BV/5P=5710s；24项已声明来源hash匹配、33个worker文件指纹；6Markdown/4SVG/142站内路由。73讲12实验48任务不变；前70讲/前十一实验167文件、全部lab及非P11讲次元数据保持；13行公开曲线匹配实测。",
+    "build": "passed npm run build once; tsc --noEmit + Vite5.4.21,3080modules,6.94s; sources/p11-shared/build.log",
+    "browserSmoke": "passed actual Chromium三讲默认笔记/全部官方页头/明暗可读图/公式/自测/页底，1440桌面390手机；实验双标签、公共306链接。LEC71实点原站新tab且笔记保留；修72图历史状态断连箭头后截图复验。无应用pageerror，验证tab关闭；非Pages或全片播放。",
+    "courseExperiments": "passed三讲纸例、三优化器两步解析与稳定CE；真实Fashion同初值/批次/LR/StepLR三小MLP各60步，三组磁盘新进程续22步精确一致及遗漏状态反例。旧训练/迁移/CPU计时证据保留；非全部学生任务、调优排名或GPU基准。",
+    "evidence": "sources/p11-manifest.json"
   },
   "batchManifests": [
     "sources/p1-manifest.json",
@@ -1099,6 +1128,7 @@
     "sources/p7-manifest.json",
     "sources/p8-manifest.json",
     "sources/p9-manifest.json",
-    "sources/p10-manifest.json"
+    "sources/p10-manifest.json",
+    "sources/p11-manifest.json"
   ]
 }

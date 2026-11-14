@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "phase": "P11",
+  "owner": "P11Capstone",
+  "date": "2026-11-14",
+  "labId": "optimization-capstone",
+  "ownedPaths": ["labs/optimization-capstone/", "sources/p11-optimization-capstone/"],
+  "documents": ["labs/optimization-capstone/lab.zh.md", "labs/optimization-capstone/guide.zh.md"],
+  "assets": [{"path": "labs/optimization-capstone/assets/resume-state.svg", "kind": "editorial_mechanism_not_observation", "hasTitleDesc": true}],
+  "sourceFiles": ["sources/p11-optimization-capstone/source-index.json", "sources/p11-optimization-capstone/api-review.txt", "sources/p11-optimization-capstone/verification-contract.json", "sources/p11-optimization-capstone/manifest-fragment.json"],
+  "sourceIndex": "sources/p11-optimization-capstone/source-index.json",
+  "verificationContract": "sources/p11-optimization-capstone/verification-contract.json",
+  "counts": {"labDocuments": 2, "mechanismSVGs": 1, "observedSVGs": 0, "actualCurveTables": 1, "fullSolutionScripts": 0},
+  "taskIdsUnchanged": ["optimization-capstone-1", "optimization-capstone-2", "optimization-capstone-3", "optimization-capstone-4"],
+  "taskCoverage": {
+    "optimization-capstone-1": "Same-model/split/initialization/order/budget SGD,momentum,Adam comparison; explicit same-numericLR versus equal-tuning-budget distinction; actual Main13point curves with no quality ranking.",
+    "optimization-capstone-2": "Scheduler units/order, stable CE and denominator checks; complete state inventory and disk/new-process resume contract; Main all3 actual step23->45 proof integrated; omission counterexamples correctly qualified.",
+    "optimization-capstone-3": "Full MLP/CNN/CV/RNN/Attention/Transformer/BERT task/shape/loss/evaluation/resource map; old evidence preserved without retraining; course-summary video learning independently remains unreviewed.",
+    "optimization-capstone-4": "Personal CS336 readiness evidence for training-loop/token-mask/Transformer/performance/data-evaluation; no new prerequisite course or required paper route."
+  },
+  "bookVersion": "Current Chinese second edition fixed e6b18ccea71451a55fcd861d7b96fddf2587b09a; not2021 full-book snapshot",
+  "workerNumericalExecution": "not_run",
+  "workerBuildTestsLintFormatter": "not_run",
+  "workerBrowser": "not_run",
+  "mainNumericalEvidence": "sources/p11-shared/optimization-smoke.json",
+  "mainNumericalIntegration": {
+    "status": "actual_main_output_read_and_published_separately_from_worker_execution",
+    "model": "new Fashion MLP784-32-10,25450parameters,dropout.1",
+    "data": "257train/73val from preserved seed2021 global permutation; official test unread",
+    "comparison": "SGD/Momentum/Adam same init/order/60updates,initialLR.01,shared StepLR20updates*.5; not tuned ranking",
+    "finalValidationCE": {"SGD": 1.895593285560608, "Momentum": 1.264548659324646, "Adam": 0.8031877279281616},
+    "finalValidationCorrectOf73": {"SGD": 21, "Momentum": 43, "Adam": 49},
+    "resume": "all3 actual disk and independent process at23/epoch4/cursor192;22updates to45,exact fields,parameter maxdiff0; crosses epoch and scheduler40",
+    "counterexampleBoundary": "Omitting entire Adam optimizer also omits currentLR, not a moments-only experiment",
+    "checkpointRetention": "Temporary files deleted; neither oldP9/P10 nor newP11 offers a retained reusable self-trained checkpoint",
+    "notExecuted": ["per-optimizer LR tuning", "multiple-seed ranking", "official test score", "GPU/MPS/performance", "full student task variants", "classroom video learning", "competition execution"]
+  },
+  "evidenceLayers": ["synthetic mechanisms", "real finite small training", "named pretrained transfer", "actually measured CPU hardware only"],
+  "preservedGaps": ["LEC71 classroom and winner methods unreviewed", "course-summary video learning unreviewed", "cowboy authentication/actual files/scorer/image_id-vs-id/xyxy unresolved", "no implied GPU or distributed execution", "no full student task completion claim"],
+  "publicationPolicy": "No full solution code, scripts, raw datasets, weights, signed media or cookies; no source .md; no accepted lecture/lab files edited; xv6 commands explicitly inapplicable.",
+  "pendingMainVerification": ["content/source consistency", "actual browser zh/guide light/dark/mobile", "one final build and shared indices", "commit/push by Main only"]
+}

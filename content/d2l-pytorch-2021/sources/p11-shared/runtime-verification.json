@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-14",
+  "environment": {
+    "python": "3.11.8",
+    "torch": "2.5.1",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "threads": 1,
+    "device": "cpu",
+    "dtype": "float32",
+    "CUDAdeviceCount": 0,
+    "MPSavailableProbeOnly": true
+  },
+  "evidence": "sources/p11-shared/optimization-smoke.json",
+  "passed": [
+    "float64 two-step SGD/momentum/Adam against analytic recurrence",
+    "stable CE with large logits, finite gradients; naive exp nonfinite synthetic counterexample",
+    "real cached Fashion257/73 new MLP, three paired runs60updates each, same init and batches, fixed LR schedule",
+    "actual temporary disk checkpoints for all3optimizers atstep23, independent child processes22updates through45, exact batches/loss/gradients/LR/fullstate match",
+    "Adam omission counterexamples: optimizer including current LR; scheduler; CPU RNG; sampler cursor"
+  ],
+  "notExecuted": [
+    "GPU/MPS computation or performance",
+    "old model retraining",
+    "full dataset tuning or test score",
+    "all student tasks",
+    "classroom video learning",
+    "historical competition authenticated access/scoring"
+  ],
+  "checkpointRetention": "TemporaryDirectory removed all checkpoint/result files after actual disk cross-process proof; no reusable model or full answer script published",
+  "notesNumericalContract": "passed all three lecture finite paper contracts; sources/p11-shared/notes-smoke.json; original worker contracts retain not-executed-by-worker history"
+}

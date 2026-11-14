@@ -1,0 +1,12 @@
+{
+  "lectureId":"lec73",
+  "executedByWorker":false,
+  "executionStatus":"not_run_by_worker; requested_main_acceptance",
+  "checks":[
+    {"id":"mlp-shape-parameter-ledger","input":{"batch":2,"inputWidth":4,"hiddenWidth":3,"classes":2,"biases":true},"expected":{"hiddenShape":[2,3],"logitsShape":[2,2],"parameterCount":23}},
+    {"id":"attention-resource-ledger","input":{"batch":2,"heads":4,"length":128,"headWidth":8,"bytesPerElement":4},"expected":{"scoreShape":[2,4,128,128],"scoreElements":131072,"oneScoreTensorBytes":524288,"doubleLengthScoreBytes":2097152},"assertions":["Only one explicit score tensor, not full peak training memory","Doubling length quadruples this term; no measured throughput claim"]},
+    {"id":"token-loss-denominator","input":{"nllSums":[4,6],"validTokens":[2,3]},"expected":{"globalMeanNll":2,"perplexityExpression":"exp(2)"},"assertions":["Aggregate total valid-token NLL and count before exponentiation","PAD excluded consistently from loss and metric"]}
+  ],
+  "editorialAssertions":["MLP,CNN,CV,RNN,Attention,Transformer,BERT all retain task/shape/loss/evaluation/resource tradeoffs","Course-summary video is not watched or content-verified","CS336 list is an editorial readiness checklist, not 2021 lecture claims or new required papers","Historical mechanism, real small training, pretrained transfer and hardware measurement evidence remain separate","No reusable persisted P9/P10 self-trained checkpoints are claimed"],
+  "mainBrowserChecks":["Default notes and original-site new tab","Full2P durations lec72 43:17 and lec73 27:55","390px and desktop SVG/formulas/tables/details/footer","Draft and materials absent honestly"]
+}

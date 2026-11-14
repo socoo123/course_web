@@ -1,0 +1,43 @@
+{
+  "lectureId": "lec71",
+  "workerStatus": "not_executed",
+  "ownerOfExecution": "main agent",
+  "scope": "Finite synthetic geometry/ranking only; no data acquisition, training, pycocotools install or original competition scorer required.",
+  "case": {
+    "name": "one_class_two_GT_three_ranked_predictions",
+    "coordinateConvention": "continuous pixel xyxy, area=(x2-x1)*(y2-y1), no +1",
+    "imageId": "synthetic-only",
+    "classId": 87,
+    "groundTruth": [
+      {"id": "A", "bbox": [0, 0, 10, 10]},
+      {"id": "B", "bbox": [20, 0, 30, 10]}
+    ],
+    "predictions": [
+      {"id": "p1", "score": 0.9, "bbox": [0, 0, 10, 10]},
+      {"id": "p2", "score": 0.8, "bbox": [0, 0, 10, 10]},
+      {"id": "p3", "score": 0.7, "bbox": [22, 0, 32, 10]}
+    ],
+    "assumptions": ["same image and category", "no crowd, ignored GT or ignored detection", "all-area setting", "maxDets at least3", "greedy score-order matching to unused GT per IoU threshold", "101 recall samples 0 through1 inclusive", "rightward maximum precision envelope", "unattainable recall precision0", "no score ties"],
+    "paperExpectations": {
+      "p3_B_intersection": 80,
+      "p3_B_union": 120,
+      "p3_B_iou": "2/3",
+      "iouThreshold0.50_labels": ["TP", "FP", "TP"],
+      "iouThreshold0.50_cumulativeTP": [1, 1, 2],
+      "iouThreshold0.50_cumulativeFP": [0, 1, 1],
+      "iouThreshold0.50_precision": ["1", "1/2", "2/3"],
+      "iouThreshold0.50_recall": ["1/2", "1/2", "1"],
+      "AP50_101point": "253/303",
+      "iouThreshold0.75_labels": ["TP", "FP", "FP"],
+      "AP75_101point": "51/101",
+      "tenThresholds": [0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95],
+      "thresholdsMatchingB": 4,
+      "tenThresholdSingleClassMean": "193/303"
+    },
+    "assertionTolerance": 1e-10,
+    "negativeChecks": ["Duplicate p2 cannot match A twice", "No averaging per-image AP", "AP50 differs from one fixed operating-point precision", "Result is not actual competition AP"]
+  },
+  "pageChecksRequested": ["default notes and official header BV with23:58", "single P1 present", "SVG XML title/desc and light/dark contrast", "390px mobile formulas and hash table", "all LEC40–50 and lab links", "self-test details and source footer", "no draft/materials placeholders"],
+  "notExecutedByWorker": ["numerical calculations in runtime", "tests", "build", "lint", "formatter", "browser checks", "competition acquisition/scoring/training", "commit"],
+  "noExternalEffect": "Read-only evidence acquisition and writing assigned content directories only. Main records results separately; do not relabel this worker contract as executed."
+}

@@ -1,0 +1,60 @@
+P11 optimization-capstone API review, 2026-11-14
+Classification: editorial review notes with short quotations; NOT a full page snapshot, NOT API execution, NOT a translation of the documentation. All listed URLs were actually read through the static reader. PyTorch / its contributors retain their documentation rights; links and named sections are preserved. No solution script retained.
+
+1. https://docs.pytorch.org/docs/2.5/optim.html
+Read scope: How to use an optimizer (construction, parameter groups, step); Optimizer deterministic parameter ordering warning; algorithms summary; How to adjust learning rate (through scheduler table). Reader returned first300 lines of563; later SWA/EMA content not reviewed or used.
+Short quote: "Learning rate scheduling should be applied after optimizer’s update".
+Applied: record lrUsed versus nextLR, identify step/epoch unit, keep parameter group order and configuration stable. Shared scheduling across optimizer runs is a control variable, not evidence that scheduling itself improves quality.
+
+2. https://docs.pytorch.org/docs/2.5/generated/torch.optim.SGD.html
+Read scope: class signature, algorithm pseudocode, parameter descriptions, momentum convention note, load_state_dict description. Reader first300 lines of447; later optimizer state_dict body not read here.
+Short quote: "the initial value of the momentum buffer is set to the gradient value at the first step".
+Applied: comparison fixes dampening0/nesterovFalse/weight_decay0; momentum recurrence uses LR outside buffer. No general optimizer implementation published.
+
+3. https://docs.pytorch.org/docs/2.5/generated/torch.optim.Adam.html
+Read scope: signature, pseudocode, betas/eps/weight_decay, implementation flags, state_dict entries and parameter-ID matching note. Reader first300 lines of424; later example body not needed.
+Short quote: "match state WITHOUT additional verification".
+Applied: deterministic parameter ordering, moments/step plus param_groups are checkpoint state; ordinary Adam is not AdamW. An omission of entire optimizer state may also omit current LR, so it is not a moments-only causal experiment.
+
+4. https://docs.pytorch.org/docs/2.5/generated/torch.optim.Optimizer.load_state_dict.html
+Read scope: complete method description and accepted state_dict argument.
+Applied: optimizer loading restores a state dictionary; weight loading alone does not restore optimizer history.
+
+5. https://docs.pytorch.org/docs/2.5/generated/torch.optim.lr_scheduler.StepLR.html
+Read scope: signature, epoch-oriented example, get_last_lr, state_dict/load_state_dict and step descriptions.
+Short quote: "every variable in self.__dict__ which is not the optimizer".
+Applied: optimizer and scheduler states are separate; explicit update-based call unit in our own contract, no claim that default epoch example uses updates.
+
+6. https://docs.pytorch.org/docs/2.5/notes/randomness.html
+Read scope: reproducibility limits, torch/Python/NumPy RNGs (including independent generators), CUDA benchmarking/determinism, uninitialized memory, DataLoader seeding example.
+Short quote: "Completely reproducible results are not guaranteed across PyTorch releases".
+Applied: actual used RNG sources must be listed; source seed is not current RNG state. Saving current permutation/cursor for mid-epoch resume is an editorial state-machine extension, not a quoted DataLoader guarantee. No CUDA/MPS determinism test performed by worker.
+
+7. Requested https://pytorch.org/tutorials/beginner/saving_loading_models.html
+Resolved https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html
+Current tutorial, NOT version-pinned2.5. Author Matthew Inkawhich; displayed last updated Jun26,2025. Read first300 lines of475: What is a state_dict, inference state_dict saving/loading, reference-versus-copy note, full-module pickle caveat, general training checkpoint model/optimizer/epoch and train/eval guidance; multiple-model example only as context. Later warmstarting/cross-device sections not reviewed.
+Short quote: "best_model_state = model.state_dict() returns a reference to the state and not its copy".
+Applied: independent initial snapshot; tensor/basic-container checkpoint loaded explicitly weights_only=True from trusted local file. Model, optimizer and scheduler construction precedes final restoration of runtime RNG. This review does not assert cross-version pickle safety or execute the tutorial.
+
+8. https://docs.pytorch.org/docs/2.5/generated/torch.nn.CrossEntropyLoss.html
+Read scope: class parameters, unnormalized logits requirement, integer/probability targets, reduction/ignore_index formula, shape and examples.
+Short quote: "The input is expected to contain the unnormalized logits".
+Applied: integer-label image classification uses sample denominator; token tasks use valid-token denominator; no softmax before CE. No numerical run by worker.
+
+9. https://docs.pytorch.org/docs/2.5/generated/torch.logsumexp.html
+Read scope: signature, numerical-stabilization description, keepdim/axis behavior and example.
+Short quote: "The computation is numerically stabilized".
+Applied: max-shift derivation and finite-logit contrast; synthetic overflow evidence must remain separate from real training behavior.
+
+Local provenance reviewed:
+- sources/practice-plan.json lines327-355 and1272-1355: exact four tasks and editorial practice provenance, unchanged.
+- sources/p1-shared/book-version.json: fixed e6b18ccea71451a55fcd861d7b96fddf2587b09a current Chinese second edition; not a2021 whole-book snapshot. Optimization chapter listed as practice range; worker did not newly read its whole source.
+- sources/p2-linear-training/fashion-mnist-README.txt lines1-95: original description, official file identities/MD5, class labels and download guidance. No need to reacquire old dataset.
+- sources/p2-linear-training/fashion-mnist-LICENSE.txt whole7 lines: MIT, Copyright2017 Zalando SE. Not extended to unrelated assets.
+- sources/p2-shared/dataset-acquisition.json whole: actual official GitHub HTTPS acquisition, IDX headers and digests; historical evidence, not a new download by worker.
+- sources/p4-shared/practice-smoke.json lines3-59:257/73 split contract, stored IDs digests, classes, test exclusion and old CNN config. Its old short 'first5000' description means positions in seed2021 global permutation, not original IDX ID ranges, as clarified by Main for P11.
+- sources/p3-shared/runtime-verification.json whole; p5-shared/runtime-verification.json whole; p7-shared/runtime-verification.json whole: preserve existing finite training/mechanism/hardware boundaries.
+- status.json lab states730-813; sources/p10-manifest.json selected labs/runtime/exclusions; sources/NEXT-PROMPT.txt whole: old real RNN/translation/Transformer/BERT outcomes and no reusable P9/P10 checkpoint. Not all individual predictions or binary assets reread.
+- sources/p11-shared/optimization-smoke.json: environment/data identities/contract; all curves and first/last step records via jq; all resume/counterexample/mechanism fields. Worker did not rerun numerical checks, recompute curve values or inspect all12074 JSON lines. Main clarified seed2021 randperm60000: val=indices[:73], train=indices[5000:5257]; candidates first5000/rest55000 of permutation.
+
+Worker execution boundary: reading/provenance extraction and authoring only. No training/numerical tests/build/lint/formatter/browser/commit/push. Main supplied actual P11 evidence after initial not-run authoring; public guide distinguishes that attribution.

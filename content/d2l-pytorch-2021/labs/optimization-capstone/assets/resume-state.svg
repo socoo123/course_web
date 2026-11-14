@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 740" role="img" aria-labelledby="title desc">
+  <title id="title">训练恢复的完整状态切面</title>
+  <desc id="desc">在更新、调度与清梯度之后保存模型优化器调度器、随机数状态和采样进度到磁盘。新进程恢复之后，对照下一批、学习率、损失、梯度和参数。此图是机制合同而非实测数据。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/></marker>
+  </defs>
+  <rect width="540" height="740" rx="18" fill="#f8fafc"/>
+  <g font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#0f172a" text-anchor="middle">
+    <text x="270" y="40" font-size="24" font-weight="700">恢复的是训练状态，不只是权重</text>
+    <rect x="30" y="65" width="480" height="72" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="270" y="96" font-size="21">更新 → 约定调度 → 清梯度</text>
+    <text x="270" y="123" font-size="18">保存边界：下一批与随机前向之前</text>
+    <path d="M270 142 V173" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="30" y="185" width="480" height="230" rx="12" fill="#ffffff" stroke="#475569" stroke-width="2"/>
+    <text x="270" y="221" font-size="23" font-weight="700">同一时刻的完整状态包</text>
+    <text x="270" y="264" font-size="21">模型参数 / buffer / optimizer</text>
+    <text x="270" y="301" font-size="21">scheduler / 当前LR / 实际RNG</text>
+    <text x="270" y="338" font-size="21">排列 / 游标 / epoch / global_step</text>
+    <text x="270" y="381" font-size="18">数据身份、配置与实际启用的额外状态</text>
+    <path d="M270 421 V452" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="30" y="465" width="480" height="74" rx="12" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+    <text x="270" y="495" font-size="22">写入磁盘 → 新进程重建与装载</text>
+    <text x="270" y="523" font-size="18">初始化之后恢复RNG；不重做已完成的step</text>
+    <path d="M270 545 V576" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="30" y="590" width="480" height="100" rx="12" fill="#fef3c7" stroke="#a16207" stroke-width="2"/>
+    <text x="270" y="622" font-size="22">与不中断路径比较</text>
+    <text x="270" y="652" font-size="20">下一批 / LR / loss / 梯度 / 参数</text>
+    <text x="270" y="679" font-size="18">继续跨过换轮和调度边界</text>
+    <text x="270" y="722" font-size="17">自主机制示意 · 不是运行观测或课堂截图</text>
+  </g>
+</svg>

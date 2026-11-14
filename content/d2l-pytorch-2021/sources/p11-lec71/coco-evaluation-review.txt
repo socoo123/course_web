@@ -1,0 +1,34 @@
+Reviewed: 2026-11-14
+Source: https://raw.githubusercontent.com/cocodataset/cocoapi/master/PythonAPI/pycocotools/cocoeval.py
+Discovery: https://github.com/cocodataset/cocoapi/tree/master/PythonAPI/pycocotools
+Authorship in source: Piotr Dollar and Tsung-Yi Lin, 2015; Microsoft COCO Toolbox version 2.0; Simplified BSD License reference in header.
+Read scope: complete 539-line source through reader output and continuation. Current upstream master, not a pinned historical competition scorer. Only short exact excerpts and editorial observations retained, no code executed.
+
+Exact header excerpts:
+    #  iouThrs    - [.5:.05:.95] T=10 IoU thresholds for evaluation
+    #  recThrs    - [0:.01:1] R=101 recall thresholds for evaluation
+    #  maxDets    - [1 10 100] M=3 thresholds on max detections per image
+    # Note: precision and recall==-1 for settings with no gt objects.
+
+Exact evaluateImg excerpt:
+                        # if this gt already matched, and not a crowd, continue
+                        if gtm[tind,gind]>0 and not iscrowd[gind]:
+                            continue
+
+Exact accumulate excerpts:
+                    inds = np.argsort(-dtScores, kind='mergesort')
+                    npig = np.count_nonzero(gtIg==0 )
+                    if npig == 0:
+                        continue
+                        rc = tp / npig
+                        pr = tp / (fp+tp+np.spacing(1))
+                        for i in range(nd-1, 0, -1):
+                            if pr[i] > pr[i-1]:
+                                pr[i-1] = pr[i]
+                        inds = np.searchsorted(rc, p.recThrs, side='left')
+
+Editorial reading notes:
+- evaluateImg matches independently for each image/category and IoU threshold, in descending score order, with special crowd/ignore/area treatment. Accumulate orders detections across images per class; it does not average per-image AP.
+- Precision is enveloped from right to left, then sampled on 101 recall points. Missing recall levels remain zero; absent-GT settings stay -1 and summarize excludes them.
+- Default detection summary uses all-area and maxDets100; parameters are configurable. None of these defaults establish CodaLab33573's deployed scorer version/settings or submission coordinate adapter.
+- Local pedagogical example intentionally has one class, two ordinary noncrowd GT boxes, three predictions, no ignored boxes, no ties, and no truncation by max detections. Its rational expectations are paper deductions, pending main-agent finite validation, not a competition score or pycocotools execution.

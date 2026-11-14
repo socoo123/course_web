@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "batch": "P11",
+  "courseId": "d2l-pytorch-2021",
+  "date": "2026-11-14",
+  "scope": "LEC71–73 and optimization-capstone only; acceptedLEC1–70 and first11labs unchanged",
+  "parallelOwners": {
+    "P11Lec71": [
+      "lec71"
+    ],
+    "P11Lec72to73": [
+      "lec72",
+      "lec73"
+    ],
+    "P11Capstone": [
+      "optimization-capstone"
+    ]
+  },
+  "mainResponsibilities": [
+    "shared indices and honest completion ledger",
+    "finite numerical and paired real small training plus disk cross-process recovery",
+    "actual browser and one final build",
+    "requested commit push main and maintenance handoff"
+  ],
+  "bookVersion": "sources/p1-shared/book-version.json",
+  "newBookReadScope": [
+    "11.1–11.11 full fixed original including implementations; actual reading details in p11-lec72/source-index"
+  ],
+  "bookBoundary": "Current Chinese second edition not2021 complete book; entire optimization reading not per-section video coverage; full73course guides not all129booksections read",
+  "lectures": [
+    {
+      "lecture": "lec71",
+      "bvid": "BV13b4y1m7y8",
+      "parts": 1,
+      "seconds": 1438,
+      "duration": "23:58",
+      "ownerMid": 1567748478,
+      "year": 2021,
+      "captionEmptyCount": 1,
+      "sourceManifest": "sources/p11-lec71/manifest-fragment.json",
+      "content": "editorial_official_source_guide",
+      "classroomReviewed": false
+    },
+    {
+      "lecture": "lec72",
+      "bvid": "BV1bP4y1p7Gq",
+      "parts": 2,
+      "seconds": 2597,
+      "duration": "43:17",
+      "ownerMid": 1567748478,
+      "year": 2021,
+      "captionEmptyCount": 2,
+      "sourceManifest": "sources/p11-lec72/manifest-fragment.json",
+      "content": "fixed_textbook_guide",
+      "classroomReviewed": false
+    },
+    {
+      "lecture": "lec73",
+      "bvid": "BV1AL4y1Y7gu",
+      "parts": 2,
+      "seconds": 1675,
+      "duration": "27:55",
+      "ownerMid": 1567748478,
+      "year": 2021,
+      "captionEmptyCount": 2,
+      "sourceManifest": "sources/p11-lec73/manifest-fragment.json",
+      "content": "editorial_full_course_synthesis",
+      "classroomReviewed": false
+    }
+  ],
+  "labs": [
+    {
+      "id": "optimization-capstone",
+      "sourceManifest": "sources/p11-optimization-capstone/manifest-fragment.json",
+      "tasks": [
+        "optimization-capstone-1",
+        "optimization-capstone-2",
+        "optimization-capstone-3",
+        "optimization-capstone-4"
+      ],
+      "fullSolutionsPublished": false,
+      "personalTasksCompleted": false,
+      "courseSummaryVideoLearning": "not_completed_no_media_review"
+    }
+  ],
+  "counts": {
+    "newNotes": 3,
+    "newLabDocuments": 2,
+    "newMechanismSVGs": 4,
+    "BVs": 3,
+    "parts": 5,
+    "seconds": 5710,
+    "emptySubtitleParts": 5,
+    "restrictedSubtitleParts": 0
+  },
+  "cumulativeCounts": {
+    "lectureNotes": 73,
+    "classroomDrafts": 0,
+    "labDocuments": 24,
+    "mechanismSVGs": 78,
+    "observedPlots": 1,
+    "BVs": 73,
+    "parts": 203,
+    "publicVideoLinks": 306,
+    "emptySubtitleParts": 194,
+    "restrictedUnknownParts": 9,
+    "lectureEntries": 73,
+    "labs": 12,
+    "tasks": 48
+  },
+  "runtimeBoundary": {
+    "evidence": "sources/p11-shared/optimization-smoke.json",
+    "newModel": "MLP784-32-10 ReLU Dropout.1 Xavier zero bias25450parameters",
+    "data": "Existing official Fashion traininggzip rehashed; seed2021 global permutation; valindices[:73] within first5000candidate,trainindices[5000:5257] within remaining55000; test unread",
+    "pairedConditions": {
+      "model": "784->32 ReLU Dropout(.1)->10; Xavier/zero bias",
+      "parameters": 25450,
+      "initSeed": 2041,
+      "shuffleSeed": 2042,
+      "dropoutSeed": 2043,
+      "epochs": 12,
+      "updates": 60,
+      "batch": 64,
+      "tailBatch": 1,
+      "lrAll": 0.01,
+      "learningRatePolicy": "same numeric initial LR for mechanistic paired comparison; no per-optimizer tuning, not optimal-quality ranking",
+      "scheduler": "StepLR every completed update, step_size20 gamma.5, optimizer.step before scheduler.step",
+      "clip": null,
+      "weightDecay": 0,
+      "randomSources": "torch CPU Dropout plus explicit shuffle Generator only; no Python/NumPy RNG, no workers/augmentation/AMP",
+      "checkpointBoundary": "after update+scheduler+zero_grad; no pending gradients"
+    },
+    "final": {
+      "SGD": {
+        "step": 60,
+        "trainCE": 1.7753620147705078,
+        "valCE": 1.895593285560608,
+        "valCorrect": 21,
+        "valN": 73
+      },
+      "Momentum": {
+        "step": 60,
+        "trainCE": 1.0700957775115967,
+        "valCE": 1.264548659324646,
+        "valCorrect": 43,
+        "valN": 73
+      },
+      "Adam": {
+        "step": 60,
+        "trainCE": 0.5977733731269836,
+        "valCE": 0.8031877279281616,
+        "valCorrect": 49,
+        "valN": 73
+      }
+    },
+    "resume": "All3optimizers actual temp disk step23 epoch4 cursor192 -> independent subprocess22updates through45; all batches/loss/gradients/LR and model/optimizer/scheduler/CPU+shuffleRNG/permutation/cursor/progress exactly equal; crosses epoch andstep40 scheduler boundary",
+    "counterexamples": {
+      "optimizer": {
+        "maxParameterDifferenceAt45": 0.16172285377979279,
+        "firstBatchSame": true,
+        "lrSequenceSame": false,
+        "boundary": "counterexample starts from the same local step23 checkpoint; not a new model-quality experiment"
+      },
+      "scheduler": {
+        "maxParameterDifferenceAt45": 0.0077432990074157715,
+        "firstBatchSame": true,
+        "lrSequenceSame": false,
+        "boundary": "counterexample starts from the same local step23 checkpoint; not a new model-quality experiment"
+      },
+      "rng": {
+        "maxParameterDifferenceAt45": 0.04992115497589111,
+        "firstBatchSame": true,
+        "lrSequenceSame": true,
+        "boundary": "counterexample starts from the same local step23 checkpoint; not a new model-quality experiment"
+      },
+      "sampler": {
+        "maxParameterDifferenceAt45": 0.10656222701072693,
+        "firstBatchSame": false,
+        "lrSequenceSame": true,
+        "boundary": "counterexample starts from the same local step23 checkpoint; not a new model-quality experiment"
+      }
+    },
+    "checkpointRetention": "TemporaryDirectory removed all checkpoint/result files after actual disk cross-process proof; no reusable model or full answer script published",
+    "oldRuns": "P1–P10 real training/pretrained transfer/CPU microbenchmarks preserved; no old model retraining and no assumed P9/P10 persisted self-trained checkpoints",
+    "notExecuted": [
+      "per-optimizer tuning or multi-seed ranking",
+      "official test scoring",
+      "GPU/MPS computation or performance",
+      "full student implementations and all task variants",
+      "classroom video learning",
+      "historical authenticated competition execution"
+    ]
+  },
+  "verification": {
+    "source": "sources/p11-shared/source-check.json",
+    "content": "sources/p11-shared/content-check.json",
+    "video": "sources/p11-shared/video-check.json",
+    "numeric": "sources/p11-shared/runtime-verification.json",
+    "paperExamples": "sources/p11-shared/notes-smoke.json",
+    "browser": "sources/p11-shared/browser-check.json",
+    "build": {
+      "command": "npm run build",
+      "runs": 1,
+      "exitCode": 0,
+      "tsc": "passed",
+      "vite": "5.4.21",
+      "modules": 3080,
+      "buildSeconds": 6.94,
+      "log": "sources/p11-shared/build.log"
+    },
+    "acceptedFilesUnchanged": 167,
+    "declaredSourceHashesMatched": 24,
+    "workerFilesFingerprinted": 33,
+    "publicDocumentsChecked": 6,
+    "newSVGsChecked": 4,
+    "internalRouteOccurrencesChecked": 142,
+    "curveRowsMatched": 13,
+    "browserBoundary": "actual local Chromium1440/390; all3headers/defaultnotes/diagrams/formulas/selftests/footer plus labtwo tabs and306publiclinks; lec71popup target verified originalnotes retained; no application errors; validation tabs closed; not deployed Pages or full playback"
+  },
+  "completionLedger": {
+    "allCourseGuides": "complete73/73",
+    "labDocumentation": "complete12pairs48tasks_retained_no_full_solutions",
+    "classroomDrafts": "0published_all73stillblocked",
+    "individualLearningAndAssignments": "not_certified_summary_video_unfinished",
+    "historicalCompetitions": "authenticated_files_scorer_and_execution_unresolved",
+    "hardwareExtensions": "prior_CPU_measurement_preserved_GPU_MPS_multidevice_network_not_run"
+  },
+  "preservedIssues": [
+    "LEC71classroom and winningmethods not reviewed",
+    "Cowboy authenticatedfiles/scorer/image_id-vs-id/xyxy unresolved; no made-up AP score",
+    "Empty subtitles and HTTP412 neither prove absence of burned-in captions",
+    "Prior source/link/license/UI/mobile issues remain separately recorded"
+  ],
+  "remaining": {
+    "lectureNotes": [],
+    "labDocuments": [],
+    "maintenancePrompt": "sources/NEXT-PROMPT.txt",
+    "policy": "Only new credible classroom evidence, authorized competition files/scorer or actual hardware justify closing respective gaps; no automatic old training reruns"
+  },
+  "deliveryPolicy": {
+    "branch": "main",
+    "remote": "https://github.com/socoo123/course_web",
+    "onlyContent": true,
+    "commitPush": "requested_by_user; actual command result reported with delivery",
+    "sourceFiles": [
+      "content/d2l-pytorch-2021/sources/p11-lec71/coco-evaluation-review.txt",
+      "content/d2l-pytorch-2021/sources/p11-lec71/competition-evidence.json",
+      "content/d2l-pytorch-2021/sources/p11-lec71/manifest-fragment.json",
+      "content/d2l-pytorch-2021/sources/p11-lec71/schedule-evidence.json",
+      "content/d2l-pytorch-2021/sources/p11-lec71/source-index.json",
+      "content/d2l-pytorch-2021/sources/p11-lec71/verification-contract.json",
+      "content/d2l-pytorch-2021/sources/p11-lec71/video-metadata.json",
+      "content/d2l-pytorch-2021/sources/p11-lec72/book-adadelta.txt",
+      "content/d2l-pytorch-2021/sources/p11-lec72/book-adagrad.txt",
+      "content/d2l-pytorch-2021/sources/p11-lec72/book-adam.txt",
+      "content/d2l-pytorch-2021/sources/p11-lec72/book-convexity.txt",
+      "content/d2l-pytorch-2021/sources/p11-lec72/book-gd.txt",
+      "content/d2l-pytorch-2021/sources/p11-lec72/book-lr-scheduler.txt",
+      "content/d2l-pytorch-2021/sources/p11-lec72/book-minibatch-sgd.txt",
+      "content/d2l-pytorch-2021/sources/p11-lec72/book-momentum.txt",
+      "content/d2l-pytorch-2021/sources/p11-lec72/book-optimization-intro.txt",
+      "content/d2l-pytorch-2021/sources/p11-lec72/book-rmsprop.txt",
+      "content/d2l-pytorch-2021/sources/p11-lec72/book-sgd.txt",
+      "content/d2l-pytorch-2021/sources/p11-lec72/manifest-fragment.json",
+      "content/d2l-pytorch-2021/sources/p11-lec72/pytorch-optim-reading.txt",
+      "content/d2l-pytorch-2021/sources/p11-lec72/schedule-evidence.json",
+      "content/d2l-pytorch-2021/sources/p11-lec72/source-index.json",
+      "content/d2l-pytorch-2021/sources/p11-lec72/verification-contract.json",
+      "content/d2l-pytorch-2021/sources/p11-lec72/video-metadata.json",
+      "content/d2l-pytorch-2021/sources/p11-lec73/manifest-fragment.json",
+      "content/d2l-pytorch-2021/sources/p11-lec73/schedule-evidence.json",
+      "content/d2l-pytorch-2021/sources/p11-lec73/source-index.json",
+      "content/d2l-pytorch-2021/sources/p11-lec73/verification-contract.json",
+      "content/d2l-pytorch-2021/sources/p11-lec73/video-metadata.json",
+      "content/d2l-pytorch-2021/sources/p11-optimization-capstone/api-review.txt",
+      "content/d2l-pytorch-2021/sources/p11-optimization-capstone/manifest-fragment.json",
+      "content/d2l-pytorch-2021/sources/p11-optimization-capstone/source-index.json",
+      "content/d2l-pytorch-2021/sources/p11-optimization-capstone/verification-contract.json",
+      "content/d2l-pytorch-2021/sources/p11-shared/accepted-baseline.json",
+      "content/d2l-pytorch-2021/sources/p11-shared/browser-check.json",
+      "content/d2l-pytorch-2021/sources/p11-shared/build.log",
+      "content/d2l-pytorch-2021/sources/p11-shared/content-check.json",
+      "content/d2l-pytorch-2021/sources/p11-shared/diagnostics.json",
+      "content/d2l-pytorch-2021/sources/p11-shared/notes-smoke.json",
+      "content/d2l-pytorch-2021/sources/p11-shared/optimization-smoke.json",
+      "content/d2l-pytorch-2021/sources/p11-shared/runtime-verification.json",
+      "content/d2l-pytorch-2021/sources/p11-shared/source-check.json",
+      "content/d2l-pytorch-2021/sources/p11-shared/video-check.json",
+      "content/d2l-pytorch-2021/sources/PLAN.txt",
+      "content/d2l-pytorch-2021/sources/NEXT-PROMPT.txt",
+      "content/d2l-pytorch-2021/sources/p11-manifest.json"
+    ],
+    "exclude": [
+      "datasets",
+      "model weights",
+      "checkpoints",
+      "environments",
+      "credentials",
+      "full solution scripts"
+    ]
+  }
+}

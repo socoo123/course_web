@@ -1,6 +1,6 @@
 ---
 source: 李沐《动手学深度学习》2021 中文课程官方课表；《动手学深度学习》中文第二版
-status: 已完成LEC1–70学习笔记及前十一项实验说明/指导；70BV共198P元数据已核。P10的7P字幕为空、9P访问受限，课堂稿仍阻塞。Transformer复用P9固定英法划分；BERT语料、SNLI、权重与词表分别审计，有限运行见对应实验。不将机制、小训练或迁移写成质量/GPU基准；牛仔认证文件、评分端与LEC71课堂仍未核。
+status: 全部73讲教材/官方来源导读及十二项实验说明/指导已完成编排；73BV共203P元数据已核。课堂稿仍未完成：194P公开字幕空列表、9P访问受限，均不能排除烧录字幕。P11完成固定条件优化器小训练与磁盘跨进程恢复；个人作业、课堂学习、历史竞赛和GPU扩展不因此完成。牛仔认证文件、评分端与LEC71课堂仍未核。
 license: 本页为编者自主课程导航；教材、代码、视频分别按原始许可处理，视频授权不由教材许可推定。
 ---
 
@@ -176,7 +176,7 @@ license: 本页为编者自主课程导航；教材、代码、视频分别按�
 | [9. Seq2Seq、翻译与注意力](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=zh) | LEC 60–66 | 翻译数据与 mask，seq2seq 基线、搜索和注意力对齐。 |
 | [10. 从注意力到Transformer](#/c/d2l-pytorch-2021/lab/transformer?v=zh) | LEC 67–68 | 逐步解释 Q/K/V、位置编码和 mask，训练教学规模编码器—解码器模型。 |
 | [11. BERT预训练与自然语言推断](#/c/d2l-pytorch-2021/lab/bert-pretrain-finetune?v=zh) | LEC 69–70 | 理解 MLM/NSP 与微调；小模型验证，不以全量预训练为要求。 |
-| [12. 优化回顾与全课程工程总结](#/c/d2l-pytorch-2021/lab/optimization-capstone?v=zh) | LEC 72–73 | 复用已有模型比较优化器、恢复训练并整理 CS336 准备清单。 |
+| [12. 优化回顾与全课程工程总结](#/c/d2l-pytorch-2021/lab/optimization-capstone?v=zh) | LEC 72–73 | 复用数据与模型结构做新的配对优化器小运行、恢复训练并整理 CS336 准备清单；不假定旧批留有检查点。 |
 
 ### 环境与版本
 
@@ -359,6 +359,14 @@ beam宽3按累积原始log概率剪枝，已结束候选冻结；最后在保留
 [BERT实验](#/c/d2l-pytorch-2021/lab/bert-pretrain-finetune?v=guide)分开记录合成目标检查、真实WikiText小预训练，以及另行下载的教材预训练权重在SNLI上的有限迁移。自训小模型不冒充工业BERT，也不冒充下载检查点。MLM/NSP分母、双向可见信息、句对标签和词表ID都属于模型合同，不能仅凭张量形状相同替换。
 
 本批复用PyTorch 2.5.1的CPU环境；Parquet读取器只用于明确版本的发布方数据。WikiText原教材ZIP未取得，采用Salesforce发布的`wikitext-2-v1`非raw Parquet；SNLI采用Stanford发布的`plain_text` Parquet，保留原train/validation，未下载测试集。二者有各自文件hash和格式差异，不能沿用教材ZIP的校验值。权重包没有独立config或LICENSE，参数配置由教材与实际张量核对；不把代码Apache-2.0推广成数据、权重或词表的无限再分发授权。精确身份、条件与运行边界见实验页底和本批来源索引。
+
+#### 第十一批：优化对照与训练恢复
+
+[第十二项实验](#/c/d2l-pytorch-2021/lab/optimization-capstone?v=guide)复用已经取得的 Fashion-MNIST 训练数据与 257／73 划分，新建同初值的小 MLP，固定批次、随机流和 60 次更新预算比较 SGD、动量和 Adam。三者采用相同数值学习率与按更新计数的调度，不为各自搜索最优超参数；曲线只说明这组条件下的结果，不是通用算法排名。没有重训旧 CNN、GRU、Transformer 或 BERT。
+
+三种优化器都实际经过**磁盘保存、独立进程加载、继续 22 步**，跨越采样换轮与学习率衰减边界；模型、优化器、调度器、实际使用的随机状态及采样排列／游标均与连续训练一致。完整结果、遗漏状态的反例和稳定损失小例放在实验指导，不重复发布答案脚本。临时检查点已经删除，P9／P10 未持久保存自训权重的历史不变。
+
+全课教材／官方来源导读与十二项实验说明、指导已经编排到结尾；这不等于学习者完成了作业，也不等于课堂录像已经审阅。课堂讲授与 QA、历史竞赛认证文件和评分端、GPU／多 GPU 扩展仍按各自证据记账。既有预训练迁移与 CPU 微基准不回退为“未运行”，也不外推为 GPU 或全课程质量验收。
 
 ## 学完后怎样衔接 CS336
 
@@ -660,3 +668,18 @@ LEC67–70共4个BV、16P、10,697秒，均为官方课表绑定的“跟李沐�
 
 - 本批固定教材新增[10.5–10.7](https://zh.d2l.ai/chapter_attention-mechanisms/index.html)、[14.8–14.10](https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert.html)，以及按课表顺序的[15.6](https://zh.d2l.ai/chapter_natural-language-processing-applications/finetuning-bert.html)、[15.4](https://zh.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html)、[15.7](https://zh.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-bert.html)。全文或PyTorch精确节选范围见逐讲清单，不扩称全章视频覆盖。
 - [Salesforce WikiText数据卡](https://huggingface.co/datasets/Salesforce/wikitext)标明Wikipedia来源；卡头CC BY-SA3.0/GFDL与正文4.0存在版本冲突，未消除，不发布全文或派生语料。[Stanford SNLI数据卡](https://huggingface.co/datasets/stanfordnlp/snli)标CC BY-SA4.0，需署名与相同方式共享等条件；数据偏见和标注伪线索不因小实验消失。权重/词表另见[教材加载章节](https://zh.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-bert.html)，没有从数据卡推断其许可。
+
+### 第十一批已核实的全部分 P
+
+LEC71–73共3个BV、5P、5,710秒，均为官方课表绑定的“跟李沐学AI”（mid1567748478）2021上传。5个新P的公开字幕各查一次成功空列表；未审阅音视频，不编造课堂总结、获奖方法或QA。下表为实际文件列表，不是片内主题时间轴。
+
+| 讲次 | 全部真实分P | 页头口径 |
+|---|---|---|
+| LEC71 | [P1 目标检测竞赛总结 · 23:58](https://www.bilibili.com/video/BV13b4y1m7y8?p=1) | 单P23:58 |
+| LEC72 | [P1 优化算法 · 34:04](https://www.bilibili.com/video/BV1bP4y1p7Gq?p=1)；[P2 QA · 09:13](https://www.bilibili.com/video/BV1bP4y1p7Gq?p=2) | 全2P合计43:17 |
+| LEC73 | [P1 课程总结和进阶学习 · 22:37](https://www.bilibili.com/video/BV1AL4y1Y7gu?p=1)；[P2 QA · 05:18](https://www.bilibili.com/video/BV1AL4y1Y7gu?p=2) | 全2P合计27:55 |
+
+LEC71课表8月15日、上传8月22日；LEC72/73课表8月21日、上传分别8月24/25日。版权与禁止转载标志不授予全文转录许可，空列表不证明无烧录字幕。全课累计73BV/203P，加上保留的103条原课表入口，公共资料共306个B站链接。
+
+- LEC72实际阅读全文与代码的范围为固定[优化第11章11.1–11.11](https://zh.d2l.ai/chapter_optimization/index.html)，不据此声称录像逐节讲完。LEC71与LEC73没有独立教材指定链接，分别采用公开竞赛证据和自主工程复盘；必要关联阅读与精确审阅范围见各讲页底。
+- 第十二实验复用[Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)缓存，优化与恢复采用[PyTorch 2.5](https://docs.pytorch.org/docs/2.5/optim.html)合同。结果和状态边界见[实验指导](#/c/d2l-pytorch-2021/lab/optimization-capstone?v=guide)；没有数据、权重或完整解答程序随站点发布。
