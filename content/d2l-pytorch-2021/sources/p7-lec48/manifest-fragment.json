@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "batch": "P7",
+  "lectureId": "lec48",
+  "generatedAt": "2026-11-14",
+  "owner": "P7Lec47to50",
+  "scope": "Only owned lecture/source directories. No shared index changes, tests/build/lint/formatter, numerical execution or git operations.",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required",
+    "diagram": "original_svg_written_pending_browser_acceptance"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "editionBoundary": "Current pinned Chinese second edition; not 2021 full-book snapshot.",
+    "sections": [
+      "13.11",
+      "13.9 partial"
+    ],
+    "versionEvidenceReused": "sources/p1-shared/book-version.json",
+    "licenseBoundary": "Root Apache-2.0 separate from setup.py MIT-0; no extension to videos, images, data or pretrained weights."
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1af4y1L7Zu/",
+    "label": "官方 B站视频（全 3 P 合计）",
+    "duration": "26:55",
+    "language": "zh",
+    "durationSeconds": 1615,
+    "pageCount": 3,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 367982799,
+        "part": "FCN",
+        "duration": 263
+      },
+      {
+        "page": 2,
+        "cid": 367985837,
+        "part": "代码",
+        "duration": 1061
+      },
+      {
+        "page": 3,
+        "cid": 367989549,
+        "part": "QA",
+        "duration": 291
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 3,
+    "permission": "No open transcript republication permission; no media reviewed/downloaded."
+  },
+  "scheduleDate": "2021-07-11",
+  "publishedAt": "2021-07-11T07:44:52+00:00",
+  "sources": [
+    {
+      "snapshot": "sources/p7-lec48/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1af4y1L7Zu",
+      "sha256": "06655f861ce1fbbeae1d1b736aaf059e48e1e5dd507d05f1e586c9712fe742ed",
+      "bytes": 2512,
+      "readScope": "Filtered view fields and one public subtitle request per page; all retained fields read.",
+      "readRanges": []
+    },
+    {
+      "snapshot": "sources/p7-lec48/schedule-evidence.json",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "e9374609e4d8105bf23a463ebef548ac9c29b60fe467abe71016d6ee0caaf435",
+      "bytes": 2009,
+      "readScope": "Owned lecture mapping and full associated schedule row; schedule not content coverage.",
+      "readRanges": []
+    },
+    {
+      "snapshot": "sources/p7-lec48/book-fcn.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/fcn.md",
+      "sha256": "5d5069aa251b99a2f8110740ce1b571347fb0cd8328b119edd31b6eeaa844ba7",
+      "bytes": 18046,
+      "readScope": "Whole pinned chapter read, including prose, framework branches and exercises; implementation explanation limited to PyTorch.",
+      "readRanges": [
+        {
+          "start": 1,
+          "end": 488
+        }
+      ]
+    },
+    {
+      "snapshot": "sources/p7-lec48/book-semantic-segmentation-and-dataset.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/semantic-segmentation-and-dataset.md",
+      "sha256": "8ae1c8f5c5c8fdeea3eeafdf6eb8258796fe740f8f68945193ce41a3fbe35a84",
+      "bytes": 21253,
+      "readScope": "Supplemental first portion only: task distinction, VOC read, classes/color lookup and synchronized crop; remainder saved but not claimed read.",
+      "readRanges": [
+        {
+          "start": 1,
+          "end": 290
+        }
+      ]
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "lectures/lec48/notes.zh.md",
+      "sha256": "57729f53bd21db350ee1895618de57b618bd928dea8c340acb4dbf0e1312d127",
+      "bytes": 10497,
+      "status": "written_pending_main_acceptance"
+    },
+    {
+      "path": "lectures/lec48/assets/fcn-pixel-contract.svg",
+      "sha256": "dc40cd943bda88f5b2e2313455251edfc56d70fcd437341d44872680a1a1f1a5",
+      "bytes": 2283,
+      "status": "written_pending_main_acceptance"
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "id": "fcn-shapes",
+      "kind": "synthetic_shape",
+      "expected": [
+        "ResNet18 trunk B,3,320,480 -> B,512,10,15",
+        "1x1 512->21 -> B,21,10,15",
+        "Transpose k64,s32,p16 -> B,21,320,480",
+        "321x481 -> 11x16 trunk -> 352x512 transpose"
+      ],
+      "checks": [
+        "No pretrained-quality claim from random tensors.",
+        "Main real VOC run has separate evidence."
+      ]
+    },
+    {
+      "id": "void-normalization",
+      "kind": "synthetic_mechanism",
+      "expected": "21 all-zero logits, 3 valid of4 pixels: valid mean ln21; wrong all-pixel mean .75 ln21; void grads zero.",
+      "checks": [
+        "Background remains supervised.",
+        "All-void batch handled without divide-by-zero.",
+        "Book RGB lookup unknown colors map0; demonstrate why this is not correct void semantics."
+      ]
+    },
+    {
+      "id": "bilinear-initialization",
+      "kind": "synthetic_mechanism",
+      "expected": "k4 1D weights [.25,.75,.75,.25]; center 2D weight .5625; diagonal channel kernels only at init.",
+      "checks": [
+        "Explicit zero bias for strict linear filter comparison.",
+        "Do not claim identical boundary behavior to arbitrary interpolate settings."
+      ]
+    }
+  ],
+  "workerExecution": {
+    "numerical": false,
+    "training": false,
+    "browser": false,
+    "build": false,
+    "lint": false,
+    "formatter": false,
+    "commit": false,
+    "note": "Hashes identify saved sources and generation-time content, not runtime/browser acceptance."
+  },
+  "mainVerificationBoundary": "Main owns p7-shared final numerical/browser/build evidence; lecture48/49 footers acknowledge main-reported finite real runs without converting worker status to executed.",
+  "limits": [
+    "No classroom time blocks, demonstrations or QA verified.",
+    "No extra draft/materials placeholders.",
+    "Original SVG is not a screenshot."
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "batch": "P7",
+  "lectureId": "lec47",
+  "generatedAt": "2026-11-14",
+  "owner": "P7Lec47to50",
+  "scope": "Only owned lecture/source directories. No shared index changes, tests/build/lint/formatter, numerical execution or git operations.",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required",
+    "diagram": "original_svg_written_pending_browser_acceptance"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "editionBoundary": "Current pinned Chinese second edition; not 2021 full-book snapshot.",
+    "sections": [
+      "13.10"
+    ],
+    "versionEvidenceReused": "sources/p1-shared/book-version.json",
+    "licenseBoundary": "Root Apache-2.0 separate from setup.py MIT-0; no extension to videos, images, data or pretrained weights."
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1CM4y1K7r7/",
+    "label": "官方 B站视频",
+    "duration": "09:39",
+    "language": "zh",
+    "durationSeconds": 579,
+    "pageCount": 1,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 368908786,
+        "part": "再谈转置卷积",
+        "duration": 579
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 1,
+    "permission": "No open transcript republication permission; no media reviewed/downloaded."
+  },
+  "scheduleDate": "2021-07-10",
+  "publishedAt": "2021-07-13T03:40:08+00:00",
+  "sources": [
+    {
+      "snapshot": "sources/p7-lec47/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1CM4y1K7r7",
+      "sha256": "da36a56ceab64ffb67c8f5acf41608c0baa07ed12429eaaaba1bac8f83b41007",
+      "bytes": 1750,
+      "readScope": "Filtered view fields and one public subtitle request per page; all retained fields read.",
+      "readRanges": []
+    },
+    {
+      "snapshot": "sources/p7-lec47/schedule-evidence.json",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "40a7917640184c3db61873f0d79346bc433155a1450323612782d6b31f7c581e",
+      "bytes": 2030,
+      "readScope": "Owned lecture mapping and full associated schedule row; schedule not content coverage.",
+      "readRanges": []
+    },
+    {
+      "snapshot": "sources/p7-lec47/book-transposed-conv.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/transposed-conv.md",
+      "sha256": "c657b09bdba88f3b2b0b11ad94c40e1fb42c4d4b72ea076a3039f4186fdca43f",
+      "bytes": 10813,
+      "readScope": "Whole pinned chapter read, including prose, framework branches and exercises; implementation explanation limited to PyTorch.",
+      "readRanges": [
+        {
+          "start": 1,
+          "end": 291
+        }
+      ]
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "lectures/lec47/notes.zh.md",
+      "sha256": "a5ceab4086f3d9ef6d1469de5e3db3ba017ce0678592046201018581686365e5",
+      "bytes": 8397,
+      "status": "written_pending_main_acceptance"
+    },
+    {
+      "path": "lectures/lec47/assets/convolution-adjoint.svg",
+      "sha256": "aa44768aac223befed3cfc5361f8fd517cc9ed6784791e49a8aa5abcd272457e",
+      "bytes": 2006,
+      "status": "written_pending_main_acceptance"
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "id": "adjoint-1d",
+      "kind": "synthetic_mechanism",
+      "inputs": {
+        "x": [
+          1,
+          2,
+          3
+        ],
+        "kernel": [
+          1,
+          2
+        ],
+        "v": [
+          4,
+          5
+        ]
+      },
+      "expected": {
+        "conv": [
+          5,
+          8
+        ],
+        "transpose": [
+          4,
+          13,
+          10
+        ],
+        "bothInnerProducts": 60,
+        "transposeOfConv": [
+          5,
+          18,
+          16
+        ]
+      },
+      "checks": [
+        "Same tied kernel, bias=False. Compare explicit W and Conv/ConvTranspose; compare autograd input gradient.",
+        "Null vector [-2,1,-0.5] maps to zero.",
+        "Stride2 transpose on [4,5] gives [4,8,5,10]; compare zero insertion plus reversed-kernel correlation."
+      ]
+    },
+    {
+      "id": "shape-ambiguity",
+      "kind": "synthetic_mechanism",
+      "expected": "Conv k3,s2,p1 maps both lengths5/6 to3; transpose length3 gives5 with output_padding0 and6 with output_padding1.",
+      "checks": [
+        "Test adjoint with each original length and matching output padding.",
+        "Confirm restored shape does not imply inverse."
+      ]
+    }
+  ],
+  "workerExecution": {
+    "numerical": false,
+    "training": false,
+    "browser": false,
+    "build": false,
+    "lint": false,
+    "formatter": false,
+    "commit": false,
+    "note": "Hashes identify saved sources and generation-time content, not runtime/browser acceptance."
+  },
+  "mainVerificationBoundary": "Main owns p7-shared final numerical/browser/build evidence; lecture48/49 footers acknowledge main-reported finite real runs without converting worker status to executed.",
+  "limits": [
+    "No classroom time blocks, demonstrations or QA verified.",
+    "No extra draft/materials placeholders.",
+    "Original SVG is not a screenshot."
+  ]
+}

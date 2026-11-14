@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "batch": "P7",
+  "lectureId": "lec46",
+  "generatedAt": "2026-11-14",
+  "owner": "P7Lec43to46",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required",
+    "diagram": "original_svg_written_pending_main_browser_acceptance"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "sections": [
+      "13.10"
+    ],
+    "editionBoundary": "Current Chinese second edition pinned source, not2021 snapshot.",
+    "licenseBoundary": "Root Apache-2.0 separate from setup.py MIT-0 field; no extension to third-party media,data,weights."
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV17o4y1X7Jn/",
+    "label": "官方 B站视频（全 3 P 合计）",
+    "duration": "31:58",
+    "durationSeconds": 1918,
+    "pageCount": 3,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 367441828,
+        "part": "转置卷积",
+        "duration": 561
+      },
+      {
+        "page": 2,
+        "cid": 367443595,
+        "part": "代码",
+        "duration": 762
+      },
+      {
+        "page": 3,
+        "cid": 367446029,
+        "part": "QA",
+        "duration": 595
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 3,
+    "permission": "No open transcript reuse grant established; no media review/download."
+  },
+  "scheduleDates": [
+    "7月10日"
+  ],
+  "publishedAt": "2021-07-10T07:34:50+00:00",
+  "sources": [
+    {
+      "path": "sources/p7-lec46/schedule-evidence.json",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "a292a07f60a50a890e70f4c5ad5640bb7891413a225d76d7b4171d5ded9f73b0",
+      "bytes": 1927,
+      "readScope": "Exact lecture and corresponding schedule inventory rows; original HTML already archived in sources/schedule-2021.html; linked slides/notebooks not read.",
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec46/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV17o4y1X7Jn",
+      "sha256": "cdac69b7a406c0b0171d511e30ba65e0ada1481df468ceec052067df2ac24d57",
+      "bytes": 1814,
+      "readScope": "Filtered identity, dates, all pages, durations and one public player request per page; no media/subtitle content.",
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec46/book-transposed-conv.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/transposed-conv.md",
+      "sha256": "c657b09bdba88f3b2b0b11ad94c40e1fb42c4d4b72ea076a3039f4186fdca43f",
+      "bytes": 10813,
+      "readScope": {
+        "lines": "1-291",
+        "coverage": "Full source read, including all displayed framework branches, prose and exercises; implementation claims only common prose and PyTorch; no execution by worker."
+      },
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec46/transpose-api-review.txt",
+      "url": "https://docs.pytorch.org/docs/2.5/generated/torch.nn.ConvTranspose2d.html",
+      "sha256": "46edfb8a84655e48853ecbb42876fcae75eeb3f33335293323fed522dfafac76",
+      "bytes": 1497,
+      "readScope": "Description, parameter notes, Shape, weight Variables; original review",
+      "reused": false
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "lectures/lec46/notes.zh.md",
+      "sha256": "3283fe6ee34322345e07da1cb56c7c2dc3791df103c19f4f52c39938258240e9",
+      "bytes": 9869
+    },
+    {
+      "path": "lectures/lec46/assets/transpose-scatter.svg",
+      "sha256": "eb56b3d2a5f568f292bc9e45e2caff70c13327be29ad9ad98ef0873505cf1915",
+      "bytes": 2324
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "name": "textbook_scatter2d",
+      "input": {
+        "X": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "K": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "stride": 1,
+        "padding": 0,
+        "bias": false
+      },
+      "expected": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          4,
+          6
+        ],
+        [
+          4,
+          12,
+          9
+        ]
+      ]
+    },
+    {
+      "name": "textbook_padding1",
+      "input": "same X,K,stride1,padding1,biasFalse",
+      "expected": [
+        [
+          4
+        ]
+      ]
+    },
+    {
+      "name": "textbook_stride2",
+      "input": "same X,K,stride2,padding0,biasFalse",
+      "expected": [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          2,
+          0,
+          3
+        ],
+        [
+          4,
+          6,
+          6,
+          9
+        ]
+      ]
+    },
+    {
+      "name": "scatter_1d_diagram",
+      "input": "X=[1,2],K=[1,3]",
+      "expected": {
+        "stride1": [
+          1,
+          5,
+          6
+        ],
+        "stride2": [
+          1,
+          3,
+          2,
+          6
+        ]
+      }
+    },
+    {
+      "name": "shape_ambiguity",
+      "input": "k3,s2,p1,d1; original lengths5,6",
+      "expected": {
+        "convBoth": 3,
+        "transposeDefault": 5,
+        "transposeOutputPadding1": 6,
+        "outputPaddingMeansAppendZero": false
+      }
+    },
+    {
+      "name": "textbook_shape_counterexample",
+      "input": "k5,s3,p2,d1; original16 versus17",
+      "expected": {
+        "convBoth": 6,
+        "transposeDefault": 16,
+        "outputPaddingFor17": 1
+      }
+    },
+    {
+      "name": "channel_parameters",
+      "input": {
+        "Cin": 2,
+        "Cout": 3,
+        "kernel": [
+          2,
+          2
+        ],
+        "groups": 1
+      },
+      "expected": {
+        "weightShape": [
+          2,
+          3,
+          2,
+          2
+        ],
+        "withoutBias": 24,
+        "withBias": 27
+      }
+    },
+    {
+      "name": "non_inverse",
+      "input": "X1=[1,0],X2=[0,1],K=[1,1],s1,p0",
+      "expected": {
+        "convBoth": [
+          1
+        ],
+        "transpose": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "unequal_overlap",
+      "input": "X=[1,1,1],K=[1,1,1],s2,p0",
+      "expected": [
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1
+      ]
+    }
+  ],
+  "reusedEvidence": [],
+  "workerExecution": {
+    "numericalTests": false,
+    "build": false,
+    "lint": false,
+    "formatter": false,
+    "browser": false,
+    "training": false,
+    "commitPush": false
+  },
+  "mainExecutionBoundary": "Main independently acquired banana/VOC and ran small TinySSD/FCN; public notes link central evidence. Worker did not run or verify those results. Training loss reduction is not detection quality success; banana visualization at.9 has no prediction.",
+  "remainingGaps": [
+    "No reliable caption/media content, so no draft, classroom QA or in-video timing.",
+    "No open video transcript republication permission established.",
+    "Third-party image/data/weight rights are independent; do not infer redistribution permission.",
+    "Main must accept numerical contracts, SVG/browser/mobile/formula rendering and build; worker ran none."
+  ],
+  "splitBoundary": "LEC46 scatter/shape/channels/noninverse; LEC47 explicit adjoint/matrix and equivalent convolution. Same book section does not imply repeated classroom."
+}

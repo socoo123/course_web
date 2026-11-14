@@ -1,6 +1,6 @@
 ---
 source: 李沐《动手学深度学习》2021 中文课程官方课表；《动手学深度学习》中文第二版
-status: 已完成LEC1–42学习笔记、自绘图及前六项实验说明/指导；LEC30与LEC42为官方来源导读/编者复盘框架，不冒充课堂总结。42个BV共123P公开字幕均为空，完整课堂稿持续阻塞。页头使用官方入口和单P/全P核实时长；P6只验收合成迁移机制、随机模型形状与检测几何，不虚称真实小数据训练、预训练效果或竞赛完成。
+status: 已完成LEC1–50学习笔记、自绘图及前七项实验说明/指导；50BV共142P元数据已核，公开字幕为空，课堂稿持续阻塞。P7完成有限CPU香蕉TinySSD、VOC小FCN与真实预训练单图风格优化，不宣称质量达标、完整复现或竞赛完成。牛仔行头认证访问、评分端格式及LEC71课堂总结仍未核。
 license: 本页为编者自主课程导航；教材、代码、视频分别按原始许可处理，视频授权不由教材许可推定。
 ---
 
@@ -283,6 +283,28 @@ LeNet在此极小配置下仍接近随机分类水平，不能把“损失下降
 
 本批**没有执行真实小数据训练、预训练迁移训练或任何竞赛下载、训练、提交**。CIFAR-10、Dogs、树叶三种输出接口仅在各自类别规模的合成张量上核对；不能因此称真实数据接口已经走通。树叶复用 P5 的身份与匿名访问证据，登录后条件及图片再分发权仍未核实；教材小样本包的校验值也不是图片授权。LEC42 仅提供编者复盘框架，不编造课堂总结或获奖方案。四项任务及各层级证据要求见[第六项实验](#/c/d2l-pytorch-2021/lab/cv-transfer?v=zh)，数值范围见 `sources/p6-shared/mechanism-smoke.json` 与 `transfer-contract-smoke.json`；此前 Fashion 小训练不算本实验完成。
 
+#### 第七批：检测、分割与单图风格优化
+
+本批复用 CPU 单线程环境，**实际下载并校验教材香蕉数据、VOC2012 trainval、官方 ResNet-18/VGG-19 权重**，完成三项有限运行。香蕉包本身是作者拍摄香蕉后合成的教学图像；这里的“实际数据训练”指读取了发布包，不是随机张量，也不是自然场景竞赛数据。
+
+| 小验收 | 固定输入与训练范围 | 实测结果 |
+|---|---|---|
+| 教材 TinySSD | 官方训练/验证各取17/5张；256×256；完整五尺度、5,444锚框；B4、5轮25步，SGD 0.05 | eval重评训练总损失0.937574→0.120026；末轮验证0.116673 |
+| VOC小FCN | 官方分割train/val各取8/3张；中心裁剪128×160；预训练ResNet-18冻结并eval，只训练21类分类/上采样头；B2、10轮40步 | 有效像素训练CE 5.248981→0.334790；末轮验证CE 4.055865 |
+| 单图风格迁移 | 教材雷尼尔山照片与秋天橡树油画；VGG-19固定特征；64×96、Adam 0.05、25步，只优化图像 | 加权总损失59.640411→14.012579；特征网络参数和梯度均保持不变 |
+
+这三项证明数据与更新链路，不证明模型已经学好。TinySSD在固定验证图、置信度阈值0.9下**没有显示预测框**，最高保留置信度约0.5933；不能用背景占多数时下降的分类损失宣称检测质量。FCN验证像素准确率约0.251958，本子集“并集非零类别、含背景”的mIoU约0.064885，所看预测几乎全背景；它不是官方VOC成绩。风格结果只检查了低分辨率输入、输出及优化对象，不是完整500步或高分辨率复现。
+
+VOC直接读取PNG调色板索引，保留`255`为忽略标签；图像与掩码共用裁剪框，不把void变成背景。FCN采用完整ResNet-18特征和`512→21`分类卷积，再接核64、步幅32、填充16的转置卷积；只训练头与全网微调分别记录。验证未改变参数、BN状态或既有梯度；不同验证batch的有效像素CE在浮点容差内一致。
+
+风格损失按教材实际Python表达式核算：`10 * styles_l`是列表重复，合计风格系数为10,000，而不是只看变量名得到的1,000。内容/风格目标脱离计算图，只有合成图像更新。LEC40/41已验收的边界框、匹配和NMS几何直接复用，不把重复检查算成新成果。
+
+数据、权重、原图及本地可视化**不随站点发布**。教材直接提供的教学下载支持本地例题执行，不等于图片或权重取得无限再分发许可；VOC要求遵守图片原条款，权重可能受训练数据条件约束。秋天橡树图的画家和独立图片授权未确定，不宣称CC授权。
+
+牛仔行头竞赛另有身份与访问合同：官方公告绑定CodaLab 33573，公开条款明确教育用途、遵循非商用条件且不得另作再分发；Kaggle入口要求登录并接受规则后访问文件。本批**未登录接受规则、未下载竞赛文件、未训练或提交竞赛预测**，上述香蕉/VOC运行不能替代它。LEC71真实课堂总结仍未核实，不编造获奖方案。四任务及接口核对路线见[第七项实验](#/c/d2l-pytorch-2021/lab/cv-dense-prediction?v=zh)。
+
+精确样本ID、种子、逐轮值和局部可视化观察见`sources/p7-shared/`的`ssd-smoke.json`、`fcn-smoke.json`、`style-smoke.json`及获取清单。所有运行显式使用CPU；未执行CUDA/MPS、旧Notebook全集、全量视觉训练或全部学生任务。
+
 ## 学完后怎样衔接 CS336
 
 用三个问题自查：能否不依赖整段答案写出小模型训练循环；能否逐步解释 Attention 的形状与 mask；能否解释模型的参数、梯度、优化器状态和激活为何占用内存。
@@ -473,7 +495,7 @@ LEC36–42 共 **7个BV、18P、17071秒**，均由官方课表绑定到“跟�
 
 ### 原课表需核对的链接
 
-- MLP 的从零与简洁实现都链接到同一 `?p=3`；本批已核实真实 P3“代码实现”、P4“QA”，但内容归属仍待真实字幕/视频证据，两个原链接不改。R-CNN、SSD、YOLO 三个主题使用同一无 `p` 入口，尚待后续核实；不能漏掉任何主题。
+- MLP 的从零与简洁实现都链接到同一 `?p=3`；已核实真实 P3“代码实现”、P4“QA”，但片内归属仍待课堂证据，两个原链接不改。R-CNN、SSD、YOLO 的同BV上传实际只有P1“目标检测”与P2“QA”，不是三个模型各一P；三主题均保留，P1内部分界未核实，不能猜时间码。
 - 课表的 `part-4_1.pdf`、`part-4_2.pdf`、`part-4_3.pdf` 在不同主题间重复使用；转置卷积两讲也共用教材/Notebook 入口。抓取时需对照真实内容，不能只按文件名认定对应关系。
 - 官方课程简介计划四次竞赛，最终课表及课程公告可证实三次课程竞赛：房价预测、树叶分类、牛仔行头目标检测。教材中的 CIFAR-10、狗品种识别属于案例，不据此虚构第四次课程竞赛。
 
@@ -507,3 +529,21 @@ LEC36–42 共 **7个BV、18P、17071秒**，均由官方课表绑定到“跟�
 - 教材目录、公告、固定源码许可和安装说明已留存来源快照；章节实际阅读范围见逐讲来源。没有因此声称已读全书、取得录像再发布许可或验证全部 Notebook。
 
 - P6视觉预处理与权重边界：[TorchVision0.20模型通则](https://docs.pytorch.org/vision/0.20/models.html)、[ResNet-18 V1推理规范](https://docs.pytorch.org/vision/0.20/models/generated/torchvision.models.resnet18.html)。实际读取范围、固定v0.20.1源码与独立数据条款见各讲/实验来源清单；权重未下载，不把框架代码许可当作权重授权。
+
+### 第七批已核实的全部分 P
+
+以下时长来自真实页列表，每个P从各自00:00开始；表格不是课堂内部主题时间轴。LEC43三个模型共用上传，真实P名只到“目标检测/QA”。LEC46与47为不同BV，保留两讲；课表日期与上传日期分开，尤其LEC47课表7月10日/上传7月13日、LEC50课表7月11日/上传7月19日。19个公开字幕请求各一次均成功空列表，未审阅音视频，不生成课堂稿。
+
+| 讲次 | 全部真实分P | 页头口径 |
+|---|---|---|
+| LEC43 | [P1 目标检测 · 42:05](https://www.bilibili.com/video/BV1Db4y1C71g?p=1)；[P2 QA · 16:24](https://www.bilibili.com/video/BV1Db4y1C71g?p=2) | 全2P合计58:29 |
+| LEC44 | [P1 多尺度锚框 · 09:57](https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=1)；[P2 SSD · 52:45](https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=2)；[P3 QA · 27:01](https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=3) | 全3P合计1:29:43 |
+| LEC45 | [P1 语义分割 · 07:12](https://www.bilibili.com/video/BV1BK4y1M7Rd?p=1)；[P2 语义分割数据集 · 27:57](https://www.bilibili.com/video/BV1BK4y1M7Rd?p=2)；[P3 QA · 20:01](https://www.bilibili.com/video/BV1BK4y1M7Rd?p=3) | 全3P合计55:10 |
+| LEC46 | [P1 转置卷积 · 09:21](https://www.bilibili.com/video/BV17o4y1X7Jn?p=1)；[P2 代码 · 12:42](https://www.bilibili.com/video/BV17o4y1X7Jn?p=2)；[P3 QA · 09:55](https://www.bilibili.com/video/BV17o4y1X7Jn?p=3) | 全3P合计31:58 |
+| LEC47 | [P1 再谈转置卷积 · 09:39](https://www.bilibili.com/video/BV1CM4y1K7r7?p=1) | 单P09:39 |
+| LEC48 | [P1 FCN · 04:23](https://www.bilibili.com/video/BV1af4y1L7Zu?p=1)；[P2 代码 · 17:41](https://www.bilibili.com/video/BV1af4y1L7Zu?p=2)；[P3 QA · 04:51](https://www.bilibili.com/video/BV1af4y1L7Zu?p=3) | 全3P合计26:55 |
+| LEC49 | [P1 样式迁移 · 04:58](https://www.bilibili.com/video/BV1Eh41167GN?p=1)；[P2 代码 · 19:18](https://www.bilibili.com/video/BV1Eh41167GN?p=2)；[P3 QA · 08:32](https://www.bilibili.com/video/BV1Eh41167GN?p=3) | 全3P合计32:48 |
+| LEC50 | [P1 det_kaggle · 11:04](https://www.bilibili.com/video/BV1F64y1x7xP?p=1) | 单P11:04 |
+
+- P7局部运行依循[教材SSD](https://zh.d2l.ai/chapter_computer-vision/ssd.html)、[FCN](https://zh.d2l.ai/chapter_computer-vision/fcn.html)、[风格迁移](https://zh.d2l.ai/chapter_computer-vision/neural-style.html)的PyTorch结构，缩小数据与更新次数，保留各自任务身份；固定源码与精确读取范围见逐讲清单。
+- [VOC2012官方说明](https://www.robots.ox.ac.uk/~vgg/projects/pascal/VOC/voc2012/index.html)、[TorchVision模型使用通则](https://docs.pytorch.org/vision/0.20/models.html)、[牛仔行头CodaLab竞赛](https://competitions.codalab.org/competitions/33573)、[Kaggle入口](https://www.kaggle.com/competitions/cowboyoutfits)。条款与身份的实际可见范围见实验来源清单，不把代码许可外推为图片/权重许可。

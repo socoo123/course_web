@@ -1,0 +1,6 @@
+Captured: 2026-11-14
+URL: https://docs.pytorch.org/vision/0.20/generated/torchvision.ops.roi_pool.html
+Read scope: roi_pool Parameters (input, boxes, output_size, spatial_scale) and Returns.
+Editorial summary: Input is [N,C,H,W]. Tensor boxes are [K,5]: first column is batch image index in [0,N-1], not class label; remaining four columns are x1,y1,x2,y2. List-of-[L,4] alternative is per-image. spatial_scale maps image box coordinates to feature coordinates. Return is [K,C,output_height,output_width].
+Correction boundary: pinned Chinese textbook rcnn lines 90–99 describe the first element as target category, but torchvision's actual API calls it the batch index. The two example rows happen to use 0 for both because there is one image.
+No operator execution, pretrained model loading or benchmark performed by this worker. Documentation/API semantics do not establish video or dataset rights.

@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "batch": "P7",
+  "lectureId": "lec45",
+  "generatedAt": "2026-11-14",
+  "owner": "P7Lec43to46",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required",
+    "diagram": "original_svg_written_pending_main_browser_acceptance"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "sections": [
+      "13.9"
+    ],
+    "editionBoundary": "Current Chinese second edition pinned source, not2021 snapshot.",
+    "licenseBoundary": "Root Apache-2.0 separate from setup.py MIT-0 field; no extension to third-party media,data,weights."
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1BK4y1M7Rd",
+    "label": "官方 B站视频（全 3 P 合计）",
+    "duration": "55:10",
+    "durationSeconds": 3310,
+    "pageCount": 3,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 367422597,
+        "part": "语义分割",
+        "duration": 432
+      },
+      {
+        "page": 2,
+        "cid": 369439542,
+        "part": "语义分割数据集",
+        "duration": 1677
+      },
+      {
+        "page": 3,
+        "cid": 367434860,
+        "part": "QA",
+        "duration": 1201
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 3,
+    "permission": "No open transcript reuse grant established; no media review/download."
+  },
+  "scheduleDates": [
+    "7月10日"
+  ],
+  "publishedAt": "2021-07-10T07:21:56+00:00",
+  "sources": [
+    {
+      "path": "sources/p7-lec45/schedule-evidence.json",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "478658f1898673ec04ca043fbb9478c9b9242fb51062fa0b173fbdfb7431e0b5",
+      "bytes": 2862,
+      "readScope": "Exact lecture and corresponding schedule inventory rows; original HTML already archived in sources/schedule-2021.html; linked slides/notebooks not read.",
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec45/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1BK4y1M7Rd",
+      "sha256": "187682c3b4238a63825d9a8640ac0c124b9f6128900625ca035babc128143a83",
+      "bytes": 1843,
+      "readScope": "Filtered identity, dates, all pages, durations and one public player request per page; no media/subtitle content.",
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec45/book-semantic-segmentation-and-dataset.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/semantic-segmentation-and-dataset.md",
+      "sha256": "8ae1c8f5c5c8fdeea3eeafdf6eb8258796fe740f8f68945193ce41a3fbe35a84",
+      "bytes": 21253,
+      "readScope": {
+        "lines": "1-558",
+        "coverage": "Full source read, including all displayed framework branches, prose and exercises; implementation claims only common prose and PyTorch; no execution by worker."
+      },
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec45/voc-devkit-review.txt",
+      "url": "https://www.robots.ox.ac.uk/~vgg/projects/pascal/VOC/voc2012/htmldoc/index.html",
+      "sha256": "004c9ccc832568d5b1541ad6e9793858483cb2ea1f4d9c135f6c2dabac29e428",
+      "bytes": 1974,
+      "readScope": "Sections1,2.2/table2,2.6,5.4; archived original review and one short quote",
+      "reused": false
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "lectures/lec45/notes.zh.md",
+      "sha256": "e1b095bee8cf2da61108fb8cfc9e2c1008cdb7d7bc3390529faf7aba43d3943f",
+      "bytes": 11711
+    },
+    {
+      "path": "lectures/lec45/assets/segmentation-label-contract.svg",
+      "sha256": "8a69867c309c44f73d0dfa66db5458433226311278aa88a556a23189064b234d",
+      "bytes": 2538
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "name": "rgb_map",
+      "input": "0,0,0;128,0,0;0,128,0",
+      "expected": {
+        "keys": [
+          0,
+          8388608,
+          32768
+        ],
+        "classes": [
+          0,
+          1,
+          2
+        ],
+        "lookupLongBytes": 134217728,
+        "lookupMiB": 128
+      }
+    },
+    {
+      "name": "void_not_background",
+      "input": "pinned zero-init lookup versus faithful VOC labels",
+      "expected": "unlisted RGB defaults0 in pinned textbook; faithful indexed labels retain255 ignore; unexpected colors must not silently become background",
+      "kind": "source contract"
+    },
+    {
+      "name": "masked_ce",
+      "input": {
+        "target": [
+          [
+            0,
+            1
+          ],
+          [
+            255,
+            1
+          ]
+        ],
+        "validTargetProbabilities": [
+          0.5,
+          0.25,
+          0.5
+        ]
+      },
+      "expected": {
+        "validPixels": 3,
+        "loss": "4*ln(2)/3",
+        "voidLogitGradient": 0,
+        "voidLogitChangesLoss": false,
+        "allVoid": "explicit no-supervision handling, no fabricated background target"
+      }
+    },
+    {
+      "name": "segmentation_confusion",
+      "input": {
+        "truth": [
+          [
+            0,
+            1
+          ],
+          [
+            255,
+            1
+          ]
+        ],
+        "prediction": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      "expected": {
+        "confusionRowsTruth": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "pixelAccuracy": "2/3",
+        "iou": [
+          0.5,
+          0.5
+        ],
+        "twoClassMeanIoU": 0.5,
+        "changingVoidPredictionAffectsMetrics": false
+      }
+    },
+    {
+      "name": "paired_geometry_validation",
+      "expected": "One crop parameter set applied to image and label; nearest for discrete labels if resizing; image normalize only; pinned val has random crop and drop_last=True, corrected independent validation deterministic and full coverage",
+      "kind": "source contract",
+      "boundary": "Main owns actual VOC/FCN data run; notes only explain invariants."
+    }
+  ],
+  "reusedEvidence": [],
+  "workerExecution": {
+    "numericalTests": false,
+    "build": false,
+    "lint": false,
+    "formatter": false,
+    "browser": false,
+    "training": false,
+    "commitPush": false
+  },
+  "mainExecutionBoundary": "Main independently acquired banana/VOC and ran small TinySSD/FCN; public notes link central evidence. Worker did not run or verify those results. Training loss reduction is not detection quality success; banana visualization at.9 has no prediction.",
+  "remainingGaps": [
+    "No reliable caption/media content, so no draft, classroom QA or in-video timing.",
+    "No open video transcript republication permission established.",
+    "Third-party image/data/weight rights are independent; do not infer redistribution permission.",
+    "Main must accept numerical contracts, SVG/browser/mobile/formula rendering and build; worker ran none."
+  ]
+}

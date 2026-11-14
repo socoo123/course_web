@@ -1,0 +1,9 @@
+Captured: 2026-11-14
+Primary source: Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi. You Only Look Once: Unified, Real-Time Object Detection. CVPR 2016.
+URL: https://arxiv.org/html/1506.02640
+Version displayed: arXiv:1506.02640v5, 09 May 2016.
+Read scope used: Abstract; section 2 Unified Detection and Figure 2; sections 2.1–2.4. No claims of classroom coverage or reproduced benchmark results.
+Editorial paraphrase of audited facts:
+An S by S grid assigns an object to the cell containing its center. Each cell predicts B boxes, five values per box (x,y,w,h,confidence), and one shared vector of C conditional class probabilities. Output is S by S by (5B+C). The VOC setting is S=7, B=2, C=20, thus 7 by 7 by 30 and 98 candidate boxes. Center coordinates are cell-relative; widths/heights are image-relative. Confidence is trained toward object presence times localization IoU. At inference the model predicts this score; ground truth is not available. Class-specific confidence multiplies the shared conditional class score by box confidence.
+Section 2.2 assigns the highest-current-IoU predictor responsibility, uses squared-error terms with coordinate and no-object weights, and square roots of widths/heights. Section 2.3 retains NMS as postprocessing. Section 2.4 identifies constraints on nearby/small grouped objects and localization. These claims describe original YOLO, not all later YOLO versions.
+Rights: arXiv page displays perpetual non-exclusive license; no open full-text republication grant inferred. Only this original paraphrase is archived; no paper figures or full text copied. Supplement is optional clarification of a named course topic, not additional required paper reading.

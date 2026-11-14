@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "batch": "P7",
+  "lectureId": "lec43",
+  "generatedAt": "2026-11-14",
+  "owner": "P7Lec43to46",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required",
+    "diagram": "original_svg_written_pending_main_browser_acceptance"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "sections": [
+      "13.8",
+      "13.7 (design supplement)"
+    ],
+    "editionBoundary": "Current Chinese second edition pinned source, not2021 snapshot.",
+    "licenseBoundary": "Root Apache-2.0 separate from setup.py MIT-0 field; no extension to third-party media,data,weights."
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1Db4y1C71g",
+    "label": "官方 B站视频（全 2 P 合计）",
+    "duration": "58:29",
+    "durationSeconds": 3509,
+    "pageCount": 2,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 364137722,
+        "part": "目标检测",
+        "duration": 2525
+      },
+      {
+        "page": 2,
+        "cid": 363606575,
+        "part": "QA",
+        "duration": 984
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 2,
+    "permission": "No open transcript reuse grant established; no media review/download."
+  },
+  "scheduleDates": [
+    "7月3日"
+  ],
+  "publishedAt": "2021-07-04T07:34:24+00:00",
+  "sources": [
+    {
+      "path": "sources/p7-lec43/schedule-evidence.json",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "1011db09a8d7751d6e54e0cb38dfa99c468b274dd6bae41da809e4ae8e40c904",
+      "bytes": 3781,
+      "readScope": "Exact lecture and corresponding schedule inventory rows; original HTML already archived in sources/schedule-2021.html; linked slides/notebooks not read.",
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec43/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Db4y1C71g",
+      "sha256": "a08df5067d77b4906735d91b0a9f7afe65fbcaf0d1f95bbc87ac856edd92bf0e",
+      "bytes": 1461,
+      "readScope": "Filtered identity, dates, all pages, durations and one public player request per page; no media/subtitle content.",
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec43/book-rcnn.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/rcnn.md",
+      "sha256": "7b5607c42e929ddf6d8eba238f43cef7876bd260f082328acdddd63a816117b0",
+      "bytes": 11304,
+      "readScope": {
+        "lines": "1-182",
+        "coverage": "Full source read, including all displayed framework branches, prose and exercises; implementation claims only common prose and PyTorch; no execution by worker."
+      },
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec43/yolo-original-review.txt",
+      "url": "https://arxiv.org/html/1506.02640",
+      "sha256": "adc8636aa48e5ecb9167e31298eeb58fbb40c68159a89463b939b5e714a8a36e",
+      "bytes": 1715,
+      "readScope": "Abstract, section2/Figure2, sections2.1–2.4; archived original paraphrase, no full copyrighted paper",
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec43/roi-pool-api-review.txt",
+      "url": "https://docs.pytorch.org/vision/0.20/generated/torchvision.ops.roi_pool.html",
+      "sha256": "159352ecb21bea0a8a24573bfa90848c50f9621b62af24d20f6f39992e8b13a3",
+      "bytes": 903,
+      "readScope": "Parameters and Returns; archived original API review",
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec44/book-ssd.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/ssd.md",
+      "sha256": "80abb227f9e1baa63a1217b832d716fc5dfc43b576b386cb6e92b4a0c1232a7f",
+      "bytes": 37700,
+      "readScope": {
+        "lines": "1-107",
+        "coverage": "Design and prediction heads supplement; full source also read for LEC44."
+      },
+      "reused": true
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "lectures/lec43/notes.zh.md",
+      "sha256": "3c351cfbde6fc3e89af7489026cdade821b80916e2d02bcdc480be2ab7d2293d",
+      "bytes": 11170
+    },
+    {
+      "path": "lectures/lec43/assets/detector-routes.svg",
+      "sha256": "b867b53e418b22ceb3d7808f56333c603e017c5a391a142a086d24661441f3e3",
+      "bytes": 2302
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "name": "roi_regular_grid",
+      "input": "4x4 row-major 0..15, one full-grid ROI, 2x2 pooling bins",
+      "expected": [
+        [
+          5,
+          7
+        ],
+        [
+          13,
+          15
+        ]
+      ],
+      "boundary": "Regular-bin arithmetic; arbitrary floating ROI rounding not inferred."
+    },
+    {
+      "name": "roi_batch_index",
+      "input": "torchvision.ops.roi_pool boxes [R,5]",
+      "expected": "first column is batch index, not object class; output [R,C,h,w]",
+      "kind": "API contract"
+    },
+    {
+      "name": "ssd_small_head",
+      "input": {
+        "H": 4,
+        "W": 4,
+        "anchorsPerCell": 3,
+        "objectClasses": 2
+      },
+      "expected": {
+        "anchors": 48,
+        "classLogits": 144,
+        "bboxCoordinates": 192
+      }
+    },
+    {
+      "name": "original_yolo_layout",
+      "input": {
+        "S": 7,
+        "B": 2,
+        "C": 20
+      },
+      "expected": {
+        "shape": [
+          7,
+          7,
+          30
+        ],
+        "elements": 1470,
+        "boxes": 98,
+        "classSpecificScore": 0.48
+      },
+      "boundary": "Original YOLO paper only; conditional class .8 times confidence .6; not measured accuracy."
+    }
+  ],
+  "reusedEvidence": [
+    "sources/p6-shared/detection-smoke.json",
+    "sources/p6-shared/notes-smoke.json"
+  ],
+  "workerExecution": {
+    "numericalTests": false,
+    "build": false,
+    "lint": false,
+    "formatter": false,
+    "browser": false,
+    "training": false,
+    "commitPush": false
+  },
+  "mainExecutionBoundary": "Main independently acquired banana/VOC and ran small TinySSD/FCN; public notes link central evidence. Worker did not run or verify those results. Training loss reduction is not detection quality success; banana visualization at.9 has no prediction.",
+  "remainingGaps": [
+    "No reliable caption/media content, so no draft, classroom QA or in-video timing.",
+    "No open video transcript republication permission established.",
+    "Third-party image/data/weight rights are independent; do not infer redistribution permission.",
+    "Main must accept numerical contracts, SVG/browser/mobile/formula rendering and build; worker ran none."
+  ],
+  "mappingBoundary": "Official schedule lists R-CNN,SSD,YOLO under one BV. Actual platform pages are target detection and QA, not three separate model parts; all3 topics retained without invented timings."
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 510" role="img" aria-labelledby="title desc">
+<title id="title">TinySSD候选身份对齐及训练推理分流</title>
+<desc id="desc">锚框模板和网络预测须按尺度、位置、锚框使用同一顺序；训练接入真值匹配，推理只对预测解码和去重。候选数量另见正文表格。</desc>
+<style>svg{background:#f8fafc;color:#172033;font-family:Arial,"Noto Sans SC","PingFang SC",sans-serif}text{fill:currentColor;font-size:19px}.head{font-size:24px;font-weight:700}.small{font-size:16px}.box{fill:#e0f2fe;stroke:#0369a1;stroke-width:2}.train{fill:#dcfce7;stroke:#15803d;stroke-width:2}.infer{fill:#fef3c7;stroke:#a16207;stroke-width:2}.line{stroke:#475569;stroke-width:2;fill:none}@media(prefers-color-scheme:dark){svg{background:#111827;color:#f1f5f9}.box{fill:#15324b;stroke:#7dd3fc}.train{fill:#163d2a;stroke:#86efac}.infer{fill:#423513;stroke:#fde68a}.line{stroke:#cbd5e1}}</style>
+<text x="26" y="37" class="head">先对齐候选身份，再分训练与推理</text>
+<rect class="box" x="25" y="62" width="360" height="86" rx="8"/>
+<rect class="box" x="405" y="62" width="370" height="86" rx="8"/>
+<text x="44" y="95">多尺度特征 → 锚框模板</text>
+<text x="44" y="128" class="small">记录尺度、位置、锚框的排列顺序</text>
+<text x="424" y="95">多尺度特征 → 预测头</text>
+<text x="424" y="128" class="small">每个候选的类别logits与框偏移</text>
+<path class="line" d="M205 148 V175 H400 V204 M590 148 V175 H400"/>
+<rect class="box" x="25" y="204" width="750" height="83" rx="10"/>
+<text x="44" y="235">NCHW → NHWC → 逐位置展平 → 按尺度拼接</text>
+<text x="44" y="265" class="small">同一个anchor索引必须同时指向模板、类别预测与四个偏移</text>
+<path class="line" d="M230 287 V310 M570 287 V310"/>
+<rect class="train" x="25" y="310" width="360" height="126" rx="10"/>
+<rect class="infer" x="405" y="310" width="370" height="126" rx="10"/>
+<text x="44" y="341">训练：匹配真值 → 分类 / 回归</text>
+<text x="44" y="375" class="small">背景参与CE；回归只让正类贡献分子</text>
+<text x="44" y="405" class="small">CE除A，masked L1除4A，再均值B</text>
+<text x="424" y="341">推理：类别softmax → 解码</text>
+<text x="424" y="375" class="small">NMS → 过滤无效框 → 置信度筛选</text>
+<text x="424" y="405" class="small">不读取真实框；输出为数量可变的检测</text>
+<text x="28" y="479">检查顺序，比“张量shape对了”更重要</text>
+</svg>

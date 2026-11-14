@@ -1,41 +1,39 @@
-继续 content/d2l-pytorch-2021 的P7：LEC43–50和cv-dense-prediction实验。先读已注入AGENTS.md、status.json、sources/PLAN.txt、sources/p6-manifest.json、sources/p1-shared/book-version.json、resources.zh.md及相关schedule/book/outline/practice inventories；必须读取skill://technical-video-notes。只改content/。
+继续 content/d2l-pytorch-2021 的P8：LEC51–59和recurrent-language-model实验。先读已注入AGENTS.md、status.json、sources/PLAN.txt、sources/p7-manifest.json、sources/p1-shared/book-version.json、resources.zh.md及相关schedule/book/outline/practice inventories；必须读skill://technical-video-notes。只改content/。
 
-并行合同：必须task多agent。A拥有lectures/lec43–46及sources/p7-lec43–46（各讲独立目录）；B拥有lec47–50及对应sources；C拥有labs/cv-dense-prediction及sources/p7-cv-dense-prediction。主agent独占course/status/resources/共享manifest/PLAN/NEXT-PROMPT，统一必要数值、真实浏览器和一次最终build，提交推送现有https://github.com/socoo123/course_web的main，再给下一批提示词。子agent不跑数值/tests/build/lint/formatter，不提交。
+并行合同：必须task多agent。A拥有lectures/lec51–54及各自sources/p8-lec51–54；B拥有lec55–59及对应sources；C拥有labs/recurrent-language-model及sources/p8-recurrent-language-model。主agent独占course/status/resources/共享manifest/PLAN/NEXT-PROMPT，统一必要数值、真实浏览器和一次最终build，提交推送现有https://github.com/socoo123/course_web的main，再给下一批提示词。子agent不跑数值/tests/build/lint/formatter，不提交。
 
-已验收P1–P6：LEC1–42学习笔记/42张SVG，前六项实验说明/指导。不要重做已验收讲次或实验。73讲/12实验/48任务完整保留；剩余31讲notes（43–73）、6实验。42讲draft阻塞，不创建占位；materials为not_required，不重复翻译中文教材。LEC30是官方竞赛来源导读；LEC42仅编者复盘框架，不是教师/获奖技术总结。
+已验收P1–P7：LEC1–50学习笔记/50张SVG、前七项实验说明/指导，不重做。73讲/12实验/48任务完整保留；剩余23讲notes（51–73）、5实验。50讲draft阻塞，不创建占位；materials为not_required，不重复翻译中文教材。竞赛讲次的官方来源导读/编者框架不是教师或获奖方案总结。
 
-学习目标：完整中文PyTorch工程路线，数学随课补，之后CS336；不删CNN/CV/RNN、不另加整门前置或刷论文。实验给任务合同、路线、不变量、局部提示，不给完整答案。基础机制、真实小数据训练、历史竞赛执行、硬件扩展分层记录，不能拿前一层冒充后一层完成。
+学习目标：完整中文PyTorch工程路线，数学随课补，之后CS336；不删CNN/CV/RNN，不另加前置课或必读论文。实验给合同、思路、不变量和局部提示，不给完整答案。机制、真实小数据训练、历史竞赛执行、硬件扩展分层记账，不能互相冒充。
 
-视频累计42BV/123P元数据核实；P6新增7BV/18P=17071秒，公开字幕每P一次均成功空列表。未审阅本批音视频，不造课堂讲授、演示、QA或片内时间轴。旧空接口不重刷；空列表不证明绝无烧录字幕。只有合法可靠、作者/年份/BV/分P/时间匹配的新课堂来源到位才补draft，教材导读不能冒充课堂整理。
+P8连续主题：51序列模型，52文本预处理，53语言模型与采样，54RNN原理，55从零及简洁实现，56GRU，57LSTM，58深层，59双向。不能因为实现相似而删一讲；不要把双向网络输出用于声称无未来信息的自回归生成。按课表真实BV核完整分P，不能猜分P或复制上一讲时长。
 
-每讲页头必须使用官方课表B站入口及真实全部P时长求和，多P在label标“全 N P 合计”；LEC1–42入口不改。默认笔记、原站新标签打开，不恢复播放器或课程视频标签，不找转载凑数。P6页头：36全3P55:00、37全3P34:21、38全2P45:43、39全2P34:25、40全4P35:40、41全3P52:53、42单P26:29。LEC40检测/边界框/数据/QA完整保留；LEC42课表6月27日、上传7月3日是不同字段。
+recurrent-language-model四任务完整保留：1教材文本、词表、随机/顺序采样及输入目标错位/跨批状态；2从零RNN对照简洁实现，CE/困惑度/裁剪/生成；3小规模GRU与LSTM比较，深层/双向形状与可用信息；4时间反传/detach边界、双向未来信息泄漏。给指导不给完整程序。核原始文本身份、获取条件和固定划分；词表fit边界、未知token、跨批状态清零/detach、梯度范数与token加权指标必须解释。真实小训练使用实际语料与日志，不能拿随机token或预写生成文本代替。
 
-教材固定d2l-ai/d2l-zh提交e6b18ccea71451a55fcd861d7b96fddf2587b09a：当前中文第二版，不是2021全书快照。P6新增13.1/13.2/13.3/13.4/13.6/13.13/13.14；13.5与13.7–13.12尚未新读，其他历史缺口见status。根Apache-2.0与setup.py MIT-0字段分开，视频/第三方图片/权重/数据权利独立。
+视频累计50BV/142P元数据已核；P7新增8BV/19P=18946秒，公开字幕每P一次均成功空列表，未审阅音视频。不重刷旧空接口，不用非本人转载；空列表不证明无烧录字幕。只在合法可靠、作者/年份/BV/分P/时间匹配的新课堂来源到位后补draft，不造片内时间轴、QA或演示，教材导读不能冒充课堂整理。
 
-P7核课表真实映射：43同BV入口对应R-CNN/SSD/YOLO三主题，必须核全部分P，不能凭无p链接猜同一内容或漏主题；44多尺度与SSD实现；45语义分割与数据；46/47两讲转置卷积，共同教材入口不等于重复课堂；48 FCN；49风格迁移；50目标检测竞赛安排。不要把未经阅读的论文设为额外必读，也不预先猜时间码或教师解释。
+每讲页头必须保留官方课表B站入口、真实全部P时长和；多P label注明“全 N P 合计”。默认笔记、原站新tab，不恢复播放器或课程视频标签。LEC1–50入口不改。P7：43全2P58:29、44全3P1:29:43、45全3P55:10、46全3P31:58、47单P09:39、48全3P26:55、49全3P32:48、50单P11:04。
 
-复用40/41已有几何内容与p6-shared/detection-smoke.json、notes-smoke.json，不重写。连续坐标宽高不加1；实际bbox helper要求[N,4]，不是[4]。矩形锚框宽需H/W因子，返回[1,A,4]。匹配用>=阈值并强制覆盖真实目标；填充-1须过滤，空GT单独处理。背景class0仍参与分类、回归mask只给正类。offset_boxes对数内eps导致编码/逆解码近似非严格恒等。教材NMS不按类分组、IoU等于阈值保留；multibox_detection取非背景最大值。P6只核机制，未下载香蕉或训练检测器。
+P7映射纠偏：LEC43三模型同BV实际仅P1目标检测/P2QA，不是三个模型各一P；P1内部时间未核。46/47两个转置卷积BV分别保留；47课表7月10日/上传7月13日，50课表7月11日/上传7月19日。课表与上传日期不可混成一个字段。
 
-cv-dense-prediction完整保留四任务：边界框/IoU/匹配/NMS/多尺度并解释R-CNN/SSD/YOLO；教材小SSD训练/可视化及牛仔行头竞赛适配/离线验证；分割标签/转置卷积/FCN与小分割基线；单图风格迁移及内容/风格损失。取得数据和权重后按真实条件执行必要小验收；不可访问则精确记录依赖和阻塞，不伪造训练曲线，不把合成张量或其他数据冒充真实竞赛。
+教材固定d2l-ai/d2l-zh提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，当前中文第二版而非2021快照。P7新读13.5与13.7–13.12；此前章节覆盖以status与各manifest为准，不声称全书已读。P8需新读8章与相关9章，BPTT等按当前问题补，别扩为额外研究路线。根Apache-2.0、setup.py MIT-0、视频/语料/图片/权重独立核条件。
 
-牛仔行头竞赛先从已存官方公告核身份、原任务、数据和访问规则；本批不能仅因是Kaggle就推定许可或禁止访问。区分本地学习使用条件与图片再分发权，按来源实际条款处理，不绕登录/规则/下载限制、不发布原图或权重。LEC71是后续目标检测总结，实验的阅读关联保留，但本批不伪造其课堂/获奖方案，不将未来依赖写成已完成。
+数值环境可复用/tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python，先确认存在。P7实测Python3.11.8/torch2.5.1/torchvision0.20.1/numpy1.26.4/pandas2.2.3/Pillow13.0.0，Apple M2 Max/macOS26.3.1、CPU1线程，无d2l/Jupyter；CUDA0，MPS仅探测。GPU/吞吐只报真硬件实测，不外推旧Notebook兼容。临时脚本只作内存subprocess输入，不随课程公开完整解答。
 
-树叶P5证据仍可复用sources/p5-lec30：host Mu Li，176类、18353训练/8800测试、Accuracy；匿名Rules只有模板，登录后下载/加入/迟交与图片再分发权未核。P6未重刷/登录/接受规则/下载/训练/提交。CIFAR10、Dogs及其他叶片数据不能替代树叶；不用P6复盘框架冒充已读LEC42课堂。
+P7本地真实运行已完成，不要回退成“全未下载/训练”：banana/VOC包匹配教材SHA1，官方R18/VGG19实际完整hash及安全加载有证据；数据权重在/tmp/d2l-p7-data.ypPWPO，两风格原图在/tmp/d2l-p7-style.8QlTtD。不因新批而重下载/重训视觉数据。来源用于有限本地教学，不授予任意再分发；不提交原图、派生图、权重、数据包。
 
-P6数据/权重来源：原始CIFAR发布页与v0.20.1适配器已读，Kaggle CIFAR/Dogs静态页面只有元信息，未读实际CSV/图像或tiny压缩包。ResNet18/34的IMAGENET1K_V1枚举与官方URL、短边256/中心224/双线性/antialias/像素缩放/通道统计已核；未下载权重，文件名hash前缀不是本地完整hash。代码BSD不等于权重许可。教材微调Resize([256,256])不等于权重短边缩放；Dogs固定PyTorch保留1000 logits再接1000→256→120，512特征是另行改造。
+P7机制复用40/41几何，不重做。新增RoI首列batch索引、5444锚框和展平顺序、背景CE/全坐标L1归约、VOC void255/有效像素分母、转置散布/形状/多通道伴随、FCN两组形状、Gram/TV/真实style系数1e4以及五类ID/大整数往返。精确证据在p7-shared/mechanism-smoke.json；并非完整学生任务。
 
-数值环境可复用/tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python，先确认存在。Python3.11.8/torch2.5.1/torchvision0.20.1/numpy1.26.4/pandas2.2.3/Pillow13.0.0，Apple M2 Max/macOS26.3.1、CPU1线程，无d2l/Jupyter；CUDA0，MPS仅探测未执行。GPU/吞吐必须真硬件、真实测量；不外推旧Notebook兼容。
+P7真实小实验：banana17train/5val，完整TinySSD1010376参数，B4、5轮25步，train总loss .937574→.120026、val .116673；检查图.9阈值无预测。VOC8/3中心crop128x160，R18V1冻结eval，仅训练完整21类FCN头40步，trainCE5.248981→.334790、valCE4.055865，子集mIoU.064885且近全背景。VGG19两教材图64x96、25步只优化图，total59.640411→14.012579。仅有限流程，不能称检测/分割质量或500步风格复现；完整配置/逐轮/图像本地观察见p7-shared三个smoke与runtime-visual-check。
 
-P6只做合成机制：增广/确定验证/uint8归一化、随机ConvBN冻结参数和buffers/训练态BN反例/解冻分组SGD、验证不改state/grads、ID和类别列对齐、10/120/176类合成schema。随机完整ResNet18的176头90288参数，全模型11266800，输出[2,176]；Dogs独立随机头参数287096/162168。没有预训练参数加载、真实小数据训练或任何竞赛执行。早期Fashion/Ames小训练不算本批视觉任务完成。
+牛仔竞赛仍独立阻塞：官方公告↔CodaLab33573↔Kaggle cowboyoutfits身份已核，host Joshua Z. Zhang，五类ID87/1034/131/318/588、AP0.50:0.95。CodaLab明确教育/非商用/不另用途再分发，不应写成无使用条件；Kaggle文件需登录接受规则，未完成。Data称image_id而starter Version1读id；starter像素xyxy与评分端合同仍待真实文件/scorer核查，不擅自改为COCO xywh。未下载/训练/评分/提交，不以banana/VOC冒充。LEC71课堂总结依赖保持未核，不编造获奖方案。
 
-P6检测与纸面验证用固定教材函数配torch别名执行，不装d2l；有效正面积框、非空GT范围内核矩形网格/IoU/低阈值强制匹配/背景mask梯度/offset epsilon/NMS与按类反例，另核所有手算、配对误差与micro/macro。公开Python整块代码0；临时脚本仅内存subprocess输入，不发布完整答案。精确范围见sources/p6-shared/runtime-verification.json及classification-notes-smoke.json。
+旧竞赛边界继续保留：树叶P5身份/匿名访问、加州P3身份及CIFAR/Dogs教材案例见旧manifest；P7没执行这些竞赛。公开Kaggle Rules模板不是自动授权，也不能仅因平台名称推定全面禁止本地学习。不绕登录、接受规则或下载限制。
 
-页面写法：正文从学习问题开始，引用/许可/缺口放frontmatter与页底含“来源”的末节。正文其他标题不要含“来源/许可/参考”等关键词，否则会被自动移到页底；P6已修LEC37与实验的3处标题。HashRouter公共资料是#/c/d2l-pytorch-2021，没有/resources路由；站内不用../notes.zh.md。长API/哈希拆写，公式$$独占行，手机必要分行。SVG自绘、title/desc、深浅可读，截图只放真实draft。
+页面约定：学习内容开头，来源/许可/缺口放frontmatter与页底；正文标题避开来源/许可/参考等会自动移页底的关键词。公共资料路由#/c/d2l-pytorch-2021，没有/resources；实验说明?v=zh，不是?v=lab；站内不用../notes.zh.md。公式$$独占行，手机长式分行；自绘SVG有title/desc且深浅可读，课堂截图只放真实draft。数字表不再复制一张数字图。
 
-统一验收：每讲实际核页头BV/全P时长/默认笔记/无iframe，代表入口真点新tab且本站保留；1440桌面/390手机、图滚入视口后加载、明暗图、公式/自测/页底来源、缺稿和实验双标签。P6七讲/两实验页/公共资料均通过，226公共B站入口；LEC40新tab实点通过，无应用pageerror，验证tab关闭。仅本地Chromium+Vite，非部署或全片播放验收。waitForUrl通配字符串曾超时但实际根路由已正确打开，勿误记404。
+P7验收：50项唯一来源hash、11Markdown/8SVG/146本地路由通过；八讲页头/默认笔记/图明暗/公式/自测/页底，1440桌面/390手机及实验双标签实点、公共资料245B站链接、缺稿状态通过。LEC45/47长式初始393/406px已分行修到390；LEC44实际新tab且笔记保留。无应用pageerror，验证tab关闭。本地Chromium+Vite非Pages部署或全片播放验收。npm run build一次通过：tsc --noEmit+Vite5.4.21，3018modules，5.68s，见p7-shared/build.log。
 
-已有UI限制不属content任务：xv6常用命令框不适用，not_required资料仍显示待生成，课堂稿标签叫“课堂整理”；LEC2/5/6旧手机溢出不在P6范围，不声称全42讲手机都通过。P6自测A组为行内答案，B组/实验有折叠，不机械要求每讲都有details。
+验收器经验：视频按钮DOM文字同时含“在B站打开”和时长，不能精确等于按钮短文案；图先滚入视口再等加载。数学MathML隐藏节点/表格自身横向滚动不等于整页溢出，以document.scrollWidth及实际截图判定。外链SVG修改后禁缓存刷新再看。已有xv6命令框、not_required资料仍待生成和LEC2/5/6旧手机溢出不属本content批，不宣称全50讲手机都验过。
 
-sources默认gitignore。只按manifest显式保存小索引、固定原件.txt、筛选metadata、数值/browser JSON与build.log；不盲目强加数据、权重、CSV、环境、cookies或签名响应。worker manifest保留原始生成hash/未运行历史，最终hash以p6-shared/content-check为准。P6 41项唯一源hash、10Markdown/7SVG通过，npm run build一次通过（3000modules，5.34s）。
-
-收尾更新status、p7-manifest、PLAN和本交接；主agent提交推送main并给提交链接和下一批提示词。只复验失败项，不弱化验收或静默缩scope；所有依赖真实数据、媒体或硬件而未完成的项目必须保留真实状态。
+sources默认gitignore。按manifest显式保存小索引、固定原件.txt、筛选metadata、数值/browser JSON与build.log，不盲目强加压缩包/CSV/权重/环境/cookies。worker生成hash/未运行历史不改写，最终hash以主agentcontent-check为准。主agent收尾更新status、p8-manifest、PLAN与本交接，提交推送main并提供提交链接和下一批提示词。

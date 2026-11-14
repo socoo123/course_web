@@ -1,0 +1,73 @@
+URL: https://www.kaggle.com/code/zhreshold/cowboy-outfits-starter-kit
+Author: Joshua Z. Zhang (zhreshold); Version 1 of 1. Accessed anonymously 2026-11-14. Notebook page declares Apache 2.0; this does not license its input images. Rendered notebook text read; only selected schema passages preserved. No notebook executed or data downloaded.
+
+Load the training data
+In [3]:
+coco = COCO(os.path.join(root, 'train.json'))
+
+loading annotations into memory...
+Done (t=0.15s)
+creating index...
+index created!
+
+
+Dataset info and categories
+
+In [4]:
+print('Data info:', coco.info())
+categories = {cat_info['name']:cat_info['id'] for cat_info in coco.loadCats(coco.getCatIds())}
+print('Categories:', categories)
+
+description: CowboySuit
+url: http://github.com/dmlc/gluon-cv
+version: 1.0
+year: 2021
+contributor: GluonCV/AutoGluon
+date_created: 2021/07/01
+Data info: None
+Categories: {'belt': 87, 'sunglasses': 1034, 'boot': 131, 'cowboy_hat': 318, 'jacket': 588}
+
+
+
+Generate submission
+
+You will use valid.csv for public phase submission, and test.csv for the final phase submission. Note that you only have 3 chance to submit for the final phase so be careful not to submit wrong results on the last day
+
+In [10]:
+from PIL import Image
+def create_submission(df, detector, score_thresh=0.1):
+    results = []
+    for index, row in df.iterrows():
+        img_id = row['id']
+        file_name = row['file_name']
+        img = Image.open(file_name)
+        width, height = img.size
+        output = detector.predict(file_name)
+        for _, p in output.iterrows():
+            if p['predict_score'] > score_thresh:
+                roi = p['predict_rois']
+                pred = {'image_id': img_id,
+                        'category_id': categories[p['predict_class']],
+                        'bbox': [roi['xmin'] * width, roi['ymin'] * height, roi['xmax'] * width, roi['ymax'] * height],
+                        'score': p['predict_score']}
+                results.append(pred)
+    return results
+
+In [11]:
+submission_df = pd.read_csv(os.path.join(root, 'valid.csv'))  # replace with test.csv on the last day
+submission_df['file_name'] = submission_df.apply(lambda x: os.path.join(root, 'images', x['file_name']), axis=1)
+submission = create_submission(submission_df, detector)
+
+NumExpr defaulting to 2 threads.
+
+In [12]:
+# create json and zip
+submission_name = '/kaggle/working/answer.json'
+with open(submission_name, 'w') as f:
+    json.dump(submission, f)
+zf = zipfile.ZipFile('/kaggle/working/sample_answer.zip', 'w')
+zf.write(submission_name, 'answer.json')
+zf.close()
+
+
+

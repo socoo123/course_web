@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img" aria-labelledby="title desc">
+<title id="title">分割图像与类别标签必须共享几何变换</title>
+<desc id="desc">同一个样本ID配对图像和PNG标签，两者使用同一裁剪参数。图像可归一化，标签保持整数，void单独忽略。示例四格中背景0和类别1参与损失，255不参与。</desc>
+<style>svg{background:#f8fafc;color:#172033;font-family:Arial,"Noto Sans SC","PingFang SC",sans-serif}text{fill:currentColor;font-size:19px}.head{font-size:24px;font-weight:700}.small{font-size:16px}.box{fill:#e0f2fe;stroke:#0369a1;stroke-width:2}.label{fill:#dcfce7;stroke:#15803d;stroke-width:2}.void{fill:#f8fafc;stroke:#64748b;stroke-width:2;stroke-dasharray:6 4}.line{fill:none;stroke:#475569;stroke-width:2}@media(prefers-color-scheme:dark){svg{background:#111827;color:#f1f5f9}.box{fill:#15324b;stroke:#7dd3fc}.label{fill:#163d2a;stroke:#86efac}.void{fill:#1e293b;stroke:#cbd5e1}.line{stroke:#cbd5e1}}</style>
+<text x="25" y="37" class="head">同ID配对，同几何变换；像素含义不能混用</text>
+<rect class="box" x="25" y="64" width="350" height="80" rx="10"/>
+<rect class="label" x="425" y="64" width="350" height="80" rx="10"/>
+<text x="45" y="95">图像：RGB照片</text><text x="45" y="124" class="small">输入 [3,H,W]，浮点归一化</text>
+<text x="445" y="95">标签：类别PNG</text><text x="445" y="124" class="small">输出 [H,W]，整数类别ID</text>
+<path class="line" d="M200 144 V170 H600 V144 M400 170 V191"/>
+<rect class="box" x="150" y="191" width="500" height="60" rx="9"/>
+<text x="171" y="228">只采样一次裁剪框 / 翻转，再同步应用</text>
+<rect class="label" x="25" y="281" width="110" height="65"/>
+<rect class="label" x="145" y="281" width="110" height="65"/>
+<rect class="void" x="25" y="356" width="110" height="65"/>
+<rect class="label" x="145" y="356" width="110" height="65"/>
+<text x="52" y="319">0 背景</text><text x="175" y="319">1 对象</text>
+<text x="39" y="394">255 void</text><text x="175" y="394">1 对象</text>
+<text x="291" y="302">有效像素只有3个，不是4个</text>
+<text x="291" y="337">背景0：有确定监督，计入损失与IoU</text>
+<text x="291" y="372">void：不确定，不计入损失与IoU</text>
+<text x="291" y="407" class="small">标签不能颜色抖动；resize必须保持离散类别</text>
+<text x="25" y="451" class="small">编者合成示意，不是VOC图像；教材默认零查表会丢失void语义</text>
+</svg>

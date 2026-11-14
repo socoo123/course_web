@@ -1,0 +1,50 @@
+{
+  "status": "passed_finite_CPU_scope",
+  "environment": {
+    "python": "3.11.8",
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "pillow": "13.0.0",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "chip": "Apple M2 Max",
+    "threads": 1,
+    "device": "cpu",
+    "cuda_count": 0,
+    "mps_available_detected_only": true
+  },
+  "environmentEvidence": "sources/p7-shared/environment.json",
+  "mechanisms": "sources/p7-shared/mechanism-smoke.json",
+  "reusedWithoutRerun": [
+    "sources/p6-shared/detection-smoke.json",
+    "sources/p6-shared/notes-smoke.json"
+  ],
+  "realExperiments": {
+    "banana": "sources/p7-shared/ssd-smoke.json",
+    "VOC": "sources/p7-shared/fcn-smoke.json",
+    "style": "sources/p7-shared/style-smoke.json"
+  },
+  "acquisition": [
+    "sources/p7-shared/data-weight-acquisition.json",
+    "sources/p7-shared/style-image-acquisition.json"
+  ],
+  "visualObservation": "sources/p7-shared/runtime-visual-check.json",
+  "sourceImplementationBoundary": "Main transient Python programs used exact pinned P6 bbox/anchor functions with torch aliases; TinySSD/FCN/style topology follows reviewed textbook PyTorch design. Independent finite data loaders preserve VOC palette255. FCN explicitly freezes pretrained backbone, uses Xavier classifier, zero biases and bilinear upsampler; not original full finetuning. No d2l install or old Notebook execution.",
+  "qualityBoundary": [
+    "TinySSD fixed validation image has zero boxes at display threshold0.9 despite reduced training loss.",
+    "VOC tiny validation is weak and observed prediction nearly all background; subset mIoU is not an official VOC benchmark.",
+    "Style result is real pretrained two-image optimization but only64x96/25updates, not full500-step quality reproduction."
+  ],
+  "notExecuted": [
+    "Cowboy authentication, acceptance of rules, original competition data download, real files/scorer/schema acceptance, training, AP evaluation or submission",
+    "LEC71 classroom or winner-method review",
+    "Full student implementations and every task variant, style-weight paired comparison",
+    "Full-scale textbook banana/VOC training or full-resolution style",
+    "CUDA/MPS execution, GPU or CPU performance benchmark",
+    "New empty-GT/padding adapter implementation; contract documented, previous P6 helper scope remains valid nonempty GT"
+  ],
+  "publication": "Scripts only transient subprocess command input, no solution scripts created on disk. Datasets, pretrained weights, raw and derived images only in /tmp caches; not committed or served.",
+  "verificationRuns": "Three bounded real CPU scenarios and one mechanism script, each once; all exited0. No numerical rerun or weakened assertion."
+}

@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-14",
+  "status": "downloaded_and_hash_checked",
+  "runtimeDirectory": "/tmp/d2l-p7-data.ypPWPO",
+  "files": [
+    {
+      "name": "banana-detection.zip",
+      "url": "https://d2l-data.s3-accelerate.amazonaws.com/banana-detection.zip",
+      "bytes": 139442012,
+      "sha1": "5de26c8fce5ccdea9f91267273464dc968d20d72",
+      "verification": "matches fixed textbook SHA1",
+      "useBasis": "Textbook13.6 says authors photographed and composited banana images and directly offers the dataset to test detection models. Local educational execution only, no image redistribution claim."
+    },
+    {
+      "name": "VOCtrainval_11-May-2012.tar",
+      "url": "https://d2l-data.s3-accelerate.amazonaws.com/VOCtrainval_11-May-2012.tar",
+      "bytes": 1999639040,
+      "sha1": "4e443f8a2eca6b1dac8a6c57641b67dd40621a49",
+      "verification": "matches fixed textbook SHA1",
+      "useBasis": "Public VOC2012 trainval learning/evaluation dataset; official Database Rights refer to Flickr conditions, not an unrestricted image redistribution grant. Local educational subset only."
+    },
+    {
+      "name": "resnet18-f37072fd.pth",
+      "url": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+      "bytes": 46830571,
+      "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "verification": "full local SHA256 measured; prefix agrees with official filename, no independently supplied full hash claimed"
+    },
+    {
+      "name": "vgg19-dcbb9e9d.pth",
+      "url": "https://download.pytorch.org/models/vgg19-dcbb9e9d.pth",
+      "bytes": 574673361,
+      "sha256": "dcbb9e9dad569fff7a846263a77324fc34978fea2bfb039c012d710e1776ae44",
+      "verification": "full local SHA256 measured; prefix agrees with official filename, no independently supplied full hash claimed"
+    }
+  ],
+  "weightUseBoundary": "Official torchvision weights supplied for inference/research and used in the textbook example; torchvision warns that pretrained weights may have dataset-derived conditions. This local noncommercial educational run does not claim unrestricted use or redistribute weights, and code BSD is not a weight license.",
+  "competition": "Cowboy competition files were not downloaded; these inputs are not substitutes for that competition.",
+  "publication": "Only small metadata and numerical evidence committed. No datasets, images, generated image derivatives, weights, credentials or model checkpoints."
+}

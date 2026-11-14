@@ -1,0 +1,320 @@
+{
+  "lec43": {
+    "roi_batch_index": [
+      [
+        [
+          [
+            5.0,
+            7.0
+          ],
+          [
+            13.0,
+            15.0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            105.0,
+            107.0
+          ],
+          [
+            113.0,
+            115.0
+          ]
+        ]
+      ]
+    ],
+    "SSD_example": [
+      48,
+      144,
+      192
+    ],
+    "original_YOLO": [
+      7,
+      7,
+      30,
+      1470,
+      98
+    ],
+    "score_product": 0.48
+  },
+  "lec44": {
+    "scales": [
+      48,
+      12,
+      3
+    ],
+    "total_multiscale": 63,
+    "full_SSD_anchors": 5444,
+    "full_bbox_values": 21776,
+    "correct_flatten": [
+      [
+        10.0,
+        11.0,
+        20.0,
+        21.0
+      ]
+    ],
+    "incorrect_flatten": [
+      [
+        10.0,
+        20.0,
+        11.0,
+        21.0
+      ]
+    ],
+    "loss": 1.1931471824645996,
+    "regression_doubled_background": 0.25,
+    "background_classification_gradient_nonzero": true,
+    "background_regression_gradient_zero": true,
+    "block_receptive_field": 6
+  },
+  "lec45": {
+    "color_keys": [
+      0,
+      8388608,
+      32768
+    ],
+    "LUT_bytes": 134217728,
+    "valid_CE": 0.9241962407465937,
+    "wrong_all_pixel_CE": 0.6931471805599453,
+    "void_gradient_zero": true,
+    "confusion": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "IoU": [
+      0.5,
+      0.5
+    ],
+    "pixel_accuracy": 0.6666666666666666
+  },
+  "lec46": {
+    "scatter": [
+      [
+        [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            4.0,
+            6.0
+          ],
+          [
+            4.0,
+            12.0,
+            9.0
+          ]
+        ]
+      ]
+    ],
+    "stride2": [
+      [
+        [
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            3.0
+          ],
+          [
+            0.0,
+            2.0,
+            0.0,
+            3.0
+          ],
+          [
+            4.0,
+            6.0,
+            6.0,
+            9.0
+          ]
+        ]
+      ]
+    ],
+    "crop": 4.0,
+    "one_dimensional": [
+      [
+        [
+          [
+            1.0,
+            5.0,
+            6.0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            1.0,
+            3.0,
+            2.0,
+            6.0
+          ]
+        ]
+      ]
+    ],
+    "shape_pairs": [
+      [
+        16,
+        6,
+        16
+      ],
+      [
+        17,
+        6,
+        16
+      ]
+    ],
+    "output_padding_nonzero_last_value": 1.0,
+    "overlap_counts": [
+      1.0,
+      1.0,
+      2.0,
+      1.0,
+      2.0,
+      1.0,
+      1.0
+    ],
+    "parameters_with_bias": 27
+  },
+  "lec47": {
+    "forward": [
+      5,
+      8
+    ],
+    "adjoint": [
+      4,
+      13,
+      10
+    ],
+    "both_inner_products": 60,
+    "not_inverse": [
+      5,
+      18,
+      16
+    ],
+    "null_vector": [
+      -2,
+      1,
+      -0.5
+    ],
+    "strided_equivalent": [
+      4,
+      8,
+      5,
+      10
+    ],
+    "multichannel_adjoint_abs_error": 3.9968028886505635e-15,
+    "input_gradient_max_error": 0.0
+  },
+  "lec48": {
+    "actual_random_backbone_shapes": [
+      {
+        "input": [
+          320,
+          480
+        ],
+        "features": [
+          1,
+          512,
+          10,
+          15
+        ],
+        "transpose_output": [
+          320,
+          480
+        ]
+      },
+      {
+        "input": [
+          321,
+          481
+        ],
+        "features": [
+          1,
+          512,
+          11,
+          16
+        ],
+        "transpose_output": [
+          352,
+          512
+        ]
+      }
+    ],
+    "log21": 3.044522437723423,
+    "wrong_denominator": 2.2833918282925674,
+    "bilinear_filter": [
+      0.25,
+      0.75,
+      0.75,
+      0.25
+    ],
+    "central_weight": 0.5625,
+    "boundary": "No additional pretrained training here; actual FCN proof separately recorded."
+  },
+  "lec49": {
+    "content_MSE": 2.5,
+    "Gram": [
+      [
+        1.25,
+        2.75
+      ],
+      [
+        2.75,
+        6.25
+      ]
+    ],
+    "column_permutation_invariant": true,
+    "TV": 0.5,
+    "effective_style_coefficient": 10000,
+    "style_graph_and_optimizer_scope": "covered by actual style-smoke.json"
+  },
+  "lec50": {
+    "external_class_ids": [
+      87,
+      1034,
+      131,
+      318,
+      588
+    ],
+    "internal_class_ids": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "SSD_training_foreground_ids": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "large_id_exact_JSON_roundtrip": 9007199254740993,
+    "float_precision_negative_control": 9007199254740992,
+    "historical_deadline_UTC_plus8": "2021-08-07T12:00:00+08:00",
+    "COCO_threshold_count": 10,
+    "boundary": "synthetic schema only, not actual competition CSV/scorer acceptance"
+  },
+  "reuse": "LEC40/41 numerical geometry accepted in P6; not rerun as a new validation task."
+}

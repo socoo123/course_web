@@ -1,0 +1,1028 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>The PASCAL Visual Object Classes Challenge 2012 (VOC2012)</title>
+		<link rel="stylesheet" href="main.css" />
+		<meta name="keyword" content="PASCAL, VOC, voc2012, 2012, visual, object, classes, challenge, recognition" />
+	</head>
+	<body>
+		<center>
+			<TABLE ALIGN="center" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+				<TR>
+					<TD ALIGN="center" width="70"><a href="examples/images/aeroplane_04.jpg"><img title="aeroplane" src="examples/images/aeroplane_04_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/bicycle_03.jpg"><img title="bicycle" src="examples/images/bicycle_03_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/bird_01.jpg"><img title="bird" src="examples/images/bird_01_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/boat_08.jpg"><img title="boat" src="examples/images/boat_08_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/bottle_05.jpg"><img title="bottle" src="examples/images/bottle_05_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/bus_01.jpg"><img title="bus" src="examples/images/bus_01_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/car_05.jpg"><img title="car" src="examples/images/car_05_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/cat_01.jpg"><img title="cat" src="examples/images/cat_01_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/chair_02.jpg"><img title="chair" src="examples/images/chair_02_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/cow_05.jpg"><img title="cow" src="examples/images/cow_05_thumb.jpg" width="70"></a></TD>
+				</TR>
+			</TABLE>
+			<h1>
+				Visual Object Classes Challenge&nbsp;2012 (VOC2012)
+			</h1>
+			<h1>
+				<a href="http://pascallin2.ecs.soton.ac.uk/"><img src="pascal2.png" border="0"></a>
+			</h1>
+			<TABLE ALIGN="center" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+				<TR>
+					<TD ALIGN="center" width="70"><a href="examples/images/diningtable_07.jpg"><img title="dining table" src="examples/images/diningtable_07_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/dog_01.jpg"><img title="dog" src="examples/images/dog_01_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/horse_06.jpg"><img title="horse" src="examples/images/horse_06_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/motorbike_02.jpg"><img title="motorbike" src="examples/images/motorbike_02_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/person_05.jpg"><img title="person" src="examples/images/person_05_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/pottedplant_03.jpg"><img title="potted plant" src="examples/images/pottedplant_03_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/sheep_06.jpg"><img title="sheep" src="examples/images/sheep_06_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/sofa_04.jpg"><img title="sofa" src="examples/images/sofa_04_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/train_06.jpg"><img title="train" src="examples/images/train_06_thumb.jpg" width="70"></a></TD>
+					<TD ALIGN="center" width="70"><a href="examples/images/tvmonitor_02.jpg"><img title="tv/monitor" src="examples/images/tvmonitor_02_thumb.jpg" width="70"></a></TD>
+				</TR>
+				<tr>
+					<td align="center" colspan="10">
+						<font size="-2">[click on an image to see the annotation]</font>
+					</td>
+				</tr>
+			</TABLE>
+		</center>
+
+<h1> For news and updates, see the 
+<a href="../index.html">
+PASCAL Visual Object Classes Homepage </a> </h1> 
+
+
+		<h2>Mark Everingham</h2>
+
+It is with great sadness that we report that Mark Everingham died in 2012.
+Mark was the key member of the VOC project, and it would have been
+impossible without his selfless contributions.  The VOC workshop at
+ECCV 2012 was dedicated to Mark's memory.
+
+<a
+href="https://britishmachinevisionassociation.github.io/obituaries/mark-everingham.html"> A
+tribute web page</a> has been set up, and an <a
+href="http://bit.ly/markever"> appreciation of Mark's
+life and work</a> published.
+
+
+		<h2>News</h2>
+		<ul>
+			<li>
+			    <font size="+1">
+Nov-13: A leaderboard including significance tests will be soon be introduced for
+new submissions. See <a href="../pubs/bootstrap_note.pdf">
+Assessing the Significance of Performance Differences on the
+PASCAL VOC Challenges via Bootstrapping</a> for a description and
+a demonstration of the method on VOC2012.
+			    </font>
+            </li>
+
+            <li>
+The <a href="http://host.robots.ox.ac.uk/">PASCAL VOC Evaluation Server</a> 
+is open for submissions
+            </li>
+
+            <li>
+The VOC series of challenges has now finished. We are grateful 
+to the hundreds of participants that have taken part in the challenges over the years.
+            </li>
+
+            <li>
+				    17-Oct-12: Presentations from the <a href="workshop/index.html">workshop</a> are now being placed online.
+            </li>
+            <li>
+				    17-Oct-12: <a href="results/index.html">Results</a> from the challenge are
+                    now available online.
+            </li>
+            <li>
+				07-Oct-12: Provisional programme for the <a href="workshop/index.html">workshop</a>
+                is now online.
+            </li>
+            <li>
+				    01-Oct-12: Preliminary results of the challenge are now available to participants. 
+            </li>
+            <li>
+				24-Sep-12: The evaluation server is now closed to submissions for the 2012 challenge.
+            </li>
+            <li>
+03-Sep-12: The <a href="http://host.robots.ox.ac.uk/">PASCAL VOC Evaluation Server</a> is now open for submissions. Note that results on the validation set can be checked, but test set results will be withheld until after the challenge closing date. 
+            </li>
+			<li>
+				    25-Jun-12: The <a href="#testdata">test data</a> is now available for download from the evaluation server.
+			</li>
+			<li>
+				21-May-12: The <a href="#devkit">development kit</a> is now available for download. Participants
+                should note that data from VOC2011 has been re-used for some tasks: see
+                <a href="#voc2012vs2011">VOC2012 vs. VOC2011</a> for details.
+			</li>
+			<li>
+				21-May-12: The challenge <a href="workshop/index.html">workshop</a> will be held on 12th October 2012
+                in association with <a href="http://eccv2012.unifi.it/">ECCV 2012</a>. The workshop format
+                is different to previous years - see the <a href="workshop/index.html">webpage</a> for details.
+			</li>
+			<li>
+				20-Feb-12: The ImageNet
+				<a href="http://www.image-net.org/challenges/LSVRC/2012/index">Large Scale Visual Recognition Challenge</a>
+                2012 (ILSVRC2012) will be run in association with the VOC2012 challenge.
+			</li>
+		</ul>
+
+		<h2>Contents</h2>
+		<ul>
+			<li><a href="#introduction">Introduction</a></li>
+			<li><a href="#data">Data</a></li>
+			<li><a href="#voc2012vs2011">VOC2012 vs. VOC2011</a></li>
+			<li><a href="#devkit">Development kit</a></li>
+	        <li><a href="#testdata">Test data</a></li>
+			<li><a href="#sw">Useful software</a></li>
+			<li><a href="#timetable">Timetable</a></li>
+			<li><a href="#submission">Submission of results</a></li>
+			<li><a href="#bestpractice">Best practice</a> <font color="red">(Recommendations on using the training and test data)</font></li>
+			<li><a href="#publicationpolicy">Publication policy</a></li>
+			<li><a href="#citation">Citation</a></li>
+			<li><a href="#rights">Database rights</a></li>
+			<li><a href="#organizers">Organizers</a></li>
+			<li><a href="#acknowledgements">Acknowledgements</a></li>
+			<li><a href="#support">Support</a></li>
+			<li><a href="#history">History and background</a></li>
+		</ul>
+
+		<a name="introduction">
+			<h2>Introduction</h2>
+		</a>
+		<p>
+			The main goal of this challenge is to recognize objects from a number of visual
+			object classes in realistic scenes (i.e. not pre-segmented objects). It is
+			fundamentally a supervised learning learning problem in that a training set of
+			labelled images is provided. The twenty object classes that have been selected
+			are:
+		</p>
+		<ul>
+			<li>
+				<i>Person:</i> person</li>
+			<li>
+				<i>Animal:</i> bird, cat, cow, dog, horse, sheep</li>
+			<li>
+				<i>Vehicle:</i> aeroplane, bicycle, boat, bus, car, motorbike, train</li>
+			<li>
+				<i>Indoor:</i> bottle, chair, dining table, potted plant, sofa, tv/monitor</li>
+		</ul>
+		<p>
+			There are three main object recognition competitions: classification, detection, and 
+			segmentation, a competition on action classification, and a competition on
+            large scale recognition run by ImageNet. In addition there is a "taster" competition
+            on person layout.
+		</p>
+		<h3>Classification/Detection Competitions</h3>
+		<ol>
+			<li>
+				<b>Classification</b>: For each of the twenty classes, predicting
+				presence/absence of an example of that class in the test image.
+			</li>
+			<li>
+				<b>Detection</b>: Predicting the bounding box and label of each object from the
+				twenty target classes in the test image.
+				<table>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td width="50"></td>
+						<td align="center" colspan="10">20 classes</td>
+					</tr>
+					<TR>
+						<td width="50"></td>
+						<TD width="60"><a href="examples/images/aeroplane_02.jpg"><img title="aeroplane" src="examples/images/aeroplane_02_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/bicycle_03.jpg"><img title="bicycle" src="examples/images/bicycle_03_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/bird_01.jpg"><img title="bird" src="examples/images/bird_01_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/boat_08.jpg"><img title="boat" src="examples/images/boat_08_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/bottle_07.jpg"><img title="bottle" src="examples/images/bottle_07_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/bus_06.jpg"><img title="bus" src="examples/images/bus_06_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/car_07.jpg"><img title="car" src="examples/images/car_07_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/cat_06.jpg"><img title="cat" src="examples/images/cat_06_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/chair_02.jpg"><img title="chair" src="examples/images/chair_02_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/cow_05.jpg"><img title="cow" src="examples/images/cow_05_thumb.jpg" width="60"></a></TD>
+					</TR>
+					<TR>
+						<td width="50"></td>
+						<TD width="60"><a href="examples/images/diningtable_02.jpg"><img title="dining table" src="examples/images/diningtable_02_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/dog_01.jpg"><img title="dog" src="examples/images/dog_01_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/horse_08.jpg"><img title="horse" src="examples/images/horse_08_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/motorbike_02.jpg"><img title="motorbike" src="examples/images/motorbike_02_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/person_07.jpg"><img title="person" src="examples/images/person_07_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/pottedplant_05.jpg"><img title="potted plant" src="examples/images/pottedplant_05_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/sheep_04.jpg"><img title="sheep" src="examples/images/sheep_04_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/sofa_02.jpg"><img title="sofa" src="examples/images/sofa_02_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/train_08.jpg"><img title="train" src="examples/images/train_08_thumb.jpg" width="60"></a></TD>
+						<TD width="60"><a href="examples/images/tvmonitor_01.jpg"><img title="tv/monitor" src="examples/images/tvmonitor_01_thumb.jpg" width="60"></a></TD>
+					</TR>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+			</li>
+		</ol>
+		<p>
+			Participants may enter either (or both) of these competitions, and can choose
+			to tackle any (or all) of the twenty object classes. The challenge allows for
+			two approaches to each of the competitions:
+		</p>
+		<ol>
+			<li>
+				Participants may use systems built or trained using any methods or data
+				excluding the provided test sets.
+			</li>
+			<li>
+				Systems are to be built or trained using only the provided training/validation
+				data.
+			</li>
+		</ol>
+		<p>
+			The intention in the first case is to establish just what level of success can
+			currently be achieved on these problems and by what method; in the second case
+			the intention is to establish which method is most successful given a specified
+			training set.
+		</p>
+		<h3>Segmentation Competition</h3>
+		<ul>
+			<li>
+				<b>Segmentation</b>: Generating pixel-wise segmentations giving the class of
+				the object visible at each pixel, or "background" otherwise.
+				<table>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td width="50"></td>
+						<td align="center">Image</td>
+						<td align="center">Objects</td>
+						<td align="center">Class</td>
+					</tr>
+					<tr>
+						<td width="50"></td>
+						<td>
+							<a href="segexamples/index.html"><img src="segexamples/images/21.jpg" width="200"></a>
+						</td>
+						<td>
+							<a href="segexamples/index.html"><img src="segexamples/images/21_object.png" width="200"></a>
+						</td>
+						<td>
+							<a href="segexamples/index.html"><img src="segexamples/images/21_class.png" width="200"></a>
+						</td>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					</tr>
+				</table>
+			</li>
+		</ul>
+		<a name="action">
+			<h3>Action Classification Competition</h3>
+		</a>
+		<ul>
+			<li>
+				<b>Action Classification</b>: Predicting the action(s) being performed by a person
+				in a still image.
+				<table>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td width="50"></td>
+						<td align="center" colspan="10">10 action classes + "other"</td>
+					</tr>
+					<TR>
+						<td width="50"></td>
+						<TD width="120"><a href="actionexamples/images/jumping_01.jpg"><img title="jumping" src="actionexamples/images/jumping_01_thumb.jpg" width="120"></a></TD>
+						<TD width="120"><a href="actionexamples/images/phoning_01.jpg"><img title="phoning" src="actionexamples/images/phoning_01_thumb.jpg" width="120"></a></TD>
+						<TD width="120"><a href="actionexamples/images/playinginstrument_01.jpg"><img title="playinginstrument" src="actionexamples/images/playinginstrument_01_thumb.jpg" width="120"></a></TD>
+						<TD width="120"><a href="actionexamples/images/reading_01.jpg"><img title="reading" src="actionexamples/images/reading_01_thumb.jpg" width="120"></a></TD>
+						<TD width="120"><a href="actionexamples/images/ridingbike_01.jpg"><img title="ridingbike" src="actionexamples/images/ridingbike_01_thumb.jpg" width="120"></a></TD>
+					</TR>
+					<tr>						
+						<td width="50"></td>
+
+						<TD width="120"><a href="actionexamples/images/ridinghorse_01.jpg"><img title="ridinghorse" src="actionexamples/images/ridinghorse_01_thumb.jpg" width="120"></a></TD>
+						<TD width="120"><a href="actionexamples/images/running_01.jpg"><img title="running" src="actionexamples/images/running_01_thumb.jpg" width="120"></a></TD>
+						<TD width="120"><a href="actionexamples/images/takingphoto_01.jpg"><img title="takingphoto" src="actionexamples/images/takingphoto_01_thumb.jpg" width="120"></a></TD>
+						<TD width="120"><a href="actionexamples/images/usingcomputer_05.jpg"><img title="usingcomputer" src="actionexamples/images/usingcomputer_05_thumb.jpg" width="120"></a></TD>
+						<TD width="120"><a href="actionexamples/images/walking_03.jpg"><img title="walking" src="actionexamples/images/walking_03_thumb.jpg" width="120"></a></TD>
+					</TR>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+			</li>
+		</ul>
+        <p>
+            In 2012 there are two variations of this competition, depending on how the person whose actions are to be classified
+            is identified in a test image: (i)&nbsp;by a tight bounding box around the person; (ii)&nbsp;by only a single point
+            located somewhere on the body. The latter competition aims to investigate the performance of methods given
+            only approximate localization of a person, as might be the output from a generic person detector.
+        </p>
+		<h3>ImageNet Large Scale Visual Recognition Competition</h3>
+		<p>
+			The goal of this competition is to estimate the content of photographs for the
+			purpose of retrieval and automatic annotation using a subset of the large
+			hand-labeled <A href="http://www.image-net.org">ImageNet</A> dataset 
+			(10,000,000
+			labeled images depicting 10,000+ object categories) as training. Test images
+			will be presented with no initial annotation - no segmentation or labels - and
+			algorithms will have to produce labelings specifying what objects are present 
+			in
+			the images. In this initial version of the challenge, the goal is only to
+			identify the main objects present in images, not to specify the location of
+			objects.
+		</p>
+		<p>
+			Further details can be found at the <a href="http://www.image-net.org/challenges/LSVRC/2012/index">
+				ImageNet</a> website.
+		</p>
+
+		<h3>Person Layout Taster Competition</h3>
+		<ul>
+			<li>
+				<b>Person Layout</b>: Predicting the bounding box and label of each part of a
+				person (head, hands, feet).
+				<table>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td width="50"></td>
+						<td align="center">Image</td>
+						<td align="center">Person Layout</td>
+					</tr>
+					<tr>
+						<td width="50"></td>
+						<td>
+							<a href="layoutexamples/index.html"><img src="layoutexamples/images/08.jpg" width="300"></a>
+						</td>
+						<td>
+							<a href="layoutexamples/index.html"><img src="layoutexamples/images/08_parts.jpg" width="300"></a>
+						</td>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					</tr>
+				</table>
+			</li>
+		</ul>
+		<a name="data">
+			<h2>Data</h2>
+		</a>
+		<p>
+			To download the training/validation data, see the <a href="#devkit">development kit</a>.
+		</p>
+		<p>
+			The training data provided consists of a set of images; each image has an
+			annotation file giving a bounding box and object class label for each object in
+			one of the twenty classes present in the image. Note that multiple objects from
+			multiple classes may be present in the same image. Annotation was performed
+            according to a set of <a href="guidelines.html">guidelines</a>
+			distributed to all annotators.
+        </p>
+        <p>
+			A subset of images are also annotated with pixel-wise segmentation of each 
+			object present, to support the segmentation competition.
+		</p>
+        <p>
+            Images for the action classification task are disjoint from those of the
+            classification/detection/segmentation tasks. They have been partially annotated with people,
+            bounding boxes, reference points and their actions.  Annotation was performed
+            according to a set of <a href="action_guidelines/index.html">guidelines</a>
+			distributed to all annotators.
+        </p>
+        <p>
+            Images for the person layout taster, where the test set is disjoint from the main tasks,
+            have been additionally annotated with parts of the people (head/hands/feet).
+        </p>
+		<p>
+			The data will be made available in two stages; in the first stage, a
+			development kit will be released consisting of training and validation data,
+			plus evaluation software (written in MATLAB). One purpose of the validation set
+			is to demonstrate how the evaluation software works ahead of the competition
+			submission.
+		</p>
+		<p>
+			In the second stage, the test set will be made available for the actual
+			competition. As in the VOC2008-2011 challenges, no ground truth for the test 
+			data
+			will be released.
+		</p>
+		<p>
+			The data has been split into 50% for training/validation and 50% for testing.
+			The distributions of images and objects by class are approximately equal across
+			the training/validation and test sets.
+			<a href="dbstats.html">Statistics</a> of the database are online.
+		</p>
+		<a name="examples">
+			<h3>Example images</h3>
+		</a>
+		<p>
+			Example images and the corresponding annotation for the
+			classification/detection/segmentation/action tasks, and person layout taster can 
+			be viewed online:
+		</p>
+		<ul>
+			<li>
+				<a href="examples/index.html">Classification/detection example images</a>
+			</li>
+			<li>
+				<a href="segexamples/index.html">Segmentation example images</a>
+			</li>
+			<li>
+				<a href="actionexamples/index.html">Action Classification example images</a>
+			</li>
+			<li>
+				<a href="layoutexamples/index.html">Person Layout taster example images</a>
+			</li>
+		</ul>
+		<a name="voc2012vs2011">
+			<h3>VOC2012 vs. VOC2011</h3>
+		</a>
+        <p>
+            For VOC2012 the majority of the annotation effort was put into increasing the size
+            of the segmentation and action classification datasets, and no additional annotation was performed for
+            the classification/detection tasks. The list below summarizes the differences
+            in the data between VOC2012 and VOC2011.
+        </p>
+        <ul>
+            <li>
+                <b>Classification/Detection:</b> The 2012 dataset is the same as that used in 2011.
+                No additional data has been annotated. For this reason, participants are not
+                allowed to run evaluation on the VOC2011 dataset, and this option on the
+                evaluation server has been disabled.
+            </li>
+            <li>
+                <b>Segmentation:</b> The 2012 dataset contains images from 2008-2011 for
+                which additional segmentations have been prepared. As in previous years
+                the assignment to training/test sets has been maintained. The total number of images
+                with segmentation has been increased from 7,062 to 9,993.
+            </li>
+            <li>
+                <b>Action Classification:</b> The 2012 dataset comprises the 2011 dataset
+                plus additional annotated images. The assignment to training/test sets has been maintained.
+                In addition to the box annotation, people are now also annotated with a reference point
+                on the body to support the "boxless" action classification task (see the development kit).
+            </li>
+            <li>
+                <b>Person Layout Taster:</b> The 2012 dataset is the same as that used in 2011.
+                No additional data has been annotated. For this reason, participants are not
+                allowed to run evaluation on the VOC2011 dataset, and this option on the
+                evaluation server has been disabled.
+            </li>
+        </ul>
+
+		<a name="devkit">
+			<h2>Development Kit</h2>
+		</a>
+		<p>
+			The development kit consists of the training/validation data, MATLAB code for
+			reading the annotation data, support files, and example implementations for
+			each competition.
+		</p>
+		<p>
+			The development kit is now available:
+		</p>
+		<ul>
+			<li>
+				Download the <a href="VOCtrainval_11-May-2012.tar">training/validation data</a>
+				(2GB tar file)</li>
+			<li>
+				Download the <a href="VOCdevkit_18-May-2011.tar">development kit code and 
+					documentation</a> (500KB tar file)</li>
+			<li>
+				Download the <a href="devkit_doc.pdf">PDF documentation</a>
+			(500KB PDF)
+			<li>
+				Browse the <a href="htmldoc/index.html">HTML documentation</a></li>
+			<li>
+				View the <a href="guidelines.html">guidelines</a> used for annotating the 
+				database (VOC2011)</li>
+			<li>
+				View the <a href="action_guidelines/index.html">action guidelines</a> used for annotating the 
+				action task images</li>
+		</ul>
+
+		<a name="testdata">
+			<h2>Test Data</h2>
+		</a>
+		<p>
+			The test data will be made available according to the challenge <a href="#timetable">timetable</a>. Note that the only
+			annotation in the data is for the action task and layout taster. As in 2008-2011,
+			there are no current plans to release full annotation - evaluation of results will be
+			provided by the organizers.
+		</p>
+		<p>
+			The test data can be downloaded from the <a href="http://host.robots.ox.ac.uk/">evaluation server</a>.
+			You can also use the evaluation server to evaluate your method on the test data.					
+		</p>			
+
+		<a name="sw">
+			<h2>Useful Software</h2>
+		</a>
+		<p>
+			Below is a list of software you may find useful, contributed by participants
+			to previous challenges.
+		</p>
+		<ul>
+            <li>
+                <a href="http://www.robots.ox.ac.uk/~vgg/software/enceval_toolkit/">Encoding Methods Evaluation Toolkit</a>
+                <br>
+                Ken Chatfield, Victor Lempitsky, Andrea Vedaldi, Andrew Zisserman 
+				<br>&nbsp;
+            </li>
+			<li>
+				<a href="http://sminchisescu.ins.uni-bonn.de/code/cpmc/">CPMC: Constrained Parametric Min-Cuts for Automatic Object Segmentation</a>
+				<br>
+				Joao Carreira and Cristian Sminchisescu.
+				<br>&nbsp;
+			</li>
+			<li>
+				<a href="http://cms.brookes.ac.uk/staff/PhilipTorr/ale.htm">Automatic Labelling Environment (Semantic Segmentation)</a>
+				<br>
+				Lubor Ladicky, Philip H.S. Torr.
+				<br>&nbsp;
+			</li>
+            
+			<li>
+				<a href="http://people.cs.uchicago.edu/~pff/latent/">Discriminatively Trained 
+					Deformable Part Models</a>
+				<br>
+				Pedro Felzenszwalb, Ross Girshick, David McAllester, Deva Ramanan.
+				<br>&nbsp;
+			</li>
+			<li>
+				<a href="http://staff.science.uva.nl/~ksande/research/colordescriptors/">Color 
+					Descriptors</a>
+				<br>
+				Koen van de Sande, Theo Gevers, Cees Snoek.
+				<br>&nbsp;
+			</li>
+		</ul>
+
+		<a name="timetable">
+			<h2>Timetable</h2>
+		</a>
+		<ul>
+			<li>
+				May 2012: Development kit (training and validation data plus evaluation
+				software) made available.</li>
+			<li>
+				25th June 2012: Test set made available.</li>
+			<li>
+		        23rd September 2012 (Sunday, 2300 hours GMT): Deadline for submission of results <font color="red">(there will be no extension)</font>.</li>
+			<li>
+				12th October 2012: Challenge <a href="workshop/index.html">workshop</a> in association with <a href="http://eccv2012.unifi.it/">ECCV 2012</a>.</li>
+		</ul>
+		<a name="submission">
+			<h2>Submission of Results</h2>
+		</a>
+		<p>
+			Participants are expected to submit a single set of results per method
+			employed. Participants who have investigated several algorithms may submit one
+			result per method. Changes in algorithm parameters do <i>not</i> constitute a
+			different method - all parameter tuning must be conducted using the training
+			and validation data alone.
+		</p>
+		<p>
+			Results must be submitted using the automated evaluation server:
+		</p>
+		<ul>
+			<li><a href="http://host.robots.ox.ac.uk/">PASCAL VOC Evaluation Server</a></li>
+		</ul>
+		<p>
+			It is essential that your results files are in the correct format.
+			Details of the required file formats for submitted results can be found in the 
+			development kit documentation. The results files should be collected in a single
+			archive file (tar/tgz/tar.gz).
+		</p>
+		<p>
+			Participants submitting results for several different methods (noting the
+			definition of different methods above) should produce a <b>separate</b> archive
+			for each method.
+		</p>
+		<p>
+			In addition to the results files, participants will need to additionally 
+			specify:
+		</p>
+		<ul>
+			<li>contact details and affiliation</li>
+			<li>list of contributors</li>
+			<li><b>description of the method (minimum 500 characters) - see below</b></li>
+		</ul>
+        <p>
+            Since 2011 we require all submissions to be accompanied by an abstract describing
+            the method, of minimum length <b>500 characters</b>. The abstract will be
+            used in part to select invited speakers at the challenge workshop. If you are unable to
+            submit a description due e.g. to commercial interests or other issues of confidentiality
+            you must contact the organisers to discuss this. Below are two example descriptions, for
+            classification and detection methods previously presented at the challenge workshop.
+            <i>Note these are our own summaries, not provided by the original authors</i>.
+        </p>
+        <ul>
+            <li>
+                <b>Example Abstract: Object classification</b>
+                <br>
+                <i>
+                Based on the VOC2006 QMUL description of LSPCH by Jianguo Zhang,
+                Cordelia Schmid, Svetlana Lazebnik, Jean Ponce in sec 2.16 of 
+                The PASCAL Visual Object Classes Challenge 2006 (VOC2006) Results.
+                </i>            
+                <br>
+                <br>
+                We make use of a bag-of-visual-words method (cf Csurka et al 2004).
+                Regions of interest are detected with a Laplacian detector (Lindeberg,
+                1998), and normalized for scale. A SIFT descriptor (Lowe 2004) is then
+                computed for each detection. 50,000 randomly selected descriptors from
+                the training set are then vector quantized (using k-means) into k=3000
+                "visual words" (300 for each of the 10 classes). Each image is then
+                represented by the histogram of how often each visual word is used.
+                We also make use a spatial pyramid scheme (Lazebnik et al, CVPR 2006).
+                We first train SVM classifiers using the chi^2 kernel based on the
+                histograms of each level in the pyramid. The outputs of these SVM
+                classifiers are then concatenated into a feature vector for each image
+                and used to learn another SVM classifier based on a Gaussian RBF
+                kernel.
+                <br>
+                <br>
+            </li>
+            <li>
+                <b>Example Abstract: Object detection</b>
+                <br>
+                <i>
+                Based on "Object Detection with Discriminatively Trained Part Based Models";
+                Pedro F. Felzenszwalb, Ross B. Girshick, David McAllester and Deva Ramanan;
+                IEEE Transactions on Pattern Analysis and Machine Intelligence,
+                Vol. 32, No. 9, September 2010.
+                </i>
+                <br>
+                <br>
+                We introduce a discriminatively-trained parts-based model for object
+                detection. The model consists of a coarse "root" template of HOG
+                features (Dalal and Triggs, 2006), plus a number of higher-resolution
+                part-based HOG templates which can translate in a neighborhood
+                relative to their default position. The responses of the root and part
+                templates are combined by a latent-SVM model, where the latent
+                variables are the offsets of the parts. We introduce a novel training
+                algorithm for the latent SVM. We also make use of an iterative
+                training procedure exploiting "hard negative" examples, which are
+                negative examples incorrectly classified in an earlier iteration.
+                Finally the model is scanned across the test image in a
+                "sliding-window" fashion at a variety of scales to produce candidate
+                detections, followed by greedy non-maximum suppression.  The model is
+                applied to all 20 PASCAL VOC object detection challenges.
+
+            </li>
+        </ul>
+		<p>
+			If you would like to submit a more detailed description of your method, for 
+			example
+			a relevant publication, this can be included in the results archive.
+		</p>
+		
+		<a name="bestpractice"><h2>Best Practice</h2></a>
+		<p>
+			The VOC challenge encourages two types of participation: (i) methods which
+			are trained using only the provided "trainval" (training + validation) data;
+			(ii) methods built or trained using any data except the provided
+			test data, for example commercial systems. In both cases the <i>test</i>
+			data must be used strictly for reporting of results alone - it must not
+			be used in any way to train or tune systems, for example by runing multiple
+			parameter choices and reporting the best results obtained.
+		</p>
+		<p>
+			If using the training data we provide as part of the challenge development kit,
+			all development, e.g. feature selection and parameter tuning, must 
+			use the "trainval" (training + validation) set alone. One way is to divide the 
+			set into training and validation sets (as suggested in the development kit). 
+			Other schemes e.g. <i>n</i>-fold cross-validation are equally valid. The tuned 
+			algorithms should then be run only <i>once</i> on the test data.
+		</p>
+		<p>
+			In VOC2007 we made all annotations available (i.e. for training, validation 
+			and test data) but since then we have not made the test annotations available. 
+			Instead, results on the test data are submitted to an evaluation server.
+		</p>
+		<p>
+			Since algorithms should only be run <i>once</i> on the test data we strongly 
+			discourage multiple submissions to the server (and indeed the number of 
+			submissions for the same algorithm is strictly controlled), as the evaluation 
+			server should not be used for parameter tuning.
+		</p>
+		<p>
+			We encourage you to publish test results always on the latest release of the 
+			challenge, using the output of the evaluation server. If you wish to compare 
+			methods or design choices e.g. subsets of features, then there are two options: 
+			(i) use the entire VOC2007 data, where all annotations are available; (ii) 
+			report cross-validation results using the latest "trainval" set alone. 
+		</p>
+        <b>
+            <a name="emailpolicy">
+                Policy on email address requirements when registering for the evaluation server
+            </a>
+        </b>
+        <p>
+            In line with the Best Practice procedures (above) we restrict the number of times
+            that the test data can be processed by the evaluation server. To prevent any abuses
+            of this restriction an institutional email address is required when registering
+            for the evaluation server. This aims to prevent one user registering multiple times
+            under different emails. Institutional emails include academic ones, such as name@university.ac.uk,
+            and corporate ones, but not personal ones, such as name@gmail.com or name@123.com.
+        </p>
+		<a name="publicationpolicy">
+			<h2>Publication Policy</h2>
+		</a>
+		<p>
+			The main mechanism for dissemination of the results will be the challenge
+			webpage.
+		</p>
+		<p>
+			The detailed output of each submitted method will be published
+			online e.g. per-image confidence for the classification task, and bounding
+			boxes for the detection task. The intention is to assist others in the
+			community in carrying out detailed analysis and comparison with their own
+			methods. The published results will not be anonymous - by submitting results,
+			participants are agreeing to have their results shared online.
+		</p>
+
+		<a name="citation">
+			<h2>Citation</h2>
+		</a>
+		<p>
+			If you make use of the VOC2012 data, please cite the following reference (to be 
+			prepared after the challenge workshop) in any publications:
+		</p>
+		<pre>
+@misc{pascal-voc-2012,
+	author = "Everingham, M. and Van~Gool, L. and Williams, C. K. I. and Winn, J. and Zisserman, A.",
+	title = "The {PASCAL} {V}isual {O}bject {C}lasses {C}hallenge 2012 {(VOC2012)} {R}esults",
+	howpublished = "http://www.pascal-network.org/challenges/VOC/voc2012/workshop/index.html"}	
+		</pre>
+
+		<a name="rights">
+			<h2>Database Rights</h2>
+		</a>
+		<p>
+			The VOC2012 data includes images obtained from the "flickr" website.
+			Use of these images must respect the corresponding terms of use:
+		</p>
+		<ul>
+			<li>
+				<a href="http://www.flickr.com/terms.gne?legacy=1">"flickr" terms of use</a>
+			</li>
+		</ul>
+
+		<p>
+			For the purposes of the challenge, the identity of the images in the
+			database, e.g. source and name of owner, has been obscured.
+			Details of the contributor of each image can be found in the annotation
+			to be included in the final release of the data, after completion of the 
+			challenge.
+			Any queries about the use or ownership of the data should be addressed to the
+			<a href="#organizers">organizers</a>.
+		</p>
+
+
+		<a name="organizers">
+			<h2>Organizers</h2>
+		</a>
+<ul>
+	<li>
+		Mark Everingham (University of Leeds)
+	</li>
+	<li>
+		Luc van Gool (ETHZ, Zurich)
+	</li>
+	<li>
+		Chris Williams (University of Edinburgh)
+	</li>
+	<li>
+		John Winn (Microsoft Research Cambridge), <a href="mailto:john@johnwinn.org">john@johnwinn.org</a>
+	</li>
+	<li>
+		Andrew Zisserman (University of Oxford)
+	</li>
+</ul>
+
+
+		<a name="acknowledgements">
+			<h2>Acknowledgements</h2>
+		</a>
+		<p>
+			We gratefully acknowledge the following, who spent many long hours providing
+			annotation for the VOC2012 database:
+		</p>
+		<p>
+            Yusuf Aytar, Lucia
+            Ballerini, Hakan Bilen, Ken Chatfield, Mircea Cimpoi, Ali Eslami,
+            Basura Fernando, Christoph Godau, Bertan Gunyel, Phoenix/Xuan
+            Huang, Jyri Kivinen, Markus Mathias, Kristof Overdulve,
+            Konstantinos Rematas, Johan Van Rompay, Gilad Sharir, Mathias
+            Vercruysse, Vibhav Vineet, Ziming Zhang, Shuai Kyle Zheng.
+        </p>
+		<p>
+We also thank Yusuf Aytar for continued development and administration
+of the evaluation server, and Ali Eslami for analysis of the results.
+		</p>
+
+		<a name="support">
+			<h2>Support</h2>
+		</a>
+		<p>
+			The preparation and running of this challenge is supported by the EU-funded <a href="http://pascallin2.ecs.soton.ac.uk/">
+				PASCAL2</a> Network of Excellence on Pattern Analysis, Statistical 
+			Modelling
+			and Computational Learning.
+		</p>
+		<a name="history"><h2> History and Background</h2></a>
+		<p>
+			The main challenges have run each year since 2005. For more background
+			on VOC, the following journal paper discusses some of the choices we made and
+			our experience in running the challenge, and gives a more in depth
+			discussion of the 2007 methods and results:
+		</p>
+		<p>
+			<b>The PASCAL Visual Object Classes (VOC) Challenge</b><br>
+			Everingham, M.,  Van Gool, L.,  Williams, C. K. I.,  Winn, J. and Zisserman, A.<br>
+			<i>International Journal of Computer Vision, 88(2), 303-338, 2010</i><br>
+			<a href="../pubs/everingham10.html#bibtex">Bibtex source</a> | 
+			<a href="../pubs/everingham10.html#abstract">Abstract</a> | 
+			<a href="../pubs/everingham10.pdf">PDF</a>
+		</p>		
+		<p>
+			The table below gives a
+			brief summary of the main stages of the VOC development.
+		</p>
+		<table border="1" cellpadding="10" ID="Table1">
+		<tr>
+		<th> Year </th>
+		<th> Statistics </th>
+		<th> New developments </th>
+		<th>Notes  </th>
+		</tr>
+		<tr> 
+		<td> <a HREF="../voc2005/index.html">  2005 </a></td>
+		<td> Only 4 classes: bicycles, cars, motorbikes, people. 
+		Train/validation/test: 1578 images containing 2209 annotated objects.  </td>
+		<td> Two competitions: classification and detection </td>
+		<td>Images were largely taken from exising public datasets, and were not as
+		challenging as the flickr images subsequently used. This dataset is obsolete. 
+		</td>
+		</tr>
+		<tr>
+		<td> <a HREF="../voc2006/index.html">  2006 </a></td>
+		<td> 10 classes:
+		bicycle, bus, car, cat, cow, dog, 
+		horse, motorbike, person, sheep. 
+		Train/validation/test: 2618 images containing 4754 annotated objects.
+		</td>
+		<td> Images from flickr and from Microsoft Research Cambridge (MSRC) dataset </td>
+		<td> The MSRC images were easier than flickr as the photos often concentrated
+		on the object of interest.  This dataset is obsolete. </td>
+		</tr>
+		<tr>
+		<td> <a HREF="../voc2007/index.html">  2007 </a></td>
+		<td>
+		20 classes:
+		<ul>
+		<li><i>Person:</i> person</li>
+		<li><i>Animal:</i> bird, cat, cow, dog, horse, sheep</li>
+		<li><i>Vehicle:</i> aeroplane, bicycle, boat, bus, car, 
+				motorbike, train</li>
+		<li><i>Indoor:</i> bottle, chair, dining table, potted plant, sofa,
+				tv/monitor</li>
+		</ul>
+		Train/validation/test: 
+		9,963 images containing 24,640 annotated objects.
+		</td>
+		<td> 
+		<ul>
+		<li> Number of classes increased from 10 to 20  </li>
+		<li> Segmentation taster introduced </li>
+		<li> Person layout taster introduced </li>
+		<li> Truncation flag added to annotations</li>
+		<li> Evaluation measure for the classification challenge
+		changed to Average Precision. Previously it had been ROC-AUC.</li>
+		</ul>
+		</td>
+		<td> This year established the 20 classes, and these have been fixed 
+		since then. This was the 
+		final year that annotation was released for  the testing data. </td>
+		</tr>
+		<tr>
+		<td> <a HREF="../voc2008/index.html">  2008 </a></td>
+		<td> 20 classes. The data is split (as usual) around 50% train/val and
+		50% test. The train/val data has 4,340 images containing 10,363 annotated
+		objects.
+		</td>
+		<td>
+		<ul>
+		<li> Occlusion flag added to annotations.</li>
+		<li> Test data annotation no longer made public. </li>
+		<li> The segmentation and person layout data sets include images from
+		the corresponding VOC2007 sets.</li>
+		</ul>
+		</td>
+		<td> 
+		</td>
+		</tr>
+		<tr>
+		<td> <a HREF="../voc2009/index.html">  2009 </a></td>
+		<td>
+		20 classes. The train/val data has 
+		7,054  images containing 17,218 ROI annotated
+		objects and 3,211 segmentations.
+		</td>
+		<td>
+		<ul>
+		<li>  From now on the data for all tasks consists of the previous years' images
+		augmented with new images. In
+		earlier years an entirely new data set was released each year for the
+		classification/detection tasks.
+		</li>
+		<li>  Augmenting allows the number of images to grow each year,
+		and means that test results can be compared on the previous years' images.
+		</li>
+		<li> Segmentation becomes a standard challenge (promoted from a taster) </li>
+		</ul>
+		</td>
+		<td> 
+		<ul>
+		<li> No difficult flags were provided for the additional images (an omission).</li>
+		<li> Test data annotation not made public. </li>
+		</ul>
+		</td> 
+		</tr>
+		<tr>
+		<td> <a HREF="../voc2010/index.html">  2010 </a></td>
+		<td> 
+		20 classes. The train/val data has 
+		10,103  images containing 23,374 ROI annotated
+		objects and 4,203 segmentations.
+		</td>
+		<td> 
+		<ul>
+		<li> Action Classification taster introduced.  </li>
+		<li> Associated challenge on large scale classification 
+			introduced based on ImageNet.
+		</li>
+		<li> Amazon Mechanical Turk used for early stages of the annotation.  </li>
+		</ul>
+		</td>
+		<td> 
+		<ul>
+		<li> Method of computing AP changed. Now uses all data points rather than
+		TREC style sampling. </li>
+		<li> Test data annotation not made public. </li>
+		</ul>
+		</td>
+		</tr>
+
+		<tr>
+		<td> <a HREF="../voc2011/index.html">  2011 </a></td>
+		<td> 
+		20 classes. The train/val data has 
+		11,530 images containing 27,450 ROI annotated
+		objects and 5,034 segmentations.
+		</td>
+		<td> 
+		<ul>
+		<li> Action Classification taster extended to 10 classes + "other".  </li>
+		</ul>
+		</td>
+		<td> 
+		<ul>
+		<li> Layout annotation is now not "complete": only people are annotated and
+        some people may be unannotated.</li>
+		</ul>
+		</td>
+		</tr>
+
+		<tr>
+		<td> <a HREF="../voc2012/index.html">  2012 </a></td>
+		<td> 
+		20 classes. The train/val data has 
+		11,530 images containing 27,450 ROI annotated
+		objects and 6,929 segmentations.
+		</td>
+		<td> 
+		<ul>
+		<li> Size of segmentation dataset substantially increased.</li>
+		<li> People in action classification dataset are additionally
+        annotated with a reference point on the body.</li>
+		</ul>
+		</td>
+		<td> 
+		<ul>
+		<li> Datasets for classification, detection and person layout are the same as VOC2011.</li>
+		</ul>
+		</td>
+		</tr>
+
+		</table> 
+	</body>
+</html>

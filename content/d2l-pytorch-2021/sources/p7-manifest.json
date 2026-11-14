@@ -1,0 +1,602 @@
+{
+  "schemaVersion": 1,
+  "batch": "P7",
+  "courseId": "d2l-pytorch-2021",
+  "date": "2026-11-14",
+  "scope": "LEC43–50 + cv-dense-prediction; accepted LEC1–42 and first six labs unchanged; content only",
+  "parallelOwners": {
+    "P7Lec43to46": [
+      "lec43",
+      "lec44",
+      "lec45",
+      "lec46"
+    ],
+    "P7Lec47to50": [
+      "lec47",
+      "lec48",
+      "lec49",
+      "lec50"
+    ],
+    "P7DenseLab": [
+      "cv-dense-prediction"
+    ]
+  },
+  "mainResponsibilities": [
+    "shared indices and source integration",
+    "bounded numerical/real-data/browser/final build acceptance",
+    "status and next handoff",
+    "commit and push main"
+  ],
+  "bookVersion": "sources/p1-shared/book-version.json",
+  "newTextbookReadScope": [
+    "13.5",
+    "13.7",
+    "13.8",
+    "13.9",
+    "13.10",
+    "13.11",
+    "13.12"
+  ],
+  "readScopeBoundary": "Worker manifests retain exact full/selected ranges. Current Chinese second edition fixed commit, not2021 snapshot. Original YOLO section2, RoI API and VOC documentation are editor supplements, not extra required papers. LEC50 official-source guide is not classroom content.",
+  "lectures": [
+    {
+      "lectureId": "lec43",
+      "bvid": "BV1Db4y1C71g",
+      "parts": [
+        {
+          "p": 1,
+          "title": "目标检测",
+          "seconds": 2525,
+          "cid": 364137722
+        },
+        {
+          "p": 2,
+          "title": "QA",
+          "seconds": 984,
+          "cid": 363606575
+        }
+      ],
+      "durationSeconds": 3509,
+      "metadata": "sources/p7-lec43/video-metadata.json",
+      "sourceManifest": "sources/p7-lec43/manifest-fragment.json",
+      "notes": "verified_editorial_textbook_guide_not_classroom",
+      "draft": "blocked_empty_public_captions_no_media_review",
+      "materials": "not_required"
+    },
+    {
+      "lectureId": "lec44",
+      "bvid": "BV1ZX4y1c7Sw",
+      "parts": [
+        {
+          "p": 1,
+          "title": "多尺度锚框",
+          "seconds": 597,
+          "cid": 364138290
+        },
+        {
+          "p": 2,
+          "title": "SSD",
+          "seconds": 3165,
+          "cid": 364144536
+        },
+        {
+          "p": 3,
+          "title": "QA",
+          "seconds": 1621,
+          "cid": 364144643
+        }
+      ],
+      "durationSeconds": 5383,
+      "metadata": "sources/p7-lec44/video-metadata.json",
+      "sourceManifest": "sources/p7-lec44/manifest-fragment.json",
+      "notes": "verified_editorial_textbook_guide_not_classroom",
+      "draft": "blocked_empty_public_captions_no_media_review",
+      "materials": "not_required"
+    },
+    {
+      "lectureId": "lec45",
+      "bvid": "BV1BK4y1M7Rd",
+      "parts": [
+        {
+          "p": 1,
+          "title": "语义分割",
+          "seconds": 432,
+          "cid": 367422597
+        },
+        {
+          "p": 2,
+          "title": "语义分割数据集",
+          "seconds": 1677,
+          "cid": 369439542
+        },
+        {
+          "p": 3,
+          "title": "QA",
+          "seconds": 1201,
+          "cid": 367434860
+        }
+      ],
+      "durationSeconds": 3310,
+      "metadata": "sources/p7-lec45/video-metadata.json",
+      "sourceManifest": "sources/p7-lec45/manifest-fragment.json",
+      "notes": "verified_editorial_textbook_guide_not_classroom",
+      "draft": "blocked_empty_public_captions_no_media_review",
+      "materials": "not_required"
+    },
+    {
+      "lectureId": "lec46",
+      "bvid": "BV17o4y1X7Jn",
+      "parts": [
+        {
+          "p": 1,
+          "title": "转置卷积",
+          "seconds": 561,
+          "cid": 367441828
+        },
+        {
+          "p": 2,
+          "title": "代码",
+          "seconds": 762,
+          "cid": 367443595
+        },
+        {
+          "p": 3,
+          "title": "QA",
+          "seconds": 595,
+          "cid": 367446029
+        }
+      ],
+      "durationSeconds": 1918,
+      "metadata": "sources/p7-lec46/video-metadata.json",
+      "sourceManifest": "sources/p7-lec46/manifest-fragment.json",
+      "notes": "verified_editorial_textbook_guide_not_classroom",
+      "draft": "blocked_empty_public_captions_no_media_review",
+      "materials": "not_required"
+    },
+    {
+      "lectureId": "lec47",
+      "bvid": "BV1CM4y1K7r7",
+      "parts": [
+        {
+          "p": 1,
+          "title": "再谈转置卷积",
+          "seconds": 579,
+          "cid": 368908786
+        }
+      ],
+      "durationSeconds": 579,
+      "metadata": "sources/p7-lec47/video-metadata.json",
+      "sourceManifest": "sources/p7-lec47/manifest-fragment.json",
+      "notes": "verified_editorial_textbook_guide_not_classroom",
+      "draft": "blocked_empty_public_captions_no_media_review",
+      "materials": "not_required"
+    },
+    {
+      "lectureId": "lec48",
+      "bvid": "BV1af4y1L7Zu",
+      "parts": [
+        {
+          "p": 1,
+          "title": "FCN",
+          "seconds": 263,
+          "cid": 367982799
+        },
+        {
+          "p": 2,
+          "title": "代码",
+          "seconds": 1061,
+          "cid": 367985837
+        },
+        {
+          "p": 3,
+          "title": "QA",
+          "seconds": 291,
+          "cid": 367989549
+        }
+      ],
+      "durationSeconds": 1615,
+      "metadata": "sources/p7-lec48/video-metadata.json",
+      "sourceManifest": "sources/p7-lec48/manifest-fragment.json",
+      "notes": "verified_editorial_textbook_guide_not_classroom",
+      "draft": "blocked_empty_public_captions_no_media_review",
+      "materials": "not_required"
+    },
+    {
+      "lectureId": "lec49",
+      "bvid": "BV1Eh41167GN",
+      "parts": [
+        {
+          "p": 1,
+          "title": "样式迁移",
+          "seconds": 298,
+          "cid": 367986330
+        },
+        {
+          "p": 2,
+          "title": "代码",
+          "seconds": 1158,
+          "cid": 367996398
+        },
+        {
+          "p": 3,
+          "title": "QA",
+          "seconds": 512,
+          "cid": 367993134
+        }
+      ],
+      "durationSeconds": 1968,
+      "metadata": "sources/p7-lec49/video-metadata.json",
+      "sourceManifest": "sources/p7-lec49/manifest-fragment.json",
+      "notes": "verified_editorial_textbook_guide_not_classroom",
+      "draft": "blocked_empty_public_captions_no_media_review",
+      "materials": "not_required"
+    },
+    {
+      "lectureId": "lec50",
+      "bvid": "BV1F64y1x7xP",
+      "parts": [
+        {
+          "p": 1,
+          "title": "det_kaggle",
+          "seconds": 664,
+          "cid": 372624177
+        }
+      ],
+      "durationSeconds": 664,
+      "metadata": "sources/p7-lec50/video-metadata.json",
+      "sourceManifest": "sources/p7-lec50/manifest-fragment.json",
+      "notes": "verified_official_source_editorial_guide_not_classroom",
+      "draft": "blocked_empty_public_captions_no_media_review",
+      "materials": "not_required"
+    }
+  ],
+  "lab": {
+    "id": "cv-dense-prediction",
+    "sourceManifest": "sources/p7-cv-dense-prediction/manifest-fragment.json",
+    "taskIds": [
+      "cv-dense-prediction-1",
+      "cv-dense-prediction-2",
+      "cv-dense-prediction-3",
+      "cv-dense-prediction-4"
+    ],
+    "documents": [
+      "lab.zh.md",
+      "guide.zh.md"
+    ],
+    "contract": "All four tasks preserved; routes/invariants/local hints, no complete student solution or English placeholder.",
+    "execution": "bounded_real_banana_VOC_style_and_synthetic_mechanisms_not_full_student_tasks"
+  },
+  "counts": {
+    "bvids": 8,
+    "parts": 19,
+    "durationSeconds": 18946,
+    "notes": 8,
+    "drafts": 0,
+    "materials": 0,
+    "selfDrawnSvgs": 8,
+    "labDocuments": 2
+  },
+  "cumulativeCounts": {
+    "lectureNotes": 50,
+    "lectureDrafts": 0,
+    "lectureMaterials": 0,
+    "selfDrawnSvgs": 50,
+    "labDocuments": 14,
+    "bvids": 50,
+    "parts": 142
+  },
+  "videoBoundary": "All19 public subtitle requests once succeeded empty; mid1567748478 and2021 identity verified. No media review or internal classroom timeline. LEC43 actual target detection/QA two parts, three model topics preserved; LEC46/47 separate BVs. Header total durations verified individually, no player restored.",
+  "competition": {
+    "identity": "Official announcement + CodaLab33573 + Kaggle cowboyoutfits; Kaggle host Joshua Z. Zhang",
+    "evidence": "sources/p7-cv-dense-prediction/source-index.json",
+    "publicTerms": "CodaLab explicitly educational purposes, noncommercial licenses and no data redistribution for other purposes. This is not an unlimited use grant or completed Kaggle authentication.",
+    "access": "Kaggle sign-in and rules acceptance required for files; neither performed, no original competition files downloaded.",
+    "schemaConflicts": [
+      "Data description image_id vs official host starter Version1 id column",
+      "Starter exports pixel xyxy; actual scorer unread, cannot presume standard COCO xywh submission"
+    ],
+    "LEC71": "classroom and winner-method summary not reviewed; dependency retained",
+    "execution": "not_run_no_competition_training_AP_scoring_export_or_submission",
+    "substitution": "banana/VOC/synthetic examples do not count as cowboy execution"
+  },
+  "verification": {
+    "source": "passed50 unique declared source hashes; sources/p7-shared/source-check.json",
+    "video": "passed8 official headers/all19P sums; sources/p7-shared/video-check.json and browser-check.json",
+    "content": "passed11 Markdown/8 SVG XML/146 local routes/4 task IDs; prior42 course entries and all12lab metadata unchanged; sources/p7-shared/content-check.json",
+    "numeric": "passed finite CPU mechanisms and three real runs each once; sources/p7-shared/runtime-verification.json",
+    "browser": "passed actual Chromium desktop1440/mobile390, eight default notes/headers/figures/light-dark/math/selftests/footer, experiment two tabs and root navigation, missing draft,245 Bilibili links; LEC44 real popup retains notes; no app errors; tabs closed",
+    "browserEvidence": "sources/p7-shared/browser-check.json",
+    "build": "passed npm run build once: tsc --noEmit + Vite5.4.21,3018modules,5.68s",
+    "buildEvidence": "sources/p7-shared/build.log",
+    "deployment": "not_checked_local_Vite_and_build_are_not_GitHub_Pages_or_full_video_playback"
+  },
+  "runtimeBoundary": {
+    "status": "passed_finite_CPU_scope",
+    "environment": {
+      "python": "3.11.8",
+      "torch": "2.5.1",
+      "torchvision": "0.20.1",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "pillow": "13.0.0",
+      "platform": "macOS-26.3.1-arm64-arm-64bit",
+      "machine": "arm64",
+      "chip": "Apple M2 Max",
+      "threads": 1,
+      "device": "cpu",
+      "cuda_count": 0,
+      "mps_available_detected_only": true
+    },
+    "environmentEvidence": "sources/p7-shared/environment.json",
+    "mechanisms": "sources/p7-shared/mechanism-smoke.json",
+    "reusedWithoutRerun": [
+      "sources/p6-shared/detection-smoke.json",
+      "sources/p6-shared/notes-smoke.json"
+    ],
+    "realExperiments": {
+      "banana": "sources/p7-shared/ssd-smoke.json",
+      "VOC": "sources/p7-shared/fcn-smoke.json",
+      "style": "sources/p7-shared/style-smoke.json"
+    },
+    "acquisition": [
+      "sources/p7-shared/data-weight-acquisition.json",
+      "sources/p7-shared/style-image-acquisition.json"
+    ],
+    "visualObservation": "sources/p7-shared/runtime-visual-check.json",
+    "sourceImplementationBoundary": "Main transient Python programs used exact pinned P6 bbox/anchor functions with torch aliases; TinySSD/FCN/style topology follows reviewed textbook PyTorch design. Independent finite data loaders preserve VOC palette255. FCN explicitly freezes pretrained backbone, uses Xavier classifier, zero biases and bilinear upsampler; not original full finetuning. No d2l install or old Notebook execution.",
+    "qualityBoundary": [
+      "TinySSD fixed validation image has zero boxes at display threshold0.9 despite reduced training loss.",
+      "VOC tiny validation is weak and observed prediction nearly all background; subset mIoU is not an official VOC benchmark.",
+      "Style result is real pretrained two-image optimization but only64x96/25updates, not full500-step quality reproduction."
+    ],
+    "notExecuted": [
+      "Cowboy authentication, acceptance of rules, original competition data download, real files/scorer/schema acceptance, training, AP evaluation or submission",
+      "LEC71 classroom or winner-method review",
+      "Full student implementations and every task variant, style-weight paired comparison",
+      "Full-scale textbook banana/VOC training or full-resolution style",
+      "CUDA/MPS execution, GPU or CPU performance benchmark",
+      "New empty-GT/padding adapter implementation; contract documented, previous P6 helper scope remains valid nonempty GT"
+    ],
+    "publication": "Scripts only transient subprocess command input, no solution scripts created on disk. Datasets, pretrained weights, raw and derived images only in /tmp caches; not committed or served.",
+    "verificationRuns": "Three bounded real CPU scenarios and one mechanism script, each once; all exited0. No numerical rerun or weakened assertion."
+  },
+  "mainIntegrationChanges": [
+    "Official header all-P durations and true two-part LEC43 mapping",
+    "Centralized real-run results in resources, removed duplicate lab logs",
+    "Clarified MSE mean-of-squares parentheses and removed duplicated LEC47 shape derivation",
+    "Replaced repeated SSD numeric diagram with candidate-identity flow",
+    "Fixed lab ?v=lab links to supported ?v=zh",
+    "Split mobile-overflow equations in LEC45/47 and verified390px",
+    "No src/player/UI code changes"
+  ],
+  "diagnostics": [
+    "Header test initially used exact short text but actual anchor includes duration; corrected selector, all8 then passed. No app failure.",
+    "LEC45/47 initial mobile scrollWidths393/406 repaired to390 with split equations; only affected surfaces rechecked.",
+    "No numerical or build failures."
+  ],
+  "workerEvidenceBoundary": "Generation-time hashes and not_run_by_worker remain historical. Main final content-check and runtime/browser evidence are authoritative.",
+  "remaining": {
+    "lectureNotes": [
+      "lec51",
+      "lec52",
+      "lec53",
+      "lec54",
+      "lec55",
+      "lec56",
+      "lec57",
+      "lec58",
+      "lec59",
+      "lec60",
+      "lec61",
+      "lec62",
+      "lec63",
+      "lec64",
+      "lec65",
+      "lec66",
+      "lec67",
+      "lec68",
+      "lec69",
+      "lec70",
+      "lec71",
+      "lec72",
+      "lec73"
+    ],
+    "practiceIds": [
+      "recurrent-language-model",
+      "seq2seq-attention",
+      "transformer",
+      "bert-pretrain-finetune",
+      "optimization-capstone"
+    ],
+    "blockedDraftIds": [
+      "lec01",
+      "lec02",
+      "lec03",
+      "lec04",
+      "lec05",
+      "lec06",
+      "lec07",
+      "lec08",
+      "lec09",
+      "lec10",
+      "lec11",
+      "lec12",
+      "lec13",
+      "lec14",
+      "lec15",
+      "lec16",
+      "lec17",
+      "lec18",
+      "lec19",
+      "lec20",
+      "lec21",
+      "lec22",
+      "lec23",
+      "lec24",
+      "lec25",
+      "lec26",
+      "lec27",
+      "lec28",
+      "lec29",
+      "lec30",
+      "lec31",
+      "lec32",
+      "lec33",
+      "lec34",
+      "lec35",
+      "lec36",
+      "lec37",
+      "lec38",
+      "lec39",
+      "lec40",
+      "lec41",
+      "lec42",
+      "lec43",
+      "lec44",
+      "lec45",
+      "lec46",
+      "lec47",
+      "lec48",
+      "lec49",
+      "lec50"
+    ],
+    "nextBatch": {
+      "batch": "P8",
+      "A": [
+        "lec51",
+        "lec52",
+        "lec53",
+        "lec54"
+      ],
+      "B": [
+        "lec55",
+        "lec56",
+        "lec57",
+        "lec58",
+        "lec59"
+      ],
+      "C": [
+        "recurrent-language-model"
+      ]
+    },
+    "boundary": "Retain full sequence/RNN/GRU/LSTM/deep/bidirectional topics and four tasks. Verify actual corpus/access; synthetic tokens are not real corpus training; bidirectional context is not causal generation."
+  },
+  "deliveryPolicy": {
+    "branch": "main",
+    "remote": "https://github.com/socoo123/course_web",
+    "contentOnly": true,
+    "noAssetsToCommit": [
+      "datasets",
+      "raw or derived images",
+      "weights",
+      "predictions",
+      "environments",
+      "cookies/tokens",
+      "temporary full solution scripts"
+    ],
+    "sourceArtifacts": [
+      "sources/p7-cv-dense-prediction/book-fcn.txt",
+      "sources/p7-cv-dense-prediction/book-multiscale-object-detection.txt",
+      "sources/p7-cv-dense-prediction/book-neural-style.txt",
+      "sources/p7-cv-dense-prediction/book-rcnn.txt",
+      "sources/p7-cv-dense-prediction/book-semantic-segmentation-and-dataset.txt",
+      "sources/p7-cv-dense-prediction/book-ssd.txt",
+      "sources/p7-cv-dense-prediction/book-transposed-conv.txt",
+      "sources/p7-cv-dense-prediction/codalab-public-clauses.txt",
+      "sources/p7-cv-dense-prediction/download-headers.json",
+      "sources/p7-cv-dense-prediction/flickr-terms-excerpt.txt",
+      "sources/p7-cv-dense-prediction/kaggle-data.txt",
+      "sources/p7-cv-dense-prediction/kaggle-overview.txt",
+      "sources/p7-cv-dense-prediction/kaggle-rules.txt",
+      "sources/p7-cv-dense-prediction/kaggle-starter-excerpt.txt",
+      "sources/p7-cv-dense-prediction/manifest-fragment.json",
+      "sources/p7-cv-dense-prediction/source-index.json",
+      "sources/p7-cv-dense-prediction/style-image-headers.json",
+      "sources/p7-cv-dense-prediction/torchvision-vgg.txt",
+      "sources/p7-cv-dense-prediction/verification-contract.json",
+      "sources/p7-cv-dense-prediction/voc2012-official.txt",
+      "sources/p7-cv-dense-prediction/weight-use-conditions.txt",
+      "sources/p7-lec43/book-rcnn.txt",
+      "sources/p7-lec43/manifest-fragment.json",
+      "sources/p7-lec43/roi-pool-api-review.txt",
+      "sources/p7-lec43/schedule-evidence.json",
+      "sources/p7-lec43/video-metadata.json",
+      "sources/p7-lec43/yolo-original-review.txt",
+      "sources/p7-lec44/book-multiscale-object-detection.txt",
+      "sources/p7-lec44/book-ssd.txt",
+      "sources/p7-lec44/manifest-fragment.json",
+      "sources/p7-lec44/schedule-evidence.json",
+      "sources/p7-lec44/video-metadata.json",
+      "sources/p7-lec45/book-semantic-segmentation-and-dataset.txt",
+      "sources/p7-lec45/manifest-fragment.json",
+      "sources/p7-lec45/schedule-evidence.json",
+      "sources/p7-lec45/video-metadata.json",
+      "sources/p7-lec45/voc-devkit-review.txt",
+      "sources/p7-lec46/book-transposed-conv.txt",
+      "sources/p7-lec46/manifest-fragment.json",
+      "sources/p7-lec46/schedule-evidence.json",
+      "sources/p7-lec46/transpose-api-review.txt",
+      "sources/p7-lec46/video-metadata.json",
+      "sources/p7-lec47/book-transposed-conv.txt",
+      "sources/p7-lec47/manifest-fragment.json",
+      "sources/p7-lec47/schedule-evidence.json",
+      "sources/p7-lec47/video-metadata.json",
+      "sources/p7-lec48/book-fcn.txt",
+      "sources/p7-lec48/book-semantic-segmentation-and-dataset.txt",
+      "sources/p7-lec48/manifest-fragment.json",
+      "sources/p7-lec48/schedule-evidence.json",
+      "sources/p7-lec48/video-metadata.json",
+      "sources/p7-lec49/book-neural-style.txt",
+      "sources/p7-lec49/manifest-fragment.json",
+      "sources/p7-lec49/schedule-evidence.json",
+      "sources/p7-lec49/video-metadata.json",
+      "sources/p7-lec50/announcement-evidence.txt",
+      "sources/p7-lec50/manifest-fragment.json",
+      "sources/p7-lec50/schedule-evidence.json",
+      "sources/p7-lec50/video-metadata.json",
+      "sources/p7-shared/browser-check.json",
+      "sources/p7-shared/build.log",
+      "sources/p7-shared/content-check.json",
+      "sources/p7-shared/data-weight-acquisition.json",
+      "sources/p7-shared/environment.json",
+      "sources/p7-shared/fcn-smoke.json",
+      "sources/p7-shared/mechanism-smoke.json",
+      "sources/p7-shared/runtime-verification.json",
+      "sources/p7-shared/runtime-visual-check.json",
+      "sources/p7-shared/source-check.json",
+      "sources/p7-shared/ssd-smoke.json",
+      "sources/p7-shared/style-image-acquisition.json",
+      "sources/p7-shared/style-smoke.json",
+      "sources/p7-shared/video-check.json"
+    ],
+    "publicationArtifacts": [
+      "lectures/lec43/notes.zh.md",
+      "lectures/lec44/notes.zh.md",
+      "lectures/lec45/notes.zh.md",
+      "lectures/lec46/notes.zh.md",
+      "lectures/lec47/notes.zh.md",
+      "lectures/lec48/notes.zh.md",
+      "lectures/lec49/notes.zh.md",
+      "lectures/lec50/notes.zh.md",
+      "labs/cv-dense-prediction/lab.zh.md",
+      "labs/cv-dense-prediction/guide.zh.md",
+      "resources.zh.md",
+      "lectures/lec43/assets/detector-routes.svg",
+      "lectures/lec44/assets/ssd-contract.svg",
+      "lectures/lec45/assets/segmentation-label-contract.svg",
+      "lectures/lec46/assets/transpose-scatter.svg",
+      "lectures/lec47/assets/convolution-adjoint.svg",
+      "lectures/lec48/assets/fcn-pixel-contract.svg",
+      "lectures/lec49/assets/style-optimization.svg",
+      "lectures/lec50/assets/competition-contract.svg"
+    ],
+    "sharedFiles": [
+      "course.json",
+      "status.json",
+      "resources.zh.md",
+      "sources/PLAN.txt",
+      "sources/NEXT-PROMPT.txt",
+      "sources/p7-manifest.json"
+    ]
+  }
+}

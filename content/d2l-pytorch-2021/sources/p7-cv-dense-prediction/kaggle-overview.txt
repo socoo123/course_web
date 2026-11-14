@@ -1,0 +1,120 @@
+URL: https://www.kaggle.com/competitions/cowboyoutfits/overview
+Captured 2026-11-14; anonymous Chromium; DOM visible text; no login.
+
+menu
+Skip to
+content
+
+Create
+
+Home
+
+Competitions
+
+Benchmarks
+
+Arenas
+
+Game Arena
+
+Data Hub
+
+More
+
+​
+Login
+Sign Up
+Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic.
+Learn more
+OK, Got it.
+Joshua Z. Zhang · Community Prediction Competition · 5 years ago
+Late Submission
+more_horiz
+CowBoy Outfits Detection
+
+Can you train a model to locate cowboy outfits? Accept the challenge of imbalanced training data.
+
+Overview
+Data
+Code
+Models
+Discussion
+Leaderboard
+Rules
+Overview
+
+Start
+
+Jul 16, 2021
+
+Close
+
+Aug 7, 2021
+Description
+link
+keyboard_arrow_up
+Welcome to Cowboy Outfits Detection Competition!
+
+This is an object detection competition with imbalanced data challenge. You will need to train a model to detect cowboy outfits in wild images.
+
+Training Data Distribution
+Example Image
+Starter Kit
+
+We provide a notebook in Code for you to get ready for the training data/annotation. Due to the evaluation system restriction in Kaggle InClass competition, in the starter kit notebook, we will also provide you with an example of how to generating the prediction.json file so that you can use the Codalab competition platform to automatically evaluate your submissions.
+
+For more details, please refer to the Evaluation page.
+
+Evaluation
+link
+keyboard_arrow_up
+
+The evaluation metric for this competition is Mean Average Precition for Bounding Box IoU. The Bbox IoU score, commonly used in object detection tasks, measures how accurate the model can localize objects of interest while being able to predict the true categories.
+
+While there are many different settings you can tune for e.g. IoU threshold, we use the popular AP 0.5:0.95 metric used in COCO as the primary challenge metric.
+
+Submission Format
+
+For every author in the dataset, submission files should be json serialized list of annotations with the following keys: image_id, category_id, bbox, and score. image_id should be a unique image identifier provided by either valid.csv or test.csv. category_id should be a unique category id as in
+category_id = { 'belt': 87, 'sunglasses': 1034, 'boot': 131, 'cowboy_hat': 318, 'jacket': 588}
+bbox should be a list of 4 float coordinates. score should be a float number for confidence score, in range 0-1.
+
+The file should contain a serialized json string and have the following format:
+
+[{"image_id": 2817499345625518079, "category_id": 588, "bbox": [0, 0, 0, 0], "score": 0.8323169745334087}, {"image_id": 4780409558104969215, "category_id": 131, "bbox": [0, 0, 0, 0], "score": 0.19203804173293615}, {"image_id": 7518610131770248858, "category_id": 1034, "bbox": [0, 0, 0, 0], "score": 0.1928978657543734},]
+Important!
+kaggle InClass Competition does not support custom score function so please submit your submission file to Codalab competition here: submission link. Your submission to Kaggle will fail, don't worry! We will use the final phase leaderboard on CodaLab to determine the winners, the competition will close on 08/07/2021 4:00 am UTC( 12:00 pm GMT+8).  Note that you will need to submit the solution(link to notebook or projects) and details in order to be eligible for awards!
+Citation
+link
+keyboard_arrow_up
+
+Joshua Z. Zhang. CowBoy Outfits Detection. https://www.kaggle.com/competitions/cowboyoutfits, 2021. Kaggle.
+
+Cite
+Competition Host
+
+Joshua Z. Zhang
+
+Prizes & Awards
+
+Kudos
+
+Does not award Points or Medals
+
+Participation
+
+147 Entrants
+
+0 Participants
+
+0 Teams
+
+0 Submissions
+
+Tags
+Categorization Accuracy
+Table of Contents
+collapse_all
+Description
+Evaluation
+Citation

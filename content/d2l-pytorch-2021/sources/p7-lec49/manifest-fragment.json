@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "batch": "P7",
+  "lectureId": "lec49",
+  "generatedAt": "2026-11-14",
+  "owner": "P7Lec47to50",
+  "scope": "Only owned lecture/source directories. No shared index changes, tests/build/lint/formatter, numerical execution or git operations.",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required",
+    "diagram": "original_svg_written_pending_browser_acceptance"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "editionBoundary": "Current pinned Chinese second edition; not 2021 full-book snapshot.",
+    "sections": [
+      "13.12"
+    ],
+    "versionEvidenceReused": "sources/p1-shared/book-version.json",
+    "licenseBoundary": "Root Apache-2.0 separate from setup.py MIT-0; no extension to videos, images, data or pretrained weights."
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1Eh41167GN/",
+    "label": "官方 B站视频（全 3 P 合计）",
+    "duration": "32:48",
+    "language": "zh",
+    "durationSeconds": 1968,
+    "pageCount": 3,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 367986330,
+        "part": "样式迁移",
+        "duration": 298
+      },
+      {
+        "page": 2,
+        "cid": 367996398,
+        "part": "代码",
+        "duration": 1158
+      },
+      {
+        "page": 3,
+        "cid": 367993134,
+        "part": "QA",
+        "duration": 512
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 3,
+    "permission": "No open transcript republication permission; no media reviewed/downloaded."
+  },
+  "scheduleDate": "2021-07-11",
+  "publishedAt": "2021-07-11T08:06:57+00:00",
+  "sources": [
+    {
+      "snapshot": "sources/p7-lec49/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Eh41167GN",
+      "sha256": "d8fdd4e6cec7f58aa712c5fcb1db577f881446447339eba1882a49a8fc0545cb",
+      "bytes": 2502,
+      "readScope": "Filtered view fields and one public subtitle request per page; all retained fields read.",
+      "readRanges": []
+    },
+    {
+      "snapshot": "sources/p7-lec49/schedule-evidence.json",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "21f05710c74d00a013a448739164ebdc4a9f82c12071fcdbafac771022621b85",
+      "bytes": 1973,
+      "readScope": "Owned lecture mapping and full associated schedule row; schedule not content coverage.",
+      "readRanges": []
+    },
+    {
+      "snapshot": "sources/p7-lec49/book-neural-style.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/neural-style.md",
+      "sha256": "4b9a894c3d421e0eacd01cc81504d8c2fd00949ab997fa99d54f6645568c9003",
+      "bytes": 22969,
+      "readScope": "Whole pinned chapter read, including prose, framework branches and exercises; implementation explanation limited to PyTorch.",
+      "readRanges": [
+        {
+          "start": 1,
+          "end": 563
+        }
+      ]
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "lectures/lec49/notes.zh.md",
+      "sha256": "4daddcc95908f177e851b47da88b58db794bf08867b6a5724c15fd92727fbdd1",
+      "bytes": 10689,
+      "status": "written_pending_main_acceptance"
+    },
+    {
+      "path": "lectures/lec49/assets/style-optimization.svg",
+      "sha256": "6821c520e681c5bcd53a3949d5332a40f4c788abdcb8e450e60893663d68a6da",
+      "bytes": 2459,
+      "status": "written_pending_main_acceptance"
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "id": "content-gram-tv",
+      "kind": "synthetic_mechanism",
+      "expected": {
+        "contentMSE": 2.5,
+        "gramForA_1_2_3_4": [
+          [
+            1.25,
+            2.75
+          ],
+          [
+            2.75,
+            6.25
+          ]
+        ],
+        "tvForRows_0_1": 0.5
+      },
+      "checks": [
+        "Feature-space common column permutation preserves Gram.",
+        "Constant image TV0.",
+        "Single image only; no invalid batch flattening."
+      ]
+    },
+    {
+      "id": "style-effective-weight",
+      "kind": "source_semantics",
+      "expected": "list 10 * styles_l repeats terms; effective per-style-layer coefficient10000, plotted style sum coefficient1000; content1 TV10.",
+      "checks": [
+        "Compare actual objective against explicit weighted scalar sum."
+      ]
+    },
+    {
+      "id": "optimization-object",
+      "kind": "synthetic_autograd",
+      "expected": "Frozen feature parameters unchanged; generated image has nonzero gradient/updates; cached targets detached.",
+      "checks": [
+        "No no_grad around generated-image forward.",
+        "Standalone mechanism check is not real pretrained image optimization; main run separate."
+      ]
+    }
+  ],
+  "workerExecution": {
+    "numerical": false,
+    "training": false,
+    "browser": false,
+    "build": false,
+    "lint": false,
+    "formatter": false,
+    "commit": false,
+    "note": "Hashes identify saved sources and generation-time content, not runtime/browser acceptance."
+  },
+  "mainVerificationBoundary": "Main owns p7-shared final numerical/browser/build evidence; lecture48/49 footers acknowledge main-reported finite real runs without converting worker status to executed.",
+  "limits": [
+    "No classroom time blocks, demonstrations or QA verified.",
+    "No extra draft/materials placeholders.",
+    "Original SVG is not a screenshot."
+  ]
+}

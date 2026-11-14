@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "batch": "P7",
+  "lectureId": "lec44",
+  "generatedAt": "2026-11-14",
+  "owner": "P7Lec43to46",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required",
+    "diagram": "original_svg_written_pending_main_browser_acceptance"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "sections": [
+      "13.5",
+      "13.7"
+    ],
+    "editionBoundary": "Current Chinese second edition pinned source, not2021 snapshot.",
+    "licenseBoundary": "Root Apache-2.0 separate from setup.py MIT-0 field; no extension to third-party media,data,weights."
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1ZX4y1c7Sw?p=1",
+    "label": "官方 B站视频（全 3 P 合计）",
+    "duration": "1:29:43",
+    "durationSeconds": 5383,
+    "pageCount": 3,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 364138290,
+        "part": "多尺度锚框",
+        "duration": 597
+      },
+      {
+        "page": 2,
+        "cid": 364144536,
+        "part": "SSD",
+        "duration": 3165
+      },
+      {
+        "page": 3,
+        "cid": 364144643,
+        "part": "QA",
+        "duration": 1621
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 3,
+    "permission": "No open transcript reuse grant established; no media review/download."
+  },
+  "scheduleDates": [
+    "7月4日"
+  ],
+  "publishedAt": "2021-07-04T07:56:40+00:00",
+  "sources": [
+    {
+      "path": "sources/p7-lec44/schedule-evidence.json",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "e5c10ef2328897018be8224c580e0f85c0c7a9b541615b22cf27a2a3613e1e1b",
+      "bytes": 3106,
+      "readScope": "Exact lecture and corresponding schedule inventory rows; original HTML already archived in sources/schedule-2021.html; linked slides/notebooks not read.",
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec44/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZX4y1c7Sw",
+      "sha256": "b9b435e5e1206a3cf1fa6b622785e17a50cb85bc0c91cddca30e19acfffd608a",
+      "bytes": 1813,
+      "readScope": "Filtered identity, dates, all pages, durations and one public player request per page; no media/subtitle content.",
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec44/book-multiscale-object-detection.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/multiscale-object-detection.md",
+      "sha256": "157f60c5525f12ce0c5160615838e1c66d536b46e066f74d112ca10d9d854a9a",
+      "bytes": 8591,
+      "readScope": {
+        "lines": "1-178",
+        "coverage": "Full source read, including all displayed framework branches, prose and exercises; implementation claims only common prose and PyTorch; no execution by worker."
+      },
+      "reused": false
+    },
+    {
+      "path": "sources/p7-lec44/book-ssd.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/ssd.md",
+      "sha256": "80abb227f9e1baa63a1217b832d716fc5dfc43b576b386cb6e92b4a0c1232a7f",
+      "bytes": 37700,
+      "readScope": {
+        "lines": "1-978",
+        "coverage": "Full source read, including all displayed framework branches, prose and exercises; implementation claims only common prose and PyTorch; no execution by worker."
+      },
+      "reused": false
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "lectures/lec44/notes.zh.md",
+      "sha256": "395d11843214a9ee49c15e5e1f91e91cc01eb1de6a3483b850721056476ce257",
+      "bytes": 11906
+    },
+    {
+      "path": "lectures/lec44/assets/ssd-contract.svg",
+      "sha256": "48956bd6809ca382e22e3d1724386891cd7ff9e43037c4ed36732bede792da6b",
+      "bytes": 2896
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "name": "multiscale_display_count",
+      "input": "grids4x4,2x2,1x1; 3 anchors per center",
+      "expected": {
+        "perScale": [
+          48,
+          12,
+          3
+        ],
+        "total": 63
+      }
+    },
+    {
+      "name": "complete_tinyssd_shape",
+      "input": "Pinned full TinySSD, 256x256 input, K=1; five scales [32,16,8,4,1], 4 anchors per center",
+      "expected": {
+        "perScale": [
+          4096,
+          1024,
+          256,
+          64,
+          4
+        ],
+        "anchors": [
+          1,
+          5444,
+          4
+        ],
+        "classes": [
+          "B",
+          5444,
+          2
+        ],
+        "bbox": [
+          "B",
+          21776
+        ],
+        "channels": [
+          64,
+          128,
+          128,
+          128,
+          128
+        ]
+      },
+      "boundary": "No extra2x2 prediction scale. Main already ran complete model; reuse sources/p7-shared/ssd-smoke.json rather than rerun."
+    },
+    {
+      "name": "flatten_order",
+      "input": "NCHW [1,2,1,2], channel0=[10,20],channel1=[11,21]",
+      "expected": {
+        "correctNHWC": [
+          10,
+          11,
+          20,
+          21
+        ],
+        "wrongDirect": [
+          10,
+          20,
+          11,
+          21
+        ]
+      }
+    },
+    {
+      "name": "masked_bbox_reduction",
+      "input": "one image,2 anchors,first positive,its4 absolute errors all1;second background;two class logits all0",
+      "expected": {
+        "bbox": 0.5,
+        "cls": "ln(2)",
+        "total": "ln(2)+.5",
+        "addedTwoBackgroundAnchorsBbox": 0.25,
+        "positiveCoordinateGradientMagnitude": 0.125,
+        "backgroundBBoxGradient": 0,
+        "backgroundClassGradientNonzero": true
+      },
+      "boundary": "Pinned mean over all A/4A, not positive normalization; all inputs finite."
+    },
+    {
+      "name": "object_class_count",
+      "input": "K=3,4 anchors per cell,256 square input",
+      "expected": {
+        "classChannels": 16,
+        "bboxChannels": 16,
+        "classShape": [
+          "B",
+          5444,
+          4
+        ]
+      }
+    },
+    {
+      "name": "training_inference_semantics",
+      "expected": "train/zero_grad -> forward -> multibox_target -> mean loss/backward -> step; eval plus no_grad separately; softmax dim2 then permute B,K+1,A; decode/filter class=-1; .9 display threshold distinct from NMS/assignment",
+      "kind": "source contract",
+      "boundary": "Reuse P6 geometry/NMS tests; no new variants."
+    }
+  ],
+  "reusedEvidence": [
+    "sources/p6-shared/detection-smoke.json",
+    "sources/p6-shared/notes-smoke.json"
+  ],
+  "workerExecution": {
+    "numericalTests": false,
+    "build": false,
+    "lint": false,
+    "formatter": false,
+    "browser": false,
+    "training": false,
+    "commitPush": false
+  },
+  "mainExecutionBoundary": "Main independently acquired banana/VOC and ran small TinySSD/FCN; public notes link central evidence. Worker did not run or verify those results. Training loss reduction is not detection quality success; banana visualization at.9 has no prediction.",
+  "remainingGaps": [
+    "No reliable caption/media content, so no draft, classroom QA or in-video timing.",
+    "No open video transcript republication permission established.",
+    "Third-party image/data/weight rights are independent; do not infer redistribution permission.",
+    "Main must accept numerical contracts, SVG/browser/mobile/formula rendering and build; worker ran none."
+  ]
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-labelledby="title desc">
+<title id="title">R-CNN系列、SSD与原始YOLO的计算路线</title>
+<desc id="desc">原始R-CNN逐区域抽特征；Fast和Faster R-CNN共享整图特征后做区域识别，Faster使用RPN；SSD多尺度锚框与原始YOLO网格直接预测，仍需要后处理。</desc>
+<style>svg{background:#f8fafc;color:#172033;font-family:Arial,"Noto Sans SC","PingFang SC",sans-serif}text{fill:currentColor;font-size:19px}.head{font-size:24px;font-weight:700}.small{font-size:16px}.box{fill:#e0f2fe;stroke:#0369a1;stroke-width:2}.direct{fill:#dcfce7;stroke:#15803d;stroke-width:2}.line{stroke:#475569;stroke-width:2;fill:none}.foot{fill:#fef3c7;stroke:#a16207;stroke-width:2}@media(prefers-color-scheme:dark){svg{background:#111827;color:#f1f5f9}.box{fill:#15324b;stroke:#7dd3fc}.direct{fill:#163d2a;stroke:#86efac}.line{stroke:#cbd5e1}.foot{fill:#423513;stroke:#fde68a}}</style>
+<text x="28" y="38" class="head">先提议再识别，还是直接密集预测？</text>
+<rect class="box" x="25" y="65" width="750" height="82" rx="10"/>
+<text x="43" y="94">R-CNN：选择性搜索 → 每个区域分别过CNN → 分类 / 修框</text>
+<text x="43" y="125" class="small">重叠区域也重复计算主干特征；不是共享整图特征的路线</text>
+<rect class="box" x="25" y="167" width="750" height="104" rx="10"/>
+<text x="43" y="198">整图共享CNN → 区域特征 → 分类 / 修框</text>
+<text x="43" y="229" class="small">Fast R-CNN：选择性搜索提供区域</text>
+<text x="43" y="253" class="small">Faster R-CNN：RPN学习对象性与偏移，再提供区域</text>
+<rect class="direct" x="25" y="292" width="360" height="100" rx="10"/>
+<rect class="direct" x="405" y="292" width="370" height="100" rx="10"/>
+<text x="43" y="324">SSD：多层特征 + 多尺度锚框</text>
+<text x="43" y="357" class="small">逐锚框直接输出类别与四个偏移</text>
+<text x="423" y="324">原始YOLO：整图 + 网格责任</text>
+<text x="423" y="357" class="small">每格B个框，共享一组类别分数</text>
+<rect class="foot" x="25" y="414" width="750" height="44" rx="8"/>
+<text x="44" y="443">“单阶段”不等于单层、不等于单框，也不等于无需NMS</text>
+</svg>

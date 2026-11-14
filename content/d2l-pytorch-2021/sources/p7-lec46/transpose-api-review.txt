@@ -1,0 +1,7 @@
+Captured: 2026-11-14
+URL: https://docs.pytorch.org/docs/2.5/generated/torch.nn.ConvTranspose2d.html
+Read scope used: operator description; stride/padding/output_padding notes; Shape; Variables (weight/bias).
+Editorial paraphrase: The operator corresponds to the gradient of Conv2d with respect to its input, not the true inverse. Per axis output=(input-1)*stride-2*padding+dilation*(kernel_size-1)+output_padding+1. Strided Conv2d can map several input sizes to one output size. output_padding selects an output size, not zero-valued padding appended to the result. For groups=1 the weight shape is [C_in,C_out,k_h,k_w], unlike Conv2d's [C_out,C_in,k_h,k_w]. Equal output shape does not imply recovered signal values. The textbook's 16->6->16 example is valid but its surrounding shape-recovery statement is not universal for stride>1.
+Numeric cases requested, not executed: input length 3,k3,s2,p1,d1 gives output 5 with output_padding0, 6 with output_padding1; forward k3,s2,p1 maps lengths5 and6 both to3. Original length17,k5,s3,p2 maps6 then default transpose maps16. Basic textbook X=K=[[0,1],[2,3]] gives [[0,0,1],[0,4,6],[4,12,9]] for stride1,p0,biasFalse and [[4]] for padding1.
+Scope split: LEC46 covers scatter-add, shape, channels and non-inverse. LEC47 develops explicit sparse matrix/adjoint and equivalent convolution; no duplication of that full proof here.
+No API execution by worker. Documentation version is 2.5; no claims of legacy 2021 notebook compatibility or GPU behavior.

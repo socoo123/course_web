@@ -1,0 +1,60 @@
+{
+  "labId": "cv-dense-prediction",
+  "capturedAt": "2026-11-14",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "workerExecutionStatus": "not_run: no numerical checks, training, tests, build, lint, formatters, GPU or submissions by P7DenseLab",
+  "finalVerificationOwner": "Main",
+  "independentMainEvidence": ["../p7-shared/ssd-smoke.json", "../p7-shared/fcn-smoke.json", "../p7-shared/style-smoke.json", "../p7-shared/data-weight-acquisition.json", "../p7-shared/style-image-acquisition.json"],
+  "reuseWithoutRerun": ["../p6-shared/detection-smoke.json", "../p6-shared/notes-smoke.json"],
+  "layers": {
+    "syntheticMechanism": {
+      "proves": "interfaces, local tensor mathematics and gradient/state invariants only",
+      "taskIds": ["cv-dense-prediction-1", "cv-dense-prediction-2", "cv-dense-prediction-3", "cv-dense-prediction-4"],
+      "checks": [
+        "Reuse continuous bbox convention and existing P6 checks; do not rerun accepted geometry for volume",
+        "Multi-scale anchor/class/offset order with unique marker tensors, rectangular grid, explicit empty-GT/padding policy",
+        "TinySSD retains all five blocks and predicts 5444 anchors for 256x256 input, one foreground class yields Bx5444x2 logits and Bx21776 offsets",
+        "Foreground regression mask blocks background gradient; distinguish all-coordinate vs positive-only denominator",
+        "Shared image/mask crop, nearest-neighbor label resize, VOC classes0..20 and ignore255, invalid colors not background",
+        "Transposed convolution scatter/overlap/shape separately from same-operator adjoint inner product, no inverse claim",
+        "FCN shape, diagonal bilinear initialization with explicit bias, valid-pixel CE denominator and all-void handling",
+        "Gram normalization CHW, symmetry and common spatial permutation invariance for one image; detached targets and frozen network with nonzero image gradient",
+        "Python list repetition in textbook styles_l contributes extra factor10; logged total matches effective weight"
+      ]
+    },
+    "realSmallExperiments": {
+      "proves": "bounded execution on the named real data and actual pretrained artifacts, not full training quality",
+      "banana": {
+        "taskId": "cv-dense-prediction-2",
+        "input": "official banana-detection.zip with textbook SHA1; record actual train/val IDs and CSV fields",
+        "mustRetain": ["all TinySSD stages", "actual image intensity convention", "initial and final same-mode loss", "independent validation", "parameter update", "eval state/gradients unchanged", "decoded boxes and local visualization with fixed threshold"],
+        "failureHonesty": "Zero detections at chosen threshold must remain visible in the report; loss decline is not a detection-quality pass"
+      },
+      "voc": {
+        "taskId": "cv-dense-prediction-3",
+        "input": "official VOC2012 trainval, Segmentation train/val lists, palette ignore255, actual ResNet18 V1 state dict for pretrained route",
+        "mustRetain": ["explicit subset IDs and preprocessing", "512-to-21 projection and k64/s32/p16 upsampler", "BN/freeze strategy", "valid pixel CE", "global confusion matrix", "pixel accuracy", "per-class IoU and stated mIoU averaging set", "local input/GT/prediction visualization"],
+        "failureHonesty": "Nearly-all-background predictions and tiny-subset mIoU are not VOC benchmark success"
+      },
+      "style": {
+        "taskId": "cv-dense-prediction-4",
+        "input": "two explicitly identified images with local-use basis plus actual VGG19 V1 weights",
+        "mustRetain": ["image and weight hashes", "resolution", "feature layer indices", "effective content/style/TV weights", "initial/final component and total losses", "only image parameter changes", "local output visualization", "actual steps and optimizer"],
+        "failureHonesty": "Low-resolution short optimization is not high-quality rendering or full textbook500-step reproduction"
+      }
+    },
+    "historicalCompetition": {
+      "taskId": "cv-dense-prediction-2",
+      "identity": "Kaggle cowboyoutfits + CodaLab33573, bound by official announcement and exact Kaggle submission links",
+      "currentStatus": "not_executed: anonymous data previews demand sign-in and rule acceptance; neither done; no files downloaded",
+      "knownTerms": "CodaLab: educational purposes, follow non-commercial licenses, do not redistribute data for other purposes; Kaggle Data: Subject to Competition Rules; anonymous Rules only template",
+      "unknowns": ["authenticated download/acceptance conditions", "actual CSV column id vs image_id", "actual train.json and image integrity", "actual scorer bbox conversion vs Version1 starter xyxy", "image-level rights and current late-submission availability"],
+      "requires": ["authorized original data", "five-class original-ID mapping", "image-level disjoint split with duplicate-group handling", "COCO AP0.50:0.95 implementation and config", "empty and duplicate detection tests", "lossless large integer IDs", "explicit internal/COCO/submission bbox conversions", "real inference coverage ledger and JSON schema checks"],
+      "notRequired": "upload to historical leaderboard",
+      "cannotSubstitute": ["banana", "VOC", "synthetic tensors", "other fashion images", "organizer notebook historical logs"]
+    }
+  },
+  "hardwareBoundary": "CPU measured where Main actually runs; CUDA/MPS and throughput require separate real execution, not extrapolation",
+  "classroomBoundary": "LEC71 summary remains unverified; no inferred winner method, classroom QA or timeline",
+  "publicationBoundary": "No original photos, dataset archives, weight binaries, cookies, tokens, signed URLs or full student solution scripts in content"
+}
