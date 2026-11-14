@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 550" role="img" aria-labelledby="title desc">
+<title id="title">抽象二维乘加阵列中的局部复用</title><desc id="desc">A的片段向右传递，B的片段向下传递，四个乘加单元分别累加C的四个位置。图省略错时输入、填充排空与具体周期，不是商用芯片结构。</desc><style>
+svg{color:#16324f;background:#f8fafc} .box{fill:#e8f0fb;stroke:#315b83;stroke-width:2} .accent{fill:#e1f4eb;stroke:#267451;stroke-width:2} .warn{fill:#fff1d6;stroke:#956600;stroke-width:2} text{fill:currentColor;font-family:system-ui,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;font-size:20px} .small{font-size:17px} .line{fill:none;stroke:currentColor;stroke-width:2} @media(prefers-color-scheme:dark){svg{color:#e4edf8;background:#101b2b}.box{fill:#203852;stroke:#91b7e1}.accent{fill:#173e35;stroke:#87d4b1}.warn{fill:#44361d;stroke:#e3bd65}}
+</style>
+<text x="300" y="35" text-anchor="middle">同一数据在邻近乘加单元间复用</text>
+<text class="small" x="225" y="83" text-anchor="middle">B 第1列片段</text><text class="small" x="435" y="83" text-anchor="middle">B 第2列片段</text>
+<path class="line" d="M225 95v45m-6-10 6 10 6-10M435 95v45m-6-10 6 10 6-10"/>
+<text class="small" x="12" y="168">A 第1行</text><text class="small" x="12" y="194">片段 →</text>
+<rect class="accent" x="145" y="140" width="160" height="100" rx="12"/><text x="225" y="179" text-anchor="middle">乘加 / 累加</text><text class="small" x="225" y="213" text-anchor="middle">C₁₁</text>
+<rect class="accent" x="355" y="140" width="160" height="100" rx="12"/><text x="435" y="179" text-anchor="middle">乘加 / 累加</text><text class="small" x="435" y="213" text-anchor="middle">C₁₂</text>
+<path class="line" d="M100 190h45m-10-6 10 6-10 6M305 190h50m-10-6 10 6-10 6M225 240v55m-6-10 6 10 6-10M435 240v55m-6-10 6 10 6-10"/>
+<text class="small" x="12" y="323">A 第2行</text><text class="small" x="12" y="349">片段 →</text>
+<rect class="box" x="145" y="295" width="160" height="100" rx="12"/><text x="225" y="334" text-anchor="middle">乘加 / 累加</text><text class="small" x="225" y="368" text-anchor="middle">C₂₁</text>
+<rect class="box" x="355" y="295" width="160" height="100" rx="12"/><text x="435" y="334" text-anchor="middle">乘加 / 累加</text><text class="small" x="435" y="368" text-anchor="middle">C₂₂</text>
+<path class="line" d="M100 345h45m-10-6 10 6-10 6M305 345h50m-10-6 10 6-10 6"/>
+<rect class="warn" x="40" y="437" width="520" height="80" rx="12"/><text class="small" x="300" y="469" text-anchor="middle">需要调度与错时输入；这里不指定周期或满载率</text><text class="small" x="300" y="497" text-anchor="middle">编者概念图，不是实际TPU或张量核结构图</text>
+</svg>

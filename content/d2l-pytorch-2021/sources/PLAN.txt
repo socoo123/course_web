@@ -110,3 +110,16 @@ Lab.tsx的常用命令固定输出git checkout / make qemu / make grade，仅适
 - Chromium逐讲页头、八图/公式/自测/页底来源、1440桌面/390手机、八图明暗色、实验双标签和缺稿状态通过。修正站内相对Markdown链接、NiN通道间误导箭头、VGG重复表格图与实验卷积公式398px溢出；改图后hash导航命中旧SVG缓存，禁缓存刷新两图后复验。缺稿标签当前显示中文说明而非draft路径，验收器最初等待路径超时后改用实际DOM。无应用运行错误，tab关闭；非部署或全片播放验收。
 - 网站构建结果见p4-shared/build.log与status，完整交付清单见p4-manifest.json。子agent清单保留原始未运行与生成时hash，最终内容hash以主agentcontent-check为准，不强改历史证据。
 - 下一批P5：LEC30–35 + training-performance；A30–32、B33–35、C实验。剩余44讲notes、8实验，29讲draft仍阻塞。LEC30竞赛先核身份与访问规则；多GPU需真实设备，不拿CPU推演冒称硬件实测。仍只改content，统一验收后提交推送再给下一提示词。
+
+十三、P5实际结果（2026-11-14）
+- 并行A=P5Lec30to32、B=P5Lec33to35、C=P5PerformanceLab；主agent整合共享索引并统一来源、数值、浏览器和构建验收。只改content，不重做LEC1–29或前四实验。
+- 新增6份notes、6张自绘SVG及training-performance说明/指导；累计35讲笔记、35图、10份实验文档。LEC30是官方竞赛来源导读，LEC32是教材12.4编者关联；不冒充课堂复述，不创建无来源draft或重复materials。73讲/12实验/48任务保持。
+- 新增6BV/12P=15677秒，全部mid1567748478、2021发布；每P一次公开player请求均成功空列表。LEC30单P397秒；31全2P5529秒；32全2P3997秒；33全2P655秒；34全3P3254秒；35全2P1845秒。所有页头官方入口/整讲时长正确，累计35BV/105P，公共资料208入口。
+- Classify Leaves身份由官方公告绑定；匿名Kaggle页面实读host=Mu Li、Start2021-05-28/Close2021-06-26（无精确时区）、176类、18353训练/8800测试、public/private等分、Classification Accuracy。Data仅Subject to Competition Rules，Rules只有通用模板；登录后下载/加入/迟交与图片再分发权未核实。未登录/接受规则/下载/训练/提交；不以CIFAR10或Dogs替代。
+- 固定教材新增12.4–12.7，12.2为计时补充；各manifest保留精确范围。12.1/12.3及此前4.9/5.3/7.7等缺口不冒称已读。PyTorch2.5.1 DataParallel/DDP/同步/显存API原件或节选单独留证；DDP设计说明自述基于v1.4，不能外推全部内部细节。38项来源快照hash通过。
+- 数值复用P2隔离环境，实测Apple M2 Max/macOS26.3.1、Python3.11.8/torch2.5.1、CPU1线程，CUDA0；MPS仅探测。合成8192内存样本，MLP784→64→10/50890参数，float32训练、meanCE、SGD.01，独立进程B16/64/128各10热身+30测量。计时分取批/前向含损失/反向/更新清梯度，整步中位数.1881/.2911/.4449ms，吞吐约80894/193505/258558样本每秒。仅短CPU微基准，不是硬件排名或收敛比较。
+- RSS为macOS ru_maxrss进程终身高水位bytes，含框架与数据；输入张量49/196/392KiB另算，不把RSS差称作batch独占内存。无磁盘解码/设备传输计时，不重训P4网络，不测GPU/网络/旧Notebook。
+- float64等长3+3与不等4+3分片，同初值线性层加权梯度/一步SGD与整批差≤2.23e-16/2.78e-17；错误不等分片mean等权反例差.104568。另核六讲纸面例子、sum路径/DDP缩放、形状算术、通信/强弱扩展，以及三逻辑worker同轮收齐/一次更新/到达顺序/重复旧轮拒绝/缺失不更新、独立两步MLP参数变化。通信数值是理想预算，不是实际传输；六讲没有公开Python整块代码，不虚称“运行六段代码”。
+- Chromium验收六讲页头/默认笔记/图/公式/自测/页底来源、1440桌面/390手机、六图明暗、实验双标签和缺稿状态。LEC34实际B站新tab打开且本站笔记保留。修复实验长RSS API导致489px溢出，以及3处错误公共资料/resources路由；正确公共资料路由为#/c/d2l-pytorch-2021。图截图曾被sticky页签遮挡，调整视口后复验完整图；一次scroll工具参数错误非应用错误。所有验证tab关闭，无应用pageerror，非部署/全片播放验收。
+- npm run build一次通过：tsc --noEmit + Vite5.4.21，2984modules，5.51s。主验收见p5-manifest.json与p5-shared，最终内容hash独立于worker生成时hash；临时脚本删除，不发布完整答案、数据、权重、凭据。
+- 下一批P6连续LEC36–42 + cv-transfer：A36–39、B40–42、C实验；剩余38讲笔记、7实验、35讲课堂稿阻塞。LEC42树叶总结不能由比赛页面或教材伪造；LEC40/41检测主题照常保留，密集预测实验留后续。主agent本批提交推送main后给下一提示词。

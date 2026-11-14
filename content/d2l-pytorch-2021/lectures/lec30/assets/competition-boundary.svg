@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 620" role="img" aria-labelledby="title desc">
+<title id="title">树叶分类的训练验证与测试边界</title><desc id="desc">合法取得有标签训练清单后先按身份划分训练和验证。训练拟合模型，验证用于预先规定的选择。无标签测试仅做预测和格式检查，不流回拟合。</desc><style>
+svg{color:#16324f;background:#f8fafc} .box{fill:#e8f0fb;stroke:#315b83;stroke-width:2} .accent{fill:#e1f4eb;stroke:#267451;stroke-width:2} .warn{fill:#fff1d6;stroke:#956600;stroke-width:2} text{fill:currentColor;font-family:system-ui,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;font-size:20px} .small{font-size:17px} .line{fill:none;stroke:currentColor;stroke-width:2} @media(prefers-color-scheme:dark){svg{color:#e4edf8;background:#101b2b}.box{fill:#203852;stroke:#91b7e1}.accent{fill:#173e35;stroke:#87d4b1}.warn{fill:#44361d;stroke:#e3bd65}}
+</style>
+<rect class="box" x="45" y="20" width="510" height="68" rx="12"/><text x="300" y="48" text-anchor="middle">合规取得数据并核对 image / label</text><text class="small" x="300" y="73" text-anchor="middle">未取得：只完成规划，不宣称复现</text>
+<path class="line" d="M300 88v35M150 123h300M150 123v30M450 123v30"/>
+<rect class="accent" x="30" y="153" width="245" height="85" rx="12"/><text x="152" y="185" text-anchor="middle">有标签训练清单</text><text class="small" x="152" y="215" text-anchor="middle">冻结词表与样本身份</text>
+<rect class="warn" x="325" y="153" width="245" height="85" rx="12"/><text x="447" y="185" text-anchor="middle">无标签测试清单</text><text class="small" x="447" y="215" text-anchor="middle">样例标签不是真值</text>
+<path class="line" d="M152 238v35M85 273h135M85 273v30M220 273v30M447 238v230"/>
+<rect class="accent" x="20" y="303" width="130" height="85" rx="12"/><text x="85" y="337" text-anchor="middle">本地训练</text><text class="small" x="85" y="366" text-anchor="middle">拟合与增强</text>
+<rect class="box" x="165" y="303" width="130" height="85" rx="12"/><text x="230" y="337" text-anchor="middle">本地验证</text><text class="small" x="230" y="366" text-anchor="middle">固定预处理</text>
+<path class="line" d="M85 388v39h145v-39M152 427v41"/>
+<rect class="accent" x="30" y="468" width="265" height="72" rx="12"/><text x="162" y="497" text-anchor="middle">按验证协议选择模型</text><text class="small" x="162" y="523" text-anchor="middle">保存配置与选择历史</text>
+<path class="line" d="M295 504h30"/>
+<rect class="warn" x="325" y="468" width="245" height="72" rx="12"/><text x="447" y="497" text-anchor="middle">预测 + ID对齐检查</text><text class="small" x="447" y="523" text-anchor="middle">不以榜单替代本地验证</text>
+<text class="small" x="300" y="584" text-anchor="middle">编者工作流；测试标签不回流训练，不代为提交</text>
+</svg>

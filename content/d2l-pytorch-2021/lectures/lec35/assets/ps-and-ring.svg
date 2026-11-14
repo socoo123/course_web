@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 670" role="img" aria-labelledby="title desc">
+<title id="title">参数服务器与分块环归约</title>
+<desc id="desc">上方三个worker把梯度推送给中心参数服务器，再取回聚合结果或更新参数。下方四个对等节点构成环，reduce-scatter阶段每节点得到不同的聚合块，allgather后每节点得到完整结果。架构图不表示真实链路速度。</desc>
+<style>svg{color:#172b4d;background:#fff;font:16px system-ui,'PingFang SC','Microsoft YaHei',sans-serif}.box{fill:#edf4fc;stroke:#446a91;stroke-width:1.5}.sync{fill:#e5f5ed;stroke:#31765a;stroke-width:1.5}text{fill:currentColor;text-anchor:middle}.edge{fill:none;stroke:currentColor;stroke-width:1.6}.small{font-size:14px}@media(prefers-color-scheme:dark){svg{color:#eef3ff;background:#111827}.box{fill:#20304a;stroke:#99b9de}.sync{fill:#163e32;stroke:#8cd4b3}}</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></marker></defs>
+<text x="180" y="28" font-weight="700">参数服务器：谁持有与更新状态</text>
+<rect class="box" x="10" y="49" width="100" height="54" rx="9"/><rect class="box" x="130" y="49" width="100" height="54" rx="9"/><rect class="box" x="250" y="49" width="100" height="54" rx="9"/>
+<text x="60" y="82">worker A</text><text x="180" y="82">worker B</text><text x="300" y="82">worker C</text>
+<path class="edge" d="M60 108 L130 174 M180 108 V174 M300 108 L230 174" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<rect class="sync" x="70" y="180" width="220" height="76" rx="9"/><text x="180" y="208">参数服务器</text><text x="180" y="233">按 key 聚合 / 管理状态</text>
+<text x="180" y="282" class="small">push 梯度；pull 的语义依协议而定</text>
+<path class="edge" d="M20 305 H340" stroke-dasharray="5 5"/>
+<text x="180" y="337" font-weight="700">allreduce：每方都得到归约结果</text>
+<text x="180" y="361" class="small">环只是实现路径之一；不是优化器</text>
+<rect class="box" x="28" y="387" width="110" height="54" rx="9"/><rect class="box" x="222" y="387" width="110" height="54" rx="9"/>
+<rect class="box" x="28" y="493" width="110" height="54" rx="9"/><rect class="box" x="222" y="493" width="110" height="54" rx="9"/>
+<text x="83" y="420">节点0</text><text x="277" y="420">节点1</text><text x="83" y="526">节点3</text><text x="277" y="526">节点2</text>
+<path class="edge" d="M142 414 H216 M277 447 V487 M216 520 H144 M83 487 V447" marker-end="url(#arrow)"/>
+<text x="180" y="466" class="small">各节点并行</text><text x="180" y="487" class="small">交换分块</text>
+<text x="180" y="580">① reduce-scatter：每方一块</text><text x="180" y="609">② allgather：每方完整结果</text>
+<text x="180" y="647" class="small">概念图；不表示链路规格或实测时序</text>
+</svg>

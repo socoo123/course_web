@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 650" role="img" aria-labelledby="title desc">
+<title id="title">DataParallel与常见一进程一卡DDP的职责边界</title>
+<desc id="desc">上图DataParallel在单进程内切分输入，副本前向后汇集输出，梯度求和回原模型。下图DDP由用户给每个进程分配数据，各进程保留本地模型，平均梯度后各自更新。两者是替代路线，不是串行阶段。</desc>
+<style>svg{color:#172b4d;background:#fff;font:16px system-ui,'PingFang SC','Microsoft YaHei',sans-serif}.box{fill:#edf4fc;stroke:#446a91;stroke-width:1.5}.sync{fill:#e5f5ed;stroke:#31765a;stroke-width:1.5}text{fill:currentColor;text-anchor:middle}.edge{fill:none;stroke:currentColor;stroke-width:1.6}.small{font-size:14px}@media(prefers-color-scheme:dark){svg{color:#eef3ff;background:#111827}.box{fill:#20304a;stroke:#99b9de}.sync{fill:#163e32;stroke:#8cd4b3}}</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></marker></defs>
+<text x="180" y="28" font-weight="700">教材路线：DataParallel</text>
+<rect class="box" x="30" y="45" width="300" height="48" rx="9"/><text x="180" y="75">单进程：包装器拆分全局输入</text>
+<path class="edge" d="M180 93 V115 H89 V132 M180 115 H271 V132" marker-end="url(#arrow)"/>
+<rect class="box" x="14" y="132" width="150" height="55" rx="9"/><rect class="box" x="196" y="132" width="150" height="55" rx="9"/>
+<text x="89" y="165">设备0副本</text><text x="271" y="165">设备1副本</text>
+<path class="edge" d="M89 187 V207 H180 V226 M271 187 V207 H180" marker-end="url(#arrow)"/>
+<rect class="sync" x="30" y="226" width="300" height="82" rx="9"/><text x="180" y="250">输出汇集后计算全局 loss</text><text x="180" y="275">梯度求和回原模型</text><text x="180" y="296" class="small">首设备参数与 buffers 必须已就位</text>
+<path class="edge" d="M20 332 H340" stroke-dasharray="5 5"/>
+<text x="180" y="364" font-weight="700">现代补充：常见一进程一卡 DDP</text>
+<text x="180" y="389" class="small">用户负责：不重不漏的数据分片</text>
+<rect class="box" x="14" y="410" width="150" height="83" rx="9"/><rect class="box" x="196" y="410" width="150" height="83" rx="9"/>
+<text x="89" y="435">进程0 / 设备0</text><text x="89" y="460">局部输入与 loss</text><text x="89" y="482" class="small">本地模型与优化器</text>
+<text x="271" y="435">进程1 / 设备1</text><text x="271" y="460">局部输入与 loss</text><text x="271" y="482" class="small">本地模型与优化器</text>
+<path class="edge" d="M89 493 V517 H180 V536 M271 493 V517 H180" marker-end="url(#arrow)"/>
+<rect class="sync" x="30" y="536" width="300" height="75" rx="9"/><text x="180" y="561">默认跨进程平均梯度</text><text x="180" y="587">各进程按相同状态更新</text>
+<text x="180" y="636" class="small">不等 batch 需要权重；本图非多卡实测</text>
+</svg>

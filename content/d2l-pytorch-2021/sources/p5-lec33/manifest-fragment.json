@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "phase": "P5",
+  "lectureId": "lec33",
+  "generatedAt": "2026-11-14",
+  "ownership": [
+    "lectures/lec33",
+    "sources/p5-lec33"
+  ],
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "bookVersionBoundary": "当前中文第二版固定源码，非2021全书快照",
+  "sourcePolicy": "Only actually read references cited. New source originals use .txt. No media/dataset/credentials/player signed URLs retained.",
+  "sources": [
+    {
+      "path": "content/d2l-pytorch-2021/sources/p5-lec33/book-multiple-gpus.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computational-performance/multiple-gpus.md",
+      "sha256": "86ccd820ae065982c6c3f4c97511d23c3575e7e1dbbd746836cbc49263fe54ce",
+      "bytes": 23680,
+      "readRange": "全文（教材正文、全部代码标签及练习均已读取；讲解仅采用正文与PyTorch）",
+      "snapshotKind": "verbatim full text"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p5-lec33/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1vU4y1V7rd",
+      "sha256": "c81a3c9f10c7117bbccb837e893d12dbe02212203d10ca532abe9bb3da4ce521",
+      "bytes": 2066,
+      "readRange": "view metadata identity/title/date/all pages; each listed player URL checked once; selected fields only",
+      "snapshotKind": "filtered API metadata, not original full response"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p5-lec33/schedule-evidence.txt",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "9e18f9f31a43c4e00d7dce223748f173d58616a8e56c5bee2186c2b817d48699",
+      "bytes": 719,
+      "readRange": "UTF-8 decoded characters 31054:31576 (0-based, end-exclusive), containing BV1vU4y1V7rd",
+      "snapshotKind": "verbatim HTML excerpt with provenance header"
+    }
+  ],
+  "sharedPlanningEvidence": [
+    {
+      "path": "content/d2l-pytorch-2021/sources/schedule-inventory.json",
+      "sha256AtReading": "89bb850c79609eb5f4cd405c5d23bfd283be6f63398c20700acdc7a059ddd041",
+      "readRange": "lec33–35 rows, lines 3458–3593",
+      "role": "existing planning/version evidence; not a new external source"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/book-inventory.json",
+      "sha256AtReading": "4574d457af12d10b718ffb7f6166bb6caa09c6b728d32fe5726f8ef9fe06fb6c",
+      "readRange": "12.5–12.7 mappings, lines 1976–2050",
+      "role": "existing planning/version evidence; not a new external source"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/outline-plan.json",
+      "sha256AtReading": "a31dece725d404e49a72210603050ded445bf5a2ed3a1001508b29c90c5c74a4",
+      "readRange": "performance module, lines 671–765",
+      "role": "existing planning/version evidence; not a new external source"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/practice-plan.json",
+      "sha256AtReading": "52728031fcc0c224fcb5316008c23ad5d4f0e7cb4bf4c881e73fc534d6ed53ba",
+      "readRange": "training-performance contract, lines 741–838",
+      "role": "existing planning/version evidence; not a new external source"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p1-shared/book-version.json",
+      "sha256AtReading": "dbb78240eaaa8b292eeb14b56b0de7e4673f7201348e057c2475c06c5e7f7bb4",
+      "readRange": "全文",
+      "role": "existing planning/version evidence; not a new external source"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/NEXT-PROMPT.txt",
+      "sha256AtReading": "e59a6026fa563c211941d787d56ed6e3cec148ed3a063912b23f5b3d36caa72a",
+      "readRange": "全文",
+      "role": "existing planning/version evidence; not a new external source"
+    }
+  ],
+  "video": {
+    "bvid": "BV1vU4y1V7rd",
+    "ownerMid": 1567748478,
+    "publicationYear": 2021,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 349741612,
+        "part": "单机多卡并行",
+        "duration": 419
+      },
+      {
+        "page": 2,
+        "cid": 349742102,
+        "part": "QA",
+        "duration": 236
+      }
+    ],
+    "durationSeconds": 655,
+    "duration": "10:55",
+    "suggestedLabel": "哔哩哔哩官方视频（全 2 P 合计）",
+    "subtitleStatus": "all public player requests succeeded with empty lists",
+    "subtitleRequestCount": 2,
+    "draft": "blocked; no transcript or guessed timeline",
+    "mediaDownloaded": false
+  },
+  "outputs": [
+    {
+      "path": "content/d2l-pytorch-2021/lectures/lec33/assets/shards-and-gradient.svg",
+      "sha256": "1ed91b13b3356aaa3bd3c379b9ae986520ff3d437ddd6698cd6c58c31713ec97",
+      "bytes": 2707,
+      "origin": "editorial original; source-derived explanation, not classroom transcript"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/lectures/lec33/notes.zh.md",
+      "sha256": "cb0778688fdcf8c4af31865105208668df15cb10ef3dc3ccaf7eea418e2f8acf",
+      "bytes": 10283,
+      "origin": "editorial original; source-derived explanation, not classroom transcript"
+    }
+  ],
+  "licenseBoundary": {
+    "book": "Apache-2.0 per pinned root LICENSE; setup.py MIT-0 field separate",
+    "video": "copyright=1/no_reprint=1 is not open transcript permission",
+    "pytorch": "v2.5.1 LICENSE retained in p5-lec34; official excerpts cited only in lec34",
+    "editorial": "new explanations/examples/SVG; no textbook images copied"
+  },
+  "numericalVerificationRequested": [
+    {
+      "id": "unequal-2-plus-1-sgd",
+      "setup": "float64 CPU; scalar theta=1; x=[1,2,3], y=0; per-sample loss 0.5*(theta*x)^2; independent model copies; shards [1,2]/[3]; SGD lr=0.1",
+      "expected": "per-sample grads 1,4,9; local sums 5,9; local means 2.5,9; full mean and weighted mean grad 14/3; correct next theta 8/15; incorrect equal local-mean average 5.75 and next theta .425",
+      "boundary": "CPU mathematical equivalence only; not scatter, allreduce, or GPU communication"
+    }
+  ],
+  "verification": {
+    "workerRanTests": false,
+    "workerRanNumericalChecks": false,
+    "workerRanBuild": false,
+    "workerRanBrowser": false,
+    "reason": "Assigned worker must not run verification; main agent owns unified acceptance",
+    "mainReportedSharedEvidence": "sources/p5-shared/mechanism-smoke.json reported by Main; not executed or independently read by this worker",
+    "specificChecksStatus": "requested above; not claimed passed here",
+    "multiGpuTraining": "not run",
+    "ddpCommunication": "not run",
+    "clusterDeployment": "not performed",
+    "throughput": "not measured"
+  },
+  "excluded": [
+    "draft.zh.md (no captions)",
+    "materials duplicate",
+    "full multi-GPU solution",
+    "real-GPU/cluster performance claims"
+  ]
+}

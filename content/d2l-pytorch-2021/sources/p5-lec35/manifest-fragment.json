@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "phase": "P5",
+  "lectureId": "lec35",
+  "generatedAt": "2026-11-14",
+  "ownership": [
+    "lectures/lec35",
+    "sources/p5-lec35"
+  ],
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "bookVersionBoundary": "当前中文第二版固定源码，非2021全书快照",
+  "sourcePolicy": "Only actually read references cited. New source originals use .txt. No media/dataset/credentials/player signed URLs retained.",
+  "sources": [
+    {
+      "path": "content/d2l-pytorch-2021/sources/p5-lec35/book-parameterserver.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computational-performance/parameterserver.md",
+      "sha256": "7083d320fc8abb8283caff3acc3695fa54bb3e5993a63795b8abb52ca184e291",
+      "bytes": 12664,
+      "readRange": "全文正文、通信算例、小结与练习；本节无PyTorch代码",
+      "snapshotKind": "verbatim full text"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p5-lec35/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1jU4y1G7iu",
+      "sha256": "4300b84dba2bfe775e95b5da664421129413f12b9ee717114af01f961a4f82eb",
+      "bytes": 2062,
+      "readRange": "view metadata identity/title/date/all pages; each listed player URL checked once; selected fields only",
+      "snapshotKind": "filtered API metadata, not original full response"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p5-lec35/schedule-evidence.txt",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "6e6399208d9a00c30cf5dbf4fa1c62840f35d29519b32d262f0a85020c6debc7",
+      "bytes": 591,
+      "readRange": "UTF-8 decoded characters 32183:32572 (0-based, end-exclusive), containing BV1jU4y1G7iu",
+      "snapshotKind": "verbatim HTML excerpt with provenance header"
+    }
+  ],
+  "sharedPlanningEvidence": [
+    {
+      "path": "content/d2l-pytorch-2021/sources/schedule-inventory.json",
+      "sha256AtReading": "89bb850c79609eb5f4cd405c5d23bfd283be6f63398c20700acdc7a059ddd041",
+      "readRange": "lec33–35 rows, lines 3458–3593",
+      "role": "existing planning/version evidence; not a new external source"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/book-inventory.json",
+      "sha256AtReading": "4574d457af12d10b718ffb7f6166bb6caa09c6b728d32fe5726f8ef9fe06fb6c",
+      "readRange": "12.5–12.7 mappings, lines 1976–2050",
+      "role": "existing planning/version evidence; not a new external source"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/outline-plan.json",
+      "sha256AtReading": "a31dece725d404e49a72210603050ded445bf5a2ed3a1001508b29c90c5c74a4",
+      "readRange": "performance module, lines 671–765",
+      "role": "existing planning/version evidence; not a new external source"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/practice-plan.json",
+      "sha256AtReading": "52728031fcc0c224fcb5316008c23ad5d4f0e7cb4bf4c881e73fc534d6ed53ba",
+      "readRange": "training-performance contract, lines 741–838",
+      "role": "existing planning/version evidence; not a new external source"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p1-shared/book-version.json",
+      "sha256AtReading": "dbb78240eaaa8b292eeb14b56b0de7e4673f7201348e057c2475c06c5e7f7bb4",
+      "readRange": "全文",
+      "role": "existing planning/version evidence; not a new external source"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/NEXT-PROMPT.txt",
+      "sha256AtReading": "e59a6026fa563c211941d787d56ed6e3cec148ed3a063912b23f5b3d36caa72a",
+      "readRange": "全文",
+      "role": "existing planning/version evidence; not a new external source"
+    }
+  ],
+  "video": {
+    "bvid": "BV1jU4y1G7iu",
+    "ownerMid": 1567748478,
+    "publicationYear": 2021,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 356491827,
+        "part": "分布式训练",
+        "duration": 1305
+      },
+      {
+        "page": 2,
+        "cid": 356491978,
+        "part": "QA",
+        "duration": 540
+      }
+    ],
+    "durationSeconds": 1845,
+    "duration": "30:45",
+    "suggestedLabel": "哔哩哔哩官方视频（全 2 P 合计）",
+    "subtitleStatus": "all public player requests succeeded with empty lists",
+    "subtitleRequestCount": 2,
+    "draft": "blocked; no transcript or guessed timeline",
+    "mediaDownloaded": false
+  },
+  "outputs": [
+    {
+      "path": "content/d2l-pytorch-2021/lectures/lec35/assets/ps-and-ring.svg",
+      "sha256": "ba6def228f728e33b5dcd9e0101c24cf1ecca5910810a9439dc291550ec9c4bc",
+      "bytes": 2982,
+      "origin": "editorial original; source-derived explanation, not classroom transcript"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/lectures/lec35/notes.zh.md",
+      "sha256": "565fcb3b985cf86bcbf974573433ea8ca2406d8b2729565481e2bb2ffd20d62e",
+      "bytes": 12220,
+      "origin": "editorial original; source-derived explanation, not classroom transcript"
+    }
+  ],
+  "licenseBoundary": {
+    "book": "Apache-2.0 per pinned root LICENSE; setup.py MIT-0 field separate",
+    "video": "copyright=1/no_reprint=1 is not open transcript permission",
+    "pytorch": "v2.5.1 LICENSE retained in p5-lec34; official excerpts cited only in lec34",
+    "editorial": "new explanations/examples/SVG; no textbook images copied"
+  },
+  "numericalVerificationRequested": [
+    {
+      "id": "ring-root-model-units",
+      "setup": "k=4,G=120e6 bytes,beta=12e9 bytes/s,alpha=.0001s; root is one participating worker; serialized root, parallel uniform ring",
+      "expected": "full transfer .01s; chunk .0025s; root .0606s; ring .0156s; each ring node sends 180e6 bytes; system sends 720e6 bytes",
+      "boundary": "predicted ideal model, not measured bandwidth"
+    },
+    {
+      "id": "scaling-definitions",
+      "setup": "single worker B=128,T=.080s; strong k4 same B,T=.035s; weak k4,B=512,T=.100s",
+      "expected": "strong speedup 16/7, efficiency 4/7; weak efficiency .8; weak throughput ratio 3.2",
+      "boundary": "assumed teaching times, no hardware measurement"
+    },
+    {
+      "id": "block-aggregation-contract",
+      "setup": "CPU four small vectors with independent storage; partition equal parameter blocks, sum each block, concatenate",
+      "expected": "concatenated block sums equal direct vector sum; each contribution appears once; nonuniform sample count requires sample weighting",
+      "boundary": "does not execute real ring/network/PS"
+    }
+  ],
+  "verification": {
+    "workerRanTests": false,
+    "workerRanNumericalChecks": false,
+    "workerRanBuild": false,
+    "workerRanBrowser": false,
+    "reason": "Assigned worker must not run verification; main agent owns unified acceptance",
+    "mainReportedSharedEvidence": "sources/p5-shared/mechanism-smoke.json reported by Main; not executed or independently read by this worker",
+    "specificChecksStatus": "requested above; not claimed passed here",
+    "multiGpuTraining": "not run",
+    "ddpCommunication": "not run",
+    "clusterDeployment": "not performed",
+    "throughput": "not measured"
+  },
+  "excluded": [
+    "draft.zh.md (no captions)",
+    "materials duplicate",
+    "full multi-GPU solution",
+    "real-GPU/cluster performance claims"
+  ]
+}

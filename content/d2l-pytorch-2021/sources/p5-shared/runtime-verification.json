@@ -1,0 +1,29 @@
+{
+  "batch": "P5",
+  "date": "2026-11-14",
+  "status": "passed_finite_CPU_scope_no_GPU_or_network_claims",
+  "environment": "environment.json",
+  "performance": "performance-smoke.json",
+  "aggregation": "mechanism-smoke.json",
+  "lectureArithmeticAndProtocol": "supplement-smoke.json",
+  "specialHardwareArithmetic": "special-hardware-smoke.json",
+  "publishedPythonBlocks": 0,
+  "blockInventory": "notes-smoke.json",
+  "executed": [
+    "Three independent fresh CPU processes, batch16/64/128, float32 MLP784-64-10, each10 warmup+30 measured training steps; data-loading/forward-loss/backward/step-zero/end-to-end samples recorded",
+    "CPU float64 Linear3x2 whole-batch versus weighted local-mean gradients and one SGD step for3+3 and4+3 shards",
+    "Negative control: equal weighting of unequal4+3 local means changes gradient by0.10456770753394629",
+    "Six lectures' editorial accuracy, compute/bandwidth/memory, matrix/quantization, sum/mean/DDP-scaling, shape, ring/root and scaling arithmetic",
+    "Three logical workers: local gradient sums/sample counts, same-round collection, single SGD update, order agreement, duplicate/old-step rejection and missing-worker no-update",
+    "Independent untimed two-step MLP correctness: finite loss/gradients/parameters and nonzero parameter change"
+  ],
+  "notExecuted": [
+    "CUDA or MPS operations",
+    "multi-GPU or multi-node processes and communication",
+    "DDP/DataParallel hardware execution",
+    "disk/image-decoding data pipeline",
+    "old d2l notebooks or all student tasks",
+    "classification training or competition data acquisition"
+  ],
+  "measurementBoundary": "Short serial-stage CPU microbenchmark, not production overlap/acceleration or convergence comparison; ru_maxrss is process-lifetime peak including framework/dataset, not active tensors or isolated batch memory."
+}

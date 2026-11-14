@@ -1,6 +1,6 @@
 ---
 source: 李沐《动手学深度学习》2021 中文课程官方课表；《动手学深度学习》中文第二版
-status: 已验收LEC1–29教材导读、自绘图及前四项实验说明/指导；29个BV共93P公开字幕均为空，完整课堂稿持续阻塞。讲次页头提供官方原站链接与核实时长，多P按全部分P合计；不恢复嵌入播放器。P4的CPU小基线与前向验证不等于全课或全部作业完成。
+status: 已完成LEC1–35学习笔记、自绘图及前五项实验说明/指导；其中LEC30为官方竞赛来源导读，其他笔记不冒充课堂整理。35个BV共105P公开字幕均为空，完整课堂稿持续阻塞。页头官方入口与核实时长按全部分P合计；CPU性能微基准、梯度与通信预算推演不等于真实多GPU实测或学生作业完成。
 license: 本页为编者自主课程导航；教材、代码、视频分别按原始许可处理，视频授权不由教材许可推定。
 ---
 
@@ -259,6 +259,22 @@ LeNet在此极小配置下仍接近随机分类水平，不能把“损失下降
 
 本批不运行GPU/MPS、旧Notebook、全量Fashion或大模型全训；没有提交学生完整解答、数据集、检查点或临时脚本。配置、逐轮输出、形状与源码块定位见 `sources/p4-shared/practice-smoke.json`、`architecture-smoke.json`、`notes-smoke.json`、`mechanism-smoke.json`、`lab-mechanism-smoke.json`；主agent最终验收范围以 `sources/p4-manifest.json` 为准。
 
+#### 第五批：CPU性能测量与梯度聚合推演
+
+复用 Python 3.11.8 / PyTorch 2.5.1 环境，在 **Apple M2 Max、macOS 26.3.1、CPU单线程、float32** 上测量编者小MLP（784→64→10）。模型为训练模式，交叉熵均值、SGD 0.01；数据为8192条内存合成样本，`num_workers=0`，不包含磁盘读取、图像解码或设备传输。各batch在独立进程执行10步热身和30步测量，分别计时取批、前向与损失、反向、更新与清梯度；CPU同步执行，无CUDA/MPS操作。
+
+| batch | 整步中位数 ms | 四分位区间 ms | 样本/秒 | 输入张量 KiB | 进程峰值RSS bytes |
+|---:|---:|---:|---:|---:|---:|
+| 16 | 0.1881 | 0.1823–0.1935 | 80,894 | 49 | 279281664 |
+| 64 | 0.2911 | 0.2847–0.3018 | 193,505 | 196 | 279379968 |
+| 128 | 0.4449 | 0.4361–0.4812 | 258,558 | 392 | 280461312 |
+
+吞吐按测量窗口内实际样本数除以总时长计算，不是中位数的倒数。这里的“整步”是串行分段计时的同一窗口；短微基准受调度与计时开销影响，**不是硬件排名、收敛速度或GPU加速比**。输入字节数仅含float32特征；RSS是macOS `ru_maxrss` 的进程终身高水位，包含框架和全部数据，不是活跃张量内存，也不能从其差值推断batch独占内存。各阶段原始30个样本、中位数和四分位数见 `sources/p5-shared/performance-smoke.json`。
+
+另在CPU float64上，用同初值线性层与逐样本可加损失核对等长3+3及不等长4+3分片：按样本数加权局部均值梯度，与整批梯度最大误差不超过2.23×10⁻¹⁶，一步SGD参数最大误差不超过2.78×10⁻¹⁷。错误地等权平均4+3两份局部均值，梯度最大误差约0.104568。这个反例证明归一化合同的重要性，**不证明真实all-reduce、参数服务器、网络通信或多GPU性能**。
+
+本批CUDA设备数为0；MPS仅探测可用，未执行。补充核对了六讲纸面算例、三逻辑worker的同轮收齐/一次更新/重复与旧轮拒绝、遗漏不更新和到达顺序一致性，以及独立的两步MLP参数变化；均非网络执行。没有重训P4模型、运行分布式进程组或完成学生全部任务；[第五项实验](#/c/d2l-pytorch-2021/lab/training-performance?v=zh)仍要求学习者自行实现并记录。数值范围见 `sources/p5-shared/environment.json`、`mechanism-smoke.json`、`supplement-smoke.json`、`special-hardware-smoke.json`。
+
 ## 学完后怎样衔接 CS336
 
 用三个问题自查：能否不依赖整段答案写出小模型训练循环；能否逐步解释 Attention 的形状与 mask；能否解释模型的参数、梯度、优化器状态和激活为何占用内存。
@@ -336,9 +352,24 @@ LEC 22–29 共 **8 个 BV、24P、20337 秒**，均由官方课表指向作者�
 
 八讲的 `copyright=1`、`no_reprint=1` 均不是开放转录许可。LEC27上传标题另含“Inception V3”，教材7.4展示的GoogLeNet结构不能据此冒称完整覆盖该课堂拓展；未核实部分保留缺口，不猜写。
 
+### 第五批已核实的全部分 P
+
+LEC 30–35共 **6个BV、12P、15677秒**，均为官方课表指向作者“跟李沐学AI”的2021年上传。LEC30单P，其余按全部真实P求和，包含QA；LEC34同时保留从零开始与简洁实现。12次公开player请求均成功但字幕列表为空，未下载或观看音视频，不造课堂稿、演示、问答或主题时间轴。
+
+| 讲次 | 真实分 P 与时长 |
+|---|---|
+| LEC 30 | [P1 leaf · 06:37](https://www.bilibili.com/video/BV1z64y1o7iz?p=1) |
+| LEC 31 | [P1 CPU 和 GPU · 39:22](https://www.bilibili.com/video/BV1TU4y1j7Wd?p=1)；[P2 QA · 52:47](https://www.bilibili.com/video/BV1TU4y1j7Wd?p=2) |
+| LEC 32 | [P1 更多的芯片 · 29:19](https://www.bilibili.com/video/BV1VV41147PC?p=1)；[P2 QA · 37:18](https://www.bilibili.com/video/BV1VV41147PC?p=2) |
+| LEC 33 | [P1 单机多卡并行 · 06:59](https://www.bilibili.com/video/BV1vU4y1V7rd?p=1)；[P2 QA · 03:56](https://www.bilibili.com/video/BV1vU4y1V7rd?p=2) |
+| LEC 34 | [P1 从零开始 · 21:41](https://www.bilibili.com/video/BV1MQ4y1R7Qg?p=1)；[P2 简洁实现 · 11:53](https://www.bilibili.com/video/BV1MQ4y1R7Qg?p=2)；[P3 QA · 20:40](https://www.bilibili.com/video/BV1MQ4y1R7Qg?p=3) |
+| LEC 35 | [P1 分布式训练 · 21:45](https://www.bilibili.com/video/BV1jU4y1G7iu?p=1)；[P2 QA · 09:00](https://www.bilibili.com/video/BV1jU4y1G7iu?p=2) |
+
+六讲均为 `copyright=1`、`no_reprint=1`，不是开放转录许可。LEC30竞赛说明与LEC32硬件补充不冒充教材指定章节或课堂内容；树叶比赛与CIFAR-10、狗品种教材案例分别处理。空字幕接口不证明不存在烧录字幕。
+
 ### 全课视频入口
 
-以下链接逐项保留课表中的 BV 与分 P 参数。未写 `p` 的原始链接标作「入口」，不推定它覆盖整组内容。LEC 1–29 的真实全部分 P 已列于上方四表；其余讲次尚待逐 P 核对。讲次页头提供原站链接与已记录时长，例如[LEC1课程安排](#/c/d2l-pytorch-2021/lec/lec01)的B站入口为08:09；点击后在新标签页观看，本站保留笔记。嵌入播放器与“课程视频”标签已按用户要求移除。曾误接入的非本人YouTube上传也已撤下，不以转载替代官方课表来源。
+以下链接逐项保留课表中的 BV 与分 P 参数。未写 `p` 的原始链接标作「入口」，不推定它覆盖整组内容。LEC 1–35 的真实全部分 P 已列于上方五表；其余讲次尚待逐 P 核对。讲次页头提供原站链接与已记录时长；点击后在新标签页观看，本站保留笔记。嵌入播放器与“课程视频”标签已按用户要求移除。曾误接入的非本人YouTube上传也已撤下，不以转载替代官方课表来源。
 
 | 站内讲次 | 原课表视频入口 |
 |---|---|

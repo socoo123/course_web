@@ -1,0 +1,81 @@
+{
+  "device": "CPU float64, 1 thread",
+  "scope": "same initial Linear3x2, independent per-example half sum squared loss, no BN/Dropout, all samples exactly once; sequential simulation, not communication",
+  "cases": [
+    {
+      "shard_sizes": [
+        3,
+        3
+      ],
+      "weighted_gradient_max_error": 2.220446049250313e-16,
+      "SGD_update_max_error": 2.7755575615628914e-17,
+      "naive_equal_mean_error": 2.220446049250313e-16,
+      "full_parameter_after_step": [
+        [
+          [
+            -0.48321082015550126,
+            0.41480151563230305,
+            0.4001166048525554
+          ],
+          [
+            -0.36350769998616567,
+            -0.06930894278662375,
+            0.27851685599277953
+          ]
+        ],
+        [
+          -0.3574255108539328,
+          0.11185873084972724
+        ]
+      ]
+    },
+    {
+      "shard_sizes": [
+        4,
+        3
+      ],
+      "weighted_gradient_max_error": 1.1102230246251565e-16,
+      "SGD_update_max_error": 2.7755575615628914e-17,
+      "naive_equal_mean_error": 0.10456770753394629,
+      "full_parameter_after_step": [
+        [
+          [
+            0.5463759032698113,
+            -0.3006827053528255,
+            0.24953078438431903
+          ],
+          [
+            0.38497968646585407,
+            0.44581875216490646,
+            -0.25530396914842174
+          ]
+        ],
+        [
+          -0.08742945715761011,
+          -0.496000600923873
+        ]
+      ]
+    }
+  ],
+  "analytic": {
+    "unequal_batch_local_means": {
+      "sizes": [
+        3,
+        1
+      ],
+      "means": [
+        2.0,
+        10.0
+      ],
+      "weighted": 4.0,
+      "naive": 6.0
+    },
+    "speedup_assumed_times": {
+      "T1_ms": 100,
+      "T4_ms": 40,
+      "S4": 2.5,
+      "efficiency": 0.625
+    }
+  },
+  "passed": true
+}

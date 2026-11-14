@@ -1,0 +1,304 @@
+{
+  "labId": "training-performance",
+  "preparedAt": "2026-11-14",
+  "owner": "P5PerformanceLab",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "editionBoundary": "Pinned current Chinese second edition; not a 2021 complete-book snapshot.",
+  "status": "authored_main_owns_independent_acceptance",
+  "taskIds": [
+    "training-performance-1",
+    "training-performance-2",
+    "training-performance-3",
+    "training-performance-4"
+  ],
+  "lectureIds": [
+    "lec31",
+    "lec32",
+    "lec33",
+    "lec34",
+    "lec35"
+  ],
+  "outputs": [
+    {
+      "path": "../../labs/training-performance/lab.zh.md",
+      "sha256": "147c74ba7dfa9c4cc507b39598f564783087e6a1a56f0fcbaf75d8e76f98e21b",
+      "bytes": 20082,
+      "kind": "editorial laboratory contract",
+      "completeSolution": false
+    },
+    {
+      "path": "../../labs/training-performance/guide.zh.md",
+      "sha256": "14176dd3770aff047773b0b76bc0d9aedbf4e9b28f4bf6efc089a0adb63a55e8",
+      "bytes": 19306,
+      "kind": "editorial hints and folded local analytic answers",
+      "completeSolution": false
+    }
+  ],
+  "sources": [
+    {
+      "name": "hardware",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computational-performance/hardware.md",
+      "snapshot": "book-hardware.txt",
+      "sha256": "528849c3f7718e3c1c7b62eb268cebd930a5af9feaaaf4ae779a4b05405c2ec1",
+      "bytes": 31443,
+      "lines": 217,
+      "readRanges": {
+        "snapshot": [
+          [
+            1,
+            217
+          ]
+        ],
+        "basis": "Full source read; prose and PyTorch/shared portions used. Other framework branches observed but not treated as PyTorch implementation."
+      },
+      "role": "pinned textbook reading"
+    },
+    {
+      "name": "multiple-gpus",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computational-performance/multiple-gpus.md",
+      "snapshot": "book-multiple-gpus.txt",
+      "sha256": "86ccd820ae065982c6c3f4c97511d23c3575e7e1dbbd746836cbc49263fe54ce",
+      "bytes": 23680,
+      "lines": 576,
+      "readRanges": {
+        "snapshot": [
+          [
+            1,
+            576
+          ]
+        ],
+        "basis": "Full source read; prose and PyTorch/shared portions used. Other framework branches observed but not treated as PyTorch implementation."
+      },
+      "role": "pinned textbook reading"
+    },
+    {
+      "name": "multiple-gpus-concise",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computational-performance/multiple-gpus-concise.md",
+      "snapshot": "book-multiple-gpus-concise.txt",
+      "sha256": "192d0b0a8c6e2487007e68affdb610040e9a2c14f57b962ca0929ad8ba1b284b",
+      "bytes": 14482,
+      "lines": 364,
+      "readRanges": {
+        "snapshot": [
+          [
+            1,
+            364
+          ]
+        ],
+        "basis": "Full source read; prose and PyTorch/shared portions used. Other framework branches observed but not treated as PyTorch implementation."
+      },
+      "role": "pinned textbook reading"
+    },
+    {
+      "name": "parameterserver",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computational-performance/parameterserver.md",
+      "snapshot": "book-parameterserver.txt",
+      "sha256": "7083d320fc8abb8283caff3acc3695fa54bb3e5993a63795b8abb52ca184e291",
+      "bytes": 12664,
+      "lines": 103,
+      "readRanges": {
+        "snapshot": [
+          [
+            1,
+            103
+          ]
+        ],
+        "basis": "Full source read; prose and PyTorch/shared portions used. Other framework branches observed but not treated as PyTorch implementation."
+      },
+      "role": "pinned textbook reading"
+    },
+    {
+      "name": "async-computation",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computational-performance/async-computation.md",
+      "snapshot": "book-async-computation.txt",
+      "sha256": "7a101cde7abf67af8dd4c58262156ce64ce1b9c0b5cd53765ae48a7d3b95f3e7",
+      "bytes": 13220,
+      "lines": 282,
+      "readRanges": {
+        "snapshot": [
+          [
+            1,
+            282
+          ]
+        ],
+        "basis": "Full source read; prose and PyTorch/shared portions used. Other framework branches observed but not treated as PyTorch implementation."
+      },
+      "role": "editorial asynchronous timing supplement"
+    },
+    {
+      "name": "data-parallel",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/nn/parallel/data_parallel.py",
+      "snapshot": "torch-v2.5.1-data-parallel-excerpt.txt",
+      "sha256": "08758d7089800fd991ba2abeed96050a84ea0dfa5e1104055c4c311c6a72aa68",
+      "bytes": 7483,
+      "readRanges": {
+        "originalLines": [
+          [
+            52,
+            217
+          ]
+        ],
+        "snapshot": "whole"
+      },
+      "upstreamSha256": "4ec21a674b0d076ef6ca7de5eb7de38ab6eab347f25b8c63d82c9624a185e1bf"
+    },
+    {
+      "name": "cuda-sync",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/cuda/__init__.py",
+      "snapshot": "torch-v2.5.1-cuda-sync-excerpt.txt",
+      "sha256": "bb3fffdd334c0214abfb8ea7a0c15b61fa675f56a3750f3de65afa36ff3ecc44",
+      "bytes": 492,
+      "readRanges": {
+        "originalLines": [
+          [
+            944,
+            954
+          ]
+        ],
+        "snapshot": "whole"
+      },
+      "upstreamSha256": "ca7cdd9a766b7ec5433fad1003b0e0c81f74407db1f452c5815f25a11e76383b"
+    },
+    {
+      "name": "cuda-memory",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/cuda/memory.py",
+      "snapshot": "torch-v2.5.1-cuda-memory-excerpt.txt",
+      "sha256": "eba04ed3bcd1f2f8a16e18189417a8fc61a55bf0d979bf2b08b0f33f0cc671e4",
+      "bytes": 4058,
+      "readRanges": {
+        "originalLines": [
+          [
+            328,
+            344
+          ],
+          [
+            399,
+            413
+          ],
+          [
+            416,
+            434
+          ],
+          [
+            437,
+            449
+          ],
+          [
+            452,
+            470
+          ]
+        ],
+        "snapshot": "whole"
+      },
+      "upstreamSha256": "850e31a87c45c1e863e4cc8dd1e15fd269a3800e4a9947a535188913ae2e139d"
+    },
+    {
+      "name": "torch-license",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/LICENSE",
+      "snapshot": "torch-v2.5.1-LICENSE.txt",
+      "sha256": "47a26beb94e3f6b333a3677fc85d546f1fdfd2f0b3686c26d2fb5b10e0134165",
+      "bytes": 3384,
+      "readRanges": {
+        "snapshot": "whole"
+      },
+      "reusedFrom": "../p4-cnn-architectures/torch-2.5.1-LICENSE.txt"
+    }
+  ],
+  "planningRead": {
+    "skill://technical-video-notes": "whole",
+    "NEXT-PROMPT.txt": "whole",
+    "p1-shared/book-version.json": "whole",
+    "practice-plan.json": [
+      [
+        124,
+        152
+      ],
+      [
+        740,
+        814
+      ]
+    ],
+    "outline-plan.json": [
+      [
+        665,
+        765
+      ]
+    ],
+    "book-inventory.json": [
+      [
+        1959,
+        2047
+      ]
+    ],
+    "schedule-inventory.json": [
+      [
+        3374,
+        3593
+      ]
+    ],
+    "course.json": [
+      [
+        1371,
+        1399
+      ]
+    ],
+    "p4-cnn-architectures/manifest-fragment.json": [
+      [
+        1,
+        93
+      ]
+    ],
+    "labs/cnn-architectures/lab.zh.md": [
+      [
+        1,
+        98
+      ]
+    ],
+    "labs/cnn-architectures/guide.zh.md": [
+      [
+        1,
+        88
+      ]
+    ]
+  },
+  "licenseEvidence": {
+    "book": {
+      "path": "../p1-shared/book-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/LICENSE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "readRanges": [
+        [
+          1,
+          25
+        ],
+        [
+          175,
+          201
+        ]
+      ],
+      "scope": "root Apache-2.0 source license; setup.py MIT-0 field is a separate existing version record; no media rights inference"
+    },
+    "pytorch": "torch-v2.5.1-LICENSE.txt"
+  },
+  "boundaries": {
+    "video": "No video/player requests, downloads, viewing or transcript claims by lab worker; metadata owned by lecture agents.",
+    "notAuthored": [
+      "lab.en.md",
+      "draft",
+      "materials",
+      "complete student solutions",
+      "scripts",
+      "media"
+    ],
+    "noGpuClaims": "CPU timing and logical gradient aggregation do not validate GPU kernels, inter-device transfers, NCCL, throughput scaling, MPS, or networking.",
+    "cpuMemory": "RSS lifetime process high-water, not active tensor or accelerator memory.",
+    "data": "synthetic in-memory tensors only; no real-dataset accuracy claim.",
+    "supplements": "12.2 read as editorial timing supplement; 12.3 only indexed and not cited as read; DDP recommendation read only in DataParallel documentation, no DDP tutorial or execution."
+  },
+  "verificationContract": "verification-contract.json",
+  "verification": {
+    "workerExecuted": [],
+    "owner": "Main",
+    "note": "Main reported finite CPU microbenchmark and gradient acceptance; exact authoritative results belong to shared manifest/resources. Worker does not rerun."
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "labId": "training-performance",
+  "status": "acceptance_contract_not_worker_execution",
+  "workerRanNumericalChecks": false,
+  "workerCreatedExecutableScripts": false,
+  "performance": {
+    "device": "cpu",
+    "dtype": "float32",
+    "threads": 1,
+    "model": "Linear(784,64),ReLU,Linear(64,10); no BN/dropout",
+    "data": "pre-generated CPU synthetic tensors; in-memory DataLoader num_workers=0; no disk/decode benchmark",
+    "batches": [
+      16,
+      64,
+      128
+    ],
+    "warmupSteps": 10,
+    "measuredSteps": 30,
+    "processIsolation": "fresh process per batch",
+    "timingStages": [
+      "next(iterator)",
+      "forward plus mean CE",
+      "backward",
+      "SGD step plus zero_grad"
+    ],
+    "statistics": [
+      "raw per-step stages and total",
+      "median",
+      "IQR with quantile method",
+      "actual samples / matching total wall seconds"
+    ],
+    "memory": "raw ru_maxrss, OS-specific unit, lifetime high-water scope including import/data/warmup; not live tensor bytes; separate theoretical X/y bytes",
+    "acceptance": "finite positive durations, actual 30 updates and sample counts, finite loss/parameters and changed parameters; no required acceleration or accuracy threshold"
+  },
+  "gradient": {
+    "device": "cpu",
+    "dtype": "float64",
+    "model": "small deterministic linear layer, no BN/dropout",
+    "partitions": "at least one equal and one unequal nonempty partition; six-sample 3+3 / 2+4 in lab are suggestions, main 3+3 / 4+3 valid",
+    "routes": [
+      "full batch mean",
+      "aggregate local sum gradients then divide by actual total samples",
+      "sample-count weighted local mean gradients"
+    ],
+    "update": "one SGD step, same initial independent snapshot, no momentum or weight decay",
+    "tolerances": {
+      "atol": 1e-10,
+      "rtol": 1e-08
+    },
+    "negativeControl": "unequal partitions naive unweighted local-mean average differs; compare each weight and bias"
+  },
+  "parameterServer": {
+    "workers": 3,
+    "mode": "CPU logical sequential roles, no network",
+    "required": [
+      "sample-count tagged local sum gradients",
+      "receive each worker exactly once for current step/key",
+      "normalize once then exactly one SGD update",
+      "all workers receive same updated parameter version",
+      "changed arrival order agrees within floating tolerance",
+      "missing, duplicate and stale-step contributions cannot count as full successful synchronous update"
+    ]
+  },
+  "communication": {
+    "nature": "analytic budget only; no byte payload transmitted",
+    "workers": 4,
+    "vectorBytes": 160000000,
+    "effectiveUnidirectionalBytesPerSecond": 16000000000,
+    "assumptions": "root/PS ingress then egress serial; ring links concurrent; no protocol/startup/compute/contention cost",
+    "expected": {
+      "workerRoot": {
+        "seconds": 0.06,
+        "aggregateSentBytes": 960000000
+      },
+      "separateParameterServer": {
+        "seconds": 0.08,
+        "aggregateSentBytes": 1280000000
+      },
+      "idealChunkedRing": {
+        "seconds": 0.015,
+        "aggregateSentBytes": 960000000,
+        "sentBytesPerWorker": 240000000
+      }
+    },
+    "latencyExtension": "2*(n-1)*alpha + 2*(n-1)*S/(n*R)"
+  },
+  "notExecutedByWorker": [
+    "CPU numerical experiments",
+    "CUDA",
+    "MPS",
+    "GPU communication",
+    "distributed networking",
+    "real dataset training",
+    "browser",
+    "build",
+    "lint",
+    "formatters"
+  ],
+  "parentEvidenceReported": "Main reported successful finite CPU performance and gradient checks in sources/p5-shared; worker did not rerun or independently read those results; logical PS and communication acceptance owned by Main."
+}

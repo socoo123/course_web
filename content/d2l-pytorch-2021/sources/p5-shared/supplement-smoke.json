@@ -1,0 +1,186 @@
+{
+  "scope": "CPU arithmetic and logical protocols only, no devices/network simulation performance",
+  "lec30": {
+    "accuracy": 0.6,
+    "wrong_batch_average": 0.375
+  },
+  "lec31": {
+    "add_intensity": 0.08333333333333333,
+    "compute_us": 1.0,
+    "memory_us": 120.0,
+    "matmul600_intensity": 100.0,
+    "one_transfer_ms": 1.01,
+    "thousand_transfers_ms": 11.0,
+    "four_FP32_parameter_arrays_MB": 16.0
+  },
+  "lec33_34": {
+    "full_gradient": 4.666666666666666,
+    "sum_then_normalize": 4.666666666666667,
+    "weighted_mean": 4.666666666666666,
+    "default_worker_mean_after_local_scaling": 4.666666666666666,
+    "wrong_equal_mean": 5.75,
+    "SGD_correct": 0.5333333333333334,
+    "SGD_wrong": 0.42499999999999993,
+    "loss3plus1": 3.5,
+    "wrong_loss_mean": 5.0
+  },
+  "lec34_spatial_arithmetic_not_model_forward": [
+    28,
+    14,
+    7,
+    4
+  ],
+  "lec35": {
+    "communication_assumptions": {
+      "root_ms": 60.6,
+      "separate_server_ms": 80.8,
+      "ring_ms": 15.6,
+      "ring_per_node_send_MB": 180.0,
+      "ring_system_send_MB": 720.0
+    },
+    "strong_speedup": 2.2857142857142856,
+    "strong_efficiency": 0.5714285714285714,
+    "weak_efficiency": 0.8,
+    "weak_throughput_ratio": 3.2
+  },
+  "lab_communication": {
+    "root_ms": 60.0,
+    "separate_server_ms": 80.0,
+    "ring_ms": 15.0,
+    "ring_per_node_send_MB": 240.0,
+    "ring_system_send_MB": 960.0
+  },
+  "lab_logical_PS": {
+    "sample_counts": [
+      2,
+      1,
+      3
+    ],
+    "events": [
+      {
+        "step": 7,
+        "worker": 2,
+        "outcome": "accept",
+        "accepted": [
+          2
+        ],
+        "update_count": 0,
+        "parameter_version": 7
+      },
+      {
+        "step": 6,
+        "worker": 0,
+        "outcome": "reject_old_step",
+        "accepted": [
+          2
+        ],
+        "update_count": 0,
+        "parameter_version": 7
+      },
+      {
+        "step": 7,
+        "worker": 2,
+        "outcome": "reject_duplicate",
+        "accepted": [
+          2
+        ],
+        "update_count": 0,
+        "parameter_version": 7
+      },
+      {
+        "step": 7,
+        "worker": 0,
+        "outcome": "accept",
+        "accepted": [
+          2,
+          0
+        ],
+        "update_count": 0,
+        "parameter_version": 7
+      },
+      {
+        "step": 7,
+        "worker": 1,
+        "outcome": "accept",
+        "accepted": [
+          2,
+          0,
+          1
+        ],
+        "update_count": 1,
+        "parameter_version": 8
+      }
+    ],
+    "other_order_events": [
+      {
+        "step": 7,
+        "worker": 1,
+        "outcome": "accept",
+        "accepted": [
+          1
+        ],
+        "update_count": 0,
+        "parameter_version": 7
+      },
+      {
+        "step": 7,
+        "worker": 0,
+        "outcome": "accept",
+        "accepted": [
+          1,
+          0
+        ],
+        "update_count": 0,
+        "parameter_version": 7
+      },
+      {
+        "step": 7,
+        "worker": 2,
+        "outcome": "accept",
+        "accepted": [
+          1,
+          0,
+          2
+        ],
+        "update_count": 1,
+        "parameter_version": 8
+      }
+    ],
+    "missing_events": [
+      {
+        "step": 7,
+        "worker": 0,
+        "outcome": "accept",
+        "accepted": [
+          0
+        ],
+        "update_count": 0,
+        "parameter_version": 7
+      },
+      {
+        "step": 7,
+        "worker": 2,
+        "outcome": "accept",
+        "accepted": [
+          0,
+          2
+        ],
+        "update_count": 0,
+        "parameter_version": 7
+      }
+    ],
+    "updated_parameter": [
+      1.0,
+      -2.0833333333333335
+    ],
+    "order_maxdiff": 0.0
+  },
+  "lab_separate_training_correctness": {
+    "steps": 2,
+    "parameter_count": 50890,
+    "parameter_max_change": 0.003978170454502106,
+    "last_loss": 2.051143169403076,
+    "timed": false
+  },
+  "passed": true
+}
