@@ -1,0 +1,915 @@
+{
+  "environment": {
+    "python": "3.11.8",
+    "torch": "2.5.1",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "hardware": "Apple M2 Max",
+    "threads": 1,
+    "device": "CPU",
+    "dtype": "float32",
+    "cudaCount": 0,
+    "mpsAvailableProbeOnly": true
+  },
+  "data": {
+    "reusedP9ArchiveHash": "9e35994767f7307dc1fa9d5efcc36681f3756a1bdaaa02c1381b3eb11461261e",
+    "selectedLineIdsExactlyP9": true,
+    "splitGroupVerified": true,
+    "train": 512,
+    "val": 64,
+    "test": "not read for fitting or evaluation",
+    "vocabSizes": [
+      156,
+      429
+    ],
+    "maxLength": 12,
+    "targetValidTokens": [
+      1919,
+      269
+    ]
+  },
+  "mechanisms": {
+    "futureMaxDiff": 0.0,
+    "sourcePadIdentityMaxDiff": 0.0,
+    "sourcePadWidthMaxDiff": 5.960464477539062e-07,
+    "incrementalFullTeacherMaxDiff": 6.556510925292969e-07,
+    "multiTokenChunksMaxDiff": 5.960464477539062e-07,
+    "parentReorderMaxDiff": 5.364418029785156e-07,
+    "duplicateParentWriteIndependent": true,
+    "positionOffsetCounterexample": true,
+    "targetPadLogitGradientZero": true,
+    "first4GreedyFullPrefixEqual": true
+  },
+  "config": {
+    "dModel": 32,
+    "heads": 4,
+    "ffn": 64,
+    "encoderLayers": 2,
+    "decoderLayers": 2,
+    "norm": "postnorm",
+    "qkvOutputBias": false,
+    "dropout": 0.1,
+    "sinusoidalPosition": true,
+    "embeddingScale": "sqrt32",
+    "initSeed": 2029,
+    "shuffleSeed": 2030,
+    "optimizer": "Adam",
+    "learningRate": 0.005,
+    "clip": 1,
+    "batch": 32,
+    "epochs": 20,
+    "updates": 320,
+    "parameters": 74861,
+    "sourcePadding": "masked keys each encoder and cross layer; right padding",
+    "targetPadding": "masked keys and ignored loss; query rows not claimed zero",
+    "cache": "per decoder layer projected self K/V; cross K/V recomputed, no perf claim"
+  },
+  "training": {
+    "initialTrainCE": 5.879510335837757,
+    "history": [
+      {
+        "epoch": 1,
+        "trainCE": 3.410530666810513,
+        "valCE": 4.031193275877091
+      },
+      {
+        "epoch": 2,
+        "trainCE": 2.891206328852715,
+        "valCE": 3.8754612805674955
+      },
+      {
+        "epoch": 3,
+        "trainCE": 2.574919898911278,
+        "valCE": 3.6934525160098164
+      },
+      {
+        "epoch": 4,
+        "trainCE": 2.287991792600313,
+        "valCE": 3.630904300505344
+      },
+      {
+        "epoch": 5,
+        "trainCE": 2.0223422942526827,
+        "valCE": 3.5984948594330857
+      },
+      {
+        "epoch": 6,
+        "trainCE": 1.8031909777634836,
+        "valCE": 3.475204637945806
+      },
+      {
+        "epoch": 7,
+        "trainCE": 1.6058798865019623,
+        "valCE": 3.509735220870121
+      },
+      {
+        "epoch": 8,
+        "trainCE": 1.4639079067594003,
+        "valCE": 3.816530248932679
+      },
+      {
+        "epoch": 9,
+        "trainCE": 1.3062627254643124,
+        "valCE": 3.6602462144589336
+      },
+      {
+        "epoch": 10,
+        "trainCE": 1.1636764263970085,
+        "valCE": 3.817709089654972
+      },
+      {
+        "epoch": 11,
+        "trainCE": 1.0605578559211544,
+        "valCE": 3.6852384092196213
+      },
+      {
+        "epoch": 12,
+        "trainCE": 0.9499621607475818,
+        "valCE": 3.8869438313197024
+      },
+      {
+        "epoch": 13,
+        "trainCE": 0.8642061600280094,
+        "valCE": 3.8762236527793914
+      },
+      {
+        "epoch": 14,
+        "trainCE": 0.8081642377494586,
+        "valCE": 4.107492212912407
+      },
+      {
+        "epoch": 15,
+        "trainCE": 0.7336416597351424,
+        "valCE": 4.12709470841078
+      },
+      {
+        "epoch": 16,
+        "trainCE": 0.6839773566726597,
+        "valCE": 4.144421885891032
+      },
+      {
+        "epoch": 17,
+        "trainCE": 0.648760717569881,
+        "valCE": 4.225650376103625
+      },
+      {
+        "epoch": 18,
+        "trainCE": 0.6371795034085542,
+        "valCE": 4.248125834979089
+      },
+      {
+        "epoch": 19,
+        "trainCE": 0.5937762536252148,
+        "valCE": 4.363174154855948
+      },
+      {
+        "epoch": 20,
+        "trainCE": 0.574303307466174,
+        "valCE": 4.462685056778578
+      }
+    ],
+    "clippedUpdates": 242,
+    "maxPreclipNorm": 2.0787601470947266
+  },
+  "validation": {
+    "CEBatch32": 4.462685056778578,
+    "CEBatch17": 4.462684602985595,
+    "batchAbsDiff": 4.537929827463927e-07,
+    "modelBuffersGradsUnchanged": true
+  },
+  "resume": {
+    "serializedBytes": 990380,
+    "atCompletedUpdates": 160,
+    "nextBatchEqual": true,
+    "lossEqual": true,
+    "gradientEqual": true,
+    "optimizerEqual": true,
+    "cpuRngEqual": true,
+    "parameterMaxDiff": 0.0,
+    "weightsOnlyEmptyAdamMaxDiff": 0.010351836681365967,
+    "persistedCheckpoint": false
+  },
+  "generation": {
+    "interface": "model,source,cached,maxSteps only; no reference/true target length",
+    "maxSteps": 12,
+    "EOSStop": true,
+    "forbidBOSPADAfterLogSoftmaxNoRenormalization": true,
+    "firstFixedSample": {
+      "source": "i try .",
+      "reference": "j'essaye .",
+      "attribution": "CC-BY 2.0 (France) Attribution: tatoeba.org #20776 (CK) & #1133630 (nimfeo)",
+      "modelOutput": {
+        "lineId": 58,
+        "outputIds": [
+          15,
+          348,
+          5,
+          3
+        ],
+        "output": "j'ai pleuré .",
+        "endedEOS": true
+      }
+    },
+    "outputs": [
+      {
+        "lineId": 58,
+        "outputIds": [
+          15,
+          348,
+          5,
+          3
+        ],
+        "output": "j'ai pleuré .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 80,
+        "outputIds": [
+          80,
+          4,
+          3
+        ],
+        "output": "ah !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 185,
+        "outputIds": [
+          10,
+          28,
+          4,
+          3
+        ],
+        "output": "soyez calme !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 186,
+        "outputIds": [
+          10,
+          28,
+          4,
+          3
+        ],
+        "output": "soyez calme !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 187,
+        "outputIds": [
+          10,
+          28,
+          4,
+          3
+        ],
+        "output": "soyez calme !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 188,
+        "outputIds": [
+          10,
+          28,
+          4,
+          3
+        ],
+        "output": "soyez calme !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 189,
+        "outputIds": [
+          10,
+          28,
+          4,
+          3
+        ],
+        "output": "soyez calme !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 190,
+        "outputIds": [
+          10,
+          28,
+          4,
+          3
+        ],
+        "output": "soyez calme !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 323,
+        "outputIds": [
+          168,
+          5,
+          3
+        ],
+        "output": "aide-moi .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 324,
+        "outputIds": [
+          168,
+          5,
+          3
+        ],
+        "output": "aide-moi .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 325,
+        "outputIds": [
+          168,
+          5,
+          3
+        ],
+        "output": "aide-moi .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 326,
+        "outputIds": [
+          168,
+          5,
+          3
+        ],
+        "output": "aide-moi .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 333,
+        "outputIds": [
+          32,
+          5,
+          3
+        ],
+        "output": "attends .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 334,
+        "outputIds": [
+          32,
+          5,
+          3
+        ],
+        "output": "attends .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 335,
+        "outputIds": [
+          32,
+          5,
+          3
+        ],
+        "output": "attends .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 336,
+        "outputIds": [
+          32,
+          5,
+          3
+        ],
+        "output": "attends .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 366,
+        "outputIds": [
+          314,
+          5,
+          3
+        ],
+        "output": "marche .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 371,
+        "outputIds": [
+          6,
+          7,
+          275,
+          5,
+          3
+        ],
+        "output": "je suis folle .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 372,
+        "outputIds": [
+          6,
+          7,
+          275,
+          5,
+          3
+        ],
+        "output": "je suis folle .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 390,
+        "outputIds": [
+          311,
+          5,
+          3
+        ],
+        "output": "mange-le .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 391,
+        "outputIds": [
+          311,
+          5,
+          3
+        ],
+        "output": "mange-le .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 404,
+        "outputIds": [
+          95,
+          4,
+          3
+        ],
+        "output": "courage !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 405,
+        "outputIds": [
+          95,
+          4,
+          3
+        ],
+        "output": "courage !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 417,
+        "outputIds": [
+          8,
+          58,
+          4,
+          3
+        ],
+        "output": "à terre !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 418,
+        "outputIds": [
+          8,
+          58,
+          4,
+          3
+        ],
+        "output": "à terre !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 479,
+        "outputIds": [
+          80,
+          33,
+          13,
+          3
+        ],
+        "output": "ah bon ?",
+        "endedEOS": true
+      },
+      {
+        "lineId": 480,
+        "outputIds": [
+          80,
+          33,
+          13,
+          3
+        ],
+        "output": "ah bon ?",
+        "endedEOS": true
+      },
+      {
+        "lineId": 487,
+        "outputIds": [
+          145,
+          5,
+          3
+        ],
+        "output": "tire .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 488,
+        "outputIds": [
+          145,
+          5,
+          3
+        ],
+        "output": "tire .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 552,
+        "outputIds": [
+          17,
+          5,
+          3
+        ],
+        "output": "dégage .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 553,
+        "outputIds": [
+          17,
+          5,
+          3
+        ],
+        "output": "dégage .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 638,
+        "outputIds": [
+          70,
+          4,
+          3
+        ],
+        "output": "détends-toi !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 639,
+        "outputIds": [
+          70,
+          4,
+          3
+        ],
+        "output": "détends-toi !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 640,
+        "outputIds": [
+          70,
+          4,
+          3
+        ],
+        "output": "détends-toi !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 641,
+        "outputIds": [
+          70,
+          4,
+          3
+        ],
+        "output": "détends-toi !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 642,
+        "outputIds": [
+          70,
+          4,
+          3
+        ],
+        "output": "détends-toi !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 658,
+        "outputIds": [
+          6,
+          7,
+          404,
+          5,
+          3
+        ],
+        "output": "je suis tombée .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 669,
+        "outputIds": [
+          6,
+          7,
+          404,
+          5,
+          3
+        ],
+        "output": "je suis tombée .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 676,
+        "outputIds": [
+          6,
+          7,
+          404,
+          5,
+          3
+        ],
+        "output": "je suis tombée .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 677,
+        "outputIds": [
+          6,
+          7,
+          404,
+          5,
+          3
+        ],
+        "output": "je suis tombée .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 742,
+        "outputIds": [
+          6,
+          7,
+          325,
+          5,
+          3
+        ],
+        "output": "je suis mouillé .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 743,
+        "outputIds": [
+          6,
+          7,
+          325,
+          5,
+          3
+        ],
+        "output": "je suis mouillé .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 744,
+        "outputIds": [
+          6,
+          7,
+          325,
+          5,
+          3
+        ],
+        "output": "je suis mouillé .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 751,
+        "outputIds": [
+          311,
+          5,
+          3
+        ],
+        "output": "mange-le .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 763,
+        "outputIds": [
+          19,
+          5,
+          3
+        ],
+        "output": "attendez .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 765,
+        "outputIds": [
+          8,
+          58,
+          4,
+          3
+        ],
+        "output": "à terre !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 838,
+        "outputIds": [
+          72,
+          106,
+          122,
+          5,
+          3
+        ],
+        "output": "il est parti .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 866,
+        "outputIds": [
+          189,
+          18,
+          5,
+          3
+        ],
+        "output": "attrapez tom .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 886,
+        "outputIds": [
+          311,
+          5,
+          3
+        ],
+        "output": "mange-le .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 887,
+        "outputIds": [
+          311,
+          5,
+          3
+        ],
+        "output": "mange-le .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 888,
+        "outputIds": [
+          311,
+          5,
+          3
+        ],
+        "output": "mange-le .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 900,
+        "outputIds": [
+          170,
+          4,
+          3
+        ],
+        "output": "aidez-nous !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 901,
+        "outputIds": [
+          170,
+          4,
+          3
+        ],
+        "output": "aidez-nous !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 928,
+        "outputIds": [
+          94,
+          4,
+          3
+        ],
+        "output": "cool !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 972,
+        "outputIds": [
+          311,
+          5,
+          3
+        ],
+        "output": "mange-le .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 990,
+        "outputIds": [
+          8,
+          58,
+          4,
+          3
+        ],
+        "output": "à terre !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 992,
+        "outputIds": [
+          8,
+          58,
+          4,
+          3
+        ],
+        "output": "à terre !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 999,
+        "outputIds": [
+          94,
+          4,
+          3
+        ],
+        "output": "cool !",
+        "endedEOS": true
+      },
+      {
+        "lineId": 1031,
+        "outputIds": [
+          314,
+          5,
+          3
+        ],
+        "output": "marche .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 1032,
+        "outputIds": [
+          314,
+          5,
+          3
+        ],
+        "output": "marche .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 1037,
+        "outputIds": [
+          314,
+          5,
+          3
+        ],
+        "output": "marche .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 1038,
+        "outputIds": [
+          314,
+          5,
+          3
+        ],
+        "output": "marche .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 1039,
+        "outputIds": [
+          314,
+          5,
+          3
+        ],
+        "output": "marche .",
+        "endedEOS": true
+      },
+      {
+        "lineId": 1040,
+        "outputIds": [
+          314,
+          5,
+          3
+        ],
+        "output": "marche .",
+        "endedEOS": true
+      }
+    ],
+    "corpusBLEU2": {
+      "score": 0.1210687598576008,
+      "matches": [
+        66,
+        6
+      ],
+      "candidates": [
+        163,
+        99
+      ],
+      "hypLength": 163,
+      "refLength": 205,
+      "brevityPenalty": 0.772851226303219,
+      "contract": "same P9 single reference/clean whitespace/full reference/uniform bigram/no smoothing/fixed order2/0..1"
+    }
+  },
+  "notExecuted": [
+    "beam search with trained Transformer",
+    "full student implementations",
+    "full corpus",
+    "test scoring",
+    "GPU/MPS",
+    "hardware timing",
+    "old d2l Notebook",
+    "persisted reusable checkpoint"
+  ]
+}

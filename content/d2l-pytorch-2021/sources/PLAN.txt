@@ -185,3 +185,18 @@ Lab.tsx的常用命令固定输出git checkout / make qemu / make grade，仅适
 - Chromium逐讲默认笔记/官方页头/明暗可读图/公式/自测/页底，1440桌面390手机、实验双标签及两图通过，LEC66实点新tab保留笔记。修65/66页底hash溢出423/409→390、guide JSON指针564→390；lab SHA入滚动表，信息图源状态箭头绕过CE框，观测图改称末轮模型而非已保存checkpoint。改SVG禁缓存刷新；无应用错误，验证tab关闭，非Pages/全片播放验收。
 - npm run build仅一次通过：tsc --noEmit+Vite5.4.21，3056modules，5.36s。10Markdown/9SVG XML/120本地路由/真实图数值及四任务保留检查通过；最终hash以p9-shared/content-check为准，worker生成hash/未运行记录保留历史。一次video字段行号错误已按工具诊断修复；一次status尾逗号保护拒绝，重新读取后原子更新，未触发额外build。
 - 牛仔认证文件/评分端及LEC71课堂总结保持未核；P7/P8真实小运行不回退。下一批P10 LEC67–70+transformer/bert-pretrain-finetune：A67–68、B69–70、C transformer、D BERT实验；之后P11 LEC71–73+optimization-capstone。剩余7讲、3实验，主agent提交推送main后给下一提示词。
+
+十八、P10实际结果（2026-11-14）
+- 并行A67–68、B69–70、C Transformer、D BERT实验；主agent共享索引、统一数值/真实浏览器/一次最终构建与发布。只改content，152个前66讲/前九实验正文图文件及所有lab元数据保持。
+- 新增4notes、两实验4文档、7张自主机制图；累计70讲/22实验文档/74机制图+1观测图，73讲12实验48任务不变。无完整学生答案，70讲课堂稿仍阻塞，materials不重译中文教材。
+- 官方4BV/16P=10697秒：67全3P37:44、68全4P51:53、69全5P57:14、70全4P31:26。mid1567748478/2021，课表与上传日期分开。7P字幕成功空列表、9P HTTP412未知，各一次不重刷。LEC69课表p2/p3错位独立记录，全部三主题/5P保留。累计198P/公共301链接。
+- 固定教材新增10.5–10.7、14.8–14.10、15.6/15.4/15.7，全文或精确节选见各清单；当前第二版不是2021快照。三mask/位置offset/projectedKV、LN只沿特征、BERT .data位置断梯度与MLM标量/广播陷阱均明确工程差异，不冒称原Notebook复现。
+- Transformer复用P9带署名英法512/64固定划分与156/429训练词表，未重下语料/重训旧GRU。2enc2dec/d32/h4/ff64/postnorm/dropout.1、74861参数，seed2029/shuffle2030、Adam.005/B32/clip1/20轮320步。trainCE5.879510→.574303、val4.462685，greedy语料BLEU2 .121069，首句i try .仍译成j'ai pleuré .；242步真实裁剪，不称排名。
+- 源/目标mask、未来不可干扰、位置偏移、每层projected selfKV与fullprefix/chunk对照、重复父独立写通过，最大差<7e-7；crossKV重算，不是硬件性能实测。160步后BytesIO990380B真实序列化恢复模型/Adam/CPU与shuffle RNG，下一批/loss/grads/优化器/参数一致；空Adam反例差.010352。未持久存checkpoint、未验任意多步/磁盘跨进程，学生合同另列。
+- 原WikiText/SNLI ZIP失败，明确采用Salesforce非raw wikitext-2-v1和Stanford plain_text固定revision Parquet，train/validation核LFS SHA256，test未下载。WikiText许可卡metadata3.0/GFDL与正文4.0冲突保留；SNLI CC BY-SA4.0，HF标签按名0/1/2→0/2/1。独立核教材bert.small包SHA1、两成员SHA256、60005词表ID与H256/2层配置；无独立LICENSE/config，不推断再分发/商用。
+- 环境仍Python3.11.8/torch2.5.1、Apple M2 Max/macOS26.3.1、CPU1线程float32。pyarrow安装因TLS截断失败且坏wheel未安装，改由仓库外Bun1.4.4/hyparquet1.33.0读同一Parquet，显式转换BigInt标签；无d2l/Jupyter/GPU/MPS运行/硬件计时。
+- 真实WikiText128/32句对、train-only708词表、32宽、114/128与29/32截断，固定监督472/83；d32/2层/66438参数，seed2035/shuffle2036、Adam.003/B16/10轮80步。trainMLM6.740114→4.152513、NSP.722930→.175329，val5.298478/1.609197，验证关系弱。NSP同split跨doc负例、真后继/同文本排除；MLM普通词候选/替换池与有效归约分别核。
+- 另一路真实既有权重SNLI迁移64/32，max32，各7对截断/OOV150与60，所选前提交叠0；严格weights_only载入完整模型。冻结encoder+pooler771可训练参数 vs全微调16613635，同head/shuffle初值、Adam1e-4/B8/两轮各16步；valCE1.095402/1.121991，13/32和14/32，不是质量排名。冻结骨干不变、全微调预训练参数与位置梯度实际变化；验证不改state/grads。
+- 39来源hash、9Markdown/7SVG/115站内路由/八任务原文检查通过。Chromium四讲页头/默认笔记/图/公式/自测/页底、1440/390、双实验双标签与公共301入口通过；LEC69新tab保留笔记。修嵌入公式391→390与Transformer公式420→390；无应用pageerror，tab关闭。工具点击/视口/错误等待词与下载诊断留证，不外推Pages或全片播放。
+- 最终一次构建结果见status.verification.build与p10-shared/build.log；本批完整清单p10-manifest。worker生成hash/未运行历史保留，主最终hash见content-check。无语料、模型、环境、完整脚本或凭据随提交。
+- 牛仔认证数据/评分端及LEC71课堂未核，P1–P9真实小运行不回退。下一批P11仅LEC71–73+optimization-capstone，A71、B72–73、C实验；SGD/动量/Adam配对、调度/稳定性/完整状态恢复、全模型谱系复盘与CS336清单四任务全部保留，视频无源不得冒称已看完。

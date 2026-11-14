@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "batch": "P10",
+  "owner": "P10BertLab",
+  "labId": "bert-pretrain-finetune",
+  "completedAt": "2026-11-14",
+  "scope": ["labs/bert-pretrain-finetune", "sources/p10-bert-pretrain-finetune"],
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "contentStatus": "Two substantive Chinese guidance documents with all four exact task texts and one minimal original mechanism diagram; no full solution. Runtime evidence pending main integration.",
+  "taskIds": ["bert-pretrain-finetune-1", "bert-pretrain-finetune-2", "bert-pretrain-finetune-3", "bert-pretrain-finetune-4"],
+  "publicFiles": [
+    {"path":"labs/bert-pretrain-finetune/lab.zh.md","sha256":"238ee3e0455531a3ebf5c038c0791cd32c0fb4fa845fd4bb524a146a084d3a13"},
+    {"path":"labs/bert-pretrain-finetune/guide.zh.md","sha256":"d090a4a9adeb31cb7fbcc3a86c9ff2c570e5ef173dda64633c20a10e96f201fd"},
+    {"path":"labs/bert-pretrain-finetune/assets/bert-objectives.svg","sha256":"cf7cefe639f24568c080d92931805eca94f21e070d4008d44deb0a620d9cc49f"}
+  ],
+  "sourceFiles": [
+    {"path":"sources/p10-bert-pretrain-finetune/book-bert.txt","sha256":"c36a2fb78a500faaaa7712bdfadd8bfbd7e792bc208baf2524fbc74efc6055f3"},
+    {"path":"sources/p10-bert-pretrain-finetune/book-bert-dataset.txt","sha256":"561162033e7120a507c440bbb6925c7e64fa42cf4d95d9dee6cbf1aeb5bd1d6d"},
+    {"path":"sources/p10-bert-pretrain-finetune/book-bert-pretraining.txt","sha256":"e52ab2e8f6c432e235b283d0ab8be69fb914d5b0898a0108670846f86bb5a8ba"},
+    {"path":"sources/p10-bert-pretrain-finetune/book-natural-language-inference-and-dataset.txt","sha256":"dc3a0adc61a2a902fbfd5abca4c1d9cb7a4312b80d98f6314f3bdd938d9021f2"},
+    {"path":"sources/p10-bert-pretrain-finetune/book-finetuning-bert.txt","sha256":"f511434b8699c877a3b9e0b5374c3b68f5f3f71c8283d809551dbbfb97061be0"},
+    {"path":"sources/p10-bert-pretrain-finetune/book-natural-language-inference-bert.txt","sha256":"9628b54135e5e0aab86eaa49cea15ffbfb5e3ac579d98493bba3f6b015906387"},
+    {"path":"sources/p10-bert-pretrain-finetune/publisher-terms-excerpts.txt","sha256":"7533a41436b9ff321c5400b17f534722d23292ed59260fc1733322d1644218cf"},
+    {"path":"sources/p10-bert-pretrain-finetune/asset-audit.json","sha256":"c92822ba14211e2bc78056d14b40c8669593cf662d7f5151cb7b06c85daa5ae4"},
+    {"path":"sources/p10-bert-pretrain-finetune/source-index.json","sha256":"ef62d7c168f11cc4dbc9240a343b300beb166bd71225b02cad9304b6a1701364"},
+    {"path":"sources/p10-bert-pretrain-finetune/verification-contract.json","sha256":"6c2ecd47ead362d9d5369035d3ba0dbbde22f843fa1588b4704e65ed879dee9b"}
+  ],
+  "acquisition": {
+    "evidence":"sources/p10-bert-pretrain-finetune/asset-audit.json",
+    "cacheRoot":"/tmp/d2l-p10-corpus-cache",
+    "successful":["wikitext-2-train.parquet","wikitext-2-validation.parquet","snli-train.parquet","snli-validation.parquet","bert.small.torch.zip","bert.small.torch/pretrained.params","bert.small.torch/vocab.json"],
+    "originalDatasetArchivesAcquired":false,
+    "textbookWeightArchiveSha1Matched":true,
+    "parquetPublisherLfsSha256Matched":true,
+    "wikiRevision":"b08601e04326c79dfdd32d625aee71d232d685c3",
+    "snliRevision":"cdb5c3d5eed6ead6e5a341c8e56e669bb666725b",
+    "testDownloaded":false,
+    "assetsInRepository":false
+  },
+  "fourAuditBoundaries": ["WikiText nonraw publisher release + conflicting CC BY-SA versions", "SNLI publisher release + CC BY-SA4.0 + label conversion", "Exact textbook PyTorch pretrained weights + no independent open license", "Paired vocabulary identity + code-derived configuration, no config/license member"],
+  "runtime": {
+    "workerNumericalChecksRun":false,
+    "workerModelLoadRun":false,
+    "workerTrainingRun":false,
+    "buildLintFormatterTestsRun":false,
+    "mainStatus":"Pending at handoff; public documents explicitly distinguish requirements from observations."
+  },
+  "mainIntegrationNotes": [
+    "Main may append actual bounded runtime observations; do not overwrite worker acquisition-only provenance as though it ran training.",
+    "Use exact cached publisher files, preserve explicit alternative-format identity and original-download failures.",
+    "HF SNLI labels0/1/2 map to textbook0/2/1; exclude-1 and fix prose entailment direction.",
+    "Correct pos_embedding.data, masked CE scalar/broadcast, special-token selection/replacement and unconstrained NSP negatives explicitly; not byte-for-byte notebook reproduction.",
+    "Model archive has no config or independent license; local textbook-invited teaching use only, no redistribution rights asserted.",
+    "Verify paths/task texts/source hashes, JSON/SVG, 1440/390 light/dark lab tabs/formulas and one final build with other slices."
+  ],
+  "preservedBlockers": ["Unverified classroom transcripts/timecodes/Q&A", "Cowboy authenticated files/scoring contract", "LEC71 classroom summary"],
+  "notChanged": ["course.json", "status.json", "resources.zh.md", "PLAN.txt", "NEXT-PROMPT.txt", "Other lectures/labs", "Git state/commit/push"]
+}

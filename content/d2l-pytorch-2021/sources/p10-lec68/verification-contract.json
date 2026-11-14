@@ -1,0 +1,63 @@
+{
+  "status": "not_executed_by_worker",
+  "purpose": "Finite paper expectations and invariants for main verification; not a full student solution",
+  "examples": {
+    "parameters": {
+      "d": 8,
+      "dff": 16,
+      "ffnWithBias": 280,
+      "layerNormAffine": 16
+    },
+    "masks": {
+      "sourceLength": 3,
+      "sourceWidth": 4,
+      "sourceAllowed": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "targetInputLength": 3,
+      "targetWidth": 4,
+      "validDecoderRows": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    "cacheFloat32": {
+      "L": 2,
+      "B": 1,
+      "h": 2,
+      "dh": 4,
+      "T": 5,
+      "elementsKV": 160,
+      "bytesKV": 640,
+      "beam3Bytes": 1920
+    },
+    "assertions": [
+      "eval future-input perturbation at k leaves logits positions below k unchanged across all layers",
+      "source PAD identity and extra right padding preserve valid logits",
+      "full-prefix causal vs projected-KV incremental logits close; report max errors and declared tolerances",
+      "offset p=3, chunk m=2 permits 4 then 5 keys",
+      "parent reorder [2,0,2] applies to every layer K/V and lengths, independent mutable branches",
+      "feature-only LN; explicit causal mask remains active for eval prefix calls",
+      "do not feed ground truth target or target length into inference"
+    ]
+  }
+}

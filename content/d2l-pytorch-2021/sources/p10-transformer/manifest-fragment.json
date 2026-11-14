@@ -1,0 +1,105 @@
+{
+  "phase": "P10",
+  "owner": "P10TransformerLab",
+  "labId": "transformer",
+  "capturedAt": "2026-11-14",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "artifactStatus": "Four exact tasks, two public guidance documents, one original SVG, original fixed textbook snapshots, read scopes/hashes and numerical-case contract complete. Main runtime subset incorporated with explicit exclusions.",
+  "taskPreservation": [
+    "transformer-1",
+    "transformer-2",
+    "transformer-3",
+    "transformer-4"
+  ],
+  "taskTitles": [
+    "逐步实现/解释Q/K/V投影、多头拆合、位置编码、残差与前馈层。",
+    "核对padding与causal mask；构造未来词变化不影响此前位置输出的局部检查。",
+    "以教材翻译任务完成小型编码器-解码器Transformer训练，保存恢复并在固定样本推理。",
+    "比较训练与增量生成的输入/状态处理，估算序列长度增加的注意力计算与内存成本。"
+  ],
+  "publishedArtifacts": [
+    {
+      "path": "content/d2l-pytorch-2021/labs/transformer/lab.zh.md",
+      "bytes": 20332,
+      "sha256": "bb93fcd49bd608489fb62f13c4ec2dbe7af22a9126e9136daba745960b15c0f7"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/labs/transformer/guide.zh.md",
+      "bytes": 16717,
+      "sha256": "51687d7ee03feaf4971c269fabafc13b4bc7014043f2cad0667250dd224f8dd9"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/labs/transformer/assets/mask-and-cache.svg",
+      "bytes": 3245,
+      "sha256": "76be4ca6f1fec002d81aaaf78f46e331891aa11e80fc59b2ae0c2ff373482c03"
+    }
+  ],
+  "sourceArtifacts": [
+    {
+      "path": "content/d2l-pytorch-2021/sources/p10-transformer/book-multihead-attention.txt",
+      "bytes": 17655,
+      "sha256": "992b15cd04af70c15cc110d2166f553aecdc09b6c752e51ae1804e57e416157d"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p10-transformer/book-self-attention-and-positional-encoding.txt",
+      "bytes": 15653,
+      "sha256": "3556563c960b3c1a55eb7249a6a884e1a42dd0dc11e9738eec05d1aba002d813"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p10-transformer/book-transformer.txt",
+      "bytes": 51462,
+      "sha256": "480e91e1b9bcc6e049cce9e6c2c85fa94afed5095b2022217d08abda49279a35"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p10-transformer/source-index.json",
+      "bytes": 7370,
+      "sha256": "4f6475a9427d45b07d028e86129b89b98612d5d2b63c00521f6f2d8104cd8b78"
+    },
+    {
+      "path": "content/d2l-pytorch-2021/sources/p10-transformer/verification-contract.json",
+      "bytes": 6868,
+      "sha256": "95291601c8f17c527ce3c6fb7e15c8f45e12dfd96bdca650713855dbcc8d7d44"
+    }
+  ],
+  "sourceIndex": "source-index.json",
+  "verificationContract": "verification-contract.json",
+  "sourceReading": "10.5 and10.6 full fixed sources; 10.7 exact selected ranges in source-index, including PyTorch encoder/decoder/train and exercises. Saved whole original source does not claim remaining sections read.",
+  "reusedWithoutAcquisition": [
+    "../p9-shared/corpus-acquisition.json",
+    "../p9-shared/split-provenance.json"
+  ],
+  "mainEvidenceAlreadyRead": "../p10-shared/transformer-smoke.json",
+  "workerVerification": {
+    "numerical": false,
+    "training": false,
+    "tests": false,
+    "build": false,
+    "lint": false,
+    "formatter": false,
+    "browser": false,
+    "gitCommitPush": false,
+    "sourceHashes": "computed for source identity and handoff; not a numerical/content test",
+    "externalCaches": "ls observed both existing P9 archive sizes; no reacquisition or old-model retraining"
+  },
+  "checksForMain": [
+    "Four IDs/title preservation, source hashes and route/image resolution",
+    "SVG XML and light/dark visual preview, formulas and hash table overflow at1440/390",
+    "Lab two tabs and linked lec67/68 default notes",
+    "Final course build only in Main integrated pass"
+  ],
+  "observedBoundaries": [
+    "Real training320 updates and fullP9 validationBLEU reported only from Main evidence",
+    "Real model/Adam/RNG serialization continuation used BytesIO; no persisted reusable checkpoint",
+    "Projected selfKV checked; crossKV recomputed, analytic reuse explanation not claimed measured",
+    "Parent gather is mechanism evidence, not a real trained beam result",
+    "No full corpus/test/GPU/timing/originalNotebook compatibility evidence"
+  ],
+  "notPublished": [
+    "full runnable lab solution",
+    "dataset archive/full corpus",
+    "model weights/checkpoint",
+    "classroom transcript or timestamps",
+    "hardware benchmark"
+  ],
+  "unchangedOutsideOwnedPaths": "No edits to metadata, earlier labs/lectures, P9 sources, shared evidence or course resources. Classroom and cowboy competition blockers remain."
+}

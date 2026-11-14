@@ -1,0 +1,160 @@
+{
+  "lectureId": "lec70",
+  "executedByWorker": false,
+  "checks": [
+    {
+      "id": "bert-pair-truncate-segment",
+      "input": {
+        "premiseLength": 5,
+        "hypothesisLength": 4,
+        "maxLength": 10
+      },
+      "expected": {
+        "premiseRetained": 4,
+        "hypothesisRetained": 3,
+        "validLength": 10,
+        "segments": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "assertions": [
+        "Reserve three special-token positions before trimming; remove from B on a length tie.",
+        "Short pair A2/B1 has valid length6; PAD excluded, separator included."
+      ],
+      "executionStatus": "not_run_by_worker; requested_main_acceptance"
+    },
+    {
+      "id": "nli-label-map",
+      "input": {
+        "labels": [
+          "entailment",
+          "contradiction",
+          "neutral",
+          "-"
+        ]
+      },
+      "expected": {
+        "retainedLabels": [
+          0,
+          1,
+          2
+        ],
+        "filteredCount": 1
+      },
+      "assertions": [
+        "Persist mapping beside weights; do not reuse NSP labels.",
+        "Text, label and source IDs remain aligned after filtering."
+      ],
+      "executionStatus": "not_run_by_worker; requested_main_acceptance"
+    },
+    {
+      "id": "classification-head-count",
+      "input": {
+        "hidden": 256,
+        "classes": 3,
+        "bias": true
+      },
+      "expected": {
+        "newHeadParameters": 771,
+        "logitsForBatch2": [
+          2,
+          3
+        ]
+      },
+      "assertions": [
+        "Classifier shares encoder and hidden; only new output is initialized anew.",
+        "Unused MLM/NSP heads are not included in the PyTorch classifier parameter set."
+      ],
+      "executionStatus": "not_run_by_worker; requested_main_acceptance"
+    },
+    {
+      "id": "weighted-nli-metric",
+      "input": {
+        "batches": [
+          {
+            "correct": 3,
+            "count": 4
+          },
+          {
+            "correct": 1,
+            "count": 2
+          }
+        ]
+      },
+      "expected": {
+        "correct": 4,
+        "count": 6,
+        "accuracyExpression": "4/6"
+      },
+      "assertions": [
+        "Not the unweighted average .625.",
+        "Evaluation mode leaves model/optimizer state unchanged."
+      ],
+      "executionStatus": "not_run_by_worker; requested_main_acceptance"
+    },
+    {
+      "id": "qa-valid-span",
+      "input": {
+        "startScores": [
+          1,
+          4,
+          2
+        ],
+        "endScores": [
+          5,
+          1,
+          3
+        ],
+        "oneBasedContextPositions": [
+          1,
+          2,
+          3
+        ]
+      },
+      "expected": {
+        "invalidIndependent": [
+          2,
+          1
+        ],
+        "bestValidSpan": [
+          2,
+          3
+        ],
+        "score": 7
+      },
+      "assertions": [
+        "Exclude question/special/PAD positions and constrain start<=end."
+      ],
+      "executionStatus": "not_run_by_worker; requested_main_acceptance"
+    },
+    {
+      "id": "checkpoint-vocab-config-identity",
+      "input": {
+        "textbookArchive": "bert.small.torch.zip",
+        "textbookSHA1": "c72329e68a732bef0452e4b96a1c341c8910f81f",
+        "H": 256,
+        "layers": 2,
+        "heads": 4,
+        "ffn": 512,
+        "maxPositions": 512
+      },
+      "assertions": [
+        "Resolve actual acquisition and permission ledger from p10-bert-pretrain-finetune; do not infer license from code.",
+        "Verify actual archive/member hashes, ordered vocabulary and all special IDs, state shapes/config before strict load.",
+        "Record source of pretrained tensors; random initialization is not pretrained transfer.",
+        "Before any downstream step shared tensors equal acquired checkpoint; after a real step intended trainable parameters change; label map persisted.",
+        "Never claim the LEC69 H128 model can load H256 weights."
+      ],
+      "executionStatus": "not_run_by_worker; requested_main_acceptance"
+    }
+  ]
+}

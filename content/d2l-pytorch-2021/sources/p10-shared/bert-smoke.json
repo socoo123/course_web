@@ -1,0 +1,7336 @@
+{
+  "environment": {
+    "python": "3.11.8",
+    "torch": "2.5.1",
+    "parquetReader": {
+      "name": "hyparquet",
+      "version": "1.33.0",
+      "bun": "1.4.4",
+      "bigint": "converted safe signed label integers to JSON numbers"
+    },
+    "pyarrow": "not installed; repeated incomplete TLS downloads; hyparquet read exact cached bytes instead",
+    "device": "CPU",
+    "threads": 1,
+    "dtype": "float32",
+    "GPU": "not run"
+  },
+  "pretraining": {
+    "sourceFormat": "Salesforce wikitext-2-v1 nonraw Parquet fixed publisher commit; not acquired textbook ZIP",
+    "trainCorpus": {
+      "rows": 36718,
+      "documents": 629,
+      "candidateAdjacentPairs": 59135,
+      "selectedBasePairs": 64,
+      "selectedDocumentIds": [
+        0,
+        1,
+        20,
+        28,
+        48,
+        50,
+        52,
+        63,
+        75,
+        90,
+        97,
+        127,
+        142,
+        176,
+        178,
+        191,
+        208,
+        209,
+        212,
+        215,
+        247,
+        254,
+        260,
+        271,
+        272,
+        276,
+        281,
+        308,
+        311,
+        314,
+        319,
+        324,
+        347,
+        349,
+        350,
+        380,
+        386,
+        410,
+        413,
+        414,
+        428,
+        437,
+        455,
+        463,
+        467,
+        481,
+        485,
+        498,
+        512,
+        525,
+        534,
+        537,
+        553,
+        573,
+        595,
+        604,
+        617,
+        622,
+        625
+      ],
+      "selectedDocumentTitleSha256": {
+        "0": "17c7b7112f38c0fc0c28566e40444b445bb2a79b394fc49226de4ec0289c77b2",
+        "512": "941d560ade7f06ed5f5db245de97fb15f10686fb979286db591f5cee4edb0bbb",
+        "386": "a22ab5a25a7010a14f10798aafe3bd7bdc54e521eb069be768792e4915b48d03",
+        "1": "b6d4a3dae1283417d960dea0d0b15d4578c6992709a18e0cd9845062fe122c93",
+        "260": "7e708e0530c2b6cdf4135ecb3a5f036e1205aa69e60caccd7dd83376f7f757c8",
+        "525": "20147535dc100e88993d723b15dcc8d8a6323bae3475f45093e1f6a509270fe8",
+        "142": "52cac4de64d3a06b89fd7b79db5de7e25eb5e85e2dd9015a1bc088793758ca13",
+        "271": "5fcec3b12737e2b0c4bf0aa6b9f7c3718795a44596acba93ae2ccbed0c5a61e1",
+        "272": "b18b7eaa119baecca9570ab252ec2a1a46852b7beb9c8a730fbc22e71e0957ec",
+        "20": "31daca5ee31946ed1280d974ee7cc7309ebdb1ac64e8db4874636a1d6b4d063b",
+        "276": "df23f557b15bbb27c4bb87ae763b394b440f1efb6328a7b3cf65f791442f7b0e",
+        "534": "dc4475399dd88fbf6c1206c4481c5c84351b82b897ed8a45ff8411fac805e548",
+        "281": "0a0f575f167527296c18a418666de4c2ae687e2898c2b07ccf0000c02625f0be",
+        "537": "b68810b63b63230bc89acb1d16a7401d366c5fa1bd2f192944fdd63e403d97fd",
+        "410": "e85d10684060277ec0d10ee642844337a5d6e603fe4814be56672c35cdb739ea",
+        "28": "1f2e0c3761d9a8e08968da87d8df243a233822bba2ff7ebbb2fd9ed653f5117f",
+        "413": "431a79b8e6b9369bb13fb191d0373cc78f63c41f25bccb2227278bd5280f9a41",
+        "414": "b35ab02005ef8a2fab1f1a2bf9faf89d30eb1d519752921732c2eec6343057c2",
+        "553": "d19060989bf956544a2edd97f9923085962ce2954b65c34a467d788bb808a296",
+        "428": "d6ff0d505c81758a9fe07b9fb81814826cab5064c6f98046f4c1d70df487ce8f",
+        "48": "7d5b38d3c2065b0acd2d6bc25edd7ae1592caf36959a0c33b2836dc0bdda6369",
+        "176": "38719b77f6c2ef6e3021cd42396e1672bba9db488d3178c0866c4dbd639a8966",
+        "178": "0f9e19f153576d62ddb0e1d0cafa36dcb18e88143afdce66730ca3ca84522863",
+        "50": "232d024ff700902d04bf55505afc0dde57b6f0db2416d4c5db87ebaa3f5b44a9",
+        "52": "a26560f46a7dc2fd22046ee5b8c6c157d71921a2bdbc13b7c96b9c4b7efdda94",
+        "437": "2e531bb74374bb3dfe7bf26a8a8c741ad33953bab85e52af937ffac3e0f23c3b",
+        "308": "9a99bf0dcc12f97f4a814c572fbc6c4679888f512d8d2ec80675b48b4bf8670d",
+        "311": "aa4bcd50c902dcff037218e5bb2be2e90d7357021c54d2e6fbe03afb3e22b92b",
+        "314": "d6df2da13ee58d2d8f72783a7cb93a880d37729ead27255bbe87ee3feb82907a",
+        "573": "a27101fffc5523c82236d299046843abf90c392ca3c623fb522646ed8fbd9fce",
+        "63": "5f23a9f36f74c0bdea9762794f8d6bd5f5f35c83eaf873439a26ad0765dc7c55",
+        "191": "f7d03f581b07ab7e858699cf122920605b707559c33a1f5821dd67118190917f",
+        "319": "1f8cff2e4f6a858d2e2912175c35d7e02194fcf367b019f1553ddb01454285d7",
+        "324": "7b92f51391926350f296f7b114fed2cb0cd5547e91ee5c425c5752ea89e5b761",
+        "455": "8e4fb0c332124f4cccfe77d374c5d49b3499b0092917fc325f22b3d6b3c24ad9",
+        "75": "105ce2b2a21ac27362f135ea7220572fe35f83420c6be0b74ab7ba3193e93f3a",
+        "463": "0bb833b02f3f31a5e87aaedba0489851430801e9f31d34560ea165f4ca7b092a",
+        "208": "013173a806672a533a8289de63565afe18c83f827817dbf3dd37b3577a4e43db",
+        "209": "fedb3f3c4ed08a6815ac1403d229bab90931cdf8b59c6fb8d4b392c8a733592f",
+        "595": "b58b27e27b04018cc171e4de712289e9737d049e1b5cb0394dfafed68f865c4a",
+        "212": "1447a22b42f96f73cbd1133344e5c87bede99cabf204abf12e0fe2e92569c1f4",
+        "467": "ac2241656dc8876a5bfd7892d57db0ef4ddbd13ac7f8a75cbd53a49f7234ed3e",
+        "215": "e0d25e4c1314c7cc6f917ea16e4f8fb063301f93df0c8a6777f42be3d71df689",
+        "90": "6dd85d08801073a4bf4fbe03945ce761d92ecfb85011812bf606baa56c482b7e",
+        "347": "a5680b6349bc7ff49e33356384775d7d9dea0e2fba2a0c480d927d072479732a",
+        "604": "6ded36eb822e206c7d472acc7de1f847383df80818c09f5c000b72746dd104cb",
+        "349": "b242ff97a1ae0f2efc1533cb08681a12f69c0214cfb8d3d82266aa92da69ee39",
+        "350": "bdb129aa4340cdd407bbb2b5c09b21e4dacf5b72bb7daa7d4c70f51975b4748f",
+        "481": "ce74a72a2eb228d832a7b7b7ddbc05a291f6cec4ad04739bf70993122f6a211a",
+        "97": "c50c1ca04f41fb27b309c8a2a868bd18b1f70c5721817013eb8fdbe5907ada48",
+        "485": "79ef01d258830d86ab5b797f7bf7bc3f53702a26ef48428ca384452928981ef3",
+        "617": "b4ae948a68df181cc11aec31041276a6919f403ad1fe8cdd08160f802d569515",
+        "622": "3760155444166f40170ea17237139e53fcc197b51431d09d7ee970fefcfce10b",
+        "625": "6a1d093b48785a837363005a582122864e20074ac409c69485b1437001f36ce0",
+        "498": "1bb95d82aab5b84a74df1ce492f2b3cfdc9db51d0c00a33f9881eb7ead1f35a9",
+        "247": "0560d7118148670f0bda3c0936c308f5ee15cf3e6436510d58894635e515c282",
+        "380": "7ff5301d780c775b0058263c8ea4471570dcc2c8b4648fff144540b3962c86e8",
+        "254": "85d1c67d0512ec24298ab0732a92832c846614c166680e6036380ea795915b41",
+        "127": "6739318670731ea2f1ac7843fd894a45b5c18e1dec2b6b0301209f87a47edfeb"
+      }
+    },
+    "validationCorpus": {
+      "rows": 3760,
+      "documents": 60,
+      "candidateAdjacentPairs": 6216,
+      "selectedBasePairs": 16,
+      "selectedDocumentIds": [
+        0,
+        4,
+        8,
+        12,
+        13,
+        18,
+        32,
+        40,
+        44,
+        47,
+        51,
+        56
+      ],
+      "selectedDocumentTitleSha256": {
+        "0": "8f4a764e8235570e00070d094a8ead931e3fbb040f85656936c52cf097526156",
+        "32": "70c691b0b93f0900f04b520b41f7b457b41e2a4b240bffdd24295abda3e49545",
+        "4": "c8a9870795b3cf4a68d426b9c24d1219fa0ac61a664a4dd239738ca77be03726",
+        "40": "7bbb8045476766cfbe67c69911aadd1fd33fb9c678e269a7986a0bc06ffd0811",
+        "8": "b8218cc88dad4dd74a54d892548c2f5c279b13527fccb8b6f7f1c4cb90f9eef2",
+        "44": "da7c2738a189ab3e60cf8066ff3921d8efb93d2e95728a4aac8f1be72c6cccff",
+        "13": "458a45d450a162ac099c13c3ef269c2663e929a9db31663da24a8826cc6c10a5",
+        "12": "b404b10d06911aa70aedd4aa084a0fe555bfe03d25d3e2d9b84da1633c744f15",
+        "47": "081ffc270ae5283a598c23692fdd311845ad344eedc753f84b763c03adf60a1c",
+        "18": "eee155a08a640e9f2f9232d3f004d6a59a99300d193d17483596bff7ca43f3e8",
+        "51": "a9633b46d18e40a5a1d17d0142ff7f48b2df46eda2f835ac1bb615a1bb6c90c6",
+        "56": "da7c2738a189ab3e60cf8066ff3921d8efb93d2e95728a4aac8f1be72c6cccff"
+      }
+    },
+    "tokenizer": "lower + whitespace; split paragraphs on space-dot-space; top-level titles define document IDs",
+    "vocab": {
+      "size": 708,
+      "minfreq": 2,
+      "fit": "selected128 train pairs before truncation only",
+      "order": "frequency descending Unicode tie",
+      "serializedSHA256": "58680fa1d5109f361e60f54e72c4127f7f997e113df58ab5e57b53ff5f298120"
+    },
+    "nsp": "1 actual adjacent same paragraph;0 sentence from different document of same original split, unequal true successor; paired positive and negative for each selectedbase",
+    "masking": "eligible ordinary ids>=5; max1 round(.15*eligible) bounded by count;80%MASK/10%random ordinary/10%unchanged; fixed once per example",
+    "branchCountsCombinedTrainVal": {
+      "mask": 436,
+      "unchanged": 57,
+      "randomOrdinary": 62
+    },
+    "trainAudit": [
+      {
+        "aId": [
+          "train",
+          0,
+          3,
+          0
+        ],
+        "bId": [
+          "train",
+          0,
+          3,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          3,
+          1
+        ],
+        "aSha256": "c56985b551841718b08c66925b058f82ac7690e48381945b7cdfd85823d8a908",
+        "bSha256": "e64fa71a7bd9febfd213f0408f3e67fa3f503d77a71a4fb7abbe01f67ce93437",
+        "trueNextSha256": "e64fa71a7bd9febfd213f0408f3e67fa3f503d77a71a4fb7abbe01f67ce93437",
+        "label": 1,
+        "selectedPositions": [
+          4,
+          5,
+          15,
+          16
+        ],
+        "selectedOriginalIds": [
+          124,
+          36,
+          12,
+          8
+        ],
+        "originalSideLengths": [
+          13,
+          34
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          3,
+          0
+        ],
+        "bId": [
+          "train",
+          191,
+          11367,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          3,
+          1
+        ],
+        "aSha256": "c56985b551841718b08c66925b058f82ac7690e48381945b7cdfd85823d8a908",
+        "bSha256": "d5ef19dd92e3ea2b907b00b3ffd7fbf72d51328bb824b5d886b379f3b201537a",
+        "trueNextSha256": "e64fa71a7bd9febfd213f0408f3e67fa3f503d77a71a4fb7abbe01f67ce93437",
+        "label": 0,
+        "selectedPositions": [
+          9,
+          17,
+          23
+        ],
+        "selectedOriginalIds": [
+          278,
+          174,
+          640
+        ],
+        "originalSideLengths": [
+          13,
+          10
+        ],
+        "packedLength": 26,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          3,
+          1
+        ],
+        "bId": [
+          "train",
+          0,
+          3,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          3,
+          2
+        ],
+        "aSha256": "e64fa71a7bd9febfd213f0408f3e67fa3f503d77a71a4fb7abbe01f67ce93437",
+        "bSha256": "9142bfcdd195a61ee58d3dd1165084034329c428ad4393694301220d8938b13f",
+        "trueNextSha256": "9142bfcdd195a61ee58d3dd1165084034329c428ad4393694301220d8938b13f",
+        "label": 1,
+        "selectedPositions": [
+          8,
+          11,
+          15,
+          30
+        ],
+        "selectedOriginalIds": [
+          360,
+          16,
+          185,
+          5
+        ],
+        "originalSideLengths": [
+          34,
+          16
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          3,
+          1
+        ],
+        "bId": [
+          "train",
+          380,
+          21092,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          3,
+          2
+        ],
+        "aSha256": "e64fa71a7bd9febfd213f0408f3e67fa3f503d77a71a4fb7abbe01f67ce93437",
+        "bSha256": "e9e2eac172888555f1b25a769d6cd5cb0e792d1bdd057e05ba7f10d7c36a3d4c",
+        "trueNextSha256": "9142bfcdd195a61ee58d3dd1165084034329c428ad4393694301220d8938b13f",
+        "label": 0,
+        "selectedPositions": [
+          12,
+          13,
+          28
+        ],
+        "selectedOriginalIds": [
+          12,
+          15,
+          449
+        ],
+        "originalSideLengths": [
+          34,
+          19
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          3,
+          2
+        ],
+        "bId": [
+          "train",
+          0,
+          3,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          3,
+          3
+        ],
+        "aSha256": "9142bfcdd195a61ee58d3dd1165084034329c428ad4393694301220d8938b13f",
+        "bSha256": "c0205a845d82b3c32d91933aceba1fdef918e2da7eb6c48be85e73dea64f2ad4",
+        "trueNextSha256": "c0205a845d82b3c32d91933aceba1fdef918e2da7eb6c48be85e73dea64f2ad4",
+        "label": 1,
+        "selectedPositions": [
+          4,
+          6,
+          12,
+          28
+        ],
+        "selectedOriginalIds": [
+          316,
+          130,
+          20,
+          16
+        ],
+        "originalSideLengths": [
+          16,
+          61
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          3,
+          2
+        ],
+        "bId": [
+          "train",
+          413,
+          23278,
+          6
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          3,
+          3
+        ],
+        "aSha256": "9142bfcdd195a61ee58d3dd1165084034329c428ad4393694301220d8938b13f",
+        "bSha256": "8ca3ce4971b2e8aafff3dd02ae560daf0d4f4293359e3470b342b4a74731991a",
+        "trueNextSha256": "c0205a845d82b3c32d91933aceba1fdef918e2da7eb6c48be85e73dea64f2ad4",
+        "label": 0,
+        "selectedPositions": [
+          10,
+          13,
+          21,
+          28
+        ],
+        "selectedOriginalIds": [
+          5,
+          11,
+          174,
+          679
+        ],
+        "originalSideLengths": [
+          16,
+          21
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          4,
+          0
+        ],
+        "bId": [
+          "train",
+          0,
+          4,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          4,
+          1
+        ],
+        "aSha256": "3c3e78178e42256ea5f0831f25a1c33930ca4126a8caf9daae96db04e65ad56f",
+        "bSha256": "e88a76d82bb8758b55db1d2836c0c073749b6b90225cfd055d5dc165b38c163c",
+        "trueNextSha256": "e88a76d82bb8758b55db1d2836c0c073749b6b90225cfd055d5dc165b38c163c",
+        "label": 1,
+        "selectedPositions": [
+          10,
+          11,
+          17,
+          25
+        ],
+        "selectedOriginalIds": [
+          9,
+          94,
+          38,
+          42
+        ],
+        "originalSideLengths": [
+          20,
+          26
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          4,
+          0
+        ],
+        "bId": [
+          "train",
+          314,
+          17505,
+          0
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          4,
+          1
+        ],
+        "aSha256": "3c3e78178e42256ea5f0831f25a1c33930ca4126a8caf9daae96db04e65ad56f",
+        "bSha256": "95e853d1a0722fd2b5f0db1537e8a4ab72316d272edcc993cf2373292d8ff8de",
+        "trueNextSha256": "e88a76d82bb8758b55db1d2836c0c073749b6b90225cfd055d5dc165b38c163c",
+        "label": 0,
+        "selectedPositions": [
+          1,
+          10,
+          19,
+          30
+        ],
+        "selectedOriginalIds": [
+          5,
+          9,
+          17,
+          90
+        ],
+        "originalSideLengths": [
+          20,
+          30
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          4,
+          1
+        ],
+        "bId": [
+          "train",
+          0,
+          4,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          4,
+          2
+        ],
+        "aSha256": "e88a76d82bb8758b55db1d2836c0c073749b6b90225cfd055d5dc165b38c163c",
+        "bSha256": "59606ad1e1f8c6c405b2ba9d2175b1c23358b4587cda4d939e9e86bed27fdddd",
+        "trueNextSha256": "59606ad1e1f8c6c405b2ba9d2175b1c23358b4587cda4d939e9e86bed27fdddd",
+        "label": 1,
+        "selectedPositions": [
+          2,
+          23,
+          24,
+          29
+        ],
+        "selectedOriginalIds": [
+          25,
+          229,
+          243,
+          394
+        ],
+        "originalSideLengths": [
+          26,
+          22
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          4,
+          1
+        ],
+        "bId": [
+          "train",
+          512,
+          29187,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          4,
+          2
+        ],
+        "aSha256": "e88a76d82bb8758b55db1d2836c0c073749b6b90225cfd055d5dc165b38c163c",
+        "bSha256": "26dfe5a96bb4f32635c618cabdfc8839545fce14b408e611134f2cfab3174cf5",
+        "trueNextSha256": "59606ad1e1f8c6c405b2ba9d2175b1c23358b4587cda4d939e9e86bed27fdddd",
+        "label": 0,
+        "selectedPositions": [
+          1,
+          8,
+          12,
+          18
+        ],
+        "selectedOriginalIds": [
+          38,
+          5,
+          50,
+          27
+        ],
+        "originalSideLengths": [
+          26,
+          36
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          4,
+          2
+        ],
+        "bId": [
+          "train",
+          0,
+          4,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          4,
+          3
+        ],
+        "aSha256": "59606ad1e1f8c6c405b2ba9d2175b1c23358b4587cda4d939e9e86bed27fdddd",
+        "bSha256": "74a1f4f4d30dba19b47f91cd16f4287bdbdcc443f14942679846ba28567d9032",
+        "trueNextSha256": "74a1f4f4d30dba19b47f91cd16f4287bdbdcc443f14942679846ba28567d9032",
+        "label": 1,
+        "selectedPositions": [
+          8,
+          10,
+          14,
+          15
+        ],
+        "selectedOriginalIds": [
+          243,
+          196,
+          6,
+          157
+        ],
+        "originalSideLengths": [
+          22,
+          8
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          4,
+          2
+        ],
+        "bId": [
+          "train",
+          498,
+          28085,
+          0
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          4,
+          3
+        ],
+        "aSha256": "59606ad1e1f8c6c405b2ba9d2175b1c23358b4587cda4d939e9e86bed27fdddd",
+        "bSha256": "afae6be5e06951073b212edaff3fedb2bc4259e61d5bd36082ecffac98640681",
+        "trueNextSha256": "74a1f4f4d30dba19b47f91cd16f4287bdbdcc443f14942679846ba28567d9032",
+        "label": 0,
+        "selectedPositions": [
+          5,
+          21,
+          26
+        ],
+        "selectedOriginalIds": [
+          10,
+          606,
+          41
+        ],
+        "originalSideLengths": [
+          22,
+          22
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          4,
+          3
+        ],
+        "bId": [
+          "train",
+          0,
+          4,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          4,
+          4
+        ],
+        "aSha256": "74a1f4f4d30dba19b47f91cd16f4287bdbdcc443f14942679846ba28567d9032",
+        "bSha256": "1eb4d4ae09a34b8dc904573919d146cc6978fe89624ba5d6c74f0e8db6fc4232",
+        "trueNextSha256": "1eb4d4ae09a34b8dc904573919d146cc6978fe89624ba5d6c74f0e8db6fc4232",
+        "label": 1,
+        "selectedPositions": [
+          7,
+          17
+        ],
+        "selectedOriginalIds": [
+          5,
+          17
+        ],
+        "originalSideLengths": [
+          8,
+          11
+        ],
+        "packedLength": 22,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          4,
+          3
+        ],
+        "bId": [
+          "train",
+          625,
+          36422,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          4,
+          4
+        ],
+        "aSha256": "74a1f4f4d30dba19b47f91cd16f4287bdbdcc443f14942679846ba28567d9032",
+        "bSha256": "6db70cd7f2c94f85b3cf62f654147668c985c781314f6508366c714dfdaba32e",
+        "trueNextSha256": "1eb4d4ae09a34b8dc904573919d146cc6978fe89624ba5d6c74f0e8db6fc4232",
+        "label": 0,
+        "selectedPositions": [
+          2,
+          5,
+          19
+        ],
+        "selectedOriginalIds": [
+          94,
+          593,
+          13
+        ],
+        "originalSideLengths": [
+          8,
+          28
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          5,
+          0
+        ],
+        "bId": [
+          "train",
+          0,
+          5,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          5,
+          1
+        ],
+        "aSha256": "f4dd00480cba5b0950f60c59b4577fd045c3da6b46c52757b407fc75bb06d897",
+        "bSha256": "4c35391d9ece78f42f33045730c2fd860be729dc9613acb7632a554e263ef953",
+        "trueNextSha256": "4c35391d9ece78f42f33045730c2fd860be729dc9613acb7632a554e263ef953",
+        "label": 1,
+        "selectedPositions": [
+          5,
+          13,
+          21,
+          22
+        ],
+        "selectedOriginalIds": [
+          244,
+          81,
+          295,
+          387
+        ],
+        "originalSideLengths": [
+          17,
+          18
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          5,
+          0
+        ],
+        "bId": [
+          "train",
+          209,
+          12407,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          5,
+          1
+        ],
+        "aSha256": "f4dd00480cba5b0950f60c59b4577fd045c3da6b46c52757b407fc75bb06d897",
+        "bSha256": "fe79eb035bf97b0476cfa1120e60df9cf152107c5f526d6cdb970c3bbdfb3d31",
+        "trueNextSha256": "4c35391d9ece78f42f33045730c2fd860be729dc9613acb7632a554e263ef953",
+        "label": 0,
+        "selectedPositions": [
+          3,
+          9,
+          24
+        ],
+        "selectedOriginalIds": [
+          18,
+          10,
+          23
+        ],
+        "originalSideLengths": [
+          17,
+          17
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          5,
+          1
+        ],
+        "bId": [
+          "train",
+          0,
+          5,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          5,
+          2
+        ],
+        "aSha256": "4c35391d9ece78f42f33045730c2fd860be729dc9613acb7632a554e263ef953",
+        "bSha256": "20b4d75bde140c7066e9f2ccff59cd6eec916a5f7f6a521e9ee0c2ea730876b6",
+        "trueNextSha256": "20b4d75bde140c7066e9f2ccff59cd6eec916a5f7f6a521e9ee0c2ea730876b6",
+        "label": 1,
+        "selectedPositions": [
+          5,
+          10,
+          13,
+          23
+        ],
+        "selectedOriginalIds": [
+          295,
+          18,
+          168,
+          47
+        ],
+        "originalSideLengths": [
+          18,
+          12
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          5,
+          1
+        ],
+        "bId": [
+          "train",
+          260,
+          14116,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          5,
+          2
+        ],
+        "aSha256": "4c35391d9ece78f42f33045730c2fd860be729dc9613acb7632a554e263ef953",
+        "bSha256": "88bf4391353e2aca60e3c521f4b868539a183a7f6e765a53c0f2d4e80e3bbe46",
+        "trueNextSha256": "20b4d75bde140c7066e9f2ccff59cd6eec916a5f7f6a521e9ee0c2ea730876b6",
+        "label": 0,
+        "selectedPositions": [
+          5,
+          6,
+          11,
+          13
+        ],
+        "selectedOriginalIds": [
+          295,
+          387,
+          31,
+          168
+        ],
+        "originalSideLengths": [
+          18,
+          28
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          5,
+          2
+        ],
+        "bId": [
+          "train",
+          0,
+          5,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          5,
+          3
+        ],
+        "aSha256": "20b4d75bde140c7066e9f2ccff59cd6eec916a5f7f6a521e9ee0c2ea730876b6",
+        "bSha256": "842a1e73530d7194a767b09edb9d9bf7bbf0a38028540eb6d6c526024d6fb3ef",
+        "trueNextSha256": "842a1e73530d7194a767b09edb9d9bf7bbf0a38028540eb6d6c526024d6fb3ef",
+        "label": 1,
+        "selectedPositions": [
+          4,
+          12,
+          14,
+          30
+        ],
+        "selectedOriginalIds": [
+          323,
+          42,
+          62,
+          66
+        ],
+        "originalSideLengths": [
+          12,
+          31
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          5,
+          2
+        ],
+        "bId": [
+          "train",
+          534,
+          30390,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          5,
+          3
+        ],
+        "aSha256": "20b4d75bde140c7066e9f2ccff59cd6eec916a5f7f6a521e9ee0c2ea730876b6",
+        "bSha256": "c953784e18c88a56ce44c5dd750e040f22959d0980ee6255dc7b7deed7039017",
+        "trueNextSha256": "842a1e73530d7194a767b09edb9d9bf7bbf0a38028540eb6d6c526024d6fb3ef",
+        "label": 0,
+        "selectedPositions": [
+          3,
+          6,
+          19
+        ],
+        "selectedOriginalIds": [
+          50,
+          467,
+          97
+        ],
+        "originalSideLengths": [
+          12,
+          14
+        ],
+        "packedLength": 29,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          5,
+          3
+        ],
+        "bId": [
+          "train",
+          0,
+          5,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          5,
+          4
+        ],
+        "aSha256": "842a1e73530d7194a767b09edb9d9bf7bbf0a38028540eb6d6c526024d6fb3ef",
+        "bSha256": "01c8d7d6df91c2289cd1d85e2528cc5f98a7c48d0334ed08d912d2abd0d3e204",
+        "trueNextSha256": "01c8d7d6df91c2289cd1d85e2528cc5f98a7c48d0334ed08d912d2abd0d3e204",
+        "label": 1,
+        "selectedPositions": [
+          5,
+          21,
+          24,
+          26
+        ],
+        "selectedOriginalIds": [
+          8,
+          5,
+          5,
+          8
+        ],
+        "originalSideLengths": [
+          31,
+          19
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          5,
+          3
+        ],
+        "bId": [
+          "train",
+          324,
+          18080,
+          13
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          5,
+          4
+        ],
+        "aSha256": "842a1e73530d7194a767b09edb9d9bf7bbf0a38028540eb6d6c526024d6fb3ef",
+        "bSha256": "45e5719c5b963eee49bd23d8e0f2decb4d2fd6feded8e2c30501a4801328152e",
+        "trueNextSha256": "01c8d7d6df91c2289cd1d85e2528cc5f98a7c48d0334ed08d912d2abd0d3e204",
+        "label": 0,
+        "selectedPositions": [
+          9,
+          10,
+          25
+        ],
+        "selectedOriginalIds": [
+          6,
+          12,
+          25
+        ],
+        "originalSideLengths": [
+          31,
+          17
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          0
+        ],
+        "bId": [
+          "train",
+          0,
+          9,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          1
+        ],
+        "aSha256": "6ec2e4bbc4bfd66b4bfd1389c579fa26d317b12896def359b15d0b4eb47d2a43",
+        "bSha256": "b253f3c4e8302039265d268c2f06affc5ff2310cdfd126d30e0d1dcf27475b35",
+        "trueNextSha256": "b253f3c4e8302039265d268c2f06affc5ff2310cdfd126d30e0d1dcf27475b35",
+        "label": 1,
+        "selectedPositions": [
+          13,
+          17,
+          29,
+          30
+        ],
+        "selectedOriginalIds": [
+          204,
+          559,
+          511,
+          6
+        ],
+        "originalSideLengths": [
+          33,
+          27
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          0
+        ],
+        "bId": [
+          "train",
+          455,
+          25735,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          1
+        ],
+        "aSha256": "6ec2e4bbc4bfd66b4bfd1389c579fa26d317b12896def359b15d0b4eb47d2a43",
+        "bSha256": "8a331fdde7032f33a71e1b2e257d80166e348e00fcb17914f48bdb57a1c63007",
+        "trueNextSha256": "b253f3c4e8302039265d268c2f06affc5ff2310cdfd126d30e0d1dcf27475b35",
+        "label": 0,
+        "selectedPositions": [
+          3,
+          20,
+          22,
+          23
+        ],
+        "selectedOriginalIds": [
+          52,
+          245,
+          8,
+          9
+        ],
+        "originalSideLengths": [
+          33,
+          1
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          1
+        ],
+        "bId": [
+          "train",
+          0,
+          9,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          2
+        ],
+        "aSha256": "b253f3c4e8302039265d268c2f06affc5ff2310cdfd126d30e0d1dcf27475b35",
+        "bSha256": "a51efbaaa1a4157b9d61ef04769b03949665ec1e9dace8c945aa3da031ae79bb",
+        "trueNextSha256": "a51efbaaa1a4157b9d61ef04769b03949665ec1e9dace8c945aa3da031ae79bb",
+        "label": 1,
+        "selectedPositions": [
+          2,
+          6,
+          8,
+          23
+        ],
+        "selectedOriginalIds": [
+          24,
+          263,
+          146,
+          8
+        ],
+        "originalSideLengths": [
+          27,
+          26
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          1
+        ],
+        "bId": [
+          "train",
+          75,
+          4453,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          2
+        ],
+        "aSha256": "b253f3c4e8302039265d268c2f06affc5ff2310cdfd126d30e0d1dcf27475b35",
+        "bSha256": "c274dd3c3ab86a8877c40625fc6882498b20e6c63cf321be57f132cc1f05a31d",
+        "trueNextSha256": "a51efbaaa1a4157b9d61ef04769b03949665ec1e9dace8c945aa3da031ae79bb",
+        "label": 0,
+        "selectedPositions": [
+          14,
+          17,
+          24
+        ],
+        "selectedOriginalIds": [
+          6,
+          5,
+          249
+        ],
+        "originalSideLengths": [
+          27,
+          27
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          2
+        ],
+        "bId": [
+          "train",
+          0,
+          9,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          3
+        ],
+        "aSha256": "a51efbaaa1a4157b9d61ef04769b03949665ec1e9dace8c945aa3da031ae79bb",
+        "bSha256": "8151e6845081f054e906eec18ca05d199eddda980abfeb5a02dc490bf7d75c1a",
+        "trueNextSha256": "8151e6845081f054e906eec18ca05d199eddda980abfeb5a02dc490bf7d75c1a",
+        "label": 1,
+        "selectedPositions": [
+          6,
+          17,
+          19,
+          21
+        ],
+        "selectedOriginalIds": [
+          42,
+          5,
+          7,
+          86
+        ],
+        "originalSideLengths": [
+          26,
+          32
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          2
+        ],
+        "bId": [
+          "train",
+          595,
+          34319,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          3
+        ],
+        "aSha256": "a51efbaaa1a4157b9d61ef04769b03949665ec1e9dace8c945aa3da031ae79bb",
+        "bSha256": "55d211a9cd0c6b2dadb5b2b23dbf40f3f0773427431ae6fe7e3bd7ff2b84772b",
+        "trueNextSha256": "8151e6845081f054e906eec18ca05d199eddda980abfeb5a02dc490bf7d75c1a",
+        "label": 0,
+        "selectedPositions": [
+          6,
+          9,
+          13
+        ],
+        "selectedOriginalIds": [
+          42,
+          48,
+          16
+        ],
+        "originalSideLengths": [
+          26,
+          27
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          3
+        ],
+        "bId": [
+          "train",
+          0,
+          9,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          4
+        ],
+        "aSha256": "8151e6845081f054e906eec18ca05d199eddda980abfeb5a02dc490bf7d75c1a",
+        "bSha256": "af5eaeadb361203b15f9bbf1656e6786237497be317a87ea83236a77c1ac3971",
+        "trueNextSha256": "af5eaeadb361203b15f9bbf1656e6786237497be317a87ea83236a77c1ac3971",
+        "label": 1,
+        "selectedPositions": [
+          13,
+          18,
+          25,
+          27
+        ],
+        "selectedOriginalIds": [
+          31,
+          48,
+          9,
+          6
+        ],
+        "originalSideLengths": [
+          32,
+          20
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          3
+        ],
+        "bId": [
+          "train",
+          178,
+          10680,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          4
+        ],
+        "aSha256": "8151e6845081f054e906eec18ca05d199eddda980abfeb5a02dc490bf7d75c1a",
+        "bSha256": "84a025dc99ec97d19d365201d9b27a3a27de8cd20f986447a3bd147c2d9f2c1e",
+        "trueNextSha256": "af5eaeadb361203b15f9bbf1656e6786237497be317a87ea83236a77c1ac3971",
+        "label": 0,
+        "selectedPositions": [
+          3,
+          9,
+          14,
+          21
+        ],
+        "selectedOriginalIds": [
+          7,
+          114,
+          440,
+          11
+        ],
+        "originalSideLengths": [
+          32,
+          25
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          4
+        ],
+        "bId": [
+          "train",
+          0,
+          9,
+          5
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          5
+        ],
+        "aSha256": "af5eaeadb361203b15f9bbf1656e6786237497be317a87ea83236a77c1ac3971",
+        "bSha256": "cf15892e33d6ef1753f8094882bffbd3abf3b01b07dbb73cd835afe62b635d26",
+        "trueNextSha256": "cf15892e33d6ef1753f8094882bffbd3abf3b01b07dbb73cd835afe62b635d26",
+        "label": 1,
+        "selectedPositions": [
+          2,
+          23,
+          26,
+          29
+        ],
+        "selectedOriginalIds": [
+          48,
+          19,
+          561,
+          7
+        ],
+        "originalSideLengths": [
+          20,
+          16
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          4
+        ],
+        "bId": [
+          "train",
+          208,
+          12322,
+          12
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          5
+        ],
+        "aSha256": "af5eaeadb361203b15f9bbf1656e6786237497be317a87ea83236a77c1ac3971",
+        "bSha256": "96d57ff63b9d039af90c4274e1a04cc9900cd95a2f14f78586dfed5dadcddce5",
+        "trueNextSha256": "cf15892e33d6ef1753f8094882bffbd3abf3b01b07dbb73cd835afe62b635d26",
+        "label": 0,
+        "selectedPositions": [
+          10,
+          15,
+          28
+        ],
+        "selectedOriginalIds": [
+          348,
+          41,
+          9
+        ],
+        "originalSideLengths": [
+          20,
+          36
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          5
+        ],
+        "bId": [
+          "train",
+          0,
+          9,
+          6
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          6
+        ],
+        "aSha256": "cf15892e33d6ef1753f8094882bffbd3abf3b01b07dbb73cd835afe62b635d26",
+        "bSha256": "ccd86c0c8a2dd704139a6630fb0875d7d6aabaf31efe981c06c74e12203720ef",
+        "trueNextSha256": "ccd86c0c8a2dd704139a6630fb0875d7d6aabaf31efe981c06c74e12203720ef",
+        "label": 1,
+        "selectedPositions": [
+          3,
+          5,
+          24,
+          25
+        ],
+        "selectedOriginalIds": [
+          95,
+          48,
+          396,
+          24
+        ],
+        "originalSideLengths": [
+          16,
+          27
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          5
+        ],
+        "bId": [
+          "train",
+          463,
+          26276,
+          7
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          6
+        ],
+        "aSha256": "cf15892e33d6ef1753f8094882bffbd3abf3b01b07dbb73cd835afe62b635d26",
+        "bSha256": "3faa15171867ee01ebd573ed20211fbf90b2dacdedf9f0da00714f262ec3c5d7",
+        "trueNextSha256": "ccd86c0c8a2dd704139a6630fb0875d7d6aabaf31efe981c06c74e12203720ef",
+        "label": 0,
+        "selectedPositions": [
+          5,
+          7,
+          12,
+          18
+        ],
+        "selectedOriginalIds": [
+          48,
+          19,
+          527,
+          6
+        ],
+        "originalSideLengths": [
+          16,
+          39
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          6
+        ],
+        "bId": [
+          "train",
+          0,
+          9,
+          7
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          7
+        ],
+        "aSha256": "ccd86c0c8a2dd704139a6630fb0875d7d6aabaf31efe981c06c74e12203720ef",
+        "bSha256": "b495db6d87596129aae40525c2ceb9167745da4066a21a7b9c2494fc3d5a14a6",
+        "trueNextSha256": "b495db6d87596129aae40525c2ceb9167745da4066a21a7b9c2494fc3d5a14a6",
+        "label": 1,
+        "selectedPositions": [
+          2,
+          14,
+          18,
+          26
+        ],
+        "selectedOriginalIds": [
+          5,
+          78,
+          24,
+          20
+        ],
+        "originalSideLengths": [
+          27,
+          23
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          9,
+          6
+        ],
+        "bId": [
+          "train",
+          63,
+          3608,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          9,
+          7
+        ],
+        "aSha256": "ccd86c0c8a2dd704139a6630fb0875d7d6aabaf31efe981c06c74e12203720ef",
+        "bSha256": "d35507375dd5f4483a03f8b9af19d713ecb1046365a34e918accc669397ee054",
+        "trueNextSha256": "b495db6d87596129aae40525c2ceb9167745da4066a21a7b9c2494fc3d5a14a6",
+        "label": 0,
+        "selectedPositions": [
+          2,
+          3,
+          23,
+          26
+        ],
+        "selectedOriginalIds": [
+          5,
+          20,
+          105,
+          648
+        ],
+        "originalSideLengths": [
+          27,
+          38
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          0
+        ],
+        "bId": [
+          "train",
+          0,
+          10,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          1
+        ],
+        "aSha256": "d0dc208cd88f77455864f849dc181ddc98cde4e22ea361da4fe9213d42fa750e",
+        "bSha256": "02a8fe27ca4fa2531d99f152776b041cbcd37cd5f82c5b9b1ed753e5df4bfcee",
+        "trueNextSha256": "02a8fe27ca4fa2531d99f152776b041cbcd37cd5f82c5b9b1ed753e5df4bfcee",
+        "label": 1,
+        "selectedPositions": [
+          1,
+          7,
+          17,
+          22
+        ],
+        "selectedOriginalIds": [
+          5,
+          5,
+          60,
+          45
+        ],
+        "originalSideLengths": [
+          17,
+          36
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          0
+        ],
+        "bId": [
+          "train",
+          311,
+          17197,
+          5
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          1
+        ],
+        "aSha256": "d0dc208cd88f77455864f849dc181ddc98cde4e22ea361da4fe9213d42fa750e",
+        "bSha256": "1c4934541a880d0e6c259533f67cff478d4b146f2ec9cdaac6fa06fd086d2c5e",
+        "trueNextSha256": "02a8fe27ca4fa2531d99f152776b041cbcd37cd5f82c5b9b1ed753e5df4bfcee",
+        "label": 0,
+        "selectedPositions": [
+          7,
+          25,
+          29
+        ],
+        "selectedOriginalIds": [
+          5,
+          609,
+          17
+        ],
+        "originalSideLengths": [
+          17,
+          14
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          1
+        ],
+        "bId": [
+          "train",
+          0,
+          10,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          2
+        ],
+        "aSha256": "02a8fe27ca4fa2531d99f152776b041cbcd37cd5f82c5b9b1ed753e5df4bfcee",
+        "bSha256": "34863b146de68b03ab49140aaf56a2ace259485c349f2616820ae25ff0825eee",
+        "trueNextSha256": "34863b146de68b03ab49140aaf56a2ace259485c349f2616820ae25ff0825eee",
+        "label": 1,
+        "selectedPositions": [
+          4,
+          8,
+          18,
+          27
+        ],
+        "selectedOriginalIds": [
+          116,
+          309,
+          19,
+          66
+        ],
+        "originalSideLengths": [
+          36,
+          25
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          1
+        ],
+        "bId": [
+          "train",
+          212,
+          12571,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          2
+        ],
+        "aSha256": "02a8fe27ca4fa2531d99f152776b041cbcd37cd5f82c5b9b1ed753e5df4bfcee",
+        "bSha256": "69169972fcd3336e029e254641db78853fc2e855e68289e3e73a06f3a261aa89",
+        "trueNextSha256": "34863b146de68b03ab49140aaf56a2ace259485c349f2616820ae25ff0825eee",
+        "label": 0,
+        "selectedPositions": [
+          6,
+          8,
+          26,
+          28
+        ],
+        "selectedOriginalIds": [
+          45,
+          309,
+          681,
+          622
+        ],
+        "originalSideLengths": [
+          36,
+          13
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          2
+        ],
+        "bId": [
+          "train",
+          0,
+          10,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          3
+        ],
+        "aSha256": "34863b146de68b03ab49140aaf56a2ace259485c349f2616820ae25ff0825eee",
+        "bSha256": "cb5b78a2289020ebfcba4778d8ce4bab487b5ead4c3fd46fd9fb2edd613e958f",
+        "trueNextSha256": "cb5b78a2289020ebfcba4778d8ce4bab487b5ead4c3fd46fd9fb2edd613e958f",
+        "label": 1,
+        "selectedPositions": [
+          4,
+          7,
+          8,
+          23
+        ],
+        "selectedOriginalIds": [
+          496,
+          188,
+          22,
+          384
+        ],
+        "originalSideLengths": [
+          25,
+          14
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          2
+        ],
+        "bId": [
+          "train",
+          617,
+          35861,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          3
+        ],
+        "aSha256": "34863b146de68b03ab49140aaf56a2ace259485c349f2616820ae25ff0825eee",
+        "bSha256": "2c6ab6fe13c7c9907576d119390c06877c2fdea6e1bfe1d45b890fce2f8bb71d",
+        "trueNextSha256": "cb5b78a2289020ebfcba4778d8ce4bab487b5ead4c3fd46fd9fb2edd613e958f",
+        "label": 0,
+        "selectedPositions": [
+          7,
+          11,
+          21,
+          29
+        ],
+        "selectedOriginalIds": [
+          188,
+          66,
+          8,
+          611
+        ],
+        "originalSideLengths": [
+          25,
+          17
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          3
+        ],
+        "bId": [
+          "train",
+          0,
+          10,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          4
+        ],
+        "aSha256": "cb5b78a2289020ebfcba4778d8ce4bab487b5ead4c3fd46fd9fb2edd613e958f",
+        "bSha256": "85e4f17d9bb18957f00fbcc09b2460686eae51e43613e4042a25c90d50e82c70",
+        "trueNextSha256": "85e4f17d9bb18957f00fbcc09b2460686eae51e43613e4042a25c90d50e82c70",
+        "label": 1,
+        "selectedPositions": [
+          6,
+          13,
+          19,
+          22
+        ],
+        "selectedOriginalIds": [
+          10,
+          139,
+          33,
+          159
+        ],
+        "originalSideLengths": [
+          14,
+          11
+        ],
+        "packedLength": 28,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          3
+        ],
+        "bId": [
+          "train",
+          414,
+          23443,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          4
+        ],
+        "aSha256": "cb5b78a2289020ebfcba4778d8ce4bab487b5ead4c3fd46fd9fb2edd613e958f",
+        "bSha256": "baf9391d4080f78c3e7c7223ada4065fbac4478561f6c2107066f856a2222c8b",
+        "trueNextSha256": "85e4f17d9bb18957f00fbcc09b2460686eae51e43613e4042a25c90d50e82c70",
+        "label": 0,
+        "selectedPositions": [
+          3,
+          6,
+          10
+        ],
+        "selectedOriginalIds": [
+          93,
+          10,
+          459
+        ],
+        "originalSideLengths": [
+          14,
+          20
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          4
+        ],
+        "bId": [
+          "train",
+          0,
+          10,
+          5
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          5
+        ],
+        "aSha256": "85e4f17d9bb18957f00fbcc09b2460686eae51e43613e4042a25c90d50e82c70",
+        "bSha256": "0b792e45201f73e66e0ece6e714a1684d216c792b4ec6453ecc8561248985111",
+        "trueNextSha256": "0b792e45201f73e66e0ece6e714a1684d216c792b4ec6453ecc8561248985111",
+        "label": 1,
+        "selectedPositions": [
+          6,
+          7,
+          16,
+          21
+        ],
+        "selectedOriginalIds": [
+          41,
+          159,
+          33,
+          553
+        ],
+        "originalSideLengths": [
+          11,
+          30
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          4
+        ],
+        "bId": [
+          "train",
+          48,
+          2431,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          5
+        ],
+        "aSha256": "85e4f17d9bb18957f00fbcc09b2460686eae51e43613e4042a25c90d50e82c70",
+        "bSha256": "e6c7a860df091ec1f054b58d1fc05b4fa0453c680597b3ae98a7a8a32da6bf73",
+        "trueNextSha256": "0b792e45201f73e66e0ece6e714a1684d216c792b4ec6453ecc8561248985111",
+        "label": 0,
+        "selectedPositions": [
+          2,
+          8,
+          28
+        ],
+        "selectedOriginalIds": [
+          7,
+          7,
+          8
+        ],
+        "originalSideLengths": [
+          11,
+          25
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          5
+        ],
+        "bId": [
+          "train",
+          0,
+          10,
+          6
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          6
+        ],
+        "aSha256": "0b792e45201f73e66e0ece6e714a1684d216c792b4ec6453ecc8561248985111",
+        "bSha256": "34f3c21c27d21a0058ee4a094140ccc15524f070ff70a7354020448b89155f09",
+        "trueNextSha256": "34f3c21c27d21a0058ee4a094140ccc15524f070ff70a7354020448b89155f09",
+        "label": 1,
+        "selectedPositions": [
+          2,
+          18,
+          24,
+          26
+        ],
+        "selectedOriginalIds": [
+          143,
+          45,
+          13,
+          119
+        ],
+        "originalSideLengths": [
+          30,
+          13
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          5
+        ],
+        "bId": [
+          "train",
+          467,
+          26702,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          6
+        ],
+        "aSha256": "0b792e45201f73e66e0ece6e714a1684d216c792b4ec6453ecc8561248985111",
+        "bSha256": "5c2a87b062b525151ae3db36e7c4b13dd81d5cdf96add85473a0ac4d5931e9eb",
+        "trueNextSha256": "34f3c21c27d21a0058ee4a094140ccc15524f070ff70a7354020448b89155f09",
+        "label": 0,
+        "selectedPositions": [
+          2,
+          13,
+          21,
+          29
+        ],
+        "selectedOriginalIds": [
+          143,
+          6,
+          83,
+          5
+        ],
+        "originalSideLengths": [
+          30,
+          24
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          6
+        ],
+        "bId": [
+          "train",
+          0,
+          10,
+          7
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          7
+        ],
+        "aSha256": "34f3c21c27d21a0058ee4a094140ccc15524f070ff70a7354020448b89155f09",
+        "bSha256": "373643aec877a311e1f33d5176008e089ccd1b5d5ebee90872bd602ae2c976d8",
+        "trueNextSha256": "373643aec877a311e1f33d5176008e089ccd1b5d5ebee90872bd602ae2c976d8",
+        "label": 1,
+        "selectedPositions": [
+          8,
+          12,
+          19,
+          26
+        ],
+        "selectedOriginalIds": [
+          6,
+          45,
+          13,
+          442
+        ],
+        "originalSideLengths": [
+          13,
+          50
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          6
+        ],
+        "bId": [
+          "train",
+          485,
+          27366,
+          0
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          7
+        ],
+        "aSha256": "34f3c21c27d21a0058ee4a094140ccc15524f070ff70a7354020448b89155f09",
+        "bSha256": "b89e51c1901b77d744dcb808c0dbcabcbfe6f14ffab9c01458aa01077b4e6ae0",
+        "trueNextSha256": "373643aec877a311e1f33d5176008e089ccd1b5d5ebee90872bd602ae2c976d8",
+        "label": 0,
+        "selectedPositions": [
+          8,
+          13,
+          26
+        ],
+        "selectedOriginalIds": [
+          6,
+          19,
+          538
+        ],
+        "originalSideLengths": [
+          13,
+          12
+        ],
+        "packedLength": 28,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          7
+        ],
+        "bId": [
+          "train",
+          0,
+          10,
+          8
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          8
+        ],
+        "aSha256": "373643aec877a311e1f33d5176008e089ccd1b5d5ebee90872bd602ae2c976d8",
+        "bSha256": "ccc9247bc1c4383c6f1ccf55b83613c8c7684302078a38dae7b5aa92e8693dde",
+        "trueNextSha256": "ccc9247bc1c4383c6f1ccf55b83613c8c7684302078a38dae7b5aa92e8693dde",
+        "label": 1,
+        "selectedPositions": [
+          9,
+          17,
+          26,
+          30
+        ],
+        "selectedOriginalIds": [
+          6,
+          7,
+          87,
+          13
+        ],
+        "originalSideLengths": [
+          50,
+          31
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          7
+        ],
+        "bId": [
+          "train",
+          272,
+          14841,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          8
+        ],
+        "aSha256": "373643aec877a311e1f33d5176008e089ccd1b5d5ebee90872bd602ae2c976d8",
+        "bSha256": "2ace7f4ed839d4804b5d7dc7b015705e2b8573d23da642b3a5efaaf6f96c76b7",
+        "trueNextSha256": "ccc9247bc1c4383c6f1ccf55b83613c8c7684302078a38dae7b5aa92e8693dde",
+        "label": 0,
+        "selectedPositions": [
+          4,
+          17,
+          19
+        ],
+        "selectedOriginalIds": [
+          47,
+          18,
+          7
+        ],
+        "originalSideLengths": [
+          50,
+          43
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          8
+        ],
+        "bId": [
+          "train",
+          0,
+          10,
+          9
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          9
+        ],
+        "aSha256": "ccc9247bc1c4383c6f1ccf55b83613c8c7684302078a38dae7b5aa92e8693dde",
+        "bSha256": "ffdcb25c77e1e2b9e366da274275896665fdcf1819472b3160f4a05e2bd09dc8",
+        "trueNextSha256": "ffdcb25c77e1e2b9e366da274275896665fdcf1819472b3160f4a05e2bd09dc8",
+        "label": 1,
+        "selectedPositions": [
+          3,
+          5,
+          13,
+          23
+        ],
+        "selectedOriginalIds": [
+          90,
+          6,
+          203,
+          274
+        ],
+        "originalSideLengths": [
+          31,
+          60
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          10,
+          8
+        ],
+        "bId": [
+          "train",
+          481,
+          27181,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          10,
+          9
+        ],
+        "aSha256": "ccc9247bc1c4383c6f1ccf55b83613c8c7684302078a38dae7b5aa92e8693dde",
+        "bSha256": "83bcf3434a2ffebf793c1a4f22af65c86767dcfe49d58c7efb9e02115898e190",
+        "trueNextSha256": "ffdcb25c77e1e2b9e366da274275896665fdcf1819472b3160f4a05e2bd09dc8",
+        "label": 0,
+        "selectedPositions": [
+          6,
+          20,
+          26,
+          27
+        ],
+        "selectedOriginalIds": [
+          45,
+          8,
+          9,
+          659
+        ],
+        "originalSideLengths": [
+          31,
+          23
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          11,
+          0
+        ],
+        "bId": [
+          "train",
+          0,
+          11,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          11,
+          1
+        ],
+        "aSha256": "9af11a803962a3ceea8c6d32d3a83d19c78013eb23e6606a26731d4fb9769383",
+        "bSha256": "e2e108b2c00d6789bb2feb9f514c92109838c99ed5849b951c3f604c36334528",
+        "trueNextSha256": "e2e108b2c00d6789bb2feb9f514c92109838c99ed5849b951c3f604c36334528",
+        "label": 1,
+        "selectedPositions": [
+          1,
+          11,
+          15
+        ],
+        "selectedOriginalIds": [
+          572,
+          6,
+          10
+        ],
+        "originalSideLengths": [
+          17,
+          9
+        ],
+        "packedLength": 29,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          11,
+          0
+        ],
+        "bId": [
+          "train",
+          319,
+          17817,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          11,
+          1
+        ],
+        "aSha256": "9af11a803962a3ceea8c6d32d3a83d19c78013eb23e6606a26731d4fb9769383",
+        "bSha256": "6c49f0a84b4b1eec980bc2ef8ebeba57097236845343873d3a41ad9968bd53ee",
+        "trueNextSha256": "e2e108b2c00d6789bb2feb9f514c92109838c99ed5849b951c3f604c36334528",
+        "label": 0,
+        "selectedPositions": [
+          9,
+          13,
+          15
+        ],
+        "selectedOriginalIds": [
+          6,
+          6,
+          10
+        ],
+        "originalSideLengths": [
+          17,
+          16
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          11,
+          1
+        ],
+        "bId": [
+          "train",
+          0,
+          11,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          11,
+          2
+        ],
+        "aSha256": "e2e108b2c00d6789bb2feb9f514c92109838c99ed5849b951c3f604c36334528",
+        "bSha256": "ddddef39fa783a2b388422b705b0d5be017a67f2f1d070ac58b4b65455459533",
+        "trueNextSha256": "ddddef39fa783a2b388422b705b0d5be017a67f2f1d070ac58b4b65455459533",
+        "label": 1,
+        "selectedPositions": [
+          3,
+          6,
+          13
+        ],
+        "selectedOriginalIds": [
+          564,
+          161,
+          270
+        ],
+        "originalSideLengths": [
+          9,
+          14
+        ],
+        "packedLength": 26,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          11,
+          1
+        ],
+        "bId": [
+          "train",
+          127,
+          7783,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          11,
+          2
+        ],
+        "aSha256": "e2e108b2c00d6789bb2feb9f514c92109838c99ed5849b951c3f604c36334528",
+        "bSha256": "8a331fdde7032f33a71e1b2e257d80166e348e00fcb17914f48bdb57a1c63007",
+        "trueNextSha256": "ddddef39fa783a2b388422b705b0d5be017a67f2f1d070ac58b4b65455459533",
+        "label": 0,
+        "selectedPositions": [
+          5
+        ],
+        "selectedOriginalIds": [
+          17
+        ],
+        "originalSideLengths": [
+          9,
+          1
+        ],
+        "packedLength": 13,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          11,
+          2
+        ],
+        "bId": [
+          "train",
+          0,
+          11,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          11,
+          3
+        ],
+        "aSha256": "ddddef39fa783a2b388422b705b0d5be017a67f2f1d070ac58b4b65455459533",
+        "bSha256": "59ff534adc3143f99c5bd8c9ebf26d955f18bd9d2ab411d441dd2ed64466a09c",
+        "trueNextSha256": "59ff534adc3143f99c5bd8c9ebf26d955f18bd9d2ab411d441dd2ed64466a09c",
+        "label": 1,
+        "selectedPositions": [
+          3,
+          12,
+          13,
+          14
+        ],
+        "selectedOriginalIds": [
+          270,
+          9,
+          52,
+          162
+        ],
+        "originalSideLengths": [
+          14,
+          41
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          11,
+          2
+        ],
+        "bId": [
+          "train",
+          386,
+          21449,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          11,
+          3
+        ],
+        "aSha256": "ddddef39fa783a2b388422b705b0d5be017a67f2f1d070ac58b4b65455459533",
+        "bSha256": "2dea231e8f369a6cfee42d8457065ab419e452092f719470062bf6827e253173",
+        "trueNextSha256": "59ff534adc3143f99c5bd8c9ebf26d955f18bd9d2ab411d441dd2ed64466a09c",
+        "label": 0,
+        "selectedPositions": [
+          3,
+          6,
+          12,
+          14
+        ],
+        "selectedOriginalIds": [
+          270,
+          258,
+          9,
+          162
+        ],
+        "originalSideLengths": [
+          14,
+          41
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          15,
+          0
+        ],
+        "bId": [
+          "train",
+          0,
+          15,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          15,
+          1
+        ],
+        "aSha256": "3d81e15c183142699ec4b5a6cdea7afb06a1d704316f5a1ac454dca708f97929",
+        "bSha256": "38f9b7df456982c6b85b30621525a38f250d182b98604272eab28ec1776536c4",
+        "trueNextSha256": "38f9b7df456982c6b85b30621525a38f250d182b98604272eab28ec1776536c4",
+        "label": 1,
+        "selectedPositions": [
+          1,
+          8,
+          9,
+          22
+        ],
+        "selectedOriginalIds": [
+          5,
+          402,
+          71,
+          13
+        ],
+        "originalSideLengths": [
+          9,
+          43
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          15,
+          0
+        ],
+        "bId": [
+          "train",
+          254,
+          13831,
+          0
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          15,
+          1
+        ],
+        "aSha256": "3d81e15c183142699ec4b5a6cdea7afb06a1d704316f5a1ac454dca708f97929",
+        "bSha256": "593cc8f2b72c7df37f740b9aa3d2b824cd789b034e87899a52a6ebe4b12390fc",
+        "trueNextSha256": "38f9b7df456982c6b85b30621525a38f250d182b98604272eab28ec1776536c4",
+        "label": 0,
+        "selectedPositions": [
+          7,
+          17
+        ],
+        "selectedOriginalIds": [
+          136,
+          22
+        ],
+        "originalSideLengths": [
+          9,
+          12
+        ],
+        "packedLength": 24,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          15,
+          1
+        ],
+        "bId": [
+          "train",
+          0,
+          15,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          15,
+          2
+        ],
+        "aSha256": "38f9b7df456982c6b85b30621525a38f250d182b98604272eab28ec1776536c4",
+        "bSha256": "0087645b8775eaa2bd29ebb5be204f4205634773f552cdcfec660ef3617313f2",
+        "trueNextSha256": "0087645b8775eaa2bd29ebb5be204f4205634773f552cdcfec660ef3617313f2",
+        "label": 1,
+        "selectedPositions": [
+          9,
+          14,
+          18,
+          30
+        ],
+        "selectedOriginalIds": [
+          13,
+          24,
+          17,
+          525
+        ],
+        "originalSideLengths": [
+          43,
+          41
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          15,
+          1
+        ],
+        "bId": [
+          "train",
+          386,
+          21431,
+          0
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          15,
+          2
+        ],
+        "aSha256": "38f9b7df456982c6b85b30621525a38f250d182b98604272eab28ec1776536c4",
+        "bSha256": "e37041bc4ebbef34189dda4ab6b32c1a84220eb768ca8ed6777bc10fc27b171b",
+        "trueNextSha256": "0087645b8775eaa2bd29ebb5be204f4205634773f552cdcfec660ef3617313f2",
+        "label": 0,
+        "selectedPositions": [
+          7,
+          17,
+          19,
+          22
+        ],
+        "selectedOriginalIds": [
+          280,
+          67,
+          221,
+          9
+        ],
+        "originalSideLengths": [
+          43,
+          9
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          15,
+          2
+        ],
+        "bId": [
+          "train",
+          0,
+          15,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          15,
+          3
+        ],
+        "aSha256": "0087645b8775eaa2bd29ebb5be204f4205634773f552cdcfec660ef3617313f2",
+        "bSha256": "3c58f8b8ae2c9cb4c9738180cbf023377b89030d312872ae3674c86a38c10096",
+        "trueNextSha256": "3c58f8b8ae2c9cb4c9738180cbf023377b89030d312872ae3674c86a38c10096",
+        "label": 1,
+        "selectedPositions": [
+          12,
+          17,
+          26,
+          28
+        ],
+        "selectedOriginalIds": [
+          23,
+          13,
+          6,
+          65
+        ],
+        "originalSideLengths": [
+          41,
+          62
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          15,
+          2
+        ],
+        "bId": [
+          "train",
+          176,
+          10598,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          15,
+          3
+        ],
+        "aSha256": "0087645b8775eaa2bd29ebb5be204f4205634773f552cdcfec660ef3617313f2",
+        "bSha256": "3306be4d4023602a9bdb2f88224fab87291d5999497d014250e810de0ea3e833",
+        "trueNextSha256": "3c58f8b8ae2c9cb4c9738180cbf023377b89030d312872ae3674c86a38c10096",
+        "label": 0,
+        "selectedPositions": [
+          9,
+          11,
+          13
+        ],
+        "selectedOriginalIds": [
+          182,
+          48,
+          5
+        ],
+        "originalSideLengths": [
+          41,
+          20
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          15,
+          3
+        ],
+        "bId": [
+          "train",
+          0,
+          15,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          15,
+          4
+        ],
+        "aSha256": "3c58f8b8ae2c9cb4c9738180cbf023377b89030d312872ae3674c86a38c10096",
+        "bSha256": "2724c42d2b503063b119d0932939329f024f814da5d76e6ee3694f68398db65b",
+        "trueNextSha256": "2724c42d2b503063b119d0932939329f024f814da5d76e6ee3694f68398db65b",
+        "label": 1,
+        "selectedPositions": [
+          2,
+          5,
+          9,
+          28
+        ],
+        "selectedOriginalIds": [
+          5,
+          33,
+          447,
+          7
+        ],
+        "originalSideLengths": [
+          62,
+          29
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          15,
+          3
+        ],
+        "bId": [
+          "train",
+          414,
+          23366,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          15,
+          4
+        ],
+        "aSha256": "3c58f8b8ae2c9cb4c9738180cbf023377b89030d312872ae3674c86a38c10096",
+        "bSha256": "5428c38c419a33177130f0d8ceef215ab006cc51566d6f1f3bc58a85566311e8",
+        "trueNextSha256": "2724c42d2b503063b119d0932939329f024f814da5d76e6ee3694f68398db65b",
+        "label": 0,
+        "selectedPositions": [
+          1,
+          14,
+          17
+        ],
+        "selectedOriginalIds": [
+          13,
+          407,
+          11
+        ],
+        "originalSideLengths": [
+          62,
+          24
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          16,
+          0
+        ],
+        "bId": [
+          "train",
+          0,
+          16,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          16,
+          1
+        ],
+        "aSha256": "0605889dfa616db5ffa1ff54ce7a0b82b7216a0af675665024d7344132e3050c",
+        "bSha256": "4b6c420c704a65755eb81d5cbba023fbc84e0f03dc24d67a346a9c3eb422e968",
+        "trueNextSha256": "4b6c420c704a65755eb81d5cbba023fbc84e0f03dc24d67a346a9c3eb422e968",
+        "label": 1,
+        "selectedPositions": [
+          9,
+          14,
+          21,
+          25
+        ],
+        "selectedOriginalIds": [
+          5,
+          53,
+          591,
+          6
+        ],
+        "originalSideLengths": [
+          38,
+          28
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          16,
+          0
+        ],
+        "bId": [
+          "train",
+          413,
+          23298,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          16,
+          1
+        ],
+        "aSha256": "0605889dfa616db5ffa1ff54ce7a0b82b7216a0af675665024d7344132e3050c",
+        "bSha256": "f858a0418789627296f223e911b7dc2a946c3128278eb75df4ed676cee30747f",
+        "trueNextSha256": "4b6c420c704a65755eb81d5cbba023fbc84e0f03dc24d67a346a9c3eb422e968",
+        "label": 0,
+        "selectedPositions": [
+          6,
+          7,
+          9,
+          30
+        ],
+        "selectedOriginalIds": [
+          58,
+          628,
+          5,
+          235
+        ],
+        "originalSideLengths": [
+          38,
+          17
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          16,
+          1
+        ],
+        "bId": [
+          "train",
+          0,
+          16,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          16,
+          2
+        ],
+        "aSha256": "4b6c420c704a65755eb81d5cbba023fbc84e0f03dc24d67a346a9c3eb422e968",
+        "bSha256": "452a12d4995a998c69a6420a53b1da028eff5ed066bb05300764eaad340cfb1b",
+        "trueNextSha256": "452a12d4995a998c69a6420a53b1da028eff5ed066bb05300764eaad340cfb1b",
+        "label": 1,
+        "selectedPositions": [
+          6,
+          14,
+          15,
+          26
+        ],
+        "selectedOriginalIds": [
+          7,
+          438,
+          47,
+          23
+        ],
+        "originalSideLengths": [
+          28,
+          36
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          16,
+          1
+        ],
+        "bId": [
+          "train",
+          437,
+          24707,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          16,
+          2
+        ],
+        "aSha256": "4b6c420c704a65755eb81d5cbba023fbc84e0f03dc24d67a346a9c3eb422e968",
+        "bSha256": "b64b9de9299221e0f8df809b7807d43147c2ec4a21bb24ac1292230273df93d6",
+        "trueNextSha256": "452a12d4995a998c69a6420a53b1da028eff5ed066bb05300764eaad340cfb1b",
+        "label": 0,
+        "selectedPositions": [
+          3,
+          6,
+          12,
+          22
+        ],
+        "selectedOriginalIds": [
+          248,
+          7,
+          9,
+          5
+        ],
+        "originalSideLengths": [
+          28,
+          31
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          16,
+          2
+        ],
+        "bId": [
+          "train",
+          0,
+          16,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          16,
+          3
+        ],
+        "aSha256": "452a12d4995a998c69a6420a53b1da028eff5ed066bb05300764eaad340cfb1b",
+        "bSha256": "59a426abb5961a9eb52afda184f421f420600764618dd652b66a40ab7fef5633",
+        "trueNextSha256": "59a426abb5961a9eb52afda184f421f420600764618dd652b66a40ab7fef5633",
+        "label": 1,
+        "selectedPositions": [
+          12,
+          15,
+          25,
+          29
+        ],
+        "selectedOriginalIds": [
+          319,
+          10,
+          65,
+          397
+        ],
+        "originalSideLengths": [
+          36,
+          22
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          16,
+          2
+        ],
+        "bId": [
+          "train",
+          271,
+          14778,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          16,
+          3
+        ],
+        "aSha256": "452a12d4995a998c69a6420a53b1da028eff5ed066bb05300764eaad340cfb1b",
+        "bSha256": "19817020c0493f49be3b327850cd9b64890724bf13c3d2e32ea70d6e51c10247",
+        "trueNextSha256": "59a426abb5961a9eb52afda184f421f420600764618dd652b66a40ab7fef5633",
+        "label": 0,
+        "selectedPositions": [
+          8,
+          25,
+          29
+        ],
+        "selectedOriginalIds": [
+          137,
+          10,
+          700
+        ],
+        "originalSideLengths": [
+          36,
+          30
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          16,
+          3
+        ],
+        "bId": [
+          "train",
+          0,
+          16,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          16,
+          4
+        ],
+        "aSha256": "59a426abb5961a9eb52afda184f421f420600764618dd652b66a40ab7fef5633",
+        "bSha256": "c0c4bc055ade25106e3b408796578cad7dd077aff1db29c8a83c856c73c92a71",
+        "trueNextSha256": "c0c4bc055ade25106e3b408796578cad7dd077aff1db29c8a83c856c73c92a71",
+        "label": 1,
+        "selectedPositions": [
+          3,
+          8,
+          19,
+          22
+        ],
+        "selectedOriginalIds": [
+          77,
+          53,
+          81,
+          391
+        ],
+        "originalSideLengths": [
+          22,
+          39
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          16,
+          3
+        ],
+        "bId": [
+          "train",
+          20,
+          632,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          16,
+          4
+        ],
+        "aSha256": "59a426abb5961a9eb52afda184f421f420600764618dd652b66a40ab7fef5633",
+        "bSha256": "d395772e422c01a162f1ae1d941b277b1fa2cb1d12bfc8dfbd8c1a16d89d1aa9",
+        "trueNextSha256": "c0c4bc055ade25106e3b408796578cad7dd077aff1db29c8a83c856c73c92a71",
+        "label": 0,
+        "selectedPositions": [
+          4,
+          7,
+          14
+        ],
+        "selectedOriginalIds": [
+          138,
+          79,
+          5
+        ],
+        "originalSideLengths": [
+          22,
+          37
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          16,
+          4
+        ],
+        "bId": [
+          "train",
+          0,
+          16,
+          5
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          16,
+          5
+        ],
+        "aSha256": "c0c4bc055ade25106e3b408796578cad7dd077aff1db29c8a83c856c73c92a71",
+        "bSha256": "c8aafbda1189693b016ba199cbc016aa3ed7c78865570bc3264f55c76e9e5978",
+        "trueNextSha256": "c8aafbda1189693b016ba199cbc016aa3ed7c78865570bc3264f55c76e9e5978",
+        "label": 1,
+        "selectedPositions": [
+          3,
+          14,
+          15,
+          27
+        ],
+        "selectedOriginalIds": [
+          81,
+          9,
+          307,
+          267
+        ],
+        "originalSideLengths": [
+          39,
+          53
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          16,
+          4
+        ],
+        "bId": [
+          "train",
+          97,
+          5833,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          16,
+          5
+        ],
+        "aSha256": "c0c4bc055ade25106e3b408796578cad7dd077aff1db29c8a83c856c73c92a71",
+        "bSha256": "8726a8b2be1c9596d735acfe6cc2d467b9e923b8f733bf9049fe6fb21e4c496d",
+        "trueNextSha256": "c8aafbda1189693b016ba199cbc016aa3ed7c78865570bc3264f55c76e9e5978",
+        "label": 0,
+        "selectedPositions": [
+          7,
+          13,
+          15
+        ],
+        "selectedOriginalIds": [
+          6,
+          8,
+          307
+        ],
+        "originalSideLengths": [
+          39,
+          28
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          17,
+          0
+        ],
+        "bId": [
+          "train",
+          0,
+          17,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          17,
+          1
+        ],
+        "aSha256": "6e8cf657780fca3de7b0b4ce38681b6cbd0142cdd2521a14884b956b32988799",
+        "bSha256": "b8593c5e66fe1c840f3112f505f34d3335b2dcfb983b739f0b8f345298be0b7f",
+        "trueNextSha256": "b8593c5e66fe1c840f3112f505f34d3335b2dcfb983b739f0b8f345298be0b7f",
+        "label": 1,
+        "selectedPositions": [
+          10,
+          15,
+          20,
+          25
+        ],
+        "selectedOriginalIds": [
+          7,
+          656,
+          22,
+          16
+        ],
+        "originalSideLengths": [
+          49,
+          35
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          17,
+          0
+        ],
+        "bId": [
+          "train",
+          28,
+          1162,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          17,
+          1
+        ],
+        "aSha256": "6e8cf657780fca3de7b0b4ce38681b6cbd0142cdd2521a14884b956b32988799",
+        "bSha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8",
+        "trueNextSha256": "b8593c5e66fe1c840f3112f505f34d3335b2dcfb983b739f0b8f345298be0b7f",
+        "label": 0,
+        "selectedPositions": [
+          3,
+          8,
+          10,
+          19
+        ],
+        "selectedOriginalIds": [
+          7,
+          664,
+          7,
+          5
+        ],
+        "originalSideLengths": [
+          49,
+          1
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          17,
+          1
+        ],
+        "bId": [
+          "train",
+          0,
+          17,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          17,
+          2
+        ],
+        "aSha256": "b8593c5e66fe1c840f3112f505f34d3335b2dcfb983b739f0b8f345298be0b7f",
+        "bSha256": "8a6e176c9aab466aca4f042a16e15ef32fc375b246e0fc34a30e7c396dced7c6",
+        "trueNextSha256": "8a6e176c9aab466aca4f042a16e15ef32fc375b246e0fc34a30e7c396dced7c6",
+        "label": 1,
+        "selectedPositions": [
+          12,
+          14,
+          28,
+          29
+        ],
+        "selectedOriginalIds": [
+          29,
+          6,
+          11,
+          5
+        ],
+        "originalSideLengths": [
+          35,
+          30
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          17,
+          1
+        ],
+        "bId": [
+          "train",
+          142,
+          8505,
+          6
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          17,
+          2
+        ],
+        "aSha256": "b8593c5e66fe1c840f3112f505f34d3335b2dcfb983b739f0b8f345298be0b7f",
+        "bSha256": "7815bd875696de234e3d77fe145f16fcaefbf4dbe57056944b5ec02faf409f7b",
+        "trueNextSha256": "8a6e176c9aab466aca4f042a16e15ef32fc375b246e0fc34a30e7c396dced7c6",
+        "label": 0,
+        "selectedPositions": [
+          1,
+          2,
+          26
+        ],
+        "selectedOriginalIds": [
+          37,
+          27,
+          8
+        ],
+        "originalSideLengths": [
+          35,
+          33
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          17,
+          2
+        ],
+        "bId": [
+          "train",
+          0,
+          17,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          17,
+          3
+        ],
+        "aSha256": "8a6e176c9aab466aca4f042a16e15ef32fc375b246e0fc34a30e7c396dced7c6",
+        "bSha256": "236cc67d51225ea2cecf85047151fa23f61f4f74d5d44289e77d4a0ac248e154",
+        "trueNextSha256": "236cc67d51225ea2cecf85047151fa23f61f4f74d5d44289e77d4a0ac248e154",
+        "label": 1,
+        "selectedPositions": [
+          7,
+          9,
+          10,
+          29
+        ],
+        "selectedOriginalIds": [
+          5,
+          7,
+          294,
+          480
+        ],
+        "originalSideLengths": [
+          30,
+          51
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          17,
+          2
+        ],
+        "bId": [
+          "train",
+          622,
+          36269,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          17,
+          3
+        ],
+        "aSha256": "8a6e176c9aab466aca4f042a16e15ef32fc375b246e0fc34a30e7c396dced7c6",
+        "bSha256": "5b0b1f702cf2ccf186cc92cc0a77c7b14aefb46f7aa93df244f9b5f3924ac7ee",
+        "trueNextSha256": "236cc67d51225ea2cecf85047151fa23f61f4f74d5d44289e77d4a0ac248e154",
+        "label": 0,
+        "selectedPositions": [
+          5,
+          7,
+          8,
+          13
+        ],
+        "selectedOriginalIds": [
+          180,
+          5,
+          160,
+          5
+        ],
+        "originalSideLengths": [
+          30,
+          17
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          17,
+          3
+        ],
+        "bId": [
+          "train",
+          0,
+          17,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          17,
+          4
+        ],
+        "aSha256": "236cc67d51225ea2cecf85047151fa23f61f4f74d5d44289e77d4a0ac248e154",
+        "bSha256": "cc68284fcf26e3aff3b7629e9694f5a6fb272af3f0b4098fb7a9c515e45e3329",
+        "trueNextSha256": "cc68284fcf26e3aff3b7629e9694f5a6fb272af3f0b4098fb7a9c515e45e3329",
+        "label": 1,
+        "selectedPositions": [
+          18,
+          24,
+          25,
+          27
+        ],
+        "selectedOriginalIds": [
+          501,
+          120,
+          6,
+          109
+        ],
+        "originalSideLengths": [
+          51,
+          18
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          17,
+          3
+        ],
+        "bId": [
+          "train",
+          281,
+          15332,
+          6
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          17,
+          4
+        ],
+        "aSha256": "236cc67d51225ea2cecf85047151fa23f61f4f74d5d44289e77d4a0ac248e154",
+        "bSha256": "405b26cf8ccec1f997cb45fbfa4ca1ece982bb75d1daa927a4de659cc89dc991",
+        "trueNextSha256": "cc68284fcf26e3aff3b7629e9694f5a6fb272af3f0b4098fb7a9c515e45e3329",
+        "label": 0,
+        "selectedPositions": [
+          1,
+          6,
+          12,
+          21
+        ],
+        "selectedOriginalIds": [
+          16,
+          445,
+          152,
+          30
+        ],
+        "originalSideLengths": [
+          51,
+          19
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          17,
+          4
+        ],
+        "bId": [
+          "train",
+          0,
+          17,
+          5
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          17,
+          5
+        ],
+        "aSha256": "cc68284fcf26e3aff3b7629e9694f5a6fb272af3f0b4098fb7a9c515e45e3329",
+        "bSha256": "53132141608abde7f1ab785a67f20a804ff80ba2eaf08281226f644813ddab22",
+        "trueNextSha256": "53132141608abde7f1ab785a67f20a804ff80ba2eaf08281226f644813ddab22",
+        "label": 1,
+        "selectedPositions": [
+          5,
+          8,
+          21
+        ],
+        "selectedOriginalIds": [
+          490,
+          120,
+          26
+        ],
+        "originalSideLengths": [
+          18,
+          15
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          17,
+          4
+        ],
+        "bId": [
+          "train",
+          553,
+          31833,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          17,
+          5
+        ],
+        "aSha256": "cc68284fcf26e3aff3b7629e9694f5a6fb272af3f0b4098fb7a9c515e45e3329",
+        "bSha256": "2e388f73c238d126b5fce8fa675ebfa2bd1709d8bae39c666209d28e18a5dd93",
+        "trueNextSha256": "53132141608abde7f1ab785a67f20a804ff80ba2eaf08281226f644813ddab22",
+        "label": 0,
+        "selectedPositions": [
+          4,
+          7,
+          15,
+          20
+        ],
+        "selectedOriginalIds": [
+          7,
+          73,
+          382,
+          625
+        ],
+        "originalSideLengths": [
+          18,
+          58
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          0
+        ],
+        "bId": [
+          "train",
+          0,
+          21,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          1
+        ],
+        "aSha256": "38ab51ae24a7e8120234ad70af8ab4cb5b89b9b70da3dcd6809524540d636c54",
+        "bSha256": "71ead32a09adcabb99287149c88925e69fca1048e5e9b42fec15fef4f685238f",
+        "trueNextSha256": "71ead32a09adcabb99287149c88925e69fca1048e5e9b42fec15fef4f685238f",
+        "label": 1,
+        "selectedPositions": [
+          5,
+          19,
+          21,
+          25
+        ],
+        "selectedOriginalIds": [
+          15,
+          8,
+          15,
+          186
+        ],
+        "originalSideLengths": [
+          25,
+          18
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          0
+        ],
+        "bId": [
+          "train",
+          604,
+          34953,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          1
+        ],
+        "aSha256": "38ab51ae24a7e8120234ad70af8ab4cb5b89b9b70da3dcd6809524540d636c54",
+        "bSha256": "580ca89a007b65818170803f1ce3a4393af243034b060e9f0e89b9d11c2a44f0",
+        "trueNextSha256": "71ead32a09adcabb99287149c88925e69fca1048e5e9b42fec15fef4f685238f",
+        "label": 0,
+        "selectedPositions": [
+          4,
+          16,
+          20,
+          30
+        ],
+        "selectedOriginalIds": [
+          12,
+          92,
+          14,
+          28
+        ],
+        "originalSideLengths": [
+          25,
+          12
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          1
+        ],
+        "bId": [
+          "train",
+          0,
+          21,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          2
+        ],
+        "aSha256": "71ead32a09adcabb99287149c88925e69fca1048e5e9b42fec15fef4f685238f",
+        "bSha256": "74f87eda69671f2412e378f0dbfae6d15208af3815d4d49b5bfda98f24c0d078",
+        "trueNextSha256": "74f87eda69671f2412e378f0dbfae6d15208af3815d4d49b5bfda98f24c0d078",
+        "label": 1,
+        "selectedPositions": [
+          13,
+          17,
+          24,
+          25
+        ],
+        "selectedOriginalIds": [
+          23,
+          15,
+          84,
+          212
+        ],
+        "originalSideLengths": [
+          18,
+          6
+        ],
+        "packedLength": 27,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          1
+        ],
+        "bId": [
+          "train",
+          573,
+          32908,
+          6
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          2
+        ],
+        "aSha256": "71ead32a09adcabb99287149c88925e69fca1048e5e9b42fec15fef4f685238f",
+        "bSha256": "9e50d779b0144d005aadbdefd733f51e8a6fa8cbcffefdc5d405461681e16149",
+        "trueNextSha256": "74f87eda69671f2412e378f0dbfae6d15208af3815d4d49b5bfda98f24c0d078",
+        "label": 0,
+        "selectedPositions": [
+          7,
+          9,
+          10,
+          22
+        ],
+        "selectedOriginalIds": [
+          6,
+          186,
+          6,
+          263
+        ],
+        "originalSideLengths": [
+          18,
+          44
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          2
+        ],
+        "bId": [
+          "train",
+          0,
+          21,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          3
+        ],
+        "aSha256": "74f87eda69671f2412e378f0dbfae6d15208af3815d4d49b5bfda98f24c0d078",
+        "bSha256": "93bef320946dadc5b777be9f2d0d40982abeec65f320e048e96586017c91fa26",
+        "trueNextSha256": "93bef320946dadc5b777be9f2d0d40982abeec65f320e048e96586017c91fa26",
+        "label": 1,
+        "selectedPositions": [
+          6,
+          17,
+          19,
+          23
+        ],
+        "selectedOriginalIds": [
+          212,
+          201,
+          9,
+          5
+        ],
+        "originalSideLengths": [
+          6,
+          31
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          2
+        ],
+        "bId": [
+          "train",
+          428,
+          24099,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          3
+        ],
+        "aSha256": "74f87eda69671f2412e378f0dbfae6d15208af3815d4d49b5bfda98f24c0d078",
+        "bSha256": "9309404303bb8f30ce0fc5f50f45fabd4f0771267a51067643c9513b456b6ccf",
+        "trueNextSha256": "93bef320946dadc5b777be9f2d0d40982abeec65f320e048e96586017c91fa26",
+        "label": 0,
+        "selectedPositions": [
+          2,
+          10,
+          20
+        ],
+        "selectedOriginalIds": [
+          100,
+          9,
+          705
+        ],
+        "originalSideLengths": [
+          6,
+          27
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          3
+        ],
+        "bId": [
+          "train",
+          0,
+          21,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          4
+        ],
+        "aSha256": "93bef320946dadc5b777be9f2d0d40982abeec65f320e048e96586017c91fa26",
+        "bSha256": "675116c8670f70c7455f6d75bb5973e28aa0620751cfee28b5add7c71caeff67",
+        "trueNextSha256": "675116c8670f70c7455f6d75bb5973e28aa0620751cfee28b5add7c71caeff67",
+        "label": 1,
+        "selectedPositions": [
+          11,
+          13,
+          18,
+          30
+        ],
+        "selectedOriginalIds": [
+          122,
+          465,
+          145,
+          37
+        ],
+        "originalSideLengths": [
+          31,
+          52
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          3
+        ],
+        "bId": [
+          "train",
+          1,
+          90,
+          7
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          4
+        ],
+        "aSha256": "93bef320946dadc5b777be9f2d0d40982abeec65f320e048e96586017c91fa26",
+        "bSha256": "dbc4393b825ce4c0d63e5ea824003b2f418c2c8cdd362944b32b76fdcb451158",
+        "trueNextSha256": "675116c8670f70c7455f6d75bb5973e28aa0620751cfee28b5add7c71caeff67",
+        "label": 0,
+        "selectedPositions": [
+          3,
+          7,
+          11,
+          19
+        ],
+        "selectedOriginalIds": [
+          194,
+          35,
+          122,
+          21
+        ],
+        "originalSideLengths": [
+          31,
+          8
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          4
+        ],
+        "bId": [
+          "train",
+          0,
+          21,
+          5
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          5
+        ],
+        "aSha256": "675116c8670f70c7455f6d75bb5973e28aa0620751cfee28b5add7c71caeff67",
+        "bSha256": "443ba83ca4d70afddd410078cb2a326ceabc3f104b38dcc7bc29e00c09fe9ce3",
+        "trueNextSha256": "443ba83ca4d70afddd410078cb2a326ceabc3f104b38dcc7bc29e00c09fe9ce3",
+        "label": 1,
+        "selectedPositions": [
+          2,
+          8,
+          15,
+          23
+        ],
+        "selectedOriginalIds": [
+          145,
+          14,
+          14,
+          14
+        ],
+        "originalSideLengths": [
+          52,
+          70
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          4
+        ],
+        "bId": [
+          "train",
+          553,
+          31814,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          5
+        ],
+        "aSha256": "675116c8670f70c7455f6d75bb5973e28aa0620751cfee28b5add7c71caeff67",
+        "bSha256": "40028fe81863be68b521d7750ccda08d90abbcd91fce2695cdecda8b6e7c4de4",
+        "trueNextSha256": "443ba83ca4d70afddd410078cb2a326ceabc3f104b38dcc7bc29e00c09fe9ce3",
+        "label": 0,
+        "selectedPositions": [
+          2,
+          15,
+          21,
+          28
+        ],
+        "selectedOriginalIds": [
+          145,
+          14,
+          286,
+          473
+        ],
+        "originalSideLengths": [
+          52,
+          18
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          5
+        ],
+        "bId": [
+          "train",
+          0,
+          21,
+          6
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          6
+        ],
+        "aSha256": "443ba83ca4d70afddd410078cb2a326ceabc3f104b38dcc7bc29e00c09fe9ce3",
+        "bSha256": "1bea62c4bcef69789a807cf84dcef498c87a79414e7c71216844cd67a367c0cd",
+        "trueNextSha256": "1bea62c4bcef69789a807cf84dcef498c87a79414e7c71216844cd67a367c0cd",
+        "label": 1,
+        "selectedPositions": [
+          5,
+          6,
+          24,
+          25
+        ],
+        "selectedOriginalIds": [
+          6,
+          25,
+          52,
+          56
+        ],
+        "originalSideLengths": [
+          70,
+          45
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          5
+        ],
+        "bId": [
+          "train",
+          276,
+          15002,
+          0
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          6
+        ],
+        "aSha256": "443ba83ca4d70afddd410078cb2a326ceabc3f104b38dcc7bc29e00c09fe9ce3",
+        "bSha256": "d4707b0a6728aa9bb192670106632449d63ba6b6ed8f4d5ab97b86cd1c141b5e",
+        "trueNextSha256": "1bea62c4bcef69789a807cf84dcef498c87a79414e7c71216844cd67a367c0cd",
+        "label": 0,
+        "selectedPositions": [
+          1,
+          22,
+          29,
+          30
+        ],
+        "selectedOriginalIds": [
+          151,
+          66,
+          5,
+          98
+        ],
+        "originalSideLengths": [
+          70,
+          31
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          6
+        ],
+        "bId": [
+          "train",
+          0,
+          21,
+          7
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          7
+        ],
+        "aSha256": "1bea62c4bcef69789a807cf84dcef498c87a79414e7c71216844cd67a367c0cd",
+        "bSha256": "162d94ecffd1dac08104f86ca1b5252dd0e544d1b8768449a3e7f1acec725b7c",
+        "trueNextSha256": "162d94ecffd1dac08104f86ca1b5252dd0e544d1b8768449a3e7f1acec725b7c",
+        "label": 1,
+        "selectedPositions": [
+          1,
+          2,
+          11,
+          22
+        ],
+        "selectedOriginalIds": [
+          11,
+          257,
+          43,
+          10
+        ],
+        "originalSideLengths": [
+          45,
+          13
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          21,
+          6
+        ],
+        "bId": [
+          "train",
+          625,
+          36411,
+          0
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          21,
+          7
+        ],
+        "aSha256": "1bea62c4bcef69789a807cf84dcef498c87a79414e7c71216844cd67a367c0cd",
+        "bSha256": "9039868c7163c84c585ae73b987cb2ab6b087ff7ccd0556c8f5b5d28fbe08e3d",
+        "trueNextSha256": "162d94ecffd1dac08104f86ca1b5252dd0e544d1b8768449a3e7f1acec725b7c",
+        "label": 0,
+        "selectedPositions": [
+          8,
+          20,
+          23
+        ],
+        "selectedOriginalIds": [
+          52,
+          661,
+          49
+        ],
+        "originalSideLengths": [
+          45,
+          79
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          0
+        ],
+        "bId": [
+          "train",
+          0,
+          22,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          1
+        ],
+        "aSha256": "495fae77fa243896c91dfa9e40dcb90e2aef5ee71d8c5333d02259e85d0e2c3e",
+        "bSha256": "d5774fdad4dd34bb63f1cc68cba674dfe3bdd7fb67885f4cf55eff6d39325852",
+        "trueNextSha256": "d5774fdad4dd34bb63f1cc68cba674dfe3bdd7fb67885f4cf55eff6d39325852",
+        "label": 1,
+        "selectedPositions": [
+          5,
+          18,
+          25,
+          29
+        ],
+        "selectedOriginalIds": [
+          222,
+          37,
+          20,
+          199
+        ],
+        "originalSideLengths": [
+          23,
+          33
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          0
+        ],
+        "bId": [
+          "train",
+          50,
+          2580,
+          0
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          1
+        ],
+        "aSha256": "495fae77fa243896c91dfa9e40dcb90e2aef5ee71d8c5333d02259e85d0e2c3e",
+        "bSha256": "d7c5bf5590deff26ecdde116fd9a27aa24d61d94c752a7ebbf17c66c6ef8b581",
+        "trueNextSha256": "d5774fdad4dd34bb63f1cc68cba674dfe3bdd7fb67885f4cf55eff6d39325852",
+        "label": 0,
+        "selectedPositions": [
+          1,
+          4,
+          22
+        ],
+        "selectedOriginalIds": [
+          5,
+          657,
+          7
+        ],
+        "originalSideLengths": [
+          23,
+          20
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          1
+        ],
+        "bId": [
+          "train",
+          0,
+          22,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          2
+        ],
+        "aSha256": "d5774fdad4dd34bb63f1cc68cba674dfe3bdd7fb67885f4cf55eff6d39325852",
+        "bSha256": "e543d31e4c57770250c5eff5b78ecc6d6ea85436226ecab826b1f0fd32b3b471",
+        "trueNextSha256": "e543d31e4c57770250c5eff5b78ecc6d6ea85436226ecab826b1f0fd32b3b471",
+        "label": 1,
+        "selectedPositions": [
+          1,
+          5,
+          23,
+          24
+        ],
+        "selectedOriginalIds": [
+          158,
+          49,
+          110,
+          87
+        ],
+        "originalSideLengths": [
+          33,
+          15
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          1
+        ],
+        "bId": [
+          "train",
+          52,
+          2682,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          2
+        ],
+        "aSha256": "d5774fdad4dd34bb63f1cc68cba674dfe3bdd7fb67885f4cf55eff6d39325852",
+        "bSha256": "59f8d5ff85bf2ce7c927f27c25b860f98951f2846349d185596e7bcaad31a3ae",
+        "trueNextSha256": "e543d31e4c57770250c5eff5b78ecc6d6ea85436226ecab826b1f0fd32b3b471",
+        "label": 0,
+        "selectedPositions": [
+          2,
+          5,
+          7,
+          8
+        ],
+        "selectedOriginalIds": [
+          37,
+          49,
+          7,
+          5
+        ],
+        "originalSideLengths": [
+          33,
+          30
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          2
+        ],
+        "bId": [
+          "train",
+          0,
+          22,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          3
+        ],
+        "aSha256": "e543d31e4c57770250c5eff5b78ecc6d6ea85436226ecab826b1f0fd32b3b471",
+        "bSha256": "ee029a9fec2f5f4d6cd8e5d68fe6d98dd9dbed995efd4d7e25929b67f0bc2cae",
+        "trueNextSha256": "ee029a9fec2f5f4d6cd8e5d68fe6d98dd9dbed995efd4d7e25929b67f0bc2cae",
+        "label": 1,
+        "selectedPositions": [
+          7,
+          18,
+          25,
+          28
+        ],
+        "selectedOriginalIds": [
+          110,
+          85,
+          104,
+          5
+        ],
+        "originalSideLengths": [
+          15,
+          31
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          2
+        ],
+        "bId": [
+          "train",
+          349,
+          19581,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          3
+        ],
+        "aSha256": "e543d31e4c57770250c5eff5b78ecc6d6ea85436226ecab826b1f0fd32b3b471",
+        "bSha256": "c996fa45ed70ce591b134c1bd99bdb4340dc83fbcd55fd616394c395d7000bc5",
+        "trueNextSha256": "ee029a9fec2f5f4d6cd8e5d68fe6d98dd9dbed995efd4d7e25929b67f0bc2cae",
+        "label": 0,
+        "selectedPositions": [
+          1,
+          18,
+          27
+        ],
+        "selectedOriginalIds": [
+          9,
+          695,
+          5
+        ],
+        "originalSideLengths": [
+          15,
+          35
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          3
+        ],
+        "bId": [
+          "train",
+          0,
+          22,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          4
+        ],
+        "aSha256": "ee029a9fec2f5f4d6cd8e5d68fe6d98dd9dbed995efd4d7e25929b67f0bc2cae",
+        "bSha256": "3de3701dba2e895ba1839388cbf96a63f216c89fd2d4ab8dc57822acd251c09f",
+        "trueNextSha256": "3de3701dba2e895ba1839388cbf96a63f216c89fd2d4ab8dc57822acd251c09f",
+        "label": 1,
+        "selectedPositions": [
+          7,
+          11,
+          14,
+          25
+        ],
+        "selectedOriginalIds": [
+          5,
+          47,
+          20,
+          8
+        ],
+        "originalSideLengths": [
+          31,
+          27
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          3
+        ],
+        "bId": [
+          "train",
+          350,
+          19615,
+          11
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          4
+        ],
+        "aSha256": "ee029a9fec2f5f4d6cd8e5d68fe6d98dd9dbed995efd4d7e25929b67f0bc2cae",
+        "bSha256": "b09af60643af605cf9e877985f0c358c284dac7e26a9a5ffe13bfa54109c9222",
+        "trueNextSha256": "3de3701dba2e895ba1839388cbf96a63f216c89fd2d4ab8dc57822acd251c09f",
+        "label": 0,
+        "selectedPositions": [
+          6,
+          10,
+          15,
+          30
+        ],
+        "selectedOriginalIds": [
+          6,
+          437,
+          49,
+          13
+        ],
+        "originalSideLengths": [
+          31,
+          16
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          4
+        ],
+        "bId": [
+          "train",
+          0,
+          22,
+          5
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          5
+        ],
+        "aSha256": "3de3701dba2e895ba1839388cbf96a63f216c89fd2d4ab8dc57822acd251c09f",
+        "bSha256": "a81d3410f2117bcf15b3e985b9912553ad539c7d37b259b07ccb1e3a7a7f682b",
+        "trueNextSha256": "a81d3410f2117bcf15b3e985b9912553ad539c7d37b259b07ccb1e3a7a7f682b",
+        "label": 1,
+        "selectedPositions": [
+          1,
+          10,
+          19,
+          25
+        ],
+        "selectedOriginalIds": [
+          30,
+          291,
+          534,
+          49
+        ],
+        "originalSideLengths": [
+          27,
+          9
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          4
+        ],
+        "bId": [
+          "train",
+          347,
+          19197,
+          0
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          5
+        ],
+        "aSha256": "3de3701dba2e895ba1839388cbf96a63f216c89fd2d4ab8dc57822acd251c09f",
+        "bSha256": "84af823c247d15b6fabc982222b6fe46a1878f96ec1ed445236f4e774aaba512",
+        "trueNextSha256": "a81d3410f2117bcf15b3e985b9912553ad539c7d37b259b07ccb1e3a7a7f682b",
+        "label": 0,
+        "selectedPositions": [
+          10,
+          14,
+          18,
+          28
+        ],
+        "selectedOriginalIds": [
+          291,
+          260,
+          8,
+          8
+        ],
+        "originalSideLengths": [
+          27,
+          30
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          5
+        ],
+        "bId": [
+          "train",
+          0,
+          22,
+          6
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          6
+        ],
+        "aSha256": "a81d3410f2117bcf15b3e985b9912553ad539c7d37b259b07ccb1e3a7a7f682b",
+        "bSha256": "0d10afcd22fa88fcdfa3dcedc070cc1318d6b6698e16fd6d96ae8d69960ca7a8",
+        "trueNextSha256": "0d10afcd22fa88fcdfa3dcedc070cc1318d6b6698e16fd6d96ae8d69960ca7a8",
+        "label": 1,
+        "selectedPositions": [
+          2,
+          3,
+          13,
+          20
+        ],
+        "selectedOriginalIds": [
+          485,
+          299,
+          380,
+          44
+        ],
+        "originalSideLengths": [
+          9,
+          18
+        ],
+        "packedLength": 30,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          5
+        ],
+        "bId": [
+          "train",
+          260,
+          14124,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          6
+        ],
+        "aSha256": "a81d3410f2117bcf15b3e985b9912553ad539c7d37b259b07ccb1e3a7a7f682b",
+        "bSha256": "a226b3d80d3a799d3c188b8513e9a5e1758c8d596510812986dbbb49fcf566e2",
+        "trueNextSha256": "0d10afcd22fa88fcdfa3dcedc070cc1318d6b6698e16fd6d96ae8d69960ca7a8",
+        "label": 0,
+        "selectedPositions": [
+          16,
+          17,
+          21,
+          22
+        ],
+        "selectedOriginalIds": [
+          458,
+          230,
+          6,
+          10
+        ],
+        "originalSideLengths": [
+          9,
+          21
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          6
+        ],
+        "bId": [
+          "train",
+          0,
+          22,
+          7
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          7
+        ],
+        "aSha256": "0d10afcd22fa88fcdfa3dcedc070cc1318d6b6698e16fd6d96ae8d69960ca7a8",
+        "bSha256": "6e86c22b225a0a64a596adc33e243c4e121da4e6a0efb6f82b8d99cdd907539c",
+        "trueNextSha256": "6e86c22b225a0a64a596adc33e243c4e121da4e6a0efb6f82b8d99cdd907539c",
+        "label": 1,
+        "selectedPositions": [
+          14,
+          15,
+          25,
+          26
+        ],
+        "selectedOriginalIds": [
+          5,
+          52,
+          406,
+          18
+        ],
+        "originalSideLengths": [
+          18,
+          51
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          6
+        ],
+        "bId": [
+          "train",
+          308,
+          16973,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          7
+        ],
+        "aSha256": "0d10afcd22fa88fcdfa3dcedc070cc1318d6b6698e16fd6d96ae8d69960ca7a8",
+        "bSha256": "266cbabec75fd3ed417544c0dca313874a3e403bd804129bfba761facc2817ae",
+        "trueNextSha256": "6e86c22b225a0a64a596adc33e243c4e121da4e6a0efb6f82b8d99cdd907539c",
+        "label": 0,
+        "selectedPositions": [
+          5,
+          8,
+          13,
+          20
+        ],
+        "selectedOriginalIds": [
+          225,
+          113,
+          28,
+          6
+        ],
+        "originalSideLengths": [
+          18,
+          35
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          7
+        ],
+        "bId": [
+          "train",
+          0,
+          22,
+          8
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          8
+        ],
+        "aSha256": "6e86c22b225a0a64a596adc33e243c4e121da4e6a0efb6f82b8d99cdd907539c",
+        "bSha256": "08f5c86b1fa5ce876122455e586afb4312d65b5ea8902987f7aa9064a324f310",
+        "trueNextSha256": "08f5c86b1fa5ce876122455e586afb4312d65b5ea8902987f7aa9064a324f310",
+        "label": 1,
+        "selectedPositions": [
+          2,
+          3,
+          16,
+          17
+        ],
+        "selectedOriginalIds": [
+          110,
+          5,
+          34,
+          60
+        ],
+        "originalSideLengths": [
+          51,
+          8
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          7
+        ],
+        "bId": [
+          "train",
+          215,
+          12767,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          8
+        ],
+        "aSha256": "6e86c22b225a0a64a596adc33e243c4e121da4e6a0efb6f82b8d99cdd907539c",
+        "bSha256": "436b75efe51cf1130d86e2415a2ca218b7b64168d5c0c57633f7e7bec7a8d753",
+        "trueNextSha256": "08f5c86b1fa5ce876122455e586afb4312d65b5ea8902987f7aa9064a324f310",
+        "label": 0,
+        "selectedPositions": [
+          3,
+          5,
+          23,
+          24
+        ],
+        "selectedOriginalIds": [
+          5,
+          63,
+          73,
+          596
+        ],
+        "originalSideLengths": [
+          51,
+          24
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          8
+        ],
+        "bId": [
+          "train",
+          0,
+          22,
+          9
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          9
+        ],
+        "aSha256": "08f5c86b1fa5ce876122455e586afb4312d65b5ea8902987f7aa9064a324f310",
+        "bSha256": "1061e624d4cfd62521975b50e467638f60e006d481fb9871dee431cc77d84d36",
+        "trueNextSha256": "1061e624d4cfd62521975b50e467638f60e006d481fb9871dee431cc77d84d36",
+        "label": 1,
+        "selectedPositions": [
+          6,
+          13,
+          16
+        ],
+        "selectedOriginalIds": [
+          51,
+          52,
+          6
+        ],
+        "originalSideLengths": [
+          8,
+          15
+        ],
+        "packedLength": 26,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          8
+        ],
+        "bId": [
+          "train",
+          247,
+          13506,
+          4
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          9
+        ],
+        "aSha256": "08f5c86b1fa5ce876122455e586afb4312d65b5ea8902987f7aa9064a324f310",
+        "bSha256": "88cda62ae925ebb5dd76681a19dfd37da925b88545a303e2923c44fcbaa27275",
+        "trueNextSha256": "1061e624d4cfd62521975b50e467638f60e006d481fb9871dee431cc77d84d36",
+        "label": 0,
+        "selectedPositions": [
+          7,
+          11,
+          13
+        ],
+        "selectedOriginalIds": [
+          14,
+          6,
+          135
+        ],
+        "originalSideLengths": [
+          8,
+          19
+        ],
+        "packedLength": 30,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          9
+        ],
+        "bId": [
+          "train",
+          0,
+          22,
+          10
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          10
+        ],
+        "aSha256": "1061e624d4cfd62521975b50e467638f60e006d481fb9871dee431cc77d84d36",
+        "bSha256": "36f0c0772aed6d40edc7bcf67cdffb7ea5540308ddb451c59401c486eb687e91",
+        "trueNextSha256": "36f0c0772aed6d40edc7bcf67cdffb7ea5540308ddb451c59401c486eb687e91",
+        "label": 1,
+        "selectedPositions": [
+          1,
+          6,
+          8
+        ],
+        "selectedOriginalIds": [
+          16,
+          56,
+          12
+        ],
+        "originalSideLengths": [
+          15,
+          8
+        ],
+        "packedLength": 26,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          22,
+          9
+        ],
+        "bId": [
+          "train",
+          525,
+          29861,
+          0
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          22,
+          10
+        ],
+        "aSha256": "1061e624d4cfd62521975b50e467638f60e006d481fb9871dee431cc77d84d36",
+        "bSha256": "dc66ea7a83bbff1f42e1a30080523066cb3e066c86849ce67cb8ca0bc8549d1d",
+        "trueNextSha256": "36f0c0772aed6d40edc7bcf67cdffb7ea5540308ddb451c59401c486eb687e91",
+        "label": 0,
+        "selectedPositions": [
+          2,
+          8,
+          23
+        ],
+        "selectedOriginalIds": [
+          18,
+          12,
+          28
+        ],
+        "originalSideLengths": [
+          15,
+          23
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          26,
+          0
+        ],
+        "bId": [
+          "train",
+          0,
+          26,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          26,
+          1
+        ],
+        "aSha256": "aeb6ba5535c9341b2096386deb273d5c1464bd51b6b6628687fe9839ff1f529f",
+        "bSha256": "dd7da3a9e12b85e286f0f0f0121078cd68a435c80339bbdb53dcb69bb135e922",
+        "trueNextSha256": "dd7da3a9e12b85e286f0f0f0121078cd68a435c80339bbdb53dcb69bb135e922",
+        "label": 1,
+        "selectedPositions": [
+          4,
+          8,
+          9,
+          17
+        ],
+        "selectedOriginalIds": [
+          221,
+          6,
+          44,
+          99
+        ],
+        "originalSideLengths": [
+          18,
+          31
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          26,
+          0
+        ],
+        "bId": [
+          "train",
+          537,
+          30569,
+          8
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          26,
+          1
+        ],
+        "aSha256": "aeb6ba5535c9341b2096386deb273d5c1464bd51b6b6628687fe9839ff1f529f",
+        "bSha256": "571271aeee7fd9f4f6d4bc1d1f02d6631ea9258535972445fbb952a26c28994e",
+        "trueNextSha256": "dd7da3a9e12b85e286f0f0f0121078cd68a435c80339bbdb53dcb69bb135e922",
+        "label": 0,
+        "selectedPositions": [
+          5,
+          10,
+          26,
+          28
+        ],
+        "selectedOriginalIds": [
+          17,
+          34,
+          5,
+          21
+        ],
+        "originalSideLengths": [
+          18,
+          66
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          26,
+          1
+        ],
+        "bId": [
+          "train",
+          0,
+          26,
+          2
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          26,
+          2
+        ],
+        "aSha256": "dd7da3a9e12b85e286f0f0f0121078cd68a435c80339bbdb53dcb69bb135e922",
+        "bSha256": "80d87a07ef0e3f18f09882966d579389f4e9aabac5cd5159fa471ad01a2caebb",
+        "trueNextSha256": "80d87a07ef0e3f18f09882966d579389f4e9aabac5cd5159fa471ad01a2caebb",
+        "label": 1,
+        "selectedPositions": [
+          2,
+          4,
+          20,
+          30
+        ],
+        "selectedOriginalIds": [
+          57,
+          426,
+          57,
+          526
+        ],
+        "originalSideLengths": [
+          31,
+          14
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          26,
+          1
+        ],
+        "bId": [
+          "train",
+          90,
+          5383,
+          0
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          26,
+          2
+        ],
+        "aSha256": "dd7da3a9e12b85e286f0f0f0121078cd68a435c80339bbdb53dcb69bb135e922",
+        "bSha256": "f91cf2a15334a666871e3fab9eb2d7605dad23d9ff6b13749993e873471678d4",
+        "trueNextSha256": "80d87a07ef0e3f18f09882966d579389f4e9aabac5cd5159fa471ad01a2caebb",
+        "label": 0,
+        "selectedPositions": [
+          10,
+          15,
+          18,
+          22
+        ],
+        "selectedOriginalIds": [
+          302,
+          282,
+          7,
+          56
+        ],
+        "originalSideLengths": [
+          31,
+          5
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          26,
+          2
+        ],
+        "bId": [
+          "train",
+          0,
+          26,
+          3
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          26,
+          3
+        ],
+        "aSha256": "80d87a07ef0e3f18f09882966d579389f4e9aabac5cd5159fa471ad01a2caebb",
+        "bSha256": "dca2921beaaa8cde02bda6ea7ca11be015ed524bdab2632627ba985883a26729",
+        "trueNextSha256": "dca2921beaaa8cde02bda6ea7ca11be015ed524bdab2632627ba985883a26729",
+        "label": 1,
+        "selectedPositions": [
+          4,
+          6,
+          21,
+          30
+        ],
+        "selectedOriginalIds": [
+          57,
+          126,
+          254,
+          37
+        ],
+        "originalSideLengths": [
+          14,
+          20
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "train",
+          0,
+          26,
+          2
+        ],
+        "bId": [
+          "train",
+          410,
+          23063,
+          1
+        ],
+        "trueNextId": [
+          "train",
+          0,
+          26,
+          3
+        ],
+        "aSha256": "80d87a07ef0e3f18f09882966d579389f4e9aabac5cd5159fa471ad01a2caebb",
+        "bSha256": "29c6b21a805a08658666bbbbde880e7ca227b6d80d29ea10d5ad06679fd38be4",
+        "trueNextSha256": "dca2921beaaa8cde02bda6ea7ca11be015ed524bdab2632627ba985883a26729",
+        "label": 0,
+        "selectedPositions": [
+          1,
+          10,
+          18,
+          26
+        ],
+        "selectedOriginalIds": [
+          31,
+          8,
+          5,
+          13
+        ],
+        "originalSideLengths": [
+          14,
+          22
+        ],
+        "packedLength": 32,
+        "truncated": true
+      }
+    ],
+    "validationAudit": [
+      {
+        "aId": [
+          "validation",
+          0,
+          3,
+          0
+        ],
+        "bId": [
+          "validation",
+          0,
+          3,
+          1
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          3,
+          1
+        ],
+        "aSha256": "21ce5b635468e9644ef3e4ae0e697bd436651810caca3503863a703d4df82790",
+        "bSha256": "969139f34db89e8f46af2a5030f4ba54bb3d380cb1a3e898a7d0e72d2d605736",
+        "trueNextSha256": "969139f34db89e8f46af2a5030f4ba54bb3d380cb1a3e898a7d0e72d2d605736",
+        "label": 1,
+        "selectedPositions": [
+          5,
+          12
+        ],
+        "selectedOriginalIds": [
+          16,
+          6
+        ],
+        "originalSideLengths": [
+          32,
+          11
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          3,
+          0
+        ],
+        "bId": [
+          "validation",
+          51,
+          3203,
+          1
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          3,
+          1
+        ],
+        "aSha256": "21ce5b635468e9644ef3e4ae0e697bd436651810caca3503863a703d4df82790",
+        "bSha256": "fb71070020cab5bc42ac12cec5562a6eae19690e04042917189bd2e212e4ef67",
+        "trueNextSha256": "969139f34db89e8f46af2a5030f4ba54bb3d380cb1a3e898a7d0e72d2d605736",
+        "label": 0,
+        "selectedPositions": [
+          4,
+          15
+        ],
+        "selectedOriginalIds": [
+          280,
+          692
+        ],
+        "originalSideLengths": [
+          32,
+          8
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          3,
+          1
+        ],
+        "bId": [
+          "validation",
+          0,
+          3,
+          2
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          3,
+          2
+        ],
+        "aSha256": "969139f34db89e8f46af2a5030f4ba54bb3d380cb1a3e898a7d0e72d2d605736",
+        "bSha256": "9083ec7ed1e20c53e25f86d74871172579369cee94babd4bfee142be3fa33cc5",
+        "trueNextSha256": "9083ec7ed1e20c53e25f86d74871172579369cee94babd4bfee142be3fa33cc5",
+        "label": 1,
+        "selectedPositions": [
+          1,
+          6,
+          22
+        ],
+        "selectedOriginalIds": [
+          25,
+          5,
+          74
+        ],
+        "originalSideLengths": [
+          11,
+          31
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          3,
+          1
+        ],
+        "bId": [
+          "validation",
+          4,
+          158,
+          4
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          3,
+          2
+        ],
+        "aSha256": "969139f34db89e8f46af2a5030f4ba54bb3d380cb1a3e898a7d0e72d2d605736",
+        "bSha256": "93765282a6f66ab23dfd511cd5fe20f488fe070f9be917fa70c5cba68e396646",
+        "trueNextSha256": "9083ec7ed1e20c53e25f86d74871172579369cee94babd4bfee142be3fa33cc5",
+        "label": 0,
+        "selectedPositions": [
+          1,
+          23
+        ],
+        "selectedOriginalIds": [
+          25,
+          14
+        ],
+        "originalSideLengths": [
+          11,
+          14
+        ],
+        "packedLength": 28,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          3,
+          2
+        ],
+        "bId": [
+          "validation",
+          0,
+          3,
+          3
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          3,
+          3
+        ],
+        "aSha256": "9083ec7ed1e20c53e25f86d74871172579369cee94babd4bfee142be3fa33cc5",
+        "bSha256": "856399262572f9d60da8b90404c3b0f4d91e4954f7949fc87925d1c5993d2c57",
+        "trueNextSha256": "856399262572f9d60da8b90404c3b0f4d91e4954f7949fc87925d1c5993d2c57",
+        "label": 1,
+        "selectedPositions": [
+          19,
+          20,
+          25
+        ],
+        "selectedOriginalIds": [
+          6,
+          5,
+          496
+        ],
+        "originalSideLengths": [
+          31,
+          16
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          3,
+          2
+        ],
+        "bId": [
+          "validation",
+          40,
+          2348,
+          0
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          3,
+          3
+        ],
+        "aSha256": "9083ec7ed1e20c53e25f86d74871172579369cee94babd4bfee142be3fa33cc5",
+        "bSha256": "d55e2c236fba15a487b36710e0af8b3448e24618da7d1f22f5fa179e8223e17f",
+        "trueNextSha256": "856399262572f9d60da8b90404c3b0f4d91e4954f7949fc87925d1c5993d2c57",
+        "label": 0,
+        "selectedPositions": [
+          5,
+          13
+        ],
+        "selectedOriginalIds": [
+          9,
+          70
+        ],
+        "originalSideLengths": [
+          31,
+          49
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          3,
+          3
+        ],
+        "bId": [
+          "validation",
+          0,
+          3,
+          4
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          3,
+          4
+        ],
+        "aSha256": "856399262572f9d60da8b90404c3b0f4d91e4954f7949fc87925d1c5993d2c57",
+        "bSha256": "4b03c91c78e72f92d22132f62d46e1062b4ada316078083f67701194d059de03",
+        "trueNextSha256": "4b03c91c78e72f92d22132f62d46e1062b4ada316078083f67701194d059de03",
+        "label": 1,
+        "selectedPositions": [
+          1,
+          3,
+          8
+        ],
+        "selectedOriginalIds": [
+          11,
+          6,
+          6
+        ],
+        "originalSideLengths": [
+          16,
+          24
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          3,
+          3
+        ],
+        "bId": [
+          "validation",
+          44,
+          2647,
+          1
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          3,
+          4
+        ],
+        "aSha256": "856399262572f9d60da8b90404c3b0f4d91e4954f7949fc87925d1c5993d2c57",
+        "bSha256": "351d5e4582d4d628c6330512a0d541d146d9194a87cb3f5894b41a23940c9a0a",
+        "trueNextSha256": "4b03c91c78e72f92d22132f62d46e1062b4ada316078083f67701194d059de03",
+        "label": 0,
+        "selectedPositions": [
+          6,
+          18,
+          27
+        ],
+        "selectedOriginalIds": [
+          24,
+          5,
+          5
+        ],
+        "originalSideLengths": [
+          16,
+          21
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          3,
+          4
+        ],
+        "bId": [
+          "validation",
+          0,
+          3,
+          5
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          3,
+          5
+        ],
+        "aSha256": "4b03c91c78e72f92d22132f62d46e1062b4ada316078083f67701194d059de03",
+        "bSha256": "5cd452d876a280d9aa2e020925e20fa950ce01a247a6002ece8be09c989d78d2",
+        "trueNextSha256": "5cd452d876a280d9aa2e020925e20fa950ce01a247a6002ece8be09c989d78d2",
+        "label": 1,
+        "selectedPositions": [
+          10,
+          12
+        ],
+        "selectedOriginalIds": [
+          24,
+          17
+        ],
+        "originalSideLengths": [
+          24,
+          22
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          3,
+          4
+        ],
+        "bId": [
+          "validation",
+          47,
+          3055,
+          4
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          3,
+          5
+        ],
+        "aSha256": "4b03c91c78e72f92d22132f62d46e1062b4ada316078083f67701194d059de03",
+        "bSha256": "e8cd4ec0e0040a6d32d7568b89d28fb9a56f7671a00bfeb7c4b9c1478ebd1415",
+        "trueNextSha256": "5cd452d876a280d9aa2e020925e20fa950ce01a247a6002ece8be09c989d78d2",
+        "label": 0,
+        "selectedPositions": [
+          10,
+          15,
+          22
+        ],
+        "selectedOriginalIds": [
+          24,
+          21,
+          6
+        ],
+        "originalSideLengths": [
+          24,
+          23
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          7,
+          0
+        ],
+        "bId": [
+          "validation",
+          0,
+          7,
+          1
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          7,
+          1
+        ],
+        "aSha256": "b3b9cf8db1a4a3efaf268e249ba8d27e2d3d65798d9bdc374769addbed90c841",
+        "bSha256": "20df103d471692f95cb9fda41553bc5c274e15ad30d32aaec50705a82c0cbebf",
+        "trueNextSha256": "20df103d471692f95cb9fda41553bc5c274e15ad30d32aaec50705a82c0cbebf",
+        "label": 1,
+        "selectedPositions": [
+          3,
+          10,
+          18
+        ],
+        "selectedOriginalIds": [
+          27,
+          345,
+          68
+        ],
+        "originalSideLengths": [
+          74,
+          26
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          7,
+          0
+        ],
+        "bId": [
+          "validation",
+          56,
+          3520,
+          1
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          7,
+          1
+        ],
+        "aSha256": "b3b9cf8db1a4a3efaf268e249ba8d27e2d3d65798d9bdc374769addbed90c841",
+        "bSha256": "9cf8917a7d6be54032794c4fab11ae0b93a5ee02f85ee7760607df2953385467",
+        "trueNextSha256": "20df103d471692f95cb9fda41553bc5c274e15ad30d32aaec50705a82c0cbebf",
+        "label": 0,
+        "selectedPositions": [
+          5,
+          20
+        ],
+        "selectedOriginalIds": [
+          94,
+          14
+        ],
+        "originalSideLengths": [
+          74,
+          19
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          7,
+          1
+        ],
+        "bId": [
+          "validation",
+          0,
+          7,
+          2
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          7,
+          2
+        ],
+        "aSha256": "20df103d471692f95cb9fda41553bc5c274e15ad30d32aaec50705a82c0cbebf",
+        "bSha256": "e29f7ec4e469a2d148b1a310d447f918a4db8084628d3d68688ca9b13ebce169",
+        "trueNextSha256": "e29f7ec4e469a2d148b1a310d447f918a4db8084628d3d68688ca9b13ebce169",
+        "label": 1,
+        "selectedPositions": [
+          4,
+          24,
+          30
+        ],
+        "selectedOriginalIds": [
+          6,
+          21,
+          7
+        ],
+        "originalSideLengths": [
+          26,
+          24
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          7,
+          1
+        ],
+        "bId": [
+          "validation",
+          44,
+          2621,
+          5
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          7,
+          2
+        ],
+        "aSha256": "20df103d471692f95cb9fda41553bc5c274e15ad30d32aaec50705a82c0cbebf",
+        "bSha256": "4cfec82fab2f7c8ece03a194080f3b438b68bbd07153a4845de1f190e93f3a80",
+        "trueNextSha256": "e29f7ec4e469a2d148b1a310d447f918a4db8084628d3d68688ca9b13ebce169",
+        "label": 0,
+        "selectedPositions": [
+          2,
+          6,
+          10
+        ],
+        "selectedOriginalIds": [
+          68,
+          174,
+          89
+        ],
+        "originalSideLengths": [
+          26,
+          40
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          8,
+          0
+        ],
+        "bId": [
+          "validation",
+          0,
+          8,
+          1
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          8,
+          1
+        ],
+        "aSha256": "28cf24da27af08ef582839572c8b007c5efab1c739db6a6af737af53ececc7b6",
+        "bSha256": "e87d4c54e70fab9f2fa2b459ea4cb3a2ecac901c7c217cc67201684f0cd7e3d6",
+        "trueNextSha256": "e87d4c54e70fab9f2fa2b459ea4cb3a2ecac901c7c217cc67201684f0cd7e3d6",
+        "label": 1,
+        "selectedPositions": [
+          6,
+          10,
+          25
+        ],
+        "selectedOriginalIds": [
+          27,
+          94,
+          6
+        ],
+        "originalSideLengths": [
+          15,
+          41
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          8,
+          0
+        ],
+        "bId": [
+          "validation",
+          56,
+          3575,
+          5
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          8,
+          1
+        ],
+        "aSha256": "28cf24da27af08ef582839572c8b007c5efab1c739db6a6af737af53ececc7b6",
+        "bSha256": "8c7d084b8756235752143b80d72312aaf3fcf8f1e023a430f0af55f6f32f07ad",
+        "trueNextSha256": "e87d4c54e70fab9f2fa2b459ea4cb3a2ecac901c7c217cc67201684f0cd7e3d6",
+        "label": 0,
+        "selectedPositions": [
+          4,
+          6,
+          24
+        ],
+        "selectedOriginalIds": [
+          8,
+          27,
+          194
+        ],
+        "originalSideLengths": [
+          15,
+          49
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          8,
+          1
+        ],
+        "bId": [
+          "validation",
+          0,
+          8,
+          2
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          8,
+          2
+        ],
+        "aSha256": "e87d4c54e70fab9f2fa2b459ea4cb3a2ecac901c7c217cc67201684f0cd7e3d6",
+        "bSha256": "da1e829d3c086546b4fa4e16e3c43987f57e5b76510ba86245c778ebd31799c4",
+        "trueNextSha256": "da1e829d3c086546b4fa4e16e3c43987f57e5b76510ba86245c778ebd31799c4",
+        "label": 1,
+        "selectedPositions": [
+          4,
+          26,
+          29
+        ],
+        "selectedOriginalIds": [
+          27,
+          10,
+          27
+        ],
+        "originalSideLengths": [
+          41,
+          16
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          8,
+          1
+        ],
+        "bId": [
+          "validation",
+          32,
+          1887,
+          5
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          8,
+          2
+        ],
+        "aSha256": "e87d4c54e70fab9f2fa2b459ea4cb3a2ecac901c7c217cc67201684f0cd7e3d6",
+        "bSha256": "5b04eeb59e3bdb4013ff1b2a8a662efdb94466c0614a55936e8f5170198cdfb5",
+        "trueNextSha256": "da1e829d3c086546b4fa4e16e3c43987f57e5b76510ba86245c778ebd31799c4",
+        "label": 0,
+        "selectedPositions": [
+          9,
+          15,
+          23
+        ],
+        "selectedOriginalIds": [
+          6,
+          21,
+          74
+        ],
+        "originalSideLengths": [
+          41,
+          32
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          9,
+          0
+        ],
+        "bId": [
+          "validation",
+          0,
+          9,
+          1
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          9,
+          1
+        ],
+        "aSha256": "b0799053f100b49945698faf8d1cb77266bbf10a3abb1b0beff9d319c3d65e92",
+        "bSha256": "b5e1b94571b91edb48ea335090fc21ab5763da87e73fa5214f0a8c293507270a",
+        "trueNextSha256": "b5e1b94571b91edb48ea335090fc21ab5763da87e73fa5214f0a8c293507270a",
+        "label": 1,
+        "selectedPositions": [
+          12,
+          13
+        ],
+        "selectedOriginalIds": [
+          6,
+          10
+        ],
+        "originalSideLengths": [
+          15,
+          10
+        ],
+        "packedLength": 28,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          9,
+          0
+        ],
+        "bId": [
+          "validation",
+          8,
+          568,
+          0
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          9,
+          1
+        ],
+        "aSha256": "b0799053f100b49945698faf8d1cb77266bbf10a3abb1b0beff9d319c3d65e92",
+        "bSha256": "b4ffc74a084356e4e7d0cfa0c5d65f7d6abb97ce2562616071104f8766233d73",
+        "trueNextSha256": "b5e1b94571b91edb48ea335090fc21ab5763da87e73fa5214f0a8c293507270a",
+        "label": 0,
+        "selectedPositions": [
+          24,
+          26
+        ],
+        "selectedOriginalIds": [
+          6,
+          40
+        ],
+        "originalSideLengths": [
+          15,
+          24
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          9,
+          1
+        ],
+        "bId": [
+          "validation",
+          0,
+          9,
+          2
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          9,
+          2
+        ],
+        "aSha256": "b5e1b94571b91edb48ea335090fc21ab5763da87e73fa5214f0a8c293507270a",
+        "bSha256": "7fa40e08f618058a0d10174624f81575151936a47e943d7345b52628e416b516",
+        "trueNextSha256": "7fa40e08f618058a0d10174624f81575151936a47e943d7345b52628e416b516",
+        "label": 1,
+        "selectedPositions": [
+          1,
+          15
+        ],
+        "selectedOriginalIds": [
+          5,
+          6
+        ],
+        "originalSideLengths": [
+          10,
+          35
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          9,
+          1
+        ],
+        "bId": [
+          "validation",
+          47,
+          3067,
+          5
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          9,
+          2
+        ],
+        "aSha256": "b5e1b94571b91edb48ea335090fc21ab5763da87e73fa5214f0a8c293507270a",
+        "bSha256": "4f6a9753d020ee6420a35ef4357e62b0f22a23506c0f77f0c4bf48ed3a79704a",
+        "trueNextSha256": "7fa40e08f618058a0d10174624f81575151936a47e943d7345b52628e416b516",
+        "label": 0,
+        "selectedPositions": [
+          7,
+          19
+        ],
+        "selectedOriginalIds": [
+          496,
+          74
+        ],
+        "originalSideLengths": [
+          10,
+          10
+        ],
+        "packedLength": 23,
+        "truncated": false
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          10,
+          0
+        ],
+        "bId": [
+          "validation",
+          0,
+          10,
+          1
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          10,
+          1
+        ],
+        "aSha256": "ebb90d297d2c7eff3893542ce4ba20c8695b46721729e3b1da767a1d29536155",
+        "bSha256": "586beb26f053ac08b7970cd3f0fc0205c5cfa8b2935a9117e24ea3ba3ee09f63",
+        "trueNextSha256": "586beb26f053ac08b7970cd3f0fc0205c5cfa8b2935a9117e24ea3ba3ee09f63",
+        "label": 1,
+        "selectedPositions": [
+          1,
+          20,
+          27
+        ],
+        "selectedOriginalIds": [
+          5,
+          549,
+          6
+        ],
+        "originalSideLengths": [
+          13,
+          28
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          10,
+          0
+        ],
+        "bId": [
+          "validation",
+          32,
+          1893,
+          1
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          10,
+          1
+        ],
+        "aSha256": "ebb90d297d2c7eff3893542ce4ba20c8695b46721729e3b1da767a1d29536155",
+        "bSha256": "c1d97d49515ebd3936d5af644e20a67afc18316171c4855345c59cc05465099d",
+        "trueNextSha256": "586beb26f053ac08b7970cd3f0fc0205c5cfa8b2935a9117e24ea3ba3ee09f63",
+        "label": 0,
+        "selectedPositions": [
+          1,
+          7,
+          21
+        ],
+        "selectedOriginalIds": [
+          5,
+          27,
+          14
+        ],
+        "originalSideLengths": [
+          13,
+          34
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          10,
+          1
+        ],
+        "bId": [
+          "validation",
+          0,
+          10,
+          2
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          10,
+          2
+        ],
+        "aSha256": "586beb26f053ac08b7970cd3f0fc0205c5cfa8b2935a9117e24ea3ba3ee09f63",
+        "bSha256": "80c2c97c1ec7718cc0268e417c95a5c86b56fba93798cc29d902f1c93cf82f85",
+        "trueNextSha256": "80c2c97c1ec7718cc0268e417c95a5c86b56fba93798cc29d902f1c93cf82f85",
+        "label": 1,
+        "selectedPositions": [
+          19,
+          26,
+          28
+        ],
+        "selectedOriginalIds": [
+          5,
+          9,
+          8
+        ],
+        "originalSideLengths": [
+          28,
+          12
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          10,
+          1
+        ],
+        "bId": [
+          "validation",
+          18,
+          1022,
+          4
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          10,
+          2
+        ],
+        "aSha256": "586beb26f053ac08b7970cd3f0fc0205c5cfa8b2935a9117e24ea3ba3ee09f63",
+        "bSha256": "ba056e7da5ec0eac7c0988dd13691f52a244cd57de71e302c2a0b6571416c41c",
+        "trueNextSha256": "80c2c97c1ec7718cc0268e417c95a5c86b56fba93798cc29d902f1c93cf82f85",
+        "label": 0,
+        "selectedPositions": [
+          2,
+          7,
+          13
+        ],
+        "selectedOriginalIds": [
+          152,
+          6,
+          6
+        ],
+        "originalSideLengths": [
+          28,
+          54
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          17,
+          0
+        ],
+        "bId": [
+          "validation",
+          0,
+          17,
+          1
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          17,
+          1
+        ],
+        "aSha256": "f930983d982c8400d3e707891ca97b40fd711a622a5b888ff0344395e3937098",
+        "bSha256": "410e16673878140f65b2d9f63ec1185f06a786a1e1bef792fe4c88e6060329de",
+        "trueNextSha256": "410e16673878140f65b2d9f63ec1185f06a786a1e1bef792fe4c88e6060329de",
+        "label": 1,
+        "selectedPositions": [
+          20,
+          27
+        ],
+        "selectedOriginalIds": [
+          11,
+          6
+        ],
+        "originalSideLengths": [
+          38,
+          23
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          17,
+          0
+        ],
+        "bId": [
+          "validation",
+          13,
+          781,
+          1
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          17,
+          1
+        ],
+        "aSha256": "f930983d982c8400d3e707891ca97b40fd711a622a5b888ff0344395e3937098",
+        "bSha256": "d98d53443b070e6b636a1a62fe09f0b97e9410bdd1c922d78fb86e9ff03ba9e4",
+        "trueNextSha256": "410e16673878140f65b2d9f63ec1185f06a786a1e1bef792fe4c88e6060329de",
+        "label": 0,
+        "selectedPositions": [
+          1,
+          11
+        ],
+        "selectedOriginalIds": [
+          271,
+          7
+        ],
+        "originalSideLengths": [
+          38,
+          33
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          17,
+          1
+        ],
+        "bId": [
+          "validation",
+          0,
+          17,
+          2
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          17,
+          2
+        ],
+        "aSha256": "410e16673878140f65b2d9f63ec1185f06a786a1e1bef792fe4c88e6060329de",
+        "bSha256": "c50164076822bfeba32e4f859be5a9fd5894bdb9e9a85a0cac5226eea1de205c",
+        "trueNextSha256": "c50164076822bfeba32e4f859be5a9fd5894bdb9e9a85a0cac5226eea1de205c",
+        "label": 1,
+        "selectedPositions": [
+          3,
+          10,
+          20
+        ],
+        "selectedOriginalIds": [
+          493,
+          271,
+          5
+        ],
+        "originalSideLengths": [
+          23,
+          20
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          17,
+          1
+        ],
+        "bId": [
+          "validation",
+          44,
+          2636,
+          2
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          17,
+          2
+        ],
+        "aSha256": "410e16673878140f65b2d9f63ec1185f06a786a1e1bef792fe4c88e6060329de",
+        "bSha256": "5b2578147081fca9f9ec426ec4225a3a7785836f1b6bc3cc5207849e5c72db38",
+        "trueNextSha256": "c50164076822bfeba32e4f859be5a9fd5894bdb9e9a85a0cac5226eea1de205c",
+        "label": 0,
+        "selectedPositions": [
+          23,
+          30
+        ],
+        "selectedOriginalIds": [
+          8,
+          5
+        ],
+        "originalSideLengths": [
+          23,
+          19
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          17,
+          2
+        ],
+        "bId": [
+          "validation",
+          0,
+          17,
+          3
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          17,
+          3
+        ],
+        "aSha256": "c50164076822bfeba32e4f859be5a9fd5894bdb9e9a85a0cac5226eea1de205c",
+        "bSha256": "324add5873fad372e77f42dfd61cd59d6a1eb07359bf5db480b1bc720e062eca",
+        "trueNextSha256": "324add5873fad372e77f42dfd61cd59d6a1eb07359bf5db480b1bc720e062eca",
+        "label": 1,
+        "selectedPositions": [
+          7,
+          8,
+          14
+        ],
+        "selectedOriginalIds": [
+          69,
+          7,
+          5
+        ],
+        "originalSideLengths": [
+          20,
+          18
+        ],
+        "packedLength": 32,
+        "truncated": true
+      },
+      {
+        "aId": [
+          "validation",
+          0,
+          17,
+          2
+        ],
+        "bId": [
+          "validation",
+          12,
+          721,
+          8
+        ],
+        "trueNextId": [
+          "validation",
+          0,
+          17,
+          3
+        ],
+        "aSha256": "c50164076822bfeba32e4f859be5a9fd5894bdb9e9a85a0cac5226eea1de205c",
+        "bSha256": "0c7a695c31627e166a7c0c76d364e3bda497c32a4c32d6a040e9d8c4420224ac",
+        "trueNextSha256": "324add5873fad372e77f42dfd61cd59d6a1eb07359bf5db480b1bc720e062eca",
+        "label": 0,
+        "selectedPositions": [
+          7,
+          12,
+          26
+        ],
+        "selectedOriginalIds": [
+          69,
+          376,
+          6
+        ],
+        "originalSideLengths": [
+          20,
+          22
+        ],
+        "packedLength": 32,
+        "truncated": true
+      }
+    ],
+    "config": {
+      "d": 32,
+      "ffn": 64,
+      "heads": 4,
+      "layers": 2,
+      "maxlen": 32,
+      "dropout": 0.1,
+      "parameters": 66438,
+      "seed": 2035,
+      "shuffle": 2036,
+      "AdamLR": 0.003,
+      "batch": 16,
+      "epochs": 10,
+      "updates": 80,
+      "clip": 1
+    },
+    "initial": {
+      "MLM": 6.740113533149331,
+      "NSP": 0.7229296192526817,
+      "selectedTokens": 472,
+      "pairs": 128
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train": {
+          "MLM": 5.9825294623940675,
+          "NSP": 0.6854901015758514,
+          "selectedTokens": 472,
+          "pairs": 128
+        },
+        "validation": {
+          "MLM": 6.011714705501694,
+          "NSP": 0.6911909878253937,
+          "selectedTokens": 83,
+          "pairs": 32
+        }
+      },
+      {
+        "epoch": 2,
+        "train": {
+          "MLM": 5.418399293543929,
+          "NSP": 0.6802158206701279,
+          "selectedTokens": 472,
+          "pairs": 128
+        },
+        "validation": {
+          "MLM": 5.46975046180817,
+          "NSP": 0.6893170773983002,
+          "selectedTokens": 83,
+          "pairs": 32
+        }
+      },
+      {
+        "epoch": 3,
+        "train": {
+          "MLM": 5.036474842136189,
+          "NSP": 0.6314233392477036,
+          "selectedTokens": 472,
+          "pairs": 128
+        },
+        "validation": {
+          "MLM": 5.128095695771367,
+          "NSP": 0.7135070860385895,
+          "selectedTokens": 83,
+          "pairs": 32
+        }
+      },
+      {
+        "epoch": 4,
+        "train": {
+          "MLM": 4.8473993075096,
+          "NSP": 0.43514230102300644,
+          "selectedTokens": 472,
+          "pairs": 128
+        },
+        "validation": {
+          "MLM": 5.046423119234752,
+          "NSP": 0.7030085623264313,
+          "selectedTokens": 83,
+          "pairs": 32
+        }
+      },
+      {
+        "epoch": 5,
+        "train": {
+          "MLM": 4.715730117539228,
+          "NSP": 0.30503590777516365,
+          "selectedTokens": 472,
+          "pairs": 128
+        },
+        "validation": {
+          "MLM": 5.04657423639872,
+          "NSP": 1.0240594148635864,
+          "selectedTokens": 83,
+          "pairs": 32
+        }
+      },
+      {
+        "epoch": 6,
+        "train": {
+          "MLM": 4.615409592450676,
+          "NSP": 0.35565767530351877,
+          "selectedTokens": 472,
+          "pairs": 128
+        },
+        "validation": {
+          "MLM": 5.113542303981551,
+          "NSP": 0.9159963726997375,
+          "selectedTokens": 83,
+          "pairs": 32
+        }
+      },
+      {
+        "epoch": 7,
+        "train": {
+          "MLM": 4.508437916383905,
+          "NSP": 0.2730492018163204,
+          "selectedTokens": 472,
+          "pairs": 128
+        },
+        "validation": {
+          "MLM": 5.179422769201807,
+          "NSP": 1.3567392826080322,
+          "selectedTokens": 83,
+          "pairs": 32
+        }
+      },
+      {
+        "epoch": 8,
+        "train": {
+          "MLM": 4.39860912904901,
+          "NSP": 0.2312680808827281,
+          "selectedTokens": 472,
+          "pairs": 128
+        },
+        "validation": {
+          "MLM": 5.221028890954443,
+          "NSP": 1.2101951241493225,
+          "selectedTokens": 83,
+          "pairs": 32
+        }
+      },
+      {
+        "epoch": 9,
+        "train": {
+          "MLM": 4.284206034773487,
+          "NSP": 0.2065266501158476,
+          "selectedTokens": 472,
+          "pairs": 128
+        },
+        "validation": {
+          "MLM": 5.212369436241058,
+          "NSP": 1.1295132040977478,
+          "selectedTokens": 83,
+          "pairs": 32
+        }
+      },
+      {
+        "epoch": 10,
+        "train": {
+          "MLM": 4.152513019109176,
+          "NSP": 0.17532879067584872,
+          "selectedTokens": 472,
+          "pairs": 128
+        },
+        "validation": {
+          "MLM": 5.298478275896555,
+          "NSP": 1.6091967225074768,
+          "selectedTokens": 83,
+          "pairs": 32
+        }
+      }
+    ],
+    "validationBatch7": {
+      "MLM": 5.298478643578219,
+      "NSP": 1.609196811914444,
+      "selectedTokens": 83,
+      "pairs": 32
+    },
+    "evaluationStateGradsUnchanged": true,
+    "positionGradientNorm": 0.06605345755815506,
+    "bidirectionalFuturePerturbMaxDiff": 0.16000604629516602,
+    "sourcePadIdentityMaxDiff": 0.0,
+    "selectedLossSynthetic": {
+      "good": 0.12692804634571075,
+      "incorrectAllSlotsMean": 2.751397132873535,
+      "incorrectBroadcast": 8.254192352294922,
+      "ignoredGradientZero": true
+    },
+    "checkpointTransfer": "this randomly initialized tiny model is NOT claimed to be textbook pretrained checkpoint; SNLI uses separate real downloaded weights"
+  },
+  "transfer": {
+    "checkpoint": "exact textbook bert.small.torch weights; all keys strict and initial tensors identical",
+    "weightsSHA256": "6b50cf1eb763954014df9734e0ce539dae7a9e974c8986e6e3c8815e9754f958",
+    "vocabSHA256": "72054eefdee98d1f83894df640f1bae9829b1398f8a2b77143a75798bc48ab22",
+    "vocabSize": 60005,
+    "config": {
+      "d": 256,
+      "ffn": 512,
+      "heads": 4,
+      "layers": 2,
+      "maxPosition": 512,
+      "inputMaxLength": 32,
+      "dropout": 0.2,
+      "ReLU": true,
+      "postnorm": true,
+      "trainablePositionFix": true,
+      "headSeed": 2037,
+      "shuffleSeed": 2038,
+      "AdamLR": 0.0001,
+      "batch": 8,
+      "epochs": 2,
+      "updatesEach": 16
+    },
+    "SNLI": {
+      "train": {
+        "publisherRows": 550152,
+        "selectedRows0Based": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63
+        ],
+        "labelCounts": {
+          "2": 22,
+          "1": 20,
+          "0": 22
+        },
+        "discardedMissingLabelsFullSplit": 785,
+        "selectedTextSHA256": [
+          "81c8a9cf6ad34b2cba9e83b569726af794bd78ea7b00444bdcb6f25842313da2",
+          "b7fb758f8aa667ff74bb04b0920f46ec118fc1904e7335091f9f414bf04a98af",
+          "30b29ac5362b0cd8702032ad46e99a590bb9520b483a195108cf31cb7f2b8f51",
+          "0a38075d8f52f54e15cd671052edf03479a085dc5c7cb7ee5fa9da10bd7663b0",
+          "90ccc390a585de341c445c65a5e2812a5e9b32fa06f7d4e1b4cd3d88c4f91afc",
+          "ab51d838b9c795496f965fa860414fc48c2ac13463b2e05ee690768745f6364b",
+          "67668261826af054d3895b4c6f99e8ee137075e302d5a4f0822095ab942e1a3a",
+          "f81f75e17bac5cfd9df4cd7a9716354429dcf01a495b7318f918bb9eb6a328ee",
+          "a678e8727019aa1bf109b4cae19554835710e7cab4fda624f826d799e65134e1",
+          "26a4f1cb4588e2f61d66cdae92f18f1abfd2e84e495af6c675e49c82b0ef4090",
+          "79e065b96ab78acb7277f0e4bef97c84c5ece608faf5ff31bff8bcf5498c4010",
+          "d2806861124ed4a52e864c6b0236d1aa40729d0534ab94a5d528ad6d87986528",
+          "51781954f9cc2fe87f80b4d1cf11b1dac360c33fd0d87da023d9b71391ce7d8c",
+          "366b507ebd9e0729802d2844bbf803efa48e9a321b697783977c0c8cf898a72d",
+          "fdd14cf2631882f7190d8c6dc3e86159e81d5d44215f52f34144504f159cdc82",
+          "0fabd0a79f463c4887c37fd3fb49473f7ba05ddd455403bc86bc58041d54f1f6",
+          "7ad3a94aad2175f1bf6d4ab1afb530f7b63c09f38bdd4417f95b6b56822c3f18",
+          "1da44c94df6048080ab7b3ae3aa72832dcf3f740ce332b934c0c2b2641c4f6ac",
+          "6c6aa51de8c0bd51291bb3f89307277d9328673724daee0deb4140cc31d2ea04",
+          "3d3e28bf4588a59ef9977a843379e8b9660a2b63797e9dfee379c68c40a553dc",
+          "221f91d757600dba4e6d7d5ca92dde07550c9245c1202525dfd740be3f2e12e1",
+          "ba220eb49483eb1fb25acb49d4b8d0500387d4cf8c21949a1d285dd5fb8b7357",
+          "5b967de12e49ddf44a296d25b086424a2e339f6899081d41dd17928218a6fe2f",
+          "b97c0fa7182fc17b9640532e46b60feab1519bc0d952c520ed9317dfccb7f4fe",
+          "4cd9b3cae50d44c3bc281138a0fb18833b7527f350ba8ca1be6868b154ac1a9d",
+          "37a57fd602bcaf0222422285dd830fe8a8088e9feb603085f663c58f99616176",
+          "25af075abb624987c18819de29ecec6105f1fa179797e565c3d188b049641461",
+          "a1eb8a92404555c23ef014536720c8c06b7100e9bd0a84163be68ff567187c17",
+          "ff475e280ce02d87d5be71a9264e1a299145c4421f1781ef22954c91028a8eb8",
+          "08f447177fcd41b1fdd35687c7878a899881a8d00cdd5b09c7702c88ac99662f",
+          "4cc0cbfaf48e2ec46ff7f2985ca643fc9931343e555d61a5a39029c1ac0d9522",
+          "5ebd21086fff8d8ccdfb8e3c751937811ff6925f4823b6f369af2d974d7f7f91",
+          "5ed3edb65c29bbafe7c5ae203e21e18327022aaf29afec39e1f7b912df731017",
+          "a520ad11a1b1f797d973a205c75d9ecad01b953bea522b51565be5044fa3581d",
+          "32248170c3801132c2711902c6407c71a84100ff3987eecbac87960a56b48af3",
+          "5d68da52f90d1b2ce1260b45061fff4e6cff9c5351416d7a51ab445ad1821a6e",
+          "025fe095d2edf11cf0c2f0360632484ec1dbc7185022515e59c08b74aeb3817f",
+          "730cb1f8ea376c31a0962c57dc43dd75a0dbf78b46c5a96b7c3d124103be9742",
+          "26a555cb4ee83509efd2d33e04602e0f0f87d67f4ca485fa257db53df41fe19f",
+          "31355f42e6772f7e204793472aff5789d1c627280036ea534857755c8944c052",
+          "be9224c6aea79116348eda545ffe215abe9f1f1f8a3b84156b89511da665f99c",
+          "4044e27155c9ebdcd6c029db674a9780769eb1b3546b7d7add6ef9e9abc7255e",
+          "165801a4353d5b055aacf195d5bf4619e7f502605fe54373cf46fe414a888d86",
+          "15e9f31d8a872140b6e44d77ec9abf8b4fde6aac5b1cd3fa2738a56c6697016c",
+          "302f9f0d7db5fdc7e7a37a825854f8c16be310a49220d2ed8a9f9a1a392c397a",
+          "1bf5163bb5cf93e9abb5bd56e850895430b5260caa0dfcbf063713e136de907c",
+          "73662f9fb2cf223e80499db8c1c052922046ccd16fdf51f9f36bb0640f273c6c",
+          "099807be1fc760d45eba937f3ea79b36afcded23b8916fa77ab3f6ca7062ab83",
+          "a3955ab4905a4b625f9057db3bec14287b5018c4ab892e6a7ec4a8abf01ef4b1",
+          "f5053029fb24ec53bc040928efee5e20f4576861b89a80c1251fed83c10577a6",
+          "1290653c392f66b8c2ed20fa5a39e8bbe9754f51b000624c37b41e031abc995d",
+          "a6c3b45a7d35da65d28fa966d331d4a291b03141cea65257f2001b06d56f6250",
+          "ba6cfe6bcd9fcc91fadda41c49b77757afa7fbfa57cbf78585908586ecac69e5",
+          "9d967a8b9dc486ceb816df338231dfea91bb147398ee96451cd6d16818e6879b",
+          "13a94f2ebf911c842a9057c2e7bbaca89bedc375065e0ad7658285899ba170e2",
+          "72799fce5747f2cb91fcd29854521e046c34612ad5cf7d0d4fa74a60ea782301",
+          "aacb33807b5a8919226b62575407a4697feadae6a9bb604e4888f5cddab4e669",
+          "12a777f0da2c062748291bbf0fb868f218fc1037f69cb4f56192d6693daa155c",
+          "991eb0938368d7c94eef7b9c851cd9b2b922490d8e99f82d0886cb257cf0f58f",
+          "b3576553cb1d5b56dd79a8af97281b3b2c334d79ddd154090388667f93562331",
+          "051f55219ed21f91e5fccaafbfe8fe0a32bda917c7efd74dfc6cff283cf199b7",
+          "a2d2a48667f4aff733f225ce791548a7692f2930b23a1157ba371c982d07f4f6",
+          "ec4451dd27d6c5e9bbb7612ecb6d13183e310df2ebfa6083e0f8bbbb1e3d6a0f",
+          "39475f0fd54e5f59bf00ca4152855f8a044832a9f164e5bf2730d02a5494e0ce"
+        ],
+        "truncatedPairs": 7,
+        "oovTokens": 150
+      },
+      "validation": {
+        "publisherRows": 10000,
+        "selectedRows0Based": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "labelCounts": {
+          "2": 8,
+          "0": 10,
+          "1": 14
+        },
+        "discardedMissingLabelsFullSplit": 158,
+        "selectedTextSHA256": [
+          "fd8e3708c45efe7b63655f7cf31fe2546095e25178549bc801f252802dfe2227",
+          "303d29520fe5ebd6442e3b22032c00e91311ab95fd0d9f58609c6b6211280e88",
+          "318a401dc5e573e226684da66001573e7068901218d47edaedc85e6125993d04",
+          "d8c5e72554c6d3a7734ae968164fcd975e759bfc48cb89cd6990d0be64d7ad5e",
+          "d39597120b6289ae2fe7e173a790de1f70a66df819b15ea1dfcb5e3e3e88dda3",
+          "6fd6ff8a2e6eab8b95cb3a255fad2b3475c8f357fe4ecaa267141f66c72cb552",
+          "50b5fa294370dcf854390ba54843b479fd4ec81f347f1a4a98bae50a1e589b85",
+          "4ce676288e6a4071277c2cb166abd37907f228f5f8867d82f0bec0928337f9bf",
+          "770f9df2c7ecb6677f10dba7f220be5f8e45786677a81ca82ea8fb54971987d1",
+          "554e5707322708b755b74972a13a338ce62e7a4040419434c7ef125c4996bf28",
+          "096ca45285ee81ee2483249ab34b42c5a7ce147f3d7aa342c6e4c3c22052bf2f",
+          "819e7a3e04a6b700ddd8475af4420b3295fe5802f2a48284434f5c090f46cc09",
+          "3d1046f7d80a4d0a6574e724e961af0f90500db346ac526025ceae96e0abe763",
+          "ba64465e02bd8774f8aaddd5631d0501e72f8b492361f9526a9a1b740b6d3ae9",
+          "7310ac5359f5c22f4a3bd57d69ec14698cddef36bc7843e651ac38f52f080e4d",
+          "dae2f360bbe1ab188ec2657bbb45f33f740fafdb407871d35a9a3c12fc9435bc",
+          "610b9b79ca9a3986dba21eb033ed07edb57d0098a863057409125823dfe2e13e",
+          "3f8686a348aee25db6cc695d640040e861c2c2ce955d7b17b1e3fdd418395cf9",
+          "dc7cf4474f0f8ef5c492f31698470b3cab24073af1167e5b48de329175c81043",
+          "db847a127bcabf37de4f467ec3cd14d32c49dd3ee2813c9fbd34c9db3aca4034",
+          "f8648b41c786fb12c78ff5b5e3341908808e4ac669e322a5756903d3c0f59715",
+          "54b88b5933d108fca7547ac92ffaab8ff8ebc658b32717b53b813b6548cf7bad",
+          "4751ab4967025e67cbf60a512871fcbe2563395058e2f83b4f1f5347c5aa209f",
+          "1a9f0c202c02320da406822faa27089c4857bd0ed3878f434308c9550928558a",
+          "bbbbd38894f392fad9172fe3755fa2c8ed28a798b58bf554328e38d674e39a44",
+          "4e4b3b3f636ee1d613d49bebac52668bb925e90d9b27dc9e7b6462ee6c1cf367",
+          "d704eb2ddd46282b19238c89076701fdc737de87718b20f75db00fa588eea293",
+          "a5f7344222f887e626358719434a83b573ad4ec701b39072c3d44f0c5d601836",
+          "5c407effaf1b1f563f9ef870f8485f908dcedb06e93f454ce5a076d7d3be6d98",
+          "3725d444aec163479c28b6b52b5a68ee81370cf2551629126ffd1e6c951738aa",
+          "3d7a19220c01400a2e7743f9e0b1f039d393143be7cf126b76998ce0106fdc20",
+          "44c3ce16e5c40f36f6d19172180aa45560551eb3c49b5bd3c62f7646820a23da"
+        ],
+        "truncatedPairs": 7,
+        "oovTokens": 60
+      },
+      "format": "Stanford publisher HF plain_text Parquet, no binary parses or pairID",
+      "labelMap": "HF0entailment->0,1neutral->2,2contradiction->1; -1 excluded",
+      "selectedPremiseOverlap": 0,
+      "test": "not downloaded/read/evaluated"
+    },
+    "models": {
+      "frozenEncoderAndPooler": {
+        "trainableParameters": 771,
+        "initialTrain": {
+          "CE": 1.237756833434105,
+          "correct": 23,
+          "count": 64
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "CE": 1.2010905593633652,
+              "correct": 21,
+              "count": 64
+            },
+            "validation": {
+              "CE": 1.1107120215892792,
+              "correct": 13,
+              "count": 32
+            }
+          },
+          {
+            "epoch": 2,
+            "train": {
+              "CE": 1.170996069908142,
+              "correct": 20,
+              "count": 64
+            },
+            "validation": {
+              "CE": 1.0954023003578186,
+              "correct": 13,
+              "count": 32
+            }
+          }
+        ],
+        "backboneAndPoolerMaxDiff": 0.0,
+        "headMaxDiff": 0.0013941079378128052,
+        "positionGradNormLastStep": null,
+        "validationBatch5": {
+          "CE": 1.09540231898427,
+          "correct": 13,
+          "count": 32
+        },
+        "evaluationStateGradsUnchanged": true,
+        "first8PredictedLabels": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "first8GoldLabels": [
+          2,
+          0,
+          1,
+          0,
+          2,
+          1,
+          1,
+          2
+        ]
+      },
+      "fullFineTune": {
+        "trainableParameters": 16613635,
+        "initialTrain": {
+          "CE": 1.237756833434105,
+          "correct": 23,
+          "count": 64
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "CE": 1.0386593490839005,
+              "correct": 29,
+              "count": 64
+            },
+            "validation": {
+              "CE": 1.0895816683769226,
+              "correct": 17,
+              "count": 32
+            }
+          },
+          {
+            "epoch": 2,
+            "train": {
+              "CE": 1.0128633752465248,
+              "correct": 36,
+              "count": 64
+            },
+            "validation": {
+              "CE": 1.1219905614852905,
+              "correct": 14,
+              "count": 32
+            }
+          }
+        ],
+        "backboneAndPoolerMaxDiff": 0.0015164166688919067,
+        "headMaxDiff": 0.0009620785713195801,
+        "positionGradNormLastStep": 3.1228342056274414,
+        "validationBatch5": {
+          "CE": 1.1219905093312263,
+          "correct": 14,
+          "count": 32
+        },
+        "evaluationStateGradsUnchanged": true,
+        "first8PredictedLabels": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "first8GoldLabels": [
+          2,
+          0,
+          1,
+          0,
+          2,
+          1,
+          1,
+          2
+        ]
+      }
+    }
+  },
+  "notExecuted": [
+    "industrial/original BERT reproduction",
+    "full student solutions",
+    "full WikiText/SNLI",
+    "official test evaluation",
+    "causal BERT generation or perplexity",
+    "GPU/MPS or throughput",
+    "standalone config.json acquisition (none in weights archive)",
+    "redistribution of raw corpora or weights"
+  ]
+}

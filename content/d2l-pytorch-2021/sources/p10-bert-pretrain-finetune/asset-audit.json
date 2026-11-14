@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "labId": "bert-pretrain-finetune",
+  "auditedAt": "2026-11-14",
+  "cacheRoot": "/tmp/d2l-p10-corpus-cache",
+  "workerExecution": "Public download, archive listing/extraction, JSON vocabulary identity and cryptographic hashes only; no model loading, numerical checks, training, tests, builds or formatters.",
+  "assets": [
+    {
+      "id": "pretraining-corpus",
+      "identity": "Salesforce/wikitext, wikitext-2-v1 (non-raw), publisher Parquet distribution",
+      "publisher": "Salesforce; Stephen Merity, Caiming Xiong, James Bradbury, Richard Socher; underlying Wikipedia contributors",
+      "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+      "metadataUrl": "https://huggingface.co/api/datasets/Salesforce/wikitext",
+      "treeUrl": "https://huggingface.co/api/datasets/Salesforce/wikitext/tree/main?recursive=true",
+      "textbookOriginal": {
+        "url": "https://s3.amazonaws.com/research.metamind.io/wikitext/wikitext-2-v1.zip",
+        "expectedSha1": "3c914d17d80b1459be871a5039ac23e752a53cbe",
+        "acquired": false,
+        "attempts": [
+          "Original endpoint yielded 487-byte XML PermanentRedirect, not a ZIP; preserved only in external cache as wikitext-original-endpoint-error.xml.",
+          "Advertised virtual-host endpoint failed certificate hostname validation; TLS validation was NOT disabled.",
+          "us-west-2 regional path endpoint returned403; no access-control bypass.",
+          "D2L candidate mirror HEAD returned403; no content downloaded."
+        ]
+      },
+      "files": [
+        {
+          "url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-v1/train-00000-of-00001.parquet",
+          "cache": "/tmp/d2l-p10-corpus-cache/wikitext-2-train.parquet",
+          "bytes": 6068114,
+          "sha256": "dfc27e4360c639dc1fba1e403bfffd53af4a5c75d5363b5724d49bf12d07cce6",
+          "matchesPublisherLfsOid": true,
+          "split": "train"
+        },
+        {
+          "url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-v1/validation-00000-of-00001.parquet",
+          "cache": "/tmp/d2l-p10-corpus-cache/wikitext-2-validation.parquet",
+          "bytes": 617738,
+          "sha256": "717de9a0c1c0b0b1dfdd8f1e6ad8a30ece618bbde81f5da8207277547d324215",
+          "matchesPublisherLfsOid": true,
+          "split": "validation"
+        }
+      ],
+      "testDownloaded": false,
+      "terms": {
+        "evidence": "publisher-terms-excerpts.txt",
+        "cardMetadata": ["cc-by-sa-3.0", "gfdl"],
+        "cardProse": "CC BY-SA4.0",
+        "versionConflictResolved": false,
+        "permittedScopeDecision": "Publisher publicly offers non-gated dataset for language modeling; bounded local teaching experiment with source attribution. No corpus or derived weights redistribution, no universal rights claim.",
+        "conditions": "Preserve publisher and Wikipedia attribution, source/license URLs and modifications; source article attribution required before public text excerpts."
+      },
+      "preprocessingContract": "Keep publisher splits. Restore documents from top-level = title = headers before paragraph/sentence splitting. Lowercase, split sentences on ' . ', whitespace tokens; fit small-pretraining vocabulary on selected training data only. NSP negatives same split, different document, exclude identical A/true-successor text. Candidate/negative sampling differs explicitly from textbook.",
+      "limitations": ["Parquet is a named alternative release format, NOT verified byte-equivalent original ZIP.", "Non-raw contains pre-existing <unk>; do not silently switch to raw or claim WordPiece.", "Publisher description has unresolved license version inconsistency."]
+    },
+    {
+      "id": "nli-corpus",
+      "identity": "stanfordnlp/snli plain_text publisher Parquet distribution",
+      "publisher": "Stanford NLP Group; Samuel R. Bowman, Gabor Angeli, Christopher Potts, Christopher D. Manning",
+      "revision": "cdb5c3d5eed6ead6e5a341c8e56e669bb666725b",
+      "metadataUrl": "https://huggingface.co/api/datasets/stanfordnlp/snli",
+      "treeUrl": "https://huggingface.co/api/datasets/stanfordnlp/snli/tree/main?recursive=true",
+      "textbookOriginal": {
+        "url": "https://nlp.stanford.edu/projects/snli/snli_1.0.zip",
+        "expectedSha1": "9fcde07509c7e87ec61c640c1b2753d9041758e4",
+        "acquired": false,
+        "attempts": ["Official project read failed ECONNRESET; curl official page/archive failed SSL_ERROR_SYSCALL.", "D2L candidate mirror HEAD403; not downloaded."]
+      },
+      "files": [
+        {
+          "url": "https://huggingface.co/datasets/stanfordnlp/snli/resolve/cdb5c3d5eed6ead6e5a341c8e56e669bb666725b/plain_text/train-00000-of-00001.parquet",
+          "cache": "/tmp/d2l-p10-corpus-cache/snli-train.parquet",
+          "bytes": 19614612,
+          "sha256": "ef9a7b25d97390a62aeda7abe26aec8640600f50b818eaeb9107097d60ac6620",
+          "matchesPublisherLfsOid": true,
+          "split": "train"
+        },
+        {
+          "url": "https://huggingface.co/datasets/stanfordnlp/snli/resolve/cdb5c3d5eed6ead6e5a341c8e56e669bb666725b/plain_text/validation-00000-of-00001.parquet",
+          "cache": "/tmp/d2l-p10-corpus-cache/snli-validation.parquet",
+          "bytes": 413157,
+          "sha256": "00f5ed8deaed007fef3022f0215b287efbab815b1bb31ac3f3ff4f4129d41ffe",
+          "matchesPublisherLfsOid": true,
+          "split": "validation"
+        }
+      ],
+      "testDownloaded": false,
+      "terms": {
+        "evidence": "publisher-terms-excerpts.txt",
+        "license": "CC BY-SA4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "conditions": "Credit Stanford NLP Group and authors; retain source, license, changes notice and ShareAlike obligations; no inference of associated image rights. No dataset redistribution here."
+      },
+      "labelMapping": {
+        "publisher": {"0": "entailment", "1": "neutral", "2": "contradiction", "-1": "no consensus; exclude"},
+        "textbook": {"entailment": 0, "contradiction": 1, "neutral": 2},
+        "conversion": {"0": 0, "1": 2, "2": 1}
+      },
+      "limitations": ["Parquet has premise/hypothesis/label, not original binary parse or pairID; use split,row index,text hash identity.", "Do not apply textbook parse-parenthesis removal to already plain text.", "Publisher Data Fields prose reverses entailment direction; use premise entails hypothesis from task definition.", "Official validation used, unlike textbook's direct test evaluation; no test tuning."]
+    },
+    {
+      "id": "pretrained-weights",
+      "identity": "D2L textbook bert.small PyTorch archive, not Google BERT or Hugging Face namesake",
+      "url": "https://d2l-data.s3-accelerate.amazonaws.com/bert.small.torch.zip",
+      "cache": "/tmp/d2l-p10-corpus-cache/bert.small.torch.zip",
+      "bytes": 75336931,
+      "sha1": "c72329e68a732bef0452e4b96a1c341c8910f81f",
+      "expectedTextbookSha1": "c72329e68a732bef0452e4b96a1c341c8910f81f",
+      "matchesTextbookSha1": true,
+      "sha256": "02078e7899d7468f0c0c1e1af23922df0106bb92575058f14571f85cb1bac811",
+      "member": {
+        "name": "bert.small.torch/pretrained.params",
+        "cache": "/tmp/d2l-p10-corpus-cache/bert.small.torch/pretrained.params",
+        "bytes": 128412829,
+        "sha256": "6b50cf1eb763954014df9734e0ce539dae7a9e974c8986e6e3c8815e9754f958"
+      },
+      "terms": {
+        "independentLicenseFound": false,
+        "basis": "Fixed15.7 explicitly supplies this archive for download and SNLI fine-tuning; public access required no login or terms acceptance.",
+        "scopeDecision": "Requested bounded local educational loading/fine-tuning only; no assertion of open redistribution/commercial rights; do not publish original or derived checkpoints.",
+        "notInferredFrom": ["book Apache-2.0", "setup.py MIT-0", "Google BERT license"]
+      },
+      "limitations": ["Archive has no LICENSE, model card or complete pretraining data/step/log provenance.", "Do not assert this package was trained by this session, matches local WikiText run, or is an industrial BERT reproduction.", "Actual restricted deserialization, strict key/shape loading and real transfer remain main verification responsibilities."]
+    },
+    {
+      "id": "vocabulary-and-config",
+      "identity": "vocab.json paired with exact D2L bert.small.torch archive; configuration derived from fixed15.7 PyTorch loader",
+      "member": {
+        "name": "bert.small.torch/vocab.json",
+        "cache": "/tmp/d2l-p10-corpus-cache/bert.small.torch/vocab.json",
+        "bytes": 656877,
+        "sha256": "72054eefdee98d1f83894df640f1bae9829b1398f8a2b77143a75798bc48ab22",
+        "count": 60005,
+        "specialIds": {"<unk>": 0, "<pad>": 1, "<mask>": 2, "<cls>": 3, "<sep>": 4}
+      },
+      "configFileInArchive": false,
+      "independentVocabularyLicenseFound": false,
+      "configSource": {"file": "book-natural-language-inference-bert.txt", "lines": [[90,111],[139,145],[378,391]]},
+      "expectedConfigurationNotRuntimeObservation": {
+        "hiddenSize": 256,
+        "ffnHiddenSize": 512,
+        "heads": 4,
+        "layers": 2,
+        "maxPositions": 512,
+        "dropout": 0.2,
+        "dropoutCallArgumentIgnoredByFixedLoader": 0.1,
+        "tokenEmbeddingShape": [60005,256],
+        "segmentEmbeddingShape": [2,256],
+        "positionEmbeddingShape": [1,512,256],
+        "poolerWeightShape": [256,256],
+        "nspOutputWeightShape": [2,256],
+        "mlmOutputWeightShape": [60005,256],
+        "newNliOutputWeightShape": [3,256],
+        "pooler": "Linear+Tanh",
+        "mlmActivation": "ReLU",
+        "attentionProjectionBias": true
+      },
+      "tokenizerContract": "Lowercase plus whitespace tokenization following textbook; preserve exact vocab list order and special IDs. Not original BERT WordPiece. Never rebuild on SNLI or swap tokenizer silently.",
+      "terms": "Vocabulary has no independent license statement in archive; code-derived configuration does not transfer code licensing to vocabulary. Same bounded local teaching scope and no redistribution as paired weights."
+    }
+  ],
+  "repositoryPolicy": "Only small source excerpts, fixed chapter snapshots and identity/contract JSON under content; no corpus, weights, parquet, archives, cookies, environments or full solution scripts.",
+  "preservedBlockers": ["Unverified BERT classroom transcripts are not supplied by textbook guides.", "Cowboy authenticated competition files/scoring contract and LEC71 classroom summary remain independent blockers."]
+}

@@ -1,6 +1,6 @@
 ---
 source: 李沐《动手学深度学习》2021 中文课程官方课表；《动手学深度学习》中文第二版
-status: 已完成LEC1–66学习笔记及前九项实验说明/指导；66BV共182P元数据已核，公开字幕为空，课堂稿持续阻塞。P9完成真实带署名英法语料上的有限CPU基线/注意力训练，固定样本仍错译，attention与beam未提高BLEU；未测GPU或宣称翻译质量达标。牛仔竞赛认证访问、评分端格式及LEC71课堂总结仍未核。
+status: 已完成LEC1–70学习笔记及前十一项实验说明/指导；70BV共198P元数据已核。P10的7P字幕为空、9P访问受限，课堂稿仍阻塞。Transformer复用P9固定英法划分；BERT语料、SNLI、权重与词表分别审计，有限运行见对应实验。不将机制、小训练或迁移写成质量/GPU基准；牛仔认证文件、评分端与LEC71课堂仍未核。
 license: 本页为编者自主课程导航；教材、代码、视频分别按原始许可处理，视频授权不由教材许可推定。
 ---
 
@@ -352,6 +352,14 @@ beam宽3按累积原始log概率剪枝，已结束候选冻结；最后在保留
 
 合成验收另覆盖稳定masked softmax、全mask非空合同、padding零梯度、Q/K/V形状、teacher forcing错位、固定上下文逐步一致性、beam父状态重排和BLEU短句边界；它们不是翻译质量证据。完整配置、逐轮指标与划分见`sources/p9-shared/`，未执行测试集、GPU/MPS、性能测量、全量训练或全部学生作业，不发布完整答案脚本或权重。
 
+#### 第十批：Transformer与BERT的两条路线
+
+[Transformer实验](#/c/d2l-pytorch-2021/lab/transformer?v=guide)沿用第九批带署名英法语料、固定划分和训练侧词表，没有重下语料或重训旧GRU。组件、三种mask、位置偏移、逐层缓存、真实训练恢复与源句驱动的生成分别核对；真实小训练的原始指标和错译保留在实验页，不从机制通过推出翻译质量或硬件速度结论。
+
+[BERT实验](#/c/d2l-pytorch-2021/lab/bert-pretrain-finetune?v=guide)分开记录合成目标检查、真实WikiText小预训练，以及另行下载的教材预训练权重在SNLI上的有限迁移。自训小模型不冒充工业BERT，也不冒充下载检查点。MLM/NSP分母、双向可见信息、句对标签和词表ID都属于模型合同，不能仅凭张量形状相同替换。
+
+本批复用PyTorch 2.5.1的CPU环境；Parquet读取器只用于明确版本的发布方数据。WikiText原教材ZIP未取得，采用Salesforce发布的`wikitext-2-v1`非raw Parquet；SNLI采用Stanford发布的`plain_text` Parquet，保留原train/validation，未下载测试集。二者有各自文件hash和格式差异，不能沿用教材ZIP的校验值。权重包没有独立config或LICENSE，参数配置由教材与实际张量核对；不把代码Apache-2.0推广成数据、权重或词表的无限再分发授权。精确身份、条件与运行边界见实验页底和本批来源索引。
+
 ## 学完后怎样衔接 CS336
 
 用三个问题自查：能否不依赖整段答案写出小模型训练循环；能否逐步解释 Attention 的形状与 mask；能否解释模型的参数、梯度、优化器状态和激活为何占用内存。
@@ -636,3 +644,19 @@ LEC60–66共 **7个BV、15P、9,745秒**。均为官方课表对应的作者“
 - 数据由[ManyThings/Charles Kelly](https://www.manythings.org/anki/)筛选[Tatoeba](https://tatoeba.org/en/terms_of_use)句子；本次实际训练包为2026-02-13带署名版本，不是教材2019 S3镜像。文本的[CC BY 2.0 France](https://creativecommons.org/licenses/by/2.0/fr/deed.en)与包内一般CC-BY2.0链接分别记录；公开例子保留句主、句子ID、发布方与许可，并说明清洗修改。包hash、原始说明与使用边界见[实验说明页底](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=zh)，不以代码许可替代数据条件。
 - [PyTorch 2.5 packed sequence文档](https://docs.pytorch.org/docs/2.5/generated/torch.nn.utils.rnn.pack_padded_sequence.html)用于有效源终态实现。[Papineni等2002 BLEU论文](https://aclanthology.org/P02-1040/)的实际阅读范围见LEC62/实验来源；指标补读不是新增必修论文。
 
+
+### 第十批已核实的全部分 P
+
+LEC67–70共4个BV、16P、10,697秒，均为官方课表绑定的“跟李沐学AI”（mid1567748478）2021上传。页头按全P求和，包含实现与QA；下表只列各P边界，不是课堂内部时间轴。LEC67–68的7P公开字幕各查一次成功空列表，LEC69–70的9P各查一次均HTTP412，后者字幕有无未知；均未审阅音视频，不造课堂稿。
+
+| 讲次 | 全部真实分P | 页头口径 |
+|---|---|---|
+| LEC67 | [P1 自注意力 · 27:52](https://www.bilibili.com/video/BV19o4y1m7mo?p=1)；[P2 代码 · 02:57](https://www.bilibili.com/video/BV19o4y1m7mo?p=2)；[P3 QA · 06:55](https://www.bilibili.com/video/BV19o4y1m7mo?p=3) | 全3P合计37:44 |
+| LEC68 | [P1 Transformer · 21:04](https://www.bilibili.com/video/BV1Kq4y1H7FL?p=1)；[P2 多头注意力代码 · 05:01](https://www.bilibili.com/video/BV1Kq4y1H7FL?p=2)；[P3 Transformer代码 · 19:49](https://www.bilibili.com/video/BV1Kq4y1H7FL?p=3)；[P4 QA · 05:59](https://www.bilibili.com/video/BV1Kq4y1H7FL?p=4) | 全4P合计51:53 |
+| LEC69 | [P1 BERT · 21:51](https://www.bilibili.com/video/BV1yU4y1E7Ns?p=1)；[P2 BERT代码 · 11:37](https://www.bilibili.com/video/BV1yU4y1E7Ns?p=2)；[P3 BERT预训练数据代码 · 08:15](https://www.bilibili.com/video/BV1yU4y1E7Ns?p=3)；[P4 BERT预训练代码 · 09:37](https://www.bilibili.com/video/BV1yU4y1E7Ns?p=4)；[P5 QA · 05:54](https://www.bilibili.com/video/BV1yU4y1E7Ns?p=5) | 全5P合计57:14 |
+| LEC70 | [P1 BERT微调 · 09:45](https://www.bilibili.com/video/BV15L4y1v7ts?p=1)；[P2 自然语言推理数据集 · 04:43](https://www.bilibili.com/video/BV15L4y1v7ts?p=2)；[P3 BERT微调代码 · 12:14](https://www.bilibili.com/video/BV15L4y1v7ts?p=3)；[P4 QA · 04:44](https://www.bilibili.com/video/BV15L4y1v7ts?p=4) | 全4P合计31:26 |
+
+课表67/68为8月14日、69/70为8月15日；上传分别为8月16、17、18、19日。LEC69课表把p2/p3链接称为数据/预训练，但当前真实分P为P2结构代码、P3数据代码、P4预训练代码；保留原课表证据和全部主题，不把链接标签当作片内覆盖。版权/禁止转载标志不授予转录许可；空列表或412都不能排除烧录字幕。
+
+- 本批固定教材新增[10.5–10.7](https://zh.d2l.ai/chapter_attention-mechanisms/index.html)、[14.8–14.10](https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert.html)，以及按课表顺序的[15.6](https://zh.d2l.ai/chapter_natural-language-processing-applications/finetuning-bert.html)、[15.4](https://zh.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html)、[15.7](https://zh.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-bert.html)。全文或PyTorch精确节选范围见逐讲清单，不扩称全章视频覆盖。
+- [Salesforce WikiText数据卡](https://huggingface.co/datasets/Salesforce/wikitext)标明Wikipedia来源；卡头CC BY-SA3.0/GFDL与正文4.0存在版本冲突，未消除，不发布全文或派生语料。[Stanford SNLI数据卡](https://huggingface.co/datasets/stanfordnlp/snli)标CC BY-SA4.0，需署名与相同方式共享等条件；数据偏见和标注伪线索不因小实验消失。权重/词表另见[教材加载章节](https://zh.d2l.ai/chapter_natural-language-processing-applications/natural-language-inference-bert.html)，没有从数据卡推断其许可。

@@ -1,0 +1,34 @@
+{
+  "labId": "bert-pretrain-finetune",
+  "status": "worker_not_executed_main_verification_pending",
+  "evidenceAlreadyObserved": ["Public publisher train/validation downloads with exact hashes", "Textbook bert.small archive SHA1 matches fixed source", "Archive lists exactly weights and vocabulary, no config/license", "Vocabulary parsed:60005 entries, specials0/1/2/3/4"],
+  "notObservedByWorker": ["Model deserialization or shape/key loading", "Numerical mechanism checks", "Pretraining or SNLI training", "Frozen/full comparison metrics", "Hardware performance", "Browser/render/build checks"],
+  "taskIds": ["bert-pretrain-finetune-1", "bert-pretrain-finetune-2", "bert-pretrain-finetune-3", "bert-pretrain-finetune-4"],
+  "task1": {
+    "packing": "CLS A SEP B SEP, segment0 through first SEP and1 through final SEP; global continuous positions; right PAD excluded by valid_len.",
+    "mlm": "Candidates valid non-special tokens, including exclusion of pre-existing UNK; K=min(C,max(1,round(.15*C))) for C>0, drop C=0. Python round semantics. Without-replacement positions; 80%MASK/10%ordinary random/10%unchanged. Original labels retained. Random ordinary replacement may equal original. Padded prediction slots weight0.",
+    "nsp": "Keep publisher split, restore top-level article documents before splitting paragraphs on ' . '. Positive adjacent sentence same paragraph/doc. Negative same split different document; reject normalized text equal A or true successor. Empty candidate pools/overlength examples counted rather than silently relabeled. Textbook is_next1/not_next0.",
+    "checks": ["No special candidate or random replacement", "Unique true MLM positions below valid_len", "Label follows sorted position and pre-corruption token", "Batch gather does not cross rows", "NSP negative split/doc identity and text collision exclusion", "Final positive/negative counts after filtering", "PAD identity and width invariance in eval", "Right effective context can change earlier BERT representations; no causal mask"]
+  },
+  "task2": {
+    "data": "Real publisher nonraw WikiText2 named Parquet release; NOT claimed original ZIP byte equivalence. Small vocabulary fit selected train only.",
+    "loss": "Unreduced flattened MLM CE and weights must both shape(B*P,), weighted sum/selected count; NSP unreduced sum/pair count; total sum of task means. Epoch metric accumulates own numerator/denominator, not average of uneven batches.",
+    "corrections": ["Do not use pos_embedding.data; keep Parameter graph", "Default mean CE before weights is invalid", "Changing reduction to none without removing column-shaped weights creates outer-product broadcasting", "Exclude all special tokens in candidates/replacement pool", "15% count based on eligible candidates, unlike fixed textbook len(tokens)", "Document-aware negatives replace textbook unconstrained random choice"],
+    "mainProposedBudgetNotResult": {"trainPairs":128,"validationPairs":32,"hidden":32,"layers":2,"maxLength":32,"updates":80,"minFrequency":2},
+    "requiredEvidence": ["Fixed revision/file hashes and original row/doc/paragraph identities", "Vocab hash and IDs/OOV/length statistics", "Actual config/device/seeds/update count", "Initial/final MLM and NSP plus correct denominators", "Real parameter updates including position parameters", "Validation fixed corruption and NLL counts", "No industrial-scale or GPU claim"]
+  },
+  "task3": {
+    "load": "Exact D2L weights+paired60005 vocab+code-derived config. Safe restricted loading then strict state keys/shapes. No random-weight fallback and no tokenizer swap.",
+    "snli": "Publisher train/validation plain_text. Exclude -1; HF0/1/2->textbook0/2/1. Premise entails hypothesis. Use split,row index,text hash because parquet omits pairID/parse.",
+    "head": "Transfer encoder and Linear+Tanh pooler, new H->3 head; unused MLM/NSP heads excluded from NLI optimizer. CLS is sequence position0, special tokenID3.",
+    "truncate": "Reserve3 boundaries, remove longer side tail, tie remove hypothesis, max_len <=512, record truncation.",
+    "requiredEvidence": ["Strict loading and actual key/shape identity", "Loaded parameter identity before optimization", "Real pretrained encoder change during full fine-tuning", "SNLI training and fixed validation CE/accuracy with sample counts", "Sequence vs token task interface explained", "No test selection"]
+  },
+  "task4": {
+    "comparison": "Same pretrained state and identical initial new head, same data/order/budget. Frozen encoder+pooler requires_grad false and eval, train new head. Full fine-tuning updates encoder+pooler+head. eval does not freeze, requires_grad does not disable dropout.",
+    "mainProposedBudgetNotResult": {"trainPairs":64,"validationPairs":32,"maxLength":32,"updatesEach":16},
+    "requiredEvidence": ["Separate four asset audit", "Frozen params unchanged and new head changed", "Full fine-tuned pretrained params changed", "Trainable parameter counts", "Same fixed validation metrics", "No unmeasured speed/GPU/memory claims", "Explain bidirectional MLM is not autoregressive likelihood or causal generation"]
+  },
+  "publishing": "No full solution, dataset, model weights, corpus quotes without attribution or unverified training claims. Preserve classroom and competition blockers. Main owns final public runtime evidence and status.",
+  "recommendedMainChecks": ["Content paths and exact four task texts", "JSON/SVG parsing and source hashes", "1440/390 light/dark lab tabs/formulas/SVG", "Mechanisms and real bounded pretraining/transfer", "One final main build after all slices"]
+}

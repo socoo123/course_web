@@ -2,7 +2,7 @@
   "courseId": "d2l-pytorch-2021",
   "plannedAt": "2026-11-13",
   "updatedAt": "2026-11-14",
-  "phase": "P9_real_translation_small_CPU_browser_build_verified_classroom_blocked",
+  "phase": "P10_real_Transformer_BERT_CPU_browser_build_verified_classroom_blocked",
   "plan": "sources/PLAN.txt",
   "nextPrompt": "sources/NEXT-PROMPT.txt",
   "scheduleInventory": "sources/schedule-inventory.json",
@@ -15,7 +15,7 @@
     "math": "数学遗忘，随课用符号、形状和小例补回；不增加独立前置课程清单。",
     "aiRole": "助教解释与排错，不代写完整实践答案。",
     "parallelAgentsRequired": true,
-    "currentScope": "P1–P9已完成LEC1–66教材导读与前九实验；课堂缺口、竞赛状态独立保留。下一批P10 LEC67–70与transformer、bert-pretrain-finetune，再接LEC71–73与optimization-capstone；73讲12实验48任务不变。",
+    "currentScope": "P1–P10已写LEC1–70教材导读与前十一实验；课堂缺口与竞赛独立保留。P11仅余LEC71–73及optimization-capstone；73讲12实验48任务不变。",
     "delivery": "每批完成后主agent汇总验收、提交推送到现有GitHub仓库，再给下一批提示词；只改content，不夹带无关改动。用户新指示覆盖旧交接不提交不推送。"
   },
   "versions": {
@@ -25,11 +25,11 @@
     "framework": "PyTorch",
     "snapshotDate": "2026-11-13",
     "numbering": "73个唯一BV按课表首现顺序分组；不是官方视频标题编号",
-    "practiceRuntime": "P9实测Python3.11.8/torch2.5.1、Apple M2 Max/macOS26.3.1、CPU1线程float32；带署名英法512训练/64验证，基线与注意力各320步，真实生成仍错译。CUDA0，MPS仅探测；无性能测量/d2l/Jupyter或旧Notebook兼容承诺，旧批记录保留。"
+    "practiceRuntime": "P10实测Python3.11.8/torch2.5.1、Apple M2 Max/macOS26.3.1、CPU单线程float32；Bun1.4.4/hyparquet1.33.0读已核Parquet，pyarrow未安装。真实Transformer320步、WikiText小预训练80步、SNLI两迁移对照各16步，验证仍弱；无GPU/MPS运算或性能基准，不承诺旧Notebook兼容。"
   },
   "artifacts": {
     "catalogRegistration": "complete",
-    "publicResources": "full_timetable_plus_182_verified_parts_and_P1_to_P9_bounded_CPU_evidence",
+    "publicResources": "full_timetable_plus_198_verified_parts_and_P1_to_P10_bounded_evidence",
     "lectureEntries": 73,
     "officialTeachingRows": 103,
     "breakRows": 11,
@@ -37,28 +37,28 @@
     "practiceTasks": 48,
     "textbookChapters": 16,
     "textbookSections": 129,
-    "lectureDocumentsPublished": 66,
-    "labDocumentsPublished": 18,
+    "lectureDocumentsPublished": 70,
+    "labDocumentsPublished": 22,
     "bodyPlaceholdersCreated": 0,
-    "lectureNotesPublished": 66,
+    "lectureNotesPublished": 70,
     "lectureDraftsPublished": 0,
     "lectureMaterialsPublished": 0,
-    "selfDrawnSvgs": 67,
-    "videoBvidsAcquired": 66,
-    "videoPartsAcquired": 182,
+    "selfDrawnSvgs": 74,
+    "videoBvidsAcquired": 70,
+    "videoPartsAcquired": 198,
     "observedRuntimePlots": 1,
-    "totalPublishedSvgs": 68
+    "totalPublishedSvgs": 75
   },
   "sourceCoverage": {
     "schedule": "完整官方课表HTML已保存并逐行登记，含重复链接/分P参数/休课。",
-    "book": "P1–P8范围保留；P9新增9.5–9.8与10.1–10.4，全文或精确PyTorch节选见逐讲/实验manifest。纠正旧交接漏10.4：LEC64=10.2核回归（10.1补充）、65=10.3、66=10.4 Bahdanau。BLEU原论文§2、PyTorch2.5 packing为编者补充，不加必读论文。旧缺口不冒称覆盖；当前固定第二版不是2021快照。",
+    "book": "P1–P9已读范围保留；P10新增10.5补充/10.6/10.7、14.8–14.10、15.6/15.4/15.7；全文或精确PyTorch节选见worker源索引。固定当前中文第二版不是2021全书快照；不冒称整个词向量/情感分析章视频覆盖，不新增必读论文。",
     "announcements": "课程公告已读取并留存，用于核对三次实际课程竞赛。",
-    "license": "根Apache-2.0/setup.py MIT-0分开；P9七讲copyright1/no_reprint1不授予全文转录。教材2019英法两列包缺逐句署名；真实训练改用ManyThings2026三列包，保留Tatoeba句主/ID与CC BY2.0FR，少量例子附署名/许可/修改说明，不发布语料全文/权重。P8小说与旧视觉/竞赛条件保持。",
-    "videoMetadata": "LEC1–66共66BV/182P；P9新增7BV/15P=9745秒，单P/全P合计页头真实时长，课表与上传日期分开。LEC67–73未取得。",
-    "captions": "P1 18P+P2 28P+P3 23P+P4 24P+P5 12P+P6 18P+P7 19P+P8 25P+P9 15P公开player均成功空列表。P9每P一次，旧空接口不重刷；空列表不证明无烧录字幕，不造课堂稿/QA/片内时间轴。",
+    "license": "教材Apache-2.0/setup MIT-0独立；P10视频copyright1/no_reprint1不授权全文转录。P9署名英法条件复用；WikiText publisher卡metadata3.0/GFDL与正文4.0冲突保留，SNLI卡CC BY-SA4.0；教材权重/同包词表无独立许可/config，不推断开放再分发权，原文/数据/权重不发布。",
+    "videoMetadata": "LEC1–70共70BV/198P；P10新增4BV/16P=10697秒，页头按全P总时长，课表日期与上传日期分开。LEC69课表p2/p3标签与当前P2结构代码/P3数据代码/P4训练代码错位，主题全部保留。LEC71–73未取得。",
+    "captions": "P1–P9的182P成功空字幕历史保留，不重刷；P10新16P各一次，LEC67/68的7P成功空列表，LEC69/70的9P HTTP412访问受限、字幕有无未知。两者都不排除烧录字幕，不造课堂稿/QA/片内时间线。",
     "videoOrAudioReview": "lec01_approved_Bilibili_sampled_frames_at_0_45_120_210_300_390_465_seconds_only; non_author_YouTube_trial_withdrawn_as_source; no_audio_transcription_or_full_classroom_review; other_lectures_not_reviewed",
     "slidesAndNotebooks": "课程slides/Notebook链接登记但未执行；P7另审读官方host牛仔行头Starter Kit Version1代码及历史输出用于核接口，不冒称本次运行。",
-    "courseExperiments": "P9合成数据/状态/mask/beam/核回归/加性点积/时序/BLEU及七讲纸面例通过；真实ManyThings2026英法512/64固定源句分组、训练侧词表156/429，两GRU各20轮320步。valCE4.304012/4.157927；greedy语料BLEU2 .114977/.105344，beam3 .096055/.091091，首条均错译。真实图来自生成日志；测试封存、GPU未运行，不代替全部学生任务。P7视觉/P8语言模型历史保留。"
+    "courseExperiments": "P10有限组件/位置/mask/缓存/MLM归约/NSP身份/NLI标签与手算通过；Transformer复用P9固定512/64，74861参数320步，真实BytesIO模型/Adam/RNG恢复下一步一致，首句仍错译。WikiText128/32、708词表、66438参数80步；独立已下载bert.small严格加载后SNLI64/32冻结和全微调各16步，验证13/32与14/32且全微调CE更差。未测测试/GPU或全部学生变体，P1–P9历史保留。"
   },
   "content": {
     "lectures": {
@@ -657,24 +657,40 @@
         "verification": "P9_previous_query_padding_prefix_chunk_real_attention_actual_header_popup_retains_notes_source_numeric_browser_passed"
       },
       "lec67": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_classroom",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p10-lec67/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts_header_total_verified",
+        "videoContent": "not_reviewed",
+        "verification": "P10_source_finite_numeric_and_actual_browser; implementation_differences_explicit"
       },
       "lec68": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_classroom",
+        "draft": "blocked_public_subtitles_empty_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p10-lec68/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts_header_total_verified",
+        "videoContent": "not_reviewed",
+        "verification": "P10_source_finite_numeric_and_actual_browser; implementation_differences_explicit"
       },
       "lec69": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_classroom",
+        "draft": "blocked_public_caption_HTTP412_content_unknown_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p10-lec69/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts_header_total_verified",
+        "videoContent": "not_reviewed",
+        "verification": "P10_source_finite_numeric_and_actual_browser; implementation_differences_explicit"
       },
       "lec70": {
-        "notes": "planned",
-        "draft": "planned_pending_real_video_sources",
-        "materials": "pending_independent_reading_scope"
+        "notes": "verified_editorial_textbook_guide_not_classroom",
+        "draft": "blocked_public_caption_HTTP412_content_unknown_no_media_review",
+        "materials": "not_required",
+        "sourceManifest": "sources/p10-lec70/manifest-fragment.json",
+        "videoMetadata": "acquired_all_parts_header_total_verified",
+        "videoContent": "not_reviewed",
+        "verification": "P10_source_finite_numeric_and_actual_browser; implementation_differences_explicit"
       },
       "lec71": {
         "notes": "planned",
@@ -769,16 +785,25 @@
         "evidence": "sources/p9-shared/seq2seq-smoke.json"
       },
       "transformer": {
-        "zh": "planned_editorial_practice_spec",
-        "guide": "planned",
+        "zh": "verified_editorial_four_task_practice_spec",
+        "guide": "verified_routes_invariants_no_full_solution",
         "en": "not_planned_no_english_original",
-        "execution": "not_run"
+        "execution": "passed_finite_CPU_mechanisms_real_P9_512_64_Transformer_320updates_BytesIO_Adam_RNG_resume_and_source_only_generation_not_all_student_tasks",
+        "sourceManifest": "sources/p10-transformer/manifest-fragment.json",
+        "evidence": "sources/p10-shared/transformer-smoke.json",
+        "qualityBoundary": "first_fixed_sample_wrong; no_equal_parameter_ranking; no_persisted_checkpoint_or_GPU_performance; cross_KV_recomputed",
+        "corpus": "P9_exact_archive_selected_rows_and_train_only_vocab_reused; no_old_GRU_retraining"
       },
       "bert-pretrain-finetune": {
-        "zh": "planned_editorial_practice_spec",
-        "guide": "planned",
+        "zh": "verified_editorial_four_task_practice_spec",
+        "guide": "verified_routes_invariants_no_full_solution",
         "en": "not_planned_no_english_original",
-        "execution": "not_run"
+        "execution": "passed_finite_CPU_objectives_and_real_WikiText128_32_80updates_plus_exact_pretrained_SNLI64_32_frozen_and_finetuned16updates_each",
+        "sourceManifest": "sources/p10-bert-pretrain-finetune/manifest-fragment.json",
+        "evidence": "sources/p10-shared/bert-smoke.json",
+        "corpus": "named_publisher_Parquet_alternative_not_original_ZIP; train_only_vocab708_for_tiny_pretrain; paired_download_vocab60005_for_SNLI; original_splits_and_text_hashes",
+        "qualityBoundary": "WikiText_truncation114of128_and29of32; NSP_validation1.609197_weak; SNLI13of32_vs14of32_not_quality_or_ranking; unknown_checkpoint_full_pretraining_overlap",
+        "notExecuted": "industrial_BERT; full_corpus; official_test; GPU_MPS_timing; full_student_variants; reusable_checkpoint_persistence"
       },
       "optimization-capstone": {
         "zh": "planned_editorial_practice_spec",
@@ -792,7 +817,7 @@
     {
       "id": "bilibili-video-button",
       "status": "fixed_with_header_external_link_and_duration",
-      "issue": "LEC1–66官方外链及核实时长已配置；多P标合计，默认笔记，无iframe。P9逐页核七讲，LEC66实点新tab且笔记保留，390手机入口通过；非全片播放/Pages验收。",
+      "issue": "LEC1–70官方页头/时长已配置；P10逐页核四讲全部分P，默认笔记，新tab入口不嵌播放器；移动布局与代表点击结果见p10-shared/browser-check。非全片播放或Pages部署验收。",
       "blocksCurrentPhase": false
     },
     {
@@ -821,8 +846,8 @@
     },
     {
       "id": "runtime-version",
-      "status": "p1_to_p9_bounded_cpu_verified_full_course_not_verified",
-      "issue": "P9 CPU真实英法小训练/推理/对齐有限验收，仍错译，不宣称质量或全部学生作业完成。CUDA0，MPS仅探测；d2l/Jupyter、旧Notebook、全课依赖、GPU/性能未验。旧批训练历史不回退。",
+      "status": "p1_to_p10_bounded_CPU_verified_full_course_not_verified",
+      "issue": "P10机制、真实Transformer/WikiText小训练与教材权重SNLI迁移已执行，数据/配置/差结果分开记录。hyparquet实际读取，pyarrow安装失败未使用。CUDA0、MPS仅探测，无GPU/硬件基准/d2l/Jupyter/旧Notebook兼容承诺，旧批历史不回退。",
       "blocksCurrentPhase": false
     },
     {
@@ -834,7 +859,7 @@
     {
       "id": "materials-not-required-ui",
       "status": "documented_outside_content_scope",
-      "issue": "LEC1–66 materials为not_required，页面仍显示待生成；不创建重复材料，不改src。",
+      "issue": "LEC1–70 materials为not_required，页面仍显示待生成；不为凑标签创建重复中文材料，不改src。",
       "blocksCurrentPhase": false
     },
     {
@@ -926,27 +951,45 @@
       "status": "identity_attribution_fixed_split_finite_CPU_verified_not_quality",
       "issue": "实际采用带署名2026包而非2019两列镜像；源句group、规范化去重，短句前512/64不代表总体。参考保留clean词不映射UNK，推理不读真实目标/长度。首条均错译；attention/beam未提高BLEU。实际torch2.5.1 CPU topk返回序，不保证跨设备同分顺序。",
       "blocksCurrentPhase": false
+    },
+    {
+      "id": "p10-caption-access",
+      "status": "blocked_classroom_drafts",
+      "issue": "LEC67–68的7P成功空列表；LEC69–70的9P HTTP412，字幕有无未知。各新P一次、旧接口不重刷；无课堂媒体审阅，无时间码/QA伪造。",
+      "blocksCurrentPhase": false
+    },
+    {
+      "id": "p10-lec69-part-link-mismatch",
+      "status": "recorded_original_schedule_and_current_pages_separately",
+      "issue": "原课表数据/预训练链接p2/p3；当前全5P为BERT、BERT代码、数据代码、预训练代码、QA。保留三主题与全5P，未冒称片内覆盖。",
+      "blocksCurrentPhase": false
+    },
+    {
+      "id": "p10-bert-assets-rights",
+      "status": "publisher_files_and_paired_checkpoint_acquired_separate_terms_limits",
+      "issue": "原WikiText/SNLI ZIP未取得，明确采用Salesforce/Stanford固定revision非raw/plain_text Parquet且各核LFS SHA256；HF SNLI标签0/1/2转换0/2/1。WikiText许可版本冲突，权重/词表无独立开放许可与完整训练日志；仅本地有限教材用途，不发布数据或检查点。",
+      "blocksCurrentPhase": false
+    },
+    {
+      "id": "p10-bounded-model-quality",
+      "status": "finite_training_and_transfer_verified_not_full_quality",
+      "issue": "Transformer固定首句错译，只有self投影KV缓存/cross重算；BytesIO续训验下一步无持久文件。WikiText高截断与固定mask，NSP验证弱；SNLI64/32有限微调不构成基准、下载权重完整训练历史未证实。测试/GPU未运行。",
+      "blocksCurrentPhase": false
     }
   ],
   "nextExecution": {
     "entry": "sources/NEXT-PROMPT.txt",
-    "parallelism": "必须task多agent：A LEC67–68；B LEC69–70；C transformer实验；D bert-pretrain-finetune实验；主agent独占共享索引与统一验收。",
-    "firstWork": "先读P9交接/manifest，不重做LEC1–66和前九实验。保留多头/自注意力/位置编码/Transformer与BERT结构、MLM/NSP数据、预训练、微调/NLI；两实验各四任务齐全。翻译数据复用P9固定版本/划分/词表合同；BERT语料/NLI/权重分别核身份许可与接口。课堂缺口不以教材掩盖。",
+    "parallelism": "必须task多agent：A LEC71竞赛总结来源导读；B LEC72–73优化与课程总结；C optimization-capstone四任务；主agent共享索引与统一验收。",
+    "firstWork": "先读P10交接/manifest，不重做LEC1–70或前十一实验。完整保留目标检测总结、优化与课程收尾；LEC71课堂未核不能编获奖方案。复用已有数据/运行记录，不把未持久化P9/P10权重当现成checkpoint，不重训旧模型。",
     "initialLectureIds": [
-      "lec67",
-      "lec68",
-      "lec69",
-      "lec70"
+      "lec71",
+      "lec72",
+      "lec73"
     ],
     "initialPracticeIds": [
-      "transformer",
-      "bert-pretrain-finetune"
+      "optimization-capstone"
     ],
     "remainingLectureNotes": [
-      "lec67",
-      "lec68",
-      "lec69",
-      "lec70",
       "lec71",
       "lec72",
       "lec73"
@@ -1017,19 +1060,21 @@
       "lec63",
       "lec64",
       "lec65",
-      "lec66"
+      "lec66",
+      "lec67",
+      "lec68",
+      "lec69",
+      "lec70"
     ],
-    "laterWaves": "P11 LEC71–73与optimization-capstone；牛仔认证文件/评分端及LEC71课堂仍未核，不编获奖方法，不删除优化/课程总结。",
+    "laterWaves": "P11完成剩余教材导读与第十二实验后，全课课堂稿/历史竞赛/GPU扩展仍独立记账，不用一个complete掩盖。",
     "scopeRules": "sources/PLAN.txt",
     "beforeGeneratingVideoContent": "先读skill://technical-video-notes；逐讲核官方BV全部分P/作者年份/真实总时长，无字幕不造课堂稿。",
     "remainingPracticeIds": [
-      "transformer",
-      "bert-pretrain-finetune",
       "optimization-capstone"
     ],
     "afterEachBatch": "主agent统一必要数值、真实浏览器及一次最终build，更新状态交接，提交推送现有main并给下一提示词；只改content。"
   },
-  "batchManifest": "sources/p9-manifest.json",
+  "batchManifest": "sources/p10-manifest.json",
   "bookVersion": "sources/p1-shared/book-version.json",
   "planningVerification": {
     "metadataAndLinks": "passed_2026-11-13：73讲/103源行/12练习/48任务/16章/129小节；完整课表视频链接多重集逐项一致，所有站内路由和交接路径可解析，4份源快照哈希一致；只发布公共资料Markdown，无逐讲/实验占位正文。",
@@ -1038,11 +1083,11 @@
     "courseExperiments": "not_run_planning_only"
   },
   "verification": {
-    "metadataAndLinks": "passed P9:7BV/15P=9745s；44项本批来源快照SHA256；10Markdown/9SVG/120本地路由；真实图值匹配日志。73讲12实验48任务不变；前59讲/前八实验134文件、全部lab及非P9讲次元数据保持。",
-    "build": "passed npm run build once；tsc --noEmit + Vite5.4.21，3056modules，5.36s；sources/p9-shared/build.log",
-    "browserSmoke": "passed actual Chromium七讲默认笔记/官方页头/明暗图/公式/自测/页底、1440桌面390手机；实验双标签/两图、公共285链接。修LEC65/66长hash和guide长JSON指针溢出、图源状态路线。LEC66实点新tab保留笔记，无应用错误、tab关闭；非Pages/全片播放。",
-    "courseExperiments": "passed finite CPU数据/状态/mask/attention/teacher forcing/token NLL/beam/BLEU及七讲纸面；真实512/64两模型各320步、原样生成及权重图；首4独立greedy=beam1。无全部学生实现、完整核回归短训、测试评分/GPU或竞赛完成声明。",
-    "evidence": "sources/p9-manifest.json"
+    "metadataAndLinks": "passed P10:4BV/16P=10697s；39项来源hash；9Markdown/7SVG/115本地路由。73讲12实验48任务不变；前66讲/前九实验152文件、所有lab及非P10讲次元数据保持。",
+    "build": "passed npm run build once; tsc --noEmit + Vite5.4.21,3071modules,11.06s; sources/p10-shared/build.log",
+    "browserSmoke": "passed actual Chromium四讲默认笔记/全部官方页头/明暗图/公式/自测/页底、1440桌面390手机；双实验双标签实点、公共301链接。LEC69实点原站新tab且笔记保留。修69嵌入公式391→390、Transformer实验公式420→390；无应用pageerror，验证tab关闭；非Pages/全片播放。",
+    "courseExperiments": "passed有限CPU手算/组件/mask/position/cache/MLM/NSP/NLI；真实Transformer320步+序列化恢复、WikiText80步、独立教材权重SNLI两对照各16步。明确弱验证/错译、高截断/格式与许可局限；不是全部学生任务或硬件基准。",
+    "evidence": "sources/p10-manifest.json"
   },
   "batchManifests": [
     "sources/p1-manifest.json",
@@ -1053,6 +1098,7 @@
     "sources/p6-manifest.json",
     "sources/p7-manifest.json",
     "sources/p8-manifest.json",
-    "sources/p9-manifest.json"
+    "sources/p9-manifest.json",
+    "sources/p10-manifest.json"
   ]
 }

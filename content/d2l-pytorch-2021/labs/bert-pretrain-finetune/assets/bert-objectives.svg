@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="540" viewBox="0 0 880 540" role="img" aria-labelledby="title desc">
+  <title id="title">BERT预训练与NLI迁移的监督接口</title>
+  <desc id="desc">词元、片段和可学习位置嵌入相加，进入屏蔽PAD键的双向编码器。被选正文位置连接MLM头；CLS位置连接NSP头或迁移后的NLI头。MLM按有效预测位置归约，NSP和NLI按句对归约。NLI头是新建三分类头，不是NSP二分类头。</desc>
+  <style>
+    .bg{fill:#f8fafc}.box{fill:#fff;stroke:#475569;stroke-width:2}.enc{fill:#e0f2fe;stroke:#0369a1;stroke-width:2}.task{fill:#ecfdf5;stroke:#047857;stroke-width:2}.transfer{fill:#fff7ed;stroke:#c2410c;stroke-width:2}.line{fill:none;stroke:#475569;stroke-width:2;marker-end:url(#arrow)}.text{fill:#0f172a;font:18px system-ui,-apple-system,"Noto Sans SC","Microsoft YaHei",sans-serif}.small{font-size:15px}.heading{font-weight:650;font-size:21px}
+    @media(prefers-color-scheme:dark){.bg{fill:#0f172a}.box{fill:#1e293b;stroke:#94a3b8}.enc{fill:#0c4a6e;stroke:#7dd3fc}.task{fill:#064e3b;stroke:#6ee7b7}.transfer{fill:#7c2d12;stroke:#fdba74}.text{fill:#f1f5f9}.line{stroke:#cbd5e1}.arrow{fill:#cbd5e1}}
+  </style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="arrow" fill="#475569" d="M0 0L10 5L0 10Z"/></marker></defs>
+  <rect class="bg" width="880" height="540" rx="12"/>
+  <text class="text heading" x="28" y="36">同一编码机制，不同监督位置与标签空间</text>
+  <rect class="box" x="35" y="65" width="810" height="78" rx="8"/>
+  <text class="text" x="58" y="95">CLS　A　SEP　B　SEP　PAD</text>
+  <text class="text small" x="58" y="123">词元嵌入 ＋ 片段嵌入 ＋ 可学习位置嵌入；segment不是padding mask</text>
+  <path class="line" d="M440 143V176"/>
+  <rect class="enc" x="145" y="180" width="590" height="80" rx="8"/>
+  <text class="text heading" x="175" y="212">双向Transformer编码器 → (B,T,H)</text>
+  <text class="text small" x="175" y="241">可看左右有效正文；屏蔽PAD键；没有causal三角mask</text>
+  <path class="line" d="M265 260V302H190V329"/>
+  <path class="line" d="M440 260V329"/>
+  <path class="line" d="M615 260V302H700V329"/>
+  <text class="text small" x="55" y="296">选中正文位置</text>
+  <text class="text small" x="451" y="303">CLS位置0</text>
+  <text class="text small" x="665" y="296">CLS＋pooler</text>
+  <rect class="task" x="35" y="333" width="270" height="120" rx="8"/>
+  <text class="text heading" x="55" y="365">MLM：V类</text>
+  <text class="text small" x="55" y="393">标签＝替换前的词元</text>
+  <text class="text small" x="55" y="420">分母＝选中有效位置数</text>
+  <text class="text small" x="55" y="441">补预测槽位：权重0</text>
+  <rect class="task" x="330" y="333" width="220" height="120" rx="8"/>
+  <text class="text heading" x="350" y="365">NSP：2类</text>
+  <text class="text small" x="350" y="393">真后继 / 非后继</text>
+  <text class="text small" x="350" y="420">分母＝句对数</text>
+  <rect class="transfer" x="575" y="333" width="270" height="120" rx="8"/>
+  <text class="text heading" x="595" y="365">迁移NLI：新建3类头</text>
+  <text class="text small" x="595" y="393">蕴涵 / 矛盾 / 中性</text>
+  <text class="text small" x="595" y="420">分母＝句对数</text>
+  <text class="text small" x="595" y="441">不使用MLM / NSP输出头</text>
+  <text class="text small" x="35" y="488">预训练：MLM ＋ NSP；迁移：核验权重＋同包词表＋结构后，接NLI头</text>
+  <text class="text small" x="35" y="516">编者机制示意，非训练结果。CLS所在位置0 ≠ CLS词表ID（教材下载词表为3）。</text>
+</svg>

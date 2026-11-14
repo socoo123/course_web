@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 650" role="img" aria-labelledby="title desc">
+  <title id="title">Transformer的三类注意力mask与逐层缓存</title>
+  <desc id="desc">上半部分分别列出编码器源padding、解码器causal加目标padding、交叉注意力源padding。下半部分展示同一候选每层独立的投影键值缓存和位置偏移；父重排必须同步所有层、源映射及历史。图为机制示意，没有测量数据。</desc>
+  <style>
+    :root{color-scheme:light dark}
+    .bg{fill:#f8fafc}.box{fill:#ffffff;stroke:#64748b;stroke-width:1.5}.accent{fill:#e0f2fe;stroke:#0369a1;stroke-width:1.5}.t{fill:#0f172a;font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;font-size:19px}.small{font-size:17px}.head{font-weight:650}.line{stroke:#0369a1;stroke-width:2;fill:none}
+    @media(prefers-color-scheme:dark){.bg{fill:#111827}.box{fill:#1f2937;stroke:#94a3b8}.accent{fill:#14334a;stroke:#7dd3fc}.t{fill:#f1f5f9}.line{stroke:#7dd3fc}}
+  </style>
+  <rect class="bg" width="680" height="650" rx="14"/>
+  <text class="t head" x="24" y="36">先决定谁可见，再决定保存什么</text>
+  <rect class="box" x="24" y="55" width="632" height="74" rx="8"/>
+  <text class="t head" x="40" y="84">① Encoder self-attention</text>
+  <text class="t small" x="40" y="112">源 → 源：只屏蔽源PAD，不加causal</text>
+  <rect class="box" x="24" y="141" width="632" height="74" rx="8"/>
+  <text class="t head" x="40" y="170">② Decoder self-attention</text>
+  <text class="t small" x="40" y="198">右移目标 → 自己：causal ∩ 非PAD key</text>
+  <rect class="box" x="24" y="227" width="632" height="74" rx="8"/>
+  <text class="t head" x="40" y="256">③ Decoder cross-attention</text>
+  <text class="t small" x="40" y="284">目标query → 源memory：屏蔽源PAD</text>
+  <text class="t small" x="28" y="331">另一个边界：CE只计有效目标，含EOS、不含PAD</text>
+  <rect class="accent" x="24" y="351" width="632" height="65" rx="8"/>
+  <text class="t head" x="40" y="378">候选b：已消费p个输入，新token用位置p</text>
+  <text class="t small" x="40" y="403">只追加新token；BOS起点为0；生成不读参考</text>
+  <path class="line" d="M340 416V436M178 436H502M178 436V451M502 436V451"/>
+  <rect class="box" x="24" y="451" width="308" height="92" rx="8"/>
+  <text class="t head" x="40" y="481">第1层 self K₁ / V₁</text>
+  <text class="t small" x="40" y="510">本层输入 → 本层投影</text>
+  <text class="t small" x="40" y="533">形状：h × (p+1) × dₕ</text>
+  <rect class="box" x="348" y="451" width="308" height="92" rx="8"/>
+  <text class="t head" x="364" y="481">第2层 self K₂ / V₂</text>
+  <text class="t small" x="364" y="510">本层输入 → 本层投影</text>
+  <text class="t small" x="364" y="533">独立参数、独立历史</text>
+  <text class="t small" x="28" y="576">父索引 [2,0,2]：所有层KV、源映射、偏移、历史同排</text>
+  <text class="t small" x="28" y="605">复制父项后的两个子路径，后续写入必须彼此独立</text>
+  <text class="t small" x="28" y="634">自绘合同示意 · 不是实测权重、内存图或课堂截图</text>
+</svg>

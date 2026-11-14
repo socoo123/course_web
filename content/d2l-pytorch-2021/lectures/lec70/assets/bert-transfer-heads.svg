@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="640" viewBox="0 0 760 640" role="img" aria-labelledby="title desc">
+<title id="title">BERT微调中的身份合同与任务头</title><desc id="desc">相匹配的预训练权重、固定词表和模型配置共同确定编码器。输入为CLS、前提、SEP、假设、SEP，segment区分句子，padding由有效长度屏蔽。输出分为CLS上的序列级头与各位置上的词元级头。NLI复用encoder和hidden，新建三类输出；词元标注和问答各自定义有效监督位置。</desc>
+<style>text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:#162638;font-size:18px}.title{font-size:24px;font-weight:700}.small{font-size:16px}.box{fill:#f1f6fc;stroke:#416584;stroke-width:2}.accent{fill:#e4f5ec;stroke:#28724f;stroke-width:2}.target{fill:#fff3db;stroke:#8a641e;stroke-width:2}.arrow{fill:none;stroke:#416584;stroke-width:2;marker-end:url(#a)}@media(prefers-color-scheme:dark){text{fill:#e8f0fa}.box{fill:#172d43;stroke:#a9cbe8}.accent{fill:#173e30;stroke:#8ad2ac}.target{fill:#40341c;stroke:#e8c57d}.arrow{stroke:#a9cbe8}}</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#6386a5"/></marker></defs>
+<text class="title" x="30" y="36">可复用的是匹配的参数，不只是“BERT”名称</text>
+<rect class="target" x="30" y="60" width="700" height="66" rx="10"/><text x="50" y="88">checkpoint权重 ↔ vocab逐项ID ↔ 模型config</text><text class="small" x="50" y="113">文件身份、预处理、特殊ID均须一致；同词表大小不等于兼容</text>
+<rect class="box" x="30" y="160" width="700" height="76" rx="10"/><text x="50" y="189">CLS　前提A　SEP　假设B　SEP　PAD…</text><text class="small" x="50" y="216">segment: A含CLS/首SEP为0，B含末SEP为1；另传有效长度</text>
+<path class="arrow" d="M380 126 V151"/><path class="arrow" d="M380 236 V265"/>
+<rect class="accent" x="30" y="265" width="700" height="68" rx="10"/><text x="50" y="293">预训练双向编码器 → Z [B, T, H]</text><text class="small" x="50" y="319">全参数微调会更新共享表示；冻结编码器是另一种基线</text>
+<path class="arrow" d="M200 333 V369"/><path class="arrow" d="M560 333 V369"/>
+<rect class="box" x="30" y="369" width="330" height="71" rx="10"/><text x="48" y="398">序列级：取CLS位置 [B,H]</text><text class="small" x="48" y="423">整句/句对分类，或连续值回归</text>
+<rect class="box" x="395" y="369" width="335" height="71" rx="10"/><text x="413" y="398">词元级：保留 [B,T,H]</text><text class="small" x="413" y="423">每个合法监督位置有自己的输出</text>
+<path class="arrow" d="M200 440 V475"/><path class="arrow" d="M560 440 V475"/>
+<rect class="accent" x="30" y="475" width="330" height="107" rx="10"/><text x="48" y="503">NLI：复用hidden + 新三类头</text><text x="48" y="531">0蕴涵 / 1矛盾 / 2中性</text><text class="small" x="48" y="560">按句对计损失；不是原NSP头</text>
+<rect class="box" x="395" y="475" width="335" height="107" rx="10"/><text x="413" y="503">标注：[B,T,C]，排除无效位置</text><text x="413" y="531">问答：开始 / 结束两个分数</text><text class="small" x="413" y="560">只在合法段落中选有序跨度</text>
+<text class="small" x="30" y="618">示意图，不是已加载权重或真实训练结果；不同任务按需选择对应分支。</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="620" viewBox="0 0 760 620" role="img" aria-labelledby="title desc">
+<title id="title">BERT的双向编码与两个预训练出口</title><desc id="desc">原句先保存被选位置的原词标签，再按80、10、10比例扰动输入。词、片段和位置嵌入相加后进入共享双向编码器。MLM从选中位置取表示，除以有效预测词数；NSP从CLS取表示，除以句对数。padding不作有效key，两个任务使用不同分母。</desc>
+<style>text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:#162638;font-size:18px}.title{font-size:24px;font-weight:700}.small{font-size:16px}.box{fill:#f1f6fc;stroke:#416584;stroke-width:2}.accent{fill:#e4f5ec;stroke:#28724f;stroke-width:2}.target{fill:#fff3db;stroke:#8a641e;stroke-width:2}.arrow{fill:none;stroke:#416584;stroke-width:2;marker-end:url(#a)}@media(prefers-color-scheme:dark){text{fill:#e8f0fa}.box{fill:#172d43;stroke:#a9cbe8}.accent{fill:#173e30;stroke:#8ad2ac}.target{fill:#40341c;stroke:#e8c57d}.arrow{stroke:#a9cbe8}}</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#6386a5"/></marker></defs>
+<text class="title" x="30" y="36">先保存监督，再扰动输入</text>
+<rect class="box" x="30" y="60" width="700" height="66" rx="10"/><text x="50" y="88">原句对 + 原文身份 → 选择普通词位置</text><text class="small" x="50" y="113">CLS / SEP / PAD不作预测目标；NSP先划分、再抽负例</text>
+<path class="arrow" d="M210 126 V155"/><path class="arrow" d="M560 126 V155"/>
+<rect class="accent" x="30" y="155" width="355" height="68" rx="10"/><text x="48" y="183">选中后：80% MASK / 10%随机</text><text x="48" y="208">10%不变；三类都参与预测</text>
+<rect class="target" x="420" y="155" width="310" height="68" rx="10"/><text x="438" y="183">另存原词标签 + 位置 + 权重</text><text class="small" x="438" y="208">不从扰动后的输入重建标签</text>
+<path class="arrow" d="M210 223 V252"/>
+<rect class="box" x="30" y="252" width="355" height="62" rx="10"/><text x="48" y="279">词嵌入 + segment + 学习位置</text><text class="small" x="48" y="302">相加后宽度仍为 H</text>
+<path class="arrow" d="M210 314 V342"/>
+<rect class="accent" x="30" y="342" width="700" height="70" rx="10"/><text x="50" y="370">共享双向Transformer编码器 → Z [B, T, H]</text><text class="small" x="50" y="396">A/B可以相互注意；所有有效query屏蔽padding key</text>
+<path class="arrow" d="M210 412 V448"/><path class="arrow" d="M560 412 V448"/>
+<rect class="box" x="30" y="448" width="355" height="103" rx="10"/><text x="48" y="477">MLM：gather被选位置</text><text x="48" y="505">logits [B, M, V]</text><text class="small" x="48" y="534">有效槽NLL之和 / 有效预测词数</text>
+<rect class="box" x="420" y="448" width="310" height="103" rx="10"/><text x="438" y="477">NSP：Z[:, 0, :] → 两类</text><text x="438" y="505">logits [B, 2]</text><text class="small" x="438" y="534">句对NLL之和 / 有效句对数</text>
+<text x="30" y="587">联合损失 = MLM均值 + NSP均值；不是共用一个分母</text>
+</svg>

@@ -1,0 +1,50 @@
+Acquired/read 2026-11-14. These are short source excerpts and editorial limitations, not a new license grant.
+
+[WikiText publisher card]
+URL: https://huggingface.co/datasets/Salesforce/wikitext/raw/b08601e04326c79dfdd32d625aee71d232d685c3/README.md
+Actual read: main raw card complete via reader (rendered artifact416 lines1-348); downloaded raw file has343 lines. Publisher API identifies main=b08601e04326c79dfdd32d625aee71d232d685c3. Excerpt line numbers below refer to the downloaded raw file, retained in external cache.
+Original lines 8-10:
+license:
+- cc-by-sa-3.0
+- gfdl
+Original lines 163-164:
+The WikiText language modeling dataset is a collection of over 100 million tokens extracted from the set of verified
+Good and Featured articles on Wikipedia. The dataset is available under the Creative Commons Attribution-ShareAlike License.
+Original lines 171-174:
+Each subset comes in two different variants:
+- Raw (for character level work) contain the raw tokens, before the addition of the <unk> (unknown) tokens.
+- Non-raw (for word level work) contain only the tokens in their vocabulary (wiki.train.tokens, wiki.valid.tokens, and wiki.test.tokens).
+  The out-of-vocabulary tokens have been replaced with the the <unk> token.
+Original lines 324-326:
+### Licensing Information
+The dataset is available under the [Creative Commons Attribution-ShareAlike License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
+Editorial decision: metadata3.0/GFDL versus prose4.0 is unresolved. Preserve both; do not claim one definitively supersedes the other. Public local teaching use based on publisher release; no corpus redistribution here. Attribution: Stephen Merity, Caiming Xiong, James Bradbury, Richard Socher / Salesforce; Wikipedia contributors. Public excerpts would additionally require corresponding article attribution and modification notice. No real corpus text reproduced in public lab documents.
+
+[SNLI publisher card]
+URL: https://huggingface.co/datasets/stanfordnlp/snli/raw/cdb5c3d5eed6ead6e5a341c8e56e669bb666725b/README.md
+Actual read: main raw card complete via reader; downloaded raw file has275 lines. Publisher API identifies main=cdb5c3d5eed6ead6e5a341c8e56e669bb666725b. Excerpt line numbers below refer to the downloaded raw file.
+Original lines 8-9:
+license:
+- cc-by-sa-4.0
+Original lines 34-37:
+names:
+  '0': entailment
+  '1': neutral
+  '2': contradiction
+Original lines 218-222:
+### Licensing Information
+The Stanford Natural Language Inference Corpus by The Stanford NLP Group is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+The corpus includes content from the [Flickr 30k corpus](http://shannon.cs.illinois.edu/DenotationGraph/), also released under an Attribution-ShareAlike licence.
+Editorial decision: retain Stanford NLP Group; Samuel R. Bowman, Gabor Angeli, Christopher Potts, Christopher D. Manning; source and CC BY-SA4.0 link; note lowercase/whitespace/truncation modifications. No image rights inferred. HF Data Fields prose reverses entailment direction ('hypothesis entails premise'); use fixed textbook definition premise entails hypothesis, not that prose error. Labels names/IDs above remain correct.
+
+[Creative Commons official deeds]
+Read complete rendered deeds at https://creativecommons.org/licenses/by-sa/3.0/ and https://creativecommons.org/licenses/by-sa/4.0/.
+Shared short clauses:
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+No warranties are given. The license may not give you all of the permissions necessary for your intended use.
+Deeds summarize legal codes; no claim of legal advice or full legal-code review. Code/book license is not corpus/model license.
+
+[Textbook weight invitation and boundary]
+Fixed book-natural-language-inference-bert.txt lines9,44-70,90-111,137-145 explicitly offer a pretrained small BERT for download and SNLI fine-tuning, register the PyTorch archive SHA1, and load vocab.json plus pretrained.params. Archive contains no separate LICENSE, model card, training log, tokenizer configuration or config.json.
+Decision: permit the requested bounded local teaching experiment via the public textbook distribution; no claim of an open redistribution/commercial license, no publishing original/derived checkpoints. Exact vocab and code-derived configuration remain paired with weights. Google BERT Apache license does not license this separate D2L asset.

@@ -1,0 +1,213 @@
+{
+  "lectureId": "lec69",
+  "executedByWorker": false,
+  "checks": [
+    {
+      "id": "mlm-effective-denominator",
+      "input": {
+        "slotNLL": [
+          [
+            2,
+            4,
+            99
+          ],
+          [
+            6,
+            99,
+            99
+          ]
+        ],
+        "weights": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "nspNLL": [
+          0.2,
+          0.8
+        ]
+      },
+      "expected": {
+        "mlm": 4,
+        "nsp": 0.5,
+        "total": 4.5
+      },
+      "assertions": [
+        "Use unreduced CE and identical flattened shapes, not Nx1 times N broadcast.",
+        "Changing zero-weight logits/valid labels leaves MLM unchanged and their direct logit gradients zero."
+      ],
+      "executionStatus": "not_run_by_worker; requested_main_acceptance"
+    },
+    {
+      "id": "bert-position-parameter-gradient",
+      "input": {
+        "batch": 2,
+        "length": 8,
+        "hidden": 16,
+        "heads": 4,
+        "dropout": 0
+      },
+      "assertions": [
+        "Slice the Parameter without .data.",
+        "Selected valid supervision yields finite nonzero pos_embedding gradient in a nondegenerate deterministic fixture.",
+        "Optimizer step changes at least one used position row; do not claim unseen positions trained."
+      ],
+      "executionStatus": "not_run_by_worker; requested_main_acceptance"
+    },
+    {
+      "id": "mlm-selection-branches",
+      "input": {
+        "tokens": [
+          "<cls>",
+          "we",
+          "read",
+          "<sep>",
+          "books",
+          "<sep>",
+          "<pad>",
+          "<pad>"
+        ],
+        "validLength": 6,
+        "selectedPositions": [
+          1,
+          2,
+          4
+        ]
+      },
+      "expected": {
+        "ordinaryCandidates": [
+          1,
+          2,
+          4
+        ]
+      },
+      "assertions": [
+        "Force mask/random/unchanged branches by prescribed RNG values; all three retain original labels and unit loss weights.",
+        "Candidate set excludes structural/special/padding positions; finite synthetic random pool excludes control IDs under stated engineering contract.",
+        "0.8 mask then 0.5 of remaining unchanged yields probabilities .8/.1/.1; do not require small empirical batches exact proportions."
+      ],
+      "executionStatus": "not_run_by_worker; requested_main_acceptance"
+    },
+    {
+      "id": "mlm-gather-shapes",
+      "input": {
+        "B": 2,
+        "T": 8,
+        "H": 16,
+        "V": 11,
+        "M": 3
+      },
+      "expected": {
+        "encoded": [
+          2,
+          8,
+          16
+        ],
+        "gather": [
+          2,
+          3,
+          16
+        ],
+        "mlmLogits": [
+          2,
+          3,
+          11
+        ],
+        "nspLogits": [
+          2,
+          2
+        ]
+      },
+      "assertions": [
+        "Gather indexes positions within each correct batch row.",
+        "MLM padding slots may point at zero but must carry weight zero."
+      ],
+      "executionStatus": "not_run_by_worker; requested_main_acceptance"
+    },
+    {
+      "id": "bert-bidirectional-padding",
+      "input": {
+        "validLength": 6,
+        "paddedLength": 8,
+        "dropout": 0
+      },
+      "assertions": [
+        "Changing IDs only in masked padding leaves valid outputs/CLS logits unchanged within dtype tolerance.",
+        "Changing a right-side effective token may change an earlier output in a fixed nondegenerate fixture; BERT has no causal triangle.",
+        "PAD query outputs need not be zero."
+      ],
+      "executionStatus": "not_run_by_worker; requested_main_acceptance"
+    },
+    {
+      "id": "nsp-identity-split",
+      "input": {
+        "documents": {
+          "train": [
+            "d1",
+            "d2"
+          ],
+          "validation": [
+            "d3"
+          ]
+        },
+        "positive": [
+          "d1:s0",
+          "d1:s1"
+        ],
+        "negativeCandidate": [
+          "d2:s0"
+        ]
+      },
+      "expected": {
+        "positiveLabel": 1,
+        "negativeLabel": 0
+      },
+      "assertions": [
+        "Use true adjacency for positive; negative differs from current and true-next identity and comes from a different document within train.",
+        "No held-out d3 sentences in training pairs; record selected source IDs.",
+        "Reject a fixture lacking legal negative candidates instead of mislabeling true successors."
+      ],
+      "executionStatus": "not_run_by_worker; requested_main_acceptance"
+    },
+    {
+      "id": "task-global-aggregation",
+      "input": {
+        "mlmBatches": [
+          {
+            "sum": 6,
+            "count": 2
+          },
+          {
+            "sum": 6,
+            "count": 1
+          }
+        ],
+        "nspBatches": [
+          {
+            "sum": 0.2,
+            "count": 1
+          },
+          {
+            "sum": 0.8,
+            "count": 1
+          }
+        ]
+      },
+      "expected": {
+        "mlm": 4,
+        "nsp": 0.5
+      },
+      "assertions": [
+        "Aggregate each task numerator and its own denominator across batches."
+      ],
+      "executionStatus": "not_run_by_worker; requested_main_acceptance"
+    }
+  ]
+}

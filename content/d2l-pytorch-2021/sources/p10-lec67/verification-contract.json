@@ -1,0 +1,66 @@
+{
+  "status": "not_executed_by_worker",
+  "purpose": "Finite paper expectations and invariants for main verification; not a full student solution",
+  "examples": {
+    "headShape": {
+      "B": 2,
+      "Tq": 3,
+      "Tk": 5,
+      "d": 8,
+      "h": 2,
+      "scoresShape": [
+        2,
+        2,
+        3,
+        5
+      ],
+      "scoreElements": 60,
+      "outputShape": [
+        2,
+        3,
+        8
+      ],
+      "projectionParametersNoBias": 256
+    },
+    "maskBatchHeadOrder": [
+      3,
+      3,
+      2,
+      2
+    ],
+    "positionD4": {
+      "P0": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "P1Approx": [
+        0.841471,
+        0.540302,
+        0.01,
+        0.99995
+      ]
+    },
+    "positionOffset": {
+      "past": 3,
+      "new": 2,
+      "indices": [
+        3,
+        4
+      ]
+    },
+    "scoreMemoryFloat32": {
+      "B": 2,
+      "h": 2,
+      "T4Bytes": 256,
+      "T8Bytes": 1024
+    },
+    "assertions": [
+      "split/merge roundtrip with distinct nonconstant elements",
+      "position P(i+delta) equals rotation times P(i) for multiple i,j",
+      "whole-position-table vs chunks with offsets equal",
+      "padding perturbations preserve valid self-attention outputs"
+    ]
+  }
+}

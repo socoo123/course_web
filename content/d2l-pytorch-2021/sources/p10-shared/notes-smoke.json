@@ -1,0 +1,125 @@
+{
+  "lec67": {
+    "splitMergeDistinctRoundtrip": true,
+    "scoreShape": [
+      2,
+      2,
+      3,
+      5
+    ],
+    "outputShape": [
+      2,
+      3,
+      8
+    ],
+    "projections": 256,
+    "positionP1": [
+      0.8414709848078965,
+      0.5403023058681398,
+      0.009999833334166664,
+      0.9999500004166653
+    ],
+    "rotationMaxDiff": 1.1102230246251565e-16,
+    "permutationEquivarianceMaxDiff": 2.384185791015625e-07,
+    "scoreBytesT4T8": [
+      256,
+      1024
+    ]
+  },
+  "lec68": {
+    "FFNParameters": 280,
+    "LNParameters": 16,
+    "featureLNNonInterference": true,
+    "timeFeatureLNCounterexampleMaxDiff": 1.686670184135437,
+    "threeMaskValidRows": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "chunkKeys": [
+      4,
+      5
+    ],
+    "cacheBytesBeam1Beam3": [
+      640,
+      1920
+    ],
+    "realCacheResumeEvidence": "transformer-smoke.json"
+  },
+  "lec69": {
+    "paperMLM": 4,
+    "paperNSP": 0.5,
+    "paperTotal": 4.5,
+    "ignoredSlotGradientZero": true,
+    "gatherShape": [
+      2,
+      3,
+      16
+    ],
+    "forcedReplacementBranchesLabelsRetained": true,
+    "eligiblePositions": [
+      1,
+      2,
+      4
+    ],
+    "realModelGradientAndCorpusNSP": "bert-smoke.json separate"
+  },
+  "lec70": {
+    "truncatedLengths": [
+      4,
+      3
+    ],
+    "segments": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "newHeadParameters": 771,
+    "labelMap": {
+      "entailment": 0,
+      "contradiction": 1,
+      "neutral": 2
+    },
+    "pooledAccuracy": 0.6666666666666666,
+    "incorrectMeanBatchAccuracy": 0.625,
+    "validQASpan": [
+      2,
+      3
+    ],
+    "QAScore": 7,
+    "actualPretrainedIdentity": "bert-smoke.json separate"
+  },
+  "labArithmetic": {
+    "attentionElementsT12T24": [
+      1152,
+      4608
+    ],
+    "bytes": [
+      4608,
+      18432
+    ]
+  },
+  "boundary": "Finite synthetic/paper checks; no full student solution, no performance evidence; real runs logged separately"
+}

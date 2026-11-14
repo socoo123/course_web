@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "labId": "bert-pretrain-finetune",
+  "readAt": "2026-11-14",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "editionBoundary": "Current Chinese second edition fixed commit, not2021 classroom snapshot. Editorial guidance, not a video transcript or duplicated translation.",
+  "linePolicy": "Book readRanges are inclusive requested line ranges of exact raw UTF8 snapshots, not claims of reading omitted ranges. Reader context may show neighboring lines. All chapter snapshots are complete source files; selective reading is explicit.",
+  "bookSources": [
+    {
+      "section": "14.8",
+      "file": "book-bert.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_natural-language-processing-pretraining/bert.md",
+      "lines": 582,
+      "readRanges": [[1,230],[231,299],[300,405],[465,582]],
+      "sha256": "c36a2fb78a500faaaa7712bdfadd8bfbd7e792bc208baf2524fbc74efc6055f3",
+      "usedFor": ["Bidirectional vs causal", "CLS/segments/learned positions", "pos_embedding.data gradient defect", "MLM gather/head", "NSP and BERTModel interfaces"]
+    },
+    {
+      "section": "14.9",
+      "file": "book-bert-dataset.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_natural-language-processing-pretraining/bert-dataset.md",
+      "lines": 448,
+      "readRanges": [[1,240],[244,448]],
+      "readerAdditionalContext": [[241,243]],
+      "sha256": "561162033e7120a507c440bbb6925c7e64fa42cf4d95d9dee6cbf1aeb5bd1d6d",
+      "usedFor": ["Original WikiText2 URL/SHA1", "Paragraph/sentence split", "NSP sampling weakness", "15% and80/10/10 textbook differences", "Padding/MLM slots", "Whitespace vs WordPiece"]
+    },
+    {
+      "section": "14.10",
+      "file": "book-bert-pretraining.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_natural-language-processing-pretraining/bert-pretraining.md",
+      "lines": 372,
+      "readRanges": [[1,215],[270,372]],
+      "sha256": "e52ab2e8f6c432e235b283d0ab8be69fb914d5b0898a0108670846f86bb5a8ba",
+      "usedFor": ["Teaching model128/2layer/2head vs original BERT", "Mean CE and column-weight loss defect", "Separate task denominators", "Limited update budget not full pretraining", "CLS position vs tokenID"]
+    },
+    {
+      "section": "15.4",
+      "file": "book-natural-language-inference-and-dataset.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.md",
+      "lines": 340,
+      "readRanges": [[1,190]],
+      "sha256": "dc3a0adc61a2a902fbfd5abca4c1d9cb7a4312b80d98f6314f3bdd938d9021f2",
+      "usedFor": ["NLI direction and three meanings", "Original SNLI URL/SHA1", "Textbook label mapping", "Original parse columns vs plain_text alternative"]
+    },
+    {
+      "section": "15.6",
+      "file": "book-finetuning-bert.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_natural-language-processing-applications/finetuning-bert.md",
+      "lines": 67,
+      "readRanges": [[1,67]],
+      "sha256": "f511434b8699c877a3b9e0b5374c3b68f5f3f71c8283d809551dbbfb97061be0",
+      "usedFor": ["Sequence vs token interfaces", "Single/pair classification", "Tagging and extraction QA boundaries", "Fine-tuning vs frozen features"]
+    },
+    {
+      "section": "15.7",
+      "file": "book-natural-language-inference-bert.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_natural-language-processing-applications/natural-language-inference-bert.md",
+      "lines": 470,
+      "readRanges": [[1,250],[254,470]],
+      "readerAdditionalContext": [[251,253]],
+      "sha256": "9628b54135e5e0aab86eaa49cea15ffbfb5e3ac579d98493bba3f6b015906387",
+      "usedFor": ["Exact PyTorch bert.small archive/SHA1", "Public local fine-tuning invitation", "Vocab loader/config/dropout discrepancy", "SNLI truncation", "Encoder/pooler/new output head", "Unused pretraining heads"]
+    }
+  ],
+  "publisherSources": [
+    {
+      "source": "Salesforce WikiText card",
+      "urlRead": "https://huggingface.co/datasets/Salesforce/wikitext/raw/main/README.md",
+      "fixedUrl": "https://huggingface.co/datasets/Salesforce/wikitext/raw/b08601e04326c79dfdd32d625aee71d232d685c3/README.md",
+      "readScope": "Complete reader text: artifact416 lines1-300 then301-348; raw download343 lines; source line numbers differ because reader wrapper adds lines.",
+      "cachedRaw": "/tmp/d2l-p10-corpus-cache/wikitext-card.txt",
+      "rawSha256": "d5aabf145d341366745ac703b5844c442c143943b6c77929481395c822b1c28c",
+      "savedExcerpt": "publisher-terms-excerpts.txt",
+      "originalRawExcerptRanges": [[8,10],[163,164],[171,174],[324,326]],
+      "limits": "Metadata3.0/GFDL vs prose4.0 conflict unresolved; no blanket rights grant. Original blog404/reset and original ZIP inaccessible."
+    },
+    {
+      "source": "Stanford SNLI card",
+      "urlRead": "https://huggingface.co/datasets/stanfordnlp/snli/raw/main/README.md",
+      "fixedUrl": "https://huggingface.co/datasets/stanfordnlp/snli/raw/cdb5c3d5eed6ead6e5a341c8e56e669bb666725b/README.md",
+      "readScope": "Complete rendered raw card; raw download275 lines.",
+      "cachedRaw": "/tmp/d2l-p10-corpus-cache/snli-card.txt",
+      "rawSha256": "f5182390b149b02e045286a586b7f4d4d626e1e47eade1bc1feabc01ee549578",
+      "savedExcerpt": "publisher-terms-excerpts.txt",
+      "originalRawExcerptRanges": [[8,9],[34,37],[218,222]],
+      "limits": "Original Stanford page/archive connection failed. Publisher card CC BY-SA4.0 and label mapping explicitly read. Direction typo not copied."
+    },
+    {
+      "source": "Publisher API identity and LFS metadata",
+      "urlsRead": ["https://huggingface.co/api/datasets/Salesforce/wikitext", "https://huggingface.co/api/datasets/Salesforce/wikitext/tree/main?recursive=true", "https://huggingface.co/api/datasets/stanfordnlp/snli", "https://huggingface.co/api/datasets/stanfordnlp/snli/tree/main?recursive=true"],
+      "readScope": "WikiText metadata reader lines1-300 including revision/card; final siblings/footer omitted. WikiText tree and both SNLI API responses read complete.",
+      "savedSelectedFields": "asset-audit.json",
+      "usedFor": "Publisher revision, non-gated status and requested train/validation path/size/LFS SHA256 identity; volatile likes/download counts not retained."
+    },
+    {
+      "source": "Creative Commons license deeds",
+      "urlsRead": ["https://creativecommons.org/licenses/by-sa/3.0/", "https://creativecommons.org/licenses/by-sa/4.0/"],
+      "readScope": "Complete rendered deeds; attribution/sharealike/changes/no-warranties clauses excerpted, not full legal code review.",
+      "savedExcerpt": "publisher-terms-excerpts.txt"
+    }
+  ],
+  "localPlanSources": [
+    {"file":"../practice-plan.json","readRanges":[[1203,1305]],"taskTextEvidence":"grep matches299-325; same exact task texts matched course.json1631-1644"},
+    {"file":"../NEXT-PROMPT.txt","readRanges":[[1,53]]},
+    {"file":"../p10-shared/contract.txt","readRanges":[[1,7]],"fullBertLineRead":6},
+    {"file":"../book-inventory.json","readScope":"grep BERT/NLI fixed section mapping around2480-2666"}
+  ],
+  "licenseBoundary": "Book root Apache-2.0/setup MIT-0 already audited in p1-shared; neither grants third-party corpus/weights/vocab rights. No classroom footage/captions reproduced.",
+  "skillRead": "skill://technical-video-notes",
+  "extraRequiredPapers": [],
+  "runtime": "All numerical checks delegated to main; acquisition is not training evidence."
+}
