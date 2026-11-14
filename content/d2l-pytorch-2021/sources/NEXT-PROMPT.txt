@@ -1,4 +1,4 @@
-维护content/d2l-pytorch-2021。先读已注入AGENTS.md、status.json、sources/p11-manifest.json、sources/PLAN.txt、本交接及skill://technical-video-notes。只改content/；课程仍73讲、12实验、48任务，不重做已验收正文或旧训练，不自动扩充课程、前置课或必读论文。
+维护content/d2l-pytorch-2021。先读已注入AGENTS.md、status.json、status.maintenanceReview指向的最新维护记录、sources/p11-manifest.json、sources/PLAN.txt、本交接及skill://technical-video-notes。只改content/；课程仍73讲、12实验、48任务，不重做已验收正文或旧训练，不自动扩充课程、前置课或必读论文。
 
 P1–P11全课教材/官方来源导读及十二实验双文档已编排完成；不表示全部课堂看完、学生作业完成、竞赛完成或GPU扩展完成。实际元数据、数值、页面和构建验收以p11-manifest与p11-shared最终记录为准。逐讲notes与课堂draft独立，中文教材materials不重译，不创建凑标签的空壳。
 
@@ -28,4 +28,6 @@ P11实际新配对运行：复用官方Fashion缓存，seed2021生成全60000条
 
 页面维护：引用/许可/状态放frontmatter或页底；正文标题不要误含“来源/参考”等被自动收底词。$$独占行，长公式拆行，hash放滚动表，SVG带title/desc且明暗可读。公共资料路由#/c/d2l-pytorch-2021；讲次/lec/<id>?v=notes，实验/lab/<id>?v=zh|guide。页头原站新tab、默认笔记、不嵌入播放器；有视频的改动逐讲检查链接/全P时长，并实点代表入口确认笔记保留和手机布局。xv6通用命令框不适用、not_required材料仍显示待生成、旧LEC2/5/6手机溢出是独立已知UI问题，不擅自改src或重做前批正文。
 
-验收用已有5310预览先确认再复用，不抢占/杀用户服务。实际浏览器tab.emulate定视口，验证用tab结束关闭。只有内容变更需要时运行必要数值、相应页面与一次最终npm run build；不为维护状态重跑旧训练或全套验收。保存真实失败与边界。sources默认gitignore，仅显式加入小JSON/固定原件.txt/build.log，不提交数据、权重、凭据、环境或答案脚本。主agent按用户授权更新status/manifest/PLAN/本交接，提交推送现有github.com/socoo123/course_web的main，交付区分“文档完成”和“学习/课堂/竞赛/硬件仍未完成”。
+验收用已有5310预览先确认再复用，不抢占/杀用户服务。实际浏览器tab.emulate定视口，验证用tab结束关闭。正文或视频元数据变更才检查相应页面，新实验才做必要数值；提交前一次最终npm run build。仅维护状态时检查JSON/完成账及交接引用，不重跑旧训练或全套页面。保存真实失败与边界。sources默认gitignore，仅显式加入小JSON/固定原件.txt/build.log，不提交数据、权重、凭据、环境或答案脚本。主agent按用户授权更新status/维护manifest/PLAN/本交接，保留P1–P11历史证据，提交推送现有github.com/socoo123/course_web的main，交付区分“文档完成”和“学习/课堂/竞赛/硬件仍未完成”。
+
+最新维护（2026-11-14，基线814be1c）：见sources/maintenance-2026-11-14.json。课程目录没有新增未入库文件；官方课程更新/收尾入口及公告未带来可关闭缺口的新依据。本轮未取得可信字幕/媒体、认证竞赛文件/scorer或新硬件实测，因此未新增课堂稿、未推进竞赛/GPU完成状态，未动已验收正文或旧模型。此次核查范围有限，不是全网来源不存在的证明。下一轮先看用户新输入或真正新增证据；不要仅因进入新会话就再次请求同一批旧页面/字幕或重做维护记录。

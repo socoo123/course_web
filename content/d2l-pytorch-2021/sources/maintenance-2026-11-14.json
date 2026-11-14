@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "courseId": "d2l-pytorch-2021",
+  "date": "2026-11-14",
+  "kind": "maintenance_not_new_content_batch",
+  "baselineCommit": "814be1c",
+  "previousBatchManifest": "sources/p11-manifest.json",
+  "result": "no_new_gap_closing_evidence_in_reviewed_scope",
+  "reviewedScope": {
+    "localCourseFiles": {
+      "untrackedAtStart": 0,
+      "ignoredAtStart": 0,
+      "newUserSuppliedMaterials": false,
+      "boundary": "仅检查本课程目录与本次用户输入；没有扫描用户其他目录或凭据。"
+    },
+    "officialPages": [
+      {
+        "url": "https://courses.d2l.ai/zh-v2/",
+        "method": "read native HTML extraction",
+        "readScope": "课程更新、摘要、开头课表及收尾LEC67–73入口；未重新验收全部视频元数据。",
+        "observation": "课程更新仍为第二十四周课程结束；收尾视频入口仍为BV13b4y1m7y8、BV1bP4y1p7Gq、BV1AL4y1Y7gu。",
+        "gapClosingEvidence": false
+      },
+      {
+        "url": "https://courses.d2l.ai/zh-v2/announcements.html",
+        "method": "read native HTML extraction",
+        "readScope": "第二十四周至第一周的全部可读公告。",
+        "observation": "仍为历史课程结束、加州房价/树叶/牛仔竞赛及既有B站入口；第二十二周指向CodaLab33573结果及8月15日赠书代码条件，没有提供本轮可核实的认证文件或部署评分器。",
+        "gapClosingEvidence": false
+      }
+    ],
+    "reusedEvidence": [
+      "sources/p11-manifest.json",
+      "sources/p11-lec71/competition-evidence.json",
+      "sources/NEXT-PROMPT.txt",
+      "sources/PLAN.txt"
+    ],
+    "boundary": "本轮未取得新增可信证据不等于全网不存在该证据；没有把公告、视频元数据、历史字幕空列表或HTTP412当成课堂审阅。"
+  },
+  "decisions": {
+    "classroomDrafts": "保留0份发布、73讲阻塞；194P历史空列表/9P受限未知不重刷，不推断无烧录字幕。",
+    "historicalCompetitions": "保留认证文件、规则、scorer及执行缺口；牛仔image_id/id、像素xyxy与评分端适配仍未核。不以banana/VOC替代。",
+    "hardwareExtensions": "无新硬件实测记录；保留既有CPU证据，GPU/MPS/多设备/网络计算仍未运行。设备可用性不等于实测。",
+    "personalLearning": "不认证个人作业或课程总结视频学习完成。",
+    "acceptedContent": "不修改已验收导读、图示、实验文档或course.json，不重训旧模型，不改写P1–P11历史验收。"
+  },
+  "notExecuted": [
+    "字幕接口重试、媒体下载或课堂审阅",
+    "竞赛登录、接受规则、文件下载、评分或提交",
+    "模型训练、硬件探测或GPU/MPS基准",
+    "新正文生成或既有页面重复验收"
+  ],
+  "parallelism": "没有两个独立实质内容切片，未拆分agent。",
+  "verification": {
+    "consistency": {
+      "status": "passed",
+      "jsonFilesParsed": 4,
+      "counts": {"lectures": 73, "labs": 12, "tasks": 48, "notes": 73, "drafts": 0, "labDocuments": 24},
+      "publishedFilesUnchanged": 178,
+      "completionLedgerAndKnownIssuesUnchanged": true,
+      "p11HistoricalManifestUnchanged": true,
+      "handoffReferencesResolve": true
+    },
+    "build": {
+      "command": "npm run build",
+      "runs": 1,
+      "exitCode": 0,
+      "tsc": "passed",
+      "vite": "5.4.21",
+      "modules": 3080,
+      "buildSeconds": 9.05,
+      "log": "sources/maintenance-2026-11-14-build.log"
+    },
+    "browser": "not_run_no_published_body_or_video_metadata_changes",
+    "numerical": "not_run_no_new_experiment",
+    "boundary": "本次仅验证维护记录/完成账/交接引用与构建；不把历史页面、训练或当前部署标为本次重新验收。"
+  },
+  "nextTrigger": "用户新材料、可信新课堂来源、合法认证竞赛文件/部署scorer或实际设备运行证据；无变化则保留缺口，不重复旧来源请求。"
+}

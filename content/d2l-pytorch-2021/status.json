@@ -2,7 +2,7 @@
   "courseId": "d2l-pytorch-2021",
   "plannedAt": "2026-11-13",
   "updatedAt": "2026-11-14",
-  "phase": "P11_full_course_guides_and_lab_documents_verified_classroom_competition_GPU_gaps_preserved",
+  "phase": "evidence_driven_maintenance_no_new_gap_closing_evidence",
   "plan": "sources/PLAN.txt",
   "nextPrompt": "sources/NEXT-PROMPT.txt",
   "scheduleInventory": "sources/schedule-inventory.json",
@@ -1009,7 +1009,7 @@
   "nextExecution": {
     "entry": "sources/NEXT-PROMPT.txt",
     "parallelism": "维护有两个以上独立实质切片时继续task多agent，各自独占讲次/实验目录；主agent负责共享索引与统一验收。",
-    "firstWork": "先读P11交接/manifest，按用户指定的维护问题处理。已有73讲教材/官方来源导读和十二实验文档不重做、不重训旧模型；仅新可信证据可推进课堂、竞赛或硬件缺口。",
+    "firstWork": "先读最新maintenanceReview、P11交接/manifest，按用户指定的维护问题处理。已有73讲教材/官方来源导读和十二实验文档不重做、不重训旧模型；仅新可信证据可推进课堂、竞赛或硬件缺口。本轮核查未取得可推进证据，不把再次读取旧公告记作新增课堂或竞赛依据。",
     "initialLectureIds": [],
     "initialPracticeIds": [],
     "remainingLectureNotes": [],
@@ -1092,7 +1092,7 @@
     "scopeRules": "sources/PLAN.txt",
     "beforeGeneratingVideoContent": "先读skill://technical-video-notes；逐讲核官方BV全部分P/作者年份/真实总时长，无字幕不造课堂稿。",
     "remainingPracticeIds": [],
-    "afterEachBatch": "主agent统一必要数值、真实浏览器及一次最终build，更新状态交接，提交推送现有main并给下一提示词；只改content。"
+    "afterEachBatch": "主agent按实际变更做最小验收，提交前一次最终build；仅正文/视频元数据变更才检查相应真实页面，仅新实验才做必要数值验证。不为状态维护重跑旧训练或全套页面。更新状态交接，提交推送现有main；只改content。"
   },
   "completionLedger": {
     "courseTextbookAndOfficialSourceGuides": "complete_73_of_73_not_all_129_book_sections",
@@ -1104,6 +1104,7 @@
     "futureWork": "evidence_driven_maintenance_not_new_content_batch"
   },
   "batchManifest": "sources/p11-manifest.json",
+  "maintenanceReview": "sources/maintenance-2026-11-14.json",
   "bookVersion": "sources/p1-shared/book-version.json",
   "planningVerification": {
     "metadataAndLinks": "passed_2026-11-13：73讲/103源行/12练习/48任务/16章/129小节；完整课表视频链接多重集逐项一致，所有站内路由和交接路径可解析，4份源快照哈希一致；只发布公共资料Markdown，无逐讲/实验占位正文。",
