@@ -1,0 +1,49 @@
+CS336-2026 P2 验收记录
+日期：2026-11-14
+结论：P2「首批端到端样板」完成并验收，保留真实权限、阅读与执行边界。停止，不进入P3。P1基线提交7588260未重做。
+
+一、交付范围
+- L01、L02各notes.zh.md + draft.zh.md，共4份；draft是按真实时间的适度译述与全片导航，不是完整逐句翻译。
+- bridge04 Python实验工程、bridge02概率/信息论、bridge01张量形状、bridge05内存语义、bridge07浮点稳定性、bridge08资源估算，六篇独立编者notes。
+- labs/a1-basics/guide.zh.md仅为P2来源/任务地图；全部38个计分Problem索引在sources/p2-a1/task-index.json。未创建lab.zh.md，没有声称完整A1指导或实验完成。
+- 两张原创SVG仅在notes；没有课堂截图、音视频下载或materials占位。
+- 合计10份讲次正文、1份A1任务地图；公共资料更新到真实进度。仅content/，不碰src/或官方作业代码。
+
+二、实际阅读，不以采集冒充
+- L01完整1509 cues，00:04.880–79:17.220；对应Python762行完整读；trace只读指定分词状态。12处内部>2秒空隙及两端如实记录。
+- L02完整1425 cues，00:05.040–77:20.780；固定recording trace中files[lecture_02.py]881行完整读。当前lecture_02.py只读版本差异，不混入录像时序。37处内部>2秒空隙、8条INAUDIBLE及其他疑点保留。
+- A1固定Spring2026 v26.0.3、仓库a158843b20107949f1a8d7df1b05cd33b9166712，47页全部提取文本已读；不是逐页视觉审校。README旧2025、LICENSE版权2025、package26.0.0与讲义版次分开。
+- 桥接官方Python/PyTorch文档按各分片明确范围读取，补充版本不冒充课程依赖。没有新增16篇论文全文精读。
+- 52个P2来源记录指向45个去重后的本地文件/哈希，包含P1复用、补充原件和派生阅读物；不是52个新下载，也不等于远端备份。
+- 主manifest保留70个P1原始快照条目，新增5个P2分片指针和processing状态；分片的pending/false是子任务交接时状态，最终验收以本记录、p2-acceptance.json、status.json为准。
+
+三、主agent审查与整合
+- 主agent通读11份正文，核对形状、概率分母、内存单位、低资源边界和许可；选段独立跨源记录见p2-shared/source-spotcheck.json。
+- L02字幕02:12–02:16 H100、30:15–30:30一周、46:59–47:07 BF16 ReLU强度1/4、70:08–70:24参数元素数，均为课堂自纠，不能把静态源码残留数值当事实或说成编者首次纠正。
+- 独立澄清：6ND有条件；AMP计算dtype不等于权重存储；梯度累积主要省激活而非FLOPs，均值需正确加权；分段checkpoint峰值O(L/k+k)、全网额外前向O(L)。未运行带限制的整份课堂脚本。
+- L01概率完整推导统一回链bridge02，避免两篇重复展开；修正L02页底A1链接到实际存在的guide标签。
+- A1§7.5 leaderboard为标准路线6分计分题，不普遍标选做；10 B200-hours探索与45min/0.75h单run分别记录。p44校外有限GPU低资源框才有TinyStories替代和可选提交。327.68M/loss≤1.45与约40M/loss≤2.00不等效。
+- A1保留完整MIT版权、许可和改动声明；第三方材料不继承。录像/课堂讲义许可仍未确认，只自主讲解与适度译述。官方AI政策禁止代写作业/排行榜实现，本批只提供概念/API微例与导航。
+
+四、实际验证
+1. python3 sources/check-p2.py（从仓库根的完整路径见p2-acceptance.json）：通过10讲次文档+1任务地图、2SVG、96站内链接、155时间范围、52源记录/45去重文件哈希；两份时间图全部cue各覆盖一次，内部>2s空隙精确匹配；38任务ID与固定讲义相符。无sources .md、无越界P3正文。
+2. 现有Python3.11.8/PyTorch2.5.1 CPU环境实际运行10个正文代码片段，并核对数值、别名、梯度、形状、浮点与预算微例。全部通过，完整输出cpu-example-check.json。不是A1 torch2.11.0依赖验收，也不是GPU性能/官方训练。没有安装环境；临时smoke脚本已删除。
+3. npm run build初次通过，Vite5.97s。浏览器发现7个手机页面的长display公式/inline SHA256导致溢出；只在content分行公式、将完整哈希保留来源清单，未改src。修复后再次构建通过，Vite5.64s。第二次构建是具体页面问题的必要复验，不跑其他无关套件。
+4. 浏览器使用production build的Vite preview 127.0.0.1:5412。12个页面（11正文+公共资料）均实际访问桌面1440×1000与手机390×844。7个修复页面定向复验后所有手机页面宽390；KaTeX错误0、runtime错误0。表格使用内部横滚，A1实际wheel横滚71px；bridge02折叠答案实际展开。
+5. L01/L02页头分别JuoVZkPBiKk/79:22、kuYAsz7zspQ/77:25，默认笔记。两者均真实点击YouTube入口，新标签打开正确目标，原笔记URL/标题/选中标签保留。
+6. 实际查看代表性桌面/手机正文、两张原创图及深浅色、A1手机任务表、概率公式。截图只作本地页面证据，不冒充课堂截图或GitHub备份。
+机器记录：p2-shared/structure-check.json、cpu-example-check.json、page-check.json、source-spotcheck.json、build.log、build-after-layout.log。
+
+五、模型
+全部5个实际子agent显式openai-codex/gpt-6-astra:xhigh。Main读取每个当前子会话model_change/thinking_level_change及首assistant模型字段：全部gpt-6-astra/xhigh、resolvedModelIsFallback=false。cfg预检perCallModel已为on，无override/prewalk，本轮没有改配置。证据p2-model-preflight.json；P1模型记录保留。后续仍须重新核实。
+
+六、仍未做及真实缺口
+- 没有核音、全片看画面、截帧、阅读全文trace事件流或全部图像依赖；不把字幕空隙猜成静音，不将疑词静默当原话。
+- 未进入L03/L04或其他批次；A1完整说明/指导仍为P3，全部官方作业未实现/运行。
+- 没有官方测试、训练、模型/数据下载、付费API或云算力启动。CPU机制微例不替代官方原规模。
+- L18缺片、L02版本边界、A3/A4/A5权限/规模/许可缺口及其他P1发现全部保留。
+- 本地原始字幕、规范化全文、PDF、代码原件、补充文档及浏览器截图不发布；GitHub仅提交正文/SVG与轻量清单、审核、检查、提示词。
+
+七、交接与GitHub
+status.json、production-plan.json、manifest.json已更新；reading-map.json的16篇单一归属及P1阅读状态不虚增。下一关键词CS336-2026-P3-模型基础，完整可复制NEXT-P3-PROMPT.txt。P3不自动开始。
+提交推送结果由实际git输出后报告，不预填commit SHA或GitHub Pages部署成功。沿用现有sources忽略策略，只明确强制加入本课程轻量文件，不整目录add -f，不强推或修改远端。

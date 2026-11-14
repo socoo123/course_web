@@ -1,0 +1,49 @@
+CS336 Spring 2026 P2 — bridge05 / bridge07 / bridge08
+
+实际交付
+- lectures/bridge05/notes.zh.md：storage/dtype/shape/stride/offset，地址手算，view与reshape/transpose/contiguous，别名、clone、detach及快照；微例、自测折叠答案、L02回链。
+- lectures/bridge07/notes.zh.md：FP32/FP16/BF16位分配、范围/精度、正常与次正常数、overflow/underflow、非结合、稳定softmax/logsumexp、归约dtype与均值权重；微例、自测、L02回链。
+- lectures/bridge08/notes.zh.md：byte/GB/GiB；参数/梯度/状态/主参数/激活/临时buffer分账；存活峰值与allocated/reserved；矩阵乘FLOPs与带条件6ND；warmup/同步/重复测量/记录表；低资源边界、自测、L02回链。
+- sources/p2-bridge-systems/manifest-fragment.json：18条逐源记录、精确阅读范围、许可证据、状态与主agent微例建议。
+- sources/p2-bridge-systems/review.txt：本记录。
+- 同分片raw/有16份新增原始来源快照，text/有14份派生阅读文本，仅本地；没有原文.md。P1 recording和字幕原件直接复用，未复制、重取或改写。
+- 三篇均为编者桥接，不是官方讲次。仅notes；无独立录像，无draft/materials占位。表格、公式和小数组足以解释本批桥接，因此没有硬加SVG或截图。
+
+实际已读与已写分开
+1. 已读NEXT-P2-PROMPT及production-plan相关内容、P1 lecture review/recording条目，读取课程bridge/lec02身份。
+2. 实际读P1 lecture_02_recording.json内嵌files[lecture_02.py]选定范围：1–168、277–350、371–428、613–666、805–876及函数轮廓。不称整个trace事件流、所有源码或图像精读。未把当前lecture_02.py混作录像版。
+3. 实际读PyTorch 2.9版本文档13页；Tensor Views、finfo、numerical accuracy及clone/detach/sum/mean/softmax/logsumexp的主正文已读；view、Storage、CUDA、Benchmark按manifest限定节/行读取，非整页全文精读。每页原始HTML均有SHA256/UTC，派生文本只辅助定位，不替代原件。
+4. 实际读PyTorch v2.9.0完整LICENSE。仓库BSD三条款式许可不外推课程录像、文档站壳或第三方图片；发布正文为原创解释而非文档全文译本。
+5. 为核对格式数值，读Wikipedia Bfloat16条目正文和固定修订1384316605中的FP16/BF16/FP32位分配、指数范围；保存版本及SHA256。另读并固定Wikipedia版权政策修订1378669134，确认文本CC BY-SA 4.0及媒体独立许可。中文只核对数值事实并独立推导，不复制其段落、位图或表格。
+6. Main提示课堂已有自纠后，本slice实际读取P1 L02字幕70:00.700–70:30.980，仅这段。70:08–70:24讲者明确把parameter_memory修正成number of parameters。bridge08页底已说明静态源码仍留旧值、课堂已有修正，不称编者首次纠正课堂错误；回链L02 draft上下文。没有全文字幕已读声明，没有核音、看画面或截帧。
+7. 三篇notes已写；未宣称独立审查通过、代码执行通过或浏览器验收。
+
+关键技术处理
+- view(shape)按stride兼容性判断，不把非contiguous一律写成不能view；给出stride(4,2)展平为stride(2,)的反例。
+- reshape可能复制，contiguous可能返回自身；clone复制但默认可保留转置布局和autograd关系；detach切断求导却共享storage。
+- BF16与FP32指数范围相同，不说全部表示边界完全一样；tiny是最小正常数，min是最负有限数；次正常数可能被后端冲刷。
+- softmax有限输入减最大值、logsumexp稳定形式；不写可提交作业实现，只调用库API观察三个数。logsumexp没有dtype参数，先转换输入；已丢信息不能事后恢复。
+- 归约指定dtype与事后转dtype分开；不声称mean必然采用sum再除或必然溢出；不同大小组的均值需要加权。
+- 内存始终从参数元素数N出发，每个账户只乘一次元素字节数；12/16bytes是明示存储方案下的例子，不称PyTorch默认。reserved包含allocated，不能相加。
+- 6ND明确稠密矩阵乘主导、前后向、短上下文近似/额外计算另列、实际token次数等条件；无硬件性能预报。
+- 低资源示例仅检查机制，不等于官方训练、依赖验收或A1提交；不提供优化器/softmax/完整训练实现或排行榜代码。
+
+主agent可执行的最小建议（本slice均未运行）
+- bridge05正文微例：修改t[0,1]后x=[[0,1,2],[99,4,5]]，提前复制的c=[[0,3],[1,4],[2,5]]；stride(3,1)/(1,3)，s.offset=1；clone/detach/独立快照的requires_grad为True/False/False。另检查t.view(-1)抛RuntimeError而q=arange(12).reshape(3,4)[:,::2]可view为[0,2,4,6,8,10]。
+- bridge07：float32的[1000,1001,999] softmax约[.244728,.665241,.090031]，绝对容差1e-6；logsumexp约1001.407606，绝对容差1e-4。4个FP16的40000默认sum为inf、FP32 sum为160000、FP32 mean为40000；不要断言默认mean必溢出。可选验证FP32标量a=2**24,b=1,c=-2**24两种括号得0和1。
+- bridge08：N=2**20时BF16参数/梯度与两份FP32状态共12MiB，另有FP32主参数则16MiB；每个(2,128,512) BF16激活256KiB；3份激活+512KiB workspace在明示同时存活条件下合计13.25MiB（无主参数和其他开销）。
+- CPU计时模板输入ones (32,64)@(64,16)，输出(32,16)全64；逻辑数据x+w+y=14336byte=14KiB，近似65536FLOPs。Timer只报告本机实际结果，不设时间阈值。Main已表示有torch2.5.1隔离环境；若使用它应记录真实版本，不把该验证说成PyTorch2.9文档环境或官方A1依赖验收。
+- 页面整合应检查三篇折叠答案、长表/公式手机可读性与L02 notes/draft回链；本slice没有预报检查结果。
+
+未做事项
+- 未运行任何示例、测试、构建、lint、formatter、验证命令或git。
+- 未修改course/catalog/resources/status/共享manifest/reading-map/production-plan/model-preflight；没有创建子agent。
+- 未安装环境、下载模型/训练数据/媒体、启动付费算力或进入L03与后续系统课。
+- P1许可和视频缺口不被本片改写；视频manual/non-ASR分类不等于已人工逐词校订。
+- 未把采集当成全文阅读，未把正文写成等同官方讲次，未宣布已审核或页面已验收。
+
+可直接整合的状态
+- bridge05/bridge07/bridge08：notes=written_pending_main_review；sourceRead=actual_ranges_recorded；draft=not_applicable_editorial_bridge_no_official_recording；materials=not_created_no_separate_assigned_material；codeExecution=not_run；pageAcceptance=not_run。
+- manifest中delivery和integration_status_fields有机器可读版本。
+- 模型运行核实由Main负责，依据sources/p2-model-preflight.json；本slice仅引用，不重复宣称自行核验运行元数据。
+- sources原始全文和text派生全文仅本地，整合提交轻量manifest/review及三篇自主notes；没有把原件存在等同已提交/备份。

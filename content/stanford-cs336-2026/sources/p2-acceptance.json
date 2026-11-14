@@ -1,0 +1,87 @@
+{
+  "course_id": "stanford-cs336-2026",
+  "phase": "P2",
+  "date": "2026-11-14",
+  "result": "passed_with_documented_limits",
+  "completion_meaning": "L01-L02 sample, six associated prerequisite bridges and A1 source/task map accepted. Not full video translation, audio verification, full A1 guidance, assignment execution or P3 production.",
+  "states": {
+    "registered": {"lecture_entries":43,"lab_entries":7,"p1_canonical_source_snapshot":70,"p2_source_records":52},
+    "acquired": {"unique_p2_source_files_hash_checked":45,"policy":"Includes reused P1 and new/derived files; not 45 newly downloaded originals or a remote raw backup."},
+    "read": {"lec01_caption_cues":1509,"lec02_caption_cues":1425,"lec01_python_lines":762,"lec02_recording_python_lines":881,"a1_extracted_text_pages":47,"a1_scored_tasks_indexed":38,"papers_newly_close_read":0,"other_sources":"Actual scoped ranges in five P2 fragments; trace event streams and classroom figures not fully read."},
+    "written": {"lecture_notes":8,"limited_classroom_paraphrases":2,"a1_task_maps":1,"original_svgs":2,"materials":0,"full_a1_lab_instructions":0},
+    "reviewed": {"body_documents_read_by_main":11,"source_crosscheck":"p2-shared/source-spotcheck.json","integration":"Removed repeated probability derivation from L01 in favor of bridge02; corrected L02 A1 link to guide; retained classroom self-corrections, editorial qualifications and scoped low-resource leaderboard exception."},
+    "accepted": {"body_pages":11,"updated_resources_page":1,"official_assignments_executed":0}
+  },
+  "structure": {
+    "command":"python3 content/stanford-cs336-2026/sources/check-p2.py",
+    "result":"passed",
+    "evidence":"p2-shared/structure-check.json",
+    "internal_links":96,
+    "in_bounds_time_ranges":155,
+    "svg_assets":2,
+    "p2_fragments":5,
+    "source_records":52,
+    "unique_file_hashes":45,
+    "caption_navigation":"Both cue sets covered exactly once by source time maps; all internal >2s gaps match raw captions (L01 12, L02 37).",
+    "a1_tasks":"All38 unique IDs match the fixed handout Problem blocks.",
+    "scope_note":"Ran before subsequent content-only formula line breaks and inline-hash presentation fixes; no source/time/task changes followed. Formula rendering and changed layouts were verified in the rebuilt site."
+  },
+  "cpu_examples": {
+    "result":"passed",
+    "evidence":"p2-shared/cpu-example-check.json",
+    "python":"3.11.8",
+    "torch":"2.5.1",
+    "device":"cpu",
+    "body_code_blocks":10,
+    "pages":["bridge04","bridge02","bridge01","bridge05","bridge07","bridge08","lec02"],
+    "additional":"L01 UTF-8/byte concatenation; compatible noncontiguous view; FP32 nonassociativity; A1 token-budget arithmetic; bridge08 memory arithmetic; exact L02 gradients.",
+    "limits":"Existing local teaching environment, not fixed A1 torch2.11.0 or documentation2.9/2.15 environment acceptance. No official tests or model/data download. Timer output is a local API demonstration, not course GPU performance.",
+    "throwaway_script":"Deleted after successful execution; published code examples remain in the learning pages."
+  },
+  "build": {
+    "command":"npm run build",
+    "result":"passed",
+    "components":["tsc --noEmit","vite build"],
+    "initial_vite_seconds":5.97,
+    "final_vite_seconds":5.64,
+    "evidence":["p2-shared/build.log","p2-shared/build-after-layout.log"],
+    "reason_for_second_build":"Browser found seven mobile pages overflowing due to long displayed formulas or inline SHA256. Fixed only content; rebuilt and rechecked those seven pages. No unrelated suite."
+  },
+  "browser": {
+    "result":"passed",
+    "surface":"Production build served by Vite preview at 127.0.0.1:5412",
+    "desktop":"1440x1000",
+    "mobile":"390x844",
+    "routes_each_size":12,
+    "body_routes":11,
+    "video_headers":[{"id":"lec01","video":"JuoVZkPBiKk","duration":"79:22"},{"id":"lec02","video":"kuYAsz7zspQ","duration":"77:25"}],
+    "actual_new_tab_clicks":["lec01","lec02"],
+    "default_notes_and_original_page_retained":true,
+    "final_mobile_page_width":390,
+    "katex_errors":0,
+    "runtime_errors":0,
+    "images":"Both original SVGs loaded; representative desktop/mobile and light/dark screenshots viewed. No classroom screenshots or audio verification claimed.",
+    "interactions":"A1 table horizontally scrolled71px by wheel; probability-bridge details answer actually opened.",
+    "evidence":"p2-shared/page-check.json",
+    "screenshots":"p2-shared/screenshots/ local-only; no remote screenshot-backup claim"
+  },
+  "models": {
+    "subagents":5,
+    "selector":"openai-codex/gpt-6-astra:xhigh",
+    "resolved_model":"openai-codex/gpt-6-astra",
+    "thinking_level":"xhigh",
+    "fallback":false,
+    "configuration_changed_this_run":false,
+    "actual_runtime_evidence":"p2-model-preflight.json"
+  },
+  "preserved_limits":[
+    "Video and classroom handout full-translation permission remains unverified; drafts are limited paraphrases and navigation.",
+    "No lecture audio or frames verified, no original media downloaded; gaps and uncertain terms stay explicit.",
+    "A1 full47-page text reading is not per-page visual formula/figure audit; full instructions/guidance belong to P3.",
+    "Other P1 papers/captions are not promoted to full reading. L18 missing and all P1 compute/access/version gaps remain.",
+    "No official assignment implementation, tests, training, paid cloud job, data/model download or institutional access attempted."
+  ],
+  "publication_boundary":"Only content bodies/assets and lightweight provenance, review, checks and handoff. No raw fulltexts, captions, PDFs, external document mirrors or browser screenshots committed.",
+  "git_delivery":"Commit/push result reported from actual execution separately; no predicted commit or Pages deployment success.",
+  "next_stage":{"id":"P3","keyword":"CS336-2026-P3-模型基础","prompt":"NEXT-P3-PROMPT.txt","state":"not_started","auto_start":false}
+}

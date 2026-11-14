@@ -1,0 +1,110 @@
+Stanford CS336 Spring 2026 — P2 A1 task map delivery
+Date: 2026-11-14
+Scope owner: P2AssignmentOne
+Assigned directories only: labs/a1-basics/ and sources/p2-a1/
+
+ACTUAL FILES WRITTEN
+1. labs/a1-basics/guide.zh.md
+   Chinese P2 task decomposition/source navigation, not full A1 guidance or a solved assignment.
+   Includes stage dependencies, inputs/artifacts, actual section/Problem IDs, acceptance entrypoints,
+   L01/L02 starting boundary, L03-onward/P3 boundary, resource/access distinction, AI policy,
+   complete original MIT notice and editorial modification statement.
+2. sources/p2-a1/task-index.json
+   All 38 scored Problem blocks indexed with section/pages, title, points, subquestions where present,
+   conceptual dependencies, inputs, deliverables and handout acceptance entrypoints.
+   Separate standard-route requirements, official low-resource alternatives and truly optional unscored suggestions.
+3. sources/p2-a1/manifest-fragment.json
+   Eight per-source records, all reusing actual existing P1 files; original acquisition times/SHA256 retained.
+   Includes actual P2 read scope, Chinese treatment, material files, gaps and mechanical integration fields.
+4. sources/p2-a1/review.txt
+   This delivery boundary and main-agent verification suggestions.
+
+ACTUAL READING
+- A1 PDF edition: Spring 2026 / Version 26.0.3 / 47 pages.
+- Repository commit: a158843b20107949f1a8d7df1b05cd33b9166712.
+- Entire existing pdftotext -layout extraction actually read continuously: lines 1–2442,
+  printed pp.1–47, including task statements, examples, low-resource tips and bibliography.
+  The tool ranges plus displayed neighboring lines covered every line; this was not only a heading search.
+- README (50 lines), LICENSE (7), pyproject (50), CHANGELOG (225): read in full.
+- Complete repository blob-path/size inventory and root SHA/truncated=false read via JSON projection.
+  Individual test/adapters bodies, fixtures, AGENTS/CLAUDE instructions and packaging script not read.
+- Cluster-guide snapshot lines 1–143 of 185 actually read: enrolled-only access, Stanford Google sign-in
+  and invite, own environment, shared workspace/security, data/volumes, concurrency and GPU section start.
+  Remaining lines not read in this slice; no permission or account access attempted.
+- P1 metadata was reused, not treated as a substitute for reading A1 itself.
+- No raw source re-downloads, source-file edits or new raw-text publication.
+
+TECHNICAL/REQUIREMENT CONCLUSIONS FROM THE SOURCES
+- README's Spring 2025 title is stale. PDF cover and current changelog support the fixed 2026 edition;
+  package version 26.0.0 and Copyright 2025 are separate metadata, not a different handout version.
+- Standard TinyStories: approximately 327,680,000 tokens, validation loss <=1.45,
+  single-B200 reference run roughly 20–30 minutes for correct efficient code.
+- Official CPU/MPS route: approximately 40M tokens, relaxed loss <=2.00.
+  Detailed staff example: 32*5000*256=40,960,000 tokens, M4 Max 36GB, CPU 82min/MPS 36min, loss1.80.
+  These are source-reported results, not local runs and not equivalent to the standard route.
+- The short p3 M4 feasibility statement does not promise full A1 completion in five minutes.
+  The handout's MPS/TF32/compile warning records torch2.9.0 experience; current manifest declares 2.11.
+- BPE resource envelopes are <=30min/30GB (TinyStories10k) and <=12h/100GB (OWT32k), no GPU.
+  They are neither universal minimum configurations nor guaranteed timings on any CPU machine.
+- §7.5 leaderboard is a standard-route 6-point problem; no universal Optional label.
+  10 B200 hrs is the exploration label, while final run is <=45min=0.75 B200-hours.
+  p44's separate low-resource box specifically describes leaderboard submission as optional for the
+  limited-GPU online route and recommends continuing TinyStories modifications. Scope is kept explicit.
+- Truly optional suggestions are separated: systems-language BPE acceleration, fused QKV stretch goal,
+  shared RoPE caching, and choice of architecture-improvement ideas. They are not extra required tasks.
+- Tests listed are the handout's acceptance navigation, not tests run or test source verified.
+  Module tests, experimental artifacts, target metrics and page-production status are kept distinct.
+- Model output is logits; mask True means allowed; RoPE acts on Q/K, not V; gradient clipping uses the
+  aggregate gradient norm; checkpoint contract includes optimizer state and iteration, not weights alone.
+- Official AI policy permits conceptual/API assistance but forbids AI implementing any assignment
+  component, including leaderboard code/autocomplete. No implementation or numerical task solutions supplied.
+- MIT applies to first-party software/associated documentation. Full copyright/permission/warranty
+  notice appears in the guide, with modification statement. It does not cover datasets, quoted papers,
+  third-party figures, package dependencies, cloud services or cluster-guide permission by inheritance.
+
+MODEL
+Main notified this worker that actual model_change/thinking_level_change and first assistant metadata
+were checked: openai-codex/gpt-6-astra, xhigh, resolvedModelIsFallback=false.
+Main evidence: sources/p2-model-preflight.json. Worker did not independently audit runtime events.
+No subagents were spawned by this worker.
+
+NOT DONE / NOT CLAIMED
+- No lab.zh.md, English handout publication, A1 code, complete solution or full P3 guide.
+- No per-page visual PDF/formula/image audit and no cited-paper full-text reading.
+- No official code/tests/fixtures audit, lock re-read, package installation or platform compatibility claim.
+- No build, lint, formatter, test, smoke run, hash rerun, link check, browser review or git command.
+- No datasets/models downloaded, checkpoint produced, GPU launched, paid compute purchased,
+  institutional login used, leaderboard/Gradescope submission made, or A1 experiment completed.
+- No shared course/catalog/resources/status/manifest/reading-map/production-plan/model-preflight edits.
+- The fragment says reviewed=false and accepted=false. Main must supply real review/page acceptance later.
+
+SUGGESTED MINIMAL CHECKS FOR MAIN (NOT RUN HERE)
+Mechanical:
+- Parse the two new JSON files; confirm task ID uniqueness and 38 scored Problem entries.
+- Resolve eight reused source paths and compare listed SHA256 against P1/local files during Main's
+  aggregate source check, without counting PDF+extraction as two independently read handouts.
+- Check guide route and L01/L02/bridge routes, MIT footer, mobile table readability and clear P2 label.
+- Keep lab.zh.md absent; expose only the guide variant for A1. Do not mark A1 implementation complete.
+- Standard leaderboard should remain scored; p44 online low-resource caveat must not overwrite it.
+CPU/arithmetic examples, only if useful to Main's existing minimal check batch:
+- Check 32*5000*256 == 40960000 and 45/60 == 0.75.
+- Check that 327680000/40960000 == 8, illustrating different token budgets rather than equivalent runs.
+- These expected values are hand-calculated, not executed here. No PyTorch/model/data download is needed.
+- No proposed check requires implementing a tokenizer, Transformer, optimizer or decoding solution.
+
+READY-TO-INTEGRATE STATE
+assignment_id: a1-basics
+material_file: labs/a1-basics/guide.zh.md
+guide_route: #/c/stanford-cs336-2026/lab/a1-basics?v=guide
+content_kind: P2 task decomposition and source navigation
+content_written: true
+unique_handouts_full_extracted_text_read: 1
+handout_pages_text_read: 47
+scored_problems_indexed: 38
+source_records: 8
+lab_zh_created: false
+full_A1_guidance_completed: false
+assignment_implementation_or_experiments_completed: false
+independent_review_completed: false
+page_acceptance_completed: false
+worker_checks_run: none

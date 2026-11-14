@@ -1,0 +1,49 @@
+{
+  "phase": "P2",
+  "reviewer": "Main",
+  "date": "2026-11-14",
+  "scope": "Independent selected-source review before integrated page acceptance; not full-video watching or assignment execution",
+  "checks": [
+    {
+      "source": "p1-videos/captions/kuYAsz7zspQ.en-US.manual.json3",
+      "source_sha256": "039448d7bf8899b9310e7019476c7650a5325f3783d6ff956eeac851d3f555f3",
+      "read_seconds": [[125,140],[1805,1835],[2810,2840],[4195,4235]],
+      "findings": [
+        "At 132.75s speaker corrects hardware to H100.",
+        "At 1823.73s speaker corrects two weeks to one week.",
+        "At 2819.11s speaker corrects ReLU arithmetic intensity to one quarter; dtype and read/write boundary must accompany the ratio.",
+        "At 4213.40–4221.38s speaker explicitly changes memory multipliers to parameter count, not parameter_memory. This is classroom self-correction, not an editor silently rewriting the lecture."
+      ]
+    },
+    {
+      "source": "p1-lectures/raw/var/traces/lecture_02_recording.json",
+      "source_sha256": "90a7c53791b2317d945a4126520f518131131ae11e2f9019c863f5ec9d26504e",
+      "read_scope": "Embedded files[lecture_02.py], lines 633–665, memory and compute accounting",
+      "finding": "Static recording source retains parameter_memory in gradient/state multipliers even though parameter_memory is already bytes. Caption self-correction is the relevant classroom evidence; independent accounting uses N times bytes-per-element."
+    },
+    {
+      "source": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "source_sha256": "a84a70aba7a1aa28e6c9dca04b0dfe79896fb74a979e382c5d61f8db77dd2cec",
+      "read_scope": "Lines 1–173, 1984–2105, 2329–2405; task/optional/resource wording search and excerpts at 430–494 and 2281–2290. Not full 47-page review by Main.",
+      "findings": [
+        "Cover Spring 2026 Version 26.0.3; framework restrictions and AI implementation prohibition explicit.",
+        "TinyStories original 327680000 tokens and validation loss at most 1.45; CPU/MPS low-resource advice about 40000000 tokens and target 2.00, with 40960000 worked run. Distinct protocols, not equivalent completion.",
+        "Opening short M4 demonstration is not the detailed low-resource experiment duration or full assignment completion time.",
+        "Section 7.5 leaderboard is a 6-point standard task. 10 B200-hours exploration and 45-minute/0.75-hour final-run limit are different quantities.",
+        "Page 44 explicitly permits the limited-GPU online-student route to continue on TinyStories and optionally submit to the leaderboard. This narrow exception does not make the standard task universally optional."
+      ]
+    },
+    {
+      "source": "p1-assignments-a1-a4/a1/LICENSE",
+      "source_sha256": "b3ccacaf9286910f22ba98681601f426288297f17004699f99d9fdd5f7432751",
+      "read_scope": "Full license, all 7 lines",
+      "finding": "Copyright 2025 Stanford University; MIT first-party software and associated documentation, notices required. Not an assignment-year test or third-party reuse license."
+    },
+    {
+      "source": "p1-shared/ai-policy.txt",
+      "source_sha256": "127b697e3a67d9a3d86e0aa6cfdd6bb2ddc74a28c5786198b8d24008b9d6ef01",
+      "read_scope": "Complete policy, all 21 lines",
+      "finding": "Conceptual/API help allowed; assignment and leaderboard implementation/experiment code must be handcrafted. P2 provides navigation and independent prerequisite mechanisms, no submission solution."
+    }
+  ]
+}

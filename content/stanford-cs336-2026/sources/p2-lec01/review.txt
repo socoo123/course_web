@@ -1,0 +1,62 @@
+CS336 Spring 2026 P2 — L01 阅读与撰写记录
+范围：仅 lectures/lec01/ 与 sources/p2-lec01/。
+模型：本次任务要求 openai-codex/gpt-6-astra:xhigh；Main 已消息确认实际 model_change/thinking_level_change、首 assistant 字段及无 fallback，统一证据 sources/p2-model-preflight.json。本分片没有自行读取运行事件或宣称页面已验收。
+
+一、完成的正文
+1. lectures/lec01/notes.zh.md
+   自主核心问题、三种表示、往返契约、语言建模链式分解/NLL/PPL、跨 tokenizer 度量限制、词表/序列资源取舍、BPE 不变量与重叠/顺序/tie-break、A1 概念检查清单、自测及答案。概率推导与 A中/ababx/aaa 为明确标注的编者补充；课堂行政信息、历史及五单元预告不在 notes 重复展开。
+2. lectures/lec01/draft.zh.md
+   严格按2026录像原顺序的17个内容块，加首尾无字幕段；课堂演示仅适度译述，不是逐句或全文翻译。包含完整79:22导航、12处内部>2s空隙、首尾空隙、未核音术语、课堂预告与最终作业规格的区别；没有伪造问答、画面或截图。
+3. lectures/lec01/assets/tokenization-tradeoff.svg
+   原创 ababx 单轮合并图，展示字节不变量、token数5→3和词表256→257；含title/desc，无脚本、无外部资源，最小16px字体，透明背景及prefers-color-scheme明暗配色。未实际渲染或浏览器验收。
+4. 不创建 materials.zh.md：P1没有给L01指定独立的课外阅读正文归属；课堂推荐链接不升级为已精读材料。没有引入论文全文。
+
+二、实际来源阅读
+- 先读 technical-video-notes 技能、NEXT-P2-PROMPT、production-plan相关合同、P1总review、视频review的通用及lec01部分、讲义review、lec01 metadata及主manifest相应记录。
+- 原始字幕 p1-videos/captions/JuoVZkPBiKk.en-US.manual.json3 复用P1。运行技能现有normalize_captions.py仅作来源规范化，生成 captions.normalized.json、captions.en.vtt、transcript.en.txt，没有重新下载媒体/字幕。
+- 实际分段全读 transcript.en.txt 全2646行，包括cue内部换行；对应1509条非空cue全部内容。各次实际显示行范围及涉及cue索引记录在reading-log.json。并非只下载、扫描或读取首尾。
+- 首起4.880s，末止4757.220s，视频4762s；首缺4.880s、尾缺4.780s。12处内部>2s空隙逐项复用P1已核实时间统计，在本次全文阅读中保留；不把字幕空隙认定为静音。
+- p1-lectures/raw/lecture_01.py 实际全读1–762行，提交de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e。源码SHA256和成功恢复获取UTC来自P1 recovery.json，未伪称本轮重新获取或复核哈希。
+- trace仅选读：根结构/文件键/617步总数，0-based steps 0,1,2,383,386,391,394,417,437,452,481,484,488,491,495,498,501,506,599的特定字段。读取往返值、压缩率、BPE相邻对与新增词表条目；大词表显示收窄为新ID，不声称整份trace或全部图像已读。
+- 原始P1记录未改；本分片登记新的实际阅读范围。来源URL、版本、SHA256、获取UTC、许可及read_scope在manifest-fragment.json逐源保留。派生字幕文件的哈希仅为新生成证据的身份信息，不是本轮跑验证的报告。
+
+三、关键技术/版本结论
+- 2026视频明确为JuoVZkPBiKk，Stanford Online，79:22，上传2026-04-14；不修改共享metadata。源码第58行Spring2025播放列表是历史链接，不得用于本年时间轴。
+- 当前固定讲义提交在学期之后。draft时间与顺序以2026字幕为准，不把当前讲义内容强塞进录像。
+- 教学代码实际调用o200k_base；课堂称GPT-5 tokenizer。两者分别标注，不能据此发布泛化的产品/分词器对照表。
+- trace支持Hello混合文字示例20bytes/8tokens=2.5，以及BPE演示新增th/the/the-space、最终1.5bytes/token。这些是读到的既有trace输出，不是本轮执行得到的结果。
+- 原讲义A2–A5有上一届链接/预告，录像明确部分规格尚未决定；特别是第一讲A3的缓存API介绍不能用来否定P1已核实的2026真实训练任务。
+- 不确定项：atom/Adam、Cloud Code产品名、224n的MLP字样、scaling loss、SMDB/70B、MV link、GPD、Steven/Stephen；详细位置和处理见reading-log.json及draft页底。没有声称听音校正。
+- 部分手写讲义算法全名疑有笔误；正文保留DPO/GRPO缩写和课堂角色，不传播错误展开或暗示已读对应论文。
+
+四、许可与发布边界
+- 单视频license=null；讲义仓库P1未发现统一授权。公开可读不等于全文翻译许可。
+- notes为自主讲解，SVG原创；draft为有限顺序译述与导航，不是完整翻译。
+- 未下载音视频、未核音、未截帧、未复制讲义/论文图像，无生成画面冒充截图。
+- transcript.en.txt、captions.normalized.json、captions.en.vtt只留本地，不能强制提交未经许可全文。P1原始字幕同样只留本地。
+- 可整合的轻量来源记录：manifest-fragment.json、reading-log.json、time-intervals.json、source-evidence.json、本review.txt。
+
+五、供Main统一执行的最小验证建议（本agent没有执行）
+A. 来源与时间机械检查：原JSON3非空cue数1509；规范化TXT与cue多行对应；time-intervals.json内容块首尾0/4762、连续导航；12处内部>2s空隙及两端已明确列出。核对JSON中的cue范围采用start-time归属，不将其当每秒语音覆盖。
+B. Markdown/链接/图：两篇正文可渲染；桥接bridge04/bridge02、lec02和A1 guide链接可达；相对SVG引用可达且XML可解析；检查桌面/手机、明暗主题的字体和横向溢出。SVG尚未渲染，不预报通过。
+C. 不需要安装课程环境的CPU微例：
+   - s='A中'：预期len(s)=2，list(s.encode('utf-8'))=[65,228,184,173]，字节数4；对应码点级r=2，字节级r=1。
+   - b''.join([b'ab',b'ab',b'x'])==b'ababx'；仅验证字节拼接不变量，预期5bytes/3tokens，不执行BPE训练或生成A1实现。
+   - math.exp(-math.log(0.25))预期4；同总NLL12、token数6/12时平均损失2/1、PPL为e²/e，仅演示分母不可混比。
+   - 'aaa'的相邻aa计数2而非重叠合并次数1，建议手工对照，不给完整算法解答。
+D. Main按总计划统一做必要构建/浏览器验收；不要把以上建议写成已运行。
+
+六、可直接整合的状态
+lectureId=lec01
+materialFiles=[lectures/lec01/notes.zh.md, lectures/lec01/draft.zh.md]
+assetFiles=[lectures/lec01/assets/tokenization-tradeoff.svg]
+captionFullRead=true；captionCuesRead=1509；handoutPythonFullRead=true；traceRead=selected_fields_only
+notesWritten=true；draftWritten=true；materialsWritten=false；materialsReason=no_assigned_independent_reading_body
+sourceFragment=p2-lec01/manifest-fragment.json
+readingLog=p2-lec01/reading-log.json
+timeIntervals=p2-lec01/time-intervals.json
+sourceEvidence=p2-lec01/source-evidence.json
+independentReview=false；browserAccepted=false；examplesExecuted=false；audioVerified=false；framesExtracted=0
+
+七、未做事项
+没有build/tests/lint/formatter/git；没有课程实现、环境安装、数据模型下载、收费算力或P3/L03–04制作；没有修改course/catalog/resources/status/manifest/reading-map/production-plan等共享文件。

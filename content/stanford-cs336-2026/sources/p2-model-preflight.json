@@ -1,0 +1,27 @@
+{
+  "phase": "P2",
+  "checkedAt": "2026-11-14",
+  "requestedModel": "openai-codex/gpt-6-astra:xhigh",
+  "observedConfiguration": {
+    "defaultModelRole": "openai-codex/gpt-6-astra:xhigh",
+    "taskPerCallModel": "on",
+    "taskEnableEffort": false,
+    "taskAgentModelOverrides": {},
+    "taskPrewalk": false
+  },
+  "configurationChangedThisRun": false,
+  "resolvedSubagentModel": "openai-codex/gpt-6-astra",
+  "resolvedSubagentEffort": "xhigh",
+  "resolvedModelIsFallback": false,
+  "subagentsStarted": 5,
+  "runtimeEvidence": [
+    {"agent":"P2LectureOne","modelEvent":"add6414c","effortEvent":"68652ca8","timestamp":"2026-11-14T15:02:45.577Z"},
+    {"agent":"P2LectureTwo","modelEvent":"b2b44841","effortEvent":"41467100","timestamp":"2026-11-14T15:02:45.582Z"},
+    {"agent":"P2BridgeFoundations","modelEvent":"711b82aa","effortEvent":"08b6926d","timestamp":"2026-11-14T15:02:45.603Z"},
+    {"agent":"P2BridgeSystems","modelEvent":"e84224d7","effortEvent":"267920d8","timestamp":"2026-11-14T15:02:45.551Z"},
+    {"agent":"P2AssignmentOne","modelEvent":"1a9e6861","effortEvent":"11d560ea","timestamp":"2026-11-14T15:02:45.565Z"}
+  ],
+  "verification": "Main inspected each current-run child session's model_change and thinking_level_change events and first assistant metadata. All five: openai-codex/gpt-6-astra, xhigh, resolvedModelIsFallback=false; assistant provider=openai-codex/model=gpt-6-astra. No prompt-only effort claim.",
+  "p1EvidencePreserved": "model-preflight.json",
+  "nextDispatchGate": "Recheck supported config and actual child runtime events for later phases; no model substitution or downgrade."
+}

@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "lecture_id": "lec01",
+  "recorded_at": "2026-11-14T15:20:17.161836Z",
+  "source_reuse": "All primary source files reused from P1; no refetch. Normalization is derived acquisition processing, not audio verification.",
+  "identity": {
+    "video_id": "JuoVZkPBiKk",
+    "title": "Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 1: Overview, Tokenization",
+    "channel": "Stanford Online",
+    "duration_seconds": 4762,
+    "upload_date": "20260414",
+    "scheduled_date": "2026-03-30",
+    "edition_evidence": "Individual title explicitly Spring2026 / Lecture1. lecture_01.py lines53–58 explicitly distinguishes Spring2026 third offering from Spring2025 second-offering playlist."
+  },
+  "version": {
+    "commit": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+    "commit_date": "2026-09-12T21:34:48Z",
+    "caution": "Post-term fixed source; not declared recording-identical. Current handout previews A2–A5 and old PDF links are not final2026 assignment specs."
+  },
+  "normalization": {
+    "tool": "skill://technical-video-notes/scripts/normalize_captions.py",
+    "command": "python3 /Users/zy/.agents/skills/technical-video-notes/scripts/normalize_captions.py content/stanford-cs336-2026/sources/p1-videos/captions/JuoVZkPBiKk.en-US.manual.json3 content/stanford-cs336-2026/sources/p2-lec01",
+    "observed_stdout": "1509 cues; 00:00:04.880–01:19:17.220",
+    "content_policy": "No lexical correction in derived English text; original internal line breaks preserved; whole English artifacts local only."
+  },
+  "technical_source_locations": [
+    {
+      "claim": "Tokenizer encode/decode interface",
+      "file": "p1-lectures/raw/lecture_01.py",
+      "lines": [
+        256,
+        262
+      ]
+    },
+    {
+      "claim": "Byte concatenation, encode/decode and compression definition",
+      "file": "p1-lectures/raw/lecture_01.py",
+      "lines": [
+        505,
+        571
+      ]
+    },
+    {
+      "claim": "o200k_base is actual teaching-code encoding",
+      "file": "p1-lectures/raw/lecture_01.py",
+      "lines": [
+        574,
+        576
+      ]
+    },
+    {
+      "claim": "Tokenizer tradeoffs and byte coverage",
+      "file": "p1-lectures/raw/lecture_01.py",
+      "lines": [
+        627,
+        695
+      ]
+    },
+    {
+      "claim": "BPE training, ordered merges and A1 extensions",
+      "file": "p1-lectures/raw/lecture_01.py",
+      "lines": [
+        698,
+        758
+      ]
+    }
+  ],
+  "trace_evidence": [
+    {
+      "step_index_0_based": 383,
+      "source_line": 605,
+      "function": "tokenization_examples",
+      "observed_env": {
+        "reconstructed_string": "Hello, 🌍! 你好!"
+      }
+    },
+    {
+      "step_index_0_based": 386,
+      "source_line": 609,
+      "function": "tokenization_examples",
+      "observed_env": {}
+    },
+    {
+      "step_index_0_based": 391,
+      "source_line": 609,
+      "function": "tokenization_examples",
+      "observed_env": {
+        "compression_ratio": 2.5
+      }
+    },
+    {
+      "step_index_0_based": 394,
+      "source_line": 612,
+      "function": "tokenization_examples",
+      "observed_env": {
+        "vocabulary_size": 200019
+      }
+    },
+    {
+      "step_index_0_based": 417,
+      "source_line": 647,
+      "function": "character_tokenizer",
+      "observed_env": {
+        "compression_ratio": 1.5384615384615385
+      }
+    },
+    {
+      "step_index_0_based": 437,
+      "source_line": 670,
+      "function": "byte_tokenizer",
+      "observed_env": {
+        "compression_ratio": 1.0
+      }
+    },
+    {
+      "step_index_0_based": 452,
+      "source_line": 689,
+      "function": "word_tokenizer",
+      "observed_env": {
+        "compression_ratio": 5.5
+      }
+    },
+    {
+      "step_index_0_based": 481,
+      "source_line": 740,
+      "function": "train_bpe",
+      "observed_env": {
+        "pair": [
+          116,
+          104
+        ]
+      }
+    },
+    {
+      "step_index_0_based": 484,
+      "source_line": 745,
+      "function": "train_bpe",
+      "observed_env": {
+        "vocab": {
+          "256": "b'th'"
+        }
+      }
+    },
+    {
+      "step_index_0_based": 488,
+      "source_line": 740,
+      "function": "train_bpe",
+      "observed_env": {
+        "pair": [
+          256,
+          101
+        ]
+      }
+    },
+    {
+      "step_index_0_based": 491,
+      "source_line": 745,
+      "function": "train_bpe",
+      "observed_env": {
+        "vocab": {
+          "256": "b'th'",
+          "257": "b'the'"
+        }
+      }
+    },
+    {
+      "step_index_0_based": 495,
+      "source_line": 740,
+      "function": "train_bpe",
+      "observed_env": {
+        "pair": [
+          257,
+          32
+        ]
+      }
+    },
+    {
+      "step_index_0_based": 498,
+      "source_line": 745,
+      "function": "train_bpe",
+      "observed_env": {
+        "vocab": {
+          "256": "b'th'",
+          "257": "b'the'",
+          "258": "b'the '"
+        }
+      }
+    },
+    {
+      "step_index_0_based": 501,
+      "source_line": 748,
+      "function": "train_bpe",
+      "observed_env": {}
+    },
+    {
+      "step_index_0_based": 506,
+      "source_line": 748,
+      "function": "train_bpe",
+      "observed_env": {
+        "compression_ratio": 1.5
+      }
+    },
+    {
+      "step_index_0_based": 599,
+      "source_line": 719,
+      "function": "bpe_tokenizer",
+      "observed_env": {
+        "reconstructed_string": "the quick brown fox"
+      }
+    }
+  ],
+  "editorial_additions": [
+    "Probability-chain/NLL/PPL derivation and cross-tokenizer denominator example",
+    "A中 byte/codepoint example",
+    "ababx original SVG and one-merge invariant",
+    "aaa overlap example and implementation-contract questions",
+    "Vocabulary/sequence-length cost reasoning and limits",
+    "A1 conceptual checklist without implementation"
+  ],
+  "license": {
+    "video": "unverified; individual metadata license=null",
+    "handout": "unverified; P1 complete tree found no LICENSE/COPYING/NOTICE and API license=null",
+    "evidence": [
+      "p1-videos/metadata/lec01-JuoVZkPBiKk.json",
+      "p1-lectures/review.txt",
+      "p1-lectures/version-review.json",
+      "p1-lectures/tree.json"
+    ],
+    "public_treatment": "Independent notes, original SVG and moderate chronological paraphrase; not full translation. No source images copied."
+  },
+  "material_files": [
+    "lectures/lec01/notes.zh.md",
+    "lectures/lec01/draft.zh.md"
+  ],
+  "asset_files": [
+    "lectures/lec01/assets/tokenization-tradeoff.svg"
+  ],
+  "status": {
+    "acquired_reused": true,
+    "caption_full_read": true,
+    "handout_python_full_read": true,
+    "trace_selected_read": true,
+    "written_notes": true,
+    "written_draft": true,
+    "written_materials": false,
+    "independently_reviewed": false,
+    "browser_accepted": false,
+    "examples_executed": false
+  }
+}

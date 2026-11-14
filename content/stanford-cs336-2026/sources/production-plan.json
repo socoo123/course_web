@@ -48,12 +48,12 @@
     "requestedModel": "openai-codex/gpt-6-astra:xhigh",
     "observedConfiguration": {
       "defaultModelRole": "openai-codex/gpt-6-astra:xhigh",
-      "taskPerCallModel": "on (P1 session override only; not persisted)",
+      "taskPerCallModel": "on (P2 observed existing configuration; no config mutation this run)",
       "taskEnableEffort": false,
       "taskAgentModelOverrides": {},
       "checkedAt": "2026-11-14"
     },
-    "dispatchPreflight": "P1显式派发5个独立采集任务，完整selector均为openai-codex/gpt-6-astra:xhigh；已从实际model_change、thinking_level_change及首条assistant元数据核实模型和xhigh，无fallback。证据见model-preflight.json。会话覆盖未持久化，下次派发重新预检。",
+    "dispatchPreflight": "P2显式派发5个独立内容任务，selector均为openai-codex/gpt-6-astra:xhigh；Main实际核对model_change、thinking_level_change和首assistant字段，全部gpt-6-astra/xhigh、无fallback。证据p2-model-preflight.json，P1旧证据保持原样。",
     "concurrency": "建议每波 4 至 6 个相互独立的任务，按来源访问情况调整；不是一次性启动全课。",
     "ownership": "每个内容任务独占其讲次、实验和来源分片目录；主 agent 独占 catalog.json、course.json、resources.zh.md、status.json 和汇总来源清单。",
     "workerContract": "按分配范围完成来源核实、采集和正文制作；记录源 URL、版本、许可、读取范围与缺口；不跨目录改共享文件；中途不运行构建、lint、测试或格式化。",
@@ -147,7 +147,7 @@
   "productionPhases": [
     {"id": "phase0", "title": "课程骨架与共享约定", "deliverables": ["课程元数据与目录卡片", "完整讲次、桥接、专题与实验入口", "公共资料与学习顺序", "术语及阅读归属约定", "模型配置预检", "来源清单与状态结构"], "status": "complete", "completedAt": "2026-11-14", "acceptance": "p0-acceptance.json"},
     {"id": "phase1", "title": "并行采集与来源核查", "deliverables": ["官方课表快照", "逐讲视频 ID、作者、时长与字幕可用性", "讲义、论文和实验讲义的固定版本", "逐来源许可与章节范围", "校内权限、硬件与资料缺口清单"], "status": "complete_with_documented_gaps", "completedAt": "2026-11-14", "acceptance": "p1-acceptance.json", "gaps": "p1-gaps.json"},
-    {"id": "phase2", "title": "首批端到端样板", "deliverables": ["L01–L02 的实际可制作材料", "对应先修桥接", "A1 的来源与任务拆解", "真实页面与视频入口验收"], "note": "不以空白占位页充当完成；样板通过后复用结构，不要求用户反复确认排版。"},
+    {"id": "phase2", "title": "首批端到端样板", "deliverables": ["L01–L02 的实际可制作材料", "对应先修桥接", "A1 的来源与任务拆解", "真实页面与视频入口验收"], "status": "complete_with_documented_limits", "completedAt": "2026-11-14", "acceptance": "p2-acceptance.json", "review": "P2-REVIEW.txt", "note": "10份讲次正文+1份A1任务地图，2张原创SVG。draft为适度译述而非全文翻译；无materials占位。A1完整说明/指导仍属P3，官方实验未执行。"},
     {"id": "phase3", "title": "模型基础批", "deliverables": ["L03–L04", "A1 完整说明和指导", "关联桥接、专题与论文材料"]},
     {"id": "phase4", "title": "硬件与训练系统批", "deliverables": ["L05–L08", "A2 完整说明和指导", "关联专题与论文材料"]},
     {"id": "phase5", "title": "缩放推理与评测批", "deliverables": ["L09–L12", "A3 完整说明和指导", "关联专题与论文材料"]},
@@ -169,13 +169,13 @@
     "https://github.com/stanford-cs336/lectures",
     "https://cs336.stanford.edu/spring2025/"
   ],
-  "currentDelivery": "P1来源核查与验收完成：18条官方视频与字幕、17讲讲义及独立L02录像版、16篇固定论文、5个完整仓库SHA和6份2026作业讲义。结构/哈希/链接、视频页头桌面手机及实际新标签点击、更新的公共资料与实验目标页面、npm run build均通过。L18录像与权限/许可等缺口保留，未宣称全文精读；讲次/实验正文仍0，P2未启动，无收费算力。",
+  "currentDelivery": "P2验收完成并停止：L01/L02各notes+适度draft，bridge04/02/01/05/07/08六篇notes，A1 guide任务地图与38题索引。两讲全部2934 cues已读并记录缺口；A1全部47页提取文本已读，不冒充逐图校验。52个分片来源记录/45个唯一文件哈希、时间/链接/SVG、10个正文CPU微例、生产构建及12页面桌面手机检查通过。手机长公式与哈希显示已仅在content修复并复验。原视频/讲义许可、L18缺失和其他P1权限缺口保留。无官方作业执行或收费算力。",
   "actualProgressFile": "../status.json",
-  "modelPreflightFile": "model-preflight.json",
+  "modelPreflightFile": "p2-model-preflight.json",
   "nextStage": {
-    "id": "phase2",
-    "keyword": "CS336-2026-P2-样板",
-    "promptFile": "NEXT-P2-PROMPT.txt",
+    "id": "phase3",
+    "keyword": "CS336-2026-P3-模型基础",
+    "promptFile": "NEXT-P3-PROMPT.txt",
     "status": "not_started",
     "autoStart": false
   }

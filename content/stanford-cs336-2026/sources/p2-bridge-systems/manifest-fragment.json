@@ -1,0 +1,682 @@
+{
+  "schemaVersion": 1,
+  "courseId": "stanford-cs336-2026",
+  "slice": "p2-bridge-systems",
+  "created_at": "2026-11-14T15:20:54.984375+00:00",
+  "path_convention": {
+    "file": "relative to sources/",
+    "material_files": "relative to course root"
+  },
+  "scope": [
+    "bridge05 notes only",
+    "bridge07 notes only",
+    "bridge08 notes only"
+  ],
+  "status": "authored_source_scoped_pending_main_verification",
+  "model_preflight_reference": "p2-model-preflight.json",
+  "sources": [
+    {
+      "id": "p2-bridge-systems-pytorch29-tensor-views",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/tensor_view.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/tensor_view.html",
+      "retrieved_at": "2026-11-14T15:04:47.071030+00:00",
+      "sha256": "b50cbd477845d83267c87d06a9fa0bdb142ef181fc4c81b8adf9fb041c2c84f5",
+      "file": "p2-bridge-systems/raw/tensor-views.html",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+        "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+        "scope": "First-party API/reference semantics used for original notes; no documentation prose or media republished in full"
+      },
+      "read_scope": "Complete main article, including view operation list, basic versus advanced indexing, reshape and contiguous caveats; equivalent text extraction lines 1-80.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "编者自主中文机制解释、手算与独立微例；不是文档全文翻译，也不是官方课外指定材料",
+      "material_files": [
+        "lectures/bridge05/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_scope_recorded_used_in_notes_pending_main_verification",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/tensor-views.txt",
+          "sha256": "1741f30f46793fd6f4e3958d39a5bfd1744b49e36a366d074c1c6c9e7fa40278",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-pytorch29-tensor-view",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/generated/torch.Tensor.view.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/generated/torch.Tensor.view.html",
+      "retrieved_at": "2026-11-14T15:04:47.034374+00:00",
+      "sha256": "cafd4ddb6b3a1cee7411b222c84c9ec27757f74254a5758b666494c697ffe133",
+      "file": "p2-bridge-systems/raw/tensor-view.html",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+        "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+        "scope": "First-party API/reference semantics used for original notes; no documentation prose or media republished in full"
+      },
+      "read_scope": "Shape overload constraints and examples plus dtype-overload requirements/warning; extracted text lines 1-69. Remaining dtype examples not read.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "编者自主中文机制解释、手算与独立微例；不是文档全文翻译，也不是官方课外指定材料",
+      "material_files": [
+        "lectures/bridge05/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_scope_recorded_used_in_notes_pending_main_verification",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/tensor-view.txt",
+          "sha256": "243ec283dff370f0da12b0be22b8d496b6b3e0e4154775ff819a00ebc7cc88c4",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-pytorch29-clone",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/generated/torch.clone.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/generated/torch.clone.html",
+      "retrieved_at": "2026-11-14T15:04:46.945684+00:00",
+      "sha256": "38bc3910e3a3478d99925d69cda16b1edc8abfdf7fd10fc06d43d78f5e1e980b",
+      "file": "p2-bridge-systems/raw/clone.html",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+        "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+        "scope": "First-party API/reference semantics used for original notes; no documentation prose or media republished in full"
+      },
+      "read_scope": "Complete API body; extracted text lines 1-17. Copy, autograd and preserve_format semantics.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "编者自主中文机制解释、手算与独立微例；不是文档全文翻译，也不是官方课外指定材料",
+      "material_files": [
+        "lectures/bridge05/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_scope_recorded_used_in_notes_pending_main_verification",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/clone.txt",
+          "sha256": "1bbde16342b328d705cd6ebf272fc2597c034a3114cb513645ee4af2c77a605d",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-pytorch29-detach",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/generated/torch.Tensor.detach.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/generated/torch.Tensor.detach.html",
+      "retrieved_at": "2026-11-14T15:04:46.923202+00:00",
+      "sha256": "2ba67aebfaf3d58bd2150093013592007d944428f8b5e46ebd4688aecaa5beb5",
+      "file": "p2-bridge-systems/raw/detach.html",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+        "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+        "scope": "First-party API/reference semantics used for original notes; no documentation prose or media republished in full"
+      },
+      "read_scope": "Complete API body; extracted text lines 1-10. Shared storage and removed autograd relationship.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "编者自主中文机制解释、手算与独立微例；不是文档全文翻译，也不是官方课外指定材料",
+      "material_files": [
+        "lectures/bridge05/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_scope_recorded_used_in_notes_pending_main_verification",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/detach.txt",
+          "sha256": "2768f0f5de5790f2e8b134ebc56b45678b58cabdf91c25ba42445e6dc7abc44a",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-pytorch29-storage",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/storage.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/storage.html",
+      "retrieved_at": "2026-11-14T15:04:47.541145+00:00",
+      "sha256": "5156442805917f0c19dcca6b2ed553d242f89187a544ab667eaec5fb50d91ad2",
+      "file": "p2-bridge-systems/raw/storage.html",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+        "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+        "scope": "First-party API/reference semantics used for original notes; no documentation prose or media republished in full"
+      },
+      "read_scope": "Introductory components, Untyped Storage explanation, pointer caveat, direct-manipulation warning and special cases; extracted text lines 1-95, plus beginning of API list through line 118. Remaining storage API list not read.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "编者自主中文机制解释、手算与独立微例；不是文档全文翻译，也不是官方课外指定材料",
+      "material_files": [
+        "lectures/bridge05/notes.zh.md",
+        "lectures/bridge08/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_scope_recorded_used_in_notes_pending_main_verification",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/storage.txt",
+          "sha256": "dce1f6871b8c41a659eda7d82a1162f2ba92f0bcae4c244d482c1be008cce2cd",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-pytorch29-numerical-accuracy",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/notes/numerical_accuracy.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/notes/numerical_accuracy.html",
+      "retrieved_at": "2026-11-14T15:04:49.349652+00:00",
+      "sha256": "9605f8ef9d70eaff62a9748399a65d1649b135c627c2721d4aec5ce2552664fe",
+      "file": "p2-bridge-systems/raw/numerical-accuracy.html",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+        "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+        "scope": "First-party API/reference semantics used for original notes; no documentation prose or media republished in full"
+      },
+      "read_scope": "Complete main article via static reader, including associativity, batched computations, extremal values, linalg, TF32 and reduced precision caveats; equivalent extracted text lines 1-114. Bridge uses introductory, extremal-value and reduction sections, not later-system instruction.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "编者自主中文机制解释、手算与独立微例；不是文档全文翻译，也不是官方课外指定材料",
+      "material_files": [
+        "lectures/bridge07/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_scope_recorded_used_in_notes_pending_main_verification",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/numerical-accuracy.txt",
+          "sha256": "def0e6a4361b4e690114471d958c1cf349f2c4d11c8b78dcf72f705d54d0e7bd",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-pytorch29-type-info",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/type_info.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/type_info.html",
+      "retrieved_at": "2026-11-14T15:04:48.904282+00:00",
+      "sha256": "fd7a8f1ab82c68397ff14b922b30e6795f654ee5ac413030f1852a1a495325c3",
+      "file": "p2-bridge-systems/raw/type-info.html",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+        "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+        "scope": "First-party API/reference semantics used for original notes; no documentation prose or media republished in full"
+      },
+      "read_scope": "Complete main article via static reader; finfo/iinfo and all attribute definitions, especially eps/min/tiny/subnormal distinction; equivalent text lines 1-58.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "编者自主中文机制解释、手算与独立微例；不是文档全文翻译，也不是官方课外指定材料",
+      "material_files": [
+        "lectures/bridge07/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_scope_recorded_used_in_notes_pending_main_verification",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/type-info.txt",
+          "sha256": "c3e9b5d142a3d0bc982a1f63e7551cb308f742424de0baf158d34db9d032c606",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-pytorch29-sum",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/generated/torch.sum.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/generated/torch.sum.html",
+      "retrieved_at": "2026-11-14T15:04:48.695629+00:00",
+      "sha256": "1526cc64e5cfb1902214c0abd19912ef5b174a6f93b65a46c007e5c3daa0d3b0",
+      "file": "p2-bridge-systems/raw/sum.html",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+        "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+        "scope": "First-party API/reference semantics used for original notes; no documentation prose or media republished in full"
+      },
+      "read_scope": "Complete API body and examples; extracted text lines 1-47, especially dtype casts before reduction.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "编者自主中文机制解释、手算与独立微例；不是文档全文翻译，也不是官方课外指定材料",
+      "material_files": [
+        "lectures/bridge07/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_scope_recorded_used_in_notes_pending_main_verification",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/sum.txt",
+          "sha256": "e1224327140db9c2d7e48de7bcb6812c215ad91739a59d4666b5b08999131c4a",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-pytorch29-mean",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/generated/torch.mean.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/generated/torch.mean.html",
+      "retrieved_at": "2026-11-14T15:04:49.045085+00:00",
+      "sha256": "b0a44806b2685f456b06e59dcf5cb0d069187a92f20f06f2b5d721696d5a0d79",
+      "file": "p2-bridge-systems/raw/mean.html",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+        "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+        "scope": "First-party API/reference semantics used for original notes; no documentation prose or media republished in full"
+      },
+      "read_scope": "Complete API body and examples; extracted text lines 1-53, especially dtype and mean-versus-sum semantics.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "编者自主中文机制解释、手算与独立微例；不是文档全文翻译，也不是官方课外指定材料",
+      "material_files": [
+        "lectures/bridge07/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_scope_recorded_used_in_notes_pending_main_verification",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/mean.txt",
+          "sha256": "ed04dfe322996b366f6b614e0fdba7af7169e925e4f21a4bb07c5042fa01b26f",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-pytorch29-softmax",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/generated/torch.nn.functional.softmax.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/generated/torch.nn.functional.softmax.html",
+      "retrieved_at": "2026-11-14T15:04:50.684012+00:00",
+      "sha256": "5d5e60ac99676071f7f8bdebdfd745d3b05af209414b6e81dca2b9b78f7ae2c9",
+      "file": "p2-bridge-systems/raw/softmax.html",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+        "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+        "scope": "First-party API/reference semantics used for original notes; no documentation prose or media republished in full"
+      },
+      "read_scope": "Complete API body; extracted text lines 1-20, dim/dtype contract and recommendation of log_softmax.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "编者自主中文机制解释、手算与独立微例；不是文档全文翻译，也不是官方课外指定材料",
+      "material_files": [
+        "lectures/bridge07/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_scope_recorded_used_in_notes_pending_main_verification",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/softmax.txt",
+          "sha256": "822cf8a4ca7baee571e4c81dbaa432f2d6388d8196110ef129c2c2487e5ebe13",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-pytorch29-logsumexp",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/generated/torch.logsumexp.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/generated/torch.logsumexp.html",
+      "retrieved_at": "2026-11-14T15:04:50.811049+00:00",
+      "sha256": "5c7f88891f41dd51a31c63744d63eefcaa1621464dab2a6b7bf65678c1cdb3e1",
+      "file": "p2-bridge-systems/raw/logsumexp.html",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+        "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+        "scope": "First-party API/reference semantics used for original notes; no documentation prose or media republished in full"
+      },
+      "read_scope": "Complete API body; extracted text lines 1-24, numerical stabilization, dim/keepdim and absence of dtype keyword.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "编者自主中文机制解释、手算与独立微例；不是文档全文翻译，也不是官方课外指定材料",
+      "material_files": [
+        "lectures/bridge07/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_scope_recorded_used_in_notes_pending_main_verification",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/logsumexp.txt",
+          "sha256": "459989b24ade75523c4876678aea57fbafe70a65b66e19c81c3f318bc5ae4ceb",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-pytorch29-benchmark",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/benchmark_utils.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/benchmark_utils.html",
+      "retrieved_at": "2026-11-14T15:04:54.348137+00:00",
+      "sha256": "ec885ed40df019885b96aa6c75264e01fb6051b6abe8b24f86507a3d4f33c5cc",
+      "file": "p2-bridge-systems/raw/benchmark.html",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+        "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+        "scope": "First-party API/reference semantics used for original notes; no documentation prose or media republished in full"
+      },
+      "read_scope": "Timer introduction/parameters and blocked_autorange only; extracted text lines 1-79 and 105-136. Other benchmark utilities not fully read.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "编者自主中文机制解释、手算与独立微例；不是文档全文翻译，也不是官方课外指定材料",
+      "material_files": [
+        "lectures/bridge08/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_scope_recorded_used_in_notes_pending_main_verification",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/benchmark.txt",
+          "sha256": "e34f5c7c64f743ff20a2f80034746ee2f23a952e96920c24ca8b8188a7029340",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-pytorch29-cuda",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/notes/cuda.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/notes/cuda.html",
+      "retrieved_at": "2026-11-14T15:04:53.934268+00:00",
+      "sha256": "6b22568501a65790143039a3001b1bb484bd757cae6b7ca61ee977474e81c41f",
+      "file": "p2-bridge-systems/raw/cuda.html",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+        "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+        "scope": "First-party API/reference semantics used for original notes; no documentation prose or media republished in full"
+      },
+      "read_scope": "Asynchronous execution and opening memory-management explanation only; extracted text lines 163-192 and 304-320. Other CUDA semantics sections only keyword-located, not fully read.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "编者自主中文机制解释、手算与独立微例；不是文档全文翻译，也不是官方课外指定材料",
+      "material_files": [
+        "lectures/bridge08/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_scope_recorded_used_in_notes_pending_main_verification",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/cuda.txt",
+          "sha256": "46183757757b4f7e480d2f41f401cf9599cb9300410a6ed310e6a7b52dc69602",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-pytorch-license",
+      "kind": "license_evidence",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+      "version": "PyTorch v2.9.0 LICENSE",
+      "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+      "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+      "retrieved_at": "2026-11-14T15:09:02.295595+00:00",
+      "license": "BSD-3-Clause-style, copyright holder names and disclaimer retained in original file",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+        "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt"
+      },
+      "read_scope": "Full LICENSE, from copyright notices through redistribution conditions and disclaimer.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "仅说明许可适用边界，不作全文译文",
+      "material_files": [
+        "lectures/bridge05/notes.zh.md",
+        "lectures/bridge07/notes.zh.md",
+        "lectures/bridge08/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_used_for_permission_boundary"
+    },
+    {
+      "id": "p2-bridge-systems-bfloat16-format",
+      "url": "https://en.wikipedia.org/w/index.php?title=Bfloat16_floating-point_format&oldid=1384316605",
+      "version": "Wikipedia revision 1384316605; 2026-11-07T18:14:36Z",
+      "file": "p2-bridge-systems/raw/bfloat16-format-revision.json",
+      "sha256": "e8bd807d8d3adb4eef3f0527db02ae6c68ea8e484dab2bf65eab6181ad215e09",
+      "retrieved_at": "2026-11-14T15:18:07.191750+00:00",
+      "kind": "supplementary_format_reference",
+      "license": "CC BY-SA 4.0 for Wikipedia article text; external media and quoted material separately scoped",
+      "license_evidence": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Wikipedia:Copyrights&oldid=1378669134",
+        "file": "p2-bridge-systems/raw/wikipedia-copyrights-revision.json",
+        "sha256": "17234f4f5a5e0f7f3492a5e021c9edd6e49fbe02915811641a94ad4b8ac8532e",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "read_scope": "Static reader article prose; pinned wikitext FP16/BF16/FP32 bit-layout facts (lines 13-64 and 180-201), exponent encoding/normal and subnormal bounds (203-232), and online Examples maximum-finite paragraph. Other formats, embedded media and underlying references not claimed read in full; some long wikitext lines were truncated by the reader.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "仅交叉核对位宽、指数及数值事实，中文解释与表格独立推导；无条目文字/图表复用",
+      "material_files": [
+        "lectures/bridge07/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_selected_ranges_read_used_in_notes",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/bfloat16-format.txt",
+          "sha256": "0894d75ccf6c36371148d4078794d68b02d90cfb46b60ffb8b0ac496dd13913b",
+          "kind": "derived_revision_wikitext"
+        }
+      ]
+    },
+    {
+      "id": "p2-bridge-systems-wikipedia-copyright-policy",
+      "url": "https://en.wikipedia.org/w/index.php?title=Wikipedia:Copyrights&oldid=1378669134",
+      "version": "Wikipedia revision 1378669134; 2026-10-05T15:56:15Z",
+      "file": "p2-bridge-systems/raw/wikipedia-copyrights-revision.json",
+      "sha256": "17234f4f5a5e0f7f3492a5e021c9edd6e49fbe02915811641a94ad4b8ac8532e",
+      "retrieved_at": "2026-11-14T15:18:57.991397+00:00",
+      "kind": "license_evidence",
+      "license": "CC BY-SA 4.0 for Wikipedia policy text; describes separate treatment for media and non-free quotations",
+      "license_evidence": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Wikipedia:Copyrights&oldid=1378669134",
+        "file": "p2-bridge-systems/raw/wikipedia-copyrights-revision.json"
+      },
+      "read_scope": "Static reader policy text, especially opening license statement, original expression versus facts, attribution/share-alike, and Reusers rights and obligations. Not a legal opinion or image-license audit.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "仅用于核实格式事实参考的文本许可边界，不复制政策全文至发布正文",
+      "material_files": [
+        "lectures/bridge07/notes.zh.md"
+      ],
+      "local_raw_archive_only": true,
+      "status": "acquired_read_used_for_permission_boundary"
+    },
+    {
+      "id": "p2-bridge-systems-lec02-recording-selected-read",
+      "kind": "classroom_handout",
+      "url": "https://cs336.stanford.edu/lectures/?trace=lecture_02_recording",
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var/traces/lecture_02_recording.json",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; separate recording trace, embedded files[lecture_02.py]; post-term repository pin, not current lecture_02 handout",
+      "file": "p1-lectures/raw/var/traces/lecture_02_recording.json",
+      "sha256": "90a7c53791b2317d945a4126520f518131131ae11e2f9019c863f5ec9d26504e",
+      "retrieved_at": "2026-11-14T13:41:18.131526+00:00",
+      "license": "unverified; no repository-wide license found in P1",
+      "license_evidence": {
+        "files": [
+          "p1-lectures/tree.json",
+          "p1-lectures/version-review.json",
+          "p1-lectures/review.txt"
+        ],
+        "note": "Reuse P1 permission finding; no new permission grant inferred"
+      },
+      "read_scope": "P2 actually read embedded lecture_02.py lines 1-168, 277-350, 371-428, 613-666 and 805-876, plus function-name outline. Focus: dtype/memory, FLOPs, optimizer data accounting and timing. Trace event stream, all code, figures and video not read/watched in full by this slice.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "作为L02门槛与资源口径锚点；自主桥接，不逐句翻译课堂源码",
+      "material_files": [
+        "lectures/bridge05/notes.zh.md",
+        "lectures/bridge07/notes.zh.md",
+        "lectures/bridge08/notes.zh.md"
+      ],
+      "reused_from_p1": true,
+      "p1_source_id": "lec02-recording-handout",
+      "local_raw_archive_only": true,
+      "status": "p1_reused_selected_ranges_read_used_in_notes",
+      "variant_note": "Static lines 653/656 retain parameter_memory where num_parameters is needed; selected captions show instructor correction at 70:08-70:24. Not labeled an uncorrected classroom error or an original editorial discovery."
+    },
+    {
+      "id": "p2-bridge-systems-lec02-captions-accounting-correction",
+      "kind": "video_captions",
+      "url": "https://www.youtube.com/watch?v=kuYAsz7zspQ",
+      "version": "YouTube en-US manual/non-ASR JSON3 track; video kuYAsz7zspQ; P1 snapshot retrieved 2026-11-14T13:39:15.925675Z",
+      "file": "p1-videos/captions/kuYAsz7zspQ.en-US.manual.json3",
+      "sha256": "039448d7bf8899b9310e7019476c7650a5325f3783d6ff956eeac851d3f555f3",
+      "retrieved_at": "2026-11-14T13:39:15.925675Z",
+      "license": "unverified; no open-content/full-translation grant established",
+      "license_evidence": {
+        "file": "p1-videos/metadata/lec02-kuYAsz7zspQ.json",
+        "note": "P1 metadata license=null; no separate caption license established"
+      },
+      "read_scope": "Only cues starting 4200.700 through 4225.900 seconds, ending 4230.980 seconds (70:00.700-70:30.980), selected to read instructor correction of number-of-parameters versus parameter-memory multipliers at about 70:08-70:24. No full-caption read, audio verification or visual review by this slice.",
+      "read_at": "2026-11-14T15:20:54.984375+00:00",
+      "chinese_treatment": "一条简短自主事实说明：课堂已有自纠；上下文回链L02 draft；不是全片译稿",
+      "material_files": [
+        "lectures/bridge08/notes.zh.md"
+      ],
+      "reused_from_p1": true,
+      "p1_source_id": "lec02-captions-en-US-manual",
+      "local_raw_archive_only": true,
+      "status": "p1_reused_narrow_correction_excerpt_read",
+      "video_edition_evidence": "P1 lec02-video metadata: Stanford Online Spring 2026 Lecture 2, Percy Liang, duration 4645 seconds, upload_date=20260414; not newly downloaded or watched",
+      "caption_classification_note": "Platform manual/non-ASR classification does not prove word-level human correction"
+    }
+  ],
+  "delivery": {
+    "material_files": [
+      "lectures/bridge05/notes.zh.md",
+      "lectures/bridge07/notes.zh.md",
+      "lectures/bridge08/notes.zh.md"
+    ],
+    "notes_written": 3,
+    "draft_files": [],
+    "materials_files": [],
+    "svg_files": [],
+    "official_bridge_video": false,
+    "code_executed": false,
+    "build_lint_tests_formatters_run": false,
+    "browser_acceptance_run": false,
+    "independent_review_complete": false,
+    "shared_files_modified": false
+  },
+  "reading_summary": {
+    "source_records": 18,
+    "new_source_snapshots": 16,
+    "reused_p1_sources": 2,
+    "read_status": "Every record states its actual full-or-selected read scope; acquisition is not full reading.",
+    "local_raw_policy": "raw/ and text/ are local source evidence only; publish lightweight manifest/review plus authored notes, not the original full pages or caption payloads."
+  },
+  "integration_status_fields": [
+    {
+      "lectureId": "bridge05",
+      "notes": "written_pending_main_review",
+      "draft": "not_applicable_editorial_bridge_no_official_recording",
+      "materials": "not_created_no_separate_assigned_material",
+      "sourceRead": "actual_ranges_recorded",
+      "codeExecution": "not_run",
+      "pageAcceptance": "not_run"
+    },
+    {
+      "lectureId": "bridge07",
+      "notes": "written_pending_main_review",
+      "draft": "not_applicable_editorial_bridge_no_official_recording",
+      "materials": "not_created_no_separate_assigned_material",
+      "sourceRead": "actual_ranges_recorded",
+      "codeExecution": "not_run",
+      "pageAcceptance": "not_run"
+    },
+    {
+      "lectureId": "bridge08",
+      "notes": "written_pending_main_review",
+      "draft": "not_applicable_editorial_bridge_no_official_recording",
+      "materials": "not_created_no_separate_assigned_material",
+      "sourceRead": "actual_ranges_recorded",
+      "codeExecution": "not_run",
+      "pageAcceptance": "not_run"
+    }
+  ],
+  "not_done": [
+    "No build/lint/tests/formatter/verification commands or git",
+    "No official assignment implementation or leaderboard code",
+    "No complete L02 caption read by this slice; no audio/video observation",
+    "No media downloads, screenshots, paid compute, model/data downloads or environment installation",
+    "No L03 or later-system expansion"
+  ],
+  "main_agent_check_suggestions": [
+    {
+      "id": "bridge05-storage",
+      "device": "CPU",
+      "input": "notes bridge05 microexample; plus separate t.view(-1) and q=arange(12).reshape(3,4)[:,::2]",
+      "expected": "x=[[0,1,2],[99,4,5]]; c=[[0,3],[1,4],[2,5]]; strides (3,1)/(1,3); offset=1; requires_grad True/False/False. t.view(-1) raises RuntimeError; q.view(-1) gives [0,2,4,6,8,10] with stride (2,)."
+    },
+    {
+      "id": "bridge05-copy-detach",
+      "device": "CPU",
+      "input": "live nonempty ordinary tensor u requiring grad; u.clone(), u.detach(), u.detach().clone(); transpose clone",
+      "expected": "detach shares storage, clone does not; clone preserves grad relation; detach removes it; transposed dense clone may remain non-contiguous under preserve_format."
+    },
+    {
+      "id": "bridge07-stability",
+      "device": "CPU",
+      "input": "x=[1000.,1001.,999.] float32; F.softmax and torch.logsumexp as in notes",
+      "expected": "finite probabilities approx [0.244728,0.665241,0.090031] (absolute tolerance 1e-6); logsumexp approx 1001.407606 (absolute tolerance 1e-4)."
+    },
+    {
+      "id": "bridge07-reductions",
+      "device": "CPU",
+      "input": "four 40000 values stored in float16; sum default, sum(dtype=float32), mean(dtype=float32)",
+      "expected": "inf;160000;40000. Do not assert default mean must overflow. Optional scalar FP32 a=2**24,b=1,c=-2**24: (a+b)+c=0; a+(b+c)=1."
+    },
+    {
+      "id": "bridge08-accounting",
+      "device": "CPU or hand arithmetic",
+      "input": "N=2**20 BF16 parameters and gradients, two FP32 states; three BF16 (2,128,512) activations and 512KiB workspace",
+      "expected": "12MiB state subtotal;16MiB with FP32 master; each activation256KiB;13.25MiB for stated simultaneous account example without master or other overhead."
+    },
+    {
+      "id": "bridge08-timing-template",
+      "device": "CPU only",
+      "input": "ones float32 x=(32,64),w=(64,16), Timer num_threads=1 min_run_time=.05",
+      "expected": "output (32,16), all values64; logical x+w+y14336bytes; estimated65536FLOPs. No expected wall time or throughput; record actual PyTorch/environment version and do not call it official dependency or training acceptance."
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+Stanford CS336 Spring 2026 — P2 L02制作记录
+日期：2026-11-14
+范围：独占 lectures/lec02/ 与 sources/p2-lec02/。本记录是实际来源阅读与写作交接，不是已完成独立审查或页面验收。
+技能：已读 skill://technical-video-notes 及其字幕规范化脚本；遵循本任务更严格的许可边界，draft是有限适度译述，不是全文翻译。实际模型证据由Main维护于sources/p2-model-preflight.json，本子任务未另行伪报运行元数据核查。
+
+一、实际读过的资料
+1. NEXT-P2-PROMPT.txt全文、production-plan.json的版本/内容/翻译契约、L02与桥接归属、P2及验收相关段；P1-REVIEW.txt全文；p1-lectures/version-review.json与variant-audit.json。
+2. P1缓存 kuYAsz7zspQ.en-US.manual.json3 经机械规范化后，实际逐条读完1425 cues，不把提取/下载当全文已读。
+   阅读窗口：transcript.en.txt第1–300、301–600、601–900、901–1200、1201–1425行；一行恰为一个cue。
+   全文时间范围：00:05.040–77:20.780；录像总长77:25。
+   完整英文字幕及规范化JSON仅本地保存，不发布未授权全文。
+3. 课堂代码严格来自 p1-lectures/raw/var/traces/lecture_02_recording.json 的 files[lecture_02.py] 字符串。
+   已实际抽取并读完881行，窗口1–300、301–600、601–881，包括全部定义、注释、公式与辅助函数。
+   未读完trace事件流、其他嵌入文件或全部外链图片/论文；未运行课堂脚本。
+4. 当前 p1-lectures/raw/lecture_02.py 只阅读它与录像版的完整unified diff，不将其写成当前版全文独立精读，更不将当前新增内容放回录像时间线。
+5. P1本讲metadata阅读身份/时长/频道/上传与排课日期/许可/字幕身份和SHA等字段；自动语言清单未完整读，不重复P1采集。
+6. 补充PyTorch AMP官方文档：stable入口返回2.15入口后，读取明确2.15页面reader第1–300行（引言、Autocasting、Gradient Scaling开场等）；未读后续完整算子表。不把文档版本当课堂运行环境。仅用于自主澄清“计算dtype不等于参数持久存储dtype”。页面原始响应仅本地留存，逐源URL/SHA256/UTC/许可边界见manifest。
+
+二、时间覆盖与不确定项
+- 全部1425 cues归入22个编辑主题区间；毫秒边界、cue索引和实际阅读窗口见time-intervals.json。
+- 开头无字幕5.040秒，末尾无字幕4.220秒；内部严格大于2秒的空隙共37个，最长7.640秒（65:31.940–65:39.580）。draft逐一列出全部间隙。
+- cue 207、282、295、296、717、724、894、1020含[INAUDIBLE]。局部问句不静默补全；只在讲者复述足够明确时转述问题主题。
+- 33:34–33:59问答的division/addition/multiplication字幕语义不清；36:11–36:25吞吐公式“times”与源码除法不符；38:03–38:12的“80.8”数值不清；54:03附近fp16措辞与源码bf16不同。分别保留不确定性，不称已经核音改正。
+- 未核音、未看视频画面、未截帧、未下载媒体。字幕间隙只标“无字幕/音频未核实”，不猜静音、操作画面或说话人。
+
+三、课堂自纠与独立技术澄清
+课堂字幕本身提供的自纠（不是拿当前版倒填）：
+- 02:12–02:16：题目B100改为H100；源码数值本就采用H100。
+- 30:15–30:30：题目两周但表达式7天，讲者明确按一周解释；当前版后来改成两周不能覆盖录像。
+- 46:59–47:07：ReLU强度从注释1/2改为1/4。此前42:38–43:27明确bf16，读2n、写2n，因此为完整理想读写4n字节。fp32相应为8n、1/8，不能混用；不是硬件实测。
+- 57:41–57:45：deep_linear_network虽旧名带linear，Block有ReLU，讲者自己说明为deep network。
+- 61:56–62:08：FLOPs系数2来自乘加，不是bf16字节数。
+- 70:08–70:24：gradient_memory和optimizer_state_memory应分别是2N、4N（AdaGrad），不能对已为byte的parameter_memory再乘2/4。
+
+编者自主推导与边界，正文明确区分：
+- 形状/链式法则推导两支矩阵梯度；2BDK、6BP/6TP只是稠密主项，受求导需求、冻结参数、长上下文、重算等影响。
+- 参数/梯度/状态/激活分别N*b记账；12P只是指定bf16参数梯度、fp32两个状态且无额外主权重副本的模型。实际AMP不一定改变参数存储dtype。
+- 8卡总容量只是理想分布式分配上界，不能当普通复制式数据并行每卡可放53B。
+- 理想roofline读写边界明确；ReLU比较数及GELU操作数只是粗计数，不把Tensor Core峰值当所有指令峰值，不声称两种激活实测完全等时。
+- 梯度累积节省激活峰值而不是自动节省FLOPs；microbatch均值须加权，期间参数不更新，随机/跨样本运算还会破坏严格等价。
+- checkpoint分段重建并暂存段内激活的策略：峰值O(L/k+k)，总额外前向O(L)；k约sqrt(L)平衡两项。录像“sqrt(L) recomputation”未区分单段/全网，独立推导不冒充课堂原话。
+- 源码演示还有rank-3注释实际创建二维张量、scalar model(x).mean()对向量目标广播、非标量model(x).backward()及CPU测量辅助函数不运行闭包就返回0等局限。本页不执行或复制成可运行训练教程，不从返回0伪造省内存实测。CPU返回的虚构峰值分母也不被用于报告GPU MFU。
+
+四、实际写入文件
+可发布正文：
+- lectures/lec02/notes.zh.md：自主推导、形状、资源账本、梯度与代价边界、基础回链bridge01/05/07/08、一个独立CPU机制例子及解析答案、自测、全片导航与页底引用。
+- lectures/lec02/draft.zh.md：22块有限适度译述、课堂问答/自纠、训练循环明确跳过、完整首尾与37个内部缺口、无法核实的字幕处。不含视频跳转链接或截图，不称全文翻译。
+- lectures/lec02/assets/linear-layer-ledger.svg：原创三次收缩图，有title/desc，字体19px以上，无背景填充、无脚本与外部资源。未进行浏览器主题/手机视觉验收。
+
+轻量来源交付：
+- sources/p2-lec02/manifest-fragment.json：5项来源逐源URL/version/file/SHA256/UTC/license/evidence/read_scope/read_at/chinese_treatment/material_files，及派生原件与整合状态。
+- sources/p2-lec02/time-intervals.json：真实cue范围、主题区间、全部指定缺口、不可辨cue、纠错分类。
+- sources/p2-lec02/extraction-inventory.json：规范化时生成的数量/首尾/间隙统计；只代表机械处理，不代替阅读或验收。
+- sources/p2-lec02/review.txt：本记录。
+
+仅本地、不要提交未授权全文：
+- sources/p2-lec02/captions.normalized.json
+- sources/p2-lec02/transcript.en.txt
+- sources/p2-lec02/lecture_02_recording.source.txt
+- sources/p2-lec02/pytorch-2.15-amp.txt
+既有P1原件未改动，不应因本批有轻量清单就声称新克隆已含全部原件。
+
+未创建materials.zh.md：没有独立课外指定材料的已核实依据；课堂源码出现的外链不自动升级成官方必读或已精读材料。没有占位正文。
+
+五、供Main统一执行的最小验证建议（本子任务均未运行）
+1. 机械：对time-intervals.json的22个cue范围检查恰好覆盖1–1425；与原字幕首尾和严格>2000ms空隙对照。检查片内时间不超4645000ms。读源清单哈希与派生文件；许可不明全文维持local-only。
+2. 正文：站内bridge01/05/07/08与A1回链、SVG相对路径、公式、页头本讲kuYAsz7zspQ/77:25。统一桌面/手机与深浅模式浏览，实际点击视频入口留待Main；不要将本文写作完成等同验收。
+3. CPU机制：只执行notes第8节那一个既有PyTorch小例子；无CUDA、无模型数据下载。解析预期：Y=[[5,-1],[2,3]]，x.grad=[[6,10,-1],[-1,4,3]]，w.grad=[[5,-1],[12,1],[6,9]]。两个allclose应成立。它不构成A1实现、完整训练或GPU性能证据。
+4. 纯标量复核可合并：P=3*8*8=192；简化Adam主项12P=2304；2BLD=192；载荷合计2496字节。前向主项1536 FLOPs，三份乘加主项4608 FLOPs；第一层不求输入梯度则少512。都是解析预期，不是已测内存。
+5. 不建议运行课堂整个脚本：包含GPU/大张量/外链依赖和已记录的教学代码限制；也不需安装大环境或启动付费算力。
+
+六、可直接整合的状态
+lecture_id=lec02
+notes_written=true
+draft_written=true
+draft_type=limited_chronological_paraphrase_not_full_translation
+materials_written=false
+materials_reason=no_verified_independent_extra_class_assigned_material
+caption_cues_read=1425
+recording_source_lines_read=881
+original_svg_count=1
+cpu_examples_written=1
+cpu_examples_executed=0
+audio_verified=false
+frames_verified=false
+reviewed=false
+site_accepted=false
+build_run=false
+shared_metadata_modified=false
+未运行build/lint/tests/formatter/验证或git。仅做原始来源读取、规范化/抽取、差异比较、必要补充文档获取与SHA来源登记，未修改共享metadata/status/manifest/catalog/course/resources/reading-map/production-plan等文件；本片到L02止。

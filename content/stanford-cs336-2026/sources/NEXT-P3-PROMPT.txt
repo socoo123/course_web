@@ -1,0 +1,59 @@
+接续关键词：CS336-2026-P3-模型基础
+
+继续 Stanford CS336 Spring 2026 — 从零构建语言模型，仅执行 P3「模型基础批」。
+项目：/Users/zy/ai_learn/course_web
+课程：content/stanford-cs336-2026/
+
+一、先读完整交接，不重做已验收批次
+1. status.json、sources/production-plan.json。
+2. sources/P2-REVIEW.txt、sources/p2-acceptance.json、sources/p2-model-preflight.json。
+3. sources/manifest.json、sources/reading-map.json；P2五个manifest-fragment.json和review.txt。
+4. sources/P1-REVIEW.txt及sources/p1-gaps.json，保留P1版本/权限/许可结论。
+5. L01/L02 notes与draft、六篇已写桥接及labs/a1-basics/guide.zh.md；sources/p2-a1/的任务索引与实际阅读证据。
+以实际文件与验收记录为准。采集、已读、已写、已审、页面验收、课程实验执行分别计数。
+
+二、只做 P3
+- L03 模型架构与超参数、L04 Attention替代方案与MoE。
+- 对应尚未写的bridge03反向传播与自动微分、bridge06自回归模型训练闭环。
+- 关联编者专题ext01稳定计算与梯度诊断、ext02优化器与训练动态、ext03位置编码与长上下文；不顺手进入后续系统专题或L05。
+- A1完整说明和指导：在P2现有任务拆解上扩展，不重复另建一份，严格固定Spring2026 v26.0.3、仓库a158843b20107949f1a8d7df1b05cd33b9166712，不给可直接提交的作业/排行榜实现。
+- Attention Is All You Need及RoFormer的指定核心范围自主精读，唯一正文归属lectures/lec03/materials.zh.md；L04/ext03等回链，不设第二正文。精确版本/核心与选读节号以reading-map.json为准，不把编者核心必读称官方全文必读。
+- 已写桥接只在发现具体问题时必要修正，不重做P2。无可制作独立材料不建占位正文。
+
+三、来源、版权和版本边界
+- L03/L04必须实际全读本批字幕并记录范围/首尾/内部空隙/不确定项。平台manual/non-ASR不证明人工校订；没听过音频就不称核音。
+- 录像与课堂讲义没有已确认的开放全文翻译许可。draft沿真实2026时间做适度译述与全片导航，不机械逐句翻译完整字幕，不声称全文译稿；notes是自主教学，不能重复课堂讲述。截图若实际取用只在draft，不制造截图。
+- 讲义固定de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e，2026-09-12晚于学期；不默认与录像完全一致。L02 recording与当前handout不得混合；P2发现的recording数值/单位不一致及编者修正见P2记录。
+- paper01 Attention固定1706.03762v7，arXiv分发许可不等于全文翻译授权；paper02 RoFormer固定2104.09864v5，CC BY-NC-ND 4.0不得公开翻译改编。两者自主精读，来源、作者、版本与第三方素材权利边界留页底。
+- A1第一方软件/associated documentation有MIT，翻译/改编保留Stanford版权和完整许可条件；第三方论文/插图/数据不继承MIT。README旧2025不能推翻PDF封面的2026。
+- A1原规模单B200参考、TinyStories327.68M token/loss≤1.45；官方低资源约40M/loss≤2.00是不同路线，不是原规模等效完成。BPE资源上限不是最低硬件保证。官方AI政策仅允许概念/API辅助，禁止AI实现作业代码。
+- 校内Modal需要正式选课、Stanford登录和邀请；不买/启动收费算力，不下载大模型/全量训练数据。CPU微型机制示范不算官方作业或GPU性能复现。
+- L18 Daniel Selsam录像缺失、L19 Dan Fu正确映射及A3/A4/A5权限缺口继续保留，不因P3完成抹平。
+
+四、编辑与来源记录
+- 仅修改content/，不碰src/或官方作业代码，不修改其他课程。
+- 复用本地P1/P2源，缺失时按固定URL重取；路径登记不代表新克隆有文件。逐源URL、固定版本、SHA256、获取日期、许可、实际读范围、处理类型齐全。
+- 原始档案存sources/且不用.md后缀；不存cookies/凭据/签名媒体地址。大文件/授权不明全文留本地；GitHub只提交正文与必要轻量清单、审核、脚本。不要用git add -f整个sources目录。
+- 引用放frontmatter/页底；公共环境资料回链resources.zh.md；三种讲次材料与A1说明/指导职责分离。
+- 主agent独占course/catalog/resources/status和汇总清单，每个子agent独占内容目录及来源分片。
+
+五、模型与并行
+- 所有实际子agent（包括审核）必须openai-codex/gpt-6-astra:xhigh。
+- 派发前重新读匹配技能与受支持cfg入口，显式selector；核实实际model_change、thinking_level_change或等效运行元数据与assistant模型字段。不能只把模型要求写进提示词。
+- 配置不可用时报告，不换模型/降级；必要配置批准正常取得，不擅自持久化。
+- 按独立内容范围合理并行；子agent中途不得跑构建/lint/测试/格式化，由主agent整合后统一最小验证。
+
+六、验收、交付与停止
+- 核对公式、轴/形状、单位、数值例、原文节号和作业边界，原讲含义与编者纠错分开。
+- 复用已核实L03/L04页头视频元数据并逐讲核对链接/讲次/时长；真点代表性入口确认新标签打开、原笔记保留。浏览器实际看桌面和手机正文及SVG、表格、公式，不以元数据检查代替页面验收。
+- 运行本批定向链接/图片/SVG/时间/源哈希检查、必要小示例和npm run build；不跑P1/P2历史阶段冻结断言或无关全仓测试。
+- 更新status、production-plan、manifest/reading-map实际状态、P3验收记录与完整NEXT-P4-PROMPT.txt。
+- 完成必要验证后提交本次content改动并推送现有GitHub仓库，保留无关用户改动，不强推、不改远端；部署是否成功必须有实际证据。
+- P3验收后停止，不自动进入P4。
+
+七、P2 已验收事实，接续时不要误降回零正文
+- 共11份正文：L01/L02各notes+限量draft、六篇bridge notes、A1 guide任务地图；2张原创SVG。没有materials或完整A1 lab.zh.md。
+- 全部2934 cues实际已读，字幕空隙和疑词已记；未核音/看画面。A1完整47页提取文本已读、38个计分Problem已索引，不等于作业完成。
+- 10个正文微例在已有Python3.11.8/PyTorch2.5.1 CPU环境通过；不是官方依赖或GPU验收。临时验证脚本已删除，结果保留。
+- 12页面（11正文+公共资料）已在production preview实际验收桌面/手机；长display公式必须主动分行，完整SHA256保留来源清单而非不换行的inline code，以免手机溢出。七处页面问题已定向修复复验，最终手机宽390。
+- 两讲页头均实际点击，新标签与原笔记保留通过；构建最终通过。子任务分片里的pending/false保留的是交接时状态，最终状态以p2-acceptance.json和status.json为准。

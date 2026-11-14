@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="530" viewBox="0 0 720 530" role="img" aria-labelledby="title desc">
+  <title id="title">一次字节对合并：内容不变，序列变短，词表变大</title>
+  <desc id="desc">编者自拟字符串 ababx。五个基础字节 token 97、98、97、98、120，合并字节对 ab 为新 token 256 后，序列变为 256、256、120。原始五字节内容保持不变，token 数从五降为三，基础词表从二百五十六增至二百五十七。解码时先拼接字节。</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, "PingFang SC", "Noto Sans CJK SC", sans-serif; fill: var(--fg, #24364b); }
+    .title { font-size: 24px; font-weight: 700; }
+    .label { font-size: 20px; font-weight: 600; }
+    .body { font-size: 18px; }
+    .small { font-size: 16px; }
+    .box { fill: var(--surface, #eef4fb); stroke: var(--border, #6582a4); stroke-width: 2; }
+    .merged { fill: var(--accent-soft, #e0f2ef); stroke: var(--accent, #247568); stroke-width: 2; }
+    .line { stroke: var(--fg, #536b84); stroke-width: 2; fill: none; }
+    @media (prefers-color-scheme: dark) {
+      text { fill: var(--fg, #e3edf7); }
+      .box { fill: var(--surface, #223449); stroke: var(--border, #9cb7d3); }
+      .merged { fill: var(--accent-soft, #183f3b); stroke: var(--accent, #86c9ba); }
+      .line { stroke: var(--fg, #b2c8de); }
+    }
+  </style>
+  <text x="34" y="43" class="title">BPE 的一次合并，交换了什么？</text>
+  <text x="34" y="78" class="body">自拟文本 ababx：总共 5 个 UTF-8 字节</text>
+  <text x="34" y="122" class="label">合并前：5 个 token</text>
+  <g class="box">
+    <rect x="34" y="142" width="104" height="76" rx="10"/>
+    <rect x="164" y="142" width="104" height="76" rx="10"/>
+    <rect x="294" y="142" width="104" height="76" rx="10"/>
+    <rect x="424" y="142" width="104" height="76" rx="10"/>
+    <rect x="554" y="142" width="104" height="76" rx="10"/>
+  </g>
+  <g text-anchor="middle" class="body">
+    <text x="86" y="173">a</text><text x="86" y="201">ID 97</text>
+    <text x="216" y="173">b</text><text x="216" y="201">ID 98</text>
+    <text x="346" y="173">a</text><text x="346" y="201">ID 97</text>
+    <text x="476" y="173">b</text><text x="476" y="201">ID 98</text>
+    <text x="606" y="173">x</text><text x="606" y="201">ID 120</text>
+  </g>
+  <path d="M86 225 L86 240 L216 240 L216 225 M346 225 L346 240 L476 240 L476 225" class="line"/>
+  <text x="34" y="276" class="body">新增规则：(97, 98) → 256，字节内容是 ab</text>
+  <text x="34" y="319" class="label">合并后：3 个 token</text>
+  <rect x="34" y="338" width="234" height="76" rx="10" class="merged"/>
+  <rect x="294" y="338" width="234" height="76" rx="10" class="merged"/>
+  <rect x="554" y="338" width="104" height="76" rx="10" class="box"/>
+  <g text-anchor="middle" class="body">
+    <text x="151" y="369">ab</text><text x="151" y="397">ID 256</text>
+    <text x="411" y="369">ab</text><text x="411" y="397">ID 256</text>
+    <text x="606" y="369">x</text><text x="606" y="397">ID 120</text>
+  </g>
+  <text x="34" y="454" class="body">词表：256 → 257　　bytes/token：1 → 5/3</text>
+  <text x="34" y="488" class="body">不变量：拼接 ab + ab + x，仍是原来的 5 字节</text>
+  <text x="34" y="516" class="small">只展示表示机制；压缩率改善不等于总训练时间按相同比例改善。</text>
+</svg>

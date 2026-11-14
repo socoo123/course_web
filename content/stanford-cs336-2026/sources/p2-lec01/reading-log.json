@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "lecture_id": "lec01",
+  "recorded_at": "2026-11-14T15:20:17.161836Z",
+  "model_evidence_file": "p2-model-preflight.json",
+  "read_completed": {
+    "caption_cues": 1509,
+    "caption_cue_range_1_based": [
+      1,
+      1509
+    ],
+    "normalized_transcript_line_range": [
+      1,
+      2646
+    ],
+    "raw_handout_source_lines": [
+      1,
+      762
+    ],
+    "trace_scope": "selected steps and fields only; not complete617-step reading"
+  },
+  "caption_read_segments": [
+    {
+      "displayed_transcript_lines_inclusive": [
+        1,
+        303
+      ],
+      "cue_indices_touched_1_based": [
+        1,
+        173
+      ],
+      "method": "functions.read; actual displayed source text read, including multiline cue continuations",
+      "audio_verified": false
+    },
+    {
+      "displayed_transcript_lines_inclusive": [
+        300,
+        603
+      ],
+      "cue_indices_touched_1_based": [
+        171,
+        345
+      ],
+      "method": "functions.read; actual displayed source text read, including multiline cue continuations",
+      "audio_verified": false
+    },
+    {
+      "displayed_transcript_lines_inclusive": [
+        600,
+        903
+      ],
+      "cue_indices_touched_1_based": [
+        343,
+        517
+      ],
+      "method": "functions.read; actual displayed source text read, including multiline cue continuations",
+      "audio_verified": false
+    },
+    {
+      "displayed_transcript_lines_inclusive": [
+        903,
+        1303
+      ],
+      "cue_indices_touched_1_based": [
+        517,
+        744
+      ],
+      "method": "functions.read; actual displayed source text read, including multiline cue continuations",
+      "audio_verified": false
+    },
+    {
+      "displayed_transcript_lines_inclusive": [
+        1300,
+        1703
+      ],
+      "cue_indices_touched_1_based": [
+        742,
+        964
+      ],
+      "method": "functions.read; actual displayed source text read, including multiline cue continuations",
+      "audio_verified": false
+    },
+    {
+      "displayed_transcript_lines_inclusive": [
+        1700,
+        2103
+      ],
+      "cue_indices_touched_1_based": [
+        963,
+        1191
+      ],
+      "method": "functions.read; actual displayed source text read, including multiline cue continuations",
+      "audio_verified": false
+    },
+    {
+      "displayed_transcript_lines_inclusive": [
+        2103,
+        2403
+      ],
+      "cue_indices_touched_1_based": [
+        1191,
+        1369
+      ],
+      "method": "functions.read; actual displayed source text read, including multiline cue continuations",
+      "audio_verified": false
+    },
+    {
+      "displayed_transcript_lines_inclusive": [
+        2400,
+        2646
+      ],
+      "cue_indices_touched_1_based": [
+        1367,
+        1509
+      ],
+      "method": "functions.read; actual displayed source text read, including multiline cue continuations",
+      "audio_verified": false
+    }
+  ],
+  "handout_read_segments": [
+    {
+      "file": "p1-lectures/raw/lecture_01.py",
+      "lines": [
+        1,
+        243
+      ]
+    },
+    {
+      "file": "p1-lectures/raw/lecture_01.py",
+      "lines": [
+        244,
+        493
+      ]
+    },
+    {
+      "file": "p1-lectures/raw/lecture_01.py",
+      "lines": [
+        491,
+        762
+      ]
+    }
+  ],
+  "trace_read": {
+    "file": "p1-lectures/raw/var/traces/lecture_01.json",
+    "step_indices_0_based": [
+      0,
+      1,
+      2,
+      383,
+      386,
+      391,
+      394,
+      417,
+      437,
+      452,
+      481,
+      484,
+      488,
+      491,
+      495,
+      498,
+      501,
+      506,
+      599
+    ],
+    "fields": "root file keys and step count; sample stacks; selected env values for roundtrip/compression/vocab/BPE pairs; huge vocab displays narrowed to newly added IDs; no whole-trace or image-read claim"
+  },
+  "metadata_read_scope": "Title, channel/uploader, upload_date, duration, description, license evidence, selected manual caption type, SHA/retrieval timestamp and full stored timing coverage. Automatic-language inventory not individually audited.",
+  "p1_reviews_read": [
+    "NEXT-P2-PROMPT.txt",
+    "production-plan.json sections22–46,70–100,147–164",
+    "P1-REVIEW.txt",
+    "p1-videos/review.txt relevant lec01 and global constraints",
+    "p1-lectures/review.txt",
+    "manifest.json lec01-handout and lec01-video records",
+    "p1-lectures/recovery.json lec01.py record"
+  ],
+  "uncertainties": [
+    {
+      "at_seconds": 773.91,
+      "raw": "atom optimizer",
+      "treatment": "Adam optimizer in lecture_01.py lines132–137; corrected technical reading, audio unchecked"
+    },
+    {
+      "at_seconds": 1526.94,
+      "raw": "Cloud Code",
+      "treatment": "Product name uncertain; no product assertion in public paraphrase"
+    },
+    {
+      "at_seconds": 1803.75,
+      "raw": "224n, the MLP class",
+      "treatment": "Course-description word uncertain; not repeated as an MLP-class claim"
+    },
+    {
+      "at_seconds": 2022.04,
+      "raw": "scaling loss",
+      "treatment": "Context is scaling laws; source outline supports topic, audio unchecked"
+    },
+    {
+      "at_seconds": 2203.83,
+      "raw": "SMDB",
+      "treatment": "Source line325 gives 70B parameters and1T tokens; no claimed phonetic verification"
+    },
+    {
+      "at_seconds": 2295.33,
+      "raw": "MV link",
+      "treatment": "Possible interconnect-name transcription error; public text uses GPU communication only"
+    },
+    {
+      "at_seconds": 2846.53,
+      "raw": "GPD-5",
+      "treatment": "Model name uncertain in caption; not propagated as a distinct product"
+    },
+    {
+      "at_seconds": 4020.24,
+      "raw": "GPT-5 tokenizer",
+      "treatment": "Keep lecture label distinct from actual code get_encoding(o200k_base), lines574–576; no general product-tokenizer mapping"
+    },
+    {
+      "at_seconds": 4102.359,
+      "raw": "GPD token vocabulary",
+      "treatment": "Contextual acronym uncertainty; no invented model"
+    },
+    {
+      "at_seconds": 13.02,
+      "raw": "Steven / Stephen",
+      "treatment": "Name spelling varies between introduction cues; no speculative normalization"
+    },
+    {
+      "source_lines": [
+        467,
+        468
+      ],
+      "raw": "Direct Policy Optimization / Group Relative Preference Optimization",
+      "treatment": "Public text keeps DPO/GRPO acronyms and function only; no independent paper-name audit performed"
+    }
+  ],
+  "not_done": [
+    "No audio or full-video viewing",
+    "No screenshot extraction",
+    "No paper full-text reading",
+    "No lecture source execution, installations or training",
+    "No independent quality review or browser acceptance",
+    "No tests/build/lint/formatter/git",
+    "No materials.zh.md because no assigned independent reading body",
+    "No P3 or L03–04 production"
+  ]
+}

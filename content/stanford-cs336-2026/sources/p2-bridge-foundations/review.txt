@@ -1,0 +1,63 @@
+CS336-2026 P2 — bridge foundations 编写记录
+记录时间：2026-11-14T15:14:40Z
+范围：bridge04 / bridge02 / bridge01；独立编者桥接，非官方讲次。
+结论：三篇 notes 已写，来源按实际范围读过；未执行示例或验收页面，等待 Main 统一最小验证。此记录不是审查通过、CPU通过或浏览器验收报告。
+
+一、实际新增正文
+1. lectures/bridge04/notes.zh.md
+   Python实验工程：学习门槛；解释器身份与环境隔离；隔离不等于沙箱/复现；沿用A1既有uv约定；str/bytes/token三个单位；UTF-8小例；iterator耗尽与文件游标；文件/JSON配置/日志/证据最小组合；四个折叠自测；回链L01。
+   三个原创标准库片段：A你换行的UTF-8字节；双sum检验iterator耗尽；两行临时文件统计并打印JSON。都不是tokenizer或A1实现。
+2. lectures/bridge02/notes.zh.md
+   条件概率与链式恒等式；不偷偷加入独立性；总NLL和按有效token平均的区别；one-hot交叉熵为何等于单次NLL；PPL的几何平均含义；按token数合并批次；对数底与单位；同一ab文本分成两个或一个token的PPL反例；bits/byte的适用边界；四个折叠答案；回链L01。
+   小片段只对直接给定的三个概率做math.log/exp算术，不接收logits、不含可提交的交叉熵组件。
+3. lectures/bridge01/notes.zh.md
+   轴名与尺寸分离；张量rank与矩阵秩分离；matmul向量/矩阵/批次形状；广播右对齐；(2,1)-(2,)产生两两比较的错误；reduction/keepdim；显式einsum输出；非均匀手算例与B=T的合法错轴反例；四个折叠答案；回链L02。
+   小CPU片段只验证整数张量的matmul/einsum/reduction和错轴，不实现模型层、注意力或作业组件。
+
+二、实际来源阅读与复用
+- 先读 sources/NEXT-P2-PROMPT.txt、production-plan.json 的内容合同与bridge映射、P1-REVIEW及来源片段，不重做P0/P1采集。
+- 复用5项P1来源：L01讲义源、L02当前讲义源、A1文本提取、A1 README、A1 LICENSE；未重下、未重算其哈希。获取时间和哈希沿用P1已记录数据。
+- L01读579–617、627–678；L02读89–110、214–276；A1读封面身份和§4.1式16–18及相邻任务约束（文本行1–15、1444–1511）。这不是完整讲义/作业精读，未逐页视觉核对PDF。
+- L02仅用当前handout做概念关联，明确不是lecture_02_recording，绝不拿这部分当录像译述。
+- 新取并实际读指定范围的Python官方v3.14.0资料：venv、输入输出、迭代器/生成器、基础logging及LICENSE。补充版本不是课程运行环境承诺。
+- 新取并实际读指定范围的PyTorch官方v2.9.0资料：broadcasting.rst、_torch_docs.py中的matmul/sum、functional.py中的einsum及LICENSE。不把大源码文件的下载计为全文件已读。
+- 共14项来源记录，其中11项内容来源、3项许可证；9项新外部原件、5项P1复用。逐项URL/版本/哈希/UTC/read_scope/read_at/许可与正文归属均在manifest-fragment.json。
+- PyTorch获取曾遇urllib SSL EOF，另一次curl有partial-file错误18；换HTTP/1.1完成恢复，最终哈希在成功取得完整响应后记录。未把失败体作为有效来源。
+
+三、技术核对与边界决定（来源核对，不是运行验证）
+- 概率链式法则由条件概率定义逐步推出，不要求独立性。完整文本终止事件与给定长度片段分开说明。
+- 自拟三概率0.5/0.25/0.8乘积0.1；总NLL=ln10，均值ln10/3，PPL=10^(1/3)。NLL分母是被计分的token，不是字符数/字节数；总损失与批均值不混用。
+- 按不同tokenization计算PPL改变计量单位。ab反例中两条规范编码路径均得0.25，但PPL分别2和4；bits/byte换算也必须固定文本、边界、上下文和预处理，不能据此宣称全面公平。
+- 张量手算用[a,b,c]W=[a+c,b-c]，且第二个batch数值是第一个的十倍。B=T=2故意保留“shape相同但语义错误”条件；单一shape断言不足。
+- torch.einsum的单字母语法与课堂einops.einsum多词语法明确分开；是否求和由输出标签决定，不是看到重复字母就一概求和。
+- PyTorch广播文档中的(0,)示例把零长度说成无维，表述不严谨；本页显式只教正尺寸规则，不复述该错误或扩展空张量主题。
+- 环境隔离不是不可信代码沙箱，也不自动锁定版本。A1 README遗留2025标题真实保留；学期以同commit讲义封面Spring2026/26.0.3为准。
+- 所有例子为编者独立机制示例，概念/API解释不越过课程AI政策，不构成A1解答或排行榜代码。
+
+四、许可与发布
+- 讲义开放翻译许可仍未确认；只写自主解释，不镜像正文、不制造获准全文译稿。
+- A1 MIT只用于第一方文档，未外推第三方数据/论文/图片/服务。
+- Python PSF v2和文档代码0BSD双许可、PyTorch BSD-3-Clause均实际读过相应条款。
+- raw/下9个原件仅本地留存；建议只提交三篇原创正文及此manifest/review，不随意强制发布原始镜像。
+- 未采集、读取或翻译课堂字幕；未下载媒体、未截帧、未核音。无官方桥接录像，因此不创建draft。
+- 没有独立课外材料正文需求，因此不创建materials占位。桥接无必要的解释性图，本片不为凑数画图；L01/L02 SVG由对应讲次负责。
+
+五、给Main的最小验证建议（全部未执行）
+1. bridge04三个Python代码块分别在新标准库进程运行：
+   A stdout：[65, 228, 189, 160, 10]
+   B stdout两行：10 0；10 10
+   C stdout JSON字段：bytes=7、lines=2、code_points_including_newlines=5；解释器字段因环境不同而变化；stderr一条INFO日志。仅临时目录，不保留输入数据。
+   不需要执行venv创建命令，不需要安装任何依赖。
+2. bridge02唯一Python块：预期stdout为2.302585 0.767528 2.154435。
+3. bridge01唯一Python块：已有CPU PyTorch即可；全部assert应成立，stdout为[10, -2] [50, -20]。不要为此安装大环境，也不要运行A1官方测试。
+4. 结构性检查：三篇前置身份、每篇四个details答案、站内回链L01/L02、页底外链、数学渲染；所有source.file相对sources/，material_files相对课程根。
+5. 页面验收与共享状态整合由Main负责，本片不预填通过结论。
+
+六、可整合状态
+bridge04: notes=written_pending_main_verification; draft=not_applicable_editorial_bridge_without_official_video; materials=not_created_no_separate_material_assignment; official_lecture=false; before=lec01
+bridge02: notes=written_pending_main_verification; draft=not_applicable_editorial_bridge_without_official_video; materials=not_created_no_separate_material_assignment; official_lecture=false; before=lec01
+bridge01: notes=written_pending_main_verification; draft=not_applicable_editorial_bridge_without_official_video; materials=not_created_no_separate_material_assignment; official_lecture=false; before=lec02
+模型：Main已消息确认实际子会话gpt-6-astra/xhigh且无fallback；共享证据为sources/p2-model-preflight.json。本片不自称独立读取运行事件。
+
+七、明确未做
+未修改共享course/catalog/resources/status/manifest/reading-map/production-plan/model-preflight；未进入L03–04/P3；未写作业实现；未安装环境或下载数据模型；未用付费算力；未运行构建、测试、lint、formatter、smoke、浏览器或git；未重新审核P1全部材料；未预报审核/验收通过。

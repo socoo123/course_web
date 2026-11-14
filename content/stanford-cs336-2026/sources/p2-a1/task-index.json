@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "course_id": "stanford-cs336-2026",
+  "assignment_id": "a1-basics",
+  "phase": "P2",
+  "created_at": "2026-11-14T15:13:15Z",
+  "source": {
+    "id": "p2-a1-handout",
+    "url": "https://github.com/stanford-cs336/assignment1-basics/blob/a158843b20107949f1a8d7df1b05cd33b9166712/cs336_assignment1_basics.pdf",
+    "commit": "a158843b20107949f1a8d7df1b05cd33b9166712",
+    "edition": "Spring 2026",
+    "version": "26.0.3",
+    "pages": 47,
+    "file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.pdf",
+    "sha256": "cf402d1c6d3c66da035bdf33b3e2c1bbc4bb92a78b006ee36577e925a265e328",
+    "text_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+    "read_scope": "All extracted text, lines 1–2442, corresponding to PDF pp.1–47 including bibliography; not a visual formula/image review."
+  },
+  "scope": "All 38 scored Problem blocks indexed for P3 reuse. This is a source/task map, not full guidance, a solution, or evidence of assignment execution.",
+  "defaults": {
+    "requiredness": "standard_route_scored_problem",
+    "implementation_status": "not_performed",
+    "experiment_status": "not_performed",
+    "acceptance_status": "not_run",
+    "acceptance_evidence": "Names and requirements transcribed/summarized from the handout; official test source bodies not read or executed in P2.",
+    "dependency_semantics": "Editorial working order based on the handout, not a newly imposed official prerequisite policy.",
+    "page_semantics": "Printed PDF pages; ranges include statement continuation when applicable."
+  },
+  "stage_order": [
+    {"id": "0", "title": "Rules, version, environment and resource choice", "sections": ["1"], "gate": "before implementation"},
+    {"id": "1", "title": "Tokenizer assets and encoded data", "sections": ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7"], "gate": "Can start after L01; full-corpus work remains resource-gated"},
+    {"id": "2", "title": "Tensor contracts, Linear and Embedding", "sections": ["3.1", "3.2", "3.2.1", "3.3"], "gate": "Can start after L02"},
+    {"id": "3", "title": "Architecture and full forward pass", "sections": ["3.4", "3.5"], "gate": "L03 onward / P3 guidance; accounting framework can be previewed after L02"},
+    {"id": "4", "title": "Loss, optimization and numerical behavior", "sections": ["4.1", "4.2", "4.3", "4.4", "4.5"], "gate": "L03 onward / P3 integration"},
+    {"id": "5", "title": "Data, checkpoint and training loop", "sections": ["5.1", "5.2", "5.3"], "gate": "L03 onward / P3"},
+    {"id": "6", "title": "Decoding interface", "sections": ["6"], "gate": "L03 onward / P3"},
+    {"id": "7", "title": "Logging and TinyStories baseline", "sections": ["7.1", "7.2"], "gate": "After a correct training loop; start logging before long runs"},
+    {"id": "8", "title": "Ablations and OpenWebText", "sections": ["7.3", "7.4"], "gate": "After a recorded baseline"},
+    {"id": "9", "title": "Own modification and leaderboard", "sections": ["7.5"], "gate": "After baseline/experiment infrastructure and access to the required compute"}
+  ],
+  "tasks": [
+    {
+      "id": "unicode1", "title": "Understanding Unicode", "section": "2.1", "pages": [3, 4], "points": 1, "stage": "1", "depends_on": [],
+      "inputs": ["Python chr/ord and representations of strings"],
+      "subtasks": {"a": "Identify chr(0).", "b": "Compare __repr__ and printed representation.", "c": "Describe behavior when this character occurs inside text."},
+      "deliverables": ["One-sentence response for each subquestion"],
+      "acceptance": {"type": "written_observation", "tests": []}
+    },
+    {
+      "id": "unicode2", "title": "Unicode Encodings", "section": "2.2", "pages": [4, 5], "points": 3, "stage": "1", "depends_on": ["unicode1"],
+      "inputs": ["Unicode strings and encoded bytes", "The handout's intentionally incorrect per-byte UTF-8 decoder"],
+      "subtasks": {"a": "Explain reasons to prefer UTF-8 over UTF-16/UTF-32 for this tokenizer.", "b": "Give a failing input and explain the supplied decoder's error.", "c": "Give a two-byte sequence that does not decode to Unicode characters and explain."},
+      "deliverables": ["Short explanations and the requested counterexamples, not merely output screenshots"],
+      "acceptance": {"type": "written_reasoning", "tests": []}
+    },
+    {
+      "id": "train_bpe", "title": "BPE Tokenizer Training", "section": "2.5", "pages": [9], "points": 15, "stage": "1", "depends_on": ["unicode2"],
+      "inputs": ["input_path: str", "vocab_size: int (maximum final size, including base bytes and special tokens)", "special_tokens: list[str]"],
+      "deliverables": ["Training function returning vocab: dict[int, bytes]", "merges: list[tuple[bytes, bytes]] in creation order"],
+      "contract_notes": ["Use §2.4 training rules and pre-tokenization boundaries.", "Special tokens are hard boundaries and excluded from merge counts.", "Frequency ties prefer the lexicographically greater pair of byte strings."],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_train_bpe"], "commands_from_handout": ["uv run pytest tests/test_train_bpe.py"]}
+    },
+    {
+      "id": "train_bpe_tinystories", "title": "BPE Training on TinyStories", "section": "2.5", "pages": [9, 10], "points": 2, "stage": "1", "depends_on": ["train_bpe"],
+      "inputs": ["TinyStories training data", "Maximum vocabulary size 10000", "<|endoftext|> special token"],
+      "subtasks": {"a": "Train and serialize vocabulary/merges; report elapsed time, memory, longest token and interpretation.", "b": "Profile and identify the most time-consuming part."},
+      "deliverables": ["Serialized vocabulary and merges", "One-to-two sentence responses to a and b"],
+      "resource_reference": {"gpu": "none", "elapsed_time_envelope": "<=30 minutes", "ram_envelope": "<=30 GB", "minimum_configuration_guarantee": false},
+      "acceptance": {"type": "measured_experiment_and_written_response", "tests": []}
+    },
+    {
+      "id": "train_bpe_expts_owt", "title": "BPE Training on OpenWebText", "section": "2.5", "pages": [10], "points": 2, "stage": "1", "depends_on": ["train_bpe", "train_bpe_tinystories"],
+      "inputs": ["Provided OpenWebText training data", "Maximum vocabulary size 32000"],
+      "subtasks": {"a": "Train and serialize vocabulary/merges; interpret the longest token.", "b": "Compare tokenizer learned from TinyStories and OpenWebText."},
+      "deliverables": ["Serialized vocabulary and merges", "One-to-two sentence responses to a and b"],
+      "resource_reference": {"gpu": "none", "elapsed_time_envelope": "<=12 hours", "ram_envelope": "<=100 GB", "minimum_configuration_guarantee": false},
+      "acceptance": {"type": "measured_experiment_and_written_response", "tests": []}
+    },
+    {
+      "id": "tokenizer", "title": "Implementing the tokenizer", "section": "2.6", "pages": [11, 12], "points": 15, "stage": "1", "depends_on": ["train_bpe"],
+      "inputs": ["Frozen vocab and ordered merges", "Optional special_tokens", "Input text, iterable of strings, or token IDs"],
+      "deliverables": ["Tokenizer class", "Constructor and from_files", "encode, lazy encode_iterable and decode"],
+      "contract_notes": ["Special tokens must remain atomic and may need adding to vocabulary.", "Apply trained merges without crossing pre-token boundaries.", "Stream boundaries must not alter tokenization semantics.", "Malformed decoded UTF-8 uses replacement character U+FFFD."],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["get_tokenizer"], "commands_from_handout": ["uv run pytest tests/test_tokenizer.py"]}
+    },
+    {
+      "id": "tokenizer_experiments", "title": "Experiments with tokenizers", "section": "2.7", "pages": [12, 13], "points": 4, "stage": "1", "depends_on": ["tokenizer", "train_bpe_tinystories", "train_bpe_expts_owt"],
+      "inputs": ["TinyStories and OWT tokenizers (10k and 32k)", "10 sampled documents from each dataset", "Corresponding train/development data"],
+      "subtasks": {"a": "Compute each tokenizer's compression ratio in bytes/token.", "b": "Apply TinyStories tokenizer to OWT sample and compare.", "c": "Measure throughput and estimate time for 825 GB Pile; downloading Pile is not required.", "d": "Encode train/development datasets, serialize token arrays and explain suitability of uint16."},
+      "deliverables": ["Short answers for a–d", "Encoded TinyStories and OWT train/development token datasets"],
+      "acceptance": {"type": "data_artifacts_and_measured_analysis", "tests": []}
+    },
+    {
+      "id": "linear", "title": "Implementing the linear module", "section": "3.3.2", "pages": [18], "points": 1, "stage": "2", "depends_on": [],
+      "inputs": ["in_features, out_features, device, dtype", "Input tensor and weights"],
+      "deliverables": ["Custom nn.Module with nn.Parameter weight stored as W (out_features, in_features), without bias", "Initialization from §3.3.1"],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_linear"], "commands_from_handout": ["uv run pytest -k test_linear"]}
+    },
+    {
+      "id": "embedding", "title": "Implement the embedding module", "section": "3.3.3", "pages": [18, 19], "points": 1, "stage": "2", "depends_on": [],
+      "inputs": ["num_embeddings, embedding_dim, device, dtype", "Integer token IDs"],
+      "deliverables": ["Custom nn.Module embedding lookup", "Parameter matrix (vocab_size, d_model), initialized as in §3.3.1"],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_embedding"], "commands_from_handout": ["uv run pytest -k test_embedding"]}
+    },
+    {
+      "id": "rmsnorm", "title": "Root Mean Square Layer Normalization", "section": "3.4.1", "pages": [20], "points": 1, "stage": "3", "depends_on": [],
+      "inputs": ["d_model, eps, device, dtype", "Input activations"],
+      "deliverables": ["RMSNorm module preserving activation shape", "Float32 normalization computation followed by restoration of input dtype"],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_rmsnorm"], "commands_from_handout": ["uv run pytest -k test_rmsnorm"]}
+    },
+    {
+      "id": "positionwise_feedforward", "title": "Implement the position-wise feed-forward network", "section": "3.4.2", "pages": [22], "points": 2, "stage": "3", "depends_on": ["linear"],
+      "inputs": ["Activation tensor", "SwiGLU weights", "d_ff approximately (8/3)*d_model, rounded to a multiple of 64"],
+      "deliverables": ["SwiGLU feed-forward network using SiLU and gating"],
+      "contract_notes": ["torch.sigmoid is explicitly permitted for numerical stability."],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_swiglu"], "commands_from_handout": ["uv run pytest -k test_swiglu"]}
+    },
+    {
+      "id": "rope", "title": "Implement RoPE", "section": "3.4.3", "pages": [23], "points": 2, "stage": "3", "depends_on": [],
+      "inputs": ["theta, d_k, max_seq_len, device", "x (..., seq_len, d_k)", "token_positions (..., seq_len)"],
+      "deliverables": ["RotaryPositionalEmbedding with shape-preserving forward and arbitrary leading batch dimensions"],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_rope"], "commands_from_handout": ["uv run pytest -k test_rope"]}
+    },
+    {
+      "id": "softmax", "title": "Implement softmax", "section": "3.4.4", "pages": [24], "points": 1, "stage": "3", "depends_on": [],
+      "inputs": ["Tensor and normalization dimension"],
+      "deliverables": ["Numerically stable softmax retaining input shape"],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_softmax"], "commands_from_handout": ["uv run pytest -k test_softmax_matches_pytorch"]}
+    },
+    {
+      "id": "scaled_dot_product_attention", "title": "Implement scaled dot-product attention", "section": "3.4.4", "pages": [24, 25], "points": 5, "stage": "3", "depends_on": ["softmax"],
+      "inputs": ["Q, K, V with arbitrary leading batch-like dimensions", "Optional boolean mask"],
+      "deliverables": ["Scaled dot-product attention output with final value dimension d_v"],
+      "contract_notes": ["True means permitted attention; masked-out probabilities are zero.", "Leading batch-like dimensions are preserved."],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_scaled_dot_product_attention"], "commands_from_handout": ["uv run pytest -k test_scaled_dot_product_attention", "uv run pytest -k test_4d_scaled_dot_product_attention"]}
+    },
+    {
+      "id": "multihead_self_attention", "title": "Implement causal multi-head self-attention", "section": "3.4.5", "pages": [25, 26], "points": 5, "stage": "3", "depends_on": ["linear", "rope", "scaled_dot_product_attention"],
+      "inputs": ["d_model, num_heads", "Input activations, position information and weights"],
+      "deliverables": ["Causal multi-head self-attention module", "d_k=d_v=d_model/num_heads; RoPE on Q/K, not V"],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_multihead_self_attention"], "commands_from_handout": ["uv run pytest -k test_multihead_self_attention"]}
+    },
+    {
+      "id": "transformer_block", "title": "Implement the Transformer block", "section": "3.5", "pages": [26], "points": 3, "stage": "3", "depends_on": ["rmsnorm", "positionwise_feedforward", "multihead_self_attention"],
+      "inputs": ["d_model, num_heads, d_ff", "Activations and block weights"],
+      "deliverables": ["Pre-norm block combining attention and SwiGLU sublayers with residual connections"],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_transformer_block"], "commands_from_handout": ["uv run pytest -k test_transformer_block"]}
+    },
+    {
+      "id": "transformer_lm", "title": "Implementing the Transformer LM", "section": "3.5", "pages": [26, 27], "points": 3, "stage": "3", "depends_on": ["embedding", "transformer_block", "linear", "rmsnorm"],
+      "inputs": ["Block configuration plus vocab_size, context_length, num_layers", "Token IDs"],
+      "deliverables": ["Transformer LM: embedding, blocks, final normalization and LM head", "Unnormalized logits over vocabulary"],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_transformer_lm"], "commands_from_handout": ["uv run pytest -k test_transformer_lm"]}
+    },
+    {
+      "id": "transformer_accounting", "title": "Transformer LM resource accounting", "section": "3.5", "pages": [27, 28], "points": 5, "stage": "3", "depends_on": ["transformer_lm"],
+      "inputs": ["Assignment architecture with GPT-2-XL-shaped dimensions: vocab 50257, context 1024, layers 48, d_model 1600, heads 25, d_ff 4288", "Float32 parameter storage", "Other model/context configurations from subquestions"],
+      "subtasks": {"a": "Count trainable parameters and memory to load them.", "b": "List forward matrix multiplies and total FLOPs for one context-length input.", "c": "Identify dominant FLOPs components.", "d": "Repeat proportional accounting for GPT-2 small/medium/large shaped configurations and interpret trend.", "e": "Increase XL context length to 16384; explain total and proportional FLOPs changes."},
+      "deliverables": ["Parameter/memory result, matrix multiplication inventory, component FLOPs and short interpretations"],
+      "acceptance": {"type": "written_resource_accounting", "tests": []}
+    },
+    {
+      "id": "cross_entropy", "title": "Implement cross-entropy", "section": "4.1", "pages": [29], "points": 1, "stage": "4", "depends_on": [],
+      "inputs": ["Logits with vocabulary on final axis", "Target token IDs"],
+      "deliverables": ["Stable mean cross-entropy over arbitrary leading batch dimensions"],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_cross_entropy"], "commands_from_handout": ["uv run pytest -k test_cross_entropy"]}
+    },
+    {
+      "id": "learning_rate_tuning", "title": "Tuning the learning rate", "section": "4.2.1", "pages": [31], "points": 1, "stage": "4", "depends_on": [],
+      "inputs": ["Handout SGD toy example", "Learning rates 1e1, 1e2, 1e3", "10 iterations for each"],
+      "deliverables": ["One-to-two sentence response describing observed loss decrease or divergence"],
+      "acceptance": {"type": "toy_experiment_observation", "tests": []},
+      "distinction": "Not the full LM hyperparameter search task named learning_rate."
+    },
+    {
+      "id": "adamw", "title": "Implement AdamW", "section": "4.3", "pages": [32], "points": 2, "stage": "4", "depends_on": ["learning_rate_tuning"],
+      "inputs": ["Parameters and gradients", "Learning rate, beta1/beta2, epsilon, weight decay"],
+      "deliverables": ["torch.optim.Optimizer subclass maintaining per-parameter moments/state and matching fixed handout update order"],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["get_adamw_cls"], "commands_from_handout": ["uv run pytest -k test_adamw"]}
+    },
+    {
+      "id": "adamw_accounting", "title": "Resource accounting for training with AdamW", "section": "4.3", "pages": [32, 33], "points": 2, "stage": "4", "depends_on": ["adamw", "transformer_accounting"],
+      "inputs": ["Float32 for all tensors", "Listed activation components", "d_ff=(8/3)*d_model", "Paper problem's 80 GB and H100 assumptions"],
+      "subtasks": {"a": "Derive separate parameter, activation, gradient and optimizer-state memory expressions and their total.", "b": "Instantiate GPT-2-XL-shaped case as a*batch_size+b and find maximum batch fitting 80 GB.", "c": "Derive FLOPs for one AdamW step.", "d": "Estimate training hours for 400K steps, batch 1024, single H100 at given 495 TFLOP/s and 50% MFU, with backward twice forward FLOPs."},
+      "deliverables": ["Expressions and brief justifications; numerical instantiation where requested"],
+      "acceptance": {"type": "written_resource_accounting", "tests": []},
+      "distinction": "H100 is the accounting question's assumption, not the 2026 experimental hardware reference."
+    },
+    {
+      "id": "learning_rate_schedule", "title": "Implement cosine learning rate schedule with warmup", "section": "4.4", "pages": [33, 34], "points": 1, "stage": "4", "depends_on": [],
+      "inputs": ["t, alpha_max, alpha_min, warmup iterations T_w, final annealing iteration T_c"],
+      "deliverables": ["Learning-rate function covering warmup, cosine and post-annealing regions"],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["get_lr_cosine_schedule"], "commands_from_handout": ["uv run pytest -k test_get_lr_cosine_schedule"]}
+    },
+    {
+      "id": "gradient_clipping", "title": "Implement gradient clipping", "section": "4.5", "pages": [34], "points": 1, "stage": "4", "depends_on": [],
+      "inputs": ["Parameter list with gradients", "Maximum global L2 norm", "epsilon=1e-6"],
+      "deliverables": ["In-place clipping of gradients using a norm over all parameters"],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_gradient_clipping"], "commands_from_handout": ["uv run pytest -k test_gradient_clipping"]}
+    },
+    {
+      "id": "data_loading", "title": "Implement data loading", "section": "5.1", "pages": [34, 35], "points": 2, "stage": "5", "depends_on": ["tokenizer_experiments"],
+      "inputs": ["NumPy token ID array", "batch_size, context_length, requested device"],
+      "deliverables": ["Sampled input and next-token-target tensors, each (batch_size, context_length), on requested device"],
+      "contract_notes": ["§5.1 requires memory-mapped loading for large stored arrays and matching dtype/file format."],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_get_batch"], "commands_from_handout": ["uv run pytest -k test_get_batch"]}
+    },
+    {
+      "id": "checkpointing", "title": "Implement model checkpointing", "section": "5.2", "pages": [36], "points": 1, "stage": "5", "depends_on": ["transformer_lm", "adamw"],
+      "inputs": ["model, optimizer, iteration", "Output/input path or binary file-like object"],
+      "deliverables": ["save_checkpoint", "load_checkpoint restoring model/optimizer and returning saved iteration"],
+      "acceptance": {"type": "official_unit_tests", "adapters": ["run_save_checkpoint", "run_load_checkpoint"], "commands_from_handout": ["uv run pytest -k test_checkpointing"]}
+    },
+    {
+      "id": "training_together", "title": "Put it together", "section": "5.3", "pages": [36, 37], "points": 4, "stage": "5", "depends_on": ["transformer_lm", "cross_entropy", "adamw", "learning_rate_schedule", "gradient_clipping", "data_loading", "checkpointing"],
+      "inputs": ["User-provided data and model/optimizer configuration", "Checkpoint output path"],
+      "deliverables": ["Training script with configurable hyperparameters", "Memory-efficient train/validation data loading", "Checkpoint serialization", "Periodic training and validation logging"],
+      "acceptance": {"type": "integration_deliverable", "tests": [], "note": "Handout does not name a single official unit test proving completion of the whole script."}
+    },
+    {
+      "id": "decoding", "title": "Decoding", "section": "6", "pages": [38], "points": 3, "stage": "6", "depends_on": ["tokenizer", "transformer_lm", "softmax"],
+      "inputs": ["Prompt and model", "Maximum generation length", "Temperature and top-p threshold"],
+      "deliverables": ["Prompt completion until EOS or maximum length", "Temperature-scaled sampling", "Nucleus/top-p sampling"],
+      "acceptance": {"type": "functional_deliverable", "tests": [], "note": "Generation behavior must be checked; this task alone does not establish learned-model fluency."}
+    },
+    {
+      "id": "experiment_log", "title": "Experiment logging", "section": "7.1", "pages": [38, 39], "points": 3, "stage": "7", "depends_on": ["training_together"],
+      "inputs": ["Training/evaluation metrics, gradient step counts and wall-clock times"],
+      "deliverables": ["Experiment tracking infrastructure", "Document recording tried experiments and corresponding curves"],
+      "acceptance": {"type": "logging_and_experiment_record", "tests": []},
+      "working_order_note": "Integrate before starting long baseline/ablation runs, despite its later handout section."
+    },
+    {
+      "id": "learning_rate", "title": "Tune the learning rate", "section": "7.2.3", "pages": [40, 41], "points": 3, "stage": "7", "depends_on": ["training_together", "experiment_log"],
+      "inputs": ["TinyStories baseline from §7.2.1–7.2.2", "Learning-rate search plan"],
+      "subtasks": {"a": "Sweep learning rates, report final losses/divergence and curves, explain search; produce target-validation-loss model.", "b": "Investigate stability boundary with increasing learning rates, at least one divergent run, and analysis of relation to convergence."},
+      "deliverables": ["Learning curves, search strategy and stability analysis", "Model satisfying the explicitly selected route's validation-loss target"],
+      "resource_reference": {"exploration_label": "2 B200 hrs", "standard_training_tokens": 327680000, "standard_validation_loss_max": 1.45},
+      "official_low_resource_variant": {"pages": [40, 41], "training_tokens_approx": 40000000, "validation_loss_max": 2.0, "staff_example_tokens": 40960000, "staff_example_hardware": "M4 Max, 36 GB RAM", "staff_example_cpu_minutes": 82, "staff_example_mps_minutes": 36, "staff_example_loss": 1.8, "equivalent_to_standard_route": false},
+      "acceptance": {"type": "training_experiment", "tests": []}
+    },
+    {
+      "id": "batch_size_experiment", "title": "Batch size variations", "section": "7.2.3", "pages": [41], "points": 1, "stage": "7", "depends_on": ["learning_rate", "experiment_log"],
+      "inputs": ["TinyStories baseline", "Batch sizes from 1 to GPU memory limit, with intermediates including 64 and 128"],
+      "deliverables": ["Learning curves for different batches", "Re-tuned learning rates if necessary", "Discussion of observed training behavior"],
+      "resource_reference": {"exploration_label": "1 B200 hr"},
+      "acceptance": {"type": "controlled_training_experiment", "tests": []}
+    },
+    {
+      "id": "generate", "title": "Generate text", "section": "7.2.3", "pages": [42], "points": 1, "stage": "7", "depends_on": ["decoding", "learning_rate"],
+      "inputs": ["Own trained checkpoint and decoder", "Sampling settings"],
+      "deliverables": ["At least 256 generated tokens or until the first <|endoftext|>", "Brief fluency commentary and at least two quality-affecting factors"],
+      "acceptance": {"type": "generated_artifact_and_analysis", "tests": []}
+    },
+    {
+      "id": "layer_norm_ablation", "title": "Remove RMSNorm and train", "section": "7.3", "pages": [42], "points": 1, "stage": "8", "depends_on": ["learning_rate", "experiment_log"],
+      "inputs": ["Baseline model with all RMSNorms removed", "Previous optimal learning rate and lower learning rates"],
+      "deliverables": ["Learning curve after removal and curve at best learning rate", "Commentary on RMSNorm's impact"],
+      "resource_reference": {"exploration_label": "0.5 B200 hrs"},
+      "acceptance": {"type": "ablation_experiment", "tests": []}
+    },
+    {
+      "id": "pre_norm_ablation", "title": "Implement post-norm and train", "section": "7.3", "pages": [43], "points": 1, "stage": "8", "depends_on": ["learning_rate", "experiment_log"],
+      "inputs": ["Baseline pre-norm model", "Post-norm variant"],
+      "deliverables": ["Learning curve comparing post-norm with pre-norm"],
+      "resource_reference": {"exploration_label": "0.5 B200 hrs"},
+      "acceptance": {"type": "ablation_experiment", "tests": []}
+    },
+    {
+      "id": "no_pos_emb", "title": "Implement NoPE", "section": "7.3", "pages": [43], "points": 1, "stage": "8", "depends_on": ["learning_rate", "experiment_log"],
+      "inputs": ["RoPE baseline", "Variant with position embedding information removed"],
+      "deliverables": ["Learning curve comparing RoPE and NoPE"],
+      "resource_reference": {"exploration_label": "0.5 B200 hrs"},
+      "acceptance": {"type": "ablation_experiment", "tests": []}
+    },
+    {
+      "id": "swiglu_ablation", "title": "SwiGLU vs. SiLU", "section": "7.3", "pages": [43, 44], "points": 1, "stage": "8", "depends_on": ["learning_rate", "experiment_log"],
+      "inputs": ["SwiGLU baseline", "Ungated SiLU FFN with d_ff=4*d_model to approximately match parameters"],
+      "deliverables": ["Learning curves comparing approximately parameter-matched networks", "Discussion of findings"],
+      "resource_reference": {"exploration_label": "0.5 B200 hrs"},
+      "acceptance": {"type": "ablation_experiment", "tests": []}
+    },
+    {
+      "id": "main_experiment", "title": "Experiment on OWT", "section": "7.4", "pages": [45], "points": 2, "stage": "8", "depends_on": ["train_bpe_expts_owt", "tokenizer_experiments", "learning_rate", "decoding", "experiment_log"],
+      "inputs": ["Provided OWT data", "Same model architecture and total training iterations as TinyStories", "Re-tuned learning rate/batch if necessary"],
+      "deliverables": ["OWT learning curve and interpretation of loss differences from TinyStories", "Generated text in TinyStories output format and discussion of fluency/data difficulty"],
+      "resource_reference": {"exploration_label": "2 B200 hrs"},
+      "official_low_resource_variant": {"page": 44, "scope": "Online students with limited GPU access are advised to continue testing modifications on TinyStories.", "equivalent_to_standard_owt_experiment": false},
+      "acceptance": {"type": "cross_dataset_training_experiment", "tests": []}
+    },
+    {
+      "id": "leaderboard", "title": "Leaderboard", "section": "7.5", "pages": [45, 46], "points": 6, "stage": "9", "depends_on": ["main_experiment", "experiment_log"],
+      "requiredness": "standard_route_scored_problem_not_labeled_optional",
+      "inputs": ["Only the provided OWT training dataset", "Own architecture/hyperparameter modification", "B200 run within final budget"],
+      "deliverables": ["Final validation loss", "Learning curve with wall-clock x-axis showing less than 45 minutes per stated deliverable", "Description of modifications", "Leaderboard submission as directed by the official repository"],
+      "resource_reference": {"exploration_label": "10 B200 hrs", "final_run_limit_minutes": 45, "final_run_limit_b200_hours": 0.75, "naive_baseline_loss_to_beat": 5.0},
+      "official_low_resource_note": {"page": 44, "exact_scope": "The preceding low-resource tip for online students with limited GPU resources describes making a leaderboard submission as '(optionally)' and recommends continued TinyStories modifications.", "interpretation": "This scoped alternative does not make the 6-point standard-route problem universally optional; do not conflate official enrolled-course requirements with the external low-resource route."},
+      "acceptance": {"type": "budget_constrained_training_and_submission_evidence", "tests": []}
+    }
+  ],
+  "unscored_optional_suggestions": [
+    {"id": "systems_language_bpe", "section": "2.5", "page": 9, "scope": "Optionally implement key BPE-training parts in C++ or Rust; include build instructions. Not a requirement to finish train_bpe."},
+    {"id": "fused_qkv_projection", "section": "3.4.5", "page": 25, "scope": "Footnote stretch goal: combine key/query/value projections into one matrix multiplication."},
+    {"id": "shared_rope_cache", "section": "3.4.3", "page": 23, "scope": "Optional optimization: share a RoPE module/precomputed sin-cos buffers across layers."},
+    {"id": "leaderboard_modification_ideas", "section": "7.5", "page": 45, "scope": "Llama/Qwen/NanoGPT speedrun and weight tying are possible research directions, not a mandatory implementation list."}
+  ],
+  "non_problem_requirements": {
+    "submission": {"section": "1", "page": 2, "artifacts": ["writeup.pdf", "code.zip"], "packaging": "make_submission.sh", "note": "Course submission and leaderboard access are not verified by this content-production task."},
+    "ai_policy": {"section": "1", "pages": [1, 2], "allowed": ["High-level conceptual questions", "Low-level programming documentation/API signatures"], "forbidden": ["AI implementation of any assignment part", "Coding-agent or AI-autocomplete implementation, including leaderboard code"]},
+    "library_policy": {"section": "1", "page": 1, "restricted_namespaces": ["torch.nn", "torch.nn.functional", "torch.optim"], "listed_exceptions": ["torch.nn.Parameter", "torch.nn container classes", "torch.optim.Optimizer base class"], "later_explicit_permissions": ["torch.nn.init.trunc_normal_ in §3.3.1", "torch.sigmoid in positionwise_feedforward"]},
+    "data_download_status": "not_performed",
+    "compute_purchase_or_launch_status": "not_performed"
+  },
+  "material_files": ["labs/a1-basics/guide.zh.md"],
+  "not_created": ["labs/a1-basics/lab.zh.md", "English source publication", "Assignment implementation or solution files"],
+  "review_status": "not_independently_reviewed",
+  "page_acceptance_status": "not_performed"
+}
