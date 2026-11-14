@@ -1,0 +1,45 @@
+接续关键词：CS336-2026-P1-采集
+
+继续 Stanford CS336 Spring 2026 课程建设，仅执行 P1「并行采集与来源核查」。
+
+先读：
+1. content/stanford-cs336-2026/status.json
+2. content/stanford-cs336-2026/sources/production-plan.json
+3. content/stanford-cs336-2026/sources/P0-REVIEW.txt
+4. content/stanford-cs336-2026/sources/manifest.json
+5. content/stanford-cs336-2026/sources/reading-map.json
+6. content/stanford-cs336-2026/sources/model-preflight.json
+
+已完成的 P0
+- catalog 已迁移到 stanford-cs336-2026，卡片 active；course.json 有 43 个课程入口和 7 个实验入口。
+- resources.zh.md 已有公共学习路线、环境边界、术语和阅读归属。
+- 构建、50 个路由、桌面与手机验收通过。正文没有占位：讲次正文 0、实验正文 0、已核实单视频页头 0。
+- 官网只做了 P0 元数据/概述读取，未保存课表快照、未固定仓库、未采集视频/字幕或论文全文；P1 尚未开始。
+
+本阶段交付（按 production-plan.json 的 phase1，不擅自缩减）
+- 保存 2026 官方课表快照、来源 URL、取得日期、内容哈希，区分历史页与当前动态页。
+- 逐讲核对视频 ID、真实作者/官方链路、课程年份、讲次、时长、字幕可用性；嘉宾课以录像为准，不猜主题。
+- 固定讲义、论文与五份作业仓库/讲义版本；A5 必做与官方选做分别登记。不能只凭 README、URL 或文件名判年份。
+- 逐来源核实许可和实际阅读范围；给论文明确官方指定/编者补充、必读/选读、精确章节、先修、实验关联和中文处理类型。全文没读不可标完整已读。
+- 记录校内 API/账号与校外运行路径、依赖、原规模算力和可取得材料缺口；原规模要求与低资源教学路线分开。不购买、不启动收费算力。
+
+已知核查点
+- 2026 官网 A5 正篇链接文件名含 spring2026；Optional Part 2 仍指向 cs336_spring2025_assignment5_supplement_safety_rlhf.pdf。先读 PDF 内文并固定提交，再决定是否为 2026 补充讲义；计划中的模型/数据细节也要据固定讲义重新核实。
+- 当前官方列表共有 19 项，L18/L19 只标 Daniel Selsam / Dan Fu 姓名。
+- L02 官方课表同时链接 lecture_02 和 lecture_02_recording，应分别记录，不混用课堂版本。
+- 当前 paper01–paper16 只有归属规划；P0 没有全文核验，不把编者安排自动标成官方阅读。
+
+子 agent 约束
+- 所有实际子 agent（包括审核）统一 GPT-6 Astra xhigh：openai-codex/gpt-6-astra:xhigh。
+- 启动前重新读取受支持的配置入口。P0 观察到默认角色匹配，但 task.perCallModel=off，enableEffort=false，agentModelOverrides={}；P0 没有启动子 agent，也未修改配置。
+- 如需修改 CLI 配置，先读相应技能，并通过受支持入口及所需批准开启逐任务选择或等效覆盖；显式指定完整 selector，核实实际解析模型与推理等级。不以提示词代替配置，不静默换模型/降级。
+- 按独立采集范围合理并行，不为凑数派空任务。子任务独占来源分片目录，不改共享文件；主 agent 独占 catalog/course/resources/status 和汇总来源清单。
+- 子 agent 中途不运行构建、lint、测试或格式化；主 agent 整合后统一做最小必要验证。
+
+内容与验收边界
+- 仅修改 content/，沿用操作系统与分布式课程规范；原始存档在 sources/，不用 .md 后缀，不存 cookies/凭据/签名媒体地址。
+- 同一论文只在 reading-map.json 的单一归属页展开；课堂讲义随课堂整理，不重复成课程资料。
+- P1 不自动进入 P2 样板正文制作，也不创建无可靠来源的译稿或占位正文。
+- 已核实视频元数据才可同步 lectures[].video；如更新了页头，逐讲核对目标和显示时长，实际点击代表性链接验证新标签和原笔记页保留，并检查手机。
+- 保存登记/采集/已读/已写/已审/页面验收的真实状态；缺口明确说明，不能用搜索摘要或未读文件伪装完成。
+- P1 完成并验收后，保存实际进度、缺口与下一阶段接续关键词，然后停止，不自动启动 P2。

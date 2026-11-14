@@ -1,0 +1,52 @@
+{
+  "course_id": "stanford-cs336-2026",
+  "recorded_at": "2026-11-14T13:42:29.847599Z",
+  "acquisition_failures": [],
+  "limitations": [
+    {
+      "stage": "static_playlist_reader",
+      "result": "Reader exposed playlist title and generic page/footer only; did not enumerate videos.",
+      "resolution": "yt-dlp flat-playlist acquired 18 public entries successfully."
+    },
+    {
+      "stage": "per_video_metadata",
+      "result": "All 18 metadata commands exited 0. Each emitted the no supported JavaScript runtime warning. Subtitle inventories and requested JSON3 downloads nevertheless succeeded; media-format completeness was not tested.",
+      "warning": "WARNING: [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  [URL omitted]  for details on installing one",
+      "affected_video_ids": [
+        "JuoVZkPBiKk",
+        "kuYAsz7zspQ",
+        "lVynu4bo1rY",
+        "cKSwj_qZ8Jg",
+        "izZba4UA7iY",
+        "xnDHaNUvHBg",
+        "SzpOcwdIL0Y",
+        "6-cXp-aOmdg",
+        "Q15rhEWZPQ4",
+        "EfM546A79aM",
+        "vTfEyOyzV9E",
+        "JpAxdTWQJxM",
+        "-qm0ln33G24",
+        "5sxHosTLPF8",
+        "2oH6PWPrYFo",
+        "dIFAi87Ws4E",
+        "26FtD08ZpOU",
+        "9EEm4iMAF5s"
+      ]
+    },
+    {
+      "stage": "missing_scheduled_lecture",
+      "lecture_id": "lec18",
+      "result": "Official schedule lists Daniel Selsam, but no matching entry appears in the acquired 18-entry playlist.",
+      "search_query": "site:youtube.com \"CS336\" \"2026\" \"Daniel Selsam\"",
+      "search_result_urls": [
+        "https://www.youtube.com/watch?v=9EEm4iMAF5s",
+        "https://www.youtube.com/watch?v=2oH6PWPrYFo",
+        "https://www.youtube.com/watch?index=6&list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV&v=izZba4UA7iY",
+        "https://www.youtube.com/watch?v=SzpOcwdIL0Y",
+        "https://www.youtube.com/watch?v=R3meYJU7wEg"
+      ],
+      "conclusion": "No verified Daniel Selsam recording discovered; negative search evidence does not establish nonexistence. Other results not accepted as replacements."
+    }
+  ],
+  "security_boundary": "No cookies, credentials, request headers, subtitle signed URLs, media URLs or full yt-dlp/player responses archived. Only caption payloads downloaded; no audio/video."
+}

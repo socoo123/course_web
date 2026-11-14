@@ -1,0 +1,1263 @@
+{
+  "paper09": {
+    "canonicalTitle": "DataComp-LM: In search of the next generation of training sets for language models",
+    "authors": [
+      "Li, Jeffrey",
+      "Fang, Alex",
+      "Smyrnis, Georgios",
+      "Ivgi, Maor",
+      "Jordan, Matt",
+      "Gadre, Samir",
+      "Bansal, Hritik",
+      "Guha, Etash",
+      "Keh, Sedrick",
+      "Arora, Kushal",
+      "Garg, Saurabh",
+      "Xin, Rui",
+      "Muennighoff, Niklas",
+      "Heckel, Reinhard",
+      "Mercat, Jean",
+      "Chen, Mayee",
+      "Gururangan, Suchin",
+      "Wortsman, Mitchell",
+      "Albalak, Alon",
+      "Bitton, Yonatan",
+      "Nezhurina, Marianna",
+      "Abbas, Amro",
+      "Hsieh, Cheng-Yu",
+      "Ghosh, Dhruba",
+      "Gardner, Josh",
+      "Kilian, Maciej",
+      "Zhang, Hanlin",
+      "Shao, Rulin",
+      "Pratt, Sarah",
+      "Sanyal, Sunny",
+      "Ilharco, Gabriel",
+      "Daras, Giannis",
+      "Marathe, Kalyani",
+      "Gokaslan, Aaron",
+      "Zhang, Jieyu",
+      "Chandu, Khyathi",
+      "Nguyen, Thao",
+      "Vasiljevic, Igor",
+      "Kakade, Sham",
+      "Song, Shuran",
+      "Sanghavi, Sujay",
+      "Faghri, Fartash",
+      "Oh, Sewoong",
+      "Zettlemoyer, Luke",
+      "Lo, Kyle",
+      "El-Nouby, Alaaeldin",
+      "Pouransari, Hadi",
+      "Toshev, Alexander",
+      "Wang, Stephanie",
+      "Groeneveld, Dirk",
+      "Soldaini, Luca",
+      "Koh, Pang Wei",
+      "Jitsev, Jenia",
+      "Kollar, Thomas",
+      "Dimakis, Alexandros G.",
+      "Carmon, Yair",
+      "Dave, Achal",
+      "Schmidt, Ludwig",
+      "Shankar, Vaishaal"
+    ],
+    "authorFormat": "arXiv citation_author values, preserved without inferred affiliation/identity normalization",
+    "version": "arXiv:2406.11794v4",
+    "versionDate": "2025-04-21",
+    "versionSelection": "latest numbered version listed on the official arXiv landing page at retrieval; fixed URL retained",
+    "requirement": "editorial_required_core",
+    "designation": "editorial_supplement_official_assignment_unverified",
+    "officialAssignmentEvidence": null,
+    "officialCrosscheck": "待主agent与Spring 2026固定讲义/作业证据交叉；本分片未取得逐篇官方指定阅读证据，必读/选读均为编者建议。",
+    "verifiedScope": {
+      "version": "arXiv:2406.11794v4",
+      "pageConvention": "1-based physical PDF pages",
+      "core": [
+        {
+          "section": "3.1–3.5",
+          "title": "The DataComp for language models (DCLM) benchmark",
+          "pdfPages": "4–6",
+          "focus": "数据池、五种固定计算规模、filtering/mixing赛道、固定训练配方、53项评测及CORE/EXTENDED指标",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "4.1–4.6",
+          "title": "Building high-quality training datasets with DCLM",
+          "pdfPages": "6–10",
+          "focus": "原始数据集对照、HTML抽取、去重、fastText质量过滤、混合比例与去污染；对照表2–7",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "C.1–C.3",
+          "title": "Benchmark rules",
+          "pdfPages": "38–39",
+          "focus": "禁止更改训练/评测代码；评测数据仅用于评测与去污染；过滤和混合赛道边界",
+          "readStatus": "text_read_for_P1"
+        }
+      ],
+      "optional": [
+        {
+          "section": "5–6",
+          "title": "Scaling up DCLM-BASELINE to the trillion token scale; Conclusion and limitations",
+          "pdfPages": "10–11",
+          "focus": "表8扩大训练规模及限制；不能将小规模单维消融外推为全域最优",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "F; G.1–G.2",
+          "title": "Training details; Evaluation details",
+          "pdfPages": "41; 42–45",
+          "focus": "实验复现的训练参数和评测定义",
+          "readStatus": "TOC_and_headings_only"
+        },
+        {
+          "section": "J.1–J.2; L.1–L.2; O",
+          "title": "Model-based quality filters; Deduplication; Decontamination",
+          "pdfPages": "48–49; 58–64; 69–70",
+          "focus": "分类器、去重与污染的实现细节",
+          "readStatus": "TOC_and_headings_only"
+        }
+      ],
+      "requirementAuthority": "editorial_only; core means the recommended core within this reading, not official course requirement"
+    },
+    "prerequisites": [
+      "lec12",
+      "lec13"
+    ],
+    "prerequisiteDetails": [
+      "编者前置：训练/验证/测试隔离、固定模型与训练预算、数据过滤与去重、下游评测指标。"
+    ],
+    "relatedAssignments": [
+      "a4-data"
+    ],
+    "experimentAssociation": "编者关联a4-data：固定训练配方比较抽取/去重/fastText过滤，单列去污染检查。此处只核查论文证据，不证明作业要求复现全部DCLM赛道，也未下载数据或运行训练。",
+    "chineseTreatment": "authorized_translation_with_attribution_and_change_notice",
+    "license": "CC-BY-4.0",
+    "licenseEvidence": {
+      "metadataUrl": "https://arxiv.org/abs/2406.11794v4",
+      "metadataFile": "p1-papers-09-16/paper09-2406.11794v4-metadata.html",
+      "metadataSha256": "41ec8033d6f87bcaee69f5ad57188044706a4399e3ca41e0f04ec400a8867b32",
+      "linkObserved": "http://creativecommons.org/licenses/by/4.0/",
+      "termsFile": "p1-papers-09-16/license-cc-by-4.0.txt",
+      "decision": "固定版本arXiv元数据页view license指向CC BY 4.0；legalcode §1(a)将翻译列入Adapted Material，§2(a)(1)(B)允许制作/传播改编，§3要求署名、许可链接及改动说明。仅覆盖许可人有权许可的内容；第三方图片/数据/权重另核查。",
+      "checkedAt": "2026-11-14T13:48:38.816031Z"
+    },
+    "sourceFiles": {
+      "metadata": "p1-papers-09-16/paper09-2406.11794v4-metadata.html",
+      "fullTextPdf": "p1-papers-09-16/paper09-2406.11794v4.pdf",
+      "textExtraction": "p1-papers-09-16/paper09-2406.11794v4.txt"
+    },
+    "sourceSha256": {
+      "metadata": "41ec8033d6f87bcaee69f5ad57188044706a4399e3ca41e0f04ec400a8867b32",
+      "pdf": "af8fc884ccd601f8c6fbbba8f8e381de652fce1233949c0c64f64b4ab4b0f5b2",
+      "text": "11964d14fbedff5fc88d8c9e585df677ba50b59f313ad516f7a9aa3595367af2"
+    },
+    "sourceIds": [
+      "p1-paper09-metadata-v4",
+      "p1-paper09-fulltext-v4",
+      "p1-paper09-text-v4"
+    ],
+    "retrievedAt": "2026-11-14T13:39:11.874417Z",
+    "actualRead": {
+      "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
+      "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
+      "pagesRead": "1, 4–11, 33–34, 38–39",
+      "sectionsRead": "题名、59名作者元数据、v4标记；正文§3–6、附录目录及C.1–C.3实际读取。仅按章节标题扫描其余全文结构。",
+      "structureInspection": "实际全文文本中的章节标题索引；若有目录则读取目录（DataComp pp33–34）。没有目录的文章不声称读过不存在的目录。",
+      "notFullyRead": "§1–2未完整精读；参考文献及除C以外的大多数附录正文未完整读取。所有章节均未完成P2级逐式、逐表、逐引文精读。",
+      "readAt": "2026-11-14T13:48:38.816031Z",
+      "textExtraction": "pdftotext -layout; extracted text is a reading aid, original PDF is authoritative"
+    },
+    "readingEvidence": "题名、59名作者元数据、v4标记；正文§3–6、附录目录及C.1–C.3实际读取。仅按章节标题扫描其余全文结构。 已取得固定版本完整PDF后按所列页/节核查，不以摘要或搜索片段代替全文；§1–2未完整精读；参考文献及除C以外的大多数附录正文未完整读取。所有章节均未完成P2级逐式、逐表、逐引文精读。",
+    "cautions": [
+      "v4正文为89页；附录规则在C而非按旧版页码推定。",
+      "论文CC BY不自动覆盖Common Crawl网页、第三方训练数据、图示示例或模型资产；这些资产须单独核查。"
+    ],
+    "status": "p1_fixed_fulltext_and_core_scope_verified_not_full_close_reading",
+    "storageBoundary": "原始PDF/提取文本/元数据快照为本地P1证据，不等于已提交Git或已备份GitHub；原始授权不明资料不公开再分发。",
+    "placementPolicy": "home/materialFile/alsoUsedBy不在本更新中变更；保持唯一正文归属。"
+  },
+  "paper10": {
+    "canonicalTitle": "LoRA: Low-Rank Adaptation of Large Language Models",
+    "authors": [
+      "Hu, Edward J.",
+      "Shen, Yelong",
+      "Wallis, Phillip",
+      "Allen-Zhu, Zeyuan",
+      "Li, Yuanzhi",
+      "Wang, Shean",
+      "Wang, Lu",
+      "Chen, Weizhu"
+    ],
+    "authorFormat": "arXiv citation_author values, preserved without inferred affiliation/identity normalization",
+    "version": "arXiv:2106.09685v2",
+    "versionDate": "2021-10-16",
+    "versionSelection": "latest numbered version listed on the official arXiv landing page at retrieval; fixed URL retained",
+    "requirement": "editorial_optional",
+    "designation": "editorial_supplement_official_assignment_unverified",
+    "officialAssignmentEvidence": null,
+    "officialCrosscheck": "待主agent与Spring 2026固定讲义/作业证据交叉；本分片未取得逐篇官方指定阅读证据，必读/选读均为编者建议。",
+    "verifiedScope": {
+      "version": "arXiv:2106.09685v2",
+      "pageConvention": "1-based physical PDF pages",
+      "core": [
+        {
+          "section": "2",
+          "title": "Problem Statement",
+          "pdfPages": "2–3",
+          "focus": "全参数微调与低维参数增量的问题定义",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "4.1–4.2",
+          "title": "Low-Rank-Parametrized Update Matrices; Applying LoRA to Transformer",
+          "pdfPages": "4–5",
+          "focus": "W0+BA、A随机/B零初始化、alpha/r缩放、可合并权重及部署限制",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "7.1–7.2",
+          "title": "Which Weight Matrices in Transformer Should We Apply LoRA To?; What Is the Optimal Rank r for LoRA?",
+          "pdfPages": "10–11",
+          "focus": "投影矩阵选择、rank消融与有限任务/模型的经验边界",
+          "readStatus": "text_read_for_P1"
+        }
+      ],
+      "optional": [
+        {
+          "section": "5.1–5.5",
+          "title": "Empirical Experiments",
+          "pdfPages": "5–8",
+          "focus": "RoBERTa/DeBERTa/GPT-2/GPT-3对照；本轮只读§5引入、§5.1开头及§5.5",
+          "readStatus": "partial_text_read"
+        },
+        {
+          "section": "7.3",
+          "title": "How Does the Adaptation Matrix Delta W Compare to W?",
+          "pdfPages": "11–12",
+          "focus": "奇异子空间与增量方向解释",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "D.1–D.4",
+          "title": "Hyperparameters Used in Experiments",
+          "pdfPages": "18–20",
+          "focus": "复现超参数",
+          "readStatus": "headings_only"
+        }
+      ],
+      "requirementAuthority": "editorial_only; core means the recommended core within this reading, not official course requirement"
+    },
+    "prerequisites": [
+      "lec10",
+      "lec15"
+    ],
+    "prerequisiteDetails": [
+      "编者前置：矩阵秩、线性层反向传播、冻结参数、Adam状态显存和监督微调；ext11作为独立拓展不升级为官方必读。"
+    ],
+    "relatedAssignments": [],
+    "experimentAssociation": "编者拓展实验：比较全参微调与LoRA的可训练参数/优化器显存，并检查合并前后前向等价；既有计划未绑定正式作业，本轮不新增强制实验。",
+    "chineseTreatment": "independent_close_reading_no_full_translation_permission",
+    "license": "arXiv-nonexclusive-distrib-1.0",
+    "licenseEvidence": {
+      "metadataUrl": "https://arxiv.org/abs/2106.09685v2",
+      "metadataFile": "p1-papers-09-16/paper10-2106.09685v2-metadata.html",
+      "metadataSha256": "77c51763d3a69845adb62198048de545e134b563aa356b9c4a88fae7b19e99d6",
+      "linkObserved": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "termsFile": "p1-papers-09-16/license-arxiv-nonexclusive-1.0.html",
+      "decision": "固定版本arXiv元数据页view license指向arXiv non-exclusive 1.0；该许可仅向arXiv授予永久非独占分发权，未授予公众翻译或改编权。因此中文处理限定自主精读，不复制完整中文翻译，不以代码/模型许可证替代文章授权。",
+      "checkedAt": "2026-11-14T13:48:38.816031Z"
+    },
+    "sourceFiles": {
+      "metadata": "p1-papers-09-16/paper10-2106.09685v2-metadata.html",
+      "fullTextPdf": "p1-papers-09-16/paper10-2106.09685v2.pdf",
+      "textExtraction": "p1-papers-09-16/paper10-2106.09685v2.txt"
+    },
+    "sourceSha256": {
+      "metadata": "77c51763d3a69845adb62198048de545e134b563aa356b9c4a88fae7b19e99d6",
+      "pdf": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+      "text": "bf8bb6b2bda9a89688778e19fedfb704b93fb371df42fab86ed93abfbba25128"
+    },
+    "sourceIds": [
+      "p1-paper10-metadata-v2",
+      "p1-paper10-fulltext-v2",
+      "p1-paper10-text-v2"
+    ],
+    "retrievedAt": "2026-11-14T13:39:00.049272Z",
+    "actualRead": {
+      "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
+      "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
+      "pagesRead": "1–5, 8, 10–12",
+      "sectionsRead": "题名、作者、v2；§1–4、§5引入/5.1开头/5.5、§7.1–7.3和§8开头实际读取；其他章节标题扫描。",
+      "structureInspection": "实际全文文本中的章节标题索引；若有目录则读取目录（DataComp pp33–34）。没有目录的文章不声称读过不存在的目录。",
+      "notFullyRead": "§5.1后半至§5.4、相关工作、附录与§8跨页结尾未完整精读；未验证全部实验或子空间结论。",
+      "readAt": "2026-11-14T13:48:38.816031Z",
+      "textExtraction": "pdftotext -layout; extracted text is a reading aid, original PDF is authoritative"
+    },
+    "readingEvidence": "题名、作者、v2；§1–4、§5引入/5.1开头/5.5、§7.1–7.3和§8开头实际读取；其他章节标题扫描。 已取得固定版本完整PDF后按所列页/节核查，不以摘要或搜索片段代替全文；§5.1后半至§5.4、相关工作、附录与§8跨页结尾未完整精读；未验证全部实验或子空间结论。",
+    "cautions": [
+      "arXiv非独占分发许可仅给arXiv分发权，不是读者翻译授权。",
+      "microsoft/LoRA代码许可证不能推定覆盖论文；本轮选择自主精读。",
+      "论文只研究部分注意力权重；小rank有效不是所有任务的定理。"
+    ],
+    "status": "p1_fixed_fulltext_and_core_scope_verified_not_full_close_reading",
+    "storageBoundary": "原始PDF/提取文本/元数据快照为本地P1证据，不等于已提交Git或已备份GitHub；原始授权不明资料不公开再分发。",
+    "placementPolicy": "home/materialFile/alsoUsedBy不在本更新中变更；保持唯一正文归属。"
+  },
+  "paper11": {
+    "canonicalTitle": "QLoRA: Efficient Finetuning of Quantized LLMs",
+    "authors": [
+      "Dettmers, Tim",
+      "Pagnoni, Artidoro",
+      "Holtzman, Ari",
+      "Zettlemoyer, Luke"
+    ],
+    "authorFormat": "arXiv citation_author values, preserved without inferred affiliation/identity normalization",
+    "version": "arXiv:2305.14314v1",
+    "versionDate": "2023-05-23",
+    "versionSelection": "latest numbered version listed on the official arXiv landing page at retrieval; fixed URL retained",
+    "requirement": "editorial_optional",
+    "designation": "editorial_supplement_official_assignment_unverified",
+    "officialAssignmentEvidence": null,
+    "officialCrosscheck": "待主agent与Spring 2026固定讲义/作业证据交叉；本分片未取得逐篇官方指定阅读证据，必读/选读均为编者建议。",
+    "verifiedScope": {
+      "version": "arXiv:2305.14314v1",
+      "pageConvention": "1-based physical PDF pages",
+      "core": [
+        {
+          "section": "2",
+          "title": "Background",
+          "pdfPages": "3–4",
+          "focus": "分块量化、LoRA和参数高效微调的显存组成",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "3",
+          "title": "QLoRA Finetuning",
+          "pdfPages": "4–5",
+          "focus": "NF4、Double Quantization、Paged Optimizers；4位存储与BF16计算的区别",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "4",
+          "title": "QLoRA vs. Standard Finetuning",
+          "pdfPages": "5–7",
+          "focus": "对照协议、LoRA插入范围与NF4/DQ消融",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "8",
+          "title": "Limitations and Discussion",
+          "pdfPages": "15–16",
+          "focus": "33B/65B未建立与全16位全参微调等效；聊天评测限制",
+          "readStatus": "text_read_for_P1"
+        }
+      ],
+      "optional": [
+        {
+          "section": "5.1–5.3",
+          "title": "Experimental setup; Evaluation; Guanaco: QLoRA trained on OASST1 is a State-of-the-art Chatbot",
+          "pdfPages": "8–10",
+          "focus": "聊天评测设计与结论边界",
+          "readStatus": "headings_only"
+        },
+        {
+          "section": "E; G",
+          "title": "NormalFloat 4-bit data type; Memory Footprint",
+          "pdfPages": "24; 26",
+          "focus": "NF4码本在第24页，显存分析在第26页；本轮读G及图6文字说明，E仅标题及码表开头",
+          "readStatus": "partial_text_read"
+        }
+      ],
+      "requirementAuthority": "editorial_only; core means the recommended core within this reading, not official course requirement"
+    },
+    "prerequisites": [
+      "lec10",
+      "lec15",
+      "paper10"
+    ],
+    "prerequisiteDetails": [
+      "编者补充paper10前置：先理解LoRA，再理解量化/反量化、块尺度、BF16与激活检查点。"
+    ],
+    "relatedAssignments": [],
+    "experimentAssociation": "编者ext11拓展：核算NF4与双重量化的位宽/尺度开销及适配器梯度路径；无官方作业绑定，不下载65B模型或调用GPU。",
+    "chineseTreatment": "authorized_translation_with_attribution_and_change_notice",
+    "license": "CC-BY-4.0",
+    "licenseEvidence": {
+      "metadataUrl": "https://arxiv.org/abs/2305.14314v1",
+      "metadataFile": "p1-papers-09-16/paper11-2305.14314v1-metadata.html",
+      "metadataSha256": "5ee8ff1bfdd581d90e0c1a0bfb5df4fcf924fdb92d638dc1feafd2291ecbd724",
+      "linkObserved": "http://creativecommons.org/licenses/by/4.0/",
+      "termsFile": "p1-papers-09-16/license-cc-by-4.0.txt",
+      "decision": "固定版本arXiv元数据页view license指向CC BY 4.0；legalcode §1(a)将翻译列入Adapted Material，§2(a)(1)(B)允许制作/传播改编，§3要求署名、许可链接及改动说明。仅覆盖许可人有权许可的内容；第三方图片/数据/权重另核查。",
+      "checkedAt": "2026-11-14T13:48:38.816031Z"
+    },
+    "sourceFiles": {
+      "metadata": "p1-papers-09-16/paper11-2305.14314v1-metadata.html",
+      "fullTextPdf": "p1-papers-09-16/paper11-2305.14314v1.pdf",
+      "textExtraction": "p1-papers-09-16/paper11-2305.14314v1.txt"
+    },
+    "sourceSha256": {
+      "metadata": "5ee8ff1bfdd581d90e0c1a0bfb5df4fcf924fdb92d638dc1feafd2291ecbd724",
+      "pdf": "33a4e757c19d6ea8d3cca8958fce8fe405e290272e135c99ee66065c775d5bd1",
+      "text": "6b0e66a59818ff73c077ef6952aa2e9070ee0b676f6348e3821b61c9728f2dee"
+    },
+    "sourceIds": [
+      "p1-paper11-metadata-v1",
+      "p1-paper11-fulltext-v1",
+      "p1-paper11-text-v1"
+    ],
+    "retrievedAt": "2026-11-14T13:38:54.429146Z",
+    "actualRead": {
+      "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
+      "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
+      "pagesRead": "1, 3–7, 15–16, 26",
+      "sectionsRead": "题名/作者/v1；§2–4、§8、§9及附录G文字/图6说明实际读取，全文标题结构扫描。",
+      "structureInspection": "实际全文文本中的章节标题索引；若有目录则读取目录（DataComp pp33–34）。没有目录的文章不声称读过不存在的目录。",
+      "notFullyRead": "§5–7主体、定性示例和附录A–F未完整精读；未进行显存或吞吐实测。",
+      "readAt": "2026-11-14T13:48:38.816031Z",
+      "textExtraction": "pdftotext -layout; extracted text is a reading aid, original PDF is authoritative"
+    },
+    "readingEvidence": "题名/作者/v1；§2–4、§8、§9及附录G文字/图6说明实际读取，全文标题结构扫描。 已取得固定版本完整PDF后按所列页/节核查，不以摘要或搜索片段代替全文；§5–7主体、定性示例和附录A–F未完整精读；未进行显存或吞吐实测。",
+    "cautions": [
+      "§3中的NF4/DQ/paged optimizer是未编号小标题，不虚构为§3.1/3.2/3.3。",
+      "论文CC BY授权不替代LLaMA、训练数据或模型权重的各自许可。"
+    ],
+    "status": "p1_fixed_fulltext_and_core_scope_verified_not_full_close_reading",
+    "storageBoundary": "原始PDF/提取文本/元数据快照为本地P1证据，不等于已提交Git或已备份GitHub；原始授权不明资料不公开再分发。",
+    "placementPolicy": "home/materialFile/alsoUsedBy不在本更新中变更；保持唯一正文归属。"
+  },
+  "paper12": {
+    "canonicalTitle": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+    "authors": [
+      "Rafailov, Rafael",
+      "Sharma, Archit",
+      "Mitchell, Eric",
+      "Ermon, Stefano",
+      "Manning, Christopher D.",
+      "Finn, Chelsea"
+    ],
+    "authorFormat": "arXiv citation_author values, preserved without inferred affiliation/identity normalization",
+    "version": "arXiv:2305.18290v3",
+    "versionDate": "2024-07-29",
+    "versionSelection": "latest numbered version listed on the official arXiv landing page at retrieval; fixed URL retained",
+    "requirement": "editorial_required_core",
+    "designation": "editorial_supplement_official_assignment_unverified",
+    "officialAssignmentEvidence": null,
+    "officialCrosscheck": "待主agent与Spring 2026固定讲义/作业证据交叉；本分片未取得逐篇官方指定阅读证据，必读/选读均为编者建议。",
+    "verifiedScope": {
+      "version": "arXiv:2305.18290v3",
+      "pageConvention": "1-based physical PDF pages",
+      "core": [
+        {
+          "section": "3–4",
+          "title": "Preliminaries; Direct Preference Optimization",
+          "pdfPages": "3–5",
+          "focus": "Bradley–Terry偏好模型、KL约束RLHF、最优策略重参数化与DPO损失/梯度",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "6.1–6.2",
+          "title": "How well can DPO optimize the RLHF objective?; Can DPO scale to real preference datasets?",
+          "pdfPages": "8–9",
+          "focus": "奖励–KL前沿、摘要与单轮对话对照",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "6.4–7",
+          "title": "Validating GPT-4 judgments with human judgments; Discussion",
+          "pdfPages": "10",
+          "focus": "人评一致性、评委提示词影响和泛化/规模限制",
+          "readStatus": "text_read_for_P1"
+        }
+      ],
+      "optional": [
+        {
+          "section": "5.1–5.2",
+          "title": "Your Language Model Is Secretly a Reward Model; Instability of Actor-Critic Algorithms",
+          "pdfPages": "5–6",
+          "focus": "奖励等价类、actor-critic方差解释",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "A.1–A.4",
+          "title": "Mathematical Derivations",
+          "pdfPages": "15–17",
+          "focus": "KL最优解、BT/Plackett–Luce目标及梯度推导",
+          "readStatus": "headings_only"
+        },
+        {
+          "section": "B",
+          "title": "DPO Implementation Details and Hyperparameters",
+          "pdfPages": "19–20",
+          "focus": "损失代码在PDF第20页；beta、RMSprop与学习率设置",
+          "readStatus": "text_read_for_P1"
+        }
+      ],
+      "requirementAuthority": "editorial_only; core means the recommended core within this reading, not official course requirement"
+    },
+    "prerequisites": [
+      "lec03",
+      "lec12"
+    ],
+    "prerequisiteDetails": [
+      "编者前置：自回归序列log-prob、交叉熵、KL散度、SFT/reference policy以及偏好对；先补§3的RLHF约定。"
+    ],
+    "relatedAssignments": [
+      "a5-safety-optional"
+    ],
+    "experimentAssociation": "编者关联a5-safety-optional：从chosen/rejected的序列log-prob构造DPO损失并区分reference与policy；与真实2026安全作业要求的对应待主agent交叉，不声称官方要求DPO。",
+    "chineseTreatment": "authorized_translation_with_attribution_and_change_notice",
+    "license": "CC-BY-4.0",
+    "licenseEvidence": {
+      "metadataUrl": "https://arxiv.org/abs/2305.18290v3",
+      "metadataFile": "p1-papers-09-16/paper12-2305.18290v3-metadata.html",
+      "metadataSha256": "08edfdec10277f58ef5b670abe5d4c12772011b485501756e09527c895948d2b",
+      "linkObserved": "http://creativecommons.org/licenses/by/4.0/",
+      "termsFile": "p1-papers-09-16/license-cc-by-4.0.txt",
+      "decision": "固定版本arXiv元数据页view license指向CC BY 4.0；legalcode §1(a)将翻译列入Adapted Material，§2(a)(1)(B)允许制作/传播改编，§3要求署名、许可链接及改动说明。仅覆盖许可人有权许可的内容；第三方图片/数据/权重另核查。",
+      "checkedAt": "2026-11-14T13:48:38.816031Z"
+    },
+    "sourceFiles": {
+      "metadata": "p1-papers-09-16/paper12-2305.18290v3-metadata.html",
+      "fullTextPdf": "p1-papers-09-16/paper12-2305.18290v3.pdf",
+      "textExtraction": "p1-papers-09-16/paper12-2305.18290v3.txt"
+    },
+    "sourceSha256": {
+      "metadata": "08edfdec10277f58ef5b670abe5d4c12772011b485501756e09527c895948d2b",
+      "pdf": "92cb3a2b71362acda98a789b03d88688fd33cf5fcf13f81d2b1de30ee7d3b67a",
+      "text": "6a642d7cbf18618e8965b039147dcd7ce25b1cab2f225ce252e76f8ac87d8ced"
+    },
+    "sourceIds": [
+      "p1-paper12-metadata-v3",
+      "p1-paper12-fulltext-v3",
+      "p1-paper12-text-v3"
+    ],
+    "retrievedAt": "2026-11-14T13:39:02.397167Z",
+    "actualRead": {
+      "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
+      "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
+      "pagesRead": "1, 3–10, 19, 20（仅B，至C标题前）",
+      "sectionsRead": "题名/作者/v3；§3–7及B实际读取。第19页另经PDF图像查看，代码实际在第20页且已读取，未把第19页空白当作提取失败。",
+      "structureInspection": "实际全文文本中的章节标题索引；若有目录则读取目录（DataComp pp33–34）。没有目录的文章不声称读过不存在的目录。",
+      "notFullyRead": "§1–2未完整精读；附录A证明、C/D完整实验细节和样例未逐项复核；未运行代码。",
+      "readAt": "2026-11-14T13:48:38.816031Z",
+      "textExtraction": "pdftotext -layout; extracted text is a reading aid, original PDF is authoritative"
+    },
+    "readingEvidence": "题名/作者/v3；§3–7及B实际读取。第19页另经PDF图像查看，代码实际在第20页且已读取，未把第19页空白当作提取失败。 已取得固定版本完整PDF后按所列页/节核查，不以摘要或搜索片段代替全文；§1–2未完整精读；附录A证明、C/D完整实验细节和样例未逐项复核；未运行代码。",
+    "cautions": [
+      "默认离线偏好数据拟合不等于无需偏好标注；理论结论受偏好模型/支持集假设约束。",
+      "DPO论文版本v3日期为2024-07-29，不把2023首次发表日期当固定版本日期。"
+    ],
+    "status": "p1_fixed_fulltext_and_core_scope_verified_not_full_close_reading",
+    "storageBoundary": "原始PDF/提取文本/元数据快照为本地P1证据，不等于已提交Git或已备份GitHub；原始授权不明资料不公开再分发。",
+    "placementPolicy": "home/materialFile/alsoUsedBy不在本更新中变更；保持唯一正文归属。"
+  },
+  "paper13": {
+    "canonicalTitle": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+    "authors": [
+      "Shao, Zhihong",
+      "Wang, Peiyi",
+      "Zhu, Qihao",
+      "Xu, Runxin",
+      "Song, Junxiao",
+      "Bi, Xiao",
+      "Zhang, Haowei",
+      "Zhang, Mingchuan",
+      "Li, Y. K.",
+      "Wu, Y.",
+      "Guo, Daya"
+    ],
+    "authorFormat": "arXiv citation_author values, preserved without inferred affiliation/identity normalization",
+    "version": "arXiv:2402.03300v3",
+    "versionDate": "2024-04-27",
+    "versionSelection": "latest numbered version listed on the official arXiv landing page at retrieval; fixed URL retained",
+    "requirement": "editorial_required_core",
+    "designation": "editorial_supplement_official_assignment_unverified",
+    "officialAssignmentEvidence": null,
+    "officialCrosscheck": "待主agent与Spring 2026固定讲义/作业证据交叉；本分片未取得逐篇官方指定阅读证据，必读/选读均为编者建议。",
+    "verifiedScope": {
+      "version": "arXiv:2402.03300v3",
+      "pageConvention": "1-based physical PDF pages",
+      "core": [
+        {
+          "section": "4.1.1",
+          "title": "From PPO to GRPO",
+          "pdfPages": "11–14",
+          "focus": "省去value model、组内基线、clipped目标及单独KL项；图4/式1–4",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "4.1.2–4.1.4",
+          "title": "Outcome Supervision RL with GRPO; Process Supervision RL with GRPO; Iterative RL with GRPO",
+          "pdfPages": "14–15",
+          "focus": "结果/过程监督优势定义及迭代RL；算法1",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "4.2",
+          "title": "Training and Evaluating DeepSeekMath-RL",
+          "pdfPages": "15",
+          "focus": "144K训练问题、每题64输出、in/out-of-domain边界及表5",
+          "readStatus": "text_read_for_P1"
+        }
+      ],
+      "optional": [
+        {
+          "section": "5.2.1–5.2.3",
+          "title": "Towards to a Unified Paradigm; Why RL Works?; How to Achieve More Effective RL?",
+          "pdfPages": "18–22",
+          "focus": "统一视角、采样与奖励可靠性；本轮只读第22页尾段",
+          "readStatus": "partial_text_read"
+        },
+        {
+          "section": "6",
+          "title": "Conclusion, Limitation, and Future Work",
+          "pdfPages": "22",
+          "focus": "几何/定理证明与few-shot能力边界",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "A.1.4–A.1.6",
+          "title": "Direct Preference Optimization (DPO); Proximal Policy Optimization (PPO); Group Relative Policy Optimization (GRPO)",
+          "pdfPages": "29–30",
+          "focus": "梯度系数比较；简化分析的old=current假设",
+          "readStatus": "text_read_for_P1"
+        }
+      ],
+      "requirementAuthority": "editorial_only; core means the recommended core within this reading, not official course requirement"
+    },
+    "prerequisites": [
+      "lec15"
+    ],
+    "prerequisiteDetails": [
+      "编者前置：SFT、policy gradient、PPO clipping、importance ratio与KL正则；DPO比较可回链paper12但不移动正文归属。"
+    ],
+    "relatedAssignments": [
+      "a5-reasoning"
+    ],
+    "experimentAssociation": "编者关联a5-reasoning：核对组内标准化优势、token级损失归一化、采样/更新节奏与KL项位置；论文公式不自动等于作业指定GRPO变体。",
+    "chineseTreatment": "independent_close_reading_no_full_translation_permission",
+    "license": "arXiv-nonexclusive-distrib-1.0",
+    "licenseEvidence": {
+      "metadataUrl": "https://arxiv.org/abs/2402.03300v3",
+      "metadataFile": "p1-papers-09-16/paper13-2402.03300v3-metadata.html",
+      "metadataSha256": "e5a39c364cebfb11f1a561ac7daf74f3c6692173af8494848443768d5887a590",
+      "linkObserved": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "termsFile": "p1-papers-09-16/license-arxiv-nonexclusive-1.0.html",
+      "decision": "固定版本arXiv元数据页view license指向arXiv non-exclusive 1.0；该许可仅向arXiv授予永久非独占分发权，未授予公众翻译或改编权。因此中文处理限定自主精读，不复制完整中文翻译，不以代码/模型许可证替代文章授权。",
+      "checkedAt": "2026-11-14T13:48:38.816031Z"
+    },
+    "sourceFiles": {
+      "metadata": "p1-papers-09-16/paper13-2402.03300v3-metadata.html",
+      "fullTextPdf": "p1-papers-09-16/paper13-2402.03300v3.pdf",
+      "textExtraction": "p1-papers-09-16/paper13-2402.03300v3.txt"
+    },
+    "sourceSha256": {
+      "metadata": "e5a39c364cebfb11f1a561ac7daf74f3c6692173af8494848443768d5887a590",
+      "pdf": "6cc20b3c5b8d25b8b53868fc4ec1792c144f07d67bdf7395138efd4422197e7b",
+      "text": "384a7f66ae93a5d490c4cdc1da0e1d37023c2d61eae61fc59df574e02f421fc1"
+    },
+    "sourceIds": [
+      "p1-paper13-metadata-v3",
+      "p1-paper13-fulltext-v3",
+      "p1-paper13-text-v3"
+    ],
+    "retrievedAt": "2026-11-14T13:39:34.471062Z",
+    "actualRead": {
+      "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
+      "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
+      "pagesRead": "1, 11–15, 22, 29–30",
+      "sectionsRead": "题名/作者/v3；§4.1–4.2、表5、§6、附录A.1.4–A.1.6实际读取；全文标题扫描。",
+      "structureInspection": "实际全文文本中的章节标题索引；若有目录则读取目录（DataComp pp33–34）。没有目录的文章不声称读过不存在的目录。",
+      "notFullyRead": "预训练/SFT主体§2–3及§5.2主体未完整精读；表格未追溯全部外部基线。",
+      "readAt": "2026-11-14T13:48:38.816031Z",
+      "textExtraction": "pdftotext -layout; extracted text is a reading aid, original PDF is authoritative"
+    },
+    "readingEvidence": "题名/作者/v3；§4.1–4.2、表5、§6、附录A.1.4–A.1.6实际读取；全文标题扫描。 已取得固定版本完整PDF后按所列页/节核查，不以摘要或搜索片段代替全文；预训练/SFT主体§2–3及§5.2主体未完整精读；表格未追溯全部外部基线。",
+    "cautions": [
+      "arXiv non-exclusive不是翻译许可，DeepSeek仓库/模型许可不可替代论文许可。",
+      "算法1引用Equation 21，而正文完整GRPO目标为Equation 3；P1按原文保留该交叉引用差异，不擅自修正文稿。",
+      "附录简化公式先设old=current，不应误作所有训练配置通用实现。"
+    ],
+    "status": "p1_fixed_fulltext_and_core_scope_verified_not_full_close_reading",
+    "storageBoundary": "原始PDF/提取文本/元数据快照为本地P1证据，不等于已提交Git或已备份GitHub；原始授权不明资料不公开再分发。",
+    "placementPolicy": "home/materialFile/alsoUsedBy不在本更新中变更；保持唯一正文归属。"
+  },
+  "paper14": {
+    "canonicalTitle": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+    "authors": [
+      "DeepSeek-AI",
+      "Guo, Daya",
+      "Yang, Dejian",
+      "Zhang, Haowei",
+      "Song, Junxiao",
+      "Wang, Peiyi",
+      "Zhu, Qihao",
+      "Xu, Runxin",
+      "Zhang, Ruoyu",
+      "Ma, Shirong",
+      "Bi, Xiao",
+      "Zhang, Xiaokang",
+      "Yu, Xingkai",
+      "Wu, Yu",
+      "Wu, Z. F.",
+      "Gou, Zhibin",
+      "Shao, Zhihong",
+      "Li, Zhuoshu",
+      "Gao, Ziyi",
+      "Liu, Aixin",
+      "Xue, Bing",
+      "Wang, Bingxuan",
+      "Wu, Bochao",
+      "Feng, Bei",
+      "Lu, Chengda",
+      "Zhao, Chenggang",
+      "Deng, Chengqi",
+      "Zhang, Chenyu",
+      "Ruan, Chong",
+      "Dai, Damai",
+      "Chen, Deli",
+      "Ji, Dongjie",
+      "Li, Erhang",
+      "Lin, Fangyun",
+      "Dai, Fucong",
+      "Luo, Fuli",
+      "Hao, Guangbo",
+      "Chen, Guanting",
+      "Li, Guowei",
+      "Zhang, H.",
+      "Bao, Han",
+      "Xu, Hanwei",
+      "Wang, Haocheng",
+      "Ding, Honghui",
+      "Xin, Huajian",
+      "Gao, Huazuo",
+      "Qu, Hui",
+      "Li, Hui",
+      "Guo, Jianzhong",
+      "Li, Jiashi",
+      "Wang, Jiawei",
+      "Chen, Jingchang",
+      "Yuan, Jingyang",
+      "Qiu, Junjie",
+      "Li, Junlong",
+      "Cai, J. L.",
+      "Ni, Jiaqi",
+      "Liang, Jian",
+      "Chen, Jin",
+      "Dong, Kai",
+      "Hu, Kai",
+      "Gao, Kaige",
+      "Guan, Kang",
+      "Huang, Kexin",
+      "Yu, Kuai",
+      "Wang, Lean",
+      "Zhang, Lecong",
+      "Zhao, Liang",
+      "Wang, Litong",
+      "Zhang, Liyue",
+      "Xu, Lei",
+      "Xia, Leyi",
+      "Zhang, Mingchuan",
+      "Zhang, Minghua",
+      "Tang, Minghui",
+      "Li, Meng",
+      "Wang, Miaojun",
+      "Li, Mingming",
+      "Tian, Ning",
+      "Huang, Panpan",
+      "Zhang, Peng",
+      "Wang, Qiancheng",
+      "Chen, Qinyu",
+      "Du, Qiushi",
+      "Ge, Ruiqi",
+      "Zhang, Ruisong",
+      "Pan, Ruizhe",
+      "Wang, Runji",
+      "Chen, R. J.",
+      "Jin, R. L.",
+      "Chen, Ruyi",
+      "Lu, Shanghao",
+      "Zhou, Shangyan",
+      "Chen, Shanhuang",
+      "Ye, Shengfeng",
+      "Wang, Shiyu",
+      "Yu, Shuiping",
+      "Zhou, Shunfeng",
+      "Pan, Shuting",
+      "Li, S. S.",
+      "Zhou, Shuang",
+      "Wu, Shaoqing",
+      "Ye, Shengfeng",
+      "Yun, Tao",
+      "Pei, Tian",
+      "Sun, Tianyu",
+      "Wang, T.",
+      "Zeng, Wangding",
+      "Zhao, Wanjia",
+      "Liu, Wen",
+      "Liang, Wenfeng",
+      "Gao, Wenjun",
+      "Yu, Wenqin",
+      "Zhang, Wentao",
+      "Xiao, W. L.",
+      "An, Wei",
+      "Liu, Xiaodong",
+      "Wang, Xiaohan",
+      "Chen, Xiaokang",
+      "Nie, Xiaotao",
+      "Cheng, Xin",
+      "Liu, Xin",
+      "Xie, Xin",
+      "Liu, Xingchao",
+      "Yang, Xinyu",
+      "Li, Xinyuan",
+      "Su, Xuecheng",
+      "Lin, Xuheng",
+      "Li, X. Q.",
+      "Jin, Xiangyue",
+      "Shen, Xiaojin",
+      "Chen, Xiaosha",
+      "Sun, Xiaowen",
+      "Wang, Xiaoxiang",
+      "Song, Xinnan",
+      "Zhou, Xinyi",
+      "Wang, Xianzu",
+      "Shan, Xinxia",
+      "Li, Y. K.",
+      "Wang, Y. Q.",
+      "Wei, Y. X.",
+      "Zhang, Yang",
+      "Xu, Yanhong",
+      "Li, Yao",
+      "Zhao, Yao",
+      "Sun, Yaofeng",
+      "Wang, Yaohui",
+      "Yu, Yi",
+      "Zhang, Yichao",
+      "Shi, Yifan",
+      "Xiong, Yiliang",
+      "He, Ying",
+      "Piao, Yishi",
+      "Wang, Yisong",
+      "Tan, Yixuan",
+      "Ma, Yiyang",
+      "Liu, Yiyuan",
+      "Guo, Yongqiang",
+      "Ou, Yuan",
+      "Wang, Yuduan",
+      "Gong, Yue",
+      "Zou, Yuheng",
+      "He, Yujia",
+      "Xiong, Yunfan",
+      "Luo, Yuxiang",
+      "You, Yuxiang",
+      "Liu, Yuxuan",
+      "Zhou, Yuyang",
+      "Zhu, Y. X.",
+      "Xu, Yanhong",
+      "Huang, Yanping",
+      "Li, Yaohui",
+      "Zheng, Yi",
+      "Zhu, Yuchen",
+      "Ma, Yunxian",
+      "Tang, Ying",
+      "Zha, Yukun",
+      "Yan, Yuting",
+      "Ren, Z. Z.",
+      "Ren, Zehui",
+      "Sha, Zhangli",
+      "Fu, Zhe",
+      "Xu, Zhean",
+      "Xie, Zhenda",
+      "Zhang, Zhengyan",
+      "Hao, Zhewen",
+      "Ma, Zhicheng",
+      "Yan, Zhigang",
+      "Wu, Zhiyu",
+      "Gu, Zihui",
+      "Zhu, Zijia",
+      "Liu, Zijun",
+      "Li, Zilin",
+      "Xie, Ziwei",
+      "Song, Ziyang",
+      "Pan, Zizheng",
+      "Huang, Zhen",
+      "Xu, Zhipeng",
+      "Zhang, Zhongyu",
+      "Zhang, Zhen"
+    ],
+    "authorFormat": "arXiv citation_author values, preserved without inferred affiliation/identity normalization",
+    "version": "arXiv:2501.12948v2",
+    "versionDate": "2026-01-04",
+    "versionSelection": "latest numbered version listed on the official arXiv landing page at retrieval; fixed URL retained",
+    "requirement": "editorial_required_core",
+    "designation": "editorial_supplement_official_assignment_unverified",
+    "officialAssignmentEvidence": null,
+    "officialCrosscheck": "待主agent与Spring 2026固定讲义/作业证据交叉；本分片未取得逐篇官方指定阅读证据，必读/选读均为编者建议。",
+    "verifiedScope": {
+      "version": "arXiv:2501.12948v2",
+      "pageConvention": "1-based physical PDF pages",
+      "core": [
+        {
+          "section": "2.1–2.3",
+          "title": "Group Relative Policy Optimization; Reward Design; Incentivize Reasoning Capability in LLMs",
+          "pdfPages": "2–5",
+          "focus": "R1-Zero纯RL、规则奖励、训练轨迹和证据性质",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "3.1–3.2.2",
+          "title": "Model-based Rewards; Training Details",
+          "pdfPages": "6–8",
+          "focus": "R1多阶段训练、helpful/safety奖励、两轮RL与语言一致性",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "4",
+          "title": "Experiment",
+          "pdfPages": "8–9",
+          "focus": "各开发阶段比较与评测指标；表3",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "6",
+          "title": "Conclusion, Limitation, and Future Work",
+          "pdfPages": "10–11",
+          "focus": "输出/工具、token效率、语言混杂、提示与reward hacking限制",
+          "readStatus": "text_read_for_P1"
+        }
+      ],
+      "optional": [
+        {
+          "section": "G.1–G.2",
+          "title": "Key Findings; Unsuccessful Attempts",
+          "pdfPages": "62–64",
+          "focus": "基座/验证器依赖、PRM与MCTS失败边界",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "D.1; F–F.1",
+          "title": "Experiment Setup; DeepSeek-R1 Distillation; Distillation v.s. Reinforcement Learning",
+          "pdfPages": "39–41; 60–62",
+          "focus": "pass@1/consensus评测细节与蒸馏；本轮只读F.1在第62页的尾部",
+          "readStatus": "partial_text_read"
+        }
+      ],
+      "requirementAuthority": "editorial_only; core means the recommended core within this reading, not official course requirement"
+    },
+    "prerequisites": [
+      "lec15",
+      "paper13"
+    ],
+    "prerequisiteDetails": [
+      "编者补充paper13的GRPO前置；另需SFT、rejection sampling、可验证奖励、pass@1与consensus采样指标。"
+    ],
+    "relatedAssignments": [
+      "a5-reasoning"
+    ],
+    "experimentAssociation": "编者关联a5-reasoning：对比R1-Zero与R1的训练阶段、规则奖励和采样预算；不要求复现671B训练，也不把论文observational曲线当作消融证明。",
+    "chineseTreatment": "independent_close_reading_no_full_translation_permission",
+    "license": "arXiv-nonexclusive-distrib-1.0",
+    "licenseEvidence": {
+      "metadataUrl": "https://arxiv.org/abs/2501.12948v2",
+      "metadataFile": "p1-papers-09-16/paper14-2501.12948v2-metadata.html",
+      "metadataSha256": "baee792b4dcd1296978c3aef82dd39f0bc69fdc8219ef15e384f5567e5d644c6",
+      "linkObserved": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "termsFile": "p1-papers-09-16/license-arxiv-nonexclusive-1.0.html",
+      "decision": "固定版本arXiv元数据页view license指向arXiv non-exclusive 1.0；该许可仅向arXiv授予永久非独占分发权，未授予公众翻译或改编权。因此中文处理限定自主精读，不复制完整中文翻译，不以代码/模型许可证替代文章授权。",
+      "checkedAt": "2026-11-14T13:48:38.816031Z"
+    },
+    "sourceFiles": {
+      "metadata": "p1-papers-09-16/paper14-2501.12948v2-metadata.html",
+      "fullTextPdf": "p1-papers-09-16/paper14-2501.12948v2.pdf",
+      "textExtraction": "p1-papers-09-16/paper14-2501.12948v2.txt"
+    },
+    "sourceSha256": {
+      "metadata": "baee792b4dcd1296978c3aef82dd39f0bc69fdc8219ef15e384f5567e5d644c6",
+      "pdf": "b191b0a365a64b4ab2791d117069ed17a2933d03554a662ced58b37df52018f4",
+      "text": "04a64ae852b334dc0fbda2a7b37c55bf98d12ab44d16d8a2e243971a448813d0"
+    },
+    "sourceIds": [
+      "p1-paper14-metadata-v2",
+      "p1-paper14-fulltext-v2",
+      "p1-paper14-text-v2"
+    ],
+    "retrievedAt": "2026-11-14T13:40:13.975139Z",
+    "actualRead": {
+      "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
+      "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
+      "pagesRead": "1–10, 11（§6至作者名单前）, 62–64",
+      "sectionsRead": "题名/200项作者元数据/v2；§1–6及G.1–G.2实际读取；全篇标题索引扫描。",
+      "structureInspection": "实际全文文本中的章节标题索引；若有目录则读取目录（DataComp pp33–34）。没有目录的文章不声称读过不存在的目录。",
+      "notFullyRead": "附录A–F、H–J大部分正文未完整精读；安全报告D.3和全部评测提示未逐条核查；作者名单未逐人履历核实。",
+      "readAt": "2026-11-14T13:48:38.816031Z",
+      "textExtraction": "pdftotext -layout; extracted text is a reading aid, original PDF is authoritative"
+    },
+    "readingEvidence": "题名/200项作者元数据/v2；§1–6及G.1–G.2实际读取；全篇标题索引扫描。 已取得固定版本完整PDF后按所列页/节核查，不以摘要或搜索片段代替全文；附录A–F、H–J大部分正文未完整精读；安全报告D.3和全部评测提示未逐条核查；作者名单未逐人履历核实。",
+    "cautions": [
+      "固定v2于2026-01-04提交，共86页；与2025 v1重排不同。合并固定讲义时必须核对版本，不能沿用v1的§2.2/§2.3定位。",
+      "论文arXiv non-exclusive；文中MIT指模型资产，不据此主张论文全文翻译许可。",
+      "模型作者对aha moment的解释属于论文主张，不是P1独立验证的因果结论。"
+    ],
+    "status": "p1_fixed_fulltext_and_core_scope_verified_not_full_close_reading",
+    "storageBoundary": "原始PDF/提取文本/元数据快照为本地P1证据，不等于已提交Git或已备份GitHub；原始授权不明资料不公开再分发。",
+    "placementPolicy": "home/materialFile/alsoUsedBy不在本更新中变更；保持唯一正文归属。"
+  },
+  "paper15": {
+    "canonicalTitle": "Learning Transferable Visual Models From Natural Language Supervision",
+    "authors": [
+      "Radford, Alec",
+      "Kim, Jong Wook",
+      "Hallacy, Chris",
+      "Ramesh, Aditya",
+      "Goh, Gabriel",
+      "Agarwal, Sandhini",
+      "Sastry, Girish",
+      "Askell, Amanda",
+      "Mishkin, Pamela",
+      "Clark, Jack",
+      "Krueger, Gretchen",
+      "Sutskever, Ilya"
+    ],
+    "authorFormat": "arXiv citation_author values, preserved without inferred affiliation/identity normalization",
+    "version": "arXiv:2103.00020v1",
+    "versionDate": "2021-02-26",
+    "versionSelection": "latest numbered version listed on the official arXiv landing page at retrieval; fixed URL retained",
+    "requirement": "editorial_required_core",
+    "designation": "editorial_supplement_official_assignment_unverified",
+    "officialAssignmentEvidence": null,
+    "officialCrosscheck": "待主agent与Spring 2026固定讲义/作业证据交叉；本分片未取得逐篇官方指定阅读证据，必读/选读均为编者建议。",
+    "verifiedScope": {
+      "version": "arXiv:2103.00020v1",
+      "pageConvention": "1-based physical PDF pages",
+      "core": [
+        {
+          "section": "2.1–2.5",
+          "title": "Approach",
+          "pdfPages": "3–5",
+          "focus": "自然语言监督、WIT数据、双向对比交叉熵、图3伪代码、双塔架构与训练",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "3.1.2",
+          "title": "Using CLIP for Zero-Shot Transfer",
+          "pdfPages": "6",
+          "focus": "文本类名生成分类器、归一化相似度与温度",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "3.1.4",
+          "title": "Prompt Engineering and Ensembling",
+          "pdfPages": "7–8",
+          "focus": "提示模板与embedding空间集成",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "6",
+          "title": "Limitations",
+          "pdfPages": "18–20",
+          "focus": "细粒度/计数/域外失效、数据效率、验证集调参与社会偏差",
+          "readStatus": "text_read_for_P1"
+        }
+      ],
+      "optional": [
+        {
+          "section": "3.2–3.3",
+          "title": "Representation Learning; Robustness to Natural Distribution Shift",
+          "pdfPages": "11–16",
+          "focus": "linear probe与自然分布迁移",
+          "readStatus": "headings_only"
+        },
+        {
+          "section": "7.1–7.3",
+          "title": "Bias; Surveillance; Future Work",
+          "pdfPages": "21–25",
+          "focus": "部署偏差与监控风险；本轮只读§7在第20页的总引入",
+          "readStatus": "headings_verified; section_7_introduction_only"
+        }
+      ],
+      "requirementAuthority": "editorial_only; core means the recommended core within this reading, not official course requirement"
+    },
+    "prerequisites": [
+      "lec03",
+      "lec15"
+    ],
+    "prerequisiteDetails": [
+      "编者前置：Transformer/ViT基础、余弦相似度、batch negatives、softmax交叉熵与zero-shot评测。"
+    ],
+    "relatedAssignments": [],
+    "experimentAssociation": "编者lec17/ext15补充：手算小批次对称对比损失和类名提示变化；既有计划无正式作业绑定，不新设强制实验。",
+    "chineseTreatment": "independent_close_reading_no_full_translation_permission",
+    "license": "arXiv-nonexclusive-distrib-1.0",
+    "licenseEvidence": {
+      "metadataUrl": "https://arxiv.org/abs/2103.00020v1",
+      "metadataFile": "p1-papers-09-16/paper15-2103.00020v1-metadata.html",
+      "metadataSha256": "3ea568f0aa804fdfac56ee1cba989bfe7bf4e4165ee6dd81affc92f632743f91",
+      "linkObserved": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "termsFile": "p1-papers-09-16/license-arxiv-nonexclusive-1.0.html",
+      "decision": "固定版本arXiv元数据页view license指向arXiv non-exclusive 1.0；该许可仅向arXiv授予永久非独占分发权，未授予公众翻译或改编权。因此中文处理限定自主精读，不复制完整中文翻译，不以代码/模型许可证替代文章授权。",
+      "checkedAt": "2026-11-14T13:48:38.816031Z"
+    },
+    "sourceFiles": {
+      "metadata": "p1-papers-09-16/paper15-2103.00020v1-metadata.html",
+      "fullTextPdf": "p1-papers-09-16/paper15-2103.00020v1.pdf",
+      "textExtraction": "p1-papers-09-16/paper15-2103.00020v1.txt"
+    },
+    "sourceSha256": {
+      "metadata": "3ea568f0aa804fdfac56ee1cba989bfe7bf4e4165ee6dd81affc92f632743f91",
+      "pdf": "6478b6e571a7d6fcd846d8ef77bfd60c285f1986abb8f475eedc43de403074f5",
+      "text": "f010e1c4bc61819d4b14a4fa8f3e2e98321c92a5b8c8e3992a315656045bc115"
+    },
+    "sourceIds": [
+      "p1-paper15-metadata-v1",
+      "p1-paper15-fulltext-v1",
+      "p1-paper15-text-v1"
+    ],
+    "retrievedAt": "2026-11-14T13:41:22.663817Z",
+    "actualRead": {
+      "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
+      "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
+      "pagesRead": "1, 3–7, 8（§3.1.4段落）, 18（§6开头）, 19–20",
+      "sectionsRead": "题名/作者/v1；§2、§3.1.1–3.1.4、§6和§7引入实际读取，图3可提取伪代码已读。双栏版面按列理解，不把并排段落误认为章节顺序。",
+      "structureInspection": "实际全文文本中的章节标题索引；若有目录则读取目录（DataComp pp33–34）。没有目录的文章不声称读过不存在的目录。",
+      "notFullyRead": "§3.1.5、§3.2–5、§7主体和附录未完整精读；图像/全部实验图未逐项视觉复核。",
+      "readAt": "2026-11-14T13:48:38.816031Z",
+      "textExtraction": "pdftotext -layout; extracted text is a reading aid, original PDF is authoritative"
+    },
+    "readingEvidence": "题名/作者/v1；§2、§3.1.1–3.1.4、§6和§7引入实际读取，图3可提取伪代码已读。双栏版面按列理解，不把并排段落误认为章节顺序。 已取得固定版本完整PDF后按所列页/节核查，不以摘要或搜索片段代替全文；§3.1.5、§3.2–5、§7主体和附录未完整精读；图像/全部实验图未逐项视觉复核。",
+    "cautions": [
+      "arXiv non-exclusive不是全文翻译许可；OpenAI/CLIP软件MIT许可证不自动覆盖文章或WIT图文。",
+      "CLIP是图文匹配/表示学习，不把该论文说成视觉自回归生成模型。"
+    ],
+    "status": "p1_fixed_fulltext_and_core_scope_verified_not_full_close_reading",
+    "storageBoundary": "原始PDF/提取文本/元数据快照为本地P1证据，不等于已提交Git或已备份GitHub；原始授权不明资料不公开再分发。",
+    "placementPolicy": "home/materialFile/alsoUsedBy不在本更新中变更；保持唯一正文归属。"
+  },
+  "paper16": {
+    "canonicalTitle": "Visual Instruction Tuning",
+    "authors": [
+      "Liu, Haotian",
+      "Li, Chunyuan",
+      "Wu, Qingyang",
+      "Lee, Yong Jae"
+    ],
+    "authorFormat": "arXiv citation_author values, preserved without inferred affiliation/identity normalization",
+    "version": "arXiv:2304.08485v2",
+    "versionDate": "2023-12-11",
+    "versionSelection": "latest numbered version listed on the official arXiv landing page at retrieval; fixed URL retained",
+    "requirement": "editorial_required_core",
+    "designation": "editorial_supplement_official_assignment_unverified",
+    "officialAssignmentEvidence": null,
+    "officialCrosscheck": "待主agent与Spring 2026固定讲义/作业证据交叉；本分片未取得逐篇官方指定阅读证据，必读/选读均为编者建议。",
+    "verifiedScope": {
+      "version": "arXiv:2304.08485v2",
+      "pageConvention": "1-based physical PDF pages",
+      "core": [
+        {
+          "section": "3",
+          "title": "GPT-assisted Visual Instruction Data Generation",
+          "pdfPages": "2–4",
+          "focus": "用caption/boxes提示文本GPT-4生成三类158K视觉指令数据",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "4.1–4.2",
+          "title": "Architecture; Training",
+          "pdfPages": "4–5",
+          "focus": "CLIP ViT-L/14到Vicuna的线性投影、回答token损失与两阶段冻结/解冻",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "5.2",
+          "title": "ScienceQA",
+          "pdfPages": "8–9",
+          "focus": "LLaVA与GPT-4互补/judge集成区别及消融；表7–8",
+          "readStatus": "text_read_for_P1"
+        }
+      ],
+      "optional": [
+        {
+          "section": "5.1",
+          "title": "Multimodal Chatbot",
+          "pdfPages": "5–8",
+          "focus": "LLaVA-Bench与GPT评测；本轮只读开头及第8页表6",
+          "readStatus": "partial_text_read"
+        },
+        {
+          "section": "6; C",
+          "title": "Conclusion; Training Details",
+          "pdfPages": "9; 20",
+          "focus": "研究范围、超参数、FSDP/gradient checkpointing",
+          "readStatus": "text_read_for_P1"
+        },
+        {
+          "section": "E–F",
+          "title": "Data; Prompts",
+          "pdfPages": "20–25",
+          "focus": "数据筛选及生成提示；仅E第20页引入/开头实际读取",
+          "readStatus": "partial_text_read"
+        }
+      ],
+      "requirementAuthority": "editorial_only; core means the recommended core within this reading, not official course requirement"
+    },
+    "prerequisites": [
+      "lec03",
+      "lec15",
+      "paper15"
+    ],
+    "prerequisiteDetails": [
+      "编者补充paper15的视觉编码前置；还需自回归teacher forcing、answer-only loss与SFT冻结参数。"
+    ],
+    "relatedAssignments": [],
+    "experimentAssociation": "编者lec17/ext15补充：画出视觉token投影与回答mask，比较两阶段哪些参数更新；不要求调用付费GPT-4生成数据。",
+    "chineseTreatment": "authorized_translation_with_attribution_and_change_notice",
+    "license": "CC-BY-4.0",
+    "licenseEvidence": {
+      "metadataUrl": "https://arxiv.org/abs/2304.08485v2",
+      "metadataFile": "p1-papers-09-16/paper16-2304.08485v2-metadata.html",
+      "metadataSha256": "ca833da8c03d0b5c3d8be5bb004e9e49c94f4ac8f5161efdb1297f68fa5f903c",
+      "linkObserved": "http://creativecommons.org/licenses/by/4.0/",
+      "termsFile": "p1-papers-09-16/license-cc-by-4.0.txt",
+      "decision": "固定版本arXiv元数据页view license指向CC BY 4.0；legalcode §1(a)将翻译列入Adapted Material，§2(a)(1)(B)允许制作/传播改编，§3要求署名、许可链接及改动说明。仅覆盖许可人有权许可的内容；第三方图片/数据/权重另核查。",
+      "checkedAt": "2026-11-14T13:48:38.816031Z"
+    },
+    "sourceFiles": {
+      "metadata": "p1-papers-09-16/paper16-2304.08485v2-metadata.html",
+      "fullTextPdf": "p1-papers-09-16/paper16-2304.08485v2.pdf",
+      "textExtraction": "p1-papers-09-16/paper16-2304.08485v2.txt"
+    },
+    "sourceSha256": {
+      "metadata": "ca833da8c03d0b5c3d8be5bb004e9e49c94f4ac8f5161efdb1297f68fa5f903c",
+      "pdf": "dc8bace378a282ea78caa9b5959306202fbfa3b8cedaf8a66541a9af18f4d3bf",
+      "text": "46ea1aece847a402c95d64181ae8562425ae8b6d43bc4703bf95ee662adcdec2"
+    },
+    "sourceIds": [
+      "p1-paper16-metadata-v2",
+      "p1-paper16-fulltext-v2",
+      "p1-paper16-text-v2"
+    ],
+    "retrievedAt": "2026-11-14T13:41:24.957575Z",
+    "actualRead": {
+      "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
+      "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
+      "pagesRead": "1–5, 8–9, 20；另视觉读取PDF第4页图1及式1–3",
+      "sectionsRead": "题名/作者/v2；§3–4、§5.2、§6和C实际读取。pdftotext第4页图1/式3包含LaTeXiT噪声，已用原PDF页渲染实际补读，不把乱码当原文。",
+      "structureInspection": "实际全文文本中的章节标题索引；若有目录则读取目录（DataComp pp33–34）。没有目录的文章不声称读过不存在的目录。",
+      "notFullyRead": "§5.1中间评测段、附录B多数示例、E后半与F完整提示未精读；未复现模型训练或GPT评测。",
+      "readAt": "2026-11-14T13:48:38.816031Z",
+      "textExtraction": "pdftotext -layout; extracted text is a reading aid, original PDF is authoritative"
+    },
+    "readingEvidence": "题名/作者/v2；§3–4、§5.2、§6和C实际读取。pdftotext第4页图1/式3包含LaTeXiT噪声，已用原PDF页渲染实际补读，不把乱码当原文。 已取得固定版本完整PDF后按所列页/节核查，不以摘要或搜索片段代替全文；§5.1中间评测段、附录B多数示例、E后半与F完整提示未精读；未复现模型训练或GPT评测。",
+    "cautions": [
+      "§4.2的Stage 1/Stage 2是未编号小标题，不虚构为§4.2.1/§4.2.2。",
+      "论文CC BY不授权第三方COCO图片、Vicuna/LLaMA权重或外部服务；这些资产需另行核查。",
+      "ScienceQA的92.53%是LLaVA+GPT-4 judge集成，不是LLaVA单模型90.92%。"
+    ],
+    "status": "p1_fixed_fulltext_and_core_scope_verified_not_full_close_reading",
+    "storageBoundary": "原始PDF/提取文本/元数据快照为本地P1证据，不等于已提交Git或已备份GitHub；原始授权不明资料不公开再分发。",
+    "placementPolicy": "home/materialFile/alsoUsedBy不在本更新中变更；保持唯一正文归属。"
+  }
+}

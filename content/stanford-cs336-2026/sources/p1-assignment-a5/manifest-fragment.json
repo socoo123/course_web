@@ -1,0 +1,910 @@
+{
+  "schema_version": 1,
+  "course_document_date": "2026-11-14",
+  "audit_completed_at": "2026-11-14T13:43:54Z",
+  "fragment": "p1-assignment-a5",
+  "repository_commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+  "sources": [
+    {
+      "id": "a5-reasoning",
+      "kind": "assignment_repository",
+      "url": "https://github.com/stanford-cs336/assignment5-alignment",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取固定提交SHA、提交日期及tree；未clone全仓库或运行作业。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/repository-commit.json",
+      "sha256": "a33d579b7ab53ac529d0e4b573b8c4fc32a8ce442e364a59302f5b52ded3248b",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:15Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 3050,
+      "commit_sha": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "commit_date": "2026-06-04T07:22:05Z",
+      "retrieval_url": "https://api.github.com/repos/stanford-cs336/assignment5-alignment/commits/c2734a26308710949fe13226960a1e8cece94b7e"
+    },
+    {
+      "id": "a5-repository-tree",
+      "kind": "repository_tree",
+      "url": "https://api.github.com/repos/stanford-cs336/assignment5-alignment/git/trees/c2734a26308710949fe13226960a1e8cece94b7e?recursive=1",
+      "status": "downloaded_scoped_read",
+      "read_scope": "完整树路径/大小/对象SHA；检索PDF版本、运行文件、数据存在性及LICENSE/COPYING缺失；没有读取数据内容。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/repository-tree.json",
+      "sha256": "64a57b7b1c149f75a356755d75792f8cc465971de02a4f3bf6e1dd9529bbf539",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:35Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 89858
+    },
+    {
+      "id": "a5-official-home-snapshot",
+      "kind": "official_course_page",
+      "url": "https://cs336.stanford.edu/",
+      "status": "downloaded_scoped_read",
+      "read_scope": "官网学期、A5正篇与Optional Part2链接、19讲课表、校外GPU说明与honor code。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified",
+      "license_evidence": {
+        "detail": "页面未查到覆盖课程资料的明确再分发/翻译许可。"
+      },
+      "file": "p1-assignment-a5/raw/official-home.html",
+      "sha256": "bd57fae299fec60afedb5a22edb325a68107fa1af0cd83641695470587f7a4a7",
+      "version": "Spring 2026; snapshot 2026-11-14",
+      "retrieved_at": "2026-11-14T13:38:17Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 33995
+    },
+    {
+      "id": "a5-main-handout-2026",
+      "kind": "assignment_handout",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_spring2026_assignment5_alignment.pdf",
+      "status": "downloaded_scoped_read",
+      "read_scope": "通过pdftotext实际读取封面（Spring 2026, Version 26.0.0）、§1–3、§4.1引文及on-policy定义、§4.2模型加载和双GPU段、§4.3实验、§5变体与实验要求、§6 off-policy/GRPO/GSPO与实验、§7自拟估计器、参考文献；全文检索显式论文阅读词。未逐式推导全部数学或执行代码。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/main-2026.pdf",
+      "sha256": "c93d503a69aef4aa7519b7fc664abebbf2ebf5e5e88379a7ed92f4c209a2d26a",
+      "version": {
+        "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+        "cover_term": "Spring 2026",
+        "cover_version": "26.0.0",
+        "pages": 39
+      },
+      "retrieved_at": "2026-11-14T13:38:09Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 765568,
+      "discovered_via": "official_home",
+      "historical_only": false
+    },
+    {
+      "id": "a5-main-handout-2026-text",
+      "kind": "pdf_text_extraction",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_spring2026_assignment5_alignment.pdf",
+      "status": "downloaded_scoped_read",
+      "read_scope": "通过pdftotext实际读取封面（Spring 2026, Version 26.0.0）、§1–3、§4.1引文及on-policy定义、§4.2模型加载和双GPU段、§4.3实验、§5变体与实验要求、§6 off-policy/GRPO/GSPO与实验、§7自拟估计器、参考文献；全文检索显式论文阅读词。未逐式推导全部数学或执行代码。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/main-2026.txt",
+      "sha256": "0279f479507544f5fcf6bd4e11527b70dcf5a66c088f8729e5d3c838d0ddcf92",
+      "version": {
+        "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+        "cover_term": "Spring 2026",
+        "cover_version": "26.0.0",
+        "pages": 39
+      },
+      "retrieved_at": "2026-11-14T13:38:11Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 130141,
+      "derived_from": "a5-main-handout-2026",
+      "extraction": "pdftotext -layout",
+      "historical_only": false
+    },
+    {
+      "id": "a5-safety-handout-2026",
+      "kind": "assignment_handout",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_spring2026_assignment5_supplement_safety_rlhf.pdf",
+      "status": "downloaded_scoped_read",
+      "read_scope": "通过pdftotext实际读取封面（Spring 2026, Version 26.0.0）、§1–3、§4.1数据、§4.2.2/SFT、§5评估及red-team、§6 DPO和参考文献；非逐行精读完整数据加载器部分。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/optional-safety-2026.pdf",
+      "sha256": "30a2de73c2b95b9302bf31640f5f6016ef884d611cba94c9a0fdb1e505ad07e3",
+      "version": {
+        "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+        "cover_term": "Spring 2026",
+        "cover_version": "26.0.0",
+        "pages": 18
+      },
+      "retrieved_at": "2026-11-14T13:38:51Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 295954,
+      "discovered_via": "repository_tree_and_README",
+      "historical_only": false
+    },
+    {
+      "id": "a5-safety-handout-2026-text",
+      "kind": "pdf_text_extraction",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_spring2026_assignment5_supplement_safety_rlhf.pdf",
+      "status": "downloaded_scoped_read",
+      "read_scope": "通过pdftotext实际读取封面（Spring 2026, Version 26.0.0）、§1–3、§4.1数据、§4.2.2/SFT、§5评估及red-team、§6 DPO和参考文献；非逐行精读完整数据加载器部分。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/optional-safety-2026.txt",
+      "sha256": "afc29a0cdc11ff67fc686e3c27bfb22f8b15a7800db7b0daa62ce4ef863b2654",
+      "version": {
+        "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+        "cover_term": "Spring 2026",
+        "cover_version": "26.0.0",
+        "pages": 18
+      },
+      "retrieved_at": "2026-11-14T13:38:51Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 50493,
+      "derived_from": "a5-safety-handout-2026",
+      "extraction": "pdftotext -layout",
+      "historical_only": false
+    },
+    {
+      "id": "a5-safety-handout-2025-historical",
+      "kind": "assignment_handout",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/cd5f183cf217cd82843e521d4d226e76544de51c/cs336_spring2025_assignment5_supplement_safety_rlhf.pdf",
+      "status": "downloaded_scoped_read",
+      "read_scope": "通过pdftotext实际读取封面（Spring 2025, Version 1.0.1）、概述、Together模型路径、评估GPU要求、§3数据/SFT、§5 DPO与参考文献，并检索阅读用语；仅作历史版本对照。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/optional-safety-2025.pdf",
+      "sha256": "ecf7fd5b6ee20ac89f64a56f063805f6ac9089cd5a71f5c7764420cae875262a",
+      "version": {
+        "commit": "cd5f183cf217cd82843e521d4d226e76544de51c",
+        "cover_term": "Spring 2025",
+        "cover_version": "1.0.1",
+        "pages": 19
+      },
+      "retrieved_at": "2026-11-14T13:39:34Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 148716,
+      "discovered_via": "historical_path_commit_history",
+      "historical_only": true
+    },
+    {
+      "id": "a5-safety-handout-2025-historical-text",
+      "kind": "pdf_text_extraction",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/cd5f183cf217cd82843e521d4d226e76544de51c/cs336_spring2025_assignment5_supplement_safety_rlhf.pdf",
+      "status": "downloaded_scoped_read",
+      "read_scope": "通过pdftotext实际读取封面（Spring 2025, Version 1.0.1）、概述、Together模型路径、评估GPU要求、§3数据/SFT、§5 DPO与参考文献，并检索阅读用语；仅作历史版本对照。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/optional-safety-2025.txt",
+      "sha256": "931521120e0b01d82ab7a35840302bfd546be9336e26fbc73080850bffcce382",
+      "version": {
+        "commit": "cd5f183cf217cd82843e521d4d226e76544de51c",
+        "cover_term": "Spring 2025",
+        "cover_version": "1.0.1",
+        "pages": 19
+      },
+      "retrieved_at": "2026-11-14T13:39:34Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 60351,
+      "derived_from": "a5-safety-handout-2025-historical",
+      "extraction": "pdftotext -layout",
+      "historical_only": true
+    },
+    {
+      "id": "a5-supplement-path-history",
+      "kind": "repository_history",
+      "url": "https://api.github.com/repos/stanford-cs336/assignment5-alignment/commits?path=cs336_spring2025_assignment5_supplement_safety_rlhf.pdf&per_page=10",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取2025初次添加和2026发布补充的路径历史；用于找到2026发布前父提交cd5f183cf217cd82843e521d4d226e76544de51c。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/supplement-history.json",
+      "sha256": "6c675f4e21c8b8965953f548ff8868a865a09de033bf79fd5eab39e85c75156a",
+      "version": "snapshot 2026-11-14",
+      "retrieved_at": "2026-11-14T13:39:08Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 5852
+    },
+    {
+      "id": "a5-README-txt",
+      "kind": "repository_readme",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/README.md",
+      "status": "downloaded_scoped_read",
+      "read_scope": "全文；安装与必做测试入口、可选2026补充链接。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/README.txt",
+      "sha256": "a3c61c9a6adc99e0910190a7abfe1daaefd70943bf331711c04e4eea1afe639e",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:37Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 1059
+    },
+    {
+      "id": "a5-CHANGELOG-txt",
+      "kind": "repository_changelog",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/CHANGELOG.md",
+      "status": "downloaded_scoped_read",
+      "read_scope": "全文；2026更换模型/数据、MaxRL/GSPO/4 seeds和B200说明；不以changelog代替PDF封面定学期。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/CHANGELOG.txt",
+      "sha256": "e536d0f02c6654bbf8e218e33e5efaf2d41133a5ee36811756d53cebee8b456b",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:38Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 2700
+    },
+    {
+      "id": "a5-pyproject-toml",
+      "kind": "dependency_manifest",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/pyproject.toml",
+      "status": "downloaded_scoped_read",
+      "read_scope": "全文；Python约束、gpu extra、CUDA索引、社区flash-attn wheel。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/pyproject.toml",
+      "sha256": "c724414eef01a9e74df29426de7a9411e1716acb97f9fab5b1019b173ac9a94d",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:39Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 1534
+    },
+    {
+      "id": "a5-uv-lock",
+      "kind": "dependency_lock",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/uv.lock",
+      "status": "downloaded_scoped_read",
+      "read_scope": "完整文件下载并以tomllib读取结构，抽查直接依赖解析版本/来源；未逐项阅读全部传递依赖，更未安装。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/uv.lock",
+      "sha256": "0c58eabd82d0f9f3ecce25489a169f668f4458450b8d72999365ee7c63fa5629",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:39:45Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 272050
+    },
+    {
+      "id": "a5-python-version-txt",
+      "kind": "runtime_version",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/.python-version",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取Python运行版本文本。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/python-version.txt",
+      "sha256": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:46Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 5
+    },
+    {
+      "id": "a5-modal-utils-py-txt",
+      "kind": "runtime_guide",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_alignment/modal_utils.py",
+      "status": "downloaded_scoped_read",
+      "read_scope": "全文；B200:2、max_containers=4、SUNET_ID、wandb secret名称、CUDA镜像、gpu extra与本地目录挂载。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/modal_utils.py.txt",
+      "sha256": "5da352044a85019c3719a24e120de87b8830e282f19da042d59ca469a41904e1",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:47Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 3016
+    },
+    {
+      "id": "a5-modal-utils-safety-py-txt",
+      "kind": "runtime_guide",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_alignment/modal_utils_safety.py",
+      "status": "downloaded_scoped_read",
+      "read_scope": "全文；共享volume/environment、模型及数据路径、结果持久化。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/modal_utils_safety.py.txt",
+      "sha256": "369116fcbfd751655380007dfe22d62ba7ca304a2574d1d1f9bbcaf0c3b2312a",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:48Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 2550
+    },
+    {
+      "id": "a5-alpaca-annotator-config-yaml",
+      "kind": "evaluation_configuration",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/scripts/alpaca_eval_vllm_llama3_3_70b_fn/configs.yaml",
+      "status": "downloaded_scoped_read",
+      "read_scope": "全文；本地Llama3.3 70B评委、tensor_parallel_size=2、max_model_len=7000。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/alpaca-annotator-config.yaml",
+      "sha256": "e11e7b83d3923fceffeaab7b9253c22a148cce33d4e04d14cd557590834ada31",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:41:50Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 499
+    },
+    {
+      "id": "a5-evaluate-safety-py-txt",
+      "kind": "evaluation_helper",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/scripts/evaluate_safety.py",
+      "status": "downloaded_scoped_read",
+      "read_scope": "全文；本地vLLM评委、GPU参数与输出格式；没有运行。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/evaluate_safety.py.txt",
+      "sha256": "af6d75a680057c76f2faf1600fb6c5a361e9bb43c801ac03811e6c055bbb87c3",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:41:52Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 4352
+    },
+    {
+      "id": "a5-mmlu-README-txt",
+      "kind": "dataset_provenance",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/data/mmlu/README.txt",
+      "status": "downloaded_scoped_read",
+      "read_scope": "全文；MMLU划分和引文；此文件本身没有许可声明。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/mmlu-README.txt",
+      "sha256": "00569069f878477234be9cabe8b2b3422bcc4bae12a00cb543426dafcfe1262b",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:40:34Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 1486
+    },
+    {
+      "id": "a5-olmo-model-metadata",
+      "kind": "model_access_metadata",
+      "url": "https://huggingface.co/api/models/allenai/OLMo-2-0425-1B",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取id/sha/private/gated/license和文件列表；Llama另读公开extra_gated_prompt许可与AUP；未下载权重或数据。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "apache-2.0",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/olmo-model-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "file": "p1-assignment-a5/raw/olmo-model-api.json",
+      "sha256": "6880ae156bea742aa5da278cca7023ec6daccd54f72da5673d5eda5f6f31ee2f",
+      "version": "a1847dff35000b4271fa70afc5db10fd29fedbdf",
+      "retrieved_at": "2026-11-14T13:40:26Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 1920
+    },
+    {
+      "id": "a5-olmo-model-card",
+      "kind": "model_card",
+      "url": "https://huggingface.co/allenai/OLMo-2-0425-1B/raw/a1847dff35000b4271fa70afc5db10fd29fedbdf/README.md",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取模型卡模型规格、安装/推理、许可证与训练/评估上下文；未加载模型。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "apache-2.0",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/olmo-model-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "file": "p1-assignment-a5/raw/olmo-model-README.txt",
+      "sha256": "8e09b3ce741d945b340e51530dd95f49c646a210d0342b1a831a19e36928758b",
+      "version": "a1847dff35000b4271fa70afc5db10fd29fedbdf",
+      "retrieved_at": "2026-11-14T13:41:40Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 12892
+    },
+    {
+      "id": "a5-llama31-model-metadata",
+      "kind": "model_access_metadata",
+      "url": "https://huggingface.co/api/models/meta-llama/Llama-3.1-8B",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取id/sha/private/gated/license和文件列表；Llama另读公开extra_gated_prompt许可与AUP；未下载权重或数据。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "llama3.1",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/llama31-model-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。",
+        "additional_fields": "cardData.extra_gated_prompt含Community License及Acceptable Use Policy；gated=manual；直接固定README/LICENSE请求401。"
+      },
+      "file": "p1-assignment-a5/raw/llama31-model-api.json",
+      "sha256": "09cae81cbb17cd9e5e33e9fbdfabd1716645b65ab44607725c9e0f5b932d6f99",
+      "version": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+      "retrieved_at": "2026-11-14T13:40:27Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 18141
+    },
+    {
+      "id": "a5-llama33-model-metadata",
+      "kind": "model_access_metadata",
+      "url": "https://huggingface.co/api/models/meta-llama/Llama-3.3-70B-Instruct",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取id/sha/private/gated/license和文件列表；Llama另读公开extra_gated_prompt许可与AUP；未下载权重或数据。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "llama3.3",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/llama33-model-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。",
+        "additional_fields": "cardData.extra_gated_prompt含Community License及Acceptable Use Policy；gated=manual；直接固定README/LICENSE请求401。"
+      },
+      "file": "p1-assignment-a5/raw/llama33-model-api.json",
+      "sha256": "d3c27e9e8d6d88d5f2192649884d3bc6ebfaf36179bf32d964294dc7c04a33a0",
+      "version": "6f6073b423013f6a7d4d9f39144961bfbfbc386b",
+      "retrieved_at": "2026-11-14T13:40:28Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 26605
+    },
+    {
+      "id": "a5-gsm8k-dataset-metadata",
+      "kind": "dataset_access_metadata",
+      "url": "https://huggingface.co/api/datasets/openai/gsm8k",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取id/sha/private/gated/license和文件列表；Llama另读公开extra_gated_prompt许可与AUP；未下载权重或数据。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "mit",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/gsm8k-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "file": "p1-assignment-a5/raw/gsm8k-dataset-api.json",
+      "sha256": "afeea7e09e90a48cc5275097ec6619233d952f1ab653a6dcefdf625e1c3bb2ca",
+      "version": "740312add88f781978c0658806c59bc2815b9866",
+      "retrieved_at": "2026-11-14T13:40:29Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 2912
+    },
+    {
+      "id": "a5-gsm8k-dataset-card",
+      "kind": "dataset_card",
+      "url": "https://huggingface.co/datasets/openai/gsm8k/raw/740312add88f781978c0658806c59bc2815b9866/README.md",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取许可、用途、划分和获取说明；未读取数据实例文件。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "mit",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/gsm8k-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "file": "p1-assignment-a5/raw/gsm8k-dataset-README.txt",
+      "sha256": "a17e882503578c9e324560630e31017617714ee025c87cf4fea6fd916895f3c1",
+      "version": "740312add88f781978c0658806c59bc2815b9866",
+      "retrieved_at": "2026-11-14T13:41:45Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 7935
+    },
+    {
+      "id": "a5-ultrachat-dataset-metadata",
+      "kind": "dataset_access_metadata",
+      "url": "https://huggingface.co/api/datasets/HuggingFaceH4/ultrachat_200k",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取id/sha/private/gated/license和文件列表；Llama另读公开extra_gated_prompt许可与AUP；未下载权重或数据。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "mit",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/ultrachat-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "file": "p1-assignment-a5/raw/ultrachat-dataset-api.json",
+      "sha256": "67f6735338d0137a697a61a063a7ac4f82a2ebecceaedc0e26c23ea3410b2b00",
+      "version": "8049631c405ae6576f93f445c6b8166f76f5505a",
+      "retrieved_at": "2026-11-14T13:40:30Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 2774
+    },
+    {
+      "id": "a5-ultrachat-dataset-card",
+      "kind": "dataset_card",
+      "url": "https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k/raw/8049631c405ae6576f93f445c6b8166f76f5505a/README.md",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取许可、用途、划分和获取说明；未读取数据实例文件。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "mit",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/ultrachat-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "file": "p1-assignment-a5/raw/ultrachat-dataset-README.txt",
+      "sha256": "d2b3bf76702b85b28172f4dd971ae80c03348cd3fee518c7e6e6f4d43dd33431",
+      "version": "8049631c405ae6576f93f445c6b8166f76f5505a",
+      "retrieved_at": "2026-11-14T13:41:47Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 3899
+    },
+    {
+      "id": "a5-hh-dataset-metadata",
+      "kind": "dataset_access_metadata",
+      "url": "https://huggingface.co/api/datasets/Anthropic/hh-rlhf",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取id/sha/private/gated/license和文件列表；Llama另读公开extra_gated_prompt许可与AUP；未下载权重或数据。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "mit",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/hh-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "file": "p1-assignment-a5/raw/hh-dataset-api.json",
+      "sha256": "ae4b74f51c0cb39cae5443978cc314f03165ab38b61186810e552a32394d9384",
+      "version": "09be8c5bbc57cb3887f3a9732ad6aa7ec602a1fa",
+      "retrieved_at": "2026-11-14T13:40:32Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 1727
+    },
+    {
+      "id": "a5-hh-dataset-card",
+      "kind": "dataset_card",
+      "url": "https://huggingface.co/datasets/Anthropic/hh-rlhf/raw/09be8c5bbc57cb3887f3a9732ad6aa7ec602a1fa/README.md",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取许可、用途、划分和获取说明；未读取数据实例文件。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "mit",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/hh-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "file": "p1-assignment-a5/raw/hh-dataset-README.txt",
+      "sha256": "f75f40db0268656ba07736ec8e59a9720c1910ce554c85354cec74b1c8bda175",
+      "version": "09be8c5bbc57cb3887f3a9732ad6aa7ec602a1fa",
+      "retrieved_at": "2026-11-14T13:41:47Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 5771
+    },
+    {
+      "id": "a5-mmlu-dataset-metadata",
+      "kind": "dataset_access_metadata",
+      "url": "https://huggingface.co/api/datasets/cais/mmlu",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取id/sha/private/gated/license和文件列表；Llama另读公开extra_gated_prompt许可与AUP；未下载权重或数据。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "mit",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/mmlu-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "file": "p1-assignment-a5/raw/mmlu-dataset-api.json",
+      "sha256": "c1a22d69ab832d3606b2e90e1c79961c49bcab155832da5496a5af1f39ef61f7",
+      "version": "c30699e8356da336a370243923dbaf21066bb9fe",
+      "retrieved_at": "2026-11-14T13:42:47Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 55868
+    },
+    {
+      "id": "a5-mmlu-dataset-card",
+      "kind": "dataset_card",
+      "url": "https://huggingface.co/datasets/cais/mmlu/raw/c30699e8356da336a370243923dbaf21066bb9fe/README.md",
+      "status": "downloaded_scoped_read",
+      "read_scope": "仅核对frontmatter许可、数据集身份与划分元信息；未逐项阅读全部57学科元数据。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "mit",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/mmlu-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "file": "p1-assignment-a5/raw/mmlu-dataset-README.txt",
+      "sha256": "665eef35ecd8a89037c1e4f1e1a0d7fd4c154edc04c81cea5634ace2d3e96953",
+      "version": "c30699e8356da336a370243923dbaf21066bb9fe",
+      "retrieved_at": "2026-11-14T13:42:47Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 53221
+    },
+    {
+      "id": "a5-alpaca-dataset-metadata",
+      "kind": "dataset_access_metadata",
+      "url": "https://huggingface.co/api/datasets/tatsu-lab/alpaca_eval",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取id/sha/private/gated/license和文件列表；Llama另读公开extra_gated_prompt许可与AUP；未下载权重或数据。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "cc-by-nc-4.0",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/alpaca-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "file": "p1-assignment-a5/raw/alpaca-dataset-api.json",
+      "sha256": "4d44afedb7ea96b44490c862a5c86f4581c18c42169e4902c350cc6335368051",
+      "version": "2edc6fad8be6b14ea7230aabfd08188da6b8b814",
+      "retrieved_at": "2026-11-14T13:42:49Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 1449
+    },
+    {
+      "id": "a5-alpaca-dataset-card",
+      "kind": "dataset_card",
+      "url": "https://huggingface.co/datasets/tatsu-lab/alpaca_eval/raw/2edc6fad8be6b14ea7230aabfd08188da6b8b814/README.md",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取许可、用途、划分和获取说明；未读取数据实例文件。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "cc-by-nc-4.0",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/alpaca-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "file": "p1-assignment-a5/raw/alpaca-dataset-README.txt",
+      "sha256": "044d607fc7f4b51a82e2466d462f9d61121ee5dacb879815fdea1643896d0cfc",
+      "version": "2edc6fad8be6b14ea7230aabfd08188da6b8b814",
+      "retrieved_at": "2026-11-14T13:42:50Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 30
+    },
+    {
+      "id": "a5-safety-tuned-repository",
+      "kind": "repository_metadata",
+      "url": "https://api.github.com/repos/vinid/safety-tuned-llamas",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取公共访问、默认分支与API license=null；README单独给出数据许可，不能以API null认定无许可。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "code MIT; data CC-BY-NC-4.0 (SafeText caveat)",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/safety-tuned-README.txt",
+        "section": "Licensing"
+      },
+      "file": "p1-assignment-a5/raw/safety-tuned-repository.json",
+      "sha256": "82ed55910bc575fc7ffa4dacafc0d565bb39d17b1ca35912af9b3eaf54195947",
+      "version": "snapshot 2026-11-14",
+      "retrieved_at": "2026-11-14T13:40:33Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 5366
+    },
+    {
+      "id": "a5-safety-tuned-commit",
+      "kind": "repository_commit",
+      "url": "https://api.github.com/repos/vinid/safety-tuned-llamas/commits/main",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取固定SHA、日期及提交说明。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "code MIT; data CC-BY-NC-4.0 (SafeText caveat)",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/safety-tuned-README.txt",
+        "section": "Licensing"
+      },
+      "file": "p1-assignment-a5/raw/safety-tuned-commit.json",
+      "sha256": "47e763d03cbf82f0b93708c7e415f9c4d9d4b1665d11373bdb24a6bdc0a6d213",
+      "version": "36a4b8d5c2177ed165bf61f59b590161394f7f12",
+      "retrieved_at": "2026-11-14T13:41:53Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 4531
+    },
+    {
+      "id": "a5-safety-tuned-README-txt",
+      "kind": "dataset_provenance",
+      "url": "https://raw.githubusercontent.com/vinid/safety-tuned-llamas/36a4b8d5c2177ed165bf61f59b590161394f7f12/README.md",
+      "status": "downloaded_scoped_read",
+      "read_scope": "全文，特别是Licensing区分代码MIT与数据CC-BY-NC-4.0、SafeText另查。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "code MIT; data CC-BY-NC-4.0 (SafeText caveat)",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/safety-tuned-README.txt",
+        "section": "Licensing"
+      },
+      "file": "p1-assignment-a5/raw/safety-tuned-README.txt",
+      "sha256": "c3b9eef46ddeaedda7781f3b9cb2f9faa9431f536d578210d400b247146eb214",
+      "version": "36a4b8d5c2177ed165bf61f59b590161394f7f12",
+      "retrieved_at": "2026-11-14T13:42:45Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 2827
+    },
+    {
+      "id": "a5-safety-tuned-training-README-txt",
+      "kind": "dataset_provenance",
+      "url": "https://raw.githubusercontent.com/vinid/safety-tuned-llamas/36a4b8d5c2177ed165bf61f59b590161394f7f12/data/training/README.md",
+      "status": "downloaded_scoped_read",
+      "read_scope": "全文，数据文件组成/安全示例与Alpaca来源。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "code MIT; data CC-BY-NC-4.0 (SafeText caveat)",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/safety-tuned-README.txt",
+        "section": "Licensing"
+      },
+      "file": "p1-assignment-a5/raw/safety-tuned-training-README.txt",
+      "sha256": "a654bc75f716e1ab017b3de4c0f8361d2614a7025f4d8fb7282789c1241b8cd5",
+      "version": "36a4b8d5c2177ed165bf61f59b590161394f7f12",
+      "retrieved_at": "2026-11-14T13:42:46Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 423
+    },
+    {
+      "id": "a5-simple-safety-commit",
+      "kind": "repository_commit",
+      "url": "https://api.github.com/repos/bertiev/SimpleSafetyTests/commits/main",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取固定SHA；不将提交元数据称为数据全文阅读。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "CC-BY-4.0",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/simple-safety-LICENSE.txt"
+      },
+      "file": "p1-assignment-a5/raw/simple-safety-commit.json",
+      "sha256": "1032064891fc67dda63d73efb6198ca835d70a4db9ab3d01c2a9105d5bd8b203",
+      "version": "d7aee9a9422a5a5488f478fd79c2479c891c0f3b",
+      "retrieved_at": "2026-11-14T13:42:51Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 5247
+    },
+    {
+      "id": "a5-simple-safety-README-txt",
+      "kind": "dataset_card",
+      "url": "https://raw.githubusercontent.com/bertiev/SimpleSafetyTests/d7aee9a9422a5a5488f478fd79c2479c891c0f3b/README.md",
+      "status": "downloaded_scoped_read",
+      "read_scope": "全文，100个手写英文安全提示、内容警示和CC-BY声明。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "CC-BY-4.0",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/simple-safety-LICENSE.txt"
+      },
+      "file": "p1-assignment-a5/raw/simple-safety-README.txt",
+      "sha256": "ca1a8620a9e3e443117052fc62de20864000c75f2ddc99d7fddc552d555f50de",
+      "version": "d7aee9a9422a5a5488f478fd79c2479c891c0f3b",
+      "retrieved_at": "2026-11-14T13:42:52Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 703
+    },
+    {
+      "id": "a5-simple-safety-LICENSE-txt",
+      "kind": "license_evidence",
+      "url": "https://raw.githubusercontent.com/bertiev/SimpleSafetyTests/d7aee9a9422a5a5488f478fd79c2479c891c0f3b/LICENSE",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取许可名称、§2许可授予；未逐条完成法律审查。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "CC-BY-4.0",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/simple-safety-LICENSE.txt"
+      },
+      "file": "p1-assignment-a5/raw/simple-safety-LICENSE.txt",
+      "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661",
+      "version": "d7aee9a9422a5a5488f478fd79c2479c891c0f3b",
+      "retrieved_at": "2026-11-14T13:42:53Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 18650
+    },
+    {
+      "id": "a5-modal-gpu-guide",
+      "kind": "provider_guide",
+      "url": "https://modal.com/docs/guide/gpu.md",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取GPU规格参数语法、数量、B200说明、付费账户要求；未启动实例。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified",
+      "license_evidence": {
+        "detail": "服务商公开文档，未核实全文再分发授权。"
+      },
+      "file": "p1-assignment-a5/raw/modal-gpu-guide.txt",
+      "sha256": "5fcd473c70a98c7df5028621e8cefaec5124bb7275fbc9fc7effdf524cf2f742",
+      "version": "snapshot 2026-11-14",
+      "retrieved_at": "2026-11-14T13:41:48Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 7930
+    },
+    {
+      "id": "a5-nvidia-b200-specification",
+      "kind": "hardware_specification",
+      "url": "https://www.nvidia.com/en-us/data-center/dgx-b200.md",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取规格表8张B200总显存1440GB；180GB/卡为算术推得的参考平台规格，不是课堂实测或作业最低显存。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified",
+      "license_evidence": {
+        "detail": "厂商公开规格；未核实全文再分发授权。"
+      },
+      "file": "p1-assignment-a5/raw/nvidia-dgx-b200.txt",
+      "sha256": "2ba2dca342513216f844d42a7bb1a4e1aa809066ed24d40b3cddcef050f10fd3",
+      "version": "snapshot 2026-11-14",
+      "retrieved_at": "2026-11-14T13:42:42Z",
+      "storage": "local_evidence_only_not_claimed_published",
+      "bytes": 8736
+    },
+    {
+      "id": "a5-safety-optional",
+      "kind": "assignment_handout",
+      "url": "https://github.com/stanford-cs336/assignment5-alignment/blob/main/cs336_spring2025_assignment5_supplement_safety_rlhf.pdf",
+      "status": "broken_official_link_current_path_absent",
+      "read_scope": "官网链接文字与目标路径已核查；该路径在固定main不存在，不能声称从官网链接成功下载PDF。历史版本另行归档。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": null,
+      "sha256": null,
+      "version": {
+        "checked_main_commit": "c2734a26308710949fe13226960a1e8cece94b7e"
+      },
+      "retrieved_at": null,
+      "attempted_at": "2026-11-14T13:38:17Z",
+      "http_status": 404,
+      "attempted_url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_spring2025_assignment5_supplement_safety_rlhf.pdf",
+      "replacement_source": "a5-safety-handout-2026",
+      "historical_source": "a5-safety-handout-2025-historical"
+    }
+  ],
+  "publication_boundary": "raw/为本地证据，不宣称已提交或备份到GitHub；发布轻量清单/审核与固定链接。",
+  "verification_boundary": "仅资料下载、PDF提取/元数据读取和范围阅读；未构建、安装依赖、运行测试或GPU作业。"
+}

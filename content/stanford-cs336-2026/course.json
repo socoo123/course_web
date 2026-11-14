@@ -1,0 +1,544 @@
+{
+  "id": "stanford-cs336-2026",
+  "year": 2026,
+  "instructors": [
+    "Percy Liang",
+    "Tatsunori Hashimoto"
+  ],
+  "versions": [
+    {
+      "label": "课程 / 视频",
+      "value": "Stanford CS336 Spring 2026"
+    },
+    {
+      "label": "作业基线",
+      "value": "2026 官方要求；各仓库独立固定版本"
+    },
+    {
+      "label": "编者补充",
+      "value": "8 个先修桥接 · 16 个专题 · 1 个综合项目"
+    }
+  ],
+  "intro": "沿一个语言模型的完整生命周期学习：从分词、张量与 Transformer 开始，理解 GPU、训练并行、缩放规律与推理，再处理数据、评测和后训练。以五份官方作业贯穿原理与工程，用先修桥接补足基础，按需进入深挖专题；建议先学习《动手学深度学习》的 PyTorch 与训练循环。",
+  "links": [
+    {
+      "label": "2026 官方课程主页",
+      "url": "https://cs336.stanford.edu/"
+    },
+    {
+      "label": "官方讲义仓库",
+      "url": "https://github.com/stanford-cs336/lectures"
+    },
+    {
+      "label": "2026 官方录像播放列表",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV"
+    }
+  ],
+  "lectures": [
+    {
+      "id": "bridge04",
+      "num": "先修",
+      "title": "先修 · Python 实验工程基础",
+      "titleEn": "Python Experiment Engineering",
+      "core": true,
+      "note": "编者桥接，非官方讲次；在 L01 前自检，已掌握者可跳过。先修基础可回看《动手学深度学习》。"
+    },
+    {
+      "id": "bridge02",
+      "num": "先修",
+      "title": "先修 · 概率、信息论与语言建模",
+      "titleEn": "Probability, Information Theory and Language Modeling",
+      "core": true,
+      "note": "编者桥接，非官方讲次；在 L01 前自检，已掌握者可跳过。先修基础可回看《动手学深度学习》。"
+    },
+    {
+      "id": "lec01",
+      "num": "1",
+      "title": "课程导论与分词",
+      "titleEn": "Overview and Tokenization",
+      "video": {"label": "2026 L1", "youtube": "https://www.youtube.com/watch?v=JuoVZkPBiKk", "duration": "79:22", "language": "en"},
+      "lab": "a1-basics",
+      "core": true
+    },
+    {
+      "id": "bridge01",
+      "num": "先修",
+      "title": "先修 · 线性代数与张量形状",
+      "titleEn": "Linear Algebra and Tensor Shapes",
+      "core": true,
+      "note": "编者桥接，非官方讲次；在 L02 前自检，已掌握者可跳过。先修基础可回看《动手学深度学习》。"
+    },
+    {
+      "id": "bridge05",
+      "num": "先修",
+      "title": "先修 · PyTorch 的内存语义",
+      "titleEn": "PyTorch Memory Semantics",
+      "core": true,
+      "note": "编者桥接，非官方讲次；在 L02 前自检，已掌握者可跳过。先修基础可回看《动手学深度学习》。"
+    },
+    {
+      "id": "bridge07",
+      "num": "先修",
+      "title": "先修 · 浮点数与数值稳定性",
+      "titleEn": "Floating Point and Numerical Stability",
+      "core": true,
+      "note": "编者桥接，非官方讲次；在 L02 前自检，已掌握者可跳过。先修基础可回看《动手学深度学习》。"
+    },
+    {
+      "id": "bridge08",
+      "num": "先修",
+      "title": "先修 · 资源估算与实验纪律",
+      "titleEn": "Resource Estimation and Experiment Discipline",
+      "core": true,
+      "note": "编者桥接，非官方讲次；在 L02 前自检，已掌握者可跳过。先修基础可回看《动手学深度学习》。"
+    },
+    {
+      "id": "lec02",
+      "num": "2",
+      "title": "PyTorch、einops 与资源核算",
+      "titleEn": "PyTorch (einops) and Resource Accounting",
+      "video": {"label": "2026 L2", "youtube": "https://www.youtube.com/watch?v=kuYAsz7zspQ", "duration": "77:25", "language": "en"},
+      "lab": "a1-basics",
+      "core": true
+    },
+    {
+      "id": "bridge03",
+      "num": "先修",
+      "title": "先修 · 反向传播与自动微分",
+      "titleEn": "Backpropagation and Autodiff",
+      "core": true,
+      "note": "编者桥接，非官方讲次；在 L03 前自检，已掌握者可跳过。先修基础可回看《动手学深度学习》。"
+    },
+    {
+      "id": "bridge06",
+      "num": "先修",
+      "title": "先修 · 自回归模型训练闭环",
+      "titleEn": "The Autoregressive Training Loop",
+      "core": true,
+      "note": "编者桥接，非官方讲次；在 L03 前自检，已掌握者可跳过。先修基础可回看《动手学深度学习》。"
+    },
+    {
+      "id": "lec03",
+      "num": "3",
+      "title": "模型架构与超参数",
+      "titleEn": "Architectures and Hyperparameters",
+      "video": {"label": "2026 L3", "youtube": "https://www.youtube.com/watch?v=lVynu4bo1rY", "duration": "89:14", "language": "en"},
+      "lab": "a1-basics",
+      "core": true
+    },
+    {
+      "id": "ext01",
+      "num": "专题",
+      "title": "专题 · 稳定计算与梯度诊断",
+      "titleEn": "Stable Computation and Gradient Diagnosis",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L02、L03 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "ext02",
+      "num": "专题",
+      "title": "专题 · 优化器与训练动态",
+      "titleEn": "Optimizers and Training Dynamics",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L03 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "lec04",
+      "num": "4",
+      "title": "Attention 替代方案与 MoE",
+      "titleEn": "Attention Alternatives and Mixture of Experts",
+      "video": {"label": "2026 L4", "youtube": "https://www.youtube.com/watch?v=cKSwj_qZ8Jg", "duration": "86:20", "language": "en"},
+      "lab": "a1-basics",
+      "core": true
+    },
+    {
+      "id": "ext03",
+      "num": "专题",
+      "title": "专题 · 位置编码与长上下文",
+      "titleEn": "Position Encoding and Long Context",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L03、L04 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "lec05",
+      "num": "5",
+      "title": "GPU 与 TPU",
+      "titleEn": "GPUs and TPUs",
+      "video": {"label": "2026 L5", "youtube": "https://www.youtube.com/watch?v=izZba4UA7iY", "duration": "78:39", "language": "en"},
+      "lab": "a2-systems",
+      "core": true
+    },
+    {
+      "id": "lec06",
+      "num": "6",
+      "title": "Kernel 与 Triton",
+      "titleEn": "Kernels and Triton",
+      "video": {"label": "2026 L6", "youtube": "https://www.youtube.com/watch?v=xnDHaNUvHBg", "duration": "86:41", "language": "en"},
+      "lab": "a2-systems",
+      "core": true
+    },
+    {
+      "id": "ext05",
+      "num": "专题",
+      "title": "专题 · FlashAttention 数学推导",
+      "titleEn": "The Mathematics of FlashAttention",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L06 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "ext06",
+      "num": "专题",
+      "title": "专题 · GPU 性能分析方法",
+      "titleEn": "GPU Performance Analysis",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L05、L06 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "lec07",
+      "num": "7",
+      "title": "并行训练（一）",
+      "titleEn": "Parallelism (1)",
+      "video": {"label": "2026 L7", "youtube": "https://www.youtube.com/watch?v=SzpOcwdIL0Y", "duration": "81:02", "language": "en"},
+      "lab": "a2-systems",
+      "core": true
+    },
+    {
+      "id": "lec08",
+      "num": "8",
+      "title": "并行训练（二）",
+      "titleEn": "Parallelism (2)",
+      "video": {"label": "2026 L8", "youtube": "https://www.youtube.com/watch?v=6-cXp-aOmdg", "duration": "80:10", "language": "en"},
+      "lab": "a2-systems",
+      "core": true
+    },
+    {
+      "id": "ext07",
+      "num": "专题",
+      "title": "专题 · 集合通信算法",
+      "titleEn": "Collective Communication Algorithms",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L07、L08 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "ext08",
+      "num": "专题",
+      "title": "专题 · 分片训练与恢复",
+      "titleEn": "Sharded Training and Recovery",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L08 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "ext09",
+      "num": "专题",
+      "title": "专题 · MoE 的系统问题",
+      "titleEn": "Systems Issues in MoE",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L04、L08 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "lec09",
+      "num": "9",
+      "title": "Scaling Laws（一）",
+      "titleEn": "Scaling Laws (1)",
+      "video": {"label": "2026 L9", "youtube": "https://www.youtube.com/watch?v=Q15rhEWZPQ4", "duration": "77:57", "language": "en"},
+      "lab": "a3-scaling",
+      "core": true
+    },
+    {
+      "id": "lec10",
+      "num": "10",
+      "title": "推理",
+      "titleEn": "Inference",
+      "video": {"label": "2026 L10", "youtube": "https://www.youtube.com/watch?v=EfM546A79aM", "duration": "85:30", "language": "en"},
+      "core": true
+    },
+    {
+      "id": "ext04",
+      "num": "专题",
+      "title": "专题 · Attention 的资源账本",
+      "titleEn": "The Attention Resource Ledger",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L04、L10 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "ext10",
+      "num": "专题",
+      "title": "专题 · 推理服务与 KV 内存管理",
+      "titleEn": "Inference Serving and KV Memory",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L10 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "lec11",
+      "num": "11",
+      "title": "Scaling Laws（二）",
+      "titleEn": "Scaling Laws (2)",
+      "video": {"label": "2026 L11", "youtube": "https://www.youtube.com/watch?v=vTfEyOyzV9E", "duration": "77:03", "language": "en"},
+      "lab": "a3-scaling",
+      "core": true
+    },
+    {
+      "id": "ext12",
+      "num": "专题",
+      "title": "专题 · Scaling Laws 的统计方法",
+      "titleEn": "Statistical Methods for Scaling Laws",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L09、L11 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "lec12",
+      "num": "12",
+      "title": "评测",
+      "titleEn": "Evaluation",
+      "video": {"label": "2026 L12", "youtube": "https://www.youtube.com/watch?v=JpAxdTWQJxM", "duration": "78:34", "language": "en"},
+      "core": true
+    },
+    {
+      "id": "lec13",
+      "num": "13",
+      "title": "数据来源与数据集",
+      "titleEn": "Data: Sources and Datasets",
+      "video": {"label": "2026 L13", "youtube": "https://www.youtube.com/watch?v=-qm0ln33G24", "duration": "82:01", "language": "en"},
+      "lab": "a4-data",
+      "core": true
+    },
+    {
+      "id": "lec14",
+      "num": "14",
+      "title": "过滤、去重、混合与合成数据",
+      "titleEn": "Data: Filtering, Deduplication, Mixing and Synthetic Data",
+      "video": {"label": "2026 L14", "youtube": "https://www.youtube.com/watch?v=5sxHosTLPF8", "duration": "84:46", "language": "en"},
+      "lab": "a4-data",
+      "core": true
+    },
+    {
+      "id": "ext13",
+      "num": "专题",
+      "title": "专题 · 数据配方与污染审计",
+      "titleEn": "Data Recipes and Contamination Audits",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L12、L13、L14 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "lec15",
+      "num": "15",
+      "title": "中期训练与后训练：SFT／RLHF",
+      "titleEn": "Mid/Post-training: SFT/RLHF",
+      "video": {"label": "2026 L15", "youtube": "https://www.youtube.com/watch?v=2oH6PWPrYFo", "duration": "79:54", "language": "en"},
+      "lab": "a5-safety-optional",
+      "core": true
+    },
+    {
+      "id": "ext11",
+      "num": "专题",
+      "title": "专题 · 量化与参数高效微调",
+      "titleEn": "Quantization and Parameter-efficient Finetuning",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L10、L15 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "lec16",
+      "num": "16",
+      "title": "可验证奖励强化学习：RLVR",
+      "titleEn": "Post-training: RLVR",
+      "video": {"label": "2026 L16", "youtube": "https://www.youtube.com/watch?v=dIFAi87Ws4E", "duration": "75:50", "language": "en"},
+      "lab": "a5-reasoning",
+      "core": true
+    },
+    {
+      "id": "ext14",
+      "num": "专题",
+      "title": "专题 · 后训练目标统一推导",
+      "titleEn": "A Unified View of Post-training Objectives",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L15、L16 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "ext16",
+      "num": "专题",
+      "title": "专题 · 技术报告与源码阅读方法",
+      "titleEn": "Reading Technical Reports and Source Code",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L03、L08、L10、L16 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "lec17",
+      "num": "17",
+      "title": "对齐与多模态",
+      "titleEn": "Alignment and Multimodality",
+      "video": {"label": "2026 L17", "youtube": "https://www.youtube.com/watch?v=26FtD08ZpOU", "duration": "77:39", "language": "en"},
+      "core": true
+    },
+    {
+      "id": "ext15",
+      "num": "专题",
+      "title": "专题 · 多模态连接方式",
+      "titleEn": "Connecting Modalities",
+      "optional": true,
+      "note": "编者深挖专题，非官方讲次；在 L17 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+    },
+    {
+      "id": "lec18",
+      "num": "18",
+      "title": "Daniel Selsam 嘉宾课",
+      "titleEn": "Guest Lecture: Daniel Selsam",
+      "optional": true,
+      "note": "官方嘉宾课；课表只列嘉宾姓名，主题以实际录像核实结果为准，不按研究方向猜写。"
+    },
+    {
+      "id": "lec19",
+      "num": "19",
+      "title": "Dan Fu 嘉宾课",
+      "titleEn": "Guest Lecture: Dan Fu",
+      "video": {"label": "2026 L19 · Dan Fu", "youtube": "https://www.youtube.com/watch?v=9EEm4iMAF5s", "duration": "71:40", "language": "en"},
+      "optional": true,
+      "note": "官方嘉宾课；课表只列嘉宾姓名，主题以实际录像核实结果为准，不按研究方向猜写。"
+    }
+  ],
+  "labs": [
+    {
+      "id": "a1-basics",
+      "num": 1,
+      "title": "A1 · 从零训练 Transformer 语言模型",
+      "titleEn": "Assignment 1: Basics",
+      "stars": 4,
+      "hours": "随实现基础与算力安排",
+      "url": "https://github.com/stanford-cs336/assignment1-basics",
+      "goal": "实现分词器、模型和优化器，训练一个最小语言模型。",
+      "tasks": [
+        {
+          "id": "components",
+          "title": "实现分词器、模型架构与优化器"
+        },
+        {
+          "id": "training",
+          "title": "训练最小语言模型并记录实验结果"
+        }
+      ]
+    },
+    {
+      "id": "a2-systems",
+      "num": 2,
+      "title": "A2 · 系统优化与分布式训练",
+      "titleEn": "Assignment 2: Systems",
+      "stars": 5,
+      "hours": "随实现基础与算力安排",
+      "url": "https://github.com/stanford-cs336/assignment2-systems",
+      "goal": "在自己的 A1 模型上做性能分析、Triton Attention 优化和节省内存的分布式训练。",
+      "tasks": [
+        {
+          "id": "profile",
+          "title": "分析模型与层的性能瓶颈"
+        },
+        {
+          "id": "attention",
+          "title": "使用 Triton 实现 FlashAttention-2"
+        },
+        {
+          "id": "distributed",
+          "title": "构建节省内存的分布式训练"
+        }
+      ]
+    },
+    {
+      "id": "a3-scaling",
+      "num": 3,
+      "title": "A3 · Scaling Laws 与实验设计",
+      "titleEn": "Assignment 3: Scaling",
+      "stars": 4,
+      "hours": "随实现基础与算力安排",
+      "url": "https://github.com/stanford-cs336/assignment3-scaling",
+      "goal": "先做合成数据的 IsoFLOPs 拟合，再以 12 B200 小时真实训练探索预测 48 B200 小时配置；校内 API 资格与校外自建路径分开。",
+      "tasks": [
+        {
+          "id": "components",
+          "title": "分析模型组件与实验变量"
+        },
+        {
+          "id": "scaling",
+          "title": "拟合与检验缩放关系"
+        }
+      ]
+    },
+    {
+      "id": "a4-data",
+      "num": 4,
+      "title": "A4 · 预训练数据流水线",
+      "titleEn": "Assignment 4: Data",
+      "stars": 5,
+      "hours": "随实现基础与算力安排",
+      "url": "https://github.com/stanford-cs336/assignment4-data",
+      "goal": "处理官方提供的英语过滤 WET 数据，通过过滤与去重研究数据质量；原规模采用约 430M 固定模型、8×B200 和 8.6B tokens，低资源示例不能等同完成。",
+      "tasks": [
+        {
+          "id": "processing",
+          "title": "处理原始网页数据"
+        },
+        {
+          "id": "quality",
+          "title": "过滤、去重并比较模型表现"
+        }
+      ]
+    },
+    {
+      "id": "a5-reasoning",
+      "num": 5,
+      "title": "A5 · 推理强化学习",
+      "titleEn": "Assignment 5: Alignment and Reasoning RL",
+      "stars": 5,
+      "hours": "随实现基础与算力安排",
+      "url": "https://github.com/stanford-cs336/assignment5-alignment",
+      "goal": "在 OLMo-2-0425-1B base 与 GSM8K 上建立提示基线，比较 GRPO、Dr. GRPO、RFT、MaxRL 及 off-policy/GSPO，并设计估计器；采用固定 2026 讲义。",
+      "tasks": [
+        {
+          "id": "baseline",
+          "title": "建立数学推理评测基线"
+        },
+        {
+          "id": "rl",
+          "title": "实现并比较推理强化学习训练"
+        }
+      ]
+    },
+    {
+      "id": "a5-safety-optional",
+      "num": 5,
+      "title": "A5 官方选做 · 指令微调与安全对齐",
+      "titleEn": "Assignment 5: Optional Safety Alignment",
+      "stars": 5,
+      "hours": "随实现基础与算力安排",
+      "url": "https://github.com/stanford-cs336/assignment5-alignment",
+      "goal": "官方 A5 Optional Part 2，不是 Assignment 6。采用仓库中已核封面的 Spring 2026 v26.0.0 补充讲义：Llama 3.1 8B 的 SFT/DPO；官网旧链接失效，2025 历史版不混用。",
+      "tasks": [
+        {
+          "id": "alignment",
+          "title": "实现并评估安全对齐方法"
+        }
+      ]
+    },
+    {
+      "id": "capstone",
+      "num": 0,
+      "title": "自拟综合项目 · 可解释的小模型研究",
+      "titleEn": "Editorial Capstone — Not an Official Assignment",
+      "stars": 5,
+      "hours": "随实现基础与算力安排",
+      "url": "https://cs336.stanford.edu/",
+      "goal": "编者自拟项目，非官方作业；页头 LAB 0 只是站内编号，页底“官方页面”仅指课程官网，不是项目题目出处。分别研究小模型预训练与较强开放基础模型的后训练，不假定 TinyStories 小模型已具备 GSM8K 能力。",
+      "tasks": [
+        {
+          "id": "pretraining",
+          "title": "设计小模型预训练的可解释对照实验"
+        },
+        {
+          "id": "posttraining",
+          "title": "独立设计有适当基础能力的模型后训练实验"
+        },
+        {
+          "id": "report",
+          "title": "报告预算、证据、限制与可复现步骤"
+        }
+      ]
+    }
+  ]
+}

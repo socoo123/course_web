@@ -1,0 +1,218 @@
+Stanford CS336 Spring 2026 — P1 视频来源采集核查
+课程文书日期：2026-11-14；实际 UTC 获取时间逐文件保存在清单和元数据中。
+执行模型：openai-codex/gpt-6-astra:xhigh；Main 已据本次运行 model/thinking-level 事件确认，无回退。
+
+结论与整合契约
+官方课表 19 讲；所链官方播放列表此次枚举到 18 条公开录像：L01–L17，以及 Dan Fu 嘉宾录像。L18 Daniel Selsam 未找到，不填 video ID、时长、频道或字幕。
+video-map.json 包含 lec01–lec19 全 19 项。verified-video-updates.json 是 lecture_id → course.json lectures[].video 的直接值，仅含 18 个可上页头的 label/youtube/duration；lec18 不在其中。
+播放列表第 18 条是 Dan Fu，映射为课表 lec19；绝不能按列表位置误映射成 lec18。
+18 条实际录像均由 Stanford Online 发布，channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg，uploader_id=@stanfordonline。每条标题明确 Spring 2026；不是由 README、上传年份或历史课程相似主题判断。
+所有 duration 页头提案采用单视频 watch 元数据。L04/L07/L08/L11/L13/L15/L16/L17/L19 的 flat-playlist 数值比 watch 数值大 1 秒；两值均保留，不能把这视为另一剪辑版本。
+
+获取与阅读范围
+读取 skill://technical-video-notes；仅执行其来源核查和字幕采集部分，未进入 P2，未生成课程正文、译稿、笔记或截图。
+官网 https://cs336.stanford.edu/ 的 Spring 2026 标题、录像链接、19 行课表已读；原始 HTML 保存于 official-course.html。
+原生网页 reader 只能抽出 YouTube 播放列表标题及通用页脚，不能枚举项目；改用 yt-dlp 2026.08.19 的 flat-playlist 成功取得全部 18 个公开条目。随后逐一获取 watch 元数据，不保存 yt-dlp 完整响应。
+18 个单视频元数据命令均 exit 0；全部有未找到支持的 JavaScript runtime 警告。此警告没有阻止本次元数据和字幕下载；媒体格式完整性没有检查。详见 acquisition-errors.json，不把警告伪报为已失败或已修复。
+每条均列出 en-US 人工/非 ASR 字幕，并另有 automatic_captions 英文轨道和翻译目标；共 158 个 automatic 语言键不是 158 种独立人工/ASR 转写。完整语言代码表保留在对应 metadata 文件。
+按优先人工策略，18 条均下载 en-US manual JSON3；未下载自动字幕作为重复副本。manual 是平台/提取器分类，并不独立证明字幕逐词由人制作或技术内容已校正。
+全 18 份 JSON3 仅做机械时间统计，逐条读首尾 cue；Dan Fu 另读开头 5.20–180.76 秒确认主题。没有观看或下载任何音视频，没有全文精读或校订字幕。
+全部 cue 起点单调、没有负值或倒置 cue、没有越过选定视频时长。首尾几秒和内部字幕空隙均原样报告；字幕时间覆盖不等于语音/课程内容覆盖，不能把空隙猜作静音，也不补造文字。
+
+许可、脱敏与发布边界
+逐条 license 字段均为 null；标题/简介没有确认到开放内容或全文翻译许可。不得自行补成 Standard YouTube License、CC，也不得套用代码仓库许可。
+原始字幕和 HTML 仅作本地来源证据；中文后续处理限定自主精读，不宣称完整翻译或再发布授权。本地 file/hash 不表示 GitHub 已备份。sources/ 按仓库既有规则默认忽略，主 agent 决定仅集成轻量元数据。
+未保存 cookies、凭据、请求头、临时签名字幕地址、媒体地址或完整播放器响应；只以稳定 YouTube watch/playlist URL 标识来源。
+
+逐讲证据与局限（时长/字幕区间均以秒表示）
+
+lec01 | 2026-03-30 | Percy Liang
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 1: Overview, Tokenization
+来源：https://www.youtube.com/watch?v=JuoVZkPBiKk | 视频ID：JuoVZkPBiKk | 列表位置：1
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 1.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260414（不是录制日期证明）
+watch 时长=4762；页头=79:22；playlist 时长=4762。
+字幕：en-US manual/non-ASR 已取得；1509 cues；首起=4.88；末止=4757.22；尾部未覆盖=4.78；内部 >2s 空隙=12。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec01-JuoVZkPBiKk.json。
+原始字幕：p1-videos/captions/JuoVZkPBiKk.en-US.manual.json3；sha256=dadc9ca721bc5dd525b1a54900ead844bab1aad18463c797a3da1e4633a62d2f。
+
+lec02 | 2026-04-01 | Percy Liang
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 2: PyTorch (einops)
+来源：https://www.youtube.com/watch?v=kuYAsz7zspQ | 视频ID：kuYAsz7zspQ | 列表位置：2
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 2.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260414（不是录制日期证明）
+watch 时长=4645；页头=77:25；playlist 时长=4645。
+字幕：en-US manual/non-ASR 已取得；1425 cues；首起=5.04；末止=4640.78；尾部未覆盖=4.22；内部 >2s 空隙=37。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec02-kuYAsz7zspQ.json。
+原始字幕：p1-videos/captions/kuYAsz7zspQ.en-US.manual.json3；sha256=039448d7bf8899b9310e7019476c7650a5325f3783d6ff956eeac851d3f555f3。
+
+lec03 | 2026-04-06 | Tatsunori Hashimoto
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 3: Architectures
+来源：https://www.youtube.com/watch?v=lVynu4bo1rY | 视频ID：lVynu4bo1rY | 列表位置：3
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 3.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260415（不是录制日期证明）
+watch 时长=5354；页头=89:14；playlist 时长=5354。
+字幕：en-US manual/non-ASR 已取得；2020 cues；首起=5.6；末止=5349.75；尾部未覆盖=4.25；内部 >2s 空隙=6。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec03-lVynu4bo1rY.json。
+原始字幕：p1-videos/captions/lVynu4bo1rY.en-US.manual.json3；sha256=27788d68af69710f6f76dba45ef8d51429fd6a7173a0df43a726a71c01a4894d。
+
+lec04 | 2026-04-08 | Tatsunori Hashimoto
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 4: Attention Alternatives
+来源：https://www.youtube.com/watch?v=cKSwj_qZ8Jg | 视频ID：cKSwj_qZ8Jg | 列表位置：4
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 4.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260415（不是录制日期证明）
+watch 时长=5180；页头=86:20；playlist 时长=5181。
+字幕：en-US manual/non-ASR 已取得；1938 cues；首起=5.2；末止=5175.51；尾部未覆盖=4.49；内部 >2s 空隙=17。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec04-cKSwj_qZ8Jg.json。
+原始字幕：p1-videos/captions/cKSwj_qZ8Jg.en-US.manual.json3；sha256=bd337753209ef33ac4416d51d7bb25dcf1f9a70813d24379f4f1d1da362205d4。
+
+lec05 | 2026-04-13 | Tatsunori Hashimoto
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 5: GPUs, TPUs
+来源：https://www.youtube.com/watch?v=izZba4UA7iY | 视频ID：izZba4UA7iY | 列表位置：5
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 5.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260420（不是录制日期证明）
+watch 时长=4719；页头=78:39；playlist 时长=4719。
+字幕：en-US manual/non-ASR 已取得；1925 cues；首起=5.12；末止=4714.21；尾部未覆盖=4.79；内部 >2s 空隙=8。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec05-izZba4UA7iY.json。
+原始字幕：p1-videos/captions/izZba4UA7iY.en-US.manual.json3；sha256=ec7257dbd39c4fb12e54748e936b0c0edc039e7270e7949f81aed377fd473daa。
+
+lec06 | 2026-04-15 | Percy Liang
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 6: Kernels, Triton, XLA
+来源：https://www.youtube.com/watch?v=xnDHaNUvHBg | 视频ID：xnDHaNUvHBg | 列表位置：6
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 6.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260428（不是录制日期证明）
+watch 时长=5201；页头=86:41；playlist 时长=5201。
+字幕：en-US manual/non-ASR 已取得；1552 cues；首起=5.24；末止=5196.6；尾部未覆盖=4.4；内部 >2s 空隙=44。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec06-xnDHaNUvHBg.json。
+原始字幕：p1-videos/captions/xnDHaNUvHBg.en-US.manual.json3；sha256=a2e7147fb6a16db4f61143eb87255002d04f870f22be2dec50404cf1078cee80。
+
+lec07 | 2026-04-20 | Percy Liang
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 7: Parallelism
+来源：https://www.youtube.com/watch?v=SzpOcwdIL0Y | 视频ID：SzpOcwdIL0Y | 列表位置：7
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 7.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260428（不是录制日期证明）
+watch 时长=4862；页头=81:02；playlist 时长=4863。
+字幕：en-US manual/non-ASR 已取得；1312 cues；首起=5.16；末止=4857.68；尾部未覆盖=4.32；内部 >2s 空隙=65。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec07-SzpOcwdIL0Y.json。
+原始字幕：p1-videos/captions/SzpOcwdIL0Y.en-US.manual.json3；sha256=9275eb35b8a4aef120fe0d9d64bed5a6a59bb5dd7d59af7fbd3f3b7305a4ab70。
+
+lec08 | 2026-04-22 | Tatsunori Hashimoto
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 8: Parallelism
+来源：https://www.youtube.com/watch?v=6-cXp-aOmdg | 视频ID：6-cXp-aOmdg | 列表位置：8
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 8.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260428（不是录制日期证明）
+watch 时长=4810；页头=80:10；playlist 时长=4811。
+字幕：en-US manual/non-ASR 已取得；1870 cues；首起=5.24；末止=4805.22；尾部未覆盖=4.78；内部 >2s 空隙=8。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec08-6-cXp-aOmdg.json。
+原始字幕：p1-videos/captions/6-cXp-aOmdg.en-US.manual.json3；sha256=ad75fe3875cf5eafb76b0a8bdd0fe454cc984fd2d6783267adaf6b9444473dc4。
+
+lec09 | 2026-04-27 | Tatsunori Hashimoto
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 9: Scaling Laws
+来源：https://www.youtube.com/watch?v=Q15rhEWZPQ4 | 视频ID：Q15rhEWZPQ4 | 列表位置：9
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 9.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260430（不是录制日期证明）
+watch 时长=4677；页头=77:57；playlist 时长=4677。
+字幕：en-US manual/non-ASR 已取得；1812 cues；首起=6.04；末止=4673.51；尾部未覆盖=3.49；内部 >2s 空隙=7。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec09-Q15rhEWZPQ4.json。
+原始字幕：p1-videos/captions/Q15rhEWZPQ4.en-US.manual.json3；sha256=aa9f333c48c1a3385e7be108b63eb2aeff986a4e079ffe8fcc3ddd251a498757。
+
+lec10 | 2026-04-29 | Percy Liang
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 10: Inference
+来源：https://www.youtube.com/watch?v=EfM546A79aM | 视频ID：EfM546A79aM | 列表位置：10
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 10.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260511（不是录制日期证明）
+watch 时长=5130；页头=85:30；playlist 时长=5130。
+字幕：en-US manual/non-ASR 已取得；1509 cues；首起=5.32；末止=5124.28；尾部未覆盖=5.72；内部 >2s 空隙=31。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec10-EfM546A79aM.json。
+原始字幕：p1-videos/captions/EfM546A79aM.en-US.manual.json3；sha256=f8013253699ca406ef22f560884acda74391b3e5cde3e102f11b37fa30075727。
+
+lec11 | 2026-05-04 | Tatsunori Hashimoto
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 11:  Scaling Laws
+来源：https://www.youtube.com/watch?v=vTfEyOyzV9E | 视频ID：vTfEyOyzV9E | 列表位置：11
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 11.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260519（不是录制日期证明）
+watch 时长=4623；页头=77:03；playlist 时长=4624。
+字幕：en-US manual/non-ASR 已取得；1808 cues；首起=5.08；末止=4618.22；尾部未覆盖=4.78；内部 >2s 空隙=7。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec11-vTfEyOyzV9E.json。
+原始字幕：p1-videos/captions/vTfEyOyzV9E.en-US.manual.json3；sha256=6be81e6dbd502226fec54d7160f1b6cfea74717f8d5ca7bf50ea8a628c861fe5。
+
+lec12 | 2026-05-06 | Percy Liang
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 12: Evaluation
+来源：https://www.youtube.com/watch?v=JpAxdTWQJxM | 视频ID：JpAxdTWQJxM | 列表位置：12
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 12.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260519（不是录制日期证明）
+watch 时长=4714；页头=78:34；playlist 时长=4714。
+字幕：en-US manual/non-ASR 已取得；1376 cues；首起=5.72；末止=4710.71；尾部未覆盖=3.29；内部 >2s 空隙=21。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec12-JpAxdTWQJxM.json。
+原始字幕：p1-videos/captions/JpAxdTWQJxM.en-US.manual.json3；sha256=0b0c1835e4cccb7dbc07ed1eb534ea0a9d275079a444246db279582435861cf8。
+
+lec13 | 2026-05-11 | Percy Liang
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 13: Data (Sources, Datasets)
+来源：https://www.youtube.com/watch?v=-qm0ln33G24 | 视频ID：-qm0ln33G24 | 列表位置：13
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 13.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260519（不是录制日期证明）
+watch 时长=4921；页头=82:01；playlist 时长=4922。
+字幕：en-US manual/non-ASR 已取得；1419 cues；首起=4.64；末止=4916.08；尾部未覆盖=4.92；内部 >2s 空隙=21。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec13--qm0ln33G24.json。
+原始字幕：p1-videos/captions/-qm0ln33G24.en-US.manual.json3；sha256=afadd7428c40f4d15ab7090f3df8499a11b88310130eb3d0d74655ee4bfb8d54。
+
+lec14 | 2026-05-13 | Percy Liang
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 14: Data
+来源：https://www.youtube.com/watch?v=5sxHosTLPF8 | 视频ID：5sxHosTLPF8 | 列表位置：14
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 14.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260527（不是录制日期证明）
+watch 时长=5086；页头=84:46；playlist 时长=5086。
+字幕：en-US manual/non-ASR 已取得；1448 cues；首起=5.24；末止=5080.18；尾部未覆盖=5.82；内部 >2s 空隙=36。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec14-5sxHosTLPF8.json。
+原始字幕：p1-videos/captions/5sxHosTLPF8.en-US.manual.json3；sha256=2ec80edabdc0c8dcecc7ff00adfd6f7f04784629837c73699f347b8e6f2f5a3c。
+
+lec15 | 2026-05-18 | Tatsunori Hashimoto
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 15: Mid/Post-Training
+来源：https://www.youtube.com/watch?v=2oH6PWPrYFo | 视频ID：2oH6PWPrYFo | 列表位置：15
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 15.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260527（不是录制日期证明）
+watch 时长=4794；页头=79:54；playlist 时长=4795。
+字幕：en-US manual/non-ASR 已取得；1872 cues；首起=5.24；末止=4788.06；尾部未覆盖=5.94；内部 >2s 空隙=6。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec15-2oH6PWPrYFo.json。
+原始字幕：p1-videos/captions/2oH6PWPrYFo.en-US.manual.json3；sha256=a4ac598dd86748ba7ecd231faad5e854d1614c7fdca69049c9838d359a8b569d。
+
+lec16 | 2026-05-20 | Tatsunori Hashimoto
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 16: Post-Training - RLVR
+来源：https://www.youtube.com/watch?v=dIFAi87Ws4E | 视频ID：dIFAi87Ws4E | 列表位置：16
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 16.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260527（不是录制日期证明）
+watch 时长=4550；页头=75:50；playlist 时长=4551。
+字幕：en-US manual/non-ASR 已取得；1687 cues；首起=5.0；末止=4545.08；尾部未覆盖=4.92；内部 >2s 空隙=9。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec16-dIFAi87Ws4E.json。
+原始字幕：p1-videos/captions/dIFAi87Ws4E.en-US.manual.json3；sha256=3797800e305eaf56d37838593e030ee60a03f440961d342df6a5481c18423c6e。
+
+lec17 | 2026-05-27 | Percy Liang
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 17: Alignment - Multimodality
+来源：https://www.youtube.com/watch?v=26FtD08ZpOU | 视频ID：26FtD08ZpOU | 列表位置：17
+学期/讲次证据：Video title explicitly states Spring 2026 and Lecture 17.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260604（不是录制日期证明）
+watch 时长=4659；页头=77:39；playlist 时长=4660。
+字幕：en-US manual/non-ASR 已取得；1264 cues；首起=5.0；末止=4654.06；尾部未覆盖=4.94；内部 >2s 空隙=29。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec17-26FtD08ZpOU.json。
+原始字幕：p1-videos/captions/26FtD08ZpOU.en-US.manual.json3；sha256=69ba4f2c68e964d0b9b30f2a7a00fbff07e8832e584e4e1ab363291e1599e132。
+
+lec18 | 2026-06-01 | Daniel Selsam
+课表只给 Guest lecture: Daniel Selsam。18 条官方播放列表中无对应标题/ID。
+针对 site:youtube.com "CS336" "2026" "Daniel Selsam" 的一次检索未返回可核实的对应录像；保留未发现结论，不以搜索缺失证明不存在，也不推测私人/删除原因。
+视频ID、频道、时长、许可、字幕和主题均未知。没有以 2025 年或其他讲者录像替代。
+
+lec19 | 2026-06-03 | Dan Fu
+标题：Stanford CS336 Language Modeling from Scratch | Spring 2026 | Guest Lecture: Dan Fu
+来源：https://www.youtube.com/watch?v=9EEm4iMAF5s | 视频ID：9EEm4iMAF5s | 列表位置：18
+学期/讲次证据：Official schedule row 19 names Dan Fu; the video title explicitly states Spring 2026 and Guest Lecture: Dan Fu. Map by named guest, not playlist position 18.
+频道：Stanford Online | channel_id=UCBa5G_ESCn8Yd4vw5U-gIcg | 上传日=20260605（不是录制日期证明）
+watch 时长=4300；页头=71:40；playlist 时长=4301。
+字幕：en-US manual/non-ASR 已取得；1533 cues；首起=5.2；末止=4295.86；尾部未覆盖=4.14；内部 >2s 空隙=19。
+许可：unverified（该视频 license=null）；证据文件 p1-videos/metadata/lec19-9EEm4iMAF5s.json。
+原始字幕：p1-videos/captions/9EEm4iMAF5s.en-US.manual.json3；sha256=2281d5dc5e35ffda4efa0b468f5778c9350760945f6b14259d3ac464bf8af7f7。
+主题只记 Language-model serving and inference：开头 29.24–55.48 秒明确介绍 serving models、inference 及相关研究问题；这不是官网正式讲题，也不是全片主题精读。官网按 Dan Fu 对应第19讲，与 Daniel Selsam 无关。
+
+交接与未执行事项
+本分片没有修改共享 course/catalog/resources/status/manifest/reading-map/plan；没有启动子 agent、运行构建/lint/测试/格式化或 git 提交。
+主 agent 统一验证建议：manifest-fragment.json 必需字段与本地 SHA256；video-map 恰含 lec01–lec19；页头更新恰含 18 项且排除 lec18；Dan Fu 只映射 lec19；字幕路径可达并扫描归档无签名地址/凭据；共享文件整合后再执行项目指定的一次验收。
+源清单包含 39 项：官方首页快照 1、播放列表 1、单视频元数据 18、原始字幕 18、未找到的 lec18 占位证据 1。该未找到记录明确 null，不是伪造来源。

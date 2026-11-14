@@ -1,0 +1,257 @@
+{
+  "paper01": {
+    "title": "Attention Is All You Need",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [
+      {
+        "assignment": "a1-basics",
+        "source_id": "p1-a1-handout",
+        "commit": "a158843b20107949f1a8d7df1b05cd33b9166712",
+        "handout_version": "26.0.3",
+        "pdf_pages": [
+          19,
+          21,
+          23,
+          25,
+          26
+        ],
+        "handout_section": "§3.4–§3.4.5",
+        "classification": "task_implementation_reference_not_explicit_reading_assignment",
+        "wording": "We will now implement scaled dot-product attention as described in A. Vaswani et al. [8] (section 3.2.1). / We will implement multi-head self-attention as described in section 3.2.2 of A. Vaswani et al. [8].",
+        "scope_limit": "Handout cites paper §§3.1,3.2.1,3.2.2,3.3 and 5.4. These are implementation references, not a command to read the whole paper; the accuracy of the handout’s §5.4 cross-reference is not independently established here."
+      },
+      {
+        "assignment": "a1-basics",
+        "source_id": "p1-a1-handout",
+        "commit": "a158843b20107949f1a8d7df1b05cd33b9166712",
+        "handout_version": "26.0.3",
+        "pdf_pages": [
+          45
+        ],
+        "handout_section": "§7.5 leaderboard suggestions",
+        "classification": "optional_targeted_reference",
+        "wording": "If you are looking for some ideas ... tie the weights ... see A. Vaswani et al. [8] (Section 3.4).",
+        "scope_limit": "Optional modification/weight-tying consultation; not mandatory whole-paper reading. Bibliography entry [8] p46."
+      }
+    ],
+    "assignmentRequirementSummary": "A1 explicitly uses Transformer components as implementation references; §3.4 weight-tying reference is optional. No mandatory whole-paper reading statement.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper02": {
+    "title": "RoFormer",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [
+      {
+        "assignment": "a1-basics",
+        "source_id": "p1-a1-handout",
+        "commit": "a158843b20107949f1a8d7df1b05cd33b9166712",
+        "handout_version": "26.0.3",
+        "pdf_pages": [
+          22,
+          23,
+          47
+        ],
+        "handout_section": "§3.4.3 Relative Positional Embeddings; bibliography [21]",
+        "classification": "task_concept_citation_not_explicit_reading_assignment",
+        "wording": "To inject positional information into the model, we will implement Rotary Position Embeddings [J. Su et al., 2021], often called RoPE.",
+        "scope_limit": "RoPE implementation required; RoFormer is cited without a specific required paper section or full-paper reading instruction."
+      }
+    ],
+    "assignmentRequirementSummary": "A1 requires RoPE implementation, cites RoFormer, but does not explicitly assign reading the paper or specify its chapter range.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper03": {
+    "title": "FlashAttention",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [
+      {
+        "assignment": "a2-systems",
+        "source_id": "p1-a2-handout",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout_version": "26.1.3",
+        "pdf_pages": [
+          23,
+          24,
+          48
+        ],
+        "handout_section": "§4.2.2 FlashAttention-2 Forward Pass; bibliography [2]",
+        "classification": "explicit_strong_recommendation_not_mandatory",
+        "wording": "Before jumping into this section, we highly recommend reading at least the original FlashAttention paper [T. Dao et al., 2022].",
+        "scope_limit": "Official strong reading recommendation, not a hard requirement; no precise paper section/page range is specified. p24 also recommends both FlashAttention papers for intuition."
+      }
+    ],
+    "assignmentRequirementSummary": "A2 §4.2.2 p23 explicitly strongly recommends reading original FlashAttention; do not relabel the recommendation as mandatory.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper04": {
+    "title": "FlashAttention-2",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [
+      {
+        "assignment": "a2-systems",
+        "source_id": "p1-a2-handout",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout_version": "26.1.3",
+        "pdf_pages": [
+          15,
+          22,
+          24,
+          26,
+          27,
+          28,
+          48
+        ],
+        "handout_section": "§4.1; §4.2.2; §4.2.3",
+        "classification": "required_implementation_plus_recommended_reference",
+        "wording": "For more intuition on these techniques, check out the FlashAttention papers [T. Dao et al., 2022; T. Dao, 2023].",
+        "scope_limit": "FA2 implementation is required; handout Algorithm 1 supplies forward details. Required backward uses PyTorch+torch.compile, whereas Triton backward in §4.2.3 p28 is optional. No precise paper chapter range or mandatory whole-paper reading."
+      }
+    ],
+    "assignmentRequirementSummary": "FA2 implementation is required and the paper is explicitly recommended for intuition; full-paper mandatory reading is not stated.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper05": {
+    "title": "ZeRO",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [
+      {
+        "assignment": "a2-systems",
+        "source_id": "p1-a2-handout",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout_version": "26.1.3",
+        "pdf_pages": [
+          37,
+          38,
+          48
+        ],
+        "handout_section": "§6; optimizer_state_sharding_accounting(c); bibliography [5]",
+        "classification": "required_targeted_comparison_to_paper",
+        "wording": "How does our approach to optimizer state sharding differ from ZeRO stage 1 (described as ZeRO-DP P_os in S. Rajbhandari, J. Rasley, O. Ruwase, and Y. He [5])?",
+        "scope_limit": "Required deliverable is a 2–3 sentence comparison, especially memory and communication volume. This is stronger than a mere citation: targeted consultation of ZeRO stage 1 is needed. Handout gives no paper page/section number and does not require reading the entire paper."
+      }
+    ],
+    "assignmentRequirementSummary": "A2 p38 explicitly requires comparison with ZeRO-DP P_os/stage 1. Mark targeted required consultation, not merely citation and not whole-paper required reading.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper06": {
+    "title": "Training Compute-Optimal Large Language Models",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [
+      {
+        "assignment": "a1-basics",
+        "source_id": "p1-a1-handout",
+        "commit": "a158843b20107949f1a8d7df1b05cd33b9166712",
+        "handout_version": "26.0.3",
+        "pdf_pages": [
+          33,
+          47
+        ],
+        "handout_section": "§4.3 adamw_accounting(d); bibliography [26]",
+        "classification": "citation_only",
+        "wording": "Following J. Kaplan et al. [25] and J. Hoffmann et al. [26], assume that the backward pass has twice the FLOPs of the forward pass.",
+        "scope_limit": "A1 adopts a FLOP-accounting assumption; no reading assignment."
+      },
+      {
+        "assignment": "a3-scaling",
+        "source_id": "p1-a3-handout",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout_version": "26.0.5",
+        "pdf_pages": [
+          2,
+          3,
+          8
+        ],
+        "handout_section": "§2.1 chinchilla_isoflops; §3.3 scaling_laws; bibliography [2]",
+        "classification": "required_method_reproduction_plus_recommended_consultation",
+        "wording": "Write a script to reproduce the IsoFLOPs method described above ... / it will likely to be useful to familiarize yourself with the approaches used in J. Kaplan et al. [1] and J. Hoffmann et al. [2].",
+        "scope_limit": "Required synthetic-data IsoFLOPs exercise uses the self-contained handout. A3 recommends consulting scaling-law approaches, but does not assign all paper sections or full-paper reading. Unlike the paper’s per-profile quadratic fit, the handout recommends selecting the observed minimum run."
+      }
+    ],
+    "assignmentRequirementSummary": "A3 requires reproducing the handout’s IsoFLOPs exercise and recommends familiarization with Chinchilla approaches; no mandatory full-paper reading or exact paper-section assignment.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper07": {
+    "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [],
+    "assignmentRequirementSummary": "No mention or explicit reading direction found in the fixed A1–A4 handouts. Keep planned reading as editorial, not official required reading.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper08": {
+    "title": "The FineWeb Datasets",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [],
+    "assignmentRequirementSummary": "FineWeb is not mentioned in fixed A1–A4. A4 cites RefinedWeb (2023), a different work; never substitute this citation as evidence of official FineWeb reading.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper09": {
+    "title": "DataComp-LM",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [
+      {
+        "assignment": "a3-scaling",
+        "source_id": "p1-a3-handout",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout_version": "26.0.5",
+        "pdf_pages": [
+          4
+        ],
+        "handout_section": "§3.1 Training Run Details",
+        "classification": "dataset_mention_not_paper_citation",
+        "wording": "The training data is tokenized DCLM data of up to 500B tokens.",
+        "scope_limit": "DCLM is a data-source mention only; DataComp-LM paper title/authors/bibliography entry and reading instruction are absent. A4 does not cite DataComp-LM."
+      }
+    ],
+    "assignmentRequirementSummary": "A3 mentions DCLM as its training dataset, not the DataComp-LM paper. No A4 DataComp-LM reading assignment found.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper10": {
+    "title": "LoRA",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [],
+    "assignmentRequirementSummary": "No mention or explicit reading direction found in the fixed A1–A4 handouts. Keep planned reading as editorial, not official required reading.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper11": {
+    "title": "QLoRA",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [],
+    "assignmentRequirementSummary": "No mention or explicit reading direction found in the fixed A1–A4 handouts. Keep planned reading as editorial, not official required reading.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper12": {
+    "title": "Direct Preference Optimization",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [],
+    "assignmentRequirementSummary": "No mention or explicit reading direction found in the fixed A1–A4 handouts. Keep planned reading as editorial, not official required reading.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper13": {
+    "title": "DeepSeekMath",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [],
+    "assignmentRequirementSummary": "No mention or explicit reading direction found in the fixed A1–A4 handouts. Keep planned reading as editorial, not official required reading.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper14": {
+    "title": "DeepSeek-R1",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [],
+    "assignmentRequirementSummary": "No mention or explicit reading direction found in the fixed A1–A4 handouts. Keep planned reading as editorial, not official required reading.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper15": {
+    "title": "Learning Transferable Visual Models From Natural Language Supervision (CLIP)",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [],
+    "assignmentRequirementSummary": "No mention or explicit reading direction found in the fixed A1–A4 handouts. Keep planned reading as editorial, not official required reading.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  },
+  "paper16": {
+    "title": "Visual Instruction Tuning (LLaVA)",
+    "assignmentEvidenceScope": "Only the four pinned Spring 2026 A1–A4 handouts; not a claim about lectures, A5 or the entire course. Full-text term/citation scan plus inspected cited passages and bibliography.",
+    "assignmentEvidence": [],
+    "assignmentRequirementSummary": "No mention or explicit reading direction found in the fixed A1–A4 handouts. Keep planned reading as editorial, not official required reading.",
+    "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review."
+  }
+}

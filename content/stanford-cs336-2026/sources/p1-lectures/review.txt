@@ -1,0 +1,40 @@
+CS336 Spring 2026 P1 — 课堂讲义版本核查
+
+固定仓库
+https://github.com/stanford-cs336/lectures
+完整提交：de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e
+提交日期：2026-09-12T21:34:48Z；提交说明 update lecture 6。
+README 明确 Spring 2026；官网19讲中的L01–L17分别有当前仓库对应讲义。PDF封面给出课程/讲次/主题，不是每份都印年份；学期证据来自2026官网链接、固定README和内容，未伪报封面年份。
+这不是学期当时的只读发布版。最后提交修订L06缓存带宽估值和trace，不能假定当前讲义与课堂录像完全相同。
+
+采集
+35个固定树文件全部保存：8份PDF、9份lecture Python、10份trace JSON（含独立L02 recording）、L07 stdout、README、references、依赖清单/lock和支持文件等。精确文件列表与哈希见manifest-fragment.json。
+最初urllib获取7项失败（SSL EOF、截断或连接关闭）；改用curl HTTP/1.1仅重取失败项，7项均exit0。保留原始失败acquisition.json和recovery.json，不把中间失败掩盖为首次成功。
+PDF提取文本仅作为阅读定位，不代表所有页面/图像已精读。各来源实际阅读范围逐项记录：主要是前80–103行的封面、目录、开场；额外读取/检索了相关论文引用和依赖/权限段落。没有声称全部讲义读完。
+
+L02 两版本
+当前：raw/lecture_02.py + raw/var/traces/lecture_02.json。
+录像版：raw/var/traces/lecture_02_recording.json，内嵌files[lecture_02.py]；固定树没有独立lecture_02_recording.py。
+当前开头使用deep_network/nemotron_3_super_2026；录像版使用deep_linear_network/nemotron_3_2025并有torch.utils.checkpoint导入。已分开登记；不得合并时间轴。
+L01 trace开头明确Spring2026第三次开课，并把Spring2025录像作为上一届链接；该历史链接不是当前视频来源。
+
+嘉宾课
+L18 Daniel Selsam、L19 Dan Fu：官方课表没有讲义链接，完整固定树没有对应lecture18/19材料。仅记录未在这些来源找到，不推断主题或宣称外界一定不存在讲义。
+
+许可与资产
+完整树没有LICENSE/COPYING/NOTICE，GitHub API license=null；不能因此获准公开全文翻译。中文处理为自主讲解、必要有限短引；外部论文和图片逐份核查。
+PDF本体已保存；Python/trace引用的图片通过完整树的blob SHA固定，但未全部下载，因此不是可完全离线执行/渲染的整仓镜像。P2按本批实际需要获取。
+
+依赖与算力
+已读完整README、pyproject.toml、modal_execute.py，保存uv.lock但未逐包审计或安装。
+pyproject要求Python>=3.11，edtrace>=0.1.12、einops>=0.8.2、mmh3>=5.2.1、modal>=1.4.1、tiktoken>=0.12.0。
+README的python execute.py示例对应文件不在固定树中，不能当成已验证可运行命令。
+modal_execute.py配置CUDA13.2 Ubuntu24.04/Python3.11、B200:4，并安装torch等；这是云执行配置，不是所有讲次的最低硬件要求。
+L02指向的2026集群指南已在p1-shared/cluster-guide.txt存档并全文读取：仅选课学生、Stanford Google登录+邀请、专属环境，建议学生同时不超过3GPU。该学生使用建议与仓库4卡教学执行配置是不同语境，不混成统一最低配置。
+读取PDF/trace不需要GPU；CPU小示例不能替代CUDA/Triton、多卡性能或官方规模训练验收。
+未执行任何课程代码、安装课程环境、启动云作业或使用收费API。
+
+论文归属交叉证据
+当前讲义涵盖或引用Transformer/RoPE、FlashAttention、ZeRO、Chinchilla、PagedAttention、FineWeb/DCLM、DPO/GRPO/R1、CLIP/LLaVA；普通引用或课堂展开不等于指定必读。
+例如L10源577行直接链接PagedAttention论文；L17源49/125行直接链接CLIP/LLaVA；L13/14以DCLM参考对象链接DataComp-LM。L04文本72行建议读Mamba-2，是16篇既有规划以外的阅读线索，不冒充已经采集该文。
+各论文的具体必读证据优先用固定作业要求；未有明确命令的仍标编者补充，章节号以固定论文版本为准。

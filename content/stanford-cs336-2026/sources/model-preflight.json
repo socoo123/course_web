@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-11-14",
+  "requestedModel": "openai-codex/gpt-6-astra:xhigh",
+  "observedConfiguration": {
+    "defaultModelRole": "openai-codex/gpt-6-astra:xhigh",
+    "taskPerCallModel": "on",
+    "taskEnableEffort": false,
+    "taskAgentModelOverrides": {},
+    "taskMaxEffort": "max"
+  },
+  "configurationChanged": true,
+  "configurationChange": {
+    "entrypoint": "cfg://task/perCallModel",
+    "before": "off",
+    "after": "on",
+    "scope": "session_only",
+    "persistent": false,
+    "persistenceQuestion": "User cancelled persistence form and then requested continuation; no persistent write performed.",
+    "effortMechanism": "Explicit :xhigh model selector, not a separate effort hint; enableEffort remains false."
+  },
+  "scope": "configuration_and_actual_dispatch_events",
+  "subagentsStarted": 5,
+  "resolvedSubagentModel": "openai-codex/gpt-6-astra",
+  "resolvedSubagentEffort": "xhigh",
+  "runtimeEvidence": [
+    {"agent":"Videos2026","modelEvent":"66eed710","effortEvent":"87886f49","timestamp":"2026-11-14T13:37:06.669Z"},
+    {"agent":"AssignmentsOneFour","modelEvent":"1e4b29dd","effortEvent":"8e270b19","timestamp":"2026-11-14T13:37:06.653Z"},
+    {"agent":"AssignmentFive","modelEvent":"a9071deb","effortEvent":"3eebe8af","timestamp":"2026-11-14T13:37:06.639Z"},
+    {"agent":"PapersFirstEight","modelEvent":"ccc551c1","effortEvent":"56f6c208","timestamp":"2026-11-14T13:37:06.662Z"},
+    {"agent":"PapersLastEight","modelEvent":"ef7bd326","effortEvent":"36aa4586","timestamp":"2026-11-14T13:37:06.678Z"}
+  ],
+  "evidence": [
+    "cfg://modelRoles; cfg://task; cfg://task/perCallModel after supported session write",
+    "Current-run child session model_change: model=openai-codex/gpt-6-astra, resolvedModelIsFallback=false for all five",
+    "Current-run child session thinking_level_change: thinkingLevel=xhigh for all five",
+    "First assistant response metadata: provider=openai-codex, model=gpt-6-astra for all five"
+  ],
+  "decision": "Five independent acquisition slices explicitly dispatched and runtime verified. No fallback, no prompt-only effort claim.",
+  "nextDispatchGate": "Recheck supported runtime configuration and actual model/effort events before later-phase dispatches; session override is not persistent."
+}

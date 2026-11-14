@@ -1,0 +1,612 @@
+{
+  "courseId": "stanford-cs336-2026",
+  "plannedAt": "2026-11-14",
+  "updatedAt": "2026-11-14",
+  "phase": "P1_complete_with_documented_gaps",
+  "plan": "sources/production-plan.json",
+  "sourcesManifest": "sources/manifest.json",
+  "readingMap": "sources/reading-map.json",
+  "modelPreflight": "sources/model-preflight.json",
+  "p0Acceptance": "sources/p0-acceptance.json",
+  "p0Review": "sources/P0-REVIEW.txt",
+  "versions": {
+    "lectures": "Stanford CS336 Spring 2026",
+    "assignments": "2026 PDF covers verified; five complete repository SHAs pinned; A5 historical/current supplement separated",
+    "historical": "2025 homepage identity and A5 historical supplement isolated; no shared recording timelines"
+  },
+  "artifacts": {
+    "courseRegistration": "accepted_skeleton",
+    "catalogMigration": "stanford-cs336 -> stanford-cs336-2026; card and track active",
+    "publicResources": "accepted_desktop_and_mobile",
+    "officialScheduleEntries": 19,
+    "officialThematicLectures": 17,
+    "guestLectures": 2,
+    "bridgeEntries": 8,
+    "extensionEntries": 16,
+    "lectureEntries": 43,
+    "officialAssignmentEntries": 5,
+    "officialOptionalAssignmentEntries": 1,
+    "editorialCapstoneEntries": 1,
+    "labEntries": 7,
+    "lectureDocumentsWritten": 0,
+    "labDocumentsWritten": 0,
+    "verifiedLectureVideoHeaders": 18,
+    "captionTracksAcquired": 18,
+    "fixedPaperFulltexts": 16,
+    "papersFullyCloseRead": 0,
+    "fixedAssignmentRepositories": 5,
+    "fixed2026AssignmentHandouts": 6,
+    "fixedClassroomHandouts": 18
+  },
+  "batches": {
+    "P0": "complete",
+    "P1": "complete_with_documented_gaps",
+    "P2": "not_started",
+    "P3": "not_started",
+    "P4": "not_started",
+    "P5": "not_started",
+    "P6": "not_started",
+    "P7": "not_started",
+    "P8": "not_started"
+  },
+  "sourceCoverage": {
+    "officialHomepage": "2026 live and 2025 historical HTML snapshots with URL/UTC/SHA256; numbered 2026 schedule has19 rows. Historical page read only identity metadata.",
+    "videos": "18 official Stanford Online videos mapped individually with watch duration and en-US non-ASR caption track; lec18 not found. All18 page headers checked desktop/mobile and actual L01/L19 popup clicks succeeded. No full video watching.",
+    "handouts": "17 lectures plus separate L02 recording trace pinned at de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; bounded opening/reference reading, no full offline image bundle.",
+    "papers": "16 numbered arXiv fulltexts acquired; exact selected sections, license, editorial/official relationship crosschecked; no full close-reading claim.",
+    "assignments": "5 full SHAs,6 current2026 handouts and historical2025 A5 supplement; original scale/dependencies/access checked statically.",
+    "experiments": "No environment installation, course-code tests, training, benchmarking, paid compute or training API calls."
+  },
+  "entries": {
+    "lectures": {
+      "bridge04": {
+        "kind": "editorial_bridge",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "bridge02": {
+        "kind": "editorial_bridge",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "lec01": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "bridge01": {
+        "kind": "editorial_bridge",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "bridge05": {
+        "kind": "editorial_bridge",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "bridge07": {
+        "kind": "editorial_bridge",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "bridge08": {
+        "kind": "editorial_bridge",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "lec02": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "bridge03": {
+        "kind": "editorial_bridge",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "bridge06": {
+        "kind": "editorial_bridge",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "lec03": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "reading_map_scoped_body_not_started",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "ext01": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "ext02": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "lec04": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "ext03": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "lec05": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "lec06": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "reading_map_scoped_body_not_started",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "ext05": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "ext06": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "lec07": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "lec08": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "reading_map_scoped_body_not_started",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "ext07": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "ext08": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "ext09": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "lec09": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "reading_map_scoped_body_not_started",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "lec10": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "reading_map_scoped_body_not_started",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "ext04": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "ext10": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "lec11": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "ext12": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "lec12": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "lec13": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "lec14": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "reading_map_scoped_body_not_started",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "ext13": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "lec15": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "reading_map_scoped_body_not_started",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "ext11": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "reading_map_scoped_body_not_started",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "lec16": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "reading_map_scoped_body_not_started",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "ext14": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "ext16": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "lec17": {
+        "kind": "official",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "reading_map_scoped_body_not_started",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "ext15": {
+        "kind": "editorial_extension",
+        "metadata": "registered",
+        "notes": "not_started",
+        "draft": "not_applicable_no_official_classroom",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_applicable",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "lec18": {
+        "kind": "official_guest",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "not_found_official_sources",
+        "page": "no_unverified_video_header_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      },
+      "lec19": {
+        "kind": "official_guest",
+        "metadata": "source_checked",
+        "notes": "not_started",
+        "draft": "not_started",
+        "materials": "no_separate_reading_assigned_in_P1",
+        "video": "verified_header_accepted_captions_acquired",
+        "page": "header_accepted_body_not_started",
+        "sourceRead": "See manifest per-source scope; not full classroom reading"
+      }
+    },
+    "labs": {
+      "a1-basics": {
+        "kind": "official_assignment",
+        "metadata": "2026_handout_version_scope_access_checked",
+        "lab": "not_started",
+        "guide": "not_started",
+        "englishOriginal": "not_provided",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "a2-systems": {
+        "kind": "official_assignment",
+        "metadata": "2026_handout_version_scope_access_checked",
+        "lab": "not_started",
+        "guide": "not_started",
+        "englishOriginal": "not_provided",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "a3-scaling": {
+        "kind": "official_assignment",
+        "metadata": "2026_handout_version_scope_access_checked",
+        "lab": "not_started",
+        "guide": "not_started",
+        "englishOriginal": "not_provided",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "a4-data": {
+        "kind": "official_assignment",
+        "metadata": "2026_handout_version_scope_access_checked",
+        "lab": "not_started",
+        "guide": "not_started",
+        "englishOriginal": "not_provided",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "a5-reasoning": {
+        "kind": "official_assignment",
+        "metadata": "2026_handout_version_scope_access_checked",
+        "lab": "not_started",
+        "guide": "not_started",
+        "englishOriginal": "not_provided",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "a5-safety-optional": {
+        "kind": "official_optional",
+        "metadata": "2026_handout_version_scope_access_checked",
+        "lab": "not_started",
+        "guide": "not_started",
+        "englishOriginal": "not_provided",
+        "page": "skeleton_accepted_body_not_started"
+      },
+      "capstone": {
+        "kind": "editorial_capstone",
+        "metadata": "registered",
+        "lab": "not_started",
+        "guide": "not_started",
+        "englishOriginal": "not_provided",
+        "page": "skeleton_accepted_body_not_started"
+      }
+    }
+  },
+  "knownGaps": [
+    {
+      "id": "lec18-recording",
+      "scope": "lec18",
+      "detail": "Daniel Selsam录像未出现在已核官方列表；一次针对性检索亦未找到。ID/时长/字幕/主题均未知，不用Dan Fu或2025录像替代。",
+      "evidence": "p1-videos/review.txt"
+    },
+    {
+      "id": "guest-handouts",
+      "scope": "lec18–lec19",
+      "detail": "课表无讲义链接，固定仓库树无对应文件；不推断全网不存在。",
+      "evidence": "p1-lectures/variant-audit.json"
+    },
+    {
+      "id": "translation-permissions",
+      "detail": "18录像、课堂讲义仓库及A5无明确开放翻译许可。RoFormer为CC BY-NC-ND；其余论文逐项分为6篇CC BY可附条件翻译与10篇自主精读。A1–A4 MIT不延伸至第三方材料。",
+      "evidence": "reading-map.json"
+    },
+    {
+      "id": "reading-and-assets",
+      "detail": "视频未全片观看/核音；字幕仅首尾与时间统计，论文/讲义仅记录选段已读，均不称全文精读。讲义引用图片未全部下载，不是完全离线运行包。",
+      "evidence": "p1-lectures/review.txt"
+    },
+    {
+      "id": "post-term-lecture-revision",
+      "detail": "课堂讲义固定提交2026-09-12晚于学期，L06存在课后修订；L02当前与recording trace分别登记，不能混时间轴。",
+      "evidence": "p1-lectures/variant-audit.json"
+    },
+    {
+      "id": "a5-stale-optional-url",
+      "detail": "官网spring2025选做链接当前404。已分别核实历史2025 v1.0.1和仓库新2026 v26.0.0；正式制作使用后者，断链事实保留。",
+      "evidence": "p1-assignment-a5/assignment-audit.json"
+    },
+    {
+      "id": "a3-external-path",
+      "detail": "官方训练API要求课程登记ID与Stanford网络/VPN；非学生自建需自备算力/数据/存储/服务。README direct-run与Modal call-ID检查存在静态冲突，未作运行验证。",
+      "evidence": "p1-assignments-a1-a4/assignment-audit.json"
+    },
+    {
+      "id": "a4-scale-and-path",
+      "detail": "原规模为固定430M、8×B200、8.6B tokens；校外小样本路径仍有SUNET占位guard、课程路径和资产下载边界，不能称开箱即跑。",
+      "evidence": "p1-assignments-a1-a4/assignment-audit.json"
+    },
+    {
+      "id": "a5-gated-models-and-mixture",
+      "detail": "Llama模型需审批；2026精确SFT混合数据校外访问未证实。历史公开URL仅HEAD遇TLS/SSL失败，不能写404或替换为任意原料后称等效。",
+      "evidence": "p1-assignment-a5/assignment-audit.json"
+    },
+    {
+      "id": "cluster-and-dependencies",
+      "detail": "Modal课程workspace仅enrolled students。通用指南建议并发≤3GPU与作业多卡配置须staff协调；依赖隔离，尚无安装/训练/性能实测；不启动收费计算。",
+      "evidence": "p1-shared/policy-audit.json"
+    },
+    {
+      "id": "retrieval-limitations",
+      "detail": "大部分SSL/截断失败已换curl恢复。CC部分legalcode HTML直接403但reader已读并留摘录，另一分片保存CC BY完整text；A5历史commit详情API403但路径历史提供必要版本证据。",
+      "evidence": "p1-papers-01-08/review.txt; p1-papers-09-16/review.txt; p1-assignment-a5/review.txt"
+    },
+    {
+      "id": "source-backup-boundary",
+      "detail": "GitHub提交轻量清单/计划/审核/获取脚本，不提交许可不明全文、PDF/字幕大文件；本地采集不等于远端备份，新克隆须按固定URL重取。",
+      "evidence": "P1-REVIEW.txt"
+    }
+  ],
+  "verification": {
+    "status": "passed_P1_source_review_with_documented_gaps",
+    "date": "2026-11-14",
+    "evidence": "sources/p1-acceptance.json",
+    "build": "npm run build passed: tsc --noEmit and Vite, 3082 modules, 5.83 s",
+    "structure": "43 lecture entries, 7 lab entries, 16 paper placements, 70 canonical sources, 244 local file/hash checks and 60 course-internal links passed",
+    "resourcesAndLabs": "Updated public resources desktop/mobile and four changed lab goal pages checked; no page overflow, runtime errors or KaTeX errors",
+    "videoAcceptance": "sources/p1-shared/video-page-check.json:19 desktop/mobile routes;18 headers;L01/L19 actual popup clicks; no page overflow",
+    "courseExperimentExecution": "not_run"
+  },
+  "nextStage": {
+    "id": "P2",
+    "title": "首批端到端样板",
+    "keyword": "CS336-2026-P2-样板",
+    "prompt": "sources/NEXT-P2-PROMPT.txt",
+    "state": "not_started",
+    "autoStart": false
+  },
+  "p1Acceptance": "sources/p1-acceptance.json",
+  "p1Review": "sources/P1-REVIEW.txt"
+}

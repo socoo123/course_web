@@ -1,0 +1,485 @@
+{
+  "id": "xnDHaNUvHBg",
+  "title": "Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 6: Kernels, Triton, XLA",
+  "duration": 5201,
+  "channel": "Stanford Online",
+  "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+  "uploader": "Stanford Online",
+  "uploader_id": "@stanfordonline",
+  "upload_date": "20260428",
+  "release_date": null,
+  "license": null,
+  "availability": "public",
+  "webpage_url": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+  "description": "For more information about Stanford's online Artificial Intelligence programs, visit: https://stanford.io/ai\n\nTo learn more about enrolling in this course, visit: https://online.stanford.edu/courses/cs336-language-modeling-scratch\n\nFollow along with the course schedule and syllabus, visit: https://cs336.stanford.edu/\n\nPercy Liang\nProfessor of Computer Science (and courtesy in Statistics)\n\nTatsunori Hashimoto\nAssistant Professor of Computer Science\n\nView the course playlist: https://www.youtube.com/playlist?list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV",
+  "playlist_position": 6,
+  "retrieved_at": "2026-11-14T13:39:16.683067Z",
+  "metadata_exit_code": 0,
+  "metadata_diagnostics": "WARNING: [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  [URL omitted]  for details on installing one",
+  "metadata_method": "yt-dlp 2026.08.19; no media download; full response retained only in memory",
+  "captions": {
+    "manual": {
+      "en-US": {
+        "name": "English (United States)",
+        "formats": [
+          "json3",
+          "srt",
+          "srv1",
+          "srv2",
+          "srv3",
+          "ttml",
+          "vtt"
+        ]
+      }
+    },
+    "automatic_languages": [
+      "en-US",
+      "ab",
+      "aa",
+      "af",
+      "ak",
+      "sq",
+      "am",
+      "ar",
+      "hy",
+      "as",
+      "ay",
+      "az",
+      "bn",
+      "ba",
+      "eu",
+      "be",
+      "bho",
+      "bs",
+      "br",
+      "bg",
+      "my",
+      "ca",
+      "ceb",
+      "zh-Hans",
+      "zh-Hant",
+      "co",
+      "hr",
+      "cs",
+      "da",
+      "dv",
+      "nl",
+      "dz",
+      "en-orig",
+      "en",
+      "eo",
+      "et",
+      "ee",
+      "fo",
+      "fj",
+      "fil",
+      "fi",
+      "fr",
+      "gaa",
+      "gl",
+      "lg",
+      "ka",
+      "de",
+      "el",
+      "gn",
+      "gu",
+      "ht",
+      "ha",
+      "haw",
+      "iw",
+      "hi",
+      "hmn",
+      "hu",
+      "is",
+      "ig",
+      "id",
+      "iu",
+      "ga",
+      "it",
+      "ja",
+      "jv",
+      "kl",
+      "kn",
+      "kk",
+      "kha",
+      "km",
+      "rw",
+      "ko",
+      "kri",
+      "ku",
+      "ky",
+      "lo",
+      "la",
+      "lv",
+      "ln",
+      "lt",
+      "lua",
+      "luo",
+      "lb",
+      "mk",
+      "mg",
+      "ms",
+      "ml",
+      "mt",
+      "gv",
+      "mi",
+      "mr",
+      "mn",
+      "mfe",
+      "ne",
+      "new",
+      "nso",
+      "no",
+      "ny",
+      "oc",
+      "or",
+      "om",
+      "os",
+      "pam",
+      "ps",
+      "fa",
+      "pl",
+      "pt",
+      "pt-PT",
+      "pa",
+      "qu",
+      "ro",
+      "rn",
+      "ru",
+      "sm",
+      "sg",
+      "sa",
+      "gd",
+      "sr",
+      "crs",
+      "sn",
+      "sd",
+      "si",
+      "sk",
+      "sl",
+      "so",
+      "st",
+      "es",
+      "su",
+      "sw",
+      "ss",
+      "sv",
+      "tg",
+      "ta",
+      "tt",
+      "te",
+      "th",
+      "bo",
+      "ti",
+      "to",
+      "ts",
+      "tn",
+      "tum",
+      "tr",
+      "tk",
+      "uk",
+      "ur",
+      "ug",
+      "uz",
+      "ve",
+      "vi",
+      "war",
+      "cy",
+      "fy",
+      "wo",
+      "xh",
+      "yi",
+      "yo",
+      "zu"
+    ],
+    "automatic_english_tracks": {
+      "en-US": {
+        "name": null,
+        "formats": [
+          "vtt"
+        ]
+      },
+      "en-orig": {
+        "name": "English (Original)",
+        "formats": [
+          "json3",
+          "srt",
+          "srv1",
+          "srv2",
+          "srv3",
+          "ttml",
+          "vtt"
+        ]
+      },
+      "en": {
+        "name": "English",
+        "formats": [
+          "json3",
+          "srt",
+          "srv1",
+          "srv2",
+          "srv3",
+          "ttml",
+          "vtt"
+        ]
+      }
+    },
+    "automatic_language_count": 158,
+    "classification_evidence": "yt-dlp subtitles versus automatic_captions dictionaries. manual means a platform non-ASR/uploaded track, not independent verification of human authorship. automatic languages include translation targets, not 158 independently transcribed languages."
+  },
+  "selected_caption": {
+    "status": "acquired",
+    "kind": "manual",
+    "language": "en-US",
+    "file": "p1-videos/captions/xnDHaNUvHBg.en-US.manual.json3",
+    "sha256": "a2e7147fb6a16db4f61143eb87255002d04f870f22be2dec50404cf1078cee80",
+    "retrieved_at": "2026-11-14T13:39:27.837498Z",
+    "error": null,
+    "coverage": {
+      "cue_count": 1552,
+      "first_start_seconds": 5.24,
+      "last_end_seconds": 5196.6,
+      "starts_monotonic": true,
+      "negative_or_reversed_cue_count": 0,
+      "ends_after_video_seconds": 0,
+      "uncovered_leading_seconds": 5.24,
+      "uncovered_trailing_seconds": 4.4,
+      "timed_union_seconds": 5020.012,
+      "internal_gaps_over_two_seconds": [
+        {
+          "start_seconds": 432.59,
+          "end_seconds": 436.01,
+          "duration_seconds": 3.42
+        },
+        {
+          "start_seconds": 1043.92,
+          "end_seconds": 1047.819,
+          "duration_seconds": 3.899
+        },
+        {
+          "start_seconds": 1281.69,
+          "end_seconds": 1285.15,
+          "duration_seconds": 3.46
+        },
+        {
+          "start_seconds": 1293.18,
+          "end_seconds": 1296.04,
+          "duration_seconds": 2.86
+        },
+        {
+          "start_seconds": 1297.14,
+          "end_seconds": 1304.584,
+          "duration_seconds": 7.444
+        },
+        {
+          "start_seconds": 1521.59,
+          "end_seconds": 1524.25,
+          "duration_seconds": 2.66
+        },
+        {
+          "start_seconds": 1705.27,
+          "end_seconds": 1708.01,
+          "duration_seconds": 2.74
+        },
+        {
+          "start_seconds": 1922.87,
+          "end_seconds": 1925.53,
+          "duration_seconds": 2.66
+        },
+        {
+          "start_seconds": 2101.35,
+          "end_seconds": 2103.86,
+          "duration_seconds": 2.51
+        },
+        {
+          "start_seconds": 2131.88,
+          "end_seconds": 2134.78,
+          "duration_seconds": 2.9
+        },
+        {
+          "start_seconds": 2144.38,
+          "end_seconds": 2151.62,
+          "duration_seconds": 7.24
+        },
+        {
+          "start_seconds": 2157.12,
+          "end_seconds": 2163.236,
+          "duration_seconds": 6.116
+        },
+        {
+          "start_seconds": 2676.76,
+          "end_seconds": 2679.7,
+          "duration_seconds": 2.94
+        },
+        {
+          "start_seconds": 2769.74,
+          "end_seconds": 2772.72,
+          "duration_seconds": 2.98
+        },
+        {
+          "start_seconds": 2786.493,
+          "end_seconds": 2793.22,
+          "duration_seconds": 6.727
+        },
+        {
+          "start_seconds": 2909.13,
+          "end_seconds": 2912.99,
+          "duration_seconds": 3.86
+        },
+        {
+          "start_seconds": 2985.87,
+          "end_seconds": 2988.93,
+          "duration_seconds": 3.06
+        },
+        {
+          "start_seconds": 3011.27,
+          "end_seconds": 3015.49,
+          "duration_seconds": 4.22
+        },
+        {
+          "start_seconds": 3203.69,
+          "end_seconds": 3207.09,
+          "duration_seconds": 3.4
+        },
+        {
+          "start_seconds": 3252.52,
+          "end_seconds": 3256.84,
+          "duration_seconds": 4.32
+        },
+        {
+          "start_seconds": 3257.34,
+          "end_seconds": 3261.1,
+          "duration_seconds": 3.76
+        },
+        {
+          "start_seconds": 3267.24,
+          "end_seconds": 3272.8,
+          "duration_seconds": 5.56
+        },
+        {
+          "start_seconds": 3423.02,
+          "end_seconds": 3426.62,
+          "duration_seconds": 3.6
+        },
+        {
+          "start_seconds": 3432.76,
+          "end_seconds": 3435.66,
+          "duration_seconds": 2.9
+        },
+        {
+          "start_seconds": 3498.18,
+          "end_seconds": 3501.48,
+          "duration_seconds": 3.3
+        },
+        {
+          "start_seconds": 3729.21,
+          "end_seconds": 3734.21,
+          "duration_seconds": 5.0
+        },
+        {
+          "start_seconds": 3740.94,
+          "end_seconds": 3743.86,
+          "duration_seconds": 2.92
+        },
+        {
+          "start_seconds": 3825.33,
+          "end_seconds": 3828.95,
+          "duration_seconds": 3.62
+        },
+        {
+          "start_seconds": 3836.123,
+          "end_seconds": 3838.59,
+          "duration_seconds": 2.467
+        },
+        {
+          "start_seconds": 3857.71,
+          "end_seconds": 3860.57,
+          "duration_seconds": 2.86
+        },
+        {
+          "start_seconds": 3888.99,
+          "end_seconds": 3892.53,
+          "duration_seconds": 3.54
+        },
+        {
+          "start_seconds": 4203.29,
+          "end_seconds": 4205.865,
+          "duration_seconds": 2.575
+        },
+        {
+          "start_seconds": 4215.26,
+          "end_seconds": 4218.32,
+          "duration_seconds": 3.06
+        },
+        {
+          "start_seconds": 4222.013,
+          "end_seconds": 4225.52,
+          "duration_seconds": 3.507
+        },
+        {
+          "start_seconds": 4245.34,
+          "end_seconds": 4247.978,
+          "duration_seconds": 2.638
+        },
+        {
+          "start_seconds": 4252.66,
+          "end_seconds": 4255.48,
+          "duration_seconds": 2.82
+        },
+        {
+          "start_seconds": 4259.54,
+          "end_seconds": 4262.32,
+          "duration_seconds": 2.78
+        },
+        {
+          "start_seconds": 4308.62,
+          "end_seconds": 4311.46,
+          "duration_seconds": 2.84
+        },
+        {
+          "start_seconds": 4431.3,
+          "end_seconds": 4437.72,
+          "duration_seconds": 6.42
+        },
+        {
+          "start_seconds": 4558.38,
+          "end_seconds": 4563.28,
+          "duration_seconds": 4.9
+        },
+        {
+          "start_seconds": 4691.08,
+          "end_seconds": 4695.34,
+          "duration_seconds": 4.26
+        },
+        {
+          "start_seconds": 4790.54,
+          "end_seconds": 4794.81,
+          "duration_seconds": 4.27
+        },
+        {
+          "start_seconds": 4919.54,
+          "end_seconds": 4926.26,
+          "duration_seconds": 6.72
+        },
+        {
+          "start_seconds": 4929.02,
+          "end_seconds": 4932.2,
+          "duration_seconds": 3.18
+        }
+      ],
+      "interpretation": "Mechanical cue timing only; gaps can be pauses, music, slide transitions or missing speech. No audio/video comparison or semantic coverage claim."
+    },
+    "bytes": 212760
+  },
+  "lecture_id": "lec06",
+  "course_year": 2026,
+  "scheduled_date": "2026-04-15",
+  "scheduled_speaker": "Percy Liang",
+  "speaker_evidence": "Official Spring 2026 schedule; video uploader/channel recorded separately. No visual speaker identity verification.",
+  "license_evidence": "yt-dlp returned license=null for this individual video. No explicit open-content or full-translation license verified; null does not prove Standard YouTube License or Creative Commons.",
+  "publication_boundary": "Raw captions are local evidence, not confirmed committed/backed up or licensed for republication. Chinese treatment limited to autonomous close reading; no full translation permission claimed.",
+  "read_at": "2026-11-14T13:40:05.068651Z",
+  "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+  "playlist_duration_seconds": 5201,
+  "duration_evidence": "Individual watch extraction duration; playlist flat duration retained separately. Values differ by at most one second; page-header proposal uses individual watch duration consistently."
+}

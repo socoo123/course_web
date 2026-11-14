@@ -1,0 +1,69 @@
+Stanford CS336 Spring 2026 — P1 paper01–paper08 来源与阅读范围核查
+文书日期：2026-11-14。获取/阅读日期：真实 UTC 2026-11-14；逐文件时间与 SHA-256 见 manifest-fragment.json。
+执行模型：openai-codex/gpt-6-astra:xhigh。Main 已通过本次运行事件核实 actual provider/model、thinkingLevel=xhigh、resolvedModelIsFallback=false；共享 model-preflight.json 由 Main 整合。
+
+交付
+- manifest-fragment.json：37 个来源记录；8 个固定版本 PDF、8 个固定版本 arXiv 元数据页、8 个首次发现版本的 arXiv 快照、8 个 PDF 文本提取物、3 个官方许可说明页、2 个法律条款摘录来源记录。
+- reading-updates.json：以 paper01…paper08 为键，可合并的更新字段；含全体作者、固定版本、精确节号/物理 PDF 页码、编者必读/选读、实际阅读范围、尚未完整精读部分、许可依据、哈希及来源路径。
+- license-reading-evidence.txt：明确标注为摘录的官方关键许可条款及本次使用边界，不冒充完整法律文本。
+- 所有写入仅在本独占目录；没有改共享 reading-map、manifest、plan、课程页面或 catalog。没有进入 P2，没有写课程正文或译文。
+
+固定版本和处理决定
+paper01 Attention Is All You Need — 1706.03762v7（2023-08-02），15页。
+  编者核心：§3（含3.1–3.5/3.2.1–3.2.3）、§4、§5.3；训练其他小节和§6.1–6.2选读。
+  arXiv non-exclusive 1.0 → 自主精读。v7首页另准许署名后在新闻/学术作品中复用图表，但不等于整篇翻译许可。
+  关联：a1-basics 的attention/causal mask/FFN；原文encoder-decoder和post-LN不是现代decoder-only实现的逐项要求。
+
+paper02 RoFormer — 2104.09864v5（2023-11-08），14页。
+  编者核心：§2.1–2.3、§3.1–3.3、§3.4.2；§3.4.1/3.4.3推导与§4.2/4.5实验选读。
+  本篇自身的 arXiv 链接为 CC BY-NC-ND 4.0 → 自主精读；禁止据此共享翻译改编。论文或代码可公开访问不改变此限制。
+  关联：a1-basics 的成对旋转、query/key相对位移内积；不把长程衰减概括为无条件长上下文外推。
+
+paper03 FlashAttention — 2205.14135v2（2022-06-23），34页。
+  编者核心：§2.1–2.2、§3.1–3.2、附录B.3–B.4（Algorithms 1–4）；B.1–B.2/C证明及§4.3/E测量选读。
+  arXiv non-exclusive 1.0 → 自主精读。
+  关联：a2-systems 的online softmax、tiling、重计算及HBM IO；仍是精确且二次FLOPs的attention，不是线性时间算法。
+
+paper04 FlashAttention-2 — 2307.08691v1（2023-07-17），14页。
+  编者核心：§2.1、§3.1–3.3、§4.1–4.2的设置与测量口径；§2.2–2.3背景/§5讨论选读。
+  arXiv non-exclusive 1.0 → 自主精读。
+  关联：a2-systems 的线程块/warp划分与occupancy。图4–7和Table 1没有逐数据点审读，也未复现性能。
+  版本注意：§4.2出现“compared to FlashAttention-2”自比较措辞，而§4引导写对比FlashAttention；不把前者未经核对地写为事实。
+
+paper05 ZeRO — 1910.02054v3（2020-05-13），24页。
+  编者核心：§3.1–3.2、§4.1、§5.1–5.4、§7.1–7.2.2；ZeRO-R的§4.2/6/8及§10.1–10.2/10.5评测选读。
+  arXiv non-exclusive 1.0 → 自主精读。
+  关联：a2-systems 的状态分片与通信量；保留既有概念关联，实际作业要求由固定2026作业证据确认。
+  官方历史把v1标为withdrawn，本次固定v3。v3 §10实测是Pos+g与ZeRO-R的ZeRO-100B子集，不应把三阶段理论结果全部写成已实测。
+
+paper06 Chinchilla — 2203.15556v1（2022-03-29），36页。
+  编者核心：§3.1–3.4、§4.1、§4.2.1–4.2.2、§5、附录B/F；附录D/E拟合细节和其余评测选读。
+  arXiv non-exclusive 1.0 → 自主精读。
+  关联：a3-scaling 的IsoFLOP、经验损失拟合、学习率周期和FLOP记账；不把训练compute-optimal等同含推理成本的部署最优。
+  固定v1原始版本，不偷偷混入后续纠错/复现数值；摘要MMLU 67.5与正文4.2.2的67.6不强行统一。
+
+paper07 PagedAttention — 2309.06180v1（2023-09-12），16页。
+  编者核心：§3/3.1、§4.1–4.5、§6.1–6.3、§7.1–7.2；§4.6/5/6.4–6.5/7.3选读。
+  本篇自身 arXiv 页面明确 CC BY 4.0 → 未来可做获准翻译；须作者署名、固定源版本/许可证链接、翻译改动声明、第三方权利边界、非官方译文声明。
+  既有relatedAssignments为空，保持为空，不虚构课程实验。§7.1单核开销与系统吞吐是不同层面；§6的Orca是作者自行实现且包含Oracle等假设。
+  双栏layout/default提取发生列交错，已改用pdftotext -raw并删除两份不适合阅读的冗余提取物。原始PDF保留。
+
+paper08 FineWeb — 2406.17557v2（2024-10-31），38页。
+  编者核心：§3.1–3.7、§4及4.1–4.2、§5、附录B/E.1；D/E.2–E.4/F/G详表选读。
+  本篇自身 arXiv 页面明确 CC BY 4.0 → 未来可做符合上述署名/版本/改动等条件的获准翻译。
+  重要区分：论文许可是CC BY；附录B的数据集许可是ODC-By v1.0且受CommonCrawl Terms约束，不授权底层网页的任意用途。
+  关联：a4-data的数据清洗、过滤、MinHash去重和固定预算消融。§4.2明说domain-fit评测未做decontamination；E.1的MinHash阈值是概率性的。
+
+阅读边界与官方身份
+- 已实际阅读各固定版本的题名/作者/许可/版本信息，扫描主文与附录节标题，并阅读reading-updates逐项列明的核心正文、算法或实验设定。没有把搜索摘要当全文。
+- 没有声称八篇全文精读。actualReading保留实际选段、物理PDF页和未完整阅读项；页面列表代表读过该页所列选段，不代表整页逐字精读。公式排版/插图只由提取文本核查，未做逐图逐式视觉审校。
+- 多数论文没有独立目录页，所谓目录核查是依据正文/附录标题重建章节结构。
+- 必读/选读全部是编者建议。本分片没有获得官方逐项指定阅读的固定2026讲义证据，统一标editorial_supplement_pending_fixed_lecture_crosscheck，留待Main与讲义证据整合。先修主题与实验关联同样是编者概念映射，不是官方要求。
+- 保留既有home/materialFile/alsoUsedBy，其他讲次只回链，未新增正文归属。
+
+真实获取失败与缺口
+- 两个Creative Commons legalcode.en URL直接urllib请求均返回HTTP 403 Forbidden；未反复下载。官方static-web reader成功显示，已阅读定义/许可授予/署名及ND限制并保存有出处的关键条款摘录。完整legal-code HTML未归档，manifest诚实记录这一点。
+- 三个官方许可说明页（arXiv non-exclusive、CC BY-NC-ND deed、CC BY deed）原始HTML均成功保存；8篇固定版PDF和元数据页均成功获取。
+- 原始文件仅为本地取证档案。sources/既有ignore策略不变；没有声称已Git提交或已在GitHub备份。许可不明的原始全文不应因本次本地获取而自动公开；用于发布的是轻量元数据/审核材料及固定URL。
+- 未下载任何数据集/模型权重，未运行训练或付费计算，没有存储cookies、凭据或签名媒体URL。
+- 未运行构建、测试、lint、格式化、smoke run或git提交。由Main整合后一次验证：清单必填字段、引用路径/哈希、八个更新键、固定版本URL、官方/编者身份与唯一home边界。

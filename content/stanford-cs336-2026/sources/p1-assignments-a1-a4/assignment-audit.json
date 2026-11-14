@@ -1,0 +1,747 @@
+{
+  "schema_version": 1,
+  "course": "stanford-cs336-2026",
+  "phase": "P1",
+  "document_date": "2026-11-14",
+  "audited_at": "2026-11-14T13:43:29Z",
+  "model": "openai-codex/gpt-6-astra:xhigh",
+  "boundary": "只核查来源和规划，不进入 P2，不写课程正文、不实现作业、不启动训练/API/依赖安装/测试/付费计算。",
+  "pinning_method": "先 git ls-remote HEAD 取完整40位SHA，再读取固定SHA递归仓库树，按树中真实路径下载原文。官网当前 A1–A4 链接与四仓库匹配；学期最终由每份PDF首页内文 Spring 2026 确认。",
+  "source_manifest": "p1-assignments-a1-a4/manifest-fragment.json",
+  "source_count": 53,
+  "paper_evidence_file": "p1-assignments-a1-a4/reading-updates.json",
+  "publication": "原始53项、4866309 bytes仅本地采集；文件/hash/固定URL可用于复现，不声称已进入Git或GitHub备份。",
+  "license_scope": {
+    "repository": "四仓库均为 MIT 文本，许可 Software 及 associated documentation；A1/A2 copyright 2025，A3/A4 copyright 2026。版权年份不是课程版次证据。",
+    "permissions": "第一方代码及相应文档可依 MIT 使用、修改、分发，须保留版权和许可声明。",
+    "limits": "MIT 不自动扩展至引用论文、第三方图像、Common Crawl 网页、TinyStories/OWT/DCLM/Paloma 数据、外部预训练分类器、软件依赖及 Modal/Stanford 服务。未将这些来源宣称为 MIT 或已获全文翻译许可。",
+    "chinese_treatment": "本分片只作来源采集及独立核查，不生成译文或答案；后续中文处理默认自主精读/独立说明，第三方材料另核权利。"
+  },
+  "shared_cluster_access": {
+    "source_file": "p1-shared/cluster-guide.txt",
+    "url": "https://docs.google.com/document/d/1cHE0iKVyXLJ3XpIs2XuXTmZ-HMmPk2hIPeCvy-AydMg/edit",
+    "reviewer": "Main 已实际全文读取；本分片按 Main 提供的已核证据引用，未重复获取。",
+    "eligibility": "Spring 2026 Modal workspace 仅 enrolled students；Stanford Google 登录、邀请、cs336-<sunetid> 环境；公开自学 Modal 账号不等于校内 workspace 权限。",
+    "concurrency": "guide 建议并发不超过 3 GPU；A2 原任务最多 6、A4 原训练 8 B200，不能据此把正式任务改写成 3 GPU。建议与具体作业需求的协调/例外需课程 staff 确认；不把建议当已验证硬配额。"
+  },
+  "assignments": [
+    {
+      "id": "a1-basics",
+      "repository": "https://github.com/stanford-cs336/assignment1-basics",
+      "commit": "a158843b20107949f1a8d7df1b05cd33b9166712",
+      "pinned_tree_url": "https://github.com/stanford-cs336/assignment1-basics/tree/a158843b20107949f1a8d7df1b05cd33b9166712",
+      "edition": {
+        "course": "Spring 2026",
+        "evidence": "cs336_assignment1_basics.pdf p1",
+        "handout_version": "26.0.3",
+        "handout_pages": 47,
+        "package_version": "26.0.0"
+      },
+      "read_scope": "Text-extraction reading: PDF pp.1–3,9–10,13,19,22–23,33,39–42,44–47; additional citation excerpts on pp.21,25–26. Whole extracted text searched for 16 planned papers, headings, deliverables and resource signals. Not a full visual or derivation review.",
+      "dependencies": {
+        "python": ">=3.12,<3.14",
+        "package_version": "26.0.0",
+        "declared": [
+          "einops>=0.8",
+          "einx>=0.4",
+          "jaxtyping>=0.3",
+          "numpy>=2.4",
+          "psutil>=7",
+          "pytest>=9.0",
+          "pytest-timeout",
+          "regex>=2026.3.32",
+          "tiktoken>=0.12.0",
+          "torch~=2.11.0",
+          "tqdm>=4.67",
+          "wandb>=0.25",
+          "ty>=0.0.26",
+          "ruff>=0.15.8"
+        ],
+        "optional": {},
+        "selected_lock_versions": {
+          "numpy": "2.4.4",
+          "pydantic": "2.12.5",
+          "requests": "2.33.1",
+          "torch": "2.11.0",
+          "triton": "3.6.0"
+        },
+        "lock_review": "仅阅读依赖声明及相关锁定条目；未安装、同步环境或证明本机可运行。",
+        "evidence": [
+          "p1-assignments-a1-a4/a1/pyproject.toml",
+          "p1-assignments-a1-a4/a1/uv.lock"
+        ]
+      },
+      "license": {
+        "repository": "四仓库均为 MIT 文本，许可 Software 及 associated documentation；A1/A2 copyright 2025，A3/A4 copyright 2026。版权年份不是课程版次证据。",
+        "permissions": "第一方代码及相应文档可依 MIT 使用、修改、分发，须保留版权和许可声明。",
+        "limits": "MIT 不自动扩展至引用论文、第三方图像、Common Crawl 网页、TinyStories/OWT/DCLM/Paloma 数据、外部预训练分类器、软件依赖及 Modal/Stanford 服务。未将这些来源宣称为 MIT 或已获全文翻译许可。",
+        "chinese_treatment": "本分片只作来源采集及独立核查，不生成译文或答案；后续中文处理默认自主精读/独立说明，第三方材料另核权利。"
+      },
+      "sources": [
+        "p1-a1-changelog-txt",
+        "p1-a1-license",
+        "p1-a1-readme-txt",
+        "p1-a1-handout",
+        "p1-a1-handout-text",
+        "p1-a1-pyproject-toml",
+        "p1-a1-tree-json",
+        "p1-a1-uv-lock"
+      ],
+      "requirements": {
+        "implementation": [
+          "byte-level BPE训练、编码/解码、特殊token与流式编码 (§2 pp3–13)",
+          "从零Transformer：pre-norm/RMSNorm、SwiGLU、RoPE、causal multi-head attention (§3 pp13–28)",
+          "交叉熵、AdamW、warmup-cosine调度、梯度裁剪 (§4 pp28–34)",
+          "数据加载、checkpoint保存/恢复、训练循环 (§5 pp34–36)",
+          "temperature/top-p生成及实验日志、学习率/批量/结构消融 (§6–7 pp37–44)"
+        ],
+        "data": [
+          "TinyStoriesV2-GPT4 train/valid（README公共下载入口；未下载）",
+          "stanford-cs336/owt-sample train/valid（README公共下载入口；未下载）"
+        ],
+        "model": {
+          "tinystories": {
+            "vocab_size": 10000,
+            "context_length": 256,
+            "d_model": 512,
+            "d_ff": 1344,
+            "rope_theta": 10000,
+            "num_layers": 4,
+            "num_heads": 16,
+            "non_embedding_parameters_approx": 17000000,
+            "training_tokens": 327680000,
+            "evidence": "§7.2.1 p39"
+          },
+          "owt": "§7.4 p45要求与TinyStories相同model architecture和total training iterations；词表另有32k BPE实验。不要把模型缩小后的实验冒充原规模。"
+        },
+        "deliverables": [
+          "Gradescope writeup.pdf（全部书面问题）和code.zip；make_submission.sh打包 (p2)",
+          "测试adapters对接、tokenizer及模型代码、实验日志、学习曲线、至少256token或遇EOS生成文本 (§7)",
+          "TinyStories原目标validation loss≤1.45 (p40)",
+          "OWT leaderboard PR及最终validation loss/学习曲线/修改描述；naive baseline 5.0；最终run≤45min on B200 (pp45–46)"
+        ],
+        "restrictions": [
+          "除Parameter、容器及Optimizer基类等列出例外，不得直接使用torch.nn/functional/optim实现被要求从零实现的组件 (p1)",
+          "学校版AI政策禁止AI代实现作业；本次仅核查文档，不生成解答 (pp1–2)"
+        ]
+      },
+      "access": {
+        "public_materials": "讲义、代码、TinyStories/OWT下载指引公开；本次仅保存文档和依赖证据。",
+        "institutional": "Gradescope、课堂Slack和学生compute guide需相应课程资格；自学不自动获得校内账户/预算。参见shared_cluster_access。",
+        "service_checks": "未登录、未申请GPU、未测试共享挂载或提交。"
+      },
+      "compute": {
+        "original": {
+          "gpu": "实验以单B200为基准；TinyStories参考20–30min/run (pp39–40)。题目标注预算：learning_rate 2h、batch_size 1h、四项结构消融各0.5h、OWT 2h、leaderboard探索10h；最终leaderboard run限0.75h (pp40–46)。这些是讲义估计/限制，不是本次实测。",
+          "cpu_ram": [
+            {
+              "task": "10k词表TinyStories BPE",
+              "cpu": "无GPU；≤30min",
+              "ram": "≤30GB",
+              "evidence": "train_bpe_tinystories p9"
+            },
+            {
+              "task": "32k词表OWT BPE",
+              "cpu": "无GPU；≤12h",
+              "ram": "≤100GB",
+              "evidence": "train_bpe_expts_owt p10"
+            }
+          ],
+          "ram_caveat": "以上是官方resource requirements的上限式资源包络，不是承诺最低内存，也不是所有CPU机器都能达到的保证；CPU核数和完整LM host RAM最低值未指定。",
+          "not_hardware_requirement": "p33 80GB/H100是AdamW资源估算的纸笔题设，不能据此把2026实训硬件标成H100。"
+        },
+        "low_resource": {
+          "official": [
+            "p3给M4 Max 36GB的简短可行性示例（<5min MPS /约30min CPU）；未说明完整相同实验配置。",
+            "p40详细低资源实验改为约40M tokens，validation loss目标由1.45放宽到2.00；32×5000×256=40,960,000 tokens；staff报告CPU 1h22、MPS 36min，loss1.80。",
+            "p44明确建议校外低GPU学习者继续在TinyStories测试修改，而不是强制完成OWT流利性/leaderboard。",
+            "p35使用cpu/mps设备；p40–41提示MPS的TF32/Inductor限制为当时torch2.9.0经验，依赖锁已是torch2.11.0，不能无验证宣称当前平台行为一致。"
+          ],
+          "doable": [
+            "CPU上的BPE小样本、模块正确性、资源估算",
+            "Apple Silicon/CPU上较小TinyStories训练、生成和结构对照"
+          ],
+          "not_equivalent": [
+            "40M-token/loss2.00路线不等同327.68M-token/loss1.45原实验",
+            "TinyStories替代不等同OWT数据难度和45min B200排行榜成绩",
+            "CPU/MPS耗时不能直接替代B200运行时/显存测量"
+          ]
+        }
+      },
+      "plan_review": {
+        "status": "现有A1主题范围基本正确；需补上原规模、限时排行榜和低资源边界。",
+        "corrections": [
+          "README标题仍写Spring2025，但固定PDF内文为Spring2026 v26.0.3、pyproject v26.0.0、CHANGELOG有2026更改；禁止按README把仓库误归2025。",
+          "不要把p3简短可行性陈述推广为完整A1五分钟完成；p40同一硬件详细40M-token实验明确需36min MPS/82min CPU。",
+          "按16篇规划，Attention/RoFormer是任务引用而非官方全文必读清单。"
+        ]
+      },
+      "gaps": [
+        "完整训练/数据大小/实际下载可用性未实测；数据和第三方许可未在本分片核完。",
+        "完整LM host RAM/CPU核数无明确官方最低值。",
+        "本地CPU/MPS可行性仅据讲义，不声称在当前设备复现。"
+      ]
+    },
+    {
+      "id": "a2-systems",
+      "repository": "https://github.com/stanford-cs336/assignment2-systems",
+      "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "pinned_tree_url": "https://github.com/stanford-cs336/assignment2-systems/tree/ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "edition": {
+        "course": "Spring 2026",
+        "evidence": "cs336_assignment2_systems.pdf p1",
+        "handout_version": "26.1.3",
+        "handout_pages": 48,
+        "package_version": "26.1.4"
+      },
+      "read_scope": "Text-extraction reading: PDF pp.1–3,23–25,28,32,37–38,46–48; additional citation/heading excerpts on pp.15,17,22,26–27,29–31,33–36,39–45. Whole extracted text searched for 16 planned papers and task/resource signals. Not a full visual or derivation review.",
+      "dependencies": {
+        "python": ">=3.12,<3.14",
+        "package_version": "26.1.4",
+        "declared": [
+          "cs336-basics",
+          "humanfriendly",
+          "matplotlib",
+          "numpy",
+          "pytest>=8",
+          "regex>=2026.3.32",
+          "torch~=2.11.0",
+          "tqdm>=4.67.1",
+          "wandb>=0.19.7",
+          "pandas>=2",
+          "ty>=0.0.29",
+          "ruff>=0.15.10"
+        ],
+        "optional": {},
+        "selected_lock_versions": {
+          "numpy": "2.4.4",
+          "pydantic": "2.13.1",
+          "requests": "2.33.1",
+          "torch": "2.11.0",
+          "triton": "3.6.0"
+        },
+        "lock_review": "仅阅读依赖声明及相关锁定条目；未安装、同步环境或证明本机可运行。",
+        "evidence": [
+          "p1-assignments-a1-a4/a2/pyproject.toml",
+          "p1-assignments-a1-a4/a2/uv.lock"
+        ]
+      },
+      "license": {
+        "repository": "四仓库均为 MIT 文本，许可 Software 及 associated documentation；A1/A2 copyright 2025，A3/A4 copyright 2026。版权年份不是课程版次证据。",
+        "permissions": "第一方代码及相应文档可依 MIT 使用、修改、分发，须保留版权和许可声明。",
+        "limits": "MIT 不自动扩展至引用论文、第三方图像、Common Crawl 网页、TinyStories/OWT/DCLM/Paloma 数据、外部预训练分类器、软件依赖及 Modal/Stanford 服务。未将这些来源宣称为 MIT 或已获全文翻译许可。",
+        "chinese_treatment": "本分片只作来源采集及独立核查，不生成译文或答案；后续中文处理默认自主精读/独立说明，第三方材料另核权利。"
+      },
+      "sources": [
+        "p1-a2-changelog-txt",
+        "p1-a2-license",
+        "p1-a2-readme-txt",
+        "p1-a2-cs336-basics-pyproject-toml",
+        "p1-a2-handout",
+        "p1-a2-handout-text",
+        "p1-a2-pyproject-toml",
+        "p1-a2-tree-json",
+        "p1-a2-uv-lock"
+      ],
+      "requirements": {
+        "implementation": [
+          "benchmark/profiling：端到端计时、Nsight Systems、mixed precision、内存快照 (§2)",
+          "activation checkpointing及最优重算分析 (§3)",
+          "FA2纯PyTorch前向、Triton前向与causal masking、PyTorch+torch.compile后向 (§4)",
+          "DDP、通信合并及计算/通信重叠 (§5)",
+          "optimizer-state sharding (§6)",
+          "FSDP模块与memory/communication分析 (§7)",
+          "DP/FSDP/TP/2D并行的FLOP和通信瓶颈分析 (§8)"
+        ],
+        "optional": "§4.2.3 p28 Triton backward明确OPTIONAL；不能把全Triton后向当所有学生硬性必做。",
+        "data": "性能题允许随机权重和随机batch；不是要下载并训练一个预训练8B checkpoint (§2.1.3 p3)。",
+        "models": {
+          "table1": "vocab10000、batch4、默认context512；small(768,3072,12,12)、medium(1024,4096,24,16)、large(1280,5120,36,20)、xl(2560,10240,32,32)、10B(4608,12288,50,36)；元组为d_model,d_ff,layers,heads (pp2–3)。",
+          "leaderboard": {
+            "reported_size": "8B",
+            "vocab_size": 151936,
+            "d_model": 4096,
+            "d_ff": 11008,
+            "num_layers": 34,
+            "num_heads": 32,
+            "context_length": 32768,
+            "batch_size": 2,
+            "dtype": "bfloat16",
+            "causal": true,
+            "evidence": "§9 pp46–48"
+          }
+        },
+        "deliverables": [
+          "Gradescope writeup.pdf+code.zip及原始提供测试对应实现 (p1)",
+          "计时/显存表图与分析、优化器状态分片和FSDP实现/比较",
+          "完整训练step排行榜：forward+loss+backward+AdamW，不仅attention前向；目标优于10s，空PyTorch/Triton cache下benchmark须10min内完成 (p48)"
+        ],
+        "reading_task": "p38 optimizer_state_sharding_accounting(c)必须比较实现与ZeRO stage1的内存/通信；是针对性任务，不是仅列参考书目。"
+      },
+      "access": {
+        "public_materials": "源码、staff A1基础模型、讲义公开；可用自己的A1实现或固定仓库cs336-basics。",
+        "institutional": "校内Modal资格按shared_cluster_access；同节点多GPU访问需有实际资源。",
+        "gpu_stack": "CUDA/NVIDIA GPU、PyTorch、Triton、Nsight Systems、NCCL；MPS不是Triton/NCCL的等效环境。",
+        "service_checks": "未安装Nsight、未申请GPU、未运行分布式测试或性能测量。"
+      },
+      "compute": {
+        "original": {
+          "single_gpu": "p28 FA2 benchmark明确单B200，batch1，causal；seq_len 128..65536、head_dim 16..128的2次幂、FP32/BF16。",
+          "distributed": "p32 all-reduce需2/4/6 GPU或process条件，最高6GPU，每个run<5min；xl DDP/optimizer/FSDP性能题多为1node×2GPU (pp33–39)。",
+          "leaderboard": "两块B200，8B-shaped模型、32,768上下文、batch2；不得改I/O语义或抄现成实现 (pp46–48)。",
+          "cpu_ram": "Gloo CPU多进程可开发调试；官方没有CPU核数/host RAM最低值。GPU VRAM需求依模型/seq/精度和优化而变，讲义期望部分naive配置OOM，不给单一可保证通跑显存数。"
+        },
+        "low_resource": {
+          "official": [
+            "§5.1 pp31–32明确先Gloo on CPU debug，题目要求处再用NCCL GPU benchmark。",
+            "p25 Triton interpreter TRITON_INTERPRET=1可CPU调试，但staff警告buggy；不能当可靠通用替代。"
+          ],
+          "doable": [
+            "小矩阵PyTorch数学正确性、梯度/检查点逻辑、Gloo多进程通信逻辑",
+            "DP/FSDP/TP/2D纸笔FLOP/通信分析"
+          ],
+          "not_equivalent": [
+            "CPU/Gloo结果不能充当NCCL多GPU通信速度和扩展性",
+            "CPU/MPS不替代Triton GPU优化、Nsight GPU trace和B200性能表",
+            "单GPU缩小模型不满足2-B200 8B完整step排行榜和最高6GPU通信测量"
+          ]
+        }
+      },
+      "plan_review": {
+        "status": "现有A2写入activation checkpointing及FSDP是正确2026范围，不能依据旧版将其删除。",
+        "corrections": [
+          "补齐§8 TP/2D并行分析和§9完整训练step排行榜，不能只写attention微基准。",
+          "Triton backward是选做；标准必做后向是PyTorch+torch.compile。",
+          "CHANGELOG 26.0.0明确移除bucketed DDP；不得把2025旧任务作为当前必做。",
+          "repo/package v26.1.4含测试调整，PDF仍v26.1.3；两个版本应同时记录。"
+        ]
+      },
+      "gaps": [
+        "未验证GPU可得性、驱动、Nsight平台及lock安装；无本机性能结论。",
+        "CPU核数/host RAM最低值未给。",
+        "集群guide≤3GPU建议与作业6GPU测量存在协调问题，须明确不是本分片已获配额。"
+      ]
+    },
+    {
+      "id": "a3-scaling",
+      "repository": "https://github.com/stanford-cs336/assignment3-scaling",
+      "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+      "pinned_tree_url": "https://github.com/stanford-cs336/assignment3-scaling/tree/03e9372992e913061b9e78b5cfcb62ad8a87de35",
+      "edition": {
+        "course": "Spring 2026",
+        "evidence": "cs336_assignment3_scaling.pdf p1",
+        "handout_version": "26.0.5",
+        "handout_pages": 8,
+        "package_version": "26.0.2"
+      },
+      "read_scope": "All 8 pages of extracted text read for version, tasks, access, budgets, data/model, submissions and reading requirements. No API called; no visual/implementation execution review.",
+      "dependencies": {
+        "python": ">=3.12",
+        "package_version": "26.0.2",
+        "declared": [
+          "pydantic>=2.8",
+          "requests>=2.32",
+          "rich>=14.0"
+        ],
+        "optional": {
+          "server": [
+            "einx>=0.3.0",
+            "einops>=0.8.1",
+            "equinox>=0.13.0",
+            "fastapi[standard]>=0.115",
+            "flash-hog>=0.5.0",
+            "furu>=0.0.27",
+            "jax[cuda13]==0.9.1; sys_platform == 'linux'",
+            "jax==0.9.1; sys_platform != 'linux'",
+            "jaxtyping>=0.3.3",
+            "modal",
+            "optax>=0.2.3",
+            "polars>=1.40.1",
+            "psycopg[binary]>=3.2",
+            "psycopg2-binary>=2.9.12",
+            "python-dotenv>=1.2.2",
+            "sqlalchemy>=2.0",
+            "tqdm>=4.67",
+            "transformers>=5.6.2",
+            "typer>=0.12",
+            "uvicorn[standard]>=0.30",
+            "wandb>=0.26.1"
+          ]
+        },
+        "selected_lock_versions": {
+          "equinox": "0.13.7",
+          "flash-hog": "0.5.0",
+          "furu": "0.0.27",
+          "jax": "0.9.1",
+          "jax-cuda13-pjrt": "0.9.1",
+          "jax-cuda13-plugin": "0.9.1",
+          "jaxlib": "0.9.1",
+          "modal": "1.4.1",
+          "numpy": "2.4.4",
+          "polars": "1.40.1",
+          "pydantic": "2.12.5",
+          "requests": "2.33.1",
+          "scipy": "1.17.1",
+          "transformers": "5.6.2"
+        },
+        "lock_review": "仅阅读依赖声明及相关锁定条目；未安装、同步环境或证明本机可运行。",
+        "evidence": [
+          "p1-assignments-a1-a4/a3/pyproject.toml",
+          "p1-assignments-a1-a4/a3/uv.lock"
+        ]
+      },
+      "license": {
+        "repository": "四仓库均为 MIT 文本，许可 Software 及 associated documentation；A1/A2 copyright 2025，A3/A4 copyright 2026。版权年份不是课程版次证据。",
+        "permissions": "第一方代码及相应文档可依 MIT 使用、修改、分发，须保留版权和许可声明。",
+        "limits": "MIT 不自动扩展至引用论文、第三方图像、Common Crawl 网页、TinyStories/OWT/DCLM/Paloma 数据、外部预训练分类器、软件依赖及 Modal/Stanford 服务。未将这些来源宣称为 MIT 或已获全文翻译许可。",
+        "chinese_treatment": "本分片只作来源采集及独立核查，不生成译文或答案；后续中文处理默认自主精读/独立说明，第三方材料另核权利。"
+      },
+      "sources": [
+        "p1-a3-changelog-txt",
+        "p1-a3-license",
+        "p1-a3-readme-txt",
+        "p1-a3-handout",
+        "p1-a3-handout-text",
+        "p1-a3-cs336-scaling-api-public-py",
+        "p1-a3-cs336-scaling-auth-py",
+        "p1-a3-cs336-scaling-budget-py",
+        "p1-a3-cs336-scaling-client-py",
+        "p1-a3-cs336-scaling-config-py",
+        "p1-a3-cs336-scaling-modal-utils-py",
+        "p1-a3-cs336-scaling-tokenized-data-py",
+        "p1-a3-cs336-scaling-training-run-py",
+        "p1-a3-cs336-scaling-training-training-config-py",
+        "p1-a3-data-isoflops-curves-json",
+        "p1-a3-pyproject-toml",
+        "p1-a3-scripts-1-download-tokenized-data-py",
+        "p1-a3-scripts-db-seed-users-py",
+        "p1-a3-tree-json",
+        "p1-a3-uv-lock"
+      ],
+      "requirements": {
+        "part1": {
+          "name": "chinchilla_isoflops",
+          "points": 5,
+          "data": "仓库data/isoflops_curves.json：72条synthetic runs、9个budget (6e18..3e21 FLOPs)。已下载7,484 bytes。",
+          "task": "按handout选择每个IsoFLOPs profile最低观察loss、拟合模型/数据规模幂律并外推1e23和1e24 FLOPs；各给图和预测 (pp2–3)。",
+          "warning": "这是合成数据练习，不能冒充第二部分真实API训练数据。"
+        },
+        "part2": {
+          "name": "scaling_laws",
+          "points": 50,
+          "task": "真实训练API实验设计、拟合缩放律，预测48 B200-hour最终run的模型超参数与validation loss；12 B200-hour实验硬预算 (pp3–8)。",
+          "data": "DCLM tokenized data最多500B tokens，固定顺序、不epoching；Llama-2 tokenizer 32k词表；seq512；validation 2^18 tokens，最终leaderboard验证用更多token (p4及tokenized_data.py)。",
+          "model": "类似A1的Transformer，但由提供JAX/Equinox训练代码运行；AdamW或SGD，warmup-cosine、no dropout。训练配置固定seq_len512、允许FP32/BF16；training_config.py进一步限制num_kv_heads==num_attention_heads（不支持GQA），不能因handout只说divisible就推断GQA可用。"
+        },
+        "deliverables": [
+          "writeup.pdf：完整可复现实验/拟合/选择方法及决策解释；code.zip (p1)",
+          "POST /final_submission提交training_config与predicted_final_loss，允许替换提交；不是用/submit直接花48h实验预算 (pp7–8)",
+          "校内题设要求训练只经API，不自行训练（p4）；README另列non-students自建路线，两者适用人群不同。"
+        ]
+      },
+      "access": {
+        "hosted_api": {
+          "base_url": "http://hyperturing.stanford.edu:8000",
+          "docs_url": "http://hyperturing.stanford.edu:8000/docs",
+          "eligibility": "p4：8位Stanford ID作为X-API-Key，必须Stanford网络/可能需VPN；auth.py实际查UserTable，seed_users.py从私有roster CSV导入。因此需课程已登记用户，不是任意8位ID或所有公开GitHub用户自动有权。",
+          "client_setup": "uv sync；A3_API_KEY仅在用户自己的环境中设置；本次未收集真实ID或密钥。",
+          "budget": "43200s=12h；queued/running先预留max_runtime_seconds，completed/failed按实际报告时间截在[1,max]，timeout按max；重复配置返回409，超剩余预算400 (pp4–6; budget.py; api/public.py)。",
+          "final_target": "48h是预测目标，不是额外免费可反复调用的客户端探索配额；所有正式run单B200 (p8)。",
+          "state": "仅文档/源码核查；未访问budget、submit或final_submission，未测试当前服务存活、账号有效或预算。"
+        },
+        "non_student_path": {
+          "documented": [
+            "README明确For non-students：uv sync --extra server",
+            "数据创建命令使用Modal；训练代码与FastAPI/dispatcher公开；自建API需DATABASE_URL_PROD/DEV和INTERNAL_API_KEY",
+            "scripts/db/seed_users.py需自己提供sunet_id,api_key格式用户表；官方私有CSV不在固定树中。"
+          ],
+          "required_services": "按当前源码默认配置，需自备GPU/存储、PostgreSQL、Modal账户/volume，按实际运行路径配置HF/W&B、Tailscale及内部API；仅有代码许可不提供校内服务资格或免费compute。",
+          "static_gaps": [
+            "README声称uv run cs336_scaling/training/run.py可direct run，但该main调用run_training.local，而函数开头检查modal.current_function_call_id并在无Modal调用时抛ValueError；[INFERENCE] standalone命令不是已验证即开即用。",
+            "默认代码仍含staff W&B entity、staff Modal namespace与内部服务回报；非学生须迁移自己的配置，不能将学校账户当可借用资源。",
+            "未启动该路线，未证明current server-extra依赖/本机CPU可跑；不能承诺校外无GPU等价完成Part2。"
+          ]
+        }
+      },
+      "compute": {
+        "original": {
+          "student_client": "CPU可完成HTTP客户端、拟合与图表；训练算力在服务器，不代表训练不耗GPU。",
+          "gpu": "单B200/run；探索累计12h，目标最终48h；是真实训练，而非旧版离线回归器模拟API。",
+          "cpu_ram": "讲义未给客户端/服务端CPU或RAM最低值。tokenized_data.py数据预处理默认n_workers32；这是实现配置，不是普适最低资源。",
+          "storage": "DCLMData total_tokens=500,000,000,000、uint16；[INFERENCE]仅token载荷约1TB十进制，另有length/验证/中间数据。数据生成脚本ephemeral_disk=2,850,000 MB；训练Modal函数ephemeral_disk=1,099,511 MB；均为源码资源申请，不是实测最小磁盘。",
+          "provisioning_risk": "数据脚本默认3333 shards、max_containers100；不可作为轻量下载命令在P1执行。"
+        },
+        "low_resource": {
+          "doable": [
+            "真实公开synthetic IsoFLOPs Part1在CPU拟合（无需API/大数据/GPU）",
+            "Part2预算设计、理论推导、分析公开合成数据可作编者练习，但须标注非官方真实API成绩"
+          ],
+          "not_equivalent": [
+            "合成72条数据不替代Part2的真实超参数搜索与48h预测",
+            "不能承诺无需校内API/真实训练日志就完成原50分Part2",
+            "自建小模型或更便宜硬件改变wall-clock scaling口径，不能直接等同单B200预算结论"
+          ]
+        }
+      },
+      "plan_review": {
+        "status": "规划已要求校内API与非学生路线分开，方向正确；需强化两部分不等价与真实访问缺口。",
+        "corrections": [
+          "给定数据拟合只对应5分Part1；50分Part2是12h真实B200在线训练API，不能合并为全离线/纯CPU作业。",
+          "2026预算是wall-clock B200-hours；文中残存FLOPs budget措辞不应覆盖12h/48h准确口径。",
+          "README非学生direct run有静态不一致，不应写成验证可运行的免配置校外路径。",
+          "PDF v26.0.5、package v26.0.2、CHANGELOG v26.0.5须分别保存；旧CHANGELOG的2e18 API预算是2024历史，不是2026要求。",
+          "Chinchilla用于必做方法练习并建议熟悉论文；DCLM仅数据提及，不能推断DataComp-LM是官方必读。"
+        ]
+      },
+      "gaps": [
+        "校内API存活、实际注册资格、VPN、剩余预算未测试；私有students.csv和凭据不可取得/不可存。",
+        "非学生direct command静态问题及全链路依赖未运行验证；没有声称原规模训练可公开免费完成。",
+        "500B DCLM/分类tokenizer许可与实际数据端点可用性未审计；未下载这些大文件。"
+      ]
+    },
+    {
+      "id": "a4-data",
+      "repository": "https://github.com/stanford-cs336/assignment4-data",
+      "commit": "0555bea66369872d912652debf10b115ca0688c8",
+      "pinned_tree_url": "https://github.com/stanford-cs336/assignment4-data/tree/0555bea66369872d912652debf10b115ca0688c8",
+      "edition": {
+        "course": "Spring 2026",
+        "evidence": "cs336_assignment4_data.pdf p1",
+        "handout_version": "26.0.1",
+        "handout_pages": 16,
+        "package_version": "26.0.0"
+      },
+      "read_scope": "All 16 pages of extracted text read for version, tasks, data, fixed training, submissions and bibliography. No dataset/model downloaded or run; not a visual-layout review.",
+      "dependencies": {
+        "python": ">=3.12",
+        "package_version": "26.0.0",
+        "declared": [
+          "numpy<2.0",
+          "tqdm>=4.67.1",
+          "wandb>=0.19.7",
+          "pytest>=8.3.5",
+          "xopen>=2.0.2",
+          "resiliparse>=0.15.2",
+          "fasttext>=0.9.3",
+          "mmh3>=5.1.0",
+          "nltk>=3.9.1",
+          "fastwarc>=0.15.2",
+          "tldextract>=5.3.0",
+          "einops>=0.8.1",
+          "einx>=0.3.0",
+          "jaxtyping>=0.3.0",
+          "psutil>=6.1.1",
+          "regex>=2024.11.6",
+          "submitit>=1.5.2",
+          "tiktoken>=0.9.0",
+          "transformers>=4.51.3",
+          "typer>=0.15.3",
+          "hydra-core>=1.3.2",
+          "modal>=1.4.2",
+          "furu==0.0.31",
+          "polars>=1.40.1",
+          "warcio>=1.8.1",
+          "pytest-timeout>=2.4.0",
+          "torch>=2.11.0"
+        ],
+        "optional": {},
+        "selected_lock_versions": {
+          "fasttext": "0.9.3",
+          "fastwarc": "0.15.2",
+          "furu": "0.0.31",
+          "modal": "1.4.2",
+          "numpy": "1.26.4",
+          "polars": "1.40.1",
+          "pydantic": "2.13.3",
+          "requests": "2.32.3",
+          "resiliparse": "0.15.2",
+          "torch": "2.11.0",
+          "transformers": "4.51.3",
+          "triton": "3.6.0"
+        },
+        "lock_review": "仅阅读依赖声明及相关锁定条目；未安装、同步环境或证明本机可运行。",
+        "evidence": [
+          "p1-assignments-a1-a4/a4/pyproject.toml",
+          "p1-assignments-a1-a4/a4/uv.lock"
+        ]
+      },
+      "license": {
+        "repository": "四仓库均为 MIT 文本，许可 Software 及 associated documentation；A1/A2 copyright 2025，A3/A4 copyright 2026。版权年份不是课程版次证据。",
+        "permissions": "第一方代码及相应文档可依 MIT 使用、修改、分发，须保留版权和许可声明。",
+        "limits": "MIT 不自动扩展至引用论文、第三方图像、Common Crawl 网页、TinyStories/OWT/DCLM/Paloma 数据、外部预训练分类器、软件依赖及 Modal/Stanford 服务。未将这些来源宣称为 MIT 或已获全文翻译许可。",
+        "chinese_treatment": "本分片只作来源采集及独立核查，不生成译文或答案；后续中文处理默认自主精读/独立说明，第三方材料另核权利。"
+      },
+      "sources": [
+        "p1-a4-changelog-txt",
+        "p1-a4-license",
+        "p1-a4-readme-txt",
+        "p1-a4-configs-config-yaml",
+        "p1-a4-configs-experiment-your-data-yaml",
+        "p1-a4-handout",
+        "p1-a4-handout-text",
+        "p1-a4-cs336-basics-train-config-py",
+        "p1-a4-cs336-data-common-py",
+        "p1-a4-cs336-data-modal-utils-py",
+        "p1-a4-cs336-data-wet-files-py",
+        "p1-a4-pyproject-toml",
+        "p1-a4-scripts-download-data-py",
+        "p1-a4-scripts-train-py",
+        "p1-a4-tree-json",
+        "p1-a4-uv-lock"
+      ],
+      "requirements": {
+        "implementation": [
+          "Common Crawl WARC/WET观察和Resiliparse HTML提取 (§2.1–2.2 pp2–4)",
+          "fastText语言识别、email/US phone/IPv4 PII掩码、Dolma NSFW/toxicity过滤、Gopher规则与自己训练fastText质量分类器 (§2.3–2.7 pp4–9)",
+          "exact-line去重；MinHash+LSH候选+真实ngram Jaccard+聚类保留 (§3 pp9–12)",
+          "从预先English-filtered WET生成训练数据，报告各filter保留比例/总时间、人工检视保留和删除样例 (§4 pp12–14)",
+          "用GPT-2 tokenizer加EOS，uint16 .bin；用固定staff训练脚本训练/评价 (§4 pp14–16)"
+        ],
+        "original_data": {
+          "inspection": "CC-MAIN-2026-12 WARC/WET示例；下载脚本通过对应*.paths.gz选择首路径，不是要求下载全CC。",
+          "pipeline": "CC-MAIN-2026-17的2500 raw WET，seed336、每4文件合并；先fastText lid.176 P(English)≥0.7过滤。校内入口/shared-data/english-wet-data。",
+          "quality_positive": "May 2026 English Wikipedia dump外链：enwiki-20260501-extracted_urls.txt.gz，再采样抓页面训练质量分类器 (pp8–9)。",
+          "evaluation": "Paloma C4 100 domains，GPT-2-tokenized validation；可参考验证数据构造过滤器，不得复制验证内容进LM训练数据 (pp12–14)。",
+          "classifiers": "fastText lid.176.bin；Dolma Jigsaw bigrams NSFW/hatespeech models；只保存下载指引，未下载权重。"
+        },
+        "model": {
+          "handout_label": "GPT-2 small-shaped, approximately 430M parameters（pp15–16原文）；small-shaped不是124M数值承诺。",
+          "authoritative_config": "cs336_basics/train_config.py + scripts/train.py",
+          "parameters_approx": 430000000,
+          "vocab_size": 50257,
+          "context_length": 512,
+          "d_model": 1024,
+          "d_ff": 3072,
+          "num_layers": 24,
+          "num_heads": 16,
+          "rope_theta": 10000,
+          "dtype": "bfloat16",
+          "batch_size_per_device": 128,
+          "gpus": 8,
+          "steps": 16384,
+          "training_tokens": 8589934592
+        },
+        "deliverables": [
+          "Gradescope writeup.pdf、code.zip、原测试adapters对应实现 (p1)",
+          "25条原始WET人工观察、20例语言/PII/有害/规则filter观察、质量分类器、去重代码、过滤比例与时间、5条保留+5条删除样例分析",
+          "token数量、最佳C4 100 validation loss、学习曲线、数据处理与迭代说明 (pp14–16)"
+        ],
+        "restrictions": [
+          "不得改模型架构、训练procedure或script以改善成绩；目标是比较数据质量，不是A1架构优化 (pp12,16)。",
+          "讲义未把任一指定FineWeb/DataComp-LM全文阅读列为任务。",
+          "数据消融/系统化ablation可由编者安排；原文要求数据决策比较/迭代和训练，并未给出规划16篇论文相对应的强制消融清单。"
+        ]
+      },
+      "access": {
+        "students": "Modal共享a4-shared-data volume来自cs336-shared-data环境；需课程workspace访问；/shared-data不是公共互联网下载URL。",
+        "non_students": [
+          "README允许offline-only下载少量辅助资源；不是预装/零网络：包含验证集、WARC/WET示例与三个分类器。",
+          "全量路线先实现is_english；Modal路线去掉institution environment_name并用自己的volume；非Modal路线配置本地共享目录。",
+          "代码当前SUNET_ID=\"TODO\"在import时抛ValueError，而download_data.py导入modal_utils；[INFERENCE]即使offline-only也需先处理此账户/namespace占位，不是完全免配置。",
+          "n_files可下调，但源码要求可被group_size4整除；原2500规模与缩小教学数据应分开。",
+          "本地EnglishWetFiles返回furu缓存路径，english-wet-data软链只在远程分支创建；[INFERENCE]非Modal使用者需显式将返回路径接入自己的pipeline，不能盲抄校内/shared-data路径。"
+        ],
+        "state": "只读源码与指导，未申请账户、调用Modal或下载辅助大资产。"
+      },
+      "compute": {
+        "original": {
+          "gpu": "固定8×B200 data parallel，batch128/device，16384steps，seq512，2^33≈8.6B训练token；staff报告约2h (p15)。[INFERENCE]约16 B200-GPU-hours/run，不含预处理/搜索；不是免费预算或本次实测。",
+          "cpu": "2500 raw-WET来源的数据过滤/抓取/分词适合multiprocessing；手册没有CPU核数或RAM最低值。源码远程WET/wiki max_containers128为上限，不是建议盲目开启。",
+          "ram": "没有完整数据处理/训练host RAM最低值；取决于文档数、去重索引、并发和tokenization实现。不能凭讲义声明普通16GB笔记本可完整做完。",
+          "storage": "scripts/train.py申请EPHEMERAL_DISK_MB=524288并把train/valid .bin拷至本地临时磁盘；此为申请上限/源码配置，不是实际数据大小。完整CC/维基预处理另需存储，未估测或下载。"
+        },
+        "low_resource": {
+          "official": [
+            "README明示non-student可降低WET n_files；CPU先调试得到正确性（官方站点通用建议，由Main另存）。"
+          ],
+          "editorial_doable": [
+            "小WARC/WET样本的提取、语言/PII/quality过滤、手工误差分析",
+            "小规模exact/MinHash去重、tokenization和过滤阶段留存统计",
+            "缩小模型/训练量的数据对照只可作为独立教学实验，不能沿用原validation目标或原作业完成声明"
+          ],
+          "not_equivalent": [
+            "小样本统计不能替代2500 raw-WET规模吞吐/去重效果",
+            "单GPU/CPU小模型不能替代固定430M、8B200、8.6B-token训练",
+            "改变模型或训练脚本属于偏离官方data-only比较条件，须明确教学改编。"
+          ]
+        }
+      },
+      "plan_review": {
+        "status": "现有HTML/过滤/PII/去重/训练范围基本正确；需准确钉住新规模及数据-only公平性。",
+        "corrections": [
+          "2026从2500 raw WET的English-filtered数据开始，不是2025旧5000 raw WET。",
+          "430M、8×B200、约8.6B tokens、约2h：不能写作GPT-2 124M/单GPU小作业。",
+          "必须使用固定staff训练逻辑；A1式任意改模型不在官方范围。",
+          "FineWeb和DataComp-LM均非A4引用/必读；A4实际引用Dolma/Gopher/RefinedWeb/Paloma/T5等。RefinedWeb≠FineWeb。",
+          "手册small-shaped用语与常见GPT-2 small规格不一致，保留原称谓但以明确430M和固定1024/24layer参数消歧。"
+        ]
+      },
+      "gaps": [
+        "Common Crawl、维基、Hugging Face及分类器资产的当前可用性/大小/许可证未逐项测试；只固定代码里入口。",
+        "共享volume权限和8GPU调度未验证；guide≤3GPU并发建议与本作业8GPU正式run需staff协调，不改原要求。",
+        "host CPU/RAM无正式最低值；offline-only/full-data路线仅静态审查，未以执行确认。"
+      ]
+    }
+  ],
+  "planned_papers_summary": {
+    "count": 16,
+    "evidence_file": "p1-assignments-a1-a4/reading-updates.json",
+    "mandatory_whole_paper_reading_found": false,
+    "strong_recommendation": "FlashAttention：A2 §4.2.2 p23明确highly recommend reading；FA2 p24也明确check out for intuition。",
+    "required_targeted_paper_comparison": "ZeRO：A2 §6 p38要求比较stage1/ZeRO-DP P_os，不能仅标引用。",
+    "method_exercise": "Chinchilla：A3 §2.1 pp2–3必做IsoFLOPs合成数据练习；p8建议熟悉方法；无全文必读声明。",
+    "not_official_a4_readings": [
+      "FineWeb",
+      "DataComp-LM"
+    ],
+    "non_planned_references_to_consider": "A4 Gopher Appendix A(p8)；Mining of Massive Datasets ch3/§3.3.3(p10)；RefinedWeb归一化规则(p11)；Dolma及Paloma数据/评测。这里只识别缺口，不扩写阅读正文。",
+    "absence_limit": "A1–A4无命中不是全课/A5不存在；由主agent合并lecture与A5证据。"
+  },
+  "acquisition_failures": [
+    {
+      "stage": "initial downloads",
+      "items": [
+        "a1 PDF：IncompleteRead(704512/965629)",
+        "a3 pyproject/CHANGELOG：SSL unexpected EOF",
+        "a4 uv.lock：IncompleteRead(229376/408445)",
+        "a4 CHANGELOG：SSL unexpected EOF"
+      ],
+      "resolution": "针对失败项改用curl下载后成功；保存最终完整文件及SHA256，未将失败当不存在。"
+    },
+    {
+      "stage": "additional evidence",
+      "items": [
+        "a3 data/isoflops_curves.json：RemoteDisconnected"
+      ],
+      "resolution": "单项curl重试成功，7484 bytes。"
+    }
+  ],
+  "verification_boundary": {
+    "performed": [
+      "仓库SHA和树读取",
+      "文档下载及pdftotext提取",
+      "指定页面/章节阅读与全提取文本论文术语扫描",
+      "依赖声明/锁条目和访问限制静态阅读",
+      "原始文件SHA256计算用于来源身份"
+    ],
+    "not_performed": [
+      "build",
+      "lint",
+      "tests",
+      "formatter",
+      "environment install",
+      "training",
+      "GPU allocation",
+      "API request",
+      "paid compute",
+      "git commit",
+      "automatic metadata acceptance suite"
+    ],
+    "main_agent_checks": [
+      "解析manifest-fragment/assignment-audit/reading-updates JSON",
+      "核对source id唯一、每项file相对sources并存在、sha256与保存文件相符",
+      "将本分片来源与共享cluster-guide及论文/lecture证据合并；不把recommendation升级成必读",
+      "轻量元数据提交策略与大原始文件本地留存策略分开。"
+    ]
+  }
+}

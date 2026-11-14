@@ -1,0 +1,55 @@
+接续关键词：CS336-2026-P2-样板
+
+继续 Stanford CS336 Spring 2026 — 从零构建语言模型，仅执行 P2「首批端到端样板」。
+项目目录：/Users/zy/ai_learn/course_web
+
+一、先读实际记录，不重做 P0/P1
+1. content/stanford-cs336-2026/status.json
+2. content/stanford-cs336-2026/sources/production-plan.json
+3. content/stanford-cs336-2026/sources/P1-REVIEW.txt
+4. content/stanford-cs336-2026/sources/p1-acceptance.json
+5. content/stanford-cs336-2026/sources/manifest.json
+6. content/stanford-cs336-2026/sources/reading-map.json
+7. content/stanford-cs336-2026/sources/model-preflight.json
+8. 上述清单指向的 p1-lectures、p1-videos、p1-assignments-a1-a4、p1-assignment-a5 和两组论文分片 review/清单。
+以实际验收记录为准，不能把“P1 核查完成并记录缺口”当成全部来源齐全、全文已读或正文完成。
+
+二、P2 范围
+- 制作 L01–L02 实际可靠来源支持的端到端样板。
+- 制作这两讲对应的先修桥接：bridge04 Python 实验工程、bridge02 概率与信息论、bridge01 线性代数与张量形状、bridge05 PyTorch 内存语义、bridge07 浮点数与数值稳定性、bridge08 资源估算与实验纪律；不要顺手进入 L03–L04 或其他批次。
+- 为 A1 做固定讲义的来源与任务拆解；不自动扩成 P3 的 A1 全部完整说明/指导，不给可提交的完整作业解答。
+- 三种讲次材料职责分离：notes 自主讲解与推导；draft 只按真实课堂时间整理；materials 只放课外阅读的获准译文或自主精读，不重复已讲过的幻灯片。
+- 有可靠来源才写对应文件；无可制作内容不创建占位正文。
+
+三、必须保留的 P1 发现
+- 2026 官方播放列表核实 18 条录像：L01–L17 和 L19 Dan Fu。L18 Daniel Selsam 未发现，不猜主题、不拿列表第18条替代。
+- 已保存18份 en-US 人工/非ASR类别字幕；分类来自平台，不证明人工逐词校订。字幕只做了首尾/时间统计，未完整精读或核音；P2 必须先实际读本批全文并记录范围、空隙与不确定项。
+- 所有录像开放翻译许可未确认。可写自主学习笔记与适度译述，不宣称获准全文逐字翻译，不把完整字幕机械翻译后公开。须遵守版权边界，并清楚标注实际处理类型。
+- L02 的 lecture_02 与 lecture_02_recording 分开保存，后者源码嵌在 recording trace 的 files[lecture_02.py]。译述对齐 recording 版本，不能混入当前 handout 的代码和时间轴。
+- 讲义仓库固定 de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e（2026-09-12，晚于学期）；L06 有课后修改证据。当前固定版不保证与录像逐字一致。讲义图像依赖并非全部本地下载，按本批实际需要从固定树取，不把目录注册算已采集。
+- A5 官网 spring2025 选做链接失效；当前仓库有内文标 Spring 2026 / Version 26.0.0 的补充版。以 p1-assignment-a5 审核结论分别解释，勿再凭文件名判断。
+- 论文只有清单所记范围经过核查，并非16篇全文精读；官方引用、官方明确要求阅读与编者补充分开。DeepSeek-R1 的2026 v2节号不同于2025 v1，不混用。
+- 校内 Modal workspace 仅面向选课学生，需 Stanford 登录与邀请；A3 训练API按核实资格处理。校外路径、原规模硬件与低资源教学示例分开，不声称低资源示例完成官方任务。
+
+四、来源和权限
+- 仅修改 content/；不改 src/，不修改官方作业代码或生成解答。
+- 原始资料保存在 sources/，不可 .md 后缀；不存 cookies、凭据、签名媒体/字幕地址。
+- 逐来源记录 URL、固定版本、SHA256、获取日期、许可证据与实际已读范围。登记/采集/已读/已写/已审/页面已验收分别计数。
+- 同一论文只有 reading-map.json 指定的单一正文归属；其他讲次回链。
+- 引用放 frontmatter 或页底，正文从学习内容开始。截图只在 draft；notes 用必要的自绘示意图。
+- 不购买或启动付费算力，不下载大模型/全量训练数据；如需局部CPU示例只证明明确的学习机制，不冒充官方训练复现。
+- 原始大文件和许可不明全文仅本地保存，GitHub 按现有惯例提交轻量来源清单、审核、计划和可复现脚本；从新克隆继续时按清单重取缺失原始资料，不能因路径登记就声称文件存在。
+
+五、子 agent
+- 所有实际子 agent，包括审核，统一 openai-codex/gpt-6-astra:xhigh。
+- P1 的 task.perCallModel=on 仅会话覆盖，未持久化。正式派发前重新读相应技能与受支持配置入口，所需批准正常取得；显式 selector，并从实际 model_change / thinking_level_change 或等效运行元数据核实模型及 xhigh，不能用提示词代替配置。
+- 不可用即报告，绝不静默换模型或降级。合理按独立内容范围并行，每个任务独占目录；主 agent 独占 catalog/course/resources/status 和汇总来源清单。
+- 子 agent 中途不运行构建、lint、测试或格式化，主 agent 整合后统一最小必要验证。
+
+六、验收与停止
+- 技术内容按实际来源核对，区分讲者内容与编者解释；字幕/译述时间不能越界，缺口不得填造。
+- 逐讲核对视频页头链接、对应讲次、显示时长；实际点击代表性入口，确认新标签打开且原笔记页保留，并检查手机布局。
+- 验证本批链接/图像/公式、必要的小示例和 npm run build；浏览器实际查看桌面与手机正文，不只写元数据。
+- 更新 status、production-plan、来源清单、P2 验收、下一阶段关键词及可直接复制的完整接续提示词。
+- 每次结束前提交本次改动并推送现有 GitHub 仓库；保留无关用户改动，不强推、不改远端。
+- P2 完成并验收后停止，不自动进入 P3。

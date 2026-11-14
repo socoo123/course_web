@@ -1,0 +1,41 @@
+{
+  "paper12": {
+    "requirement": "编者精读安排；A5官方选做要求实现DPO，但未明确要求阅读DPO论文或指定论文节次。",
+    "designation": "editorial_close_reading_with_official_optional_assignment_citation",
+    "assignmentReadingEvidence": {
+      "audit": "p1-assignment-a5/assignment-audit.json",
+      "source": "a5-safety-handout-2026",
+      "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "scope": "2026补充§6、§6.1–6.4，p18参考文献[7]",
+      "classification": "method_implementation_and_citation_not_explicit_paper_reading",
+      "checked_at": "2026-11-14T13:43:54Z"
+    },
+    "assignmentVerifiedScope": "DPO目标、实现与实验与选做作业关联已核实；论文精读章节范围仍属编者安排，由论文分片独立核实。"
+  },
+  "paper13": {
+    "requirement": "编者精读安排；A5必做要求GRPO，但DeepSeekMath在主篇中为方法出处，未明确指定论文阅读或节次。",
+    "designation": "editorial_close_reading_with_official_required_method_citation",
+    "assignmentReadingEvidence": {
+      "audit": "p1-assignment-a5/assignment-audit.json",
+      "source": "a5-main-handout-2026",
+      "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "scope": "主篇§4.1，p39参考文献[8]",
+      "classification": "method_citation_not_explicit_paper_reading",
+      "checked_at": "2026-11-14T13:43:54Z"
+    },
+    "assignmentVerifiedScope": "GRPO与on/off-policy作业关联已核实；不能将编者选出的DeepSeekMath GRPO章节改标官方必读。"
+  },
+  "paper14": {
+    "requirement": "编者精读安排；DeepSeek-R1为A5的R1-Zero提示与推理RL背景引用，未明确指定论文阅读。",
+    "designation": "editorial_close_reading_with_official_prompt_and_background_citation",
+    "assignmentReadingEvidence": {
+      "audit": "p1-assignment-a5/assignment-audit.json",
+      "source": "a5-main-handout-2026",
+      "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "scope": "主篇§3.2、§4背景，p39参考文献[4]",
+      "classification": "prompt_and_background_citation_not_explicit_paper_reading",
+      "checked_at": "2026-11-14T13:43:54Z"
+    },
+    "assignmentVerifiedScope": "R1-Zero prompt被正式用于作业；训练路线、证据与局限为编者精读重点，不是官方全文阅读要求。"
+  }
+}

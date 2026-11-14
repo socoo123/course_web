@@ -1,0 +1,44 @@
+CS336-2026 P0 验收记录
+日期：2026-11-14
+结论：P0 课程骨架与共享约定完成；只完成本阶段，不代表课程正文完成，不进入 P1。
+
+交付
+- catalog.json：卡片与 ml-systems track 从 stanford-cs336 迁移到 stanford-cs336-2026，状态 active。
+- course.json：43 个课程入口 = 17 个主题讲次 + 2 个嘉宾课 + 8 个先修 + 16 个专题。
+- 7 个实验入口 = A1–A5 + A5 官方选做 + 编者自拟综合项目；A5 两入口均 LAB 5，自拟项目 LAB 0。没有 Assignment 6。
+- resources.zh.md：课程公共资料、先修自检、学习顺序、环境与算力边界、实验纪律、术语符号、论文单一归属导航。
+- sources/reading-map.json：16 篇论文登记，保留归属、共享使用、先修、关联实验、范围/许可/中文处理的待核实状态。
+- sources/manifest.json：来源登记与分阶段状态结构；URL 登记不计为获取/已读/获准翻译。
+- status.json 与 production-plan.json：记录实际进度、已知缺口、P1 未开始和禁止自动启动。
+
+本轮实际来源工作
+- 读取 https://cs336.stanford.edu/ 的 reader 文本，仅用于元数据与公共导航：2026 学期、两位教师、19 项课表、先修、作业概述、CPU 调试建议和诚信政策。
+- 未保存原始课表 HTML，未读链接目标 PDF/仓库全文，未采集逐视频元数据或字幕；不计为 P1 来源采集完成。
+- 官方页给出的 A5 Optional Part 2 文件名含 spring2025，正篇含 spring2026；内文版本必须在 P1 核实。既有计划中的具体模型/数据安排不因本次建课自动变成已核验事实。
+
+模型预检
+- 默认角色 openai-codex/gpt-6-astra:xhigh；task.perCallModel=off，task.enableEffort=false，task.agentModelOverrides={}，task.maxEffort=max。
+- P0 均为共享元数据和导航，由主 agent 实施。子 agent 启动数 0，未改运行配置，未宣称观察到子 agent 实际模型/推理等级。
+- 下一次派发前须重新核实并通过受支持入口及批准启用显式 selector 或等效覆盖，再检查实际解析模型和 xhigh；不能仅依赖提示词或默认角色。详见 model-preflight.json。
+
+验收证据
+- 临时内存脚本：JSON 解析、ID 唯一与计划集合一致、官方讲次顺序、桥接与专题插入位置、实验关联、目录迁移、63 个站内 Markdown 链接、16 篇论文映射全部通过。
+- 本课程只有 resources.zh.md 一份上线 Markdown；未创建 notes/draft/materials/lab/guide 空白占位文件，sources 下没有 Markdown。
+- npm run build 通过。页面修正后最终构建：3082 modules transformed，Vite 6.02 s。未执行课程实验或 GPU 训练。
+- 浏览器以 production build + vite preview 检查：43 个课程与 7 个实验路径均渲染正确标题、默认 notes/zh 标签和真实“待生成”状态；没有未核实的视频链接或 xv6 命令框。
+- 桌面 1440×1000：课程卡片可进入公共资料，侧栏 43 个讲次入口可见，引用在页底，6 个数学表达式渲染且 KaTeX 错误为 0。
+- 手机 390×844：公共资料、L01 和综合项目截图已实际查看；打开目录进入 L01、切换中文译稿、切换实验指导均成功。公共资料与综合项目 scrollWidth=390，无页面级横向溢出。
+- 浏览器 runtime errors 0。公共资料 10 个外部链接均 target=_blank；本轮没有逐视频页头入口，未声称验证视频新标签、时长或字幕。
+- 详细机器记录：p0-acceptance.json。
+
+验收中修正
+- 页底完整 A5 选做文件名作为链接标签会使手机页面宽至 473px；改成简洁标签，完整 URL 留在链接和来源清单中，修复后 390px。
+- 实验模板固定显示“官方页面”，自拟项目现在仅链接真实课程官网，并在目标中明示不是本项目题目出处。未改 src/。
+- 站点把非数字讲次的侧栏标记统一显示为“选读”；先修/专题身份仍以标题前缀、正文和 core/optional 元数据区分。未为建课引入新的 UI 约定。
+- 初次启动 5310 dev 服务因端口已占用退出，未停止原服务；使用独立 5410 production preview 完成验收。
+
+实际完成度与边界
+- 公共资料 1；讲次正文 0；实验正文 0；已核实单视频页头 0。
+- 论文全文、精确章节和许可，讲义固定版本，作业提交，视频身份/时长/字幕，校内权限与原规模硬件要求均留在 P1。
+- 未安装课程环境、运行作业测试、购买或启动付费计算；未提交、推送或部署。
+- P0 完成后停止。下一阶段关键词：CS336-2026-P1-采集；接续说明：NEXT-P1-PROMPT.txt。

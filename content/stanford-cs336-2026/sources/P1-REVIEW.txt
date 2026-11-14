@@ -1,0 +1,55 @@
+CS336-2026 P1 验收记录
+日期：2026-11-14
+结论：P1「并行采集与来源核查」完成并验收，保留真实缺口；不是所有来源齐全、不是全文精读或正文完成。停止，不进入P2。
+
+一、实际交付
+- 2026动态官网与2025历史页分别存HTML、URL、UTC与SHA256；2026课表解析19行，历史页只读身份元数据。
+- 18条官方Stanford Online录像：L01–L17和L19。每条有ID、频道、年份/讲次、watch时长、字幕类型/语言/首尾与空隙统计。18份en-US人工/非ASR类别字幕已下载，仅平台类别而非人工逐字校订保证；未观看全片或核音。
+- L18 Daniel Selsam未找到。列表第18条Dan Fu是课表L19，不按位置错配。Dan Fu开头字幕明确提及serving/inference，但页面仍保留嘉宾姓名，不把局部证据包装成完整主题精读。
+- 17讲课堂讲义及独立L02 recording trace固定；讲义仓库SHA de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e。L02两个版本分别保存。2026-09-12提交晚于学期，L06有课后修订，不宣称与录像完全相同。
+- 16篇固定arXiv全文已取得。每篇有版本、作者元数据、许可、精确核心/选读节号、实际已读范围、先修、实验关联和唯一正文归属。未将PDF下载算成全文精读。
+- 五仓库完整SHA、六份2026作业讲义（A1–A5及A5选做）固定，并另存2025 A5选做作历史对照。
+- 汇总清单70个主记录、7个分片224项细项；必要结构检查实际核对244个本地文件/哈希。
+
+二、版本与范围纠错
+A1 a158843b20107949f1a8d7df1b05cd33b9166712；封面Spring2026 v26.0.3，README遗留2025不作为版次证据。
+A2 ca8bc81a59b70516f7ebb2da4808daade877c736；封面Spring2026 v26.1.3。保留activation checkpointing/FSDP，补TP/2D与双B200的8B完整training-step；Triton backward为选做。
+A3 03e9372992e913061b9e78b5cfcb62ad8a87de35；封面Spring2026 v26.0.5。合成数据仅Part1；Part2真实12 B200小时探索、48小时预测，不包装成免费纯离线拟合。
+A4 0555bea66369872d912652debf10b115ca0688c8；封面Spring2026 v26.0.1。2500 raw WET来源的英语过滤输入，约430M固定模型、8×B200、8.6B tokens，不套用往年124M/单卡规模。
+A5 c2734a26308710949fe13226960a1e8cece94b7e；正篇与新补充封面均Spring2026 v26.0.0。Main独立读取三份PDF封面及开场要求：旧官网选做路径404；历史父提交cd5f183cf217cd82843e521d4d226e76544de51c中的旧版确为Spring2025 v1.0.1。新补充从固定树/README发现，不伪报旧链接重定向成功。
+A5正篇确为OLMo-2-0425-1B base/GSM8K；不能漏MaxRL、GSPO和§7自拟估计器。补充Llama3.1 8B/SFT/DPO属实，70B本地评委不是必须付费调用GPT-4。
+
+三、阅读与许可
+A2明确推荐FlashAttention两篇，并有ZeRO stage1针对性比较任务；A3建议熟悉Chinchilla方法。其他引用、实现要求与编者精读分开；没有把16篇都升级成官方全文必读。FineWeb不是RefinedWeb；DCLM不是A4指定论文。
+6篇固定论文有CC BY4.0许可：PagedAttention、FineWeb、DataComp-LM、QLoRA、DPO、LLaVA。翻译需署名、版本、许可链接、改动声明，第三方权利另核。
+RoFormer为CC BY-NC-ND4.0；其余9篇为arXiv非独占分发许可，不产生公众全文翻译授权，均采用自主精读。DeepSeek-R1固定2026 v2，节号与2025 v1不同。
+A1–A4仓库有MIT；A5与课堂讲义仓库未找到明确许可。18录像license字段未确认，不补写Standard或CC。课程正文仍0，没有发布原文全文翻译。
+
+四、权限、算力与真实缺口
+完整缺口见p1-gaps.json及各分片review，不为“完成”抹平：
+- 校内Modal workspace仅正式选课学生，需Stanford Google登录与邀请。A3还需课程登记ID与Stanford网络/VPN。
+- A3校外direct-run路径存在Modal call-ID和staff服务依赖的静态冲突；A4小样本路径仍有SUNET占位guard、路径和辅助资产下载问题。未执行，不能声称开箱即跑。
+- A5 Llama模型需审批；2026精确SFT混合文件校外未确认可下载。历史公共URL HEAD遇TLS/SSL错误，不等于404；公开原料不等于同一混合文件。
+- 集群通用指南建议同时≤3GPU，与作业多卡配置须staff协调。保留原规模，不以小CPU教学样例宣称等效完成。
+- 依赖按仓库隔离，未安装/训练/基准测试；没有收费API请求或云算力购买/启动。
+- 课堂trace依赖图片未全部下载，非完全离线可运行包；未找到L18/L19讲义。
+- SSL/下载截断已对失败项换curl恢复；部分CC legalcode HTML403与A5历史commit详情API403保留记录，使用成功的官方reader/文本和历史链证据，不保存错误页冒充全文。
+
+五、实际验收
+python3 sources/check-p1.py（完整调用见p1-acceptance.json）通过：43课程入口、7实验入口、16单一论文归属、70主来源、244本地哈希、60本课程站内链接；sources无.md；讲次正文0、实验正文0。
+npm run build通过：tsc --noEmit + Vite，3082 modules，Vite5.83s。只运行这一轮构建，不跑无关全仓审计或课程作业测试。
+浏览器实际验证Vite dev页面；生产构建另通过，未声称浏览器使用production preview。
+- 桌面1440×1000和手机390×844逐一检查19个官方讲次：18个入口链接/讲次/时长匹配，L18无伪造入口，默认notes标签仍显示真实待生成。
+- 真正点击L01和L19页头：YouTube新标签打开，原笔记页URL/标题/选中标签保留。
+- 所有手机讲次scrollWidth390；公共资料新表格桌面/手机截图已查看，表格内部滚动，无页面级溢出。
+- A3、A4、A5正篇/选做更新后的目标文字在手机页逐项核对，宽度390。
+- 浏览器runtime errors0，公共资料KaTeX errors0。
+详细机器记录：p1-acceptance.json、p1-shared/structure-check.json、video-page-check.json、resources-page-check.json、build.log。
+
+六、模型与交接
+5个实际采集子agent均显式openai-codex/gpt-6-astra:xhigh；已核对实际model_change、thinking_level_change和assistant模型字段，无fallback。task.perCallModel=on为受支持入口的会话覆盖，未持久化。下一轮仍须重新核实。
+P2未启动；接续关键词CS336-2026-P2-样板，完整可复制提示词NEXT-P2-PROMPT.txt。状态、计划、来源清单和阅读归属已更新。
+
+七、GitHub交付边界
+沿用现有仓库sources默认忽略约定，明确强制提交本课程轻量计划/清单/审核/检查与必要元数据，不提交PDF、字幕全文、论文提取全文或未授权原始镜像；这些文件仍保留本地，路径与哈希可从固定URL重取。不是完整原始档案的GitHub备份。
+本次提交还包含开始时已存在但未提交的P0本课程骨架与catalog迁移，不改其他课程。实际commit/push结果在执行后由最终回复报告；此记录不猜写commit ID或GitHub Pages部署成功。

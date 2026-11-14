@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-14",
+  "status": "in_progress",
+  "courseId": "stanford-cs336-2026",
+  "existingCatalogId": "stanford-cs336",
+  "title": "从零构建语言模型",
+  "edition": "Stanford CS336 Spring 2026",
+  "scope": {
+    "officialScheduleEntries": 19,
+    "officialThematicLectures": 17,
+    "guestLectures": 2,
+    "bridgeChapters": 8,
+    "extensionChapters": 16,
+    "officialAssignments": 5,
+    "officialOptionalAssignments": 1,
+    "editorialCapstones": 1,
+    "referenceCourses": ["mit-6.s081-2020", "mit-6.824-2021"],
+    "prerequisiteCourse": "d2l-pytorch-2021",
+    "editBoundary": "只修改 content/；本计划文件不是课程正文，不代表来源已全部采集或页面已上线。"
+  },
+  "versionPolicy": {
+    "lecturesAndVideos": "2026 春季；逐视频核对作者、年份、讲次、时长与可获取字幕。",
+    "assignments": "采用 2026 讲义，正式采集时固定各仓库提交；不能仅依据可能过时的 README 标题判断年份。",
+    "historicalMaterials": "2025 仅作为明确标注的对照来源，不与 2026 共用时间轴或混写作业要求。",
+    "catalogMigration": "P0 已将 catalog.json 的课程卡片及 track 引用从 stanford-cs336 迁移至 stanford-cs336-2026；主 agent 统一修改，入口已验收。"
+  },
+  "contentContract": {
+    "resources.zh.md": "公共环境、学习路线、工具、符号、算力边界与共享入口；不在这里重复各讲论文正文。",
+    "notes.zh.md": "自主教学：核心问题、推导、形状与数值例子、设计取舍、易错点、自测和分层答案；必要时使用自绘 SVG。",
+    "draft.zh.md": "依据实际可获取的录像或字幕按时间整理课堂讲授、演示和问答；课堂截图只放这里；无可靠来源不创建占位稿。",
+    "materials.zh.md": "该讲课外阅读的获准中文译文或明确标注的自主中文精读；逐项标明官方指定或编者补充、阅读范围与版本。",
+    "lab.zh.md": "官方实验任务、约束、交付物和验收的中文说明；全文翻译须核实相应文本授权。",
+    "guide.zh.md": "实验分阶段思路、概念提示、调试路线和典型失败分析；不提供可直接提交的完整作业解答。",
+    "references": "来源、许可、状态信息放 frontmatter 或页底；正文直接进入学习内容。",
+    "deduplication": "一份论文只设一个正文归属讲次；其他讲次及专题使用站内章节链接；课堂已经完整覆盖的讲义不另重复翻译。",
+    "readingMetadata": "每项资料记录必读或选读、官方指定或编者补充、应读章节、先修要求、关联实验以及中文处理类型。",
+    "editorialEntries": "先修、深挖专题与综合项目保留独立标识，挂入课程学习顺序；不冒充官方讲次、录像或 Assignment 6。"
+  },
+  "translationPolicy": {
+    "authorized": "逐份核实允许翻译与公开发布的许可；允许时提供相应范围的完整中文译文，并保留作者、版本、原文链接、许可及修改说明。",
+    "unclearOrRestricted": "不默认公开可读等于可以全文翻译公开；提供详细自主中文精读、必要的有限短引与原文定位，并明确不是全文翻译。",
+    "precision": "保留符号、公式、代码接口和论文原题；术语首现中英对照；原文含义与编者纠错分开。",
+    "completeness": "区分全文译文、指定章节译文、逐段译述和中文精读；不将摘要或缺页整理标记为完整翻译。",
+    "rawStorage": "原始 PDF、HTML、字幕和来源清单存入 sources/；原始存档不使用 .md 后缀；不保存 cookies、凭据或签名媒体地址。"
+  },
+  "agentPlan": {
+    "requestedModel": "openai-codex/gpt-6-astra:xhigh",
+    "observedConfiguration": {
+      "defaultModelRole": "openai-codex/gpt-6-astra:xhigh",
+      "taskPerCallModel": "on (P1 session override only; not persisted)",
+      "taskEnableEffort": false,
+      "taskAgentModelOverrides": {},
+      "checkedAt": "2026-11-14"
+    },
+    "dispatchPreflight": "P1显式派发5个独立采集任务，完整selector均为openai-codex/gpt-6-astra:xhigh；已从实际model_change、thinking_level_change及首条assistant元数据核实模型和xhigh，无fallback。证据见model-preflight.json。会话覆盖未持久化，下次派发重新预检。",
+    "concurrency": "建议每波 4 至 6 个相互独立的任务，按来源访问情况调整；不是一次性启动全课。",
+    "ownership": "每个内容任务独占其讲次、实验和来源分片目录；主 agent 独占 catalog.json、course.json、resources.zh.md、status.json 和汇总来源清单。",
+    "workerContract": "按分配范围完成来源核实、采集和正文制作；记录源 URL、版本、许可、读取范围与缺口；不跨目录改共享文件；中途不运行构建、lint、测试或格式化。",
+    "review": "按批安排独立技术核对与来源覆盖核对，使用同一要求的模型配置；主 agent 负责整合和最终验收。",
+    "slices": [
+      {"name": "模型基础", "lectures": ["lec01", "lec02", "lec03", "lec04"], "assignments": ["a1-basics"]},
+      {"name": "硬件与训练系统", "lectures": ["lec05", "lec06", "lec07", "lec08"], "assignments": ["a2-systems"]},
+      {"name": "缩放推理与评测", "lectures": ["lec09", "lec10", "lec11", "lec12"], "assignments": ["a3-scaling"]},
+      {"name": "数据", "lectures": ["lec13", "lec14"], "assignments": ["a4-data"]},
+      {"name": "后训练与多模态", "lectures": ["lec15", "lec16", "lec17"], "assignments": ["a5-reasoning", "a5-safety-optional"]},
+      {"name": "嘉宾课", "lectures": ["lec18", "lec19"], "assignments": []}
+    ]
+  },
+  "officialLectures": [
+    {"id": "lec01", "title": "课程导论与分词", "assignment": "a1-basics"},
+    {"id": "lec02", "title": "PyTorch、einops 与资源核算", "assignment": "a1-basics"},
+    {"id": "lec03", "title": "模型架构与超参数", "assignment": "a1-basics"},
+    {"id": "lec04", "title": "Attention 替代方案与 MoE", "assignment": "a1-basics"},
+    {"id": "lec05", "title": "GPU 与 TPU", "assignment": "a2-systems"},
+    {"id": "lec06", "title": "Kernel 与 Triton", "assignment": "a2-systems"},
+    {"id": "lec07", "title": "并行训练（一）", "assignment": "a2-systems"},
+    {"id": "lec08", "title": "并行训练（二）", "assignment": "a2-systems"},
+    {"id": "lec09", "title": "Scaling Laws（一）", "assignment": "a3-scaling"},
+    {"id": "lec10", "title": "推理"},
+    {"id": "lec11", "title": "Scaling Laws（二）", "assignment": "a3-scaling"},
+    {"id": "lec12", "title": "评测"},
+    {"id": "lec13", "title": "数据来源与数据集", "assignment": "a4-data"},
+    {"id": "lec14", "title": "过滤、去重、混合与合成数据", "assignment": "a4-data"},
+    {"id": "lec15", "title": "中期训练与后训练：SFT／RLHF", "assignment": "a5-safety-optional"},
+    {"id": "lec16", "title": "可验证奖励强化学习：RLVR", "assignment": "a5-reasoning"},
+    {"id": "lec17", "title": "对齐与多模态"},
+    {"id": "lec18", "title": "Daniel Selsam 嘉宾课", "topicStatus": "官方课表未展开题目；须核对实际录像，不凭嘉宾方向猜写。"},
+    {"id": "lec19", "title": "Dan Fu 嘉宾课", "topicStatus": "官方课表未展开题目；须核对实际录像，不凭嘉宾方向猜写。"}
+  ],
+  "bridges": [
+    {"id": "bridge01", "title": "线性代数与张量形状", "before": "lec02"},
+    {"id": "bridge02", "title": "概率、信息论与语言建模", "before": "lec01"},
+    {"id": "bridge03", "title": "反向传播与自动微分", "before": "lec03"},
+    {"id": "bridge04", "title": "Python 实验工程基础", "before": "lec01"},
+    {"id": "bridge05", "title": "PyTorch 的内存语义", "before": "lec02"},
+    {"id": "bridge06", "title": "自回归模型训练闭环", "before": "lec03"},
+    {"id": "bridge07", "title": "浮点数与数值稳定性", "before": "lec02"},
+    {"id": "bridge08", "title": "资源估算与实验纪律", "before": "lec02"}
+  ],
+  "extensions": [
+    {"id": "ext01", "title": "稳定计算与梯度诊断", "relatedLectures": ["lec02", "lec03"]},
+    {"id": "ext02", "title": "优化器与训练动态", "relatedLectures": ["lec03"]},
+    {"id": "ext03", "title": "位置编码与长上下文", "relatedLectures": ["lec03", "lec04"]},
+    {"id": "ext04", "title": "Attention 的资源账本", "relatedLectures": ["lec04", "lec10"]},
+    {"id": "ext05", "title": "FlashAttention 数学推导", "relatedLectures": ["lec06"]},
+    {"id": "ext06", "title": "GPU 性能分析方法", "relatedLectures": ["lec05", "lec06"]},
+    {"id": "ext07", "title": "集合通信算法", "relatedLectures": ["lec07", "lec08"]},
+    {"id": "ext08", "title": "分片训练与恢复", "relatedLectures": ["lec08"]},
+    {"id": "ext09", "title": "MoE 的系统问题", "relatedLectures": ["lec04", "lec08"]},
+    {"id": "ext10", "title": "推理服务与 KV 内存管理", "relatedLectures": ["lec10"]},
+    {"id": "ext11", "title": "量化与参数高效微调", "relatedLectures": ["lec10", "lec15"]},
+    {"id": "ext12", "title": "Scaling Laws 的统计方法", "relatedLectures": ["lec09", "lec11"]},
+    {"id": "ext13", "title": "数据配方与污染审计", "relatedLectures": ["lec12", "lec13", "lec14"]},
+    {"id": "ext14", "title": "后训练目标统一推导", "relatedLectures": ["lec15", "lec16"]},
+    {"id": "ext15", "title": "多模态连接方式", "relatedLectures": ["lec17"]},
+    {"id": "ext16", "title": "技术报告与源码阅读方法", "relatedLectures": ["lec03", "lec08", "lec10", "lec16"]}
+  ],
+  "readingPlacements": [
+    {"title": "Attention Is All You Need", "url": "https://arxiv.org/abs/1706.03762", "home": "lec03", "alsoUsedBy": ["lec04"], "priority": "核心章节"},
+    {"title": "RoFormer", "url": "https://arxiv.org/abs/2104.09864", "home": "lec03", "alsoUsedBy": ["ext03"], "priority": "位置编码章节"},
+    {"title": "FlashAttention", "url": "https://arxiv.org/abs/2205.14135", "home": "lec06", "alsoUsedBy": ["ext05", "a2-systems"], "priority": "核心算法与 IO 分析"},
+    {"title": "FlashAttention-2", "url": "https://arxiv.org/abs/2307.08691", "home": "lec06", "alsoUsedBy": ["ext05", "a2-systems"], "priority": "并行划分与性能分析"},
+    {"title": "ZeRO", "url": "https://arxiv.org/abs/1910.02054", "home": "lec08", "alsoUsedBy": ["ext08", "a2-systems"], "priority": "核心状态分片机制"},
+    {"title": "Training Compute-Optimal Large Language Models", "url": "https://arxiv.org/abs/2203.15556", "home": "lec09", "alsoUsedBy": ["lec11", "ext12", "a3-scaling"], "priority": "方法与关键实验"},
+    {"title": "Efficient Memory Management for Large Language Model Serving with PagedAttention", "url": "https://arxiv.org/abs/2309.06180", "home": "lec10", "alsoUsedBy": ["ext10"], "priority": "机制与系统评测"},
+    {"title": "The FineWeb Datasets", "url": "https://arxiv.org/abs/2406.17557", "home": "lec14", "alsoUsedBy": ["lec13", "ext13", "a4-data"], "priority": "数据处理和消融"},
+    {"title": "DataComp-LM", "url": "https://arxiv.org/abs/2406.11794", "home": "lec14", "alsoUsedBy": ["lec12", "lec13", "ext13", "a4-data"], "priority": "实验协议和数据质量比较"},
+    {"title": "LoRA", "url": "https://arxiv.org/abs/2106.09685", "home": "ext11", "alsoUsedBy": ["lec15"], "priority": "拓展精读"},
+    {"title": "QLoRA", "url": "https://arxiv.org/abs/2305.14314", "home": "ext11", "alsoUsedBy": ["lec10", "lec15"], "priority": "拓展精读"},
+    {"title": "Direct Preference Optimization", "url": "https://arxiv.org/abs/2305.18290", "home": "lec15", "alsoUsedBy": ["ext14", "a5-safety-optional"], "priority": "目标推导与实验"},
+    {"title": "DeepSeekMath", "url": "https://arxiv.org/abs/2402.03300", "home": "lec16", "alsoUsedBy": ["ext14", "a5-reasoning"], "priority": "GRPO 相关章节"},
+    {"title": "DeepSeek-R1", "url": "https://arxiv.org/abs/2501.12948", "home": "lec16", "alsoUsedBy": ["ext14", "a5-reasoning"], "priority": "训练路线、证据与局限"},
+    {"title": "Learning Transferable Visual Models From Natural Language Supervision (CLIP)", "url": "https://arxiv.org/abs/2103.00020", "home": "lec17", "alsoUsedBy": ["ext15"], "priority": "图文对齐方法"},
+    {"title": "Visual Instruction Tuning (LLaVA)", "url": "https://arxiv.org/abs/2304.08485", "home": "lec17", "alsoUsedBy": ["ext15"], "priority": "架构、数据和训练阶段"}
+  ],
+  "readingStatus": "P1已固定16篇全文版本，核实许可、精确核心/选读节号及实际已读范围；未声称全文精读。已与固定A1–A5/讲义交叉：FlashAttention两篇官方推荐、ZeRO针对性任务必查、Chinchilla方法推荐；其余编者精读与官方方法引用分开。6篇CC BY可附条件翻译，10篇自主精读（含RoFormer NC-ND）。reading-map.json为具体归属与范围依据。",
+  "assignments": [
+    {"id": "a1-basics", "title": "从零训练 Transformer 语言模型", "url": "https://github.com/stanford-cs336/assignment1-basics", "commit": "a158843b20107949f1a8d7df1b05cd33b9166712", "handoutVersion": "Spring 2026 / 26.0.3", "scope": "BPE、Transformer、交叉熵、AdamW、训练与保存恢复、采样和困惑度；单B200参考训练，官方低资源路线另有token预算与目标，不与原规模等同"},
+    {"id": "a2-systems", "title": "系统优化与分布式训练", "url": "https://github.com/stanford-cs336/assignment2-systems", "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736", "handoutVersion": "Spring 2026 / 26.1.3", "scope": "性能分析、激活重算、Triton FlashAttention-2前向、PyTorch+compile后向、DDP、优化器状态分片、FSDP、TP/2D分析；Triton后向选做；通信实验最高6GPU，8B完整training-step排行榜用双B200"},
+    {"id": "a3-scaling", "title": "Scaling Laws 与实验设计", "url": "https://github.com/stanford-cs336/assignment3-scaling", "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35", "handoutVersion": "Spring 2026 / 26.0.5", "scope": "Part1合成IsoFLOPs数据拟合；Part2真实训练API用12 B200小时探索并预测48小时配置。校内ID/网络资格与校外自建路径分开；standalone路径有静态依赖冲突，尚未运行验证"},
+    {"id": "a4-data", "title": "预训练数据流水线", "url": "https://github.com/stanford-cs336/assignment4-data", "commit": "0555bea66369872d912652debf10b115ca0688c8", "handoutVersion": "Spring 2026 / 26.0.1", "scope": "2500个raw WET来源的英语过滤数据，语言/质量/PII过滤、去重、数据比较；固定约430M模型、8×B200和8.6B tokens。小样本路径不是原规模等效完成，不能混写旧124M/单卡要求"},
+    {"id": "a5-reasoning", "title": "推理强化学习", "url": "https://github.com/stanford-cs336/assignment5-alignment", "commit": "c2734a26308710949fe13226960a1e8cece94b7e", "handoutVersion": "Spring 2026 / 26.0.0", "scope": "OLMo-2-0425-1B base与GSM8K；zero/few-shot/CoT提示，on-policy GRPO、GRPO_constant、Dr_GRPO、RFT、MaxRL，off-policy naive/noclip/token clip/GSPO，§7自拟估计器；原规模双B200配置"},
+    {"id": "a5-safety-optional", "title": "官方选做：指令微调与安全对齐", "url": "https://github.com/stanford-cs336/assignment5-alignment", "commit": "c2734a26308710949fe13226960a1e8cece94b7e", "handoutVersion": "Spring 2026 / 26.0.0", "optional": true, "scope": "固定仓库2026补充讲义已读封面：Llama3.1 8B基线/SFT/DPO及Llama3.3 70B评委；官网spring2025旧链接404，历史2025版仅对照。Llama审批和精确课程SFT混合数据校外访问缺口保留"},
+    {"id": "capstone", "title": "自拟综合项目：可解释的小模型研究", "editorial": true, "scope": "自建小模型的预训练研究与较强开放基础模型的后训练分别成线；不假定 TinyStories 小模型具有 GSM8K 基础能力"}
+  ],
+  "productionPhases": [
+    {"id": "phase0", "title": "课程骨架与共享约定", "deliverables": ["课程元数据与目录卡片", "完整讲次、桥接、专题与实验入口", "公共资料与学习顺序", "术语及阅读归属约定", "模型配置预检", "来源清单与状态结构"], "status": "complete", "completedAt": "2026-11-14", "acceptance": "p0-acceptance.json"},
+    {"id": "phase1", "title": "并行采集与来源核查", "deliverables": ["官方课表快照", "逐讲视频 ID、作者、时长与字幕可用性", "讲义、论文和实验讲义的固定版本", "逐来源许可与章节范围", "校内权限、硬件与资料缺口清单"], "status": "complete_with_documented_gaps", "completedAt": "2026-11-14", "acceptance": "p1-acceptance.json", "gaps": "p1-gaps.json"},
+    {"id": "phase2", "title": "首批端到端样板", "deliverables": ["L01–L02 的实际可制作材料", "对应先修桥接", "A1 的来源与任务拆解", "真实页面与视频入口验收"], "note": "不以空白占位页充当完成；样板通过后复用结构，不要求用户反复确认排版。"},
+    {"id": "phase3", "title": "模型基础批", "deliverables": ["L03–L04", "A1 完整说明和指导", "关联桥接、专题与论文材料"]},
+    {"id": "phase4", "title": "硬件与训练系统批", "deliverables": ["L05–L08", "A2 完整说明和指导", "关联专题与论文材料"]},
+    {"id": "phase5", "title": "缩放推理与评测批", "deliverables": ["L09–L12", "A3 完整说明和指导", "关联专题与论文材料"]},
+    {"id": "phase6", "title": "数据批", "deliverables": ["L13–L14", "A4 完整说明和指导", "关联专题与论文材料"]},
+    {"id": "phase7", "title": "后训练与多模态批", "deliverables": ["L15–L17", "A5 必做及官方选做说明和指导", "关联专题与论文材料"]},
+    {"id": "phase8", "title": "嘉宾课与全课收尾", "deliverables": ["按实际来源制作 L18–L19", "综合项目说明与指导", "补齐剩余桥接与专题", "总学习路线及真实完成度清单"]}
+  ],
+  "acceptance": {
+    "sources": "论文与录像分别核验；每项中文材料可回溯到实际读过的原文范围、版本和许可。",
+    "technical": "核对关键公式、符号、张量形状、复杂度、单位、实验约束与结论适用条件；发现原文错误以编者注分开说明。",
+    "video": "逐讲核对页头入口、目标讲次和真实时长；字幕时间轴及缺口如实记录；抽查实际点击新标签打开且笔记页保留。",
+    "site": "批次整合后统一执行必要的 JSON、链接、图片、SVG、公式检查及 npm run build；浏览器检查实际页面和手机布局。子 agent 不各自重复构建。",
+    "completion": "区分来源已登记、已采集、已读、已写、已审和页面已验收；有缺口不标完整完成。"
+  },
+  "computePolicy": "保留官方原规模要求，另列明确标注的低资源教学实验；二者不混淆。模型套餐额度不等于 GPU 预算，不擅自购买或启动收费计算。",
+  "sourceEntrypoints": [
+    "https://cs336.stanford.edu/",
+    "https://www.youtube.com/playlist?list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV",
+    "https://github.com/stanford-cs336/lectures",
+    "https://cs336.stanford.edu/spring2025/"
+  ],
+  "currentDelivery": "P1来源核查与验收完成：18条官方视频与字幕、17讲讲义及独立L02录像版、16篇固定论文、5个完整仓库SHA和6份2026作业讲义。结构/哈希/链接、视频页头桌面手机及实际新标签点击、更新的公共资料与实验目标页面、npm run build均通过。L18录像与权限/许可等缺口保留，未宣称全文精读；讲次/实验正文仍0，P2未启动，无收费算力。",
+  "actualProgressFile": "../status.json",
+  "modelPreflightFile": "model-preflight.json",
+  "nextStage": {
+    "id": "phase2",
+    "keyword": "CS336-2026-P2-样板",
+    "promptFile": "NEXT-P2-PROMPT.txt",
+    "status": "not_started",
+    "autoStart": false
+  }
+}

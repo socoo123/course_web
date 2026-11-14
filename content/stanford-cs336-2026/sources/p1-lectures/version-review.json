@@ -1,0 +1,25 @@
+{
+  "commit": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+  "commit_date": "2026-09-12T21:34:48Z",
+  "edition_evidence": "Pinned README explicitly says Spring 2026; current official schedule links these handouts. Individual PDF covers and source topics checked separately.",
+  "classroom_equivalence": "Current revision is after term, not asserted identical to recording: final commit changes L06 L1/L2 bandwidth estimates and execution trace.",
+  "license": "No LICENSE/COPYING/NOTICE in complete recursive tree; GitHub repository license=null. No blanket translation permission established.",
+  "translation_policy": "Independent Chinese explanation and limited quotations; external figures and linked papers have separate rights.",
+  "dependencies": {
+    "requires_python": ">=3.11",
+    "declared": [
+      "edtrace>=0.1.12",
+      "einops>=0.8.2",
+      "mmh3>=5.2.1",
+      "modal>=1.4.1",
+      "tiktoken>=0.12.0"
+    ],
+    "lock": "raw/uv.lock"
+  },
+  "runtime_notes": [
+    "Pinned README refers to python execute.py but this file is absent from tree; do not copy as a verified runnable command.",
+    "modal_execute.py explicitly selects B200:4, CUDA13.2 Ubuntu24.04 Python3.11; running it launches cloud execution and requires Modal account/billing. Not run.",
+    "Reading saved trace JSON or PDFs needs no GPU; a local CPU example cannot validate GPU/Triton/distributed performance."
+  ],
+  "read_scope": "Complete pinned README, pyproject.toml and modal_execute.py; complete tree for license filenames; latest commit patch only. No course code executed."
+}

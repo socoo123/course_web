@@ -1,0 +1,1742 @@
+{
+  "course_id": "stanford-cs336-2026",
+  "updated_at": "2026-11-14",
+  "phase": "P1",
+  "linked_sources_default_status": "registered_only_unless_explicitly_recorded",
+  "source_fragments": ["p1-shared/manifest-fragment.json", "p1-lectures/manifest-fragment.json", "p1-videos/manifest-fragment.json", "p1-assignments-a1-a4/manifest-fragment.json", "p1-assignment-a5/manifest-fragment.json", "p1-papers-01-08/manifest-fragment.json", "p1-papers-09-16/manifest-fragment.json"],
+  "reading_map": "reading-map.json",
+  "path_convention": "file paths relative to sources/; material paths relative to course root",
+  "state_contract": {
+    "registered": "URL 与用途已登记，不代表已获取或已读。",
+    "acquired": "本地原始文件和内容哈希已保存。",
+    "read": "必须同时记录实际阅读范围，不由下载状态推定。",
+    "written": "中文正文已写，按译文/译述/精读区分。",
+    "reviewed": "技术或来源审查已完成，记录审查范围。",
+    "accepted": "指定页面与检查实际通过，不代表实验执行通过。"
+  },
+  "source_record_contract": {
+    "required": [
+      "id",
+      "kind",
+      "url",
+      "status",
+      "read_scope",
+      "license",
+      "file",
+      "sha256",
+      "version"
+    ],
+    "on_acquisition": [
+      "retrieved_at",
+      "file",
+      "sha256",
+      "version"
+    ],
+    "on_reading": [
+      "read_scope",
+      "read_at"
+    ],
+    "on_translation": [
+      "authors",
+      "license_evidence",
+      "chinese_treatment",
+      "material_files"
+    ],
+    "video_additions": [
+      "video_id",
+      "uploader",
+      "author_year_lecture_evidence",
+      "duration_seconds",
+      "caption_availability",
+      "caption_language",
+      "metadata_evidence"
+    ],
+    "note": "未知值保留 null 或 unverified，不能由仓库许可证推定每份外链论文或视频的许可。"
+  },
+  "sources": [
+    {
+      "id": "official-home-2026",
+      "kind": "course_website",
+      "url": "https://cs336.stanford.edu/",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Full reader text: staff, logistics, prerequisites, assignment overview, self-study compute, honor code and all 19 numbered schedule rows",
+      "read_at": "2026-11-14",
+      "license": "No explicit reuse license found in homepage text; independent Chinese navigation only",
+      "license_evidence": "Current homepage inspected for license/copyright/Creative Commons text: none found; historical metadata only.",
+      "file": "p1-shared/home-2026.html",
+      "sha256": "bd57fae299fec60afedb5a22edb325a68107fa1af0cd83641695470587f7a4a7",
+      "version": "Live dynamic root explicitly headed Stanford / Spring 2026; snapshot is not a historical release",
+      "retrieved_at": "2026-11-14T13:37:22Z",
+      "source_record": {
+        "fragment": "p1-shared/manifest-fragment.json",
+        "id": "official-home-2026"
+      },
+      "chinese_treatment": "Independent navigation; no full translation"
+    },
+    {
+      "id": "video-playlist-2026",
+      "kind": "video_playlist",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV",
+      "status": "acquired_and_read_metadata",
+      "read_scope": "Read playlist title, channel ID, description and all 18 public entry titles/IDs/durations. Each of the 18 videos was separately queried; no video media watched.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Playlist metadata does not establish the license of each individual recording. All 18 queried video license values are null.",
+      "file": "p1-videos/playlist-metadata.json",
+      "sha256": "04f85fa25da1b1aafda25cf2de4231e803adc9efabb19e1625fc3176169fefdd",
+      "version": "Stanford CS336: Language Modeling from Scratch | Spring 2026; 18 public entries observed 2026-11-14; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:37:46.362467Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "video-playlist-2026"
+      },
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg"
+    },
+    {
+      "id": "lecture-repository",
+      "kind": "code_and_handouts",
+      "url": "https://github.com/stanford-cs336/lectures",
+      "status": "commit_pinned_selected_files_acquired",
+      "read_scope": "Complete recursive tree metadata, pinned README, pyproject and modal_execute; latest commit diff; per-handout scopes separate. No lecture execution.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no license file in full tree",
+      "license_evidence": "Complete tree plus GitHub API license=null; no blanket handout/figure permission",
+      "file": "p1-lectures/tree.json",
+      "sha256": "736248b03b5b31bd07e17aa75d692267b2ec472521104b8c0c290fb40fc4493a",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+      "retrieved_at": "2026-11-14T13:37:48.287663+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lecture-repository"
+      },
+      "commit_sha": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e"
+    },
+    {
+      "id": "historical-home-2025",
+      "kind": "historical_comparison",
+      "url": "https://cs336.stanford.edu/spring2025/",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "HTML lines 1–60: title, canonical, archive description, structured course name only; historical assignments and recordings not adopted",
+      "read_at": "2026-11-14",
+      "license": "unverified; no translation planned",
+      "license_evidence": "Current homepage inspected for license/copyright/Creative Commons text: none found; historical metadata only.",
+      "file": "p1-shared/home-2025.html",
+      "sha256": "2754583fe0977dfb746c0ae40fc19afd82437641d52919e3693d94fcaace9004",
+      "version": "Archived Spring 2025 homepage, separate URL and metadata",
+      "retrieved_at": "2026-11-14T13:37:22Z",
+      "source_record": {
+        "fragment": "p1-shared/manifest-fragment.json",
+        "id": "historical-home-2025"
+      },
+      "chinese_treatment": "Independent navigation; no full translation"
+    },
+    {
+      "id": "lec01-handout",
+      "kind": "classroom_handout",
+      "url": "https://cs336.stanford.edu/lectures/?trace=lecture_01",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Trace embedded source lines 1–90: edition, introduction and outline only; not full handout read.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/var/traces/lecture_01.json",
+      "sha256": "6f3fdd61e5f87be9284e3c04bef9173ac2ea0b300ed06e83109a787999c47104",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:41:12.774330+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec01-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var/traces/lecture_01.json",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec01"
+    },
+    {
+      "id": "lec02-handout",
+      "kind": "classroom_handout",
+      "url": "https://cs336.stanford.edu/lectures/?trace=lecture_02",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Current Python lines 1–88: announcements, outline and accounting examples; recording variant separately recorded.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/var/traces/lecture_02.json",
+      "sha256": "dea0edc07279ec3469c8d9f2e48165d5c0eca362c82b3243b5c33bc829505486",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:41:14.828098+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec02-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var/traces/lecture_02.json",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec02"
+    },
+    {
+      "id": "lec03-handout",
+      "kind": "classroom_handout",
+      "url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_03.pdf",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Extracted PDF text lines 1–93: title, course identity, goals and architecture outline only.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/lecture_03.pdf",
+      "sha256": "20a953541b41a099bc69b8d809139a4ccdb2aefedaa13e50c766245fe4b5167e",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:44:05.993093+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec03-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_03.pdf",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec03"
+    },
+    {
+      "id": "lec04-handout",
+      "kind": "classroom_handout",
+      "url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_04.pdf",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Extracted PDF text lines 1–83: title, attention alternatives, linear/recurrent attention and Mamba-2 reading suggestion only.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/lecture_04.pdf",
+      "sha256": "922da01cee70ed9dc9eef13d8116f1d6f45d663c12e632b3e80954c783bd3ce5",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:44:08.194833+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec04-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_04.pdf",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec04"
+    },
+    {
+      "id": "lec05-handout",
+      "kind": "classroom_handout",
+      "url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_05.pdf",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Extracted PDF text lines 1–83: title, goals, attribution and hardware outline only.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/lecture_05.pdf",
+      "sha256": "a2d5664a3b5a1f246df2fe58b43189215f29931ec05bde4d8a6af4664f55cafe",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:44:49.614488+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec05-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_05.pdf",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec05"
+    },
+    {
+      "id": "lec06-handout",
+      "kind": "classroom_handout",
+      "url": "https://cs336.stanford.edu/lectures/?trace=lecture_06",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Python lines 1–88: outline, hardware table, programming model; latest commit patch changes bandwidth estimates.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/var/traces/lecture_06.json",
+      "sha256": "13fe17130634f625c838a3715b3f201d59a1d29540babd661450a61d63ded48f",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:41:24.038650+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec06-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var/traces/lecture_06.json",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec06"
+    },
+    {
+      "id": "lec07-handout",
+      "kind": "classroom_handout",
+      "url": "https://cs336.stanford.edu/lectures/?trace=lecture_07",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Python lines 1–88: lecture identity, outline and communication primitives.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/var/traces/lecture_07.json",
+      "sha256": "5e17a63a09248fc194d5f63680681dc855cf956eac5c2b25215f69429f336968",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:41:25.904458+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec07-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var/traces/lecture_07.json",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec07"
+    },
+    {
+      "id": "lec08-handout",
+      "kind": "classroom_handout",
+      "url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_08.pdf",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Extracted PDF lines 1–103 plus keyword-located ZeRO context around lines 117–282; not complete slides.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/lecture_08.pdf",
+      "sha256": "4c4d7674b333693f20f328935d84dd8a073362c9725c5e05302b6650751ad4d1",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:42:12.295884+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec08-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_08.pdf",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec08"
+    },
+    {
+      "id": "lec09-handout",
+      "kind": "classroom_handout",
+      "url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_09.pdf",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Extracted PDF lines 1–103 plus keyword-located Chinchilla context around lines 448–505; not complete slides.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/lecture_09.pdf",
+      "sha256": "92a5d9e26e65bb0a9d8c79b12ed7ea26d14530bf960dcf44f9ed5fd372f519fa",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:42:28.588533+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec09-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_09.pdf",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec09"
+    },
+    {
+      "id": "lec10-handout",
+      "kind": "classroom_handout",
+      "url": "https://cs336.stanford.edu/lectures/?trace=lecture_10",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Python lines 1–88: inference outline, scope, packages; not full handout.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/var/traces/lecture_10.json",
+      "sha256": "b9229447c3042f34bd6e307c2f2c34ba294d10708f208e8d1237be080d683cb6",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:41:36.629380+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec10-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var/traces/lecture_10.json",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec10"
+    },
+    {
+      "id": "lec11-handout",
+      "kind": "classroom_handout",
+      "url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_11.pdf",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Extracted PDF lines 1–103 plus keyword-located Chinchilla references; not complete slides.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/lecture_11.pdf",
+      "sha256": "b2148e683b4020f3fa95f5c95f37be55ebf6b2f57382f4c148517e84bf1df890",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:42:11.249942+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec11-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_11.pdf",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec11"
+    },
+    {
+      "id": "lec12-handout",
+      "kind": "classroom_handout",
+      "url": "https://cs336.stanford.edu/lectures/?trace=lecture_12",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Python lines 1–78: evaluation outline and perplexity introduction.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/var/traces/lecture_12.json",
+      "sha256": "1f71bd19541b5902c35cc4ead4442ec6e25445e442ac746029558ad55259b35f",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:41:38.534502+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec12-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var/traces/lecture_12.json",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec12"
+    },
+    {
+      "id": "lec13-handout",
+      "kind": "classroom_handout",
+      "url": "https://cs336.stanford.edu/lectures/?trace=lecture_13",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Python lines 1–88 plus FineWeb/DataComp references around lines 513–566.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/var/traces/lecture_13.json",
+      "sha256": "8b756902b42c9d775292840ad04eb008df815f86c438bba1795beb3830cec373",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:41:40.375114+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec13-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var/traces/lecture_13.json",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec13"
+    },
+    {
+      "id": "lec14-handout",
+      "kind": "classroom_handout",
+      "url": "https://cs336.stanford.edu/lectures/?trace=lecture_14",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Python lines 1–88: pipeline outline and filtering; not full handout.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/var/traces/lecture_14.json",
+      "sha256": "08f5e49a794a94e20423eb4edf7908f3b0b8969c3d0c31fa7d3c6b176aa0bddb",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:41:42.433896+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec14-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var/traces/lecture_14.json",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec14"
+    },
+    {
+      "id": "lec15-handout",
+      "kind": "classroom_handout",
+      "url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_15.pdf",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Extracted PDF lines 1–93: post-training outline, SFT data examples only.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/lecture_15.pdf",
+      "sha256": "42a4bc02408a96e0b414f789f32780ae1d8461000f872d93aa38c94fe369e862",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:44:52.818523+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec15-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_15.pdf",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec15"
+    },
+    {
+      "id": "lec16-handout",
+      "kind": "classroom_handout",
+      "url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_16.pdf",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Extracted PDF lines 1–93: RLVR outline and PPO overview only.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/lecture_16.pdf",
+      "sha256": "1a2bea825499f226b1c3fe990606253ad1b4fdbdf2ae90b4d12d7d0c07f2c8b3",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:45:41.543885+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec16-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_16.pdf",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec16"
+    },
+    {
+      "id": "lec17-handout",
+      "kind": "classroom_handout",
+      "url": "https://cs336.stanford.edu/lectures/?trace=lecture_17",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Python lines 1–83 plus CLIP/LLaVA link context around lines 124–139; not complete handout.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "file": "p1-lectures/raw/var/traces/lecture_17.json",
+      "sha256": "4eb3419ca93a62d70d88c06a89e0e12b2b48984e1020f1e1020ec65f199887d2",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:41:44.581585+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec17-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var/traces/lecture_17.json",
+      "chinese_treatment": "自主中文讲解与必要有限短引，不宣称获准全文翻译",
+      "lecture": "lec17"
+    },
+    {
+      "id": "lec02-recording-handout",
+      "kind": "classroom_handout",
+      "url": "https://cs336.stanford.edu/lectures/?trace=lecture_02_recording",
+      "status": "acquired_read_scope_limited",
+      "read_scope": "Embedded files[lecture_02.py] lines 1–70; edition/outline compared with current variant. Trace event stream not fully read.",
+      "read_at": "2026-11-14",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json and version-review.json",
+      "file": "p1-lectures/raw/var/traces/lecture_02_recording.json",
+      "sha256": "90a7c53791b2317d945a4126520f518131131ae11e2f9019c863f5ec9d26504e",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; separate recording trace, embedded lecture_02.py",
+      "retrieved_at": "2026-11-14T13:41:18.131526+00:00",
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec02-recording-handout"
+      },
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var/traces/lecture_02_recording.json",
+      "chinese_treatment": "Independent explanation; recording-specific narration requires reading complete captions and recording trace in P2.",
+      "lecture": "lec02"
+    },
+    {
+      "id": "a1-basics",
+      "kind": "assignment_repository",
+      "url": "https://github.com/stanford-cs336/assignment1-basics",
+      "status": "downloaded_and_read",
+      "read_scope": "Complete blob-path and size inventory read; tree truncated=false. Not every repository file downloaded.",
+      "read_at": "2026-11-14T13:43:29Z",
+      "license": "GitHub repository metadata; no independent license asserted",
+      "license_evidence": "GitHub API inventory of the pinned repository. Each listed content file retains its own license; repository LICENSE retained separately.",
+      "file": "p1-assignments-a1-a4/a1/tree.json",
+      "sha256": "76cb4ac9bdb906a73008dcdfd561872e159a98f9c321505af6fa36042d9694df",
+      "version": {
+        "repository": "stanford-cs336/assignment1-basics",
+        "commit": "a158843b20107949f1a8d7df1b05cd33b9166712",
+        "handout": "26.0.3",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:37:57Z",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a1-tree-json"
+      },
+      "commit_sha": "a158843b20107949f1a8d7df1b05cd33b9166712",
+      "related_lab": "a1-basics",
+      "handout_source": "p1-a1-handout"
+    },
+    {
+      "id": "a2-systems",
+      "kind": "assignment_repository",
+      "url": "https://github.com/stanford-cs336/assignment2-systems",
+      "status": "downloaded_and_read",
+      "read_scope": "Complete blob-path and size inventory read; tree truncated=false. Not every repository file downloaded.",
+      "read_at": "2026-11-14T13:43:29Z",
+      "license": "GitHub repository metadata; no independent license asserted",
+      "license_evidence": "GitHub API inventory of the pinned repository. Each listed content file retains its own license; repository LICENSE retained separately.",
+      "file": "p1-assignments-a1-a4/a2/tree.json",
+      "sha256": "d4edaf42b901fad8870ab1addbc11ac712562147a5f125dca6bf3f0979f87c67",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:37:59Z",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a2-tree-json"
+      },
+      "commit_sha": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "related_lab": "a2-systems",
+      "handout_source": "p1-a2-handout"
+    },
+    {
+      "id": "a3-scaling",
+      "kind": "assignment_repository",
+      "url": "https://github.com/stanford-cs336/assignment3-scaling",
+      "status": "downloaded_and_read",
+      "read_scope": "Complete blob-path and size inventory read; tree truncated=false. Not every repository file downloaded.",
+      "read_at": "2026-11-14T13:43:29Z",
+      "license": "GitHub repository metadata; no independent license asserted",
+      "license_evidence": "GitHub API inventory of the pinned repository. Each listed content file retains its own license; repository LICENSE retained separately.",
+      "file": "p1-assignments-a1-a4/a3/tree.json",
+      "sha256": "533d27aa718739a7a35858390cf89c1d7eede8a1d0c2485a1c42c32ac8fdaf97",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:37:59Z",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-tree-json"
+      },
+      "commit_sha": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+      "related_lab": "a3-scaling",
+      "handout_source": "p1-a3-handout"
+    },
+    {
+      "id": "a4-data",
+      "kind": "assignment_repository",
+      "url": "https://github.com/stanford-cs336/assignment4-data",
+      "status": "downloaded_and_read",
+      "read_scope": "Complete blob-path and size inventory read; tree truncated=false. Not every repository file downloaded.",
+      "read_at": "2026-11-14T13:43:29Z",
+      "license": "GitHub repository metadata; no independent license asserted",
+      "license_evidence": "GitHub API inventory of the pinned repository. Each listed content file retains its own license; repository LICENSE retained separately.",
+      "file": "p1-assignments-a1-a4/a4/tree.json",
+      "sha256": "a47312bd0e6651c6bd8f2c9ff9337ac5005c264534e61ed8b00fb846d5863ab5",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:38:01Z",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-tree-json"
+      },
+      "commit_sha": "0555bea66369872d912652debf10b115ca0688c8",
+      "related_lab": "a4-data",
+      "handout_source": "p1-a4-handout"
+    },
+    {
+      "id": "a5-reasoning",
+      "kind": "assignment_repository",
+      "url": "https://github.com/stanford-cs336/assignment5-alignment",
+      "status": "downloaded_scoped_read",
+      "read_scope": "读取固定提交SHA、提交日期及tree；未clone全仓库或运行作业。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/repository-commit.json",
+      "sha256": "a33d579b7ab53ac529d0e4b573b8c4fc32a8ce442e364a59302f5b52ded3248b",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:15Z",
+      "source_record": {
+        "fragment": "p1-assignment-a5/manifest-fragment.json",
+        "id": "a5-reasoning"
+      },
+      "commit_sha": "c2734a26308710949fe13226960a1e8cece94b7e"
+    },
+    {
+      "id": "a5-safety-optional",
+      "kind": "assignment_handout",
+      "url": "https://github.com/stanford-cs336/assignment5-alignment/blob/main/cs336_spring2025_assignment5_supplement_safety_rlhf.pdf",
+      "status": "broken_official_link_current_path_absent",
+      "read_scope": "官网链接文字与目标路径已核查；该路径在固定main不存在，不能声称从官网链接成功下载PDF。历史版本另行归档。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": null,
+      "sha256": null,
+      "version": {
+        "checked_main_commit": "c2734a26308710949fe13226960a1e8cece94b7e"
+      },
+      "retrieved_at": null,
+      "source_record": {
+        "fragment": "p1-assignment-a5/manifest-fragment.json",
+        "id": "a5-safety-optional"
+      }
+    },
+    {
+      "id": "paper01",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/1706.03762v7",
+      "status": "read",
+      "read_scope": "题名、作者、v7标识及首页图表授权；§§1–5正文、§6.1–6.2正文和表2–3的提取文本；浏览余下节标题。PDF物理页1–9的这些内容已做P1范围核查，不等于逐图逐式或全文精读。",
+      "read_at": "2026-11-14T13:47:55.076422Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "license_evidence": {
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "metadataFile": "p1-papers-01-08/paper01-1706.03762v7-abs.html",
+        "metadataSelector": "div.abs-license a[title=\"Rights to this article\"]",
+        "termsFile": "p1-papers-01-08/license-arxiv-nonexclusive-1.0.html",
+        "inspectedTermsExcerptFile": "p1-papers-01-08/license-reading-evidence.txt",
+        "legalCodeUrl": null,
+        "legalCodeCapture": "not_applicable",
+        "translationPermission": "public_translation_grant_not_established",
+        "readAt": "2026-11-14T13:47:55.076422Z",
+        "notes": "v7首页只额外允许适当署名的图表用于新闻或学术作品，不授权整篇翻译。"
+      },
+      "file": "p1-papers-01-08/paper01-1706.03762v7.pdf",
+      "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+      "version": "arXiv:1706.03762v7",
+      "retrieved_at": "2026-11-14T13:39:28.160324Z",
+      "source_record": {
+        "fragment": "p1-papers-01-08/manifest-fragment.json",
+        "id": "p1-paper01-fulltext"
+      },
+      "chinese_treatment": "independent_close_reading",
+      "reading_record": "paper01"
+    },
+    {
+      "id": "paper02",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2104.09864v5",
+      "status": "read",
+      "read_scope": "题名、作者、v5标识；§§2.1–2.3、3.1–3.3及§3.4.2的正文/公式提取文本；§4.2与§4.5（含4.5.5限制）正文与相关表格；扫描全部节标题。",
+      "read_at": "2026-11-14T13:47:55.076422Z",
+      "license": "CC-BY-NC-ND-4.0",
+      "license_evidence": {
+        "url": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+        "metadataFile": "p1-papers-01-08/paper02-2104.09864v5-abs.html",
+        "metadataSelector": "div.abs-license a[title=\"Rights to this article\"]",
+        "termsFile": "p1-papers-01-08/license-cc-by-nc-nd-4.0.html",
+        "inspectedTermsExcerptFile": "p1-papers-01-08/license-reading-evidence.txt",
+        "legalCodeUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.en",
+        "legalCodeCapture": "official_page_read_online; direct_full_download_HTTP_403; labelled_excerpt_preserved",
+        "translationPermission": "sharing_translated_adaptation_not_permitted_by_CC_BY_NC_ND_4.0",
+        "readAt": "2026-11-14T13:47:55.076422Z",
+        "notes": "本固定版是CC BY-NC-ND 4.0，NoDerivatives禁止共享翻译改编；不能因为论文公开即可整篇翻译。"
+      },
+      "file": "p1-papers-01-08/paper02-2104.09864v5.pdf",
+      "sha256": "e9a481fbe1c8a20b7b1fa566b13102a1896c7829fa9a8b4c80528452a5ddaf79",
+      "version": "arXiv:2104.09864v5",
+      "retrieved_at": "2026-11-14T13:39:48.186086Z",
+      "source_record": {
+        "fragment": "p1-papers-01-08/manifest-fragment.json",
+        "id": "p1-paper02-fulltext"
+      },
+      "chinese_treatment": "independent_close_reading",
+      "reading_record": "paper02"
+    },
+    {
+      "id": "paper03",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2205.14135v2",
+      "status": "read",
+      "read_scope": "题名/作者/v2；§§2–3.2的算法和IO分析正文、Algorithm 1、Theorems 1–2/Proposition 3；§4.3和§5正文；B.3–B.4和Algorithms 2–4提取文本；扫描完整主文/附录标题。",
+      "read_at": "2026-11-14T13:47:55.076422Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "license_evidence": {
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "metadataFile": "p1-papers-01-08/paper03-2205.14135v2-abs.html",
+        "metadataSelector": "div.abs-license a[title=\"Rights to this article\"]",
+        "termsFile": "p1-papers-01-08/license-arxiv-nonexclusive-1.0.html",
+        "inspectedTermsExcerptFile": "p1-papers-01-08/license-reading-evidence.txt",
+        "legalCodeUrl": null,
+        "legalCodeCapture": "not_applicable",
+        "translationPermission": "public_translation_grant_not_established",
+        "readAt": "2026-11-14T13:47:55.076422Z",
+        "notes": "许可逐份从本固定版arXiv页面核实，不由其他论文或代码仓库许可推断。"
+      },
+      "file": "p1-papers-01-08/paper03-2205.14135v2.pdf",
+      "sha256": "ca7f9fda10b90fc05dd291a3accc85e9c1a4a860b99b31928dab03ed3fcb14e4",
+      "version": "arXiv:2205.14135v2",
+      "retrieved_at": "2026-11-14T13:40:46.479936Z",
+      "source_record": {
+        "fragment": "p1-papers-01-08/manifest-fragment.json",
+        "id": "p1-paper03-fulltext"
+      },
+      "chinese_treatment": "independent_close_reading",
+      "reading_record": "paper03"
+    },
+    {
+      "id": "paper04",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "status": "read",
+      "read_scope": "题名/作者/v1；§2.1，§§3.1–3.3正文及Algorithms 1–2；§4引导、§4.1 benchmark设置和FLOPs口径、§4.2正文；扫描§1–5标题。图4–7未逐数据点审读，§5仅开头。",
+      "read_at": "2026-11-14T13:47:55.076422Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "license_evidence": {
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "metadataFile": "p1-papers-01-08/paper04-2307.08691v1-abs.html",
+        "metadataSelector": "div.abs-license a[title=\"Rights to this article\"]",
+        "termsFile": "p1-papers-01-08/license-arxiv-nonexclusive-1.0.html",
+        "inspectedTermsExcerptFile": "p1-papers-01-08/license-reading-evidence.txt",
+        "legalCodeUrl": null,
+        "legalCodeCapture": "not_applicable",
+        "translationPermission": "public_translation_grant_not_established",
+        "readAt": "2026-11-14T13:47:55.076422Z",
+        "notes": "许可逐份从本固定版arXiv页面核实，不由其他论文或代码仓库许可推断。"
+      },
+      "file": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T13:40:55.676290Z",
+      "source_record": {
+        "fragment": "p1-papers-01-08/manifest-fragment.json",
+        "id": "p1-paper04-fulltext"
+      },
+      "chinese_treatment": "independent_close_reading",
+      "reading_record": "paper04"
+    },
+    {
+      "id": "paper05",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/1910.02054v3",
+      "status": "read",
+      "read_scope": "题名/作者/v3；§3、§4导言与4.1、§5全部、§7全部正文和内存/通信式；§10导言、10.1–10.2、10.5的实验方法与正文；扫描所有主文节标题。",
+      "read_at": "2026-11-14T13:47:55.076422Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "license_evidence": {
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "metadataFile": "p1-papers-01-08/paper05-1910.02054v3-abs.html",
+        "metadataSelector": "div.abs-license a[title=\"Rights to this article\"]",
+        "termsFile": "p1-papers-01-08/license-arxiv-nonexclusive-1.0.html",
+        "inspectedTermsExcerptFile": "p1-papers-01-08/license-reading-evidence.txt",
+        "legalCodeUrl": null,
+        "legalCodeCapture": "not_applicable",
+        "translationPermission": "public_translation_grant_not_established",
+        "readAt": "2026-11-14T13:47:55.076422Z",
+        "notes": "许可逐份从本固定版arXiv页面核实，不由其他论文或代码仓库许可推断。"
+      },
+      "file": "p1-papers-01-08/paper05-1910.02054v3.pdf",
+      "sha256": "c531734c7d9ee647fda9b4f0e1a6abd6d58ad34e862bc945451b09032be3167e",
+      "version": "arXiv:1910.02054v3",
+      "retrieved_at": "2026-11-14T13:41:08.713404Z",
+      "source_record": {
+        "fragment": "p1-papers-01-08/manifest-fragment.json",
+        "id": "p1-paper05-fulltext"
+      },
+      "chinese_treatment": "independent_close_reading",
+      "reading_record": "paper05"
+    },
+    {
+      "id": "paper06",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2203.15556v1",
+      "status": "read",
+      "read_scope": "题名/22名作者/v1；§3导言与3.1–3.4的三种方法/拟合及外推限制正文，§4/4.1，§4.2导言、4.2.1的主要结论与泄漏警告、4.2.2正文；§5与附录B/F正文；扫描主文及A–J附录标题。",
+      "read_at": "2026-11-14T13:47:55.076422Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "license_evidence": {
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "metadataFile": "p1-papers-01-08/paper06-2203.15556v1-abs.html",
+        "metadataSelector": "div.abs-license a[title=\"Rights to this article\"]",
+        "termsFile": "p1-papers-01-08/license-arxiv-nonexclusive-1.0.html",
+        "inspectedTermsExcerptFile": "p1-papers-01-08/license-reading-evidence.txt",
+        "legalCodeUrl": null,
+        "legalCodeCapture": "not_applicable",
+        "translationPermission": "public_translation_grant_not_established",
+        "readAt": "2026-11-14T13:47:55.076422Z",
+        "notes": "许可逐份从本固定版arXiv页面核实，不由其他论文或代码仓库许可推断。"
+      },
+      "file": "p1-papers-01-08/paper06-2203.15556v1.pdf",
+      "sha256": "3fd3632a8ef48171bd25282990221d49535d75356192f068b3b2ebe08f2aedd4",
+      "version": "arXiv:2203.15556v1",
+      "retrieved_at": "2026-11-14T13:42:34.658578Z",
+      "source_record": {
+        "fragment": "p1-papers-01-08/manifest-fragment.json",
+        "id": "p1-paper06-fulltext"
+      },
+      "chinese_treatment": "independent_close_reading",
+      "reading_record": "paper06"
+    },
+    {
+      "id": "paper07",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2309.06180v1",
+      "status": "read",
+      "read_scope": "题名/作者；按raw-order提取正文核查§3、§§4.1–4.6、§§6.1–6.3及§§7.1–7.2的机制、工作负载和指标；扫描§2–10标题。双栏layout/default提取曾交错，改用pdftotext -raw；图只读提取到的标题/说明，未逐图视觉审读。",
+      "read_at": "2026-11-14T13:47:55.076422Z",
+      "license": "CC-BY-4.0",
+      "license_evidence": {
+        "url": "http://creativecommons.org/licenses/by/4.0/",
+        "metadataFile": "p1-papers-01-08/paper07-2309.06180v1-abs.html",
+        "metadataSelector": "div.abs-license a[title=\"Rights to this article\"]",
+        "termsFile": "p1-papers-01-08/license-cc-by-4.0.html",
+        "inspectedTermsExcerptFile": "p1-papers-01-08/license-reading-evidence.txt",
+        "legalCodeUrl": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+        "legalCodeCapture": "official_page_read_online; direct_full_download_HTTP_403; labelled_excerpt_preserved",
+        "translationPermission": "permitted_under_CC_BY_4.0_with_attribution_license_link_change_notice_and_third_party_limits",
+        "readAt": "2026-11-14T13:47:55.076422Z",
+        "notes": "许可逐份从本固定版arXiv页面核实，不由其他论文或代码仓库许可推断。"
+      },
+      "file": "p1-papers-01-08/paper07-2309.06180v1.pdf",
+      "sha256": "55b3b324d779a67c59dac2519445e3b07c14e6ff5c656fadb47a3d7b5997469e",
+      "version": "arXiv:2309.06180v1",
+      "retrieved_at": "2026-11-14T13:43:00.720333Z",
+      "source_record": {
+        "fragment": "p1-papers-01-08/manifest-fragment.json",
+        "id": "p1-paper07-fulltext"
+      },
+      "chinese_treatment": "authorized_translation",
+      "reading_record": "paper07"
+    },
+    {
+      "id": "paper08",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2406.17557v2",
+      "status": "read",
+      "read_scope": "题名/作者/v2；§3.1–3.7的主要正文（跳过图曲线逐点复核）、§4主节与4.1–4.2、§5正文；附录B、D.1–D.3表格、E.1正文；扫描主文及A–G附录标题。",
+      "read_at": "2026-11-14T13:47:55.076422Z",
+      "license": "CC-BY-4.0",
+      "license_evidence": {
+        "url": "http://creativecommons.org/licenses/by/4.0/",
+        "metadataFile": "p1-papers-01-08/paper08-2406.17557v2-abs.html",
+        "metadataSelector": "div.abs-license a[title=\"Rights to this article\"]",
+        "termsFile": "p1-papers-01-08/license-cc-by-4.0.html",
+        "inspectedTermsExcerptFile": "p1-papers-01-08/license-reading-evidence.txt",
+        "legalCodeUrl": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+        "legalCodeCapture": "official_page_read_online; direct_full_download_HTTP_403; labelled_excerpt_preserved",
+        "translationPermission": "permitted_under_CC_BY_4.0_with_attribution_license_link_change_notice_and_third_party_limits",
+        "readAt": "2026-11-14T13:47:55.076422Z",
+        "notes": "论文arXiv许可为CC BY 4.0；附录B明确数据集另为ODC-By v1.0并受CommonCrawl Terms约束，不能混写。"
+      },
+      "file": "p1-papers-01-08/paper08-2406.17557v2.pdf",
+      "sha256": "ae632bd6618d2566e708962670f27ab1fbc5ba9bc8de3acaceee8fbda85fbdd4",
+      "version": "arXiv:2406.17557v2",
+      "retrieved_at": "2026-11-14T13:43:44.626966Z",
+      "source_record": {
+        "fragment": "p1-papers-01-08/manifest-fragment.json",
+        "id": "p1-paper08-fulltext"
+      },
+      "chinese_treatment": "authorized_translation",
+      "reading_record": "paper08"
+    },
+    {
+      "id": "paper09",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2406.11794v4",
+      "status": "downloaded_selectively_read",
+      "read_scope": "题名、59名作者元数据、v4标记；正文§3–6、附录目录及C.1–C.3实际读取。仅按章节标题扫描其余全文结构。 实际PDF页：1, 4–11, 33–34, 38–39。§1–2未完整精读；参考文献及除C以外的大多数附录正文未完整读取。所有章节均未完成P2级逐式、逐表、逐引文精读。",
+      "read_at": "2026-11-14T13:48:38.816031Z",
+      "license": "CC-BY-4.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper09-2406.11794v4-metadata.html",
+        "url": "https://arxiv.org/abs/2406.11794v4",
+        "link_observed": "http://creativecommons.org/licenses/by/4.0/",
+        "terms_file": "p1-papers-09-16/license-cc-by-4.0.txt",
+        "interpretation": "固定版本arXiv元数据页view license指向CC BY 4.0；legalcode §1(a)将翻译列入Adapted Material，§2(a)(1)(B)允许制作/传播改编，§3要求署名、许可链接及改动说明。仅覆盖许可人有权许可的内容；第三方图片/数据/权重另核查。"
+      },
+      "file": "p1-papers-09-16/paper09-2406.11794v4.pdf",
+      "sha256": "af8fc884ccd601f8c6fbbba8f8e381de652fce1233949c0c64f64b4ab4b0f5b2",
+      "version": "arXiv:2406.11794v4",
+      "retrieved_at": "2026-11-14T13:39:11.874417Z",
+      "source_record": {
+        "fragment": "p1-papers-09-16/manifest-fragment.json",
+        "id": "p1-paper09-fulltext-v4"
+      },
+      "reading_record": "paper09",
+      "chinese_treatment": "authorized_translation_with_attribution_and_change_notice"
+    },
+    {
+      "id": "paper10",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2106.09685v2",
+      "status": "downloaded_selectively_read",
+      "read_scope": "题名、作者、v2；§1–4、§5引入/5.1开头/5.5、§7.1–7.3和§8开头实际读取；其他章节标题扫描。 实际PDF页：1–5, 8, 10–12。§5.1后半至§5.4、相关工作、附录与§8跨页结尾未完整精读；未验证全部实验或子空间结论。",
+      "read_at": "2026-11-14T13:48:38.816031Z",
+      "license": "arXiv-nonexclusive-distrib-1.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper10-2106.09685v2-metadata.html",
+        "url": "https://arxiv.org/abs/2106.09685v2",
+        "link_observed": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "terms_file": "p1-papers-09-16/license-arxiv-nonexclusive-1.0.html",
+        "interpretation": "固定版本arXiv元数据页view license指向arXiv non-exclusive 1.0；该许可仅向arXiv授予永久非独占分发权，未授予公众翻译或改编权。因此中文处理限定自主精读，不复制完整中文翻译，不以代码/模型许可证替代文章授权。"
+      },
+      "file": "p1-papers-09-16/paper10-2106.09685v2.pdf",
+      "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+      "version": "arXiv:2106.09685v2",
+      "retrieved_at": "2026-11-14T13:39:00.049272Z",
+      "source_record": {
+        "fragment": "p1-papers-09-16/manifest-fragment.json",
+        "id": "p1-paper10-fulltext-v2"
+      },
+      "reading_record": "paper10",
+      "chinese_treatment": "independent_close_reading_no_full_translation_permission"
+    },
+    {
+      "id": "paper11",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2305.14314v1",
+      "status": "downloaded_selectively_read",
+      "read_scope": "题名/作者/v1；§2–4、§8、§9及附录G文字/图6说明实际读取，全文标题结构扫描。 实际PDF页：1, 3–7, 15–16, 26。§5–7主体、定性示例和附录A–F未完整精读；未进行显存或吞吐实测。",
+      "read_at": "2026-11-14T13:48:38.816031Z",
+      "license": "CC-BY-4.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper11-2305.14314v1-metadata.html",
+        "url": "https://arxiv.org/abs/2305.14314v1",
+        "link_observed": "http://creativecommons.org/licenses/by/4.0/",
+        "terms_file": "p1-papers-09-16/license-cc-by-4.0.txt",
+        "interpretation": "固定版本arXiv元数据页view license指向CC BY 4.0；legalcode §1(a)将翻译列入Adapted Material，§2(a)(1)(B)允许制作/传播改编，§3要求署名、许可链接及改动说明。仅覆盖许可人有权许可的内容；第三方图片/数据/权重另核查。"
+      },
+      "file": "p1-papers-09-16/paper11-2305.14314v1.pdf",
+      "sha256": "33a4e757c19d6ea8d3cca8958fce8fe405e290272e135c99ee66065c775d5bd1",
+      "version": "arXiv:2305.14314v1",
+      "retrieved_at": "2026-11-14T13:38:54.429146Z",
+      "source_record": {
+        "fragment": "p1-papers-09-16/manifest-fragment.json",
+        "id": "p1-paper11-fulltext-v1"
+      },
+      "reading_record": "paper11",
+      "chinese_treatment": "authorized_translation_with_attribution_and_change_notice"
+    },
+    {
+      "id": "paper12",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2305.18290v3",
+      "status": "downloaded_selectively_read",
+      "read_scope": "题名/作者/v3；§3–7及B实际读取。第19页另经PDF图像查看，代码实际在第20页且已读取，未把第19页空白当作提取失败。 实际PDF页：1, 3–10, 19, 20（仅B，至C标题前）。§1–2未完整精读；附录A证明、C/D完整实验细节和样例未逐项复核；未运行代码。",
+      "read_at": "2026-11-14T13:48:38.816031Z",
+      "license": "CC-BY-4.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper12-2305.18290v3-metadata.html",
+        "url": "https://arxiv.org/abs/2305.18290v3",
+        "link_observed": "http://creativecommons.org/licenses/by/4.0/",
+        "terms_file": "p1-papers-09-16/license-cc-by-4.0.txt",
+        "interpretation": "固定版本arXiv元数据页view license指向CC BY 4.0；legalcode §1(a)将翻译列入Adapted Material，§2(a)(1)(B)允许制作/传播改编，§3要求署名、许可链接及改动说明。仅覆盖许可人有权许可的内容；第三方图片/数据/权重另核查。"
+      },
+      "file": "p1-papers-09-16/paper12-2305.18290v3.pdf",
+      "sha256": "92cb3a2b71362acda98a789b03d88688fd33cf5fcf13f81d2b1de30ee7d3b67a",
+      "version": "arXiv:2305.18290v3",
+      "retrieved_at": "2026-11-14T13:39:02.397167Z",
+      "source_record": {
+        "fragment": "p1-papers-09-16/manifest-fragment.json",
+        "id": "p1-paper12-fulltext-v3"
+      },
+      "reading_record": "paper12",
+      "chinese_treatment": "authorized_translation_with_attribution_and_change_notice"
+    },
+    {
+      "id": "paper13",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2402.03300v3",
+      "status": "downloaded_selectively_read",
+      "read_scope": "题名/作者/v3；§4.1–4.2、表5、§6、附录A.1.4–A.1.6实际读取；全文标题扫描。 实际PDF页：1, 11–15, 22, 29–30。预训练/SFT主体§2–3及§5.2主体未完整精读；表格未追溯全部外部基线。",
+      "read_at": "2026-11-14T13:48:38.816031Z",
+      "license": "arXiv-nonexclusive-distrib-1.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper13-2402.03300v3-metadata.html",
+        "url": "https://arxiv.org/abs/2402.03300v3",
+        "link_observed": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "terms_file": "p1-papers-09-16/license-arxiv-nonexclusive-1.0.html",
+        "interpretation": "固定版本arXiv元数据页view license指向arXiv non-exclusive 1.0；该许可仅向arXiv授予永久非独占分发权，未授予公众翻译或改编权。因此中文处理限定自主精读，不复制完整中文翻译，不以代码/模型许可证替代文章授权。"
+      },
+      "file": "p1-papers-09-16/paper13-2402.03300v3.pdf",
+      "sha256": "6cc20b3c5b8d25b8b53868fc4ec1792c144f07d67bdf7395138efd4422197e7b",
+      "version": "arXiv:2402.03300v3",
+      "retrieved_at": "2026-11-14T13:39:34.471062Z",
+      "source_record": {
+        "fragment": "p1-papers-09-16/manifest-fragment.json",
+        "id": "p1-paper13-fulltext-v3"
+      },
+      "reading_record": "paper13",
+      "chinese_treatment": "independent_close_reading_no_full_translation_permission"
+    },
+    {
+      "id": "paper14",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2501.12948v2",
+      "status": "downloaded_selectively_read",
+      "read_scope": "题名/200项作者元数据/v2；§1–6及G.1–G.2实际读取；全篇标题索引扫描。 实际PDF页：1–10, 11（§6至作者名单前）, 62–64。附录A–F、H–J大部分正文未完整精读；安全报告D.3和全部评测提示未逐条核查；作者名单未逐人履历核实。",
+      "read_at": "2026-11-14T13:48:38.816031Z",
+      "license": "arXiv-nonexclusive-distrib-1.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper14-2501.12948v2-metadata.html",
+        "url": "https://arxiv.org/abs/2501.12948v2",
+        "link_observed": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "terms_file": "p1-papers-09-16/license-arxiv-nonexclusive-1.0.html",
+        "interpretation": "固定版本arXiv元数据页view license指向arXiv non-exclusive 1.0；该许可仅向arXiv授予永久非独占分发权，未授予公众翻译或改编权。因此中文处理限定自主精读，不复制完整中文翻译，不以代码/模型许可证替代文章授权。"
+      },
+      "file": "p1-papers-09-16/paper14-2501.12948v2.pdf",
+      "sha256": "b191b0a365a64b4ab2791d117069ed17a2933d03554a662ced58b37df52018f4",
+      "version": "arXiv:2501.12948v2",
+      "retrieved_at": "2026-11-14T13:40:13.975139Z",
+      "source_record": {
+        "fragment": "p1-papers-09-16/manifest-fragment.json",
+        "id": "p1-paper14-fulltext-v2"
+      },
+      "reading_record": "paper14",
+      "chinese_treatment": "independent_close_reading_no_full_translation_permission"
+    },
+    {
+      "id": "paper15",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2103.00020v1",
+      "status": "downloaded_selectively_read",
+      "read_scope": "题名/作者/v1；§2、§3.1.1–3.1.4、§6和§7引入实际读取，图3可提取伪代码已读。双栏版面按列理解，不把并排段落误认为章节顺序。 实际PDF页：1, 3–7, 8（§3.1.4段落）, 18（§6开头）, 19–20。§3.1.5、§3.2–5、§7主体和附录未完整精读；图像/全部实验图未逐项视觉复核。",
+      "read_at": "2026-11-14T13:48:38.816031Z",
+      "license": "arXiv-nonexclusive-distrib-1.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper15-2103.00020v1-metadata.html",
+        "url": "https://arxiv.org/abs/2103.00020v1",
+        "link_observed": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "terms_file": "p1-papers-09-16/license-arxiv-nonexclusive-1.0.html",
+        "interpretation": "固定版本arXiv元数据页view license指向arXiv non-exclusive 1.0；该许可仅向arXiv授予永久非独占分发权，未授予公众翻译或改编权。因此中文处理限定自主精读，不复制完整中文翻译，不以代码/模型许可证替代文章授权。"
+      },
+      "file": "p1-papers-09-16/paper15-2103.00020v1.pdf",
+      "sha256": "6478b6e571a7d6fcd846d8ef77bfd60c285f1986abb8f475eedc43de403074f5",
+      "version": "arXiv:2103.00020v1",
+      "retrieved_at": "2026-11-14T13:41:22.663817Z",
+      "source_record": {
+        "fragment": "p1-papers-09-16/manifest-fragment.json",
+        "id": "p1-paper15-fulltext-v1"
+      },
+      "reading_record": "paper15",
+      "chinese_treatment": "independent_close_reading_no_full_translation_permission"
+    },
+    {
+      "id": "paper16",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2304.08485v2",
+      "status": "downloaded_selectively_read",
+      "read_scope": "题名/作者/v2；§3–4、§5.2、§6和C实际读取。pdftotext第4页图1/式3包含LaTeXiT噪声，已用原PDF页渲染实际补读，不把乱码当原文。 实际PDF页：1–5, 8–9, 20；另视觉读取PDF第4页图1及式1–3。§5.1中间评测段、附录B多数示例、E后半与F完整提示未精读；未复现模型训练或GPT评测。",
+      "read_at": "2026-11-14T13:48:38.816031Z",
+      "license": "CC-BY-4.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper16-2304.08485v2-metadata.html",
+        "url": "https://arxiv.org/abs/2304.08485v2",
+        "link_observed": "http://creativecommons.org/licenses/by/4.0/",
+        "terms_file": "p1-papers-09-16/license-cc-by-4.0.txt",
+        "interpretation": "固定版本arXiv元数据页view license指向CC BY 4.0；legalcode §1(a)将翻译列入Adapted Material，§2(a)(1)(B)允许制作/传播改编，§3要求署名、许可链接及改动说明。仅覆盖许可人有权许可的内容；第三方图片/数据/权重另核查。"
+      },
+      "file": "p1-papers-09-16/paper16-2304.08485v2.pdf",
+      "sha256": "dc8bace378a282ea78caa9b5959306202fbfa3b8cedaf8a66541a9af18f4d3bf",
+      "version": "arXiv:2304.08485v2",
+      "retrieved_at": "2026-11-14T13:41:24.957575Z",
+      "source_record": {
+        "fragment": "p1-papers-09-16/manifest-fragment.json",
+        "id": "p1-paper16-fulltext-v2"
+      },
+      "reading_record": "paper16",
+      "chinese_treatment": "authorized_translation_with_attribution_and_change_notice"
+    },
+    {
+      "id": "cluster-guide-2026",
+      "kind": "access_policy",
+      "url": "https://docs.google.com/document/d/1cHE0iKVyXLJ3XpIs2XuXTmZ-HMmPk2hIPeCvy-AydMg/export?format=txt",
+      "status": "acquired_and_read",
+      "read_scope": "Complete exported document: quickstart, permissions, volumes, parallel jobs, GPU jobs, shell, secrets and run history",
+      "read_at": "2026-11-14",
+      "license": "No explicit reuse license in document; independent summary only",
+      "license_evidence": "Full text inspected",
+      "file": "p1-shared/cluster-guide.txt",
+      "sha256": "007acc2a222ecd69301e02388469d38649216ac0e8f6f82ccdae9f65ffb39e9c",
+      "version": "Live document explicitly CS336 Spring 2026; snapshot hash pins content",
+      "retrieved_at": "2026-11-14T13:42:10Z",
+      "source_record": {
+        "fragment": "p1-shared/manifest-fragment.json",
+        "id": "cluster-guide-2026"
+      }
+    },
+    {
+      "id": "ai-policy-2026",
+      "kind": "course_policy",
+      "url": "https://docs.google.com/document/d/1SZAlExB1qAc9izHt54gwunNpjKE6wXb8Y7yA_e-baK8/export?format=txt",
+      "status": "acquired_and_read",
+      "read_scope": "Complete exported policy; conceptual/API questions allowed, AI implementation and autocomplete prohibited for assignments and leaderboards",
+      "read_at": "2026-11-14",
+      "license": "No explicit reuse license in document; independent summary only",
+      "license_evidence": "Full text inspected",
+      "file": "p1-shared/ai-policy.txt",
+      "sha256": "127b697e3a67d9a3d86e0aa6cfdd6bb2ddc74a28c5786198b8d24008b9d6ef01",
+      "version": "CS336 AI Policy Spring 2025-2026, live document snapshot",
+      "retrieved_at": "2026-11-14T13:42:10Z",
+      "source_record": {
+        "fragment": "p1-shared/manifest-fragment.json",
+        "id": "ai-policy-2026"
+      }
+    },
+    {
+      "id": "lec18-handout",
+      "kind": "classroom_handout",
+      "url": "https://cs336.stanford.edu/",
+      "status": "not_published_in_checked_schedule_or_tree",
+      "read_scope": "Official row names Daniel Selsam but no handout URL; no lecture_18 file in complete tree. Not evidence that no handout exists elsewhere.",
+      "read_at": "2026-11-14",
+      "license": "unverified",
+      "license_evidence": null,
+      "file": null,
+      "sha256": null,
+      "version": "2026 schedule and pinned lecture tree de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+      "retrieved_at": null,
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec18-handout"
+      },
+      "lecture": "lec18"
+    },
+    {
+      "id": "lec19-handout",
+      "kind": "classroom_handout",
+      "url": "https://cs336.stanford.edu/",
+      "status": "not_published_in_checked_schedule_or_tree",
+      "read_scope": "Official row names Dan Fu but no handout URL; no lecture_19 file in complete tree. Not evidence that no handout exists elsewhere.",
+      "read_at": "2026-11-14",
+      "license": "unverified",
+      "license_evidence": null,
+      "file": null,
+      "sha256": null,
+      "version": "2026 schedule and pinned lecture tree de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+      "retrieved_at": null,
+      "source_record": {
+        "fragment": "p1-lectures/manifest-fragment.json",
+        "id": "lec19-handout"
+      },
+      "lecture": "lec19"
+    },
+    {
+      "id": "a5-main-handout-2026",
+      "kind": "assignment_handout",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_spring2026_assignment5_alignment.pdf",
+      "status": "downloaded_scoped_read",
+      "read_scope": "通过pdftotext实际读取封面（Spring 2026, Version 26.0.0）、§1–3、§4.1引文及on-policy定义、§4.2模型加载和双GPU段、§4.3实验、§5变体与实验要求、§6 off-policy/GRPO/GSPO与实验、§7自拟估计器、参考文献；全文检索显式论文阅读词。未逐式推导全部数学或执行代码。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/main-2026.pdf",
+      "sha256": "c93d503a69aef4aa7519b7fc664abebbf2ebf5e5e88379a7ed92f4c209a2d26a",
+      "version": {
+        "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+        "cover_term": "Spring 2026",
+        "cover_version": "26.0.0",
+        "pages": 39
+      },
+      "retrieved_at": "2026-11-14T13:38:09Z",
+      "source_record": {
+        "fragment": "p1-assignment-a5/manifest-fragment.json",
+        "id": "a5-main-handout-2026"
+      }
+    },
+    {
+      "id": "a5-safety-handout-2026",
+      "kind": "assignment_handout",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_spring2026_assignment5_supplement_safety_rlhf.pdf",
+      "status": "downloaded_scoped_read",
+      "read_scope": "通过pdftotext实际读取封面（Spring 2026, Version 26.0.0）、§1–3、§4.1数据、§4.2.2/SFT、§5评估及red-team、§6 DPO和参考文献；非逐行精读完整数据加载器部分。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/optional-safety-2026.pdf",
+      "sha256": "30a2de73c2b95b9302bf31640f5f6016ef884d611cba94c9a0fdb1e505ad07e3",
+      "version": {
+        "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+        "cover_term": "Spring 2026",
+        "cover_version": "26.0.0",
+        "pages": 18
+      },
+      "retrieved_at": "2026-11-14T13:38:51Z",
+      "source_record": {
+        "fragment": "p1-assignment-a5/manifest-fragment.json",
+        "id": "a5-safety-handout-2026"
+      }
+    },
+    {
+      "id": "a5-safety-handout-2025-historical",
+      "kind": "assignment_handout",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/cd5f183cf217cd82843e521d4d226e76544de51c/cs336_spring2025_assignment5_supplement_safety_rlhf.pdf",
+      "status": "downloaded_scoped_read",
+      "read_scope": "通过pdftotext实际读取封面（Spring 2025, Version 1.0.1）、概述、Together模型路径、评估GPU要求、§3数据/SFT、§5 DPO与参考文献，并检索阅读用语；仅作历史版本对照。",
+      "read_at": "2026-11-14T13:43:54Z",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "file": "p1-assignment-a5/raw/optional-safety-2025.pdf",
+      "sha256": "ecf7fd5b6ee20ac89f64a56f063805f6ac9089cd5a71f5c7764420cae875262a",
+      "version": {
+        "commit": "cd5f183cf217cd82843e521d4d226e76544de51c",
+        "cover_term": "Spring 2025",
+        "cover_version": "1.0.1",
+        "pages": 19
+      },
+      "retrieved_at": "2026-11-14T13:39:34Z",
+      "source_record": {
+        "fragment": "p1-assignment-a5/manifest-fragment.json",
+        "id": "a5-safety-handout-2025-historical"
+      }
+    },
+    {
+      "id": "lec01-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=JuoVZkPBiKk",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec01-JuoVZkPBiKk.json",
+      "sha256": "14daacbaef516e4867f210c6d25f64bd9ea8707bb0e59c0407b6003bd954467a",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 1: Overview, Tokenization; upload_date=20260414; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:38:03.798241Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec01-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "JuoVZkPBiKk",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 4762,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec02-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=kuYAsz7zspQ",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec02-kuYAsz7zspQ.json",
+      "sha256": "2dbf2e9f5938c459f46c384be0155e58456af997d723c0eac941f2c967be6dfa",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 2: PyTorch (einops); upload_date=20260414; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:12.588764Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec02-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "kuYAsz7zspQ",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 4645,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec03-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=lVynu4bo1rY",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec03-lVynu4bo1rY.json",
+      "sha256": "55aa1c0895561e3d2f87168a5c4888b8f20ca7135b6a2fd458f74013f12208df",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 3: Architectures; upload_date=20260415; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:12.602580Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec03-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "lVynu4bo1rY",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 5354,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec04-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=cKSwj_qZ8Jg",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec04-cKSwj_qZ8Jg.json",
+      "sha256": "38ce6a2a392d65ad547bb8ed2a7a2d0ba184886297bd736f562fe68fcce63705",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 4: Attention Alternatives; upload_date=20260415; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:11.383432Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec04-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "cKSwj_qZ8Jg",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 5180,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec05-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=izZba4UA7iY",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec05-izZba4UA7iY.json",
+      "sha256": "150dbb3fa0b49d2400b8057ea2c3896c7abc2faa91a137cf03c5f62e7cf3e853",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 5: GPUs, TPUs; upload_date=20260420; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:15.157287Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec05-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "izZba4UA7iY",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 4719,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec06-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec06-xnDHaNUvHBg.json",
+      "sha256": "f0f4c4df0a78678b92b18ba609fb7a36d42c44bac1bf90003426c16031f37253",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 6: Kernels, Triton, XLA; upload_date=20260428; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:16.683067Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec06-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "xnDHaNUvHBg",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 5201,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec07-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=SzpOcwdIL0Y",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec07-SzpOcwdIL0Y.json",
+      "sha256": "4526829bcf3a3d68b3e27eec2aa8380648898cc8ecd33417cc81c879b7a7af5b",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 7: Parallelism; upload_date=20260428; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:20.511700Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec07-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "SzpOcwdIL0Y",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 4862,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec08-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec08-6-cXp-aOmdg.json",
+      "sha256": "cbc27bdfb7200bb94578c342475407ed5a806862662e4b9dde44b17a605d20c5",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 8: Parallelism; upload_date=20260428; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:20.311031Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec08-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "6-cXp-aOmdg",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 4810,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec09-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=Q15rhEWZPQ4",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec09-Q15rhEWZPQ4.json",
+      "sha256": "079b4e2ce65a185cc3364e1bdcce233e7c1b87833a7ae27f62feed166851f87d",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 9: Scaling Laws; upload_date=20260430; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:25.038848Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec09-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "Q15rhEWZPQ4",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 4677,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec10-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=EfM546A79aM",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec10-EfM546A79aM.json",
+      "sha256": "08a3944e780916797afb69cfa949ce3bcfb588185fe6981d8308336c13eed389",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 10: Inference; upload_date=20260511; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:26.067669Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec10-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "EfM546A79aM",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 5130,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec11-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=vTfEyOyzV9E",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec11-vTfEyOyzV9E.json",
+      "sha256": "061a1135901c5f4299cadb4f59c0970e3195e20c9ca128a1f15c141add79a791",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 11:  Scaling Laws; upload_date=20260519; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:29.358439Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec11-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "vTfEyOyzV9E",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 4623,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec12-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=JpAxdTWQJxM",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec12-JpAxdTWQJxM.json",
+      "sha256": "c3a904c2f4ce9c6bef33b2aed660cdf8c8bab76a26acdf5f9628d27790300102",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 12: Evaluation; upload_date=20260519; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:32.595872Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec12-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "JpAxdTWQJxM",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 4714,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec13-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=-qm0ln33G24",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec13--qm0ln33G24.json",
+      "sha256": "789d40cffe6155733f4bad84e974510bdb7ffa137527bd3b98a65efa0dbad3b2",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 13: Data (Sources, Datasets); upload_date=20260519; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:30.937161Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec13-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "-qm0ln33G24",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 4921,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec14-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=5sxHosTLPF8",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec14-5sxHosTLPF8.json",
+      "sha256": "6fe2529f5f5bf618256c4dd8e5e766d31448302218f8d7fa64ca6ec6556a88f5",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 14: Data; upload_date=20260527; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:34.324785Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec14-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "5sxHosTLPF8",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 5086,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec15-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=2oH6PWPrYFo",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec15-2oH6PWPrYFo.json",
+      "sha256": "58c5b81f2757217823620fb493d24f0abb13bd6351d8830efaa87c9548e7a733",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 15: Mid/Post-Training; upload_date=20260527; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:37.473054Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec15-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "2oH6PWPrYFo",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 4794,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec16-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=dIFAi87Ws4E",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec16-dIFAi87Ws4E.json",
+      "sha256": "e58b1f0a6439134ab6c5bd17b4950373da3dad681a4651760c8c3fb3bf936b8c",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 16: Post-Training - RLVR; upload_date=20260527; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:38.022012Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec16-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "dIFAi87Ws4E",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 4550,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec17-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=26FtD08ZpOU",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec17-26FtD08ZpOU.json",
+      "sha256": "a67168144ed9371fc12737d24c68c0e0cfe95100ebeb4d2f8013f001b7a1b3ec",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 17: Alignment - Multimodality; upload_date=20260604; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:38.568034Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec17-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "26FtD08ZpOU",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 4659,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    },
+    {
+      "id": "lec18-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV",
+      "status": "unavailable_no_matched_video_id",
+      "read_scope": "Read official schedule row and all 18 public playlist entries. A targeted public search returned no Daniel Selsam 2026 recording; this is not proof that no recording exists.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "No matched recording; license unknown.",
+      "file": null,
+      "sha256": null,
+      "version": "Spring 2026 scheduled guest Daniel Selsam; recording not identified",
+      "retrieved_at": "2026-11-14T13:37:46.362467Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec18-video"
+      },
+      "video_id": null,
+      "uploader": null,
+      "channel_id": null,
+      "duration_seconds": null,
+      "caption_language": null
+    },
+    {
+      "id": "lec19-video",
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=9EEm4iMAF5s",
+      "status": "metadata_acquired_and_read_video_not_downloaded_or_watched",
+      "read_scope": "Read individual title, channel identity, upload date, description, duration, license field and caption inventory; mechanically parsed all cue timestamps and read first/last cue. Audio/video not watched and caption body not fully read. Also read caption opening 5.20–180.76 seconds; serving/inference topic explicitly introduced at 29.24–55.48 seconds.",
+      "read_at": "2026-11-14T13:40:05.068651Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "file": "p1-videos/metadata/lec19-9EEm4iMAF5s.json",
+      "sha256": "5426020d9eaea2e75dee99183deca913deddf22297b9069ae7d761cbf6fb6e05",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Guest Lecture: Dan Fu; upload_date=20260605; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:42.236909Z",
+      "source_record": {
+        "fragment": "p1-videos/manifest-fragment.json",
+        "id": "lec19-video"
+      },
+      "chinese_treatment": "自主精读；未授权全文翻译；本阶段未写正文",
+      "video_id": "9EEm4iMAF5s",
+      "uploader": "Stanford Online",
+      "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+      "duration_seconds": 4300,
+      "caption_language": "en-US",
+      "caption_type": "manual_non_ASR_platform_classification"
+    }
+  ]
+}

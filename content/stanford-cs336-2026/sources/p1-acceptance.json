@@ -1,0 +1,18 @@
+{
+  "course_id": "stanford-cs336-2026",
+  "phase": "P1",
+  "date": "2026-11-14",
+  "result": "passed_source_acquisition_review_with_documented_gaps",
+  "completion_meaning": "P1采集与核查任务完成；不表示所有录像/许可/校外权限齐全，不表示全文精读、课程正文或实验完成。",
+  "source_counts": {"canonical_records":70,"fragment_records":224,"fragments":7,"verified_local_file_hashes":244,"official_schedule_entries":19,"verified_videos":18,"acquired_caption_tracks":18,"fixed_classroom_handouts_including_l02_recording":18,"fixed_papers":16,"fixed_assignment_repositories":5,"current_2026_assignment_handouts":6,"historical_2025_a5_supplement":1},
+  "states": {"registered":"原有44项全部有P1核查结论；详细新增来源在7个分片","acquired":"以实际file/hash计；缺失或断链为null，不以URL登记充下载","read":"逐源read_scope与论文actualReading/actualRead限定；不称全文精读","written":{"public_resources":1,"lecture_documents":0,"lab_documents":0},"reviewed":"采集分片审核加Main跨源核对；A5三封面和版本差异独立复核","accepted":"本次结构/哈希/链接、页面入口与构建；没有课程实验执行验收"},
+  "structure": {"result":"passed","evidence":"p1-shared/structure-check.json","command":"python3 content/stanford-cs336-2026/sources/check-p1.py","lecture_entries":43,"lab_entries":7,"paper_single_homes":16,"course_internal_links":60,"source_markdown_files":0,"placeholder_bodies_created":0},
+  "build": {"result":"passed","command":"npm run build","components":["tsc --noEmit","vite build"],"modules":3082,"vite_seconds":5.83,"evidence":"p1-shared/build.log"},
+  "browser": {"result":"passed","surface":"Vite development server at 127.0.0.1:5411; production build separately passed","desktop":"1440x1000","mobile":"390x844","official_routes_checked":19,"video_headers_checked":18,"missing_video_route":"lec18 has no invented header","actual_new_tab_clicks":["lec01","lec19"],"original_notes_page_retained":true,"mobile_header_overflow":false,"resources_table":"Viewed desktop/mobile; table-local horizontal scrolling, no page-level overflow","changed_lab_goal_pages":["a3-scaling","a4-data","a5-reasoning","a5-safety-optional"],"runtime_errors":0,"katex_errors":0,"evidence":["p1-shared/video-page-check.json","p1-shared/resources-page-check.json"]},
+  "runtime": {"subagents":5,"resolved_model":"openai-codex/gpt-6-astra","thinking_level":"xhigh","fallback":false,"explicit_selector":"openai-codex/gpt-6-astra:xhigh","configuration":"task.perCallModel on via supported session override, not persisted","evidence":"model-preflight.json"},
+  "gaps":"p1-gaps.json",
+  "not_run":["course environment installation","assignment tests","GPU training or benchmarking","training API calls","paid cloud compute","full-video viewing or audio verification","P2 content production"],
+  "publication_boundary":"Only course metadata/resources/status and lightweight provenance/reviews/plans/checks are committed. Raw PDFs, caption bodies, extracted fulltexts and other unlicensed raw archives stay local under the existing sources ignore convention. Local acquisition is not a remote backup claim.",
+  "git_delivery":"Commit and push result is reported separately after actual execution; no guessed commit or deployment status is recorded here.",
+  "next_stage":{"id":"P2","keyword":"CS336-2026-P2-样板","prompt":"NEXT-P2-PROMPT.txt","status":"not_started","auto_start":false}
+}

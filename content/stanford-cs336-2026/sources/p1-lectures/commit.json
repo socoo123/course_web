@@ -1,0 +1,136 @@
+{
+  "sha": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+  "node_id": "C_kwDOOCDCbdoAKGRlNTNhOWY5NzlhNmVlMzVmN2QxM2E1ZTFhYWRlZTVlYTFhZmM1OGU",
+  "commit": {
+    "author": {
+      "name": "Percy Liang",
+      "email": "percyliang@gmail.com",
+      "date": "2026-09-12T21:34:48Z"
+    },
+    "committer": {
+      "name": "Percy Liang",
+      "email": "percyliang@gmail.com",
+      "date": "2026-09-12T21:34:48Z"
+    },
+    "message": "update lecture 6",
+    "tree": {
+      "sha": "1fa09e89c702d412e7d13fb768efb1a65f5e1967",
+      "url": "https://api.github.com/repos/stanford-cs336/lectures/git/trees/1fa09e89c702d412e7d13fb768efb1a65f5e1967"
+    },
+    "url": "https://api.github.com/repos/stanford-cs336/lectures/git/commits/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/stanford-cs336/lectures/commits/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+  "html_url": "https://github.com/stanford-cs336/lectures/commit/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+  "comments_url": "https://api.github.com/repos/stanford-cs336/lectures/commits/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/comments",
+  "author": {
+    "login": "percyliang",
+    "id": 435384,
+    "node_id": "MDQ6VXNlcjQzNTM4NA==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/435384?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/percyliang",
+    "html_url": "https://github.com/percyliang",
+    "followers_url": "https://api.github.com/users/percyliang/followers",
+    "following_url": "https://api.github.com/users/percyliang/following{/other_user}",
+    "gists_url": "https://api.github.com/users/percyliang/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/percyliang/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/percyliang/subscriptions",
+    "organizations_url": "https://api.github.com/users/percyliang/orgs",
+    "repos_url": "https://api.github.com/users/percyliang/repos",
+    "events_url": "https://api.github.com/users/percyliang/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/percyliang/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "percyliang",
+    "id": 435384,
+    "node_id": "MDQ6VXNlcjQzNTM4NA==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/435384?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/percyliang",
+    "html_url": "https://github.com/percyliang",
+    "followers_url": "https://api.github.com/users/percyliang/followers",
+    "following_url": "https://api.github.com/users/percyliang/following{/other_user}",
+    "gists_url": "https://api.github.com/users/percyliang/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/percyliang/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/percyliang/subscriptions",
+    "organizations_url": "https://api.github.com/users/percyliang/orgs",
+    "repos_url": "https://api.github.com/users/percyliang/repos",
+    "events_url": "https://api.github.com/users/percyliang/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/percyliang/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "8b59b50730766695c2ffedd1a79c50cd09b9eb91",
+      "url": "https://api.github.com/repos/stanford-cs336/lectures/commits/8b59b50730766695c2ffedd1a79c50cd09b9eb91",
+      "html_url": "https://github.com/stanford-cs336/lectures/commit/8b59b50730766695c2ffedd1a79c50cd09b9eb91"
+    }
+  ],
+  "stats": {
+    "total": 1510,
+    "additions": 768,
+    "deletions": 742
+  },
+  "files": [
+    {
+      "sha": "7576b2b2d2155320bd870fbd19eebb623662fa3e",
+      "filename": "lecture_06.py",
+      "status": "modified",
+      "additions": 3,
+      "deletions": 2,
+      "changes": 5,
+      "blob_url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_06.py",
+      "raw_url": "https://github.com/stanford-cs336/lectures/raw/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_06.py",
+      "contents_url": "https://api.github.com/repos/stanford-cs336/lectures/contents/lecture_06.py?ref=de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+      "patch": "@@ -49,10 +49,11 @@ def review_of_gpus():\n     text(\"| HBM size                           |     80 GB |     80 GB |    192 GB |\", verbatim=True)\n     text(\"+------------------------------------+-----------+-----------+-----------+\", verbatim=True)\n     text(\"| Register bandwidth                 | ~116 TB/s | ~401 TB/s | ~447 TB/s |\", verbatim=True)\n-    text(\"| L1 cache + shared memory bandwidth |  ~19 TB/s |  ~33 TB/s |  ~19 TB/s |\", verbatim=True)\n-    text(\"| L2 cache bandwidth                 | ~5-8 TB/s |  ~12 TB/s |   ~9 TB/s |\", verbatim=True)\n+    text(\"| L1 cache + shared memory bandwidth |  ~19 TB/s |  ~33 TB/s |  ~40 TB/s |\", verbatim=True)\n+    text(\"| L2 cache bandwidth                 | ~5-8 TB/s |  ~12 TB/s |  ~17 TB/s |\", verbatim=True)\n     text(\"| HBM bandwidth                      |    2 TB/s | 3.35 TB/s |    8 TB/s |\", verbatim=True)\n \n+    text(\"Note: the L1/L2 bandwidth numbers are rough estimates (online sources differ).\")\n     text(\"(B200s also have tensor memory (TMEM) for tensor cores (between registers and shared memory) that are invisible to programmer.)\")\n \n     text(\"## Programming model\")"
+    },
+    {
+      "sha": "61303faf7fc616f1ce9e6567848c30152efdf1b2",
+      "filename": "modal_execute.py",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 2,
+      "changes": 3,
+      "blob_url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/modal_execute.py",
+      "raw_url": "https://github.com/stanford-cs336/lectures/raw/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/modal_execute.py",
+      "contents_url": "https://api.github.com/repos/stanford-cs336/lectures/contents/modal_execute.py?ref=de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+      "patch": "@@ -45,8 +45,7 @@ def execute(module: str) -> dict[str, str]:\n     os.makedirs(\"var/traces\", exist_ok=True)\n \n     result = subprocess.run(\n-        [\"python\", f\"{module}.py\"],\n-        #[\"python\", \"-m\", \"edtrace.execute\", \"-m\", module],\n+        [\"python\", \"-m\", \"edtrace.execute\", \"-m\", module],\n         #[\"uv\", \"run\", \"nsys\", \"profile\", \"-w\", \"true\", \"-t\", \"cuda,ntvx\", \"python\", \"-m\", \"edtrace.execute\", \"-m\", module],\n         stderr=subprocess.PIPE,\n         text=True,"
+    },
+    {
+      "sha": "2f134eca578d9c75efcb39cc2eb77ac84c222b0e",
+      "filename": "var/traces/lecture_06.json",
+      "status": "modified",
+      "additions": 740,
+      "deletions": 714,
+      "changes": 1454,
+      "blob_url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var%2Ftraces%2Flecture_06.json",
+      "raw_url": "https://github.com/stanford-cs336/lectures/raw/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var%2Ftraces%2Flecture_06.json",
+      "contents_url": "https://api.github.com/repos/stanford-cs336/lectures/contents/var%2Ftraces%2Flecture_06.json?ref=de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e"
+    },
+    {
+      "sha": "09d8fce9016b6fe0e36e31ac3a47fc9feddee206",
+      "filename": "var/triton_gelu-ptx.txt",
+      "status": "modified",
+      "additions": 24,
+      "deletions": 24,
+      "changes": 48,
+      "blob_url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var%2Ftriton_gelu-ptx.txt",
+      "raw_url": "https://github.com/stanford-cs336/lectures/raw/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var%2Ftriton_gelu-ptx.txt",
+      "contents_url": "https://api.github.com/repos/stanford-cs336/lectures/contents/var%2Ftriton_gelu-ptx.txt?ref=de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+      "patch": "@@ -20,34 +20,34 @@\n \t.reg .pred \t%p<3>;\n \t.reg .b32 \t%r<121>;\n \t.reg .b64 \t%rd<8>;\n-\t.loc\t1 362 0                         // lecture_06.py:362:0\n+\t.loc\t1 363 0                         // lecture_06.py:363:0\n $L__func_begin0:\n-\t.loc\t1 362 0                         // lecture_06.py:362:0\n+\t.loc\t1 363 0                         // lecture_06.py:363:0\n \n // %bb.0:\n \tld.param.b64 \t%rd5, [triton_gelu_kernel_param_0];\n \tld.param.b64 \t%rd6, [triton_gelu_kernel_param_1];\n $L__tmp0:\n-\t.loc\t1 369 24                        // lecture_06.py:369:24\n+\t.loc\t1 370 24                        // lecture_06.py:370:24\n \tmov.u32 \t%r17, %ctaid.x;\n-\t.loc\t1 370 18                        // lecture_06.py:370:18\n+\t.loc\t1 371 18                        // lecture_06.py:371:18\n \tshl.b32 \t%r18, %r17, 10;\n \tld.param.b32 \t%r19, [triton_gelu_kernel_param_2];\n-\t.loc\t1 373 35                        // lecture_06.py:373:35\n+\t.loc\t1 374 35                        // lecture_06.py:374:35\n \tmov.u32 \t%r20, %tid.x;\n \tshl.b32 \t%r21, %r20, 2;\n \tand.b32 \t%r22, %r21, 508;\n-\t.loc\t1 373 22                        // lecture_06.py:373:22\n+\t.loc\t1 374 22                        // lecture_06.py:374:22\n \tor.b32 \t%r23, %r22, %r18;\n \tor.b32 \t%r24, %r23, 512;\n-\t.loc\t1 376 21                        // lecture_06.py:376:21\n+\t.loc\t1 377 21                        // lecture_06.py:377:21\n \tsetp.lt.s32 \t%p1, %r23, %r19;\n \tsetp.lt.s32 \t%p2, %r24, %r19;\n-\t.loc\t1 379 24                        // lecture_06.py:379:24\n+\t.loc\t1 380 24                        // lecture_06.py:380:24\n \tmul.wide.s32 \t%rd7, %r23, 4;\n \tadd.s64 \t%rd1, %rd5, %rd7;\n \tadd.s64 \t%rd2, %rd1, 2048;\n-\t.loc\t1 379 16                        // lecture_06.py:379:16\n+\t.loc\t1 380 16                        // lecture_06.py:380:16\n \t// begin inline asm\n \tmov.u32 %r1, 0x0;\n \tmov.u32 %r2, 0x0;\n@@ -62,7 +62,7 @@ $L__tmp0:\n \tmov.u32 %r8, 0x0;\n \t@%p2 ld.global.v4.b32 { %r5, %r6, %r7, %r8 }, [ %rd2 + 0 ];\n \t// end inline asm\n-\t.loc\t1 383 37                        // lecture_06.py:383:37\n+\t.loc\t1 384 37                        // lecture_06.py:384:37\n \tmul.f32 \t%r25, %r1, 0f3D372713;\n \tmul.f32 \t%r26, %r2, 0f3D372713;\n \tmul.f32 \t%r27, %r3, 0f3D372713;\n@@ -71,7 +71,7 @@ $L__tmp0:\n \tmul.f32 \t%r30, %r6, 0f3D372713;\n \tmul.f32 \t%r31, %r7, 0f3D372713;\n \tmul.f32 \t%r32, %r8, 0f3D372713;\n-\t.loc\t1 383 41                        // lecture_06.py:383:41\n+\t.loc\t1 384 41                        // lecture_06.py:384:41\n \tmul.f32 \t%r33, %r25, %r1;\n \tmul.f32 \t%r34, %r26, %r2;\n \tmul.f32 \t%r35, %r27, %r3;\n@@ -80,7 +80,7 @@ $L__tmp0:\n \tmul.f32 \t%r38, %r30, %r6;\n \tmul.f32 \t%r39, %r31, %r7;\n \tmul.f32 \t%r40, %r32, %r8;\n-\t.loc\t1 383 26                        // lecture_06.py:383:26\n+\t.loc\t1 384 26                        // lecture_06.py:384:26\n \tfma.rn.f32 \t%r41, %r33, %r1, %r1;\n \tfma.rn.f32 \t%r42, %r34, %r2, %r2;\n \tfma.rn.f32 \t%r43, %r35, %r3, %r3;\n@@ -89,7 +89,7 @@ $L__tmp0:\n \tfma.rn.f32 \t%r46, %r38, %r6, %r6;\n \tfma.rn.f32 \t%r47, %r39, %r7, %r7;\n \tfma.rn.f32 \t%r48, %r40, %r8, %r8;\n-\t.loc\t1 383 22                        // lecture_06.py:383:22\n+\t.loc\t1 384 22                        // lecture_06.py:384:22\n \tmul.f32 \t%r49, %r41, 0f3F4C422A;\n \tmul.f32 \t%r50, %r42, 0f3F4C422A;\n \tmul.f32 \t%r51, %r43, 0f3F4C422A;\n@@ -98,7 +98,7 @@ $L__tmp0:\n \tmul.f32 \t%r54, %r46, 0f3F4C422A;\n \tmul.f32 \t%r55, %r47, 0f3F4C422A;\n \tmul.f32 \t%r56, %r48, 0f3F4C422A;\n-\t.loc\t1 384 21                        // lecture_06.py:384:21\n+\t.loc\t1 385 21                        // lecture_06.py:385:21\n \tfma.rn.f32 \t%r57, %r41, 0f3F4C422A, %r49;\n \tfma.rn.f32 \t%r58, %r42, 0f3F4C422A, %r50;\n \tfma.rn.f32 \t%r59, %r43, 0f3F4C422A, %r51;\n@@ -107,7 +107,7 @@ $L__tmp0:\n \tfma.rn.f32 \t%r62, %r46, 0f3F4C422A, %r54;\n \tfma.rn.f32 \t%r63, %r47, 0f3F4C422A, %r55;\n \tfma.rn.f32 \t%r64, %r48, 0f3F4C422A, %r56;\n-\t.loc\t1 384 17                        // lecture_06.py:384:17\n+\t.loc\t1 385 17                        // lecture_06.py:385:17\n \tmul.f32 \t%r65, %r57, 0f3FB8AA3B;\n \tex2.approx.f32 \t%r66, %r65;\n \tmul.f32 \t%r67, %r58, 0f3FB8AA3B;\n@@ -124,7 +124,7 @@ $L__tmp0:\n \tex2.approx.f32 \t%r78, %r77;\n \tmul.f32 \t%r79, %r64, 0f3FB8AA3B;\n \tex2.approx.f32 \t%r80, %r79;\n-\t.loc\t1 385 18                        // lecture_06.py:385:18\n+\t.loc\t1 386 18                        // lecture_06.py:386:18\n \tadd.f32 \t%r81, %r66, 0fBF800000;\n \tadd.f32 \t%r82, %r68, 0fBF800000;\n \tadd.f32 \t%r83, %r70, 0fBF800000;\n@@ -133,7 +133,7 @@ $L__tmp0:\n \tadd.f32 \t%r86, %r76, 0fBF800000;\n \tadd.f32 \t%r87, %r78, 0fBF800000;\n \tadd.f32 \t%r88, %r80, 0fBF800000;\n-\t.loc\t1 385 30                        // lecture_06.py:385:30\n+\t.loc\t1 386 30                        // lecture_06.py:386:30\n \tadd.f32 \t%r89, %r66, 0f3F800000;\n \tadd.f32 \t%r90, %r68, 0f3F800000;\n \tadd.f32 \t%r91, %r70, 0f3F800000;\n@@ -142,7 +142,7 @@ $L__tmp0:\n \tadd.f32 \t%r94, %r76, 0f3F800000;\n \tadd.f32 \t%r95, %r78, 0f3F800000;\n \tadd.f32 \t%r96, %r80, 0f3F800000;\n-\t.loc\t1 385 24                        // lecture_06.py:385:24\n+\t.loc\t1 386 24                        // lecture_06.py:386:24\n \tdiv.full.f32 \t%r97, %r81, %r89;\n \tdiv.full.f32 \t%r98, %r82, %r90;\n \tdiv.full.f32 \t%r99, %r83, %r91;\n@@ -151,7 +151,7 @@ $L__tmp0:\n \tdiv.full.f32 \t%r102, %r86, %r94;\n \tdiv.full.f32 \t%r103, %r87, %r95;\n \tdiv.full.f32 \t%r104, %r88, %r96;\n-\t.loc\t1 386 14                        // lecture_06.py:386:14\n+\t.loc\t1 387 14                        // lecture_06.py:387:14\n \tmul.f32 \t%r105, %r1, 0f3F000000;\n \tmul.f32 \t%r106, %r2, 0f3F000000;\n \tmul.f32 \t%r107, %r3, 0f3F000000;\n@@ -160,7 +160,7 @@ $L__tmp0:\n \tmul.f32 \t%r110, %r6, 0f3F000000;\n \tmul.f32 \t%r111, %r7, 0f3F000000;\n \tmul.f32 \t%r112, %r8, 0f3F000000;\n-\t.loc\t1 386 23                        // lecture_06.py:386:23\n+\t.loc\t1 387 23                        // lecture_06.py:387:23\n \tadd.f32 \t%r113, %r97, 0f3F800000;\n \tadd.f32 \t%r114, %r98, 0f3F800000;\n \tadd.f32 \t%r115, %r99, 0f3F800000;\n@@ -169,7 +169,7 @@ $L__tmp0:\n \tadd.f32 \t%r118, %r102, 0f3F800000;\n \tadd.f32 \t%r119, %r103, 0f3F800000;\n \tadd.f32 \t%r120, %r104, 0f3F800000;\n-\t.loc\t1 386 19                        // lecture_06.py:386:19\n+\t.loc\t1 387 19                        // lecture_06.py:387:19\n \tmul.f32 \t%r9, %r105, %r113;\n \tmul.f32 \t%r10, %r106, %r114;\n \tmul.f32 \t%r11, %r107, %r115;\n@@ -178,17 +178,17 @@ $L__tmp0:\n \tmul.f32 \t%r14, %r110, %r118;\n \tmul.f32 \t%r15, %r111, %r119;\n \tmul.f32 \t%r16, %r112, %r120;\n-\t.loc\t1 389 21                        // lecture_06.py:389:21\n+\t.loc\t1 390 21                        // lecture_06.py:390:21\n \tadd.s64 \t%rd3, %rd6, %rd7;\n \tadd.s64 \t%rd4, %rd3, 2048;\n-\t.loc\t1 389 30                        // lecture_06.py:389:30\n+\t.loc\t1 390 30                        // lecture_06.py:390:30\n \t// begin inline asm\n \t@%p1 st.global.v4.b32 [ %rd3 + 0 ], { %r9, %r10, %r11, %r12 };\n \t// end inline asm\n \t// begin inline asm\n \t@%p2 st.global.v4.b32 [ %rd4 + 0 ], { %r13, %r14, %r15, %r16 };\n \t// end inline asm\n-\t.loc\t1 389 4                         // lecture_06.py:389:4\n+\t.loc\t1 390 4                         // lecture_06.py:390:4\n \tret;\n $L__tmp1:\n $L__func_end0:"
+    }
+  ]
+}

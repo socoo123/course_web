@@ -1,0 +1,68 @@
+{
+  "phase": "P1",
+  "state": "checked_and_explicitly_bounded_not_all_sources_complete",
+  "items": [
+    {
+      "id": "lec18-recording",
+      "scope": "lec18",
+      "detail": "Daniel Selsam录像未出现在已核官方列表；一次针对性检索亦未找到。ID/时长/字幕/主题均未知，不用Dan Fu或2025录像替代。",
+      "evidence": "p1-videos/review.txt"
+    },
+    {
+      "id": "guest-handouts",
+      "scope": "lec18–lec19",
+      "detail": "课表无讲义链接，固定仓库树无对应文件；不推断全网不存在。",
+      "evidence": "p1-lectures/variant-audit.json"
+    },
+    {
+      "id": "translation-permissions",
+      "detail": "18录像、课堂讲义仓库及A5无明确开放翻译许可。RoFormer为CC BY-NC-ND；其余论文逐项分为6篇CC BY可附条件翻译与10篇自主精读。A1–A4 MIT不延伸至第三方材料。",
+      "evidence": "reading-map.json"
+    },
+    {
+      "id": "reading-and-assets",
+      "detail": "视频未全片观看/核音；字幕仅首尾与时间统计，论文/讲义仅记录选段已读，均不称全文精读。讲义引用图片未全部下载，不是完全离线运行包。",
+      "evidence": "p1-lectures/review.txt"
+    },
+    {
+      "id": "post-term-lecture-revision",
+      "detail": "课堂讲义固定提交2026-09-12晚于学期，L06存在课后修订；L02当前与recording trace分别登记，不能混时间轴。",
+      "evidence": "p1-lectures/variant-audit.json"
+    },
+    {
+      "id": "a5-stale-optional-url",
+      "detail": "官网spring2025选做链接当前404。已分别核实历史2025 v1.0.1和仓库新2026 v26.0.0；正式制作使用后者，断链事实保留。",
+      "evidence": "p1-assignment-a5/assignment-audit.json"
+    },
+    {
+      "id": "a3-external-path",
+      "detail": "官方训练API要求课程登记ID与Stanford网络/VPN；非学生自建需自备算力/数据/存储/服务。README direct-run与Modal call-ID检查存在静态冲突，未作运行验证。",
+      "evidence": "p1-assignments-a1-a4/assignment-audit.json"
+    },
+    {
+      "id": "a4-scale-and-path",
+      "detail": "原规模为固定430M、8×B200、8.6B tokens；校外小样本路径仍有SUNET占位guard、课程路径和资产下载边界，不能称开箱即跑。",
+      "evidence": "p1-assignments-a1-a4/assignment-audit.json"
+    },
+    {
+      "id": "a5-gated-models-and-mixture",
+      "detail": "Llama模型需审批；2026精确SFT混合数据校外访问未证实。历史公开URL仅HEAD遇TLS/SSL失败，不能写404或替换为任意原料后称等效。",
+      "evidence": "p1-assignment-a5/assignment-audit.json"
+    },
+    {
+      "id": "cluster-and-dependencies",
+      "detail": "Modal课程workspace仅enrolled students。通用指南建议并发≤3GPU与作业多卡配置须staff协调；依赖隔离，尚无安装/训练/性能实测；不启动收费计算。",
+      "evidence": "p1-shared/policy-audit.json"
+    },
+    {
+      "id": "retrieval-limitations",
+      "detail": "大部分SSL/截断失败已换curl恢复。CC部分legalcode HTML直接403但reader已读并留摘录，另一分片保存CC BY完整text；A5历史commit详情API403但路径历史提供必要版本证据。",
+      "evidence": "p1-papers-01-08/review.txt; p1-papers-09-16/review.txt; p1-assignment-a5/review.txt"
+    },
+    {
+      "id": "source-backup-boundary",
+      "detail": "GitHub提交轻量清单/计划/审核/获取脚本，不提交许可不明全文、PDF/字幕大文件；本地采集不等于远端备份，新克隆须按固定URL重取。",
+      "evidence": "P1-REVIEW.txt"
+    }
+  ]
+}

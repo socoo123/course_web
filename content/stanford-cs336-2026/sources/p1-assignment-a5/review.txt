@@ -1,0 +1,39 @@
+A5 P1 来源采集核查
+课程文书日期：2026-11-14；证据核查时间（UTC）：2026-11-14T13:43:54Z
+范围：仅 sources/p1-assignment-a5/；未写P2/课程正文、未改共享计划或清单、未运行构建/测试/lint/格式化、未提交git、未下载模型数据、未支付计算。
+模型：本次Main从派发实际事件核实 openai-codex/gpt-6-astra、thinkingLevel=xhigh、无fallback；不是仅沿用P0默认配置。
+
+一、版本结论（必须保留断链事实）
+固定仓库：https://github.com/stanford-cs336/assignment5-alignment/tree/c2734a26308710949fe13226960a1e8cece94b7e
+主篇：raw/main-2026.pdf，39页。实际读封面和内文，Spring 2026 / Version 26.0.0。
+官网Optional Part2仍链接cs336_spring2025_assignment5_supplement_safety_rlhf.pdf；固定main无此路径，raw请求HTTP404。
+历史PDF已从发布2026补充前的父提交 cd5f183cf217cd82843e521d4d226e76544de51c 取到，raw/optional-safety-2025.pdf，19页；封面为Spring 2025 / Version1.0.1，内文是Together集群路径和旧硬件预算。
+当前仓库另有cs336_spring2026_assignment5_supplement_safety_rlhf.pdf，raw/optional-safety-2026.pdf，18页；实际读封面Spring2026 / Version26.0.0与内文。它由固定tree和README发现，不是官网旧URL成功下载或自动重定向。它明确entirely optional。
+
+二、原计划核对
+OLMo-2-0425-1B base + GSM8K完全真实；不能换成OLMo Instruct或旧Qwen-2.5-Math-1.5B/MATH。
+主篇要求三种prompt baseline、on-policy GRPO、GRPO_constant/Dr_GRPO/RFT/MaxRL、off-policy naive/noclip/GRPO token clip/GSPO sequence clip；还包括§7自拟估计器，不能漏。标准与算法比较要求4 random seeds/展示方差；默认6400 train、至少1024 val、200 rollout steps、group8、256 responses/batch、max_new_tokens512，标准GRPO最终平均val accuracy至少25%。这些是原规模要求，不把玩具演示称为完成作业。
+Llama3.1 8B / SFT / DPO由2026补充本身确认；70B Llama3.3 Instruct是本地评委，GPT-4 Turbo是已存参考输出，不要求付费GPT-4调用。SFT为UltraChat200k+SafetyTunedLlamas单轮混合；DPO用HH四个train collection；四基准MMLU/GSM8K/AlpacaEval/SimpleSafetyTests。
+新旧提示目录、解析器、SFT后模板、test API与路径均不同，不可拼接2025实现指南。
+
+三、运行规模、依赖与访问权限
+固定modal_utils.py配置B200:2；主篇training与vLLM inference各一GPU；补充DPO reference/train各一GPU，70B评委tensor_parallel_size=2。
+2026讲义未给可证明的最低显存GB。NVIDIA官方DGX B200为8卡总1440GB，即算术推得参考规格180GB/卡、双卡360GB；这不是课堂机器实测，也不是作业最低显存保证。旧补充的评委2卡各>80GB、SFT 24 H100小时不可迁移为2026要求。当前逐题标注B200小时见audit。
+运行依赖已存README.txt、pyproject.toml、uv.lock、.python-version及两份Modal helper、评委配置/代码。Python3.12；锁定torch2.10.0(+cu129)、transformers5.7.0、vllm0.19.1、flash-attn2.8.3。flash-attn是指定社区linux x86_64 cp312 wheel，非官方wheel。README两次uv sync没有显式gpu extra，但pyproject把关键GPU库放extra；Modal显式extras=[gpu]。未安装验证，不能宣称Mac或单照README可跑原规模GPU实验。
+课程Modal访问仅enrolled students：Stanford Google登录+邀请，cs336-<sunetid>环境（已读Main存的p1-shared/cluster-guide.txt）。共享卷cs336-a5-supplement位于cs336-shared-data环境，挂载/mnt/cs336-a5-supplement；不可写共享卷。结果放独立results卷。
+另有并发冲突：A5 helper默认4 containers ×2GPU=最多8GPU，而课程集群指南建议同时不超过3GPU。制作必须提示按课程规则安排，例如双卡任务顺序执行，不把配置默认值当授权额度。
+校外主篇公开路径成立：未gate的OLMo模型（Apache2.0）与GSM8K（MIT）公开元数据可读，仓库data/gsm8k存在。未取权重/数据。
+补充的Llama3.1/3.3均manual gated、定制Community License+AUP；固定raw README/LICENSE匿名401，已保存公开API中的许可与访问声明，无绕过。公开Meta模型路径不等于无需审批。
+校外精确SFT混合文件仍有缺口：2026只给课程卷；2025脚注有nlp.stanford.edu历史公共train/test URL，但仅HEAD即遇Python TLS EOF和curl SSL_ERROR_SYSCALL，不能称404，也不能称已可下载。公开UltraChat与SafetyTunedLlamas原料不证明与2026课程混合文件完全相同，不能静默替换后声称完整复现。
+
+四、授权与论文阅读分类
+固定A5完整tree无LICENSE/COPYING，README/pyproject无许可声明；没有作业全文翻译或公开再分发授权证据。只做原创中文自主精读/摘要与适量引文，不宣称授权全文翻译。
+上游数据：GSM8K/MMLU/UltraChat/HH卡片声明MIT；AlpacaEval为CC-BY-NC4.0；SimpleSafetyTests为CC-BY4.0（LICENSE已存）；SafetyTunedLlamas代码MIT，但数据CC-BY-NC4.0，SafeText另有来源限制。不能把整个SFT混合统一标MIT/商用可用。
+DPO是官方选做方法+论文引用；DeepSeekMath是官方必做GRPO方法出处；R1是官方prompt/背景引用。实际读引文上下文并检索全提取文本，均未见明确要求阅读论文全文/指定章节。编者安排的目标推导、GRPO章节、R1训练路线精读需维持编者标签。reading-updates.json仅给这类作业关系证据，不覆盖论文分片的版本/全文阅读/许可结论。
+
+五、证据与失败记录
+manifest-fragment.json记录所有43份本地证据及官网旧链接失败；每条均有URL、read_scope、时间、许可证据、file、sha256、version。下载与范围阅读分开：本次没有逐式精读主篇所有推导，也没有读模型/数据集全文或完成论文全文阅读。
+首次uv.lock下载curl18截断；按GitHub树272050字节重新下载成功并保留完整文件。获取2026补充发布commit完整详情API403，已有路径历史含parent/message足够定位，不宣称读到完整diff。pdfinfo对两份Typst2026PDF报告Suspects类型warning，但正常列页数且pdftotext成功，原件未修改。
+原始PDF/文本/HTML/metadata仅本地存证，不能说已GitHub备份；按主agent惯例只发布轻量清单/审核/固定链接。未来公开制作可依据已核实2026范围开展，但原规模实验必须另获计算与模型/数据权限，当前没有训练成功或依赖兼容性实测承诺。
+
+主agent整合入口：assignment-audit.json；manifest-fragment.json；reading-updates.json。建议统一验证仅做JSON/字段/路径/hash和既定项目检查；本分片未自行运行验证套件。

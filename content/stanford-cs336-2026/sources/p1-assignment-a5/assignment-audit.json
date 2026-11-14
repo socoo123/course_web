@@ -1,0 +1,527 @@
+{
+  "schema_version": 1,
+  "assignment": "A5 Alignment and Reasoning RL",
+  "phase": "P1 source acquisition and audit only",
+  "course_document_date": "2026-11-14",
+  "completed_at": "2026-11-14T13:43:54Z",
+  "model_provenance": {
+    "required": "openai-codex/gpt-6-astra:xhigh",
+    "observed_model": "openai-codex/gpt-6-astra",
+    "thinking_level": "xhigh",
+    "fallback": false,
+    "evidence": "Main 在本次派发事件核对 model_change / thinking_level_change / 首条assistant provider/model，并通过agent消息确认；共享model-preflight.json由Main保存。"
+  },
+  "repository": {
+    "url": "https://github.com/stanford-cs336/assignment5-alignment",
+    "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+    "commit_date": "2026-06-04T07:22:05Z",
+    "tree_sha": "190f637d4bfc4f45c2ea7e3800daeef65560c6a9",
+    "tree_sha_evidence": "repository-commit.json commit.tree.sha；按commit请求tree接口返回的顶层sha保留在原始JSON，不将其混作commit.tree.sha。",
+    "tree_truncated": false,
+    "acquisition": "只取公开元数据、固定PDF、README/运行与授权证据；未clone全仓、未下载模型或数据集。",
+    "evidence": [
+      "p1-assignment-a5/raw/repository-commit.json",
+      "p1-assignment-a5/raw/repository-tree.json"
+    ]
+  },
+  "edition_resolution": {
+    "main": {
+      "file": "p1-assignment-a5/raw/main-2026.pdf",
+      "text": "p1-assignment-a5/raw/main-2026.txt",
+      "cover": "CS336 Assignment 5 (alignment): Reasoning RL; Version 26.0.0; Spring 2026",
+      "pages": 39,
+      "actual_year": 2026,
+      "evidence": "封面p1及内文§1、§2.2、§4–7；不是按文件名/README判学期。"
+    },
+    "official_optional_link": {
+      "url": "https://github.com/stanford-cs336/assignment5-alignment/blob/main/cs336_spring2025_assignment5_supplement_safety_rlhf.pdf",
+      "result": "官网仍链接2025路径；固定main无该文件，raw请求404。",
+      "evidence": [
+        "p1-assignment-a5/raw/official-home.html",
+        "p1-assignment-a5/raw/repository-tree.json"
+      ],
+      "not_successful_download": true
+    },
+    "historical_optional": {
+      "commit": "cd5f183cf217cd82843e521d4d226e76544de51c",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/cd5f183cf217cd82843e521d4d226e76544de51c/cs336_spring2025_assignment5_supplement_safety_rlhf.pdf",
+      "file": "p1-assignment-a5/raw/optional-safety-2025.pdf",
+      "text": "p1-assignment-a5/raw/optional-safety-2025.txt",
+      "cover": "Version 1.0.1; Spring 2025",
+      "actual_year": 2025,
+      "pages": 19,
+      "discovery": "旧路径历史列出2026-06-04 a8ad44f355c0bf9b69d1b97aa5f35ff19276d82a发布补充；从其父提交cd5f183cf217cd82843e521d4d226e76544de51c取得历史PDF。",
+      "role": "历史对照；不可把Together路径、24 H100小时、>80GB评委显存说明或旧提示/测试API当成2026要求。"
+    },
+    "current_optional": {
+      "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_spring2026_assignment5_supplement_safety_rlhf.pdf",
+      "file": "p1-assignment-a5/raw/optional-safety-2026.pdf",
+      "text": "p1-assignment-a5/raw/optional-safety-2026.txt",
+      "cover": "CS336 Assignment 5 Supplement (alignment): Instruction Tuning and RLHF; Version 26.0.0; Spring 2026",
+      "actual_year": 2026,
+      "pages": 18,
+      "discovered_via": "固定仓库tree和README，而非官网旧Optional Part2链接成功跳转",
+      "requirement": "§1明确entirely optional；不能列为全班必做"
+    },
+    "conclusion": "2026主篇与2026补充均有封面和内文依据。官网Optional Part2链接已过时并断链；2025补充确实存在但仅能历史定位。生产使用固定2026补充并显式标注其仓库发现来源，同时保留官网断链与2025对照。"
+  },
+  "plan_claim_audit": [
+    {
+      "claim": "OLMo-2-0425-1B / GSM8K",
+      "verdict": "verified_official_2026",
+      "evidence": "主篇p1 §1、pp2–3 §2.2、p13模型加载、pp24–25 §4.3。必须使用base，不是SFT/DPO/Instruct模型。"
+    },
+    {
+      "claim": "提示基线",
+      "verdict": "verified_official_2026",
+      "details": [
+        "zero-shot question_only",
+        "zero-shot r1_zero",
+        "3-shot r1_zero_three_shot_gsm8k"
+      ],
+      "evidence": "主篇§3 pp4–7；主任务采样temperature=1、top_p=1、max_tokens=512；与安全补充greedy设置不可混用。"
+    },
+    {
+      "claim": "GRPO估计器及on/off-policy",
+      "verdict": "verified_official_2026",
+      "details": [
+        "§4推导/实现on-policy GRPO",
+        "§5 GRPO_constant / Dr_GRPO / RFT / MaxRL",
+        "§6 offpolicy_naive / noclip / token-level GRPO clip / sequence-level GSPO clip",
+        "§7自拟policy-gradient估计器"
+      ],
+      "evidence": "主篇pp7–38。原计划是正确但不完整摘要，制作不可漏§7。"
+    },
+    {
+      "claim": "2026补充 Llama3.1 8B / SFT / DPO",
+      "verdict": "verified_in_current_repository_pdf_not_old_official_link",
+      "evidence": "2026补充p1实现与运行清单，§2.1、§4、§6。原计划标2026需补这条实际来源，不能从spring2025 URL推断。"
+    },
+    {
+      "claim": "旧Qwen-2.5-Math-1.5B / MATH和完整旧SFT主篇",
+      "verdict": "exclude_from_2026_required_assignment",
+      "evidence": "2026主篇封面/§1与§2.2；CHANGELOG 2.0.0指出模型数据更换。RFT仍是2026要求，不能因旧主篇有SFT就删除RFT。"
+    }
+  ],
+  "required_2026_scope": {
+    "official_required_tasks": [
+      "提示baseline与输出/解析错误分析",
+      "GRPO训练核心：分离prompt/response tokenization、response mask、log-prob/entropy、组奖励归一化、loss aggregation、gradient accumulation、train step",
+      "on-policy训练与LR/prompt消融",
+      "GRPO_constant、Dr_GRPO、RFT、MaxRL变体实现和受控比较",
+      "off-policy naive、未clip重要性重加权、GRPO token clip、GSPO sequence clip",
+      "只改变一个因素的自拟估计器及多随机种子比较"
+    ],
+    "on_policy_definition": "每个inference/rollout batch一次optimizer step，训练batch等于rollout batch；微批梯度累加不等于多个optimizer step。§4.1.8、§6.1。",
+    "off_policy_definition": "同一rollout batch分成多个训练minibatch更新，第一次更新后样本来自旧策略；§6默认32 training steps/inference batch。",
+    "suggested_hyperparameters": {
+      "n_train_examples": 6400,
+      "n_val_examples": 1024,
+      "num_rollout_steps": 200,
+      "learning_rate": 1e-05,
+      "rollout_batch_size_responses": 256,
+      "train_batch_size_responses": 256,
+      "group_size": 8,
+      "gradient_accumulation_steps": 32,
+      "sampling_temperature": 1.0,
+      "sampling_max_tokens": 512,
+      "max_grad_norm": 1.0,
+      "optimizer": "AdamW, betas=(0.9,0.95), weight_decay=0"
+    },
+    "validation": "讲义允许data/gsm8k/test.jsonl作validation；复现时须如实命名，不称为从未用于调参的独立测试集。",
+    "replication_requirements": "标准GRPO与各算法比较4 random seeds，并展示方差而非仅均值；标准GRPO最终validation accuracy至少25% averaged across seeds。LR/prompt消融与自拟估计器的具体种子说明以原题为准。",
+    "variant_contracts": {
+      "GRPO_standard": {
+        "baseline": "mean",
+        "advantage_normalizer": "std",
+        "loss_normalization": "sequence"
+      },
+      "GRPO_constant": {
+        "baseline": "mean",
+        "advantage_normalizer": "std",
+        "loss_normalization": "constant"
+      },
+      "Dr_GRPO": {
+        "baseline": "mean",
+        "advantage_normalizer": "none",
+        "loss_normalization": "constant"
+      },
+      "RFT": {
+        "baseline": "none",
+        "advantage_normalizer": "none",
+        "loss_normalization": "constant"
+      },
+      "MaxRL_assignment_variant": {
+        "baseline": "mean",
+        "advantage_normalizer": "mean",
+        "loss_normalization": "constant",
+        "note": "论文原MaxRL按batch token数归一化，讲义刻意采用constant；不可把此作业变体当论文逐字实现。"
+      }
+    },
+    "off_policy_defaults": {
+      "rollout_batch_size_responses": 256,
+      "train_batch_size_responses": 8,
+      "gradient_accumulation_steps": 1,
+      "grpo_cliprange": 0.2,
+      "gspo_cliprange": 0.0003
+    },
+    "reward_contract": "正确性binary answer reward就是total reward；format只记录、不加部分分。GSM8K ground_truth取####后答案；question_only解析boxed，r1_zero解析answer tags。",
+    "not_required_by_main": "DPO、Llama3.1 8B通用指令SFT与安全对齐属于optional补充；不把它们转成主篇要求。"
+  },
+  "optional_2026_scope": {
+    "base_model": "meta-llama/Meta-Llama-3.1-8B（讲义命名）；公开HF当前规范页面meta-llama/Llama-3.1-8B",
+    "judge_model": "meta-llama/Llama-3.3-70B-Instruct",
+    "tasks": [
+      "MMLU/GSM8K/AlpacaEval/SimpleSafetyTests零样本baseline",
+      "UltraChat-200K+SafetyTunedLlamas单轮混合数据SFT",
+      "四基准评估、受控red-teaming报告",
+      "Anthropic HH偏好数据过滤、DPO loss、DPO训练及四基准复评"
+    ],
+    "sft": {
+      "epochs": 1,
+      "context_length": 512,
+      "effective_batch_size_sequences": 32,
+      "learning_rate": 2e-05,
+      "scheduler": "cosine with 3% warmup",
+      "weight_decay": 0.1,
+      "gradient_clip": 1.0,
+      "precision": "bfloat16",
+      "attention": "FlashAttention-2",
+      "training_utilities": "禁止Hugging Face Trainer；可用transformers加载、vLLM推理。"
+    },
+    "dpo": {
+      "dataset": "HH四个training collections，去掉多轮human消息>1的对话",
+      "reference": "SFT模型的冻结副本，不是RLVR的旧rollout策略",
+      "gpu_roles": "2 GPUs，reference和train model各一张",
+      "optimizer": "建议RMSprop以减内存，不默认AdamW",
+      "effective_batch_size": 64,
+      "beta": 0.1,
+      "learning_rate": 1e-06,
+      "validation_examples_suggestion": 200,
+      "epochs": 1
+    },
+    "evaluation": "zero-shot任务prompt插入zero-shot system prompt；SFT后改用alpaca_sft.prompt。AlpacaEval用仓库data/alpaca_eval/alpaca_eval_gpt4_turbo.json作为预生成reference，Llama3.3 70B本地评委；不是要求调用付费GPT-4 API。",
+    "paper_reading_vs_implementation": "DPO是选做作业的明确实现方法，但未发现明确要求阅读DPO论文全文或指定章节。"
+  },
+  "access_and_licenses": {
+    "course_resources": {
+      "access": "只对enrolled students；Stanford Google登录与邀请，独立cs336-<sunetid>环境。校外自学无自动权限。",
+      "evidence": "p1-shared/cluster-guide.txt:1-28,48-52,109-119（Main采集，本分片已实际阅读）",
+      "main_path": "主篇可直接用allenai/OLMo-2-0425-1B及仓库data/gsm8k/{train,test}.jsonl，没有强制私有模型路径。",
+      "supplement_shared_environment": "cs336-shared-data",
+      "supplement_volume": "cs336-a5-supplement",
+      "mount": "/mnt/cs336-a5-supplement",
+      "model_paths": [
+        "/mnt/cs336-a5-supplement/models/Meta-Llama-3.1-8B",
+        "/mnt/cs336-a5-supplement/models/Llama-3.3-70B-Instruct"
+      ],
+      "sft_paths": [
+        "/mnt/cs336-a5-supplement/data/safety_augmented_ultrachat_200k_single_turn/train.jsonl.gz",
+        "/mnt/cs336-a5-supplement/data/safety_augmented_ultrachat_200k_single_turn/test.jsonl.gz"
+      ],
+      "results_volume": "cs336-a5-supplement-results-{SUNET_ID}",
+      "results_mount": "/mnt/cs336-a5-supplement-results",
+      "write_policy": "共享volume禁止写；自己的results volume持久化。",
+      "public_access_test": "未登录课程workspace或尝试读取私有volume，不宣称校外可mount。"
+    },
+    "models": [
+      {
+        "id": "allenai/OLMo-2-0425-1B",
+        "revision": "a1847dff35000b4271fa70afc5db10fd29fedbdf",
+        "public_metadata": true,
+        "gated": false,
+        "license": "apache-2.0",
+        "evidence": "p1-assignment-a5/raw/olmo-model-api.json",
+        "weights_downloaded": false
+      },
+      {
+        "id": "meta-llama/Llama-3.1-8B",
+        "revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+        "public_metadata": true,
+        "gated": "manual",
+        "license": "llama3.1",
+        "evidence": "p1-assignment-a5/raw/llama31-model-api.json",
+        "weights_downloaded": false
+      },
+      {
+        "id": "meta-llama/Llama-3.3-70B-Instruct",
+        "revision": "6f6073b423013f6a7d4d9f39144961bfbfbc386b",
+        "public_metadata": true,
+        "gated": "manual",
+        "license": "llama3.3",
+        "evidence": "p1-assignment-a5/raw/llama33-model-api.json",
+        "weights_downloaded": false
+      }
+    ],
+    "llama_gate": "两种Llama均manual gated。权重访问须遵守发布者审批、Community License与AUP，学术/校外使用不自动豁免。固定README/LICENSE匿名请求实际401，公开API含许可正文，未尝试绕过或使用凭据。",
+    "datasets": [
+      {
+        "id": "openai/gsm8k",
+        "revision": "740312add88f781978c0658806c59bc2815b9866",
+        "gated": false,
+        "license": [
+          "mit"
+        ],
+        "evidence": "p1-assignment-a5/raw/gsm8k-dataset-api.json",
+        "data_downloaded": false
+      },
+      {
+        "id": "HuggingFaceH4/ultrachat_200k",
+        "revision": "8049631c405ae6576f93f445c6b8166f76f5505a",
+        "gated": false,
+        "license": "mit",
+        "evidence": "p1-assignment-a5/raw/ultrachat-dataset-api.json",
+        "data_downloaded": false
+      },
+      {
+        "id": "Anthropic/hh-rlhf",
+        "revision": "09be8c5bbc57cb3887f3a9732ad6aa7ec602a1fa",
+        "gated": false,
+        "license": "mit",
+        "evidence": "p1-assignment-a5/raw/hh-dataset-api.json",
+        "data_downloaded": false
+      },
+      {
+        "id": "cais/mmlu",
+        "revision": "c30699e8356da336a370243923dbaf21066bb9fe",
+        "gated": false,
+        "license": [
+          "mit"
+        ],
+        "evidence": "p1-assignment-a5/raw/mmlu-dataset-api.json",
+        "data_downloaded": false
+      },
+      {
+        "id": "tatsu-lab/alpaca_eval",
+        "revision": "2edc6fad8be6b14ea7230aabfd08188da6b8b814",
+        "gated": false,
+        "license": "cc-by-nc-4.0",
+        "evidence": "p1-assignment-a5/raw/alpaca-dataset-api.json",
+        "data_downloaded": false
+      }
+    ],
+    "SafetyTunedLlamas": {
+      "url": "https://github.com/vinid/safety-tuned-llamas",
+      "revision": "36a4b8d5c2177ed165bf61f59b590161394f7f12",
+      "license": "代码MIT；数据CC-BY-NC-4.0；SafeText/PhysicalSafety另引用其来源",
+      "evidence": "p1-assignment-a5/raw/safety-tuned-README.txt",
+      "caution": "API license=null不覆盖README明确授权；不得把混合SFT数据整体标MIT或允许商业用途。"
+    },
+    "SimpleSafetyTests": {
+      "url": "https://github.com/bertiev/SimpleSafetyTests",
+      "revision": "d7aee9a9422a5a5488f478fd79c2479c891c0f3b",
+      "license": "CC-BY-4.0",
+      "evidence": [
+        "p1-assignment-a5/raw/simple-safety-README.txt",
+        "p1-assignment-a5/raw/simple-safety-LICENSE.txt"
+      ],
+      "content_warning": "敏感安全测试内容，只采元数据/许可，无测试提示或模型响应的批量下载。"
+    },
+    "public_paths": {
+      "required_gsm8k": "https://github.com/stanford-cs336/assignment5-alignment/tree/c2734a26308710949fe13226960a1e8cece94b7e/data/gsm8k",
+      "optional_hh": "https://github.com/stanford-cs336/assignment5-alignment/tree/c2734a26308710949fe13226960a1e8cece94b7e/data/hh",
+      "optional_mmlu": "https://github.com/stanford-cs336/assignment5-alignment/tree/c2734a26308710949fe13226960a1e8cece94b7e/data/mmlu",
+      "optional_alpaca_reference": "https://github.com/stanford-cs336/assignment5-alignment/blob/c2734a26308710949fe13226960a1e8cece94b7e/data/alpaca_eval/alpaca_eval_gpt4_turbo.json",
+      "optional_simple_safety": "https://github.com/stanford-cs336/assignment5-alignment/blob/c2734a26308710949fe13226960a1e8cece94b7e/data/simple_safety_tests/simple_safety_tests.csv",
+      "evidence": "固定repository-tree的文件对象SHA和大小；仅确认存在，未下载数据。"
+    },
+    "exact_sft_mix_gap": {
+      "status": "outside_course_access_not_verified",
+      "explanation": "2026补充只列课程Modal volume；公开UltraChat和SafetyTunedLlamas原料可获取，但不是已证明与课程单轮混合文件字节一致的替代。不能把自行重新混合作为原版完整复现。",
+      "legacy_public_urls": [
+        "https://nlp.stanford.edu/data/nfliu/cs336-spring-2024/assignment5/safety_augmented_ultrachat_200k_single_turn/train.jsonl.gz",
+        "https://nlp.stanford.edu/data/nfliu/cs336-spring-2024/assignment5/safety_augmented_ultrachat_200k_single_turn/test.jsonl.gz"
+      ],
+      "legacy_url_evidence": "2025补充p8脚注3/4，历史路径中的2024不等于2026混合数据版本。",
+      "attempt": "仅HEAD，Python TLS EOF、curl SSL_ERROR_SYSCALL；未获得HTTP状态/长度或文件hash，未下载数据。"
+    },
+    "license_scope_limit": "模型/数据许可与代码许可必须分开。上游dataset card许可证不证明课程重新打包文件的字节同一性或覆盖其他来源内容。"
+  },
+  "hardware_and_environment": {
+    "current_original_scale": {
+      "configured_gpus_per_job": 2,
+      "gpu_type": "B200",
+      "evidence": [
+        "p1-assignment-a5/raw/modal_utils.py.txt:35",
+        "p1-assignment-a5/raw/modal_utils_safety.py.txt:12-18,50-56"
+      ],
+      "main_roles": "主篇§4.2明确training(HF+optimizer)与inference(vLLM+KV cache)各一GPU，NCCL权重同步。",
+      "optional_roles": "DPO reference/train各1GPU；70B评委tensor_parallel_size=2；SFT小microbatch+梯度累加。"
+    },
+    "vram": {
+      "assignment_explicit_minimum_gb": null,
+      "minimum_status": "2026 PDF没有给出可证明的最低单卡GB数；不可把历史>80GB或CPU可测试误写为当前完整训练要求。",
+      "reference_platform": "NVIDIA DGX B200官方8张Blackwell总GPU显存1440GB，算术等价180GB/卡；双卡参考总360GB。",
+      "reference_per_gpu_gb": 180,
+      "reference_evidence": "p1-assignment-a5/raw/nvidia-dgx-b200.txt",
+      "inference_label": "180和360为厂商平台规格算术推导；没有实际申请GPU或读取nvidia-smi，不宣称课堂/Modal实例可用显存实测。"
+    },
+    "official_time_annotations": {
+      "main_standard_GRPO": "2 B200 hrs",
+      "main_learning_rate": "4 B200 hrs",
+      "main_prompt_ablation": "4 B200 hrs",
+      "main_variants": "8 B200 hrs",
+      "main_off_policy": "8 B200 hrs",
+      "optional_SFT": "3 B200 hrs",
+      "optional_DPO": "1 B200 hr",
+      "interpretation": "逐题原文估计，不作为保证运行时/费用；未把GPU-hour和双卡wall-clock擅自换算，未含自拟估计器等未标注工作。"
+    },
+    "concurrency_conflict": {
+      "repository": "MAX_CONTAINERS=4且每container B200:2，最多8 GPUs",
+      "course_guide": "Aim not to use more than 3 GPUs at a time",
+      "decision": "不能把helper默认4并发解释为获准8GPU配额；制作须提示在课程规则内调度（如每次一个双卡任务，多个seed顺序），不在P1改上游helper。"
+    },
+    "python": "3.12; project >=3.12,<3.13; uv.lock ==3.12.*",
+    "dependency_manager": "uv",
+    "container": "nvidia/cuda:12.9.1-devel-ubuntu22.04 with Python3.12",
+    "gpu_extra": "pyproject [project.optional-dependencies].gpu; modal .uv_sync(extras=[\"gpu\"])",
+    "locked_core_versions": {
+      "torch": [
+        "2.10.0",
+        "2.10.0+cu129"
+      ],
+      "transformers": [
+        "5.7.0"
+      ],
+      "vllm": [
+        "0.19.1"
+      ],
+      "flash-attn": [
+        "2.8.3"
+      ],
+      "modal": [
+        "1.4.2"
+      ],
+      "accelerate": [
+        "1.6.0"
+      ],
+      "alpaca-eval": [
+        "0.6.6"
+      ],
+      "wandb": [
+        "0.26.1"
+      ]
+    },
+    "platforms": "uv列darwin arm64和linux x86_64；GPU wheel仅linux x86_64 cp312。Mac本地CPU调试不等于可运行原规模vLLM/CUDA训练。",
+    "flash_attention": "2.8.3社区wheel lesj0610/flash-attention，cu12/Torch2.10/cp312；pyproject注释明确非官方wheel；CUDA torch索引cu129。须记录供应链来源，不运行即无兼容性成功保证。",
+    "readme_setup_mismatch": "README两次uv sync未显式启用gpu extra；固定pyproject把vllm/flash-attn放gpu extra，Modal helper才显式extras=[gpu]。未来校外GPU操作说明需据pyproject显式选择extra，不应声称单照README就已验证完整GPU环境。",
+    "dependencies_installed": false,
+    "tests_run": false,
+    "gpu_jobs_run": false,
+    "paid_compute": false,
+    "secret_handling": "只保存原始代码中的secret名称与占位符；未读取/保存任何实际token、cookies或凭据。"
+  },
+  "paper_reading_classification": {
+    "scope": "仅限本次固定A5主篇与2026可选补充；不代替整门课其他讲次阅读安排。",
+    "explicit_paper_reading_found": [],
+    "DPO": {
+      "paper_id": "paper12",
+      "classification": "official_optional_method_and_citation_not_explicit_paper_reading",
+      "evidence": "2026补充§6、§6.1–6.4，p18 bibliography [7]；要求实现DPO，不存在指定阅读论文全文/章节的句子。",
+      "editorial_scope": "目标推导与实验是编者精读安排。"
+    },
+    "DeepSeekMath": {
+      "paper_id": "paper13",
+      "classification": "official_required_method_citation_not_explicit_paper_reading",
+      "evidence": "主篇§4.1引用Z. Shao et al. 2024，p39 bibliography [8]；GRPO为必做方法但论文只作出处。",
+      "editorial_scope": "GRPO论文相关章节是编者精读安排；不要改为官方必读章节。"
+    },
+    "DeepSeek-R1": {
+      "paper_id": "paper14",
+      "classification": "official_prompt_and_background_citation_not_explicit_paper_reading",
+      "evidence": "主篇§3.2 R1-Zero prompt、§4背景和p39 bibliography [4]。",
+      "editorial_scope": "训练路线/证据/局限是编者安排，不是官方指定全文阅读。"
+    },
+    "search_method": "在三个PDF的完整提取文本中查read/reading/recommend/consult与paper/DeepSeek/Rafailov及required/suggested reading；另实际阅读全部三篇相关引文上下文与2026参考文献；未找到明确阅读指令。",
+    "paper_full_text_read_here": false,
+    "paper_license_audit": "由论文分片负责；本分片不覆盖论文许可或谎称论文全文精读。"
+  },
+  "rights_and_production_boundary": {
+    "assignment_license": "固定repository完整树无LICENSE/COPYING，README/pyproject无许可声明；没有观察到作业PDF全文翻译授权。未虚构LICENSE文件。",
+    "chinese_treatment": "自主精读、原创结构化摘要/教学解读及必要短引文附出处；不宣称获授权全文中文翻译，不公开打包原始PDF/全提取文本。",
+    "can_produce_after_P1": [
+      "以固定2026正篇为准的完整实验要求索引与原创解读，保留§7和多seed要求",
+      "明确optional的2026安全SFT/DPO材料，首屏说明官网旧链接失效与当前来源",
+      "原规模B200双卡路线、校内与校外权限差异、依赖与数据许可说明",
+      "论文精读可按编者安排组织，但不得伪标官方必读"
+    ],
+    "cannot_claim": [
+      "本轮已完成P2或课程正文",
+      "模型已下载/数据全文已读/实验已跑通/依赖安装成功",
+      "校外无需申请即可拿到Llama或课程Modal volume",
+      "重混原始UltraChat+SafetyTunedLlamas与课程2026混合文件一致",
+      "旧版Together/H100要求自动适用2026",
+      "许可证覆盖所有数据或许可不明讲义可整篇翻译发布",
+      "本地raw证据已GitHub备份"
+    ],
+    "operational_gaps": [
+      "校外精确SFT混合文件公开可达性和与2026卷同一性未核实",
+      "Llama gated审批未申请；只读公开许可/metadata",
+      "作业代码/PDF公开再分发及全文翻译许可未确认",
+      "最低可复现显存和实际运行耗时未实测"
+    ],
+    "honor_code": "官网允许低层编程/高层概念AI辅助，禁止AI直接解题与未经许可参考已有实现；未来教学材料不能伪装学生提交答案。"
+  },
+  "acquisition_failures": [
+    {
+      "at": "2026-11-14T13:38:17Z",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_spring2025_assignment5_supplement_safety_rlhf.pdf",
+      "result": "HTTP404",
+      "resolution": "标官网旧路径断链，历史父提交存2025版，当前树独立取得2026版。"
+    },
+    {
+      "at": "2026-11-14T13:38:51Z",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/uv.lock",
+      "result": "curl18 transferred partial file; 207180 bytes vs GitHub tree272050",
+      "resolution": "一次重新下载完成272050 bytes，保留最终完整文件hash；未保留部分文件作为有效锁文件。"
+    },
+    {
+      "at": "2026-11-14T13:39:11Z",
+      "url": "https://api.github.com/repos/stanford-cs336/assignment5-alignment/commits/a8ad44f355c0bf9b69d1b97aa5f35ff19276d82a",
+      "result": "HTTP403",
+      "resolution": "已有路径历史含commit、parent和2026发布message；不重复请求，不宣称已取得该完整commit diff。"
+    },
+    {
+      "at": "2026-11-14T13:41:41Z/2026-11-14T13:41:45Z",
+      "urls": [
+        "https://huggingface.co/meta-llama/Llama-3.1-8B/raw/d04e592bb4f6aa9cfee91e2e20afa771667e1d4b/README.md",
+        "https://huggingface.co/meta-llama/Llama-3.1-8B/raw/d04e592bb4f6aa9cfee91e2e20afa771667e1d4b/LICENSE",
+        "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct/raw/6f6073b423013f6a7d4d9f39144961bfbfbc386b/README.md",
+        "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct/raw/6f6073b423013f6a7d4d9f39144961bfbfbc386b/LICENSE"
+      ],
+      "result": "匿名固定raw均HTTP401",
+      "resolution": "以公开API manual gated字段和公开license/AUP正文为权限证据；未绕过。"
+    },
+    {
+      "at": "2026-11-14T13:40:34Z/2026-11-14T13:41:54Z",
+      "urls": [
+        "https://nlp.stanford.edu/data/nfliu/cs336-spring-2024/assignment5/safety_augmented_ultrachat_200k_single_turn/train.jsonl.gz",
+        "https://nlp.stanford.edu/data/nfliu/cs336-spring-2024/assignment5/safety_augmented_ultrachat_200k_single_turn/test.jsonl.gz"
+      ],
+      "method": "HEAD only",
+      "result": "urllib TLS EOF then curl SSL_ERROR_SYSCALL; no HTTP response",
+      "resolution": "记录外部路径可达性未证实，不转HTTP、不下载、不称404/失效。"
+    },
+    {
+      "at": "2026-11-14T13:43:24Z",
+      "files": [
+        "p1-assignment-a5/raw/main-2026.pdf",
+        "p1-assignment-a5/raw/optional-safety-2026.pdf"
+      ],
+      "result": "pdfinfo显示Syntax Error: Suspects object is wrong type (boolean)，但正常返回页数/metadata；pdftotext成功",
+      "resolution": "保留原始PDF，不改字节；本次以封面文本+内文判年，不把metadata warning当资料无法读。"
+    }
+  ],
+  "delivery": {
+    "files": [
+      "manifest-fragment.json",
+      "assignment-audit.json",
+      "reading-updates.json",
+      "review.txt"
+    ],
+    "shared_files_modified": false,
+    "phase2_started": false,
+    "verification_for_main": "可一次核对JSON解析、来源必填字段、文件存在与sha256；本分片未运行构建/lint/测试/格式化或git命令。"
+  }
+}
