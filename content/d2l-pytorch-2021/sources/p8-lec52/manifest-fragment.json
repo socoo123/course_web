@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "batch": "P8",
+  "lectureId": "lec52",
+  "generatedAt": "2026-11-14",
+  "owner": "P8Lec51to54",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "diagram": "original_svg_pending_main_browser_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "sections": [
+      "8.2"
+    ],
+    "editionBoundary": "Current Chinese second edition; not 2021 snapshot",
+    "versionEvidenceReused": "sources/p1-shared/book-version.json"
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1Fo4y1Q79L/",
+    "label": "官方 B站视频（全 2 P 合计）",
+    "duration": "20:30",
+    "language": "zh",
+    "durationSeconds": 1230,
+    "pageCount": 2,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 372631893,
+        "part": "代码",
+        "duration": 1084
+      },
+      {
+        "page": 2,
+        "cid": 372637890,
+        "part": "QA",
+        "duration": 146
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 2
+  },
+  "scheduleDate": "2021-07-17",
+  "publishedAt": "2021-07-20T02:00:08+00:00",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_recurrent-neural-networks/text-preprocessing.md",
+      "snapshot": "sources/p8-lec52/book-text-preprocessing.txt",
+      "sha256": "bd3a2280ee9ab6ba8a7fc4002b2cd265fe2a87b85bca64694d769ba7ca51a2ba",
+      "readRange": "lines 1–229, full section including all framework tabs; no linked papers or figures read",
+      "license": "Pinned repository root Apache-2.0; not extended to third-party media/data"
+    },
+    {
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "snapshot": "sources/p8-lec52/schedule-excerpt.txt",
+      "sha256": "85d1a57df379188d3f14b57980ff78fc90660421893f59d1c244896a6c619804",
+      "readRange": "whole saved excerpt; original offsets in schedule-evidence.json",
+      "license": "Public schedule evidence only; no open video transcript permission inferred"
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "lectures/lec52/notes.zh.md",
+      "sha256": "645ee3cf60a655679d2190fd8dfcf6b54abbd49c2cce7fdd75c29a143d437af3",
+      "hashPhase": "generation_time_not_final_acceptance"
+    },
+    {
+      "path": "lectures/lec52/assets/vocabulary-boundary.svg",
+      "sha256": "57fc441221168b4f5f5ed5603cc3007a6b279fb2813c64acbb436b5239b60b55",
+      "hashPhase": "generation_time_not_final_acceptance"
+    },
+    {
+      "path": "sources/p8-lec52/video-metadata.json",
+      "sha256": "f5b3495bf7f0320e2a94cdf56a5625b35f842a891945f4cf72af47550b0a24a0",
+      "hashPhase": "generation_time_not_final_acceptance"
+    },
+    {
+      "path": "sources/p8-lec52/schedule-evidence.json",
+      "sha256": "53bcb6892ffacd432971681a115749708bd2f58adc24614d9144d7fd26a66735",
+      "hashPhase": "generation_time_not_final_acceptance"
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "name": "train_only_vocab",
+      "input": "train red blue red; min_freq=1; unk0; val blue green",
+      "expected": "red1 blue2; val [2,0]; min_freq2 maps both val tokens to0"
+    },
+    {
+      "name": "normalization",
+      "input": "Time, 2021!; Can't",
+      "expected": "time; can t"
+    }
+  ],
+  "workerExecution": {
+    "status": "not_run_by_worker",
+    "numerical": false,
+    "tests": false,
+    "build": false,
+    "lint": false,
+    "formatter": false,
+    "browser": false,
+    "git": false,
+    "boundary": "Source retrieval and generation-time hashing only. Main owns later numerical/browser/build evidence; preserve this historical status."
+  },
+  "limits": [
+    "No media review, transcript, classroom QA or guessed internal timestamps.",
+    "Empty public caption lists do not rule out burned-in captions.",
+    "Analytic examples are independent mechanism expectations, not real-corpus training or hardware measurements.",
+    "No complete lab answers or duplicated materials."
+  ]
+}

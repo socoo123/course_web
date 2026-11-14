@@ -1,0 +1,71 @@
+{
+  "url": "https://d2l-data.s3-accelerate.amazonaws.com/timemachine.txt",
+  "bytes": 178979,
+  "sha1": "090b5e7e70c295757f55df93cb0a180b9691891a",
+  "sha256": "8424dbd9532ac81f7e5f0b6add90e6952baea29158309d7d1bf3884f4e12c516",
+  "cache": "/var/folders/5k/y6qh6sfd2g30js0v0qrv4mfr0000gn/T/d2l-p8-data.35tghha4",
+  "title_line": "The Time Machine, by H. G. Wells [1898]",
+  "cleaning": "per-line [^A-Za-z]+ -> single space; strip/lower; discard empty lines; concatenate within split with no inserted separator",
+  "split": {
+    "nonempty_lines": 2848,
+    "zero_based_half_open": {
+      "train": [
+        0,
+        2278
+      ],
+      "validation": [
+        2278,
+        2563
+      ],
+      "test": [
+        2563,
+        2848
+      ]
+    },
+    "candidate_tokens": [
+      137058,
+      16970,
+      16552
+    ],
+    "vocabulary_fit": "complete training candidate only, before taking first8192 runtime tokens",
+    "vocabulary_order": "<unk> then frequency descending, alphabetical ties",
+    "vocabulary": [
+      "<unk>",
+      " ",
+      "e",
+      "t",
+      "a",
+      "i",
+      "n",
+      "o",
+      "s",
+      "h",
+      "r",
+      "d",
+      "l",
+      "m",
+      "u",
+      "c",
+      "f",
+      "w",
+      "g",
+      "y",
+      "p",
+      "b",
+      "v",
+      "k",
+      "x",
+      "z",
+      "j",
+      "q"
+    ],
+    "train_subset_tokens": 8192,
+    "validation_subset_tokens": 2048,
+    "train_pairs_per_epoch": 8184,
+    "eval_train_pairs": 8191,
+    "eval_validation_pairs": 2047,
+    "validation_OOV": 0,
+    "test_used_for_fit_training_tuning_or_evaluation": false
+  },
+  "rights": "S3 mirror has no independent license statement; work identified as H.G.Wells The Time Machine; PG35 lists US public domain, local law still applies; PG current file is not identical; no raw text redistribution"
+}

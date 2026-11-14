@@ -1,0 +1,38 @@
+{
+  "batch": "P8",
+  "status": "passed_bounded_CPU_scope",
+  "environment": "sources/p8-shared/environment.json",
+  "mechanisms": "sources/p8-shared/mechanism-smoke.json",
+  "realCorpusAcquisition": "sources/p8-shared/corpus-acquisition.json",
+  "realTraining": "sources/p8-shared/language-model-smoke.json",
+  "runs": "one synthetic-mechanism process and one real-corpus process covering three models; both exit0; no rerun or failed assertions",
+  "scope": [
+    "sampling X/Y shift and sequential row identity",
+    "time-major target order",
+    "scratch/API RNN forward, gradient and SGD with frozen zero bias_hh",
+    "detach gradient boundary and value carry versus zero reset",
+    "global gradient clipping and token-weighted PPL",
+    "GRU reset-before/reset-after counterexample",
+    "two-layer bidirectional RNN/GRU/LSTM shapes, h/c detach",
+    "future-token perturbation demonstrates backward context leakage",
+    "real S3 Time Machine checksum, fixed split, train-only fit vocabulary",
+    "single-layer unidirectional RNN/GRU/LSTM real small training, held-out CE/PPL and actual greedy text",
+    "validation parameter/buffer/gradient immutability and B1 chunk-length invariance"
+  ],
+  "notExecuted": [
+    "full student task implementations or all comparison variants",
+    "textbook 500 epochs or full corpus tuning",
+    "causal generation or perplexity from bidirectional network",
+    "test split evaluation",
+    "GPU CUDA/MPS operation or hardware performance benchmarks",
+    "historical competition or LEC71 classroom work",
+    "d2l/Jupyter or original 2021 notebooks"
+  ],
+  "boundaries": [
+    "No clipping activation during actual training; synthetic large gradient separately shrinks.",
+    "Generated text repeats; losses are not quality or competition scores.",
+    "Changing recurrent batch size changes context; only chunk-length B1 invariance verified.",
+    "GRU and LSTM models have different parameter counts; not equal-capacity benchmark."
+  ],
+  "publication": "Only content documents, source evidence and logs; raw corpus cached outside repository; transient scripts remain process inputs, no solution scripts or checkpoints written."
+}

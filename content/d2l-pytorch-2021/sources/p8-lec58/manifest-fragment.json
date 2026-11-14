@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "batch": "P8",
+  "lectureId": "lec58",
+  "generatedAt": "2026-11-14",
+  "owner": "P8Lec55to59",
+  "scope": "Only owned lecture and source directories. No numeric execution, tests/build/lint/formatter, browser, commits or shared-index edits.",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required",
+    "diagram": "original_svg_written_pending_browser_acceptance"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "editionBoundary": "Current pinned Chinese second edition; not2021 snapshot.",
+    "sections": [
+      "9.3"
+    ],
+    "versionEvidenceReused": "sources/p1-shared/book-version.json",
+    "licenseBoundary": "Repository root Apache-2.0 separately from setup.py MIT-0; videos, data, images and PyTorch have separate conditions."
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1JM4y1T7N4/",
+    "label": "官方 B站视频（全 3 P 合计）",
+    "duration": "13:19",
+    "language": "zh",
+    "durationSeconds": 799,
+    "pageCount": 3,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 376279066,
+        "part": "深层循环神经网络",
+        "duration": 203
+      },
+      {
+        "page": 2,
+        "cid": 376282968,
+        "part": "代码",
+        "duration": 165
+      },
+      {
+        "page": 3,
+        "cid": 376287501,
+        "part": "QA",
+        "duration": 431
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 3,
+    "permission": "No open transcript republication authorization; no media downloaded/reviewed."
+  },
+  "scheduleDate": "2021-07-25",
+  "publishedAt": "2021-07-27T02:00:06+00:00",
+  "sources": [
+    {
+      "snapshot": "sources/p8-lec58/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1JM4y1T7N4",
+      "sha256": "ff80120283105516ffcba4e8c8dd328378e0266abd3dbe48e6fbb352fbc41405",
+      "bytes": 2149,
+      "readScope": "Filtered identity/year/all page title,cid,duration and one public caption query per page; retained fields reviewed. No audio/video or subtitle body obtained.",
+      "readRanges": []
+    },
+    {
+      "snapshot": "sources/p8-lec58/schedule-evidence.json",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "e06c44ee100a70971f471e10991ba8892bcb9b635fb88ce24b1df84c14c322a1",
+      "bytes": 2344,
+      "readScope": "Owned schedule mapping and full corresponding row(s); not classroom coverage.",
+      "readRanges": []
+    },
+    {
+      "snapshot": "sources/p8-lec58/book-deep-rnn.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_recurrent-modern/deep-rnn.md",
+      "sha256": "f5bf6d165e7a28bfe4ddde89c4ec4d7170b1767bc07baa0bc11392e534074559",
+      "bytes": 6678,
+      "readScope": "Selected prose/PyTorch implementations actually reviewed; multi-framework snapshot retained but NOT a claim of reviewing every backend or full-book coverage.",
+      "readRanges": [
+        {
+          "start": 1,
+          "end": 73
+        },
+        {
+          "start": 83,
+          "end": 93
+        },
+        {
+          "start": 105,
+          "end": 110
+        },
+        {
+          "start": 117,
+          "end": 127
+        },
+        {
+          "start": 136,
+          "end": 174
+        }
+      ],
+      "section": "9.3",
+      "license": "Repository root Apache-2.0; setup.py metadata MIT-0 separately recorded; no extension to external assets."
+    },
+    {
+      "snapshot": "sources/p8-lec58/torch-rnn-v2.5.1-excerpt.txt",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/nn/modules/rnn.py",
+      "sha256": "30a9950d33c2f35e6a9ee6a27e2f75ef3ffb9534ee49ef63cf5dee338b2839d2",
+      "bytes": 8914,
+      "readScope": "Original source lines named in excerpt, including API docstrings, equations, shapes and parameter layout; only these ranges retained/reviewed.",
+      "readRanges": [
+        {
+          "start": 819,
+          "end": 951
+        }
+      ],
+      "rangeCoordinates": "Original upstream source line numbers, not excerpt-file physical lines.",
+      "licenseEvidenceReused": "sources/p5-lec34/torch-v2.5.1-LICENSE.txt",
+      "upstreamSha256": "7a9330a13cfdb951a92c980d529efffbe79a440b2a8cbcaa3158bc02622dbca5"
+    },
+    {
+      "snapshot": "sources/p5-lec34/torch-v2.5.1-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/LICENSE",
+      "sha256": "47a26beb94e3f6b333a3677fc85d546f1fdfd2f0b3686c26d2fb5b10e0134165",
+      "bytes": 3384,
+      "readScope": "Whole existing pinned PyTorch license reviewed and reused; retain copyright and disclaimer.",
+      "readRanges": [
+        {
+          "start": 1,
+          "end": 80
+        }
+      ]
+    }
+  ],
+  "sourceIndex": "sources/p8-lec58/source-index.json",
+  "generatedFiles": [
+    {
+      "path": "lectures/lec58/notes.zh.md",
+      "sha256": "c33de759b5ad44efd39847fcde1aca08d11235cad417f8b7d8b5fffe7d43f15c",
+      "bytes": 9249,
+      "status": "written_pending_main_acceptance",
+      "hashStage": "generation_time_not_final_main_acceptance"
+    },
+    {
+      "path": "lectures/lec58/assets/deep-rnn-axes.svg",
+      "sha256": "81ea0b02ad1b2706836d2876fe029d8eff188e71764608e255d6cdb4ed3ed9e8",
+      "bytes": 2676,
+      "status": "written_pending_main_acceptance",
+      "hashStage": "generation_time_not_final_main_acceptance"
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "id": "deep-lstm-axes",
+      "kind": "synthetic_mechanism",
+      "inputs": {
+        "T": 4,
+        "B": 2,
+        "D": 5,
+        "H": 3,
+        "L": 2,
+        "V": 5,
+        "proj_size": 0
+      },
+      "expected": {
+        "output": [
+          4,
+          2,
+          3
+        ],
+        "hn": [
+          2,
+          2,
+          3
+        ],
+        "cn": [
+          2,
+          2,
+          3
+        ],
+        "weightIH0": [
+          12,
+          5
+        ],
+        "weightIH1": [
+          12,
+          3
+        ],
+        "logits": [
+          8,
+          5
+        ],
+        "layer0Parameters": 120,
+        "layer1Parameters": 96,
+        "recurrentParameterCount": 216,
+        "withHead": 236
+      }
+    },
+    {
+      "id": "deep-dropout-contract",
+      "kind": "structural_contract",
+      "expected": "Built-in dropout is between recurrent layers, excluding last output; no interlayer dropout with L=1; eval disables dropout; no claim of locked time mask or recurrent-edge dropout."
+    }
+  ],
+  "workerExecution": {
+    "status": "not_run_by_worker",
+    "numerical": false,
+    "training": false,
+    "tests": false,
+    "browser": false,
+    "build": false,
+    "lint": false,
+    "formatter": false,
+    "commit": false,
+    "note": "Hashes identify saved sources and generation-time content only; preserve this historical status after main verification."
+  },
+  "mainVerificationBoundary": "Main owns sources/p8-shared mechanism/real-corpus/browser/final-build evidence. Main reported mechanism checks performed; worker did not inspect or execute them. No invented training scores, generations or throughput.",
+  "limits": [
+    "No classroom timestamps, demonstrations or QA verified.",
+    "Caption empty lists do not rule out burned-in captions.",
+    "No draft/materials placeholders.",
+    "SVG original, not video screenshot.",
+    "No causal PPL claim from bidirectional full-window model."
+  ]
+}

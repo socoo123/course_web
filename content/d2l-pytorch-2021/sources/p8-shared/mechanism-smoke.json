@@ -1,0 +1,196 @@
+{
+  "kind": "synthetic_mechanism_only_not_training",
+  "device": "cpu",
+  "torch": "2.5.1",
+  "sampling": {
+    "sequential_first_X": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        20,
+        21,
+        22,
+        23
+      ]
+    ],
+    "sequential_second_X": [
+      [
+        4,
+        5,
+        6,
+        7
+      ],
+      [
+        24,
+        25,
+        26,
+        27
+      ]
+    ],
+    "random_starts": [
+      20,
+      4,
+      12,
+      0
+    ],
+    "random_Y": [
+      [
+        21,
+        22,
+        23,
+        24
+      ],
+      [
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        13,
+        14,
+        15,
+        16
+      ],
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "boundary_reset_required": true
+  },
+  "flatten_order": [
+    0,
+    3,
+    1,
+    4,
+    2,
+    5
+  ],
+  "scratch_RNN_API": {
+    "max_forward_diff": 1.1102230246251565e-16,
+    "max_state_diff": 5.551115123125783e-17,
+    "max_gradient_diff": 2.7755575615628914e-17,
+    "max_SGD_diff": 1.1102230246251565e-16,
+    "bias_contract": "bias_hh zero and frozen; otherwise two biases cause double effective bias SGD update"
+  },
+  "detach": {
+    "full": {
+      "value": 12.0,
+      "w_grad": 12.0,
+      "x_grad": 4.0,
+      "boundary_grad": 2.0
+    },
+    "truncated": {
+      "value": 12.0,
+      "w_grad": 6.0,
+      "x_grad": null,
+      "boundary_grad": null
+    }
+  },
+  "carry": {
+    "split_forward_error": 0.0,
+    "wrong_reset_error": 0.5205851477107298
+  },
+  "clip": {
+    "before_global_L2": 13.0,
+    "after_global_L2": 0.9999999230769291,
+    "values": [
+      0.23076921301775288,
+      0.3076922840236705,
+      0.9230768520710115
+    ]
+  },
+  "token_metric": {
+    "batch_tokens": [
+      2,
+      1
+    ],
+    "batch_CE": [
+      0.6931471805599453,
+      2.0794415416798357
+    ],
+    "token_CE": 1.155245300933242,
+    "ppl": 3.1748021039363983,
+    "wrong_batch_PPL_mean": 5.0
+  },
+  "GRU_reset_order": {
+    "before_projection": [
+      [
+        5.000000000000001,
+        6.800000000000001
+      ]
+    ],
+    "after_projection": [
+      [
+        1.4000000000000001,
+        8.0
+      ]
+    ]
+  },
+  "shapes": [
+    {
+      "model": "RNN",
+      "output": [
+        6,
+        3,
+        8
+      ],
+      "state": [
+        [
+          4,
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "model": "GRU",
+      "output": [
+        6,
+        3,
+        8
+      ],
+      "state": [
+        [
+          4,
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "model": "LSTM",
+      "output": [
+        6,
+        3,
+        8
+      ],
+      "state": [
+        [
+          4,
+          3,
+          4
+        ],
+        [
+          4,
+          3,
+          4
+        ]
+      ]
+    }
+  ],
+  "bidirectional_leak": {
+    "future_changed_at": 2,
+    "observed_at": 1,
+    "forward_diff": 0.0,
+    "backward_diff": 0.2270326087174543,
+    "no_causal_PPL_or_generation_claim": true
+  }
+}

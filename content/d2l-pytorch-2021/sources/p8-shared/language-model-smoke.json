@@ -1,0 +1,1166 @@
+{
+  "environment": {
+    "python": "3.11.8",
+    "torch": "2.5.1",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "chip": "Apple M2 Max",
+    "device": "cpu",
+    "threads": 1,
+    "cuda_count": 0,
+    "mps_available_detected_only": true,
+    "dtype": "float32",
+    "d2l_or_Jupyter_used": false,
+    "performance_measured": false
+  },
+  "acquisition": {
+    "url": "https://d2l-data.s3-accelerate.amazonaws.com/timemachine.txt",
+    "bytes": 178979,
+    "sha1": "090b5e7e70c295757f55df93cb0a180b9691891a",
+    "sha256": "8424dbd9532ac81f7e5f0b6add90e6952baea29158309d7d1bf3884f4e12c516",
+    "cache": "/var/folders/5k/y6qh6sfd2g30js0v0qrv4mfr0000gn/T/d2l-p8-data.35tghha4",
+    "title_line": "The Time Machine, by H. G. Wells [1898]",
+    "cleaning": "per-line [^A-Za-z]+ -> single space; strip/lower; discard empty lines; concatenate within split with no inserted separator",
+    "split": {
+      "nonempty_lines": 2848,
+      "zero_based_half_open": {
+        "train": [
+          0,
+          2278
+        ],
+        "validation": [
+          2278,
+          2563
+        ],
+        "test": [
+          2563,
+          2848
+        ]
+      },
+      "candidate_tokens": [
+        137058,
+        16970,
+        16552
+      ],
+      "vocabulary_fit": "complete training candidate only, before taking first8192 runtime tokens",
+      "vocabulary_order": "<unk> then frequency descending, alphabetical ties",
+      "vocabulary": [
+        "<unk>",
+        " ",
+        "e",
+        "t",
+        "a",
+        "i",
+        "n",
+        "o",
+        "s",
+        "h",
+        "r",
+        "d",
+        "l",
+        "m",
+        "u",
+        "c",
+        "f",
+        "w",
+        "g",
+        "y",
+        "p",
+        "b",
+        "v",
+        "k",
+        "x",
+        "z",
+        "j",
+        "q"
+      ],
+      "train_subset_tokens": 8192,
+      "validation_subset_tokens": 2048,
+      "train_pairs_per_epoch": 8184,
+      "eval_train_pairs": 8191,
+      "eval_validation_pairs": 2047,
+      "validation_OOV": 0,
+      "test_used_for_fit_training_tuning_or_evaluation": false
+    },
+    "rights": "S3 mirror has no independent license statement; work identified as H.G.Wells The Time Machine; PG35 lists US public domain, local law still applies; PG current file is not identical; no raw text redistribution"
+  },
+  "config": {
+    "seed_per_model": 2028,
+    "input": "one-hot characters",
+    "hidden": 32,
+    "layers": 1,
+    "bidirectional": false,
+    "batch": 8,
+    "num_steps": 32,
+    "last_step_length": 31,
+    "epochs": 15,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "clip_global_L2": 1.0,
+    "sampling": "fixed row-major contiguous streams, offset0 each epoch, no shuffle; state reset each epoch/model/split, detached per batch; retain short final chunk",
+    "evaluation": "B1 full selected split, start zero, carry state; token NLL sum/count then exp; no train state reuse",
+    "fairness": "same corpus/split/vocab/B/T/epochs/optimizer/seed, different parameter counts, not equal capacity or a tuned model ranking"
+  },
+  "models": [
+    {
+      "model": "RNN",
+      "parameters": 2908,
+      "initial_eval_train": {
+        "CE": 3.3410181446457328,
+        "PPL": 28.247872489370792,
+        "tokens": 8191,
+        "NLL_sum": 27366.279622793198
+      },
+      "epochs": [
+        {
+          "epoch": 1,
+          "steps": 32,
+          "online_train_CE": 2.8492222685268547,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.6066240806556884,
+            "PPL": 13.553218958911089,
+            "tokens": 8191,
+            "NLL_sum": 21350.857844650745
+          },
+          "eval_validation": {
+            "CE": 2.6252914925406605,
+            "PPL": 13.808598702999165,
+            "tokens": 2047,
+            "NLL_sum": 5373.971685230732
+          }
+        },
+        {
+          "epoch": 2,
+          "steps": 32,
+          "online_train_CE": 2.453762261399076,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.319646947456067,
+            "PPL": 10.172082392477769,
+            "tokens": 8191,
+            "NLL_sum": 19000.228146612644
+          },
+          "eval_validation": {
+            "CE": 2.4121668978062383,
+            "PPL": 11.158113459393265,
+            "tokens": 2047,
+            "NLL_sum": 4937.70563980937
+          }
+        },
+        {
+          "epoch": 3,
+          "steps": 32,
+          "online_train_CE": 2.279283991307457,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.2105314668926064,
+            "PPL": 9.120562382132913,
+            "tokens": 8191,
+            "NLL_sum": 18106.46324531734
+          },
+          "eval_validation": {
+            "CE": 2.36617963794213,
+            "PPL": 10.656602338302664,
+            "tokens": 2047,
+            "NLL_sum": 4843.56971886754
+          }
+        },
+        {
+          "epoch": 4,
+          "steps": 32,
+          "online_train_CE": 2.19282901135591,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.131609249057321,
+            "PPL": 8.428419329687802,
+            "tokens": 8191,
+            "NLL_sum": 17460.01135902852
+          },
+          "eval_validation": {
+            "CE": 2.3423063986887858,
+            "PPL": 10.405207465731678,
+            "tokens": 2047,
+            "NLL_sum": 4794.701198115945
+          }
+        },
+        {
+          "epoch": 5,
+          "steps": 32,
+          "online_train_CE": 2.1280087003027357,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.0725874144608043,
+            "PPL": 7.945354469888218,
+            "tokens": 8191,
+            "NLL_sum": 16976.56351184845
+          },
+          "eval_validation": {
+            "CE": 2.332975365898495,
+            "PPL": 10.308567709233754,
+            "tokens": 2047,
+            "NLL_sum": 4775.600573994219
+          }
+        },
+        {
+          "epoch": 6,
+          "steps": 32,
+          "online_train_CE": 2.076992896411892,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.0266354876718102,
+            "PPL": 7.5885117185793645,
+            "tokens": 8191,
+            "NLL_sum": 16600.171279519796
+          },
+          "eval_validation": {
+            "CE": 2.3277111868954137,
+            "PPL": 10.25444414659537,
+            "tokens": 2047,
+            "NLL_sum": 4764.824799574912
+          }
+        },
+        {
+          "epoch": 7,
+          "steps": 32,
+          "online_train_CE": 2.0353094046882636,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.987797920501737,
+            "PPL": 7.299442099455745,
+            "tokens": 8191,
+            "NLL_sum": 16282.052766829729
+          },
+          "eval_validation": {
+            "CE": 2.3248424382801165,
+            "PPL": 10.22506887942354,
+            "tokens": 2047,
+            "NLL_sum": 4758.952471159399
+          }
+        },
+        {
+          "epoch": 8,
+          "steps": 32,
+          "online_train_CE": 2.001387673971823,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.9536264063450475,
+            "PPL": 7.054222730259278,
+            "tokens": 8191,
+            "NLL_sum": 16002.153894372284
+          },
+          "eval_validation": {
+            "CE": 2.3274194779330397,
+            "PPL": 10.251453269587667,
+            "tokens": 2047,
+            "NLL_sum": 4764.227671328932
+          }
+        },
+        {
+          "epoch": 9,
+          "steps": 32,
+          "online_train_CE": 1.973926570175447,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.9178801261142358,
+            "PPL": 6.80651421296592,
+            "tokens": 8191,
+            "NLL_sum": 15709.356113001704
+          },
+          "eval_validation": {
+            "CE": 2.3400612481677303,
+            "PPL": 10.381872413922249,
+            "tokens": 2047,
+            "NLL_sum": 4790.105374999344
+          }
+        },
+        {
+          "epoch": 10,
+          "steps": 32,
+          "online_train_CE": 1.9507165135759297,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.8965885670804021,
+            "PPL": 6.663124822479691,
+            "tokens": 8191,
+            "NLL_sum": 15534.956952955574
+          },
+          "eval_validation": {
+            "CE": 2.3658619075867975,
+            "PPL": 10.653216950103854,
+            "tokens": 2047,
+            "NLL_sum": 4842.919324830174
+          }
+        },
+        {
+          "epoch": 11,
+          "steps": 32,
+          "online_train_CE": 1.9243674195523601,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.8700611480153455,
+            "PPL": 6.488693157864877,
+            "tokens": 8191,
+            "NLL_sum": 15317.670863393694
+          },
+          "eval_validation": {
+            "CE": 2.3679524426838507,
+            "PPL": 10.675511169339018,
+            "tokens": 2047,
+            "NLL_sum": 4847.198650173843
+          }
+        },
+        {
+          "epoch": 12,
+          "steps": 32,
+          "online_train_CE": 1.8995429308882907,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.8467039404226144,
+            "PPL": 6.338891687196756,
+            "tokens": 8191,
+            "NLL_sum": 15126.351976001635
+          },
+          "eval_validation": {
+            "CE": 2.3715269519339177,
+            "PPL": 10.71373916522184,
+            "tokens": 2047,
+            "NLL_sum": 4854.515670608729
+          }
+        },
+        {
+          "epoch": 13,
+          "steps": 32,
+          "online_train_CE": 1.8787592672765663,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.8270481758428179,
+            "PPL": 6.215512453345916,
+            "tokens": 8191,
+            "NLL_sum": 14965.351608328521
+          },
+          "eval_validation": {
+            "CE": 2.3795147589614873,
+            "PPL": 10.799661153493895,
+            "tokens": 2047,
+            "NLL_sum": 4870.866711594164
+          }
+        },
+        {
+          "epoch": 14,
+          "steps": 32,
+          "online_train_CE": 1.8608159756730378,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.8101697602319406,
+            "PPL": 6.111484831256025,
+            "tokens": 8191,
+            "NLL_sum": 14827.100506059825
+          },
+          "eval_validation": {
+            "CE": 2.389723877953461,
+            "PPL": 10.9104809027621,
+            "tokens": 2047,
+            "NLL_sum": 4891.764778170735
+          }
+        },
+        {
+          "epoch": 15,
+          "steps": 32,
+          "online_train_CE": 1.8449371811931083,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.795379790645618,
+            "PPL": 6.021761296180419,
+            "tokens": 8191,
+            "NLL_sum": 14705.955865178257
+          },
+          "eval_validation": {
+            "CE": 2.4007689977673476,
+            "PPL": 11.031656438822402,
+            "tokens": 2047,
+            "NLL_sum": 4914.374138429761
+          }
+        }
+      ],
+      "total_updates": 480,
+      "gradient_clipping": {
+        "steps_clipped": 0,
+        "max_pre_global_L2": 0.8047247529029846,
+        "max_post_global_L2": 0.8047247529029846
+      },
+      "evaluation_invariants": {
+        "parameters_buffers_existing_gradients_unchanged": true,
+        "single_stream_chunk31_vs64_CE_difference": 1.1647216524579562e-10,
+        "chunk31": {
+          "CE": 2.4007689976508755,
+          "PPL": 11.031656437537523,
+          "tokens": 2047,
+          "NLL_sum": 4914.374138191342
+        },
+        "chunk64": {
+          "CE": 2.4007689977673476,
+          "PPL": 11.031656438822402,
+          "tokens": 2047,
+          "NLL_sum": 4914.374138429761
+        },
+        "not_batch_size_invariance_claim": "Changing B changes recurrent context, unlike changing chunk length at B1 with state carried."
+      },
+      "generation": {
+        "prefix": "time traveller",
+        "new_token_ids": [
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          2
+        ],
+        "new_tokens": 40,
+        "text": "time traveller the the the the the the the the the the",
+        "decoder": "greedy argmax; fresh state; prefix warmup; no handwritten continuation"
+      }
+    },
+    {
+      "model": "GRU",
+      "parameters": 6876,
+      "initial_eval_train": {
+        "CE": 3.3673600919691142,
+        "PPL": 29.001863657377083,
+        "tokens": 8191,
+        "NLL_sum": 27582.046513319016
+      },
+      "epochs": [
+        {
+          "epoch": 1,
+          "steps": 32,
+          "online_train_CE": 2.898839817718327,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.6477333037586326,
+            "PPL": 14.121992072821977,
+            "tokens": 8191,
+            "NLL_sum": 21687.58349108696
+          },
+          "eval_validation": {
+            "CE": 2.6748959183634695,
+            "PPL": 14.510839449073028,
+            "tokens": 2047,
+            "NLL_sum": 5475.511944890022
+          }
+        },
+        {
+          "epoch": 2,
+          "steps": 32,
+          "online_train_CE": 2.463531957926522,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.3199596617804272,
+            "PPL": 10.17526384576755,
+            "tokens": 8191,
+            "NLL_sum": 19002.78958964348
+          },
+          "eval_validation": {
+            "CE": 2.413360776700913,
+            "PPL": 11.171442850813117,
+            "tokens": 2047,
+            "NLL_sum": 4940.149509906769
+          }
+        },
+        {
+          "epoch": 3,
+          "steps": 32,
+          "online_train_CE": 2.2836291174734793,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.210779358133148,
+            "PPL": 9.122823569909,
+            "tokens": 8191,
+            "NLL_sum": 18108.493722468615
+          },
+          "eval_validation": {
+            "CE": 2.3445065323614642,
+            "PPL": 10.428125515189667,
+            "tokens": 2047,
+            "NLL_sum": 4799.2048717439175
+          }
+        },
+        {
+          "epoch": 4,
+          "steps": 32,
+          "online_train_CE": 2.1867431396379966,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.112683743271195,
+            "PPL": 8.270407177151816,
+            "tokens": 8191,
+            "NLL_sum": 17304.992541134357
+          },
+          "eval_validation": {
+            "CE": 2.3074650377559265,
+            "PPL": 10.048918710843601,
+            "tokens": 2047,
+            "NLL_sum": 4723.380932286382
+          }
+        },
+        {
+          "epoch": 5,
+          "steps": 32,
+          "online_train_CE": 2.09921696831637,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.022383034471234,
+            "PPL": 7.556310443367584,
+            "tokens": 8191,
+            "NLL_sum": 16565.339435353875
+          },
+          "eval_validation": {
+            "CE": 2.2848638414601377,
+            "PPL": 9.82434846400375,
+            "tokens": 2047,
+            "NLL_sum": 4677.116283468902
+          }
+        },
+        {
+          "epoch": 6,
+          "steps": 32,
+          "online_train_CE": 2.013378918578781,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.9384339727700564,
+            "PPL": 6.947861905642402,
+            "tokens": 8191,
+            "NLL_sum": 15877.712670959532
+          },
+          "eval_validation": {
+            "CE": 2.2678657574155996,
+            "PPL": 9.658764653783129,
+            "tokens": 2047,
+            "NLL_sum": 4642.321205429733
+          }
+        },
+        {
+          "epoch": 7,
+          "steps": 32,
+          "online_train_CE": 1.9383131572111845,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.8659030310054638,
+            "PPL": 6.461768429352956,
+            "tokens": 8191,
+            "NLL_sum": 15283.611726965755
+          },
+          "eval_validation": {
+            "CE": 2.260820014718019,
+            "PPL": 9.590950663756312,
+            "tokens": 2047,
+            "NLL_sum": 4627.898570127785
+          }
+        },
+        {
+          "epoch": 8,
+          "steps": 32,
+          "online_train_CE": 1.8733125137327238,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.804642114649124,
+            "PPL": 6.077795905125946,
+            "tokens": 8191,
+            "NLL_sum": 14781.823561090976
+          },
+          "eval_validation": {
+            "CE": 2.2636416329841644,
+            "PPL": 9.618050880592357,
+            "tokens": 2047,
+            "NLL_sum": 4633.6744227185845
+          }
+        },
+        {
+          "epoch": 9,
+          "steps": 32,
+          "online_train_CE": 1.815996955566742,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.750652649107524,
+            "PPL": 5.758359638162023,
+            "tokens": 8191,
+            "NLL_sum": 14339.59584883973
+          },
+          "eval_validation": {
+            "CE": 2.2717243786910335,
+            "PPL": 9.696106165615292,
+            "tokens": 2047,
+            "NLL_sum": 4650.219803180546
+          }
+        },
+        {
+          "epoch": 10,
+          "steps": 32,
+          "online_train_CE": 1.7646700126334718,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.7010479099669236,
+            "PPL": 5.479686602320204,
+            "tokens": 8191,
+            "NLL_sum": 13933.283430539072
+          },
+          "eval_validation": {
+            "CE": 2.2831628221962066,
+            "PPL": 9.807651263167113,
+            "tokens": 2047,
+            "NLL_sum": 4673.6342970356345
+          }
+        },
+        {
+          "epoch": 11,
+          "steps": 32,
+          "online_train_CE": 1.7172885466647405,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.655308735546781,
+            "PPL": 5.234695809397268,
+            "tokens": 8191,
+            "NLL_sum": 13558.633852863684
+          },
+          "eval_validation": {
+            "CE": 2.301027639317233,
+            "PPL": 9.984437585247672,
+            "tokens": 2047,
+            "NLL_sum": 4710.203577682376
+          }
+        },
+        {
+          "epoch": 12,
+          "steps": 32,
+          "online_train_CE": 1.6743528158900092,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.6150191758806278,
+            "PPL": 5.027984338571799,
+            "tokens": 8191,
+            "NLL_sum": 13228.622069638222
+          },
+          "eval_validation": {
+            "CE": 2.3237296362922986,
+            "PPL": 10.21369673109711,
+            "tokens": 2047,
+            "NLL_sum": 4756.674565490335
+          }
+        },
+        {
+          "epoch": 13,
+          "steps": 32,
+          "online_train_CE": 1.636738624973614,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.579764044125992,
+            "PPL": 4.853810391035349,
+            "tokens": 8191,
+            "NLL_sum": 12939.847285436
+          },
+          "eval_validation": {
+            "CE": 2.3524545734419755,
+            "PPL": 10.511338938974186,
+            "tokens": 2047,
+            "NLL_sum": 4815.474511835724
+          }
+        },
+        {
+          "epoch": 14,
+          "steps": 32,
+          "online_train_CE": 1.601727977526153,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.5512556273566598,
+            "PPL": 4.717389749049149,
+            "tokens": 8191,
+            "NLL_sum": 12706.3348436784
+          },
+          "eval_validation": {
+            "CE": 2.3811704293239186,
+            "PPL": 10.81755664281769,
+            "tokens": 2047,
+            "NLL_sum": 4874.2558688260615
+          }
+        },
+        {
+          "epoch": 15,
+          "steps": 32,
+          "online_train_CE": 1.5691915878685572,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.529916212746581,
+            "PPL": 4.617789894158087,
+            "tokens": 8191,
+            "NLL_sum": 12531.543698607245
+          },
+          "eval_validation": {
+            "CE": 2.410723468114071,
+            "PPL": 11.142019125431528,
+            "tokens": 2047,
+            "NLL_sum": 4934.750939229503
+          }
+        }
+      ],
+      "total_updates": 480,
+      "gradient_clipping": {
+        "steps_clipped": 0,
+        "max_pre_global_L2": 0.4768552780151367,
+        "max_post_global_L2": 0.4768552780151367
+      },
+      "evaluation_invariants": {
+        "parameters_buffers_existing_gradients_unchanged": true,
+        "single_stream_chunk31_vs64_CE_difference": 1.1647216524579562e-10,
+        "chunk31": {
+          "CE": 2.410723468230543,
+          "PPL": 11.142019126729263,
+          "tokens": 2047,
+          "NLL_sum": 4934.750939467922
+        },
+        "chunk64": {
+          "CE": 2.410723468114071,
+          "PPL": 11.142019125431528,
+          "tokens": 2047,
+          "NLL_sum": 4934.750939229503
+        },
+        "not_batch_size_invariance_claim": "Changing B changes recurrent context, unlike changing chunk length at B1 with state carried."
+      },
+      "generation": {
+        "prefix": "time traveller",
+        "new_token_ids": [
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          5,
+          8,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          4,
+          3,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          5,
+          8,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          2,
+          1
+        ],
+        "new_tokens": 40,
+        "text": "time traveller the this the the that the this the the ",
+        "decoder": "greedy argmax; fresh state; prefix warmup; no handwritten continuation"
+      }
+    },
+    {
+      "model": "LSTM",
+      "parameters": 8860,
+      "initial_eval_train": {
+        "CE": 3.3439629204819568,
+        "PPL": 28.331178740619478,
+        "tokens": 8191,
+        "NLL_sum": 27390.40028166771
+      },
+      "epochs": [
+        {
+          "epoch": 1,
+          "steps": 32,
+          "online_train_CE": 2.9380731839005665,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.7991357635860843,
+            "PPL": 16.43044084806568,
+            "tokens": 8191,
+            "NLL_sum": 22927.721039533615
+          },
+          "eval_validation": {
+            "CE": 2.80209628832183,
+            "PPL": 16.47915564972233,
+            "tokens": 2047,
+            "NLL_sum": 5735.891102194786
+          }
+        },
+        {
+          "epoch": 2,
+          "steps": 32,
+          "online_train_CE": 2.6510453501521436,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.471412843799812,
+            "PPL": 11.839161927494505,
+            "tokens": 8191,
+            "NLL_sum": 20243.342603564262
+          },
+          "eval_validation": {
+            "CE": 2.50801352136707,
+            "PPL": 12.280510842023439,
+            "tokens": 2047,
+            "NLL_sum": 5133.903678238392
+          }
+        },
+        {
+          "epoch": 3,
+          "steps": 32,
+          "online_train_CE": 2.3844591061041154,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.3030722140738296,
+            "PPL": 10.00487239742524,
+            "tokens": 8191,
+            "NLL_sum": 18864.46450547874
+          },
+          "eval_validation": {
+            "CE": 2.3959114874463343,
+            "PPL": 10.978199991545644,
+            "tokens": 2047,
+            "NLL_sum": 4904.430814802647
+          }
+        },
+        {
+          "epoch": 4,
+          "steps": 32,
+          "online_train_CE": 2.275055053996201,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.207280118382686,
+            "PPL": 9.09095641096829,
+            "tokens": 8191,
+            "NLL_sum": 18079.83144967258
+          },
+          "eval_validation": {
+            "CE": 2.3330836421543935,
+            "PPL": 10.309683942778692,
+            "tokens": 2047,
+            "NLL_sum": 4775.822215490043
+          }
+        },
+        {
+          "epoch": 5,
+          "steps": 32,
+          "online_train_CE": 2.1972404829101713,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.1392500711100806,
+            "PPL": 8.493066044476377,
+            "tokens": 8191,
+            "NLL_sum": 17522.59733246267
+          },
+          "eval_validation": {
+            "CE": 2.3132496857110265,
+            "PPL": 10.107216621796567,
+            "tokens": 2047,
+            "NLL_sum": 4735.222106650472
+          }
+        },
+        {
+          "epoch": 6,
+          "steps": 32,
+          "online_train_CE": 2.129844959530313,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.073717727044675,
+            "PPL": 7.954340281460099,
+            "tokens": 8191,
+            "NLL_sum": 16985.82190222293
+          },
+          "eval_validation": {
+            "CE": 2.2934352388877546,
+            "PPL": 9.908918784295953,
+            "tokens": 2047,
+            "NLL_sum": 4694.661934003234
+          }
+        },
+        {
+          "epoch": 7,
+          "steps": 32,
+          "online_train_CE": 2.0685961866425395,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 2.015297846930715,
+            "PPL": 7.502961782569858,
+            "tokens": 8191,
+            "NLL_sum": 16507.304664209485
+          },
+          "eval_validation": {
+            "CE": 2.277572559186407,
+            "PPL": 9.752976877581158,
+            "tokens": 2047,
+            "NLL_sum": 4662.191028654575
+          }
+        },
+        {
+          "epoch": 8,
+          "steps": 32,
+          "online_train_CE": 2.0157618580908605,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.9664561098354842,
+            "PPL": 7.145309374149017,
+            "tokens": 8191,
+            "NLL_sum": 16107.24199566245
+          },
+          "eval_validation": {
+            "CE": 2.273523446421799,
+            "PPL": 9.713565818171455,
+            "tokens": 2047,
+            "NLL_sum": 4653.902494825423
+          }
+        },
+        {
+          "epoch": 9,
+          "steps": 32,
+          "online_train_CE": 1.9690600202463473,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.9219582672726065,
+            "PPL": 6.834328816112544,
+            "tokens": 8191,
+            "NLL_sum": 15742.76016722992
+          },
+          "eval_validation": {
+            "CE": 2.27259807627508,
+            "PPL": 9.704581331973909,
+            "tokens": 2047,
+            "NLL_sum": 4652.008262135088
+          }
+        },
+        {
+          "epoch": 10,
+          "steps": 32,
+          "online_train_CE": 1.9265568264535213,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.881376611434279,
+            "PPL": 6.562532704408764,
+            "tokens": 8191,
+            "NLL_sum": 15410.355824258178
+          },
+          "eval_validation": {
+            "CE": 2.2721812562770416,
+            "PPL": 9.700537111316729,
+            "tokens": 2047,
+            "NLL_sum": 4651.155031599104
+          }
+        },
+        {
+          "epoch": 11,
+          "steps": 32,
+          "online_train_CE": 1.8868192684848522,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.8448855671988436,
+            "PPL": 6.327375689648286,
+            "tokens": 8191,
+            "NLL_sum": 15111.457680925727
+          },
+          "eval_validation": {
+            "CE": 2.2811064836880783,
+            "PPL": 9.78750413395857,
+            "tokens": 2047,
+            "NLL_sum": 4669.424972109497
+          }
+        },
+        {
+          "epoch": 12,
+          "steps": 32,
+          "online_train_CE": 1.8495895794992456,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.8103213307826695,
+            "PPL": 6.112411222582717,
+            "tokens": 8191,
+            "NLL_sum": 14828.342020440847
+          },
+          "eval_validation": {
+            "CE": 2.2897070185092523,
+            "PPL": 9.872044930992136,
+            "tokens": 2047,
+            "NLL_sum": 4687.03026688844
+          }
+        },
+        {
+          "epoch": 13,
+          "steps": 32,
+          "online_train_CE": 1.8125843835133377,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.7783702503789287,
+            "PPL": 5.920200108161403,
+            "tokens": 8191,
+            "NLL_sum": 14566.630720853806
+          },
+          "eval_validation": {
+            "CE": 2.2989274707741574,
+            "PPL": 9.963490587323149,
+            "tokens": 2047,
+            "NLL_sum": 4705.9045326747
+          }
+        },
+        {
+          "epoch": 14,
+          "steps": 32,
+          "online_train_CE": 1.7772675283027417,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.7455810130990068,
+            "PPL": 5.7292292658334425,
+            "tokens": 8191,
+            "NLL_sum": 14298.054078293964
+          },
+          "eval_validation": {
+            "CE": 2.307281549790675,
+            "PPL": 10.047075024348684,
+            "tokens": 2047,
+            "NLL_sum": 4723.005332421511
+          }
+        },
+        {
+          "epoch": 15,
+          "steps": 32,
+          "online_train_CE": 1.7441198866621375,
+          "online_tokens": 8184,
+          "eval_train": {
+            "CE": 1.7112729850837656,
+            "PPL": 5.536004244831474,
+            "tokens": 8191,
+            "NLL_sum": 14017.037020821124
+          },
+          "eval_validation": {
+            "CE": 2.3182378733757214,
+            "PPL": 10.157759268376717,
+            "tokens": 2047,
+            "NLL_sum": 4745.432926800102
+          }
+        }
+      ],
+      "total_updates": 480,
+      "gradient_clipping": {
+        "steps_clipped": 0,
+        "max_pre_global_L2": 0.5660910606384277,
+        "max_post_global_L2": 0.566091001033783
+      },
+      "evaluation_invariants": {
+        "parameters_buffers_existing_gradients_unchanged": true,
+        "single_stream_chunk31_vs64_CE_difference": 0.0,
+        "chunk31": {
+          "CE": 2.3182378733757214,
+          "PPL": 10.157759268376717,
+          "tokens": 2047,
+          "NLL_sum": 4745.432926800102
+        },
+        "chunk64": {
+          "CE": 2.3182378733757214,
+          "PPL": 10.157759268376717,
+          "tokens": 2047,
+          "NLL_sum": 4745.432926800102
+        },
+        "not_batch_size_invariance_claim": "Changing B changes recurrent context, unlike changing chunk length at B1 with state carried."
+      },
+      "generation": {
+        "prefix": "time traveller",
+        "new_token_ids": [
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          5,
+          13,
+          2,
+          1,
+          3,
+          9,
+          4,
+          3,
+          1,
+          5,
+          8,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          9,
+          2,
+          1,
+          3,
+          5,
+          13,
+          2,
+          1,
+          3,
+          9,
+          4,
+          3,
+          1
+        ],
+        "new_tokens": 40,
+        "text": "time traveller the the time that is the the time that ",
+        "decoder": "greedy argmax; fresh state; prefix warmup; no handwritten continuation"
+      }
+    }
+  ],
+  "boundary": "Real mirrored textbook text, bounded CPU runs only; synthetic mechanisms separate; not full student tasks or full textbook 500epochs, not causal bidirectional LM; no GPU/throughput/competition claims; generated text is actual weak greedy output. Only logs saved, no checkpoint or full solution script published."
+}

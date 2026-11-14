@@ -1,0 +1,19 @@
+Capture date: 2026-11-14
+Type: editorial evidence summary, not a byte-for-byte source snapshot.
+
+1. Project Gutenberg bibliographic page
+URL: https://www.gutenberg.org/ebooks/35
+Reader first used alternate OPDS feed; raw HTML was subsequently inspected.
+Read scope: raw HTML reader lines1-483, specifically download options and About this eBook table; no novel-reading claim.
+Exact fields observed: Author: Wells, H. G. (Herbert George), 1866-1946. Title: The Time Machine. Language: English. eBook-No.: 35. Copyright: Public domain in the USA.
+The downloadable Plain Text link was https://www.gutenberg.org/ebooks/35.txt.utf-8. The actual downloaded bytes resolved to https://www.gutenberg.org/cache/epub/35/pg35.txt, whose header says Release date October 2, 2004 and Most recently updated June 16, 2026.
+The downloaded text and textbook S3 file have different actual byte counts/hashes and visible header/contents/punctuation. No claim of a complete literary collation or exact derivation lineage.
+The textbook S3 first-line [1898] is a mirror title annotation, not evidence for first-publication date.
+
+2. PyTorch GRU current documentation
+Requested URL: https://docs.pytorch.org/docs/stable/generated/torch.nn.GRU.html
+Reader returned link: https://docs.pytorch.org/docs/2.15/generated/torch.nn.GRU.html
+Read scope: class formula; Parameters; Inputs; Outputs; Variables; Notes including reset-gate operation ordering and batch_first; example. No 2021-document or installed-runtime-version equivalence is claimed.
+Editorial summary: batch_first changes input/output ordering but not hidden-state layout. Batched hidden shape is (directions*num_layers,batch,hidden). Output width is directions*hidden. Directions are forward0 and backward1.
+Editorial summary: PyTorch applies reset gate after the hidden-state linear transformation for the new gate, including the hidden bias inside that gate product; the original-style formula gates the hidden state before the matrix transform. This is explicitly intentional for efficiency. Textbook9.1 uses the latter ordering, so general scratch-GRU/API parameter-transpose parity is not asserted.
+Publication boundary: this is a narrow factual paraphrase; the whole documentation page, copyrighted examples and metadata payload are not republished. Source-page byte hash was not captured by the reader; source-index distinguishes this summary's SHA256 from original source bytes.

@@ -1,6 +1,6 @@
 ---
 source: 李沐《动手学深度学习》2021 中文课程官方课表；《动手学深度学习》中文第二版
-status: 已完成LEC1–50学习笔记、自绘图及前七项实验说明/指导；50BV共142P元数据已核，公开字幕为空，课堂稿持续阻塞。P7完成有限CPU香蕉TinySSD、VOC小FCN与真实预训练单图风格优化，不宣称质量达标、完整复现或竞赛完成。牛仔行头认证访问、评分端格式及LEC71课堂总结仍未核。
+status: 已完成LEC1–59学习笔记、自绘图及前八项实验说明/指导；59BV共167P元数据已核，公开字幕为空，课堂稿持续阻塞。P8完成真实教材文本上的有限CPU RNN/GRU/LSTM小训练，生成重复、不宣称质量达标；双向只做形状与泄漏检查。牛仔竞赛认证访问、评分端格式及LEC71课堂总结仍未核。
 license: 本页为编者自主课程导航；教材、代码、视频分别按原始许可处理，视频授权不由教材许可推定。
 ---
 
@@ -305,6 +305,30 @@ VOC直接读取PNG调色板索引，保留`255`为忽略标签；图像与掩码
 
 精确样本ID、种子、逐轮值和局部可视化观察见`sources/p7-shared/`的`ssd-smoke.json`、`fcn-smoke.json`、`style-smoke.json`及获取清单。所有运行显式使用CPU；未执行CUDA/MPS、旧Notebook全集、全量视觉训练或全部学生任务。
 
+#### 第八批：真实文本上的循环语言模型
+
+本批实际读取教材的 **H. G. Wells《The Time Machine》文本镜像**，文件SHA1与固定教材8.2一致；不是随机token或另一版电子书。按教材规则逐行把非英文字母连续片段替换为空格、转小写、去首尾空白；移除空行后得到2,848行。按原顺序固定划分为训练`[0,2278)`、验证`[2278,2563)`、测试`[2563,2848)`，区间左闭右开。各段独立展平字符，**不额外插入行间空格**，因此会有行边粘词；这是教材清洗的局限，不是通用文本规范。
+
+词表仅在完整训练候选段137,058字符上拟合，共28项（26字母、空格与`<unk>`）；再取其前8,192字符训练、验证候选段前2,048字符评估。词表并非仅用小训练子集拟合，但没有读取验证或测试来拟合；测试段封存、不评分。窗口与状态均不跨划分，验证不借用训练末状态。本次验证子集无OOV，不代表未来输入不会有未知字符。
+
+三模型均为单层、单向、one-hot输入、隐藏宽32，CPU单线程float32；每模型初始化seed2028，Adam学习率0.01、全局梯度L2阈值1。B8、时间窗口32，每轮从固定offset0的连续行流开始；每轮清状态、跨批保留数值并detach，LSTM的h/c都处理。每轮8,184个训练目标、32步，末窗口长31；15轮各480次更新。相同数据与训练预算不等于相同参数量，也不是调参后的模型排名。
+
+| 模型 | 参数量 | 初始训练CE | 末轮训练CE | 末轮验证CE | 末轮验证困惑度 |
+|---|---:|---:|---:|---:|---:|
+| RNN | 2,908 | 3.341018 | 1.795380 | 2.400769 | 11.031656 |
+| GRU | 6,876 | 3.367360 | 1.529916 | 2.410723 | 11.142019 |
+| LSTM | 8,860 | 3.343963 | 1.711273 | 2.318238 | 10.157759 |
+
+表中训练与验证均是冻结末轮模型后的单流重评，不是混合更新时刻的批均值。分别累计8,191／2,047个目标的负对数概率，再除以token数、取指数；不能平均每批困惑度。保持B1连续状态、只将评估分块31改为64，CE差不超过约1.17×10⁻¹⁰；参数、buffers与既有梯度未改变。**更改batch行数会改变循环上下文，不据此声称任意batch大小的指标都相同。**
+
+真实生成使用固定前缀`time traveller`、新状态逐字符热身、贪心解码40个新token，日志保存模型直接输出；三个结果都有重复短词。RNN实际续写为` the the the the the the the the the the`，不是预写示例，也不代表可用写作质量。没有按生成质量调参或挑选种子。
+
+三次训练都调用裁剪，但最大裁剪前范数均低于1，**实际没有触发缩放**。裁剪机制另用合成梯度`[3,4,12]`核对：全局范数13被缩至约1；不能把这个合成反例说成训练中观察到了梯度爆炸。
+
+独立机制还核对了随机／顺序采样错位、time-major标签展平、从零RNN与API同权前向／梯度／一步SGD、跨批清零反例、detach切断历史但保留状态、GRU重置门位置差异，以及两层双向网络的形状。单bias从零实现与双bias API做一步更新对照时，将API的循环bias置零并冻结，避免有效bias更新两倍。改变未来输入确实影响较早位置的反向表示；双向网络只做形状和泄漏检查，**没有用它计算因果语言模型困惑度或生成文本**。
+
+这些是有限语料流程与机制验收，不是全部学生任务、教材500轮训练、GPU性能或模型质量达标。[第八项实验](#/c/d2l-pytorch-2021/lab/recurrent-language-model?v=zh)仍要求学习者独立实现四任务。完整划分、逐轮指标、原始生成与环境见`sources/p8-shared/`的`corpus-acquisition.json`、`language-model-smoke.json`和`mechanism-smoke.json`；不发布语料全文、权重或完整答案脚本。
+
 ## 学完后怎样衔接 CS336
 
 用三个问题自查：能否不依赖整段答案写出小模型训练循环；能否逐步解释 Attention 的形状与 mask；能否解释模型的参数、梯度、优化器状态和激活为何占用内存。
@@ -415,7 +439,7 @@ LEC36–42 共 **7个BV、18P、17071秒**，均由官方课表绑定到“跟�
 
 ### 全课视频入口
 
-以下链接逐项保留课表中的 BV 与分 P 参数。未写 `p` 的原始链接标作「入口」，不推定它覆盖整组内容。LEC 1–42 的真实全部分 P 已列于上方六表；其余讲次尚待逐 P 核对。讲次页头提供原站链接与已记录时长；点击后在新标签页观看，本站保留笔记。嵌入播放器与“课程视频”标签已按用户要求移除。曾误接入的非本人YouTube上传也已撤下，不以转载替代官方课表来源。
+以下链接逐项保留课表中的 BV 与分 P 参数。未写 `p` 的原始链接标作「入口」，不推定它覆盖整组内容。LEC 1–59 的真实全部分 P 已列于本页各批次表；其余讲次尚待逐 P 核对。讲次页头提供原站链接与已记录时长；点击后在新标签页观看，本站保留笔记。嵌入播放器与“课程视频”标签已按用户要求移除。曾误接入的非本人YouTube上传也已撤下，不以转载替代官方课表来源。
 
 | 站内讲次 | 原课表视频入口 |
 |---|---|
@@ -547,3 +571,24 @@ LEC36–42 共 **7个BV、18P、17071秒**，均由官方课表绑定到“跟�
 
 - P7局部运行依循[教材SSD](https://zh.d2l.ai/chapter_computer-vision/ssd.html)、[FCN](https://zh.d2l.ai/chapter_computer-vision/fcn.html)、[风格迁移](https://zh.d2l.ai/chapter_computer-vision/neural-style.html)的PyTorch结构，缩小数据与更新次数，保留各自任务身份；固定源码与精确读取范围见逐讲清单。
 - [VOC2012官方说明](https://www.robots.ox.ac.uk/~vgg/projects/pascal/VOC/voc2012/index.html)、[TorchVision模型使用通则](https://docs.pytorch.org/vision/0.20/models.html)、[牛仔行头CodaLab竞赛](https://competitions.codalab.org/competitions/33573)、[Kaggle入口](https://www.kaggle.com/competitions/cowboyoutfits)。条款与身份的实际可见范围见实验来源清单，不把代码许可外推为图片/权重许可。
+
+### 第八批已核实的全部分 P
+
+LEC51–59共 **9个BV、25P、19,880秒**，全部为官方课表绑定的作者“跟李沐学AI”（mid1567748478）2021上传。每P公开字幕请求各一次成功且列表为空；未审阅音视频，不生成课堂稿或猜测片内讲授。下表只列文件名和长度，各P独立从00:00计时。页头时长按全P求和，包含实现与QA。
+
+| 讲次 | 全部真实分P | 页头口径 |
+|---|---|---|
+| LEC51 | [P1 序列模型 · 20:04](https://www.bilibili.com/video/BV1L44y1m768?p=1)；[P2 代码 · 11:53](https://www.bilibili.com/video/BV1L44y1m768?p=2)；[P3 QA · 22:14](https://www.bilibili.com/video/BV1L44y1m768?p=3) | 全3P合计54:11 |
+| LEC52 | [P1 代码 · 18:04](https://www.bilibili.com/video/BV1Fo4y1Q79L?p=1)；[P2 QA · 02:26](https://www.bilibili.com/video/BV1Fo4y1Q79L?p=2) | 全2P合计20:30 |
+| LEC53 | [P1 语言模型 · 16:18](https://www.bilibili.com/video/BV1ZX4y1F7K3?p=1)；[P2 代码 · 25:47](https://www.bilibili.com/video/BV1ZX4y1F7K3?p=2)；[P3 QA · 09:08](https://www.bilibili.com/video/BV1ZX4y1F7K3?p=3) | 全3P合计51:13 |
+| LEC54 | [P1 RNN · 25:16](https://www.bilibili.com/video/BV1D64y1z7CA?p=1)；[P2 QA · 08:48](https://www.bilibili.com/video/BV1D64y1z7CA?p=2) | 全2P合计34:04 |
+| LEC55 | [P1 从零开始实现 · 48:35](https://www.bilibili.com/video/BV1kq4y1H7sw?p=1)；[P2 简介实现 · 07:11](https://www.bilibili.com/video/BV1kq4y1H7sw?p=2)；[P3 QA · 30:39](https://www.bilibili.com/video/BV1kq4y1H7sw?p=3) | 全3P合计1:26:25 |
+| LEC56 | [P1 门控循环单元（GRU） · 15:23](https://www.bilibili.com/video/BV1mf4y157N2?p=1)；[P2 代码 · 13:57](https://www.bilibili.com/video/BV1mf4y157N2?p=2)；[P3 QA · 10:29](https://www.bilibili.com/video/BV1mf4y157N2?p=3) | 全3P合计39:49 |
+| LEC57 | [P1 长短期记忆网络（LSTM） · 09:39](https://www.bilibili.com/video/BV1JU4y1H7PC?p=1)；[P2 代码 · 04:37](https://www.bilibili.com/video/BV1JU4y1H7PC?p=2)；[P3 QA · 03:39](https://www.bilibili.com/video/BV1JU4y1H7PC?p=3) | 全3P合计17:55 |
+| LEC58 | [P1 深层循环神经网络 · 03:23](https://www.bilibili.com/video/BV1JM4y1T7N4?p=1)；[P2 代码 · 02:45](https://www.bilibili.com/video/BV1JM4y1T7N4?p=2)；[P3 QA · 07:11](https://www.bilibili.com/video/BV1JM4y1T7N4?p=3) | 全3P合计13:19 |
+| LEC59 | [P1 双向循环神经网络 · 07:25](https://www.bilibili.com/video/BV12X4y1c71W?p=1)；[P2 代码 · 01:51](https://www.bilibili.com/video/BV12X4y1c71W?p=2)；[P3 QA · 04:38](https://www.bilibili.com/video/BV12X4y1c71W?p=3) | 全3P合计13:54 |
+
+LEC55的P2平台标题确为“简介实现”，保留原元数据；教学主题仍是简洁实现。课表日期与上传日期分别保存：51/52课表7月17日、上传7月19/20日；53/54课表7月18日、上传7月22/23日；55/56两日期分别一致为7月24/25日；57–59课表7月25日、上传7月26–28日。`copyright=1`与`no_reprint=1`不授予转录再发布许可，空字幕列表不证明无烧录字幕。
+
+- P8教材导读新增[8.1–8.7](https://zh.d2l.ai/chapter_recurrent-neural-networks/index.html)、[9.1–9.4](https://zh.d2l.ai/chapter_recurrent-modern/index.html)，固定源码全文或精确节选范围见逐讲/实验manifest；不声称全书已读。现代接口另核[PyTorch v2.5.1循环层源码](https://github.com/pytorch/pytorch/blob/v2.5.1/torch/nn/modules/rnn.py)，与当前在线文档版本分开。
+- 语料为[教材S3镜像](https://d2l-data.s3-accelerate.amazonaws.com/timemachine.txt)，已核178979字节与教材SHA1。作品身份对应[Project Gutenberg #35](https://www.gutenberg.org/ebooks/35)，但当前PG文件204384字节、包装与标点不同，不能替换后沿用原位置/hash。PG标美国公版；当地法律及[PG许可/商标条件](https://www.gutenberg.org/license)仍适用。S3首行的`[1898]`不当作初版年份，镜像无独立许可声明，教材Apache-2.0不能代替小说的使用条件；本站不发布全文。

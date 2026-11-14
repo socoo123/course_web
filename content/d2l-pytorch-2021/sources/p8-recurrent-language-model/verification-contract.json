@@ -1,0 +1,91 @@
+{
+  "labId": "recurrent-language-model",
+  "capturedAt": "2026-11-14",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "workerExecutionStatus": "not_run_by_worker: no numerical checks, training, tests, build, lint, formatter or submission",
+  "finalVerificationOwner": "Main",
+  "resultPolicy": "This file specifies inputs and assertions, not measured results. Main runs an independent temporary implementation and stores actual evidence in p8-shared. No full solution program is published.",
+  "taskIds": ["recurrent-language-model-1", "recurrent-language-model-2", "recurrent-language-model-3", "recurrent-language-model-4"],
+  "mechanismChecks": [
+    {
+      "id": "cleaning-and-train-only-vocabulary",
+      "inputs": {"rawLines": ["Alpha, BETA!", "Gamma."], "fitTokens": ["a", "b", "b", "a"], "unseenToken": "z"},
+      "operations": "Apply [^A-Za-z]+ -> one space, strip/lower per line; direct character flatten without separator. Separate toy vocabulary: reserve <unk>=0, frequency descending then lexical ascending ties.",
+      "assertions": ["cleanedLines == ['alpha beta','gamma']", "flattened == 'alpha betagamma'", "toyVocab == {'<unk>':0,'a':1,'b':2}", "transform('z') == 0", "vocabulary unchanged after validation transform"],
+      "scope": "Synthetic local contract only; not a claim about real corpus counts."
+    },
+    {
+      "id": "sequential-sampling-and-row-identity",
+      "inputs": {"tokens": "integers 0 through 12 inclusive", "batchSize": 2, "numSteps": 3, "offset": 0},
+      "expectedBatches": [
+        {"X": [[0,1,2],[6,7,8]], "Y": [[1,2,3],[7,8,9]]},
+        {"X": [[3,4,5],[9,10,11]], "Y": [[4,5,6],[10,11,12]]}
+      ],
+      "assertions": ["Y[:, :-1] == X[:, 1:] within each batch", "previousY[:, -1] == nextX[:, 0] for the same row", "all X/Y original indices belong to one split", "randomized independent windows must reset state for every batch"],
+      "negativeCases": ["split after window creation leaks target indices", "row permutation with unpermuted carried state is invalid", "detach of a random-window old state does not repair its wrong numerical history"]
+    },
+    {
+      "id": "rnn-scratch-api-equivalence",
+      "inputs": {"B": 2, "T": 3, "V": 4, "H": 3, "dtype": "float64", "dropout": 0, "nonlinearity": "tanh", "weights": "explicit fixed finite nonzero small matrices shared by both paths"},
+      "mapping": "Scratch right-multiplication matrices transpose into API weights; API b_ih + b_hh equals scratch b_h. Same initial state and output projection. Preserve time-major ordering.",
+      "assertions": ["timeMajorOneHot.shape == (3,2,4)", "logits.shape == (6,4)", "flattened target equals Y.T.reshape(-1)", "max absolute error of all logits and final hidden state < 1e-9", "mapped gradients for a shared scalar objective agree with atol=1e-9 and rtol=1e-7"],
+      "caveat": "Do not assert one-step optimizer equivalence with both API biases trainable versus one scratch bias: their summed update differs unless parameterization/freeze policy is aligned. This is ordinary RNN equivalence, not a blanket GRU formula equivalence."
+    },
+    {
+      "id": "global-l2-clipping",
+      "inputs": {"gradientsAcrossTwoParameters": [3,4], "threshold": 1},
+      "expected": {"preNorm": 5, "postGradients": [0.6,0.8], "postNorm": 1},
+      "assertions": ["all trainable parameter gradients contribute to one global norm", "postNorm <= 1 + 1e-6", "postGradients close to expected at atol=1e-6", "gradient vector [0.3,0.4] remains unchanged", "nonfinite gradient is an explicit failure, not hidden by clipping"],
+      "executionOrder": "zero_grad, forward, loss.backward, clip, optimizer.step",
+      "scope": "Main may use an equivalent higher-dimensional vector; normal real training need not trigger scaling. Record whether it did."
+    },
+    {
+      "id": "token-weighted-ce-perplexity",
+      "inputs": {"uniformVocabularySize": 4, "unequalBatchesNLL": [["ln(2)","ln(2)"],["ln(8)"]]},
+      "expected": {"uniformCE": "ln(4)", "uniformPPL": 4, "unequalLossSum": "ln(32)", "unequalTokenCount": 3, "unequalPPL": "32**(1/3)"},
+      "assertions": ["CE == sum(valid token NLL)/count(valid tokens)", "PPL == exp(CE)", "unequal-token case is neither mean([2,8]) nor exp(mean(batch means))", "padding excluded only by explicit mask; <unk> is not padding", "zero valid targets must not produce a finite reported score"]
+    },
+    {
+      "id": "detach-truncated-bptt",
+      "inputs": {"w": 2, "x1": 3, "h1": "w*x1", "h2": "w*h1"},
+      "expected": {"forwardBoth": 12, "fullDerivativeW": 12, "detachedDerivativeW": 6},
+      "assertions": ["detach preserves h1 value and removes its historical autograd edge", "resetting h1 to zero changes forward value and is not detach", "in actual LSTM both h and c detached values equal originals", "detached h and c have no old grad_fn", "new-window parameters still receive finite nonzero gradients where fixture establishes a path"],
+      "caveat": "No retain_graph workaround; optimizer.zero_grad does not detach states."
+    },
+    {
+      "id": "deep-bidirectional-shapes",
+      "inputs": {"T": 5, "B": 2, "V": 4, "H": 3, "layers": 2, "batchFirst": false, "lstmProjection": 0},
+      "expected": {"unidirectionalOutput": [5,2,3], "unidirectionalHidden": [2,2,3], "bidirectionalOutput": [5,2,6], "bidirectionalHidden": [4,2,3]},
+      "assertions": ["unprojected LSTM c.shape == h.shape", "output projection width equals directions*H", "batch_first=True changes only input/output batch-time ordering, not hidden-state layout", "bidirectional final output at last time is not the pair of final directional states"]
+    },
+    {
+      "id": "causal-future-perturbation",
+      "inputs": "Two sequences with identical prefix and a differing future token; same initial states, deterministic nonzero weights, eval mode, no dropout.",
+      "assertions": ["unidirectional outputs before the changed token are equal within 1e-9 in float64 fixture", "construct a nonzero reverse dependency so bidirectional earlier output differs by more than 1e-6", "identify y_t=x_(t+1) inside future input", "do not interpret bidirectional next-token CE as causal language-model perplexity"],
+      "caveat": "All-zero weights can mask future dependence; use a deliberate nondegenerate counterexample, not an unconditional random test."
+    },
+    {
+      "id": "prefix-warmup-and-stream-chunking",
+      "inputs": "One causal trained or fixed model; prefix abc, also prefix length1 and requested new-token count0; one fixed validation stream and initial state.",
+      "assertions": ["consume a and b only to warm state, then consume c exactly once to obtain logits for first new token", "autoregressive loop feeds model output, not held-out answers", "independent prefix generation resets state and does not update weights", "new-token count tracked separately from rendered string length when <unk> occurs", "same fixed stream, token set and carried state yield equal eval CE under different processing chunk lengths within dtype-appropriate tolerance"],
+      "caveat": "Changing batch size can change row-stream boundaries and context; no general batch-size-invariance assertion."
+    }
+  ],
+  "realCorpusContract": {
+    "downloadUrl": "https://d2l-data.s3-accelerate.amazonaws.com/timemachine.txt",
+    "bytes": 178979,
+    "sha1": "090b5e7e70c295757f55df93cb0a180b9691891a",
+    "sha256": "8424dbd9532ac81f7e5f0b6add90e6952baea29158309d7d1bf3884f4e12c516",
+    "split": "Clean each line, remove empty cleaned lines; n remaining lines; train[0,floor(.8n)), val[floor(.8n),floor(.9n)), test[floor(.9n),n). Preserve original-line provenance. Independently flatten each segment without interline separator.",
+    "vocabularyFit": "Complete training segment only, before selecting small prefixes; not validation/test and not falsely described as fit on only8192 tokens.",
+    "smallRunCandidateTokens": {"trainPrefix": 8192, "validationPrefix": 2048, "test": "sealed, not evaluated in phase small run"},
+    "candidateConfiguration": {"models": ["single-layer causal RNN", "single-layer causal GRU", "single-layer causal LSTM"], "hiddenSize": 32, "batchSize": 8, "numSteps": 32, "epochs": 15, "inputRepresentation": "one-hot", "optimizer": "Adam", "learningRate": 0.01, "globalClipThreshold": 1},
+    "trainingPolicy": "Sequential rows retain identity, epoch starts reset state, each following training batch detaches carried state (both h/c for LSTM). Record final shorter window or dropped tails. Effective tokens, not candidate count, determine CE denominator.",
+    "evaluationPolicy": "Fixed separate validation stream, eval/no_grad, reset at split start, carry within stream; fixed-mode initial/final train and validation rescoring separately from optimization-time sums. No parameter updates. Save lossSum and validTokenCount.",
+    "requiredEvidence": ["actual raw acquisition hash and legal-use boundary", "raw/clean line boundaries and split hashes", "actual ordered vocab and fit range", "seed, runtime, hardware, threads, parameter count", "actual epochs, steps, window lengths and tokens", "finite gradients and real parameter update", "preclip/postclip norm and whether actual scaling occurred", "initial/final comparable scoring and per-epoch weighted metrics", "actual checkpoint/prefix/decoding config/new-token IDs/raw generated output", "explicit test-not-evaluated status"],
+    "qualityPolicy": "No fabricated text, minimum PPL, monotone per-step decline, winner claim or fluency pass. Short repetitive output remains in evidence.",
+    "studentScopeBoundary": "Main's small API three-model run plus mechanism checks does not by itself complete all student tasks. Student task2 also calls for a real, possibly very short, scratch-RNN training/generation record; local API equivalence is not that record."
+  },
+  "hardwareBoundary": "Only report actual measured CPU/GPU/device and timing. No throughput or GPU extrapolation from shapes or API documentation.",
+  "publicationBoundary": "No original novel full text, raw dataset artifact, checkpoint binary, full training/solution script, cookies or tokens in content. Keep only small provenance txt/json and pedagogical instructions."
+}

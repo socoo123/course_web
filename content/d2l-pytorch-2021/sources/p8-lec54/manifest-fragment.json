@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "batch": "P8",
+  "lectureId": "lec54",
+  "generatedAt": "2026-11-14",
+  "owner": "P8Lec51to54",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "diagram": "original_svg_pending_main_browser_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "sections": [
+      "8.4",
+      "8.7"
+    ],
+    "editionBoundary": "Current Chinese second edition; not 2021 snapshot",
+    "versionEvidenceReused": "sources/p1-shared/book-version.json"
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1D64y1z7CA/",
+    "label": "官方 B站视频（全 2 P 合计）",
+    "duration": "34:04",
+    "language": "zh",
+    "durationSeconds": 2044,
+    "pageCount": 2,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 372645527,
+        "part": "RNN",
+        "duration": 1516
+      },
+      {
+        "page": 2,
+        "cid": 372655152,
+        "part": "QA",
+        "duration": 528
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 2
+  },
+  "scheduleDate": "2021-07-18",
+  "publishedAt": "2021-07-23T02:00:04+00:00",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_recurrent-neural-networks/rnn.md",
+      "snapshot": "sources/p8-lec54/book-rnn.txt",
+      "sha256": "573f138a3450f3d2d35f565b196dc97696178ea1ab1a80f9c07bfa004968b610",
+      "readRange": "lines 1–331, full section including all framework tabs; no linked papers or figures read",
+      "license": "Pinned repository root Apache-2.0; not extended to third-party media/data"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_recurrent-neural-networks/bptt.md",
+      "snapshot": "sources/p8-lec54/book-bptt.txt",
+      "sha256": "edd2b5ded614c835151fdbc326c05bfdc3faf432578c703abba3e903fef300c3",
+      "readRange": "lines 1–323, full section",
+      "license": "Pinned repository root Apache-2.0"
+    },
+    {
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "snapshot": "sources/p8-lec54/schedule-excerpt.txt",
+      "sha256": "85d1a57df379188d3f14b57980ff78fc90660421893f59d1c244896a6c619804",
+      "readRange": "whole saved excerpt; original offsets in schedule-evidence.json",
+      "license": "Public schedule evidence only; no open video transcript permission inferred"
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "lectures/lec54/notes.zh.md",
+      "sha256": "5a37172d841399ec1c11f85067966c8888c1b7e0cc98a21b8f038c4027440f80",
+      "hashPhase": "generation_time_not_final_acceptance"
+    },
+    {
+      "path": "lectures/lec54/assets/rnn-bptt.svg",
+      "sha256": "fa64c9f8e653b955bbf1899fac958a6a461c99a20f10f256b68657b9f6ff02fa",
+      "hashPhase": "generation_time_not_final_acceptance"
+    },
+    {
+      "path": "sources/p8-lec54/video-metadata.json",
+      "sha256": "cddb06ccbd0825182a0422871448cc1baaf5eb11369ae0434a99fd6c35946921",
+      "hashPhase": "generation_time_not_final_acceptance"
+    },
+    {
+      "path": "sources/p8-lec54/schedule-evidence.json",
+      "sha256": "7c8ff4a4f0daef3a7fc490cfca43a86f3ce888a4f2e53864693e4ceb90bce786",
+      "hashPhase": "generation_time_not_final_acceptance"
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "name": "scalar_detach",
+      "input": "h0=1,w=2,x1=x2=1,L=h2",
+      "expected": "full forward7 grad5; detach forward7 grad3; reset forward1"
+    },
+    {
+      "name": "global_clip",
+      "input": "grad=[3,4],threshold1",
+      "expected": "[0.6,0.8], global norm1"
+    },
+    {
+      "name": "parameter_shapes",
+      "input": "D3 H2 V3 single hidden bias",
+      "expected": "23 params independent S; native nn.RNN bias convention differs"
+    }
+  ],
+  "workerExecution": {
+    "status": "not_run_by_worker",
+    "numerical": false,
+    "tests": false,
+    "build": false,
+    "lint": false,
+    "formatter": false,
+    "browser": false,
+    "git": false,
+    "boundary": "Source retrieval and generation-time hashing only. Main owns later numerical/browser/build evidence; preserve this historical status."
+  },
+  "limits": [
+    "No media review, transcript, classroom QA or guessed internal timestamps.",
+    "Empty public caption lists do not rule out burned-in captions.",
+    "Analytic examples are independent mechanism expectations, not real-corpus training or hardware measurements.",
+    "No complete lab answers or duplicated materials."
+  ]
+}

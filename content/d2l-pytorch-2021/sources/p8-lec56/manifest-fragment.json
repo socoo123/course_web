@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "batch": "P8",
+  "lectureId": "lec56",
+  "generatedAt": "2026-11-14",
+  "owner": "P8Lec55to59",
+  "scope": "Only owned lecture and source directories. No numeric execution, tests/build/lint/formatter, browser, commits or shared-index edits.",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required",
+    "diagram": "original_svg_written_pending_browser_acceptance"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "editionBoundary": "Current pinned Chinese second edition; not2021 snapshot.",
+    "sections": [
+      "9.1"
+    ],
+    "versionEvidenceReused": "sources/p1-shared/book-version.json",
+    "licenseBoundary": "Repository root Apache-2.0 separately from setup.py MIT-0; videos, data, images and PyTorch have separate conditions."
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1mf4y157N2/",
+    "label": "官方 B站视频（全 3 P 合计）",
+    "duration": "39:49",
+    "language": "zh",
+    "durationSeconds": 2389,
+    "pageCount": 3,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 376274927,
+        "part": "门控循环单元（GRU）",
+        "duration": 923
+      },
+      {
+        "page": 2,
+        "cid": 376277753,
+        "part": "代码",
+        "duration": 837
+      },
+      {
+        "page": 3,
+        "cid": 376284748,
+        "part": "QA",
+        "duration": 629
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "copyright": 1,
+    "noReprint": 1,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 3,
+    "permission": "No open transcript republication authorization; no media downloaded/reviewed."
+  },
+  "scheduleDate": "2021-07-25",
+  "publishedAt": "2021-07-25T07:21:16+00:00",
+  "sources": [
+    {
+      "snapshot": "sources/p8-lec56/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1mf4y157N2",
+      "sha256": "289cbbd9b36261e44e8c023e7dcc06efc7d838ec554d82a926787cdc41dfc4ff",
+      "bytes": 2156,
+      "readScope": "Filtered identity/year/all page title,cid,duration and one public caption query per page; retained fields reviewed. No audio/video or subtitle body obtained.",
+      "readRanges": []
+    },
+    {
+      "snapshot": "sources/p8-lec56/schedule-evidence.json",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "c1752baf78fe830f09c1d1e4f7a3ef427aa34457d3178760f22091112ad9a7c6",
+      "bytes": 2333,
+      "readScope": "Owned schedule mapping and full corresponding row(s); not classroom coverage.",
+      "readRanges": []
+    },
+    {
+      "snapshot": "sources/p8-lec56/book-gru.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_recurrent-modern/gru.md",
+      "sha256": "d8e03e0acf3df8d50b265c1287417bd33e915908f4fc915a928ef739c41cdb34",
+      "bytes": 19172,
+      "readScope": "Selected prose/PyTorch implementations actually reviewed; multi-framework snapshot retained but NOT a claim of reviewing every backend or full-book coverage.",
+      "readRanges": [
+        {
+          "start": 1,
+          "end": 156
+        },
+        {
+          "start": 232,
+          "end": 256
+        },
+        {
+          "start": 310,
+          "end": 382
+        },
+        {
+          "start": 427,
+          "end": 509
+        }
+      ],
+      "section": "9.1",
+      "license": "Repository root Apache-2.0; setup.py metadata MIT-0 separately recorded; no extension to external assets."
+    },
+    {
+      "snapshot": "sources/p8-lec56/torch-rnn-v2.5.1-excerpt.txt",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/nn/modules/rnn.py",
+      "sha256": "6725c833e3600c539b9cd2a259f199642946f755299314df1bf7e1b63c337cdc",
+      "bytes": 7557,
+      "readScope": "Original source lines named in excerpt, including API docstrings, equations, shapes and parameter layout; only these ranges retained/reviewed.",
+      "readRanges": [
+        {
+          "start": 1161,
+          "end": 1290
+        }
+      ],
+      "rangeCoordinates": "Original upstream source line numbers, not excerpt-file physical lines.",
+      "licenseEvidenceReused": "sources/p5-lec34/torch-v2.5.1-LICENSE.txt",
+      "upstreamSha256": "7a9330a13cfdb951a92c980d529efffbe79a440b2a8cbcaa3158bc02622dbca5"
+    },
+    {
+      "snapshot": "sources/p5-lec34/torch-v2.5.1-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/LICENSE",
+      "sha256": "47a26beb94e3f6b333a3677fc85d546f1fdfd2f0b3686c26d2fb5b10e0134165",
+      "bytes": 3384,
+      "readScope": "Whole existing pinned PyTorch license reviewed and reused; retain copyright and disclaimer.",
+      "readRanges": [
+        {
+          "start": 1,
+          "end": 80
+        }
+      ]
+    }
+  ],
+  "sourceIndex": "sources/p8-lec56/source-index.json",
+  "generatedFiles": [
+    {
+      "path": "lectures/lec56/notes.zh.md",
+      "sha256": "6e3508040a97f1ea27e68e17d8d17ba3a7f90e4ae169037d8aafade8cde85a72",
+      "bytes": 8894,
+      "status": "written_pending_main_acceptance",
+      "hashStage": "generation_time_not_final_main_acceptance"
+    },
+    {
+      "path": "lectures/lec56/assets/gru-reset-order.svg",
+      "sha256": "01bd90d7c7d3055f9cf24df9eb4f843fcf088e8ffad4259a2570b1c38c50c874",
+      "bytes": 2508,
+      "status": "written_pending_main_acceptance",
+      "hashStage": "generation_time_not_final_main_acceptance"
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "id": "gru-mixture",
+      "kind": "synthetic_mechanism",
+      "inputs": {
+        "old": [
+          0.8,
+          -0.4
+        ],
+        "candidate": [
+          0.2,
+          0.6
+        ],
+        "z": [
+          0.75,
+          0.25
+        ]
+      },
+      "expected": {
+        "new": [
+          0.65,
+          0.35
+        ]
+      }
+    },
+    {
+      "id": "gru-reset-order-counterexample",
+      "kind": "synthetic_mechanism",
+      "inputs": {
+        "H": [
+          1,
+          2
+        ],
+        "R": [
+          0.25,
+          0.75
+        ],
+        "W": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "bias": 0,
+        "inputTerm": 0
+      },
+      "expected": {
+        "resetBeforePreTanh": [
+          1.5,
+          0.25
+        ],
+        "resetAfterPreTanh": [
+          0.5,
+          0.75
+        ]
+      },
+      "checks": [
+        "No general equality by merely transposing textbook weights.",
+        "For library parity use reset-after and r,z,n packed order; handle recurrent bias under gate."
+      ]
+    },
+    {
+      "id": "gru-shape-count",
+      "kind": "synthetic_mechanism",
+      "inputs": {
+        "T": 3,
+        "B": 2,
+        "D": 5,
+        "H": 4,
+        "V": 5,
+        "layers": 1
+      },
+      "expected": {
+        "output": [
+          3,
+          2,
+          4
+        ],
+        "hn": [
+          1,
+          2,
+          4
+        ],
+        "logits": [
+          6,
+          5
+        ],
+        "weightIH": [
+          12,
+          5
+        ],
+        "weightHH": [
+          12,
+          4
+        ],
+        "recurrentParameterCount": 132,
+        "withHead": 157
+      }
+    }
+  ],
+  "workerExecution": {
+    "status": "not_run_by_worker",
+    "numerical": false,
+    "training": false,
+    "tests": false,
+    "browser": false,
+    "build": false,
+    "lint": false,
+    "formatter": false,
+    "commit": false,
+    "note": "Hashes identify saved sources and generation-time content only; preserve this historical status after main verification."
+  },
+  "mainVerificationBoundary": "Main owns sources/p8-shared mechanism/real-corpus/browser/final-build evidence. Main reported mechanism checks performed; worker did not inspect or execute them. No invented training scores, generations or throughput.",
+  "limits": [
+    "No classroom timestamps, demonstrations or QA verified.",
+    "Caption empty lists do not rule out burned-in captions.",
+    "No draft/materials placeholders.",
+    "SVG original, not video screenshot.",
+    "No causal PPL claim from bidirectional full-window model."
+  ]
+}

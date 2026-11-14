@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "batch": "P8",
+  "lectureId": "lec51",
+  "generatedAt": "2026-11-14",
+  "owner": "P8Lec51to54",
+  "kind": "pinned_textbook_editorial_notes_not_classroom",
+  "status": {
+    "notes": "written_pending_main_acceptance",
+    "diagram": "original_svg_pending_main_browser_acceptance",
+    "draft": "blocked_empty_public_captions_no_media_review",
+    "materials": "not_required"
+  },
+  "book": {
+    "commit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+    "sections": [
+      "8.1"
+    ],
+    "editionBoundary": "Current Chinese second edition; not 2021 snapshot",
+    "versionEvidenceReused": "sources/p1-shared/book-version.json"
+  },
+  "videoRecommendation": {
+    "bilibili": "https://www.bilibili.com/video/BV1L44y1m768/",
+    "label": "官方 B站视频（全 3 P 合计）",
+    "duration": "54:11",
+    "language": "zh",
+    "durationSeconds": 3251,
+    "pageCount": 3,
+    "allPages": [
+      {
+        "page": 1,
+        "cid": 372627423,
+        "part": "序列模型",
+        "duration": 1204
+      },
+      {
+        "page": 2,
+        "cid": 372631176,
+        "part": "代码",
+        "duration": 713
+      },
+      {
+        "page": 3,
+        "cid": 372634724,
+        "part": "QA",
+        "duration": 1334
+      }
+    ],
+    "authorMid": 1567748478,
+    "year": 2021,
+    "publicCaptionStatus": "all_requests_success_empty_lists",
+    "captionRequestCount": 3
+  },
+  "scheduleDate": "2021-07-17",
+  "publishedAt": "2021-07-19T12:00:10+00:00",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_recurrent-neural-networks/sequence.md",
+      "snapshot": "sources/p8-lec51/book-sequence.txt",
+      "sha256": "14a6178318573eef537f65590475206297ed404ce9da23cbe33c8c92d766b2ff",
+      "readRange": "lines 1–558, full section including all framework tabs; no linked papers or figures read",
+      "license": "Pinned repository root Apache-2.0; not extended to third-party media/data"
+    },
+    {
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "snapshot": "sources/p8-lec51/schedule-excerpt.txt",
+      "sha256": "85d1a57df379188d3f14b57980ff78fc90660421893f59d1c244896a6c619804",
+      "readRange": "whole saved excerpt; original offsets in schedule-evidence.json",
+      "license": "Public schedule evidence only; no open video transcript permission inferred"
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "lectures/lec51/notes.zh.md",
+      "sha256": "e63c8b30e9acd19b3af149071777ff90f19620bbac00904c09b8e7e104702955",
+      "hashPhase": "generation_time_not_final_acceptance"
+    },
+    {
+      "path": "lectures/lec51/assets/forecast-boundary.svg",
+      "sha256": "8d4dba267ec96be02b0344ac88076a5990870adf949bb1ca699175e2f95a521a",
+      "hashPhase": "generation_time_not_final_acceptance"
+    },
+    {
+      "path": "sources/p8-lec51/video-metadata.json",
+      "sha256": "354b95abff75676074dd26509d904a63deb9d05e6918649907a3bb239f691e5f",
+      "hashPhase": "generation_time_not_final_acceptance"
+    },
+    {
+      "path": "sources/p8-lec51/schedule-evidence.json",
+      "sha256": "d7850d5bffc9bc66092605d00d989686b8848e818419c5ff38baa9ba964cb4b9",
+      "hashPhase": "generation_time_not_final_acceptance"
+    }
+  ],
+  "numericalAcceptanceRequests": [
+    {
+      "name": "window_pairs",
+      "input": "0..5; tau=3",
+      "expected": "3 pairs; first [0,1,2]->3; last [2,3,4]->5"
+    },
+    {
+      "name": "forecast_visibility",
+      "input": "mean window [2,4]; next truth 8",
+      "expected": "first 3; recursive second 3.5; refreshed one-step 6"
+    }
+  ],
+  "workerExecution": {
+    "status": "not_run_by_worker",
+    "numerical": false,
+    "tests": false,
+    "build": false,
+    "lint": false,
+    "formatter": false,
+    "browser": false,
+    "git": false,
+    "boundary": "Source retrieval and generation-time hashing only. Main owns later numerical/browser/build evidence; preserve this historical status."
+  },
+  "limits": [
+    "No media review, transcript, classroom QA or guessed internal timestamps.",
+    "Empty public caption lists do not rule out burned-in captions.",
+    "Analytic examples are independent mechanism expectations, not real-corpus training or hardware measurements.",
+    "No complete lab answers or duplicated materials."
+  ]
+}

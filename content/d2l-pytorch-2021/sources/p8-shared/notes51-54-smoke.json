@@ -1,0 +1,24 @@
+{
+  "status": "passed_after_correcting_LEC54_parameter_count",
+  "passed_before_failure": [
+    "LEC51 three windows, first3, recursive3.5, refreshed6",
+    "LEC52 regex/time machine12chars/train vocab and OOV",
+    "LEC53 bigram add-one and sequential rows, weighted PPL=2**2.5",
+    "LEC54 full(7,5),detach(7,3) value/gradient"
+  ],
+  "failure": {
+    "type": "AssertionError",
+    "finding": "Single-hidden-bias D3,H2,V3 formula gives21, not23.23 belongs to native double-hidden-bias nn.RNN plus head.",
+    "repaired": "lectures/lec54/notes.zh.md; worker manifest request remains historical",
+    "rerun_scope": "only failed parameter-count check and subsequent clipping assertion; earlier passed cases not rerun"
+  },
+  "corrected_and_remaining": {
+    "single_bias_math_parameters": 21,
+    "native_double_bias_plus_head_parameters": 23,
+    "analytic_clipped": [
+      0.6,
+      0.8
+    ]
+  },
+  "kind": "paper_mechanism_examples_not_real_training"
+}

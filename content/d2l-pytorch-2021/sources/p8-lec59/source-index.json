@@ -1,0 +1,75 @@
+{
+  "lectureId": "lec59",
+  "capturedAt": "2026-11-14",
+  "sources": [
+    {
+      "snapshot": "sources/p8-lec59/video-metadata.json",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV12X4y1c71W",
+      "sha256": "d71ceced85007bd46bfd4bf31a2fb579c3b6197b0f5883ac14b216d461524740",
+      "bytes": 2149,
+      "readScope": "Filtered identity/year/all page title,cid,duration and one public caption query per page; retained fields reviewed. No audio/video or subtitle body obtained.",
+      "readRanges": []
+    },
+    {
+      "snapshot": "sources/p8-lec59/schedule-evidence.json",
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "sha256": "74f5e5432beb2cd7d620c1fb20834b1707994ade30235197c68fd742ff701fc6",
+      "bytes": 2337,
+      "readScope": "Owned schedule mapping and full corresponding row(s); not classroom coverage.",
+      "readRanges": []
+    },
+    {
+      "snapshot": "sources/p8-lec59/book-bi-rnn.txt",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_recurrent-modern/bi-rnn.md",
+      "sha256": "b1830894db51a1701c1a59a3bc384a67a27ed46ca67db764a260466995d4fa29",
+      "bytes": 14521,
+      "readScope": "Selected prose/PyTorch implementations actually reviewed; multi-framework snapshot retained but NOT a claim of reviewing every backend or full-book coverage.",
+      "readRanges": [
+        {
+          "start": 1,
+          "end": 214
+        },
+        {
+          "start": 232,
+          "end": 252
+        },
+        {
+          "start": 273,
+          "end": 301
+        }
+      ],
+      "section": "9.4",
+      "license": "Repository root Apache-2.0; setup.py metadata MIT-0 separately recorded; no extension to external assets."
+    },
+    {
+      "snapshot": "sources/p8-lec59/torch-rnn-v2.5.1-excerpt.txt",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/nn/modules/rnn.py",
+      "sha256": "f147d62b979832b8871f3b8f203df9746a8498fc65bb82fe2105eaefcc095eef",
+      "bytes": 7484,
+      "readScope": "Original source lines named in excerpt, including API docstrings, equations, shapes and parameter layout; only these ranges retained/reviewed.",
+      "readRanges": [
+        {
+          "start": 838,
+          "end": 951
+        }
+      ],
+      "rangeCoordinates": "Original upstream source line numbers, not excerpt-file physical lines.",
+      "licenseEvidenceReused": "sources/p5-lec34/torch-v2.5.1-LICENSE.txt",
+      "upstreamSha256": "7a9330a13cfdb951a92c980d529efffbe79a440b2a8cbcaa3158bc02622dbca5"
+    },
+    {
+      "snapshot": "sources/p5-lec34/torch-v2.5.1-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/LICENSE",
+      "sha256": "47a26beb94e3f6b333a3677fc85d546f1fdfd2f0b3686c26d2fb5b10e0134165",
+      "bytes": 3384,
+      "readScope": "Whole existing pinned PyTorch license reviewed and reused; retain copyright and disclaimer.",
+      "readRanges": [
+        {
+          "start": 1,
+          "end": 80
+        }
+      ]
+    }
+  ],
+  "authorizationBoundary": "Metadata public access is not video transcript permission; no media/data/model-weight redistribution. Book snapshots and original paraphrase only within applicable repository license."
+}
