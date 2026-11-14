@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "courseId": "d2l-pytorch-2021",
+  "date": "2026-11-14",
+  "baselineCommit": "acba625",
+  "kind": "user_requested_scope_and_presentation_revision",
+  "userDecisions": {
+    "classroomDrafts": "取消本课中文课堂逐段整理及其交付缺口；通过已核实的官方页头入口看原课。",
+    "personalLearning": "个人学习与作业进度由用户管理，不作为教程交付状态或agent待办；页面个人自检功能不代表教程发布进度。",
+    "practice": "十二实验由用户在本地自行实现、保存与自检；无需Git提交、推送、上传作业或上交报告。",
+    "experimentNavigation": "直接显示具体实验标题，不显示Lab编号标签或分支说明。",
+    "delivery": "本轮仅修改本地文件，不提交推送。"
+  },
+  "implementation": {
+    "lectureTabs": "CourseDetail.lectureDrafts可选，D2L为false；其他课程保持原行为。旧?v=draft通过已有useView逻辑选择可用笔记，原站视频入口不变。",
+    "experimentTitles": "侧栏、关联实验链接和面包屑使用lab.title；侧栏实验名称可换行。",
+    "localPractice": "Lab.branch改为可选；删除D2L十二个伪branch值。无branch不显示Git/xv6命令或分支标记；真实分支课程保留命令。",
+    "documents": "逐讲notes、十二实验双文档、公共资料、status及交接同步最新约定；保留技术内容和来源真实性。"
+  },
+  "historicalEvidence": {
+    "previousMaintenance": "sources/maintenance-2026-11-14.json",
+    "lastContentBatch": "sources/p11-manifest.json",
+    "policy": "保留P1–P11原始证据与当时的范围记录，不将旧课堂阻塞或个人学习记录作为当前要求；没有新增字幕、媒体审阅、模型训练或GPU实测。"
+  },
+  "verification": {
+    "content": {
+      "status": "passed",
+      "lectureNotes": 73,
+      "labDocuments": 24,
+      "labs": 12,
+      "taskIds": 48,
+      "videoMetadataAndTaskIdsUnchanged": true,
+      "allDraftStatuses": "not_required_by_user",
+      "personalLearningRemovedFromDeliveryLedger": true,
+      "localPracticeNoGitRequirement": true,
+      "handoffPathsResolve": true
+    },
+    "build": {
+      "command": "npm run build",
+      "runs": 1,
+      "exitCode": 0,
+      "tsc": "passed",
+      "vite": "5.4.21",
+      "modules": 3080,
+      "buildSeconds": 6.74,
+      "log": "sources/scope-revision-2026-11-14-build.log"
+    },
+    "browser": {
+      "engine": "actual Chromium on existing localhost:5310 preview",
+      "viewports": ["1440x1000", "390x844"],
+      "sidebarTitlesChecked": 12,
+      "retiredDraftRoute": "lec08?v=draft selects notes; no classroom-draft tab or missing-draft panel",
+      "video": "LEC08 BV1PX4y1g7KC opens in new tab; notes page retained; popup closed",
+      "lab": "mlp-generalization desktop/mobile shows concrete title and local-practice policy, no Git/xv6 command block; mobile sidebar link clicked successfully",
+      "layout": "representative mobile lecture and lab scrollWidth390; experiment sidebar names readable",
+      "regression": "mit-6.s081-2020 lec01 retains selected Chinese draft; util retains git checkout util/make qemu/make grade",
+      "publicResources": "local self-practice policy visible",
+      "applicationErrors": [],
+      "validationTabsClosed": true,
+      "boundary": "local preview only, not deployed Pages or full video playback; no claim all73pages/mobile checked"
+    },
+    "diagnostics": [
+      "LSP references attempted for CourseDetail and Lab.branch; no language server available, used scoped source search.",
+      "Status edit initially missed two JSON commas; tool warning identified it and both were corrected before final JSON/build verification.",
+      "Python BrowserTab.run rejected documented args keyword; reported tool issue and retried only failed browser step with serialized JSON."
+    ],
+    "notExecuted": ["model retraining", "new classroom acquisition", "GPU or competition execution", "git commit", "git push"]
+  },
+  "preservedBoundaries": [
+    "73讲、12实验、48任务；官方视频链接和已核实时长保持",
+    "实验说明/指导不是完整答案；本人自练结果不由agent认证",
+    "竞赛数据身份、许可、评分端及历史CPU/GPU验证边界仍如实保留，但不是自动代做实验的待办",
+    "课程资料not_required标签表现及LEC2/5/6旧手机溢出未在此轮扩修"
+  ]
+}

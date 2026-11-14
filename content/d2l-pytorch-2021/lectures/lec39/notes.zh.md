@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "固定中文第二版13.14全文，并对照13.13数据组织与13.2迁移概念；TorchVision0.20.1 ResNet34权重规范。官方课表本站LEC39对应上传标题40。"
 video: "https://www.bilibili.com/video/BV1j5411T7wx/"
 license: "教材及框架代码许可不能外推到ImageNet/Dogs图片或预训练权重；当前竞赛访问与再分发条件未核实。视频无开放转录授权。"
-status: "教材导读；全2P核实，每P一次公开字幕请求均成功空列表；未观看音视频或下载数据/权重。draft阻塞。"
+status: "教材导读；全2P核实，每P一次公开字幕请求均成功空列表；未观看音视频或下载数据/权重。课堂逐段整理不另作。"
 title: "狗品种识别：冻结特征，输出完整概率分布"
 lectureId: lec39
 kind: "教材竞赛案例导读 / 编者笔记"

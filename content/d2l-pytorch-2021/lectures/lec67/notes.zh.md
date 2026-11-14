@@ -1,10 +1,11 @@
 ---
+draftStatus: "not_required_by_user"
 title: "自注意力与位置编码：内容相同，位置不能丢"
 lectureId: lec67
 kind: "教材导读 / 多头注意力补习"
 source: "固定中文第二版10.6；10.5为教材补充，不另造讲次。"
 videoContentVerified: false
-status: "官方全3P元数据已核；字幕每P一次为空；无课堂稿。"
+status: "官方全3P元数据已核；字幕每P一次为空；中文原课通过页头观看，本课不另作课堂逐段整理。"
 codeExecution: "主agent已核有限纸面例、拆合/位置旋转/置换等变；不等于课堂代码或全部实验通过。"
 ---
 
@@ -146,4 +147,4 @@ $$
 | 2 | 代码 | 00:00–02:57 | 177 |
 | 3 | QA | 00:00–06:55 | 415 |
 
-BV19o4y1m7mo，作者“跟李沐学AI”（mid1567748478），2021年上传；全3P合计2264秒（37:44）。精确发布时间、cid、获取日期与每P一次字幕查询见`sources/p10-lec67/video-metadata.json`。各P公开字幕列表为空，不排除烧录字幕。未审阅音视频，不编片内主题时间码、演示、QA或逐段draft。copyright=1、no_reprint=1不是开放转录许可；materials不重复制作中文教材译文。原站入口只保留页头。
+BV19o4y1m7mo，作者“跟李沐学AI”（mid1567748478），2021年上传；全3P合计2264秒（37:44）。精确发布时间、cid、获取日期与每P一次字幕查询见`sources/p10-lec67/video-metadata.json`。各P公开字幕列表为空，不排除烧录字幕。未审阅音视频，不编片内主题时间码、演示、QA；中文原课通过页头观看，本课不另作课堂逐段整理。copyright=1、no_reprint=1不是开放转录许可；materials不重复制作中文教材译文。原站入口只保留页头。

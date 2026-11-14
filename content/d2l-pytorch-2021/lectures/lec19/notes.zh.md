@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版6.1–6.2全文及PyTorch实现；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照。"
 video: "https://www.bilibili.com/video/BV1L64y1m7Nh"
 license: "教材仓库Apache-2.0；不外推视频或第三方图片。视频copyright=1/no_reprint=1，未取得开放转录授权；本文讲解、算例与SVG为编者改写/自绘。"
-status: "教材导读；4P公开player字幕均成功空列表，未观看媒体，draft阻塞；两段代码已由主agent在CPU执行并匹配解析预期。"
+status: "教材导读；4P公开player字幕均成功空列表，未观看媒体，课堂逐段整理不另作；两段代码已由主agent在CPU执行并匹配解析预期。"
 title: "从全连接到卷积：共享一个局部检测器"
 lectureId: lec19
 kind: "教材导读 / 编者笔记"
@@ -211,6 +212,6 @@ $$
 | P3 | 代码 | 10:08 |
 | P4 | QA | 07:44 |
 
-合计43:54。此表只证明文件身份与时长，**不是课堂内容时间索引**。全部4P公开player各请求一次，成功但字幕列表为空；没有下载或观看媒体，未核实演示、问答、片内起止，不编造时间线。`draft`保持阻塞且无占位文件；无独立中文阅读需要拆篇，`materials=not_required`。
+合计43:54。此表只证明文件身份与时长，**不是课堂内容时间索引**。全部4P公开player各请求一次，成功但字幕列表为空；没有下载或观看媒体，未核实演示、问答、片内起止，不编造时间线。中文原课通过页头观看，本课不另作课堂逐段整理；无独立中文阅读需要拆篇，`materials=not_required`。
 
 来源快照、SHA-256、实际阅读行范围与片段预期见`sources/p3-lec19/manifest-fragment.json`。教材根LICENSE为Apache-2.0，setup包MIT-0字段另记，均不外推视频、第三方图片。视频copyright=1/no_reprint=1，不具备开放全文转录授权。本讲代码未由撰写者执行，未运行教材训练或旧Notebook。

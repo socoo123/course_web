@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 title: "安装：分清解释器、依赖、内核与设备"
 lectureId: lec03
 contentType: "教材导读／编者笔记"
@@ -120,7 +121,7 @@ Notebook文件保存代码、说明、元数据和输出；浏览器是交互界
 | P1「安装」 | 00:00–16:06（966秒） | 演示平台、操作顺序、课堂命令 |
 | P2「安装 QA」 | 00:00–03:51（231秒） | 全部问答 |
 
-这是分P总时长，不是实质内容时间轴。两个公开player请求均返回成功、字幕列表为空；未获得可核实官方替代字幕，故不生成draft。没有用现行文档去猜2021课堂操作。
+这是分P总时长，不是实质内容时间轴。两个公开player请求均返回成功、字幕列表为空；未获得可核实官方替代字幕；中文原课通过页头观看，本课不另作课堂逐段整理。没有用现行文档去猜2021课堂操作。
 
 - 张阿斯顿等，《动手学深度学习》中文第二版，[固定版安装源码](https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_installation/index.md)：课表指定阅读，已读全文，采用PyTorch分支及环境概念。网页辅助核对：[中文安装章](https://zh.d2l.ai/chapter_installation/index.html)。
 - Python官方，[venv文档](https://docs.python.org/3/library/venv.html)：编者补充，已读概述与“How venvs work”；只用其环境隔离与解释器原理，不采用最新版本新增选项。

@@ -1,6 +1,7 @@
 {
   "id": "d2l-pytorch-2021",
   "year": 2021,
+  "lectureDrafts": false,
   "instructors": [
     "李沐"
   ],
@@ -1347,9 +1348,8 @@
       "titleEn": "Tensors, Data and Autograd",
       "stars": 2,
       "hours": "短周期，多次小实验",
-      "branch": "不适用：编者阶段练习，非官方Git分支",
       "url": "https://zh.d2l.ai/chapter_preliminaries/autograd.html",
-      "goal": "把形状、广播、按轴归约和链式法则落实为可解释的PyTorch代码。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "goal": "把形状、广播、按轴归约和链式法则落实为可解释的PyTorch代码。本项为教材整合的本地自主练习，不是官方编号Lab；自己实现并自检，无需Git提交、推送或上传作业。",
       "tasks": [
         {
           "id": "tensor-autograd-1",
@@ -1376,9 +1376,8 @@
       "titleEn": "Training Loop and Linear Models",
       "stars": 2,
       "hours": "中等，需反复调试",
-      "branch": "不适用：编者阶段练习，非官方Git分支",
       "url": "https://zh.d2l.ai/chapter_linear-networks/linear-regression-scratch.html",
-      "goal": "独立写出数据批处理、前向、损失、反向、更新与评估循环，并与高层API对应。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "goal": "独立写出数据批处理、前向、损失、反向、更新与评估循环，并与高层API对应。本项为教材整合的本地自主练习，不是官方编号Lab；自己实现并自检，无需Git提交、推送或上传作业。",
       "tasks": [
         {
           "id": "linear-training-1",
@@ -1405,9 +1404,8 @@
       "titleEn": "MLP, Generalization and House Prices",
       "stars": 3,
       "hours": "中等至较长，包含对照实验",
-      "branch": "不适用：编者阶段练习，非官方Git分支",
       "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/kaggle-house-price.html",
-      "goal": "从MLP到可靠验证，理解正则化并建立房价任务的可复现基线。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "goal": "从MLP到可靠验证，理解正则化并建立房价任务的可复现基线。本项为教材整合的本地自主练习，不是官方编号Lab；自己实现并自检，无需Git提交、推送或上传作业。",
       "tasks": [
         {
           "id": "mlp-generalization-1",
@@ -1434,9 +1432,8 @@
       "titleEn": "Modules, Convolutions and Modern CNNs",
       "stars": 4,
       "hours": "较长，按网络家族分段",
-      "branch": "不适用：编者阶段练习，非官方Git分支",
       "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/lenet.html",
-      "goal": "用统一模块与训练接口理解从LeNet到ResNet的全部课程CNN路线。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "goal": "用统一模块与训练接口理解从LeNet到ResNet的全部课程CNN路线。本项为教材整合的本地自主练习，不是官方编号Lab；自己实现并自检，无需Git提交、推送或上传作业。",
       "tasks": [
         {
           "id": "cnn-architectures-1",
@@ -1463,9 +1460,8 @@
       "titleEn": "Performance and Multi-device Training",
       "stars": 3,
       "hours": "中等；多设备部分依资源安排",
-      "branch": "不适用：编者阶段练习，非官方Git分支",
       "url": "https://zh.d2l.ai/chapter_computational-performance/hardware.html",
-      "goal": "测量训练瓶颈并解释数据并行和梯度聚合，不把概念推演当作多GPU实测。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "goal": "测量训练瓶颈并解释数据并行和梯度聚合，不把概念推演当作多GPU实测。本项为教材整合的本地自主练习，不是官方编号Lab；自己实现并自检，无需Git提交、推送或上传作业。",
       "tasks": [
         {
           "id": "training-performance-1",
@@ -1492,9 +1488,8 @@
       "titleEn": "Vision Transfer and Classification",
       "stars": 3,
       "hours": "较长，含数据准备与误差分析",
-      "branch": "不适用：编者阶段练习，非官方Git分支",
       "url": "https://zh.d2l.ai/chapter_computer-vision/fine-tuning.html",
-      "goal": "将增广、微调和正确验证用于分类，完整保留课程树叶竞赛与两项教材实战。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "goal": "将增广、微调和正确验证用于分类，完整保留课程树叶竞赛与两项教材实战。本项为教材整合的本地自主练习，不是官方编号Lab；自己实现并自检，无需Git提交、推送或上传作业。",
       "tasks": [
         {
           "id": "cv-transfer-1",
@@ -1521,9 +1516,8 @@
       "titleEn": "Detection, Segmentation and Style Transfer",
       "stars": 4,
       "hours": "较长，分成三个子阶段",
-      "branch": "不适用：编者阶段练习，非官方Git分支",
       "url": "https://zh.d2l.ai/chapter_computer-vision/ssd.html",
-      "goal": "建立分类以外的完整视觉任务链，并保留2021牛仔行头检测历史竞赛映射。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "goal": "建立分类以外的完整视觉任务链，并保留2021牛仔行头检测历史竞赛映射。本项为教材整合的本地自主练习，不是官方编号Lab；自己实现并自检，无需Git提交、推送或上传作业。",
       "tasks": [
         {
           "id": "cv-dense-prediction-1",
@@ -1550,9 +1544,8 @@
       "titleEn": "Recurrent Language Models",
       "stars": 4,
       "hours": "较长，重在逐步调试",
-      "branch": "不适用：编者阶段练习，非官方Git分支",
       "url": "https://zh.d2l.ai/chapter_recurrent-neural-networks/rnn-scratch.html",
-      "goal": "理解语言建模、状态传递与门控网络，为后续注意力模型保留可比较基线。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "goal": "理解语言建模、状态传递与门控网络，为后续注意力模型保留可比较基线。本项为教材整合的本地自主练习，不是官方编号Lab；自己实现并自检，无需Git提交、推送或上传作业。",
       "tasks": [
         {
           "id": "recurrent-language-model-1",
@@ -1579,9 +1572,8 @@
       "titleEn": "Seq2Seq and Attention",
       "stars": 4,
       "hours": "较长，分数据与模型两段",
-      "branch": "不适用：编者阶段练习，非官方Git分支",
       "url": "https://zh.d2l.ai/chapter_attention-mechanisms/bahdanau-attention.html",
-      "goal": "实现可解释的小型翻译链路，从编码器瓶颈理解注意力。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "goal": "实现可解释的小型翻译链路，从编码器瓶颈理解注意力。本项为教材整合的本地自主练习，不是官方编号Lab；自己实现并自检，无需Git提交、推送或上传作业。",
       "tasks": [
         {
           "id": "seq2seq-attention-1",
@@ -1608,9 +1600,8 @@
       "titleEn": "Transformer Implementation",
       "stars": 4,
       "hours": "较长，分组件与端到端",
-      "branch": "不适用：编者阶段练习，非官方Git分支",
       "url": "https://zh.d2l.ai/chapter_attention-mechanisms/transformer.html",
-      "goal": "能追踪多头注意力的每个张量维度，完成小型Transformer训练与自回归推理。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "goal": "能追踪多头注意力的每个张量维度，完成小型Transformer训练与自回归推理。本项为教材整合的本地自主练习，不是官方编号Lab；自己实现并自检，无需Git提交、推送或上传作业。",
       "tasks": [
         {
           "id": "transformer-1",
@@ -1637,9 +1628,8 @@
       "titleEn": "BERT Pretraining and Fine-tuning",
       "stars": 4,
       "hours": "较长，分数据目标与迁移",
-      "branch": "不适用：编者阶段练习，非官方Git分支",
       "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert-pretraining.html",
-      "goal": "理解双向预训练目标、输入构造与下游微调，并区分其与CS336自回归语言建模。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "goal": "理解双向预训练目标、输入构造与下游微调，并区分其与CS336自回归语言建模。本项为教材整合的本地自主练习，不是官方编号Lab；自己实现并自检，无需Git提交、推送或上传作业。",
       "tasks": [
         {
           "id": "bert-pretrain-finetune-1",
@@ -1666,9 +1656,8 @@
       "titleEn": "Optimization and Course Capstone",
       "stars": 3,
       "hours": "中等至较长，复用已有项目",
-      "branch": "不适用：编者阶段练习，非官方Git分支",
       "url": "https://zh.d2l.ai/chapter_optimization/index.html",
-      "goal": "回到课程最后的优化总览，用已有模型整理可复现工程能力，再衔接CS336。 本项为编者整合练习，不是官方编号Lab；页面通用xv6的make qemu / make grade命令不适用。",
+      "goal": "回到课程最后的优化总览，用已有模型整理可复现工程能力，再衔接CS336。本项为教材整合的本地自主练习，不是官方编号Lab；自己实现并自检，无需Git提交、推送或上传作业。",
       "tasks": [
         {
           "id": "optimization-capstone-1",
@@ -1680,7 +1669,7 @@
         },
         {
           "id": "optimization-capstone-3",
-          "title": "整理MLP/CNN/CV/RNN/Attention/BERT的任务、输入形状、损失、评估与资源限制，完成课程总结视频学习。"
+          "title": "整理MLP/CNN/CV/RNN/Attention/BERT的任务、输入形状、损失、评估与资源限制；课程总结原视频可按自己的节奏观看。"
         },
         {
           "id": "optimization-capstone-4",

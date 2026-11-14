@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版6.3全文与PyTorch实现；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照。"
 video: "https://www.bilibili.com/video/BV1Th411U7UN"
 license: "教材仓库Apache-2.0不外推视频；视频copyright=1/no_reprint=1，未取得开放转录授权。算例与SVG为编者自拟。"
-status: "教材导读；3P公开字幕均成功空列表，课堂未核实，draft阻塞；两段CPU代码的形状、填充值与步幅相位已由主agent核对。"
+status: "教材导读；3P公开字幕均成功空列表，课堂未核实，课堂逐段整理不另作；两段CPU代码的形状、填充值与步幅相位已由主agent核对。"
 title: "填充与步幅：先定位窗口，再计算输出大小"
 lectureId: lec20
 kind: "教材导读 / 编者笔记"
@@ -215,6 +216,6 @@ for shift in (0, 1, 2):
 | P2 | 代码实现 | 05:05 |
 | P3 | QA | 23:57 |
 
-合计43:10。仅元数据与文件时长已核实，**不是已审读的课堂时间轴**。3P公开player各请求一次，成功且字幕列表为空；未下载或观看音视频，未核实演示、QA与片内时间段。`draft`阻塞，不建占位；必要阅读已内联定位，`materials=not_required`，不另写重复教材译文。
+合计43:10。仅元数据与文件时长已核实，**不是已审读的课堂时间轴**。3P公开player各请求一次，成功且字幕列表为空；未下载或观看音视频，未核实演示、QA与片内时间段。中文原课通过页头观看，本课不另作课堂逐段整理；必要阅读已内联定位，`materials=not_required`，不另写重复教材译文。
 
 证据、原件SHA-256与实际阅读范围见`sources/p3-lec20/manifest-fragment.json`。教材根LICENSE Apache-2.0与setup包MIT-0字段分开，均不外推视频。视频copyright=1/no_reprint=1，未取得全文转录授权；本页小例未由撰写者执行，未运行原教材Notebook或训练。

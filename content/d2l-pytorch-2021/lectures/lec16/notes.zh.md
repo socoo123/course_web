@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版5.1/5.2/5.4/5.5全文，重点PyTorch；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照；另读PyTorch2.5模块/读写API及官方checkpoint教程指定节。"
 video: "https://www.bilibili.com/video/BV1AK4y1P7vs"
 license: "教材仓库Apache-2.0不外推视频/官方API文档；视频copyright=1/no_reprint=1，未获得开放转录授权。图与小算例为编者自拟。"
-status: "教材导读；5P公开字幕均为空，draft阻塞；现代API与教材简化分开说明；主agent已在CPU核对三段独立代码的输出、梯度、共享和状态恢复。"
+status: "教材导读；5P公开字幕均为空，课堂逐段整理不另作；现代API与教材简化分开说明；主agent已在CPU核对三段独立代码的输出、梯度、共享和状态恢复。"
 title: "把张量计算变成模型：注册、共享与保存的边界"
 lectureId: lec16
 kind: "教材导读 / 编者笔记"
@@ -267,5 +268,5 @@ $$
 - 实际阅读中文第二版固定源码全文：[5.1层和块](https://zh.d2l.ai/chapter_deep-learning-computation/model-construction.html)1–723行；[5.2参数管理](https://zh.d2l.ai/chapter_deep-learning-computation/parameters.html)1–739行；[5.4自定义层](https://zh.d2l.ai/chapter_deep-learning-computation/custom-layer.html)1–317行；[5.5读写文件](https://zh.d2l.ai/chapter_deep-learning-computation/read-write.html)1–326行。重点核对PyTorch，未把其他框架代码当作PyTorch API。未宣称已读5.3。
 - 编者现代API补充：[PyTorch2.5 Module](https://docs.pytorch.org/docs/2.5/generated/torch.nn.Module.html)、[ModuleList](https://docs.pytorch.org/docs/2.5/generated/torch.nn.ModuleList.html)、[torch.load](https://docs.pytorch.org/docs/2.5/generated/torch.load.html)、[序列化语义](https://docs.pytorch.org/docs/2.5/notes/serialization.html)所列阅读范围；[官方保存/恢复教程](https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html)中的state_dict、推理恢复与通用checkpoint节是当前非固定版本页面，不是2021课堂材料。必要短引证据保存在`official-api-evidence.txt`，不要求整篇额外通读。
 - [本讲视频](https://www.bilibili.com/video/BV1AK4y1P7vs)，作者“跟李沐学AI”，发布2021-04-24（UTC）；2026-11-13核实全部5P：P1模型构造807秒，P2参数管理1040秒，P3自定义层328秒，P4读写文件363秒，P5 QA 651秒。仅为身份与时长，不据此推测讲授段落。
-- 每P公开player字幕请求一次均成功空列表；未下载/观看媒体，课堂讲解、演示、QA均未核实。draft阻塞不占位；必要中文教材定位已在本文，materials为`not_required`。
+- 每P公开player字幕请求一次均成功空列表；未下载/观看媒体，课堂讲解、演示、QA均未核实。中文原课通过页头观看，本课不另作课堂逐段整理；必要中文教材定位已在本文，materials为`not_required`。
 - 固定提交、原件SHA-256、现代API阅读范围与代码预期在`sources/p3-lec16/manifest-fragment.json`。教材根Apache-2.0与包字段MIT-0分开记录，均不外推视频或其他文档。子agent未执行上述代码、构建或测试，主agent统一记录实际验收。

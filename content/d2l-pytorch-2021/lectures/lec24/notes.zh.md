@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版7.1，固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照。"
 video: "https://www.bilibili.com/video/BV1h54y1L7oe"
 license: "教材仓库Apache-2.0不外推视频；视频copyright=1/no_reprint=1。算例与SVG为编者自拟。"
@@ -151,6 +152,6 @@ $$
 | P2 | 代码 | 10:39 |
 | P3 | QA | 16:06 |
 
-合计62:01。此表不是课堂时间线。3P各请求一次公开player，均成功空字幕；未观看/下载音视频，未核实课堂演示或QA。无完整课堂源，`draft`阻塞，不建占位；`materials=not_required`。
+合计62:01。此表不是课堂时间线。3P各请求一次公开player，均成功空字幕；未观看/下载音视频，未核实课堂演示或QA。中文原课通过页头观看，本课不另作课堂逐段整理；`materials=not_required`。
 
 来源、SHA-256、代码与数值验收目标见`sources/p4-lec24/manifest-fragment.json`。教材根LICENSE为Apache-2.0，不外推视频或第三方图；视频copyright=1/no_reprint=1，未取得开放转录授权。代码未由撰写者运行，未执行完整训练。

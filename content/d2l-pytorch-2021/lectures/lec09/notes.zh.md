@@ -1,10 +1,11 @@
 ---
+draftStatus: "not_required_by_user"
 title: "Softmax回归：从图像形状到稳定交叉熵"
 lectureId: lec09
 source: "中文第二版3.4–3.7固定源码全文；提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照；实现解释以PyTorch分支为准。"
 video: "https://www.bilibili.com/video/BV1K64y1Q7wu"
 license: "教材仓库Apache-2.0，不外推视频或Fashion-MNIST数据。视频copyright=1/no_reprint=1，未发现开放转载许可；图与短例为编者自拟。"
-status: "教材导读/编者笔记；6P公开字幕均为空，未观看视频，draft阻塞。2个独立代码块CPU核对通过；真实Fashion-MNIST小规模验收另见公共资料，不是全量训练复现。"
+status: "教材导读/编者笔记；6P公开字幕均为空，未观看视频，课堂逐段整理不另作。2个独立代码块CPU核对通过；真实Fashion-MNIST小规模验收另见公共资料，不是全量训练复现。"
 kind: "教材导读 / 编者笔记"
 videoContentVerified: false
 textbookCommit: e6b18ccea71451a55fcd861d7b96fddf2587b09a
@@ -238,4 +239,4 @@ print(loss_manual.item())  # 解析预期：约0.407606
 | [P5](https://www.bilibili.com/video/BV1K64y1Q7wu?p=5) | Softmax 回归简洁实现 | 4分9秒（249秒） | 演示未核实 |
 | [P6](https://www.bilibili.com/video/BV1K64y1Q7wu?p=6) | QA | 30分59秒（1859秒） | 问答未核实 |
 
-2026-11-13先核实view全部P，再查询全部6个cid的标准公开player：均HTTP 200、业务码0，字幕列表为空；未重复刷空请求、不绕登录风控、不默认下载媒体。元数据时长不是片内内容时间线，空列表也不排除烧录字幕等情况。未观看音视频，不能生成真实逐段整理或课堂问答，故draft保留阻塞且不建占位；materials无必要独立阅读，标not_required、不造重复文。视频`copyright=1/no_reprint=1`不是开放许可。证据与代码清单存于`sources/p2-lec09/`；本页两段代码CPU核对通过。真实Fashion-MNIST读取与257/73小规模训练证据见[公共资料](#/c/d2l-pytorch-2021)和`sources/p2-shared/`，不外推教材Notebook、全量训练或完整学生作业。
+2026-11-13先核实view全部P，再查询全部6个cid的标准公开player：均HTTP 200、业务码0，字幕列表为空；未重复刷空请求、不绕登录风控、不默认下载媒体。元数据时长不是片内内容时间线，空列表也不排除烧录字幕等情况。未观看音视频，未核实课堂讲授或问答；中文原课通过页头观看，本课不另作课堂逐段整理；materials无必要独立阅读，标not_required、不造重复文。视频`copyright=1/no_reprint=1`不是开放许可。证据与代码清单存于`sources/p2-lec09/`；本页两段代码CPU核对通过。真实Fashion-MNIST读取与257/73小规模训练证据见[公共资料](#/c/d2l-pytorch-2021)和`sources/p2-shared/`，不外推教材Notebook、全量训练或完整学生作业。

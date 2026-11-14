@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 title: "编码器—解码器：把接口、状态与信息边界分开"
 lectureId: lec61
 kind: "教材导读 / 结构与形状"

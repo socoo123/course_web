@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: 固定中文第二版 §8.2；编者教材导读，非课堂逐段整理
 video: 官方课表 BV1Fo4y1Q79L · 全2P合计20:30
 license: 教材仓库根许可 Apache-2.0；语料和视频条件独立，不由代码许可推定

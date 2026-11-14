@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版7.4；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照。"
 video: "https://www.bilibili.com/video/BV1b5411g7Xo/"
 license: "教材仓库Apache-2.0不外推视频；视频copyright=1/no_reprint=1，未取得开放转录授权。正文算例与SVG为编者自拟。"
-status: "教材导读；3P公开字幕均成功空列表，课堂未核实，draft阻塞。"
+status: "教材导读；3P公开字幕均成功空列表，课堂未核实，课堂逐段整理不另作。"
 title: "GoogLeNet：多条分支，先对齐再拼接"
 lectureId: lec27
 kind: "教材导读 / 编者笔记"
@@ -185,6 +186,6 @@ print(sum(p.numel() for p in branch.parameters()))  # 219
 | P3 | QA | 16:33 |
 | 全部分P合计 | 3042秒 | 50:42 |
 
-这只是分P目录，不是片内时间轴。2026-11-14各P公开字幕接口各请求一次，均code=0且空列表；未观看或下载媒体，讲授、演示和QA未核实。没有可靠完整课堂文本，不生成draft；中文教材无需重复materials，状态`not_required`。
+这只是分P目录，不是片内时间轴。2026-11-14各P公开字幕接口各请求一次，均code=0且空列表；未观看或下载媒体，讲授、演示和QA未核实。中文原课通过页头观看，本课不另作课堂逐段整理；中文教材无需重复materials，状态`not_required`。
 
 教材根LICENSE Apache-2.0与setup包MIT-0字段分开，均不外推视频或第三方图。本页使用自主讲解、算例和自绘SVG；来源原件、SHA-256、实读范围和数值机制清单见`sources/p4-lec27/manifest-fragment.json`。

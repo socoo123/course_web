@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版7.5正文与PyTorch实现；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照；补充PyTorch v2.5.1官方源码。"
 video: "https://www.bilibili.com/video/BV1X44y1r77r/"
 license: "教材仓库Apache-2.0不外推视频；PyTorch来源许可独立。视频copyright=1/no_reprint=1，未取得开放转录授权；算例和SVG自拟。"
-status: "教材导读；3P公开字幕均成功空列表，课堂未核实，draft阻塞。"
+status: "教材导读；3P公开字幕均成功空列表，课堂未核实，课堂逐段整理不另作。"
 title: "BatchNorm：统计轴、运行状态与梯度开关"
 lectureId: lec28
 kind: "教材导读 / 编者笔记"
@@ -212,6 +213,6 @@ print(y_eval.requires_grad)  # True；eval没有禁用求导
 | P3 | QA | 11:00 |
 | 全部分P合计 | 2771秒 | 46:11 |
 
-以上是分P目录，不是片内时间轴。2026-11-14各P公开字幕接口各请求一次，均code=0且空列表。未下载或观看媒体，讲授、演示和QA未核实；没有可靠完整课堂文本，不建draft。教材中文已足够，无独立materials需求，状态`not_required`。
+以上是分P目录，不是片内时间轴。2026-11-14各P公开字幕接口各请求一次，均code=0且空列表。未下载或观看媒体，讲授、演示和QA未核实；中文原课通过页头观看，本课不另作课堂逐段整理。教材中文已足够，无独立materials需求，状态`not_required`。
 
 教材根LICENSE Apache-2.0、setup包MIT-0字段、PyTorch许可与视频授权各自独立，不外推第三方图。来源哈希、实读范围、获取失败记录和数值/模式验收清单在`sources/p4-lec28/manifest-fragment.json`。

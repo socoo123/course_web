@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "2021官方课表；固定中文第二版教材13.3目标检测和边界框、13.6目标检测数据集全文，PyTorch为实现主线。"
 video: "https://www.bilibili.com/video/BV1Lh411Y7LX/"
 license: "教材仓库根Apache-2.0不扩张至第三方图像/数据/视频；视频copyright=1/no_reprint=1，未获转录再发布授权。正文和SVG自主编写。"
-status: "教材导读，不是课堂稿；全部4P元数据已核，公开字幕均为空，未观看音视频；draft阻塞，materials不另建。"
+status: "教材导读，不是课堂稿；全部4P元数据已核，公开字幕均为空，未观看音视频；课堂逐段整理不另作，materials不另建。"
 title: "物体检测：让坐标、标签与图像一起移动"
 lectureId: lec40
 kind: "教材导读 / 编者解释"

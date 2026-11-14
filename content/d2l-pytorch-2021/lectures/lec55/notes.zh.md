@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: "官方2021课表；固定中文第二版8.5/8.6与8.7选段；PyTorch v2.5.1 rnn.py 467–590行。"
 video: "https://www.bilibili.com/video/BV1kq4y1H7sw/"
 license: "教材根Apache-2.0与PyTorch自身许可分别适用，不外推视频/语料；正文和SVG为自主讲解。"
@@ -159,4 +160,4 @@ $$
 | P3 | QA | 30:39 |
 | 全3P合计 | 5185秒 | 1:26:25 |
 
-2026-11-14每P公开字幕接口查询一次成功，列表均为空；空结果不排除烧录字幕。未观看音视频，不能给片内时间轴、QA内容或逐段译稿；不建占位draft/materials。视频copyright=1、no_reprint=1不授予开放转录再发布许可。教材根Apache-2.0、setup.py MIT-0、PyTorch许可与视频/语料条件分别记录，不互相外推。
+2026-11-14每P公开字幕接口查询一次成功，列表均为空；空结果不排除烧录字幕。未观看音视频，不能给片内时间轴、QA内容或逐段译稿；中文原课通过页头观看，本课不另作课堂逐段整理；不另作重复materials。视频copyright=1、no_reprint=1不授予开放转录再发布许可。教材根Apache-2.0、setup.py MIT-0、PyTorch许可与视频/语料条件分别记录，不互相外推。

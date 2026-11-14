@@ -6,7 +6,7 @@ videoContentVerified: false
 videoEvidence: "已核实全部4P，含按特定轴求和与QA；逐P公开player字幕列表为空；未观看音视频"
 textbookVersion: "当前中文第二版源码，固定提交 e6b18ccea71451a55fcd861d7b96fddf2587b09a；不是2021快照"
 sourceDate: "2026-11-13"
-draftStatus: "blocked_no_captions"
+draftStatus: "not_required_by_user"
 materialsStatus: "not_required"
 source: "D2L中文第二版固定源码：linear-algebra；e6b18ccea71451a55fcd861d7b96fddf2587b09a"
 video: "https://www.bilibili.com/video/BV1eK4y1U7Qy"
@@ -238,7 +238,7 @@ shape为(2,1,4)，每个结果平均3个数。固定第0轴和第2轴的下标�
 | P3 | 按特定轴求和 | 00:00–07:31 | 补充讲解的逐段内容 |
 | P4 | 线性代数 QA | 00:00–12:09 | 问题、回答与时间位置 |
 
-全部四个cid的公开 `x/player/v2` 请求成功，但 `subtitle.subtitles=[]`，`need_login_subtitle=false`。这不是“视频确定没有字幕”的证明，只是本次公开获取结果。未下载/观看音视频，没有字幕可支撑draft，所以**不生成占位draft、不猜QA问答、不猜概念时间码**。P3与P4完整保留在证据与目录中；本页求和解释来自教材和编者，不能宣称覆盖了这两P的实际内容。
+全部四个cid的公开 `x/player/v2` 请求成功，但 `subtitle.subtitles=[]`，`need_login_subtitle=false`。这不是“视频确定没有字幕”的证明，只是本次公开获取结果。未下载/观看音视频，不猜QA问答或概念时间码；中文原课通过页头观看，本课不另作课堂逐段整理。P3与P4完整保留在证据与目录中；本页求和解释来自教材和编者，不能宣称覆盖了这两P的实际内容。
 
 实际阅读来源：
 

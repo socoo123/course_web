@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "课表2021-06-06更多的专有硬件无单独教材链接；编者关联中文第二版12.4硬件，固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照。"
 video: "https://www.bilibili.com/video/BV1VV41147PC/"
 license: "教材Apache-2.0不外推视频/第三方图；视频copyright=1/no_reprint=1。正文与图为编者自拟，无开放转录授权。"
-status: "教材关联导读而非课堂复述；2P公开字幕成功空列表，draft阻塞。"
+status: "教材关联导读而非课堂复述；2P公开字幕成功空列表，课堂逐段整理不另作。"
 title: "专有硬件：把有限资源押在哪一种计算上"
 lectureId: lec32
 kind: "编者关联阅读 / 硬件取舍"
@@ -163,7 +164,7 @@ $$
 | 2 | QA | 2238 | 37:18 |
 | 合计 | 全2P | 3997 | 1:06:37 |
 
-两P均只检查一次公开player字幕，成功空列表。没有下载或观看音视频，不排除烧录字幕；不生成draft、不推断课堂问答、不猜主题时间范围。
+两P均只检查一次公开player字幕，成功空列表。没有下载或观看音视频，不排除烧录字幕；中文原课通过页头观看，本课不另作课堂逐段整理；不推断课堂问答、不猜主题时间范围。
 
 - [2021官方课表](https://courses.d2l.ai/zh-v2/)：6月6日“更多的专有硬件”，**无单独教材链接**。
 - [中文第二版12.4硬件](https://zh.d2l.ai/chapter_computational-performance/hardware.html)为**编者关联阅读**；实际读取[固定源码](https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computational-performance/hardware.md)全文217行，重点第103–136行及小结。不是2021全书快照。书内TPU/脉动阵列论文仅见引用，未独立读论文，不冒称核验论文实验或商用代际规格。

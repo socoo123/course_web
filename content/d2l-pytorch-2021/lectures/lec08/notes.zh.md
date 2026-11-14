@@ -1,10 +1,11 @@
 ---
+draftStatus: "not_required_by_user"
 title: "线性回归：让损失、梯度与一次更新对得上"
 lectureId: lec08
 source: "中文第二版3.1–3.3固定源码全文；提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照；实现解读以PyTorch分支为准。"
 video: "https://www.bilibili.com/video/BV1PX4y1g7KC"
 license: "教材仓库Apache-2.0；setup包MIT-0字段不替代根许可，均不外推视频。视频copyright=1/no_reprint=1，未发现开放转载许可。图与短例为编者自拟。"
-status: "教材导读/编者笔记；5P公开字幕均为空，未观看视频，draft阻塞。2个独立代码块已在共享CPU环境执行，输出与解析预期一致；不是完整训练复现。"
+status: "教材导读/编者笔记；5P公开字幕均为空，未观看视频，课堂逐段整理不另作。2个独立代码块已在共享CPU环境执行，输出与解析预期一致；不是完整训练复现。"
 kind: "教材导读 / 编者笔记"
 videoContentVerified: false
 textbookCommit: e6b18ccea71451a55fcd861d7b96fddf2587b09a
@@ -222,4 +223,4 @@ print(torch.allclose(manual, layer(X)))  # 解析预期：True
 | [P4](https://www.bilibili.com/video/BV1PX4y1g7KC?p=4) | 线性回归的简洁实现 | 6分42秒（402秒） | 演示未核实 |
 | [P5](https://www.bilibili.com/video/BV1PX4y1g7KC?p=5) | QA | 24分21秒（1461秒） | 问答未核实 |
 
-2026-11-13查询view及全部5个cid的标准公开player接口：均HTTP 200、业务码0，字幕列表为空；未重复刷空接口，未下载或观看媒体，未绕登录/风控。空列表不排除烧录字幕或其他访问条件下的字幕。因此没有真实课堂时间轴、演示核验或问答整理，draft保持阻塞且不创建占位。`copyright=1/no_reprint=1`不是开放授权。源快照、请求摘要与代码清单见`sources/p2-lec08/`；本页两个独立代码块CPU核对通过，输出见`sources/p2-shared/notes-smoke.json`，不代表完成回归训练作业。
+2026-11-13查询view及全部5个cid的标准公开player接口：均HTTP 200、业务码0，字幕列表为空；未重复刷空接口，未下载或观看媒体，未绕登录/风控。空列表不排除烧录字幕或其他访问条件下的字幕。因此没有真实课堂时间轴、演示核验或问答整理，中文原课通过页头观看，本课不另作课堂逐段整理。`copyright=1/no_reprint=1`不是开放授权。源快照、请求摘要与代码清单见`sources/p2-lec08/`；本页两个独立代码块CPU核对通过，输出见`sources/p2-shared/notes-smoke.json`，不代表完成回归训练作业。

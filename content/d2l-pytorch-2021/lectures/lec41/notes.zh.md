@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "2021官方课表；固定中文第二版教材13.4锚框全文，PyTorch源码为实现边界依据。"
 video: "https://www.bilibili.com/video/BV1aB4y1K7za/"
 license: "教材仓库根Apache-2.0不扩张至视频/第三方图像；视频copyright=1/no_reprint=1，未获转录再发布授权。正文与SVG自主编写。"
-status: "教材导读，不是课堂稿；全部3P元数据已核，公开字幕为空，未观看音视频；draft阻塞，materials不另建。"
+status: "教材导读，不是课堂稿；全部3P元数据已核，公开字幕为空，未观看音视频；课堂逐段整理不另作，materials不另建。"
 title: "锚框：把找物体拆成匹配、回归与去重"
 lectureId: lec41
 kind: "教材导读 / 编者解释"

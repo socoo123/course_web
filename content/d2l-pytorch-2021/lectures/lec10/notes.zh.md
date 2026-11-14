@@ -1,10 +1,11 @@
 ---
+draftStatus: "not_required_by_user"
 title: "感知机与MLP：非线性不是多写一个Linear"
 lectureId: lec10
 source: "中文第二版4.1–4.3固定源码全文，PyTorch分支；提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照。感知机算法与XOR证明为明确标注的编者解释，不伪称教材独立章节或课堂内容。"
 video: "https://www.bilibili.com/video/BV1hh411U7gn"
 license: "教材仓库Apache-2.0，不外推视频。视频copyright=1/no_reprint=1，未发现开放转载许可；算例与SVG为编者自拟。"
-status: "教材导读/编者笔记；4P公开字幕均为空，未观看视频。两种MLP实现共用P3原样保留，内容映射未核实，draft阻塞。2个独立代码块CPU核对通过，不代表MLP训练通过。"
+status: "教材导读/编者笔记；4P公开字幕均为空，未观看视频。两种MLP实现共用P3原样保留，内容映射未核实，课堂逐段整理不另作。2个独立代码块CPU核对通过，不代表MLP训练通过。"
 kind: "教材导读 / 编者笔记"
 videoContentVerified: false
 textbookCommit: e6b18ccea71451a55fcd861d7b96fddf2587b09a
@@ -242,4 +243,4 @@ print(torch.allclose(b2.grad, net[2].bias.grad))  # True
 
 原课表row021“[多层感知机的从零开始实现](https://www.bilibili.com/video/BV1hh411U7gn?p=3)”与row022“[多层感知机的简洁实现](https://www.bilibili.com/video/BV1hh411U7gn?p=3)”确实共用`?p=3`，两个入口均原样保留。真实页列表只有一个名为“代码实现”的P3，P4名为“QA”。这支持“原课表共用一个代码分P入口”的描述，**不能证明P3内两种实现都讲完了、各从何时开始，更不能凭顺序把简洁实现改成P4**。
 
-全部4个cid的标准公开player请求均HTTP 200、业务码0，字幕列表为空。没有合法可核实的新字幕来源，未下载或观看音视频，不猜时间码、不编问答；空列表不证明不存在烧录字幕等其他情况。draft保持阻塞且不创建占位，materials为not_required、不另造重复阅读。视频`copyright=1/no_reprint=1`不是开放转录许可。审计证据在`sources/p2-lec10/video-metadata.json`及manifest；两个Python机制片段已在CPU核对输出与梯度对应关系，记录见`sources/p2-shared/notes-smoke.json`。完整MLP训练与教材Notebook未运行。
+全部4个cid的标准公开player请求均HTTP 200、业务码0，字幕列表为空。没有合法可核实的新字幕来源，未下载或观看音视频，不猜时间码、不编问答；空列表不证明不存在烧录字幕等其他情况。中文原课通过页头观看，本课不另作课堂逐段整理，materials为not_required、不另造重复阅读。视频`copyright=1/no_reprint=1`不是开放转录许可。审计证据在`sources/p2-lec10/video-metadata.json`及manifest；两个Python机制片段已在CPU核对输出与梯度对应关系，记录见`sources/p2-shared/notes-smoke.json`。完整MLP训练与教材Notebook未运行。

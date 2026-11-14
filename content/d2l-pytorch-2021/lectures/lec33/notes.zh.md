@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版12.5正文与PyTorch实现；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021全书快照。"
 video: "https://www.bilibili.com/video/BV1vU4y1V7rd/"
 license: "教材仓库Apache-2.0不外推视频；视频copyright=1/no_reprint=1，未取得开放转录授权。算例与SVG为编者自拟。"
-status: "教材导读；2P公开字幕均成功空列表，课堂内容未核实，draft阻塞。"
+status: "教材导读；2P公开字幕均成功空列表，课堂内容未核实，课堂逐段整理不另作。"
 title: "多GPU原理：分的是样本，合的是同一目标的梯度"
 lectureId: lec33
 kind: "教材导读 / 编者笔记"
@@ -155,7 +156,7 @@ $$
 | P2 QA | 3:56 | 236 |
 | **全2P合计** | **10:55** | **655** |
 
-每P仅做一次公开player字幕检查，均`code=0`且字幕列表为空。未下载或观看音视频，不猜QA内容、不生成draft或主题时间轴。分P标题与长度仅是平台元数据，不能证明本笔记某节在视频何时讲过，也不能证明不存在烧录字幕。
+每P仅做一次公开player字幕检查，均`code=0`且字幕列表为空。未下载或观看音视频，不猜QA内容、不编主题时间轴；中文原课通过页头观看，本课不另作课堂逐段整理。分P标题与长度仅是平台元数据，不能证明本笔记某节在视频何时讲过，也不能证明不存在烧录字幕。
 
 实际读取：[固定提交12.5原件](https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computational-performance/multiple-gpus.md)，全文正文、PyTorch实现与练习；重点为“数据并行性”“数据同步”“数据分发”“训练”。它是当前中文第二版固定源码，不是2021全书快照。本文的不等batch算例、一步等价条件与练习路线是编者说明，不冒称课堂内容；不重复制作教材materials。
 

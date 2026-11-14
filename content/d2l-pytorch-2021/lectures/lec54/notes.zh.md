@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: 固定中文第二版 §8.4与§8.7；教材导读及编者机制小例，非课堂整理
 video: 官方课表 BV1D64y1z7CA · 全2P合计34:04
 license: 教材根Apache-2.0；视频授权独立；正文自主讲解，图为自绘

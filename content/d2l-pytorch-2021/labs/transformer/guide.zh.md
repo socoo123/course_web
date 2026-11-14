@@ -3,14 +3,16 @@ title: Transformer实验指导
 kind: 实现路线、局部提示与不变量；非完整解答
 source: 固定教材10.5–10.7；P9数据与评估合同；P10主验收记录
 source_commit: e6b18ccea71451a55fcd861d7b96fddf2587b09a
-status: worker未执行数值；文末单列主agent已执行小运行，不替代学生任务验收
+status: worker未执行数值；文末单列主agent已执行小运行，不认证或追踪学习者的任务进度
 ---
 
 # Transformer实验指导
 
 ## 先画信息边界，再写训练循环
 
-[实验说明](#/c/d2l-pytorch-2021/lab/transformer?v=zh)规定四任务、固定数据与交付合同；本页给出先后顺序和失败定位，不提供可直接运行的完整Lab。可先回看[LEC67](#/c/d2l-pytorch-2021/lec/lec67)的多头/位置补充与[LEC68](#/c/d2l-pytorch-2021/lec/lec68)的架构导读；前置mask与BLEU口径沿用[Seq2Seq指导](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=guide)。
+本实验由你在本地用Python/PyTorch自行实现，程序、配置和学习记录仅供自己保存与自检；无需Git提交、推送、上交报告或上传本站，也不要求排行榜提交。个人学习与任务进度不作为教程完成条件，不由agent认证或追踪。
+
+[实验说明](#/c/d2l-pytorch-2021/lab/transformer?v=zh)规定四任务、固定数据与本地练习约定；本页给出先后顺序和失败定位，不提供可直接运行的完整Lab。可先回看[LEC67](#/c/d2l-pytorch-2021/lec/lec67)的多头/位置补充与[LEC68](#/c/d2l-pytorch-2021/lec/lec68)的架构导读；前置mask与BLEU口径沿用[Seq2Seq指导](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=guide)。
 
 | 任务 | 推荐路线 | 停下来检查什么 |
 |---|---|---|
@@ -96,7 +98,7 @@ FFN是每个位置共享同一$d\to f\to d$函数；`LayerNorm(d)`只看该位�
 
 只保存`manual_seed`不够：RNG在训练中已经推进。只保存shuffle generator也不能恢复当前epoch已经生成的排列与游标。Python/NumPy没有参与时标“不适用”，不要声称保存了未用的运行状态。更换硬件、框架版本、算子或并行方式可能破坏逐位复现，需另验。
 
-本地主验的BytesIO序列化是实际保存/反序列化，不等于创建了一份可复用的磁盘checkpoint；学生的落盘、重新进程加载、后续多步验证应另行交付。不要将未保存的P9或P10权重作为下次任务的现成依赖。
+本地主验的BytesIO序列化是实际保存/反序列化，不等于创建了一份可复用的磁盘checkpoint；学生的落盘、重新进程加载、后续多步验证可自行在本地实现并自检。不要将未保存的P9或P10权重作为下次任务的现成依赖。
 
 ### 4. 固定验证输出不要美化
 
@@ -185,4 +187,4 @@ sources/p9-shared/corpus-acquisition.json
 sources/p9-shared/split-provenance.json
 ```
 
-- 本文不生成缺乏课堂依据的逐段稿、问答或时间码；课堂缺口及牛仔竞赛认证/评分边界与本实验独立。最终运行与页面状态以[公共资料](#/c/d2l-pytorch-2021)为准。
+- 本文不生成缺乏课堂依据的逐段稿、问答或时间码；中文原视频由学习者自行观看，牛仔竞赛认证/评分边界与本实验独立。最终运行与页面状态以[公共资料](#/c/d2l-pytorch-2021)为准。

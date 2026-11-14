@@ -62,7 +62,7 @@ export interface Lab {
   titleEn: string;
   stars: number;
   hours: string;
-  branch: string;
+  branch?: string;
   url: string;
   goal: string;
   tasks: LabTask[];
@@ -98,6 +98,8 @@ export interface CourseDetail {
   intro: string;
   links?: { label: string; url: string }[];
   workflow?: string[];
+  /** false：直接观看原课，不提供课堂整理标签 */
+  lectureDrafts?: boolean;
   lectures: Lecture[];
   labs: Lab[];
   weeks?: Week[];

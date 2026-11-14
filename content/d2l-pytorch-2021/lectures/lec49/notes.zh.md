@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: "官方2021课表；固定中文第二版13.12全文，PyTorch分支为实现边界。"
 video: "https://www.bilibili.com/video/BV1Eh41167GN/"
 license: "教材根Apache-2.0不扩张至视频、VGG19权重或内容/风格图片；正文、数值例及SVG自主编写。"
@@ -181,4 +182,4 @@ VGG19预训练权重及内容/风格图片都需要可核实的使用条件。�
 | P3 | QA | 08:32 |
 | 全3P | 合计1968秒 | 32:48 |
 
-2026-11-14每P公开字幕请求一次均成功空列表；未观看音视频，平台分P目录不是片内时间轴，不造演示或QA。视频copyright=1/no_reprint=1不构成开放转录许可；不建占位draft和重复materials。
+2026-11-14每P公开字幕请求一次均成功空列表；未观看音视频，平台分P目录不是片内时间轴，不造演示或QA。视频copyright=1/no_reprint=1不构成开放转录许可；中文原课通过页头观看，本课不另作课堂逐段整理；不另作重复materials。

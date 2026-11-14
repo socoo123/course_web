@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: "官方2021课表；固定中文第二版13.11全文、13.9标签读取和颜色映射节选；VOC边界及访问条件见密集预测实验。"
 video: "https://www.bilibili.com/video/BV1af4y1L7Zu/"
 license: "教材根Apache-2.0不扩张至视频、VOC图像或预训练权重；正文及SVG自主编写，不发布数据或权重。"
@@ -153,4 +154,4 @@ $$
 | P3 | QA | 04:51 |
 | 全3P | 合计1615秒 | 26:55 |
 
-2026-11-14每P公开字幕请求一次均成功空列表；未观看音视频，以上不是片内主题时间轴，不补造QA或课堂演示。视频copyright=1/no_reprint=1，无全文转录再发布授权；不创建占位draft或重复materials。
+2026-11-14每P公开字幕请求一次均成功空列表；未观看音视频，以上不是片内主题时间轴，不补造QA或课堂演示。视频copyright=1/no_reprint=1，无全文转录再发布授权；中文原课通过页头观看，本课不另作课堂逐段整理；不另作重复materials。

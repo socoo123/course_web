@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 title: "Transformer：三道信息边界与两种解码路径"
 lectureId: lec68
 kind: "教材导读 / 架构与增量状态合同"
@@ -180,4 +181,4 @@ $$
 | 3 | Transformer代码 | 00:00–19:49 | 1189 |
 | 4 | QA | 00:00–05:59 | 359 |
 
-BV1Kq4y1H7FL，作者“跟李沐学AI”（mid1567748478），2021年上传；全4P合计3113秒（51:53）。精确时间戳、cid及每P一次字幕响应见`sources/p10-lec68/video-metadata.json`。公开字幕列表为空，不代表无烧录字幕；未审阅媒体，无可靠课堂内容和开放转录许可，不编片内时间码、QA或draft。copyright=1、no_reprint=1不授权全文再利用；materials不重复翻译中文教材。原站只用页头入口。
+BV1Kq4y1H7FL，作者“跟李沐学AI”（mid1567748478），2021年上传；全4P合计3113秒（51:53）。精确时间戳、cid及每P一次字幕响应见`sources/p10-lec68/video-metadata.json`。公开字幕列表为空，不代表无烧录字幕；未审阅媒体，无可靠课堂内容和开放转录许可，不编片内时间码、QA；中文原课通过页头观看，本课不另作课堂逐段整理。copyright=1、no_reprint=1不授权全文再利用；materials不重复翻译中文教材。原站只用页头入口。

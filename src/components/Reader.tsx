@@ -123,8 +123,8 @@ function CourseOutline({ course, detail, active, onNavigate }: { course: CourseS
         (on ? "bg-course/10 text-ink" : "text-ink-2 hover:bg-surface-2 hover:text-ink")
       }
     >
-      <span className={"w-9 shrink-0 font-mono text-[10.5px] " + (on ? "font-semibold text-course" : "text-ink-3")}>{tag}</span>
-      <span className={"min-w-0 flex-1 truncate " + (muted ? "text-ink-3" : "")}>{title}</span>
+      {tag && <span className={"w-9 shrink-0 font-mono text-[10.5px] " + (on ? "font-semibold text-course" : "text-ink-3")}>{tag}</span>}
+      <span className={"min-w-0 flex-1 " + (tag ? "truncate " : "") + (muted ? "text-ink-3" : "")}>{title}</span>
       {done && <Icon name="check" className="h-3.5 w-3.5 shrink-0 text-course" strokeWidth={2.6} />}
     </Link>
   );
@@ -160,8 +160,8 @@ function CourseOutline({ course, detail, active, onNavigate }: { course: CourseS
                 `/c/${course.id}/lab/${lab.id}`,
                 isActive("lab", lab.id),
                 lab.tasks.length > 0 && lab.tasks.every((t) => p.tasks[`${lab.id}/${t.id}`]),
-                `Lab${lab.num}`,
-                `${lab.branch} · ${lab.title}`,
+                null,
+                lab.title,
               ),
             )}
           </div>

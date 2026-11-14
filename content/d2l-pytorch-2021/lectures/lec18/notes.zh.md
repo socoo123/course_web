@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "编者复盘方法；关联并实际阅读《动手学深度学习》中文第二版4.10全文，固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a；2021课表本行无教材链接。加州竞赛公开规则证据来自本批浏览采集。"
 video: "https://www.bilibili.com/video/BV15Q4y1o7vc"
 license: "教材仓库Apache-2.0不外推视频/竞赛数据；视频copyright=1/no_reprint=1，未获开放转录许可；竞赛数据受Competition Rules约束。图与算例为编者自拟。"
-status: "教材关联导读与编者复盘；2P公开字幕为空，课堂总结/QA未核实，draft阻塞。不声称重现优胜方案或加州竞赛训练。"
+status: "教材关联导读与编者复盘；2P公开字幕为空，课堂总结/QA未核实，课堂逐段整理不另作。不声称重现优胜方案或加州竞赛训练。"
 title: "竞赛复盘：把一个分数拆成可解释、可复现的证据"
 lectureId: lec18
 kind: "教材导读 / 编者复盘方法"
@@ -198,5 +199,5 @@ $$
 - [教材4.10](https://zh.d2l.ai/chapter_multilayer-perceptrons/kaggle-house-price.html)固定源码1–632行实际全文阅读，作为**编者关联**的基线、K折和模型选择素材；2021课表“预测房价竞赛总结”行没有教材链接。复盘框架、残差分组与集成推导均为编者补充，不是课堂内容摘要。
 - [课程课表](https://courses.d2l.ai/zh-v2/)与[公告](https://courses.d2l.ai/zh-v2/announcements.html)的历史身份；[加州公开Overview](https://www.kaggle.com/competitions/california-house-prices/overview)和[Data](https://www.kaggle.com/competitions/california-house-prices/data)在2026-11-13由本批采集任务实际浏览，本文读取其筛选证据`sources/p3-mlp-generalization/california-access.json`。没有登录、接受规则、取得加州数据或提交，不绕访问条件。
 - [视频](https://www.bilibili.com/video/BV15Q4y1o7vc)，作者“跟李沐学AI”，发布2021-05-15（UTC）。2026-11-13核实全部2P：P1“竞赛总结”999秒、P2“QA”1563秒。它们不是正文段落时间戳。
-- 每P公开player仅请求一次，均成功空字幕。未下载/观看媒体，未核实课堂复盘、参赛者做法或问答；draft阻塞不占位。没有新增独立中文阅读，materials为`not_required`。
+- 每P公开player仅请求一次，均成功空字幕。未下载/观看媒体，未核实课堂复盘、参赛者做法或问答；中文原课通过页头观看，本课不另作课堂逐段整理。没有新增独立中文阅读，materials为`not_required`。
 - 阅读范围、复用教材原件路径/SHA-256、元数据、许可与代码预期在`sources/p3-lec18/manifest-fragment.json`。教材许可不外推视频或比赛文件。本讲所有数值例子是手算设计，子agent未执行课程代码；实际CPU实验与本页片段执行由主agent分别记录，不能互相替代。

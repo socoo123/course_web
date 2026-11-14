@@ -43,6 +43,7 @@ function TaskList({ courseId, lab }: { courseId: string; lab: LabT }) {
 }
 
 function Commands({ lab }: { lab: LabT }) {
+  if (!lab.branch) return null;
   const lines = [`git checkout ${lab.branch}`, "make qemu", "make grade", ...lab.tasks.filter((t) => t.grade).map((t) => t.grade!)];
   return (
     <div className="overflow-hidden rounded-xl border border-line bg-[rgb(var(--code-bg))]">
@@ -108,8 +109,7 @@ export default function Lab() {
     <header className="pb-6 pt-8 lg:pt-10">
       <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-ink-3">
         <span className="font-semibold text-course">LAB {lab.num}</span>
-        <span>·</span>
-        <span>{lab.branch}</span>
+        {lab.branch && <><span>·</span><span>{lab.branch}</span></>}
       </div>
       <h1 className="mt-3 font-serif text-[30px] font-bold leading-tight text-ink sm:text-[34px]">{lab.title}</h1>
       <p className="mt-1 text-[15px] text-ink-3">{lab.titleEn}</p>
@@ -123,10 +123,12 @@ export default function Lab() {
           {lab.hours}
           {/^\d/.test(lab.hours) ? " 小时" : ""}
         </span>
-        <span className="chip font-mono">
-          <Icon name="branch" className="h-3 w-3" />
-          {lab.branch}
-        </span>
+        {lab.branch && (
+          <span className="chip font-mono">
+            <Icon name="branch" className="h-3 w-3" />
+            {lab.branch}
+          </span>
+        )}
         {related.map((l) => (
           <Link key={l.id} to={`/c/${courseId}/lec/${l.id}`} className="chip hover:border-course/50 hover:text-ink">
             <Icon name="play" className="h-3 w-3 text-course" />
@@ -144,7 +146,7 @@ export default function Lab() {
       course={course}
       detail={detail}
       active={{ kind: "lab", id: lab.id }}
-      crumb={`Lab ${lab.num} ${lab.branch}`}
+      crumb={lab.title}
       header={header}
       rail={
         <div className="space-y-6">
@@ -154,7 +156,7 @@ export default function Lab() {
         </div>
       }
     >
-      <div className="mb-6 grid gap-4 sm:grid-cols-2 xl:hidden">
+      <div className={"mb-6 grid gap-4 xl:hidden" + (lab.branch ? " sm:grid-cols-2" : "")}>
         <TaskList courseId={courseId} lab={lab} />
         <Commands lab={lab} />
       </div>

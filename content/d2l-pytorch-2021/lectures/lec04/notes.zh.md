@@ -6,7 +6,7 @@ videoContentVerified: false
 videoEvidence: "已核实全部4P元数据；逐P公开player字幕列表为空；未观看音视频"
 textbookVersion: "当前中文第二版源码，固定提交 e6b18ccea71451a55fcd861d7b96fddf2587b09a；不是2021快照"
 sourceDate: "2026-11-13"
-draftStatus: "blocked_no_captions"
+draftStatus: "not_required_by_user"
 materialsStatus: "not_required"
 source: "D2L中文第二版固定源码：ndarray / pandas；e6b18ccea71451a55fcd861d7b96fddf2587b09a"
 video: "https://www.bilibili.com/video/BV1CV411Y7i4"
@@ -167,7 +167,7 @@ $$
 | P3 | 数据预处理实现 | 00:00–07:26 | 保留预处理实现；未逐段核实演示 |
 | P4 | 数据操作 QA | 00:00–07:36 | 保留问答分P；问题与答案未核实 |
 
-四个cid均已查询公开 `x/player/v2`：成功响应、字幕列表为空、`need_login_subtitle=false`。这只说明本次公开接口没有返回字幕，不证明视频无内嵌字幕或将来不会有字幕。没有获取音视频、截图或转录；因此不生成 `draft.zh.md`，也不编造QA内容、时间定位。教材与本笔记不能替代这些缺口。视频 `copyright=1 / no_reprint=1` 不构成转载授权；未将教材许可外推到视频。
+四个cid均已查询公开 `x/player/v2`：成功响应、字幕列表为空、`need_login_subtitle=false`。这只说明本次公开接口没有返回字幕，不证明视频无内嵌字幕或将来不会有字幕。没有获取音视频、截图或转录；中文原课通过页头观看，本课不另作课堂逐段整理；不编造QA内容、时间定位，教材导读不冒充课堂实录。视频 `copyright=1 / no_reprint=1` 不构成转载授权；未将教材许可外推到视频。
 
 实际阅读来源：
 

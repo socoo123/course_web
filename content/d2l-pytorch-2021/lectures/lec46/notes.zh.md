@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: "2021官方课表；固定中文第二版13.10全文，本讲聚焦基本操作、填充步幅通道；PyTorch 2.5 ConvTranspose2d形状说明补充。"
 video: "https://www.bilibili.com/video/BV17o4y1X7Jn/"
 license: "教材根Apache-2.0不扩张到视频；视频copyright=1/no_reprint=1，未确认转录授权。正文与SVG为自主讲解。"
@@ -168,4 +169,4 @@ $$
 | P3 | QA | 09:55 |
 | 全3P | 合计1918秒 | 31:58 |
 
-2026-11-14每P一次公开字幕请求均成功空列表，未下载或观看音视频，不猜课堂时间轴、演示结果或QA；空列表不能排除烧录字幕。未创建无可靠课堂材料的draft或重复教材materials。主agent的CPU机制核验见P7主记录，真实分割小训练另见公共资料；未执行GPU实验。
+2026-11-14每P一次公开字幕请求均成功空列表，未下载或观看音视频，不猜课堂时间轴、演示结果或QA；空列表不能排除烧录字幕。中文原课通过页头观看，本课不另作课堂逐段整理；不另作重复教材materials。主agent的CPU机制核验见P7主记录，真实分割小训练另见公共资料；未执行GPU实验。

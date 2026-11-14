@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 title: "注意力机制：从查询到核回归"
 lectureId: lec64
 kind: "教材导读 / 核回归推导"
@@ -158,4 +159,4 @@ $$
 | 1 | 注意力机制 | 00:00–13:58 | 838秒 |
 | 2 | 代码 | 00:00–10:00 | 600秒 |
 
-全2P合计1438秒（23:58）。已核BV1264y1i7R1、作者“跟李沐学AI”（mid1567748478）及2021上传年份；精确pubdate、cid与逐P字幕结果见`sources/p9-lec64/video-metadata.json`。未取得可靠课堂文本，未审阅音视频；公开字幕空列表不证明无烧录字幕。不猜片内时间码、问答或课堂演示，不生成占位draft/materials。视频copyright=1、no_reprint=1不等于开放转录授权。实验入口：[seq2seq-attention指导](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=guide)。
+全2P合计1438秒（23:58）。已核BV1264y1i7R1、作者“跟李沐学AI”（mid1567748478）及2021上传年份；精确pubdate、cid与逐P字幕结果见`sources/p9-lec64/video-metadata.json`。未取得可靠课堂文本，未审阅音视频；公开字幕空列表不证明无烧录字幕。不猜片内时间码、问答或课堂演示，中文原课通过页头观看，本课不另作课堂逐段整理；不另作重复materials。视频copyright=1、no_reprint=1不等于开放转录授权。实验入口：[seq2seq-attention指导](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=guide)。

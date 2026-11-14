@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版4.5全文，重点核对PyTorch分支；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照；另读PyTorch2.5优化器API指定节。"
 video: "https://www.bilibili.com/video/BV1UK4y1o7dy"
 license: "教材仓库Apache-2.0不外推视频；视频copyright=1/no_reprint=0，0不代表开放许可，未取得开放转载许可。算例与图为编者自拟。"
-status: "教材导读；3P公开字幕均为空，课堂未核实，draft阻塞；1个普通SGD机制片段CPU核对通过，非完整正则化实验。"
+status: "教材导读；3P公开字幕均为空，课堂未核实，课堂逐段整理不另作；1个普通SGD机制片段CPU核对通过，非完整正则化实验。"
 title: "权重衰减：把损失约定、参数分组与更新公式对齐"
 lectureId: lec12
 kind: "教材导读 / 编者笔记"
@@ -161,6 +162,6 @@ print(w_loss.detach(), w_opt.detach())
 | 2 | 代码实现 | 325680074 | 754 | 请求成功，空列表 |
 | 3 | QA | 325655537 | 695 | 请求成功，空列表 |
 
-此表不是讲授时间线。未下载/观看媒体、未取得字幕，不能核实课堂代码或QA；不生成draft、虚构时间码或占位稿。空列表不证明其他字幕形式不存在，未重复请求。必要定位已在本页，`materials=not_required`。
+此表不是讲授时间线。未下载/观看媒体、未取得字幕，不能核实课堂代码或QA；中文原课通过页头观看，本课不另作课堂逐段整理；不编造时间码。空列表不证明其他字幕形式不存在，未重复请求。必要定位已在本页，`materials=not_required`。
 
 教材`.txt`、精简视频元数据、逐项清单在`sources/p2-lec12/`。根Apache-2.0、setup包MIT-0字段均不外推视频；平台copyright=1/no_reprint=0，0也不代表开放许可。一步普通SGD片段CPU核对通过，两条路线均输出`[1.91,-0.93]`，见`sources/p2-shared/notes-smoke.json`；不代表高维回归、Adam/AdamW或完整学生作业已经执行。

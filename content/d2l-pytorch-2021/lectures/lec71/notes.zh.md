@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "2021官方课表row101与本讲BV元数据；复用P7已读官方公告、CodaLab33573、Kaggle cowboyoutfits公开证据；COCOeval上游实现为编者补充。"
 video: "https://www.bilibili.com/video/BV13b4y1m7y8 · 单P合计23:58"
 license: "视频无已确认开放转录授权；竞赛教育/非商用及再分发限制仍适用，登录后规则未核。教材源码许可不涵盖竞赛图片。正文与SVG自主编写。"
-status: "自主官方来源导读，不是课堂复述或获奖方案总结。P1公开字幕一次成功空列表；音视频未审听，无课堂时间轴/QA/draft。原竞赛认证文件、scorer、image_id/id及最终bbox接口仍未核。"
+status: "自主官方来源导读，不是课堂复述或获奖方案总结。P1公开字幕一次成功空列表；音视频未审听，无课堂时间轴/QA。原竞赛认证文件、scorer、image_id/id及最终bbox接口仍未核。"
 lectureId: lec71
 kind: "官方来源导读 / 编者复盘框架"
 videoContentVerified: false
@@ -226,7 +227,7 @@ $$
 | P1 | 目标检测竞赛总结 | 23:58 |
 | 全片 | 1438秒，1P | 23:58 |
 
-2026-11-14只对这个新P查一次公开字幕，API成功返回空列表；未审听音视频，也不能由空列表推出无烧录字幕。因此不提供时间轴、课堂QA、draft或“已看完课堂”的声明。
+2026-11-14只对这个新P查一次公开字幕，API成功返回空列表；未审听音视频，也不能由空列表推出无烧录字幕。因此不提供时间轴、课堂QA或“已看完课堂”的声明。
 
 - [官方公告](https://courses.d2l.ai/zh-v2/announcements.html)、[CodaLab33573](https://competitions.codalab.org/competitions/33573)、[Kaggle Overview](https://www.kaggle.com/competitions/cowboyoutfits/overview)、[Data](https://www.kaggle.com/competitions/cowboyoutfits/data)、[Rules](https://www.kaggle.com/competitions/cowboyoutfits/rules)、host [Starter Kit](https://www.kaggle.com/code/zhreshold/cowboy-outfits-starter-kit)：本次实读P7保存的去凭据公开文本，不重刷认证页面。没有原竞赛数据、scorer运行、训练、AP成绩或提交。CodaLab公开教育/非商用及再分发限制不能省略，Kaggle完整规则尚未认证核查；代码许可不覆盖输入图片。
 - [COCOeval上游实现](https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocotools/cocoeval.py)：Piotr Dollár、Tsung-Yi Lin，源码署2015，2026-11-14实读当前master的`evaluateImg`、`accumulate`、`summarize`、`Params`及全文件。编者补充，不是课程新增必读论文，也不是历史CodaLab部署代码；记录精简摘录与阅读范围，没有执行该库。

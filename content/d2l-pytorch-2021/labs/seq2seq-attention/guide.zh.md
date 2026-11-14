@@ -11,6 +11,8 @@ license: 自主讲解与自绘SVG；第三方数据遵循ManyThings/Tatoeba逐�
 
 ## 路线：先证明看见什么，再比较学会什么
 
+本实验由你在本地用Python/PyTorch自行实现，程序、配置和学习记录仅供自己保存与自检；无需Git提交、推送、上交报告或上传本站，也不要求排行榜提交。个人学习与任务进度不作为教程完成条件，不由agent认证或追踪。
+
 [实验说明](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=zh)规定数据、预算、搜索及指标。这里把四个任务拆成可检查的小接口：先数据与mask，再固定context基线，再搜索与独立注意力机制，最后换成Bahdanau并观察真实对齐。不要从复制整个训练脚本开始；每一层只需要留下能推翻错误实现的证据。
 
 ![训练、生成、评分三条信息通路](assets/information-boundary.svg)
@@ -259,7 +261,7 @@ $$
 
 ## 引用与来源
 
-- 本页为四任务的编者路线与局部提示，不是官方英文Lab译文，也不是可提交的完整实现。固定教材原件与链接、语料身份/署名及数据合同见[实验说明页底](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=zh)。对应[LEC60](#/c/d2l-pytorch-2021/lec/lec60?v=notes)、[LEC61](#/c/d2l-pytorch-2021/lec/lec61?v=notes)、[LEC62](#/c/d2l-pytorch-2021/lec/lec62?v=notes)、[LEC63](#/c/d2l-pytorch-2021/lec/lec63?v=notes)、[LEC64](#/c/d2l-pytorch-2021/lec/lec64?v=notes)、[LEC65](#/c/d2l-pytorch-2021/lec/lec65?v=notes)、[LEC66](#/c/d2l-pytorch-2021/lec/lec66?v=notes)。
+- 本页为四任务的编者路线与局部提示，不是官方英文Lab译文，也不是可复制的完整实现。固定教材原件与链接、语料身份/署名及数据合同见[实验说明页底](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=zh)。对应[LEC60](#/c/d2l-pytorch-2021/lec/lec60?v=notes)、[LEC61](#/c/d2l-pytorch-2021/lec/lec61?v=notes)、[LEC62](#/c/d2l-pytorch-2021/lec/lec62?v=notes)、[LEC63](#/c/d2l-pytorch-2021/lec/lec63?v=notes)、[LEC64](#/c/d2l-pytorch-2021/lec/lec64?v=notes)、[LEC65](#/c/d2l-pytorch-2021/lec/lec65?v=notes)、[LEC66](#/c/d2l-pytorch-2021/lec/lec66?v=notes)。
 - 当前中文第二版固定提交`e6b18ccea71451a55fcd861d7b96fddf2587b09a`的9.5–9.8、10.2–10.4；不是2021教材快照。自绘信息边界图概括9.5–9.7、10.4，未使用课堂截图或外部图片。示例符号与概率树是编者机制小例。
 - [PyTorch 2.5 packed sequence文档](https://docs.pytorch.org/docs/2.5/generated/torch.nn.utils.rnn.pack_padded_sequence.html)用于补足源有效长度合同。[Papineni等，BLEU（2002）](https://aclanthology.org/P02-1040/)§2.1.1、§2.3用于区别语料汇总与句级平均；2阶选择、固定划分和小预算是本实验约定，不冒称原论文或官方课程基准。
 - 教材许可与数据许可分开：[ManyThings](https://www.manythings.org/anki/)、[Tatoeba §6](https://tatoeba.org/en/terms_of_use)、[CC BY 2.0 FR](https://creativecommons.org/licenses/by/2.0/fr/deed.en)。不提交语料全文，公开个例逐句署名、附许可并说明清洗修改。

@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "2021官方课表三主题同BV；固定中文第二版13.8，13.7设计段补充；原始YOLO论文§2与torchvision 0.20 API补充。"
 video: "https://www.bilibili.com/video/BV1Db4y1C71g"
 license: "教材根Apache-2.0不扩张到视频、论文图、数据或权重；视频copyright=1/no_reprint=1，未确认开放转录授权。正文与图自主编写。"
-status: "教材导读，不是课堂整理；真实全2P已核，公开字幕请求成功空列表，未观看媒体；不造时间轴、QA或draft。"
+status: "教材导读，不是课堂整理；真实全2P已核，公开字幕请求成功空列表，未观看媒体；不造时间轴或QA；中文原课通过页头观看，本课不另作课堂逐段整理。"
 lectureId: lec43
 kind: "教材导读 / 编者解释"
 videoContentVerified: false

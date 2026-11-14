@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: "2021官方课表；固定中文第二版13.9全文；VOC2012官方开发文档§2.2、§2.6、§5.4为void与评估补充。"
 video: "https://www.bilibili.com/video/BV1BK4y1M7Rd"
 license: "教材代码许可不等于VOC图片许可；本讲未确认图片再分发权，不发布原图。视频copyright=1/no_reprint=1，正文及图自主编写。"

@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: 固定中文第二版 §8.1；编者教材导读，非2021课堂整理
 video: 官方课表 BV1L44y1m768 · 全3P合计54:11
 license: 教材仓库根许可 Apache-2.0；本站自主讲解与自绘图，不外推视频授权

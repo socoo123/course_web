@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 title: "机器翻译数据：先守住句对，再构造张量"
 lectureId: lec60
 kind: "教材导读 / 数据合同"
@@ -144,4 +145,4 @@ ManyThings说明句对按长度排序，且即使人工筛选也可能有错误�
 | P1 | 机器翻译数据集 | 384691473 | 10:16 |
 | 全1P合计 | 616秒 | — | 10:16 |
 
-2026-11-14该P公开字幕仅查询一次，成功返回空列表；这不证明没有烧录字幕。未取得可靠课堂内容，故无片内主题时间轴、课堂QA或draft。平台copyright=1、no_reprint=1并非开放转录授权。图与小例为自主讲解；实践入口：[seq2seq实验指导](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=guide)。
+2026-11-14该P公开字幕仅查询一次，成功返回空列表；这不证明没有烧录字幕。未取得可靠课堂内容，故无片内主题时间轴、课堂QA。平台copyright=1、no_reprint=1并非开放转录授权。图与小例为自主讲解；实践入口：[seq2seq实验指导](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=guide)。

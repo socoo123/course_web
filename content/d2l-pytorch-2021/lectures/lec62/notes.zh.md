@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 title: "基础seq2seq：固定源上下文，变化的是目标历史"
 lectureId: lec62
 kind: "教材导读 / 训练推理与评估"
@@ -213,4 +214,4 @@ $$
 | P3 | QA | 385264314 | 08:44 |
 | 全3P合计 | 2926秒 | — | 48:46 |
 
-2026-11-14每P公开字幕仅查询一次，均成功返回空列表，不排除烧录字幕。P3标题为QA不能证明其具体问答内容，故不编写QA或片内时间码，也不生成占位draft。copyright=1、no_reprint=1不是开放转录许可。小数例为编者手推，真实训练/译文/指标与硬件范围仅认[公共资料](#/c/d2l-pytorch-2021)日志；实践见[实验指导](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=guide)。
+2026-11-14每P公开字幕仅查询一次，均成功返回空列表，不排除烧录字幕。P3标题为QA不能证明其具体问答内容，故不编写QA或片内时间码，中文原课通过页头观看，本课不另作课堂逐段整理。copyright=1、no_reprint=1不是开放转录许可。小数例为编者手推，真实训练/译文/指标与硬件范围仅认[公共资料](#/c/d2l-pytorch-2021)日志；实践见[实验指导](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=guide)。

@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: "官方2021课表、课程公告及官方启动视频元数据；Kaggle cowboyoutfits匿名公开说明由密集预测实验留证。"
 video: "https://www.bilibili.com/video/BV1F64y1x7xP/"
 license: "视频无开放转录授权；CodaLab公开条款为教育目的、遵循非商用许可且不向其他用途再分发数据；Kaggle下载仍须登录接受规则，代码许可不代替图片条件。正文和SVG自主编写。"
@@ -136,7 +137,7 @@ AP需要结合预测分数排序、类别和定位匹配来衡量检测质量；
 
 </details>
 
-## 9. 来源、分P索引与尚未完成的核验
+## 9. 来源、分P索引与核验范围
 
 - [官方课表](https://courses.d2l.ai/zh-v2/)row075无独立教材链接；本页不把其他书章假称本讲指定阅读。[课程公告](https://courses.d2l.ai/zh-v2/announcements.html)实读第十八周和第二十二周，分别绑定启动BV及[CodaLab33573结果](https://competitions.codalab.org/competitions/33573#results)。公告不提供获奖方案。
 - [Kaggle Overview](https://www.kaggle.com/competitions/cowboyoutfits/overview)、[Data](https://www.kaggle.com/competitions/cowboyoutfits/data)、[Rules](https://www.kaggle.com/competitions/cowboyoutfits/rules)来自实验agent的匿名浏览器证据；本讲实际审读其小型文本快照，主办方/类别/指标/日期及匿名门槛据此陈述。官方host [Starter Kit](https://www.kaggle.com/code/zhreshold/cowboy-outfits-starter-kit)冲突范围及访问证据详见[实验指导](#/c/d2l-pytorch-2021/lab/cv-dense-prediction?v=guide)，不据其Apache代码许可扩张图片许可。

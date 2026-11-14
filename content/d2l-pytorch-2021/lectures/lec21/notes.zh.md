@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版6.4全文与PyTorch实现；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照；承接已读6.1–6.3。"
 video: "https://www.bilibili.com/video/BV1MB4y1F7of"
 license: "教材仓库Apache-2.0不外推视频；视频copyright=1/no_reprint=1，未取得开放转录授权。本文算例与SVG为编者自拟。"
-status: "教材导读；3P公开字幕均成功空列表，课堂未核实，draft阻塞；两段独立代码已由主agent在CPU执行并匹配解析预期。"
+status: "教材导读；3P公开字幕均成功空列表，课堂未核实，课堂逐段整理不另作；两段独立代码已由主agent在CPU执行并匹配解析预期。"
 title: "多输入多输出通道：输入求和，输出堆叠"
 lectureId: lec21
 kind: "教材导读 / 编者笔记"
@@ -232,6 +233,6 @@ print(y[0].tolist())
 | P2 | 代码实现 | 06:36 |
 | P3 | QA | 19:16 |
 
-合计45:26。此表是元数据清单，**不是课堂时间线**。3P公开player各请求一次均成功空字幕；未下载或观看音视频，未核实讲解、演示或QA，不猜片内起止。`draft`保持阻塞且不建占位，`materials=not_required`，必要中文教材阅读已在本页定位。
+合计45:26。此表是元数据清单，**不是课堂时间线**。3P公开player各请求一次均成功空字幕；未下载或观看音视频，未核实讲解、演示或QA，不猜片内起止。中文原课通过页头观看，本课不另作课堂逐段整理，`materials=not_required`，必要中文教材阅读已在本页定位。
 
 来源原件、SHA-256、实际阅读范围和代码预期在`sources/p3-lec21/manifest-fragment.json`。教材根LICENSE为Apache-2.0，setup包MIT-0字段另记，均不外推视频。视频copyright=1/no_reprint=1，未取得开放全文转录授权。本页代码未由撰写者运行，未执行教材随机验证或整套Notebook。

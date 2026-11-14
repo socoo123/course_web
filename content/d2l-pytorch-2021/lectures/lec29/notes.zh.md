@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版7.6正文与PyTorch实现；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照。"
 video: "https://www.bilibili.com/video/BV1bV41177ap/"
 license: "教材仓库Apache-2.0不外推视频；视频copyright=1/no_reprint=1，未取得开放转录授权。正文算例与SVG为编者自拟。"
-status: "教材导读；3P公开字幕均成功空列表，课堂未核实，draft阻塞。"
+status: "教材导读；3P公开字幕均成功空列表，课堂未核实，课堂逐段整理不另作。"
 title: "ResNet：学习修正量，不是保证恒等与不消失"
 lectureId: lec29
 kind: "教材导读 / 编者笔记"
@@ -213,6 +214,6 @@ print(u.grad)      # 解析预期：[0.]，在激活之前已抵消
 | P3 | QA | 10:33 |
 | 全部分P合计 | 2049秒 | 34:09 |
 
-上表只列分P和真实时长，不是片内时间轴。2026-11-14各P公开字幕接口各请求一次，均code=0且空列表。未下载或观看音视频，无法核实讲授、演示和QA；没有可靠完整课堂文本，不建draft。中文教材不重复翻译，无独立materials需求，状态`not_required`。
+上表只列分P和真实时长，不是片内时间轴。2026-11-14各P公开字幕接口各请求一次，均code=0且空列表。未下载或观看音视频，无法核实讲授、演示和QA；中文原课通过页头观看，本课不另作课堂逐段整理。中文教材不重复翻译，无独立materials需求，状态`not_required`。
 
 教材根LICENSE Apache-2.0和setup包MIT-0字段独立记录，均不外推视频或第三方图。本页算例与SVG自主编写。来源原件、哈希、实读范围与主agent数值机制验收清单在`sources/p4-lec29/manifest-fragment.json`。

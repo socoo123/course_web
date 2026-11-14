@@ -3,7 +3,7 @@ title: RNN、GRU与LSTM语言模型
 kind: 编者阶段练习（非官方编号Lab）
 source: 《动手学深度学习》当前中文第二版8.2–8.7、9.1–9.4；practice-plan中的四任务
 source_commit: e6b18ccea71451a55fcd861d7b96fddf2587b09a
-status: 四任务完整保留；独立CPU机制与真实语料小运行见公共资料，不等于全部学生任务完成
+status: 四任务完整保留；独立CPU机制与真实语料小运行见公共资料，个人练习进度不由agent追踪
 license: 教材代码许可不覆盖小说语料；原文身份、美国公版及当地法律边界分别核对；本站不再分发小说全文
 ---
 
@@ -13,7 +13,9 @@ license: 教材代码许可不覆盖小说语料；原文身份、美国公版�
 
 把一段字符流变成可复现的下一字符预测实验：先证明词表与窗口没有泄漏，再实现能沿时间传递状态的RNN，最后在相同数据上比较GRU、LSTM。短预算结果可以不好，但不能把错位标签、未来信息或不同分母造成的“低困惑度”当作模型能力。
 
-按[实验指导](#/c/d2l-pytorch-2021/lab/recurrent-language-model?v=guide)自行实现。页面通用的xv6 `make qemu` / `make grade`命令**不适用**；本实验没有官方Git分支、官方分值或规定必须达到的困惑度。
+本实验由你在本地用Python/PyTorch自行实现，程序、配置和学习记录仅供自己保存与自检；无需Git提交、推送、上交报告或上传本站，也不要求排行榜提交。个人学习与任务进度不作为教程完成条件，不由agent认证或追踪。
+
+按[实验指导](#/c/d2l-pytorch-2021/lab/recurrent-language-model?v=guide)自行实现。本地使用Python/PyTorch练习。
 
 ### 四项任务保持完整
 
@@ -140,7 +142,7 @@ LSTM的$h$和$c$都必须detach；只分离$h$仍可能通过$c$保留旧图。�
 
 另外设计一对序列：前缀完全相同，只改未来位置。固定参数与初始状态、关闭dropout，比较前缀位置的输出。单向模型在该位置应不变；构造有非零反向依赖的双向模型应变化。解释下一字符任务中的目标$y_t=x_{t+1}$怎样进入反向分支输入。这是未来泄漏反例，不是更强语言模型的证据。
 
-## 交付清单与完成边界
+## 本地自检清单与证据边界
 
 1. 数据账：下载URL、字节数/hash、使用条件、清洗版本、行/字符边界、词表fit范围与未知token、各段实际窗口及弃用token。
 2. 机制账：采样两批身份、X/Y错位、RNN/API局部对照、全局裁剪、token加权指标、detach及LSTM双状态、深层/双向形状与未来扰动。
@@ -152,7 +154,7 @@ LSTM的$h$和$c$都必须detach；只分离$h$仍可能通过$c$保留旧图。�
 ## 引用与来源
 
 - 教材：阿斯顿·张、李沐、扎卡里·C. 立顿、亚历山大·J. 斯莫拉，《动手学深度学习》，当前中文第二版，固定提交`e6b18ccea71451a55fcd861d7b96fddf2587b09a`，不是2021课程快照。[8.2文本预处理](https://zh.d2l.ai/chapter_recurrent-neural-networks/text-preprocessing.html)、[8.3采样](https://zh.d2l.ai/chapter_recurrent-neural-networks/language-models-and-dataset.html)、[8.5从零实现](https://zh.d2l.ai/chapter_recurrent-neural-networks/rnn-scratch.html)、[8.6简洁实现](https://zh.d2l.ai/chapter_recurrent-neural-networks/rnn-concise.html)、[8.7 BPTT](https://zh.d2l.ai/chapter_recurrent-neural-networks/bptt.html)、[9.1–9.4](https://zh.d2l.ai/chapter_recurrent-modern/index.html)。本文为自主任务整合，不是官方实验要求逐字翻译或课堂逐字稿。
-- 真实教材语料：[S3下载](https://d2l-data.s3-accelerate.amazonaws.com/timemachine.txt)。身份与校验检查不等于训练完成；本批实际小训练范围另见公共资料。只提交小型证据，不提交原文全文。
+- 真实教材语料：[S3下载](https://d2l-data.s3-accelerate.amazonaws.com/timemachine.txt)。身份与校验检查不等于训练完成；本批实际小训练范围另见公共资料。仅在本地保存小型证据，不提交原文全文。
 
 | 校验项 | 值 |
 |---|---|

@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版6.6，固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a；原LeNet论文仅核对架构页。"
 video: "https://www.bilibili.com/video/BV1t44y1r7ct"
 license: "教材仓库Apache-2.0不外推论文或视频；视频copyright=1/no_reprint=1。算例与SVG为编者自拟。"
-status: "教材导读；主agent已核验完整前向、参数量及独立CPU小训练。3P公开字幕空列表，课堂未核实，draft阻塞。"
+status: "教材导读；主agent已核验完整前向、参数量及独立CPU小训练。3P公开字幕空列表，课堂未核实，课堂逐段整理不另作。"
 title: "LeNet：把卷积、池化与分类头接起来"
 lectureId: lec23
 kind: "教材导读 / 编者笔记"
@@ -143,6 +144,6 @@ print(sum(p.numel() for p in net.parameters()))  # 解析预期：61706
 | P2 | 代码 | 21:47 |
 | P3 | QA | 30:08 |
 
-合计60:26。此表不是课堂时间线。3P各请求一次公开player，均成功空字幕；未观看/下载音视频、未核实课堂演示或QA。无完整课堂源，`draft`阻塞，不建占位；`materials=not_required`。
+合计60:26。此表不是课堂时间线。3P各请求一次公开player，均成功空字幕；未观看/下载音视频、未核实课堂演示或QA。中文原课通过页头观看，本课不另作课堂逐段整理；`materials=not_required`。
 
 来源与SHA-256见`sources/p4-lec23/manifest-fragment.json`。教材根LICENSE为Apache-2.0，不外推论文、视频或第三方图。视频copyright=1/no_reprint=1，未取得开放转录授权。代码未由撰写者运行。

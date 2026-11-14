@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: 固定中文第二版 §8.3及§8.4困惑度；编者教材导读，非课堂整理
 video: 官方课表 BV1ZX4y1F7K3 · 全3P合计51:13
 license: 教材根Apache-2.0与视频、文本独立；正文和示意图自主编写

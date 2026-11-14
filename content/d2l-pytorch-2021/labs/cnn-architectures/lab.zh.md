@@ -5,7 +5,7 @@ source: 固定中文第二版6.5–6.6、7.1–7.6的正文与PyTorch节选；�
 source_commit: e6b18ccea71451a55fcd861d7b96fddf2587b09a
 video: 不依据课堂音视频、演示或问答编写，不是官方课堂作业转录
 license: 教材源码根LICENSE为Apache-2.0；PyTorch与Fashion-MNIST许可分别处理；本文为自主练习改编
-status: 四任务合同与指导已编写；主agent独立CPU机制、六种教材架构前向、LeNet和小ResNet小基线及恢复验收通过，精确范围见公共资料；不等于学生四任务全部完成
+status: 四任务合同与指导已编写；主agent独立CPU机制、六种教材架构前向、LeNet和小ResNet小基线及恢复验收通过，精确范围见公共资料；个人练习进度不由agent追踪
 version_boundary: 中文第二版固定源码不是2021快照；现代API按PyTorch2.5.1
 ---
 
@@ -13,11 +13,13 @@ version_boundary: 中文第二版固定源码不是2021快照；现代API按PyTo
 
 ## 用同一套接口保留整条CNN路线
 
-这次交付四项：**模块与状态 → 卷积和池化机制 → LeNet训练及四个网络前向 → BN、残差与恢复训练**。不要删去AlexNet、VGG、NiN或GoogLeNet，也不要求在CPU上把所有大网络完整训练一遍。
+本实验由你在本地用Python/PyTorch自行实现，程序、配置和学习记录仅供自己保存与自检；无需Git提交、推送、上交报告或上传本站，也不要求排行榜提交。个人学习与任务进度不作为教程完成条件，不由agent认证或追踪。
+
+这次练习四项：**模块与状态 → 卷积和池化机制 → LeNet训练及四个网络前向 → BN、残差与恢复训练**。不要删去AlexNet、VGG、NiN或GoogLeNet，也不要求在CPU上把所有大网络完整训练一遍。
 
 先复用[LEC16模块工程](#/c/d2l-pytorch-2021/lec/lec16?v=notes)、[LEC17设备](#/c/d2l-pytorch-2021/lec/lec17?v=notes)、[LEC19卷积](#/c/d2l-pytorch-2021/lec/lec19?v=notes)、[LEC20填充步幅](#/c/d2l-pytorch-2021/lec/lec20?v=notes)、[LEC21通道](#/c/d2l-pytorch-2021/lec/lec21?v=notes)和前三项实验的工具；不用重写已经正确的数据读取、指标累计器和基础训练步骤。本页给新任务合同，[指导页](#/c/d2l-pytorch-2021/lab/cnn-architectures?v=guide)给局部提示，不提供整套架构加训练循环。
 
-> 页面通用xv6命令框不适用：没有官方Lab分支、`make qemu`或`make grade`。你提交自己的程序、配置和实际日志；不向网站仓库提交数据、权重、环境目录或AI代写答案。
+> 本地练习使用自己的Python/PyTorch环境。没有官方Lab分数或统一成绩门槛。
 
 ## 共用CPU、数据与记录合同
 
@@ -41,7 +43,7 @@ version_boundary: 中文第二版固定源码不是2021快照；现代API按PyTo
 
 把它组合进一个小块，分别使用`Sequential`和自定义`Module`；需要列表时用注册容器。保留一个“同一层被调用两次”的共享参数夹具，证明优化器只管理一份参数、梯度累计来自两次调用。
 
-### 必须交付
+### 本地记录与自检
 
 1. 参数名、shape、`requires_grad`、唯一参数量、buffer名、state keys及device表。普通张量属性与buffer的差别用观察说明，不把所有张量都设成Parameter。
 2. 自定义层输出/梯度的局部比较；复制参数数值而非重新seed后假定相等。局部float64建议`atol=1e-10, rtol=1e-8`。
@@ -59,7 +61,7 @@ version_boundary: 中文第二版固定源码不是2021快照；现代API按PyTo
 
 ### 四张检查表
 
-| 夹具 | 输入与设置 | 你要提交 |
+| 夹具 | 输入与设置 | 本地记录 |
 |---|---|---|
 | 互相关与非对称填充 | 复用P3的3×3输入、2×2核；另用左1/右0/上0/下2，stride=(2,1) | 至少一个窗口乘加过程、全部输出、与框架差值；明确`F.pad`顺序是左右上下 |
 | 多通道形状和参数 | `(2,3,8,10)`；Conv2d输出4通道，kernel=(3,5)，padding=(1,2)，stride=(2,3)，dilation=1，groups=1，bias=True | 输出shape、权重shape、参数量；一个输出值如何跨输入通道求和 |
@@ -113,7 +115,7 @@ $$
 
 四个模型最终均为`(1,10)`且有限；不要给NiN最后额外接一个大MLP。教材本就为Fashion做了改编，因此“教材完整”不等于原论文ImageNet训练复现。
 
-内存不足时仍需保留每个家族的结构：AlexNet可缩通道为12/32/48/48/32、隐藏全连接为256/256；VGG通道16/32/64/128/128、隐藏层256/256；NiN前三块宽24/64/96、最后仍10。**空间输入仍保留224**，池化、卷积数量、1×1层与Dropout不删，展平输入按实际通道重新计算。此时交付名称必须写“编者缩通道前向”，另保留教材完整结构的手算shape表，标明完整宽度未运行，不能把缩版登记为完整宽度验收。GoogLeNet优先保留96输入和教材宽度，不用删分支降成本。
+内存不足时仍需保留每个家族的结构：AlexNet可缩通道为12/32/48/48/32、隐藏全连接为256/256；VGG通道16/32/64/128/128、隐藏层256/256；NiN前三块宽24/64/96、最后仍10。**空间输入仍保留224**，池化、卷积数量、1×1层与Dropout不删，展平输入按实际通道重新计算。此时记录名称必须写“编者缩通道前向”，另保留教材完整结构的手算shape表，标明完整宽度未运行，不能把缩版登记为完整宽度验收。GoogLeNet优先保留96输入和教材宽度，不用删分支降成本。
 
 **验收**：LeNet真实训练记录 + 四家族逐层/块shape表 + 参数量/运行模式/输入尺寸 + 各自机制解释，缺一家就不算完成本任务。不要求AlexNet/VGG/NiN/GoogLeNet全量CPU训练，也不比较只做前向的随机模型准确率。
 
@@ -133,7 +135,7 @@ $$
 
 先用`(2,8,7,7)`检查同通道stride1，再用8→16、stride2检查降采样块。主支保持教材两个3×3卷积及BN，第一次BN后ReLU；第二次BN之后与捷径相加，再ReLU。变通道或变步幅时捷径用1×1投影，并与主支使用匹配stride；本配方投影不另加BN，保持教材定义。
 
-提交相加前两条支路的shape，严格相等才相加，不能依赖广播“恰好可算”。以非负输入把残差支路输出置0检查恒等捷径；负输入还会被相加后的ReLU截断，不能误称块对任意输入都是恒等函数。再检查损失能回传到主支与投影参数。
+记录相加前两条支路的shape，严格相等才相加，不能依赖广播“恰好可算”。以非负输入把残差支路输出置0检查恒等捷径；负输入还会被相加后的ReLU截断，不能误称块对任意输入都是恒等函数。再检查损失能回传到主支与投影参数。
 
 ### C. 小ResNet训练
 
@@ -161,9 +163,9 @@ CPU训练使用**编者小ResNet**：3×3/s1/p1卷积stem，宽8，后接BN/ReLU
 
 最后做故障对照：只恢复模型、重建空Adam，下一步通常不再一致；漏BN buffers可能使预测先不一致。故障应定位到丢失了哪种状态，而不是靠放宽容差掩盖。检查点暂存自己的运行目录，或可信内存字节流；不可只持有浅层`state_dict()`引用后继续训练再说那是旧快照。
 
-## 总交付与自检
+## 本地记录与自检
 
-交四个task id对应的配置/证据，不交整套复制答案。每条结果区分**手算预期、实际执行、未执行**。报告网络名称、是否缩版、输入与每层shape、参数量、实际样本数/更新数、模式、数据来源/哈希、失败分析及恢复检查。训练成功不证明泛化优秀；前向成功不证明反向、训练或原论文复现。
+在本地保存四个task id对应的配置/证据，自己实现而非复制整套答案。每条结果区分**手算预期、实际执行、未执行**。报告网络名称、是否缩版、输入与每层shape、参数量、实际样本数/更新数、模式、数据来源/哈希、失败分析及恢复检查。训练成功不证明泛化优秀；前向成功不证明反向、训练或原论文复现。
 
 <details>
 <summary>自检：为什么不是“所有网络都先换成28×28”就能省算力？</summary>
@@ -188,4 +190,4 @@ AlexNet/NiN的11×11大步幅卷积和多次池化会很快耗尽空间；VGG五
 - 现代语义按[PyTorch v2.5.1 pooling](https://github.com/pytorch/pytorch/blob/v2.5.1/torch/nn/modules/pooling.py)、[BatchNorm2d](https://github.com/pytorch/pytorch/blob/v2.5.1/torch/nn/modules/batchnorm.py)、[functional训练批量检查](https://github.com/pytorch/pytorch/blob/v2.5.1/torch/nn/functional.py)、[CPU随机态](https://github.com/pytorch/pytorch/blob/v2.5.1/torch/random.py)实读节选；PyTorch自身[LICENSE](https://github.com/pytorch/pytorch/blob/v2.5.1/LICENSE)单独保留。模块/检查点API复用LEC16的PyTorch2.5审读记录。
 - Fashion-MNIST来自[Zalando官方仓库](https://github.com/zalandoresearch/fashion-mnist)，MIT许可与官方四个gzip的校验沿P2。数据只在运行时cache；本页不重复发布数据。校验值和IDX头见`sources/p2-shared/dataset-acquisition.json`，许可原件见`sources/p2-linear-training/fashion-mnist-LICENSE.txt`。
 - 已有P3证据只覆盖当时的小型模块/共享/卷积/动量恢复，不证明本次CNN已执行。本文预期不是运行日志；本次独立数值、LeNet与小ResNet小基线、构建和浏览器验收由主agent记录到课程状态/公共资料，不能倒推为学生四任务全部完成。
-- 没有据完整课堂音视频或字幕编写本实验，不造时间轴、课堂演示或官方评分；视频核验归对应讲次。不创建draft/materials占位。
+- 没有据完整课堂音视频或字幕编写本实验，不造时间轴、课堂演示或官方评分；原视频由学习者自行观看，不设置课堂补稿要求。不创建draft/materials占位。

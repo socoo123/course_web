@@ -13,7 +13,9 @@ version_boundary: 当前中文第二版不是2021快照；PyTorch语义按2.5.1
 
 ## 先做局部正确，再做一次训练
 
-[实验说明](#/c/d2l-pytorch-2021/lab/cnn-architectures?v=zh)规定四任务的输入、配置、交付与执行边界。本页只给路线、不变量与局部答案；没有可直接提交的完整网络加训练循环，也不要求先刷论文。页面xv6命令框不适用。
+本实验由你在本地用Python/PyTorch自行实现，程序、配置和学习记录仅供自己保存与自检；无需Git提交、推送、上交报告或上传本站，也不要求排行榜提交。个人学习与任务进度不作为教程完成条件，不由agent认证或追踪。
+
+[实验说明](#/c/d2l-pytorch-2021/lab/cnn-architectures?v=zh)规定四任务的输入、配置、本地记录与执行边界。本页只给路线、不变量与局部答案；没有可直接复制的完整网络加训练循环，也不要求先刷论文。本地使用Python/PyTorch练习。
 
 保持少量普通部件：模型构造、已有训练一步/评估、shape记录、状态快照与比较。别先写通用框架。依次过五道门：**轴的含义 → 局部值 → 参数与梯度 → 模式及buffer → 连续/恢复两路比较**。遇到不一致，回到第一个不同的边界，而不是先增大网络或训练轮数。
 
@@ -241,4 +243,4 @@ Adam用历史梯度的一阶/二阶矩和step计数计算更新及偏差修正�
 
 现代行为补充来自PyTorch v2.5.1的[池化源码](https://github.com/pytorch/pytorch/blob/v2.5.1/torch/nn/modules/pooling.py)、[BN定义](https://github.com/pytorch/pytorch/blob/v2.5.1/torch/nn/modules/batchnorm.py)、[批量退化检查](https://github.com/pytorch/pytorch/blob/v2.5.1/torch/nn/functional.py)、[CPU RNG接口](https://github.com/pytorch/pytorch/blob/v2.5.1/torch/random.py)，并复用LEC16已审读的模块/存取API。PyTorch源码节选遵循其独立LICENSE，不以教材Apache-2.0覆盖。
 
-公式、小整数夹具、状态分层、CPU配方和自测为编者补充；无完整可提交程序。本文没有执行课程代码或学生完整任务。P3历史通过项与本次解析预期分开登记；本次主agent独立验收结果以课程状态/公共资料为准，不外推CUDA/MPS、旧Notebook、全量Fashion训练或原论文成绩。
+公式、小整数夹具、状态分层、CPU配方和自测为编者补充；无完整答案程序。本文没有执行课程代码或学生完整任务。P3历史通过项与本次解析预期分开登记；本次主agent独立验收结果以课程状态/公共资料为准，不外推CUDA/MPS、旧Notebook、全量Fashion训练或原论文成绩。

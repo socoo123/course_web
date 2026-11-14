@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 title: "注意力评分：异维投影、缩放点积与稳定掩蔽"
 lectureId: lec65
 kind: "教材导读 / 形状与数值合同"
@@ -167,4 +168,4 @@ $$
 | 2 | 代码 | 00:00–15:20 | 920 |
 | 3 | QA | 00:00–04:42 | 282 |
 
-全3P合计1847秒（30:47）。BV1Tb4y167rb，作者“跟李沐学AI”（mid1567748478），发布2021-08-12T02:10:12Z，与课表日期分开。cid、API地址、逐P空字幕记录见`sources/p9-lec65/video-metadata.json`。此表只是分P边界；P名为QA不代表已读到问答。未审阅音视频，空字幕不证明无烧录字幕；没有可信课堂时间轴，不猜问题或时间点，不生成draft/materials。copyright=1、no_reprint=1不授予开放转录许可。下一讲：[带注意力的seq2seq](#/c/d2l-pytorch-2021/lec/lec66)。
+全3P合计1847秒（30:47）。BV1Tb4y167rb，作者“跟李沐学AI”（mid1567748478），发布2021-08-12T02:10:12Z，与课表日期分开。cid、API地址、逐P空字幕记录见`sources/p9-lec65/video-metadata.json`。此表只是分P边界；P名为QA不代表已读到问答。未审阅音视频，空字幕不证明无烧录字幕；没有可信课堂时间轴，不猜问题或时间点，中文原课通过页头观看，本课不另作课堂逐段整理；不另作重复materials。copyright=1、no_reprint=1不授予开放转录许可。下一讲：[带注意力的seq2seq](#/c/d2l-pytorch-2021/lec/lec66)。

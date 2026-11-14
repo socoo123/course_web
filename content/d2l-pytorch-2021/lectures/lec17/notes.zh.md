@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版5.6全文，重点PyTorch；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照；MPS与同步补充来自PyTorch2.5官方文档。"
 video: "https://www.bilibili.com/video/BV1z5411c7C1"
 license: "教材仓库Apache-2.0不外推视频/官方API文档；视频copyright=1/no_reprint=1，未获开放转录许可。图与数例为编者自拟。"
-status: "教材导读；3P公开字幕为空，draft阻塞。主agent已探测CUDA不可用、MPS可用；本批只做CPU运算验收，不声称MPS/GPU计算或性能已验证。"
+status: "教材导读；3P公开字幕为空，课堂逐段整理不另作。主agent已探测CUDA不可用、MPS可用；本批只做CPU运算验收，不声称MPS/GPU计算或性能已验证。"
 title: "设备放置：知道数据在哪里，才知道计算在哪里"
 lectureId: lec17
 kind: "教材导读 / 编者笔记"
@@ -177,5 +178,5 @@ GPU操作常常异步提交。Python很快返回，并不等于GPU已完成工�
 - 实际读[教材5.6 GPU](https://zh.d2l.ai/chapter_deep-learning-computation/use-gpu.html)固定源码1–520行全文，重点PyTorch设备、复制、模块迁移与练习；固定提交非2021快照。正文对`cuda`当前设备、CPU回退、跨卡硬编码和内存口径作工程解释，不声称课堂如此讲授。
 - 编者API补充实际读：[PyTorch2.5 MPS](https://docs.pytorch.org/docs/2.5/notes/mps.html)、[Tensor.to](https://docs.pytorch.org/docs/2.5/generated/torch.Tensor.to.html)、[Module.to](https://docs.pytorch.org/docs/2.5/generated/torch.nn.Module.html#torch.nn.Module.to)、[CUDA同步](https://docs.pytorch.org/docs/2.5/generated/torch.cuda.synchronize.html)、[MPS同步](https://docs.pytorch.org/docs/2.5/generated/torch.mps.synchronize.html)。MPS是当前工程补充，不冒充2021教材内容。
 - [视频](https://www.bilibili.com/video/BV1z5411c7C1)，作者“跟李沐学AI”，发布2021-04-24（UTC）。2026-11-13核实3P：P1使用GPU 814秒，P2购买GPU 534秒，P3 QA 483秒。仅列身份与时长，没有推测片内时间轴。
-- 3次公开player请求均成功空字幕；未下载/观看媒体，不复述未核实采购建议、演示或问答。draft阻塞不占位，materials为`not_required`。
+- 3次公开player请求均成功空字幕；未下载/观看媒体，不复述未核实采购建议、演示或问答。中文原课通过页头观看，本课不另作课堂逐段整理，materials为`not_required`。
 - 原件与SHA-256、许可、阅读范围、代码预期见`sources/p3-lec17/manifest-fragment.json`。设备探测证据为`sources/p3-shared/environment.json`；CPU数值验收另由主agent记录。子agent没有执行任何课程代码，不宣称CUDA、MPS、多GPU或性能比较已完成。

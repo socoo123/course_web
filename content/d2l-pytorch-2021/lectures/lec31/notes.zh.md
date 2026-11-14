@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版12.4硬件；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021教材快照。"
 video: "https://www.bilibili.com/video/BV1TU4y1j7Wd/"
 license: "教材仓库Apache-2.0不外推视频或第三方图片。视频copyright=1/no_reprint=1；正文算例与SVG为编者自拟。"
-status: "教材导读；2P公开字幕成功空列表，课堂未核实，draft阻塞。"
+status: "教材导读；2P公开字幕成功空列表，课堂未核实，课堂逐段整理不另作。"
 title: "CPU与GPU：计算快，还要喂得上数据"
 lectureId: lec31
 kind: "教材导读 / 编者笔记"
@@ -169,7 +170,7 @@ $$
 | 2 | QA | 3167 | 52:47 |
 | 合计 | 全2P | 5529 | 1:32:09 |
 
-各P仅一次公开player字幕检查，均成功空列表；没有下载或观看媒体，不代表不存在烧录字幕。不能由QA标题推断问答内容，暂不生成draft或主题时间范围。
+各P仅一次公开player字幕检查，均成功空列表；没有下载或观看媒体，不代表不存在烧录字幕。不能由QA标题推断问答内容，不猜主题时间范围；中文原课通过页头观看，本课不另作课堂逐段整理。
 
 - [2021官方课表](https://courses.d2l.ai/zh-v2/)：6月5日硬件：CPU和GPU，对应硬件阅读。
 - [中文第二版12.4硬件](https://zh.d2l.ai/chapter_computational-performance/hardware.html)：实际读取的是[固定源码](https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computational-performance/hardware.md)全文（217行）；在线构建不保证精确同版。重点为计算机、内存、CPU、GPU、网络和总线及小结。教材内所链论文、厂商资料和历史延迟表的原始外链未逐个阅读，不冒称已独立验证其性能。

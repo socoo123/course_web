@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版4.6全文，重点核对PyTorch分支；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照；另读PyTorch2.5 Dropout API。"
 video: "https://www.bilibili.com/video/BV1Y5411c7aY"
 license: "教材仓库Apache-2.0不外推视频；视频copyright=1/no_reprint=0，0不代表开放许可，未取得开放转载许可。算例与图为编者自拟。"
-status: "教材导读；3P公开字幕均为空，课堂未核实，draft阻塞；2个独立机制片段CPU核对通过，非Dropout网络训练。"
+status: "教材导读；3P公开字幕均为空，课堂未核实，课堂逐段整理不另作；2个独立机制片段CPU核对通过，非Dropout网络训练。"
 title: "Dropout：保持期望，不是保持每次输出"
 lectureId: lec13
 kind: "教材导读 / 编者笔记"
@@ -167,6 +168,6 @@ $q=0$使$M/q$没有定义。实现必须单独全置零，此时非零输入的�
 | 2 | 代码实现 | 325657525 | 736 | 请求成功，空列表 |
 | 3 | QA | 325666689 | 1492 | 请求成功，空列表 |
 
-只核实时长和分P，不是课堂内容时间表。未下载或观看媒体，未核实讲授、演示和QA，不生成draft、时间码或占位文件。空字幕列表不排除烧录字幕或其他合法访问条件下字幕，未重复刷接口。必要阅读已在本页，`materials=not_required`。
+只核实时长和分P，不是课堂内容时间表。未下载或观看媒体，未核实讲授、演示和QA，中文原课通过页头观看，本课不另作课堂逐段整理；不编造时间码。空字幕列表不排除烧录字幕或其他合法访问条件下字幕，未重复刷接口。必要阅读已在本页，`materials=not_required`。
 
 证据在`sources/p2-lec13/`，原始教材只存`.txt`。根Apache-2.0与setup包MIT-0字段均不外推视频，平台copyright=1/no_reprint=0，0也不代表开放授权。两段机制代码CPU核对通过，涵盖期望、方差、掩码梯度及端点，见`sources/p2-shared/notes-smoke.json`；没有运行教材Dropout网络训练，图示不是训练结果。

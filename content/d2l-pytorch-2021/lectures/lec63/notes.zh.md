@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 title: "束搜索：选择的不只是词，还有整条历史的状态"
 lectureId: lec63
 kind: "教材导读 / 搜索与状态合同"
@@ -170,4 +171,4 @@ $$
 | P1 | 束搜索 | 385254837 | 11:44 |
 | 全1P合计 | 704秒 | — | 11:44 |
 
-2026-11-14该P公开字幕查询一次成功且列表为空，不排除烧录字幕。未审阅音视频，不猜片内时间码，不生成课堂QA或draft。copyright=1、no_reprint=1不授予开放转录许可；教材根Apache-2.0不覆盖视频/语料。统一数值与真实翻译日志见[公共资料](#/c/d2l-pytorch-2021)，实践见[实验指导](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=guide)。
+2026-11-14该P公开字幕查询一次成功且列表为空，不排除烧录字幕。未审阅音视频，不猜片内时间码，不生成课堂QA。copyright=1、no_reprint=1不授予开放转录许可；教材根Apache-2.0不覆盖视频/语料。统一数值与真实翻译日志见[公共资料](#/c/d2l-pytorch-2021)，实践见[实验指导](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=guide)。

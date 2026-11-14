@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版12.7参数服务器全文；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021全书快照。通信模型和强弱扩展算例为编者推导。"
 video: "https://www.bilibili.com/video/BV1jU4y1G7iu/"
 license: "教材仓库Apache-2.0不外推视频；视频copyright=1/no_reprint=1，未取得开放转录授权。SVG与算例自拟。"
-status: "教材导读；2P公开字幕均成功空列表，课堂内容未核实，draft阻塞。"
+status: "教材导读；2P公开字幕均成功空列表，课堂内容未核实，课堂逐段整理不另作。"
 title: "分布式训练：梯度相同，不代表通信代价相同"
 lectureId: lec35
 kind: "教材导读 / 编者笔记"

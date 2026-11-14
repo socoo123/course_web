@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版6.5，固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a；PyTorch 2.5池化API。"
 video: "https://www.bilibili.com/video/BV1EV411j7nX"
 license: "教材仓库Apache-2.0不外推视频及API文档；视频copyright=1/no_reprint=1。算例与SVG为编者自拟。"
-status: "教材导读；主agent已完成CPU代码与机制核验。3P公开字幕空列表，课堂未核实，draft阻塞。"
+status: "教材导读；主agent已完成CPU代码与机制核验。3P公开字幕空列表，课堂未核实，课堂逐段整理不另作。"
 title: "池化：丢掉哪些位置，保留什么信息"
 lectureId: lec22
 kind: "教材导读 / 编者笔记"
@@ -153,6 +154,6 @@ $$
 | P2 | 实现 | 06:58 |
 | P3 | QA | 09:48 |
 
-合计27:07。这里只是分P元数据，**不是课堂时间线**。3P各请求一次公开player，均成功返回空字幕列表；未观看/下载音视频，不猜片内讲授或问答。无完整课堂源，`draft`阻塞、不建占位；`materials=not_required`。
+合计27:07。这里只是分P元数据，**不是课堂时间线**。3P各请求一次公开player，均成功返回空字幕列表；未观看/下载音视频，不猜片内讲授或问答。中文原课通过页头观看，本课不另作课堂逐段整理；`materials=not_required`。
 
 来源原件、SHA-256及待验收代码在`sources/p4-lec22/manifest-fragment.json`。教材根LICENSE为Apache-2.0，不外推API文档、视频或第三方图；视频copyright=1/no_reprint=1，未取得开放转录授权。代码未由撰写者运行。

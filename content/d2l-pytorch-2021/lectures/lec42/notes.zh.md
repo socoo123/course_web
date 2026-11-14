@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: "2021官方课表与课程公告；复用P5匿名实读Kaggle Classify Leaves的Overview/Data/Rules证据及p5-manifest竞赛字段。"
 video: "https://www.bilibili.com/video/BV1by4y1K7SE/"
 license: "视频copyright=1/no_reprint=1，未获转录授权；竞赛数据Subject to Competition Rules，图片再分发权未核实。正文和SVG自主编写。"
@@ -116,7 +117,7 @@ $$
 | 计算代价与失败在哪里？ | 实测记录及未运行说明 | 不虚构GPU性能 |
 | 我能复用什么？ | 与自己的目标/访问条件相容 | 不要求复现获奖方案 |
 
-当前可完成的是：解释上面的配对误差、识别不可归因的对照、提出一个有明确不变量的下一轮实验。**“已阅读真实课堂技术总结”仍然未完成**，不能因为读完本页而自动打勾。该缺口不影响先把自己的实验记录做可信。
+本页可用于解释上面的配对误差、识别不可归因的对照、提出一个有明确不变量的下一轮实验；它不代表真实课堂技术总结。中文原课通过页头观看，个人观看与实验进度由学习者自行安排，不作为教程交付缺口。
 
 ## 7. 自测与答案
 
@@ -153,5 +154,5 @@ $$
 - [官方课表](https://courses.d2l.ai/zh-v2/)列出“树叶分类竞赛总结”；[官方公告](https://courses.d2l.ai/zh-v2/announcements.html)第十一周把比赛链接到Classify Leaves，第十六周把获胜团队和技术总结链接到本讲BV。本文直接复用P5已留存的公告证据，不从公告链接本身推导获奖方法。
 - [Kaggle Overview](https://www.kaggle.com/competitions/classify-leaves/overview)、[Data](https://www.kaggle.com/competitions/classify-leaves/data)、[Rules](https://www.kaggle.com/competitions/classify-leaves/rules)：复用2026-11-14 P5匿名浏览器读取的正文与p5-manifest竞赛字段，不重复刷新访问接口。Data只写`Subject to Competition Rules`，Rules只有通用模板。**登录后的下载、加入与迟交条件，以及图片再分发权仍未核实。**本轮没有登录、接受规则、下载数据、训练或提交；今后按官网当时规则办理，不能绕过限制。
 - [官方视频](https://www.bilibili.com/video/BV1by4y1K7SE/)作者“跟李沐学AI”，mid 1567748478，API发布时间为2021年7月3日；**课表安排日期为6月27日，两者分开保留**。真实全1P标题“树叶分类竞赛”，时长1589秒，即26:29。上传标题序号43、本站LEC42与课表日期是不同字段，不能据此重编课堂时间线。
-- 2026-11-14公开player字幕接口请求一次，成功但列表为空；未下载或观看音视频，未取得教师/团队方案、演示、问答或片内时间轴。**没有可靠课堂来源，所以不生成draft，不用教材冒充树叶技术总结**；空列表也不证明没有烧录字幕。copyright=1/no_reprint=1不是开放转录许可。
+- 2026-11-14公开player字幕接口请求一次，成功但列表为空；未下载或观看音视频，未取得教师/团队方案、演示、问答或片内时间轴。**中文原课通过页头观看，本课不另作课堂逐段整理；不用教材冒充树叶课堂技术总结**；空列表也不证明没有烧录字幕。copyright=1/no_reprint=1不是开放转录许可。
 - 本页没有对应的独立教材章节，未把CIFAR-10/Dogs章节当作树叶课堂材料。手算、配对诊断和SVG都是编者框架。精确证据复用路径、SHA-256与未运行记录见本讲manifest及[公共资料](#/c/d2l-pytorch-2021)。

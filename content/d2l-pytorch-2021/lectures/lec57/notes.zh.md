@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: "官方2021课表；固定中文第二版9.2；PyTorch v2.5.1 rnn.py 793–951行。"
 video: "https://www.bilibili.com/video/BV1JU4y1H7PC/"
 license: "教材根Apache-2.0与PyTorch许可分别适用，不外推视频/语料；正文与SVG为自主讲解。"
@@ -162,4 +163,4 @@ cell是另一条跨时间的计算图路径。两份状态的值可以保留，�
 | P3 | QA | 03:39 |
 | 全3P合计 | 1075秒 | 17:55 |
 
-2026-11-14每P公开字幕接口查询一次成功、列表均为空，不排除烧录字幕。未观看音视频，无法提供可信片内时间轴、QA或逐段译稿；不建占位draft/materials。视频copyright=1、no_reprint=1不等于开放转录授权。教材根Apache-2.0、PyTorch条款与语料条件各有边界，详见[公共资料](#/c/d2l-pytorch-2021)。
+2026-11-14每P公开字幕接口查询一次成功、列表均为空，不排除烧录字幕。未观看音视频，无法提供可信片内时间轴、QA或逐段译稿；中文原课通过页头观看，本课不另作课堂逐段整理；不另作重复materials。视频copyright=1、no_reprint=1不等于开放转录授权。教材根Apache-2.0、PyTorch条款与语料条件各有边界，详见[公共资料](#/c/d2l-pytorch-2021)。

@@ -28,7 +28,7 @@ export default function Lecture() {
   const draftLabel = lec?.video?.language === "zh" ? "课堂整理" : LECTURE_MATERIALS.draft.label;
   const tabs: MaterialTab[] = [
     { id: "notes", label: LECTURE_MATERIALS.notes.label, icon: "pen", ready: m.notes },
-    { id: "draft", label: draftLabel, icon: "lang", ready: m.draft },
+    ...(detail?.lectureDrafts !== false ? [{ id: "draft", label: draftLabel, icon: "lang" as const, ready: m.draft }] : []),
     { id: "materials", label: LECTURE_MATERIALS.materials.label, icon: "book", ready: m.materials },
   ];
   const [view, setView] = useView(tabs);
@@ -86,7 +86,7 @@ export default function Lecture() {
         {lab && (
           <Link to={`/c/${courseId}/lab/${lab.id}`} className="btn">
             <Icon name="flask" className="h-3.5 w-3.5 text-course" />
-            对应实验 · Lab {lab.num} {lab.branch}
+            对应实验 · {lab.title}
           </Link>
         )}
       </div>

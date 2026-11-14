@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版7.3；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021快照。"
 video: "https://www.bilibili.com/video/BV1Uv411G71b/"
 license: "教材仓库Apache-2.0不外推视频；视频copyright=1/no_reprint=1，未取得开放转录授权。正文算例与SVG为编者自拟。"
-status: "教材导读；3P公开字幕均成功空列表，课堂未核实，draft阻塞。"
+status: "教材导读；3P公开字幕均成功空列表，课堂未核实，课堂逐段整理不另作。"
 title: "NiN：每个位置一个共享的通道MLP"
 lectureId: lec26
 kind: "教材导读 / 编者笔记"
@@ -181,6 +182,6 @@ GAP输出(8,10,1,1)，`flatten(1)`后为(8,10)。只对两个空间轴平均，�
 | P3 | QA | 16:42 |
 | 全部分P合计 | 2258秒 | 37:38 |
 
-2026-11-14各P公开字幕接口各请求一次，均code=0、空列表。未下载或观看媒体，无法核实具体讲述和QA，也没有可靠完整课堂文本；因此不生成draft，不编造时间索引。教材已为中文，无独立materials需求，状态为`not_required`。
+2026-11-14各P公开字幕接口各请求一次，均code=0、空列表。未下载或观看媒体，无法核实具体讲述和QA，也没有可靠完整课堂文本；中文原课通过页头观看，本课不另作课堂逐段整理；不编造时间索引。教材已为中文，无独立materials需求，状态为`not_required`。
 
 教材根LICENSE为Apache-2.0，setup包的MIT-0字段另记；均不外推视频或第三方图。本页不用教材原图、不重译中文教材。来源原件、SHA-256、实读范围和待统一验收项保存在`sources/p4-lec26/manifest-fragment.json`。

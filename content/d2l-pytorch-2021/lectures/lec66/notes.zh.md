@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 title: "带注意力的seq2seq：先查询，再更新状态"
 lectureId: lec66
 kind: "教材导读 / Bahdanau时序与信息边界"
@@ -168,4 +169,4 @@ attention不是搜索策略；有注意力也可能因贪心选错早期词。be
 | 2 | 代码 | 00:00–13:16 | 796 |
 | 3 | QA | 00:00–07:06 | 426 |
 
-全3P合计1837秒（30:37）。BV1v44y1C7Tg，作者“跟李沐学AI”（mid1567748478），发布2021-08-13T02:10:04Z。分P边界不是片内主题索引，P3标题不能当作已核问答内容。精确cid、来源与每P一次空字幕结果见`sources/p9-lec66/video-metadata.json`。未审阅音视频，不能排除烧录字幕；无可信课堂内容则不编时间码、课堂训练、问答或占位draft/materials。视频copyright=1、no_reprint=1不授予开放转录许可。继续实践：[seq2seq-attention指导](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=guide)。
+全3P合计1837秒（30:37）。BV1v44y1C7Tg，作者“跟李沐学AI”（mid1567748478），发布2021-08-13T02:10:04Z。分P边界不是片内主题索引，P3标题不能当作已核问答内容。精确cid、来源与每P一次空字幕结果见`sources/p9-lec66/video-metadata.json`。未审阅音视频，不能排除烧录字幕；无可信课堂内容则不编时间码、课堂训练、问答；中文原课通过页头观看，本课不另作课堂逐段整理；不另作重复materials。视频copyright=1、no_reprint=1不授予开放转录许可。继续实践：[seq2seq-attention指导](#/c/d2l-pytorch-2021/lab/seq2seq-attention?v=guide)。

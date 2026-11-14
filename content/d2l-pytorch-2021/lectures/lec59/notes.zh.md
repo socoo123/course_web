@@ -1,4 +1,5 @@
 ---
+draftStatus: "not_required_by_user"
 source: "官方2021课表；固定中文第二版9.4；PyTorch v2.5.1 rnn.py 838–951行。"
 video: "https://www.bilibili.com/video/BV12X4y1c71W/"
 license: "教材根Apache-2.0与PyTorch许可分别适用，不外推视频/语料；正文与SVG为自主讲解。"
@@ -156,4 +157,4 @@ $$
 | P3 | QA | 04:38 |
 | 全3P合计 | 834秒 | 13:54 |
 
-2026-11-14每P公开字幕查询一次成功且列表为空，不排除烧录字幕。未观看音视频，无可信片内时间轴、QA或逐段译稿，不建占位draft/materials。视频copyright=1、no_reprint=1不授予开放转录许可；教材、PyTorch及语料条件各自独立。统一数值、真实语料训练和硬件范围见[公共资料](#/c/d2l-pytorch-2021)，实践见[实验指导](#/c/d2l-pytorch-2021/lab/recurrent-language-model?v=guide)。
+2026-11-14每P公开字幕查询一次成功且列表为空，不排除烧录字幕。未观看音视频，无可信片内时间轴、QA或逐段译稿，中文原课通过页头观看，本课不另作课堂逐段整理；不另作重复materials。视频copyright=1、no_reprint=1不授予开放转录许可；教材、PyTorch及语料条件各自独立。统一数值、真实语料训练和硬件范围见[公共资料](#/c/d2l-pytorch-2021)，实践见[实验指导](#/c/d2l-pytorch-2021/lab/recurrent-language-model?v=guide)。

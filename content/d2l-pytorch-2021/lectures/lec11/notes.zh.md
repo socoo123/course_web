@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版4.4，固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a；全文审阅，代码重点PyTorch分支，非2021快照。"
 video: "https://www.bilibili.com/video/BV1kX4y1g7jp"
 license: "教材仓库Apache-2.0不外推视频；视频copyright=1/no_reprint=0，0不代表开放许可，未取得开放转载许可。算例与图为编者自拟。"
-status: "教材导读；4P公开字幕均为空，课堂未核实，draft阻塞；1个独立代码片段CPU核对通过，非完整模型选择实验。"
+status: "教材导读；4P公开字幕均为空，课堂未核实，课堂逐段整理不另作；1个独立代码片段CPU核对通过，非完整模型选择实验。"
 title: "模型选择：先保证比较公平，再解释欠拟合与过拟合"
 lectureId: lec11
 kind: "教材导读 / 编者笔记"
@@ -161,6 +162,6 @@ print(mu.item(), sigma.item(), ((valid - mu) / sigma).tolist())
 | 3 | 代码 | 323009112 | 407 | 请求成功，空列表 |
 | 4 | QA | 323016361 | 2701 | 请求成功，空列表 |
 
-此表只核实文件身份和时长，不是内容时间线。未下载、观看媒体，未取得可审阅字幕，不能核实演示或QA；不生成draft、时间码、课堂转述或占位稿。空列表不证明烧录字幕或其他合法访问条件下的字幕不存在，未重复刷接口。
+此表只核实文件身份和时长，不是内容时间线。未下载、观看媒体，未取得可审阅字幕，不能核实演示或QA；中文原课通过页头观看，本课不另作课堂逐段整理；不编造时间码或课堂转述。空列表不证明烧录字幕或其他合法访问条件下的字幕不存在，未重复刷接口。
 
 精简证据在`sources/p2-lec11/video-metadata.json`与`manifest-fragment.json`，教材原文仅以`.txt`归档。仓库根Apache-2.0与setup包MIT-0字段分开记录，均不外推视频；平台copyright=1/no_reprint=0，0也不代表开放授权。标准化片段CPU核对通过，输出与解析预期一致，见`sources/p2-shared/notes-smoke.json`；没有运行教材多项式训练、完整学生实验或GPU。

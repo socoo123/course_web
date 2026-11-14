@@ -1,8 +1,9 @@
 ---
+draftStatus: "not_required_by_user"
 source: "《动手学深度学习》中文第二版4.10全文，重点核对PyTorch分支；固定提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，非2021教材快照。"
 video: "https://www.bilibili.com/video/BV1NK4y1P7Tu"
 license: "教材仓库Apache-2.0不外推视频或数据；视频copyright=1/no_reprint=0，不构成开放转录授权。正文算例与图为编者自拟。"
-status: "教材导读；3P公开字幕均为空，课堂未核实，draft阻塞，materials不另设；主agent已在CPU执行两段机制代码，输出符合解析预期。"
+status: "教材导读；3P公开字幕均为空，课堂未核实，课堂逐段整理不另作，materials不另设；主agent已在CPU执行两段机制代码，输出符合解析预期。"
 title: "房价预测：先把验证做诚实，再谈模型变复杂"
 lectureId: lec15
 kind: "教材导读 / 编者笔记"
@@ -189,7 +190,7 @@ $$
 
 选定模型和超参数后，重新在**全部有标签训练数据**上fit预处理、训练最终模型，再对官方无标签测试集transform与预测。不要拿测试榜单反复决定缺失处理、层数和停止轮次；反复试探排行榜同样会形成模型选择偏差。
 
-交付至少包括：数据来源与哈希、划分索引、预处理状态与列名顺序、模型结构/权重、目标单位、评价公式、配置与环境。CSV提交要核对`Id`顺序、行数、唯一性以及预测全为有限正数；不要把Pandas的行索引误写成额外列。
+本地自检建议记录：数据来源与哈希、划分索引、预处理状态与列名顺序、模型结构/权重、目标单位、评价公式、配置与环境。导出CSV时核对`Id`顺序、行数、唯一性以及预测全为有限正数；不要把Pandas的行索引误写成额外列。无需向网站或Git仓库提交作业或报告。
 
 数据获取也要能审计。固定教材写的是HTTP镜像与SHA-1；本批其他来源采集已用同host的HTTPS取得两个Ames CSV并核对SHA-1（证据见页底）。哈希用于确认是否与固定教材文件一致，不代表数据许可，也不代表SHA-1是抵御恶意替换的现代安全保证。教材下载函数核验旧缓存，但新下载后未再次核验；工程流程应检查HTTP状态及新文件哈希，失败就停止，不把HTML错误页交给训练。
 
@@ -226,5 +227,5 @@ $$
 - [中文教材4.10](https://zh.d2l.ai/chapter_multilayer-perceptrons/kaggle-house-price.html)：实际阅读固定源码全文1–632行，重点PyTorch训练、对数指标、K折与提交；[固定源码](https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/kaggle-house-price.md)。中文第二版当前源码，非2021快照。折内fit、OOF汇总和严格数据契约为编者补充。
 - [2021课程课表](https://courses.d2l.ai/zh-v2/)与[公告](https://courses.d2l.ai/zh-v2/announcements.html)区分教材比赛与[加州历史竞赛](https://www.kaggle.com/c/california-house-prices/overview)。本批另一采集任务已浏览公开Description/Evaluation/Data页：数据需登录接受比赛规则，许可为“Subject to Competition Rules”；未登录、未下载加州数据、未提交。访问结果见`sources/p3-mlp-generalization/california-access.json`，不是声称平台不可用；Ames运行不代表加州复现。
 - [本讲视频](https://www.bilibili.com/video/BV1NK4y1P7Tu)，作者“跟李沐学AI”，发布2021-04-18（UTC）。2026-11-13核实全部3P：P1“实战 Kaggle 比赛：预测房价”870秒；P2“课程竞赛：加州2020年房价预测”519秒；P3“QA”201秒。此表仅为分P身份与时长，不是讲授时间索引。
-- 每P公开player请求一次，均`code=0`、字幕空列表。未下载/观看媒体，未核实课堂演示与QA；不猜时间码，不生成draft占位。没有独立中文阅读需求，materials为`not_required`。
+- 每P公开player请求一次，均`code=0`、字幕空列表。未下载/观看媒体，未核实课堂演示与QA；不猜时间码，中文原课通过页头观看，本课不另作课堂逐段整理。没有独立中文阅读需求，materials为`not_required`。
 - 来源原件、SHA-256、阅读范围和预期输出在`sources/p3-lec15/manifest-fragment.json`。Ames HTTPS获取证据在`sources/p3-mlp-generalization/ames-access.json`；数据不入库。根Apache-2.0仅记录教材仓库适用许可，不外推视频、数据或第三方图片。本页两段机制代码由子agent编写但未执行，CPU统一验收由主agent记录。

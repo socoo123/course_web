@@ -1,16 +1,16 @@
-维护content/d2l-pytorch-2021。先读已注入AGENTS.md、status.json、status.maintenanceReview指向的最新维护记录、sources/p11-manifest.json、sources/PLAN.txt、本交接及skill://technical-video-notes。只改content/；课程仍73讲、12实验、48任务，不重做已验收正文或旧训练，不自动扩充课程、前置课或必读论文。
+维护content/d2l-pytorch-2021。先读已注入AGENTS.md、status.json、status.scopeRevision指向的最新约定、sources/p11-manifest.json、sources/PLAN.txt及本交接。日常内容维护只改content/；本轮用户明确要求的课堂整理入口、实验标题和Git/xv6命令框已作最小src调整。课程仍73讲、12实验、48任务，不重做技术导读或旧训练，不扩充前置课或必读论文。
 
-P1–P11全课教材/官方来源导读及十二实验双文档已编排完成；不表示全部课堂看完、学生作业完成、竞赛完成或GPU扩展完成。实际元数据、数值、页面和构建验收以p11-manifest与p11-shared最终记录为准。逐讲notes与课堂draft独立，中文教材materials不重译，不创建凑标签的空壳。
+当前交付：73讲教材/官方来源导读和十二实验双文档已完成。用户取消本课课堂逐段整理，直接观看中文原课；draft为not_required_by_user，不再统计73讲阻塞或追字幕。个人学习/作业与教程交付无关，不由agent认证或追踪。实验由用户本地自己实现、保存和自检，无需Git提交、推送、上交报告或上传本站；说明/指导保留，不给整套答案。中文教材materials不重译，不创建凑标签的空壳。
 
-下一轮先按用户指定维护问题行动；未指定时，仅梳理status的真实缺口与可用新证据，不重复请求已失败的字幕接口，不重新训练已验模型。若同时有两个以上独立实质内容切片，继续task多agent：各自独占讲次/实验及sources子目录，主agent独占共享索引、状态、整合与统一验收；子agent不跑数值/tests/build/lint/formatter、不提交。
+后续按用户指定问题维护；无新需求不自动抓课堂、训练模型、跑竞赛或做GPU扩展。历史来源/运行证据仍真实保留，但不是要求代用户完成全部练习。两个以上独立实质切片才继续task多agent，各自独占讲次/实验；主agent负责共享状态和统一最小验收。子agent不跑数值/tests/build/lint/formatter、不提交。
 
-课堂维护：只有新取得的可信字幕、合法可访问音视频或用户提供材料，才推进对应draft。核官方作者/年份/BV/cid/全P及真实时长；无课堂依据不造主题时间轴、演示、QA、赢家方法或教师总结。既有P1–P9共182P字幕成功空列表；P10七P成功空、九P HTTP412未知；P11五P成功空，共194P空/9P受限未知、73BV/203P。空列表或412均不证明无烧录字幕。LEC1仅历史抽帧，不等于课堂审阅。课程总结视频的学习任务仍保留待本人完成。
+原课入口：保留官方作者/年份/BV/cid/全P和已核实时长；不造片内时间轴、演示、QA、获奖方法或教师总结。本课不提供课堂整理标签，旧?v=draft链接回到可用笔记。既有194P空字幕/9P HTTP412及LEC1抽帧仅为历史来源记录，不是当前待办，也不证明无烧录字幕。课程总结视频由用户自行观看，不记录“待本人完成”。
 
 官方课表https://courses.d2l.ai/zh-v2/；教材固定d2l-ai/d2l-zh提交e6b18ccea71451a55fcd861d7b96fddf2587b09a，当前中文第二版，非2021全书快照。P11 LEC72按课表整章入口读11.1–11.11，不声称视频逐节覆盖。LEC71/73无独立教材指定章节，为官方来源/自主复盘导读。历史课表与实际上传日期分开；LEC10/43/69等链接歧义继续保留。
 
-牛仔竞赛仍单独阻塞：官方公告↔CodaLab33573↔Kaggle cowboyoutfits身份已核，host Joshua Z. Zhang；外部五类87/1034/131/318/588、AP0.50:0.95。CodaLab教育/非商用/不得另用途再分发；Kaggle登录接受规则未完成。Data image_id与starter id、starter像素xyxy与评分端约定待真实认证文件/scorer核实，不擅改COCO xywh。未下载/训练/评分/提交；LEC71未审课堂，不编获奖方案。复用P7证据，不拿banana/VOC或合成评估替代竞赛。
+牛仔竞赛来源边界（选做扩展，不阻塞教程交付）：官方公告↔CodaLab33573↔Kaggle cowboyoutfits身份已核，host Joshua Z. Zhang；外部五类87/1034/131/318/588、AP0.50:0.95。CodaLab教育/非商用/不得另用途再分发；Kaggle登录接受规则未完成。Data image_id与starter id、starter像素xyxy与评分端约定待真实认证文件/scorer核实，不擅改COCO xywh。未下载/训练/评分/提交；LEC71未审课堂，不编获奖方案。复用P7证据，不拿banana/VOC或合成评估替代竞赛。
 
-optimization-capstone四任务不可删：同小模型/划分/初值/采样/预算比较SGD、动量、Adam并记录曲线；学习率调度、稳定性与完整恢复；全模型谱系工程总结且真实记录课程总结视频学习；自主CS336准备清单（训练循环、token/mask、Transformer、性能、数据评估）。只给合同/路线/不变量/局部提示，无完整答案。
+optimization-capstone四任务保留：同小模型/划分/初值/采样/预算比较SGD、动量、Adam；学习率调度、稳定性与完整恢复；全模型谱系工程总结；自主CS336准备清单（训练循环、token/mask、Transformer、性能、数据评估）。均为本地自练与自检建议，原视频观看自己安排；不要求提交报告或认证学习完成。
 
 P11实际新配对运行：复用官方Fashion缓存，seed2021生成全60000条随机排列，排列前5000为验证候选并取前73、其余55000为训练候选并取前257；不是原IDX连续ID范围。新MLP784→32 ReLU Dropout.1→10，Xavier权重/零bias、25450参数；init2041/shuffle2042/dropout2043，CPU单线程float32，B64尾1，12轮60更新。三算法均lr.01、无wd无clip；动量.9、Adam(.9,.999)/eps1e-8；StepLR每完成20update×.5、optimizer.step后scheduler.step。相同数值LR但未分别调优，不是通用排名。初始trainCE2.330402；末轮SGD train/val1.775362/1.895593且21/73，动量1.070096/1.264549且43/73，Adam.597773/.803188且49/73。完整曲线/样本ID/梯度hash见p11-shared/optimization-smoke.json。
 
@@ -26,8 +26,8 @@ P11实际新配对运行：复用官方Fashion缓存，seed2021生成全60000条
 - P10 /tmp/d2l-p10-corpus-cache：Salesforce非raw WikiText、Stanford SNLI固定revision Parquet及教材bert.small。pyarrow下载TLS失败未安装；已有/tmp/d2l-p10-parquet-reader的Bun/hyparquet读取器，非必要不引入。具体hash/标签转换/词表ID/配置见p10-bert-pretrain-finetune/asset-audit.json。
 - WikiText许可版本冲突、SNLI CC BY-SA4.0、bert.small权重/词表无独立LICENSE/config的边界不消除；代码许可不授予数据/权重再分发。
 
-页面维护：引用/许可/状态放frontmatter或页底；正文标题不要误含“来源/参考”等被自动收底词。$$独占行，长公式拆行，hash放滚动表，SVG带title/desc且明暗可读。公共资料路由#/c/d2l-pytorch-2021；讲次/lec/<id>?v=notes，实验/lab/<id>?v=zh|guide。页头原站新tab、默认笔记、不嵌入播放器；有视频的改动逐讲检查链接/全P时长，并实点代表入口确认笔记保留和手机布局。xv6通用命令框不适用、not_required材料仍显示待生成、旧LEC2/5/6手机溢出是独立已知UI问题，不擅自改src或重做前批正文。
+页面维护：引用/许可/状态放frontmatter或页底，正文标题避免误含“来源/参考”；$$独占行，长公式拆行，hash放滚动表，SVG带title/desc且明暗可读。公共资料#/c/d2l-pytorch-2021，讲次/lec/<id>?v=notes，实验/lab/<id>?v=zh|guide。页头原站新tab、默认笔记、不嵌播放器。实验导航直接显示具体标题，不显示Lab编号标签或分支说明；无官方branch的实验不显示Git/xv6命令框。有视频元数据变更才逐讲核链接/全P时长。not_required材料仍显示待生成、旧LEC2/5/6手机溢出是另外的已知UI问题，不顺手扩修。
 
-验收用已有5310预览先确认再复用，不抢占/杀用户服务。实际浏览器tab.emulate定视口，验证用tab结束关闭。正文或视频元数据变更才检查相应页面，新实验才做必要数值；提交前一次最终npm run build。仅维护状态时检查JSON/完成账及交接引用，不重跑旧训练或全套页面。保存真实失败与边界。sources默认gitignore，仅显式加入小JSON/固定原件.txt/build.log，不提交数据、权重、凭据、环境或答案脚本。主agent按用户授权更新status/维护manifest/PLAN/本交接，保留P1–P11历史证据，提交推送现有github.com/socoo123/course_web的main，交付区分“文档完成”和“学习/课堂/竞赛/硬件仍未完成”。
+验收先确认并复用已有5310预览，不抢占/杀用户服务；实际浏览器tab.emulate定视口，结束关闭验证tab。按改动做必要JSON/内容核对、实际页面及一次最终npm run build；不重跑旧训练或全套验收。sources仅保存小JSON/证据日志，不发布数据、权重、凭据、环境或答案脚本。更新status/最新约定/PLAN/本交接，保留P1–P11历史原件。用户于2026-11-14另行明确授权提交推送此次已验收的教程范围与界面修订，覆盖上一轮“仅本地”的交付限制；后续发布仍按用户指示，不能把网站发布与用户实验作业混为一谈。
 
-最新维护（2026-11-14，基线814be1c）：见sources/maintenance-2026-11-14.json。课程目录没有新增未入库文件；官方课程更新/收尾入口及公告未带来可关闭缺口的新依据。本轮未取得可信字幕/媒体、认证竞赛文件/scorer或新硬件实测，因此未新增课堂稿、未推进竞赛/GPU完成状态，未动已验收正文或旧模型。此次核查范围有限，不是全网来源不存在的证明。下一轮先看用户新输入或真正新增证据；不要仅因进入新会话就再次请求同一批旧页面/字幕或重做维护记录。
+最新约定（2026-11-14，后于acba625维护）：见sources/scope-revision-2026-11-14.json。本次是用户调整交付范围和界面，不是新增课堂证据或重训批次。此前maintenance-2026-11-14.json及P1–P11的课堂/个人学习“未完成”记录只描述当时约定，不得据此恢复已取消的待办。
