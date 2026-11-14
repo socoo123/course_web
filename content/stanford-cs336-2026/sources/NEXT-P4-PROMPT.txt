@@ -1,0 +1,54 @@
+接续关键词：CS336-2026-P4-硬件与训练系统
+
+继续 Stanford CS336 Spring 2026 — 从零构建语言模型，仅执行 P4「硬件与训练系统批」。
+项目：/Users/zy/ai_learn/course_web
+课程：content/stanford-cs336-2026/
+
+一、先读交接，按实际验收状态接续
+1. status.json、sources/production-plan.json、sources/P3-REVIEW.txt、sources/p3-acceptance.json、sources/p3-model-preflight.json及p3-publication-record.json。
+2. sources/manifest.json、reading-map.json；本批复用来源的P1/P2/P3分片manifest和review。分片pending/false是作者交接时状态，最终验收以主验收记录为准。
+3. sources/P1-REVIEW.txt、p1-gaps.json、P2-REVIEW.txt；保留全部版本、权限、许可与执行边界。
+4. 已有L01–L04 notes/draft、L03 materials、8篇bridge notes、ext01–03及A1说明/指导。只在发现具体问题时必要修正，不重做已验收批次。
+5. P4来源重点：p1-lectures/的version-review、variant-audit和L05–L08；p1-videos/video-map对应讲次；p1-assignments-a1-a4/assignment-audit内A2；paper03–05固定全文与许可记录。
+采集、实际阅读、撰写、技术审查、页面验收和官方实验执行分别计数；路径登记不代表新克隆含原件。
+
+二、P4范围与单一正文归属
+- L05 GPU与TPU、L06 Kernel与Triton、L07并行训练（一）、L08并行训练（二）。
+- 关联编者专题ext04 Attention的资源账本、ext05 FlashAttention数学推导、ext06 GPU性能分析方法、ext07集合通信算法、ext08分片训练与恢复、ext09 MoE的系统问题。先复用L02/L04及bridge08已有概念，不复刻基础正文。
+- A2完整lab.zh.md和guide.zh.md：官方要求中译与概念/调试指导分别写，不给可提交实现或排行榜解答。不能把CPU机制演示冒充完成GPU作业。
+- paper03 FlashAttention固定2205.14135v2、paper04 FlashAttention-2固定2307.08691v1，唯一正文lectures/lec06/materials.zh.md；ext04/05及A2回链。
+- paper05 ZeRO固定1910.02054v3，唯一正文lectures/lec08/materials.zh.md；ext07/08与A2回链。
+- 精确核心/选读节号沿用reading-map.json；三篇均无已确认公开全文翻译授权，制作自主精读，不逐段改写成全文替代品。A2明确推荐两篇FlashAttention；ZeRO stage1是特定计分任务的针对性查阅，不把三篇编者核心范围称官方全文必读。
+- 不进入L09或A3，不顺手制作ext10及之后专题；无可独立制作的阅读材料不建占位materials。
+
+三、固定版本和真实来源
+- 讲义固定de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e，2026-09-12晚于学期；最后提交改L06 L1/L2带宽估计与trace。录像时间轴只能依该讲2026字幕，不能用当前讲义修订倒填原讲。
+- A2固定ca8bc81a59b70516f7ebb2da4808daade877c736；PDF Spring2026 v26.1.3、48页，package v26.1.4是不同版本字段。不能根据旧2025任务删掉activation checkpointing/FSDP或增加已移除的bucketed DDP。
+- 复用本地原件；缺失按manifest固定URL重取。每源记录URL/版本/获取日期/SHA256/许可/实际读范围/处理类型。补充文档版本不等于课堂或官方作业依赖。
+- L05–L08必须真实全读本批字幕并记录cue阅读范围、首尾、内部空隙和疑词。manual/non-ASR只是平台类别，未听音就不称核音。开放翻译许可未确认，draft只限量译述与全片导航，不声称完整翻译；notes自主教学，不重复课堂顺序。
+- 课堂截图只能来自实际取到的画面且只放draft，不用生成图冒充；原创示意图放notes assets。原始音视频默认不下载，不制作片段。
+
+四、A2不能缩掉的任务和硬件边界
+1. §2端到端计时、Nsight Systems、mixed precision、内存快照；§3激活重算及最优重算分析。
+2. §4 FA2纯PyTorch前向、Triton前向与causal mask、PyTorch+torch.compile后向；§4.2.3 p28的Triton backward明确选做，不扩大成全员硬性要求。
+3. §5 DDP、通信合并和计算通信重叠；§6优化器状态分片；§7 FSDP及内存/通信分析；§8 DP/FSDP/TP/2D的FLOP和通信瓶颈。
+4. §9排行榜是8B-shaped完整training step：forward+loss+backward+AdamW，不只是attention前向。固定vocab151936、d_model4096、d_ff11008、34层/32头、context32768、batch2、BF16、causal、两块B200；目标优于10s，空PyTorch/Triton cache的benchmark须10min内完成。最终以固定原文完整阅读为准，不由这些摘要代替精读。
+5. FA2基准单B200，batch1 causal、sequence128..65536、head_dim16..128的2次幂、FP32/BF16。通信题涉及2/4/6 GPU或process；多项xl训练性能题为单节点双GPU。通用集群指南同时≤3GPU建议与6GPU题需staff协调，不代表已获资源。
+6. 随机权重和随机batch可用于性能题，不要求下载预训练8B模型。校内Modal需正式选课、Stanford登录和邀请；不购买或启动收费算力。
+7. CPU/Gloo适合正确性调试，不替代CUDA/Triton/NCCL或Nsight GPU性能；MPS不等价。Triton interpreter的CPU调试有官方buggy警告，不当通用可靠替代。没有GPU时完成内容和可达验证并如实记缺口，不伪造延迟/吞吐/显存或完成记录。
+8. 官方AI政策仅概念/API辅助，禁止AI实现任何作业或排行榜代码，包括自动补全。A2第一方软件/associated documentation的MIT须保留完整版权和许可；第三方论文、插图和数据不继承MIT。
+
+五、模型、分工与编辑约束
+- 所有实际子agent（含审核）必须显式openai-codex/gpt-6-astra:xhigh。派发前重读匹配技能、受支持cfg入口；核实本轮实际model_change、thinking_level_change或等效元数据以及首assistant模型字段。不能仅在提示词声明；不可用即报告，不替换或降级，不擅自持久化配置。
+- 按真正独立内容范围并行，先固定共享合同。主agent独占course/catalog/resources/status和汇总manifest/reading-map/plan；每个子agent独占正文文件及来源分片。中途不运行build/lint/tests/formatters，主agent整合后统一必要验证。
+- 仅修改content/本课程，不碰src、其他课程、官方作业代码。原始资料放sources/且不用.md后缀。已有文件用edit，新文件write。
+- 不把本地授权不明全文、PDF/字幕大文件、原始镜像或浏览器截图force-add发布。GitHub只提交正文、必要原创资源与明确列出的轻量清单/审核/脚本/交接。
+- 来源与许可放frontmatter/页底，共享环境回链resources。公式主动分行适配390px；完整SHA256保留来源清单，不用超长inline code撑破手机正文。
+
+六、验收、交付与停止
+- 主审公式、维度/轴、byte与GB/GiB、FLOP/FLOP/s、通信量的每卡/全体口径、依赖顺序与mask、原文节号、A2全任务/子问及选做边界；原讲含义、source错误与编者修正分别标。
+- 逐讲复用并核实已保存L05–L08视频元数据，在真实页面核对入口/讲次/时长；代表性入口实际点击确认新标签打开、原笔记保留。浏览器实际看桌面/手机正文、SVG、表格与数学，不以元数据替代页面验收。
+- 运行P4定向链接/图片/SVG/时间/来源哈希、确有必要的独立小例和npm run build。不跑P1/P2/P3历史冻结断言或无关全仓套件，不执行官方GPU作业作为内容验收。
+- 更新status、production-plan、manifest、reading-map的真实状态，写P4验收/审查与完整NEXT-P5-PROMPT.txt。保留L18缺片、L19正确映射、A3/A4/A5访问缺口。
+- 完成必要验证后提交本批content改动并推送现有仓库，保留无关用户改动；不强推、不改远端。Pages成功必须依据实际工作流和部署页面证据，不从push成功推定。
+- P4验收后停止；不自动进入P5。最终简短报告正文范围、真实验证、提交/部署与限制。

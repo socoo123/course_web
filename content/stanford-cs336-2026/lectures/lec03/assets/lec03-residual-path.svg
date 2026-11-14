@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 680" role="img" aria-labelledby="lec03-title lec03-desc">
+  <title id="lec03-title">归一化的位置改变残差主路径</title>
+  <desc id="lec03-desc">上半图为pre-norm：输入x经恒等主路径直接到加号，分支先归一化N再计算F。下半图为residual post-norm：输入与分支F相加后，所有路径都经过N。图只表示前向依赖，不表示梯度稳定性的保证。</desc>
+  <defs>
+    <style>
+      :root { color-scheme: light dark; }
+      text { font-family: system-ui, "Noto Sans CJK SC", "PingFang SC", sans-serif; fill: var(--fg, currentColor); font-size: 21px; }
+      .heading { font-size: 24px; font-weight: 650; }
+      .muted { fill: var(--muted, currentColor); font-size: 19px; }
+      .panel { fill: none; stroke: var(--border, currentColor); stroke-width: 1.5; stroke-dasharray: 5 4; }
+      .box { fill: none; stroke: var(--accent, currentColor); stroke-width: 2; }
+      .path { fill: none; stroke: var(--accent, currentColor); stroke-width: 3; marker-end: url(#lec03-arrow); }
+    </style>
+    <marker id="lec03-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 Z" fill="var(--accent, currentColor)"/></marker>
+  </defs>
+  <text x="24" y="34" class="heading">比较“路径”，不要只背标签</text>
+  <rect x="16" y="54" width="448" height="290" rx="14" class="panel"/>
+  <text x="34" y="90" class="heading">Pre-norm</text>
+  <text x="34" y="121" class="muted">归一化只在分支上</text>
+  <text x="33" y="253">x</text>
+  <path d="M58 246 H388" class="path"/>
+  <path d="M82 246 V174 H126" class="path"/>
+  <rect x="128" y="149" width="78" height="50" rx="8" class="box"/>
+  <text x="158" y="181">N</text>
+  <path d="M207 174 H246" class="path"/>
+  <rect x="248" y="149" width="78" height="50" rx="8" class="box"/>
+  <text x="279" y="181">F</text>
+  <path d="M327 174 H402 V231" class="path"/>
+  <circle cx="402" cy="246" r="14" class="box"/>
+  <text x="395" y="253">+</text>
+  <path d="M416 246 H435" class="path"/>
+  <text x="439" y="253">y</text>
+  <text x="100" y="278" class="muted">恒等主路径不经过 N</text>
+  <text x="34" y="317">y = x + F(N(x))</text>
+  <rect x="16" y="366" width="448" height="290" rx="14" class="panel"/>
+  <text x="34" y="402" class="heading">Residual post-norm</text>
+  <text x="34" y="433" class="muted">相加后，整条路径经过 N</text>
+  <text x="33" y="562">x</text>
+  <path d="M58 555 H277" class="path"/>
+  <path d="M82 555 V486 H158" class="path"/>
+  <rect x="160" y="461" width="78" height="50" rx="8" class="box"/>
+  <text x="191" y="493">F</text>
+  <path d="M239 486 H291 V540" class="path"/>
+  <circle cx="291" cy="555" r="14" class="box"/>
+  <text x="284" y="562">+</text>
+  <path d="M305 555 H329" class="path"/>
+  <rect x="331" y="530" width="68" height="50" rx="8" class="box"/>
+  <text x="356" y="562">N</text>
+  <path d="M400 555 H435" class="path"/>
+  <text x="439" y="562">y</text>
+  <text x="34" y="629">y = N(x + F(x))</text>
+</svg>

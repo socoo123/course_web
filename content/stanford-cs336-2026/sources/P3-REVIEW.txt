@@ -1,0 +1,52 @@
+CS336 Spring 2026 — P3 模型基础批主审与交付记录
+验收日期：2026-11-15 Asia/Shanghai；来源获取和部分子任务记录使用2026-11-14 UTC。
+状态：complete_with_documented_limits。P4未开始，不自动续做。
+
+一、实际交付
+本批12篇正文：L03 notes/draft/materials，L04 notes/draft，bridge03/06 notes，ext01/02/03 notes，A1 lab/guide。11篇新建，既有A1 guide原位扩写；5张原创SVG。公共资料、status、总来源清单、reading-map和production-plan同步更新。累计22篇正文、7张原创SVG；不是22篇新文。
+仅修改本课程content。未改src、其他课程、官方作业代码；没有创建L04 materials占位。
+notes提炼问题、推导、边界、自测；draft按完整时间轴导航并作有限译述；两篇论文只在lec03/materials展开，其他页面交叉引用；A1说明与不泄露完整答案的概念指导分开。
+
+二、模型与分工
+6个独立任务均显式请求openai-codex/gpt-6-astra:xhigh。Main读取各任务当次session的model_change、thinking_level_change及首assistant元数据：全部实际gpt-6-astra/xhigh，无fallback。未修改配置。证据p3-model-preflight.json。
+分片为L03、L04、bridge03/06/ext01、ext02/03、两篇论文、A1。子任务未运行构建或测试；Main集中做一次检查与页面验收。
+
+三、真实阅读范围
+L03：官方Stanford Online录像lVynu4bo1rY，89:14/5354s；全部2020 cues读完。首cue5.600s、末cue5349.750s；6处内部>2s间隙、18处INAUDIBLE记录，不补造语音。26个主题块另列片头片尾。
+L04：官方录像cKSwj_qZ8Jg，86:20/5180s；全部1938 cues读完。首cue5.200s、末cue5175.510s；17处内部>2s间隙、19处INAUDIBLE记录。21个主题块另列片头片尾。playlist的5181s不覆盖该视频已核实5180s。
+两讲新增3958 cues；L01–L04累计6892 cues。没有核音或观看课堂画面，不称完整逐字翻译。
+讲义固定de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e（2026-09-12课后版本）。L03全部801行、L04全部502行提取文本读完；选择性查看L03页14/43/54/58/60、L04页7/9/31/40/42/48/56/58，共13页。不能假定课后讲义和录像逐字相同。
+Attention Is All You Need v7与RoFormer v5：指定核心范围完成；读取提取文本1–433和1–544，共977行，选看Attention页3–7、RoFormer页3–8，共11页。ext03另读RoFormer§4.2/4.5实验选择范围。全文精读篇数仍为0，指定核心完成2篇。16篇论文单一正文归属保持不变，其他14篇进度不冒进。
+A1：固定a158843b20107949f1a8d7df1b05cd33b9166712，Spring2026 v26.0.3。47页/2442行提取文本全部重读；README50行、LICENSE7行、pyproject50行、CHANGELOG225行全读；cluster guide仅1–146行。覆盖38计分任务、25字母子问及相关未编号接口，详见p3-a1/task-coverage.json。未声称逐页视觉审阅或完成官方实验。
+桥接/专题所读PyTorch、NumPy等官方文档范围、固定URL、时间和哈希在各分片中；不能把文档保存称全站阅读。
+Main独立读完12篇正文和六份worker review/来源范围；完整读两讲提取文本，并核对A1关键算法/接口、两篇论文的指定公式与边界。Main阅读日志见p3-shared/source-spotcheck.json。
+
+四、技术核对与修正
+1. 共享节点反向传播必须先累加各使用点贡献；图中箭头是前向依赖，反向数值单独注明。可解析例子与PyTorch核对。
+2. eval不等于no_grad。Dropout在eval下可能直接返回原输入，no_grad也不清除该张量已有requires_grad；桥接例子改为在上下文内执行乘法，正确展示True/False。
+3. A1 AdamW Algorithm1把bias correction放进alpha_t，epsilon位于未校正sqrt(v)外；不能冒充数值相同的校正矩公式。先按旧参数以基础alpha衰减，再做矩更新，t从1开始。CPU核对等价变换与同epsilon的差异。
+4. Q(K^T V)重排不适用于softmax注意力。线性状态压缩历史并不保留全部位置；固定top-k下MoE主专家计算近似不变，不代表路由/通信/存储免费。
+5. RoPE列向量约定满足R(m)^T R(n)=R(n-m)。论文Eq16缺下标/转置经原PDF视觉确认，明确作为原文笔误的编者修正，不怪罪文本提取；Eq4、Eq32局部符号问题也登记。位置共同平移不变不意味着任意长度外推成功，不能把相对位置性质说成任意向量点积单调衰减。
+6. L03 PaLM head表48*258/18432与显示1.48矛盾；RMS均值因子、KV查询/分数表述和z-loss方向均不照抄为事实。L04结尾V2/V3、258/256及sigmoid/softmax标签冲突明确限定，不伪造产品规格。
+7. A1标准327.68M tokens/目标loss≤1.45，与官方低资源约40M/≤2.0分开；排行榜6分、单B200最终45分钟、探索10 B200小时不混淆，p44校外学习者例外只在其适用范围使用。
+8. 修正公共资料路由为#/c/stanford-cs336-2026，修复注意力V的LaTeX笔误；删除L04重复KV推导与ext03重复RoPE数例，链接到唯一展开处。
+9. 5张SVG使用主题变量/currentColor，无外部资源、脚本或背景块；正文无课堂截图。
+
+五、验证（不把编辑检查当官方实验）
+python3 content/stanford-cs336-2026/sources/check-p3.py：通过。12正文，166站内链接，5图片/5SVG，176合法时间范围，6分片，69来源记录/58唯一文件哈希身份；两讲每cue恰好分配一次，gap统计相符；16论文home、38任务、25字母子问保持完整。证据p3-shared/structure-check.json。
+CPU：既有Python3.11.8/PyTorch2.5.1 CPU环境，8个正文代码块全部通过（L03一、bridge03二、bridge06一、ext01二、ext02一、ext03一）。另核RoPE图示、L04状态累加、A1 epsilon约定。临时runner已删除，结果见p3-shared/cpu-example-check.json。没有安装A1所需Python>=3.12,<3.14/torch~=2.11.0，未跑官方测试。
+npm run build：一次通过tsc --noEmit和Vite5.4.21，3152模块，Vite5.45s。日志p3-shared/build.log。
+真实生产构建预览：12正文加公共资料共13页，在1440×1000和390×844逐页访问，共26次；根宽分别1440/390，无KaTeX错误、显示公式溢出或运行时错误。5张原创图实际观察，L03另查深浅主题；A1表格横向滚动0→16且根宽仍390，ext02折叠答案实际展开。L03/L04默认课程笔记，页头时长89:14/86:20，实际点击均打开正确YouTube新标签，原笔记页URL和选中标签保留。证据p3-shared/page-check.json；截图仅本地保存。
+最终状态/验收/交接轻量JSON另外做语法和本批状态一致性检查，不重复构建或全面审计。
+
+六、许可、发布及明确未做
+视频与课堂讲义翻译许可未证实，因此draft是完整导航配有限译述，不是全文字幕翻译。Attention使用arXiv distribution许可；RoFormer为CC BY-NC-ND，两篇均为自主中文精读，不发布翻译派生全文。A1第一方MIT告知完整保留，不能延伸授权到第三方论文。
+未下载数据集/模型权重、运行官方作业/训练、开GPU或付费算力；低资源说明不冒充官方原规模完成。
+L18录像、嘉宾讲义、校内网络/算力权限与其他P1缺口原样保留。未完整视觉核对所有PDF页、未读取全部trace事件/离线资产。
+仅提交本批正文、原创SVG及显式列出的轻量来源/审核/脚本。原始字幕（含normalized）、PDF及提取全文、文档镜像和视觉截图仅本地。sources整体被忽略；不得git add -f整个sources。现有站点资产glob可能把本地忽略图片打入本地dist；干净GitHub部署只含已明确提交的资产，本批不修改src来扩展范围。
+发布选择见p3-publication-record.json；提交SHA与Pages运行结果以实际git/Actions输出为准，不在提交内部预测自身哈希。
+
+七、停止与下一批
+P3到此完成；P4状态not_started，autoStart=false。
+下一口令：CS336-2026-P4-硬件与训练系统
+完整交接：NEXT-P4-PROMPT.txt。包括L05–L08、A2、ext04–09、FlashAttention两篇与ZeRO唯一正文归属、固定版本、模型派发/真实阅读/权限/验收/发布边界；没有启动P4。

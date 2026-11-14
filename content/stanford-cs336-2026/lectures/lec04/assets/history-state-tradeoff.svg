@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 670" role="img" aria-labelledby="title desc">
+  <title id="title">逐位置KV缓存与固定大小状态</title>
+  <desc id="desc">上半部展示三个历史位置各保留一组key和value，第四个位置继续追加，查询访问历史记录。下半部展示固定大小状态S依次接收每个位置的key与value并被查询读取。两种结构保留历史的方式不同：前者按位置增长，后者压缩到固定维度，不保证与softmax注意力等价。</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    text { font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; fill: var(--fg, currentColor); }
+    .heading { font-size: 26px; font-weight: 700; }
+    .label { font-size: 23px; font-weight: 600; }
+    .detail { font-size: 21px; }
+    .box { fill: none; stroke: var(--border, currentColor); stroke-width: 2; }
+    .line { fill: none; stroke: var(--accent, currentColor); stroke-width: 2; }
+    .rule { stroke: var(--muted, currentColor); stroke-width: 1; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--accent, currentColor)"/></marker>
+  </defs>
+  <text class="heading" x="32" y="42">保留历史：存每个位置，还是更新状态？</text>
+  <text class="label" x="32" y="89">逐位置 KV 缓存</text>
+  <rect class="box" x="32" y="112" width="140" height="78" rx="10"/>
+  <rect class="box" x="196" y="112" width="140" height="78" rx="10"/>
+  <rect class="box" x="360" y="112" width="140" height="78" rx="10"/>
+  <rect class="box" x="524" y="112" width="164" height="78" rx="10" stroke-dasharray="6 5"/>
+  <text class="label" x="102" y="158" text-anchor="middle">k₁, v₁</text>
+  <text class="label" x="266" y="158" text-anchor="middle">k₂, v₂</text>
+  <text class="label" x="430" y="158" text-anchor="middle">k₃, v₃</text>
+  <text class="label" x="606" y="158" text-anchor="middle">追加 k₄, v₄</text>
+  <path class="line" d="M102 202 V224 H606 V202 M354 224 V245"/>
+  <text class="detail" x="354" y="274" text-anchor="middle">查询可访问不同历史位置</text>
+  <text class="detail" x="32" y="313">一层载荷随 T × KV头数 × 每头维度增长</text>
+  <line class="rule" x1="32" y1="340" x2="688" y2="340"/>
+  <text class="label" x="32" y="382">纯线性attention的因果状态</text>
+  <rect class="box" x="32" y="410" width="190" height="86" rx="10"/>
+  <rect class="box" x="266" y="410" width="190" height="86" rx="10"/>
+  <rect class="box" x="500" y="410" width="188" height="86" rx="10"/>
+  <text class="label" x="127" y="446" text-anchor="middle">Sₜ₋₁</text>
+  <text class="detail" x="127" y="478" text-anchor="middle">固定 dₖ × dᵥ</text>
+  <text class="label" x="361" y="446" text-anchor="middle">写入 kₜvₜᵀ</text>
+  <text class="detail" x="361" y="478" text-anchor="middle">累加到状态</text>
+  <text class="label" x="594" y="446" text-anchor="middle">Sₜ</text>
+  <text class="detail" x="594" y="478" text-anchor="middle">尺寸不变</text>
+  <path class="line" d="M226 453 H258" marker-end="url(#arrow)"/>
+  <path class="line" d="M460 453 H492" marker-end="url(#arrow)"/>
+  <path class="line" d="M594 500 V535" marker-end="url(#arrow)"/>
+  <text class="detail" x="594" y="565" text-anchor="middle">读出 qₜᵀSₜ</text>
+  <text class="detail" x="32" y="610">固定状态压缩历史，不保证无损保留所有位置。</text>
+  <text class="detail" x="32" y="644">两条路径不是同一个 softmax 算子的等价实现。</text>
+</svg>

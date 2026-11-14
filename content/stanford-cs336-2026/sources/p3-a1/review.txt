@@ -1,0 +1,123 @@
+Stanford CS336 Spring 2026 — P3 A1 complete requirements and conceptual guide
+Date: 2026-11-14
+Owner: P3AssignmentOne
+Assigned scope: labs/a1-basics/ and sources/p3-a1/ only
+
+FILES DELIVERED
+1. labs/a1-basics/lab.zh.md (new)
+   Complete Chinese requirements for fixed Spring2026 v26.0.3: all38 scored Problems, all25
+   lettered subquestions, unlettered interfaces/features/deliverables, points, acceptance entrypoints,
+   library/AI/submission rules, source prerequisites and distinct resource routes.
+   Numbered headings01–38 retain original Problem IDs. This is complete requirements coverage,
+   not a full reproduction of every textbook paragraph or third-party example, and not a solution.
+2. labs/a1-basics/guide.zh.md (updated in place)
+   Existing P2 task map expanded into the sole complete conceptual/debugging guide, G0–G9.
+   Explains dependencies, stage gates, symptom-based branches, typical causes and evidence.
+   Detailed task statements refer to lab; derivations refer to existing/new P3 lecture/bridge/topic pages.
+   No second guidance page and no stale P2-waiting-for-P3 progress language remain in this guide.
+3. sources/p3-a1/manifest-fragment.json
+   Seven source records, reusing existing P1 originals, with inherited acquisition timestamps/hashes,
+   actual P3 reading scope, rights, treatment, material files and phase-separated statuses.
+4. sources/p3-a1/task-coverage.json
+   Explicit requirement-to-material mapping for38 Problems,25 lettered questions and unlettered
+   features/contracts. Each item has lab numbered heading and guide G-section mappings;
+   source pages/extracted-line spans recorded. All implementation/experiment/test states unperformed.
+5. sources/p3-a1/review.txt
+   This delivery and verification boundary.
+
+ACTUAL READING IN THIS P3 SLICE
+- NEXT-P3-PROMPT.txt, P2-REVIEW.txt and P1-REVIEW.txt read completely.
+- Existing A1 guide read completely before in-place replacement.
+- sources/p2-a1/task-index.json, review.txt and manifest-fragment.json read completely,
+  including initially collapsed blocks via explicit subsequent range reads.
+- Fixed A1 handout a158843b20107949f1a8d7df1b05cd33b9166712, Spring2026 v26.0.3:
+  all2442 lines of existing pdftotext-layout extraction actually read continuously;
+  all47 printed pages, including examples, formula text, pseudocode, resource boxes and bibliography.
+  Displayed ranges collectively1–423,423–843,843–1263,1263–1673,1673–2083,2083–2442.
+  This is full extracted-text reading, NOT visual per-page/formula/image audit.
+- README50 lines, LICENSE7, pyproject50, CHANGELOG225: all332 lines read fully.
+- Cluster guide displayed lines1–146 of185 actually read (requested1–143 plus tool neighbors):
+  eligibility, sign-in/invitation, security, environment, volumes, concurrency and GPU example start.
+  Remaining147–185 not read; no full-guide translation or inherited MIT claim.
+- Thus one unique handout read, not PDF+extraction counted as two handouts.
+  Main text source reading:2442+332+146=2920 lines, plus P1/P2/P3 handoff documents.
+- Course A1 metadata and existing route usages inspected for navigation. Main reported that
+  public resources live at course root; both new pages now link to #/c/stanford-cs336-2026.
+- No test/adapters implementation body audit, uv.lock read, current leaderboard README protocol audit,
+  repository-tree inventory reread or cited-paper full-text reading claimed by this worker.
+
+CONTENT/TECHNICAL DECISIONS
+- Standard TinyStories327.68M tokens/loss<=1.45 and official CPU/MPS approximately40M/loss<=2.00
+  remain distinct; staff40,960,000-token/M4Max timing/loss results labeled as source-reported,not local.
+- BPE<=30min/30GB and<=12h/100GB are resource envelopes,not universal minimum hardware guarantees.
+- Leaderboard remains standard6point problem;10B200h exploration differs from final singleB200
+  <=45min=0.75B200h. Source deliverable asks wall-clock curve clearly<45min. Only providedOWT data.
+- p44 online limited-GPU exception explicitly scoped:may continue TinyStories and optional submission;
+  not standard OWT completion and not universal permission to omit a scored task.
+- BPE ties use lexicographically greatest pair of original byte strings,not concatenated strings/display
+  remapping. Special tokens excluded from counts,hard boundaries during training,atomic during encoding.
+- RMSNorm cast occurs BEFORE square/normalization and returns original input dtype.
+- True attention mask means allowed;causal diagonal retained;Q/K RoPE only,notV.
+- 2026 AdamW:gradient from current parameters,t starts1,current base alpha decay on old parameter
+  before gradient update;moments maintained;adjusted alpha times m/(sqrt(uncorrected v)+epsilon).
+  Epsilon outside root. Same numeric epsilon is not strictly equivalent to corrected-moment PyTorch
+  expression;guide explicitly refers to ext02 distinction. No optimizer implementation supplied.
+- NoPE removes explicit positions but retains causal mask;it is not a proof of long-context generalization.
+- Four ablations are separate baseline branches. SiLU has4d inner width to approximately match
+  SwiGLU8/3d. Post-norm treatment of block-external final norm should be documented,not silently invented.
+- OWT task preserves architecture/total iterations but allowsLR/batch retuning;token/FLOPs equality
+  cannot be assumed after changing batch. Vocabulary dimensions must match respective tokenizer.
+- Checkpoint minimum:model state+optimizer state+iteration;path/file-like support and returning iteration.
+  Exact stepwise reproducibility is stronger and requires separately specified random/data state.
+- Handout MFU wording is dimensionally clarified without giving accounting answers.
+- Handout approximate17M wording differs between total/non-embedding contexts;pages flag this,
+  direct learner to actual architecture accounting,and do not supply a scored numerical result.
+
+RIGHTS AND AI POLICY
+- Both pages retain full original Copyright2025 Stanford University and complete MIT permission,
+  notice-retention and warranty/liability paragraphs,with distinct editorial modification statements.
+- Third-party stories,illustrations,quoted paper passages and imported GPT2 regex source not reproduced.
+  Exact required regex is navigated to fixed §2.4 p6;this avoids copying external code without a separate
+  rights review. Mathematical/interface contracts restated as assignment requirements,not solutions.
+- No runnable code blocks,AI implementation,adapters,training script,optimizer/tokenizer solution,
+  short-answer counterexamples or scored resource-accounting numerical answers supplied.
+- Formula blocks split with aligned where appropriate;no inline unbroken source SHA256 in public prose.
+- No SVG needed;no screenshots taken;no original source full text republished.
+
+STATUS AT WORKER HANDOFF
+Collected: reused P1 snapshots;zero new downloads.
+Read: actual scope above;handout complete extracted text,repository docs complete,access guide partial.
+Written: complete requirement page+complete conceptual guide+coverage/source records.
+Main review: final integration record pending;Main separately reported lab source spotchecks via message.
+Page acceptance: pending Main;not performed here.
+Course experiments: not executed.
+All historical sources/p2-a1 files unchanged.
+No shared course/catalog/resources/status/manifest/reading-map/production-plan files changed.
+No src,other courses,official assignment code or remote/source originals changed.
+
+MODEL
+Main reported directly checking current model_change,thinking_level_change and first assistant fields:
+openai-codex/gpt-6-astra,xhigh,resolvedModelIsFallback=false.
+Evidence owner Main:sources/p3-model-preflight.json.
+Worker did not inspect runtime events independently and spawned no subagents.
+
+NOT EXECUTED
+No build,lint,formatter,test,smoke run,link/hash checker,browser validation or git command.
+No dependency installation,dataset/model download,checkpoint production,official experiment,
+GPU/cloud launch,paidAPI call,workspace login,Gradescope/leaderboard submission.
+JSON files were created through tool.write with serialized data,not through a verification run.
+
+MAIN VERIFICATION SUGGESTIONS — NOT RUN HERE
+- Parse new manifest/coverage JSON;compare38 uniqueIDs,points and all25 lettered questions against
+  preserved P2 task-index and fixed handout. Unlettered requirements separately mapped per item.
+- Resolve seven reused files/hashes during aggregate source check;count one handout not two.
+- Verify lab route v=zh and guide route v=guide,bidirectional links,and new bridge03/bridge06/ext01–03
+  and lec03 materials links. Public-resource links must use course root,not /resources.
+- Check both full MIT notices and modification statements,policy boundary,no solution code,and no
+  stale P2 waiting-for-P3 statements. Mutable review/page statuses live in fragment,not public headers.
+- Desktop/mobile390px:long ProblemIDs,signature-like inline text,table internal scrolling,aligned
+  optimizer and budget formulas,footer license readability. No diagrams or images in this slice.
+- No executable examples need running. Optional pure arithmetic sanity within Main's batch:
+  32*5000*256=40960000;45/60=0.75;327680000/40960000=8. These are source/budget values,not experiments.
+- Preserve visual-PDF audit and source-code/leaderboard-protocol gaps even after page acceptance.
+- Main alone runs final minimal build/checks and records actual acceptance;this review never claims them.

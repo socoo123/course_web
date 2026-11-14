@@ -1,0 +1,84 @@
+CS336 Spring 2026 P3 — ext02 / ext03
+日期：2026-11-14
+分片所有者：P3OptimizerPosition
+独占范围：lectures/ext02/、lectures/ext03/、sources/p3-extensions/
+
+一、已写交付
+1. lectures/ext02/notes.zh.md
+   优化器独立教学：SGD与momentum状态单位、两种动量约定、记忆的更新步/token尺度；Adam一二阶原始矩与偏差校正的平稳假设；epsilon量纲、缩放及A1/PyTorch约定差别；decoupled decay与L2、旧参数衰减顺序、累计衰减；warmup/调度三时钟；batch/token/计算量/墙钟/调参预算比较；诊断情境与自测。
+   仅一个标准库CPU预算算术块；无优化器、scheduler、训练循环或作业实现。
+2. lectures/ext03/notes.zh.md
+   位置与长度实验方法：训练长度分布/推理可见长度/逻辑坐标/任务距离分开；张量槽位、逻辑位置、缓存槽位；offset、padding、mask、分块一致性；代数/索引/模型/泛化四层检查；外推限制；固定RoFormer中文实验已训练1536的证据边界；独立合成键值任务协议及长度×距离对照；自测。
+   RoPE推导和具体单频反例统一回链lec03 materials；ext03不另建论文正文。仅一个标准库标量相位探针，不实现RoPE/attention/cache。
+3. lectures/ext03/assets/position-index-contract.svg
+   原创5-token坐标契约图；title/desc；无脚本、外部资源、背景或原图复制。只用主题变量/currentColor及light-dark color-scheme，虚线突出旧key，未用hex字面颜色。
+4. sources/p3-extensions/manifest-fragment.json
+   11条逐源记录；每条含id/kind/url/file/sha256/version/retrieved_at/license/read_scope/read_at/chinese_treatment/material_files；9条复用来源+2条新官方API快照。支持文件另记既有L02源码提取、L03文本的哈希。
+5. sources/p3-extensions/review.txt
+   本记录。
+
+仅本地，不应提交原文全文：
+- sources/p3-extensions/raw/pytorch-2.9-sgd.txt
+- sources/p3-extensions/raw/pytorch-2.9-adamw.txt
+没有来源.md文件，没有新论文原件/字幕/媒体，没有其他目录写入。
+
+二、真实阅读，不由采集推断
+先完整读取skill://technical-video-notes、NEXT-P3-PROMPT.txt、P2-REVIEW.txt、P1-REVIEW.txt；读取相关P2 L02、bridge-systems、A1 review与来源细项；完整读取本课程L02 notes/draft、bridge07/08 notes。reading-map的paper01/02完整投影条目、核心/选读与许可边界已读。
+
+原始内容实际阅读的最小明确范围（不额外累计工具邻行）：
+- A1固定Spring2026 v26.0.3提取文本：1135–1215、1510–1545、1612–1660、1708–1740、1826–1840、2127–2142；共230选定行。
+  未读1546–1600的SGD实现块；没有全文A1重读或作业解答声明。
+- L02固定recording内嵌lecture_02.py：613–666，共54行。用P2原有精确提取读取，不声称整个trace或字幕已读。
+- L03固定讲义提取文本：330–420，共91行，只做位置主题锚点；学期后提交，不冒充录像对应内容。
+- Attention 1706.03762v7：258–390，共133行；完整§3.5、§4、§5.1–5.3及邻接内容。§5.3编者核心，§5.1–5.2选读；不称全文精读。
+- RoFormer 2104.09864v5：248–377、507–556、590–609、697–790，共294行；§3.2.2–3.3、§3.4.3、§4.2、§4.5（含限制）及邻接内容。§3.4.3、§4.2、§4.5仍是编者选读，未升级为官方全文必读。
+以上五种原始内容合计802个选定文本行，不含前置review/manifest与已写中文上下文。
+- AI政策21行、A1 LICENSE7行、PyTorch v2.9.0 LICENSE84行均完整实际读；既有论文许可证据文件32行完整读，未宣称新读线上完整法律页。
+- PyTorch2.9 SGD与AdamW官方页面，各实际读在线reader显示1–300行；重点构造、公式、参数、动量差别、显示范围内恢复状态说明。剩余页面未读，所链Adam/AdamW研究论文未读，不增加精读范围。
+  页面源码链接实际为v2.9.1，不当课程依赖；v2.9.0许可证另有明确范围，不推导文档站所有资产已获翻译许可。
+  第一次urllib403，未写文件；改curl+明确Accept/User-Agent成功保存两份原始响应。原始文件获取与已读范围分开，哈希在新获取时计算。复用来源保持P1/P2原获取UTC与SHA256，worker没有重跑哈希检查。
+
+三、重要技术与去重处理
+- A1 v26.0.3在未校正sqrt(v)+epsilon外乘偏差校正步长；PyTorch示意用hat(v)。相同数字epsilon不严格等价，等效epsilon_A/sqrt(1-beta2^t)已在ext02独立说明；Main已读原文确认并传递A1/L03。
+- A1先decay旧参数再作moment-adjusted更新；不把后置衰减整个新参数写成同一算法。
+- v是二阶原始矩，不是方差；bias correction只处理指定平稳矩假设下零初始化偏差，不保证消噪或稳定；epsilon不是finfo.eps。
+- “decoupled”不表示衰减脱离LR/更新次数；batch改变同时改变状态的token记忆范围。
+- 三只时钟是microbatch、成功优化器更新与有效token；不把累积次数当优化器步数；按token进度比较不擅改A1 iteration接口。
+- ext01负责梯度诊断/裁剪，bridge03负责autograd，bridge06负责训练闭环；ext02只讲状态到位移及比较方法。
+- ext03的位移符号统一key减query；局部槽位0不等于逻辑位置0。缓存讨论只服务正确性，不进入后续系统主题。
+- 不把旋转保范数、相对性或长程衰减提升为任意长度保证；不把1536长度预训练后的1024评测说成512零样本外推。
+- Main通读ext02后报告无技术阻碍；通读ext03后要求删除与materials §8.1重复的单频cos反例。已删除具体推导与数列，保留结论+材料回链及“远处压低不等于远处正确读取”。本片仍独立保留实际读过的§4.5长度实验定位。
+- Main指出公共资料路由为课程根，已将两篇页底所有该入口改成#/c/stanford-cs336-2026；没有/resources后缀。
+- 按Main要求页头status只写恒定执行/归属边界，待主审和页面状态放本分片；长display公式已按概念分行，完整SHA256不进正文。
+
+四、许可与出版
+- 两篇是编者自主笔记，不是官方讲次；无独立录像，不制造draft、materials或全片导航。
+- Attention的arXiv分发许可不等于全文翻译；RoFormer为CC BY-NC-ND4.0，不共享翻译改编，不复制原图表。两论文唯一精读home仍为lec03/materials.zh.md。
+- 课程讲义开放全文翻译许可未确认。A1第一方MIT版权/许可/免责声明完整保留于两页底，并明示独立修改及第三方权利排除。
+- 官方AI政策只允许概念/API辅助，不提供任何作业/排行榜实现；两个代码块仅独立整数预算和标量相位算术。
+- 新快照、原件、提取全文只留本地；可发布正文/SVG以及本分片轻量manifest/review。文件路径登记不是GitHub原始档案备份声明。
+
+五、Main统一最小验证建议（worker均未运行）
+1. 执行ext02 §6唯一Python代码块，预期逐行：
+   8 1024 1000 102400
+   32 4096 250 409600
+   解释：每更新token、固定1,024,000-token预算对应步数、100步warmup的token量；纯整数，不需要PyTorch。
+2. 执行ext03 §2.1唯一Python代码块，预期逐行：
+   -0.6 0.825336
+   -0.6 0.825336
+   0.2 0.980067
+   这是phase探针，不是attention输出或长上下文性能证据。
+3. 聚合时解析manifest；核对11条来源及支持文件路径/哈希；路由仅既有或同批必交页，公共资源是课程根。
+4. 页面检查两篇长表、aligned公式、details交互；390px与桌面查看ext03 SVG位置图，深浅主题读得清，无整页横溢。SVG标题/说明、相对图片路径及材料页回链需一起验收。
+5. 不运行官方A1测试、训练或整份课堂脚本；不下载模型、数据、媒体，不安装依赖，不启动付费计算。无需新研究论文审计。
+
+六、状态与未做事项
+- 已采集：11记录涉及的本地来源存在；9复用+2新响应。
+- 已读：仅上述真实范围；论文全文精读新增0、字幕cue新增0、核音/视觉原图审校0。
+- 已写：2 notes、1原创SVG、1manifest、1review；无draft/materials占位。
+- 待主审：Main已口头报告正文技术通读结果并提出修正，完整分片/最终整合结论仍由Main记总验收，不由worker自封通过。
+- 待页面验收：worker未浏览器验收。
+- 未执行课程实验：0官方实现、0训练、0GPU/云调用；两个CPU微例也未由worker执行。
+- 未运行build/lint/tests/formatter/smoke/验证命令/git；未改src、其他课程、course/catalog/resources/status/汇总manifest/reading-map/production-plan。
+- 未创建子agent。
+- 模型：Main通知已实际核实gpt-6-astra/xhigh且无fallback，证据p3-model-preflight.json；worker不宣称自己读取过运行事件。

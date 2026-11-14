@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "slice": "p3-lec03",
+  "read_at": "2026-11-14T15:55:32.701712+00:00",
+  "method": "Actual complete displayed text reading, not download/grep-based full-read inference.",
+  "caption_reading": {
+    "source": "p3-lec03/transcript.en.txt",
+    "one_line_per_cue": true,
+    "total_lines": 2020,
+    "total_cues": 2020,
+    "windows": [
+      {
+        "lines_1_based": [
+          1,
+          340
+        ],
+        "cues_1_based": [
+          1,
+          340
+        ],
+        "start_seconds": 5.6,
+        "end_seconds": 878.44,
+        "actually_read": true
+      },
+      {
+        "lines_1_based": [
+          341,
+          680
+        ],
+        "cues_1_based": [
+          341,
+          680
+        ],
+        "start_seconds": 878.44,
+        "end_seconds": 1803.05,
+        "actually_read": true
+      },
+      {
+        "lines_1_based": [
+          681,
+          1020
+        ],
+        "cues_1_based": [
+          681,
+          1020
+        ],
+        "start_seconds": 1803.05,
+        "end_seconds": 2659.15,
+        "actually_read": true
+      },
+      {
+        "lines_1_based": [
+          1021,
+          1360
+        ],
+        "cues_1_based": [
+          1021,
+          1360
+        ],
+        "start_seconds": 2659.15,
+        "end_seconds": 3579.53,
+        "actually_read": true
+      },
+      {
+        "lines_1_based": [
+          1361,
+          1700
+        ],
+        "cues_1_based": [
+          1361,
+          1700
+        ],
+        "start_seconds": 3579.53,
+        "end_seconds": 4514.01,
+        "actually_read": true
+      },
+      {
+        "lines_1_based": [
+          1701,
+          2020
+        ],
+        "cues_1_based": [
+          1701,
+          2020
+        ],
+        "start_seconds": 4514.01,
+        "end_seconds": 5349.75,
+        "actually_read": true
+      }
+    ],
+    "normalization": "Concatenate original JSON3 segments; preserve nonempty event order, timestamps and all text; only internal linebreaks flattened in TXT. No lexical corrections.",
+    "not_done": [
+      "audio verification",
+      "video playback",
+      "speaker identification from images",
+      "caption gap sound classification"
+    ]
+  },
+  "handout_reading": {
+    "file": "p1-lectures/lecture_03.txt",
+    "complete_text_lines": 801,
+    "windows_1_based": [
+      [
+        1,
+        300
+      ],
+      [
+        301,
+        600
+      ],
+      [
+        601,
+        801
+      ]
+    ],
+    "pdf_file": "p1-lectures/raw/lecture_03.pdf",
+    "pdf_pages": 67,
+    "pdf_original_pages_visually_read": [
+      14,
+      43,
+      54,
+      58,
+      60
+    ],
+    "visual_method": "pdftoppm rendered only these original PDF pages to memory for inline image reading; no screenshots created or copied into publication.",
+    "not_claimed": "Not all PDF figures or linked technical reports were visually/read in full; no slide-to-recording visual match."
+  },
+  "prerequisites_read": [
+    "skill://technical-video-notes",
+    "sources/NEXT-P3-PROMPT.txt complete",
+    "sources/P2-REVIEW.txt complete",
+    "sources/P1-REVIEW.txt complete",
+    "lectures/lec01/notes.zh.md complete",
+    "lectures/lec01/draft.zh.md complete",
+    "lectures/lec02/notes.zh.md complete",
+    "lectures/lec02/draft.zh.md complete",
+    "sources/p2-lec01/review.txt complete",
+    "sources/p2-lec01/manifest-fragment.json complete including initially omitted records",
+    "sources/p2-lec02/review.txt complete",
+    "sources/p2-lec02/manifest-fragment.json complete including initially omitted records"
+  ],
+  "provenance_read": [
+    "p1-videos/video-map.json lec03 record",
+    "p1-videos/metadata/lec03-lVynu4bo1rY.json identity/description/selected-caption timing/license fields, not entire automatic language inventory",
+    "p1-lectures/manifest-fragment.json lec03 record",
+    "normalization skill script; equivalent one-cue-per-line view authored without changing original"
+  ],
+  "paper_reading": "No paper-body reading counted in this slice. Attention/RoFormer close reading belongs exclusively to lec03/materials.zh.md managed by Main.",
+  "model_evidence": {
+    "file": "p3-model-preflight.json",
+    "owner": "Main",
+    "scope": "Main reported live model/thinking/assistant-field verification: openai-codex/gpt-6-astra xhigh, no fallback. This worker did not read runtime events."
+  },
+  "status": {
+    "acquired": "P1 snapshots reused; no redownload",
+    "read": "complete captions and extracted handout; five PDF pages visually read",
+    "written": [
+      "lectures/lec03/notes.zh.md",
+      "lectures/lec03/draft.zh.md"
+    ],
+    "independent_review": "pending Main",
+    "page_acceptance": "pending Main",
+    "course_experiments_executed": false,
+    "cpu_budget_example_executed": false,
+    "build_tests_lint_formatters_run": false
+  }
+}

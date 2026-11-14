@@ -1,0 +1,479 @@
+{
+  "schema_version": 1,
+  "course_id": "stanford-cs336-2026",
+  "phase": "P3",
+  "slice": "papers",
+  "updated_at": "2026-11-14T15:52:33Z",
+  "path_convention": "file relative to sources/; material_files relative to course root",
+  "reuse_policy": "11 existing P1 files reused without redownload, editing, or rehash verification; original retrieval timestamps and SHA256 copied from P1/P2 records. 11 newly rendered evidence images have creation-time SHA256 recorded; these are local reading artifacts, not published raw-source copies.",
+  "model_evidence": {
+    "requested": "openai-codex/gpt-6-astra:xhigh",
+    "main_verified": "Main reported reading model_change/thinking_level_change and first assistant model fields; resolvedModelIsFallback=false",
+    "file": "p3-model-preflight.json",
+    "worker_independently_read_runtime_events": false
+  },
+  "sources": [
+    {
+      "id": "p3-paper01-pdf",
+      "kind": "paper_pdf",
+      "url": "https://arxiv.org/pdf/1706.03762v7",
+      "file": "p1-papers-01-08/paper01-1706.03762v7.pdf",
+      "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+      "version": "arXiv:1706.03762v7",
+      "retrieved_at": "2026-11-14T13:39:28.160324Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "P3实际连续阅读既有提取文本1–433行：题名/作者/摘要/§1–2；核心§3.1–3.5（含§3.2.1–3.2.3）、§4、§5.3全部；选读§5.1–5.2、§5.4全部提取文本；§6.1仅开头至433行，Table 2仅所显示提取文字，不作实验精读。实际打开固定PDF物理页3–7的渲染图核对指定结构、公式与表头。非15页全文精读。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "independent_close_reading; 自主问题组织、推导、评论与导航，不逐段改写或发布论文译文",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper01-fulltext",
+      "publication_status": "local_only_do_not_publish_raw_fulltext",
+      "complete_paper_close_read": false
+    },
+    {
+      "id": "p3-paper01-txt",
+      "kind": "paper_text_extraction",
+      "url": "https://arxiv.org/pdf/1706.03762v7",
+      "file": "p1-papers-01-08/paper01-1706.03762v7.txt",
+      "sha256": "b217207e00a758cbb7f5d0cc18ad8ae4a7c52d74ca03d9273a143cdbfc9d4858",
+      "version": "arXiv:1706.03762v7",
+      "retrieved_at": "2026-11-14T13:39:28.160324Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "P3实际连续阅读既有提取文本1–433行：题名/作者/摘要/§1–2；核心§3.1–3.5（含§3.2.1–3.2.3）、§4、§5.3全部；选读§5.1–5.2、§5.4全部提取文本；§6.1仅开头至433行，Table 2仅所显示提取文字，不作实验精读。实际打开固定PDF物理页3–7的渲染图核对指定结构、公式与表头。非15页全文精读。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "independent_close_reading; 自主问题组织、推导、评论与导航，不逐段改写或发布论文译文",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper01-extracted-text",
+      "publication_status": "local_only_do_not_publish_raw_fulltext",
+      "complete_paper_close_read": false
+    },
+    {
+      "id": "p3-paper01-metadata",
+      "kind": "arxiv_version_metadata",
+      "url": "https://arxiv.org/abs/1706.03762v7",
+      "file": "p1-papers-01-08/paper01-1706.03762v7-abs.html",
+      "sha256": "5d8311b2ad2f9d4845f8291c68329c7dcf0853f1167fa517ad87b5adb3e18f15",
+      "version": "arXiv:1706.03762v7",
+      "retrieved_at": "2026-11-14T13:38:47.987774Z",
+      "license": "Metadata HTML copyright not independently granted; article license is LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "实际查看固定版本HTML中的题名、版本/日期、作者和许可链接（106–186附近）；作者与版本另由PDF题头提取文本交叉。未把网页摘要当正文，不声称全HTML阅读。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "independent_close_reading; 自主问题组织、推导、评论与导航，不逐段改写或发布论文译文",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "publication_status": "local_only"
+    },
+    {
+      "id": "p3-paper02-pdf",
+      "kind": "paper_pdf",
+      "url": "https://arxiv.org/pdf/2104.09864v5",
+      "file": "p1-papers-01-08/paper02-2104.09864v5.pdf",
+      "sha256": "e9a481fbe1c8a20b7b1fa566b13102a1896c7829fa9a8b4c80528452a5ddaf79",
+      "version": "arXiv:2104.09864v5",
+      "retrieved_at": "2026-11-14T13:39:48.186086Z",
+      "license": "CC-BY-NC-ND-4.0",
+      "read_scope": "P3实际连续阅读既有提取文本1–544行：题名/作者/摘要/§1；核心§2.1–2.3、§3.1–3.3、§3.4.2全部；选读§3.4.1与§3.4.3全部，另实际查看固定PDF物理页3–8的渲染图核对式(2)–(19)、(20)–(37)相关符号/条件以及Figure 2趋势，不是逐数据点分析。§4实验及其后未在P3重新精读。非14页全文精读。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "independent_close_reading; 自主问题组织、推导、评论与导航，不逐段改写或发布论文译文",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper02-fulltext",
+      "publication_status": "local_only_do_not_publish_raw_fulltext",
+      "complete_paper_close_read": false
+    },
+    {
+      "id": "p3-paper02-txt",
+      "kind": "paper_text_extraction",
+      "url": "https://arxiv.org/pdf/2104.09864v5",
+      "file": "p1-papers-01-08/paper02-2104.09864v5.txt",
+      "sha256": "9e4f47d80904fb2f43459430a55eec1c5a675e7ab66d143e4e37f22c3e3e1d64",
+      "version": "arXiv:2104.09864v5",
+      "retrieved_at": "2026-11-14T13:39:48.186086Z",
+      "license": "CC-BY-NC-ND-4.0",
+      "read_scope": "P3实际连续阅读既有提取文本1–544行：题名/作者/摘要/§1；核心§2.1–2.3、§3.1–3.3、§3.4.2全部；选读§3.4.1与§3.4.3全部，另实际查看固定PDF物理页3–8的渲染图核对式(2)–(19)、(20)–(37)相关符号/条件以及Figure 2趋势，不是逐数据点分析。§4实验及其后未在P3重新精读。非14页全文精读。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "independent_close_reading; 自主问题组织、推导、评论与导航，不逐段改写或发布论文译文",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper02-extracted-text",
+      "publication_status": "local_only_do_not_publish_raw_fulltext",
+      "complete_paper_close_read": false
+    },
+    {
+      "id": "p3-paper02-metadata",
+      "kind": "arxiv_version_metadata",
+      "url": "https://arxiv.org/abs/2104.09864v5",
+      "file": "p1-papers-01-08/paper02-2104.09864v5-abs.html",
+      "sha256": "4fb05bf5ecf0937105dda84f4ff5d402d11e36bed1cf2155a6353a503e388984",
+      "version": "arXiv:2104.09864v5",
+      "retrieved_at": "2026-11-14T13:39:32.363072Z",
+      "license": "Metadata HTML copyright not independently granted; article license is CC-BY-NC-ND-4.0",
+      "read_scope": "实际查看固定版本HTML中的题名、版本/日期、作者和许可链接（106–186附近）；作者与版本另由PDF题头提取文本交叉。未把网页摘要当正文，不声称全HTML阅读。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "independent_close_reading; 自主问题组织、推导、评论与导航，不逐段改写或发布论文译文",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "publication_status": "local_only"
+    },
+    {
+      "id": "p3-papers-arxiv-license",
+      "kind": "official_license_terms",
+      "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "file": "p1-papers-01-08/license-arxiv-nonexclusive-1.0.html",
+      "sha256": "1991765e2079370736d4dedf217375799ad19aab6700ebdf42ae3dd84690067a",
+      "version": "arXiv non-exclusive distribution license 1.0",
+      "retrieved_at": "2026-11-14T13:43:49.456532Z",
+      "license": "unverified_page_copyright; evidence of license only",
+      "read_scope": "完整33行HTML；grant对象是arXiv，不是公众全文翻译授权。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "independent_close_reading; 自主问题组织、推导、评论与导航，不逐段改写或发布论文译文",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "publication_status": "local_only"
+    },
+    {
+      "id": "p3-papers-nd-license",
+      "kind": "official_license_terms",
+      "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "file": "p1-papers-01-08/license-cc-by-nc-nd-4.0.html",
+      "sha256": "0389dccad7bdfebd9b7294ccd1582d8197b450295ff5263bafa41763e5f40b27",
+      "version": "CC BY-NC-ND 4.0 deed",
+      "retrieved_at": "2026-11-14T13:43:52.993258Z",
+      "license": "unverified_page_copyright; evidence of named license only",
+      "read_scope": "实际读HTML680–770行的Share、Attribution、NonCommercial、NoDerivatives、其他限制与deed非法律文本提示；页面其他部分未全读。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "independent_close_reading; 自主问题组织、推导、评论与导航，不逐段改写或发布论文译文",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "publication_status": "local_only"
+    },
+    {
+      "id": "p3-papers-license-excerpts",
+      "kind": "official_license_excerpt_with_editorial_notes",
+      "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.en",
+      "file": "p1-papers-01-08/license-reading-evidence.txt",
+      "sha256": "cee4b060b2942491c84e7b2231d94bcf44148843d1ba4e5a7d2db59acabdc052",
+      "version": "P1 labelled composite license excerpts; CC BY-NC-ND 4.0 §§1–3",
+      "retrieved_at": "2026-11-14",
+      "license": "normative license excerpts and editorial evidence; not a complete legalcode capture",
+      "read_scope": "完整32行复合摘录实际读；本页使用arXiv与ND条款部分。ND §2(a)(1)(B)和§3(a)(1)禁止共享翻译改编。P3没有重新获取legalcode全文，不把P1摘录冒称P3完整法律页阅读。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "independent_close_reading; 自主问题组织、推导、评论与导航，不逐段改写或发布论文译文",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "publication_status": "existing_short_evidence_only"
+    },
+    {
+      "id": "p3-papers-a1-crosscheck",
+      "kind": "assignment_handout_text",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment1-basics/a158843b20107949f1a8d7df1b05cd33b9166712/cs336_assignment1_basics.pdf",
+      "file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "sha256": "a84a70aba7a1aa28e6c9dca04b0dfe79896fb74a979e382c5d61f8db77dd2cec",
+      "version": "a158843b20107949f1a8d7df1b05cd33b9166712; Spring2026 v26.0.3",
+      "retrieved_at": "2026-11-14T13:39:13Z",
+      "license": "MIT for first-party associated documentation only; third-party papers excluded",
+      "read_scope": "P3实际读657–724、991–1012、1073–1173、1199–1310行：decoder-only/logits/final norm、pre-norm/RMSNorm、SwiGLU、RoPE、softmax/mask、causal multihead和Q/K不V。未完整重读47页；未做A1逐页视觉审校。P2完整阅读作为既有历史事实单独保留，不算本分片阅读。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "Independent comparison and source navigation, not a handout translation or assignment implementation",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "publication_status": "local_only"
+    },
+    {
+      "id": "p3-papers-l03-crosscheck",
+      "kind": "classroom_handout_text",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_03.pdf",
+      "file": "p1-lectures/lecture_03.txt",
+      "sha256": "66daf54ffed30dda2b78725553cbf28d8dff1886c5b5e17ffd89915e5b722b2a",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; post-term revision 2026-09-12, not recording identity",
+      "retrieved_at": "2026-11-14T13:44:05.993093+00:00",
+      "license": "unverified; no full translation license established",
+      "read_scope": "P3实际读提取文本1–180、300–420行，核对original vs modern、pre/post norm、RMSNorm和位置/RoPE相关论述。未读L03全讲或字幕，未据提取缺失的图片/公式猜原画面。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "Independent architecture comparison, no full lecture translation",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "publication_status": "local_only"
+    },
+    {
+      "id": "p3-paper01-visual-p03",
+      "kind": "local_pdf_page_render",
+      "url": "https://arxiv.org/pdf/1706.03762v7",
+      "file": "p3-papers/visual/paper01-03.png",
+      "sha256": "e1a380ba901b7251e7e4acf5447a4db15cd248656a414671a254731434f73e85",
+      "version": "arXiv:1706.03762v7; physical PDF page 3",
+      "retrieved_at": "2026-11-14T13:39:28.160324Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Figure 1与§3.1：encoder/decoder、cross-attention、shifted outputs、post-LN。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "Formula-reading evidence only; not classroom screenshot, not public figure",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "derived_from": "p3-paper01-pdf",
+      "created_at": "2026-11-14",
+      "creation_method": "pdftoppm -r 105 -png; paper01 pages3–7, paper02 pages3–8",
+      "retrieved_at_semantics": "Inherited upstream PDF acquisition time; render created locally in P3, not a new remote download",
+      "publication_status": "local_visual_evidence_only; do_not_publish_or_embed"
+    },
+    {
+      "id": "p3-paper01-visual-p04",
+      "kind": "local_pdf_page_render",
+      "url": "https://arxiv.org/pdf/1706.03762v7",
+      "file": "p3-papers/visual/paper01-04.png",
+      "sha256": "33eca86da8124bd554c319a236f1d84ce6e3d2711eb42531df3c4935187cdcfc",
+      "version": "arXiv:1706.03762v7; physical PDF page 4",
+      "retrieved_at": "2026-11-14T13:39:28.160324Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Figure 2：scale→mask→softmax；§3.2.1式(1)的sqrt(d_k)、脚注4独立单位方差假设。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "Formula-reading evidence only; not classroom screenshot, not public figure",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "derived_from": "p3-paper01-pdf",
+      "created_at": "2026-11-14",
+      "creation_method": "pdftoppm -r 105 -png; paper01 pages3–7, paper02 pages3–8",
+      "retrieved_at_semantics": "Inherited upstream PDF acquisition time; render created locally in P3, not a new remote download",
+      "publication_status": "local_visual_evidence_only; do_not_publish_or_embed"
+    },
+    {
+      "id": "p3-paper01-visual-p05",
+      "kind": "local_pdf_page_render",
+      "url": "https://arxiv.org/pdf/1706.03762v7",
+      "file": "p3-papers/visual/paper01-05.png",
+      "sha256": "afc948a0f8be7ff4d953bd3a08b53e2a7842094c31e062c3f8296253db4cd801",
+      "version": "arXiv:1706.03762v7; physical PDF page 5",
+      "retrieved_at": "2026-11-14T13:39:28.160324Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "multihead投影形状与h=8/dk=dv=64；§3.2.3三种来源及负无穷mask；§3.3式(2)与§3.4共享/embedding缩放。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "Formula-reading evidence only; not classroom screenshot, not public figure",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "derived_from": "p3-paper01-pdf",
+      "created_at": "2026-11-14",
+      "creation_method": "pdftoppm -r 105 -png; paper01 pages3–7, paper02 pages3–8",
+      "retrieved_at_semantics": "Inherited upstream PDF acquisition time; render created locally in P3, not a new remote download",
+      "publication_status": "local_visual_evidence_only; do_not_publish_or_embed"
+    },
+    {
+      "id": "p3-paper01-visual-p06",
+      "kind": "local_pdf_page_render",
+      "url": "https://arxiv.org/pdf/1706.03762v7",
+      "file": "p3-papers/visual/paper01-06.png",
+      "sha256": "4572ea51c47642c536f83c29b23f26ab9b97d8b90bf5c3f86db574e8b730edc0",
+      "version": "arXiv:1706.03762v7; physical PDF page 6",
+      "retrieved_at": "2026-11-14T13:39:28.160324Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Table 1三列与§3.5未编号sin/cos式：偶坐标sin、奇坐标cos、指数2i/d_model；§4开头。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "Formula-reading evidence only; not classroom screenshot, not public figure",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "derived_from": "p3-paper01-pdf",
+      "created_at": "2026-11-14",
+      "creation_method": "pdftoppm -r 105 -png; paper01 pages3–7, paper02 pages3–8",
+      "retrieved_at_semantics": "Inherited upstream PDF acquisition time; render created locally in P3, not a new remote download",
+      "publication_status": "local_visual_evidence_only; do_not_publish_or_embed"
+    },
+    {
+      "id": "p3-paper01-visual-p07",
+      "kind": "local_pdf_page_render",
+      "url": "https://arxiv.org/pdf/1706.03762v7",
+      "file": "p3-papers/visual/paper01-07.png",
+      "sha256": "b9a1e68cc924f898a2d61fb5e7e49a581241718947964cceaaa125bd508cd705",
+      "version": "arXiv:1706.03762v7; physical PDF page 7",
+      "retrieved_at": "2026-11-14T13:39:28.160324Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "§4续文区分普通/扩张卷积路径；§5.3式(3)的-0.5/-1.5指数、warmup4000、Adam系数；选读§5.1–5.2设定。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "Formula-reading evidence only; not classroom screenshot, not public figure",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "derived_from": "p3-paper01-pdf",
+      "created_at": "2026-11-14",
+      "creation_method": "pdftoppm -r 105 -png; paper01 pages3–7, paper02 pages3–8",
+      "retrieved_at_semantics": "Inherited upstream PDF acquisition time; render created locally in P3, not a new remote download",
+      "publication_status": "local_visual_evidence_only; do_not_publish_or_embed"
+    },
+    {
+      "id": "p3-paper02-visual-p03",
+      "kind": "local_pdf_page_render",
+      "url": "https://arxiv.org/pdf/2104.09864v5",
+      "file": "p3-papers/visual/paper02-03.png",
+      "sha256": "83aa387dc6496379d2fe07aea0b111c2b7c64f1d40ccd5b841ebdb21b28da068",
+      "version": "arXiv:2104.09864v5; physical PDF page 3",
+      "retrieved_at": "2026-11-14T13:39:48.186086Z",
+      "license": "CC-BY-NC-ND-4.0",
+      "read_scope": "式(2)分母键索引；式(3)–(9)位置分解；式(4)PDF原文也用未解释的位置k。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "Formula-reading evidence only; not classroom screenshot, not public figure",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "derived_from": "p3-paper02-pdf",
+      "created_at": "2026-11-14",
+      "creation_method": "pdftoppm -r 105 -png; paper01 pages3–7, paper02 pages3–8",
+      "retrieved_at_semantics": "Inherited upstream PDF acquisition time; render created locally in P3, not a new remote download",
+      "publication_status": "local_visual_evidence_only; do_not_publish_or_embed"
+    },
+    {
+      "id": "p3-paper02-visual-p04",
+      "kind": "local_pdf_page_render",
+      "url": "https://arxiv.org/pdf/2104.09864v5",
+      "file": "p3-papers/visual/paper02-04.png",
+      "sha256": "241b10b3c6488c997f5504a900b12a1acf6f3c3874135f43bd803d4ccee76f85",
+      "version": "arXiv:2104.09864v5; physical PDF page 4",
+      "retrieved_at": "2026-11-14T13:39:48.186086Z",
+      "license": "CC-BY-NC-ND-4.0",
+      "read_scope": "式(10)–(13)：目标相对位移m-n、复数共轭、二维旋转上右负/下左正。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "Formula-reading evidence only; not classroom screenshot, not public figure",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "derived_from": "p3-paper02-pdf",
+      "created_at": "2026-11-14",
+      "creation_method": "pdftoppm -r 105 -png; paper01 pages3–7, paper02 pages3–8",
+      "retrieved_at_semantics": "Inherited upstream PDF acquisition time; render created locally in P3, not a new remote download",
+      "publication_status": "local_visual_evidence_only; do_not_publish_or_embed"
+    },
+    {
+      "id": "p3-paper02-visual-p05",
+      "kind": "local_pdf_page_render",
+      "url": "https://arxiv.org/pdf/2104.09864v5",
+      "file": "p3-papers/visual/paper02-05.png",
+      "sha256": "c39fc938f92192bc3b9565f534f8f66a1e54b0a611500e1a96a9c3261dc617d3",
+      "version": "arXiv:2104.09864v5; physical PDF page 5",
+      "retrieved_at": "2026-11-14T13:39:48.186086Z",
+      "license": "CC-BY-NC-ND-4.0",
+      "read_scope": "式(14)–(16)：1起始频率与R_m^T R_n=R_(n-m)。式(16)末项原PDF确为x^T W_q R_(n-m) W_k x_n，缺x_m下标与W_q转置，不是提取遗漏。§3.3切到-2i/d的编号约定。Figure1只为位置对照，未复用。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "Formula-reading evidence only; not classroom screenshot, not public figure",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "derived_from": "p3-paper02-pdf",
+      "created_at": "2026-11-14",
+      "creation_method": "pdftoppm -r 105 -png; paper01 pages3–7, paper02 pages3–8",
+      "retrieved_at_semantics": "Inherited upstream PDF acquisition time; render created locally in P3, not a new remote download",
+      "publication_status": "local_visual_evidence_only; do_not_publish_or_embed"
+    },
+    {
+      "id": "p3-paper02-visual-p06",
+      "kind": "local_pdf_page_render",
+      "url": "https://arxiv.org/pdf/2104.09864v5",
+      "file": "p3-papers/visual/paper02-06.png",
+      "sha256": "c3621f06bba9232064d6cb4e5b803e8e9a2945dc9509d58ba470d16954eaf1ef",
+      "version": "arXiv:2104.09864v5; physical PDF page 6",
+      "retrieved_at": "2026-11-14T13:39:48.186086Z",
+      "license": "CC-BY-NC-ND-4.0",
+      "read_scope": "式(17)–(19)：旋转置于特征映射之后、分母不旋转、分子可负/非概率归一化。选读式(20)–(24)极坐标与位移方向。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "Formula-reading evidence only; not classroom screenshot, not public figure",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "derived_from": "p3-paper02-pdf",
+      "created_at": "2026-11-14",
+      "creation_method": "pdftoppm -r 105 -png; paper01 pages3–7, paper02 pages3–8",
+      "retrieved_at_semantics": "Inherited upstream PDF acquisition time; render created locally in P3, not a new remote download",
+      "publication_status": "local_visual_evidence_only; do_not_publish_or_embed"
+    },
+    {
+      "id": "p3-paper02-visual-p07",
+      "kind": "local_pdf_page_render",
+      "url": "https://arxiv.org/pdf/2104.09864v5",
+      "file": "p3-papers/visual/paper02-07.png",
+      "sha256": "864da47b4b20ee834c53e81107ba3a169e3250444b070bb4b21ebe655c7205be",
+      "version": "arXiv:2104.09864v5; physical PDF page 7",
+      "retrieved_at": "2026-11-14T13:39:48.186086Z",
+      "license": "CC-BY-NC-ND-4.0",
+      "read_scope": "选读式(25)–(33)半径固定/相位等差构造；式(32)query端原PDF写x_n，正文采用独立正确定义W_q x_m。核心式(34)逐对(-x2,x1)符号与重复cos/sin，避免把otimes当Kronecker积。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "Formula-reading evidence only; not classroom screenshot, not public figure",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "derived_from": "p3-paper02-pdf",
+      "created_at": "2026-11-14",
+      "creation_method": "pdftoppm -r 105 -png; paper01 pages3–7, paper02 pages3–8",
+      "retrieved_at_semantics": "Inherited upstream PDF acquisition time; render created locally in P3, not a new remote download",
+      "publication_status": "local_visual_evidence_only; do_not_publish_or_embed"
+    },
+    {
+      "id": "p3-paper02-visual-p08",
+      "kind": "local_pdf_page_render",
+      "url": "https://arxiv.org/pdf/2104.09864v5",
+      "file": "p3-papers/visual/paper02-08.png",
+      "sha256": "c031d24881b0740c1a8e1b00c43592a7faf266f694d0478ff279e3e2be49ba37",
+      "version": "arXiv:2104.09864v5; physical PDF page 8",
+      "retrieved_at": "2026-11-14T13:39:48.186086Z",
+      "license": "CC-BY-NC-ND-4.0",
+      "read_scope": "选读式(35)–(37)复数和/Abel变换、h_(d/2)=0、系数差与相位部分上界；Figure2有振荡，不是逐分数单调衰减保证。图只看坐标和趋势，未逐数据点复算。",
+      "read_at": "2026-11-14T15:52:33Z",
+      "chinese_treatment": "Formula-reading evidence only; not classroom screenshot, not public figure",
+      "material_files": [
+        "lectures/lec03/materials.zh.md"
+      ],
+      "derived_from": "p3-paper02-pdf",
+      "created_at": "2026-11-14",
+      "creation_method": "pdftoppm -r 105 -png; paper01 pages3–7, paper02 pages3–8",
+      "retrieved_at_semantics": "Inherited upstream PDF acquisition time; render created locally in P3, not a new remote download",
+      "publication_status": "local_visual_evidence_only; do_not_publish_or_embed"
+    }
+  ],
+  "delivery": {
+    "written_materials": [
+      "lectures/lec03/materials.zh.md"
+    ],
+    "original_assets": [
+      "lectures/lec03/assets/papers-rope-shift.svg"
+    ],
+    "source_records": 22,
+    "reused_files": 11,
+    "local_rendered_pages": 11,
+    "specified_paper_core_scopes_close_read": 2,
+    "complete_papers_close_read": 0,
+    "independent_review_completed": false,
+    "page_acceptance_completed": false,
+    "course_experiments_completed": false,
+    "worker_checks_run": [],
+    "source_acquisition_operations": [
+      "Local pdftoppm formula evidence rendering",
+      "SHA256 creation-time inventory for 11 new page images only"
+    ],
+    "status": "acquired_reused; specified_core_read; written; pending_main_review; pending_page_acceptance; course_experiments_not_run"
+  },
+  "publication_policy": {
+    "publish": [
+      "lectures/lec03/materials.zh.md",
+      "lectures/lec03/assets/papers-rope-shift.svg",
+      "sources/p3-papers/manifest-fragment.json",
+      "sources/p3-papers/reading-updates.json",
+      "sources/p3-papers/review.txt"
+    ],
+    "do_not_publish": [
+      "sources/p3-papers/visual/",
+      "P1 PDFs, complete extracted texts, metadata HTML, raw license pages"
+    ],
+    "copyright_boundary": "No paper translation, paragraph-by-paragraph paraphrase, reproduced paper table, or third-party figure. RoFormer ND restriction retained; arXiv distribution is not public translation authorization."
+  }
+}

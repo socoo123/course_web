@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "course_id": "stanford-cs336-2026",
+  "phase": "P3",
+  "slice": "p3-extensions",
+  "created_at": "2026-11-14T15:55:38.863959+00:00",
+  "scope": [
+    "lectures/ext02/",
+    "lectures/ext03/",
+    "sources/p3-extensions/"
+  ],
+  "skill": "skill://technical-video-notes",
+  "model_evidence": {
+    "file": "p3-model-preflight.json",
+    "verified_by": "Main",
+    "note": "Main reported actual model_change/thinking_level_change/first-assistant verification: gpt-6-astra, xhigh, resolvedModelIsFallback=false; worker did not inspect runtime logs."
+  },
+  "path_convention": "Source file paths relative to sources/; material_files relative to course root.",
+  "reuse_policy": "Reuse P1/P2 originals, hashes and original retrieval times. Only two missing official API snapshots newly acquired. Existing-file hashes were not rechecked by worker; Main owns aggregate verification.",
+  "sources": [
+    {
+      "id": "p3-extensions-a1-handout-text",
+      "kind": "assignment_handout_text",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment1-basics/a158843b20107949f1a8d7df1b05cd33b9166712/cs336_assignment1_basics.pdf",
+      "file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "sha256": "a84a70aba7a1aa28e6c9dca04b0dfe79896fb74a979e382c5d61f8db77dd2cec",
+      "version": "Spring 2026 v26.0.3; repository a158843b20107949f1a8d7df1b05cd33b9166712; existing pdftotext -layout extraction",
+      "retrieved_at": "2026-11-14T13:39:13Z",
+      "license": "MIT for first-party software and associated documentation only; third-party papers/data/media excluded",
+      "read_scope": "Actually read extracted text lines 1135-1215, 1510-1545, 1612-1660, 1708-1740, 1826-1840, 2127-2142 (230 selected lines). RoPE position contract; SGD introduction/API notes; AdamW moments, update order and epsilon convention; schedule; resume state; batch experiments. No full-handout claim; not a visual PDF audit. Did not read or publish the SGD implementation block 1546-1600.",
+      "chinese_treatment": "Autonomous conceptual comparison, explicit A1/PyTorch epsilon distinction and task boundary; no optimizer/scheduler/RoPE implementation or assignment solutions. Full MIT notice retained in both notes.",
+      "material_files": [
+        "lectures/ext02/notes.zh.md",
+        "lectures/ext03/notes.zh.md"
+      ],
+      "reused_from": "p2-a1/manifest-fragment.json:p2-a1-handout-text",
+      "read_at": "2026-11-14T15:55:38.863959+00:00",
+      "raw_publication": "local_only_except_license_notice_in_authored_notes",
+      "status": "acquired_selected_or_full_scope_actually_read_used_in_authored_notes_pending_main_review"
+    },
+    {
+      "id": "p3-extensions-a1-license",
+      "kind": "license",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment1-basics/a158843b20107949f1a8d7df1b05cd33b9166712/LICENSE",
+      "file": "p1-assignments-a1-a4/a1/LICENSE",
+      "sha256": "b3ccacaf9286910f22ba98681601f426288297f17004699f99d9fdd5f7432751",
+      "version": "a158843b20107949f1a8d7df1b05cd33b9166712; Copyright 2025 Stanford University",
+      "retrieved_at": "2026-11-14T13:37:57Z",
+      "license": "MIT",
+      "read_scope": "All 7 lines, copyright, grant, notice condition and complete warranty/liability disclaimer.",
+      "chinese_treatment": "Original notice reproduced in full with editorial scope/modification statement; no inheritance by third-party material.",
+      "material_files": [
+        "lectures/ext02/notes.zh.md",
+        "lectures/ext03/notes.zh.md"
+      ],
+      "reused_from": "p2-a1/manifest-fragment.json:p2-a1-license",
+      "read_at": "2026-11-14T15:55:38.863959+00:00",
+      "raw_publication": "local_only_except_license_notice_in_authored_notes",
+      "status": "acquired_selected_or_full_scope_actually_read_used_in_authored_notes_pending_main_review"
+    },
+    {
+      "id": "p3-extensions-ai-policy",
+      "kind": "course_policy",
+      "url": "https://docs.google.com/document/d/1SZAlExB1qAc9izHt54gwunNpjKE6wXb8Y7yA_e-baK8/export?format=txt",
+      "file": "p1-shared/ai-policy.txt",
+      "sha256": "127b697e3a67d9a3d86e0aa6cfdd6bb2ddc74a28c5786198b8d24008b9d6ef01",
+      "version": "CS336 AI Policy Spring 2025-2026, fixed P1 snapshot",
+      "retrieved_at": "2026-11-14T13:42:10Z",
+      "license": "No explicit reuse license; independent summary only",
+      "read_scope": "Entire 21-line policy read; conceptual/API assistance allowed, AI assignment and leaderboard implementations/autocomplete prohibited.",
+      "chinese_treatment": "Brief policy boundary and link to shared course resources; examples are isolated budget/phase arithmetic, not assignment implementations.",
+      "material_files": [
+        "lectures/ext02/notes.zh.md",
+        "lectures/ext03/notes.zh.md"
+      ],
+      "reused_from": "p1-shared/manifest-fragment.json:ai-policy-2026",
+      "read_at": "2026-11-14T15:55:38.863959+00:00",
+      "raw_publication": "local_only_except_license_notice_in_authored_notes",
+      "status": "acquired_selected_or_full_scope_actually_read_used_in_authored_notes_pending_main_review"
+    },
+    {
+      "id": "p3-extensions-lec02-recording-optimizer",
+      "kind": "classroom_recording_handout",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/var/traces/lecture_02_recording.json",
+      "file": "p1-lectures/raw/var/traces/lecture_02_recording.json",
+      "sha256": "90a7c53791b2317d945a4126520f518131131ae11e2f9019c863f5ec9d26504e",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; recording variant, post-term repository pin",
+      "retrieved_at": "2026-11-14T13:41:18.131526+00:00",
+      "license": "Unverified; P1 found no repository-wide license; no full translation permission",
+      "read_scope": "Actually read embedded lecture_02.py lines 613-666 (54 selected lines) using existing exact extraction p2-lec02/lecture_02_recording.source.txt. No full trace/event/source/caption reading claim. P2 notes/draft and reviews read separately, preserving instructor memory-accounting correction. No audio/video verification.",
+      "chinese_treatment": "Course anchor for stateful optimizers; autonomous treatment, not lecture translation or memory-accounting task solution.",
+      "material_files": [
+        "lectures/ext02/notes.zh.md"
+      ],
+      "supporting_files": [
+        {
+          "file": "p2-lec02/lecture_02_recording.source.txt",
+          "sha256": "5dba6d71d60659b35ad53e0d0554091c3ba7464190b8d58c05a102aa38832ae6"
+        }
+      ],
+      "reused_from": "p2-lec02/manifest-fragment.json:p2-lec02-recording-code-full-read",
+      "read_at": "2026-11-14T15:55:38.863959+00:00",
+      "raw_publication": "local_only_except_license_notice_in_authored_notes",
+      "status": "acquired_selected_or_full_scope_actually_read_used_in_authored_notes_pending_main_review"
+    },
+    {
+      "id": "p3-extensions-lec03-position-handout",
+      "kind": "classroom_handout",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_03.pdf",
+      "file": "p1-lectures/raw/lecture_03.pdf",
+      "sha256": "20a953541b41a099bc69b8d809139a4ccdb2aefedaa13e50c766245fe4b5167e",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; post-term current handout, not recording-identical",
+      "retrieved_at": "2026-11-14T13:44:05.993093+00:00",
+      "license": "Unverified; no full translation or third-party figure reuse grant inferred",
+      "read_scope": "Actually read existing extracted text p1-lectures/lecture_03.txt lines 330-420 (91 selected lines): position variants, relative inner-product motivation and Q/K rotation. No full handout read, visual formula/image audit or video alignment by this slice.",
+      "chinese_treatment": "Course positioning only; no duplicate RoPE derivation, no copied image or invented timestamp.",
+      "material_files": [
+        "lectures/ext03/notes.zh.md"
+      ],
+      "supporting_files": [
+        {
+          "file": "p1-lectures/lecture_03.txt",
+          "sha256": "66daf54ffed30dda2b78725553cbf28d8dff1886c5b5e17ffd89915e5b722b2a"
+        }
+      ],
+      "reused_from": "p1-lectures/manifest-fragment.json:lec03-handout",
+      "read_at": "2026-11-14T15:55:38.863959+00:00",
+      "raw_publication": "local_only_except_license_notice_in_authored_notes",
+      "status": "acquired_selected_or_full_scope_actually_read_used_in_authored_notes_pending_main_review"
+    },
+    {
+      "id": "p3-extensions-attention-selected-text",
+      "kind": "paper_text_extraction",
+      "url": "https://arxiv.org/pdf/1706.03762v7",
+      "file": "p1-papers-01-08/paper01-1706.03762v7.txt",
+      "sha256": "b217207e00a758cbb7f5d0cc18ad8ae4a7c52d74ca03d9273a143cdbfc9d4858",
+      "version": "arXiv:1706.03762v7; 2023-08-02 fixed version used in 2026 reading map",
+      "retrieved_at": "2026-11-14T13:39:28.160324Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0; no public whole-paper translation grant",
+      "read_scope": "Actually read text lines 258-390 (133 selected lines): complete §3.5, §4, §5.1-5.3, adjacent table/caption and §5.4 opening only. No whole-paper close-read or visual formula/figure audit claim. Reading-map paper01 core/optional boundaries read in full; §5.3 core, §5.1-5.2 optional.",
+      "chinese_treatment": "Limited factual use for original schedule/batching and positional-extrapolation motivation; sole close-reading home remains lectures/lec03/materials.zh.md, linked from both notes.",
+      "material_files": [
+        "lectures/ext02/notes.zh.md",
+        "lectures/ext03/notes.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper01-extracted-text",
+      "read_at": "2026-11-14T15:55:38.863959+00:00",
+      "raw_publication": "local_only_except_license_notice_in_authored_notes",
+      "status": "acquired_selected_or_full_scope_actually_read_used_in_authored_notes_pending_main_review"
+    },
+    {
+      "id": "p3-extensions-roformer-selected-text",
+      "kind": "paper_text_extraction",
+      "url": "https://arxiv.org/pdf/2104.09864v5",
+      "file": "p1-papers-01-08/paper02-2104.09864v5.txt",
+      "sha256": "9e4f47d80904fb2f43459430a55eec1c5a675e7ab66d143e4e37f22c3e3e1d64",
+      "version": "arXiv:2104.09864v5; 2023-11-08 fixed version used in 2026 reading map",
+      "retrieved_at": "2026-11-14T13:39:48.186086Z",
+      "license": "CC BY-NC-ND 4.0; sharing translated adaptation not permitted under this license",
+      "read_scope": "Actually read extracted text lines 248-377, 507-556, 590-609, 697-790 (294 selected lines): §3.2.2-3.3 and nearby text; §3.4.3 bound/decay discussion and experiment opening; §4.2; §4.5 including staged training/table text and limitations, conclusion opening. No full-paper or visual figure audit. Paper02 reading-map core/optional boundaries read; §3.4.3/§4.2/§4.5 are optional editorial ranges.",
+      "chinese_treatment": "Autonomous correctness/experimental-design discussion and boundary against an overstrong universal monotonicity claim; concrete counterexample and derivation remain only in lec03 materials §8.1 and are linked rather than repeated. No sequential translation, original figure/table reproduction or second close-reading home.",
+      "material_files": [
+        "lectures/ext03/notes.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper02-extracted-text",
+      "read_at": "2026-11-14T15:55:38.863959+00:00",
+      "raw_publication": "local_only_except_license_notice_in_authored_notes",
+      "status": "acquired_selected_or_full_scope_actually_read_used_in_authored_notes_pending_main_review"
+    },
+    {
+      "id": "p3-extensions-pytorch-license",
+      "kind": "license_evidence",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+      "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+      "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+      "version": "PyTorch v2.9.0 upstream license; not a new per-page license grant for 2.9 documentation",
+      "retrieved_at": "2026-11-14T15:09:02.295595+00:00",
+      "license": "BSD-3-Clause-style; do not extend to all documentation-site or third-party assets",
+      "read_scope": "Full 84-line LICENSE read, including copyright holders, redistribution conditions and disclaimer.",
+      "chinese_treatment": "Scope note only; original API semantics, no software/doc prose copied as implementation.",
+      "material_files": [
+        "lectures/ext02/notes.zh.md"
+      ],
+      "reused_from": "p2-bridge-systems/manifest-fragment.json:p2-bridge-systems-pytorch-license",
+      "read_at": "2026-11-14T15:55:38.863959+00:00",
+      "raw_publication": "local_only_except_license_notice_in_authored_notes",
+      "status": "acquired_selected_or_full_scope_actually_read_used_in_authored_notes_pending_main_review"
+    },
+    {
+      "id": "p3-extensions-paper-license-evidence",
+      "kind": "official_license_excerpt_with_editorial_notes",
+      "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.en",
+      "file": "p1-papers-01-08/license-reading-evidence.txt",
+      "sha256": "cee4b060b2942491c84e7b2231d94bcf44148843d1ba4e5a7d2db59acabdc052",
+      "version": "Existing P1 labelled excerpts for arXiv nonexclusive and CC BY-NC-ND 4.0 / CC BY 4.0, not complete legalcode snapshot",
+      "retrieved_at": "2026-11-14",
+      "license": "Unverified page copyright; normative clauses used only as scope evidence",
+      "read_scope": "Entire 32-line existing evidence file read; clauses distinguish arXiv distribution from public translation and exclude sharing adapted RoFormer material. Not a fresh live legalcode read or legal opinion.",
+      "chinese_treatment": "Permission boundaries only; no reproduction of licensed paper content.",
+      "material_files": [
+        "lectures/ext02/notes.zh.md",
+        "lectures/ext03/notes.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-papers-license-cc-by-nc-nd-legalcode-excerpt",
+      "read_at": "2026-11-14T15:55:38.863959+00:00",
+      "raw_publication": "local_only_except_license_notice_in_authored_notes",
+      "status": "acquired_selected_or_full_scope_actually_read_used_in_authored_notes_pending_main_review"
+    },
+    {
+      "id": "p3-extensions-pytorch29-sgd",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/generated/torch.optim.SGD.html",
+      "file": "p3-extensions/raw/pytorch-2.9-sgd.txt",
+      "sha256": "df6e273018a3c2d3576cea8adc71b38b6a8637602e629a9b6947e8ebe8a73a6d",
+      "version": "PyTorch 2.9 documentation URL snapshot; displayed source links v2.9.1; not the course dependency or local runtime version",
+      "retrieved_at": "2026-11-14T15:45:44.086485+00:00",
+      "license": "Per-page translation/republication license not independently established; upstream v2.9.0 BSD-style LICENSE read separately, not extended to all site assets",
+      "read_scope": "Online static reader displayed lines 1-300 actually read: constructor, formula, parameter meanings, algorithm notes, displayed state-loading and hook-method material. Includes explicit momentum convention and first-buffer/dampening difference. Remainder not read. Locally archived full response is acquisition evidence, not a full-page reading claim; no linked research paper read or optimizer source audit.",
+      "chinese_treatment": "Editorial conceptual/API supplement only; independently written equations/explanation, no copied optimizer implementation or new research-paper close-reading scope.",
+      "material_files": [
+        "lectures/ext02/notes.zh.md"
+      ],
+      "acquisition_note": "First urllib fetch returned HTTP403 before any file write; curl with browser User-Agent and Accept:text/markdown succeeded. No error page stored as source. Raw responses local only.",
+      "read_at": "2026-11-14T15:55:38.863959+00:00",
+      "raw_publication": "local_only_except_license_notice_in_authored_notes",
+      "status": "acquired_selected_or_full_scope_actually_read_used_in_authored_notes_pending_main_review"
+    },
+    {
+      "id": "p3-extensions-pytorch29-adamw",
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/generated/torch.optim.AdamW.html",
+      "file": "p3-extensions/raw/pytorch-2.9-adamw.txt",
+      "sha256": "0a44fd74ccdc776594e50c05e9ef77d144a14781585d95713708da49f256fe04",
+      "version": "PyTorch 2.9 documentation URL snapshot; displayed source links v2.9.1; not the course dependency or local runtime version",
+      "retrieved_at": "2026-11-14T15:45:45.884491+00:00",
+      "license": "Per-page translation/republication license not independently established; upstream v2.9.0 BSD-style LICENSE read separately, not extended to all site assets",
+      "read_scope": "Online static reader displayed lines 1-300 actually read: constructor, formula, parameter meanings, algorithm notes, displayed state-loading and hook-method material. Includes bias-corrected moment denominator, epsilon outside square root, decay before moment-adjusted update. Remainder not read. Locally archived full response is acquisition evidence, not a full-page reading claim; no linked research paper read or optimizer source audit.",
+      "chinese_treatment": "Editorial conceptual/API supplement only; independently written equations/explanation, no copied optimizer implementation or new research-paper close-reading scope.",
+      "material_files": [
+        "lectures/ext02/notes.zh.md"
+      ],
+      "acquisition_note": "First urllib fetch returned HTTP403 before any file write; curl with browser User-Agent and Accept:text/markdown succeeded. No error page stored as source. Raw responses local only.",
+      "read_at": "2026-11-14T15:55:38.863959+00:00",
+      "raw_publication": "local_only_except_license_notice_in_authored_notes",
+      "status": "acquired_selected_or_full_scope_actually_read_used_in_authored_notes_pending_main_review"
+    }
+  ],
+  "context_read": [
+    "NEXT-P3-PROMPT.txt full",
+    "P2-REVIEW.txt full",
+    "P1-REVIEW.txt full",
+    "p2-lec02/review.txt full and manifest source entries",
+    "p2-bridge-systems/review.txt full and bridge07/08-related manifest records/integration fields",
+    "p2-a1/review.txt full and source records",
+    "reading-map.json full projected paper01/paper02 records and policy",
+    "lectures/lec02/notes.zh.md full",
+    "lectures/lec02/draft.zh.md full",
+    "lectures/bridge07/notes.zh.md full",
+    "lectures/bridge08/notes.zh.md full"
+  ],
+  "reading_summary": {
+    "source_records": 11,
+    "new_snapshots": 2,
+    "reused_source_records": 9,
+    "source_content_selected_lines": {
+      "a1_extraction": 230,
+      "lec02_recording_source": 54,
+      "lec03_extraction": 91,
+      "paper01_extraction": 133,
+      "paper02_extraction": 294
+    },
+    "full_policy_and_license_files_read": 3,
+    "paper_full_close_reads_in_this_slice": 0,
+    "caption_cues_read_in_this_slice": 0,
+    "audio_verified": false,
+    "visual_formula_figure_audit": false,
+    "note": "Selected-line counts omit tool-displayed neighbors; manifests/context notes and 32-line license evidence tracked separately. Acquisition and reading are separate."
+  },
+  "delivery": {
+    "material_files": [
+      "lectures/ext02/notes.zh.md",
+      "lectures/ext03/notes.zh.md"
+    ],
+    "svg_files": [
+      "lectures/ext03/assets/position-index-contract.svg"
+    ],
+    "notes_written": 2,
+    "draft_files": [],
+    "materials_files": [],
+    "cpu_examples_written": 2,
+    "cpu_examples_executed": 0,
+    "course_experiments_executed": 0,
+    "official_assignment_implementation_written": false,
+    "independent_main_review_completed": false,
+    "page_acceptance_completed": false,
+    "build_lint_tests_formatters_run": false,
+    "shared_metadata_modified": false,
+    "status": "已采集；实际限定范围已读；两篇已写；待主审；待页面验收；未执行课程实验"
+  },
+  "integration_status_fields": [
+    {
+      "lectureId": "ext02",
+      "notes": "written_pending_main_review",
+      "draft": "not_applicable_editorial_topic_no_official_video",
+      "materials": "not_created_sole_paper_home_lec03",
+      "sourceRead": "actual_ranges_recorded",
+      "codeExecution": "not_run",
+      "pageAcceptance": "not_run"
+    },
+    {
+      "lectureId": "ext03",
+      "notes": "written_pending_main_review",
+      "draft": "not_applicable_editorial_topic_no_official_video",
+      "materials": "not_created_sole_paper_home_lec03",
+      "sourceRead": "actual_ranges_recorded",
+      "codeExecution": "not_run",
+      "pageAcceptance": "not_run"
+    }
+  ],
+  "main_agent_check_suggestions": [
+    {
+      "material": "lectures/ext02/notes.zh.md",
+      "block": "section 6 single Python block",
+      "environment": "Python standard library, CPU only",
+      "expected_stdout": [
+        "8 1024 1000 102400",
+        "32 4096 250 409600"
+      ],
+      "boundary": "Pure budget arithmetic, not optimizer/scheduler/assignment implementation."
+    },
+    {
+      "material": "lectures/ext03/notes.zh.md",
+      "block": "section 2.1 single Python block",
+      "environment": "Python standard library math, CPU only",
+      "expected_stdout": [
+        "-0.6 0.825336",
+        "-0.6 0.825336",
+        "0.2 0.980067"
+      ],
+      "boundary": "Scalar phase diagnostic, not RoPE/attention/cache implementation or evidence of model extrapolation."
+    },
+    {
+      "kind": "source_and_page",
+      "checks": "Resolve existing and same-batch routes, SHA256 for 11 source records and two supporting extractions; parse one SVG; view formulas, wide tables, folded answers and SVG on desktop/390px mobile and light/dark themes. No extra official experiment requested."
+    }
+  ],
+  "publication": {
+    "public_material_files": [
+      "lectures/ext02/notes.zh.md",
+      "lectures/ext03/notes.zh.md",
+      "lectures/ext03/assets/position-index-contract.svg"
+    ],
+    "lightweight_source_files": [
+      "p3-extensions/manifest-fragment.json",
+      "p3-extensions/review.txt"
+    ],
+    "local_only_files": [
+      "p3-extensions/raw/pytorch-2.9-sgd.txt",
+      "p3-extensions/raw/pytorch-2.9-adamw.txt"
+    ],
+    "no_full_source_publication": true,
+    "no_cookies_signed_urls_credentials": true
+  },
+  "not_done": [
+    "No optimizer/scheduler/RoPE/cache/attention/training implementation or official assignment answers",
+    "No code execution, build, tests, lint, formatter, smoke run, browser acceptance or git",
+    "No media/audio acquisition, frames, models, training data, paid compute, dependency installation",
+    "No research-paper scope expansion or second lec03 materials home",
+    "No src/other-course/shared-metadata edits and no child agents"
+  ]
+}

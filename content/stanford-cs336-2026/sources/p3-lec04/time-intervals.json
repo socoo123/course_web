@@ -1,0 +1,692 @@
+{
+  "schema_version": 1,
+  "lecture_id": "lec04",
+  "video_id": "cKSwj_qZ8Jg",
+  "duration_seconds": 5180,
+  "duration_ms": 5180000,
+  "caption_source": "p1-videos/captions/cKSwj_qZ8Jg.en-US.manual.json3",
+  "caption_sha256": "bd337753209ef33ac4416d51d7bb25dcf1f9a70813d24379f4f1d1da362205d4",
+  "caption_count": 1938,
+  "caption_first_start_ms": 5200,
+  "caption_last_end_ms": 5175510,
+  "read_at": "2026-11-14T15:54:47.815379+00:00",
+  "actual_read_ranges": [
+    {
+      "file": "p3-lec04/transcript.en.txt",
+      "first_line": 1,
+      "last_line": 300,
+      "first_cue": 1,
+      "last_cue": 300
+    },
+    {
+      "file": "p3-lec04/transcript.en.txt",
+      "first_line": 301,
+      "last_line": 600,
+      "first_cue": 301,
+      "last_cue": 600
+    },
+    {
+      "file": "p3-lec04/transcript.en.txt",
+      "first_line": 601,
+      "last_line": 900,
+      "first_cue": 601,
+      "last_cue": 900
+    },
+    {
+      "file": "p3-lec04/transcript.en.txt",
+      "first_line": 901,
+      "last_line": 1200,
+      "first_cue": 901,
+      "last_cue": 1200
+    },
+    {
+      "file": "p3-lec04/transcript.en.txt",
+      "first_line": 1201,
+      "last_line": 1500,
+      "first_cue": 1201,
+      "last_cue": 1500
+    },
+    {
+      "file": "p3-lec04/transcript.en.txt",
+      "first_line": 1501,
+      "last_line": 1800,
+      "first_cue": 1501,
+      "last_cue": 1800
+    },
+    {
+      "file": "p3-lec04/transcript.en.txt",
+      "first_line": 1801,
+      "last_line": 1938,
+      "first_cue": 1801,
+      "last_cue": 1938
+    }
+  ],
+  "blocks": [
+    {
+      "id": "leading",
+      "start_seconds": 0,
+      "end_seconds": 5.2,
+      "cue_indices_1_based_by_start": null,
+      "title": "开头无字幕",
+      "classification": "no_caption_unverified_audio"
+    },
+    {
+      "id": "s01",
+      "start_seconds": 5.2,
+      "end_seconds": 92.86,
+      "cue_indices_1_based_by_start": [
+        1,
+        29
+      ],
+      "title": "本讲范围"
+    },
+    {
+      "id": "s02",
+      "start_seconds": 92.86,
+      "end_seconds": 312.88,
+      "cue_indices_1_based_by_start": [
+        30,
+        110
+      ],
+      "title": "长上下文成本与基础工具"
+    },
+    {
+      "id": "s03",
+      "start_seconds": 312.88,
+      "end_seconds": 594.71,
+      "cue_indices_1_based_by_start": [
+        111,
+        218
+      ],
+      "title": "线性attention与因果递推"
+    },
+    {
+      "id": "s04",
+      "start_seconds": 594.71,
+      "end_seconds": 671.67,
+      "cue_indices_1_based_by_start": [
+        219,
+        241
+      ],
+      "title": "MiniMax混合例子"
+    },
+    {
+      "id": "s05",
+      "start_seconds": 671.67,
+      "end_seconds": 857.12,
+      "cue_indices_1_based_by_start": [
+        242,
+        307
+      ],
+      "title": "Mamba-2与输入依赖门"
+    },
+    {
+      "id": "s06",
+      "start_seconds": 857.12,
+      "end_seconds": 1143.03,
+      "cue_indices_1_based_by_start": [
+        308,
+        409
+      ],
+      "title": "Gated DeltaNet与混合例子"
+    },
+    {
+      "id": "s07",
+      "start_seconds": 1143.03,
+      "end_seconds": 1372.485,
+      "cue_indices_1_based_by_start": [
+        410,
+        499
+      ],
+      "title": "混合质量权衡与等价性问答"
+    },
+    {
+      "id": "s08",
+      "start_seconds": 1372.485,
+      "end_seconds": 1649.75,
+      "cue_indices_1_based_by_start": [
+        500,
+        597
+      ],
+      "title": "DSA索引与适配"
+    },
+    {
+      "id": "s09",
+      "start_seconds": 1649.75,
+      "end_seconds": 2063.159,
+      "cue_indices_1_based_by_start": [
+        598,
+        770
+      ],
+      "title": "高效attention问答"
+    },
+    {
+      "id": "s10",
+      "start_seconds": 2063.159,
+      "end_seconds": 2843.98,
+      "cue_indices_1_based_by_start": [
+        771,
+        1084
+      ],
+      "title": "MoE动机、采用情况与边界"
+    },
+    {
+      "id": "s11",
+      "start_seconds": 2843.98,
+      "end_seconds": 3176.88,
+      "cue_indices_1_based_by_start": [
+        1085,
+        1205
+      ],
+      "title": "路由方式选择"
+    },
+    {
+      "id": "s12",
+      "start_seconds": 3176.88,
+      "end_seconds": 3507.41,
+      "cue_indices_1_based_by_start": [
+        1206,
+        1333
+      ],
+      "title": "top-k、细粒度与共享专家"
+    },
+    {
+      "id": "s13",
+      "start_seconds": 3507.41,
+      "end_seconds": 3793.03,
+      "cue_indices_1_based_by_start": [
+        1334,
+        1436
+      ],
+      "title": "稀疏训练与随机扰动"
+    },
+    {
+      "id": "s14",
+      "start_seconds": 3793.03,
+      "end_seconds": 4298.69,
+      "cue_indices_1_based_by_start": [
+        1437,
+        1628
+      ],
+      "title": "平衡目标与路由问答"
+    },
+    {
+      "id": "s15",
+      "start_seconds": 4298.69,
+      "end_seconds": 4595.75,
+      "cue_indices_1_based_by_start": [
+        1629,
+        1733
+      ],
+      "title": "系统边界、容量与dropless"
+    },
+    {
+      "id": "s16",
+      "start_seconds": 4595.75,
+      "end_seconds": 4780.69,
+      "cue_indices_1_based_by_start": [
+        1734,
+        1793
+      ],
+      "title": "稳定性与小数据微调"
+    },
+    {
+      "id": "s17",
+      "start_seconds": 4780.69,
+      "end_seconds": 4931.5,
+      "cue_indices_1_based_by_start": [
+        1794,
+        1842
+      ],
+      "title": "Upcycling"
+    },
+    {
+      "id": "s18",
+      "start_seconds": 4931.5,
+      "end_seconds": 5030.07,
+      "cue_indices_1_based_by_start": [
+        1843,
+        1882
+      ],
+      "title": "DeepSeek设计组合"
+    },
+    {
+      "id": "s19",
+      "start_seconds": 5030.07,
+      "end_seconds": 5104.75,
+      "cue_indices_1_based_by_start": [
+        1883,
+        1911
+      ],
+      "title": "MLA与位置分支"
+    },
+    {
+      "id": "s20",
+      "start_seconds": 5104.75,
+      "end_seconds": 5140.78,
+      "cue_indices_1_based_by_start": [
+        1912,
+        1924
+      ],
+      "title": "MTP预告"
+    },
+    {
+      "id": "s21",
+      "start_seconds": 5140.78,
+      "end_seconds": 5175.51,
+      "cue_indices_1_based_by_start": [
+        1925,
+        1938
+      ],
+      "title": "MoE总结"
+    },
+    {
+      "id": "trailing",
+      "start_seconds": 5175.51,
+      "end_seconds": 5180,
+      "cue_indices_1_based_by_start": null,
+      "title": "结尾无字幕",
+      "classification": "no_caption_unverified_audio"
+    }
+  ],
+  "segmentation_basis": "Editorial topic boundaries at exact cue starts; [first,last] inclusive cue index ranges. Leading/trailing null. Covers navigation0–5180 continuously; no assertion every second contains captions. Integer page timestamps rounded to nearest second.",
+  "caption_gaps": [
+    {
+      "kind": "leading",
+      "start_seconds": 0,
+      "end_seconds": 5.2,
+      "duration_seconds": 5.2
+    },
+    {
+      "kind": "internal",
+      "after_cue": 42,
+      "start_seconds": 128.05,
+      "end_seconds": 130.69,
+      "duration_seconds": 2.64
+    },
+    {
+      "kind": "internal",
+      "after_cue": 218,
+      "start_seconds": 591.74,
+      "end_seconds": 594.71,
+      "duration_seconds": 2.97
+    },
+    {
+      "kind": "internal",
+      "after_cue": 241,
+      "start_seconds": 668.77,
+      "end_seconds": 671.67,
+      "duration_seconds": 2.9
+    },
+    {
+      "kind": "internal",
+      "after_cue": 298,
+      "start_seconds": 826.92,
+      "end_seconds": 829.7,
+      "duration_seconds": 2.78
+    },
+    {
+      "kind": "internal",
+      "after_cue": 409,
+      "start_seconds": 1140.17,
+      "end_seconds": 1143.03,
+      "duration_seconds": 2.86
+    },
+    {
+      "kind": "internal",
+      "after_cue": 490,
+      "start_seconds": 1343.1,
+      "end_seconds": 1346.34,
+      "duration_seconds": 3.24
+    },
+    {
+      "kind": "internal",
+      "after_cue": 499,
+      "start_seconds": 1368.82,
+      "end_seconds": 1372.485,
+      "duration_seconds": 3.665
+    },
+    {
+      "kind": "internal",
+      "after_cue": 676,
+      "start_seconds": 1821.04,
+      "end_seconds": 1823.96,
+      "duration_seconds": 2.92
+    },
+    {
+      "kind": "internal",
+      "after_cue": 756,
+      "start_seconds": 2034.19,
+      "end_seconds": 2036.843,
+      "duration_seconds": 2.653
+    },
+    {
+      "kind": "internal",
+      "after_cue": 1017,
+      "start_seconds": 2667.14,
+      "end_seconds": 2670.58,
+      "duration_seconds": 3.44
+    },
+    {
+      "kind": "internal",
+      "after_cue": 1134,
+      "start_seconds": 2983.39,
+      "end_seconds": 2986.61,
+      "duration_seconds": 3.22
+    },
+    {
+      "kind": "internal",
+      "after_cue": 1535,
+      "start_seconds": 4068.59,
+      "end_seconds": 4072.81,
+      "duration_seconds": 4.22
+    },
+    {
+      "kind": "internal",
+      "after_cue": 1582,
+      "start_seconds": 4187.96,
+      "end_seconds": 4190.74,
+      "duration_seconds": 2.78
+    },
+    {
+      "kind": "internal",
+      "after_cue": 1626,
+      "start_seconds": 4294.85,
+      "end_seconds": 4297.55,
+      "duration_seconds": 2.7
+    },
+    {
+      "kind": "internal",
+      "after_cue": 1635,
+      "start_seconds": 4317.01,
+      "end_seconds": 4320.707,
+      "duration_seconds": 3.697
+    },
+    {
+      "kind": "internal",
+      "after_cue": 1701,
+      "start_seconds": 4504.75,
+      "end_seconds": 4507.65,
+      "duration_seconds": 2.9
+    },
+    {
+      "kind": "internal",
+      "after_cue": 1825,
+      "start_seconds": 4882.37,
+      "end_seconds": 4884.91,
+      "duration_seconds": 2.54
+    },
+    {
+      "kind": "trailing",
+      "start_seconds": 5175.51,
+      "end_seconds": 5180,
+      "duration_seconds": 4.49
+    }
+  ],
+  "internal_gap_threshold_seconds": 2,
+  "comparison": "strictly greater than 2 seconds",
+  "gap_interpretation": "no_caption_unverified_audio; never infer silence or speakers",
+  "inaudible_cues": [
+    {
+      "cue": 452,
+      "start_ms": 1248750,
+      "end_ms": 1252830,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 454,
+      "start_ms": 1256390,
+      "end_ms": 1262050,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 456,
+      "start_ms": 1262550,
+      "end_ms": 1267470,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 471,
+      "start_ms": 1297320,
+      "end_ms": 1305300,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 601,
+      "start_ms": 1656770,
+      "end_ms": 1657530,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 602,
+      "start_ms": 1657530,
+      "end_ms": 1660150,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 610,
+      "start_ms": 1676570,
+      "end_ms": 1679130,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 632,
+      "start_ms": 1719790,
+      "end_ms": 1723910,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 650,
+      "start_ms": 1761590,
+      "end_ms": 1767050,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 658,
+      "start_ms": 1780450,
+      "end_ms": 1785638,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 666,
+      "start_ms": 1797810,
+      "end_ms": 1801730,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 677,
+      "start_ms": 1823960,
+      "end_ms": 1828360,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 678,
+      "start_ms": 1828360,
+      "end_ms": 1833400,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 681,
+      "start_ms": 1844580,
+      "end_ms": 1850780,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 755,
+      "start_ms": 2027150,
+      "end_ms": 2030690,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 756,
+      "start_ms": 2030690,
+      "end_ms": 2034190,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 963,
+      "start_ms": 2554370,
+      "end_ms": 2557690,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 1596,
+      "start_ms": 4220700,
+      "end_ms": 4224220,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    },
+    {
+      "cue": 1616,
+      "start_ms": 4266390,
+      "end_ms": 4272190,
+      "treatment": "Do not reconstruct missing speech; question topic only where lecturer response is clear."
+    }
+  ],
+  "technical_corrections_and_uncertainties": [
+    {
+      "kind": "caption_term_unverified_audio",
+      "cue_range": [
+        137,
+        152
+      ],
+      "issue": "row/Rho interpreted as rho from fixed lecture formula; source caption not altered."
+    },
+    {
+      "kind": "lecturer_qualification",
+      "cue_range": [
+        377,
+        382
+      ],
+      "issue": "Lecturer explicitly qualifies projector intuition because normalization conditions are not generally met. Notes retain unit-key and gate conditions."
+    },
+    {
+      "kind": "lecturer_clarification",
+      "cue_range": [
+        452,
+        468
+      ],
+      "issue": "Dropping softmax changes model; subsequent corresponding linear and recurrent forms are exact algebraic equivalents. Notes add explicit causal-mask condition."
+    },
+    {
+      "kind": "caption_name_unverified_audio",
+      "cue_range": [
+        509,
+        512
+      ],
+      "issue": "DSA expansion garbled; fixed handout names DeepSeek Sparse Attention. Use abbreviation, not invented full phrase."
+    },
+    {
+      "kind": "unverified_relative_date",
+      "cue_range": [
+        567,
+        570
+      ],
+      "issue": "GLM5 last year phrase not converted into release-date claim; product claims treated as classroom observations only."
+    },
+    {
+      "kind": "editorial_complexity_clarification",
+      "cue_range": [
+        608,
+        625
+      ],
+      "issue": "Sparse selected attention counted as query-to-selected-key T*k pairings, indexer separately; not automatically k*k sub-sequence self-attention. Classroom cost shorthand not repeated as exact formula."
+    },
+    {
+      "kind": "caption_semantics_unverified_audio",
+      "cue_range": [
+        666,
+        676
+      ],
+      "issue": "linear softmax causing lots of attention wording unclear. Treat response as lecturer experience, not a universal stability proof."
+    },
+    {
+      "kind": "caption_name_unverified_audio",
+      "cue_range": [
+        867,
+        870
+      ],
+      "issue": "AIQ unclear organization name; no new identity claim from this token."
+    },
+    {
+      "kind": "editorial_cost_boundary",
+      "cue_range": [
+        807,
+        831
+      ],
+      "issue": "More experts at fixed expert size and top-k preserve active expert FLOPs main term only; router/storage/dispatch costs remain."
+    },
+    {
+      "kind": "caption_name_unverified_audio",
+      "cue_range": [
+        1389,
+        1390
+      ],
+      "issue": "Shazier spelling not treated as verified proper-name transcription; handout attribution is Shazeer et al 2017; external paper not read."
+    },
+    {
+      "kind": "editorial_gradient_clarification",
+      "cue_range": [
+        1482,
+        1497
+      ],
+      "issue": "Positive penalty derivative with respect to probabilities differs from gradient-descent direction and softmax-logit derivative. Hard counts treated as stop-gradient; top-1 denominator explicitly stated."
+    },
+    {
+      "kind": "lecturer_boundary",
+      "cue_range": [
+        1526,
+        1535
+      ],
+      "issue": "Auxiliary-loss-free balancing does not mean no auxiliary loss anywhere; lecturer mentions additional loss for extreme imbalance."
+    },
+    {
+      "kind": "caption_term_unverified_audio",
+      "cue_range": [
+        1729,
+        1733
+      ],
+      "issue": "drop less interpreted as dropless context; not a guarantee for every MoE implementation."
+    },
+    {
+      "kind": "caption_name_unverified_audio",
+      "cue_range": [
+        1821,
+        1828
+      ],
+      "issue": "many CPM and Qwen1.5.A naming irregularities not used as authenticated product identifiers."
+    },
+    {
+      "kind": "handout_internal_inconsistency",
+      "pdf_pages": [
+        35,
+        56
+      ],
+      "issue": "v3 slide incorrectly labels line V2 and 258 fine-grained experts; handout table gives256. Neither product number silently certified from this inconsistency."
+    },
+    {
+      "kind": "handout_algorithm_label_inconsistency",
+      "pdf_pages": [
+        31,
+        56
+      ],
+      "cue_range": [
+        1880,
+        1882
+      ],
+      "issue": "Softmax-after-topk annotation and Sigmoid+Softmax wording differ from displayed sigmoid-score normalization by selected sum. Generic notes distinguish operations; no unread DeepSeek report claimed to authenticate implementation."
+    },
+    {
+      "kind": "caption_term_unverified_audio",
+      "cue_range": [
+        1898,
+        1906
+      ],
+      "issue": "KB cashing / KB cache interpreted as KV caching by handout and context; no audio correction claim."
+    }
+  ],
+  "audio_verified": false,
+  "video_frames_viewed": false,
+  "screenshots_extracted": false,
+  "translation_type": "limited_selected_chronological_summaries_and_full_navigation_not_full_translation",
+  "verification_status": "Source processing and actual reading only; independent timing/hash/site/build verification reserved for Main."
+}

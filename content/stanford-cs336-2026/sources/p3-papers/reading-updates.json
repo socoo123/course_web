@@ -1,0 +1,494 @@
+{
+  "paper01": {
+    "home": "lec03",
+    "materialFile": "lectures/lec03/materials.zh.md",
+    "version": "arXiv:1706.03762v7",
+    "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+    "status": "P3_specified_core_close_read_and_written_pending_main_review",
+    "chineseTreatment": "independent_close_reading",
+    "chineseTreatmentStatus": "P3_independent_question_organized_teaching_written; not_translation_or_paragraph_paraphrase",
+    "chineseTreatmentConditions": "No shared translated adaptation or full-paper replacement; retain all authors, fixed source links and license boundary at page bottom. No third-party figures or tables reproduced.",
+    "readingEvidence": "P3实际连续阅读既有提取文本1–433行：题名/作者/摘要/§1–2；核心§3.1–3.5（含§3.2.1–3.2.3）、§4、§5.3全部；选读§5.1–5.2、§5.4全部提取文本；§6.1仅开头至433行，Table 2仅所显示提取文字，不作实验精读。实际打开固定PDF物理页3–7的渲染图核对指定结构、公式与表头。非15页全文精读。",
+    "readAt": "2026-11-14T15:52:33Z",
+    "actualReading": {
+      "phase": "P3",
+      "method": "Existing P1 pdftotext -layout extraction actually read; selected pages locally rendered by pdftoppm and visibly inspected",
+      "scope": "P3实际连续阅读既有提取文本1–433行：题名/作者/摘要/§1–2；核心§3.1–3.5（含§3.2.1–3.2.3）、§4、§5.3全部；选读§5.1–5.2、§5.4全部提取文本；§6.1仅开头至433行，Table 2仅所显示提取文字，不作实验精读。实际打开固定PDF物理页3–7的渲染图核对指定结构、公式与表头。非15页全文精读。",
+      "textFile": "p1-papers-01-08/paper01-1706.03762v7.txt",
+      "textLineSelections": [
+        [
+          1,
+          433
+        ]
+      ],
+      "pageNumbering": "1-based physical PDF pages; visual scope is selected formula/figure regions, not complete-paper audit",
+      "completePaperTextRead": false,
+      "completePaperCloseRead": false,
+      "specifiedCoreCloseRead": true,
+      "formulaAndFigureVisualAudit": false,
+      "visualAuditStatus": "partial_specified_pages_and_formulas_verified",
+      "visualAuditPdfPages": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "visualAuditEvidence": [
+        {
+          "page": 3,
+          "file": "p3-papers/visual/paper01-03.png",
+          "sha256": "e1a380ba901b7251e7e4acf5447a4db15cd248656a414671a254731434f73e85",
+          "scope": "Figure 1与§3.1：encoder/decoder、cross-attention、shifted outputs、post-LN。"
+        },
+        {
+          "page": 4,
+          "file": "p3-papers/visual/paper01-04.png",
+          "sha256": "33eca86da8124bd554c319a236f1d84ce6e3d2711eb42531df3c4935187cdcfc",
+          "scope": "Figure 2：scale→mask→softmax；§3.2.1式(1)的sqrt(d_k)、脚注4独立单位方差假设。"
+        },
+        {
+          "page": 5,
+          "file": "p3-papers/visual/paper01-05.png",
+          "sha256": "afc948a0f8be7ff4d953bd3a08b53e2a7842094c31e062c3f8296253db4cd801",
+          "scope": "multihead投影形状与h=8/dk=dv=64；§3.2.3三种来源及负无穷mask；§3.3式(2)与§3.4共享/embedding缩放。"
+        },
+        {
+          "page": 6,
+          "file": "p3-papers/visual/paper01-06.png",
+          "sha256": "4572ea51c47642c536f83c29b23f26ab9b97d8b90bf5c3f86db574e8b730edc0",
+          "scope": "Table 1三列与§3.5未编号sin/cos式：偶坐标sin、奇坐标cos、指数2i/d_model；§4开头。"
+        },
+        {
+          "page": 7,
+          "file": "p3-papers/visual/paper01-07.png",
+          "sha256": "b9a1e68cc924f898a2d61fb5e7e49a581241718947964cceaaa125bd508cd705",
+          "scope": "§4续文区分普通/扩张卷积路径；§5.3式(3)的-0.5/-1.5指数、warmup4000、Adam系数；选读§5.1–5.2设定。"
+        }
+      ],
+      "readAt": "2026-11-14T15:52:33Z",
+      "priorReadingRetention": "P1 reading-map actualReading records and p1-papers-01-08/reading-updates.json remain historical evidence; no previously read source is downgraded to never-read. P3 rereading and full-paper close reading are distinct.",
+      "notYetFullyRead": [
+        "§6.3与§7未完整阅读",
+        "参考文献与Attention Visualizations未精读",
+        "未做所有15页逐图逐式视觉审校"
+      ]
+    },
+    "p3CoreReading": [
+      {
+        "section": "3.1",
+        "pdfPages": "3",
+        "textLineRange": [
+          127,
+          143
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§2、§3.3：原始encoder–decoder/post-LN与右移"
+      },
+      {
+        "section": "3.2.1",
+        "pdfPages": "4",
+        "textLineRange": [
+          164,
+          201
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§3.1–3.2：按键softmax、sqrt(d_k)、独立方差假设与mask位置"
+      },
+      {
+        "section": "3.2.2",
+        "pdfPages": "4–5",
+        "textLineRange": [
+          192,
+          220
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§4：各头独立投影、拼接与输出投影、维度依赖的成本比较"
+      },
+      {
+        "section": "3.2.3",
+        "pdfPages": "5",
+        "textLineRange": [
+          222,
+          238
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§3.3：encoder、decoder、cross三种Q/K/V来源"
+      },
+      {
+        "section": "3.3",
+        "pdfPages": "5",
+        "textLineRange": [
+          240,
+          251
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§4：position-wise FFN、ReLU、512→2048→512与参数共享范围"
+      },
+      {
+        "section": "3.4",
+        "pdfPages": "5",
+        "textLineRange": [
+          253,
+          259
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§4：embedding/LM head共享、sqrt(d_model)、两个softmax对象不同"
+      },
+      {
+        "section": "3.5",
+        "pdfPages": "6",
+        "textLineRange": [
+          276,
+          298
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§5：sin偶/cos奇、固定偏移矩阵符号、相对可表达并非仅依赖相对位置"
+      },
+      {
+        "section": "4",
+        "pdfPages": "6–7",
+        "textLineRange": [
+          300,
+          338
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§9：交互/投影/FFN成本区别、训练并行与生成串行、普通/扩张卷积路径"
+      },
+      {
+        "section": "5.3",
+        "pdfPages": "7",
+        "textLineRange": [
+          363,
+          376
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§10：Adam参数、warmup与逆平方根、t>=1和峰值连续性"
+      }
+    ],
+    "written": "P3_single_home_independent_close_reading_complete",
+    "reviewed": "pending_main_review_at_worker_handoff",
+    "accepted": "pending_page_acceptance_at_worker_handoff",
+    "courseExperimentsExecuted": false,
+    "p3SourceManifest": "p3-papers/manifest-fragment.json",
+    "p3Review": "p3-papers/review.txt",
+    "placementPolicy": "Single home unchanged; no second paper body at lec04/ext03 or in lec03 notes/draft.",
+    "officialRequirement": "未发现明确论文全文阅读指令；指定核心/选读范围为编者安排；A1引用机制不等于全文必读",
+    "p3OptionalReading": [
+      {
+        "section": "5.1–5.2",
+        "pdfPages": "7",
+        "textLineRange": [
+          345,
+          361
+        ],
+        "p3Status": "complete_selected_section_text_read",
+        "treatment": "只用作历史实验配方背景；无硬件复现"
+      },
+      {
+        "section": "5.4",
+        "pdfPages": "7–8",
+        "textLineRanges": [
+          [
+            378,
+            380
+          ],
+          [
+            404,
+            410
+          ]
+        ],
+        "p3Status": "complete_selected_section_text_read",
+        "treatment": "残差/embedding dropout与label smoothing有限概括，不重复完整训练专题"
+      },
+      {
+        "section": "6.1–6.2",
+        "pdfPages": "8–9",
+        "p3Status": "not_complete_in_P3",
+        "actualP3Read": "§6.1仅415–433行开头；Table2随连续范围显示，不作实验精读；§6.2未重读",
+        "priorP1Status": "已有§6.1–6.2正文/表2–3提取文本范围核查，保持该历史事实"
+      },
+      {
+        "section": "6.3",
+        "pdfPages": "9–10",
+        "p3Status": "not_read_in_P3",
+        "priorP1Status": "未完整阅读"
+      }
+    ],
+    "p3AdditionalReading": {
+      "textLineRange": [
+        1,
+        109
+      ],
+      "scope": "题名/作者/摘要/§1–2实际读；不把所有被引用的论文算已读"
+    },
+    "p3FormulaChecks": [
+      {
+        "location": "§3.2.1 Eq1 / p4",
+        "result": "分母sqrt(d_k)，不是d_model；缩放在softmax之前，mask也在softmax之前"
+      },
+      {
+        "location": "§3.5 / p6",
+        "result": "原文偶坐标sin、奇坐标cos；独立推导[sin,cos]位移矩阵上右正/下左负，不与通常RoPE列向量正向旋转混用"
+      },
+      {
+        "location": "Table1 / p6; §4 / p7",
+        "result": "attention交互项不等于完整层投影与FFN成本；卷积对数路径对应扩张结构"
+      },
+      {
+        "location": "§5.3 Eq3 / p7",
+        "result": "-0.5与-1.5指数核对；warmup4000，Adam非AdamW；正文t>=1且分段连续"
+      }
+    ]
+  },
+  "paper02": {
+    "home": "lec03",
+    "materialFile": "lectures/lec03/materials.zh.md",
+    "version": "arXiv:2104.09864v5",
+    "license": "CC-BY-NC-ND-4.0",
+    "status": "P3_specified_core_close_read_and_written_pending_main_review",
+    "chineseTreatment": "independent_close_reading",
+    "chineseTreatmentStatus": "P3_independent_question_organized_teaching_written; not_translation_or_paragraph_paraphrase",
+    "chineseTreatmentConditions": "No shared translated adaptation or full-paper replacement; retain all authors, fixed source links and license boundary at page bottom. No third-party figures or tables reproduced.",
+    "readingEvidence": "P3实际连续阅读既有提取文本1–544行：题名/作者/摘要/§1；核心§2.1–2.3、§3.1–3.3、§3.4.2全部；选读§3.4.1与§3.4.3全部，另实际查看固定PDF物理页3–8的渲染图核对式(2)–(19)、(20)–(37)相关符号/条件以及Figure 2趋势，不是逐数据点分析。§4实验及其后未在P3重新精读。非14页全文精读。",
+    "readAt": "2026-11-14T15:52:33Z",
+    "actualReading": {
+      "phase": "P3",
+      "method": "Existing P1 pdftotext -layout extraction actually read; selected pages locally rendered by pdftoppm and visibly inspected",
+      "scope": "P3实际连续阅读既有提取文本1–544行：题名/作者/摘要/§1；核心§2.1–2.3、§3.1–3.3、§3.4.2全部；选读§3.4.1与§3.4.3全部，另实际查看固定PDF物理页3–8的渲染图核对式(2)–(19)、(20)–(37)相关符号/条件以及Figure 2趋势，不是逐数据点分析。§4实验及其后未在P3重新精读。非14页全文精读。",
+      "textFile": "p1-papers-01-08/paper02-2104.09864v5.txt",
+      "textLineSelections": [
+        [
+          1,
+          544
+        ]
+      ],
+      "pageNumbering": "1-based physical PDF pages; visual scope is selected formula/figure regions, not complete-paper audit",
+      "completePaperTextRead": false,
+      "completePaperCloseRead": false,
+      "specifiedCoreCloseRead": true,
+      "formulaAndFigureVisualAudit": false,
+      "visualAuditStatus": "partial_specified_pages_and_formulas_verified",
+      "visualAuditPdfPages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "visualAuditEvidence": [
+        {
+          "page": 3,
+          "file": "p3-papers/visual/paper02-03.png",
+          "sha256": "83aa387dc6496379d2fe07aea0b111c2b7c64f1d40ccd5b841ebdb21b28da068",
+          "scope": "式(2)分母键索引；式(3)–(9)位置分解；式(4)PDF原文也用未解释的位置k。"
+        },
+        {
+          "page": 4,
+          "file": "p3-papers/visual/paper02-04.png",
+          "sha256": "241b10b3c6488c997f5504a900b12a1acf6f3c3874135f43bd803d4ccee76f85",
+          "scope": "式(10)–(13)：目标相对位移m-n、复数共轭、二维旋转上右负/下左正。"
+        },
+        {
+          "page": 5,
+          "file": "p3-papers/visual/paper02-05.png",
+          "sha256": "c39fc938f92192bc3b9565f534f8f66a1e54b0a611500e1a96a9c3261dc617d3",
+          "scope": "式(14)–(16)：1起始频率与R_m^T R_n=R_(n-m)。式(16)末项原PDF确为x^T W_q R_(n-m) W_k x_n，缺x_m下标与W_q转置，不是提取遗漏。§3.3切到-2i/d的编号约定。Figure1只为位置对照，未复用。"
+        },
+        {
+          "page": 6,
+          "file": "p3-papers/visual/paper02-06.png",
+          "sha256": "c3621f06bba9232064d6cb4e5b803e8e9a2945dc9509d58ba470d16954eaf1ef",
+          "scope": "式(17)–(19)：旋转置于特征映射之后、分母不旋转、分子可负/非概率归一化。选读式(20)–(24)极坐标与位移方向。"
+        },
+        {
+          "page": 7,
+          "file": "p3-papers/visual/paper02-07.png",
+          "sha256": "864da47b4b20ee834c53e81107ba3a169e3250444b070bb4b21ebe655c7205be",
+          "scope": "选读式(25)–(33)半径固定/相位等差构造；式(32)query端原PDF写x_n，正文采用独立正确定义W_q x_m。核心式(34)逐对(-x2,x1)符号与重复cos/sin，避免把otimes当Kronecker积。"
+        },
+        {
+          "page": 8,
+          "file": "p3-papers/visual/paper02-08.png",
+          "sha256": "c031d24881b0740c1a8e1b00c43592a7faf266f694d0478ff279e3e2be49ba37",
+          "scope": "选读式(35)–(37)复数和/Abel变换、h_(d/2)=0、系数差与相位部分上界；Figure2有振荡，不是逐分数单调衰减保证。图只看坐标和趋势，未逐数据点复算。"
+        }
+      ],
+      "readAt": "2026-11-14T15:52:33Z",
+      "priorReadingRetention": "P1 reading-map actualReading records and p1-papers-01-08/reading-updates.json remain historical evidence; no previously read source is downgraded to never-read. P3 rereading and full-paper close reading are distinct.",
+      "notYetFullyRead": [
+        "§4.1、§4.3、§4.4、§5与参考文献未在本分片完整阅读",
+        "§4.2/4.5保留P1文本范围核查但未在P3重新精读",
+        "未做所有14页逐图逐式视觉审校"
+      ]
+    },
+    "p3CoreReading": [
+      {
+        "section": "2.1",
+        "pdfPages": "2–3",
+        "textLineRange": [
+          102,
+          138
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§3、§5.2：q/k/v与位置函数、键维softmax"
+      },
+      {
+        "section": "2.2",
+        "pdfPages": "3",
+        "textLineRange": [
+          140,
+          157
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§5：加法绝对位置与sin/cos坐标"
+      },
+      {
+        "section": "2.3",
+        "pdfPages": "3–4",
+        "textLineRange": [
+          159,
+          207
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§5.2：距离截断、相对偏置、内容/位置交叉项比较"
+      },
+      {
+        "section": "3.1",
+        "pdfPages": "4",
+        "textLineRange": [
+          215,
+          227
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§6.1：相对内积目标，不把向量自身当位置不变"
+      },
+      {
+        "section": "3.2.1",
+        "pdfPages": "4",
+        "textLineRange": [
+          231,
+          254
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§6.1–6.2：旋转方向、列向量/复数共轭符号"
+      },
+      {
+        "section": "3.2.2",
+        "pdfPages": "5",
+        "textLineRange": [
+          261,
+          297
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§6.3：偶数维分块、频率编号、相对内积与正交保范数"
+      },
+      {
+        "section": "3.3",
+        "pdfPages": "5–6",
+        "textLineRange": [
+          327,
+          375
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§8：衰减边界、线性attention特征后旋转、未旋转分母与非概率系数"
+      },
+      {
+        "section": "3.4.2",
+        "pdfPages": "7",
+        "textLineRange": [
+          447,
+          472
+        ],
+        "p3Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "本页§7：式34交换符号、重复sin/cos、逐元素实现式与O(d)工作量"
+      }
+    ],
+    "written": "P3_single_home_independent_close_reading_complete",
+    "reviewed": "pending_main_review_at_worker_handoff",
+    "accepted": "pending_page_acceptance_at_worker_handoff",
+    "courseExperimentsExecuted": false,
+    "p3SourceManifest": "p3-papers/manifest-fragment.json",
+    "p3Review": "p3-papers/review.txt",
+    "placementPolicy": "Single home unchanged; no second paper body at lec04/ext03 or in lec03 notes/draft.",
+    "officialRequirement": "未发现明确论文全文阅读指令；指定核心/选读范围为编者安排；A1引用机制不等于全文必读",
+    "p3OptionalReading": [
+      {
+        "section": "3.4.1",
+        "pdfPages": "6–7",
+        "textLineRange": [
+          379,
+          445
+        ],
+        "p3Status": "complete_selected_section_text_read_and_visual_formula_review",
+        "treatment": "解释固定半径/相位等差是一种构造；不采纳为所有相对编码唯一性证明"
+      },
+      {
+        "section": "3.4.3",
+        "pdfPages": "8",
+        "textLineRange": [
+          507,
+          543
+        ],
+        "p3Status": "complete_selected_section_text_read_and_visual_formula_review",
+        "treatment": "读取Abel变换与上界；Figure2核对趋势和振荡，不逐点复算，不宣传单调衰减/无限外推"
+      },
+      {
+        "section": "4.2",
+        "pdfPages": "9",
+        "p3Status": "not_reread_in_P3",
+        "priorP1Status": "P1已读本节正文及相关表格，不得抹成从未读过",
+        "treatment": "不用于P3实验结论"
+      },
+      {
+        "section": "4.5",
+        "pdfPages": "11–12",
+        "p3Status": "not_reread_in_P3",
+        "priorP1Status": "P1已读本节含4.5.5限制及相关表格，不得抹成从未读过",
+        "treatment": "不用于P3实验结论"
+      }
+    ],
+    "p3AdditionalReading": {
+      "textLineRange": [
+        1,
+        99
+      ],
+      "scope": "题名/作者/摘要/§1实际读；原论文引用的其他方法未因此算原始论文已读"
+    },
+    "p3FormulaChecks": [
+      {
+        "location": "Eq4 / p3",
+        "evidenceFile": "p3-papers/visual/paper02-03.png",
+        "result": "原PDF的p_i定义中sin/cos仍写k位置字母。正文独立统一位置索引，不默称原式无误"
+      },
+      {
+        "location": "Eq12–13 / p4; Eq16 / p5",
+        "evidenceFiles": [
+          "p3-papers/visual/paper02-04.png",
+          "p3-papers/visual/paper02-05.png"
+        ],
+        "result": "列向量正旋转R_m^T R_n=R_(n-m)；复数q*conj(k)*exp(i(m-n)omega)实部给同一值。Eq16末项原PDF确缺x_m下标及W_q转置，非文本提取问题；正文明确编者更正为x_m^T W_q^T R_(n-m) W_k x_n"
+      },
+      {
+        "location": "Eq15 / p5; §3.3 / p5; §3.4.3 / p8",
+        "result": "Eq15采用1起始10000^(-2(i-1)/d)；§3.3/3.4.3改用-2i/d。正文统一0起始j=0..d/2-1，而不是无说明混用"
+      },
+      {
+        "location": "Eq19 / p6",
+        "evidenceFile": "p3-papers/visual/paper02-06.png",
+        "result": "特征映射后旋转；分子旋转、分母不旋转；系数可能负且非标准概率归一化；不等于普通softmax线性复杂度"
+      },
+      {
+        "location": "Eq32–34 / p7",
+        "evidenceFile": "p3-papers/visual/paper02-07.png",
+        "result": "Eq32 query原PDF用x_n，正文自洽定义q=W_q x_m。Eq34每对(-x_even,x_odd)与重复cos/sin视觉核对；正文0起始J(x)_(2j)=-x_(2j+1),J(x)_(2j+1)=x_(2j)，odot表示逐元素相乘"
+      },
+      {
+        "location": "Eq35–37/Figure2 / p8",
+        "evidenceFile": "p3-papers/visual/paper02-08.png",
+        "result": "上界是系数差因子乘相位部分和，不保证每个学习分数随距离单调衰减；Figure2本身有振荡。单频率块余弦反例为编者自主评论，不是论文实验"
+      }
+    ]
+  }
+}

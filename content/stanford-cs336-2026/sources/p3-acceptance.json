@@ -1,0 +1,60 @@
+{
+  "courseId": "stanford-cs336-2026",
+  "phase": "P3",
+  "acceptedAtLocal": "2026-11-15",
+  "timezone": "Asia/Shanghai",
+  "status": "complete_with_documented_limits",
+  "scope": {
+    "lectureDocuments": ["lec03/notes", "lec03/draft", "lec03/materials", "lec04/notes", "lec04/draft", "bridge03/notes", "bridge06/notes", "ext01/notes", "ext02/notes", "ext03/notes"],
+    "assignmentDocuments": ["a1-basics/lab", "a1-basics/guide"],
+    "bodyPages": 12,
+    "newBodyPages": 11,
+    "existingBodyPagesExpanded": 1,
+    "originalSvgs": 5,
+    "resourcesUpdated": true,
+    "cumulativeBodyPages": 22,
+    "cumulativeOriginalSvgs": 7,
+    "srcOrOtherCoursesChanged": false
+  },
+  "models": {
+    "requested": "openai-codex/gpt-6-astra:xhigh",
+    "workers": 6,
+    "actualModelAndEffortChecked": 6,
+    "fallbacks": 0,
+    "configMutated": false,
+    "evidence": "p3-model-preflight.json"
+  },
+  "sourceStates": {
+    "acquisition": "Reuse P1 pinned sources; supplementary official API documents recorded in P3 fragments. Acquisition is not a reading claim.",
+    "reading": {
+      "lec03": {"videoId":"lVynu4bo1rY","duration":"89:14","durationSeconds":5354,"captionCues":2020,"internalGapsOverTwoSeconds":6,"inaudibleMarkers":18,"extractedHandoutLines":801,"selectedHandoutPagesViewed":[14,43,54,58,60]},
+      "lec04": {"videoId":"cKSwj_qZ8Jg","duration":"86:20","durationSeconds":5180,"captionCues":1938,"internalGapsOverTwoSeconds":17,"inaudibleMarkers":19,"extractedHandoutLines":502,"selectedHandoutPagesViewed":[7,9,31,40,42,48,56,58]},
+      "captionCuesThisBatch": 3958,
+      "captionCuesCumulative": 6892,
+      "paperCores": {"ids":["paper01","paper02"],"versions":["1706.03762v7","2104.09864v5"],"home":"lectures/lec03/materials.zh.md","extractedLines":977,"selectedVisualPages":11,"specifiedCoresCompleted":2,"fullPapersCloseRead":0,"additionalExt03ExperimentSelections":"separately recorded in p3-extensions/manifest-fragment.json"},
+      "a1": {"commit":"a158843b20107949f1a8d7df1b05cd33b9166712","handoutVersion":"Spring 2026 / 26.0.3","extractedPagesRead":47,"extractedLines":2442,"scoredTasksMapped":38,"letteredSubquestionsMapped":25,"repositoryTexts":"README50, LICENSE7, pyproject50 and CHANGELOG225 lines fully read; cluster guide only1–146"}
+    },
+    "written": "All12 scoped bodies written; notes, limited classroom paraphrases, original paper close-reading and authorized A1 instructions remain distinct. No placeholder materials for L04.",
+    "reviewed": "Main fully read all12 bodies, reviewed all six worker source/review records and independently crosschecked selected pinned primary sources. See p3-shared/source-spotcheck.json and P3-REVIEW.txt.",
+    "accepted": "All12 bodies plus resources accepted on actual desktop/mobile production-build pages. Pending flags within worker fragments are historical handoff states, superseded by this file.",
+    "sourceRecords": 69,
+    "uniqueFileHashIdentities": 58
+  },
+  "verification": {
+    "structure": {"command":"python3 content/stanford-cs336-2026/sources/check-p3.py","result":"passed","bodyDocuments":12,"internalLinks":166,"images":5,"svgParsed":5,"inBoundsTimeRanges":176,"sourceFragments":6,"paperHomesPreserved":16,"captionCoverage":"every cue assigned exactly once; gaps agree with normalized timing","evidence":"p3-shared/structure-check.json"},
+    "cpuExamples": {"command":"/tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python content/stanford-cs336-2026/sources/p3-shared/_cpu_smoke.py","result":"passed","python":"3.11.8","torch":"2.5.1","device":"cpu","independentAuthoredCodeBlocks":8,"extraChecks":["RoPE common-position-shift diagram dot products","L04 accumulated versus overwritten linear-attention state","A1 uncorrected-moment epsilon convention and transformed equivalent"],"temporaryRunnerDeleted":true,"evidence":"p3-shared/cpu-example-check.json","notOfficialEnvironment":true},
+    "build": {"command":"npm run build","result":"passed_once","typecheck":"tsc --noEmit","vite":"5.4.21","modules":3152,"viteSeconds":5.45,"evidence":"p3-shared/build.log"},
+    "pages": {"surface":"Vite production build preview at127.0.0.1:5413","distinctPages":13,"visits":26,"desktop":"1440x1000","mobile":"390x844","rootWidths":[1440,390],"katexErrors":0,"displayMathOverflows":0,"runtimeErrors":0,"svgVisualReview":"all5 inspected; loaded, readable and contained; residual-path figure also checked in light/dark","interactionChecks":["L03 and L04 actual video clicks opened correct YouTube IDs in new tabs and preserved original notes","A1 table scrolled horizontally from0 to16 at390px without root overflow","ext02 answer disclosure opened"],"evidence":"p3-shared/page-check.json","screenshots":"local-only p3-shared/screenshots/"}
+  },
+  "limits": [
+    "Video/lecture-handout translation permission remains unconfirmed: complete navigation with limited original paraphrase, not full transcript translation. Captions fully read does not mean audio or classroom frames verified.",
+    "Attention v7 uses arXiv distribution permission; RoFormer v5 is CC BY-NC-ND. Both are original Chinese close-readings, not published translations. Specified core completion is not full-paper close-reading.",
+    "A1 first-party MIT notice retained. Its47 text pages were read, not every visual PDF page. No official tests, training, data/model downloads, GPU use or paid compute performed.",
+    "CPU micro-examples use an existing Python3.11/PyTorch2.5 environment; not the A1 Python>=3.12,<3.14 and torch~=2.11.0 contract.",
+    "L18 recording, guest handouts and all other P1 access/rights gaps remain recorded; this batch does not resolve them.",
+    "Raw captures, full captions, PDFs/text extracts, document mirrors and screenshots remain local. GitHub receives only explicit body/SVG/lightweight evidence selections; a fresh clone must reacquire raw sources.",
+    "Local Vite build can include ignored source images through the existing asset glob. Those local-only files are excluded from the clean GitHub deployment by the explicit publication list; no src change was made."
+  ],
+  "publication": {"selection":"p3-publication-record.json","commitAndDeployment":"Actual git/Actions results are reported after this acceptance artifact is committed; no self-referential commit hash is predicted."},
+  "nextStage": {"id":"P4","keyword":"CS336-2026-P4-硬件与训练系统","prompt":"NEXT-P4-PROMPT.txt","state":"not_started","autoStart":false}
+}

@@ -1,12 +1,12 @@
 {
   "courseId": "stanford-cs336-2026",
   "plannedAt": "2026-11-14",
-  "updatedAt": "2026-11-14",
-  "phase": "P2_complete_with_documented_limits",
+  "updatedAt": "2026-11-15",
+  "phase": "P3_complete_with_documented_limits",
   "plan": "sources/production-plan.json",
   "sourcesManifest": "sources/manifest.json",
   "readingMap": "sources/reading-map.json",
-  "modelPreflight": "sources/p2-model-preflight.json",
+  "modelPreflight": "sources/p3-model-preflight.json",
   "p0Acceptance": "sources/p0-acceptance.json",
   "p0Review": "sources/P0-REVIEW.txt",
   "versions": {
@@ -28,16 +28,20 @@
     "officialOptionalAssignmentEntries": 1,
     "editorialCapstoneEntries": 1,
     "labEntries": 7,
-    "lectureDocumentsWritten": 10,
-    "labDocumentsWritten": 1,
-    "officialLecturesWithNotesAndDraft": 2,
-    "bridgesWithNotes": 6,
-    "captionTracksFullyRead": 2,
-    "captionCuesRead": 2934,
+    "lectureDocumentsWritten": 20,
+    "labDocumentsWritten": 2,
+    "officialLecturesWithNotesAndDraft": 4,
+    "bridgesWithNotes": 8,
+    "captionTracksFullyRead": 4,
+    "captionCuesRead": 6892,
     "a1HandoutPagesTextRead": 47,
     "a1ScoredTasksMapped": 38,
-    "originalSvgAssets": 2,
+    "originalSvgAssets": 7,
     "p2BodyPagesAccepted": 11,
+    "p3BodyPagesAccepted": 12,
+    "editorialExtensionsWithNotes": 3,
+    "papersSpecifiedCoreCloseRead": 2,
+    "a1LetteredSubquestionsMapped": 25,
     "officialAssignmentsExecuted": 0,
     "verifiedLectureVideoHeaders": 18,
     "captionTracksAcquired": 18,
@@ -51,7 +55,7 @@
     "P0": "complete",
     "P1": "complete_with_documented_gaps",
     "P2": "complete_with_documented_limits",
-    "P3": "not_started",
+    "P3": "complete_with_documented_limits",
     "P4": "not_started",
     "P5": "not_started",
     "P6": "not_started",
@@ -60,11 +64,11 @@
   },
   "sourceCoverage": {
     "officialHomepage": "2026 live and 2025 historical HTML snapshots with URL/UTC/SHA256; numbered 2026 schedule has19 rows. Historical page read only identity metadata.",
-    "videos": "P1 fixed18 official recordings/caption tracks, lec18 still missing. P2 fully read L01 1509 and L02 1425 cues; all >2s gaps and uncertain wording recorded. Both headers rechecked desktop/mobile and actually opened in new tabs; no audio/frame verification.",
-    "handouts": "P1 fixed17 lectures plus separate L02 recording at de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e. P2 fully read L01 Python762 lines and L02 recording embedded Python881 lines; trace event streams/assets not fully read. Current L02 is comparison only.",
-    "papers": "16 numbered arXiv fulltexts acquired; exact selected sections, license, editorial/official relationship crosschecked; no full close-reading claim.",
-    "assignments": "P1 fixed5 SHAs and6 current2026 handouts. P2 A1 all47 extracted-text pages read,38 scored tasks indexed; not a full visual PDF audit, full A1 guidance or assignment completion.",
-    "experiments": "10 independent page code blocks plus selected numerical/semantic checks passed in existing Python3.11.8/PyTorch2.5.1 CPU environment. No course-environment installation, official tests, datasets/models, GPU training or paid compute."
+    "videos": "P1 fixed18 official recordings/caption tracks, lec18 still missing. P2/P3 fully read L01–L04 all6892 cues. P3 adds L03 2020 and L04 1938 cues; all23 internal >2s gaps and uncertain wording recorded. Both new headers checked desktop/mobile and actually opened in new tabs; no audio/frame verification.",
+    "handouts": "P1 fixed17 lectures plus separate L02 recording at de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e. P2 fully read L01 Python762 lines and L02 recording embedded Python881 lines. P3 fully read L03 801 and L04 502 extracted lines and visually inspected13 selected handout pages. Not a full figure/trace audit.",
+    "papers": "16 numbered arXiv fulltexts acquired. P3 completes paper01/paper02 specified core reading at one materials home:977 extracted lines and11 selected PDF pages, plus ext03 experiment selections. Two core readings completed; full-paper close-read count remains0.",
+    "assignments": "P1 fixed5 SHAs and6 current2026 handouts. P3 reread all47 A1 extracted-text pages and fixed README/LICENSE/pyproject/CHANGELOG; complete instructions and concept guidance cover38 scored tasks and25 lettered subquestions. Not a full visual PDF audit or assignment completion.",
+    "experiments": "P2 ten and P3 eight independent authored code blocks plus selected numerical/semantic checks passed in existing Python3.11.8/PyTorch2.5.1 CPU environment. No course-environment installation, official tests, datasets/models, GPU training or paid compute."
   },
   "entries": {
     "lectures": {
@@ -145,67 +149,67 @@
       "bridge03": {
         "kind": "editorial_bridge",
         "metadata": "registered",
-        "notes": "not_started",
+        "notes": "written_reviewed_page_accepted",
         "draft": "not_applicable_no_official_classroom",
         "materials": "no_separate_reading_assigned_in_P1",
         "video": "not_applicable",
-        "page": "skeleton_accepted_body_not_started"
+        "page": "notes_accepted_desktop_mobile_P3"
       },
       "bridge06": {
         "kind": "editorial_bridge",
         "metadata": "registered",
-        "notes": "not_started",
+        "notes": "written_reviewed_page_accepted",
         "draft": "not_applicable_no_official_classroom",
         "materials": "no_separate_reading_assigned_in_P1",
         "video": "not_applicable",
-        "page": "skeleton_accepted_body_not_started"
+        "page": "notes_accepted_desktop_mobile_P3"
       },
       "lec03": {
         "kind": "official",
         "metadata": "source_checked",
-        "notes": "not_started",
-        "draft": "not_started",
-        "materials": "reading_map_scoped_body_not_started",
-        "video": "verified_header_accepted_captions_acquired",
-        "page": "header_accepted_body_not_started",
-        "sourceRead": "See manifest per-source scope; not full classroom reading"
+        "notes": "written_reviewed_page_accepted",
+        "draft": "limited_classroom_paraphrase_reviewed_page_accepted_not_full_translation",
+        "materials": "paper01_paper02_specified_core_independent_close_reading_accepted",
+        "video": "verified_header_accepted_captions_fully_read_not_audio_verified",
+        "page": "notes_draft_materials_accepted_desktop_mobile_P3",
+        "sourceRead": "All2020 cues and801 extracted handout lines; five selected handout pages viewed. Full timeline navigation with gaps/INAUDIBLE and post-term handout conflicts separated; no audio/frame audit."
       },
       "ext01": {
         "kind": "editorial_extension",
         "metadata": "registered",
-        "notes": "not_started",
+        "notes": "written_reviewed_page_accepted",
         "draft": "not_applicable_no_official_classroom",
         "materials": "no_separate_reading_assigned_in_P1",
         "video": "not_applicable",
-        "page": "skeleton_accepted_body_not_started"
+        "page": "notes_accepted_desktop_mobile_P3"
       },
       "ext02": {
         "kind": "editorial_extension",
         "metadata": "registered",
-        "notes": "not_started",
+        "notes": "written_reviewed_page_accepted",
         "draft": "not_applicable_no_official_classroom",
         "materials": "no_separate_reading_assigned_in_P1",
         "video": "not_applicable",
-        "page": "skeleton_accepted_body_not_started"
+        "page": "notes_accepted_desktop_mobile_P3"
       },
       "lec04": {
         "kind": "official",
         "metadata": "source_checked",
-        "notes": "not_started",
-        "draft": "not_started",
+        "notes": "written_reviewed_page_accepted",
+        "draft": "limited_classroom_paraphrase_reviewed_page_accepted_not_full_translation",
         "materials": "no_separate_reading_assigned_in_P1",
-        "video": "verified_header_accepted_captions_acquired",
-        "page": "header_accepted_body_not_started",
-        "sourceRead": "See manifest per-source scope; not full classroom reading"
+        "video": "verified_header_accepted_captions_fully_read_not_audio_verified",
+        "page": "notes_and_draft_accepted_desktop_mobile_P3",
+        "sourceRead": "All1938 cues and502 extracted handout lines; eight selected handout pages viewed. Full timeline navigation with gaps/INAUDIBLE and conflicting MoE slide labels separated; no audio/frame audit."
       },
       "ext03": {
         "kind": "editorial_extension",
         "metadata": "registered",
-        "notes": "not_started",
+        "notes": "written_reviewed_page_accepted",
         "draft": "not_applicable_no_official_classroom",
         "materials": "no_separate_reading_assigned_in_P1",
         "video": "not_applicable",
-        "page": "skeleton_accepted_body_not_started"
+        "page": "notes_accepted_desktop_mobile_P3"
       },
       "lec05": {
         "kind": "official",
@@ -478,11 +482,12 @@
     "labs": {
       "a1-basics": {
         "kind": "official_assignment",
-        "metadata": "2026_fixed_handout_full_extracted_text_read_38_tasks_mapped",
-        "lab": "not_started_P3",
-        "guide": "P2_task_map_reviewed_page_accepted_not_full_guidance",
+        "metadata": "2026_fixed_handout_full_extracted_text_read_38_tasks_25_subquestions_mapped",
+        "lab": "complete_official_instructions_translation_reviewed_page_accepted",
+        "guide": "complete_concept_guidance_reviewed_page_accepted_without_full_solutions",
         "englishOriginal": "not_provided",
-        "page": "guide_accepted_desktop_mobile_P2_lab_not_started"
+        "page": "lab_and_guide_accepted_desktop_mobile_P3",
+        "execution": "not_performed"
       },
       "a2-systems": {
         "kind": "official_assignment",
@@ -554,8 +559,8 @@
     },
     {
       "id": "reading-and-assets",
-      "detail": "P2全读L01/L02字幕与对应Python来源，未核音或观看画面；其他字幕仍为P1首尾/统计范围，论文无新增全文精读。trace事件流和讲义图像未全部读取/下载，不是完全离线运行包。",
-      "evidence": "P2-REVIEW.txt; p2-lec01/reading-log.json; p2-lec02/time-intervals.json; p1-lectures/review.txt"
+      "detail": "P2/P3全读L01–L04字幕与对应文字来源，未核音或观看课堂画面；其他字幕仍为P1首尾/统计范围。两篇论文指定核心精读已完成，不冒充全文精读；P3讲义13页/论文11页为选择性视觉检查。trace事件流和讲义图像未全部读取/下载，不是完全离线运行包。",
+      "evidence": "P3-REVIEW.txt; p3-lec03/reading-log.json; p3-lec04/reading-log.json; p3-papers/reading-updates.json; P2-REVIEW.txt"
     },
     {
       "id": "post-term-lecture-revision",
@@ -599,25 +604,27 @@
     }
   ],
   "verification": {
-    "status": "passed_P2_content_and_page_acceptance_with_limits",
-    "date": "2026-11-14",
-    "evidence": "sources/p2-acceptance.json",
-    "build": "npm run build passed; initial5.97s, after content-only mobile layout fixes5.64s; tsc --noEmit and Vite",
-    "structure": "10 lecture documents,1 A1 guide,2 SVGs,96 internal links,155 in-bounds time ranges,52 source records/45 unique local file hashes and38 scored A1 task IDs passed",
-    "resourcesAndLabs": "All11 body pages plus resources visited desktop1440x1000/mobile390x844. Seven formula/hash overflow pages fixed within content and rechecked; final page width390, no KaTeX/runtime errors. A1 table horizontal scroll and bridge answer expansion observed.",
-    "videoAcceptance": "sources/p2-shared/page-check.json: L01/L02 correct IDs and79:22/77:25, default notes; actual new-tab clicks preserve original notes",
+    "status": "passed_P3_content_and_page_acceptance_with_limits",
+    "date": "2026-11-15",
+    "evidence": "sources/p3-acceptance.json",
+    "build": "npm run build passed once: tsc --noEmit and Vite5.4.21;3152 modules;5.45s Vite",
+    "structure": "12 body documents,5 SVGs,166 internal links,176 in-bounds time ranges,69 source records/58 unique file-hash identities,16 paper homes and38 A1 task IDs/25 lettered subquestions passed",
+    "resourcesAndLabs": "All12 body pages plus resources visited desktop1440x1000/mobile390x844. Root widths1440/390, no KaTeX/display-math overflow/runtime errors. All5 SVGs visually inspected; L03 light/dark, A1 table horizontal scroll and ext02 answer expansion observed.",
+    "videoAcceptance": "sources/p3-shared/page-check.json: L03/L04 correct IDs and89:14/86:20, default notes; actual new-tab clicks preserve original notes",
     "courseExperimentExecution": "not_run"
   },
   "nextStage": {
-    "id": "P3",
-    "title": "模型基础批",
-    "keyword": "CS336-2026-P3-模型基础",
-    "prompt": "sources/NEXT-P3-PROMPT.txt",
+    "id": "P4",
+    "title": "硬件与训练系统批",
+    "keyword": "CS336-2026-P4-硬件与训练系统",
+    "prompt": "sources/NEXT-P4-PROMPT.txt",
     "state": "not_started",
     "autoStart": false
   },
   "p1Acceptance": "sources/p1-acceptance.json",
   "p1Review": "sources/P1-REVIEW.txt",
   "p2Acceptance": "sources/p2-acceptance.json",
-  "p2Review": "sources/P2-REVIEW.txt"
+  "p2Review": "sources/P2-REVIEW.txt",
+  "p3Acceptance": "sources/p3-acceptance.json",
+  "p3Review": "sources/P3-REVIEW.txt"
 }

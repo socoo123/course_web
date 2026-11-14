@@ -1,0 +1,121 @@
+Stanford CS336 Spring 2026 — P3 paper01/paper02 unique-home independent close reading
+Date: 2026-11-14
+Owner: P3PaperMaterials
+Skill read: skill://technical-video-notes
+
+DELIVERED / OWNERSHIP
+1. lectures/lec03/materials.zh.md
+   唯一论文精读正文，按11个独立问题组织，不按原文章节逐段改写。
+   完整覆盖所分配核心；现代架构权衡回链lec03 notes，位置/长度实验回链ext03，
+   优化器动态回链ext02、梯度诊断回链ext01、训练对齐回链bridge06。
+2. lectures/lec03/assets/papers-rope-shift.svg
+   原创二维辨号/共同平移示意。不是论文图重绘、课堂截图或实验曲线。
+   有title/desc；仅currentColor与允许主题变量；无hex/外部资源/脚本/背景填充；
+   两系列另用实线/虚线和直接标签区分。按Main最新SVG约束定向修改，未做页面视觉验收。
+3. sources/p3-papers/manifest-fragment.json
+   22来源记录：11个既有P1文件复用 + 11张本地PDF公式取证页图。
+   原始获取时间/哈希从P1/P2继承；没有把复用算新下载。
+   新页图仅为读源生成，记录生成时SHA256；没有重跑既有源哈希验收。
+4. sources/p3-papers/reading-updates.json
+   paper01/paper02两键供Main合并。逐节core/optional、P3未重读范围、历史P1阅读保留、
+   实际视觉页/公式核对证据、原PDF笔误与编者纠正、待主审/页面验收分别记录。
+5. sources/p3-papers/review.txt
+6. sources/p3-papers/visual/paper01-03.png … paper01-07.png
+   sources/p3-papers/visual/paper02-03.png … paper02-08.png
+   11张本地取证图，不发布。只在分片元数据引用，不嵌入正文。
+
+未修改lec03 notes/draft、共享course/catalog/resources/status、manifest.json、reading-map.json、
+production-plan.json、src、其他课程或官方作业代码。未再派子agent。
+
+REAL READING, NOT ACQUISITION COUNTS
+- 先完整阅读NEXT-P3-PROMPT.txt、P2-REVIEW.txt、P1-REVIEW.txt、p1-papers-01-08/review.txt、
+  reading-map中paper01/paper02完整条目、p2-a1/review.txt与完整manifest-fragment记录。
+  P1论文清单实际读取paper01/02、相应许可来源；未声称读取其他6篇论文。
+- Attention 1706.03762v7：既有layout提取文本1–433行连续实际读。
+  核心§3.1–3.5（含3.2.1–3.2.3）、§4、§5.3完整精读。
+  另外读题名/作者/摘要/§1–2，选读§5.1–5.2、§5.4完整提取文本。
+  §6.1只读415–433行开头；Table2随范围出现，不算实验完整精读。
+  §6.2/6.3/7、参考文献、Attention Visualizations未在P3完整精读。
+  P1已有§6.1–6.2范围核查保留，不降为从未读过，也不升级为P3完整精读。
+- RoFormer 2104.09864v5：既有layout提取文本1–544行连续实际读。
+  核心§2.1–2.3、§3.1–3.3、§3.4.2完整；另读题名/作者/摘要/§1，
+  选读§3.4.1、§3.4.3全文并核对对应公式。
+  §4.2/4.5保留P1已读相关正文的历史证据，但P3未重读；其余实验、结论和参考文献未完整读。
+- 两篇P3有意阅读提取文本合计977行；两篇完整论文精读数=0，指定核心完成数=2。
+  PDF总页数15和14不是已精读页数。
+- A1固定a158843b20107949f1a8d7df1b05cd33b9166712 / Spring2026 v26.0.3：
+  本分片实际读657–724、991–1012、1073–1173、1199–1310行，共303行。
+  核对现代decoder-only/pre-norm/RMSNorm/SwiGLU、logits、RoPE、mask和Q/K不V。
+  P2全47页已读是既有事实，不能算本分片重新全读。未做A1逐页视觉审查。
+- L03固定de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e：实际读提取文本1–180、300–420行，
+  共301行，只支持相关架构/位置对照。2026-09-12晚于学期，不等于录像。
+  本分片未读L03字幕、未核音、未看课堂画面。
+- 许可：arXiv许可完整33行；ND deed实际680–770行；P1法律关键条款复合摘录完整32行。
+  两篇固定metadata的题名/版本/日期/许可字段实际查看，作者与PDF题头交叉。
+  未声称P3重新下载/全读法律条款，或全读arXiv HTML。
+
+ACTUAL VISUAL SOURCE CHECK
+Local pdftoppm -r 105 -png rendered the pinned PDFs, then read(image) actually displayed each page:
+- paper01 physical pp3–7: Figure1原encoder–decoder/post-LN/右移；p4缩放、mask与式1；
+  p5多头/FFN/共享embedding；p6 sin偶/cos奇、复杂度表；p7调度指数与扩张卷积限定。
+- paper02 physical pp3–8: Eq2–10背景、Eq11–16旋转/相对位移、Eq17–19线性注意力分母、
+  选读极坐标构造、核心Eq34成对实现、选读Eq35–37上界和Figure2振荡趋势。
+- 11页的指定内容有实际视觉证据，不是两篇全部29页逐图逐式审校。
+  Figure2不做逐数据点复算；Figure1不复用。所有页图为本地PDF渲染，不是课堂截图。
+
+IMPORTANT TECHNICAL DECISIONS / SOURCE ERRATA
+1. Attention的原始架构是encoder–decoder/post-LN；A1是现代decoder-only/pre-norm，不能反向
+   用2017论文覆盖2026作业规范。6个结构相同的层不等于共享所有层参数。
+2. sqrt(d_k)在softmax前；softmax沿键轴。缩放的方差动机有独立、均值0、单位方差假设；
+   稳定softmax减最大值与尺度控制不同。mask在softmax前；全masked有效查询没有合法分布。
+3. 自回归因果mask允许对角，必须与输入/目标右移一起理解。A1 True=允许。
+4. [sin,cos]坐标的固定偏移矩阵上右正/下左负；RoPE普通[x,y]列向量正旋转上右负/下左正。
+   二者不能因为同样含sin/cos就照抄符号。
+5. RoFormer p5 Eq16末项在原PDF中就印为x^T W_q R_(n-m) W_k x_n：
+   缺x_m下标和W_q转置，不是提取器造成。本页页底明确编者独立纠正为
+   x_m^T W_q^T R_(n-m) W_k x_n。已将实际发现告知Main。
+   p3 Eq4原PDF也用未解释的k位置字母；p7 Eq32 query端原PDF用x_n。
+   正文使用自洽定义，不把错误当原文正确公式、不静默说原文如此。
+6. R_m^T R_n=R_(n-m)；复数q*conj(k)*exp(i(m-n)omega)取实部给同一值。
+   正文明确行/列、配对/共轭与位移约定；共同位置平移只保证固定内容向量的显式打分不变。
+7. Eq15的一起始10000^[-2(i-1)/d]与§3.3的-2i/d需统一编号。本文从0起始j。
+8. Eq34对应逐对(-x2,x1)、重复cos/sin、逐元素乘法，不构造d×d稠密矩阵；
+   正文改用odot，避免把论文otimes误看为Kronecker积。不给可提交实现。
+9. 长程衰减是多频率上界/趋势论述；单频率块余弦反例否定逐内积单调保证。
+   Figure2原图本身有振荡；不能由此承诺任意长度泛化或softmax权重逐距离单调。
+10. Eq19旋转在特征映射后；分子旋转、分母不旋转，系数可能负且非概率归一化。
+    不能称普通softmax自动变成线性时间；原有分母仍需非零。
+11. Attention Table1的attention交互项不包含整个层投影/FFN，卷积对数路径要求扩张结构。
+    训练并行不等于自回归生成并行。Adam+inverse-sqrt历史配方不覆盖现代AdamW调度。
+
+COPYRIGHT / PUBLICATION
+- 两篇均为自主问题组织、推导和评论，非逐段翻译/改写，不公开英文全文、译文或第三方图表。
+- Attention arXiv分发许可不是公众翻译授权；首页有限图表许可不扩张成全文翻译许可。
+- RoFormer CC BY-NC-ND4.0禁止共享翻译改编；本页未声称获准中文译本。
+- 公开页底列全体作者、固定版本/日期、URL、精确节/式/物理页导航、许可和本批真实范围。
+- 只提交正文、原创SVG和三份轻量分片文件；visual目录与P1原件留本地。
+  不存cookie、凭据或签名媒体URL。不修改sources既有忽略策略。
+
+STATE AT HANDOFF
+已采集/复用：11既有文件；新增本地取证页图11。
+已读：两篇指定核心 + 实际列出的选读/课程交叉；不是全篇。
+已写：唯一materials正文1、原创SVG1、manifest/reading-updates/review三件。
+待主审：是；待页面验收：是。
+未执行课程实验：是；没有任何官方作业实现、测试、训练、GPU/数据/模型下载或付费调用。
+Model: Main通知已实际核对六个子会话gpt-6-astra/xhigh、resolvedModelIsFallback=false；
+证据sources/p3-model-preflight.json。本人未独立读取运行事件。
+
+CHECKS NOT RUN / MAIN VERIFICATION SUGGESTIONS
+- Worker未运行build/lint/tests/formatter/smoke、站内链接检查、浏览器、git或既有哈希复验。
+  仅进行源阅读所需PDF本地渲染与新页图创建时digest登记；不能当页面验收通过。
+- 主agent最小验收：解析两个JSON；22来源必填字段、路径与哈希；paper01/02唯一home不变；
+  阅读更新保留P1历史而不把P3未重读变成从未读。渲染原件仅本地，不进发布提交。
+- 浏览器看390px下§5的sin/cos矩阵、§6/7成对公式、§8上界、§10调度、页底原文导航表。
+  SVG按最新规则透明/允许变量/currentColor，实际验明暗可读性与手机缩放。
+- 无可执行正文代码块，故本分片无需CPU代码块执行。
+  若主agent聚合验证希望检验数学微例，可用独立标量三角计算（不是RoPE作业实现）：
+  q=(1,0), k=(0,1), omega=pi/2。
+  m=0,n=1时q'=(1,0),k'=(-1,0),dot=-1；m=2,n=3时q'=(-1,0),k'=(1,0),dot=-1。
+  sin/cos位置矩阵用p=0, delta=pi/2：输入[0,1]应映射[1,0]。
+  w=4000时调度两支相等eta(w)=1/sqrt(d_model*w)；t只取正更新步。
+  上述期望为手工推导，worker未执行，不预报已通过。

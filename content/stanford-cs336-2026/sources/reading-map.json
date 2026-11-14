@@ -1,7 +1,7 @@
 {
   "courseId": "stanford-cs336-2026",
-  "updatedAt": "2026-11-14",
-  "status": "P1_fixed_sources_sectional_reading_and_official_crosscheck_complete",
+  "updatedAt": "2026-11-15",
+  "status": "P3_paper01_paper02_specified_core_readings_reviewed_and_page_accepted",
   "policy": "每篇单一正文归属不变。16篇全文已本地获取，但实际已读仅各记录所列范围；未称全文精读。官方明确推荐/任务必查与编者必读/选读分开。授权不明或ND材料仅自主精读。",
   "readings": [
     {
@@ -74,8 +74,8 @@
       "chineseTreatment": "independent_close_reading",
       "version": "arXiv:1706.03762v7",
       "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
-      "status": "P1_source_and_scope_reviewed_not_full_close_read",
-      "readingEvidence": "题名、作者、v7标识及首页图表授权；§§1–5正文、§6.1–6.2正文和表2–3的提取文本；浏览余下节标题。PDF物理页1–9的这些内容已做P1范围核查，不等于逐图逐式或全文精读。",
+      "status": "P3_specified_core_close_read_and_written_not_full_paper",
+      "readingEvidence": "P3连续读取提取文本1–433行：完整核心§3.1–3.5、§4、§5.3，选读§5.1–5.2及§5.4；实际视觉核对固定PDF物理页3–7的结构/公式。P1历史范围保留于p1ActualReading；不称15页全文精读。",
       "authors": [
         "Vaswani, Ashish",
         "Shazeer, Noam",
@@ -129,7 +129,7 @@
         "note": "a1-basics：Q/K/V、causal mask、multi-head attention和前馈层实现的概念依据；原文是encoder-decoder与post-LN，不能当作课程现代decoder-only架构的逐项规范。",
         "officialCrosscheckFile": "p1-assignments-a1-a4/reading-updates.json"
       },
-      "chineseTreatmentStatus": "P1_permission_decision_only; no_translation_or_course_body_written",
+      "chineseTreatmentStatus": "P3_single_home_independent_close_reading_written; not_translation_or_paragraph_paraphrase",
       "chineseTreatmentConditions": "只写自主概括、推导和评论，必要的短引须标出处；不发布逐段改写/整篇译文替代品。",
       "versionDate": "2023-08-02",
       "licenseEvidence": {
@@ -144,7 +144,7 @@
         "readAt": "2026-11-14T13:47:55.076422Z",
         "notes": "v7首页只额外允许适当署名的图表用于新闻或学术作品，不授权整篇翻译。"
       },
-      "actualReading": {
+      "p1ActualReading": {
         "method": "pdftotext -layout",
         "scope": "题名、作者、v7标识及首页图表授权；§§1–5正文、§6.1–6.2正文和表2–3的提取文本；浏览余下节标题。PDF物理页1–9的这些内容已做P1范围核查，不等于逐图逐式或全文精读。",
         "pdfPageSelections": [
@@ -175,6 +175,20 @@
           "模型图与公式尚未逐项对照PDF视觉校对"
         ],
         "readAt": "2026-11-14T13:47:55.076422Z"
+      },
+      "actualReading": {
+        "phase": "P3",
+        "textFile": "p1-papers-01-08/paper01-1706.03762v7.txt",
+        "textLineSelections": [[1,433]],
+        "specifiedCoreCloseRead": true,
+        "completePaperCloseRead": false,
+        "formulaAndFigureVisualAudit": false,
+        "visualAuditStatus": "specified_regions_on_physical_pages_3_to_7",
+        "readAt": "2026-11-14T15:52:33Z",
+        "detailedEvidence": "p3-papers/reading-updates.json#/paper01",
+        "sourceManifest": "p3-papers/manifest-fragment.json",
+        "notYetFullyRead": ["§6.3、§7、参考文献及Attention Visualizations未完整精读", "未做全部15页逐图逐式审校"],
+        "historicalReading": "p1ActualReading preserves earlier selected §6.1–6.2 reading; not downgraded to never-read."
       },
       "sourcePaths": {
         "metadata": "p1-papers-01-08/paper01-1706.03762v7-abs.html",
@@ -234,9 +248,9 @@
       "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review.",
       "officialCrosscheck": "L01 trace imports transformer_2017; L03 covers original Transformer. Classroom reference, not a whole-paper reading instruction.",
       "officialRequirement": "未发现明确论文阅读指令；中文精读范围为编者安排",
-      "written": "not_started",
-      "reviewed": "P1_source_version_license_and_selected_scope_only",
-      "accepted": "placement_only_no_body_page"
+      "written": "P3_single_home_independent_close_reading_complete",
+      "reviewed": "Main_read_complete_materials_and_crosschecked_core_equations",
+      "accepted": "desktop_mobile_P3; p3-acceptance.json"
     },
     {
       "id": "paper02",
@@ -314,8 +328,8 @@
       "chineseTreatment": "independent_close_reading",
       "version": "arXiv:2104.09864v5",
       "license": "CC-BY-NC-ND-4.0",
-      "status": "P1_source_and_scope_reviewed_not_full_close_read",
-      "readingEvidence": "题名、作者、v5标识；§§2.1–2.3、3.1–3.3及§3.4.2的正文/公式提取文本；§4.2与§4.5（含4.5.5限制）正文与相关表格；扫描全部节标题。",
+      "status": "P3_specified_core_close_read_and_written_not_full_paper",
+      "readingEvidence": "P3论文正文分片连续读取提取文本1–544行：完整核心§2.1–2.3、§3.1–3.3、§3.4.2及选读§3.4.1/3.4.3；视觉核对PDF物理页3–8的指定公式。ext03另按限定文本核对§4.2/4.5及限制，不构成第二论文正文或14页全文精读。",
       "authors": [
         "Su, Jianlin",
         "Lu, Yu",
@@ -352,7 +366,7 @@
         "note": "a1-basics：对query/key按位置实施RoPE、验证相对位移内积及实现式(34)；ext03仅回链原home，不在此重复正文。",
         "officialCrosscheckFile": "p1-assignments-a1-a4/reading-updates.json"
       },
-      "chineseTreatmentStatus": "P1_permission_decision_only; no_translation_or_course_body_written",
+      "chineseTreatmentStatus": "P3_single_home_independent_close_reading_written; not_translation_or_paragraph_paraphrase",
       "chineseTreatmentConditions": "只写自主概括、推导和评论，必要的短引须标出处；不发布逐段改写/整篇译文替代品。",
       "versionDate": "2023-11-08",
       "licenseEvidence": {
@@ -367,7 +381,7 @@
         "readAt": "2026-11-14T13:47:55.076422Z",
         "notes": "本固定版是CC BY-NC-ND 4.0，NoDerivatives禁止共享翻译改编；不能因为论文公开即可整篇翻译。"
       },
-      "actualReading": {
+      "p1ActualReading": {
         "method": "pdftotext -layout",
         "scope": "题名、作者、v5标识；§§2.1–2.3、3.1–3.3及§3.4.2的正文/公式提取文本；§4.2与§4.5（含4.5.5限制）正文与相关表格；扫描全部节标题。",
         "pdfPageSelections": [
@@ -417,6 +431,26 @@
         ],
         "readAt": "2026-11-14T13:47:55.076422Z"
       },
+      "actualReading": {
+        "phase": "P3",
+        "textFile": "p1-papers-01-08/paper02-2104.09864v5.txt",
+        "textLineSelections": [[1,544]],
+        "specifiedCoreCloseRead": true,
+        "completePaperCloseRead": false,
+        "formulaAndFigureVisualAudit": false,
+        "visualAuditStatus": "specified_regions_on_physical_pages_3_to_8",
+        "readAt": "2026-11-14T15:52:33Z",
+        "detailedEvidence": "p3-papers/reading-updates.json#/paper02",
+        "sourceManifest": "p3-papers/manifest-fragment.json",
+        "supplementaryReading": {
+          "slice": "p3-extensions",
+          "textLineSelections": [[248,377],[507,556],[590,609],[697,790]],
+          "scope": "ext03实际核对§4.2、§4.5及§4.5.5限制等选段；无额外视觉审核或全文精读",
+          "sourceManifest": "p3-extensions/manifest-fragment.json"
+        },
+        "notYetFullyRead": ["§4.1、§4.3、§4.4及参考文献未完整精读", "未做全部14页逐图逐式审校"],
+        "historicalReading": "p1ActualReading retains P1 selected experimental passages; P3 core proof reading is separately evidenced."
+      },
       "sourcePaths": {
         "metadata": "p1-papers-01-08/paper02-2104.09864v5-abs.html",
         "fullText": "p1-papers-01-08/paper02-2104.09864v5.pdf",
@@ -461,9 +495,9 @@
       "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review.",
       "officialCrosscheck": "L03 extracted slides lines 350–414 cover RoPE; classroom topic, not a whole-paper reading instruction.",
       "officialRequirement": "未发现明确论文阅读指令；中文精读范围为编者安排",
-      "written": "not_started",
-      "reviewed": "P1_source_version_license_and_selected_scope_only",
-      "accepted": "placement_only_no_body_page"
+      "written": "P3_single_home_independent_close_reading_complete",
+      "reviewed": "Main_read_complete_materials_and_crosschecked_core_equations; worker_visually_verified_original_Eq16_typo",
+      "accepted": "desktop_mobile_P3; p3-acceptance.json"
     },
     {
       "id": "paper03",

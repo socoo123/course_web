@@ -1,0 +1,69 @@
+CS336-2026 P3 — bridge03 / bridge06 / ext01
+日期：2026-11-14
+身份：编者先修桥接与诊断专题，不是 Stanford 官方讲次、课堂译稿或新增官方必读。
+结论：三个自主 notes、一张原创 SVG、15条来源清单已写。代码与页面由 Main 统一验收；本 worker 没有执行任何例子、测试、构建或浏览器检查。已采集/按范围已读/已写不等于已验收或课程实验完成。
+
+一、实际交付
+1. lectures/bridge03/notes.zh.md
+   链式法则的局部线性意义；共享中间节点多路径相加；残差直通路径不保证梯度永不消失；列向量J^T v与行向量v^T J约定；非标量种子不等于整个Jacobian；广播反向沿复用轴归约；叶子/grad_fn/.grad留存；retain_graph/create_graph/retain_grad三者区别；跨反向梯度累积、None与零；两个原创CPU API微例；5个折叠自测及答案。
+2. lectures/bridge03/assets/shared-node-vjp.svg
+   自拟x=2,u=x²,a=3u,b=u²,L=a+b图。u处贡献3+8=11，x梯度44。390×490竖向布局，中文title/desc；无背景、外链、脚本或课堂图复用；颜色仅theme vars/currentColor，root color-scheme声明，待Main实际检查明暗与手机。
+3. lectures/bridge06/notes.zh.md
+   token shift的输入/目标契约，教学起始符不是新增官方特殊token；teacher forcing与因果mask各自职责；行query列key且对角线允许；未来扰动因果性检查；attention/padding/计分三类掩码；文档结束符不自动隔离attention；microstep/optimizer step/processed/scored token区分；训练/验证/生成三份契约；eval与no_grad；计分分子分母；检查点基本恢复与编者复现扩展；最后有效位置生成与停止；一个模式开关微例；5个折叠自测及答案。
+4. lectures/ext01/notes.zh.md
+   数据/目标→前向→分布→反向→更新的诊断路径；合法-inf mask与异常非有限值分开；分层统计/词表熵/尺寸归一化；有限loss不保证有限梯度；None/零/非有限三分；梯度RMS与真实相对更新；anomaly detection准确边界；方向导数有限差分；global norm clipping与逐元素裁剪不同；按有效token加权累积、裁剪非线性；autocast与scaler分工；累积→unscale一次→检查/裁剪→scaler.step→update顺序；两个CPU小例；5个折叠自测及答案。
+5. sources/p3-bridges/manifest-fragment.json 与本review.txt
+   逐源必须字段齐全：id/kind/url/file/sha256/version/retrieved_at/license/read_scope/read_at/chinese_treatment/material_files。file相对sources/，material_files相对课程根。获取UTC来自新下载日志，复用来源保留原日期和哈希；阅读日期只记实际日期，不假造逐条读完秒数。
+6. sources/p3-bridges/raw/
+   9份新取得的官方来源原件，仅本地留存，不建议发布。8份PyTorch 2.9 HTML（autograd-mechanics/amp-examples/is-leaf/backward/clip-grad-norm/autograd-grad/zero-grad/dropout），1份固定v2.9.0 anomaly-mode.py。不创建来源.md，不保存cookie/签名媒体URL。
+
+二、真实阅读量与复用
+- 完整读skill://technical-video-notes、NEXT-P3-PROMPT、P2-REVIEW、P1-REVIEW。
+- 完整读p2-bridge-foundations与p2-bridge-systems各自review、manifest（包括被默认reader折叠的条目，用显式raw范围补齐）。不是只看源清单后就声称读过文档。
+- 完整读六篇现有bridge01/02/04/05/07/08 notes；不重写、不改动这六篇。
+- 新来源9项：6页短API主正文完整读（is_leaf/backward/autograd.grad/zero_grad/clip_grad_norm_/Dropout），autograd mechanics与AMP examples按精确章节读，anomaly_mode.py整份读。未把长文档采集算整页全部章节已读。
+- Autograd mechanics实际主范围：How autograd encodes the history、Saved tensors、Gradients for non-differentiable functions、Division by Zero、requires_grad/grad modes/no-grad/inference/evaluation、in-place operations/correctness checks。多线程只见开头，复数/hooks未读未教。
+- AMP examples实际主范围：开场、Typical Mixed Precision Training、Working with Unscaled Gradients/Gradient clipping、Working with Scaled Gradients/Gradient accumulation及完整例子。reader也展示gradient penalty开头，但没有声称后续章节全文已读，不教授penalty、多模型或多GPU。
+- 复用6项：P2 numerical-accuracy原始HTML及114行全文提取，P2 broadcasting.rst全部114行，P2 detach正文10行，A1提取选段，以及PyTorch/A1两份许可证（84行/7行全文）。复用获取日期和哈希，不重取原件、不重新冒充采集。
+- A1实际384个去重文本行：1–61、640–655、1292–1310、1444–1511、1743–1806、1823–1978。对应封面/AI政策、§3开场、§3.4.5因果mask与相邻段、§4.1、§4.5/§5.1、§5.2–5.3/§6到任务开头。不是完整47页已读，不是视觉PDF审校。
+- 共15源记录：13内容来源、2许可来源；9新原件、6复用。逐项真实范围在manifest。没有课堂字幕/音视频阅读声明，没有新增论文精读。
+
+三、版本、许可与范围决定
+- A1唯一基线a158843b20107949f1a8d7df1b05cd33b9166712、Spring2026 v26.0.3；README的旧2025标签不更改学期。第一方associated documentation MIT不外推数据、论文、服务、媒体。本文无大段翻译/复制，完整作业说明与许可由A1页统一承载。
+- PyTorch使用既有2.9补充基线。2.9文档页部分source链接实际指向v2.9.1，已明确记录；不假称所有页面固定v2.9.0，或课程/本地环境恰为2.9。anomaly_mode与复用broadcast/license确为v2.9.0原件。
+- 讲义固定de53a9...的学期后修订与录像边界未改变；本slice不把讲义当录像、不接触翻译授权不明的课堂正文。RoFormer等论文归属与许可也没有改动。
+- bridge03只负责求导；bridge06只负责训练闭环；ext01只负责诊断。形状/概率/内存/浮点分别回链既有bridge；优化器详细动态回链ext02。没有另建A1正文、paper正文、位置编码推导或系统专题。
+- 三篇页头status只写恒定教学/执行范围，不留会随主agent验收过期的“待主审”文案。待验收状态在分片记录与Main汇总中。
+- 三篇只链接本批已有元数据正文、既有桥接与A1 guide；没有/resources假路由或视频按钮/跳转链接。无录像的编者页不创建draft/materials占位。
+
+四、技术核对与已响应主审意见（不是运行验证）
+- VJP先定义J[m,n]和列梯度，J^T v给n维输入贡献；种子不是“随意传个ones修报错”。广播例沿batch/time求和，损失均值的分母不会自动再除一次。
+- 同图多路径相加与不同backward写入同一.grad缓冲区分别教学。非叶子未留.grad不等于反向没经过；None和0对优化器的语义可能不同。
+- eval与求导开关独立。Main发现原模式例的eval Dropout可能直接返回x，no_grad不会追溯修改输入requires_grad；已按具体问题修复：b、c均显式执行layer(x)*2，a仍全0；预期全0/全2/全2与True False。正文解释这一陷阱，未重跑去“确认错误”。
+- 未来可见性与目标计分分开；loss屏蔽不负责阻止信息泄漏。起始符与padding只是教学边界，不给A1增加任务。
+- 检查点A1基本要求与编者随机状态/数据状态/scaler补充分开；保持不同设备与版本不保证逐位复现，不称已执行恢复检查。
+- sqrt(0)小例刻意说明有限前向/无限导数；anomaly detection的check_nan不被夸成全inf检测器；非法分支不能事后mask/替换成正常值蒙混过去。
+- clipping说明理想几何公式与epsilon实现微差，非有限梯度不能靠裁剪修复；累积先按有效token权重合并再裁剪。scale在同一有效窗口固定，unscale一次后不再加入scaled梯度。
+- 文档num accuracy文本第31行的row/column示例可疑、broadcast空尺寸示例表述不严谨；不复制这两条，不借题重写P2。
+- Main报告已通读bridge03/bridge06并对ext01主体作技术主审；最终整合审核、执行与页面验收仍由Main落总记录。此review不替Main写通过结论。
+
+五、给Main的5个最小CPU验证建议（worker均未执行）
+均用既有CPU PyTorch环境，不安装官方依赖，不运行官方A1测试；记录真实Python/PyTorch版本，不称GPU/训练/课程依赖验收。
+1. bridge03第一个Python块：stdout三行为11.0 44.0；49.0；5.0。
+2. bridge03第二个Python块：stdout两行为[5.0, -2.0] True；[44.0, 66.0]。
+3. bridge06唯一Python块（已修复）：stdout第一行为[0.0, 0.0, 0.0] [2.0, 2.0, 2.0] [2.0, 2.0, 2.0]；第二行True False。
+4. ext01反例A：stdout两行为0.0 inf；True False。inf是本反例有意观察到的数学奇点，不是应掩盖的验收失败。
+5. ext01微例B：stdout为[20.0, 40.0]；-20.000000 -20.000000。解析grad=(20,40)、方向导数−20；有限差分绝对容差1e-5，h=1e-4。
+补充手算可核对：不等目标数[2,6]与均值梯度[1,3]→2.5；clip([6,8],5)→[3,4]而各裁剪再相加→[5,5]；scaled [300,400]错误先裁剪再除100→[.03,.04]。
+
+六、给Main的页面/结构建议（worker均未执行）
+- 三篇各5个details答案、数学渲染、已有站内回链；A1 guide仍是指导入口。
+- 检查三篇390px正文，特别ext01的clip非线性公式/RMS/更新比例/AMP顺序表。长公式已主动aligned分行；正文不放完整不换行SHA256。
+- bridge03 SVG相对路径/XML/title/desc可达性，手机中文字号与深浅色真实可见性；独立img不一定继承父页面CSS变量，因此增加currentColor兜底与color-scheme，但仍需实际看图。
+- 15项manifest必填字段、9个新原件hash与6个复用原件hash；新hash只是在获取时计算，本worker没有运行哈希验证pass。
+- 主agent统一build/定向检查/页面验收；本片没有运行或预填通过。
+
+七、明确未做
+没有子agent；没有编辑其他目录或共享文件；没有src/其他课程/官方作业实现；没有重写P2桥接；没有字幕翻译、媒体下载或截图；没有环境安装、模型/全量数据、付费任务；没有build/test/lint/formatter/smoke/browser/git；没有官方课程实验执行；没有声称P3整体完成或部署成功。
+模型由Main实际核实为openai-codex/gpt-6-astra/xhigh且无fallback，共享证据sources/p3-model-preflight.json；本slice不自称独立检查运行事件。
+可发布：三篇原创notes、一张SVG、本manifest/review。原始文档与A1提取全文仅本地来源档案，不强制提交整个sources目录。

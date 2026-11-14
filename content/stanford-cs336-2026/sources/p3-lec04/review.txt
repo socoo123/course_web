@@ -1,0 +1,61 @@
+Stanford CS336 Spring 2026 — P3 L04制作交接
+日期：2026-11-14
+范围：仅 lectures/lec04/ 与 sources/p3-lec04/。已读、已写，待Main最终整合主审与页面验收；课程实验未执行。未修改共享metadata/status/catalog/course/resources/manifest/reading-map/production-plan、src、其他课程或官方作业。
+
+一、先修与真实阅读
+- 先完整读 technical-video-notes 技能和现有normalize_captions.py；用等价的非空事件拼接规则生成新阅读视图，原词不改，内部换行仅在一cue一行的TXT里替为空格。所有新文件经write；后续已有正文/SVG修订经edit。没有运行课程代码或验证脚本。
+- 完整读 NEXT-P3-PROMPT.txt、P2-REVIEW.txt、P1-REVIEW.txt；L01/L02 notes+draft全部；p2-lec01与p2-lec02的review+manifest-fragment全部。另读p1-lectures/review.txt和L04视频/讲义相关来源字段。
+- 实际读完1938条字幕，不是下载/提取即已读。transcript.en.txt共1938行，一行一个cue，实际窗口1–300、301–600、601–900、901–1200、1201–1500、1501–1800、1801–1938。
+- 字幕首起00:05.200、末止86:15.510；视频cKSwj_qZ8Jg，单视频5180秒=86:20；playlist5181秒另存不采用。Stanford Online，上传2026-04-15；课表2026-04-08、Tatsunori Hashimoto，不把上传日当录制日。
+- 完整读p1-lectures/lecture_04.txt 1–502行。PDF共60页，额外在内存渲染并视觉读第7、9、31、40、42、48、56、58页，核对状态递推、router、平衡目标、z-loss、v3公式与MLA。未声称全60页图表全部视觉精读，未保存/发布这些渲染图片。
+- L03提取文本只选读674–765行作头共享背景。按Main要求，正文§2已缩为一段对照并回链L03 §6；不再重复缓存公式或数值例。两篇指定论文只回链L03 materials，不自报论文新精读。
+- Main通知其已实际核对本轮model_change、thinking_level_change和首assistant字段为gpt-6-astra/xhigh、无fallback；统一证据p3-model-preflight.json。本子任务未自读运行事件。
+
+二、交付文件
+可发布正文/资产：
+1. lectures/lec04/notes.zh.md：自主组织成本分类、softmax与线性算子的差异、因果递推、输入依赖门与定向覆盖条件、并行表达边界、混合/稀疏复杂度、MoE总/激活参数、路由连续与离散部分、平衡与z-loss、容量丢弃、MLA/MTP边界、自测和全片导航。
+2. lectures/lec04/draft.zh.md：21主题块全片导航，7组限量主线摘要，不逐块扩写为整片替代稿；含全部首尾/内部>2秒空隙及疑词类别。明确不是完整译稿。
+3. lectures/lec04/assets/history-state-tradeoff.svg：原创逐位置KV与固定状态对照，title/desc齐全；最终使用currentColor及--fg/--border/--muted/--accent，color-scheme:light dark，无hex字面量、无背景填充、无脚本/外部资源。图不表示两条路径等价。
+轻量来源：
+4. p3-lec04/manifest-fragment.json：7条来源记录，逐条id/kind/url/file/sha256/version/retrieved_at/license/read_scope/read_at/chinese_treatment/material_files；复用P1获取日期和原哈希，新派生文本另记derived_at。
+5. p3-lec04/video-metadata.json：简洁身份/日期/时长/字幕/许可与P1溯源，无cookie或签名URL。
+6. p3-lec04/time-intervals.json：Main建议的blocks结构，详见下一节。
+7. p3-lec04/reading-log.json：真实阅读窗口、PDF视觉范围、疑点、独立状态。
+8. p3-lec04/review.txt：本交接。
+仅本地，不应强制提交全文：
+9. p3-lec04/transcript.en.txt。
+10. p3-lec04/captions.normalized.json。
+不创建materials.zh.md：没有为本讲制作独立额外来源正文；课堂提及Mamba/OLMoE/DeepSeek等不等于已读其论文。原始P1字幕、PDF及其他全文继续本地保留。
+
+三、时间结构与不确定项
+- time-intervals.json采用blocks[{start_seconds,end_seconds,cue_indices_1_based_by_start:[first,last]|null}]。
+- 导航由leading+21主题块+trailing组成，边界按真实cue起点分段，首0、末5180连续；cue范围为1-based闭区间，各cue归属一次。段落可包含无字幕间隙，不等于每秒语音有记录。正文导航是这些边界四舍五入到秒。
+- caption_gaps数组含kind=leading/internal/trailing，start_seconds/end_seconds/duration_seconds；内部严格>2秒共17处，首5.200秒、尾4.490秒；不是静音判定。
+- 共19个含INAUDIBLE的cue：452、454、456、471、601、602、610、632、650、658、666、677、678、681、755、756、963、1596、1616。记录逐cue精确毫秒，不重建原问句；只有讲者回答足够明确时标主题。
+- 记录row/rho、DSA展开、AIQ、Shazier、many CPM、KB cache、drop less等疑词；GLM5的last year不改成发行日期事实。未核音、未看录像画面、未下载媒体/截帧。
+
+四、技术限定与来源冲突
+1. 结合律只在去掉softmax后的纯线性算子内成立；因果递推须和同一因果mask比较，不等于含未来位置的Q(K^TV)。
+2. 固定维度状态是增量推理的历史状态主项，不意味着训练保存集合固定，也不涵盖混合结构中全局层缓存。保留固定比例全局attention仍有二次项。
+3. Gated DeltaNet beta=0仅停止当前写入，gamma仍可衰减状态；严格正交投影需单位key和对应门值。课堂17:38–17:46已自行限定，不伪称首次编者纠错。
+4. 输入依赖仿射递推允许组合/并行表达，不保证任意稠密A都廉价；结构、状态尺寸和kernel仍重要。
+5. DSA索引仍有二次打分；选中阶段按每query的k个keys计T*k配对。课堂“小上下文上二次”的口语不被当作通用精确复杂度。
+6. 固定专家尺寸/top-k仅保持激活专家主项；router、参数存储、batch触达专家集合、状态、调度和通信不免费。
+7. top-k索引不可微不代表连续权重完全无梯度。全专家softmax再筛选与只在选中集合softmax的梯度不同；后者top1权重恒1，不能据此否定所有top1训练。未选FFN无该token直接任务梯度，与未选logit可经softmax分母获梯度要分开。
+8. 平衡公式明确为top1、f硬计数停止梯度，dL/dp=alpha*E*f/T；梯度下降方向与logit梯度另论。均匀alpha/集中alpha*E是特例，不误称任意约束下均匀必为唯一最小值。z-loss调log-partition不等于负载均衡。
+9. PDF第56页标题v3但下一行V2、258专家与第35页256冲突。第31/56页softmax旁注与第56页展示的sigmoid分数求和归一化不一致。本页不复制有冲突的产品参数表，未另读技术报告来认证其真实算法；只说明一般运算差异。
+10. 上述原讲自限、字幕不明、讲义内部矛盾、编者推导分开登记。系统只讲架构边界，不进入ext09、后续kernel或L05。
+
+五、Main统一最小检查建议（本子任务没有执行）
+- 对照原JSON3核对1938cue、5180秒、5.2–5175.51；检查blocks闭区间覆盖各cue一次及0–5180导航连续；17处内部严格>2秒空隙、19个INAUDIBLE逐项匹配。主张来自源处理与阅读，不是本子任务运行通过了验收脚本。
+- 逐源哈希、引用/站内链接、SVG路径/XML与轻量/本地全文发布边界。本讲链接只用本批必交和既有条目；无/resources公共资料后缀。
+- 浏览器实际查看两正文桌面/390px，特别是长aligned公式、三列表格、SVG两主题可读性；确认页头cKSwj_qZ8Jg/86:20，点击新标签并保留笔记。图尚未由本子任务渲染验收。
+- 正文没有可执行代码块，无CPU脚本需要运行。可合并做两个纯数值复核：Sprev=(2,5)^T,k=(1,0)^T,v=7,gamma=beta=1，累加为(9,5)^T、定向覆盖为(7,5)^T；top1平衡均匀特例alpha、同一专家全集中特例alpha*E。
+- 不运行课堂整份讲义或MoE模型；不安装依赖、不下载模型/数据、不启动付费算力。以上均不是A1实现或官方训练。
+
+六、真实状态
+sources_acquired_reused=true；caption_cues_read=1938；handout_extracted_lines_read=502；selected_pdf_visual_pages=8。
+notes_written=true；draft_written=true；materials_written=false；original_svg_count=1。
+independent_review=pending_Main_final_integration；site_accepted=false；audio_verified=false；video_frames_viewed=false。
+executable_code_blocks=0；course_experiments_executed=false；build_tests_lint_formatters_run=false；shared_metadata_modified=false。
+本子任务没有build/lint/tests/formatter/smoke/git或页面验收。最终完成状态由Main写入总status与P3验收记录，不把本分片交接态误写为课程未完成或全部已验收。

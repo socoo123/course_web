@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="620" viewBox="0 0 680 620" role="img" aria-labelledby="title desc">
+  <title id="title">共同平移保持相对旋转和内积</title>
+  <desc id="desc">编者自拟二维例子：内容向量q为一零，k为零一，每步逆时针旋转九十度。位置m为零、n为一时，旋转后的q指向右、k指向左，内积负一。两位置共同增加二后，q指向左、k指向右，内积仍为负一。两行都保持n减m为一。示例频率不是论文默认频率。</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    text { font-family: system-ui, -apple-system, "PingFang SC", "Noto Sans CJK SC", sans-serif; fill: var(--fg, currentColor); }
+    .title { font-size: 26px; font-weight: 700; }
+    .label { font-size: 23px; font-weight: 600; }
+    .body { font-size: 22px; }
+    .small { font-size: 19px; }
+    .panel { fill: none; stroke: var(--border, currentColor); stroke-width: 2; }
+    .axis { stroke: var(--muted, currentColor); stroke-width: 2; fill: none; }
+    .query { stroke: var(--accent, currentColor); stroke-width: 5; fill: none; }
+    .key { stroke: var(--c2, currentColor); stroke-width: 5; stroke-dasharray: 10 5; fill: none; }
+    .qfill { fill: var(--accent, currentColor); }
+    .kfill { fill: var(--c2, currentColor); }
+  </style>
+  <text x="26" y="42" class="title">位置一起平移，打分为什么不变？</text>
+  <text x="26" y="79" class="body">q = (1, 0)，k = (0, 1)，每步逆时针转 90°</text>
+  <rect x="24" y="106" width="632" height="196" rx="12" class="panel"/>
+  <text x="44" y="142" class="label">m = 0，n = 1</text>
+  <text x="406" y="142" class="body">n − m = 1</text>
+  <path d="M135 222 H527 M331 172 V270" class="axis"/>
+  <path d="M331 222 H465" class="query"/>
+  <path d="M480 222 L461 212 L461 232 Z" class="qfill"/>
+  <path d="M331 222 H197" class="key"/>
+  <path d="M182 222 L201 212 L201 232 Z" class="kfill"/>
+  <text x="170" y="195" class="body">k′ = (−1, 0)</text>
+  <text x="370" y="259" class="body">q′ = (1, 0)</text>
+  <text x="44" y="283" class="body">q′ · k′ = −1</text>
+  <text x="44" y="341" class="label">两个位置都加 2：共同再转 180°</text>
+  <rect x="24" y="364" width="632" height="196" rx="12" class="panel"/>
+  <text x="44" y="400" class="label">m = 2，n = 3</text>
+  <text x="406" y="400" class="body">n − m = 1</text>
+  <path d="M135 480 H527 M331 430 V528" class="axis"/>
+  <path d="M331 480 H197" class="query"/>
+  <path d="M182 480 L201 470 L201 490 Z" class="qfill"/>
+  <path d="M331 480 H465" class="key"/>
+  <path d="M480 480 L461 470 L461 490 Z" class="kfill"/>
+  <text x="170" y="453" class="body">q′ = (−1, 0)</text>
+  <text x="370" y="517" class="body">k′ = (1, 0)</text>
+  <text x="44" y="541" class="body">q′ · k′ = −1</text>
+  <text x="26" y="596" class="small">原创辨号例子；固定内容向量，不代表任意上下文中的模型输出不变。</text>
+</svg>

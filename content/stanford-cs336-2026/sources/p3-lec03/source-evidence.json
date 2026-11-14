@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "slice": "p3-lec03",
+  "recorded_at": "2026-11-14T15:55:32.701712+00:00",
+  "identity": {
+    "video_id": "lVynu4bo1rY",
+    "duration_seconds": 5354,
+    "duration_display": "89:14",
+    "source": "p1-videos/video-map.json lec03 and individual metadata",
+    "recording_time_axis": "Actual 2026 subtitle cues only; never reconstructed from post-term slides"
+  },
+  "version_boundary": {
+    "lecture_commit": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+    "commit_date": "2026-09-12",
+    "meaning": "Pinned post-term handout; no claim of recording-identical version",
+    "assignment_version": "A1 remains Spring2026 v26.0.3 / a158843b20107949f1a8d7df1b05cd33b9166712; no implementation or optimizer-spec rewrite in this slice"
+  },
+  "coverage": {
+    "caption_cues_actually_read": 2020,
+    "caption_first_start_seconds": 5.6,
+    "caption_last_end_seconds": 5349.75,
+    "internal_gaps_over_two_seconds": 6,
+    "inaudible_cues": 18,
+    "extracted_handout_lines_actually_read": 801,
+    "handout_pdf_pages": 67,
+    "original_pdf_pages_visually_read": [
+      14,
+      43,
+      54,
+      58,
+      60
+    ]
+  },
+  "claim_evidence": [
+    {
+      "claim": "Architecture survey is empirical, not universal optimality",
+      "cue_range": [
+        1,
+        181
+      ],
+      "handout_pages": [
+        1,
+        9
+      ],
+      "treatment": "Autonomous decision framework; limited paraphrase in draft"
+    },
+    {
+      "claim": "Norm placement and norm type are separate choices",
+      "cue_range": [
+        182,
+        466
+      ],
+      "handout_pages": [
+        10,
+        19
+      ],
+      "treatment": "Independent Jacobian comparison and LN/RMS definitions; original diagram"
+    },
+    {
+      "claim": "Gating adds a third matrix; 2/3 width matches matrix parameter count",
+      "cue_range": [
+        467,
+        617
+      ],
+      "handout_pages": [
+        20,
+        26
+      ],
+      "treatment": "Independent shape and budget derivation"
+    },
+    {
+      "claim": "Parallel blocks change dependencies, not only scheduling",
+      "cue_range": [
+        618,
+        705
+      ],
+      "handout_pages": [
+        27,
+        29
+      ],
+      "treatment": "Independent functional comparison; no measured loss/speed claim"
+    },
+    {
+      "claim": "RoPE interface and position choice, not a duplicate paper tutorial",
+      "cue_range": [
+        706,
+        1002
+      ],
+      "handout_pages": [
+        30,
+        35
+      ],
+      "treatment": "Link to sole materials body and ext03; qualify fixed-content relative identity"
+    },
+    {
+      "claim": "Hyperparameter defaults are search starting points",
+      "cue_range": [
+        1003,
+        1480
+      ],
+      "handout_pages": [
+        36,
+        51
+      ],
+      "treatment": "Avoid model-configuration table replication; optimizer dynamics delegated to ext02"
+    },
+    {
+      "claim": "Output z-loss, QK norm, soft-cap have distinct targets",
+      "cue_range": [
+        1481,
+        1680
+      ],
+      "handout_pages": [
+        52,
+        56
+      ],
+      "treatment": "Classroom meaning separated from editorial sign, finite-arithmetic and mask caveats"
+    },
+    {
+      "claim": "GQA/MQA share KV heads; usual cache holds K and V",
+      "cue_range": [
+        1681,
+        1933
+      ],
+      "handout_pages": [
+        57,
+        63
+      ],
+      "treatment": "Editorial shape correction of cache wording; independent 2BLThkvks budget"
+    },
+    {
+      "claim": "Local/global alternation retains quadratic term if full-layer fraction stays nonzero",
+      "cue_range": [
+        1934,
+        2020
+      ],
+      "handout_pages": [
+        64,
+        67
+      ],
+      "treatment": "Independent complexity reasoning; no L04 mechanism duplicate"
+    }
+  ],
+  "original_page_findings": [
+    {
+      "page": 14,
+      "finding": "RMS denominator displays unnormalized L2-norm notation; no explicit 1/d. Notes specify mean square definition and epsilon, not a copied implementation."
+    },
+    {
+      "page": 43,
+      "finding": "PaLM row displays 48 heads, 258 head dim, 18432 model dim, ratio1.48; inconsistent internally. Do not guess corrected external configuration or copy row as verified."
+    },
+    {
+      "page": 54,
+      "finding": "Slide shows maximized log-likelihood minus penalty and a positive auxiliary-loss excerpt. Notes use minimized NLL plus lambda(logZ)^2."
+    },
+    {
+      "page": 58,
+      "finding": "Slide labels n<d and simplified access/arithmetic expressions. Notes do not generalize this bound or promise GPU saturation; independently distinguish T^2 pair work and d^2 projections."
+    },
+    {
+      "page": 60,
+      "finding": "Incremental formula is a cumulative sequence-accounting approximation, not single-step latency or a hardware measurement."
+    }
+  ],
+  "classroom_self_corrections": [
+    {
+      "cue_range_1_based": [
+        1565,
+        1566
+      ],
+      "issue": "Devlin date 2024 corrected by lecturer to 2014"
+    },
+    {
+      "cue_range_1_based": [
+        1672,
+        1674
+      ],
+      "issue": "attention outputs corrected by lecturer to logits entering softmax"
+    },
+    {
+      "cue_range_1_based": [
+        1736,
+        1739
+      ],
+      "issue": "number of heads corrected to head dimension"
+    },
+    {
+      "cue_range_1_based": [
+        1823,
+        1830
+      ],
+      "issue": "reduce arithmetic intensity corrected to increase arithmetic intensity"
+    }
+  ],
+  "not_inferred": [
+    "manual means human-corrected",
+    "caption gaps mean silence",
+    "post-term slides exactly match recording",
+    "all cited model papers were read",
+    "source acquisition equals semantic reading",
+    "integer budget equals measured process memory",
+    "small CPU example equals A1 or GPU training"
+  ],
+  "publication": {
+    "draft": "Limited chronological paraphrase with full topic/question navigation; not full translation",
+    "notes": "Independent teaching, original derivations and one original SVG",
+    "screenshots": 0,
+    "original_figures_copied": 0,
+    "local_only": [
+      "p3-lec03/transcript.en.txt",
+      "p3-lec03/captions.normalized.json"
+    ],
+    "raw_sources": "P1 local-only records reused, not newly published or remotely backed up"
+  },
+  "validation_handoff": {
+    "mechanical_checks_run": false,
+    "build_run": false,
+    "browser_accepted": false,
+    "cpu_example_executed": false,
+    "course_experiments_executed": false,
+    "owner": "Main",
+    "expected_cpu_output": [
+      24576,
+      73728,
+      490080,
+      131072
+    ]
+  }
+}

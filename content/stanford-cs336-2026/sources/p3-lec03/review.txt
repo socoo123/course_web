@@ -1,0 +1,51 @@
+CS336 Spring 2026 — P3 L03分片交接
+日期：2026-11-14
+范围：仅lectures/lec03/notes.zh.md、draft.zh.md、assets/lec03-residual-path.svg及sources/p3-lec03/。没有修改materials.zh.md、共享清单/status/catalog/resources、src、其他课程或官方作业代码。
+
+一、交付
+1. notes.zh.md：自主设计框架；B/T/d/m/L/V/hq/hkv/k形状契约；pre/residual-post/branch-post norm区别及局部Jacobian；LN/RMS定义与均值因子；门控三矩阵参数预算及2/3；串并行依赖；完整简化decoder参数账本；GQA/KV cache存储定义；T²配对与d²投影成本；位置/窗口/全局层边界；稳定性手段接口；超参数比较纪律；九组自测答案；全片导航和页底来源。
+2. draft.zh.md：26个真实主题/问答区间的全片导航，适度有限译述；不是逐句或整片翻译。保留未解决问答、讲者自纠及编者纠错分类，首尾与全部6处内部>2s空隙，18个INAUDIBLE cue索引和疑词。没有视频按钮、时间跳转链接或生成截图。
+3. assets/lec03-residual-path.svg：原创残差路径比较，只在notes引用；含title/desc。按Main新增约束，颜色只用--fg/--muted/--border/--accent/currentColor，color-scheme light dark，无背景/hex、无外部资源或脚本。框fill=none，以虚线边框与标签区分结构。未浏览器验收。
+4. 轻量来源：manifest-fragment.json、reading-log.json、time-intervals.json、video-metadata.json、source-evidence.json、本review.txt。
+5. 本地全文：transcript.en.txt、captions.normalized.json，仅本地。原始字幕与PDF/text复用P1，不复制/公开未经许可全文。
+
+二、真实阅读量
+- 已读skill://technical-video-notes及规范化脚本；完整NEXT-P3-PROMPT、P2-REVIEW、P1-REVIEW；L01/L02 notes+draft完整；p2-lec01、p2-lec02的review/manifest完整，包含首次read省略的所有源条目。
+- 已读video-map lec03记录及个体metadata的身份/标题/频道/描述/上传/时长/许可/所选字幕及时间覆盖；自动翻译语言清单未逐项阅读，不夸大全metadata审计。
+- 原JSON3机械规范化成一行一cue、原索引+毫秒起止的TXT；保留英语词语，只展平cue内换行。实际全读2020行/2020 cues，窗口1–340、341–680、681–1020、1021–1360、1361–1700、1701–2020。不是扫描关键词、读首尾或下载即算已读。
+- 字幕首起5.600s，末止5349.750s；video lVynu4bo1rY，5354s=89:14。首缺5.600s、尾缺4.250s，6处内部>2s空隙逐项保留；无字幕不判静音。
+- p1-lectures/lecture_03.txt实际全读1–801行，窗口1–300/301–600/601–801，覆盖67页PDF提取文本。不是全67页图像逐页审校。
+- 原PDF第14、43、54、58、60页用pdftoppm仅在内存渲染并实际视觉读取：RMS定义、头维度表、z-loss符号、attention FLOPs/存取公式。未保存/复制讲义图，没有课堂截图，也未声称与录像画面匹配。
+- 没有新增外部文档或论文原文阅读；Attention v7和RoFormer v5的唯一精读正文归Main的lec03/materials。本分片只回链，绝不计为自己已读两篇论文。
+
+三、来源/版本/许可
+- 元数据、字幕、PDF、提取TXT的原SHA和获取UTC均复用P1。讲义为de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e，2026-09-12晚于学期；不把固定讲义倒填成录像原话。
+- TXT原独立提取UTC未登记，本分片明确继承原PDF成功获取时间作源身份字段，不虚造独立下载日期。
+- manifest有7个来源条目，逐条含id/kind/url/file/sha256/version/retrieved_at/license/read_scope/read_at/chinese_treatment/material_files。新派生文件哈希在创建时登记，不是本agent执行验收的声明。
+- 单视频license=null，不猜Standard或CC；讲义统一许可未确认。draft有限译述，notes自主教学，SVG原创；原始/规范化全文只留本地，不应强制提交。没有cookie或签名媒体URL。
+- 已采集=复用P1；已读=上述实际范围；已写=两正文+一SVG。Main已消息通报完整读notes/draft并通过内容主审；V_attn格式与SVG调色要求已按工具修改结果修复。最终整合/页面验收仍归Main。reading-log的pending为创建时状态，最终以本记录、manifest及Main总验收为准。
+
+四、重点技术风险与处理
+1. 固定PDF第14页RMSNorm分母显示L2范数而未显式均值因子。notes采用标准均方根并明确epsilon/特征轴；不是静默照抄。
+2. 第43页PaLM行48×258/18432与Ratio1.48不一致。确认原页本就如此，没有猜成其他模型配置，正文不复刻这行作定论。
+3. 课堂14:05的divide variance、23:33的Swish/SwiGLU混称、36:23的3D、42:13的keys/values指代等均是未核音项；完整疑点在time-intervals和draft。manual分类不证明人工校订。
+4. pre-norm恒等梯度路径是局部结构解释，不保证梯度恒定、不需要warmup或绝不失稳；LN/RMS不能据课堂一句话直接排为严格表达力包含关系。
+5. 77:25–77:59字幕说缓存旧query/分数子矩阵，notes独立纠正为普通每层历史K/V，不把纠错冒充原讲；MQA是一组KV头而非标量维。
+6. T²注意力配对与d²投影分开；讲义n<d及简化存取模型不被当所有工作负载的性能保证；累计生成成本不等于单步时延。
+7. z-loss讲义最大化目标减惩罚，最小化NLL应加惩罚。soft-cap与稳定求值不同；不得把-∞掩码经soft-cap变回有限得分。详细诊断回ext01，优化器动态回ext02，没有冒充A1固定AdamW规范。
+8. 课堂自己纠正：Devlin年份2024→2014，head number→head dimension，attention输出→softmax输入logits，MQA算术强度减小→增大。与编者纠错分列。
+9. 字幕18个INAUDIBLE，问答不补造；跨tokenizer bits/byte的同文本/归一化条件不等于下游单调保证，课堂未解决的追问明确保留。
+10. 本agent不声称已核音、全片看画面、执行课程实验、读取全部外链报告、得到GPU实测或生成真实截图。
+
+五、Main最小验证建议（本agent没有运行）
+A. 来源/时间：读取7项manifest源哈希；time-intervals.json用P2 lec01风格blocks[{start_seconds,end_seconds,cue_indices_1_based_by_start:[first,last]|null}]，26个主题块+首尾两块，连续0到5354；全部1–2020 cues恰好覆盖一次。caption_gaps含kind=leading/internal/trailing，全部6个内部空隙与原始JSON3/P1一致。18个INAUDIBLE索引可机械对照。
+B. 链接：lec03 materials、lec04 notes、bridge01/03/06、L01/L02、ext01/02/03和A1 guide为唯一相关回链，不新建重复材料。两正文无/resources错误后缀入口。
+C. 只执行notes中的一个纯Python整数预算代码块。解析期望print四数：24576 73728 490080 131072。附带可手算：MHA hkv=6总参539232，差49152；MHA KV=393216bytes=384KiB，GQA=131072bytes=128KiB。无依赖安装、张量/模型分配、训练或下载。
+D. Markdown/KaTeX/SVG：Main按全批统一检查；尤其手机390px下LN/RMS公式、参数预算表和KV式，图中N/F路径/箭头与暗色可读性。SVG viewBox为480×680，不是截图。主agent实际点击页头确认lVynu4bo1rY/89:14的新标签及原页保留。
+E. 不运行完整讲义、官方作业或额外系统benchmark；正文没有这些实现。无需对P1/P2冻结阶段重跑全仓检查。
+
+六、执行与模型边界
+- 本agent未运行构建、测试、lint、formatter、smoke、课程实验或git，没有安装环境、下载模型/数据、启动付费算力。
+- 执行的来源处理仅JSON3规范化、读取PDF页标题/原页渲染、生成轻量来源记录及新派生内容身份哈希；这些不代替主agent验收。
+- Main已消息确认本轮实际openai-codex/gpt-6-astra / xhigh、resolvedModelIsFallback=false，证据sources/p3-model-preflight.json。本分片只引用Main核实结果，未声称自己读过运行事件。
+- 中途edit一次单行替换异常保留旧段，已向xd://report_issue报告并定向CUT删除旧段；最终修复以edit结果为依据，不额外重跑审计。

@@ -1,10 +1,10 @@
 {
   "course_id": "stanford-cs336-2026",
-  "updated_at": "2026-11-14",
-  "phase": "P2",
+  "updated_at": "2026-11-15",
+  "phase": "P3",
   "linked_sources_default_status": "registered_only_unless_explicitly_recorded",
-  "source_fragments": ["p1-shared/manifest-fragment.json", "p1-lectures/manifest-fragment.json", "p1-videos/manifest-fragment.json", "p1-assignments-a1-a4/manifest-fragment.json", "p1-assignment-a5/manifest-fragment.json", "p1-papers-01-08/manifest-fragment.json", "p1-papers-09-16/manifest-fragment.json", "p2-lec01/manifest-fragment.json", "p2-lec02/manifest-fragment.json", "p2-bridge-foundations/manifest-fragment.json", "p2-bridge-systems/manifest-fragment.json", "p2-a1/manifest-fragment.json"],
-  "canonical_record_scope": "The 70 records below preserve the P1 acquisition snapshot. P2 reading/writing advances are authoritative in the five P2 fragments; fragment pending/review flags describe worker handoff, with final Main acceptance in p2-acceptance.json and ../status.json. Acquisition is never promoted to full reading by inference.",
+  "source_fragments": ["p1-shared/manifest-fragment.json", "p1-lectures/manifest-fragment.json", "p1-videos/manifest-fragment.json", "p1-assignments-a1-a4/manifest-fragment.json", "p1-assignment-a5/manifest-fragment.json", "p1-papers-01-08/manifest-fragment.json", "p1-papers-09-16/manifest-fragment.json", "p2-lec01/manifest-fragment.json", "p2-lec02/manifest-fragment.json", "p2-bridge-foundations/manifest-fragment.json", "p2-bridge-systems/manifest-fragment.json", "p2-a1/manifest-fragment.json", "p3-lec03/manifest-fragment.json", "p3-lec04/manifest-fragment.json", "p3-bridges/manifest-fragment.json", "p3-extensions/manifest-fragment.json", "p3-papers/manifest-fragment.json", "p3-a1/manifest-fragment.json"],
+  "canonical_record_scope": "The 70 records below preserve the P1 acquisition snapshot. Subsequent reading/writing is recorded in five P2 and six P3 fragments. Their pending flags describe worker handoff; final acceptance belongs to each phase acceptance file and ../status.json. Earlier stop fields are historical snapshots, not the latest phase. Acquisition never implies full reading.",
   "p2_processing": {
     "source_records": 52,
     "verified_unique_file_hashes": 45,
@@ -14,6 +14,17 @@
     "accepted": "p2-acceptance.json",
     "publication": "Original or normalized full captions, raw source/docs and screenshots remain local; only body content and lightweight provenance/acceptance/scripts are committed.",
     "stop": "P2 complete; P3 not started"
+  },
+  "p3_processing": {
+    "source_check": "p3-shared/structure-check.json",
+    "source_records": 69,
+    "verified_unique_file_hashes": 58,
+    "reading": "L03 all2020 cues and801 extracted handout lines; L04 all1938 cues and502 extracted lines, with13 handout pages selectively viewed. A1 all47 text pages reread. Two papers' specified cores completed,977 extracted lines and11 selected formula pages; ext03 experiment selections separately recorded. No full-paper or audio verification claim.",
+    "written": {"lecture_notes":7,"classroom_limited_paraphrases":2,"materials":1,"assignment_instructions":1,"assignment_guide_updated":1,"original_svgs":5},
+    "reviewed": "Main read all12 body documents and crosschecked selected primary sources. Integration corrects public-resource routing, duplicate KV/RoPE exposition, malformed value notation and the no-grad identity example.",
+    "accepted": "p3-acceptance.json",
+    "publication": "Only bodies, original SVGs and explicitly listed lightweight evidence; raw captions, PDF/fulltexts, document mirrors and visual screenshots remain local.",
+    "next": "P4 only after P3 acceptance and user continuation; see NEXT-P4-PROMPT.txt"
   },
   "reading_map": "reading-map.json",
   "path_convention": "file paths relative to sources/; material paths relative to course root",

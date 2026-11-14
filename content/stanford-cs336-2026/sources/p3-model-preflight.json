@@ -1,0 +1,21 @@
+{
+  "phase": "P3",
+  "checkedAt": "2026-11-14",
+  "requestedModel": "openai-codex/gpt-6-astra:xhigh",
+  "observedConfiguration": {"taskPerCallModel":"on","taskEnableEffort":false,"taskAgentModelOverrides":{},"taskPrewalk":false},
+  "configurationChangedThisRun": false,
+  "resolvedSubagentModel": "openai-codex/gpt-6-astra",
+  "resolvedSubagentEffort": "xhigh",
+  "resolvedModelIsFallback": false,
+  "subagentsStarted": 6,
+  "runtimeEvidence": [
+    {"agent":"P3LectureThree","modelEvent":"bc20038d","effortEvent":"16958d3d","firstAssistantEvent":"67fe8b5b","timestamp":"2026-11-14T15:43:55.857Z"},
+    {"agent":"P3LectureFour","modelEvent":"6149510d","effortEvent":"2353bcfb","firstAssistantEvent":"c2e8735f","timestamp":"2026-11-14T15:43:55.848Z"},
+    {"agent":"P3BridgesDiagnostics","modelEvent":"206dec02","effortEvent":"dcb65e81","firstAssistantEvent":"d0d0e6a9","timestamp":"2026-11-14T15:43:55.871Z"},
+    {"agent":"P3OptimizerPosition","modelEvent":"349105d2","effortEvent":"817fa371","firstAssistantEvent":"ce3a9734","timestamp":"2026-11-14T15:43:55.832Z"},
+    {"agent":"P3PaperMaterials","modelEvent":"892b3034","effortEvent":"7fd41b3a","firstAssistantEvent":"c383ab60","timestamp":"2026-11-14T15:43:55.876Z"},
+    {"agent":"P3AssignmentOne","modelEvent":"c5d9f823","effortEvent":"c5538eb5","firstAssistantEvent":"2314ea57","timestamp":"2026-11-14T15:43:55.862Z"}
+  ],
+  "verification": "Main inspected only this run's six worker session model_change, thinking_level_change and first assistant metadata. Every worker resolved to openai-codex/gpt-6-astra with xhigh, fallback=false; first assistant provider=openai-codex/model=gpt-6-astra. Supported cfg://task read before dispatch; no settings changed.",
+  "nextDispatchGate": "Recheck supported configuration and actual runtime evidence; never substitute or downgrade."
+}

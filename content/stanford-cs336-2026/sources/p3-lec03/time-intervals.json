@@ -1,0 +1,759 @@
+{
+  "schema_version": 1,
+  "lecture_id": "lec03",
+  "video_id": "lVynu4bo1rY",
+  "duration_seconds": 5354,
+  "caption_file": "p1-videos/captions/lVynu4bo1rY.en-US.manual.json3",
+  "normalized_file": "p3-lec03/captions.normalized.json",
+  "transcript_file": "p3-lec03/transcript.en.txt",
+  "caption_cue_count": 2020,
+  "caption_first_start_seconds": 5.6,
+  "caption_last_end_seconds": 5349.75,
+  "cue_assignment_rule": "Each inclusive [first,last] range assigns cues by start time exactly once. Blocks are continuous navigation, not claims of per-second audible content. No-cue leading/trailing blocks use null. Millisecond boundaries preserved as decimal seconds.",
+  "blocks": [
+    {
+      "id": "leading",
+      "kind": "uncaptioned_leading",
+      "title": "开头无字幕",
+      "start_seconds": 0,
+      "end_seconds": 5.6,
+      "cue_indices_1_based_by_start": null
+    },
+    {
+      "id": "topic-01",
+      "kind": "editorial_topic",
+      "title": "架构调查、经验和设计约束",
+      "start_seconds": 5.6,
+      "end_seconds": 449.64,
+      "cue_indices_1_based_by_start": [
+        1,
+        181
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-02",
+      "kind": "editorial_topic",
+      "title": "归一化位置与残差路径",
+      "start_seconds": 449.64,
+      "end_seconds": 836.19,
+      "cue_indices_1_based_by_start": [
+        182,
+        324
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-03",
+      "kind": "editorial_topic",
+      "title": "RMSNorm、偏置与运行时间",
+      "start_seconds": 836.19,
+      "end_seconds": 1215.26,
+      "cue_indices_1_based_by_start": [
+        325,
+        466
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-04",
+      "kind": "editorial_topic",
+      "title": "激活、门控与等参数比较",
+      "start_seconds": 1215.26,
+      "end_seconds": 1636.87,
+      "cue_indices_1_based_by_start": [
+        467,
+        617
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-05",
+      "kind": "editorial_topic",
+      "title": "串行/并行层和架构小结",
+      "start_seconds": 1636.87,
+      "end_seconds": 1864.87,
+      "cue_indices_1_based_by_start": [
+        618,
+        705
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-06",
+      "kind": "editorial_topic",
+      "title": "位置表示与RoPE课堂直觉",
+      "start_seconds": 1864.87,
+      "end_seconds": 2342.6,
+      "cue_indices_1_based_by_start": [
+        706,
+        888
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-07",
+      "kind": "editorial_topic",
+      "title": "旋转、读报告、并行层、相对表示问答",
+      "start_seconds": 2342.6,
+      "end_seconds": 2620.49,
+      "cue_indices_1_based_by_start": [
+        889,
+        1002
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-08",
+      "kind": "editorial_topic",
+      "title": "超参数问题引入",
+      "start_seconds": 2620.49,
+      "end_seconds": 2677.34,
+      "cue_indices_1_based_by_start": [
+        1003,
+        1028
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-09",
+      "kind": "editorial_topic",
+      "title": "MLP中间宽度",
+      "start_seconds": 2677.34,
+      "end_seconds": 2993.48,
+      "cue_indices_1_based_by_start": [
+        1029,
+        1137
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-10",
+      "kind": "editorial_topic",
+      "title": "头维度与模型宽度",
+      "start_seconds": 2993.48,
+      "end_seconds": 3091.86,
+      "cue_indices_1_based_by_start": [
+        1138,
+        1174
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-11",
+      "kind": "editorial_topic",
+      "title": "深宽比例",
+      "start_seconds": 3091.86,
+      "end_seconds": 3311.41,
+      "cue_indices_1_based_by_start": [
+        1175,
+        1256
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-12",
+      "kind": "editorial_topic",
+      "title": "词表大小",
+      "start_seconds": 3311.41,
+      "end_seconds": 3395.52,
+      "cue_indices_1_based_by_start": [
+        1257,
+        1286
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-13",
+      "kind": "editorial_topic",
+      "title": "多模态词表和跨tokenizer计分问答",
+      "start_seconds": 3395.52,
+      "end_seconds": 3561.83,
+      "cue_indices_1_based_by_start": [
+        1287,
+        1354
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-14",
+      "kind": "editorial_topic",
+      "title": "dropout、weight decay与优化",
+      "start_seconds": 3561.83,
+      "end_seconds": 3844.273,
+      "cue_indices_1_based_by_start": [
+        1355,
+        1451
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-15",
+      "kind": "editorial_topic",
+      "title": "扩散架构与正则化问答",
+      "start_seconds": 3844.273,
+      "end_seconds": 3901.98,
+      "cue_indices_1_based_by_start": [
+        1452,
+        1480
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-16",
+      "kind": "editorial_topic",
+      "title": "稳定性及两处softmax",
+      "start_seconds": 3901.98,
+      "end_seconds": 4026.68,
+      "cue_indices_1_based_by_start": [
+        1481,
+        1527
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-17",
+      "kind": "editorial_topic",
+      "title": "输出z-loss",
+      "start_seconds": 4026.68,
+      "end_seconds": 4167.84,
+      "cue_indices_1_based_by_start": [
+        1528,
+        1581
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-18",
+      "kind": "editorial_topic",
+      "title": "QK norm",
+      "start_seconds": 4167.84,
+      "end_seconds": 4323.01,
+      "cue_indices_1_based_by_start": [
+        1582,
+        1636
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-19",
+      "kind": "editorial_topic",
+      "title": "logit soft-cap与质量取舍",
+      "start_seconds": 4323.01,
+      "end_seconds": 4449.33,
+      "cue_indices_1_based_by_start": [
+        1637,
+        1680
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-20",
+      "kind": "editorial_topic",
+      "title": "注意力改造与prefill资源",
+      "start_seconds": 4449.33,
+      "end_seconds": 4619.59,
+      "cue_indices_1_based_by_start": [
+        1681,
+        1747
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-21",
+      "kind": "editorial_topic",
+      "title": "逐token生成与缓存成本",
+      "start_seconds": 4619.59,
+      "end_seconds": 4772.42,
+      "cue_indices_1_based_by_start": [
+        1748,
+        1807
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-22",
+      "kind": "editorial_topic",
+      "title": "MQA共享键值",
+      "start_seconds": 4772.42,
+      "end_seconds": 4867.49,
+      "cue_indices_1_based_by_start": [
+        1808,
+        1841
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-23",
+      "kind": "editorial_topic",
+      "title": "GQA折中",
+      "start_seconds": 4867.49,
+      "end_seconds": 4997.39,
+      "cue_indices_1_based_by_start": [
+        1842,
+        1888
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-24",
+      "kind": "editorial_topic",
+      "title": "搜索、动态超参数和MQA阶段问答",
+      "start_seconds": 4997.39,
+      "end_seconds": 5108.36,
+      "cue_indices_1_based_by_start": [
+        1889,
+        1933
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-25",
+      "kind": "editorial_topic",
+      "title": "局部/全局交替与混合架构",
+      "start_seconds": 5108.36,
+      "end_seconds": 5319.08,
+      "cue_indices_1_based_by_start": [
+        1934,
+        2007
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "topic-26",
+      "kind": "editorial_topic",
+      "title": "结尾总结",
+      "start_seconds": 5319.08,
+      "end_seconds": 5349.75,
+      "cue_indices_1_based_by_start": [
+        2008,
+        2020
+      ],
+      "treatment": "limited_paraphrase_or_question_navigation; not sentence-by-sentence translation"
+    },
+    {
+      "id": "trailing",
+      "kind": "uncaptioned_trailing",
+      "title": "尾部无字幕",
+      "start_seconds": 5349.75,
+      "end_seconds": 5354,
+      "cue_indices_1_based_by_start": null
+    }
+  ],
+  "caption_gaps": [
+    {
+      "kind": "leading",
+      "start_seconds": 0,
+      "end_seconds": 5.6,
+      "duration_seconds": 5.6
+    },
+    {
+      "kind": "internal",
+      "start_seconds": 1331.58,
+      "end_seconds": 1334.8,
+      "duration_seconds": 3.22
+    },
+    {
+      "kind": "internal",
+      "start_seconds": 3308.85,
+      "end_seconds": 3311.41,
+      "duration_seconds": 2.56
+    },
+    {
+      "kind": "internal",
+      "start_seconds": 3392.98,
+      "end_seconds": 3395.52,
+      "duration_seconds": 2.54
+    },
+    {
+      "kind": "internal",
+      "start_seconds": 3541.76,
+      "end_seconds": 3544.54,
+      "duration_seconds": 2.78
+    },
+    {
+      "kind": "internal",
+      "start_seconds": 4022.78,
+      "end_seconds": 4026.68,
+      "duration_seconds": 3.9
+    },
+    {
+      "kind": "internal",
+      "start_seconds": 4442.85,
+      "end_seconds": 4446.47,
+      "duration_seconds": 3.62
+    },
+    {
+      "kind": "trailing",
+      "start_seconds": 5349.75,
+      "end_seconds": 5354,
+      "duration_seconds": 4.25
+    }
+  ],
+  "gap_threshold_seconds": 2,
+  "gap_threshold_operator": ">",
+  "gap_interpretation": "Caption absence only; silence, missing speech, demonstrations and transitions not classified without audio/video.",
+  "inaudible_cues": [
+    {
+      "cue_index_1_based": 388,
+      "start_seconds": 1011.83,
+      "end_seconds": 1014.75,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 904,
+      "start_seconds": 2377.32,
+      "end_seconds": 2380.44,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 924,
+      "start_seconds": 2423.85,
+      "end_seconds": 2425.51,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 932,
+      "start_seconds": 2447.46,
+      "end_seconds": 2450.1,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 950,
+      "start_seconds": 2492.82,
+      "end_seconds": 2494.9,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 984,
+      "start_seconds": 2573.88,
+      "end_seconds": 2577.76,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 1288,
+      "start_seconds": 3398.16,
+      "end_seconds": 3405.96,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 1303,
+      "start_seconds": 3437.05,
+      "end_seconds": 3441.81,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 1341,
+      "start_seconds": 3527.1,
+      "end_seconds": 3532.82,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 1345,
+      "start_seconds": 3544.54,
+      "end_seconds": 3548.26,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 1347,
+      "start_seconds": 3550.37,
+      "end_seconds": 3552.23,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 1469,
+      "start_seconds": 3877.88,
+      "end_seconds": 3879.24,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 1890,
+      "start_seconds": 4997.89,
+      "end_seconds": 5004.78,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 1891,
+      "start_seconds": 5004.78,
+      "end_seconds": 5007.46,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 1893,
+      "start_seconds": 5009.46,
+      "end_seconds": 5013.82,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 1911,
+      "start_seconds": 5056.61,
+      "end_seconds": 5058.66,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 1928,
+      "start_seconds": 5095.72,
+      "end_seconds": 5101.04,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    },
+    {
+      "cue_index_1_based": 1929,
+      "start_seconds": 5101.04,
+      "end_seconds": 5102.358,
+      "marker": "[INAUDIBLE]",
+      "treatment": "Do not reconstruct missing question/speech; use lecturer response only where topic clear."
+    }
+  ],
+  "uncertain_transcription_and_editorial_corrections": [
+    {
+      "cue_range_1_based": [
+        62,
+        62
+      ],
+      "start_seconds": 158.98,
+      "end_seconds": 161.66,
+      "source_wording_or_issue": "SwiGLU GeLU",
+      "editorial_treatment": "Terminology ambiguity; A1 requirements not inferred from this wording.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        98,
+        98
+      ],
+      "start_seconds": 239.28,
+      "end_seconds": 241.7,
+      "source_wording_or_issue": "AP model",
+      "editorial_treatment": "Unclear scale/name; no Marin parameter count inferred.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        328,
+        328
+      ],
+      "start_seconds": 845.83,
+      "end_seconds": 848.09,
+      "source_wording_or_issue": "divide the variance",
+      "editorial_treatment": "Definition uses square root of variance plus epsilon; audio not checked.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        338,
+        343
+      ],
+      "start_seconds": 869.75,
+      "end_seconds": 887.4,
+      "source_wording_or_issue": "LayerNorm more expressive / no expressiveness loss",
+      "editorial_treatment": "Editorial distinction: invariances differ; not a proven strict function-class inclusion.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        544,
+        546
+      ],
+      "start_seconds": 1413.78,
+      "end_seconds": 1422.74,
+      "source_wording_or_issue": "SwiGLU / squish",
+      "editorial_treatment": "Separate SiLU/Swish activation from full gated block.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        666,
+        670
+      ],
+      "start_seconds": 1752.21,
+      "end_seconds": 1769.29,
+      "source_wording_or_issue": "parallel to serial / half depth",
+      "editorial_treatment": "Potential directional wording issue; only dependency comparison retained.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        699,
+        700
+      ],
+      "start_seconds": 1848.18,
+      "end_seconds": 1854.32,
+      "source_wording_or_issue": "GLU exception also called gated linear unit",
+      "editorial_treatment": "Do not confirm Falcon model configuration from inconsistent wording.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        792,
+        807
+      ],
+      "start_seconds": 2110.08,
+      "end_seconds": 2147.56,
+      "source_wording_or_issue": "no vs know",
+      "editorial_treatment": "Context is adjacent words in the stated we know example; no audio correction claimed.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        822,
+        826
+      ],
+      "start_seconds": 2183.07,
+      "end_seconds": 2195.23,
+      "source_wording_or_issue": "3D then pairs of two coordinates",
+      "editorial_treatment": "Later explicit 2D statement and pairing support editorial 2D explanation.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        968,
+        970
+      ],
+      "start_seconds": 2533.09,
+      "end_seconds": 2541.07,
+      "source_wording_or_issue": "keys and values in relative-embedding answer",
+      "editorial_treatment": "Referent unclear; do not override explicit queries/keys at cues873-875.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        994,
+        996
+      ],
+      "start_seconds": 2599.56,
+      "end_seconds": 2607.14,
+      "source_wording_or_issue": "l of i",
+      "editorial_treatment": "Unclear method name; no guessed expansion.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        1162,
+        1165
+      ],
+      "start_seconds": 3054.39,
+      "end_seconds": 3067.81,
+      "source_wording_or_issue": "coin / lambda",
+      "editorial_treatment": "Unclear model-name spelling; not used as source for model configurations.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        1315,
+        1317
+      ],
+      "start_seconds": 3462.41,
+      "end_seconds": 3470.11,
+      "source_wording_or_issue": "have adulterated it anyway",
+      "editorial_treatment": "Possible missing negation; comparison condition follows explicit unchanged-string discussion, not claimed heard.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        1338,
+        1351
+      ],
+      "start_seconds": 3514.82,
+      "end_seconds": 3557.73,
+      "source_wording_or_issue": "downstream comparison and unresolved follow-up",
+      "editorial_treatment": "Several inaudible cues; no universal downstream monotonicity claim.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        1612,
+        1613
+      ],
+      "start_seconds": 4248.9,
+      "end_seconds": 4255.4,
+      "source_wording_or_issue": "RMSE norm",
+      "editorial_treatment": "Context/handout support RMSNorm; no audio verification.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        1727,
+        1728
+      ],
+      "start_seconds": 4572.562,
+      "end_seconds": 4577.66,
+      "source_wording_or_issue": "quadratic attention so d squared",
+      "editorial_treatment": "Editorial separation of T^2 pair cost from d^2 projections.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        1762,
+        1772
+      ],
+      "start_seconds": 4645.59,
+      "end_seconds": 4679.22,
+      "source_wording_or_issue": "past keys and queries / Q dot K matrix cache",
+      "editorial_treatment": "Editorial correction: ordinary KV cache stores historical K,V per layer, not Q or scores.",
+      "audio_verified": false
+    },
+    {
+      "cue_range_1_based": [
+        1784,
+        1805
+      ],
+      "start_seconds": 4706.02,
+      "end_seconds": 4766.81,
+      "source_wording_or_issue": "incremental resource accounting",
+      "editorial_treatment": "Cumulative generated-sequence accounting is not single-step latency or measured hardware utilization.",
+      "audio_verified": false
+    }
+  ],
+  "lecturer_self_corrections": [
+    {
+      "cue_range_1_based": [
+        1565,
+        1566
+      ],
+      "issue": "Devlin date 2024 corrected by lecturer to 2014"
+    },
+    {
+      "cue_range_1_based": [
+        1672,
+        1674
+      ],
+      "issue": "attention outputs corrected by lecturer to logits entering softmax"
+    },
+    {
+      "cue_range_1_based": [
+        1736,
+        1739
+      ],
+      "issue": "number of heads corrected to head dimension"
+    },
+    {
+      "cue_range_1_based": [
+        1823,
+        1830
+      ],
+      "issue": "reduce arithmetic intensity corrected to increase arithmetic intensity"
+    }
+  ],
+  "audio_verified": false,
+  "video_frames_viewed": false,
+  "mechanical_acceptance_run": false,
+  "acceptance_owner": "Main",
+  "read_at": "2026-11-14T15:55:32.701712+00:00"
+}

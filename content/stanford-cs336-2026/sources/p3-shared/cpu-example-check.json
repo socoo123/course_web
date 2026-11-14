@@ -1,0 +1,84 @@
+{
+  "phase": "P3",
+  "status": "passed",
+  "python": "3.11.8",
+  "torch": "2.5.1",
+  "device": "cpu",
+  "body_code_blocks": 8,
+  "actual_page_examples": [
+    {
+      "page": "lec03",
+      "block": 1,
+      "stdout": "24576 73728 490080 131072\n",
+      "stderr": "",
+      "result": "passed"
+    },
+    {
+      "page": "bridge03",
+      "block": 1,
+      "stdout": "11.0 44.0\n49.0\n5.0\n",
+      "stderr": "",
+      "result": "passed"
+    },
+    {
+      "page": "bridge03",
+      "block": 2,
+      "stdout": "[5.0, -2.0] True\n[44.0, 66.0]\n",
+      "stderr": "",
+      "result": "passed"
+    },
+    {
+      "page": "bridge06",
+      "block": 1,
+      "stdout": "[0.0, 0.0, 0.0] [2.0, 2.0, 2.0] [2.0, 2.0, 2.0]\nTrue False\n",
+      "stderr": "",
+      "result": "passed"
+    },
+    {
+      "page": "ext01",
+      "block": 1,
+      "stdout": "0.0 inf\nTrue False\n",
+      "stderr": "",
+      "result": "passed"
+    },
+    {
+      "page": "ext01",
+      "block": 2,
+      "stdout": "[20.0, 40.0]\n-20.000000 -20.000000\n",
+      "stderr": "",
+      "result": "passed"
+    },
+    {
+      "page": "ext02",
+      "block": 1,
+      "stdout": "8 1024 1000 102400\n32 4096 250 409600\n",
+      "stderr": "",
+      "result": "passed"
+    },
+    {
+      "page": "ext03",
+      "block": 1,
+      "stdout": "-0.6 0.825336\n-0.6 0.825336\n0.2 0.980067\n",
+      "stderr": "",
+      "result": "passed"
+    }
+  ],
+  "selected_algebra": {
+    "rope_diagram_scores": [
+      -1.0,
+      -1.0
+    ],
+    "delta_net_accumulate": [
+      9.0,
+      5.0
+    ],
+    "delta_net_overwrite": [
+      7.0,
+      5.0
+    ],
+    "epsilon_raw": 0.9580126301980235,
+    "epsilon_correctly_transformed": 0.9580126301980239,
+    "epsilon_same_numeric_value_not_equal": 0.9853132001473718
+  },
+  "scope": "Existing local teaching environment; no installation, official assignment code/tests, data/model download, GPU performance or paid compute. This temporary script is removed after proof."
+}

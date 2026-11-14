@@ -1,0 +1,2149 @@
+{
+  "schema_version": 1,
+  "course_id": "stanford-cs336-2026",
+  "assignment_id": "a1-basics",
+  "phase": "P3",
+  "created_at": "2026-11-14T15:56:40Z",
+  "source_commit": "a158843b20107949f1a8d7df1b05cd33b9166712",
+  "edition": "Spring2026 v26.0.3",
+  "source_manifest": "p3-a1/manifest-fragment.json",
+  "historical_task_index": "p2-a1/task-index.json",
+  "historical_policy": "P2 task-index/review/manifest retained untouched. This is P3 requirement-to-material evidence,not a rewritten historical completion record.",
+  "material_files": [
+    "labs/a1-basics/lab.zh.md",
+    "labs/a1-basics/guide.zh.md"
+  ],
+  "route_map": {
+    "lab": "#/c/stanford-cs336-2026/lab/a1-basics?v=zh",
+    "guide": "#/c/stanford-cs336-2026/lab/a1-basics?v=guide"
+  },
+  "mapping_semantics": "Each coverage item maps to the exact numbered Problem heading prefix in lab and explicit G-section labels in guide. Lettered subquestions preserve original letters; unlettered required interfaces/features/deliverables are separately enumerated. Guide mappings are conceptual/debugging support,not answers. No assumption about generated HTML heading IDs.",
+  "declared_coverage": {
+    "scored_problems": 38,
+    "lettered_subquestions": 25,
+    "all_source_text_read": true,
+    "visual_pdf_review": false,
+    "main_review": "pending_main_record",
+    "page_acceptance": "pending_main_record",
+    "official_experiments_executed": false
+  },
+  "shared_contracts": [
+    {
+      "topic": "Version/library/AI/submission",
+      "source_lines": [
+        1,
+        114
+      ],
+      "lab_sections": [
+        "0．版本、行为规则与提交"
+      ],
+      "guide_sections": [
+        "G0",
+        "G9"
+      ]
+    },
+    {
+      "topic": "BPE initialization/pretokenizer/tie/special boundaries",
+      "source_lines": [
+        244,
+        426
+      ],
+      "lab_sections": [
+        "1.1 训练与编码的共同合同",
+        "03 · train_bpe"
+      ],
+      "guide_sections": [
+        "G1.2",
+        "G1.3"
+      ]
+    },
+    {
+      "topic": "Architecture,batch-like axes and initialization",
+      "source_lines": [
+        644,
+        910
+      ],
+      "lab_sections": [
+        "2.1 全局架构与初始化"
+      ],
+      "guide_sections": [
+        "G2",
+        "G3"
+      ]
+    },
+    {
+      "topic": "Baseline dimensions,tokens and low-resource alternatives",
+      "source_lines": [
+        1987,
+        2190
+      ],
+      "lab_sections": [
+        "6.1 TinyStories 基线和路线选择",
+        "30 · learning_rate"
+      ],
+      "guide_sections": [
+        "G0",
+        "G7"
+      ]
+    },
+    {
+      "topic": "p44 exception vs standard scored leaderboard",
+      "source_lines": [
+        2281,
+        2381
+      ],
+      "lab_sections": [
+        "37 · main_experiment",
+        "38 · leaderboard"
+      ],
+      "guide_sections": [
+        "G8",
+        "G9"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "unicode1",
+      "points": 1,
+      "source_pages": [
+        3,
+        4
+      ],
+      "source_text_lines": [
+        137,
+        157
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "01 · unicode1",
+      "guide_sections": [
+        "G1.1"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "Identify chr(0); one sentence.",
+          "lab_section": "01 · unicode1",
+          "guide_sections": [
+            "G1.1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "Compare repr with printed form; one sentence.",
+          "lab_section": "01 · unicode1",
+          "guide_sections": [
+            "G1.1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "Observe occurrence inside text; one sentence.",
+          "lab_section": "01 · unicode1",
+          "guide_sections": [
+            "G1.1"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "unicode2",
+      "points": 3,
+      "source_pages": [
+        4,
+        5
+      ],
+      "source_text_lines": [
+        196,
+        217
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "02 · unicode2",
+      "guide_sections": [
+        "G1.1"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "UTF8 preference over UTF16/32;1–2 sentences.",
+          "lab_section": "02 · unicode2",
+          "guide_sections": [
+            "G1.1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "Incorrect independent-byte decoder: failing byte input plus explanation.",
+          "lab_section": "02 · unicode2",
+          "guide_sections": [
+            "G1.1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "Invalid two-byte sequence plus explanation.",
+          "lab_section": "02 · unicode2",
+          "guide_sections": [
+            "G1.1"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "train_bpe",
+      "points": 15,
+      "source_pages": [
+        9
+      ],
+      "source_text_lines": [
+        430,
+        459
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "03 · train_bpe",
+      "guide_sections": [
+        "G1.2"
+      ],
+      "coverage_items": [
+        {
+          "id": "inputs",
+          "requirement": "Path, final vocabulary cap including256bytes/merges/specials, special-token strings.",
+          "lab_section": "03 · train_bpe",
+          "guide_sections": [
+            "G1.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "outputs",
+          "requirement": "ID-to-bytes vocabulary and creation-ordered bytes-pair merges.",
+          "lab_section": "03 · train_bpe",
+          "guide_sections": [
+            "G1.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "rules",
+          "requirement": "Fixed pretokenizer; weighted counts; lexicographically greatest original-byte pair on ties; no cross-pretoken/special merges; specials excluded from statistics.",
+          "lab_section": "03 · train_bpe",
+          "guide_sections": [
+            "G1.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_train_bpe and tests/test_train_bpe.py; no test-source/execution claim.",
+          "lab_section": "03 · train_bpe",
+          "guide_sections": [
+            "G1.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "optional",
+          "requirement": "Systems-language optimization optional; provide build instructions if chosen.",
+          "lab_section": "03 · train_bpe",
+          "guide_sections": [
+            "G1.2"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "train_bpe_tinystories",
+      "points": 2,
+      "source_pages": [
+        9,
+        10
+      ],
+      "source_text_lines": [
+        463,
+        481
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "04 · train_bpe_tinystories",
+      "guide_sections": [
+        "G1.2",
+        "G1.4"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "Train10k vocabulary with EOS, serialize assets; elapsed time/memory/longest token and interpretation;1–2 sentences;<=30min/30GB envelope not guarantee.",
+          "lab_section": "04 · train_bpe_tinystories",
+          "guide_sections": [
+            "G1.2",
+            "G1.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "Profile and identify bottleneck;1–2 sentences.",
+          "lab_section": "04 · train_bpe_tinystories",
+          "guide_sections": [
+            "G1.2",
+            "G1.4"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "train_bpe_expts_owt",
+      "points": 2,
+      "source_pages": [
+        10
+      ],
+      "source_text_lines": [
+        488,
+        498
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "05 · train_bpe_expts_owt",
+      "guide_sections": [
+        "G1.2",
+        "G1.4"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "Train32k vocabulary on provided OWT; serialize; longest token/interpretation;1–2 sentences;<=12h/100GB envelope.",
+          "lab_section": "05 · train_bpe_expts_owt",
+          "guide_sections": [
+            "G1.2",
+            "G1.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "Compare learned TS/OWT tokenizers;1–2 sentences.",
+          "lab_section": "05 · train_bpe_expts_owt",
+          "guide_sections": [
+            "G1.2",
+            "G1.4"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "tokenizer",
+      "points": 15,
+      "source_pages": [
+        11,
+        12
+      ],
+      "source_text_lines": [
+        543,
+        611
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "06 · tokenizer",
+      "guide_sections": [
+        "G1.3"
+      ],
+      "coverage_items": [
+        {
+          "id": "constructor",
+          "requirement": "vocab, merges, optional specials; append missing specials.",
+          "lab_section": "06 · tokenizer",
+          "guide_sections": [
+            "G1.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "from_files",
+          "requirement": "Class method loading own serialized training format.",
+          "lab_section": "06 · tokenizer",
+          "guide_sections": [
+            "G1.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "encode",
+          "requirement": "Text to IDs using frozen merge order and boundaries.",
+          "lab_section": "06 · tokenizer",
+          "guide_sections": [
+            "G1.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "encode_iterable",
+          "requirement": "Lazy ID iterator with memory-efficient boundary semantics.",
+          "lab_section": "06 · tokenizer",
+          "guide_sections": [
+            "G1.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "decode",
+          "requirement": "Concatenate bytes then decode; malformed UTF8 replacement U+FFFD.",
+          "lab_section": "06 · tokenizer",
+          "guide_sections": [
+            "G1.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "get_tokenizer and tests/test_tokenizer.py.",
+          "lab_section": "06 · tokenizer",
+          "guide_sections": [
+            "G1.3"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "tokenizer_experiments",
+      "points": 4,
+      "source_pages": [
+        12,
+        13
+      ],
+      "source_text_lines": [
+        616,
+        640
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "07 · tokenizer_experiments",
+      "guide_sections": [
+        "G1.4"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "Ten documents per corpus; respective10k/32k tokenizers; bytes/token compression.",
+          "lab_section": "07 · tokenizer_experiments",
+          "guide_sections": [
+            "G1.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "TS tokenizer on OWT sample; compression/qualitative contrast.",
+          "lab_section": "07 · tokenizer_experiments",
+          "guide_sections": [
+            "G1.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "Measure throughput; extrapolate825GB Pile, no download required.",
+          "lab_section": "07 · tokenizer_experiments",
+          "guide_sections": [
+            "G1.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "d",
+          "requirement": "Encode both train/development splits; save arrays; explain uint16; each answer1–2 sentences.",
+          "lab_section": "07 · tokenizer_experiments",
+          "guide_sections": [
+            "G1.4"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "linear",
+      "points": 1,
+      "source_pages": [
+        18
+      ],
+      "source_text_lines": [
+        924,
+        948
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "08 · linear",
+      "guide_sections": [
+        "G2"
+      ],
+      "coverage_items": [
+        {
+          "id": "constructor",
+          "requirement": "Module+super constructor, in/out_features, device/dtype.",
+          "lab_section": "08 · linear",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "weight",
+          "requirement": "Parameter W=(out,in), no bias, prescribed initialization, no builtin Linear/functional linear.",
+          "lab_section": "08 · linear",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "forward",
+          "requirement": "Linear transform preserving leading batch-like axes.",
+          "lab_section": "08 · linear",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_linear loads supplied weights; test_linear.",
+          "lab_section": "08 · linear",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "embedding",
+      "points": 1,
+      "source_pages": [
+        18,
+        19
+      ],
+      "source_text_lines": [
+        959,
+        987
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "09 · embedding",
+      "guide_sections": [
+        "G2"
+      ],
+      "coverage_items": [
+        {
+          "id": "constructor",
+          "requirement": "Module+super, num_embeddings/embedding_dim/device/dtype.",
+          "lab_section": "09 · embedding",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "weight",
+          "requirement": "Parameter(vocab,d_model), final feature axis, prescribed initialization, no builtin embedding.",
+          "lab_section": "09 · embedding",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "forward",
+          "requirement": "Integer-ID lookup.",
+          "lab_section": "09 · embedding",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_embedding;test_embedding.",
+          "lab_section": "09 · embedding",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "rmsnorm",
+      "points": 1,
+      "source_pages": [
+        19,
+        20
+      ],
+      "source_text_lines": [
+        1008,
+        1052
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "10 · rmsnorm",
+      "guide_sections": [
+        "G3.1"
+      ],
+      "coverage_items": [
+        {
+          "id": "interface",
+          "requirement": "Module;d_model/eps1e-5/device/dtype;shape-preserving.",
+          "lab_section": "10 · rmsnorm",
+          "guide_sections": [
+            "G3.1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "normalization",
+          "requirement": "Feature-axis RMS+gain initialized1, no mean-centering/bias.",
+          "lab_section": "10 · rmsnorm",
+          "guide_sections": [
+            "G3.1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "dtype",
+          "requirement": "Upcast before square/normalization; return original input dtype.",
+          "lab_section": "10 · rmsnorm",
+          "guide_sections": [
+            "G3.1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_rmsnorm;test_rmsnorm.",
+          "lab_section": "10 · rmsnorm",
+          "guide_sections": [
+            "G3.1"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "positionwise_feedforward",
+      "points": 2,
+      "source_pages": [
+        21,
+        22
+      ],
+      "source_text_lines": [
+        1058,
+        1132
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "11 · positionwise_feedforward",
+      "guide_sections": [
+        "G3.1",
+        "G8"
+      ],
+      "coverage_items": [
+        {
+          "id": "formula",
+          "requirement": "SiLU gated branch times separate linear branch, then output projection; no bias.",
+          "lab_section": "11 · positionwise_feedforward",
+          "guide_sections": [
+            "G3.1",
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "dimensions",
+          "requirement": "W1/W3 inward, W2 outward;d_ff approximately8/3d_model, nearby multiple64.",
+          "lab_section": "11 · positionwise_feedforward",
+          "guide_sections": [
+            "G3.1",
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "permission",
+          "requirement": "torch.sigmoid explicitly permitted.",
+          "lab_section": "11 · positionwise_feedforward",
+          "guide_sections": [
+            "G3.1",
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_swiglu;test_swiglu.",
+          "lab_section": "11 · positionwise_feedforward",
+          "guide_sections": [
+            "G3.1",
+            "G8"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "rope",
+      "points": 2,
+      "source_pages": [
+        22,
+        23
+      ],
+      "source_text_lines": [
+        1135,
+        1195
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "12 · rope",
+      "guide_sections": [
+        "G3.2"
+      ],
+      "coverage_items": [
+        {
+          "id": "constructor",
+          "requirement": "theta/d_k/max_seq_len/device;no learnable parameters.",
+          "lab_section": "12 · rope",
+          "guide_sections": [
+            "G3.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "forward",
+          "requirement": "(...,seq_len,d_k), arbitrary leading axes, positions(...,seq_len), preserve shape and use actual positions.",
+          "lab_section": "12 · rope",
+          "guide_sections": [
+            "G3.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "convention",
+          "requirement": "Adjacent-pair rotation,1-based source k and exponent(2k-2)/d;cache/shared buffer optional.",
+          "lab_section": "12 · rope",
+          "guide_sections": [
+            "G3.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_rope;test_rope.",
+          "lab_section": "12 · rope",
+          "guide_sections": [
+            "G3.2"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "softmax",
+      "points": 1,
+      "source_pages": [
+        24
+      ],
+      "source_text_lines": [
+        1216,
+        1226
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "13 · softmax",
+      "guide_sections": [
+        "G3.3"
+      ],
+      "coverage_items": [
+        {
+          "id": "operation",
+          "requirement": "Tensor plus selected dimension, same shape normalized on selected axis.",
+          "lab_section": "13 · softmax",
+          "guide_sections": [
+            "G3.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "stability",
+          "requirement": "Subtract axis maximum.",
+          "lab_section": "13 · softmax",
+          "guide_sections": [
+            "G3.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_softmax;test_softmax_matches_pytorch.",
+          "lab_section": "13 · softmax",
+          "guide_sections": [
+            "G3.3"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "scaled_dot_product_attention",
+      "points": 5,
+      "source_pages": [
+        24,
+        25
+      ],
+      "source_text_lines": [
+        1229,
+        1270
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "14 · scaled_dot_product_attention",
+      "guide_sections": [
+        "G3.3"
+      ],
+      "coverage_items": [
+        {
+          "id": "operation",
+          "requirement": "QK/sqrt(d_k), softmax over keys, weighted V;preserve leading axes/output d_v.",
+          "lab_section": "14 · scaled_dot_product_attention",
+          "guide_sections": [
+            "G3.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "mask",
+          "requirement": "Optional(seq,seq)boolean;True permits;False zero probability;allowed positions sum1.",
+          "lab_section": "14 · scaled_dot_product_attention",
+          "guide_sections": [
+            "G3.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_scaled_dot_product_attention;3D and4D tests.",
+          "lab_section": "14 · scaled_dot_product_attention",
+          "guide_sections": [
+            "G3.3"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "multihead_self_attention",
+      "points": 5,
+      "source_pages": [
+        25,
+        26
+      ],
+      "source_text_lines": [
+        1273,
+        1331
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "15 · multihead_self_attention",
+      "guide_sections": [
+        "G3.2",
+        "G3.3"
+      ],
+      "coverage_items": [
+        {
+          "id": "module",
+          "requirement": "d_model/num_heads;d_k=d_v=d_model/heads;QKV/output projections and head concatenation.",
+          "lab_section": "15 · multihead_self_attention",
+          "guide_sections": [
+            "G3.2",
+            "G3.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "batching",
+          "requirement": "Three batched projection matmuls;fused QKV only stretch goal.",
+          "lab_section": "15 · multihead_self_attention",
+          "guide_sections": [
+            "G3.2",
+            "G3.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "causal",
+          "requirement": "Allow j<=i, including self;no future leakage.",
+          "lab_section": "15 · multihead_self_attention",
+          "guide_sections": [
+            "G3.2",
+            "G3.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "rope",
+          "requirement": "Q/K only,not V;head as batch dimension.",
+          "lab_section": "15 · multihead_self_attention",
+          "guide_sections": [
+            "G3.2",
+            "G3.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_multihead_self_attention;test_multihead_self_attention.",
+          "lab_section": "15 · multihead_self_attention",
+          "guide_sections": [
+            "G3.2",
+            "G3.3"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "transformer_block",
+      "points": 3,
+      "source_pages": [
+        26
+      ],
+      "source_text_lines": [
+        1334,
+        1357
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "16 · transformer_block",
+      "guide_sections": [
+        "G3.4"
+      ],
+      "coverage_items": [
+        {
+          "id": "structure",
+          "requirement": "Pre-norm attention and SwiGLU sublayers,each with residual;shape preserved.",
+          "lab_section": "16 · transformer_block",
+          "guide_sections": [
+            "G3.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "parameters",
+          "requirement": "At least d_model,num_heads,d_ff.",
+          "lab_section": "16 · transformer_block",
+          "guide_sections": [
+            "G3.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_transformer_block;test_transformer_block.",
+          "lab_section": "16 · transformer_block",
+          "guide_sections": [
+            "G3.4"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "transformer_lm",
+      "points": 3,
+      "source_pages": [
+        26,
+        27
+      ],
+      "source_text_lines": [
+        1360,
+        1385
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "17 · transformer_lm",
+      "guide_sections": [
+        "G3.4"
+      ],
+      "coverage_items": [
+        {
+          "id": "structure",
+          "requirement": "Embedding,blocks,final RMSNorm,LM head;output logits,not probabilities.",
+          "lab_section": "17 · transformer_lm",
+          "guide_sections": [
+            "G3.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "parameters",
+          "requirement": "Block parameters plus vocab_size/context_length/num_layers.",
+          "lab_section": "17 · transformer_lm",
+          "guide_sections": [
+            "G3.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_transformer_lm;test_transformer_lm.",
+          "lab_section": "17 · transformer_lm",
+          "guide_sections": [
+            "G3.4"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "transformer_accounting",
+      "points": 5,
+      "source_pages": [
+        27,
+        28
+      ],
+      "source_text_lines": [
+        1406,
+        1442
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "18 · transformer_accounting",
+      "guide_sections": [
+        "G3.5"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "Assignment architecture XL dimensions stated;parameter count and float32 load-only memory;1–2 sentences.",
+          "lab_section": "18 · transformer_accounting",
+          "guide_sections": [
+            "G3.5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "All forward matmuls,descriptions and total FLOPs for context-length input.",
+          "lab_section": "18 · transformer_accounting",
+          "guide_sections": [
+            "G3.5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "Dominant components;1–2 sentences.",
+          "lab_section": "18 · transformer_accounting",
+          "guide_sections": [
+            "G3.5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "d",
+          "requirement": "Small/medium/large dimensions stated;component FLOP proportions per model and trend explanation.",
+          "lab_section": "18 · transformer_accounting",
+          "guide_sections": [
+            "G3.5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "e",
+          "requirement": "XL context16384;total and proportional FLOPs changes;1–2 sentences.",
+          "lab_section": "18 · transformer_accounting",
+          "guide_sections": [
+            "G3.5"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "cross_entropy",
+      "points": 1,
+      "source_pages": [
+        28,
+        29
+      ],
+      "source_text_lines": [
+        1454,
+        1507
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "19 · cross_entropy",
+      "guide_sections": [
+        "G4.1"
+      ],
+      "coverage_items": [
+        {
+          "id": "inputs",
+          "requirement": "Logits and next-token target IDs,vocab last.",
+          "lab_section": "19 · cross_entropy",
+          "guide_sections": [
+            "G4.1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "stability",
+          "requirement": "Subtract maximum,cancel log/exp where possible.",
+          "lab_section": "19 · cross_entropy",
+          "guide_sections": [
+            "G4.1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "reduction",
+          "requirement": "Average over all leading batch-like dimensions.",
+          "lab_section": "19 · cross_entropy",
+          "guide_sections": [
+            "G4.1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_cross_entropy;test_cross_entropy;perplexity defined separately.",
+          "lab_section": "19 · cross_entropy",
+          "guide_sections": [
+            "G4.1"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "learning_rate_tuning",
+      "points": 1,
+      "source_pages": [
+        29,
+        31
+      ],
+      "source_text_lines": [
+        1519,
+        1609
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "20 · learning_rate_tuning",
+      "guide_sections": [
+        "G4.2"
+      ],
+      "coverage_items": [
+        {
+          "id": "experiment",
+          "requirement": "Use fixed corrected SGD toy example at1e1/1e2/1e3,10iterations each.",
+          "lab_section": "20 · learning_rate_tuning",
+          "guide_sections": [
+            "G4.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverable",
+          "requirement": "Observe decay speed/divergence;1–2 sentences;not full LM search.",
+          "lab_section": "20 · learning_rate_tuning",
+          "guide_sections": [
+            "G4.2"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "adamw",
+      "points": 2,
+      "source_pages": [
+        31,
+        32
+      ],
+      "source_text_lines": [
+        1612,
+        1660
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "21 · adamw",
+      "guide_sections": [
+        "G4.3"
+      ],
+      "coverage_items": [
+        {
+          "id": "interface",
+          "requirement": "Optimizer subclass;lr,betas,epsilon,decay;per-parameter state.",
+          "lab_section": "21 · adamw",
+          "guide_sections": [
+            "G4.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "ordering",
+          "requirement": "t starts1;gradient from current parameters;decay old parameters using current base alpha BEFORE gradient update;moments persistent.",
+          "lab_section": "21 · adamw",
+          "guide_sections": [
+            "G4.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "epsilon",
+          "requirement": "Adjusted alpha with uncorrected sqrt(v)+epsilon;epsilon outside root;not strictly same numeric epsilon as corrected-moment PyTorch expression.",
+          "lab_section": "21 · adamw",
+          "guide_sections": [
+            "G4.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "get_adamw_cls;test_adamw.",
+          "lab_section": "21 · adamw",
+          "guide_sections": [
+            "G4.3"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "adamw_accounting",
+      "points": 2,
+      "source_pages": [
+        32,
+        33
+      ],
+      "source_text_lines": [
+        1664,
+        1705
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "22 · adamw_accounting",
+      "guide_sections": [
+        "G4.4",
+        "G3.5"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "All float32,d_ff=8/3d;separate parameters/activations/gradients/state and total;complete specified activation list.",
+          "lab_section": "22 · adamw_accounting",
+          "guide_sections": [
+            "G4.4",
+            "G3.5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "XL numeric a*batch+b and maximum batch within80GB.",
+          "lab_section": "22 · adamw_accounting",
+          "guide_sections": [
+            "G4.4",
+            "G3.5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "One AdamW step FLOPs expression and justification.",
+          "lab_section": "22 · adamw_accounting",
+          "guide_sections": [
+            "G4.4",
+            "G3.5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "d",
+          "requirement": "400Ksteps,batch1024,singleH100,495TFLOP/s,50%MFU,backward twice forward;hours and justification;unit clarification.",
+          "lab_section": "22 · adamw_accounting",
+          "guide_sections": [
+            "G4.4",
+            "G3.5"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "learning_rate_schedule",
+      "points": 1,
+      "source_pages": [
+        33,
+        34
+      ],
+      "source_text_lines": [
+        1708,
+        1740
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "23 · learning_rate_schedule",
+      "guide_sections": [
+        "G4.4"
+      ],
+      "coverage_items": [
+        {
+          "id": "inputs",
+          "requirement": "t,alpha_max,alpha_min,Tw,Tc.",
+          "lab_section": "23 · learning_rate_schedule",
+          "guide_sections": [
+            "G4.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "warmup",
+          "requirement": "t<Tw linear ramp.",
+          "lab_section": "23 · learning_rate_schedule",
+          "guide_sections": [
+            "G4.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "cosine",
+          "requirement": "Tw<=t<=Tc stated cosine interpolation and phase.",
+          "lab_section": "23 · learning_rate_schedule",
+          "guide_sections": [
+            "G4.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "post",
+          "requirement": "t>Tc fixed minimum.",
+          "lab_section": "23 · learning_rate_schedule",
+          "guide_sections": [
+            "G4.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "get_lr_cosine_schedule;test_get_lr_cosine_schedule.",
+          "lab_section": "23 · learning_rate_schedule",
+          "guide_sections": [
+            "G4.4"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "gradient_clipping",
+      "points": 1,
+      "source_pages": [
+        34
+      ],
+      "source_text_lines": [
+        1743,
+        1759
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "24 · gradient_clipping",
+      "guide_sections": [
+        "G4.4"
+      ],
+      "coverage_items": [
+        {
+          "id": "inputs",
+          "requirement": "Parameters and maximum aggregate gradientL2 norm.",
+          "lab_section": "24 · gradient_clipping",
+          "guide_sections": [
+            "G4.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "operation",
+          "requirement": "In-place gradient changes,global norm not per-tensor;epsilon1e-6;backward-before-step ordering.",
+          "lab_section": "24 · gradient_clipping",
+          "guide_sections": [
+            "G4.4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_gradient_clipping;test_gradient_clipping.",
+          "lab_section": "24 · gradient_clipping",
+          "guide_sections": [
+            "G4.4"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "data_loading",
+      "points": 2,
+      "source_pages": [
+        34,
+        35
+      ],
+      "source_text_lines": [
+        1767,
+        1821
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "25 · data_loading",
+      "guide_sections": [
+        "G5.1"
+      ],
+      "coverage_items": [
+        {
+          "id": "inputs",
+          "requirement": "NumPy ID array,batch,context,device.",
+          "lab_section": "25 · data_loading",
+          "guide_sections": [
+            "G5.1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "outputs",
+          "requirement": "Input/one-step-shifted targets,both(batch,context),requested device;last target must exist.",
+          "lab_section": "25 · data_loading",
+          "guide_sections": [
+            "G5.1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "storage",
+          "requirement": "Memory map matching raw/.npy format and dtype;check ID range;cpu/mps matching model device.",
+          "lab_section": "25 · data_loading",
+          "guide_sections": [
+            "G5.1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_get_batch;test_get_batch.",
+          "lab_section": "25 · data_loading",
+          "guide_sections": [
+            "G5.1"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "checkpointing",
+      "points": 1,
+      "source_pages": [
+        35,
+        36
+      ],
+      "source_text_lines": [
+        1823,
+        1876
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "26 · checkpointing",
+      "guide_sections": [
+        "G5.2"
+      ],
+      "coverage_items": [
+        {
+          "id": "save",
+          "requirement": "Save model state,optimizer state,iteration;path/PathLike/binary-file support.",
+          "lab_section": "26 · checkpointing",
+          "guide_sections": [
+            "G5.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "load",
+          "requirement": "Restore supplied model/optimizer and return saved iteration.",
+          "lab_section": "26 · checkpointing",
+          "guide_sections": [
+            "G5.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "minimum",
+          "requirement": "Weights alone insufficient;RNG/data state belong to stronger exact-resume claim,not invented minimal fields.",
+          "lab_section": "26 · checkpointing",
+          "guide_sections": [
+            "G5.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "run_save_checkpoint/run_load_checkpoint;test_checkpointing.",
+          "lab_section": "26 · checkpointing",
+          "guide_sections": [
+            "G5.2"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "training_together",
+      "points": 4,
+      "source_pages": [
+        36,
+        37
+      ],
+      "source_text_lines": [
+        1879,
+        1900
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "27 · training_together",
+      "guide_sections": [
+        "G5.3"
+      ],
+      "coverage_items": [
+        {
+          "id": "configuration",
+          "requirement": "User-provided data and configurable model/optimizer hyperparameters.",
+          "lab_section": "27 · training_together",
+          "guide_sections": [
+            "G5.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "memory",
+          "requirement": "Memory-efficient train/validation loading.",
+          "lab_section": "27 · training_together",
+          "guide_sections": [
+            "G5.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "checkpoint",
+          "requirement": "User-selected output path serialization.",
+          "lab_section": "27 · training_together",
+          "guide_sections": [
+            "G5.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "logging",
+          "requirement": "Periodic train/validation performance;console/external service choice.",
+          "lab_section": "27 · training_together",
+          "guide_sections": [
+            "G5.3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "acceptance",
+          "requirement": "Working script and actual later experiments,not fabricated single integration test.",
+          "lab_section": "27 · training_together",
+          "guide_sections": [
+            "G5.3"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "decoding",
+      "points": 3,
+      "source_pages": [
+        37,
+        38
+      ],
+      "source_text_lines": [
+        1904,
+        1980
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "28 · decoding",
+      "guide_sections": [
+        "G6"
+      ],
+      "coverage_items": [
+        {
+          "id": "prompt_eos",
+          "requirement": "User prompt completion,stop on EOS.",
+          "lab_section": "28 · decoding",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "length",
+          "requirement": "User max generated tokens.",
+          "lab_section": "28 · decoding",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "temperature",
+          "requirement": "Scale final-position logits before sampling.",
+          "lab_section": "28 · decoding",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "top_p",
+          "requirement": "User threshold,smallest highest-probability prefix reaching threshold,keep crossing item,renormalize.",
+          "lab_section": "28 · decoding",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "experiment_log",
+      "points": 3,
+      "source_pages": [
+        38,
+        39
+      ],
+      "source_text_lines": [
+        1987,
+        2010
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "29 · experiment_log",
+      "guide_sections": [
+        "G7"
+      ],
+      "coverage_items": [
+        {
+          "id": "infrastructure",
+          "requirement": "Track loss against gradient steps AND wall-clock.",
+          "lab_section": "29 · experiment_log",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "record",
+          "requirement": "Log document of all attempted experiments plus curves;failures retained.",
+          "lab_section": "29 · experiment_log",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "learning_rate",
+      "points": 3,
+      "source_pages": [
+        40,
+        41
+      ],
+      "source_text_lines": [
+        2076,
+        2124
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "30 · learning_rate",
+      "guide_sections": [
+        "G7.1",
+        "G7.2"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "Multiple learning rates,final losses/divergence,curves/search strategy and model meeting selected route:standard1.45 vs official low-resource2.00.",
+          "lab_section": "30 · learning_rate",
+          "guide_sections": [
+            "G7.1",
+            "G7.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "Increasing learning rates including at least one divergent run;stability-boundary/convergence analysis.",
+          "lab_section": "30 · learning_rate",
+          "guide_sections": [
+            "G7.1",
+            "G7.2"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "batch_size_experiment",
+      "points": 1,
+      "source_pages": [
+        41
+      ],
+      "source_text_lines": [
+        2132,
+        2140
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "31 · batch_size_experiment",
+      "guide_sections": [
+        "G7.2"
+      ],
+      "coverage_items": [
+        {
+          "id": "range",
+          "requirement": "Batch1 to GPU memory limit,several intermediate sizes including64/128.",
+          "lab_section": "31 · batch_size_experiment",
+          "guide_sections": [
+            "G7.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "retune",
+          "requirement": "Retune LR if necessary.",
+          "lab_section": "31 · batch_size_experiment",
+          "guide_sections": [
+            "G7.2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverables",
+          "requirement": "Curves and findings;report token/step/wall-clock budget changes.",
+          "lab_section": "31 · batch_size_experiment",
+          "guide_sections": [
+            "G7.2"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "generate",
+      "points": 1,
+      "source_pages": [
+        42
+      ],
+      "source_text_lines": [
+        2182,
+        2189
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "32 · generate",
+      "guide_sections": [
+        "G6",
+        "G7"
+      ],
+      "coverage_items": [
+        {
+          "id": "artifact",
+          "requirement": "Own trained checkpoint+decoder;at least256tokens or firstEOS.",
+          "lab_section": "32 · generate",
+          "guide_sections": [
+            "G6",
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "analysis",
+          "requirement": "Brief fluency discussion and at least two quality factors;record sampling settings.",
+          "lab_section": "32 · generate",
+          "guide_sections": [
+            "G6",
+            "G7"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "layer_norm_ablation",
+      "points": 1,
+      "source_pages": [
+        42
+      ],
+      "source_text_lines": [
+        2196,
+        2209
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "33 · layer_norm_ablation",
+      "guide_sections": [
+        "G8"
+      ],
+      "coverage_items": [
+        {
+          "id": "change",
+          "requirement": "Remove ALL RMSNorms including final norm.",
+          "lab_section": "33 · layer_norm_ablation",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "experiments",
+          "requirement": "Previous bestLR,then stability with lowerLR.",
+          "lab_section": "33 · layer_norm_ablation",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverables",
+          "requirement": "Removal curve,bestLR curve,and commentary;0.5B200h exploration label.",
+          "lab_section": "33 · layer_norm_ablation",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "pre_norm_ablation",
+      "points": 1,
+      "source_pages": [
+        43
+      ],
+      "source_text_lines": [
+        2212,
+        2233
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "34 · pre_norm_ablation",
+      "guide_sections": [
+        "G8"
+      ],
+      "coverage_items": [
+        {
+          "id": "change",
+          "requirement": "Post-norm sublayer formulas,compare pre-norm baseline;document treatment of block-external final norm.",
+          "lab_section": "34 · pre_norm_ablation",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverable",
+          "requirement": "Post/pre learning curves;0.5B200h exploration label.",
+          "lab_section": "34 · pre_norm_ablation",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "no_pos_emb",
+      "points": 1,
+      "source_pages": [
+        43
+      ],
+      "source_text_lines": [
+        2239,
+        2253
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "35 · no_pos_emb",
+      "guide_sections": [
+        "G8"
+      ],
+      "coverage_items": [
+        {
+          "id": "change",
+          "requirement": "Remove explicit position embeddings;retain causal mask.",
+          "lab_section": "35 · no_pos_emb",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverable",
+          "requirement": "RoPE/NoPE comparison curve;0.5B200h exploration label;not a long-context proof.",
+          "lab_section": "35 · no_pos_emb",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "swiglu_ablation",
+      "points": 1,
+      "source_pages": [
+        43,
+        44
+      ],
+      "source_text_lines": [
+        2256,
+        2277
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "36 · swiglu_ablation",
+      "guide_sections": [
+        "G8"
+      ],
+      "coverage_items": [
+        {
+          "id": "matching",
+          "requirement": "Ungated SiLU inner width4d vs gated approximately8/3d,approximately matched parameters.",
+          "lab_section": "36 · swiglu_ablation",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverables",
+          "requirement": "Comparison curves and discussion;0.5B200h exploration label.",
+          "lab_section": "36 · swiglu_ablation",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "main_experiment",
+      "points": 2,
+      "source_pages": [
+        44,
+        45
+      ],
+      "source_text_lines": [
+        2281,
+        2340
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "37 · main_experiment",
+      "guide_sections": [
+        "G8"
+      ],
+      "coverage_items": [
+        {
+          "id": "training",
+          "requirement": "ProvidedOWT,matching tokenizer,same block architecture and total iterations asTS;LR/batch retuning allowed and changes recorded.",
+          "lab_section": "37 · main_experiment",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "curves",
+          "requirement": "OWT learning curve and interpretation of different losses.",
+          "lab_section": "37 · main_experiment",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "generation",
+          "requirement": "Same output format asTS;fluency and difficulty/compute discussion.",
+          "lab_section": "37 · main_experiment",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "low_resource",
+          "requirement": "p44 external limited-GPU readers may stay onTS;not equivalent to standardOWT completion;2B200h exploration label.",
+          "lab_section": "37 · main_experiment",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    },
+    {
+      "id": "leaderboard",
+      "points": 6,
+      "source_pages": [
+        45,
+        46
+      ],
+      "source_text_lines": [
+        2343,
+        2381
+      ],
+      "source_file": "p1-assignments-a1-a4/a1/cs336_assignment1_basics.txt",
+      "lab_section": "38 · leaderboard",
+      "guide_sections": [
+        "G9"
+      ],
+      "coverage_items": [
+        {
+          "id": "rules",
+          "requirement": "Only providedOWT training data;singleB200 finalrun<=45min=0.75B200h.",
+          "lab_section": "38 · leaderboard",
+          "guide_sections": [
+            "G9"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "budget",
+          "requirement": "10B200h exploration label separate from finalrun cap.",
+          "lab_section": "38 · leaderboard",
+          "guide_sections": [
+            "G9"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverables",
+          "requirement": "Final validationloss,wall-clock curve clearly<45min,method,officialPRsubmission;beat naive loss5.0.",
+          "lab_section": "38 · leaderboard",
+          "guide_sections": [
+            "G9"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "scope",
+          "requirement": "Standard6point problem not universally optional;p44 exception limited to external low-resource route;AI policy still applies.",
+          "lab_section": "38 · leaderboard",
+          "guide_sections": [
+            "G9"
+          ],
+          "status": "written_not_executed"
+        }
+      ],
+      "acceptance_status": "not_run",
+      "implementation_status": "not_performed",
+      "experiment_status": "not_performed"
+    }
+  ],
+  "rights_and_execution_boundary": "MIT notice and modification statement retained on both pages. Third-party regex source,story samples,figures and assignment solution code not reproduced. No build/test/lint/formatter/smoke run,downloads or paid compute by worker."
+}
