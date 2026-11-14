@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 565" role="img" aria-labelledby="title desc">
+<title id="title">Inception四分支的形状合同</title>
+<desc id="desc">输入为2乘16乘8乘8。四路分别输出4、6、2、4通道，所有路径保持8乘8空间尺寸，最终沿通道拼接得到2乘16乘8乘8。3乘3和5乘5前有3和2通道瓶颈。</desc>
+<style>:root { color: #18212b; } @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+<g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="22">
+<text x="24" y="38" font-size="27" font-weight="700">Inception：同尺寸，不同通道数</text>
+<text x="30" y="84">共同输入：(2, 16, 8, 8)</text>
+<g fill="none" stroke="currentColor" stroke-width="2">
+<path d="M54 99 V355 M54 140 H98 M54 210 H98 M54 280 H98 M54 350 H98"/>
+<rect x="100" y="110" width="540" height="55" rx="8"/>
+<rect x="100" y="180" width="540" height="55" rx="8"/>
+<rect x="100" y="250" width="540" height="55" rx="8"/>
+<rect x="100" y="320" width="540" height="55" rx="8"/>
+<path d="M640 137 H675 V407 H360 V428 M640 207 H675 M640 277 H675 M640 347 H675" marker-end="url(#arrow)"/>
+<rect x="100" y="435" width="540" height="58" rx="8"/>
+</g>
+<text x="116" y="145">A：1×1 → 4通道</text>
+<text x="116" y="215">B：1×1 → 3，再3×3 → 6通道</text>
+<text x="116" y="285">C：1×1 → 2，再5×5 → 2通道</text>
+<text x="116" y="355">D：池化3×3，再1×1 → 4通道</text>
+<text x="122" y="472" font-weight="700">cat(dim=1) → (2, 16, 8, 8)</text>
+<text x="30" y="535" font-size="20">步幅均为1；空间核1/3/5对应填充0/1/2</text>
+</g>
+</svg>

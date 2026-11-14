@@ -1,0 +1,2800 @@
+{
+  "status": "passed",
+  "device": "cpu",
+  "threads": 1,
+  "mode": "eval + no_grad",
+  "scope": "full fixed-book grayscale/10-class PyTorch definitions; not original papers, no training of AlexNet/VGG/NiN/GoogLeNet/full-width ResNet; d2l import omitted, no model layers removed",
+  "networks": {
+    "lenet": {
+      "source": "sources/p4-lec23/book-lenet.txt",
+      "source_sha256": "62a1f7d14aef6a3ddc7072bccf326c57accf3dba855456b5abcfe36334c5c571",
+      "zero_based_source_blocks": [
+        1
+      ],
+      "input": [
+        1,
+        1,
+        28,
+        28
+      ],
+      "parameters": 61706,
+      "top_level_shapes": [
+        {
+          "type": "Conv2d",
+          "shape": [
+            1,
+            6,
+            28,
+            28
+          ]
+        },
+        {
+          "type": "Sigmoid",
+          "shape": [
+            1,
+            6,
+            28,
+            28
+          ]
+        },
+        {
+          "type": "AvgPool2d",
+          "shape": [
+            1,
+            6,
+            14,
+            14
+          ]
+        },
+        {
+          "type": "Conv2d",
+          "shape": [
+            1,
+            16,
+            10,
+            10
+          ]
+        },
+        {
+          "type": "Sigmoid",
+          "shape": [
+            1,
+            16,
+            10,
+            10
+          ]
+        },
+        {
+          "type": "AvgPool2d",
+          "shape": [
+            1,
+            16,
+            5,
+            5
+          ]
+        },
+        {
+          "type": "Flatten",
+          "shape": [
+            1,
+            400
+          ]
+        },
+        {
+          "type": "Linear",
+          "shape": [
+            1,
+            120
+          ]
+        },
+        {
+          "type": "Sigmoid",
+          "shape": [
+            1,
+            120
+          ]
+        },
+        {
+          "type": "Linear",
+          "shape": [
+            1,
+            84
+          ]
+        },
+        {
+          "type": "Sigmoid",
+          "shape": [
+            1,
+            84
+          ]
+        },
+        {
+          "type": "Linear",
+          "shape": [
+            1,
+            10
+          ]
+        }
+      ],
+      "leaf_shapes": [
+        {
+          "module": "0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            6,
+            28,
+            28
+          ]
+        },
+        {
+          "module": "1",
+          "type": "Sigmoid",
+          "shape": [
+            1,
+            6,
+            28,
+            28
+          ]
+        },
+        {
+          "module": "2",
+          "type": "AvgPool2d",
+          "shape": [
+            1,
+            6,
+            14,
+            14
+          ]
+        },
+        {
+          "module": "3",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            16,
+            10,
+            10
+          ]
+        },
+        {
+          "module": "4",
+          "type": "Sigmoid",
+          "shape": [
+            1,
+            16,
+            10,
+            10
+          ]
+        },
+        {
+          "module": "5",
+          "type": "AvgPool2d",
+          "shape": [
+            1,
+            16,
+            5,
+            5
+          ]
+        },
+        {
+          "module": "6",
+          "type": "Flatten",
+          "shape": [
+            1,
+            400
+          ]
+        },
+        {
+          "module": "7",
+          "type": "Linear",
+          "shape": [
+            1,
+            120
+          ]
+        },
+        {
+          "module": "8",
+          "type": "Sigmoid",
+          "shape": [
+            1,
+            120
+          ]
+        },
+        {
+          "module": "9",
+          "type": "Linear",
+          "shape": [
+            1,
+            84
+          ]
+        },
+        {
+          "module": "10",
+          "type": "Sigmoid",
+          "shape": [
+            1,
+            84
+          ]
+        },
+        {
+          "module": "11",
+          "type": "Linear",
+          "shape": [
+            1,
+            10
+          ]
+        }
+      ],
+      "analytic_stage_shapes_match": true,
+      "output_finite": true
+    },
+    "alexnet": {
+      "source": "sources/p4-lec24/book-alexnet.txt",
+      "source_sha256": "7fcce7491ae1cb4003032d1093630b4e17cab609716a154f198fd59d015c794e",
+      "zero_based_source_blocks": [
+        1
+      ],
+      "input": [
+        1,
+        1,
+        224,
+        224
+      ],
+      "parameters": 46764746,
+      "top_level_shapes": [
+        {
+          "type": "Conv2d",
+          "shape": [
+            1,
+            96,
+            54,
+            54
+          ]
+        },
+        {
+          "type": "ReLU",
+          "shape": [
+            1,
+            96,
+            54,
+            54
+          ]
+        },
+        {
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            96,
+            26,
+            26
+          ]
+        },
+        {
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            26,
+            26
+          ]
+        },
+        {
+          "type": "ReLU",
+          "shape": [
+            1,
+            256,
+            26,
+            26
+          ]
+        },
+        {
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            256,
+            12,
+            12
+          ]
+        },
+        {
+          "type": "Conv2d",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "type": "ReLU",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "type": "Conv2d",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "type": "ReLU",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            12,
+            12
+          ]
+        },
+        {
+          "type": "ReLU",
+          "shape": [
+            1,
+            256,
+            12,
+            12
+          ]
+        },
+        {
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            256,
+            5,
+            5
+          ]
+        },
+        {
+          "type": "Flatten",
+          "shape": [
+            1,
+            6400
+          ]
+        },
+        {
+          "type": "Linear",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "type": "ReLU",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "type": "Dropout",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "type": "Linear",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "type": "ReLU",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "type": "Dropout",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "type": "Linear",
+          "shape": [
+            1,
+            10
+          ]
+        }
+      ],
+      "leaf_shapes": [
+        {
+          "module": "0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            96,
+            54,
+            54
+          ]
+        },
+        {
+          "module": "1",
+          "type": "ReLU",
+          "shape": [
+            1,
+            96,
+            54,
+            54
+          ]
+        },
+        {
+          "module": "2",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            96,
+            26,
+            26
+          ]
+        },
+        {
+          "module": "3",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            26,
+            26
+          ]
+        },
+        {
+          "module": "4",
+          "type": "ReLU",
+          "shape": [
+            1,
+            256,
+            26,
+            26
+          ]
+        },
+        {
+          "module": "5",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            256,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "6",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "7",
+          "type": "ReLU",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "8",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "9",
+          "type": "ReLU",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "10",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "11",
+          "type": "ReLU",
+          "shape": [
+            1,
+            256,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "12",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            256,
+            5,
+            5
+          ]
+        },
+        {
+          "module": "13",
+          "type": "Flatten",
+          "shape": [
+            1,
+            6400
+          ]
+        },
+        {
+          "module": "14",
+          "type": "Linear",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "module": "15",
+          "type": "ReLU",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "module": "16",
+          "type": "Dropout",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "module": "17",
+          "type": "Linear",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "module": "18",
+          "type": "ReLU",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "module": "19",
+          "type": "Dropout",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "module": "20",
+          "type": "Linear",
+          "shape": [
+            1,
+            10
+          ]
+        }
+      ],
+      "analytic_stage_shapes_match": true,
+      "output_finite": true
+    },
+    "vgg": {
+      "source": "sources/p4-lec25/book-vgg.txt",
+      "source_sha256": "f6f7e68d91648155f763663ae456d9995241fc3c58e71e8e0b6a45cbba60c0e3",
+      "zero_based_source_blocks": [
+        1,
+        4,
+        6
+      ],
+      "input": [
+        1,
+        1,
+        224,
+        224
+      ],
+      "parameters": 128806154,
+      "top_level_shapes": [
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            64,
+            112,
+            112
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            128,
+            56,
+            56
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            256,
+            28,
+            28
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            512,
+            14,
+            14
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            512,
+            7,
+            7
+          ]
+        },
+        {
+          "type": "Flatten",
+          "shape": [
+            1,
+            25088
+          ]
+        },
+        {
+          "type": "Linear",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "type": "ReLU",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "type": "Dropout",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "type": "Linear",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "type": "ReLU",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "type": "Dropout",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "type": "Linear",
+          "shape": [
+            1,
+            10
+          ]
+        }
+      ],
+      "leaf_shapes": [
+        {
+          "module": "0.0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            224,
+            224
+          ]
+        },
+        {
+          "module": "0.1",
+          "type": "ReLU",
+          "shape": [
+            1,
+            64,
+            224,
+            224
+          ]
+        },
+        {
+          "module": "0.2",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            64,
+            112,
+            112
+          ]
+        },
+        {
+          "module": "1.0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            112,
+            112
+          ]
+        },
+        {
+          "module": "1.1",
+          "type": "ReLU",
+          "shape": [
+            1,
+            128,
+            112,
+            112
+          ]
+        },
+        {
+          "module": "1.2",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            128,
+            56,
+            56
+          ]
+        },
+        {
+          "module": "2.0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            56,
+            56
+          ]
+        },
+        {
+          "module": "2.1",
+          "type": "ReLU",
+          "shape": [
+            1,
+            256,
+            56,
+            56
+          ]
+        },
+        {
+          "module": "2.2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            56,
+            56
+          ]
+        },
+        {
+          "module": "2.3",
+          "type": "ReLU",
+          "shape": [
+            1,
+            256,
+            56,
+            56
+          ]
+        },
+        {
+          "module": "2.4",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            256,
+            28,
+            28
+          ]
+        },
+        {
+          "module": "3.0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            512,
+            28,
+            28
+          ]
+        },
+        {
+          "module": "3.1",
+          "type": "ReLU",
+          "shape": [
+            1,
+            512,
+            28,
+            28
+          ]
+        },
+        {
+          "module": "3.2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            512,
+            28,
+            28
+          ]
+        },
+        {
+          "module": "3.3",
+          "type": "ReLU",
+          "shape": [
+            1,
+            512,
+            28,
+            28
+          ]
+        },
+        {
+          "module": "3.4",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            512,
+            14,
+            14
+          ]
+        },
+        {
+          "module": "4.0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            512,
+            14,
+            14
+          ]
+        },
+        {
+          "module": "4.1",
+          "type": "ReLU",
+          "shape": [
+            1,
+            512,
+            14,
+            14
+          ]
+        },
+        {
+          "module": "4.2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            512,
+            14,
+            14
+          ]
+        },
+        {
+          "module": "4.3",
+          "type": "ReLU",
+          "shape": [
+            1,
+            512,
+            14,
+            14
+          ]
+        },
+        {
+          "module": "4.4",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            512,
+            7,
+            7
+          ]
+        },
+        {
+          "module": "5",
+          "type": "Flatten",
+          "shape": [
+            1,
+            25088
+          ]
+        },
+        {
+          "module": "6",
+          "type": "Linear",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "module": "7",
+          "type": "ReLU",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "module": "8",
+          "type": "Dropout",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "module": "9",
+          "type": "Linear",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "module": "10",
+          "type": "ReLU",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "module": "11",
+          "type": "Dropout",
+          "shape": [
+            1,
+            4096
+          ]
+        },
+        {
+          "module": "12",
+          "type": "Linear",
+          "shape": [
+            1,
+            10
+          ]
+        }
+      ],
+      "analytic_stage_shapes_match": true,
+      "output_finite": true
+    },
+    "nin": {
+      "source": "sources/p4-lec26/book-nin.txt",
+      "source_sha256": "15ad14414fb2f531b57914e3ea8cb1a163c5abb26c7f51b4d97b7bebcef15cc3",
+      "zero_based_source_blocks": [
+        1,
+        5
+      ],
+      "input": [
+        1,
+        1,
+        224,
+        224
+      ],
+      "parameters": 1992166,
+      "top_level_shapes": [
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            96,
+            54,
+            54
+          ]
+        },
+        {
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            96,
+            26,
+            26
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            256,
+            26,
+            26
+          ]
+        },
+        {
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            256,
+            12,
+            12
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            384,
+            5,
+            5
+          ]
+        },
+        {
+          "type": "Dropout",
+          "shape": [
+            1,
+            384,
+            5,
+            5
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            10,
+            5,
+            5
+          ]
+        },
+        {
+          "type": "AdaptiveAvgPool2d",
+          "shape": [
+            1,
+            10,
+            1,
+            1
+          ]
+        },
+        {
+          "type": "Flatten",
+          "shape": [
+            1,
+            10
+          ]
+        }
+      ],
+      "leaf_shapes": [
+        {
+          "module": "0.0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            96,
+            54,
+            54
+          ]
+        },
+        {
+          "module": "0.1",
+          "type": "ReLU",
+          "shape": [
+            1,
+            96,
+            54,
+            54
+          ]
+        },
+        {
+          "module": "0.2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            96,
+            54,
+            54
+          ]
+        },
+        {
+          "module": "0.3",
+          "type": "ReLU",
+          "shape": [
+            1,
+            96,
+            54,
+            54
+          ]
+        },
+        {
+          "module": "0.4",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            96,
+            54,
+            54
+          ]
+        },
+        {
+          "module": "0.5",
+          "type": "ReLU",
+          "shape": [
+            1,
+            96,
+            54,
+            54
+          ]
+        },
+        {
+          "module": "1",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            96,
+            26,
+            26
+          ]
+        },
+        {
+          "module": "2.0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            26,
+            26
+          ]
+        },
+        {
+          "module": "2.1",
+          "type": "ReLU",
+          "shape": [
+            1,
+            256,
+            26,
+            26
+          ]
+        },
+        {
+          "module": "2.2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            26,
+            26
+          ]
+        },
+        {
+          "module": "2.3",
+          "type": "ReLU",
+          "shape": [
+            1,
+            256,
+            26,
+            26
+          ]
+        },
+        {
+          "module": "2.4",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            26,
+            26
+          ]
+        },
+        {
+          "module": "2.5",
+          "type": "ReLU",
+          "shape": [
+            1,
+            256,
+            26,
+            26
+          ]
+        },
+        {
+          "module": "3",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            256,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "4.0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "4.1",
+          "type": "ReLU",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "4.2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "4.3",
+          "type": "ReLU",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "4.4",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "4.5",
+          "type": "ReLU",
+          "shape": [
+            1,
+            384,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "5",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            384,
+            5,
+            5
+          ]
+        },
+        {
+          "module": "6",
+          "type": "Dropout",
+          "shape": [
+            1,
+            384,
+            5,
+            5
+          ]
+        },
+        {
+          "module": "7.0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            10,
+            5,
+            5
+          ]
+        },
+        {
+          "module": "7.1",
+          "type": "ReLU",
+          "shape": [
+            1,
+            10,
+            5,
+            5
+          ]
+        },
+        {
+          "module": "7.2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            10,
+            5,
+            5
+          ]
+        },
+        {
+          "module": "7.3",
+          "type": "ReLU",
+          "shape": [
+            1,
+            10,
+            5,
+            5
+          ]
+        },
+        {
+          "module": "7.4",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            10,
+            5,
+            5
+          ]
+        },
+        {
+          "module": "7.5",
+          "type": "ReLU",
+          "shape": [
+            1,
+            10,
+            5,
+            5
+          ]
+        },
+        {
+          "module": "8",
+          "type": "AdaptiveAvgPool2d",
+          "shape": [
+            1,
+            10,
+            1,
+            1
+          ]
+        },
+        {
+          "module": "9",
+          "type": "Flatten",
+          "shape": [
+            1,
+            10
+          ]
+        }
+      ],
+      "analytic_stage_shapes_match": true,
+      "output_finite": true
+    },
+    "googlenet": {
+      "source": "sources/p4-lec27/book-googlenet.txt",
+      "source_sha256": "7534e27e5f78f17fb76baf3136758db631c50bba2c6a676c1ce60e81bf812578",
+      "zero_based_source_blocks": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21
+      ],
+      "input": [
+        1,
+        1,
+        96,
+        96
+      ],
+      "parameters": 5977530,
+      "top_level_shapes": [
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            192,
+            12,
+            12
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            480,
+            6,
+            6
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            832,
+            3,
+            3
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            1024
+          ]
+        },
+        {
+          "type": "Linear",
+          "shape": [
+            1,
+            10
+          ]
+        }
+      ],
+      "leaf_shapes": [
+        {
+          "module": "0.0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            48,
+            48
+          ]
+        },
+        {
+          "module": "0.1",
+          "type": "ReLU",
+          "shape": [
+            1,
+            64,
+            48,
+            48
+          ]
+        },
+        {
+          "module": "0.2",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "1.0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "1.1",
+          "type": "ReLU",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "1.2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            192,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "1.3",
+          "type": "ReLU",
+          "shape": [
+            1,
+            192,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "1.4",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            192,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.0.p1_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.0.p2_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            96,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.0.p2_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.0.p3_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            16,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.0.p3_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            32,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.0.p4_1",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            192,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.0.p4_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            32,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.1.p1_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.1.p2_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.1.p2_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            192,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.1.p3_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            32,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.1.p3_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            96,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.1.p4_1",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            256,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.1.p4_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.2",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            480,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.0.p1_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            192,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.0.p2_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            96,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.0.p2_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            208,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.0.p3_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            16,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.0.p3_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            48,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.0.p4_1",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            480,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.0.p4_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.1.p1_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            160,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.1.p2_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            112,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.1.p2_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            224,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.1.p3_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            24,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.1.p3_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.1.p4_1",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            512,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.1.p4_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.2.p1_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.2.p2_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.2.p2_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.2.p3_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            24,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.2.p3_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.2.p4_1",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            512,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.2.p4_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.3.p1_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            112,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.3.p2_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            144,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.3.p2_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            288,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.3.p3_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            32,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.3.p3_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.3.p4_1",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            512,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.3.p4_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.4.p1_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.4.p2_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            160,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.4.p2_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            320,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.4.p3_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            32,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.4.p3_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.4.p4_1",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            528,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.4.p4_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.5",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            832,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.0.p1_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.0.p2_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            160,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.0.p2_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            320,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.0.p3_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            32,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.0.p3_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.0.p4_1",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            832,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.0.p4_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.1.p1_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            384,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.1.p2_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            192,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.1.p2_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            384,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.1.p3_1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.1.p3_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.1.p4_1",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            832,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.1.p4_2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.2",
+          "type": "AdaptiveAvgPool2d",
+          "shape": [
+            1,
+            1024,
+            1,
+            1
+          ]
+        },
+        {
+          "module": "4.3",
+          "type": "Flatten",
+          "shape": [
+            1,
+            1024
+          ]
+        },
+        {
+          "module": "5",
+          "type": "Linear",
+          "shape": [
+            1,
+            10
+          ]
+        }
+      ],
+      "analytic_stage_shapes_match": true,
+      "output_finite": true,
+      "inception_branch_shapes": [
+        [
+          1,
+          64,
+          12,
+          12
+        ],
+        [
+          1,
+          128,
+          12,
+          12
+        ],
+        [
+          1,
+          32,
+          12,
+          12
+        ],
+        [
+          1,
+          32,
+          12,
+          12
+        ]
+      ],
+      "inception_parameter_count": 163696
+    },
+    "resnet": {
+      "source": "sources/p4-lec29/book-resnet.txt",
+      "source_sha256": "153a9844f84afab50a2752453d7cf87826442aededbf8465166358f9ff2e4f16",
+      "zero_based_source_blocks": [
+        1,
+        13,
+        17,
+        21,
+        24
+      ],
+      "input": [
+        1,
+        1,
+        96,
+        96
+      ],
+      "parameters": 11178378,
+      "top_level_shapes": [
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            128,
+            12,
+            12
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            256,
+            6,
+            6
+          ]
+        },
+        {
+          "type": "Sequential",
+          "shape": [
+            1,
+            512,
+            3,
+            3
+          ]
+        },
+        {
+          "type": "AdaptiveAvgPool2d",
+          "shape": [
+            1,
+            512,
+            1,
+            1
+          ]
+        },
+        {
+          "type": "Flatten",
+          "shape": [
+            1,
+            512
+          ]
+        },
+        {
+          "type": "Linear",
+          "shape": [
+            1,
+            10
+          ]
+        }
+      ],
+      "leaf_shapes": [
+        {
+          "module": "0.0",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            48,
+            48
+          ]
+        },
+        {
+          "module": "0.1",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            64,
+            48,
+            48
+          ]
+        },
+        {
+          "module": "0.2",
+          "type": "ReLU",
+          "shape": [
+            1,
+            64,
+            48,
+            48
+          ]
+        },
+        {
+          "module": "0.3",
+          "type": "MaxPool2d",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "1.0.conv1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "1.0.bn1",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "1.0.conv2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "1.0.bn2",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "1.1.conv1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "1.1.bn1",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "1.1.conv2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "1.1.bn2",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            64,
+            24,
+            24
+          ]
+        },
+        {
+          "module": "2.0.conv1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.0.bn1",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            128,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.0.conv2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.0.bn2",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            128,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.0.conv3",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.1.conv1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.1.bn1",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            128,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.1.conv2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            128,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "2.1.bn2",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            128,
+            12,
+            12
+          ]
+        },
+        {
+          "module": "3.0.conv1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.0.bn1",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            256,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.0.conv2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.0.bn2",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            256,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.0.conv3",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.1.conv1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.1.bn1",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            256,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.1.conv2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            256,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "3.1.bn2",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            256,
+            6,
+            6
+          ]
+        },
+        {
+          "module": "4.0.conv1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            512,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.0.bn1",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            512,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.0.conv2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            512,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.0.bn2",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            512,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.0.conv3",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            512,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.1.conv1",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            512,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.1.bn1",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            512,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.1.conv2",
+          "type": "Conv2d",
+          "shape": [
+            1,
+            512,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "4.1.bn2",
+          "type": "BatchNorm2d",
+          "shape": [
+            1,
+            512,
+            3,
+            3
+          ]
+        },
+        {
+          "module": "5",
+          "type": "AdaptiveAvgPool2d",
+          "shape": [
+            1,
+            512,
+            1,
+            1
+          ]
+        },
+        {
+          "module": "6",
+          "type": "Flatten",
+          "shape": [
+            1,
+            512
+          ]
+        },
+        {
+          "module": "7",
+          "type": "Linear",
+          "shape": [
+            1,
+            10
+          ]
+        }
+      ],
+      "analytic_stage_shapes_match": true,
+      "output_finite": true,
+      "residual_checks": {
+        "zero_branch_y_equals_relu_x": true,
+        "negative_input_shortcut_gradient_zero": true,
+        "projection_stride2_shape": [
+          1,
+          6,
+          3,
+          3
+        ]
+      }
+    }
+  }
+}

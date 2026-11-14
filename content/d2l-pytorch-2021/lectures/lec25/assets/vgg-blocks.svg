@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" role="img" aria-labelledby="title desc">
+<title id="title">两层小卷积怎样扩大感受野</title>
+<desc id="desc">左侧五乘五网格的中心三乘三虚线框表示单层三乘三卷积的输入范围，外框表示叠加两层步幅一卷积后的五乘五理论范围。右侧保留中间ReLU，强调感受野相同不等于相同函数。</desc>
+<style>:root { color: var(--fg, currentColor); } @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+<g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="22">
+<text x="28" y="40" font-size="27" font-weight="700">VGG：小核叠加，逐层扩大视野</text>
+<text x="30" y="84">步幅均为1；只看远离图像边界的一个输出位置</text>
+<g fill="none" stroke="currentColor">
+<rect x="50" y="132" width="250" height="250" stroke-width="3"/>
+<path d="M100 132 V382 M150 132 V382 M200 132 V382 M250 132 V382 M50 182 H300 M50 232 H300 M50 282 H300 M50 332 H300" stroke-width="1" opacity=".35"/>
+<rect x="100" y="182" width="150" height="150" stroke-width="3" stroke-dasharray="8 5"/>
+<rect x="410" y="132" width="300" height="64" rx="8" stroke-width="2"/>
+<rect x="410" y="228" width="300" height="64" rx="8" stroke-width="2"/>
+<rect x="410" y="324" width="300" height="64" rx="8" stroke-width="2"/>
+<path d="M560 200 V220 M560 296 V316" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<circle cx="175" cy="257" r="6"/>
+<text x="440" y="172">第一层 3×3 卷积</text>
+<text x="440" y="268">ReLU：保留非线性</text>
+<text x="440" y="364">第二层 3×3 卷积</text>
+<text x="30" y="428">虚线：单层覆盖3×3；实线：两层覆盖5×5</text>
+<text x="30" y="474" font-size="24" font-weight="700">范围相同，不代表等价于一个5×5卷积</text>
+<text x="30" y="516" font-size="21">增加中间特征和非线性；通道与成本仍需单独计算</text>
+</g>
+</svg>

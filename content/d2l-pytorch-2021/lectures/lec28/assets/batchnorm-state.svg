@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 565" role="img" aria-labelledby="title desc">
+<title id="title">BatchNorm前向方差与运行方差分离</title>
+<desc id="desc">每通道四数1、3、5、7，均值4，前向biased方差5，更新running使用unbiased方差20除3。默认momentum为0.1，初值running均值0方差1更新到0.4和47除30。train/eval选择统计来源，no_grad只选择是否记录反向图。</desc>
+<style>:root { color: #18212b; } @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+<g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="22">
+<text x="24" y="38" font-size="27" font-weight="700">BN：同一批量，两种方差用途</text>
+<text x="30" y="85">一个通道：[1, 3, 5, 7]，M=4</text>
+<text x="30" y="125">均值=4；偏差平方和=20</text>
+<g fill="none" stroke="currentColor" stroke-width="2">
+<rect x="30" y="170" width="310" height="142" rx="10"/>
+<rect x="380" y="170" width="310" height="142" rx="10"/>
+<path d="M170 135 V156 M530 135 V156" marker-end="url(#arrow)"/>
+<rect x="30" y="352" width="660" height="100" rx="10"/>
+<path d="M535 318 V339" marker-end="url(#arrow)"/>
+</g>
+<text x="47" y="207" font-weight="700">训练前向</text>
+<text x="47" y="249">biased方差：20/4=5</text>
+<text x="47" y="288">除以 √(5+ε)</text>
+<text x="397" y="207" font-weight="700">更新running_var</text>
+<text x="397" y="249">unbiased：20/3</text>
+<text x="397" y="288">旧值×0.9 + 新值×0.1</text>
+<text x="48" y="390">初值mean=0、var=1；更新一次：</text>
+<text x="48" y="430" font-weight="700">running_mean=0.4，running_var=47/30</text>
+<text x="30" y="498">train/eval：选择批量统计或running统计</text>
+<text x="30" y="536" font-size="21">no_grad：只关反向图，不代替eval</text>
+</g>
+</svg>

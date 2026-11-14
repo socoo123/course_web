@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" role="img" aria-labelledby="title desc">
+<title id="title">LeNet教学变体的形状路径</title><desc id="desc">单样本单通道28输入经卷积得到6乘28乘28，平均池化6乘14乘14，第二卷积16乘10乘10，池化16乘5乘5，展平400，分类头120到84到10。总参数61706，非原论文逐层复刻。</desc>
+<style>:root { color: #18212b; } @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+<g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="22">
+<text x="28" y="38" font-size="27" font-weight="700">LeNet教学变体：先空间，后分类</text>
+<g fill="none" stroke="currentColor" stroke-width="2"><rect x="30" y="75" width="700" height="75" rx="8"/><rect x="30" y="180" width="700" height="75" rx="8"/><rect x="30" y="285" width="700" height="75" rx="8"/><rect x="30" y="390" width="700" height="75" rx="8"/><path d="M380 150 V180 M370 168 L380 180 L390 168 M380 255 V285 M370 273 L380 285 L390 273 M380 360 V390 M370 378 L380 390 L390 378"/></g>
+<text x="50" y="106">输入 1 × 28 × 28</text><text x="50" y="136" font-size="19">Conv 5×5，pad2 → Sigmoid</text><text x="460" y="122" font-weight="700">6 × 28 × 28</text>
+<text x="50" y="211">AvgPool 2×2，stride2</text><text x="50" y="241" font-size="19">高宽各减半，通道不变</text><text x="460" y="227" font-weight="700">6 × 14 × 14</text>
+<text x="50" y="316">Conv 5×5 → Sigmoid → AvgPool</text><text x="50" y="346" font-size="19">16 × 10 × 10 → 池化</text><text x="460" y="332" font-weight="700">16 × 5 × 5</text>
+<text x="50" y="421">Flatten仅展平每个样本</text><text x="50" y="451" font-size="19">400 → 120 → 84 → 10 logits</text><text x="490" y="437" font-weight="700">61,706 参数</text>
+<text x="30" y="510" font-size="20">批量轴始终保留；AvgPool与激活没有可训练参数</text></g></svg>

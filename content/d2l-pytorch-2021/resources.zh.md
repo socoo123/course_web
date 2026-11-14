@@ -1,6 +1,6 @@
 ---
 source: 李沐《动手学深度学习》2021 中文课程官方课表；《动手学深度学习》中文第二版
-status: 已验收LEC1–21教材导读、自绘图及前三项实验说明/指导；21个BV共69P公开字幕均为空，完整课堂稿持续阻塞。已结束嵌入视频试点，讲次页头提供原站视频链接与已记录时长，不再显示课程视频标签或页内播放器。P3的CPU验证不等于全课或全部作业完成。
+status: 已验收LEC1–29教材导读、自绘图及前四项实验说明/指导；29个BV共93P公开字幕均为空，完整课堂稿持续阻塞。讲次页头提供官方原站链接与核实时长，多P按全部分P合计；不恢复嵌入播放器。P4的CPU小基线与前向验证不等于全课或全部作业完成。
 license: 本页为编者自主课程导航；教材、代码、视频分别按原始许可处理，视频授权不由教材许可推定。
 ---
 
@@ -240,6 +240,25 @@ uv pip install --python .venv-d2l/bin/python torch==2.5.1 torchvision==0.20.1 nu
 本批没有运行 CUDA/MPS、旧 Notebook 或全部学生任务。数据只保存在运行时缓存，不随站点发布；模型、预测 CSV、临时验收脚本也不作为解答发布。精确配置、每折数值与数据哈希见 `sources/p3-shared/environment.json`、`mechanism-smoke.json`、`practice-smoke.json`、`dataset-acquisition.json`。
 
 
+#### 第四批：完整CNN前向与小模型训练恢复
+
+继续复用同一CPU环境，实际执行8段笔记代码，以及固定教材的LeNet、AlexNet、VGG-11、NiN、GoogLeNet、ResNet-18完整前向。AlexNet/VGG/NiN使用单通道224输入，GoogLeNet/ResNet-18使用96输入；保留教材的全部卷积、分支、池化、通道与分类头，逐个构造释放。这里的“完整”指教材Fashion-MNIST变体，**不是原论文ImageNet训练复现**。除LeNet之外，上述完整宽度模型只做前向；训练另用明确缩小的ResNet。
+
+独立机制核验覆盖：逐通道仿射层的解析梯度、共享与buffer恢复；卷积形状/参数；负值最大池化与平均池化padding、ceil末端窗口；1×1通道映射与GAP；Inception分支拼接；BN有偏前向方差与无偏running方差、四种模式组合及每通道单值退化；残差投影、奇数尺寸、ReLU恒等边界与梯度。
+
+两条真实Fashion-MNIST小训练复用已校验的官方训练数据，未使用官方测试集。seed2021打乱60000条后，前5000作验证候选、其余55000作训练候选，分别取73和257；初始化seed2022、shuffle seed2023，Xavier权重/零偏置，CPU单线程，B64、尾批1，Adam学习率0.003，10轮各50次更新。表中训练CE均在冻结模型后以eval重评，不是混合训练时刻的批均值。
+
+| 模型 | 参数量 | 初始训练CE | 末轮训练CE | 末轮验证CE | 验证正确数 |
+|---|---:|---:|---:|---:|---:|
+| 教材LeNet（Sigmoid/AvgPool） | 61,706 | 2.634785 | 2.300294 | 2.379941 | 8/73 |
+| 编者小ResNet | 176,634 | 2.299596 | 0.313692 | 1.212001 | 46/73 |
+
+LeNet在此极小配置下仍接近随机分类水平，不能把“损失下降、更新链路可用”说成已经学好了分类。小ResNet使用3×3/s1宽8的stem，四stage宽8/16/32/64，各两个完整基本残差块，保留BN、投影和GAP；不是把原ResNet直接塞入28输入后删层。
+
+两模型评估均未改变参数、BN buffers或已有梯度，B32/B64指标一致。可信内存检查点恢复模型、Adam、BN buffers、CPU RNG及独立shuffle状态后，预测、下一随机数/批次、下一步loss/梯度/模型与优化器状态均匹配；更新后模型状态最大差值为0。故意只恢复模型并新建Adam，下一步参数分别出现约0.004869和0.005329的最大差值，说明预测相同不足以证明训练恢复。
+
+本批不运行GPU/MPS、旧Notebook、全量Fashion或大模型全训；没有提交学生完整解答、数据集、检查点或临时脚本。配置、逐轮输出、形状与源码块定位见 `sources/p4-shared/practice-smoke.json`、`architecture-smoke.json`、`notes-smoke.json`、`mechanism-smoke.json`、`lab-mechanism-smoke.json`；主agent最终验收范围以 `sources/p4-manifest.json` 为准。
+
 ## 学完后怎样衔接 CS336
 
 用三个问题自查：能否不依赖整段答案写出小模型训练循环；能否逐步解释 Attention 的形状与 mask；能否解释模型的参数、梯度、优化器状态和激活为何占用内存。
@@ -300,9 +319,26 @@ LEC 15–21 共 **7 个 BV、23P、17122 秒**。逐 P 公开字幕请求全部�
 
 LEC 17 的“购买 GPU”和七讲全部 QA 入口均保留，不因课表未单列就删除；没有观看时不提供所谓课堂购买建议或竞赛获奖方法。本批均为 `copyright=1`；LEC 15 的 `no_reprint=0`，LEC 16–21 为 1，都不能据此推定开放转录许可。
 
+### 第四批已核实的全部分 P
+
+LEC 22–29 共 **8 个 BV、24P、20337 秒**，均由官方课表指向作者“跟李沐学AI”的2021年上传。每讲3P，包括主题、实现与QA；页头时长按全部真实分P求和，不把P1当整讲。24次公开字幕请求均成功但列表为空；没有下载、观看或转录音视频，不能据文件标题推断片内时间轴。八讲仍为教材导读，不生成无依据的课堂整理。
+
+| 讲次 | 真实分 P 与时长 |
+|---|---|
+| LEC 22 | [P1 池化层 · 10:21](https://www.bilibili.com/video/BV1EV411j7nX?p=1)；[P2 实现 · 06:58](https://www.bilibili.com/video/BV1EV411j7nX?p=2)；[P3 QA · 09:48](https://www.bilibili.com/video/BV1EV411j7nX?p=3) |
+| LEC 23 | [P1 LeNet · 08:31](https://www.bilibili.com/video/BV1t44y1r7ct?p=1)；[P2 代码 · 21:47](https://www.bilibili.com/video/BV1t44y1r7ct?p=2)；[P3 QA · 30:08](https://www.bilibili.com/video/BV1t44y1r7ct?p=3) |
+| LEC 24 | [P1 AlexNet · 35:16](https://www.bilibili.com/video/BV1h54y1L7oe?p=1)；[P2 代码 · 10:39](https://www.bilibili.com/video/BV1h54y1L7oe?p=2)；[P3 QA · 16:06](https://www.bilibili.com/video/BV1h54y1L7oe?p=3) |
+| LEC 25 | [P1 VGG · 09:04](https://www.bilibili.com/video/BV1Ao4y117Pd?p=1)；[P2 代码 · 07:23](https://www.bilibili.com/video/BV1Ao4y117Pd?p=2)；[P3 QA · 04:16](https://www.bilibili.com/video/BV1Ao4y117Pd?p=3) |
+| LEC 26 | [P1 NIN · 10:55](https://www.bilibili.com/video/BV1Uv411G71b?p=1)；[P2 代码 · 10:01](https://www.bilibili.com/video/BV1Uv411G71b?p=2)；[P3 QA · 16:42](https://www.bilibili.com/video/BV1Uv411G71b?p=3) |
+| LEC 27 | [P1 GoogLeNet · 26:59](https://www.bilibili.com/video/BV1b5411g7Xo?p=1)；[P2 代码 · 07:10](https://www.bilibili.com/video/BV1b5411g7Xo?p=2)；[P3 QA · 16:33](https://www.bilibili.com/video/BV1b5411g7Xo?p=3) |
+| LEC 28 | [P1 批量归一化 · 17:59](https://www.bilibili.com/video/BV1X44y1r77r?p=1)；[P2 代码 · 17:12](https://www.bilibili.com/video/BV1X44y1r77r?p=2)；[P3 QA · 11:00](https://www.bilibili.com/video/BV1X44y1r77r?p=3) |
+| LEC 29 | [P1 ResNet · 14:10](https://www.bilibili.com/video/BV1bV41177ap?p=1)；[P2 代码 · 09:26](https://www.bilibili.com/video/BV1bV41177ap?p=2)；[P3 QA · 10:33](https://www.bilibili.com/video/BV1bV41177ap?p=3) |
+
+八讲的 `copyright=1`、`no_reprint=1` 均不是开放转录许可。LEC27上传标题另含“Inception V3”，教材7.4展示的GoogLeNet结构不能据此冒称完整覆盖该课堂拓展；未核实部分保留缺口，不猜写。
+
 ### 全课视频入口
 
-以下链接逐项保留课表中的 BV 与分 P 参数。未写 `p` 的原始链接标作「入口」，不推定它覆盖整组内容。LEC 1–21 的真实全部分 P 已列于上方三表；其余讲次尚待逐 P 核对。讲次页头提供原站链接与已记录时长，例如[LEC1课程安排](#/c/d2l-pytorch-2021/lec/lec01)的B站入口为08:09；点击后在新标签页观看，本站保留笔记。嵌入播放器与“课程视频”标签已按用户要求移除。曾误接入的非本人YouTube上传也已撤下，不以转载替代官方课表来源。
+以下链接逐项保留课表中的 BV 与分 P 参数。未写 `p` 的原始链接标作「入口」，不推定它覆盖整组内容。LEC 1–29 的真实全部分 P 已列于上方四表；其余讲次尚待逐 P 核对。讲次页头提供原站链接与已记录时长，例如[LEC1课程安排](#/c/d2l-pytorch-2021/lec/lec01)的B站入口为08:09；点击后在新标签页观看，本站保留笔记。嵌入播放器与“课程视频”标签已按用户要求移除。曾误接入的非本人YouTube上传也已撤下，不以转载替代官方课表来源。
 
 | 站内讲次 | 原课表视频入口 |
 |---|---|

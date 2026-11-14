@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "lectureId": "lec25",
+  "batch": "P4",
+  "acquiredAt": "2026-11-14T02:34:39.852200+00:00",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "bookVersionBoundary": "当前中文第二版固定源码，非2021教材快照；不声明在线构建精确等于该提交",
+  "written": [
+    "lectures/lec25/notes.zh.md",
+    "lectures/lec25/assets/vgg-blocks.svg",
+    "sources/p4-lec25/video-metadata.json",
+    "sources/p4-lec25/book-vgg.txt",
+    "sources/p4-lec25/manifest-fragment.json"
+  ],
+  "bookSections": [
+    "7.2"
+  ],
+  "bookSources": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-modern/vgg.md",
+      "snapshot": "sources/p4-lec25/book-vgg.txt",
+      "sha256": "f6f7e68d91648155f763663ae456d9995241fc3c58e71e8e0b6a45cbba60c0e3",
+      "bytes": 10061,
+      "lines": 280,
+      "retrievedAt": "2026-11-14",
+      "readRange": {
+        "linesInclusive": [
+          1,
+          280
+        ],
+        "coverage": "全文实际阅读：正文、全部代码分支、小结与习题；实现分析以PyTorch/共享代码为准；未运行教材代码。",
+        "pytorchOrSharedImplementationLines": [
+          [
+            45,
+            60
+          ],
+          [
+            108,
+            111
+          ],
+          [
+            130,
+            148
+          ],
+          [
+            199,
+            205
+          ],
+          [
+            229,
+            234
+          ],
+          [
+            246,
+            251
+          ]
+        ]
+      }
+    }
+  ],
+  "sourceRecords": [
+    {
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-modern/vgg.md",
+      "snapshot": "sources/p4-lec25/book-vgg.txt",
+      "sha256": "f6f7e68d91648155f763663ae456d9995241fc3c58e71e8e0b6a45cbba60c0e3",
+      "bytes": 10061,
+      "lines": 280,
+      "retrievedAt": "2026-11-14",
+      "readRange": {
+        "linesInclusive": [
+          1,
+          280
+        ],
+        "coverage": "全文实际阅读：正文、全部代码分支、小结与习题；实现分析以PyTorch/共享代码为准；未运行教材代码。",
+        "pytorchOrSharedImplementationLines": [
+          [
+            45,
+            60
+          ],
+          [
+            108,
+            111
+          ],
+          [
+            130,
+            148
+          ],
+          [
+            199,
+            205
+          ],
+          [
+            229,
+            234
+          ],
+          [
+            246,
+            251
+          ]
+        ]
+      }
+    },
+    {
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Ao4y117Pd",
+      "snapshot": "sources/p4-lec25/video-metadata.json",
+      "sha256": "22f2d96744beb57bc751b05d5f95d172e534fd2a56e63e0e964f7e21d5e6e30a",
+      "readRange": "Filtered view title, author, publish date, full page/cid/duration list, copyright/no_reprint; all three player subtitle results; source URLs recorded per request.",
+      "note": "needLoginSubtitle=null means field absent, not proof that no login is required."
+    }
+  ],
+  "prerequisiteEvidence": {
+    "skill": "skill://technical-video-notes",
+    "bookVersion": "sources/p1-shared/book-version.json",
+    "handoff": "sources/NEXT-PROMPT.txt",
+    "scheduleInventory": {
+      "path": "sources/schedule-inventory.json",
+      "rows": [
+        "row044"
+      ],
+      "readRange": "LEC22–25 rows, lines2999–3167 and displayed continuation",
+      "sha256": "89bb850c79609eb5f4cd405c5d23bfd283be6f63398c20700acdc7a059ddd041"
+    },
+    "bookInventoryReadRange": "1057–1165",
+    "outlinePlanReadRange": "574–627,680–709",
+    "practicePlanReadRange": "600–745",
+    "officialScheduleUrl": "https://courses.d2l.ai/zh-v2/",
+    "schedulePolicy": "Existing archived official schedule inventory read and matched to user BV and new author-owned view metadata; no claim of classroom content coverage."
+  },
+  "video": {
+    "bvid": "BV1Ao4y117Pd",
+    "url": "https://www.bilibili.com/video/BV1Ao4y117Pd",
+    "title": "25 使用块的网络 VGG【动手学深度学习v2】",
+    "owner": {
+      "mid": 1567748478,
+      "name": "跟李沐学AI"
+    },
+    "pages": [
+      {
+        "page": 1,
+        "cid": 342942152,
+        "part": "VGG",
+        "duration": 544
+      },
+      {
+        "page": 2,
+        "cid": 342950623,
+        "part": "代码",
+        "duration": 443
+      },
+      {
+        "page": 3,
+        "cid": 342952293,
+        "part": "QA",
+        "duration": 256
+      }
+    ],
+    "durationSeconds": 1243,
+    "durationLabel": "20:43",
+    "pageCount": 3,
+    "subtitleRequestCount": 3,
+    "subtitleResult": "all_success_empty_public_list",
+    "mediaDownloaded": false,
+    "classroomVerified": false
+  },
+  "outputs": [
+    {
+      "path": "lectures/lec25/notes.zh.md",
+      "sha256": "561ec4abeab36abe52bc9464048830f723806464d76743fe2256a73d8dc7fdb1",
+      "bytes": 9308
+    },
+    {
+      "path": "lectures/lec25/assets/vgg-blocks.svg",
+      "sha256": "f748a162c370b7fbc632bb186df69e380e1352c0dd5bf1dff246ab2a3318ff91",
+      "bytes": 1913
+    }
+  ],
+  "status": {
+    "notes": "textbook_guide_written",
+    "draft": "blocked_no_complete_classroom_source",
+    "materials": "not_required",
+    "numericalVerification": "pending_main_agent",
+    "buildBrowserChecks": "not_run_by_worker"
+  },
+  "codeBlocks": [
+    {
+      "index": 1,
+      "sha256": "070290399fb0bfc3313077c045f115d0bf49db9957f588eb636be486129bf178",
+      "standalone": true,
+      "dependencies": [
+        "torch"
+      ],
+      "executedByAuthor": false,
+      "purpose": "Mechanism/shape-only forward; no training loop or end-to-end student answer."
+    }
+  ],
+  "acceptanceRequested": {
+    "parameterCount": 128806154,
+    "inputShape": [
+      1,
+      1,
+      224,
+      224
+    ],
+    "keyShapes": [
+      [
+        1,
+        64,
+        112,
+        112
+      ],
+      [
+        1,
+        128,
+        56,
+        56
+      ],
+      [
+        1,
+        256,
+        28,
+        28
+      ],
+      [
+        1,
+        512,
+        14,
+        14
+      ],
+      [
+        1,
+        512,
+        7,
+        7
+      ],
+      [
+        1,
+        25088
+      ],
+      [
+        1,
+        4096
+      ],
+      [
+        1,
+        4096
+      ],
+      [
+        1,
+        10
+      ]
+    ],
+    "expectedNumerics": [
+      "conv params=9219328; head params=119586826; first FC=102764544",
+      "receptive fields after blocks=4,10,30,70,150; jumps=2,4,8,16,32",
+      "two 3x3 C64 kernels weights=73728 versus one5x5=102400",
+      "block3 conv2 MACs=1849688064 per sample",
+      "full float32 parameters approx491.4MiB",
+      "96 input -> pooled spatial48,24,12,6,3; flatten4608 incompatible with full head25088"
+    ],
+    "boundary": "Full textbook 1-channel/10-class VGG11, eight convolutions and three FC; ratio4 training variant only explained, not substituted."
+  },
+  "gaps": [
+    "No complete legal classroom transcript/media source; no timeline, no draft placeholder.",
+    "No classroom demonstration or QA verified.",
+    "No numerical/code/build/lint/browser verification by worker; main agent owns unified checks."
+  ],
+  "licenseBoundary": "Book repository Apache-2.0 only; setup.py MIT-0 separate shared record; no license inference for videos, API docs, original paper or third-party images. No third-party images reused; figures/editorial explanations original."
+}

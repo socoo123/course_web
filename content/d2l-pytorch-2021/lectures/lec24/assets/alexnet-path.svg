@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" role="img" aria-labelledby="title desc">
+<title id="title">AlexNet教材变体的224空间路径</title><desc id="desc">五卷积和三次最大池化全部保留。高宽224到54到26到12，经三个3乘3卷积维持12，最后池化为5，256乘5乘5展平6400。分类头4096到4096到10。</desc>
+<style>:root { color: #18212b; } @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+<g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="22">
+<text x="28" y="38" font-size="27" font-weight="700">224输入：保留五卷积、三池化</text>
+<g fill="none" stroke="currentColor" stroke-width="2"><rect x="30" y="70" width="700" height="80" rx="8"/><rect x="30" y="180" width="700" height="80" rx="8"/><rect x="30" y="290" width="700" height="80" rx="8"/><path d="M380 150 V180 M370 168 L380 180 L390 168 M380 260 V290 M370 278 L380 290 L390 278 M380 370 V400"/></g>
+<text x="50" y="103">Conv 11×11 / stride4 / pad1</text><text x="50" y="135" font-size="20">224 → 54；随后 Pool3 / stride2 → 26</text>
+<text x="50" y="213">Conv 5×5 / pad2：通道96 → 256</text><text x="50" y="245" font-size="20">26 → 26；随后 Pool3 / stride2 → 12</text>
+<text x="50" y="323">三个 Conv3：256 → 384 → 384 → 256</text><text x="50" y="355" font-size="20">空间保持12；最后 Pool3 / stride2 → 5</text>
+<text x="45" y="430" font-size="25" font-weight="700">256 × 5 × 5 = 6400 → 4096 → 4096 → 10</text>
+<text x="45" y="474">卷积：共享权重，重复空间运算</text><text x="45" y="512">分类头：参数多；两个隐藏层后有Dropout</text></g></svg>

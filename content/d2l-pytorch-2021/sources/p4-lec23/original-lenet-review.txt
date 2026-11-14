@@ -1,0 +1,16 @@
+{
+  "url": "https://leon.bottou.org/publications/pdf/ieee-1998.pdf",
+  "authorPage": "https://bottou.org/papers/lecun-98h",
+  "pdfSha256": "2b044160939a2a8ce6c95d7f3203e12a70287404aed9eca52cfed3fc1493aef2",
+  "readRange": "Rendered PDF pages 6–8 only: II.A Convolutional Networks; II.B LeNet-5; Figure 2; Table I; equations 5–7. Not a full-paper review.",
+  "acquisition": "Original yann.lecun.com URL ECONNRESET; static alternate reader aborted; urllib alternate succeeded. Text extraction unusable, actual reading used rendered pages; no PDF/images retained or republished.",
+  "observations": [
+    "Input 32x32; C1 6x28x28; S2 6x14x14; C3 16x10x10 with partial connections; S4 16x5x5; C5 120x1x1; F6 84; output 10 RBF units.",
+    "S2/S4 use trainable coefficient and bias before sigmoid; not parameter-free AvgPool2d.",
+    "C3 partial connectivity has 1516 trainable parameters rather than dense Conv2d(6,16,5) 2416.",
+    "Squashing function is scaled tanh, unlike PyTorch Sigmoid in textbook.",
+    "C5 is convolutional; with this fixed 5x5 input it has 48120 parameters and acts like a fully connected mapping.",
+    "Output uses Euclidean RBF distances; textbook uses Linear(84,10) logits."
+  ],
+  "copyright": "Author-hosted paper does not establish open reuse rights; only original brief paraphrase of architecture observations saved."
+}

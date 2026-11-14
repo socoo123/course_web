@@ -1,0 +1,926 @@
+{
+  "labId": "cnn-architectures",
+  "preparedAt": "2026-11-14",
+  "owner": "P4CnnLab",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "editionBoundary": "Pinned current Chinese second edition, not a 2021 snapshot.",
+  "status": "authored_pending_main_independent_acceptance",
+  "planningRead": {
+    "course.json": "full cnn-architectures laboratory object, all four task ids",
+    "practice-plan.json": "full cnn-architectures laboratory object and provenance contract",
+    "outline-plan.json": "full cnn module",
+    "book-inventory.json": "sections6.5,6.6,7.1-7.6 number/title/url/coverage; previous chapters reused",
+    "NEXT-PROMPT.txt": "whole",
+    "skill": "technical-video-notes"
+  },
+  "outputs": [
+    {
+      "path": "../../labs/cnn-architectures/lab.zh.md",
+      "sha256": "4ae5647a3e7d84a6a2ee2963205987cb6369bfb305b4ab34d74965c676f4925b",
+      "bytes": 20662,
+      "kind": "editorial lab contract",
+      "codeBlocks": 0,
+      "completeSolution": false
+    },
+    {
+      "path": "../../labs/cnn-architectures/guide.zh.md",
+      "sha256": "9896614bcce9ddb86777e42fa3502127330015f4b26901b823f84b8a7df74d3d",
+      "bytes": 18160,
+      "kind": "editorial hints and folded local analytic answers",
+      "codeBlocks": 0,
+      "completeSolution": false
+    }
+  ],
+  "sources": [
+    {
+      "name": "pooling",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-neural-networks/pooling.md",
+      "snapshot": "book-pooling.txt",
+      "sha256": "cb9f621cce7fec12fe4f12ab208b972f3ffa25bc4c1b0458a028f7d303a65192",
+      "bytes": 11529,
+      "readRanges": {
+        "prose": [
+          [
+            1,
+            42
+          ],
+          [
+            111,
+            120
+          ],
+          [
+            140,
+            141
+          ],
+          [
+            237,
+            246
+          ],
+          [
+            292,
+            307
+          ]
+        ],
+        "pytorchOrSharedCode": [
+          [
+            50,
+            55
+          ],
+          [
+            66,
+            78
+          ],
+          [
+            98,
+            102
+          ],
+          [
+            106,
+            109
+          ],
+          [
+            122,
+            126
+          ],
+          [
+            149,
+            153
+          ],
+          [
+            174,
+            178
+          ],
+          [
+            216,
+            220
+          ],
+          [
+            248,
+            252
+          ],
+          [
+            266,
+            270
+          ]
+        ]
+      },
+      "readScope": "Listed source line ranges actually inspected; whole .txt retained for provenance, not a claim that all framework variants or exercises were executed.",
+      "outputs": [
+        "lab.zh.md",
+        "guide.zh.md"
+      ]
+    },
+    {
+      "name": "lenet",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-neural-networks/lenet.md",
+      "snapshot": "book-lenet.txt",
+      "sha256": "62a1f7d14aef6a3ddc7072bccf326c57accf3dba855456b5abcfe36334c5c571",
+      "bytes": 20200,
+      "readRanges": {
+        "prose": [
+          [
+            1,
+            34
+          ],
+          [
+            109,
+            114
+          ],
+          [
+            148,
+            170
+          ],
+          [
+            229,
+            236
+          ],
+          [
+            420,
+            438
+          ]
+        ],
+        "pytorchOrSharedCode": [
+          [
+            54,
+            69
+          ],
+          [
+            124,
+            130
+          ],
+          [
+            158,
+            162
+          ],
+          [
+            184,
+            204
+          ],
+          [
+            275,
+            317
+          ],
+          [
+            414,
+            418
+          ]
+        ]
+      },
+      "readScope": "Listed source line ranges actually inspected; whole .txt retained for provenance, not a claim that all framework variants or exercises were executed.",
+      "outputs": [
+        "lab.zh.md",
+        "guide.zh.md"
+      ]
+    },
+    {
+      "name": "alexnet",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-modern/alexnet.md",
+      "snapshot": "book-alexnet.txt",
+      "sha256": "7fcce7491ae1cb4003032d1093630b4e17cab609716a154f198fd59d015c794e",
+      "bytes": 22379,
+      "readRanges": {
+        "prose": [
+          [
+            65,
+            108
+          ]
+        ],
+        "pytorchOrSharedCode": [
+          [
+            140,
+            170
+          ],
+          [
+            253,
+            259
+          ],
+          [
+            284,
+            288
+          ],
+          [
+            294,
+            298
+          ]
+        ]
+      },
+      "readScope": "Listed source line ranges actually inspected; whole .txt retained for provenance, not a claim that all framework variants or exercises were executed.",
+      "outputs": [
+        "lab.zh.md",
+        "guide.zh.md"
+      ]
+    },
+    {
+      "name": "vgg",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-modern/vgg.md",
+      "snapshot": "book-vgg.txt",
+      "sha256": "f6f7e68d91648155f763663ae456d9995241fc3c58e71e8e0b6a45cbba60c0e3",
+      "bytes": 10061,
+      "readRanges": {
+        "prose": [
+          [
+            1,
+            28
+          ],
+          [
+            95,
+            107
+          ],
+          [
+            223,
+            228
+          ]
+        ],
+        "pytorchOrSharedCode": [
+          [
+            45,
+            60
+          ],
+          [
+            108,
+            111
+          ],
+          [
+            130,
+            148
+          ],
+          [
+            199,
+            205
+          ],
+          [
+            229,
+            234
+          ],
+          [
+            246,
+            251
+          ]
+        ]
+      },
+      "readScope": "Listed source line ranges actually inspected; whole .txt retained for provenance, not a claim that all framework variants or exercises were executed.",
+      "outputs": [
+        "lab.zh.md",
+        "guide.zh.md"
+      ]
+    },
+    {
+      "name": "nin",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-modern/nin.md",
+      "snapshot": "book-nin.txt",
+      "sha256": "15ad14414fb2f531b57914e3ea8cb1a163c5abb26c7f51b4d97b7bebcef15cc3",
+      "bytes": 9661,
+      "readRanges": {
+        "prose": [
+          [
+            1,
+            24
+          ],
+          [
+            88,
+            95
+          ],
+          [
+            201,
+            204
+          ]
+        ],
+        "pytorchOrSharedCode": [
+          [
+            41,
+            53
+          ],
+          [
+            114,
+            129
+          ],
+          [
+            177,
+            183
+          ],
+          [
+            205,
+            210
+          ]
+        ]
+      },
+      "readScope": "Listed source line ranges actually inspected; whole .txt retained for provenance, not a claim that all framework variants or exercises were executed.",
+      "outputs": [
+        "lab.zh.md",
+        "guide.zh.md"
+      ]
+    },
+    {
+      "name": "googlenet",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-modern/googlenet.md",
+      "snapshot": "book-googlenet.txt",
+      "sha256": "7534e27e5f78f17fb76baf3136758db631c50bba2c6a676c1ce60e81bf812578",
+      "bytes": 18795,
+      "readRanges": {
+        "prose": [
+          [
+            160,
+            168
+          ],
+          [
+            199,
+            200
+          ],
+          [
+            236,
+            239
+          ],
+          [
+            271,
+            275
+          ],
+          [
+            319,
+            322
+          ],
+          [
+            371,
+            372
+          ],
+          [
+            406,
+            431
+          ]
+        ],
+        "pytorchOrSharedCode": [
+          [
+            57,
+            87
+          ],
+          [
+            176,
+            181
+          ],
+          [
+            209,
+            216
+          ],
+          [
+            248,
+            253
+          ],
+          [
+            287,
+            295
+          ],
+          [
+            334,
+            342
+          ],
+          [
+            382,
+            388
+          ],
+          [
+            410,
+            415
+          ]
+        ]
+      },
+      "readScope": "Listed source line ranges actually inspected; whole .txt retained for provenance, not a claim that all framework variants or exercises were executed.",
+      "outputs": [
+        "lab.zh.md",
+        "guide.zh.md"
+      ]
+    },
+    {
+      "name": "batch-norm",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-modern/batch-norm.md",
+      "snapshot": "book-batch-norm.txt",
+      "sha256": "71216a267206d9add6491555102ea5f28db7985154ad88e0b3c1d09f04d66611",
+      "bytes": 30745,
+      "readRanges": {
+        "prose": [
+          [
+            65,
+            98
+          ],
+          [
+            209,
+            217
+          ],
+          [
+            363,
+            366
+          ],
+          [
+            477,
+            480
+          ],
+          [
+            583,
+            600
+          ]
+        ],
+        "pytorchOrSharedCode": [
+          [
+            131,
+            160
+          ],
+          [
+            249,
+            278
+          ],
+          [
+            387,
+            397
+          ],
+          [
+            440,
+            445
+          ],
+          [
+            460,
+            463
+          ],
+          [
+            501,
+            511
+          ],
+          [
+            553,
+            556
+          ]
+        ]
+      },
+      "readScope": "Listed source line ranges actually inspected; whole .txt retained for provenance, not a claim that all framework variants or exercises were executed.",
+      "outputs": [
+        "lab.zh.md",
+        "guide.zh.md"
+      ]
+    },
+    {
+      "name": "resnet",
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-modern/resnet.md",
+      "snapshot": "book-resnet.txt",
+      "sha256": "153a9844f84afab50a2752453d7cf87826442aededbf8465166358f9ff2e4f16",
+      "bytes": 19849,
+      "readRanges": {
+        "prose": [
+          [
+            39,
+            58
+          ],
+          [
+            183,
+            190
+          ],
+          [
+            249,
+            291
+          ],
+          [
+            353,
+            354
+          ],
+          [
+            378,
+            378
+          ],
+          [
+            420,
+            431
+          ],
+          [
+            465,
+            489
+          ]
+        ],
+        "pytorchOrSharedCode": [
+          [
+            88,
+            118
+          ],
+          [
+            199,
+            205
+          ],
+          [
+            231,
+            235
+          ],
+          [
+            262,
+            267
+          ],
+          [
+            304,
+            316
+          ],
+          [
+            362,
+            368
+          ],
+          [
+            384,
+            389
+          ],
+          [
+            441,
+            447
+          ],
+          [
+            469,
+            474
+          ]
+        ]
+      },
+      "readScope": "Listed source line ranges actually inspected; whole .txt retained for provenance, not a claim that all framework variants or exercises were executed.",
+      "outputs": [
+        "lab.zh.md",
+        "guide.zh.md"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/nn/modules/pooling.py",
+      "snapshot": "torch-2.5.1-pooling-excerpt.txt",
+      "sourceLineRanges": [
+        [
+          145,
+          205
+        ],
+        [
+          661,
+          721
+        ]
+      ],
+      "sha256": "e585478a6bda133a13746643597f5c9200c4e209a7d3a5109be1c57d43f39a54",
+      "upstreamFullSha256": "bd14b2627aca9358d85e76353a408d8df0b61abe977bf41a4f0cc6e219f30337"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/nn/modules/batchnorm.py",
+      "snapshot": "torch-2.5.1-batchnorm-excerpt.txt",
+      "sourceLineRanges": [
+        [
+          378,
+          448
+        ]
+      ],
+      "sha256": "d1c939395c5c082d547ccb489941a97803fb4072622d9deb3a125e55b296a033",
+      "upstreamFullSha256": "9678d75ab57df83912565b5bb113e8c2a71c41a6bc4cf7e33800ce4be3672559"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/nn/functional.py",
+      "snapshot": "torch-2.5.1-functional-excerpt.txt",
+      "sourceLineRanges": [
+        [
+          2762,
+          2778
+        ],
+        [
+          2781,
+          2822
+        ]
+      ],
+      "sha256": "b378fcfc6e079163ad9aed4fbe8a66e05f664874722021a030d37fbb712e4950",
+      "upstreamFullSha256": "e91cd1c772ef9302727169f89bf8375befd3fc64a8d445df6084958708a95d53"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/random.py",
+      "snapshot": "torch-2.5.1-random-excerpt.txt",
+      "sourceLineRanges": [
+        [
+          10,
+          19
+        ],
+        [
+          22,
+          29
+        ]
+      ],
+      "sha256": "cd6dbd8dd18ef5d40dffbbddb282e1680eb15dc44470a4cb8bf38baa6b73a3e0",
+      "upstreamFullSha256": "3cb3d532c854f65f29e3e5ea0dc1a878abfb44a740a1d0eab4e35bbb530227ab"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/LICENSE",
+      "snapshot": "torch-2.5.1-LICENSE.txt",
+      "sha256": "47a26beb94e3f6b333a3677fc85d546f1fdfd2f0b3686c26d2fb5b10e0134165",
+      "readScope": "whole upstream license; retains copyright and redistribution conditions"
+    }
+  ],
+  "reusedEvidence": [
+    {
+      "path": "../p1-shared/book-version.json",
+      "sha256": "dbb78240eaaa8b292eeb14b56b0de7e4673f7201348e057c2475c06c5e7f7bb4",
+      "readScope": "whole fixed edition/license/runtime record"
+    },
+    {
+      "path": "../p1-shared/book-LICENSE.txt",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "readScope": "inherited license artifact referenced via book-version.json; not new whole-file review"
+    },
+    {
+      "path": "../p3-lec16/official-api-evidence.txt",
+      "sha256": "8622c8dfe2f06ea32d276ffaa68833637ef5a1c6c9233990d580bb55114e0174",
+      "readScope": "1-37 existing selected Module/serialization/checkpoint evidence, read this run"
+    },
+    {
+      "path": "../p3-shared/mechanism-smoke.json",
+      "sha256": "537fb297dc7038e4e32e0f05c8f8eb3f2579d9b49c784bb246089973cce68aa7",
+      "readScope": "whole prior independent CPU results, read; not rerun"
+    },
+    {
+      "path": "../p3-shared/runtime-verification.json",
+      "sha256": "d12fb6c20a49b74f34c313885e9f8ff0ddba1019c7abc252626ea5d8d54a68cc",
+      "readScope": "whole prior runtime boundary, read; no worker imports"
+    },
+    {
+      "path": "../p2-shared/dataset-acquisition.json",
+      "sha256": "955926cd76470248849ff846e52512dadfab5b60d98ddad15823d4c4dd3f1e73",
+      "readScope": "whole official HTTPS URL/hash/IDX record, read; no dataset download this run"
+    },
+    {
+      "path": "../p2-linear-training/fashion-mnist-LICENSE.txt",
+      "sha256": "13ef4788476d292858fa60eb9a5f74aeca5c65770bc885ccaa05823a17ef7be1",
+      "readScope": "whole MIT notice, read"
+    }
+  ],
+  "prerequisiteReuse": {
+    "lectures": [
+      "lec16",
+      "lec17",
+      "lec19",
+      "lec20",
+      "lec21"
+    ],
+    "notesReadThisRun": {
+      "lec16": "1-73",
+      "lec17": "1-68"
+    },
+    "existingLab": "linear-training P2 seeds/split/normalization/metric contract read via exact search hits; earlier labs untouched",
+    "previousMechanisms": "P3 registration/sharing/checkpoint/convolution numerical evidence reused, not rerun or claimed new"
+  },
+  "sourceAcquisition": {
+    "method": "Public HTTPS raw pinned textbook and PyTorch tag; exact API class-docstring/function excerpts with upstream line ranges",
+    "requestsFailed": [],
+    "mediaOrSubtitleRequests": 0,
+    "datasetRequests": 0,
+    "cookiesOrSignedMediaSaved": false
+  },
+  "licenseBoundary": {
+    "textbook": "D2L fixed root LICENSE Apache-2.0, separate setup.py MIT-0 field inherited from P1; does not cover video/data/third-party figures",
+    "pytorch": "v2.5.1 upstream LICENSE retained alongside exact excerpts",
+    "dataset": "Fashion-MNIST Zalando MIT notice reused, dataset files remain runtime-only",
+    "editorial": "Chinese contract, guidance, recipes and analytic examples are original adaptations, not official Lab translation or classroom transcript"
+  },
+  "taskCoverage": {
+    "cnn-architectures-1": [
+      "module and custom layer",
+      "registration and shared parameters",
+      "persistent buffers",
+      "save/load",
+      "explicit CPU device path"
+    ],
+    "cnn-architectures-2": [
+      "cross-correlation and asymmetric padding P3 reuse",
+      "stride/channel shape and parameter counts",
+      "pointwise affine equivalence",
+      "negative-input max/average padding fixture",
+      "ceil mode shape"
+    ],
+    "cnn-architectures-3": [
+      "textbook-shaped LeNet small training",
+      "complete AlexNet VGG11 NiN GoogLeNet forward contracts",
+      "explicit reduced-width alternatives retain every key stage and spatial input"
+    ],
+    "cnn-architectures-4": [
+      "BN estimator/mode/buffer/single-value boundaries",
+      "Inception concatenate versus residual add",
+      "projection and odd-size stride",
+      "eight-block small ResNet training",
+      "inference and model+optimizer+buffers+RNG+data-order continuation"
+    ]
+  },
+  "mainAcceptance": {
+    "executionByWorker": false,
+    "codeBlocks": [],
+    "environment": "Python3.11.8 torch2.5.1 torchvision0.20.1 CPU float32 one thread, existing runtime confirmed separately by main",
+    "dataset": "P2 official cache and hashes; seed2021 randperm60000, val first5000/train remaining55000; prefixes73/257; pixels/255",
+    "initialization": "seed2022; Conv/Linear Xavier uniform weights and zero bias; BN gamma1 beta0 running mean0 var1; independent shuffle CPU generator2023",
+    "training": {
+      "models": [
+        "textbook LeNet (6,16,120,84) Sigmoid/AvgPool",
+        "editorial small ResNet stem3x3s1p1 width8 BN/ReLU, stages8/16/32/64 each2 basic blocks, first downsample blocks s2 projection1x1 without projection BN, GAP/Linear10, no Dropout/head BN"
+      ],
+      "optimizer": "Adam lr0.003 betas0.9,0.999 eps1e-8 wd0 amsgradFalse",
+      "batchSize": 64,
+      "dropLast": false,
+      "epochs": 10,
+      "updatesPerModel": 50,
+      "tailBatch": 1,
+      "report": "epoch0 and per-epoch frozen train/val CE+accuracy; observed finite gradients/updates; actual failures retained; no promised accuracy threshold"
+    },
+    "forwards": {
+      "AlexNet": "textbook full widths B1x1x224x224 eval no_grad ->1x10, terminal256x5x5",
+      "VGG11": "full widths B1x1x224x224 ->1x10, terminal512x7x7",
+      "NiN": "full widths B1x1x224x224 ->1x10, terminal pre-classification384x5x5",
+      "GoogLeNet": "full widths B1x1x96x96 ->1x10, nine Inceptions 2+5+2",
+      "ResNet18Optional": "textbook full widths B1x1x96x96 eval ->1x10; separate from small training model",
+      "memory": "construct/run/release sequentially; no full architecture training required"
+    },
+    "mechanismAssertions": [
+      {
+        "id": "channel_affine",
+        "input": [
+          2,
+          3,
+          4,
+          4
+        ],
+        "expectedTrainableParameters": 6,
+        "check": "output shape, per-channel analytic gradients, persistent offset buffer, shared parameter unique identity"
+      },
+      {
+        "id": "conv_shape",
+        "input": [
+          2,
+          3,
+          8,
+          10
+        ],
+        "kernel": [
+          3,
+          5
+        ],
+        "padding": [
+          1,
+          2
+        ],
+        "stride": [
+          2,
+          3
+        ],
+        "outChannels": 4,
+        "expectedShape": [
+          2,
+          4,
+          4,
+          4
+        ],
+        "expectedParameters": 184
+      },
+      {
+        "id": "pointwise",
+        "expectedShape": [
+          2,
+          4,
+          8,
+          10
+        ],
+        "expectedParameters": 16,
+        "check": "same per-location affine map"
+      },
+      {
+        "id": "negative_pooling",
+        "inputRows": [
+          [
+            -1,
+            -2
+          ],
+          [
+            -3,
+            -4
+          ]
+        ],
+        "kernel": 3,
+        "stride": 1,
+        "padding": 1,
+        "expectedOutputShape": [
+          1,
+          1,
+          2,
+          2
+        ],
+        "maxEveryValue": -1,
+        "avgIncludePadEveryValue": "-10/9",
+        "avgExcludePadEveryValue": -2.5
+      },
+      {
+        "id": "ceil_pooling",
+        "inputSpatial": [
+          5,
+          5
+        ],
+        "kernel": 2,
+        "stride": 2,
+        "floorSpatial": [
+          2,
+          2
+        ],
+        "ceilSpatial": [
+          3,
+          3
+        ]
+      },
+      {
+        "id": "lenet_parameter_count",
+        "expected": 61706
+      },
+      {
+        "id": "inception_local",
+        "input": [
+          2,
+          8,
+          11,
+          13
+        ],
+        "branchChannels": [
+          2,
+          4,
+          3,
+          2
+        ],
+        "expectedOutput": [
+          2,
+          11,
+          11,
+          13
+        ],
+        "check": "all N/H/W same; dim1 concat"
+      },
+      {
+        "id": "batchnorm",
+        "input": [
+          1,
+          3
+        ],
+        "shape": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "momentum": 0.1,
+        "eps": 1e-05,
+        "expectedTrainOutput": "[-1,1]/sqrt(1+1e-5)",
+        "runningMean": 0.2,
+        "runningVar": 1.1,
+        "numBatchesTracked": 1,
+        "check": "train+no_grad updates buffers; eval freezes buffers but does not disable autograd; track_running_stats=False uses batch stats in eval"
+      },
+      {
+        "id": "bn_degenerate",
+        "legalShape": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "trainingErrorShape": [
+          1,
+          2,
+          1,
+          1
+        ],
+        "check": "N*H*W, not N alone"
+      },
+      {
+        "id": "residual",
+        "input": [
+          2,
+          8,
+          7,
+          7
+        ],
+        "projection8to16stride2Expected": [
+          2,
+          16,
+          4,
+          4
+        ],
+        "check": "exact branch shape equality; nonnegative input zero-branch identity; negative input post-add ReLU truncation; main/projection gradients"
+      },
+      {
+        "id": "checkpoint",
+        "check": "independent deep snapshots, strict model+BNbuffer load, optimizer history, eval prediction equality; same next batch and CPU/shuffle RNG next outputs; one-step loss/grad/model/BNbuffer/optimizer equality; model-only fresh Adam negative control after prior updates"
+      }
+    ],
+    "float32Tolerance": {
+      "atol": 1e-06,
+      "rtol": 1e-05
+    },
+    "float64Tolerance": {
+      "atol": 1e-10,
+      "rtol": 1e-08
+    },
+    "integerChecks": "exact counts/index equality",
+    "contentChecks": "four tasks retained, folded answers, no full solutions, formulas render mobile, correct hash routes, no en/draft/materials placeholders"
+  },
+  "gaps": [
+    "No worker numerical execution, build, lint, formatter or browser checks.",
+    "No full student solution or full Fashion-MNIST training; no CUDA/MPS execution.",
+    "No audio/video/subtitle content used; video verification belongs to lecture owners.",
+    "No original ImageNet architecture training or historical paper reproduction claimed."
+  ],
+  "additionalDeliverables": {
+    "english": "not_required_no_English_source_translation",
+    "draft": "not_created_no_classroom_source",
+    "materials": "not_required_no_independent_need",
+    "temporaryScripts": "none_created"
+  }
+}

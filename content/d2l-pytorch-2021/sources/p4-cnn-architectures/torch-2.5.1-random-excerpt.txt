@@ -1,0 +1,25 @@
+Source: https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/random.py
+Version: PyTorch v2.5.1
+Scope: exact class docstrings or selected function definitions, not complete upstream file.
+
+SOURCE LINES 10-19
+def set_rng_state(new_state: torch.Tensor) -> None:
+    r"""Sets the random number generator state.
+
+    .. note:: This function only works for CPU. For CUDA, please use
+        :func:`torch.manual_seed`, which works for both CPU and CUDA.
+
+    Args:
+        new_state (torch.ByteTensor): The desired state
+    """
+    default_generator.set_state(new_state)
+
+SOURCE LINES 22-29
+def get_rng_state() -> torch.Tensor:
+    r"""Returns the random number generator state as a `torch.ByteTensor`.
+
+    .. note:: The returned state is for the default generator on CPU only.
+
+    See also: :func:`torch.random.fork_rng`.
+    """
+    return default_generator.get_state()

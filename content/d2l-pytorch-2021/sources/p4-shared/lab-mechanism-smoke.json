@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "affine_shared_twice": {
+    "shape": [
+      2,
+      3,
+      4,
+      4
+    ],
+    "unique_parameters": 6,
+    "buffer_restored": true,
+    "analytic_input_gamma_beta_gradients_match": true
+  },
+  "convolution_shape": [
+    2,
+    4,
+    4,
+    4
+  ],
+  "convolution_parameters": 184,
+  "negative_average_pooling": {
+    "include_pad": -1.1111111111111112,
+    "exclude_pad": -2.5
+  },
+  "BN_four_fresh_state_modes": [
+    {
+      "train": true,
+      "grad_enabled": true,
+      "output": [
+        -0.9999949932098389,
+        0.9999949932098389
+      ],
+      "running_mean": 0.20000000298023224,
+      "running_var": 1.100000023841858,
+      "tracked": 1
+    },
+    {
+      "train": true,
+      "grad_enabled": false,
+      "output": [
+        -0.9999949932098389,
+        0.9999949932098389
+      ],
+      "running_mean": 0.20000000298023224,
+      "running_var": 1.100000023841858,
+      "tracked": 1
+    },
+    {
+      "train": false,
+      "grad_enabled": true,
+      "output": [
+        0.9999949932098389,
+        2.9999849796295166
+      ],
+      "running_mean": 0.0,
+      "running_var": 1.0,
+      "tracked": 0
+    },
+    {
+      "train": false,
+      "grad_enabled": false,
+      "output": [
+        0.9999949932098389,
+        2.9999849796295166
+      ],
+      "running_mean": 0.0,
+      "running_var": 1.0,
+      "tracked": 0
+    }
+  ],
+  "odd_residual_projection": {
+    "input": [
+      2,
+      8,
+      7,
+      7
+    ],
+    "output": [
+      2,
+      16,
+      4,
+      4
+    ],
+    "main_and_projection_nonzero_gradients": true
+  }
+}

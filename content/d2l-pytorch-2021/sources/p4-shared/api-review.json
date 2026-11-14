@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-14",
+  "purpose": "Main-agent numeric acceptance oracles, not 2021 classroom evidence",
+  "sources": [
+    {
+      "url": "https://docs.pytorch.org/docs/2.5/generated/torch.nn.BatchNorm2d.html",
+      "readScope": "BatchNorm2d API description, parameters, note and shape; navigation/footer not used",
+      "facts": ["Training forward uses biased variance; running variance uses unbiased estimator.", "running update is (1-momentum)*old + momentum*batch.", "Per-channel statistics over N,H,W; track_running_stats=False uses batch stats in eval too."]
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.5/generated/torch.nn.AvgPool2d.html",
+      "readScope": "AvgPool2d API description, defaults, ceil-mode note and shape",
+      "facts": ["Implicit zero padding; count_include_pad defaults true.", "Default stride equals kernel_size; ceil mode skips windows starting entirely in right padding."]
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.5/generated/torch.nn.MaxPool2d.html",
+      "readScope": "MaxPool2d API description, defaults, negative-infinity padding and shape",
+      "facts": ["Padding is implicit negative infinity, not zero.", "Default stride equals kernel_size; ceil mode allows trailing partial windows with start-position restriction."]
+    }
+  ],
+  "capture": "Read via static reader with content-negotiated markdown; no full third-party documentation redistribution.",
+  "licenseBoundary": "API facts cited; no inference of textbook or video license."
+}

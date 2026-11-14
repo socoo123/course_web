@@ -1,0 +1,411 @@
+{
+  "status": "passed",
+  "data": {
+    "source": "official Fashion-MNIST cached train split",
+    "checked_gzip": [
+      {
+        "file": "train-images-idx3-ubyte.gz",
+        "md5": "8d4fb7e6c68d591d4c3dfef9ec88bf0d"
+      },
+      {
+        "file": "train-labels-idx1-ubyte.gz",
+        "md5": "25c81989df183df01b3e8a0aad5dffbe"
+      }
+    ],
+    "train": 257,
+    "validation": 73,
+    "split_seed": 2021,
+    "candidate_split": "first5000 validation; remaining55000 train",
+    "train_ids_sha256": "391e5bf8b657d9fcd394865a2bd6d5e12ef8097b41f3c9cf4f51407a4d44eff5",
+    "validation_ids_sha256": "29ea389328bc621792145e29a2df3d49bc4d53df34fba7a9c88a19fbddbe0e99",
+    "train_classes": [
+      27,
+      25,
+      20,
+      28,
+      29,
+      23,
+      31,
+      38,
+      13,
+      23
+    ],
+    "validation_classes": [
+      8,
+      5,
+      6,
+      8,
+      7,
+      8,
+      6,
+      7,
+      10,
+      8
+    ],
+    "test_used": false
+  },
+  "config": {
+    "device": "cpu",
+    "threads": 1,
+    "batch": 64,
+    "tail": 1,
+    "epochs": 10,
+    "updates_per_model": 50,
+    "optimizer": "Adam",
+    "lr": 0.003,
+    "init_seed": 2022,
+    "shuffle_seed": 2023,
+    "initialization": "Xavier uniform conv/linear; zero bias; default BN"
+  },
+  "models": {
+    "LeNet": {
+      "parameters": 61706,
+      "initial_train_eval": {
+        "loss": 2.634784899796957,
+        "correct": 23,
+        "samples": 257
+      },
+      "curve": [
+        {
+          "epoch": 1,
+          "online_train_loss": 2.4120238504521114,
+          "train_eval": {
+            "loss": 2.2963400179310067,
+            "correct": 38,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 2.433682768312219,
+            "correct": 7,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 0.0024183206260204315
+        },
+        {
+          "epoch": 2,
+          "online_train_loss": 2.326482926825141,
+          "train_eval": {
+            "loss": 2.366070543281763,
+            "correct": 27,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 2.5209703576074887,
+            "correct": 8,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 0.0032966076396405697
+        },
+        {
+          "epoch": 3,
+          "online_train_loss": 2.3693772767768295,
+          "train_eval": {
+            "loss": 2.3631282233078656,
+            "correct": 25,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 2.542551380314239,
+            "correct": 5,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 0.002766277873888612
+        },
+        {
+          "epoch": 4,
+          "online_train_loss": 2.385684345482852,
+          "train_eval": {
+            "loss": 2.3993948999545918,
+            "correct": 25,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 2.5832840906430596,
+            "correct": 5,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 0.013158093206584454
+        },
+        {
+          "epoch": 5,
+          "online_train_loss": 2.389003771752235,
+          "train_eval": {
+            "loss": 2.3647969288584787,
+            "correct": 25,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 2.5436454145875698,
+            "correct": 5,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 0.0026510395109653473
+        },
+        {
+          "epoch": 6,
+          "online_train_loss": 2.3687185823685466,
+          "train_eval": {
+            "loss": 2.3443504994017603,
+            "correct": 25,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 2.4958668016407586,
+            "correct": 5,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 0.0016301557188853621
+        },
+        {
+          "epoch": 7,
+          "online_train_loss": 2.3401910502623027,
+          "train_eval": {
+            "loss": 2.324903118935077,
+            "correct": 23,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 2.4399924082298803,
+            "correct": 8,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 0.0012640156783163548
+        },
+        {
+          "epoch": 8,
+          "online_train_loss": 2.329028769689775,
+          "train_eval": {
+            "loss": 2.3154493639905165,
+            "correct": 25,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 2.40898926617348,
+            "correct": 5,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 0.004777359310537577
+        },
+        {
+          "epoch": 9,
+          "online_train_loss": 2.3047524287079093,
+          "train_eval": {
+            "loss": 2.2932711176371297,
+            "correct": 25,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 2.370848694892779,
+            "correct": 5,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 0.0054971566423773766
+        },
+        {
+          "epoch": 10,
+          "online_train_loss": 2.2917141765935876,
+          "train_eval": {
+            "loss": 2.3002940114833965,
+            "correct": 27,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 2.3799406077763807,
+            "correct": 8,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 0.0018872956279665232
+        }
+      ],
+      "scope": "independent small baseline, not all student tasks or textbook full training",
+      "checkpoint": {
+        "serialization": "in-memory weights_only=True; no file published",
+        "restored_eval_logits_match": true,
+        "next_update_loss": 2.323840856552124,
+        "next_update_state_max_abs_diff": 0.0,
+        "gradients_and_optimizer_state_match": true,
+        "BN_buffers_included": true,
+        "next_random_and_shuffle_indices_match": true,
+        "model_only_restore_next_step_max_diff": 0.004868946969509125,
+        "boundary": "CPU deterministic next batch; no GPU, augmentation workers, Python/NumPy stochastic pipeline"
+      },
+      "evaluation_preserves_parameters_buffers_gradients": true,
+      "batch32_and64_evaluation_agree": true
+    },
+    "small_ResNet": {
+      "parameters": 176634,
+      "initial_train_eval": {
+        "loss": 2.2995961510253786,
+        "correct": 36,
+        "samples": 257
+      },
+      "curve": [
+        {
+          "epoch": 1,
+          "online_train_loss": 2.178630253684196,
+          "train_eval": {
+            "loss": 2.3152881754047674,
+            "correct": 28,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 2.3212542860475307,
+            "correct": 8,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 3.9336531162261963
+        },
+        {
+          "epoch": 2,
+          "online_train_loss": 1.0812557495057815,
+          "train_eval": {
+            "loss": 2.5129583522039627,
+            "correct": 27,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 2.4782511044854987,
+            "correct": 8,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 4.8778157234191895
+        },
+        {
+          "epoch": 3,
+          "online_train_loss": 0.7932189202030345,
+          "train_eval": {
+            "loss": 3.022956887107879,
+            "correct": 27,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 3.0072141150905662,
+            "correct": 8,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 2.3911468982696533
+        },
+        {
+          "epoch": 4,
+          "online_train_loss": 0.596321599492767,
+          "train_eval": {
+            "loss": 1.733905779712395,
+            "correct": 78,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 1.6342834969089455,
+            "correct": 22,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 3.8465425968170166
+        },
+        {
+          "epoch": 5,
+          "online_train_loss": 0.5016256571975664,
+          "train_eval": {
+            "loss": 1.627983760277121,
+            "correct": 110,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 1.453145105544835,
+            "correct": 39,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 1.0934547185897827
+        },
+        {
+          "epoch": 6,
+          "online_train_loss": 0.3489944981229908,
+          "train_eval": {
+            "loss": 1.2549886341688699,
+            "correct": 136,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 1.5899276733398438,
+            "correct": 33,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 3.0030152797698975
+        },
+        {
+          "epoch": 7,
+          "online_train_loss": 0.2319738603403596,
+          "train_eval": {
+            "loss": 0.5967384913088283,
+            "correct": 209,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 1.2319906705046353,
+            "correct": 44,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 0.7270625233650208
+        },
+        {
+          "epoch": 8,
+          "online_train_loss": 0.179872303157465,
+          "train_eval": {
+            "loss": 0.2556169217122639,
+            "correct": 233,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 1.2381954585036186,
+            "correct": 45,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 3.053906202316284
+        },
+        {
+          "epoch": 9,
+          "online_train_loss": 0.13355800521049055,
+          "train_eval": {
+            "loss": 0.2079041051073181,
+            "correct": 237,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 1.3987023209872311,
+            "correct": 47,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 2.5315847396850586
+        },
+        {
+          "epoch": 10,
+          "online_train_loss": 0.12158668829773187,
+          "train_eval": {
+            "loss": 0.3136921830707255,
+            "correct": 234,
+            "samples": 257
+          },
+          "validation": {
+            "loss": 1.2120012257197132,
+            "correct": 46,
+            "samples": 73
+          },
+          "last_batch_first_conv_gradient_norm": 4.507153511047363
+        }
+      ],
+      "scope": "independent small baseline, not all student tasks or textbook full training",
+      "checkpoint": {
+        "serialization": "in-memory weights_only=True; no file published",
+        "restored_eval_logits_match": true,
+        "next_update_loss": 0.11378856003284454,
+        "next_update_state_max_abs_diff": 0.0,
+        "gradients_and_optimizer_state_match": true,
+        "BN_buffers_included": true,
+        "next_random_and_shuffle_indices_match": true,
+        "model_only_restore_next_step_max_diff": 0.005328988656401634,
+        "boundary": "CPU deterministic next batch; no GPU, augmentation workers, Python/NumPy stochastic pipeline"
+      },
+      "evaluation_preserves_parameters_buffers_gradients": true,
+      "batch32_and64_evaluation_agree": true,
+      "architecture": "3x3 s1 stem 8; 4 stages [8,16,32,64], 2 basic blocks each; downsample stride2 in stage2-4; learned 1x1 projection; BN/ReLU; GAP/Linear10; 28x28 input; not original ImageNet ResNet"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" role="img" aria-labelledby="title desc">
+<title id="title">池化的边界值与平均分母</title><desc id="desc">最大池化负数输入负1负2负3负4，核3步幅1填充1，隐式负无穷产生四个负1，手动填零产生四个零。平均池化正数输入1到4，总和10，计padding分母9，不计padding分母4。</desc>
+<style>:root { color: #18212b; } @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+<g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="22">
+<text x="28" y="38" font-size="27" font-weight="700">同一窗口，边界语义不同</text>
+<g fill="none" stroke="currentColor" stroke-width="2"><rect x="25" y="65" width="710" height="190" rx="10"/><rect x="25" y="280" width="710" height="190" rx="10"/><path d="M265 100 V225 M265 315 V440"/></g>
+<text x="45" y="103" font-weight="700">最大池化</text><text x="55" y="148">−1　−2</text><text x="55" y="186">−3　−4</text><text x="45" y="230" font-size="19">核3 / stride1 / pad1</text>
+<text x="290" y="113">隐式 padding = −∞</text><text x="290" y="151" font-weight="700">max = −1（四个输出）</text><text x="290" y="197">若先手动补0 → max = 0</text><text x="290" y="234" font-size="19">0会错误地击败全部负数</text>
+<text x="45" y="318" font-weight="700">平均池化</text><text x="65" y="361">1　2</text><text x="65" y="400">3　4</text><text x="45" y="445" font-size="19">核3 / stride1 / pad1</text>
+<text x="290" y="328">四个真实数之和 = 10</text><text x="290" y="369">计入 padding：10 / 9</text><text x="290" y="410">排除 padding：10 / 4 = 2.5</text><text x="290" y="447" font-size="19">每个输出相同，但分母不同</text>
+<text x="30" y="510" font-size="20">逐样本、逐通道独立运算；无可训练参数</text></g></svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 565" role="img" aria-labelledby="title desc">
+<title id="title">残差块投影与激活的边界</title>
+<desc id="desc">输入2乘16乘7乘7。主分支第一卷积步幅2再第二卷积步幅1得到2乘32乘4乘4。旁路1乘1卷积也取步幅2得到同形状，两路相加后ReLU。即使残差为零，负输入仍会被ReLU截断。</desc>
+<style>:root { color: #18212b; } @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+<g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="22">
+<text x="24" y="38" font-size="27" font-weight="700">残差：对齐 → 相加 → ReLU</text>
+<text x="30" y="84">输入：(2, 16, 7, 7)</text>
+<g fill="none" stroke="currentColor" stroke-width="2">
+<rect x="30" y="118" width="425" height="105" rx="10"/>
+<rect x="30" y="270" width="425" height="80" rx="10"/>
+<path d="M200 98 V112 M18 85 V310 H24"/>
+<circle cx="565" cy="250" r="28"/>
+<path d="M455 170 H565 V215 M455 310 H565 V285" marker-end="url(#arrow)"/>
+<path d="M565 282 V385" marker-end="url(#arrow)"/>
+<rect x="360" y="395" width="330" height="55" rx="10"/>
+</g>
+<text x="46" y="155">3×3，s=2 → BN → ReLU</text>
+<text x="46" y="197">3×3，s=1 → BN</text>
+<text x="46" y="303">旁路：1×1投影，s=2</text>
+<text x="46" y="335" font-size="20">两路都到 (2, 32, 4, 4)</text>
+<text x="552" y="260" font-size="33">+</text>
+<text x="383" y="431" font-weight="700">ReLU后才是块输出</text>
+<text x="30" y="495">即使F=0，y=ReLU(x)也非处处恒等</text>
+<text x="30" y="535" font-size="21">例：x=[−2, 3] → [0, 3]；梯度可被门控</text>
+</g>
+</svg>

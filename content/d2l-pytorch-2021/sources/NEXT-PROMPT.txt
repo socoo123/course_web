@@ -1,31 +1,35 @@
-继续 content/d2l-pytorch-2021，下一批范围为 LEC22–29 和 cnn-architectures 实验。先读 status.json、sources/PLAN.txt、sources/p3-manifest.json、sources/p1-shared/book-version.json、resources.zh.md，再读对应 schedule-inventory / book-inventory / outline-plan / practice-plan。必须读取 skill://technical-video-notes，只改content/。
+继续 content/d2l-pytorch-2021 的P5：LEC30–35和training-performance实验。先读已注入AGENTS.md、status.json、sources/PLAN.txt、sources/p4-manifest.json、sources/p1-shared/book-version.json、resources.zh.md，再读对应schedule/book/outline/practice inventories。必须读取skill://technical-video-notes；只改content/。
 
-交付约定：必须多agent并行（不是工具并行）。每批由主agent汇总、统一验收、提交推送至现有GitHub仓库 https://github.com/socoo123/course_web 的main，再给用户下一批可直接使用的提示词。子agent不提交推送，不夹带无关改动，不改src。main推送触发已有Pages工作流；本地浏览器验收不等于部署验收。sources默认gitignore，只按明确清单保存必要索引、固定版本原件与验收证据；不提交数据集、虚拟环境、模型、预测CSV、临时验收脚本或凭据。
+交付合同：必须多agent并行，不是只并行工具。A拥有lectures/lec30–32及sources/p5-lec30–32，B拥有lec33–35及sources/p5-lec33–35，C拥有labs/training-performance及sources/p5-training-performance。主agent独占course/status/resources/共享manifest/PLAN/NEXT-PROMPT；统一数值、真实浏览器和一次最终build，提交推送现有 https://github.com/socoo123/course_web 的main，再给下一批提示词。子agent不跑数值/tests/build/lint/formatter，不提交。
 
-学习目标不变：工程路线、数学遗忘、无精力刷论文，完整学2021中文PyTorch课后接CS336；不删CNN/RNN/CV，不加整门前置。数学随课用符号、形状、小例补回；基础/硬件扩展/历史竞赛分开，AI不代写完整实验答案。
+已验收P1–P4：LEC1–29教材导读、自绘SVG，以及tensor-autograd、linear-training、mlp-generalization、cnn-architectures四实验说明/指导，不能重做。73讲/12实验/48任务不变；剩余LEC30–73共44讲notes、8项实验。已有29讲draft阻塞，不建占位；materials为not_required，不重复中文教材。
 
-不要重做已验收LEC1–21教材导读、自绘SVG和tensor-autograd、linear-training、mlp-generalization三项实验。精确状态和验收以status与P1/P2/P3 manifests为准，不能把笔记存在说成课堂已看完。当前21BV共69P元数据已核实；全部公开player字幕成功空列表，未下载/观看媒体，未核实片内讲授、演示或QA。draft持续阻塞，不建占位；materials为not_required，必要中文教材在notes定位。旧空接口不要重复刷；仅有合法、身份/分P/时间轴匹配的新课堂来源时补稿。
+学习目标仍为工程路线、数学随课补、完整学完中文PyTorch课程再接CS336；不删CNN/CV/RNN，不另加整门前置或刷论文。实验只给任务合同、路线、不变量与局部提示，不代写完整答案。基础CPU/硬件扩展/历史竞赛分开。
 
-P3新增7BV/23P=17122秒，LEC17有“使用GPU/购买GPU/QA”3P，课表未单列的购买部分仍保留，不造课堂购卡建议。P3均copyright=1，LEC15 no_reprint=0，LEC16–21=1；0不代表开放转录许可。公共资料保留103原课表入口并补齐69真实分P入口。LEC10两种实现仍共原P3，真实P4是QA，不猜改链接。
+视频累计29BV/93P元数据核实，全部公开player成功空字幕列表；P4新增8BV/24P=20337秒，每讲真实3P均保留，包括QA。未下载/观看音视频，不猜讲授、问答或主题时间轴。旧空接口不要重刷；只在合法、身份/分P/时间轴匹配的新课堂来源出现时补稿。无字幕不等于绝无烧录字幕，也不能用教材导读冒充课堂整理。
 
-教材固定 d2l-ai/d2l-zh e6b18ccea71451a55fcd861d7b96fddf2587b09a，当前中文第二版源码，不是2021快照。P3新增审读4.7、4.10、5.1/5.2/5.4/5.5/5.6、6.1–6.4；精确范围以逐讲/实验manifest为准。4.9、5.3及后续未读不能冒称已读。源码保存sources/*.txt不使用.md，中文不重译。根LICENSE Apache-2.0与setup.py字段MIT-0分开；不外推视频、数据或第三方图许可。
+页头入口是必做交付：新讲在course.json填写官方课表所指video.bilibili和已核实duration；多P按全部真实P求和，label注明“全 N P 合计”。LEC1–29已有正确入口，不改、不重新请求旧字幕。当前页头按钮显示时长，完整label在来源区显示；不能用P1时长代替整讲。不恢复嵌入播放器/课程视频标签；默认notes，新标签看原站，禁止未核实转载。
 
-运行时先检查真实环境可用性，不能假设/tmp存在。P3复用 /tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python，Python3.11.8、torch2.5.1、torchvision0.20.1、numpy1.26.4、pandas2.2.3、macOS arm64、CPU、1线程，无d2l/Jupyter。CUDA不可用；MPS built/available均true，但只探测未运行MPS，不能称GPU实测通过。环境/依赖与脚本哈希见p3-shared/environment/runtime-verification/runtime-freeze；不要混装旧d2l依赖。
+LEC27上传标题含“Inception V3”，教材7.4的GoogLeNet并未证明覆盖这段课堂拓展；继续保留缺口。P4全为copyright=1/no_reprint=1，不是开放转录许可。以前误接入的非本人YouTube上传已撤下，不得重引；本人频道身份也不能证明某个课程上传存在，不无限搜索或伪造入口。
 
-P3实验范围：独立MLP同权重前向/梯度/一步SGD、参数共享与buffer、模型+动量优化器恢复、卷积机制；合成32/128、d20、四组300轮各600更新；真实Ames257样本3折86/86/85、每折30轮90更新，OOF logRMSE 0.1764610996 vs常量0.4077828291，折内非缺失值均值/std(ddof0)与类别词表、OOF每行一次。随后全1460行refit30轮690更新，内存导出1459行Id/SalePrice，正有限且原序，不上传不存CSV。不是全部学生配置、完整5折/干预重训、Fashion MLP作业或旧Notebook已完成；笔记短代码另见notes-smoke。
+教材固定 d2l-ai/d2l-zh e6b18ccea71451a55fcd861d7b96fddf2587b09a：当前中文第二版源码，非2021全书快照。P4实际新增6.5–6.6、7.1–7.6，精确全文/正文/PyTorch节选以逐讲manifest为准。4.9、5.3、7.7及后续未读不能冒称；下一批按课表匹配第12章硬件/多GPU/分布式相关正文，不猜阅读编号或硬件性能。根LICENSE Apache-2.0和setup.py MIT-0字段分开；视频、PyTorch、论文、数据许可独立。
 
-Ames官方HTTPS两CSV已核教材SHA1；数据仅运行时cache。教材Ames与2021加州竞赛不是同一数据集。Kaggle加州公开页确认d2lcourse主办、2020售房、test晚于train/private晚于public、log价格RMSE、Id/Sold Price；数据须登录接受规则，本批未登录/下载/训练，不能用sklearn California Housing或Ames冒充。详细访问记录在p3-mlp-generalization/california-access.json；静态reader仅壳，公开说明已用真实浏览器读取，tab关闭。无需重复访问已核来源，除非事实需要更新。
+LEC30为图片分类竞赛入口，不是可凭教材生成的完整课堂复述。先核实官方竞赛身份、年份、数据和评估规则，区分历史课程树叶比赛与教材CIFAR-10/狗品种案例。访问需登录/接受规则就记录缺口，不换数据冒充，不提交排行榜。本批实验training-performance只对应31–35，cv-transfer留下一批。
 
-下一批建议并行A拥有lec22–25与sources/p4-lec22–25，B拥有lec26–29与sources/p4-lec26–29，C拥有labs/cnn-architectures与sources/p4-cnn-architectures。每讲notes/draft/materials同owner；主agent独占course/status/resources/共享清单。先核实新BV全部P与字幕，实际审读固定教材6.5–6.6、7.1–7.6等对应内容，再生成有证据正文；不得删去任一网络家族。LEC29纳入本批是为了完整覆盖实验4的ResNet任务。
+P4运行环境已确认可复用/tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python，但先查当前仍存在。Python3.11.8/torch2.5.1/torchvision0.20.1/numpy1.26.4/pandas2.2.3，macOS arm64，CPU1线程，无d2l/Jupyter。CUDA不可用；MPS built/available仅探测未执行。P5多GPU实测须真实多卡；CPU张量分片/梯度聚合可证明数学，不证明多GPU通信、吞吐或加速。时延测量记设备/版本/精度/形状/batch、热身、同步、统计方式；不要把异步提交耗时当内核完成时间。
 
-cnn-architectures四任务按course/practice-plan原样保留：1模块/自定义层/参数/保存加载/设备，2卷积填充步幅通道池化手算与程序，3LeNet小训练并逐层跟踪AlexNet/VGG/NiN/GoogLeNet，4BatchNorm训练推理/残差及小ResNet训练恢复。前置LEC16–17/19–21的notes与实测证据复用，不重写；实验提供新任务合同与指导，不给端到端答案。CPU小模型和缩小输入必须标清，不用极小输入把原网络结构关键层删掉后还说原架构已验证。BatchNorm批量/空间退化、train/eval与no_grad、inception分支形状、残差投影/步幅、池化padding语义须核实；不把保存权重当恢复完整训练。
+P4主agent验收：八段notes代码、六种教材完整前向通过。AlexNet/VGG/NiN单通道224，GoogLeNet/ResNet18为96，LeNet28；未缩关键层/通道后冒称完整。另验证仿射共享/梯度/buffer、卷积形状、负池化padding/ceil、1×1/GAP、Inception分支、BN双方差/四模式/NHW退化、残差投影/激活/梯度。临时验收脚本已删除，hash在p4-shared/runtime-verification；不提供完整学生答案。
 
-统一验收：子agent不跑build/lint/tests/formatter，主agent整合后统一CPU、npm run build与真实浏览器。frontmatter含source/video(适用)/license/status，正文从学习内容开始，引用/缺口页底。$$独占行；长公式aligned逐行，别恢复手机超宽横排矩阵。SVG经img加载，currentColor后备与prefers-color-scheme深色反相，title/desc齐全，无背景/脚本/外链；先滚入视口再等待图片加载。检查每张图、公式、自测、页底来源、缺稿标签、实验双标签、1440桌面/390移动端和明暗主题，关闭验证tab。来源哈希、网站构建、实验运行分别记录，保留真实失败，不弱化验收。P3曾修LEC21横排矩阵和实验正文内长SHA1溢出；后者移到页底可滚动校验表。
+P4真实Fashion小训练：官方cache /tmp/d2l-p2-runtime.Xqsd3N/data/FashionMNIST/raw，训练两gzip复核P2官方MD5；不提交数据。seed2021 randperm60000前5000验证候选、后55000训练候选，取73/257；init2022、shuffle2023，Xavier/零偏置，B64尾批1、Adam .003、10轮各50更新。教材LeNet训练CE2.634785→2.300294、验证8/73，仍近随机，不能称分类质量成功。编者小ResNet宽8/16/32/64、四stage各2块、28输入、176634参数，训练CE2.299596→.313692、验证46/73。非全量Fashion、原ImageNet或所有学生任务。
 
-收尾更新status、p4清单、PLAN和本交接，删除临时脚本，主agent提交推送后返回提交链接与下一批提示词。P3后剩余正文lec22–lec73共52讲、9项实验，已做21讲draft仍阻塞。xv6命令框、not_required标签为既有UI限制，本内容任务不改src，不为消标签造重复文件。
+两模型恢复模型/Adam/BN buffers/torch及shuffle随机态后，下一随机数/批次、预测、一步loss/梯度/模型和优化器状态相同，模型最大差0；仅恢复权重+空Adam反例参数差.004869/.005329。评估不改状态或已有梯度，B32/B64一致。若复用做性能测试，不重复整批训练；建立当前测试所需最小输入，并明确推理/训练模式。
 
-P3后的视频界面试点已按用户最新要求结束：嵌入画质不满足需求，不再折腾播放器。已删除课程视频标签、LectureVideo组件、video.embed/checkpoints及画面导览；默认课程笔记，LEC页头只保留原站链接与已记录时长（LEC1官方B站BV1oX4y137bC，08:09），新标签页打开。video.language及中文“课堂整理”标签保留，未创建draft。sources/video-pilot-lec01.json、youtube-pilot-lec01.json、video-source-correction.json均为历史证据，不代表现在还有嵌入功能。此前推荐的非本人YouTube上传ih2SgBk8TRc/h9HsaC4jGIQ/dHtkJ0hJ-kI已撤回，不能重新引入；@mu_li本人频道身份不等于本课程有官方YouTube发布。后续以作者/课程官网原始入口为准，确认不到则停止并告知用户，可放弃课程，不无限搜索或拿转载补位。不要在内容批次重新加播放器。
+内容样式：frontmatter含source/video(适用)/license/status，正文从学习问题开始，引用与缺口页底。站内跳转用#/c/d2l-pytorch-2021/lec/<id>?v=notes等HashRouter路由，绝不用../notes.zh.md；只有assets图片相对路径。$$独占行，长公式定义中间量、aligned分行；不要重造手机横排矩阵/超长公式。SVG title/desc、自绘、currentColor后备、prefers-color-scheme深色可读，不放课堂截图到notes。数字对照用表，不再把同一表画一张图。
 
-后续每批必须遵守根AGENTS.md“讲次视频入口（生成时必做）”：由主agent在course.json同步维护本批各讲video.bilibili、video.duration和时长口径label，让LEC开头显示官方B站入口与时长，不能只更新公共资料。LEC1–21已有官方入口；此次复用P2/P3保存的video-metadata.json补齐LEC8–21全部分P合计时长，不重新请求字幕或媒体。下一批LEC22–29依真实元数据补齐，不猜时长、不换转载；逐页验收页头链接和时长，维持外链观看而非嵌入。
+页面验收：每讲核对页头官方BV、全部P口径与时长、默认笔记/无iframe；真实点击代表入口确认新标签打开、笔记保留。逐图先滚入视口再等加载；检查1440桌面/390手机、明暗色、公式、自测、页底来源、缺稿状态和实验双标签。改SVG后hash导航可能复用旧缓存，要重载/禁缓存核对实际改图，不把旧截图当新结果。P4实验公式曾398px溢出，命名k_eff/H_pad后修为390；保留原始失败。
 
-本次视频入口验收：真实Chromium逐页核对LEC1–21的页头官方链接、时长、新标签目标与无iframe，全部通过；LEC21实际打开B站且本站笔记保留，390px/1440px页头截图正常。整页移动端检查另发现未改动的LEC2/5/6横向溢出（390px视口下scrollWidth为432/412/571px），已记入status.json，不能宣称全21页手机布局通过。本地验证不是线上部署或B站全片播放验证。
+现有UI限制不属于内容任务：实验页固定xv6命令框，not_required资料仍显示待生成。中文课堂整理缺稿现在显示“完整课堂整理尚未就绪”，不是一定显示draft文件路径。LEC2/5/6此前已知手机溢出不在本批改动范围，别声称全29页手机验收。P4仅8新讲/实验/公共资料通过；本地Chromium不是线上部署或B站全片播放验证，验证tab已关闭。
+
+必要来源按manifest显式清单提交：小索引、固定版本原件(.txt)、筛选视频元数据、验收JSON/build.log。sources默认gitignore，勿盲目强制添加数据、模型、预测CSV、虚拟环境、临时脚本、凭据或签名媒体响应。来源hash、数值和网站构建是不同证据。子agentmanifest保留生成时hash/未运行历史，最终内容hash与主验收以p4-manifest及p4-shared为准。
+
+收尾更新status、p5清单、PLAN和本交接，删除临时脚本；主agent提交推送main，提供提交链接与下一批提示词。失败保留真实证据、仅复验失败项，不弱化验收、不悄悄缩scope。继续连续课程顺序。

@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 1,
+  "batch": "P4",
+  "courseId": "d2l-pytorch-2021",
+  "date": "2026-11-14",
+  "scope": "lec22–lec29 + cnn-architectures; accepted LEC1–21 and first three labs untouched",
+  "parallelOwners": {
+    "P4Lec22to25": [
+      "lec22",
+      "lec23",
+      "lec24",
+      "lec25"
+    ],
+    "P4Lec26to29": [
+      "lec26",
+      "lec27",
+      "lec28",
+      "lec29"
+    ],
+    "P4CnnLab": [
+      "cnn-architectures"
+    ]
+  },
+  "mainResponsibilities": [
+    "shared course/status/resources/manifest/handoff",
+    "source/content integration",
+    "CPU numerical and architecture/training acceptance",
+    "real browser and build acceptance",
+    "commit and push"
+  ],
+  "bookVersion": "sources/p1-shared/book-version.json",
+  "newTextbookReadScope": [
+    "6.5",
+    "6.6",
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "7.5",
+    "7.6"
+  ],
+  "readScopeBoundary": "Per-fragment full/chapter-body/PyTorch line ranges are authoritative; not all framework branches read or executed. Current fixed Chinese second edition is not a2021 snapshot. 4.9,5.3,7.7 and later not newly read.",
+  "lectures": [
+    {
+      "id": "lec22",
+      "manifest": "sources/p4-lec22/manifest-fragment.json",
+      "video": {
+        "bvid": "BV1EV411j7nX",
+        "parts": 3,
+        "durationSeconds": 1627,
+        "header": {
+          "label": "2021课程 · 全 3 P 合计",
+          "bilibili": "https://www.bilibili.com/video/BV1EV411j7nX",
+          "duration": "27:07",
+          "language": "zh"
+        }
+      },
+      "notes": "verified_editorial_textbook_guide_not_classroom_notes",
+      "draft": "blocked_public_captions_empty_no_complete_media_review",
+      "materials": "not_required"
+    },
+    {
+      "id": "lec23",
+      "manifest": "sources/p4-lec23/manifest-fragment.json",
+      "video": {
+        "bvid": "BV1t44y1r7ct",
+        "parts": 3,
+        "durationSeconds": 3626,
+        "header": {
+          "label": "2021课程 · 全 3 P 合计",
+          "bilibili": "https://www.bilibili.com/video/BV1t44y1r7ct/",
+          "duration": "1:00:26",
+          "language": "zh"
+        }
+      },
+      "notes": "verified_editorial_textbook_guide_not_classroom_notes",
+      "draft": "blocked_public_captions_empty_no_complete_media_review",
+      "materials": "not_required"
+    },
+    {
+      "id": "lec24",
+      "manifest": "sources/p4-lec24/manifest-fragment.json",
+      "video": {
+        "bvid": "BV1h54y1L7oe",
+        "parts": 3,
+        "durationSeconds": 3721,
+        "header": {
+          "label": "2021课程 · 全 3 P 合计",
+          "bilibili": "https://www.bilibili.com/video/BV1h54y1L7oe/",
+          "duration": "1:02:01",
+          "language": "zh"
+        }
+      },
+      "notes": "verified_editorial_textbook_guide_not_classroom_notes",
+      "draft": "blocked_public_captions_empty_no_complete_media_review",
+      "materials": "not_required"
+    },
+    {
+      "id": "lec25",
+      "manifest": "sources/p4-lec25/manifest-fragment.json",
+      "video": {
+        "bvid": "BV1Ao4y117Pd",
+        "parts": 3,
+        "durationSeconds": 1243,
+        "header": {
+          "label": "2021课程 · 全 3 P 合计",
+          "bilibili": "https://www.bilibili.com/video/BV1Ao4y117Pd/",
+          "duration": "20:43",
+          "language": "zh"
+        }
+      },
+      "notes": "verified_editorial_textbook_guide_not_classroom_notes",
+      "draft": "blocked_public_captions_empty_no_complete_media_review",
+      "materials": "not_required"
+    },
+    {
+      "id": "lec26",
+      "manifest": "sources/p4-lec26/manifest-fragment.json",
+      "video": {
+        "bvid": "BV1Uv411G71b",
+        "parts": 3,
+        "durationSeconds": 2258,
+        "header": {
+          "label": "2021课程 · 全 3 P 合计",
+          "bilibili": "https://www.bilibili.com/video/BV1Uv411G71b/",
+          "duration": "37:38",
+          "language": "zh"
+        }
+      },
+      "notes": "verified_editorial_textbook_guide_not_classroom_notes",
+      "draft": "blocked_public_captions_empty_no_complete_media_review",
+      "materials": "not_required"
+    },
+    {
+      "id": "lec27",
+      "manifest": "sources/p4-lec27/manifest-fragment.json",
+      "video": {
+        "bvid": "BV1b5411g7Xo",
+        "parts": 3,
+        "durationSeconds": 3042,
+        "header": {
+          "label": "2021课程 · 全 3 P 合计",
+          "bilibili": "https://www.bilibili.com/video/BV1b5411g7Xo/",
+          "duration": "50:42",
+          "language": "zh"
+        }
+      },
+      "notes": "verified_editorial_textbook_guide_not_classroom_notes",
+      "draft": "blocked_public_captions_empty_no_complete_media_review",
+      "materials": "not_required"
+    },
+    {
+      "id": "lec28",
+      "manifest": "sources/p4-lec28/manifest-fragment.json",
+      "video": {
+        "bvid": "BV1X44y1r77r",
+        "parts": 3,
+        "durationSeconds": 2771,
+        "header": {
+          "label": "2021课程 · 全 3 P 合计",
+          "bilibili": "https://www.bilibili.com/video/BV1X44y1r77r/",
+          "duration": "46:11",
+          "language": "zh"
+        }
+      },
+      "notes": "verified_editorial_textbook_guide_not_classroom_notes",
+      "draft": "blocked_public_captions_empty_no_complete_media_review",
+      "materials": "not_required"
+    },
+    {
+      "id": "lec29",
+      "manifest": "sources/p4-lec29/manifest-fragment.json",
+      "video": {
+        "bvid": "BV1bV41177ap",
+        "parts": 3,
+        "durationSeconds": 2049,
+        "header": {
+          "label": "2021课程 · 全 3 P 合计",
+          "bilibili": "https://www.bilibili.com/video/BV1bV41177ap/",
+          "duration": "34:09",
+          "language": "zh"
+        }
+      },
+      "notes": "verified_editorial_textbook_guide_not_classroom_notes",
+      "draft": "blocked_public_captions_empty_no_complete_media_review",
+      "materials": "not_required"
+    }
+  ],
+  "lab": {
+    "id": "cnn-architectures",
+    "manifest": "sources/p4-cnn-architectures/manifest-fragment.json",
+    "documents": [
+      "labs/cnn-architectures/lab.zh.md",
+      "labs/cnn-architectures/guide.zh.md"
+    ],
+    "allFourTasksPreserved": true,
+    "fullSolutionPublished": false,
+    "english": "not_required_no_English_original"
+  },
+  "counts": {
+    "bvids": 8,
+    "parts": 24,
+    "durationSeconds": 20337,
+    "notes": 8,
+    "drafts": 0,
+    "materials": 0,
+    "selfDrawnSvgs": 8,
+    "labDocuments": 2
+  },
+  "cumulativeCounts": {
+    "lectureNotes": 29,
+    "lectureDrafts": 0,
+    "lectureMaterials": 0,
+    "labDocuments": 8,
+    "selfDrawnSvgs": 29,
+    "bvids": 29,
+    "parts": 93
+  },
+  "boundary": "All24 public player requests succeeded with empty subtitle lists, no media downloaded/reviewed/transcribed. copyright1/no_reprint1 are not transcription licenses. LEC27 title names Inception V3; textbook GoogLeNet does not establish that classroom coverage. No embedded player or unverified repost.",
+  "verification": {
+    "source": "passed47 source hashes; official BV/author/year/allP and summed header durations;196 public video links",
+    "sourceEvidence": "sources/p4-shared/source-check.json",
+    "content": "passed10Markdown/8SVG XML+local images+frontmatter+math fences; curriculum73/12/48 preserved; final hashes recorded separately from worker snapshots",
+    "contentEvidence": "sources/p4-shared/content-check.json",
+    "numeric": "passed8 published code blocks, independent mechanisms, six full textbook forwards, two small real-Fashion training baselines and deterministic resume/negative-control",
+    "runtimeEvidence": "sources/p4-shared/runtime-verification.json",
+    "notesEvidence": "sources/p4-shared/notes-smoke.json",
+    "architectureEvidence": "sources/p4-shared/architecture-smoke.json",
+    "mechanismEvidence": [
+      "sources/p4-shared/mechanism-smoke.json",
+      "sources/p4-shared/lab-mechanism-smoke.json"
+    ],
+    "practiceEvidence": "sources/p4-shared/practice-smoke.json",
+    "environmentEvidence": "sources/p4-shared/environment.json",
+    "browser": "passed real managed Chromium; all8 headers/figures/formulas/self-tests/sources, desktop1440/mobile390, eight figures light/dark, lab double tabs/missing documents/resources; actual LEC29 external click retained notes. Fixed lab formula overflow and diagram issues. Tab closed.",
+    "browserEvidence": "sources/p4-shared/browser-check.json",
+    "build": "passed npm run build once; tsc --noEmit + Vite production build, 5.79s",
+    "buildEvidence": "sources/p4-shared/build.log",
+    "deployment": "not_checked; local acceptance is not Pages deployment or Bilibili full playback acceptance"
+  },
+  "runtimeBoundary": {
+    "device": "CPU one thread only; MPS available detection but not executed",
+    "fullForwardInputs": {
+      "LeNet": [
+        1,
+        1,
+        28,
+        28
+      ],
+      "AlexNet": [
+        1,
+        1,
+        224,
+        224
+      ],
+      "VGG11": [
+        1,
+        1,
+        224,
+        224
+      ],
+      "NiN": [
+        1,
+        1,
+        224,
+        224
+      ],
+      "GoogLeNet": [
+        1,
+        1,
+        96,
+        96
+      ],
+      "ResNet18": [
+        1,
+        1,
+        96,
+        96
+      ]
+    },
+    "fullForwardDefinition": "selected actual fixed-book PyTorch source blocks; only d2l import omitted; no structure/channel/head reduction",
+    "training": "official Fashion cached train gzip MD5 verified; seed2021 val pool first5000/train rest55000, take73/257, init2022/shuffle2023, Xavier/zero-bias, Adam.003 B64 tail1 10epochs50updates each",
+    "LeNet": "61706 params; train-eval CE2.6347848998→2.3002940115; validation2.3799406078,8/73, near chance, not a classifier-quality success claim",
+    "smallResNet": "176634 params; editorial3x3s1 stem8, four2-block stages8/16/32/64,28input,GAP; train-eval CE2.2995961510→.3136921831; validation1.2120012257,46/73",
+    "checkpoint": "trusted in-memory weights_only load; model/Adam/BNbuffers/CPU+shuffle RNG restored; prediction,next random/batch,loss/gradient/state match; state maxdiff0. Model-only fresh Adam differences .004868947/.005328989. No checkpoint files published.",
+    "notRun": [
+      "CUDA/MPS/multiGPU computation",
+      "old d2l/Jupyter Notebook",
+      "full Fashion or ImageNet training",
+      "all student tasks",
+      "AlexNet/VGG/NiN/GoogLeNet/full-widthResNet training"
+    ]
+  },
+  "mainIntegrationChanges": [
+    "All eight course.json official header links/durations and whole3P labels; public resources24P table",
+    "HashRouter cross-lecture links corrected before acceptance",
+    "LEC27 branch-removal wording corrected, V3 classroom gap explicit",
+    "NiN diagram no longer implies channel0 transforms into channel1",
+    "VGG duplicate configuration-table SVG replaced by geometric receptive-field explanation",
+    "Lab height formula split using effective kernel/padded height after398px mobile overflow",
+    "User-facing runtime statuses updated; worker manifests retain author-stage history"
+  ],
+  "diagnostics": [
+    "Previous day agent ECONNRESET failures did not produce P4 deliverables; this run completed fresh parallel slices.",
+    "Second dev-server launch failed port5310 occupied; existing confirmed course-web server reused.",
+    "Changed SVGs initially cached across hash navigation; disabled cache/reloaded only changed images for final proof.",
+    "Missing-draft check expected path but actual existing UI shows Chinese message; corrected acceptance wait after DOM inspection.",
+    "No application-origin browser errors observed."
+  ],
+  "workerEvidenceBoundary": "Fragments preserve acquisition/read scope and authored hashes/not_run_by_worker. Final main hashes and verification live in shared evidence; author not-run is not a denial of main execution.",
+  "remaining": {
+    "lectureNotes": [
+      "lec30",
+      "lec31",
+      "lec32",
+      "lec33",
+      "lec34",
+      "lec35",
+      "lec36",
+      "lec37",
+      "lec38",
+      "lec39",
+      "lec40",
+      "lec41",
+      "lec42",
+      "lec43",
+      "lec44",
+      "lec45",
+      "lec46",
+      "lec47",
+      "lec48",
+      "lec49",
+      "lec50",
+      "lec51",
+      "lec52",
+      "lec53",
+      "lec54",
+      "lec55",
+      "lec56",
+      "lec57",
+      "lec58",
+      "lec59",
+      "lec60",
+      "lec61",
+      "lec62",
+      "lec63",
+      "lec64",
+      "lec65",
+      "lec66",
+      "lec67",
+      "lec68",
+      "lec69",
+      "lec70",
+      "lec71",
+      "lec72",
+      "lec73"
+    ],
+    "practiceIds": [
+      "training-performance",
+      "cv-transfer",
+      "cv-dense-prediction",
+      "recurrent-language-model",
+      "seq2seq-attention",
+      "transformer",
+      "bert-pretrain-finetune",
+      "optimization-capstone"
+    ],
+    "blockedDraftIds": [
+      "lec01",
+      "lec02",
+      "lec03",
+      "lec04",
+      "lec05",
+      "lec06",
+      "lec07",
+      "lec08",
+      "lec09",
+      "lec10",
+      "lec11",
+      "lec12",
+      "lec13",
+      "lec14",
+      "lec15",
+      "lec16",
+      "lec17",
+      "lec18",
+      "lec19",
+      "lec20",
+      "lec21",
+      "lec22",
+      "lec23",
+      "lec24",
+      "lec25",
+      "lec26",
+      "lec27",
+      "lec28",
+      "lec29"
+    ],
+    "nextBatch": {
+      "batch": "P5",
+      "A": [
+        "lec30",
+        "lec31",
+        "lec32"
+      ],
+      "B": [
+        "lec33",
+        "lec34",
+        "lec35"
+      ],
+      "C": [
+        "training-performance"
+      ]
+    }
+  },
+  "deliveryPolicy": {
+    "repository": "https://github.com/socoo123/course_web",
+    "branch": "main",
+    "authority": "User requires verified integration, commit and push, then next prompt.",
+    "scope": "content only; source paths enumerated; no datasets, models, CSV, environment, credentials, temporary scripts",
+    "sourceFiles": [
+      "sources/p4-cnn-architectures/book-alexnet.txt",
+      "sources/p4-cnn-architectures/book-batch-norm.txt",
+      "sources/p4-cnn-architectures/book-googlenet.txt",
+      "sources/p4-cnn-architectures/book-lenet.txt",
+      "sources/p4-cnn-architectures/book-nin.txt",
+      "sources/p4-cnn-architectures/book-pooling.txt",
+      "sources/p4-cnn-architectures/book-resnet.txt",
+      "sources/p4-cnn-architectures/book-vgg.txt",
+      "sources/p4-cnn-architectures/manifest-fragment.json",
+      "sources/p4-cnn-architectures/torch-2.5.1-LICENSE.txt",
+      "sources/p4-cnn-architectures/torch-2.5.1-batchnorm-excerpt.txt",
+      "sources/p4-cnn-architectures/torch-2.5.1-functional-excerpt.txt",
+      "sources/p4-cnn-architectures/torch-2.5.1-pooling-excerpt.txt",
+      "sources/p4-cnn-architectures/torch-2.5.1-random-excerpt.txt",
+      "sources/p4-lec22/book-pooling.txt",
+      "sources/p4-lec22/manifest-fragment.json",
+      "sources/p4-lec22/pytorch-AvgPool2d.txt",
+      "sources/p4-lec22/pytorch-MaxPool2d.txt",
+      "sources/p4-lec22/video-metadata.json",
+      "sources/p4-lec23/book-lenet.txt",
+      "sources/p4-lec23/manifest-fragment.json",
+      "sources/p4-lec23/original-lenet-review.txt",
+      "sources/p4-lec23/video-metadata.json",
+      "sources/p4-lec24/book-alexnet.txt",
+      "sources/p4-lec24/manifest-fragment.json",
+      "sources/p4-lec24/video-metadata.json",
+      "sources/p4-lec25/book-vgg.txt",
+      "sources/p4-lec25/manifest-fragment.json",
+      "sources/p4-lec25/video-metadata.json",
+      "sources/p4-lec26/book-nin.txt",
+      "sources/p4-lec26/manifest-fragment.json",
+      "sources/p4-lec26/schedule-evidence.txt",
+      "sources/p4-lec26/video-metadata.json",
+      "sources/p4-lec27/book-googlenet.txt",
+      "sources/p4-lec27/manifest-fragment.json",
+      "sources/p4-lec27/schedule-evidence.txt",
+      "sources/p4-lec27/video-metadata.json",
+      "sources/p4-lec28/book-batch-norm.txt",
+      "sources/p4-lec28/manifest-fragment.json",
+      "sources/p4-lec28/official-api-evidence.txt",
+      "sources/p4-lec28/schedule-evidence.txt",
+      "sources/p4-lec28/torch-v2.5.1-LICENSE.txt",
+      "sources/p4-lec28/torch-v2.5.1-batchnorm.txt",
+      "sources/p4-lec28/torch-v2.5.1-functional-bn-excerpt.txt",
+      "sources/p4-lec28/video-metadata.json",
+      "sources/p4-lec29/book-resnet.txt",
+      "sources/p4-lec29/manifest-fragment.json",
+      "sources/p4-lec29/schedule-evidence.txt",
+      "sources/p4-lec29/video-metadata.json",
+      "sources/p4-shared/api-review.json",
+      "sources/p4-shared/architecture-smoke.json",
+      "sources/p4-shared/browser-check.json",
+      "sources/p4-shared/build.log",
+      "sources/p4-shared/content-check.json",
+      "sources/p4-shared/environment.json",
+      "sources/p4-shared/lab-mechanism-smoke.json",
+      "sources/p4-shared/mechanism-smoke.json",
+      "sources/p4-shared/notes-smoke.json",
+      "sources/p4-shared/practice-smoke.json",
+      "sources/p4-shared/runtime-verification.json",
+      "sources/p4-shared/source-check.json"
+    ],
+    "handoffFiles": [
+      "sources/PLAN.txt",
+      "sources/NEXT-PROMPT.txt"
+    ],
+    "manifestFile": "sources/p4-manifest.json",
+    "temporaryScriptsRemoved": true
+  }
+}

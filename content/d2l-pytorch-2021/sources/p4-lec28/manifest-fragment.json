@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "lectureId": "lec28",
+  "batch": "P4",
+  "acquiredAt": "2026-11-14T02:34:29.848484+00:00",
+  "bookCommit": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+  "bookVersionBoundary": "当前中文第二版固定源码，非2021教材快照；不声明在线构建精确等于此提交",
+  "written": [
+    "lectures/lec28/notes.zh.md",
+    "lectures/lec28/assets/batchnorm-state.svg",
+    "sources/p4-lec28/book-batch-norm.txt",
+    "sources/p4-lec28/video-metadata.json",
+    "sources/p4-lec28/schedule-evidence.txt",
+    "sources/p4-lec28/torch-v2.5.1-batchnorm.txt",
+    "sources/p4-lec28/torch-v2.5.1-functional-bn-excerpt.txt",
+    "sources/p4-lec28/torch-v2.5.1-LICENSE.txt",
+    "sources/p4-lec28/official-api-evidence.txt",
+    "sources/p4-lec28/manifest-fragment.json"
+  ],
+  "bookSections": [
+    "7.5"
+  ],
+  "bookSources": [
+    {
+      "snapshot": "sources/p4-lec28/book-batch-norm.txt",
+      "sha256": "71216a267206d9add6491555102ea5f28db7985154ad88e0b3c1d09f04d66611",
+      "bytes": 30745,
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-modern/batch-norm.md",
+      "lines": 616,
+      "readRange": {
+        "linesInclusiveRanges": [
+          [
+            1,
+            285
+          ],
+          [
+            380,
+            616
+          ]
+        ],
+        "focusLines": [
+          [
+            24,
+            94
+          ],
+          [
+            131,
+            160
+          ],
+          [
+            249,
+            278
+          ],
+          [
+            387,
+            397
+          ],
+          [
+            437,
+            444
+          ],
+          [
+            477,
+            511
+          ],
+          [
+            550,
+            600
+          ]
+        ],
+        "coverage": "读取列出范围内正文、PyTorch与共享实现、习题；未读取缺省范围的其他框架代码，未执行教材代码"
+      }
+    }
+  ],
+  "sourceRecords": [
+    {
+      "snapshot": "sources/p4-lec28/book-batch-norm.txt",
+      "sha256": "71216a267206d9add6491555102ea5f28db7985154ad88e0b3c1d09f04d66611",
+      "bytes": 30745,
+      "url": "https://raw.githubusercontent.com/d2l-ai/d2l-zh/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-modern/batch-norm.md",
+      "lines": 616,
+      "readRange": {
+        "linesInclusiveRanges": [
+          [
+            1,
+            285
+          ],
+          [
+            380,
+            616
+          ]
+        ],
+        "focusLines": [
+          [
+            24,
+            94
+          ],
+          [
+            131,
+            160
+          ],
+          [
+            249,
+            278
+          ],
+          [
+            387,
+            397
+          ],
+          [
+            437,
+            444
+          ],
+          [
+            477,
+            511
+          ],
+          [
+            550,
+            600
+          ]
+        ],
+        "coverage": "读取列出范围内正文、PyTorch与共享实现、习题；未读取缺省范围的其他框架代码，未执行教材代码"
+      }
+    },
+    {
+      "snapshot": "sources/p4-lec28/video-metadata.json",
+      "sha256": "ba9e3e88d1347a9f975d10794dc97888ad21dd63e1210f80faca6d93d8f666fb",
+      "bytes": 2497,
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1X44y1r77r",
+      "kind": "filtered_video_metadata_and_all_public_subtitle_results",
+      "readRange": "全部筛选字段/3个分P/3次字幕接口状态；没有字幕正文",
+      "rawPlayerResponseStored": false
+    },
+    {
+      "snapshot": "sources/p4-lec28/schedule-evidence.txt",
+      "sha256": "4b6e586ddaaac7c9455e4458f5ada513e63466b568fd019a19dc242fbc3f4056",
+      "bytes": 1107,
+      "url": "https://courses.d2l.ai/zh-v2/",
+      "kind": "editorial_evidence_record_not_html_snapshot",
+      "readRange": "课程身份、batch-norm对应官方BV/教材/notebook行"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/nn/modules/batchnorm.py",
+      "snapshot": "sources/p4-lec28/torch-v2.5.1-batchnorm.txt",
+      "sha256": "9678d75ab57df83912565b5bb113e8c2a71c41a6bc4cf7e33800ce4be3672559",
+      "bytes": 38384,
+      "lines": 883,
+      "readRange": [
+        [
+          38,
+          85
+        ],
+        [
+          159,
+          206
+        ],
+        [
+          378,
+          455
+        ]
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/nn/functional.py",
+      "snapshot": "sources/p4-lec28/torch-v2.5.1-functional-bn-excerpt.txt",
+      "sha256": "b464cec1b4331d189931ff1f74b014f3aba4492b6f55295bb2904387a77dacf7",
+      "upstreamSha256": "e91cd1c772ef9302727169f89bf8375befd3fc64a8d445df6084958708a95d53",
+      "originalLines": [
+        2762,
+        2824
+      ],
+      "bytes": 1882,
+      "acquisitionFailure": "First urllib attempt SSL UNEXPECTED_EOF; subsequent reader and acquisition succeeded.",
+      "readRange": "保存摘录全文；原始范围见originalLines"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/LICENSE",
+      "snapshot": "sources/p4-lec28/torch-v2.5.1-LICENSE.txt",
+      "sha256": "47a26beb94e3f6b333a3677fc85d546f1fdfd2f0b3686c26d2fb5b10e0134165",
+      "bytes": 3384,
+      "readRange": "全文"
+    },
+    {
+      "snapshot": "sources/p4-lec28/official-api-evidence.txt",
+      "sha256": "64561f16ed66e5b6cebdf259dfb112a7609ffdb702a0941c4ea03cfd6a31d690",
+      "bytes": 2195,
+      "url": "https://docs.pytorch.org/docs/2.15/notes/autograd.html",
+      "kind": "editorial_evidence_record_not_document_snapshot",
+      "readRange": "Locally disabling gradient computation / Grad Modes / No-grad Mode / Evaluation Mode；额外记录stable页续跳与一次SSL失败"
+    }
+  ],
+  "videoMetadataPath": "sources/p4-lec28/video-metadata.json",
+  "videoIdentity": {
+    "bvid": "BV1X44y1r77r",
+    "aid": 973300661,
+    "title": "28 批量归一化【动手学深度学习v2】",
+    "owner": {
+      "mid": 1567748478,
+      "name": "跟李沐学AI"
+    },
+    "publishedAt": "2021-05-30T07:24:42+00:00",
+    "durationSeconds": 2771
+  },
+  "pages": [
+    {
+      "page": 1,
+      "cid": 346236353,
+      "part": "批量归一化",
+      "duration": 1079
+    },
+    {
+      "page": 2,
+      "cid": 346242830,
+      "part": "代码",
+      "duration": 1032
+    },
+    {
+      "page": 3,
+      "cid": 346245495,
+      "part": "QA",
+      "duration": 660
+    }
+  ],
+  "subtitleRequests": [
+    {
+      "page": 1,
+      "cid": 346236353,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1X44y1r77r&cid=346236353",
+      "retrievedAt": "2026-11-14T02:34:29.848517+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 2,
+      "cid": 346242830,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1X44y1r77r&cid=346242830",
+      "retrievedAt": "2026-11-14T02:34:30.004681+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    },
+    {
+      "page": 3,
+      "cid": 346245495,
+      "sourceUrl": "https://api.bilibili.com/x/player/v2?bvid=BV1X44y1r77r&cid=346245495",
+      "retrievedAt": "2026-11-14T02:34:30.135040+00:00",
+      "apiCode": 0,
+      "message": "OK",
+      "needLoginSubtitle": null,
+      "subtitles": [],
+      "status": "empty_public_list"
+    }
+  ],
+  "license": {
+    "copyright": 1,
+    "noReprint": 1,
+    "interpretation": "平台原创/转载标记不是开放转录许可；未取得全文转录再发布授权。"
+  },
+  "authorization": {
+    "publicMetadataAccess": "unauthenticated public API",
+    "transcriptReuse": "not_granted",
+    "mediaDownloaded": false
+  },
+  "textbookLicense": {
+    "repository": "Apache-2.0",
+    "licenseEvidence": "sources/p1-shared/book-LICENSE.txt",
+    "licenseSha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "packageMetadata": "setup.py字段MIT-0，独立记录",
+    "packageEvidence": "sources/p1-shared/book-setup.py.txt",
+    "boundary": "不外推视频、字幕、第三方图或数据；正文自主导读，SVG自绘，不复制教材原图"
+  },
+  "outputs": {
+    "notes": {
+      "path": "lectures/lec28/notes.zh.md",
+      "status": "written_textbook_guide",
+      "videoContentVerified": false,
+      "sha256": "7ed264ee0a89aa6fba36aad16c4c51408739f61bd13615a41d63d29862418c98"
+    },
+    "assets": [
+      {
+        "path": "lectures/lec28/assets/batchnorm-state.svg",
+        "nature": "editorial_original",
+        "source": "教材概念基础上的自拟机制图，非截图或第三方图",
+        "sha256": "4353cb50903209d1711a2b0b2b62dd64f422f21ca763e7291b1574edd8a36c03"
+      }
+    ],
+    "draft": {
+      "status": "blocked_no_reliable_classroom_source",
+      "created": false
+    },
+    "materials": {
+      "status": "not_required",
+      "created": false,
+      "reason": "必要中文教材已在notes定位，无独立中文翻译或材料需求"
+    }
+  },
+  "codeChecks": [
+    {
+      "id": "lec28-code-1-bn-two-modes",
+      "codeFenceOrdinal": 1,
+      "expected": {
+        "batchMean": 4,
+        "forwardBiasedVariance": 5,
+        "unbiasedVariance": "20/3",
+        "runningMean": 0.4,
+        "runningVariance": "47/30",
+        "trainOutputFormula": "[-3,-1,1,3]/sqrt(5+1e-5)",
+        "evalOutputFormula": "([1,3,5,7]-0.4)/sqrt(47/30+1e-5)",
+        "evalRequiresGrad": true,
+        "trainUnderNoGradUpdatesRunning": true
+      },
+      "atol": 1e-06,
+      "scope": "标准nn.BatchNorm2d的variance口径、默认buffer初值、train+no_grad以及eval+grad",
+      "executionStatus": "not_run_by_worker",
+      "notePath": "lectures/lec28/notes.zh.md"
+    }
+  ],
+  "mechanismChecks": [
+    {
+      "id": "bn-statistic-axes",
+      "expected": "NCHW的统计轴(0,2,3)，每通道M=NHW；(4,8,3,3)有8份统计，每份36个值；gamma/beta各8。",
+      "executionStatus": "analytic_expectation_not_run_by_worker"
+    },
+    {
+      "id": "bn-mode-matrix",
+      "expected": {
+        "train_grad": "batch stats, update buffers, autograd if needed",
+        "train_no_grad": "batch stats, update buffers, no graph",
+        "eval_grad": "running stats, no buffer update, autograd if needed",
+        "eval_no_grad": "running stats, no buffer update, no graph"
+      },
+      "conditions": "默认track_running_stats=True；用独立层或恢复同状态避免顺序污染。",
+      "executionStatus": "analytic_expectation_not_run_by_worker"
+    },
+    {
+      "id": "bn-singleton",
+      "expected": {
+        "trainShape1C11": "ValueError, M=1",
+        "trainShape1C22": "valid M=4",
+        "evalDefaultShape1C11": "valid using running statistics",
+        "evalNoTrackingShape1C11": "ValueError, batch statistics still required"
+      },
+      "note": "不通过增大eps或临时切eval掩盖训练错误。",
+      "executionStatus": "analytic_expectation_not_run_by_worker"
+    },
+    {
+      "id": "bn-momentum-and-custom",
+      "expected": {
+        "torchNewWeight": 0.1,
+        "bookOldWeight": 0.9,
+        "standardRunningVarianceAfterOne": "47/30",
+        "bookBiasedRunningVarianceAfterOne": 1.4
+      },
+      "note": "教材is_grad_enabled分支与self.training独立；普通Tensor moving属性不在state_dict，而标准BN注册3个buffers。",
+      "executionStatus": "analytic_expectation_not_run_by_worker"
+    },
+    {
+      "id": "bn-zero-momentum",
+      "expected": "momentum=0不更新running值但train仍使用当前批量；momentum=None按批次累计均值不保证全数据加权精确统计。",
+      "executionStatus": "analytic_expectation_not_run_by_worker"
+    }
+  ],
+  "minimumCpuAcceptance": {
+    "dependency": "独立CPU PyTorch即可；各notes片段只使用torch，不依赖d2l或数据集",
+    "steps": [
+      "独立执行本讲唯一python代码围栏，对照codeChecks，保留实际输出。",
+      "按mechanismChecks核对数字、形状和关键模式；BN须额外验证四种模式和退化输入。",
+      "区分notes片段执行、机制测试、整架构训练；不以一个通过替代其他范围。"
+    ],
+    "notRequired": [
+      "执行原教材整套Notebook",
+      "完整原架构ImageNet训练",
+      "下载媒体或数据集",
+      "CUDA/MPS实测"
+    ]
+  },
+  "workerVerification": {
+    "numericalCodeExecuted": false,
+    "buildLintTestsFormatterRun": false,
+    "browserRun": false,
+    "sourceReading": "已完成上列实际范围审读；新BV各3P元数据及各P一次字幕请求已保存",
+    "mainPending": "数值/代码/SVG解析与浏览器明暗桌面移动验收由主agent统一执行"
+  },
+  "gaps": [
+    "全部公开字幕成功空列表；没有完整合法可用课堂文本，未下载/观看媒体，未核实片内讲授、演示或QA。",
+    "分P真实时长不是片内讲授时间轴；不据教材或分P标题猜测课堂内容。",
+    "公开空列表不证明烧录字幕或其他合法访问条件下字幕不存在；旧字幕不重刷。",
+    "教材当前中文第二版固定提交不是2021快照；notes不代表课堂已看完或整架构训练完成。"
+  ],
+  "scopeBoundary": "仅lectures/lec26–29与对应sources/p4-lec26–29；不改共享清单、course/status/resources；不提交或运行验证。",
+  "sourceAccessFailures": [
+    {
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/nn/functional.py",
+      "attempt": "first urllib acquisition",
+      "error": "SSL UNEXPECTED_EOF_WHILE_READING",
+      "resolution": "subsequent reader and source acquisition succeeded; exact excerpt retained"
+    }
+  ]
+}

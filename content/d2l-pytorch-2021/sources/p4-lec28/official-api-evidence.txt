@@ -1,0 +1,17 @@
+PyTorch supplemental source review — editorial paraphrase, not a transcript or full API snapshot.
+Reviewed on: 2026-11-14
+
+1. https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/nn/modules/batchnorm.py
+Read original lines 38–85, 159–206, 378–455. BatchNorm registers running_mean/running_var/num_batches_tracked as buffers. Forward chooses batch statistics via self.training or absent running buffers, not via autograd mode. BatchNorm2d documentation states biased variance for training forward, unbiased estimate for running variance, new-batch weight momentum=0.1, statistics across N/H/W separately per C.
+
+2. https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/nn/functional.py
+Read _verify_batch_size and batch_norm in full. Guard multiplies N and all spatial sizes and raises ValueError when the product is 1 and batch statistics are required. Saved excerpt retains exact original source text; original range and upstream SHA-256 are recorded in manifest. First urllib retrieval failed with SSL UNEXPECTED_EOF_WHILE_READING; subsequent read and acquisition succeeded. This is not a failed numerical test.
+
+3. https://docs.pytorch.org/docs/stable/notes/autograd.html
+The reader returned a continuation to https://docs.pytorch.org/docs/2.15/notes/autograd.html; followed and read Locally disabling gradient computation, Grad Modes, No-grad Mode, and Evaluation Mode. Module.eval is orthogonal to no-grad/inference mode. Validation should avoid unintentionally updating BatchNorm running statistics. This is a current documentation supplement, not a 2021 lecture source or a v2.5.1 snapshot. This file is an editorial evidence summary; its hash is not the HTML hash.
+
+4. https://docs.pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html
+Reader returned a continuation only; not counted as substantive API reading. Versioned v2.5.1 source docstring above is the substantive API evidence.
+
+5. https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/LICENSE
+Read complete license separately from D2L Apache-2.0 and package MIT-0 field. Retain copyright, redistribution conditions and disclaimer with saved source. No license is inferred for Bilibili media.

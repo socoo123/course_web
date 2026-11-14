@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-14",
+  "status": "passed",
+  "review": "Main read all eight actual stdout records and matched shapes, counts, local NiN [1,5], Inception branch219 parameters, BN mean.4/var47/30 and residual outputs/gradients to independent analytical expectations.",
+  "vggReceptiveFieldAndJump": [
+    [
+      4,
+      2
+    ],
+    [
+      10,
+      4
+    ],
+    [
+      30,
+      8
+    ],
+    [
+      70,
+      16
+    ],
+    [
+      150,
+      32
+    ]
+  ],
+  "AlexNetConv2MAC": 415334400,
+  "VggBlock3Conv2MAC": 1849688064,
+  "fullTextbookNetworkParameters": {
+    "lenet": 61706,
+    "alexnet": 46764746,
+    "vgg": 128806154,
+    "nin": 1992166,
+    "googlenet": 5977530,
+    "resnet": 11178378
+  },
+  "runtimeEvidence": [
+    "environment.json",
+    "notes-smoke.json",
+    "architecture-smoke.json",
+    "mechanism-smoke.json",
+    "lab-mechanism-smoke.json",
+    "practice-smoke.json"
+  ],
+  "temporaryScripts": [
+    {
+      "name": "verify-runtime.py",
+      "sha256": "4bc1cabc0867d44f01f37e2bac0cb1c917c273210c4516e03b950b54772ebdfb",
+      "willBeRemovedBeforeCommit": true
+    },
+    {
+      "name": "verify-architectures.py",
+      "sha256": "51e3407374fb6d7e85c87272ff04fcd566d95d323698a180f67158a14fc6940f",
+      "willBeRemovedBeforeCommit": true
+    }
+  ],
+  "boundary": "CPU only; full textbook forwards separate from LeNet and editorial small-ResNet 257/73 training. LeNet8/73 accuracy near chance; no classification-quality success claim. No full student task suite, CUDA/MPS, old Notebook, original ImageNet/full Fashion training."
+}

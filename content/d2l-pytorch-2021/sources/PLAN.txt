@@ -47,7 +47,7 @@ lab.zh.md说明任务来源、目标、输入输出、约束和可观察验收�
 课内模型先跑通、解释机制，再加工程观测；不把追榜、全量BERT预训练或大规模训练设为入门门槛。
 
 七、现有网站限制（内容范围内处理）
-Lecture.video类型包含bilibili，但src/pages/Lecture.tsx的按钮和引用目前只将youtube渲染为链接。本轮不改src；公共资料完整课表提供可点击B站链接。后续不得把B站地址塞进youtube字段伪装平台。
+讲次页头已支持官方B站外链与核实时长；默认课程笔记，原站在新标签打开。多P在video.label注明全N P合计，duration按真实分P求和。按用户要求不恢复播放器、课程视频标签或转载替代；主agent逐页核对页头并实际点击代表入口。
 Lab.tsx的常用命令固定输出git checkout / make qemu / make grade，仅适用于xv6，不适用本课。公共资料与实验goal必须显式提醒忽略此框，不伪造D2L分支或grade命令。后续如获用户单独授权可做UI修复，本内容任务不改src。
 
 八、每批验收与恢复
@@ -95,3 +95,18 @@ Lab.tsx的常用命令固定输出git checkout / make qemu / make grade，仅适
 - 真实Chromium验收七图、公式、自测、页底来源、缺稿与实验双标签、1440桌面/390移动端；七图暗色与代表浅色可读。修复LEC21横排矩阵与实验正文40字符SHA1溢出，后者移页底滚动表。保留工具选择器诊断：article不存在、隐藏H1文本等待、数字开头ID需属性选择器；一次pptr pageerror来自验收器非法选择器，不是站点应用错误。验证tab已关闭，非部署验收。
 - npm run build一次通过：tsc --noEmit + Vite5.4.21，2952modules，5.59s。证据见p3-manifest与p3-shared的source-check/content-check/browser-check/notes-smoke/mechanism-smoke/practice-smoke/environment/runtime-verification/dataset-acquisition/runtime-freeze/build.log。临时验收脚本移除，不提交数据、权重、CSV或凭据。
 - 下一批LEC22–29与cnn-architectures：A22–25、B26–29、C实验；纳入ResNet以覆盖完整四任务。剩余lec22–73共52讲、9实验，21讲draft仍阻塞。前置模块/卷积笔记与P3证据复用，不重写。主agent提交推送main后交下一提示词，仍只改content。
+
+十二、P4实际结果（2026-11-14）
+- 并行A=P4Lec22to25、B=P4Lec26to29、C=P4CnnLab；主agent独占共享索引，完成数值、内容、浏览器和构建验收及提交推送流程。此前失败的分派没有产出，本次重新完成；不重做已验收LEC1–21或前三实验。
+- 新增8份教材导读、8张自绘SVG、cnn-architectures说明/指导；累计29讲notes、29图、8份实验文档。73讲/12实验/48任务保留，所有CNN家族和实验四任务齐全，无完整学生答案。
+- 新增8BV/24P=20337秒，全部作者mid1567748478、2021发布。公开字幕每P一次均成功空列表；未下载/观看媒体，不造课堂稿或主题时间轴。累计29BV/93P，公共资料196入口=103原课表+93真实P。8讲页头均为官方B站，全3P求和；LEC29实际点击新标签后笔记保留。
+- 固定教材新增6.5–6.6、7.1–7.6；部分讲次/实验仅声明正文及PyTorch精确节选，见各manifest。PyTorch2.5.1源码及独立LICENSE另存；LeNet作者稿仅审读第6–8页。47项来源哈希核对通过。4.9、5.3、7.7及后续不冒称已读。
+- LEC27上传标题含Inception V3，教材7.4的经典GoogLeNet导读不等于该课堂拓展；保留缺口，不凭标题造稿。P4八讲copyright=1/no_reprint=1，均不构成开放转录授权。
+- 主agent执行8段笔记代码，输出与形状/参数/局部解析预期一致；完整教材LeNet、AlexNet、VGG11、NiN、GoogLeNet、ResNet18前向通过。前三大核网络使用224，后两使用96；不删关键层/分支/通道。原Notebook与原论文训练未执行。
+- 数值机制：逐通道仿射层共享/梯度/buffer、卷积形状、负池化padding与ceil、1×1/GAP、Inception拼接、BN双方差/四模式/单值退化、残差奇数形状/投影/激活与梯度边界。前置P3机制复用，不当成学生任务自动完成。
+- 环境复用/tmp/d2l-p2-runtime.Xqsd3N/venv/bin/python，Python3.11.8/torch2.5.1/vision0.20.1/numpy1.26.4/pandas2.2.3，CPU1线程，无d2l/Jupyter。MPS可用只探测，未运行GPU。Fashion官方训练gzip重新核MD5，测试集本批未读。
+- 真实Fashion划分seed2021前5000验证候选/后55000训练候选，取257/73；init2022、shuffle2023，Adam .003、B64尾批1、10轮各50更新。LeNet训练CE2.634785→2.300294、验证CE2.379941且8/73，仍近随机；小ResNet176634参数、四stage8/16/32/64各两块，训练CE2.299596→.313692、验证CE1.212001且46/73。仅小基线，不称全量效果。
+- 评估不改参数/BN buffers/梯度，B32与B64指标一致；内存检查点恢复模型/Adam/BN/torch与shuffle随机态，下一随机数/批次、预测、下一步loss/梯度/模型与优化器一致，模型最大差0。仅权重+空Adam反例参数差约.004869/.005329。无检查点、数据或临时答案脚本随提交发布。
+- Chromium逐讲页头、八图/公式/自测/页底来源、1440桌面/390手机、八图明暗色、实验双标签和缺稿状态通过。修正站内相对Markdown链接、NiN通道间误导箭头、VGG重复表格图与实验卷积公式398px溢出；改图后hash导航命中旧SVG缓存，禁缓存刷新两图后复验。缺稿标签当前显示中文说明而非draft路径，验收器最初等待路径超时后改用实际DOM。无应用运行错误，tab关闭；非部署或全片播放验收。
+- 网站构建结果见p4-shared/build.log与status，完整交付清单见p4-manifest.json。子agent清单保留原始未运行与生成时hash，最终内容hash以主agentcontent-check为准，不强改历史证据。
+- 下一批P5：LEC30–35 + training-performance；A30–32、B33–35、C实验。剩余44讲notes、8实验，29讲draft仍阻塞。LEC30竞赛先核身份与访问规则；多GPU需真实设备，不拿CPU推演冒称硬件实测。仍只改content，统一验收后提交推送再给下一提示词。

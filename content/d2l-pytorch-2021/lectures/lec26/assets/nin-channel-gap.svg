@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 565" role="img" aria-labelledby="title desc">
+<title id="title">逐位置通道混合与全局平均池化</title>
+<desc id="desc">输入两通道分别为1、2、3、4和4、3、2、1。共享点卷积的两行权重为1负1和11，经ReLU得到0、0、1、3及5、5、5、5。各通道空间平均得到1和5。</desc>
+<style>:root { color: #18212b; } @media (prefers-color-scheme: dark) { :root { filter: invert(1); } }</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+<g fill="currentColor" font-family="system-ui, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif" font-size="22">
+<text x="24" y="38" font-size="27" font-weight="700">NiN：共享通道变换，再平均空间</text>
+<text x="30" y="88">输入：N=1，C=2，H=W=2</text>
+<g fill="none" stroke="currentColor" stroke-width="2">
+<rect x="30" y="112" width="290" height="105" rx="10"/>
+<rect x="390" y="112" width="300" height="105" rx="10"/>
+<path d="M330 164 H378" marker-end="url(#arrow)"/>
+<rect x="30" y="270" width="290" height="105" rx="10"/>
+<rect x="390" y="270" width="300" height="105" rx="10"/>
+<path d="M540 220 V235 H175 V255" marker-end="url(#arrow)"/>
+<path d="M540 235 V255" marker-end="url(#arrow)"/>
+<path d="M175 382 V400 H360 V425" marker-end="url(#arrow)"/>
+<path d="M540 382 V400 H360"/>
+</g>
+<text x="48" y="148">位置左上：[1, 4]</text><text x="48" y="185">位置右下：[4, 1]</text>
+<text x="405" y="148">同一组W：两行</text><text x="405" y="185">[1, −1] 与 [1, 1]</text>
+<text x="48" y="307">ReLU后通道0</text><text x="48" y="345">[0, 0; 1, 3]</text>
+<text x="405" y="307">ReLU后通道1</text><text x="405" y="345">[5, 5; 5, 5]</text>
+<text x="30" y="451">GAP：每通道求和 ÷ 4</text>
+<text x="30" y="492" font-size="27" font-weight="700">输出 [1, 5]，不是 [4, 20]</text>
+<text x="30" y="535" font-size="20">1×1不混合相邻位置；GAP不平均通道轴</text>
+</g>
+</svg>

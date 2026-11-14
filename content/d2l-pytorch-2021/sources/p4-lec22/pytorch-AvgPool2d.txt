@@ -1,0 +1,145 @@
+[PyTorch](https://pytorch.org/)
+
+- Learn [Get Started Run PyTorch locally or get started quickly with one of the supported cloud platforms](https://pytorch.org/get-started) [Tutorials Whats new in PyTorch tutorials](https://pytorch.org/tutorials) [Learn the Basics Familiarize yourself with PyTorch concepts and modules](https://pytorch.org/tutorials/beginner/basics/intro.html) [PyTorch Recipes Bite-size, ready-to-deploy PyTorch code examples](https://pytorch.org/tutorials/recipes/recipes_index.html) [Intro to PyTorch - YouTube Series Master PyTorch basics with our engaging YouTube tutorial series](https://pytorch.org/tutorials/beginner/introyt.html)
+- Ecosystem [Tools Learn about the tools and frameworks in the PyTorch Ecosystem](https://pytorch.org/ecosystem) [Community Join the PyTorch developer community to contribute, learn, and get your questions answered](https://pytorch.org/#community-module) [Forums A place to discuss PyTorch code, issues, install, research](https://discuss.pytorch.org/) [Developer Resources Find resources and get questions answered](https://pytorch.org/resources) [Contributor Awards - 2023 Award winners announced at this year's PyTorch Conference](https://pytorch.org/ecosystem/contributor-awards-2023)
+- Edge [About PyTorch Edge Build innovative and privacy-aware AI experiences for edge devices](https://pytorch.org/edge) [ExecuTorch End-to-end solution for enabling on-device inference capabilities across mobile and edge devices](https://pytorch.org/executorch-overview)
+- Docs [PyTorch Explore the documentation for comprehensive guidance on how to use PyTorch](https://pytorch.org/docs/stable/index.html) [PyTorch Domains Read the PyTorch Domains documentation to learn more about domain-specific libraries](https://pytorch.org/pytorch-domains)
+- Blogs & News [PyTorch Blog Catch up on the latest technical news and happenings](https://pytorch.org/blog/) [Community Blog Stories from the PyTorch ecosystem](https://pytorch.org/community-blog) [Videos Learn about the latest PyTorch tutorials, new, and more](https://pytorch.org/videos) [Community Stories Learn how our community solves real, everyday machine learning problems with PyTorch](https://pytorch.org/community-stories) [Events Find events, webinars, and podcasts](https://pytorch.org/events)
+- About [PyTorch Foundation Learn more about the PyTorch Foundation](https://pytorch.org/foundation) [Governing Board](https://pytorch.org/governing-board)
+- [Become a Member](https://pytorch.org/join)
+-
+
+Table of Contents
+
+- [Docs](https://docs.pytorch.org/docs/2.5/index.html) >
+- [torch.nn](https://docs.pytorch.org/docs/2.5/nn.html) >
+- AvgPool2d
+- [![](https://docs.pytorch.org/docs/2.5/_static/images/view-page-source-icon.svg)](https://docs.pytorch.org/docs/2.5/_sources/generated/torch.nn.AvgPool2d.rst.txt)
+
+Shortcuts
+
+# AvgPool2d ¶
+
+<dl><dt>*class*torch.nn.AvgPool2d(*kernel_size*, *stride=None*, *padding=0*, *ceil_mode=False*, *count_include_pad=True*, *divisor_override=None*)<a href="https://docs.pytorch.org/docs/2.5/_modules/torch/nn/modules/pooling.html#AvgPool2d">&#91;source&#93;</a><a href="#torch.nn.AvgPool2d" title="Permalink to this definition">¶</a></dt>
+<dd>
+
+Applies a 2D average pooling over an input signal composed of several input planes.
+
+In the simplest case, the output value of the layer with input size (N,C,H,W)(N, C, H, W)(N,C,H,W), output (N,C,Hout,Wout)(N, C, H\_{out}, W\_{out})(N,C,Hout​,Wout​) and <code>kernel_size</code> (kH,kW)(kH, kW)(kH,kW) can be precisely described as:
+
+out(Ni,Cj,h,w)=1kH∗kW∑m=0kH−1∑n=0kW−1input(Ni,Cj,stride\[0]×h+m,stride\[1]×w+n)out(N\_i, C\_j, h, w) = \\frac{1}{kH \* kW} \\sum\_{m=0}^{kH-1} \\sum\_{n=0}^{kW-1} input(N\_i, C\_j, stride\[0] \\times h + m, stride\[1] \\times w + n)out(Ni​,Cj​,h,w)=kH∗kW1​m=0∑kH−1​n=0∑kW−1​input(Ni​,Cj​,stride\[0]×h+m,stride\[1]×w+n)
+
+If <code>padding</code> is non-zero, then the input is implicitly zero-padded on both sides for <code>padding</code> number of points.
+
+Note
+
+When ceil\_mode=True, sliding windows are allowed to go off-bounds if they start within the left padding or the input. Sliding windows that would start in the right padded region are ignored.
+
+The parameters <code>kernel_size</code>, <code>stride</code>, <code>padding</code> can either be:
+
+> - a single <code>int</code> – in which case the same value is used for the height and width dimension
+> - a <code>tuple</code> of two ints – in which case, the first *int* is used for the height dimension, and the second *int* for the width dimension
+
+<dl><dt>Parameters</dt>
+<dd>
+
+- **kernel\_size** (<a href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.13)">*Union*</a>*\[*<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">*int*</a>*,* <a href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.13)">*Tuple*</a>*\[*<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">*int*</a>*,* <a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">*int*</a>*]**]*) – the size of the window
+- **stride** (<a href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.13)">*Union*</a>*\[*<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">*int*</a>*,* <a href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.13)">*Tuple*</a>*\[*<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">*int*</a>*,* <a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">*int*</a>*]**]*) – the stride of the window. Default value is <code>kernel_size</code>
+- **padding** (<a href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.13)">*Union*</a>*\[*<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">*int*</a>*,* <a href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.13)">*Tuple*</a>*\[*<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">*int*</a>*,* <a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">*int*</a>*]**]*) – implicit zero padding to be added on both sides
+- **ceil\_mode** (<a href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">*bool*</a>) – when True, will use *ceil* instead of *floor* to compute the output shape
+- **count\_include\_pad** (<a href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">*bool*</a>) – when True, will include the zero-padding in the averaging calculation
+- **divisor\_override** (<a href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)">*Optional*</a>*\[*<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">*int*</a>*]*) – if specified, it will be used as divisor, otherwise size of the pooling region will be used.
+
+</dd></dl><dl><dt>Shape:</dt>
+<dd>
+
+- Input: (N,C,Hin,Win)(N, C, H\_{in}, W\_{in})(N,C,Hin​,Win​) or (C,Hin,Win)(C, H\_{in}, W\_{in})(C,Hin​,Win​).
+- Output: (N,C,Hout,Wout)(N, C, H\_{out}, W\_{out})(N,C,Hout​,Wout​) or (C,Hout,Wout)(C, H\_{out}, W\_{out})(C,Hout​,Wout​), whereHout=⌊Hin+2×padding\[0]−kernel\_size\[0]stride\[0]+1⌋H\_{out} = \\left\\lfloor\\frac{H\_{in} + 2 \\times \\text{padding}\[0] - \\text{kernel\\\_size}\[0]}{\\text{stride}\[0]} + 1\\right\\rfloor Hout​=⌊stride\[0]Hin​+2×padding\[0]−kernel\_size\[0]​+1⌋Wout=⌊Win+2×padding\[1]−kernel\_size\[1]stride\[1]+1⌋W\_{out} = \\left\\lfloor\\frac{W\_{in} + 2 \\times \\text{padding}\[1] - \\text{kernel\\\_size}\[1]}{\\text{stride}\[1]} + 1\\right\\rfloor Wout​=⌊stride\[1]Win​+2×padding\[1]−kernel\_size\[1]​+1⌋
+
+  Per the note above, if <code>ceil_mode</code> is True and (Hout−1)×stride\[0]≥Hin+padding\[0](H\_{out} - 1)\\times \\text{stride}\[0]\\geq H\_{in} + \\text{padding}\[0](Hout​−1)×stride\[0]≥Hin​+padding\[0], we skip the last window as it would start in the bottom padded region, resulting in HoutH\_{out}Hout​ being reduced by one.
+
+  The same applies for WoutW\_{out}Wout​.
+
+</dd></dl>
+
+Examples:
+
+```
+>>> # pool of square window of size=3, stride=2
+>>> m = nn.AvgPool2d(3, stride=2)
+>>> # pool of non-square window
+>>> m = nn.AvgPool2d((3, 2), stride=(2, 1))
+>>> input = torch.randn(20, 16, 50, 32)
+>>> output = m(input)
+
+```
+
+</dd></dl>
+
+- AvgPool2d
+  - [`AvgPool2d`](#torch.nn.AvgPool2d)
+
+![](https://www.googleadservices.com/pagead/conversion/795629140/?label=txkmCPmdtosBENSssfsC&guid=ON&script=0)
+
+## Docs
+
+Access comprehensive developer documentation for PyTorch
+
+[View Docs](https://pytorch.org/docs/stable/index.html)
+
+## Tutorials
+
+Get in-depth tutorials for beginners and advanced developers
+
+[View Tutorials](https://pytorch.org/tutorials)
+
+## Resources
+
+Find development resources and get your questions answered
+
+[View Resources](https://pytorch.org/resources)
+
+To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: [Cookies Policy](https://www.facebook.com/policies/cookies/).
+
+![](https://docs.pytorch.org/docs/2.5/_static/images/pytorch-x.svg)
+
+[PyTorch](https://pytorch.org/)
+
+- Learn
+
+- [Get Started](https://pytorch.org/get-started)
+- [Tutorials](https://pytorch.org/tutorials)
+- [Learn the Basics](https://pytorch.org/tutorials/beginner/basics/intro.html)
+- [PyTorch Recipes](https://pytorch.org/tutorials/recipes/recipes_index.html)
+- [Introduction to PyTorch - YouTube Series](https://pytorch.org/tutorials/beginner/introyt.html)
+
+- Ecosystem
+
+- [Tools](https://pytorch.org/ecosystem)
+- [Community](https://pytorch.org/#community-module)
+- [Forums](https://discuss.pytorch.org/)
+- [Developer Resources](https://pytorch.org/resources)
+- [Contributor Awards - 2023](https://pytorch.org/ecosystem/contributor-awards-2023)
+
+- Edge
+
+- [About PyTorch Edge](https://pytorch.org/edge)
+- [ExecuTorch](https://pytorch.org/executorch-overview)
+
+- Docs
+
+- [PyTorch](https://pytorch.org/docs/stable/index.html)
+- [PyTorch Domains](https://pytorch.org/pytorch-domains)
+
+- Blog & News
+
+- [PyTorch Blog](https://pytorch.org/blog/)
+- [Community Blog](https://pytorch.org/community-blog)
+- [Videos](https://pytorch.org/videos)
+- [Community Stories](https://pytorch.org/community-stories)
+- [Events](https://pytorch.org/events)
+
+- About
+
+- [PyTorch Foundation](https://pytorch.org/foundation)
+- [Governing Board](https://pytorch.org/governing-board)
