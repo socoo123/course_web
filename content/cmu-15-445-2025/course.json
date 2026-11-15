@@ -1,0 +1,629 @@
+{
+  "id": "cmu-15-445-2025",
+  "year": 2025,
+  "instructors": [
+    "Andy Pavlo"
+  ],
+  "versions": [
+    {
+      "label": "课程 / 视频",
+      "value": "CMU 15-445/645 Fall 2025"
+    },
+    {
+      "label": "教材",
+      "value": "Database System Concepts · 第七版（2019）"
+    },
+    {
+      "label": "BusTub",
+      "value": "v20251119-2025fall · d49b823f829a"
+    }
+  ],
+  "intro": "沿一条 SQL 从关系模型、存储页面和缓冲池走到索引、查询执行与优化，再追踪事务并发、日志恢复及分布式数据库。主线为 Andy Pavlo 的 Fall 2025，配合固定版本 BusTub 的五个 C++ 项目；先建立可解释的不变量，再用小例子与实现检验。",
+  "links": [
+    {
+      "label": "2025 官方课表",
+      "url": "https://15445.courses.cs.cmu.edu/fall2025/schedule.html"
+    },
+    {
+      "label": "官方项目与作业",
+      "url": "https://15445.courses.cs.cmu.edu/fall2025/assignments.html"
+    },
+    {
+      "label": "固定 BusTub",
+      "url": "https://github.com/cmu-db/bustub/tree/v20251119-2025fall"
+    }
+  ],
+  "lectures": [
+    {
+      "id": "lec01",
+      "num": "1",
+      "title": "关系模型与关系代数",
+      "titleEn": "Relational Model & Algebra",
+      "video": {
+        "label": "Fall 2025 L1",
+        "youtube": "https://www.youtube.com/watch?v=7NPIENPr-zk",
+        "duration": "1:14:49",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapters 1-2"
+      ],
+      "lab": "project0",
+      "note": "独立教材阅读定位见公共资料；课堂已讲的 slides/notes 不重复制作课程资料。"
+    },
+    {
+      "id": "lec02",
+      "num": "2",
+      "title": "现代 SQL",
+      "titleEn": "Modern SQL",
+      "video": {
+        "label": "Fall 2025 L2",
+        "youtube": "https://www.youtube.com/watch?v=O5gU9NQjCAs",
+        "duration": "1:17:41",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapters 3-5"
+      ],
+      "lab": "project0"
+    },
+    {
+      "id": "lec03",
+      "num": "3",
+      "title": "数据库存储（一）",
+      "titleEn": "Database Storage I",
+      "video": {
+        "label": "Fall 2025 L3",
+        "youtube": "https://www.youtube.com/watch?v=PRLXdIMJhOg",
+        "duration": "1:17:02",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 12.1-12.4, 13.2-13.3"
+      ],
+      "lab": "project0",
+      "note": "官方课表标注 No In-Class Lecture；保留课表指定的 Fall 2025 录像，不将其描述为当日现场授课。"
+    },
+    {
+      "id": "lec04",
+      "num": "4",
+      "title": "内存管理与缓冲池",
+      "titleEn": "Memory Management",
+      "video": {
+        "label": "Fall 2025 L4",
+        "youtube": "https://www.youtube.com/watch?v=8-2yv4z0VZc",
+        "duration": "1:20:10",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 13.2-13.5"
+      ],
+      "lab": "project1"
+    },
+    {
+      "id": "lec05",
+      "num": "5",
+      "title": "数据库存储（二）",
+      "titleEn": "Database Storage II",
+      "video": {
+        "label": "Fall 2025 L5",
+        "youtube": "https://www.youtube.com/watch?v=2_sTdS4h-bY",
+        "duration": "1:19:18",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 14.8.1, 24.2"
+      ],
+      "lab": "project1"
+    },
+    {
+      "id": "lec06",
+      "num": "6",
+      "title": "存储模型与压缩",
+      "titleEn": "Storage Models & Compression",
+      "video": {
+        "label": "Fall 2025 L6",
+        "youtube": "https://www.youtube.com/watch?v=yWnToWrskXE",
+        "duration": "1:21:20",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 11.2, 13.6"
+      ],
+      "lab": "project1"
+    },
+    {
+      "id": "lec07",
+      "num": "7",
+      "title": "哈希表",
+      "titleEn": "Hash Tables",
+      "video": {
+        "label": "Fall 2025 L7",
+        "youtube": "https://www.youtube.com/watch?v=nuNW8IfgPNU",
+        "duration": "1:20:30",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 14.5, 24.5"
+      ],
+      "lab": "project2"
+    },
+    {
+      "id": "lec08",
+      "num": "8",
+      "title": "索引与过滤器（一）",
+      "titleEn": "Indexes & Filters I",
+      "video": {
+        "label": "Fall 2025 L8",
+        "youtube": "https://www.youtube.com/watch?v=u7ii_Lvm9rM",
+        "duration": "1:24:42",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 14.1-14.4"
+      ],
+      "lab": "project2"
+    },
+    {
+      "id": "lec09",
+      "num": "9",
+      "title": "索引与过滤器（二）",
+      "titleEn": "Indexes & Filters II",
+      "video": {
+        "label": "Fall 2025 L9",
+        "youtube": "https://www.youtube.com/watch?v=PjST2n7abAY",
+        "duration": "1:23:29",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 14.1-14.4, 24.1"
+      ],
+      "lab": "project2"
+    },
+    {
+      "id": "lec10",
+      "num": "10",
+      "title": "索引并发控制",
+      "titleEn": "Index Concurrency Control",
+      "video": {
+        "label": "Fall 2025 L10",
+        "youtube": "https://www.youtube.com/watch?v=YgOvfXl6pss",
+        "duration": "1:22:18",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 18.10.2"
+      ],
+      "lab": "project2"
+    },
+    {
+      "id": "lec11",
+      "num": "11",
+      "title": "排序与聚合算法",
+      "titleEn": "Sorting & Aggregations Algorithms",
+      "video": {
+        "label": "Fall 2025 L11",
+        "youtube": "https://www.youtube.com/watch?v=LzyKTpeIgts",
+        "duration": "1:20:08",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 15.4-15.5"
+      ],
+      "lab": "project2"
+    },
+    {
+      "id": "lec12",
+      "num": "12",
+      "title": "连接算法",
+      "titleEn": "Joins Algorithms",
+      "video": {
+        "label": "Fall 2025 L12",
+        "youtube": "https://www.youtube.com/watch?v=YIdIaPopfpk",
+        "duration": "1:19:13",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 15.4-15.6"
+      ],
+      "lab": "project2"
+    },
+    {
+      "id": "lec13",
+      "num": "13",
+      "title": "查询执行（一）",
+      "titleEn": "Query Execution I",
+      "video": {
+        "label": "Fall 2025 L13",
+        "youtube": "https://www.youtube.com/watch?v=E-UUd6cB57w",
+        "duration": "1:20:18",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 15.1-15.3, 15.7"
+      ],
+      "lab": "project3"
+    },
+    {
+      "id": "lec14",
+      "num": "14",
+      "title": "查询执行（二）",
+      "titleEn": "Query Execution II",
+      "video": {
+        "label": "Fall 2025 L14",
+        "youtube": "https://www.youtube.com/watch?v=Kzf1hGjtZOU",
+        "duration": "1:19:13",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 22"
+      ],
+      "lab": "project3"
+    },
+    {
+      "id": "lec15",
+      "num": "15",
+      "title": "查询规划与优化（一）",
+      "titleEn": "Query Planning & Optimization I",
+      "video": {
+        "label": "Fall 2025 L15",
+        "youtube": "https://www.youtube.com/watch?v=b53huOGcsZ8",
+        "duration": "1:19:39",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 16"
+      ],
+      "lab": "project3"
+    },
+    {
+      "id": "lec16",
+      "num": "16",
+      "title": "查询规划与优化（二）",
+      "titleEn": "Query Planning & Optimization II",
+      "video": {
+        "label": "Fall 2025 L16",
+        "youtube": "https://www.youtube.com/watch?v=azTHRpzl10o",
+        "duration": "1:21:17",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 16"
+      ],
+      "lab": "project3"
+    },
+    {
+      "id": "lec17",
+      "num": "17",
+      "title": "并发控制理论",
+      "titleEn": "Concurrency Control Theory",
+      "video": {
+        "label": "Fall 2025 L17",
+        "youtube": "https://www.youtube.com/watch?v=tMFAgvDViAI",
+        "duration": "1:20:45",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 18"
+      ],
+      "lab": "project4"
+    },
+    {
+      "id": "lec18",
+      "num": "18",
+      "title": "两阶段锁并发控制",
+      "titleEn": "Two-Phase Locking Concurrency Control",
+      "video": {
+        "label": "Fall 2025 L18",
+        "youtube": "https://www.youtube.com/watch?v=drStlhNbfHI",
+        "duration": "1:23:04",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 18.1-18.3, 18.9"
+      ],
+      "lab": "project4"
+    },
+    {
+      "id": "lec19",
+      "num": "19",
+      "title": "时间戳排序并发控制",
+      "titleEn": "Timestamp Ordering Concurrency Control",
+      "video": {
+        "label": "Fall 2025 L19",
+        "youtube": "https://www.youtube.com/watch?v=risHwKeWbBM",
+        "duration": "1:24:42",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 18.5-18.6"
+      ],
+      "lab": "project4"
+    },
+    {
+      "id": "lec20",
+      "num": "20",
+      "title": "多版本并发控制",
+      "titleEn": "Multi-Version Concurrency Control",
+      "video": {
+        "label": "Fall 2025 L20",
+        "youtube": "https://www.youtube.com/watch?v=tUFha9-DuSk",
+        "duration": "1:23:20",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 18.7-18.8"
+      ],
+      "lab": "project4"
+    },
+    {
+      "id": "lec21",
+      "num": "21",
+      "title": "数据库日志",
+      "titleEn": "Database Logging",
+      "video": {
+        "label": "Fall 2025 L21",
+        "youtube": "https://www.youtube.com/watch?v=CedEy54pe3g",
+        "duration": "1:21:49",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 19.1-19.8"
+      ]
+    },
+    {
+      "id": "lec22",
+      "num": "22",
+      "title": "数据库恢复",
+      "titleEn": "Database Recovery",
+      "video": {
+        "label": "Fall 2025 L22",
+        "youtube": "https://www.youtube.com/watch?v=X2jc4qalNy0",
+        "duration": "1:17:54",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 19.1-19.9"
+      ]
+    },
+    {
+      "id": "lec23",
+      "num": "23",
+      "title": "分布式数据库系统（一）",
+      "titleEn": "Distributed Database Systems I",
+      "video": {
+        "label": "Fall 2025 L23",
+        "youtube": "https://www.youtube.com/watch?v=IFLQBWY6dlE",
+        "duration": "1:25:08",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 20.4-20.5, 21, 23.1-23.4"
+      ]
+    },
+    {
+      "id": "lec24",
+      "num": "24",
+      "title": "分布式数据库系统（二）",
+      "titleEn": "Distributed Database Systems II",
+      "video": {
+        "label": "Fall 2025 L24",
+        "youtube": "https://www.youtube.com/watch?v=pQh5fka3FC0",
+        "duration": "1:19:05",
+        "language": "en"
+      },
+      "core": true,
+      "readings": [
+        "Database System Concepts 第七版 · Chapter 20.7, 22.9"
+      ]
+    },
+    {
+      "id": "lec25",
+      "num": "25",
+      "title": "期末回顾与系统专题",
+      "titleEn": "Final Review + Systems Potpourri",
+      "video": {
+        "label": "Fall 2025 L25",
+        "youtube": "https://www.youtube.com/watch?v=qiVUf9X6ItM",
+        "duration": "1:25:43",
+        "language": "en"
+      },
+      "core": true,
+      "note": "官方课表未提供 Notes 链接；录像标题列 Databricks、Yellowbrick、ClickHouse 与 RelationalAI，不补造官方 Notes。"
+    }
+  ],
+  "labs": [
+    {
+      "id": "project0",
+      "num": 0,
+      "title": "C++ 入门：Count–Min Sketch",
+      "titleEn": "C++ Primer — Count–Min Sketch",
+      "stars": 2,
+      "hours": "按基础安排（未估时）",
+      "branch": "v20251119-2025fall",
+      "url": "https://15445.courses.cs.cmu.edu/fall2025/project0/",
+      "goal": "练习模板、移动语义、并发插入与近似频率统计；Merge 以固定原地接口为准。",
+      "tasks": [
+        {
+          "id": "task-1",
+          "title": "Count–Min Sketch"
+        }
+      ]
+    },
+    {
+      "id": "project1",
+      "num": 1,
+      "title": "缓冲池：ARC、调度与页守卫",
+      "titleEn": "Buffer Pool Manager — ARC、Disk Scheduler 与 Page Guards",
+      "stars": 4,
+      "hours": "按基础安排（未估时）",
+      "branch": "v20251119-2025fall",
+      "url": "https://15445.courses.cs.cmu.edu/fall2025/project1/",
+      "goal": "管理页面生命周期、异步 I/O 与 move-only 页守卫，维护 pin、dirty 与替换状态。",
+      "tasks": [
+        {
+          "id": "task-1",
+          "title": "ARC Replacement Policy 变体"
+        },
+        {
+          "id": "task-2",
+          "title": "Disk Scheduler"
+        },
+        {
+          "id": "task-3",
+          "title": "Buffer Pool Manager 与 Read/Write Page Guards"
+        }
+      ]
+    },
+    {
+      "id": "project2",
+      "num": 2,
+      "title": "数据库索引：带 tombstone 的 B+Tree",
+      "titleEn": "B+Tree — Tombstone Buffer 与 Optimistic Latch Crabbing",
+      "stars": 4,
+      "hours": "按基础安排（未估时）",
+      "branch": "v20251119-2025fall",
+      "url": "https://15445.courses.cs.cmu.edu/fall2025/project2/",
+      "goal": "实现唯一键 B+Tree、删除缓冲、有序迭代与 optimistic latch crabbing。",
+      "tasks": [
+        {
+          "id": "task-1",
+          "title": "B+Tree Pages"
+        },
+        {
+          "id": "task-2",
+          "title": "Insertion, Deletion, Point Search"
+        },
+        {
+          "id": "task-3",
+          "title": "Index Iterator"
+        },
+        {
+          "id": "task-4",
+          "title": "Concurrency Control"
+        }
+      ]
+    },
+    {
+      "id": "project3",
+      "num": 3,
+      "title": "查询执行：批量接口与外部算子",
+      "titleEn": "Query Execution — Batch Next 与外部算子",
+      "stars": 4,
+      "hours": "按基础安排（未估时）",
+      "branch": "v20251119-2025fall",
+      "url": "https://15445.courses.cs.cmu.edu/fall2025/project3/",
+      "goal": "沿批量 Next 接口实现访问、聚合、连接、Grace Hash Join、外部排序、Limit 与窗口函数。",
+      "tasks": [
+        {
+          "id": "task-1",
+          "title": "Access Method Executors"
+        },
+        {
+          "id": "task-2",
+          "title": "Aggregation & Join Executors"
+        },
+        {
+          "id": "task-3",
+          "title": "HashJoin Executor and Optimization"
+        },
+        {
+          "id": "task-4",
+          "title": "External Merge Sort + Limit + Window Functions"
+        }
+      ]
+    },
+    {
+      "id": "project4",
+      "num": 4,
+      "title": "并发控制：MVOCC",
+      "titleEn": "Concurrency Control — MVOCC",
+      "stars": 5,
+      "hours": "按基础安排（未估时）",
+      "branch": "v20251119-2025fall",
+      "url": "https://15445.courses.cs.cmu.edu/fall2025/project4/",
+      "goal": "实现版本可见性、undo、Commit、GC、Abort、主键更新和可串行化验证；不可止步于快照隔离。",
+      "tasks": [
+        {
+          "id": "task-1-1",
+          "title": "Timestamp Allocation"
+        },
+        {
+          "id": "task-1-2",
+          "title": "Watermark"
+        },
+        {
+          "id": "task-2-1",
+          "title": "Tuple Reconstruction"
+        },
+        {
+          "id": "task-2-2",
+          "title": "Sequential Scan / Tuple Retrieval"
+        },
+        {
+          "id": "task-3-1",
+          "title": "Insert Executor"
+        },
+        {
+          "id": "task-3-2",
+          "title": "Commit"
+        },
+        {
+          "id": "task-3-3",
+          "title": "Generate Undo Log"
+        },
+        {
+          "id": "task-3-4",
+          "title": "Update & Delete Executors"
+        },
+        {
+          "id": "task-3-5",
+          "title": "Stop-the-world Garbage Collection"
+        },
+        {
+          "id": "task-3-6",
+          "title": "Abort"
+        },
+        {
+          "id": "task-4-1",
+          "title": "Primary Key Index Insert"
+        },
+        {
+          "id": "task-4-2",
+          "title": "Index Scan, Delete & Update"
+        },
+        {
+          "id": "task-4-3",
+          "title": "Primary Key Updates"
+        },
+        {
+          "id": "task-4-4",
+          "title": "Serializable Verification"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,439 @@
+{
+  "courseId": "cmu-15-445-2025",
+  "updatedOn": "2026-11-15",
+  "phase": "P0_accepted_pending_push",
+  "planConfirmed": true,
+  "versions": {
+    "course": "CMU 15-445/645 Fall 2025",
+    "instructor": "Andy Pavlo",
+    "textbook": "Database System Concepts, 7th edition (2019)",
+    "bustubTag": "v20251119-2025fall",
+    "bustubCommit": "d49b823f829a4bf311a2c80b239ab5a9864c9c41"
+  },
+  "contract": {
+    "contentOnly": true,
+    "lectureIds": "lec01–lec25",
+    "labIds": [
+      "project0",
+      "project1",
+      "project2",
+      "project3",
+      "project4"
+    ],
+    "batchNumbersAreNotProjectNumbers": true,
+    "stopAfterEachBatch": true,
+    "studentSolutionsPublished": false,
+    "sourcesIgnored": true,
+    "sourceManifest": "source-manifest.json"
+  },
+  "batches": {
+    "P0": {
+      "status": "accepted_with_documented_source_limits_pending_push",
+      "scope": "准备与样章：全课来源/版本清单、公共资料、导航骨架、L1、C++/BusTub 准备"
+    },
+    "P1": {
+      "status": "not_started",
+      "scope": "L2–3；HW1 SQL；官方 Project 0 Count–Min Sketch 指导"
+    },
+    "P2": {
+      "status": "not_started",
+      "scope": "L4–6；HW2；官方 Project 1 ARC / Disk Scheduler / Page Guards"
+    },
+    "P3": {
+      "status": "not_started",
+      "scope": "L7–9；HW3；哈希、索引与过滤器"
+    },
+    "P4": {
+      "status": "not_started",
+      "scope": "L10–12；官方 Project 2 tombstone B+Tree；期中自测"
+    },
+    "P5": {
+      "status": "not_started",
+      "scope": "L13–14；执行器、流水线、并行执行"
+    },
+    "P6": {
+      "status": "not_started",
+      "scope": "L15–16；HW4；官方 Project 3 批量执行与外部算子完整指导"
+    },
+    "P7": {
+      "status": "not_started",
+      "scope": "L17–18；事务交错、可串行化、两阶段锁"
+    },
+    "P8": {
+      "status": "not_started",
+      "scope": "L19–20；HW5；官方 Project 4 MVOCC、Abort、GC、主键更新、Serializable"
+    },
+    "P9": {
+      "status": "not_started",
+      "scope": "L21–22；HW6 恢复部分；WAL / ARIES"
+    },
+    "P10": {
+      "status": "not_started",
+      "scope": "L23–25；HW6 分布式部分；对接 6.824 / CS168"
+    },
+    "P11": {
+      "status": "not_started",
+      "scope": "综合复盘、自测与来源缺口汇总"
+    }
+  },
+  "content": {
+    "resources": {
+      "status": "complete",
+      "path": "resources.zh.md"
+    },
+    "lectures": {
+      "lec01": {
+        "notes": {
+          "status": "complete",
+          "path": "lectures/lec01/notes.zh.md"
+        },
+        "draft": {
+          "status": "complete_caption_based_paragraph_translation_with_explicit_gaps",
+          "path": "lectures/lec01/draft.zh.md",
+          "fullSequentialCaptionRead": true,
+          "captionCues": 2019,
+          "timeBlocks": 43,
+          "wholeAudioVideoVerified": false,
+          "verifiedFrames": ["approximately 46:51"],
+          "coverage": {"unionMs": 4394555, "interiorGapCount": 46, "interiorGapMs": 92425, "unknownHeadMs": 100, "unknownTailMs": 1920},
+          "acceptanceBoundary": "所有可辨认实质字幕顺序逐段整理，含实例与问答；不是逐字听译。模糊歌词、人名、金额和未收录发言不补造；未核验音轨和字幕空隙。"
+        },
+        "materials": {
+          "status": "not_applicable_no_independent_reading",
+          "reason": "教材只在公共资料提供章节定位与原创提问；课堂已讲的 slides/notes 不重复翻译。"
+        }
+      },
+      "lec02": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec03": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec04": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec05": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec06": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec07": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec08": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec09": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec10": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec11": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec12": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec13": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec14": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec15": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec16": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec17": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec18": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec19": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec20": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec21": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec22": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec23": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec24": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      },
+      "lec25": {
+        "notes": {
+          "status": "not_started"
+        },
+        "draft": {
+          "status": "not_started"
+        },
+        "materials": {
+          "status": "not_started"
+        }
+      }
+    },
+    "labs": {
+      "project0": {
+        "metadata": "complete",
+        "statement": "not_started",
+        "guide": "not_started"
+      },
+      "project1": {
+        "metadata": "complete",
+        "statement": "not_started",
+        "guide": "not_started"
+      },
+      "project2": {
+        "metadata": "complete",
+        "statement": "not_started",
+        "guide": "not_started"
+      },
+      "project3": {
+        "metadata": "complete",
+        "statement": "not_started",
+        "guide": "not_started"
+      },
+      "project4": {
+        "metadata": "complete",
+        "statement": "not_started",
+        "guide": "not_started"
+      }
+    }
+  },
+  "learnerLabCompletion": {
+    "project0": "not_attempted",
+    "project1": "not_attempted",
+    "project2": "not_attempted",
+    "project3": "not_attempted",
+    "project4": "not_attempted"
+  },
+  "knownGaps": [
+    "L1 未逐句核验音轨或全片画面；仅约46:51一张真实帧已查看。字幕46处内部间隙、首尾未知及ASR疑点已保留，不推定静音。",
+    "L2–25 元数据、逐视频 CC 标签及字幕正文均已取得，但尚未全文审读或核验音画；正文未开始。",
+    "L12/L14 字幕尾部缺约98.462/114.182秒；L15/L16/L18 字幕端点超整数时长645/241/662毫秒，后续审读不得静默裁剪。",
+    "指定教材、独立 PDF、作业与项目网页未确认全文翻译发布许可；本批仅原创导航，不能套用视频CC授权。",
+    "HW3/HW5官方索引与PDF截止日期冲突；P4网页更新时间晚于固定源码tag。具体证据见source-manifest。",
+    "固定CMake为C++17/Clang15，FAQ写C++20；P0 Merge原地接口与网页措辞不同；P4不兼容P3全部场景，保留独立checkpoint。",
+    "Apple Silicon环境只做工具观察和静态准备路线；BusTub未配置、编译或运行学生项目测试。",
+    "Gradescope 校外入口登录后可用性未验证；不承诺隐藏评分。",
+    "本地asset glob可能包含sources图片；不上传本地dist，仅用GitHub Actions干净检出构建部署。"
+  ],
+  "validation": {
+    "content": {"status": "passed", "publicMarkdownFiles": 3, "images": 2, "svgXml": "parsed", "draftTimeline": "43 consecutive blocks, 0–4489 seconds", "captionUnionRecomputed": true, "referencesWithinDuration": true, "futureLectureBodiesAbsent": true, "projectBodiesAbsent": true},
+    "review": {"publicDraftAndNotes": "全文阅读", "originalCaptionParentSample": "transcript.en.txt 1560–1645及1890–2019", "originalCaptionWorker": "2019条顺序全文阅读", "scope": "主审未重复全文读字幕，未听核音轨"},
+    "build": {"status": "passed", "command": "npm run build", "exitCode": 0, "runs": 1, "modules": 6071, "viteSeconds": 8.92, "warning": "Existing large-chunk warning; no source/config changes"},
+    "browser": {"status": "passed", "engine": "Chromium", "origin": "http://127.0.0.1:5310", "desktop": "1365×900", "mobile": "390×844", "views": ["公共资料", "L1笔记", "L1译稿"], "videoHeadersVerified": 25, "l1Duration": "1:14:49", "actualVideoClick": {"popupUrl": "https://www.youtube.com/watch?v=7NPIENPr-zk", "originalNotesPageRetained": true}, "notesSvgVisible": true, "draftFrameVisible": true, "katexErrors": 0, "mobileScrollWidths": {"resources": 390, "notes": 390, "draft": 390}, "fixedDuringReview": "缩短笔记§5等式，消除手机端横向溢出", "materials": "无独立阅读，未创建占位文件"},
+    "studentProjectBuild": "not_run",
+    "studentProjectTests": "not_run"
+  },
+  "delivery": {
+    "commit": "not_created",
+    "push": "not_attempted",
+    "ci": "not_verified",
+    "online": "not_verified",
+    "policy": "仅在 P0 验收通过后选择性提交并推送 main；Pages 使用 CI 干净检出，不上传本地 dist。"
+  },
+  "next": {
+    "keyword": "CMU15445-P0",
+    "batch": "P0",
+    "mode": "resume_delivery_only",
+    "promptFile": "content/cmu-15-445-2025/sources/NEXT-EXECUTION-PROMPT.txt",
+    "publicRecovery": "P0内容和本地验收已通过，先完成选择性提交/推送与发布状态登记，不重复抓取、生成或构建。若推送失败保留CMU15445-P0。成功后切换CMU15445-P1，范围仅L2–3、HW1及官方Project0指导；P1尚未执行。固定版本和全部来源状态见source-manifest.json。"
+  }
+}

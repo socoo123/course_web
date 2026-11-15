@@ -1,0 +1,144 @@
+---
+source: CMU 15-445/645 Fall 2025 官方课表、大纲、FAQ；Database System Concepts 第七版官网与目录；BusTub 固定标签
+license: 本页为编者原创导航；视频、教材、讲义、实验网页和代码各自适用独立许可，不相互外推。
+---
+
+# 数据库系统：公共资料与准备路线
+
+## 先追踪一条订单查询
+
+把目标设成回答一个完整问题：**一条 SQL 从提交给数据库，到读出正确结果并可靠地保存修改，中间经过了什么？**
+
+例如，查出尚未发货且库存足够的订单：先明确表、键和查询语义，再考虑记录怎样存入页、哪些页进入缓冲池、索引是否有用、连接和排序如何执行。加入两个同时扣库存的事务，再追问谁能看见哪个版本；最后在提交前后模拟宕机，区分日志持久化、数据页落盘与客户端收到回复。
+
+本路线采用 **Andy Pavlo 的 CMU 15-445/645 Fall 2025**，保留 25 个官方讲次。课程主要讲数据库内核，不等价于 PostgreSQL/MySQL 的完整生产运维教程。BusTub 是教学系统；其简化实现和固定接口不能直接套作商业数据库的行为。
+
+## 学习顺序与材料分工
+
+| 阶段 | 讲次 | 先能回答的问题 | 动手衔接 |
+|---|---|---|---|
+| 查询的含义 | L1–3 | 文件为什么不够？关系代数与 SQL 分别描述什么？记录和页有什么区别？ | C++ 准备、HW1、官方 Project 0 |
+| 存储与缓冲 | L4–6 | pin、dirty、latch 各保护什么？行存和列存怎样影响读写？ | HW2、Project 1 |
+| 访问路径 | L7–10 | 点查、范围查询、过滤误报与并发修改有什么取舍？ | HW3、Project 2 的索引基础 |
+| 执行与优化 | L11–16 | 内存不足时怎么排序、连接？结果相同的计划为什么代价不同？ | Project 2、HW4、Project 3 |
+| 事务 | L17–20 | 隔离级别与可串行化怎样区分？如何判断版本可见、冲突和回滚？ | HW5、Project 4 |
+| 恢复与分布式 | L21–25 | COMMIT 后哪些东西已持久化？复制、分片与分布式提交有何区别？ | HW6、综合推演 |
+
+正常节奏可按每周两讲；项目周减少新课。若每周投入约 8–12 小时，可先按 4–6 个月安排，再按 C++ 基础调整。这是编者建议，不是学完或通过项目的保证。
+
+- **课程笔记**：按问题提炼机制、推导、反例与自测。默认从这里开始。
+- **中文译稿**：按真实视频时间顺序整理课堂讲解、演示与问答；课堂截图只放这里。时间索引是返回原片定位的依据，不代表逐帧核验。
+- **课程资料**：只承载独立课外阅读，不再把课堂逐项讲过的 slides/notes 翻译一遍。无独立内容时不创建占位文件。
+- **公共资料**：共用教材、版本、工具链和学习方法集中在本页；实验说明与指导按后续制作批次提供，学习者实现留在独立私有仓库。
+
+网站“材料已就绪”不等于学习者完成实验。**制作批次 P0–P11 与官方 Project 0–4 是两套编号**；本批准备路线不是 Project 0 的完整指导或答案。
+
+## C++ 先修：先把资源归属说清楚
+
+开始写 BusTub 前，至少能独立完成下面四类小练习，并解释失败时破坏了什么条件：
+
+1. **值、引用与生命周期**：返回局部变量引用为什么悬空？容器扩容以后保存的指针何时失效？
+2. **RAII 与移动语义**：用构造/析构管理一项资源；区分复制资源、转移所有权与借用对象；理解 `unique_ptr`、`shared_ptr` 的使用边界。
+3. **容器、模板与复杂度**：能读懂 `vector`、哈希表、模板类和迭代器；不把“平均常数时间”当作没有内存或同步成本。
+4. **并发与错误定位**：理解互斥锁、条件变量、原子操作和数据竞争的区别；能读编译错误、栈回溯与 sanitizer 报告。原子计数并不自动保护多字段不变量。
+
+这些是编者先修检查，不是官方项目答案。后续 Count–Min Sketch 再补哈希碰撞、概率界与近似计数；此处不提前展开实现。
+
+## 教材怎么配合第一讲
+
+指定教材是 Silberschatz、Korth、Sudarshan 的 **Database System Concepts，第七版（2019）**。第六版或其他数据库教材可以辅助理解，但页码和章节编号不能混用。
+
+第一讲指定阅读 Chapter 1–2。按第七版官方目录，可这样带着问题阅读：
+
+| 定位 | 编者阅读问题 | 与 L1 的连接 |
+|---|---|---|
+| §1.2 Purpose of Database Systems；§1.3 View of Data | 如果应用各自解析文件，约束、并发和恢复分别由谁维护？ | 文件方案的代价；抽象层次 |
+| §1.6 Database Engine；§1.7 Database and Application Architecture | 查询的含义和执行它的部件应怎样分开？ | 后续存储、执行、事务的路线图 |
+| §2.1 Structure of Relational Databases；§2.2 Database Schema | 一张表的结构与某一时刻的数据有什么区别？ | 关系、元组、属性、schema |
+| §2.3 Keys | 什么使一行可被唯一识别？应用中的名字为什么未必适合作键？ | 主键与关联的约束 |
+| §2.6 The Relational Algebra | 一个操作的输入和输出是什么？怎样组合操作而不指定存储布局？ | 选择、投影、集合操作、连接 |
+
+本页只依据官网与目录定位章节，**不是教材全文翻译，也不表示已通读教材正文**。阅读时先自己写出一个三行小表，再计算表达式结果；用反例区分关系代数的集合语义与后续 SQL 的多重集语义。L1 的技术提炼见[关系模型与关系代数笔记](#/c/cmu-15-445-2025/lec/lec01?v=notes)。
+
+## 版本冻结与实验工作区
+
+课程、视频与项目均以 **Fall 2025** 为主线，不把 2026 的编号、视频或当前 `master` 接口混入。BusTub 固定为：
+
+```text
+标签：v20251119-2025fall
+提交：d49b823f829a4bf311a2c80b239ab5a9864c9c41
+```
+
+源码必须放在课程站之外的私有学习目录。每个官方项目完成后保存独立 checkpoint；后续项目的改动不能抹掉早先阶段可复现的实现与测试条件。获取骨架、读完指导、编译成功、公开测试通过与学习者真正完成项目是不同状态；公开测试也不代表隐藏评分满分。
+
+## 五个官方项目：任务与先修地图
+
+下表只建立准备路线，不代替后续实验说明与指导。导航中的星级是编者对相对难度的建议，工时未作实测估计；讲次先修映射也是学习建议，不是 CMU 的注册条件。
+
+| 项目 | 完整任务边界 | 建议先读 |
+|---|---|---|
+| Project 0 · C++ Primer | Count–Min Sketch 的构造、移动语义、并发 Insert、Count、Clear、Merge、给定候选集合的 TopK | C++、哈希与基础概率；不必等到听完 L7 才开始 |
+| Project 1 · Buffer Pool Manager | ARC 变体、Disk Scheduler、Buffer Pool Manager 与 Read/Write Page Guards | L3–5；RAII、move、线程与 promise/future |
+| Project 2 · Database Index | B+Tree 页、插入/删除/点查、跳过 tombstone 的迭代器、optimistic latch crabbing | L8–10；复用 Project 1 的页访问能力 |
+| Project 3 · Query Execution | 访问方法执行器；聚合与 Nested Loop / Index Join；Grace Hash Join 与优化规则；外部归并排序、Limit、窗口函数 | L2、L11–16；复用缓冲池与索引 |
+| Project 4 · Concurrency Control | 时间戳与 watermark；重建 tuple / 选择 undo 历史；Insert、Commit、生成 undo、Update/Delete、stop-the-world GC、**Abort**；主键插入、扫描/删除/更新、**主键变更与 Serializable 验证** | L17–20；需访问执行器及 SeqScan→IndexScan 规则，不要求先完成 P3 全部算子 |
+
+### 不可混用的接口与版本
+
+- **语言标准**：FAQ 和 L1 口头介绍写 C++20；固定 `CMakeLists.txt` 使用 **C++17**，推荐 **Clang 15**。构建设置以固定提交为准，不为追随 FAQ 改成 C++20。
+- **Project 0 Merge**：网页描述像是创建新 sketch；固定接口为 `Merge(const CountMinSketch &) -> void`，**原地更新接收者**，输入 sketch 保持不变。网页措辞不能覆盖接口与公开测试。
+- **Project 1**：是 ARC 变体，不是往年的 LRU-K；`DiskScheduler::Schedule` 接收一组请求，Page Guards 是 move-only 的资源管理对象。
+- **Project 2**：叶页保存 tombstone 缓冲，迭代时要区分物理槽位和逻辑上仍存在的键；不能直接照搬不带删除缓冲的旧 B+Tree 指导。
+- **Project 3**：执行器实际采用 `Next(vector<Tuple> *, vector<RID> *, size_t batch_size)`，不是旧注释所说的逐 tuple 返回。Grace Hash Join 与外部排序不能退化为把全部输入装进内存；窗口函数是正式任务。
+- **Project 4**：MVOCC 改写访问方法，Task 3 起针对固定长度 schema，不能期待包括 VARCHAR 在内的全部 P3 场景继续兼容。保留 **P3 checkpoint → P4 分支**。Abort 是实际回滚，不只是标记 TAINTED；可串行化验证不是排行榜附加题。
+- Project 4 网页最后更新于 2025-12-07，晚于所固定 tag；网页获取日和代码 SHA 分别登记。后续若遇到新差异，应先定位证据，不静默更新到 `master`。
+
+### 公开测试能证明什么
+
+| 项目 | 官方公开范围 | 不应作出的推断 |
+|---|---|---|
+| Project 0 | `test/primer/count_min_sketch_test.cpp`；网页明确无隐藏测试 | 机器上的并发性能未运行，不能承诺速度阈值或评分 |
+| Project 1 | ARC、磁盘调度、页守卫、缓冲池测试；评分另有更复杂测试 | 几个样例通过不等于并发与生命周期全部正确 |
+| Project 2 | 插入、删除、规模、并发测试；固定代码另有 tombstone 测试 | 不能漏掉 tombstone 或只验单线程点查 |
+| Project 3 | `test/sql/` 的 SQLLogicTest；网页明确测试公开，排行榜数据会随机化 | `test-p3` 并非只运行当前已实现算子的最小集合；本地输出不保证评分结果 |
+| Project 4 | 时间戳、扫描、执行器、索引、并发、Abort/Serializable；并发测试公开，隐藏测试为单线程 | “并发测试公开”不等于“全部测试公开” |
+
+固定骨架的一些测试仍带禁用标记；后续按项目阶段启用并执行相应测试。这里仅做静态接口与目录核对，**未编译 BusTub、未运行任何学生项目评分测试或 benchmark**。
+
+## Apple Silicon：保守的环境准备路线
+
+本机观察为 arm64、Apple Clang 17，命令行工具与 Homebrew 可见；`cmake`、`ninja`、`clang-15`、`clang-format`、`clang-tidy` 未在当前 PATH 中找到。Docker CLI 可见，但 daemon、镜像、架构和容器运行能力没有核实。此清单不表示全机其他位置不存在这些工具。
+
+1. **先固定代码，再选择环境。** 在课程站之外执行下面的准备命令，核对打印的完整 SHA；这是给学习者的命令，本批没有执行 clone 或创建学生仓库。
+
+   ```bash
+   git clone --branch v20251119-2025fall --single-branch \
+     https://github.com/cmu-db/bustub.git bustub-2025-study
+   cd bustub-2025-study
+   git rev-parse HEAD
+   git switch -c study-2025
+   ```
+
+2. **先看安装脚本，不盲跑。** 固定 `build_support/packages.sh` 会安装软件并可能执行 `brew update`。本批没有安装依赖；也不把“工具在 PATH”当作“构建可用”。
+3. **本机可作编辑与调试环境。** 若采用原生 arm64 路线，准备 CMake、LLVM/Clang 15 及相同主版本的格式化和静态检查工具，通过独立构建目录与显式编译器路径选择它们。历史 `llvm@15` 是否仍可直接安装，需要届时实际确认；当前 Apple Clang 17 不冒充 Clang 15。
+4. **以 Linux 作为兼容性基准。** 固定 README 推荐 Ubuntu 24.04，评分环境也为 Ubuntu 24.04；macOS 仅作开发用途。脚本明确的 Linux 支持路线为 x86-64。Apple Silicon 如需对齐，可使用独立 x86-64 Ubuntu 24.04 VM/仿真或远程机器；原生 arm64 Linux 另作探索，不宣称与评分一致。
+5. **不改学生代码迁就平台。** 若当前 macOS/SDK 与历史工具链不兼容，换隔离环境，而不是关闭警告、删测试或改项目 CMake。macOS 缺少 LeakSanitizer，锁的行为也可能不同；本机结果不能替代 Linux 上的检查。
+6. **实现一个阶段，再验证该阶段。** 工具准备好后，按对应项目指导配置 Debug、编译相应目标并运行已实现路径的测试。可用 `cmake --build <build-dir> --parallel`，不要在 macOS 上照抄依赖 `nproc` 的命令。每个项目与每次性能优化前都留可恢复 checkpoint。
+
+这是一条静态核对后的准备路线，**不是已经成功配置或编译的环境**。没有为了本批样章运行未实现的项目，也没有把下载源码当作完成实验。
+
+## 校外跟课与时间安排
+
+FAQ 提供校外 Gradescope 入口，但本批**未登录核实当前能否加入、查看作业或获得评分**。不承诺隐藏评分可用、满分或正式课程资格。实现应保存在私有仓库，不能公开完整项目答案；理解每一段实现仍是学习者的责任。
+
+HW1 对应 SQL，HW2–6 分别衔接存储、索引、执行、事务、恢复与分布式阶段；官方题面和历史日期见页底作业索引。旧学期截止日期不是当前自学期限。L3 官方标注 **No In-Class Lecture**，仍有课表指定录像；L25 没有官方 Notes 链接，不补造文件。
+
+## 引用与来源
+
+- CMU Database Group / Andy Pavlo：[Fall 2025 官方课表](https://15445.courses.cs.cmu.edu/fall2025/schedule.html)、[课程大纲](https://15445.courses.cs.cmu.edu/fall2025/syllabus.html)、[FAQ](https://15445.courses.cs.cmu.edu/fall2025/faq.html)、[官方视频列表](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYMAgsGH-GtY5rJYZ6zjsd5)。逐讲视频入口显示在各讲页头。
+- Abraham Silberschatz、Henry F. Korth、S. Sudarshan：[*Database System Concepts*, 7th edition](https://www.db-book.com/)，McGraw-Hill，2019，ISBN 9780078022159；[官方目录](https://www.db-book.com/toc-dir/toc.pdf)。本批核对首页与章节目录，不取得教材全文翻译发布授权。
+- CMU Database Group：[BusTub 固定源码](https://github.com/cmu-db/bustub/tree/v20251119-2025fall)、[固定提交](https://github.com/cmu-db/bustub/commit/d49b823f829a4bf311a2c80b239ab5a9864c9c41)。代码许可与课程网页、视频、第三方依赖许可分别适用。
+- 官方 [作业与项目索引](https://15445.courses.cs.cmu.edu/fall2025/assignments.html)：[Project 0](https://15445.courses.cs.cmu.edu/fall2025/project0/)、[Project 1](https://15445.courses.cs.cmu.edu/fall2025/project1/)、[Project 2](https://15445.courses.cs.cmu.edu/fall2025/project2/)、[Project 3](https://15445.courses.cs.cmu.edu/fall2025/project3/)、[Project 4](https://15445.courses.cs.cmu.edu/fall2025/project4/)。任务与测试范围经网页和固定源码静态核对；不是已运行的验证结果。
+- 工具链依据：固定提交的 [README](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/README.md)、[CMakeLists.txt](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/CMakeLists.txt)、[packages.sh](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/build_support/packages.sh)。原生开发与 Linux 验证路线为编者建议，未实际配置或运行。
+- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。本批仅登记、获取并核对元数据，不宣称已解题或全文技术审读。HW3 索引截止日为 2025-10-05，PDF 却印 “Sunday October 3rd”；HW5 索引为 11-23，PDF 为 11-16。保留冲突，不猜测延期原因。
+- 全课逐来源版本、访问与阅读范围见仓库 `content/cmu-15-445-2025/source-manifest.json`；制作与恢复状态见同目录 `status.json`。原始字幕、媒体与网页快照只保存在本地忽略的 `sources/`，不随站点发布。
