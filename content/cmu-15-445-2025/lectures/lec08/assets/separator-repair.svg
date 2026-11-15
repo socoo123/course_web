@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="720" viewBox="0 0 420 720" role="img" aria-labelledby="title desc">
+<title id="title">叶分裂与借键后的分隔键维护</title>
+<desc id="desc">第一例将五九十插入六，分成五六与九十，九复制到父层但仍保留叶记录。第二个独立例子在左叶删除后借右叶的九，父分隔键从九改为十二，避免查九误走右侧。</desc>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#466779"/></marker></defs>
+<rect width="420" height="720" rx="12" fill="#f5f8fc"/>
+<g font-family="system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" fill="#17334b" text-anchor="middle">
+<text x="210" y="32" font-size="20" font-weight="700">移动数据，也要修复路标</text>
+<text x="210" y="69" font-size="17" font-weight="700">例一：叶容量 3，插入 6</text>
+<rect x="112" y="87" width="196" height="44" rx="6" fill="#e4eefb" stroke="#4270a0"/>
+<text x="210" y="116" font-size="20">5 | 9 | 10</text>
+<path d="M210 135V164" stroke="#466779" stroke-width="2" marker-end="url(#a)"/>
+<rect x="169" y="174" width="82" height="43" rx="6" fill="#fff1d9" stroke="#9b793a"/>
+<text x="210" y="202" font-size="21">9</text>
+<path d="M185 220L106 258M235 220L314 258" stroke="#466779" stroke-width="2" marker-end="url(#a)"/>
+<rect x="32" y="266" width="146" height="46" rx="6" fill="#e4eefb" stroke="#4270a0"/>
+<rect x="242" y="266" width="146" height="46" rx="6" fill="#e6f2ee" stroke="#427d6d"/>
+<text x="105" y="296" font-size="21">5 | 6</text><text x="315" y="296" font-size="21">9 | 10</text>
+<path d="M181 289H235" stroke="#466779" stroke-width="2" marker-end="url(#a)"/>
+<text x="210" y="342" font-size="16">父层的 9 是副本，叶层的 9 不能删除</text>
+<path d="M28 365H392" stroke="#b8c8d4"/>
+<text x="210" y="400" font-size="17" font-weight="700">例二：另一棵树，左叶删除后不足</text>
+<rect x="32" y="420" width="146" height="43" rx="6" fill="#e4eefb" stroke="#4270a0"/>
+<rect x="242" y="420" width="146" height="43" rx="6" fill="#e6f2ee" stroke="#427d6d"/>
+<text x="105" y="448" font-size="20">5</text><text x="315" y="448" font-size="20">9 | 12 | 14</text>
+<text x="210" y="494" font-size="16">借走右页的 9；父分隔 9 → 12</text>
+<rect x="169" y="511" width="82" height="43" rx="6" fill="#fff1d9" stroke="#9b793a"/>
+<text x="210" y="539" font-size="21">12</text>
+<path d="M185 558L106 590M235 558L314 590" stroke="#466779" stroke-width="2" marker-end="url(#a)"/>
+<rect x="32" y="597" width="146" height="46" rx="6" fill="#e4eefb" stroke="#4270a0"/>
+<rect x="242" y="597" width="146" height="46" rx="6" fill="#e6f2ee" stroke="#427d6d"/>
+<text x="105" y="627" font-size="21">5 | 9</text><text x="315" y="627" font-size="21">12 | 14</text>
+<path d="M181 620H235" stroke="#466779" stroke-width="2" marker-end="url(#a)"/>
+<text x="210" y="678" font-size="16">查 9：9 &lt; 12，正确走向左页</text>
+<text x="210" y="704" font-size="13">编者自拟 · 省略不相关子树与页头</text>
+</g></svg>

@@ -31,11 +31,13 @@ license: 本页为编者原创导航；视频、教材、讲义、实验网页�
 - **课程资料**：只承载独立课外阅读，不再把课堂逐项讲过的 slides/notes 翻译一遍。无独立内容时不创建占位文件。
 - **公共资料**：共用教材、版本、工具链和学习方法集中在本页；实验说明与指导提供无答案的要求导读，学习者实现留在独立私有仓库。
 
-网站“材料已就绪”不等于学习者完成实验。**制作批次 P0–P11 与官方 Project 0–4 是两套编号**；HW1–6 是另一组作业，导航中的 HW1、HW2 不是新增的官方 Project。
+网站“材料已就绪”不等于学习者完成实验。**制作批次 P0–P11 与官方 Project 0–4 是两套编号**；HW1–6 是另一组作业，导航中的 HW1、HW2、HW3 不是新增的官方 Project。
 
 L2–3 的动手入口：[HW1 SQL 要求导读](#/c/cmu-15-445-2025/lab/hw01?v=zh)与[无答案指导](#/c/cmu-15-445-2025/lab/hw01?v=guide)；[Project 0 要求导读](#/c/cmu-15-445-2025/lab/project0?v=zh)与[哈希、概率及实现指导](#/c/cmu-15-445-2025/lab/project0?v=guide)。题面网页的全文翻译发布许可未确认，这些页面是编者原创导读，不冒充授权全文译文。
 
 L4–6 的动手入口：[HW2 Storage 要求导读](#/c/cmu-15-445-2025/lab/hw02?v=zh)与[无答案指导](#/c/cmu-15-445-2025/lab/hw02?v=guide)；[Project 1 要求导读](#/c/cmu-15-445-2025/lab/project1?v=zh)与[ARC、异步 I/O、页守卫指导](#/c/cmu-15-445-2025/lab/project1?v=guide)。先用纸面状态表区分页面身份、内存槽位、使用权与读写互斥，再写并发代码；实验环境与 C++ 先修仍复用本页和 Project 0。
+
+L7–9 的动手入口：[HW3 Indexes & Filters 要求导读](#/c/cmu-15-445-2025/lab/hw03?v=zh)与[无答案指导](#/c/cmu-15-445-2025/lab/hw03?v=guide)。先比较哈希点查、有序索引范围扫描和过滤器排除不可能命中的语义，再手推维护操作。概率先修复用 Project 0，页身份与守卫复用 Project 1；课堂普通 B+Tree 不等于 Project 2 的 tombstone 变体，后者完整指导安排在制作 P4。
 
 ## C++ 先修：先把资源归属说清楚
 
@@ -67,6 +69,8 @@ L4–6 的动手入口：[HW2 Storage 要求导读](#/c/cmu-15-445-2025/lab/hw02
 L2 指定 **Chapters 3–5**，L3 指定 **§12.1–12.4、§13.2–13.3**。按各讲笔记中的问题读自己的教材；该书全文翻译发布授权仍未确认。独立章节阅读导引若有制作，放在对应讲次的课程资料；它与课堂译稿分开，也不表示通读了教材正文。
 
 L4 指定 **§13.2–13.5**，L5 指定 **§14.8.1、24.2**，L6 指定 **§11.2、13.6**。这些章节分别连接缓冲管理、日志结构/写优化及列式存储；课表指定章节与实际取得正文是两件事。带着各讲笔记中的问题阅读自己的合法教材，不把目录定位当作全文精读。L4、L5没有独立资料页；L6的[Parquet导读](#/c/cmu-15-445-2025/lec/lec06?v=materials)是另行读过的当前官方文档，不代替指定教材，也不倒填成2025课堂。
+
+L7 指定 **§14.5、24.5（Hash Indices）**，L8 指定 **§14.1–14.4（基础概念、有序索引、B+Tree 及扩展）**，L9 另含 **§24.1（Bloom Filter）**。这里只核对第七版目录定位，未取得或通读这些教材正文。读自己的教材时分别记录“查找键是什么、索引项指向什么、更新会破坏哪条不变量”；不要把过滤器的可能命中当成已经找到记录。
 
 ## 版本冻结与实验工作区
 
@@ -148,5 +152,5 @@ HW1 对应 SQL，HW2–6 分别衔接存储、索引、执行、事务、恢复�
 - CMU Database Group：[BusTub 固定源码](https://github.com/cmu-db/bustub/tree/v20251119-2025fall)、[固定提交](https://github.com/cmu-db/bustub/commit/d49b823f829a4bf311a2c80b239ab5a9864c9c41)。代码许可与课程网页、视频、第三方依赖许可分别适用。
 - 官方 [作业与项目索引](https://15445.courses.cs.cmu.edu/fall2025/assignments.html)：[Project 0](https://15445.courses.cs.cmu.edu/fall2025/project0/)、[Project 1](https://15445.courses.cs.cmu.edu/fall2025/project1/)、[Project 2](https://15445.courses.cs.cmu.edu/fall2025/project2/)、[Project 3](https://15445.courses.cs.cmu.edu/fall2025/project3/)、[Project 4](https://15445.courses.cs.cmu.edu/fall2025/project4/)。任务与测试范围经网页和固定源码静态核对；不是已运行的验证结果。
 - 工具链依据：固定提交的 [README](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/README.md)、[CMakeLists.txt](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/CMakeLists.txt)、[packages.sh](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/build_support/packages.sh)。原生开发与 Linux 验证路线为编者建议，未实际配置或运行。
-- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1、HW2已阅读全文并制作原创要求导读；HW2全部3大题、13个计分小项及必要L3/L5/L6官方notes已读，不提供选项答案。HW3–6仍仅登记、获取并核对元数据，不宣称已解题或全文技术审读。HW3索引截止日为2025-10-05，PDF却印“Sunday October 3rd”；HW5索引为11-23，PDF为11-16。保留冲突，不猜测延期原因。
+- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1–3已阅读全文并制作原创要求导读；HW3全部5大题及图形条件已读，必要补读L10 notes仅服务Q3(d)，不等于L10视频或Project 2完整指导完成。不提供选项答案。HW4–6仍仅登记、获取并核对元数据。HW3索引截止日为2025-10-05，PDF却印“Sunday October 3rd”；HW5索引为11-23，PDF为11-16。保留冲突，不猜测延期原因。
 - 全课逐来源版本、访问与阅读范围见仓库 `content/cmu-15-445-2025/source-manifest.json`；制作与恢复状态见同目录 `status.json`。原始字幕、媒体与网页快照只保存在本地忽略的 `sources/`，不随站点发布。

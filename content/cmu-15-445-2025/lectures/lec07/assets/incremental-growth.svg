@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 840" role="img" aria-labelledby="title desc">
+  <title id="title">可扩展哈希与线性哈希的两种局部扩容</title>
+  <desc id="desc">上半部是全局深度2的高位目录，00和01共享深度1的桶，10和11分别指向深度2的桶，满桶分裂可能要求目录翻倍。下半部是线性哈希N为4，分裂指针从0移动到1，把8留在桶0，把20移动到桶4；桶1溢出并不意味着立即分裂桶1。</desc>
+  <style>
+    svg { color: var(--text-color, #334155); }
+    text { fill: currentColor; font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 17px; }
+    rect { fill: none; stroke: var(--accent-color, #4776b4); stroke-width: 2; }
+    path, line { fill: none; stroke: currentColor; stroke-width: 1.7; }
+    .head { font-weight: 600; font-size: 19px; }
+    .small { font-size: 16px; }
+    .accent { stroke: var(--accent-color, #4776b4); stroke-width: 3; }
+  </style>
+  <text x="20" y="30" class="head">A. 可扩展哈希：按满桶分裂</text>
+  <text x="20" y="60">取高位前缀；目录 g = 2</text>
+  <rect x="24" y="84" width="70" height="42"/><text x="45" y="112">00</text>
+  <rect x="24" y="126" width="70" height="42"/><text x="45" y="154">01</text>
+  <rect x="24" y="168" width="70" height="42"/><text x="45" y="196">10</text>
+  <rect x="24" y="210" width="70" height="42"/><text x="45" y="238">11</text>
+  <rect x="192" y="104" width="220" height="48" rx="6"/><text x="210" y="134">前缀 0，ℓ = 1</text>
+  <rect x="192" y="166" width="220" height="48" rx="6"/><text x="210" y="196">前缀 10，ℓ = 2</text>
+  <rect x="192" y="228" width="220" height="48" rx="6"/><text x="210" y="258">前缀 11，ℓ = 2</text>
+  <path d="M94 105L192 128m-8-6 8 6-9 3M94 147L192 128m-9-3 9 3-8 6M94 189L192 190m-8-5 8 5-8 5M94 231L192 252m-8-7 8 7-9 3"/>
+  <text x="20" y="310">桶 0 满：ℓ &lt; g，目录不必变大</text>
+  <text x="20" y="338">桶 10 满：ℓ = g，需多一位目录</text>
+  <text x="20" y="366" class="small">只重分目标桶；目录翻倍仍有成本</text>
+  <line x1="20" y1="390" x2="420" y2="390"/>
+  <text x="20" y="426" class="head">B. 线性哈希：按指针轮转分裂</text>
+  <text x="20" y="456">N = 4，原 s = 0；桶 1 溢出</text>
+  <text x="20" y="484" class="small">仍分裂桶 0：新增伙伴桶 4</text>
+  <rect x="105" y="510" width="300" height="44" rx="5"/><text x="121" y="539">桶 0：8 留下，8 mod 8 = 0</text>
+  <rect x="105" y="566" width="300" height="44" rx="5"/><text x="121" y="595">桶 1：仍可保留溢出链</text>
+  <rect x="105" y="622" width="300" height="44" rx="5"/><text x="121" y="651">桶 2、3：本次不搬动</text>
+  <rect x="105" y="678" width="300" height="44" rx="5"/><text x="121" y="707">桶 4：20，20 mod 8 = 4</text>
+  <text x="20" y="594">新 s=1</text><path d="M75 588h25m-7-5 7 5-7 5" class="accent"/>
+  <text x="20" y="760">查 20：先模 4 → 0，因 0 &lt; s</text>
+  <text x="20" y="790">再模 8 → 4，只访问已分裂伙伴</text>
+  <text x="20" y="820" class="small">触发溢出的桶 ≠ 本次分裂的桶</text>
+</svg>

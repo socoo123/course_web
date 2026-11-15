@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 760" role="img" aria-labelledby="title desc">
+<title id="title">IVF簇选择与HNSW分层捷径</title>
+<desc id="desc">上图展示查询点靠近两个簇的边界，另一个未探测簇也可能含更近的点。下图用三层节点表示HNSW从稀疏层移动再下降，底层未被访问的点没有被证明不相关。</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#3066b2"/></marker></defs>
+<rect width="680" height="760" rx="18" fill="#f4f7fb"/>
+<g font-family="system-ui, -apple-system, 'Noto Sans SC', sans-serif" fill="#17263a">
+<text x="340" y="35" text-anchor="middle" font-size="24" font-weight="700">两种缩小候选空间的方法</text>
+<rect x="22" y="57" width="636" height="305" rx="14" fill="#fff" stroke="#c5d6e8"/>
+<text x="45" y="91" font-size="22" font-weight="700">IVF：选择部分簇，再比较候选</text>
+<ellipse cx="230" cy="203" rx="132" ry="83" fill="#e1edfb" stroke="#83a9d7"/>
+<ellipse cx="466" cy="203" rx="132" ry="83" fill="#f8eadd" stroke="#ddb687"/>
+<g fill="#7597bd"><circle cx="150" cy="179" r="7"/><circle cx="218" cy="151" r="7"/><circle cx="235" cy="244" r="7"/><circle cx="284" cy="168" r="7"/><circle cx="289" cy="232" r="7"/></g>
+<g fill="#b48b60"><circle cx="420" cy="151" r="7"/><circle cx="503" cy="165" r="7"/><circle cx="531" cy="230" r="7"/><circle cx="451" cy="253" r="7"/></g>
+<path d="M220 193L240 213M240 193L220 213M456 193L476 213M476 193L456 213" stroke="#17263a" stroke-width="4"/>
+<circle cx="356" cy="211" r="8" fill="#ce4d42"/><circle cx="339" cy="211" r="8" fill="#3066b2"/>
+<text x="195" y="307" font-size="19">× 质心 A</text><text x="430" y="307" font-size="19">× 质心 B</text>
+<text x="340" y="337" text-anchor="middle" font-size="18">蓝点为查询；红点虽近，却可属于另一个簇</text>
+<rect x="22" y="382" width="636" height="350" rx="14" fill="#fff" stroke="#c5d6e8"/>
+<text x="45" y="418" font-size="22" font-weight="700">HNSW：稀疏层导航，逐层下降</text>
+<text x="45" y="471" font-size="19">高层</text><text x="45" y="548" font-size="19">中层</text><text x="45" y="630" font-size="19">底层</text>
+<g stroke="#9caec5" stroke-width="2"><path d="M155 465L425 465M155 540L270 540L425 540L550 540M155 620L222 620L290 620L357 620L425 620L492 620L550 620"/><path d="M155 465L155 540L155 620M425 465L425 540L425 620M550 540L550 620" stroke-dasharray="5 5"/></g>
+<g fill="#ccd8e7" stroke="#718096" stroke-width="2"><circle cx="155" cy="465" r="12"/><circle cx="425" cy="465" r="12"/><circle cx="155" cy="540" r="12"/><circle cx="270" cy="540" r="12"/><circle cx="425" cy="540" r="12"/><circle cx="550" cy="540" r="12"/><circle cx="155" cy="620" r="12"/><circle cx="222" cy="620" r="12"/><circle cx="290" cy="620" r="12"/><circle cx="357" cy="620" r="12"/><circle cx="425" cy="620" r="12"/><circle cx="492" cy="620" r="12"/><circle cx="550" cy="620" r="12"/></g>
+<path d="M172 450L410 450M441 476L441 524M443 525L539 525M566 552L566 603" fill="none" stroke="#3066b2" stroke-width="3" marker-end="url(#a)"/>
+<text x="340" y="676" text-anchor="middle" font-size="19">箭头为示意路径，不是完整搜索算法</text>
+<text x="340" y="706" text-anchor="middle" font-size="18">未访问底层节点可能包含更好结果，需测召回</text>
+</g></svg>

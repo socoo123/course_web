@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 670" role="img" aria-labelledby="title desc">
+  <title id="title">线性探测删除后的三态不变量</title>
+  <desc id="desc">订单9、17、25都从槽1开始，依次占据槽1、2、3。删除17后若将槽2改成真正空槽，查询25会提前结束；改成墓碑则继续到槽3找到25。唯一键插入必须在复用墓碑前排除后方已有同键。</desc>
+  <style>
+    svg { color: var(--text-color, #334155); }
+    text { fill: currentColor; font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 17px; }
+    rect { fill: none; stroke: var(--accent-color, #4776b4); stroke-width: 2; }
+    path { fill: none; stroke: currentColor; stroke-width: 2; }
+    .head { font-weight: 600; font-size: 19px; }
+    .small { font-size: 16px; }
+    .deleted { stroke-dasharray: 5 3; }
+  </style>
+  <text x="20" y="30" class="head">删除的是条目，不是查找路径</text>
+  <text x="20" y="58">自拟：h(k) = k mod 8</text>
+  <text x="20" y="100" class="head">① 插入 9、17、25</text>
+  <text x="26" y="132" class="small">槽 1</text><text x="160" y="132" class="small">槽 2</text><text x="294" y="132" class="small">槽 3</text>
+  <rect x="20" y="144" width="118" height="54" rx="5"/><text x="30" y="176">9 → RID₁</text>
+  <rect x="154" y="144" width="118" height="54" rx="5"/><text x="163" y="176">17 → RID₂</text>
+  <rect x="288" y="144" width="132" height="54" rx="5"/><text x="298" y="176">25 → RID₃</text>
+  <path d="M138 171h16m-6-5 6 5-6 5M272 171h16m-6-5 6 5-6 5"/>
+  <text x="20" y="225" class="small">三个不同 key，共享探测起点 1</text>
+  <text x="20" y="270" class="head">② 错误：删除后写成 EMPTY</text>
+  <rect x="20" y="290" width="118" height="54" rx="5"/><text x="60" y="323">9</text>
+  <rect x="154" y="290" width="118" height="54" rx="5"/><text x="176" y="323">EMPTY</text>
+  <rect x="288" y="290" width="132" height="54" rx="5"/><text x="338" y="323">25</text>
+  <path d="M138 317h16m-6-5 6 5-6 5"/>
+  <text x="20" y="372" class="small">查 25：在槽 2 提前停，漏掉槽 3</text>
+  <text x="20" y="417" class="head">③ 正确：留下 DELETED</text>
+  <rect x="20" y="437" width="118" height="54" rx="5"/><text x="60" y="470">9</text>
+  <rect x="154" y="437" width="118" height="54" rx="5" class="deleted"/><text x="171" y="470" class="small">DELETED</text>
+  <rect x="288" y="437" width="132" height="54" rx="5"/><text x="338" y="470">25</text>
+  <path d="M138 464h16m-6-5 6 5-6 5M272 464h16m-6-5 6 5-6 5"/>
+  <text x="20" y="520" class="small">墓碑不是结果，也不是搜索终点</text>
+  <rect x="20" y="548" width="400" height="100" rx="8"/>
+  <text x="34" y="576">唯一键插入 25：先查后方同键</text>
+  <text x="34" y="604">不能见墓碑就立即写入第二个 25</text>
+  <text x="34" y="632" class="small">整圈上限：最多检查 m 个槽</text>
+</svg>

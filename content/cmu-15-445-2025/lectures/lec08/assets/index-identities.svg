@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="650" viewBox="0 0 420 650" role="img" aria-labelledby="title desc">
+<title id="title">key、RID、page 与 frame 的区别</title>
+<desc id="desc">顾客键七在索引叶中对应记录标识页一百零二槽三，通过页号查缓冲池映射，找到暂时容纳该页的帧五，再定位记录。页号是持久身份，帧地址需要生命周期保护。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#446879"/></marker></defs>
+<rect width="420" height="650" rx="12" fill="#f5f8fc"/>
+<g font-family="system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" fill="#17334b" text-anchor="middle">
+<text x="210" y="32" font-size="20" font-weight="700">同一次访问，四种身份</text>
+<rect x="28" y="55" width="364" height="88" rx="8" fill="#e4eefb" stroke="#4270a0"/>
+<text x="210" y="82" font-size="18" font-weight="700">索引 key：customer_id = 7</text>
+<text x="210" y="108" font-size="16">叶条目 value：RID = (102, 3)</text>
+<text x="210" y="130" font-size="14">key 是比较值；RID 指向一条物理记录</text>
+<path d="M210 145V180" stroke="#446879" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="28" y="188" width="364" height="86" rx="8" fill="#e6f2ee" stroke="#427d6d"/>
+<text x="210" y="216" font-size="18" font-weight="700">page ID = 102</text>
+<text x="210" y="242" font-size="16">向 buffer pool 请求数据库页</text>
+<text x="210" y="263" font-size="14">未驻留时，需要读取到可用 frame</text>
+<path d="M210 277V314" stroke="#446879" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="28" y="322" width="364" height="95" rx="8" fill="#fff1d9" stroke="#9b793a"/>
+<text x="210" y="351" font-size="18" font-weight="700">当前映射：page 102 → frame 5</text>
+<text x="210" y="378" font-size="16">frame 5 是内存槽，不是页身份</text>
+<text x="210" y="402" font-size="14">安全访问期间需要驻留与并发保护</text>
+<path d="M210 420V456" stroke="#446879" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="28" y="464" width="364" height="78" rx="8" fill="#e4eefb" stroke="#4270a0"/>
+<text x="210" y="493" font-size="18" font-weight="700">在 page 102 中定位 slot 3</text>
+<text x="210" y="520" font-size="16">得到 tuple，再判断所需语义</text>
+<text x="210" y="582" font-size="16" font-weight="700">淘汰后，frame 5 可能装另一页</text>
+<text x="210" y="609" font-size="15">旧地址不能当永久引用写回磁盘</text>
+<text x="210" y="635" font-size="13">编者自拟 · 不是具体项目字段布局</text>
+</g></svg>

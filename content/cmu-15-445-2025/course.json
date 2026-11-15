@@ -145,7 +145,7 @@
       "title": "哈希表",
       "titleEn": "Hash Tables",
       "video": {
-        "label": "Fall 2025 L7",
+        "label": "Fall 2025 L7 · 含 YugabyteDB 嘉宾",
         "youtube": "https://www.youtube.com/watch?v=nuNW8IfgPNU",
         "duration": "1:20:30",
         "language": "en"
@@ -154,7 +154,7 @@
       "readings": [
         "Database System Concepts 第七版 · Chapter 14.5, 24.5"
       ],
-      "lab": "project2"
+      "lab": "hw03"
     },
     {
       "id": "lec08",
@@ -171,7 +171,7 @@
       "readings": [
         "Database System Concepts 第七版 · Chapter 14.1-14.4"
       ],
-      "lab": "project2"
+      "lab": "hw03"
     },
     {
       "id": "lec09",
@@ -188,7 +188,7 @@
       "readings": [
         "Database System Concepts 第七版 · Chapter 14.1-14.4, 24.1"
       ],
-      "lab": "project2"
+      "lab": "hw03"
     },
     {
       "id": "lec10",
@@ -528,6 +528,23 @@
           "id": "task-3",
           "title": "Buffer Pool Manager 与 Read/Write Page Guards"
         }
+      ]
+    },
+    {
+      "id": "hw03",
+      "num": 3,
+      "title": "HW3 · 索引与过滤器（非 Project）",
+      "titleEn": "Homework 3 — Indexes & Filters",
+      "stars": 3,
+      "hours": "官方约 4–6 小时（个人基础有差异）",
+      "url": "https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf",
+      "goal": "手推哈希维护与 B+Tree 状态，区分过滤器和精确索引，并按查询语义比较替代索引；原创无答案导读，保留官方截止日期冲突。",
+      "tasks": [
+        {"id": "q1", "title": "线性探测与 Cuckoo Hashing", "grade": "18 分"},
+        {"id": "q2", "title": "Extendible Hashing", "grade": "20 分"},
+        {"id": "q3", "title": "B+Tree 更新与 latch 概念", "grade": "27 分"},
+        {"id": "q4", "title": "Bloom Filter", "grade": "20 分"},
+        {"id": "q5", "title": "替代索引结构", "grade": "15 分"}
       ]
     },
     {

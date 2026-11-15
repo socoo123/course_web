@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 690" role="img" aria-labelledby="title desc">
+<title id="title">过滤器安全排除与近似检索的不同契约</title>
+<desc id="desc">上半图中已正确维护的Bloom filter有零位时可排除，所有位为一必须精确复核。下半图中ANN只探索部分候选，未探索区域可能仍有真实近邻，不能当作不存在。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#718096"/></marker></defs>
+<rect width="680" height="690" rx="18" fill="#f4f7fb"/>
+<g font-family="system-ui, -apple-system, 'Noto Sans SC', sans-serif" text-anchor="middle" fill="#17263a">
+<text x="340" y="38" font-size="24" font-weight="700">同样少查一些，保证并不相同</text>
+<rect x="22" y="60" width="636" height="298" rx="14" fill="#fff" stroke="#c5d6e8"/>
+<text x="340" y="93" font-size="22" font-weight="700">成员过滤：省掉不可能的精确探测</text>
+<rect x="200" y="111" width="280" height="53" rx="9" fill="#dfeafa"/>
+<text x="340" y="144" font-size="20">查询 key → 同一组哈希位置</text>
+<path d="M270 165L178 212M410 165L502 212" fill="none" stroke="#718096" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="44" y="216" width="268" height="68" rx="9" fill="#d8f0e3"/>
+<text x="178" y="242" font-size="20">至少一个必需位为 0</text><text x="178" y="268" font-size="20" font-weight="700">确定不在 → 跳过</text>
+<rect x="368" y="216" width="268" height="68" rx="9" fill="#fff0cd"/>
+<text x="502" y="242" font-size="20">所有必需位为 1</text><text x="502" y="268" font-size="20" font-weight="700">可能在 → 精确复核</text>
+<text x="340" y="317" font-size="19">前提：无遗漏插入、错误清位或不可见更新</text>
+<text x="340" y="342" font-size="17">误报多浪费工作；假阴性会丢掉正确结果</text>
+<rect x="22" y="378" width="636" height="286" rx="14" fill="#fff" stroke="#c5d6e8"/>
+<text x="340" y="413" font-size="22" font-weight="700">ANN：用有限探索换搜索成本</text>
+<rect x="200" y="434" width="280" height="50" rx="9" fill="#dfeafa"/>
+<text x="340" y="466" font-size="20">查询向量 → 部分簇／图节点</text>
+<path d="M270 486L178 525M410 486L502 525" fill="none" stroke="#718096" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="44" y="529" width="268" height="65" rx="9" fill="#d8f0e3"/>
+<text x="178" y="555" font-size="20">已探索候选</text><text x="178" y="581" font-size="20">比较距离、排序返回</text>
+<rect x="368" y="529" width="268" height="65" rx="9" fill="#fce0dc"/>
+<text x="502" y="555" font-size="20">未探索区域</text><text x="502" y="581" font-size="20" font-weight="700">可能含真实近邻</text>
+<text x="340" y="635" font-size="19">“没找回来”不等于“证明不存在”</text>
+</g></svg>
