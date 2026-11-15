@@ -1,7 +1,7 @@
 {
   "courseId": "cmu-15-445-2025",
   "updatedOn": "2026-11-15",
-  "phase": "P0_accepted_pending_push",
+  "phase": "P0_complete_with_documented_source_limits",
   "planConfirmed": true,
   "versions": {
     "course": "CMU 15-445/645 Fall 2025",
@@ -28,7 +28,7 @@
   },
   "batches": {
     "P0": {
-      "status": "accepted_with_documented_source_limits_pending_push",
+      "status": "accepted_and_pushed_with_documented_source_limits",
       "scope": "准备与样章：全课来源/版本清单、公共资料、导航骨架、L1、C++/BusTub 准备"
     },
     "P1": {
@@ -423,17 +423,20 @@
     "studentProjectTests": "not_run"
   },
   "delivery": {
-    "commit": "not_created",
-    "push": "not_attempted",
-    "ci": "not_verified",
-    "online": "not_verified",
+    "contentCommit": "4ddc6b16e7538d090851b2d80ccebead47ec3fe6",
+    "contentCommitUrl": "https://github.com/socoo123/course_web/commit/4ddc6b16e7538d090851b2d80ccebead47ec3fe6",
+    "push": {"status": "succeeded", "remote": "origin", "branch": "main"},
+    "ci": {"status": "passed", "contentCommit": "4ddc6b16e7538d090851b2d80ccebead47ec3fe6", "run": "https://github.com/socoo123/course_web/actions/runs/43723002715", "cleanCheckoutBuild": true, "pagesDeploy": "succeeded"},
+    "online": {"url": "https://socoo123.github.io/course_web/#/c/cmu-15-445-2025/lec/lec01?v=notes", "homepageReader": "rendered current CMU Fall 2025 card", "visualStatus": "not_verified", "attempts": "Chromium initial navigation timed out and aborted entry script; changed to domcontentloaded with 120s navigation/selector limits, L1 link still not rendered. Blank page screenshot observed; no successful online visual claim. Local actual-page visual acceptance passed separately."},
+    "handoffCommitPolicy": "本状态在后续交接提交中记录已推送的内容提交，不循环写入自身SHA；此处CI结果对应内容提交，交接提交结果见最终交接记录。",
     "policy": "仅在 P0 验收通过后选择性提交并推送 main；Pages 使用 CI 干净检出，不上传本地 dist。"
   },
   "next": {
-    "keyword": "CMU15445-P0",
-    "batch": "P0",
-    "mode": "resume_delivery_only",
+    "keyword": "CMU15445-P1",
+    "batch": "P1",
+    "mode": "await_user_trigger",
+    "scope": "仅L2–3、HW1 SQL与官方Project0 Count–Min Sketch指导；不执行P2",
     "promptFile": "content/cmu-15-445-2025/sources/NEXT-EXECUTION-PROMPT.txt",
-    "publicRecovery": "P0内容和本地验收已通过，先完成选择性提交/推送与发布状态登记，不重复抓取、生成或构建。若推送失败保留CMU15445-P0。成功后切换CMU15445-P1，范围仅L2–3、HW1及官方Project0指导；P1尚未执行。固定版本和全部来源状态见source-manifest.json。"
+    "publicRecovery": "P0已验收、推送并经CI干净构建部署。仅在用户主动启动后执行P1，不重复P0。先读status和source-manifest；若sources缺失，按公开来源清单有限补取，不能把已取得字幕等同已全文读。使用多agent：L2与L3各端到端独占讲次，HW1/Project0独占实验资料，主agent维护共享状态导航。L2 O5gU9NQjCAs 1:17:41含dbt嘉宾段；L3 PRLXdIMJhOg 1:17:02，保留No In-Class Lecture。完整顺序审读字幕、连续逐段译稿、原创带图笔记及真实必要截图；无独立阅读不造materials。教材/题面全译权限需另核实，未获许可时明确采用原创要求导读，不冒充授权全文翻译。Project0完整覆盖构造/移动、Insert并发、Count/Clear、原地Merge、给定candidates的TopK；不写学生答案、不跑未实现评分测试。固定BusTub版本不变，保留C++17/Clang15与FAQ差异。只改content，统一一次build和真实桌面/手机验收，通过后选择性提交推送并交还控制；若P1核心正文阻塞保留P1恢复入口。"
   }
 }
