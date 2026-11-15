@@ -1,0 +1,209 @@
+{
+  "phase": "P8",
+  "owner": "P8ReadingMethod",
+  "created_at": "2026-11-15T09:19:56.799795+00:00",
+  "merge_policy": "Append this phase actual-read records and alsoUsedBy only; preserve existing paper homes, canonical full explanations, P7 accepted states and cumulative read scopes. Author pending snapshots must not overwrite later Main acceptance.",
+  "new_topic": {
+    "id": "ext16",
+    "title": "技术报告与源码阅读：把主张接到可检验的证据",
+    "notes": "lectures/ext16/notes.zh.md",
+    "kind": "编者原创专题",
+    "source_ids": [
+      "p8-ext16-rl-paper12-metadata-v3",
+      "p8-ext16-rl-paper12-text-v3",
+      "p8-ext16-rl-paper12-fulltext-v3",
+      "p8-ext16-rl-paper12-visual-p5",
+      "p8-ext16-rl-paper12-visual-p17",
+      "p8-ext16-rl-paper12-visual-p20",
+      "p8-ext16-rl-paper14-metadata-v2",
+      "p8-ext16-rl-paper14-text-v2",
+      "p8-ext16-rl-paper14-fulltext-v2",
+      "p8-ext16-rl-paper14-visual-p3",
+      "p8-ext16-rl-papers09-16-license-cc-by-4.0",
+      "p8-ext16-rl-papers09-16-license-arxiv-nonexclusive-1.0",
+      "p8-ext16-a5-main-handout-2026-text",
+      "p8-ext16-safety-a5-safety-handout-2026-text",
+      "p8-ext16-a5-upstream-cs336_alignment-vllm_utils-py",
+      "p8-ext16-safety-contract-tests-adapters-py",
+      "p8-ext16-safety-contract-tests-test_dpo-py",
+      "p8-ext16-safety-contract-tests-test_data-py",
+      "p8-ext16-a5-repository-tree",
+      "p8-ext16-a5-README-txt",
+      "p8-ext16-a5-pyproject-toml",
+      "p8-ext16-safety-a5-llama31-model-metadata",
+      "p8-ext16-a5-ai-policy"
+    ],
+    "original_svg": "lectures/ext16/assets/reading-evidence-chain.svg",
+    "content_scope": [
+      "seven-step operational evidence chain",
+      "R1v2 version/train-vs-inference-budget comparison",
+      "DPO main/AppendixA.4/AppendixB sign triangulation",
+      "A5 helper payload versus textual top-p contract",
+      "A5 raw versus reference-adjusted preference metric",
+      "static assertions versus actual test passage",
+      "support and denominator counterexamples",
+      "hierarchical variance and paired illustrative interval",
+      "access/license/data identity boundaries",
+      "seven layered self-checks"
+    ],
+    "acceptance": "pending_Main_integrated_review_not_worker_verified"
+  },
+  "reading_map_suggestions": [
+    {
+      "id": "paper12",
+      "retain_home": "lec15",
+      "retain_material_file": "lectures/lec15/materials.zh.md",
+      "append_also_used_by": "ext16",
+      "append_phase_read": {
+        "phase": "P8",
+        "read_at": "2026-11-15T09:19:56.799795+00:00",
+        "text_ranges": [
+          [
+            231,
+            276
+          ],
+          [
+            1015,
+            1056
+          ],
+          [
+            1186,
+            1220
+          ]
+        ],
+        "visual_physical_pdf_pages": [
+          5,
+          17,
+          20
+        ],
+        "whole_paper_read": false,
+        "treatment": "methodology comparison; no duplicate full translation or derivation"
+      }
+    },
+    {
+      "id": "paper14",
+      "retain_home": "lec16",
+      "retain_material_file": "lectures/lec16/materials.zh.md",
+      "append_also_used_by": "ext16",
+      "append_phase_read": {
+        "phase": "P8",
+        "read_at": "2026-11-15T09:19:56.799795+00:00",
+        "text_ranges": [
+          [
+            90,
+            144
+          ],
+          [
+            223,
+            260
+          ],
+          [
+            2189,
+            2281
+          ]
+        ],
+        "visual_physical_pdf_pages": [
+          3
+        ],
+        "whole_paper_read": false,
+        "v1_reread": false,
+        "treatment": "version/budget/metric evidence case only; no full report translation"
+      }
+    },
+    {
+      "id": "a5-reasoning",
+      "retain_home": "labs/a5-reasoning",
+      "append_also_used_by": "ext16",
+      "append_phase_read": {
+        "phase": "P8",
+        "read_at": "2026-11-15T09:19:56.799795+00:00",
+        "text_ranges": [
+          [
+            1,
+            18
+          ],
+          [
+            568,
+            586
+          ],
+          [
+            690,
+            707
+          ],
+          [
+            829,
+            846
+          ],
+          [
+            1230,
+            1320
+          ]
+        ],
+        "helper_ranges": [
+          [
+            1,
+            150
+          ],
+          [
+            185,
+            245
+          ]
+        ],
+        "whole_handout_reread": false,
+        "official_execution": false
+      }
+    },
+    {
+      "id": "a5-safety-optional",
+      "retain_home": "labs/a5-safety-optional",
+      "append_also_used_by": "ext16",
+      "append_phase_read": {
+        "phase": "P8",
+        "read_at": "2026-11-15T09:19:56.799795+00:00",
+        "text_ranges": [
+          [
+            1,
+            18
+          ],
+          [
+            365,
+            443
+          ],
+          [
+            804,
+            886
+          ]
+        ],
+        "static_contracts": {
+          "adapters": [
+            [
+              424,
+              461
+            ]
+          ],
+          "test_dpo": [
+            [
+              1,
+              63
+            ]
+          ],
+          "test_data": [
+            [
+              1,
+              83
+            ]
+          ]
+        },
+        "whole_handout_reread": false,
+        "official_execution": false
+      }
+    }
+  ],
+  "shared_page_suggestions": [
+    "List ext16 after ext15 in learning route as reading methodology, not an additional official lecture or assignment.",
+    "Keep canonical DPO and R1 detailed materials on lec15/lec16; ext16 only cross-links them.",
+    "Preserve course gaps, especially L18; adding ext16 does not imply full official lecture coverage.",
+    "Capstone cross-link uses #/c/stanford-cs336-2026/lab/capstone?v=guide and non-official identity."
+  ],
+  "no_shared_files_edited": true
+}

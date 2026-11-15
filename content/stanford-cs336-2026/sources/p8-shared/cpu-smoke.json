@@ -1,0 +1,210 @@
+{
+  "phase": "P8",
+  "status": "passed",
+  "groups": 24,
+  "runtime": "3.11.8",
+  "method": "Main independently computed original scalar/statistical/budget examples with Python standard library; compared declared expectations, including a central finite-difference derivative. No official imports, tests, data/models, training, GPU or service calls.",
+  "actual": {
+    "cold_turn_work_fraction": {
+      "new_tokens_per_session": 5248,
+      "cold_request_fraction": 0.1,
+      "cold_new_token_fraction": 0.7804878048780488
+    },
+    "suffix_attention_comparisons": {
+      "prefix_pairs": 524288,
+      "suffix_causal_pairs": 8256,
+      "total_pairs": 532544
+    },
+    "cache_restore_fast_slow": {
+      "cache_GiB": 0.5,
+      "restore_ms": [
+        33.25,
+        127.0
+      ],
+      "break_even_GiB_s": 10.416666666666666,
+      "fast_restore_hidden_with_40ms_lead": true
+    },
+    "dependency_overlap": {
+      "separate_us": 25,
+      "fused_serial_us": 22,
+      "fused_overlap_us": 18,
+      "latency_reduction_fraction": 0.28,
+      "speedup_ratio": 1.3888888888888888
+    },
+    "shared_parameter_and_training_budget": {
+      "shared_parameters_M": 50,
+      "unshared_four_blocks_parameters_M": 140,
+      "costs_per_token": [
+        5,
+        14
+      ],
+      "training_tokens": [
+        280000000.0,
+        100000000.0
+      ]
+    },
+    "linear_forced_recurrence": {
+      "sequences_including_x0": [
+        [
+          0,
+          1.0,
+          1.5,
+          1.75,
+          1.875
+        ],
+        [
+          0,
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          0,
+          1.0,
+          2.2,
+          3.64,
+          5.368
+        ]
+      ],
+      "a_half_limit": 2.0
+    },
+    "negative_diagonal_counterexample": {
+      "a_fourth_power": 16,
+      "x4": 16,
+      "spectral_radius": 2
+    },
+    "spectral_radius_not_norm": {
+      "eigenvalues": [
+        0.5,
+        0.5
+      ],
+      "spectral_radius": 0.5,
+      "matrix_infinity_norm": 8.5,
+      "x1": [
+        8.0,
+        0.5
+      ],
+      "state_infinity_norms": [
+        1,
+        8.0
+      ]
+    },
+    "nonlinear_remainder_counterexample": {
+      "full_update_multiplier": 1.25,
+      "x4": 2.44140625
+    },
+    "rare_failure_probability": {
+      "expected_failures": 1.0,
+      "probability_at_least_one": 0.6321223982334279
+    },
+    "r1-count-units": {
+      "responses_per_training_step": 512,
+      "minibatches_per_rollout": 16.0
+    },
+    "independent-generation-budget": {
+      "baseline_output_token_upper_bound": 10240,
+      "comparison_output_token_upper_bound": 40960,
+      "ratio": 4.0
+    },
+    "dpo-sign-local-witness": {
+      "sigmoid_z": 0.75,
+      "correct_loss_derivative": -0.25000000000441336,
+      "incorrect_negative_sigmoid_z": -0.75
+    },
+    "population-vs-sample-normalizer": {
+      "mean": 1,
+      "population_std": 1.0,
+      "sample_std": 1.4142135623730951,
+      "population_standardized": [
+        -1.0,
+        1.0
+      ],
+      "sample_standardized": [
+        -0.7071067811865475,
+        0.7071067811865475
+      ]
+    },
+    "support-loss-counterexample": {
+      "target_reward": 0.2,
+      "behavior_reward": 0.0,
+      "ratios_on_observed_support": [
+        0.8,
+        0.7999999999999999
+      ],
+      "weighted_reward_on_observed_support": 0.0,
+      "missing_target_mass": 0.2,
+      "full_support_condition_satisfied": false
+    },
+    "micro-vs-macro-estimand": {
+      "response_weighted_accuracy": 0.3333333333333333,
+      "question_weighted_accuracy": 0.4166666666666667
+    },
+    "unequal-counts-equality-not-equivalence": {
+      "response_weighted_accuracy": 0.5,
+      "question_weighted_accuracy": 0.5
+    },
+    "loss-mask-denominator": {
+      "all_label_mean": 3,
+      "response_only_mean": 4.0
+    },
+    "paired-four-block-variance": {
+      "baseline_mean": 55,
+      "comparison_mean": 56,
+      "differences_pp": [
+        2,
+        1,
+        -1,
+        2
+      ],
+      "difference_mean_pp": 1,
+      "difference_sample_variance": 2,
+      "difference_sample_std": 1.4142135623730951,
+      "difference_standard_error": 0.7071067811865476,
+      "interval_lower_rounded_pp": -1.25,
+      "interval_upper_rounded_pp": 3.25,
+      "degrees_of_freedom": 3
+    },
+    "capstone_training_budget_all_attempts": {
+      "formal_runs": 8,
+      "formal_training_tokens": 320000000,
+      "pilot_training_tokens": 8000000,
+      "all_training_tokens": 328000000,
+      "formal_run_flop_proxy": 2880000000000000,
+      "all_training_flop_proxy": 23616000000000000
+    },
+    "capstone_development_generation_bound": {
+      "development_output_token_upper_bound": 2048000,
+      "alternative_upper_bound": 16384000,
+      "alternative_multiplier": 8
+    },
+    "capstone_nll_weighted_denominator": {
+      "total_valid_tokens": 10,
+      "total_nll_nats": 14,
+      "token_mean_nll": 1.4,
+      "token_perplexity": 4.0551999668446745,
+      "document_equal_weight_mean_nll": 2.0
+    },
+    "capstone_paired_uncertainty": {
+      "pairs": 4,
+      "mean_difference": 1,
+      "sum_squared_deviations": 2,
+      "sample_variance": 0.6666666666666666,
+      "sample_standard_deviation": 0.816496580927726,
+      "standard_error": 0.408248290463863,
+      "interval_lower_using_rounded_multiplier": -0.2990460602560121,
+      "interval_upper_using_rounded_multiplier": 2.2990460602560123,
+      "body_rounded_interval": [
+        -0.3,
+        2.3
+      ]
+    },
+    "capstone_device_time_and_replication_units": {
+      "plan_one_device_hours": 2,
+      "plan_two_device_hours": 2,
+      "formal_training_runs": 8,
+      "paired_training_comparison_units": 4,
+      "training_seed_count_for_one_checkpoint_after_repeated_decodes": 1
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "phase": "P8",
+  "checkedAt": "2026-11-15",
+  "scope": "One targeted new-release check of the current official 2026 homepage, its linked official playlist, and a targeted public search for Daniel Selsam CS336 2026. No repeated broad searches or historical substitution.",
+  "homepage": {
+    "url": "https://cs336.stanford.edu/",
+    "file": "p8-shared/home-2026-recovered.html",
+    "sha256": "bd57fae299fec60afedb5a22edb325a68107fa1af0cd83641695470587f7a4a7",
+    "readScope": "Reader returned complete official page; checked Spring2026 identity, official playlist link, all schedule rows and specifically L18 June1 Daniel Selsam and L19 June3 Dan Fu. Both guest rows still lack lecture materials links.",
+    "acquisition": "First curl exited18 with truncated11925-byte file home-2026.html; one HTTP/1.1 recovery downloaded complete33995-byte HTML. Truncated file is not accepted evidence."
+  },
+  "playlist": {
+    "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV",
+    "file": "p8-shared/playlist-metadata.json",
+    "sha256": "9411e19056553a9ba80d0c4af6ff412f7a48f5163dac0e1a5610f94962edb198",
+    "channel": "Stanford Online",
+    "channelId": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+    "publicEntries": 18,
+    "readScope": "All18 entry titles, videoIDs, channel identities and durations read. Lectures1–17 plus named guest Dan Fu. Position18 is Dan Fu/L19, not Daniel Selsam/L18.",
+    "acquisition": "Static reader only exposed playlist title/footer; flat yt-dlp metadata recovered the public entry inventory without downloading media.",
+    "durationPolicy": "Dan Fu flat-playlist duration4301s is not substituted for fixed individual-video metadata4300s=71:40. P1 separately recorded this1-second difference."
+  },
+  "search": {
+    "query": "\"Daniel Selsam\" \"CS336\" \"2026\"",
+    "results": ["https://cs336.stanford.edu/", "https://stanford-cs336.github.io/", "https://github.com/zyy-martin/cs336-learning-tracker", "https://www.alphaxiv.org/@daniel-selsam", "https://github.com/stanford-cs336/stanford-cs336.github.io/blob/main/index.html"],
+    "result": "No newly linked official classroom recording or handout identified. Third-party tracker/profile are not classroom sources and were not used for content."
+  },
+  "lec18": {
+    "status": "source_gap_reconfirmed",
+    "videoId": null,
+    "durationSeconds": null,
+    "topic": null,
+    "notesCreated": false,
+    "draftCreated": false,
+    "handoutEvidence": "Current official schedule has no link; prior fixed lecture tree audit p1-lectures/variant-audit.json has noL18/L19. No claim of exhaustive current-tree or web search.",
+    "limitation": "This does not prove no recording exists: private, unlisted, unpublished, removed or differently indexed sources remain unknown. No invented topic, timeline, screenshot or2025/DanFu substitution."
+  }
+}

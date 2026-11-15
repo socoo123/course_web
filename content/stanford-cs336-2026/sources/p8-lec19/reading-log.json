@@ -1,0 +1,136 @@
+{
+  "lecture_id": "lec19",
+  "read_at": "2026-11-15",
+  "operator": "P8DanFuLecture",
+  "operation": "Actual semantic reading of all caption bodies; normalization alone is not counted as reading.",
+  "caption_source": "p1-videos/captions/9EEm4iMAF5s.en-US.manual.json3",
+  "caption_sha256": "2281d5dc5e35ffda4efa0b468f5778c9350760945f6b14259d3ac464bf8af7f7",
+  "caption_read_batches": [
+    {
+      "file": "p8-lec19/transcript.en.txt",
+      "physical_lines": [
+        1,
+        300
+      ],
+      "read_scope": "Complete shown physical lines, time00:05.200 through cue immediately before08:04.160; embedded subtitle newlines retained."
+    },
+    {
+      "file": "p8-lec19/transcript.en.txt",
+      "physical_lines": [
+        301,
+        600
+      ],
+      "read_scope": "Complete shown physical lines, from08:04.160 through first physical line of cue331 at15:25.430. Cue331 continuation separately read below."
+    },
+    {
+      "file": "p8-lec19/reading-cues.txt",
+      "cue_range": [
+        332,
+        650
+      ],
+      "start_ms": 929310,
+      "end_ms": 1823900,
+      "status": "all_cue_text_read"
+    },
+    {
+      "file": "p8-lec19/reading-cues.txt",
+      "cue_range": [
+        651,
+        970
+      ],
+      "start_ms": 1823900,
+      "end_ms": 2738250,
+      "status": "all_cue_text_read"
+    },
+    {
+      "file": "p8-lec19/reading-cues.txt",
+      "cue_range": [
+        971,
+        1250
+      ],
+      "start_ms": 2738250,
+      "end_ms": 3508770,
+      "status": "all_cue_text_read"
+    },
+    {
+      "file": "p8-lec19/reading-cues.txt",
+      "cue_range": [
+        1251,
+        1533
+      ],
+      "start_ms": 3508770,
+      "end_ms": 4295860,
+      "status": "all_cue_text_read"
+    },
+    {
+      "file": "p8-lec19/reading-cues.txt",
+      "cue_range": [
+        331,
+        331
+      ],
+      "start_ms": 925430,
+      "end_ms": 929310,
+      "status": "Previously cut embedded-newline continuation read in full"
+    }
+  ],
+  "union_of_actual_caption_reading": {
+    "first_cue": 1,
+    "last_cue": 1533,
+    "start_ms": 5200,
+    "end_ms": 4295860,
+    "complete_cue_bodies": true,
+    "not_claimed": "Complete recognized audio, audio accuracy, watched slide content, or full translation."
+  },
+  "other_source_reads": [
+    {
+      "file": "p1-videos/metadata/lec19-9EEm4iMAF5s.json",
+      "range": "Title/channel/duration/date/description/license; lines21–34,230–366 including full coverage238–346 and topic358–364; automatic-language inventory35–226 not read as content."
+    },
+    {
+      "file": "p1-videos/video-map.json",
+      "range": "Lecture19 item, lines1234–1311; other lectures not read for this slice."
+    },
+    {
+      "file": "p1-lectures/manifest-fragment.json",
+      "range": "Lecture19 handout absence record, lines584–596; inherited pinned-tree finding, not a new full repository-tree audit."
+    },
+    {
+      "file": "../lectures/lec10/notes.zh.md",
+      "range": "Lines54–79,138–173,196–232; additional headings located by grep, not counted as whole-page reading."
+    },
+    {
+      "file": "../lectures/ext10/notes.zh.md",
+      "range": "Lines84–132,151–193 (tool context additionally displayed196); additional headings located by grep."
+    },
+    {
+      "file": "../lectures/lec10/materials.zh.md",
+      "range": "Lines35–104; inherited existing translation reused as internal crosslink, no original PDF re-read claimed."
+    }
+  ],
+  "authoring_conventions_read": [
+    "AGENTS.md whole",
+    "sources/NEXT-P8-PROMPT.txt whole",
+    "local://cs336-p8-contract.md whole",
+    "skill://technical-video-notes whole",
+    "skill://technical-video-notes/scripts/normalize_captions.py whole",
+    "lectures/lec17/draft.zh.md lines1–68 for conventions only",
+    "lectures/lec17/assets/objective-boundaries.svg whole for standalone light/dark style",
+    "p7-lec17/manifest-fragment.json outer structure and first source object for convention only"
+  ],
+  "normalization": {
+    "script": "/Users/zy/.agents/skills/technical-video-notes/scripts/normalize_captions.py",
+    "rule": "Concatenate event segs[].utf8, trim outer whitespace; preserve repetitions; start=tStartMs,end=start+dDurationMs; retain nonempty events. Indexed reading copy collapses whitespace per cue but does not correct words.",
+    "outputs": [
+      "p8-lec19/captions.normalized.json",
+      "p8-lec19/captions.en.vtt",
+      "p8-lec19/transcript.en.txt",
+      "p8-lec19/reading-cues.txt"
+    ]
+  },
+  "not_performed": [
+    "No new external paper or code source consulted",
+    "No media viewing/listening/download",
+    "No official assignment/environment/test/model/data execution",
+    "No build/lint/tests/formatter/browser/page verification; Main performs final acceptance"
+  ]
+}

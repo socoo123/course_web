@@ -1,0 +1,19 @@
+{
+  "phase": "P8",
+  "checkedAt": "2026-11-15",
+  "requestedModel": "openai-codex/gpt-6-astra:xhigh",
+  "observedConfiguration": {"taskPerCallModel":"on","taskEnableEffort":false,"taskAgentModelOverrides":{},"taskPrewalk":false},
+  "configurationChangedThisRun": false,
+  "resolvedSubagentModel": "openai-codex/gpt-6-astra",
+  "resolvedSubagentEffort": "xhigh",
+  "resolvedModelIsFallback": false,
+  "subagentsStarted": 3,
+  "subagentsCompleted": 3,
+  "runtimeEvidence": [
+    {"agent":"P8DanFuLecture","modelEvent":"19faa73d","effortEvent":"67d9807d","firstAssistantEvent":"bdfbdc20","timestamp":"2026-11-15T09:11:01.446Z"},
+    {"agent":"P8ReadingMethod","modelEvent":"fed9b229","effortEvent":"3b276f30","firstAssistantEvent":"259e4c28","timestamp":"2026-11-15T09:11:00.003Z"},
+    {"agent":"P8Capstone","modelEvent":"6c8d6c10","effortEvent":"3a67ec00","firstAssistantEvent":"4eb2c492","timestamp":"2026-11-15T09:11:02.040Z"}
+  ],
+  "verification": "Main read cfg://task, dispatched three explicit-model workers and inspected each current worker model_change, thinking_level_change and first assistant provider/model. All resolve to openai-codex/gpt-6-astra/xhigh with fallback=false. No configuration change or substitution. Runtime identity is not content acceptance.",
+  "nextDispatchGate": "Any additional worker requires the same exact identity; unavailable means stop, not substitute."
+}

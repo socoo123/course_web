@@ -1,0 +1,225 @@
+{
+  "phase": "P8",
+  "owner": "P8ReadingMethod",
+  "material_file": "lectures/ext16/notes.zh.md",
+  "status": "authored_expected_values_not_executed_by_worker_Main_independent_CPU_verification_requested",
+  "safety_boundary": "Only original scalar/statistical/budget examples and source-described count arithmetic; never execute official assignment adapters/tests, models, data, grader or services.",
+  "cases": [
+    {
+      "id": "r1-count-units",
+      "section": "§2.2",
+      "type": "source_count_arithmetic",
+      "inputs": {
+        "questions_per_training_step": 32,
+        "responses_per_question": 16,
+        "responses_per_rollout": 8192
+      },
+      "expected": {
+        "responses_per_training_step": 512,
+        "minibatches_per_rollout": 16
+      },
+      "derivation": "32*16=512;8192/512=16. One inner epoch is not one optimizer update for the full rollout; kernel/accumulation behavior not independently established."
+    },
+    {
+      "id": "independent-generation-budget",
+      "section": "§2.3",
+      "type": "original_budget",
+      "inputs": {
+        "questions": 20,
+        "baseline_samples": 4,
+        "comparison_samples": 16,
+        "max_output_tokens": 128
+      },
+      "expected": {
+        "baseline_output_token_upper_bound": 10240,
+        "comparison_output_token_upper_bound": 40960,
+        "ratio": 4
+      },
+      "derivation": "N*K*Lmax. Upper bound on generated output tokens only; not actual lengths, total FLOPs, prefill or latency."
+    },
+    {
+      "id": "dpo-sign-local-witness",
+      "section": "§3.2",
+      "type": "original_scalar_diagnostic",
+      "inputs": {
+        "margin_expression": "ln(3)",
+        "loss_expression": "-ln(sigmoid(z))"
+      },
+      "expected": {
+        "sigmoid_z": 0.75,
+        "correct_loss_derivative": -0.25,
+        "incorrect_negative_sigmoid_z": -0.75
+      },
+      "derivation": "sigmoid(ln3)=3/4;d[-ln sigmoid(z)]/dz=-(1-sigmoid(z))=-1/4. This checks a scalar sign/coefficient, not a supplied DPO implementation."
+    },
+    {
+      "id": "population-vs-sample-normalizer",
+      "section": "§4.4",
+      "type": "original_statistics",
+      "inputs": {
+        "observations": [
+          0,
+          2
+        ],
+        "population_ddof": 0,
+        "sample_ddof": 1
+      },
+      "expected": {
+        "mean": 1,
+        "population_std": 1,
+        "sample_std": 1.4142135623730951,
+        "population_standardized": [
+          -1,
+          1
+        ],
+        "sample_standardized": [
+          -0.7071067811865475,
+          0.7071067811865475
+        ]
+      },
+      "derivation": "Squared centered residuals total2. Divide by2 vs1 before square root. This is a standalone statistic, not official GRPO derivation or implementation."
+    },
+    {
+      "id": "support-loss-counterexample",
+      "section": "§5.1",
+      "type": "original_probability",
+      "inputs": {
+        "target_p": [
+          0.5,
+          0.3,
+          0.2
+        ],
+        "behavior_q": [
+          0.625,
+          0.375,
+          0
+        ],
+        "rewards": [
+          0,
+          0,
+          1
+        ]
+      },
+      "expected": {
+        "target_reward": 0.2,
+        "behavior_reward": 0,
+        "ratios_on_observed_support": [
+          0.8,
+          0.8
+        ],
+        "weighted_reward_on_observed_support": 0,
+        "missing_target_mass": 0.2,
+        "full_support_condition_satisfied": false
+      },
+      "derivation": "q is p conditioned on first two outcomes. Sum_q(q*p/q*r)=0 over sampled support; third ratio undefined, so no claim to an unbiased full-support estimate."
+    },
+    {
+      "id": "micro-vs-macro-estimand",
+      "section": "§5.2",
+      "type": "original_measurement",
+      "inputs": {
+        "samples_per_question": [
+          1,
+          1,
+          4
+        ],
+        "correct_per_question": [
+          1,
+          0,
+          1
+        ]
+      },
+      "expected": {
+        "response_weighted_accuracy": 0.3333333333333333,
+        "question_weighted_accuracy": 0.4166666666666667
+      },
+      "derivation": "2/6 vs (1+0+1/4)/3=5/12. Equal sample counts are sufficient for equality, not necessary. Unequal counts can accidentally agree if rates are equal."
+    },
+    {
+      "id": "unequal-counts-equality-not-equivalence",
+      "section": "§5.2 clarification",
+      "type": "original_measurement_boundary",
+      "inputs": {
+        "samples_per_question": [
+          2,
+          4,
+          6
+        ],
+        "correct_per_question": [
+          1,
+          2,
+          3
+        ]
+      },
+      "expected": {
+        "response_weighted_accuracy": 0.5,
+        "question_weighted_accuracy": 0.5
+      },
+      "derivation": "All per-question rates equal1/2; both aggregations equal1/2 despite unequal counts. Equality on this input does not identify the estimands."
+    },
+    {
+      "id": "loss-mask-denominator",
+      "section": "§5.2",
+      "type": "original_scalar_loss_vector",
+      "inputs": {
+        "valid_label_losses": [
+          1,
+          3,
+          2,
+          6
+        ],
+        "response_mask": [
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "expected": {
+        "all_label_mean": 3,
+        "response_only_mean": 4
+      },
+      "derivation": "(1+3+2+6)/4=3;(2+6)/2=4. Different supervised positions/denominators; lower numerical loss does not demonstrate improved model quality."
+    },
+    {
+      "id": "paired-four-block-variance",
+      "section": "§6.2",
+      "type": "original_statistics",
+      "inputs": {
+        "baseline_percent_scores": [
+          40,
+          50,
+          60,
+          70
+        ],
+        "comparison_percent_scores": [
+          42,
+          51,
+          59,
+          72
+        ],
+        "t_critical_rounded": 3.182,
+        "matched_blocks_predeclared": true
+      },
+      "expected": {
+        "baseline_mean": 55,
+        "comparison_mean": 56,
+        "differences_pp": [
+          2,
+          1,
+          -1,
+          2
+        ],
+        "difference_mean_pp": 1,
+        "difference_sample_variance": 2,
+        "difference_sample_std": 1.4142135623730951,
+        "difference_standard_error": 0.7071067811865476,
+        "interval_lower_rounded_pp": -1.25,
+        "interval_upper_rounded_pp": 3.25,
+        "degrees_of_freedom": 3
+      },
+      "tolerance_for_rounded_interval": 0.001,
+      "derivation": "Centered differences[1,0,-2,1],sum squares6,divide by3 gives variance2. SEM=sqrt2/sqrt4. Interval1±3.182/sqrt2. Illustrative approximate normal independent paired-difference assumption, not proof of no effect or a fabricated real experiment."
+    }
+  ]
+}

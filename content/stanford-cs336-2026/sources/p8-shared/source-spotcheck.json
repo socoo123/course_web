@@ -1,0 +1,30 @@
+{
+  "phase": "P8",
+  "reviewer": "Main",
+  "date": "2026-11-15",
+  "status": "independent_source_and_all_five_body_review_completed",
+  "bodyFiles": ["lectures/lec19/notes.zh.md","lectures/lec19/draft.zh.md","lectures/ext16/notes.zh.md","labs/capstone/lab.zh.md","labs/capstone/guide.zh.md"],
+  "captionSpotcheck": {
+    "file": "p1-videos/captions/9EEm4iMAF5s.en-US.manual.json3",
+    "cueRangesOneBased": [[1,40],[351,380],[781,820],[1201,1240],[1491,1533],[888,925],[1038,1110]],
+    "cuesRead": 304,
+    "findings": ["Serving/inference opening,continuous batching andMegakernel dependencies supported.","Parcae named atcue892;looped Transformer andSSM stability motivation explicit.","Spectral-radius-as-norm wording and negative-diagonal/power-decay wording actually occur;notes separate correct mathematics from unresolved original parameterization.","Iso-parameter/compute/data andrecurrence axes must not be conflated.","Final audience question includes INAUDIBLE;lecturer restatement supports multiGPU communication topic andearly-exploration limit."],
+    "fullCaptionReadingByMain": false,
+    "fullCaptionReadingByAuthor": "p8-lec19/reading-log.json",
+    "audioVerified": false
+  },
+  "primarySourceReads": [
+    {"file":"p1-papers-09-16/paper12-2305.18290v3.txt","lines":"185–245;1030–1088","finding":"MainEq7 uses chosen-minus-rejected;A.4reverses order andprints inconsistent sigmoid weighting. Independent scalar derivative distinguishes alternatives;P8 Main did not re-view originalPDF pages."},
+    {"file":"p1-papers-09-16/paper14-2501.12948v2.txt","lines":"90–265;390–450;2189–2281","finding":"Zero length cap changes after8.2k;32questions×16responses=512,8192rollout/512=16batches;reference cadence differs. D.1temperature0.6/top-p0.95,max32768,and repeated pass@1 versus cons@64 are separate evaluation contracts."},
+    {"file":"p1-assignment-a5/raw/optional-safety-2026.txt","lines":"838–889","finding":"EOS/device loss contract and §6.4raw chosen/rejected logprob validation definition retained;not silently replaced with reference-adjusted diagnostic."},
+    {"file":"p1-assignment-a5/raw/main-2026.txt","lines":"80–120;568–586;829–846;1257–1278","finding":"Strong base versus classroom small-model capability;displayedpopulation/stdimplementation distinction;top-p1tasktext;test.jsonl used for validation andfour-seed requirement."},
+    {"file":"p7-a5-reasoning/upstream/cs336_alignment__vllm_utils.py.txt","lines":"75–87;185–245","finding":"sampling_params passed throughwrapper;request payload sends temperature/max_tokens/n/seed/stop butnot top_p. No claim about actual serverdefault or runtime error."},
+    {"file":"p1-assignment-a5/raw/olmo-model-README.txt","lines":"1–186 full","finding":"Apache2.0card,Base/SFT/DPO/Instruct identities andlimitations read;card benchmark table not treated as capstone result."},
+    {"file":"p1-assignment-a5/raw/gsm8k-dataset-README.txt","lines":"1–226 full;truncated169 explicitly completed with raw read","finding":"MITcard,train/testmetadata,missingprivacy/bias/limitation entries;card access not dataset download or risk clearance."}
+  ],
+  "officialSourceRecheck": "p8-shared/guest-recheck.json",
+  "integrationCorrections": ["Replaced false necessary-condition wording for micro/macro equality with sufficient-condition statement andcoincidental-equality counterexample.","Moved external ext16 citations to footer.","Replaced ext16 diagram duplicating seven-step table with distinct evidence-threshold diagram.","Split oversized mobile equations andmoved fullSHA to local-scroll code block.","Normalized3 internal-source paths relative to sources;added23 missing per-source status fields without altering source bytes/read scopes."],
+  "sourceHashEvidence": "p8-shared/structure-check.json",
+  "arithmeticEvidence": "p8-shared/cpu-smoke.json",
+  "limits": ["Main source sampling is not a second full semantic read of1533cues orwhole reports.","No official code/tests,fixtures,training,model/data download,cloud/GPU/scoring orpaid compute executed.","ext16 author re-viewed4 originalPDF pages;Main P8 source-image review count0.","Original source bytes andscreenshots remain local,not remotely backed up by publishing their manifests."]
+}

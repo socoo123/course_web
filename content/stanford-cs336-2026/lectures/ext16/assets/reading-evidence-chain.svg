@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 900" role="img" aria-labelledby="title desc">
+<title id="title">静态合同、运行结果与因果解释之间的证据门槛</title>
+<desc id="desc">静态公式、配置和测试只能支持合同层面的判断。跨到实际运行结果需要合法输入、有效运行配置和真实日志；跨到条件化因果解释还需要公平对照与重复。箭头上的门槛没有满足时，结论停在已有证据层，不用静态断言冒充运行通过。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:17px system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}.h{font-size:21px;font-weight:700}.s{font-size:15px}.box,.arrow{fill:none;stroke:var(--border);stroke-width:1.8}.tip{fill:var(--fg)}.gate{fill:none;stroke:var(--border);stroke-width:1.5;stroke-dasharray:5 4}</style>
+<text class="h" x="24" y="34">证据不能跨层借用</text>
+<text class="s" x="24" y="64">始终固定：同一主张、版本与研究对象。</text>
+<rect class="box" x="18" y="88" width="384" height="142" rx="12"/>
+<text class="h" x="34" y="122">静态合同</text>
+<text x="34" y="156">原式、配置、调用路径、测试断言</text>
+<text class="s" x="34" y="188">可以确认相符或冲突，指出未覆盖的情况。</text>
+<text class="s" x="34" y="214">不能推出：测试已通过、模型已有成绩。</text>
+<path class="arrow" d="M210 230V252"/><path class="tip" d="M205 247L210 257L215 247Z"/>
+<rect class="gate" x="36" y="264" width="348" height="94" rx="10"/>
+<text x="52" y="297">跨层门槛：合法且真实的执行</text>
+<text class="s" x="52" y="328">输入身份＋有效配置＋日志＋结果</text>
+<path class="arrow" d="M210 358V380"/><path class="tip" d="M205 375L210 385L215 375Z"/>
+<rect class="box" x="18" y="392" width="384" height="142" rx="12"/>
+<text class="h" x="34" y="426">运行观测</text>
+<text x="34" y="460">在给定协议下，确实观察到某个结果</text>
+<text class="s" x="34" y="492">记录失败、实际成本、重复单位与变异。</text>
+<text class="s" x="34" y="518">不能推出：提升必由目标改动造成。</text>
+<path class="arrow" d="M210 534V556"/><path class="tip" d="M205 551L210 561L215 551Z"/>
+<rect class="gate" x="36" y="568" width="348" height="94" rx="10"/>
+<text x="52" y="601">跨层门槛：可区分的对照</text>
+<text class="s" x="52" y="632">主变化＋公平基线＋重复＋替代解释</text>
+<path class="arrow" d="M210 662V684"/><path class="tip" d="M205 679L210 689L215 679Z"/>
+<rect class="box" x="18" y="696" width="384" height="116" rx="12"/>
+<text class="h" x="34" y="730">条件化解释</text>
+<text x="34" y="764">说明支持到哪里，仍不能排除什么</text>
+<text class="s" x="34" y="795">不越过已测模型、数据和预算作泛化承诺。</text>
+<text x="24" y="850">门槛未过，结论停在已有证据层。</text>
+<text class="s" x="24" y="880">编者原创示意；没有用图代替真实实验。</text>
+</svg>

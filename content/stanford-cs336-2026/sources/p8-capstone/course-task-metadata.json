@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "phase": "P8",
+  "owner": "P8Capstone",
+  "target": "course.json labs[id=capstone]",
+  "operation": "suggested_field_replacement_for_Main_integration_only",
+  "shared_file_edited": false,
+  "existing_contract_read": "course.json capstone entry with num=0 and task IDs pretraining, posttraining, report; read before authoring",
+  "preserve": {
+    "id": "capstone",
+    "num": 0,
+    "stars": 5,
+    "url": "https://cs336.stanford.edu/",
+    "existing_task_ids": ["pretraining", "posttraining", "report"]
+  },
+  "suggested_fields": {
+    "title": "自拟综合项目 · 可证伪的小模型与后训练研究",
+    "titleEn": "Editorial Capstone — Not an Official Assignment",
+    "hours": "先做设计审查；执行量由预注册硬预算决定",
+    "goal": "编者自拟研究项目，非官方作业、非 Assignment 6；LAB 0 仅为站内编号，页底课程官网不是题目出处。二选一：自己训练的小模型预训练研究，或具备适当能力的开放基座后训练研究；以单因素公平比较、许可与防污染、硬预算、多 seed 不确定性、负结果及可复现工件验收，不将 TinyStories 小模型等同 GSM8K 基座。",
+    "tasks": [
+      {"id": "proposal", "title": "共同要求：预注册可证伪问题、主变量与竞争解释"},
+      {"id": "data_contract", "title": "共同要求：固定模型／数据身份、许可与防污染划分"},
+      {"id": "budget", "title": "共同要求：公平基线、预算硬上限与停止条件"},
+      {"id": "pretraining", "title": "路线 A（二选一）：自己训练的小模型预训练对照研究"},
+      {"id": "posttraining", "title": "路线 B（二选一）：有适当基础能力的开放基座后训练研究"},
+      {"id": "evaluation", "title": "共同要求：冻结评测、四对 seed、失败与不确定性"},
+      {"id": "artifacts", "title": "共同要求：全部尝试账本、合法工件与分层复现记录"},
+      {"id": "report", "title": "共同要求：报告支持／负结果／失效／未运行及证据边界"}
+    ]
+  },
+  "integration_notes": [
+    "Do not renumber to LAB6 or Assignment6; retain num=0.",
+    "Routes A and B are alternatives, not sequential mandatory requirements.",
+    "No grade fields: this is an editorial research contract, not a Stanford rubric.",
+    "No video or official project URL is invented; existing course-home URL is explicitly contextual only.",
+    "Bodies link to ext16 notes as the P8 sole reading-method home; Main owns integration and final route checks.",
+    "Source and body completion are not training completion; default paid-compute authorization remains zero."
+  ]
+}

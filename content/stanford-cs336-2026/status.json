@@ -2,11 +2,11 @@
   "courseId": "stanford-cs336-2026",
   "plannedAt": "2026-11-14",
   "updatedAt": "2026-11-15",
-  "phase": "P7_complete_with_documented_limits",
+  "phase": "P8_complete_with_documented_gaps",
   "plan": "sources/production-plan.json",
   "sourcesManifest": "sources/manifest.json",
   "readingMap": "sources/reading-map.json",
-  "modelPreflight": "sources/p7-model-preflight.json",
+  "modelPreflight": "sources/p8-model-preflight.json",
   "p0Acceptance": "sources/p0-acceptance.json",
   "p0Review": "sources/P0-REVIEW.txt",
   "versions": {
@@ -28,18 +28,18 @@
     "officialOptionalAssignmentEntries": 1,
     "editorialCapstoneEntries": 1,
     "labEntries": 7,
-    "lectureDocumentsWritten": 67,
-    "labDocumentsWritten": 12,
-    "officialLecturesWithNotesAndDraft": 17,
+    "lectureDocumentsWritten": 70,
+    "labDocumentsWritten": 14,
+    "officialLecturesWithNotesAndDraft": 18,
     "bridgesWithNotes": 8,
-    "captionTracksFullyRead": 17,
-    "captionCuesRead": 27746,
+    "captionTracksFullyRead": 18,
+    "captionCuesRead": 29279,
     "a1HandoutPagesTextRead": 47,
     "a1ScoredTasksMapped": 38,
-    "originalSvgAssets": 47,
+    "originalSvgAssets": 50,
     "p2BodyPagesAccepted": 11,
     "p3BodyPagesAccepted": 12,
-    "editorialExtensionsWithNotes": 15,
+    "editorialExtensionsWithNotes": 16,
     "papersSpecifiedCoreCloseRead": 16,
     "a1LetteredSubquestionsMapped": 25,
     "p4BodyPagesAccepted": 18,
@@ -62,6 +62,9 @@
     "a4LeafRequirementsMapped": 31,
     "a4SourcePointsMapped": 71,
     "p7BodyPagesAccepted": 15,
+    "p8BodyPagesAccepted": 5,
+    "bodyPagesWritten": 84,
+    "editorialCapstoneAccepted": true,
     "a5ReasoningHandoutPagesTextRead": 39,
     "a5ReasoningScoredTasksMapped": 28,
     "a5ReasoningLetteredSubquestionsMapped": 11,
@@ -88,15 +91,15 @@
     "P5": "complete_with_documented_limits",
     "P6": "complete_with_documented_limits",
     "P7": "complete_with_documented_limits",
-    "P8": "not_started"
+    "P8": "complete_with_documented_gaps"
   },
   "sourceCoverage": {
-    "officialHomepage": "2026 live and 2025 historical HTML snapshots with URL/UTC/SHA256; numbered 2026 schedule has19 rows. Historical page read only identity metadata.",
-    "videos": "P1 fixed18 official recordings/caption tracks;lec18 remains missing. P2–P7 fully read L01–L17 all27746 cues;P7 adds4823 cues and44 internal >2s gaps. L15/16/17 headers accepted desktop/mobile79:54/75:50/77:39;actual L15 desktop/L17 mobile clicks opened new tabs and preserved default notes. No audio/frame verification.",
+    "officialHomepage": "P8 current2026 homepage and all18 official public playlist entries reread;19 schedule rows remain. L18 source gap reconfirmed in one targeted release check; no claim of exhaustive web absence. Historical2025 identity remains separate.",
+    "videos": "All18 acquired tracks,L01–L17 andL19,fully read acrossP2–P8:29279 cues. P8 L19 adds1533 cues,40 navigation sections,19 internal gaps>2s. Header71:40/9EEm4iMAF5s and default notes verified at1440/390;both actual clicks opened new tabs and preserved notes. No audio/frame verification;L18 unknown.",
     "handouts": "P7 complete L15 PDF extracted text622 lines,L16 PDF554 lines,L17 py302 lines and230 trace renderings. The pinned post-term tree contains PDFs,not lecture_15.py/lecture_16.py. Selected visual scopes in worker logs;not all-page/audio verification.",
-    "papers": "All16 fixed paper specified cores now completed at sole materials homes,not whole-paper reading. P7 DPO v3 and LLaVA v2 designated cores fully translated under CC BY4;DeepSeekMath v3,R1 2026v2 andCLIP v1 are independent close readings. Paper authors visually inspected33 selected original PDF pages. Main independently checked selected sources and4 original pages.",
-    "assignments": "A1–A5 and A5 optional supplement instructions/conceptual guides written. P7 full39-page required and18-page optional extracted handouts;28tasks/90points/11letters and16tasks/61points/42letters. Main compared complete official requirements and static contracts;optional is not Assignment6. No implementations or official experiment completion.",
-    "experiments": "P7 Main independently recomputed53 original arithmetic/mechanism groups using Python3.11.8 standard library. No official assignment imports/tests,environment installation,training datasets/models,GPU,Modal,cloud jobs,scoring APIs or paid compute."
+    "papers": "All16 specified cores retain their sole accepted material homes;not whole-paper reading. P8 ext16 reuses scoped DPOv3/R1v2 report,metadata and static-code evidence;author re-viewed4 original PDF pages. Exact ranges in p8-ext16/reading-updates.json;earlier accepted scopes preserved.",
+    "assignments": "A1–A5 and A5 optional instructions/conceptual guides remain accepted;optional is not Assignment6. P8 adds editorialLAB0 capstone with two alternative research routes,8 navigation tasks and honest unrun/negative-result contracts. No implementation or official/project experiment completion.",
+    "experiments": "P8 Main independently computed24 original scalar/statistical/budget groups with Python3.11.8 standard library. No official assignment imports/tests,environment installation,training data/models,GPU,Modal,cloud,scoring or paid compute."
   },
   "entries": {
     "lectures": {
@@ -461,11 +464,11 @@
       "ext16": {
         "kind": "editorial_extension",
         "metadata": "registered",
-        "notes": "not_started",
+        "notes": "accepted_original_evidence_reading_method_with_scoped_primary_examples",
         "draft": "not_applicable_no_official_classroom",
         "materials": "no_separate_reading_assigned_in_P1",
         "video": "not_applicable",
-        "page": "skeleton_accepted_body_not_started"
+        "page": "accepted_P8_desktop1440_mobile390"
       },
       "lec17": {
         "kind": "official",
@@ -488,23 +491,23 @@
       },
       "lec18": {
         "kind": "official_guest",
-        "metadata": "source_checked",
-        "notes": "not_started",
-        "draft": "not_started",
-        "materials": "no_separate_reading_assigned_in_P1",
-        "video": "not_found_official_sources",
-        "page": "no_unverified_video_header_body_not_started",
-        "sourceRead": "See manifest per-source scope; not full classroom reading"
+        "metadata": "2026-11-15_official_source_recheck_completed",
+        "notes": "not_created_missing_classroom_source",
+        "draft": "not_created_missing_classroom_source",
+        "materials": "no_reliable_guest_reading_identified",
+        "video": "not_found_official_sources_reconfirmed_P8",
+        "page": "no_unverified_video_header_or_placeholder_body",
+        "sourceRead": "Current homepage and all18 public playlist entries checked;one targeted public search found no new official classroom source. See sources/p8-shared/guest-recheck.json."
       },
       "lec19": {
         "kind": "official_guest",
-        "metadata": "source_checked",
-        "notes": "not_started",
-        "draft": "not_started",
-        "materials": "no_separate_reading_assigned_in_P1",
-        "video": "verified_header_accepted_captions_acquired",
-        "page": "header_accepted_body_not_started",
-        "sourceRead": "See manifest per-source scope; not full classroom reading"
+        "metadata": "official_identity_and_full_caption_topic_checked",
+        "notes": "complete_independent_notes_reviewed_page_accepted",
+        "draft": "limited_eight_window_paraphrase_and_full_navigation_accepted_not_full_translation",
+        "materials": "not_created_no_verified_external_reading",
+        "video": "official_header71:40_default_notes_and_actual_new_tab_clicks_accepted_P8",
+        "page": "accepted_P8_desktop1440_mobile390",
+        "sourceRead": "All1533 cues read;40 sections and19 internal gaps>2s recorded. Main independently read304 cues. No audio/frame/Parcae-equation verification;no guest handout."
       }
     },
     "labs": {
@@ -561,11 +564,12 @@
       },
       "capstone": {
         "kind": "editorial_capstone",
-        "metadata": "registered",
-        "lab": "not_started",
-        "guide": "not_started",
-        "englishOriginal": "not_provided",
-        "page": "skeleton_accepted_body_not_started"
+        "metadata": "editorial_LAB0_two_alternative_routes_eight_navigation_tasks",
+        "lab": "accepted_original_research_contract_not_official_assignment",
+        "guide": "accepted_original_research_guidance_without_implementation_or_fake_results",
+        "englishOriginal": "not_applicable_editorial_original",
+        "page": "accepted_P8_desktop1440_mobile390",
+        "execution": "not_performed"
       }
     }
   },
@@ -573,14 +577,14 @@
     {
       "id": "lec18-recording",
       "scope": "lec18",
-      "detail": "Daniel Selsam录像未出现在已核官方列表；一次针对性检索亦未找到。ID/时长/字幕/主题均未知，不用Dan Fu或2025录像替代。",
-      "evidence": "p1-videos/review.txt"
+      "detail": "2026-11-15 P8一次官方新发布核查：官网仍仅列姓名，官方18条公共录像是L01–L17与Dan Fu/L19；一次针对性检索未发现Daniel Selsam对应课堂。ID/时长/字幕/主题未知，不创建占位正文、不用Dan Fu或2025替代，不宣称全网不存在。",
+      "evidence": "p8-shared/guest-recheck.json"
     },
     {
       "id": "guest-handouts",
       "scope": "lec18–lec19",
-      "detail": "课表无讲义链接，固定仓库树无对应文件；不推断全网不存在。",
-      "evidence": "p1-lectures/variant-audit.json"
+      "detail": "P8当前课表仍无两位嘉宾讲义链接；此前固定仓库树无对应文件。不把公开论文冒充课堂讲义，不推断全网不存在。",
+      "evidence": "p8-shared/guest-recheck.json;p1-lectures/variant-audit.json"
     },
     {
       "id": "translation-permissions",
@@ -589,8 +593,8 @@
     },
     {
       "id": "reading-and-assets",
-      "detail": "P2–P7全读L01–L17字幕，未核音或观看课堂画面；L19仍为P1范围，L18缺失。16篇论文指定核心完成，不称全文精读。P7论文作者视觉核对33选页；Main另读完整A5两手册、论文选段、192 cues与4原PDF页。原件/模型/数据不随站点发布，不是完整离线包。",
-      "evidence": "P7-REVIEW.txt;p7-shared/source-spotcheck.json;p7-lec15/reading-log.json;p7-lec16/reading-log.json;p7-lec17/reading-log.json;p7-rl-papers/reading-updates.json;p7-mm-papers/reading-updates.json;prior P2–P6 records"
+      "detail": "P2–P8全读L01–L17及L19字幕，累计29279 cues，未核音或观看课堂画面；L18缺失。16篇仅指定核心及登记选读，不称全文精读。P8 Main读5页新正文、304 cues、DPO/R1/A5原文选段及完整模型/数据卡；ext16作者复看4原PDF页。原件/模型/数据不随站点发布，不是完整离线包。",
+      "evidence": "P8-REVIEW.txt;p8-shared/source-spotcheck.json;p8-lec19/reading-log.json;p8-ext16/reading-updates.json;prior P2–P7 records"
     },
     {
       "id": "post-term-lecture-revision",
@@ -634,21 +638,18 @@
     }
   ],
   "verification": {
-    "status": "passed_P7_content_build_and_page_acceptance_with_limits",
+    "status": "passed_P8_content_build_and_page_acceptance_with_documented_gaps",
     "date": "2026-11-15",
-    "evidence": "sources/p7-acceptance.json",
-    "build": "npm run build passed once after body fixes:tsc --noEmit and Vite5.4.21;3657 modules;Vite6.51s. Localdist includes ignored source assets and is not uploaded;publication uses clean Actions checkout.",
-    "structure": "15 new bodies,9 SVGs,131 internal links,301 in-bounds time ranges,119 source records/101 unique hashes,4823 cue assignments and44 gaps,16 preserved paper homes,44 A5 tasks/151 points passed;53 independent CPU groups passed.",
-    "resourcesAndLabs": "All15 bodies plus resources checked at1440x1000/390x844;final root1440/390,no KaTeX/display-math overflow. A5 inline-code overflow and emphasis boundaries fixed. Nine SVGs visually inspected in light/mobile and dark/desktop;actual safety table wheel moved scrollLeft0→133.",
-    "videoAcceptance": "sources/p7-shared/page-check.json:all3 correct official headers/default notes;L15 desktop andL17 mobile actual clicks opened correct new tabs and preserved reading page.",
+    "evidence": "sources/p8-acceptance.json",
+    "build": "npm run build passed once after body fixes:tsc --noEmit,Vite5.4.21,3693 modules,6.33s. Localdist not uploaded;publication uses clean Actions checkout.",
+    "structure": "5 new bodies,3 SVGs,108 internal links,121 in-bounds time ranges,40 source records/38 hashes,1533 cue assignments,40 sections and19 gaps passed. All16 paper homes preserved;24 independent CPU groups passed.",
+    "resourcesAndLabs": "All5 bodies plus resources opened at1440x1000 and390x844;final roots1440/390,no KaTeX/display overflow. Long formulas and inlineSHA reformatted locally,not globalCSS. All3 SVGs viewed light/mobile and dark/desktop;timeline tables fit356px within local-scroll wrappers. L18 missing-source page checked both widths.",
+    "videoAcceptance": "L19 official71:40 header/defaultnotes accepted atboth widths;actual desktop andmobile clicks opened9EEm4iMAF5s in newtabs and preserved reading page. See sources/p8-shared/page-check.json.",
     "courseExperimentExecution": "not_run"
   },
   "nextStage": {
-    "id": "P8",
-    "title": "嘉宾课与全课收尾",
-    "keyword": "CS336-2026-P8-嘉宾课与全课收尾",
-    "prompt": "sources/NEXT-P8-PROMPT.txt",
-    "state": "not_started_requires_explicit_user_continuation",
+    "id": null,
+    "state": "course_production_closed_with_documented_gaps_no_automatic_next_batch",
     "autoStart": false
   },
   "p1Acceptance": "sources/p1-acceptance.json",
@@ -669,17 +670,19 @@
   "p7Acceptance": "sources/p7-acceptance.json",
   "p7Review": "sources/P7-REVIEW.txt",
   "p7Publication": "sources/p7-publication-record.json",
+  "p8Acceptance": "sources/p8-acceptance.json",
+  "p8Review": "sources/P8-REVIEW.txt",
+  "p8Publication": "sources/p8-publication-record.json",
+  "catalogDecision": "Keep active,not done:one scheduled guest classroom remains unavailable;content production is not learner progress or experiment completion.",
   "latestAttempt": {
-    "phase": "P7",
+    "phase": "P8",
     "date": "2026-11-15",
-    "status": "seven_exact_model_workers_completed_Main_acceptance_passed",
+    "status": "three_exact_model_workers_completed_Main_local_acceptance_passed",
     "model": "openai-codex/gpt-6-astra:xhigh",
-    "runtimeEvidence": "sources/p7-model-preflight.json",
-    "workersStarted": 7,
-    "workersCompleted": 7,
-    "scope": "L15–L17,ext14–15,paper12–16,A5 required and optional:15 new body pages and9 originalSVGs",
-    "acceptedCounters": "P7 cumulative79 bodies/47SVGs/17lectures/27746cues/16specified paper cores/A1–A5 plus optional. No whole-paper or official experiment completion.",
-    "officialExecution": false,
-    "resumeKeyword": "CS336-2026-P8-嘉宾课与全课收尾"
+    "runtimeEvidence": "sources/p8-model-preflight.json",
+    "workersStarted": 3,
+    "workersCompleted": 3,
+    "scope": "5 new bodies/3SVGs;L19,ext16,LAB0 capstone and full-course closure. Cumulative84bodies/50SVGs/18lectures/29279cues/8bridges/16extensions;L18 remains a documented source gap.",
+    "officialExecution": false
   }
 }

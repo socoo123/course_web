@@ -1,0 +1,53 @@
+P8 L19 Dan Fu — worker handoff, 2026-11-15
+Owner: P8DanFuLecture
+Scope: lectures/lec19/ and sources/p8-lec19/ only. No shared metadata edits, no commits/push.
+Status: authoring and full caption reading complete; Main final independent acceptance pending. No build, lint, tests, formatters, browser checks, GPU/official assignments or model/data downloads run.
+
+Delivered pages
+- lectures/lec19/notes.zh.md: original mechanisms, explicit classroom/editorial boundaries, finite calculations, implementation pitfalls, tiered self-test answers, full-video index.
+- lectures/lec19/draft.zh.md: eight limited independently paraphrased windows, 40-block full navigation, nine question groups, all >2s gaps, INAUDIBLE/applause and terminology caveats. Not full or near-verbatim translation.
+- lectures/lec19/assets/dependency-overlap.svg: original mobile-oriented 420px-wide dependency schematic; standalone light/dark CanvasText convention, transparent, title/desc, Chinese system fonts, no scripts/external resources. No classroom screenshot claimed.
+- No materials.zh.md: no genuine independent external reading source acquired for this slice; inherited pinned tree has no L19 handout. Public papers/code not substituted for classroom.
+
+Evidence files
+- sources/p8-lec19/time-intervals.json: every one of1533 cue IDs assigned exactly once to40 semantic sections; exact original milliseconds; all uncovered intervals and 19 internal gaps >2000ms. Navigation includes leading/trailing uncovered time.
+- reading-log.json: actual semantic read calls; transcript physical lines1–600, remaining indexed cues332–1533, and explicit completion of initially cut cue331. Metadata/map/handout absence and internal-page reading ranges recorded separately.
+- caption-audit.json: all raw bracket markers, nine questions, thirteen groups of lexical/mathematical/claim uncertainty. No audio verification.
+- claim-map.json: 18 classroom claims and four groups of original derivation linked to cues or original case file.
+- mechanism-cases.json: ten finite original cases with inputs, expected outputs, recomputation instructions and assumptions. Main can independently recompute on CPU; these are not official assignment answers or measured benchmarks.
+- course-video-update.json: proposed truthful topic note and video metadata for Main. Official title must remain Guest Lecture: Dan Fu. Actual theme is inference serving/cache-aware routing, Megakernel, and Parcae looped Transformer stability/scaling/co-design. Video9EEm4iMAF5s,4300s=71:40. Playlist position18 maps to lecture19, not lecture18.
+- manifest-fragment.json: original URLs, fixed snapshot identity, retrieval/read dates, SHA256, actual reading scopes, licensing and publication boundaries.
+- review.txt: this handoff record.
+
+Local-only source derivatives — do not publish/force-add
+- captions.normalized.json
+- captions.en.vtt
+- transcript.en.txt
+- reading-cues.txt
+These were generated from the inherited P1 original JSON3 with the technical-video-notes normalizer, preserving words and repetitions. The one-cue-per-line reading copy collapses whitespace only. Original P1 metadata/map/captions were not edited. No raw source mirrors, PDF, audio, video, screenshot or other media were added.
+
+Actual source coverage
+- Video metadata: official title, year, channel/uploader, upload date, description, duration, license=null, manual track classification, full selected-track timing coverage and P1 read boundary.
+- Caption full reading: all1533 nonempty cues,00:05.200–71:35.860; duration71:40.000; leading5.200s, trailing4.140s;19 internal >2s gaps. Complete cue reading does not mean complete or accurately recognized audio.
+- Nine cue entries contain INAUDIBLE markers; cue1226 has two markers, ten total. Two cue entries contain APPLAUSE. No gap labeled verified silence.
+- Inherited video-map L19 item read only; inherited handout-absence record read only, not a new full-tree audit.
+- Internal prerequisite ranges only: L10 notes54–79,138–173,196–232; ext10 notes84–132,151–193 (display context196); L10 materials35–104. No whole-paper re-read claimed.
+- Instructions applied: skill://technical-video-notes and its normalization script, project contract, NEXT-P8-PROMPT.txt, AGENTS.md.
+
+Technical decisions and required caveats
+1. The full talk is not merely serving. After41:51 it includes Parcae looped Transformers, residual dynamics and recurrence/data/parameter scaling. This is grounded in full captions, not speaker biography.
+2. Cache-aware routing separates cold/warm work on prefill resources; warm requests still may contain new tokens and read long historical KV. Up-to40% metric/baseline not specified sufficiently in captions.
+3. Megakernel overlap prepares old KV and weights before dependent computations, without ignoring query/new-KV readiness. Original critical-path case separates launch savings from overlap; finite resource contention is explicit.
+4. Spectral radius is NOT a synonym for matrix norm (caption1071–1073). Negative diagonal alone does NOT imply discrete powers decay (1096–1107). Exact Parcae parameterization is unresolved without viewed equations/official handout. Notes explicitly teach original proxy recurrence, nonnormal transient amplification and nonlinear counterexample; never label them Parcae equations.
+5. Fixed parameters, fixed trainingFLOPs and fixed data are distinct. Classroom1253–1268 explicitly describes same parameters/FLOPs but different data. Original training-cost toy counts assumed whole-training-token costs, not forward-only FLOPs.
+6. The resident small-block Megakernel for recurrence was still a hope:1345–1346 says the block had not been made small enough. Do not state achieved Parcae inference acceleration.
+7. Classroom30–70% attention speedup and72% H100 bandwidth statements stay attributed and unverified; no full-service extrapolation or unseen chart/table transcription. Hardware/company/new-model anecdotes remain unverified, not contemporary factual recommendations.
+8. Existing L10/ext10/PagedAttention prose stays the unique explanation/translation owner; new pages link instead of duplicating that material.
+
+Main acceptance to run once after integration
+- Independently read both pages, sample claim-map cue ranges and the stability discussion.
+- Recompute original source SHA256, normalization cue count/times, assignments1..1533 exactly once, all navigation boundaries within4300s, exact lead/tail and19 >2s internal gaps; compare raw bracket markers and nine questions.
+- Independently evaluate ten mechanism cases, including strict restore threshold, negative-diagonal counterexample, nonnormal example and full-update multiplier.
+- Validate JSON and SVG parsing, local image/reference routes, no materials placeholder; inspect desktop/mobile actual page and SVG legibility, KaTeX and scroll behavior.
+- Integrate the course note/video fragment, preserve official title, verify header71:40/video ID and actual external-link new-tab behavior.
+- Final build/acceptance/publish only by Main. This handoff claims no passing page or deployment checks.

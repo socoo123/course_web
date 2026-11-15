@@ -1,7 +1,7 @@
 ---
 source: Stanford CS336 Spring 2026 官网（课程介绍、先修要求、作业概述与课表）；本站 production-plan.json
 license: 本页为编者自主学习导航，不是官方讲义译文；外链材料分别核实许可，不据公开访问推定全文翻译权。
-status: 已写 L01–L17 笔记与限量课堂译述、全部8篇先修桥接、ext01–15、16篇论文指定核心的10份材料页，以及A1–A5正篇和A5安全选做完整说明与概念指导，共79份正文、47张原创SVG。十七讲27746条字幕已全文读取，未核音；论文仅指定核心和登记选读，不称全文精读。18条官方录像入口沿用已核元数据，L18仍缺失；L19、ext16及综合项目留待P8。没有官方作业实现、训练或收费算力。各批页面验收以status.json及验收记录为准。
+status: 已写 L01–L17 与 L19 笔记及有限课堂译述、全部8篇先修桥接、16篇深挖专题、16篇论文指定核心的10份材料页，以及A1–A5正篇、A5安全选做和编者自拟综合项目说明／指导，共84份正文、50张原创SVG。十八讲29279条字幕已全文读取，未核音；论文不称全文精读。P8一次官方新发布核查仍未取得L18 Daniel Selsam课堂来源，不创建占位正文，课程不标完整完成。未执行官方作业或研究训练，没有收费算力。各批页面与发布结果以status.json和总验收／发布记录为准。
 ---
 
 # 从零构建语言模型：公共资料与学习路线
@@ -43,9 +43,9 @@ status: 已写 L01–L17 笔记与限量课堂译述、全部8篇先修桥接、
 | 预算与评测 | [L09](#/c/stanford-cs336-2026/lec/lec09?v=notes) / [L11 Scaling Laws](#/c/stanford-cs336-2026/lec/lec11?v=notes)、[L10 推理](#/c/stanford-cs336-2026/lec/lec10?v=notes)、[L12 评测](#/c/stanford-cs336-2026/lec/lec12?v=notes) | [A3 完整说明](#/c/stanford-cs336-2026/lab/a3-scaling?v=zh) / [概念与实验设计指导](#/c/stanford-cs336-2026/lab/a3-scaling?v=guide) | 有限预算下怎样分配模型与数据，外推证据和评测协议是什么？ |
 | 数据流水线 | [L13 数据来源](#/c/stanford-cs336-2026/lec/lec13?v=notes)、[L14 数据处理](#/c/stanford-cs336-2026/lec/lec14?v=notes)、[数据配方与污染审计](#/c/stanford-cs336-2026/lec/ext13?v=notes) | [A4 完整说明](#/c/stanford-cs336-2026/lab/a4-data?v=zh) / [概念与自查指导](#/c/stanford-cs336-2026/lab/a4-data?v=guide) | 过滤、去重与混合改变了什么，污染审计能排除哪些风险、仍留下哪些未知？ |
 | 后训练 | [L15 SFT / RLHF](#/c/stanford-cs336-2026/lec/lec15?v=notes)、[L16 RLVR](#/c/stanford-cs336-2026/lec/lec16?v=notes)、[L17 对齐与多模态](#/c/stanford-cs336-2026/lec/lec17?v=notes) | A5 推理：[说明](#/c/stanford-cs336-2026/lab/a5-reasoning?v=zh) / [概念指导](#/c/stanford-cs336-2026/lab/a5-reasoning?v=guide)；安全选做：[说明](#/c/stanford-cs336-2026/lab/a5-safety-optional?v=zh) / [概念指导](#/c/stanford-cs336-2026/lab/a5-safety-optional?v=guide) | 学习信号来自示范、偏好还是可验证奖励；奖励变高意味着什么，图像特征怎样接入语言模型？ |
-| 研究练习 | [L18 Daniel Selsam](#/c/stanford-cs336-2026/lec/lec18?v=notes)、[L19 Dan Fu](#/c/stanford-cs336-2026/lec/lec19?v=notes) | [自拟综合项目](#/c/stanford-cs336-2026/lab/capstone?v=zh) | 能否用清楚的对照实验支持一个有限结论，而非只展示最好的一次结果？ |
+| 研究练习 | [L19 Dan Fu 嘉宾课](#/c/stanford-cs336-2026/lec/lec19?v=notes)、[技术报告与源码阅读方法](#/c/stanford-cs336-2026/lec/ext16?v=notes) | 自拟综合项目：[说明](#/c/stanford-cs336-2026/lab/capstone?v=zh) / [研究指导](#/c/stanford-cs336-2026/lab/capstone?v=guide) | 能否用清楚的对照实验支持一个有限结论，而非只展示最好的一次结果？ |
 
-L09 → L10 → L11 → L12 仍按官方顺序学习；表中把两次 Scaling Laws 合在同一问题下。嘉宾课只沿用官网姓名，不凭嘉宾研究方向猜测课堂主题。
+L09 → L10 → L11 → L12 仍按官方顺序学习；表中把两次 Scaling Laws 合在同一问题下。嘉宾课只沿用官网姓名，实际主题依据对应录像核实，不凭嘉宾研究方向猜写；研究练习不以取得所有嘉宾录像为前提。
 
 ### 官方作业和自拟项目的边界
 
@@ -54,6 +54,19 @@ L09 → L10 → L11 → L12 仍按官方顺序学习；表中把两次 Scaling L
 难度星级、学习顺序和“核心 / 选读”是编者建议，不是 Stanford 评分权重。页面课程进度不计选读；实验任务进度会包含选做和自拟项目，表示个人阅读与实践勾选，不代表官方成绩。A1–A5入口按固定讲义的正式任务编号导航；字母子问、交付物、约束与测试合同在各实验说明逐项展开，自拟项目另用编者任务。
 
 自拟项目分两条线：一条用自己训练的小模型研究数据、架构或优化；另一条选有相应基础能力的开放模型研究后训练。不要把 TinyStories 上的小模型直接当成已经具备 GSM8K 数学解题能力的基座。
+
+### 用可交付证据收尾，而非把页面读完
+
+选择下面一种终点，不必把“学完课程”理解为必须复现所有论文或购买原规模算力：
+
+| 学习终点 | 应独立交出的证据 | 不能据此声称 |
+|---|---|---|
+| 理解训练闭环 | 一张自己核对过形状、标签、掩码、梯度、恢复状态的训练账本；能解释每个状态为何存在 | 已实现或通过五份官方作业 |
+| 理解系统取舍 | 为同一工作负载列计算、内存、通信与延迟约束；若有测量，保留环境、预热、样本与失败运行 | 估算就是实测吞吐；换硬件仍可直接比较性能 |
+| 评判论文结论 | 按 ext16 把一条主张连到固定版本、指标分母、实现合同与实验条件，指出尚缺哪一段证据 | 读过摘要等于精读全文；静态读过测试等于运行通过 |
+| 完成自拟研究 | 从综合项目两条路线选一条，交出公平基线、一个主变化、预算、跨种子结果及可复现报告；负结果同样可交付 | TinyStories 小模型天然会做 GSM8K；单次最高分就是可靠改进 |
+
+先用 [L12 的评测问题](#/c/stanford-cs336-2026/lec/lec12?v=notes)检查指标与数据分割，再用 [ext16 的证据链](#/c/stanford-cs336-2026/lec/ext16?v=notes)检查结论依据，最后进入[自拟项目研究指导](#/c/stanford-cs336-2026/lab/capstone?v=guide)。若预算或权限不足，交出明确标为“设计与机制学习”的工件，不能把未运行的实验填成结果。
 
 ## 深挖专题怎么选
 
@@ -181,11 +194,11 @@ PagedAttention、FineWeb、DataComp-LM、QLoRA、DPO、LLaVA 的固定论文版�
 
 ## 引用与来源
 
-- Stanford CS336 教学团队，[2026 官方课程主页与课表](https://cs336.stanford.edu/)，2026-11-14 读取：核对学期、教师 Percy Liang / Tatsunori Hashimoto、19 个官方讲次、先修要求、五份作业及 Optional Part 2 入口、CPU 先调试的建议与诚信政策。本站学习顺序、桥接、专题、星级、符号表与实验纪律为编者整理，不是官方要求逐字翻译。
-- 官方 [2026 YouTube 播放列表](https://www.youtube.com/playlist?list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV)：核实Stanford Online发布的L01–L17与L19共18条；L18 Daniel Selsam仍缺失。P2–P6已全读L01–L14共22923 cues；P7新增L15的1872条、L16的1687条及L17的1264条，累计27746条，逐讲记录首尾、内部空隙与疑词。L19仍仅P1阅读范围。视频开放翻译许可未确认，未全片观看或核音，不把平台manual/non-ASR分类当作人工准确性保证。
+- Stanford CS336 教学团队，[2026 官方课程主页与课表](https://cs336.stanford.edu/)，2026-11-14 首读、2026-11-15 P8复核：学期、19个官方讲次和嘉宾姓名不变，L18／L19仍无讲义链接。本站学习顺序、桥接、专题、星级、符号表与综合项目为编者整理，不是官方要求逐字翻译。
+- 官方 [2026 YouTube 播放列表](https://www.youtube.com/playlist?list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV)：P8核实仍为Stanford Online的L01–L17与Dan Fu/L19共18条；列表第18项不是Daniel Selsam/L18。一次针对性检索亦未发现L18可信课堂来源，这不证明全网不存在。P2–P7已读27746 cues，P8全读L19的1533条，累计29279条；L19新增19处大于2秒的内部空隙，未把无字幕段认作已核静音。视频开放翻译许可未确认，未核音或全片观看，manual/non-ASR仅平台分类。L19页头71:40来自固定单视频元数据，列表71:41的差异单独保留。
 - [固定讲义仓库](https://github.com/stanford-cs336/lectures/tree/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e)：保存17讲讲义及独立 L02 recording trace；这是课后更新的当前版本，不保证与录像完全一致，图片依赖未全部本地下载。仓库未找到统一许可证，不能据公开访问宣称可全文翻译。
 - 固定作业仓库：[A1](https://github.com/stanford-cs336/assignment1-basics/tree/a158843b20107949f1a8d7df1b05cd33b9166712)、[A2](https://github.com/stanford-cs336/assignment2-systems/tree/ca8bc81a59b70516f7ebb2da4808daade877c736)、[A3](https://github.com/stanford-cs336/assignment3-scaling/tree/03e9372992e913061b9e78b5cfcb62ad8a87de35)、[A4](https://github.com/stanford-cs336/assignment4-data/tree/0555bea66369872d912652debf10b115ca0688c8)、[A5](https://github.com/stanford-cs336/assignment5-alignment/tree/c2734a26308710949fe13226960a1e8cece94b7e)。五份正篇已由 PDF 内文核实 Spring 2026；A1 README 遗留的2025标题不是讲义年份。A1–A4 有 MIT 许可；A5 未找到明确作业许可证，第三方材料不能继承代码许可。
 - A5 官网的旧选做路径已失效。采用从固定仓库发现并核对封面的 [2026 补充讲义](https://github.com/stanford-cs336/assignment5-alignment/blob/c2734a26308710949fe13226960a1e8cece94b7e/cs336_spring2026_assignment5_supplement_safety_rlhf.pdf)（Spring 2026，26.0.0）；另行固定的2025旧版只作对照，不能搬用其 Together 路径、硬件预算或测试接口。
 - [2026 集群指南](https://docs.google.com/document/d/1cHE0iKVyXLJ3XpIs2XuXTmZ-HMmPk2hIPeCvy-AydMg/edit)与 [AI 政策](https://docs.google.com/document/d/1SZAlExB1qAc9izHt54gwunNpjKE6wXb8Y7yA_e-baK8/edit)已读取公开正文并存快照；指南公开不等于获得集群资格。未创建账号、获取凭据或运行云任务。
 - [Spring 2025 历史官网](https://cs336.stanford.edu/spring2025/)单独存档，只读取历史页身份元数据，不与2026共用视频时间轴。当前首页仍为动态页面，获取日期与哈希见快照记录。
-- 实施与审计记录：`sources/P1-REVIEW.txt`至`sources/P7-REVIEW.txt`、`sources/p7-acceptance.json`、`sources/production-plan.json`、`sources/manifest.json`、`sources/reading-map.json`、`sources/p7-model-preflight.json`和`status.json`。各分片保留作者交接时状态，最终审查/验收以相应批次总记录为准。登记、采集、实际阅读、撰写、审查、页面验收分别记录；原始大文件和授权不明全文留本地，GitHub仅提交正文与轻量审计记录，不把本地采集说成远端备份。
+- 实施与审计记录：`sources/P1-REVIEW.txt`至`sources/P8-REVIEW.txt`、`sources/p8-acceptance.json`、`sources/production-plan.json`、`sources/manifest.json`、`sources/reading-map.json`、`sources/p8-model-preflight.json`、`sources/p8-publication-record.json`和`status.json`。作者分片是交接时快照，最终审查／验收以批次总记录为准。登记、采集、实际阅读、撰写、审查、页面验收与实验执行分开记录；原件留本地，GitHub仅提交正文与轻量审计记录。本批完成可制作内容并保留缺口，不自动启动新批次；L18缺来源、未核音、未整篇精读、数据／模型访问限制和未执行实验均不因收尾而消失。

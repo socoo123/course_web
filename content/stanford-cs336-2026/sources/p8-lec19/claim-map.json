@@ -1,0 +1,303 @@
+{
+  "lecture_id": "lec19",
+  "caption_index_base": 1,
+  "source": "p1-videos/captions/9EEm4iMAF5s.en-US.manual.json3",
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "实际主题为服务、Megakernel与Parcae，而非按嘉宾研究方向推断",
+      "page_location": "notes §1; draft §1",
+      "evidence": [
+        [
+          8,
+          15
+        ],
+        [
+          122,
+          137
+        ],
+        [
+          733,
+          740
+        ],
+        [
+          888,
+          915
+        ]
+      ],
+      "treatment": "topic_identification",
+      "boundary": "Keep official title; editorial topic only."
+    },
+    {
+      "id": "C02",
+      "claim": "生产负载包括输入输出、轮数、间隔与等待目标",
+      "page_location": "notes §2; draft §3.1",
+      "evidence": [
+        [
+          198,
+          287
+        ]
+      ],
+      "treatment": "classroom_paraphrase",
+      "boundary": "No production dataset or measured distribution inferred."
+    },
+    {
+      "id": "C03",
+      "claim": "prefill与decode有常见不同资源形状；连续批处理仍受容量制约",
+      "page_location": "notes §§1–2",
+      "evidence": [
+        [
+          301,
+          335
+        ],
+        [
+          351,
+          387
+        ],
+        [
+          429,
+          453
+        ]
+      ],
+      "treatment": "classroom_context",
+      "boundary": "Not a universal bottleneck classification for every batch/model."
+    },
+    {
+      "id": "C04",
+      "claim": "分层KV缓存需淘汰、恢复与预取决策",
+      "page_location": "notes §3; draft questionQ01",
+      "evidence": [
+        [
+          550,
+          638
+        ]
+      ],
+      "treatment": "classroom_paraphrase",
+      "boundary": "Restore equation and numeric cases are original; LRU2x aside excluded as theorem."
+    },
+    {
+      "id": "C05",
+      "claim": "缓存感知路由分开冷请求与温热后续请求的prefill资源",
+      "page_location": "notes §2.2; draft §3.3",
+      "evidence": [
+        [
+          675,
+          720
+        ]
+      ],
+      "treatment": "classroom_paraphrase",
+      "boundary": "Does not skip all prefill for warm requests. Up-to40% has unspecified metric/baseline."
+    },
+    {
+      "id": "C06",
+      "claim": "Megakernel可缩小启动和粗粒度依赖等待",
+      "page_location": "notes §4.1; draft navigation",
+      "evidence": [
+        [
+          741,
+          818
+        ]
+      ],
+      "treatment": "classroom_paraphrase",
+      "boundary": "No viewed trace; does not eliminate true dependencies."
+    },
+    {
+      "id": "C07",
+      "claim": "历史KV和输出投影权重可在依赖它们的计算前开始加载",
+      "page_location": "notes §4.1; draft §3.4",
+      "evidence": [
+        [
+          832,
+          857
+        ]
+      ],
+      "treatment": "classroom_paraphrase",
+      "boundary": "Only independent data preparation can overlap; current-step data must be ready."
+    },
+    {
+      "id": "C08",
+      "claim": "attention30–70%及H10072%带宽利用率是课堂口述",
+      "page_location": "notes §8",
+      "evidence": [
+        [
+          819,
+          820
+        ],
+        [
+          870,
+          881
+        ]
+      ],
+      "treatment": "attributed_unverified_performance",
+      "boundary": "No chart reading, benchmark execution or end-to-end extrapolation."
+    },
+    {
+      "id": "C09",
+      "claim": "循环Transformer复用参数并增加计算深度",
+      "page_location": "notes §5; draft §3.5",
+      "evidence": [
+        [
+          888,
+          938
+        ]
+      ],
+      "treatment": "classroom_paraphrase",
+      "boundary": "Original parameter/FLOP examples not official architecture sizes."
+    },
+    {
+      "id": "C10",
+      "claim": "课堂通过残差动力学、A/B及矩阵幂讨论失稳",
+      "page_location": "notes §6; draft §3.6",
+      "evidence": [
+        [
+          996,
+          1089
+        ]
+      ],
+      "treatment": "classroom_paraphrase_with_editorial_math",
+      "boundary": "Original proxy recurrence not Parcae equation; spectral radius not norm."
+    },
+    {
+      "id": "C11",
+      "claim": "课堂讨论约束参数化并报告更稳定训练",
+      "page_location": "notes §6; draft §6",
+      "evidence": [
+        [
+          1090,
+          1139
+        ]
+      ],
+      "treatment": "classroom_paraphrase_with_unresolved_formula",
+      "boundary": "Negative diagonal alone not discrete stability; actual parameterization unresolved without slides/code."
+    },
+    {
+      "id": "C12",
+      "claim": "循环缩放是初步实验；等参数等FLOPs对照数据量不同",
+      "page_location": "notes §5; draft §3.7",
+      "evidence": [
+        [
+          1156,
+          1268
+        ]
+      ],
+      "treatment": "classroom_paraphrase",
+      "boundary": "No universal scaling exponent or optimization law invented; axes not visually verified."
+    },
+    {
+      "id": "C13",
+      "claim": "预训练模型加循环仍被描述为研究中的现象",
+      "page_location": "draft Q03",
+      "evidence": [
+        [
+          1301,
+          1323
+        ]
+      ],
+      "treatment": "classroom_paraphrase",
+      "boundary": "No universal no-training quality gain or named baseline asserted."
+    },
+    {
+      "id": "C14",
+      "claim": "更少参数可能缓解容量和通信；小块快速Megakernel尚未实现",
+      "page_location": "notes §5; draft §3.8",
+      "evidence": [
+        [
+          1324,
+          1358
+        ]
+      ],
+      "treatment": "classroom_paraphrase",
+      "boundary": "Keep explicit1345–1346 admission; no speedup from resident loop claimed."
+    },
+    {
+      "id": "C15",
+      "claim": "Megakernel的专门化工程成本很高",
+      "page_location": "notes §4.3; draft Q05",
+      "evidence": [
+        [
+          1365,
+          1384
+        ]
+      ],
+      "treatment": "classroom_paraphrase",
+      "boundary": "Engineer-year statement illustrative, not guaranteed schedule; no always-optimal theorem."
+    },
+    {
+      "id": "C16",
+      "claim": "硬件和应用影响容量、格式与缓存需求",
+      "page_location": "notes §§1,5; draft Q06–Q08",
+      "evidence": [
+        [
+          1393,
+          1417
+        ],
+        [
+          1419,
+          1500
+        ]
+      ],
+      "treatment": "classroom_paraphrase",
+      "boundary": "Brand examples not independently verified guidance."
+    },
+    {
+      "id": "C17",
+      "claim": "多GPU通信融合是早期探索，通信延迟仍可能限制",
+      "page_location": "notes §4.3; draft Q09",
+      "evidence": [
+        [
+          1510,
+          1529
+        ]
+      ],
+      "treatment": "classroom_paraphrase",
+      "boundary": "No distributed implementation or current DeepSeek release verification claimed."
+    },
+    {
+      "id": "C18",
+      "claim": "重复输出、工具协议或内存访问错误可能表现为模型行为异常",
+      "page_location": "notes §7; draft §3.2",
+      "evidence": [
+        [
+          472,
+          549
+        ]
+      ],
+      "treatment": "attributed_incident_anecdotes",
+      "boundary": "Not reproduced; symptom alone does not diagnose cause."
+    },
+    {
+      "id": "E01",
+      "claim": "冷请求比例、剩余attention工作、缓存恢复阈值",
+      "page_location": "notes §§2–3",
+      "evidence": "mechanism-cases.json",
+      "treatment": "original_editorial_derivation",
+      "boundary": "Given assumptions only; no production data."
+    },
+    {
+      "id": "E02",
+      "claim": "依赖图与25/22/18微秒关键路径",
+      "page_location": "notes §4; assets/dependency-overlap.svg",
+      "evidence": "mechanism-cases.json",
+      "treatment": "original_editorial_derivation",
+      "boundary": "No GPU trace, kernel run or measured gain."
+    },
+    {
+      "id": "E03",
+      "claim": "参数与训练成本账本、线性递推、瞬态放大、非线性反例",
+      "page_location": "notes §§5–6",
+      "evidence": "mechanism-cases.json",
+      "treatment": "original_editorial_derivation",
+      "boundary": "Not Parcae equations or implementation."
+    },
+    {
+      "id": "E04",
+      "claim": "罕见故障二项概率",
+      "page_location": "notes §7",
+      "evidence": "mechanism-cases.json",
+      "treatment": "original_editorial_derivation",
+      "boundary": "IID hypothetical per-opportunity probability; not observed service data."
+    }
+  ],
+  "full_cue_mapping": "time-intervals.json",
+  "uncertainty_details": "caption-audit.json"
+}

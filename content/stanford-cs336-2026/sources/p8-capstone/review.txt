@@ -1,0 +1,56 @@
+P8Capstone 交接审查记录
+日期：2026-11-15
+状态：独占内容与证据已撰写；Main 的技术、源哈希、CPU算例、构建和页面验收尚未由本worker执行，不宣称通过。
+
+一、范围与新增文件
+1. labs/capstone/lab.zh.md：交付与验收合同，非官方/非Assignment6、LAB0、A/B二选一、问题卡、许可防污染、公平基线、硬预算、冻结评测、多seed、负结果、工件与最终报告。
+2. labs/capstone/guide.zh.md：阶段0–7的决策/动手顺序/排错，原创研究问题形状、纸面预算、token归约、配对统计、自测分层答案；不重复说明页的完整提交清单，不代写训练实现或报告。
+3. labs/capstone/assets/paired-evidence.svg：一张原创证据单位图，四对训练产生四个配对差，多次decode不增加训练seed；透明、CanvasText独立浅/深主题、中文字体、title/desc、自包含，无课堂截图或实验成绩。
+4. sources/p8-capstone/course-task-metadata.json：仅给Main的course.json字段更新建议，保留capstone/num0/pretraining/posttraining/report IDs，A/B明确二选一，新增共同交付任务，无评分字段。
+5. sources/p8-capstone/mechanism-cases.json：5组原创算例的输入、预期和理由，供Main独立CPU验证。
+6. sources/p8-capstone/manifest-fragment.json：8条实际用源的固定版本、获取时间、本地路径、继承SHA256、许可证据、精确阅读范围和处理类型。
+7. sources/p8-capstone/review.txt：本文件。
+未编辑共享course/status/catalog/resources/manifest/reading-map/plan；未提交或推送；无额外文档或原件镜像。
+
+二、继承与来源范围
+先读local://cs336-p8-contract.md；定位项目sources实际在content/stanford-cs336-2026/sources，读取NEXT-P8-PROMPT、AGENTS、既有capstone元数据。继承P7 Main REVIEW、acceptance、publication success，而不将作者pending快照作为最终状态。此前模型预检是历史背景，不冒充当前agent身份核验；本次身份由Main负责。
+实际复用原件：
+- A1 v26.0.3 / commit a158843b20107949f1a8d7df1b05cd33b9166712，文本1–23、1983–2011、2030–2075；LICENSE 1–7全文。
+- A4 v26.0.1 / commit0555bea66369872d912652debf10b115ca0688c8，文本436–457、478–549；LICENSE 1–7全文。
+- A5 v26.0.0 / commitc2734a26308710949fe13226960a1e8cece94b7e，文本80–120、1257–1278。先前宽grep仅导航，不据此宣称39页全读；未重复完整树许可审计。
+- OLMo模型卡revisiona1847dff35000b4271fa70afc5db10fd29fedbdf，1–186全文。
+- GSM8K数据卡revision740312add88f781978c0658806c59bc2815b9866，1–226全文；截断的169行实际用:raw补读。只读卡片内嵌示例，不是读取/下载数据集。
+- AI政策本地固定SHA快照，1–21全文。
+来源获取时间和哈希来自已接受P3/P6/P7清单；本worker没有重新hash或网络抓取。没有PDF视觉核对、论文全文精读或音画阅读主张。所有原件仍留原sources路径，不新增raw文件。A1/A4许可只覆盖第一方软件/文档；A5整体许可未核；OLMo/GSM8K许可各自独立；卡片缺项不解释为无风险。
+
+三、技术设计与关键边界
+- 两路线独立：A从随机初始化做预训练控制实验，B用有适当任务能力的开放权重基座。明确不把TinyStories小模型等同GSM8K基座，不用模型卡成绩替代同协议实测基线。
+- A默认可选题型是训练池内完全重复去重；先对所有组统一隔离跨train/dev/test近重复，再改变train内部去重。tokenizer共享且仅训练于train。固定处理token预算不等于相同epoch或相同精确FLOPs。
+- B默认可选题型是固定SFT合同下两个预注册学习率；并不提供具体学习率答案、训练代码或官方题实现。权重阶段/监督mask/参数冻结/适配/量化须固定，未更新基座仅为能力参照，不冒充等成本训练对照。选择DPO/RL时只能另选一种方法/一个主变化，不混成组合赛。
+- 明确本项目自选目标不同于官方作业，不复制其完整mask/算法实现；回链A1/A4/A5与ext14唯一正文。ext16只作证据链阅读方法入口，没有新建共享论文正文。
+- A5的test.jsonl作validation事实已实际读原件；若继承此使用历史，不可声称封存测试。分组隔离不等于证明基座预训练无污染。
+- 预算覆盖所有尝试、预评测/开发/正式/失败/恢复/复现；多个硬上限同时成立，下一步预计越界即不启动，默认收费授权0。6ND仅粗略稠密训练账本；特意区分实际计算token位置和参与loss的监督token，mask不取消前向成本。
+- 正式对照默认四对seed，是本项目编辑合同；1–3对只作探索，失败审计可完整交付但不冒充完成训练比较。失败seed不删除，不使用幸存者均值掩盖失败。
+- 主指标/分母/采样预算/checkpoint选择冻结；token等权NLL不同于文档等权；pass@1不同于pass@k/挑最好。格式失败保留任务分母，基础设施失败单独按预注册规则处理。
+- 统计分清训练seed、有限样本和解码重复三个层级。配对差标准差用S−1；Student-t区间注明独立/近似正态假设及四对难以检验分布的局限，不将95%区间写成后验概率，不以含0证明等效。统计扩展未冒充A5原评分公式。
+- 有效交付状态区分设计未运行、运行失效、证据不足、观察退化、条件支持。复现分数字复算/恢复检查/独立重训三级，不宣称全部已做。
+
+四、原创算例交给Main
+mechanism-cases.json共5组，均未由worker运行：
+1. 2组×4seed×40M训练token+2×4M先导=328M；12M参数的6ND记账=2.3616e16 FLOPs，明确非实测且不含评价等。
+2. 2×4×5×200×1×256=2,048,000个开发评价输出token上界，k改8为16,384,000；明确不是项目总账。
+3. 两文档有效token2/8、NLL和6/8：token均值1.4，PPL约4.0552；文档等权均值2.0。
+4. 人工假定差值[0,1,2,1]个百分点：均值1，sample std sqrt(2/3)，SE sqrt(1/6)，t输入3.182给约[-0.30,2.30]；不是模型成绩。
+5. 设备时1×2=2×1=2；2arm×4paired seed=8run但4配对比较；单checkpoint8次decode仍一个训练seed。
+SVG无成绩点或曲线；所有数值示例均标假设/纸面输入，不称机器实测。
+
+五、Main应做的最终检查
+- 整合course-task-metadata.json，保持num0与替代路线语义。两页已解释课程官网不是项目题目出处，无虚构官方项目入口。
+- 核8条源文件哈希和所列精确范围；A5许可证据是继承接受过的树审查，不算本worker重复审计。
+- 独立核5组CPU算例、统计单位与区间假设、预算中mask/生成/失败开销边界。
+- 检查所有站内路由，尤其本批ext16入口；必要时按Main最终共同归属调整共享元数据，不复制内容。
+- 两正文与1SVG实际桌面1440×1000、手机390×844验收；重点检查长公式、表格局部滚动、英文版本名、配对差图的浅深主题和手机文字。
+- 批次整合后由Main统一构建/页面检查；本worker没有运行build/lint/tests/formatter/smoke/browser，也没有复审已应用输出或git验证。
+
+六、遗留限制
+没有项目实验、训练曲线、成绩或运行成功声称；没有安装官方环境/执行官方测试、训练数据或模型下载、GPU/Modal/云/评分API/收费任务。指导中所有未来执行操作都要求学习者自行实现并先获得合法权限与计算授权。内容完成不等于任何官方作业或学习者研究已完成。Main最终验收/发布状态另记。

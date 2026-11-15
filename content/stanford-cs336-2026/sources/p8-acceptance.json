@@ -1,0 +1,22 @@
+{
+  "phase": "P8",
+  "date": "2026-11-15",
+  "status": "complete_with_documented_gaps",
+  "modelEvidence": "p8-model-preflight.json",
+  "scope": {"newBodyPages":5,"originalSvg":3,"lectures":["lec19"],"extensions":["ext16"],"editorialProjects":["capstone"],"unavailableClassroom":"lec18","catalogStatus":"active"},
+  "reading": {"newFullyReadCues":1533,"navigationSections":40,"internalGapsOver2s":19,"sourceRecords":40,"verifiedUniqueFileHashes":38,"mainCaptionCues":304,"authorReViewedOriginalPdfPages":4,"mainOriginalPdfPageViews":0,"wholePaperCloseReading":false,"audioVerified":false},
+  "checks": {
+    "structure":"p8-shared/structure-check.json",
+    "technicalReview":"P8-REVIEW.txt",
+    "sourceReview":"p8-shared/source-spotcheck.json",
+    "guestRecheck":"p8-shared/guest-recheck.json",
+    "arithmetic":{"status":"passed","independentGroups":24,"evidence":"p8-shared/cpu-smoke.json","officialCodeExecuted":false},
+    "build":{"status":"passed","localRuns":1,"command":"npm run build","modules":3693,"viteSeconds":6.33,"evidence":"p8-shared/build-summary.json"},
+    "browser":{"status":"passed","authoredRoutesPlusResources":6,"viewports":["1440x1000","390x844"],"additionalSourceGapRoute":"lec18","finalRootWidths":[1440,390],"katexErrors":0,"remainingDisplayMathOverflow":0,"svgLightMobileAndDarkDesktop":3,"actualVideoNewTabClicks":2,"evidence":"p8-shared/page-check.json"},
+    "deliveredContentHashes":"p8-shared/final-artifacts.json"
+  },
+  "cumulative":{"bodyPages":84,"lectureDocuments":70,"labDocuments":14,"originalSvg":50,"officialLecturesWithNotesAndDraft":18,"captionCuesFullyRead":29279,"specifiedPaperCores":16,"wholePapersCloseRead":0,"bridges":8,"extensions":16,"officialAssignments":5,"optionalPartOfA5":1,"editorialCapstone":1,"officialAssignmentsExecuted":0,"editorialResearchExperimentsExecuted":0},
+  "publication":{"allowlist":"p8-allowlist.txt","record":"p8-publication-record.json","localAcceptanceIsNotPublication":true,"rawSourcesAndScreenshotsExcluded":true,"localDistNotUploaded":true},
+  "limits":["L18 remains unavailable after one targeted official new-release check;no topic/video/duration/body invented.","Drafts are limited independent paraphrases,not full classroom translation;no audio/frame verification.","Specified paper cores and recorded selections only,not whole-paper close reading.","No official implementation/tests,model/data download,training,GPU/cloud/Modal/scoring orpaid compute.","Gated models andexact course SFT mixture access/identity remain unverified.","Source manifests do not remotely back up local source bytes.","Capstone is LAB0 editorial two-route research,not Assignment6 orperformed research."],
+  "next":{"phase":null,"autoStart":false,"status":"course_production_closed_with_documented_gaps"}
+}

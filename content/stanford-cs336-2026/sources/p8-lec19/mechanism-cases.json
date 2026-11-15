@@ -1,0 +1,246 @@
+{
+  "phase": "P8",
+  "lecture_id": "lec19",
+  "purpose": "Independent CPU recomputation of original finite teaching examples; no tests or computations executed as acceptance in this worker slice.",
+  "units_note": "Binary MiB/GiB for storage; abstract costs explicitly assumed, not measured GPU FLOPs.",
+  "cases": [
+    {
+      "id": "cold_turn_work_fraction",
+      "page": "notes §2.2",
+      "inputs": {
+        "turns_per_session": 10,
+        "cold_new_tokens": 4096,
+        "warm_new_tokens": 128,
+        "warm_turns": 9
+      },
+      "expected": {
+        "new_tokens_per_session": 5248,
+        "cold_request_fraction": 0.1,
+        "cold_new_token_fraction": 0.7804878048780488
+      },
+      "recompute": "total=4096+9*128; cold_request_fraction=1/10; cold_work_fraction=4096/total",
+      "assumptions": "Every later turn fully reuses eligible prior prefix; count new tokens only, not attention FLOPs or latency."
+    },
+    {
+      "id": "suffix_attention_comparisons",
+      "page": "notes §2.1 formula",
+      "inputs": {
+        "cached_prefix_H": 4096,
+        "new_queries_U": 128
+      },
+      "expected": {
+        "prefix_pairs": 524288,
+        "suffix_causal_pairs": 8256,
+        "total_pairs": 532544
+      },
+      "recompute": "U*H+U*(U+1)/2",
+      "assumptions": "Dense causal attention key comparisons; counts omit heads, dimensions and other operations."
+    },
+    {
+      "id": "cache_restore_fast_slow",
+      "page": "notes §3; self-test4",
+      "inputs": {
+        "cache_MiB": 512,
+        "startup_ms": 2,
+        "bandwidth_GiB_s": [
+          16,
+          4
+        ],
+        "recompute_ms": 50,
+        "prefetch_lead_ms": 40
+      },
+      "expected": {
+        "cache_GiB": 0.5,
+        "restore_ms": [
+          33.25,
+          127
+        ],
+        "break_even_GiB_s": 10.416666666666666,
+        "fast_restore_hidden_with_40ms_lead": true
+      },
+      "recompute": "restore_ms=2+1000*(512/1024)/bandwidth; break_even=(512/1024)/((50-2)/1000)",
+      "assumptions": "Effective bandwidth; no queue or contention; strict speed advantage only for bandwidth greater than break-even."
+    },
+    {
+      "id": "dependency_overlap",
+      "page": "notes §4.2",
+      "inputs": {
+        "query_us": 4,
+        "kv_load_us": 6,
+        "attention_us": 8,
+        "output_projection_us": 3,
+        "launch_us": 1,
+        "separate_launches": 4
+      },
+      "expected": {
+        "separate_us": 25,
+        "fused_serial_us": 22,
+        "fused_overlap_us": 18,
+        "latency_reduction_fraction": 0.28,
+        "speedup_ratio": 1.3888888888888888
+      },
+      "recompute": "Separate=sum(work)+4*launch; fused_serial=sum(work)+launch; fused_overlap=max(query,KV)+attention+projection+launch; latency_drop=(25-18)/25; ratio=25/18",
+      "assumptions": "Only first two stages independent, fully overlappable and contention-free; not measured."
+    },
+    {
+      "id": "shared_parameter_and_training_budget",
+      "page": "notes §5",
+      "inputs": {
+        "nonrecurrent_parameters_M": 20,
+        "recurrent_parameters_M": 30,
+        "recurrences": [
+          1,
+          4
+        ],
+        "nonrecurrent_cost_per_token": 2,
+        "cost_per_recurrence": 3,
+        "training_budget_units": 1400000000
+      },
+      "expected": {
+        "shared_parameters_M": 50,
+        "unshared_four_blocks_parameters_M": 140,
+        "costs_per_token": [
+          5,
+          14
+        ],
+        "training_tokens": [
+          280000000,
+          100000000
+        ]
+      },
+      "recompute": "Pshared=P0+Pr; Punshared=P0+4*Pr; token_cost=2+3*r; token_budget=1400000000/token_cost",
+      "assumptions": "Abstract whole-training-token cost model; no measured FLOPs or quality effect. No claim that recurrent KV is shared."
+    },
+    {
+      "id": "linear_forced_recurrence",
+      "page": "notes §6.1; self-test5",
+      "inputs": {
+        "x0": 0,
+        "b": 0.5,
+        "u": 2,
+        "a_values": [
+          0.5,
+          1,
+          1.2
+        ],
+        "steps": 4
+      },
+      "expected": {
+        "sequences_including_x0": [
+          [
+            0,
+            1,
+            1.5,
+            1.75,
+            1.875
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2.2,
+            3.64,
+            5.368
+          ]
+        ],
+        "a_half_limit": 2
+      },
+      "recompute": "For each a: repeat x=a*x+b*u four times; closed form a^n*x0+sum(a^j*b*u,j=0..n-1)",
+      "assumptions": "Original discrete proxy, not Parcae equation; for a=1 with forcing the state grows linearly."
+    },
+    {
+      "id": "negative_diagonal_counterexample",
+      "page": "notes §6.2",
+      "inputs": {
+        "a": -2,
+        "steps": 4,
+        "x0": 1,
+        "forcing": 0
+      },
+      "expected": {
+        "a_fourth_power": 16,
+        "x4": 16,
+        "spectral_radius": 2
+      },
+      "recompute": "(-2)^4; absolute eigenvalue=2",
+      "assumptions": "Negative diagonal alone not a discrete contraction; no assertion about actual Parcae parameterization."
+    },
+    {
+      "id": "spectral_radius_not_norm",
+      "page": "notes §6.3; self-test7",
+      "inputs": {
+        "A": [
+          [
+            0.5,
+            8
+          ],
+          [
+            0,
+            0.5
+          ]
+        ],
+        "x0": [
+          0,
+          1
+        ]
+      },
+      "expected": {
+        "eigenvalues": [
+          0.5,
+          0.5
+        ],
+        "spectral_radius": 0.5,
+        "matrix_infinity_norm": 8.5,
+        "x1": [
+          8,
+          0.5
+        ],
+        "state_infinity_norms": [
+          1,
+          8
+        ]
+      },
+      "recompute": "Triangular matrix diagonal entries are eigenvalues; max absolute row sum=8.5; multiply A*x0; max absolute vector component",
+      "assumptions": "Fixed non-normal matrix can transiently amplify despite asymptotic decay."
+    },
+    {
+      "id": "nonlinear_remainder_counterexample",
+      "page": "notes §6.3",
+      "inputs": {
+        "linear_a": 0.5,
+        "g_coefficient": 0.75,
+        "x0": 1,
+        "steps": 4
+      },
+      "expected": {
+        "full_update_multiplier": 1.25,
+        "x4": 2.44140625
+      },
+      "recompute": "x=(0.5+0.75)*x repeated four times",
+      "assumptions": "g is a linear special case of a Lipschitz residual; spectral radius of A alone does not stabilize complete map."
+    },
+    {
+      "id": "rare_failure_probability",
+      "page": "notes §7",
+      "inputs": {
+        "independent_failure_probability": 1e-05,
+        "opportunities": 100000
+      },
+      "expected": {
+        "expected_failures": 1,
+        "probability_at_least_one_interval": [
+          0.6321,
+          0.6322
+        ]
+      },
+      "recompute": "N*p; 1-(1-p)^N, or -expm1(N*log1p(-p))",
+      "assumptions": "IID hypothetical opportunities with explicit denominator, not production measurement."
+    }
+  ]
+}

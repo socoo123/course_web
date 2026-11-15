@@ -1,8 +1,16 @@
 {
   "courseId": "stanford-cs336-2026",
   "updatedAt": "2026-11-15",
-  "status": "P7_sixteen_cumulative_specified_core_readings_reviewed_and_page_accepted_with_documented_limits",
+  "status": "P8_existing_sixteen_cores_preserved_ext16_scoped_reuse_reviewed_and_page_accepted_with_documented_gaps",
   "policy": "每篇单一正文归属不变。16篇全文已本地获取，但实际已读仅各记录所列范围；未称全文精读。官方明确推荐/任务必查与编者必读/选读分开。授权不明或ND材料仅自主精读。",
+  "p8Reuse": {
+    "topic": "ext16",
+    "evidence": "p8-ext16/reading-updates.json",
+    "sourceManifest": "p8-ext16/manifest-fragment.json",
+    "scope": "R1v2版本、预算和评测选段；DPO主文/附录/示例三角对照；A5任务与静态接口合同。精确重读范围见证据，不重复论文正文，不改变16篇核心已验收状态或声称全文精读。",
+    "preservedHomes": {"paper12":"lec15","paper14":"lec16"},
+    "officialExecution": false
+  },
   "readings": [
     {
       "id": "paper01",
@@ -2572,6 +2580,7 @@
       "materialFile": "lectures/lec15/materials.zh.md",
       "alsoUsedBy": [
         "ext14",
+        "ext16",
         "a5-safety-optional"
       ],
       "priority": "目标推导与实验",
@@ -2909,6 +2918,7 @@
       "materialFile": "lectures/lec16/materials.zh.md",
       "alsoUsedBy": [
         "ext14",
+        "ext16",
         "a5-reasoning"
       ],
       "priority": "训练路线、证据与局限",

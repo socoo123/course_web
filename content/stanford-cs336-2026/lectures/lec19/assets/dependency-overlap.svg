@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 740" role="img" aria-labelledby="title desc">
+<title id="title">先加载独立数据，再等待真正的计算依赖</title>
+<desc id="desc">上方串行示例先完成新query准备，再读取历史KV。下方将两条独立准备路径并行，等新query与历史KV都就绪才开始attention，随后做输出投影。重叠不等于取消依赖，也不保证共享带宽时获得理想加速。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;color:var(--fg)}text{fill:var(--fg);font:17px system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}.h{font-size:21px;font-weight:700}.s{font-size:15px}.box,.line{fill:none;stroke:var(--fg);stroke-width:1.8}.dash{stroke-dasharray:5 4}.tip{fill:var(--fg)}</style>
+<text class="h" x="22" y="34">融合不等于取消依赖</text>
+<rect class="box" x="20" y="56" width="380" height="218" rx="12"/>
+<text class="h" x="38" y="88">粗粒度串行</text>
+<text x="38" y="123">① 新query：QKV投影 ＋ RoPE</text>
+<path class="line" d="M204 135V152"/><path class="tip" d="M199 146L204 156L209 146Z"/>
+<text x="38" y="181">② 历史KV加载</text>
+<path class="line" d="M204 191V207"/><path class="tip" d="M199 202L204 212L209 202Z"/>
+<text x="38" y="239">③ attention → 输出投影</text>
+<rect class="box" x="20" y="298" width="380" height="326" rx="12"/>
+<text class="h" x="38" y="332">细粒度依赖</text>
+<rect class="box" x="35" y="359" width="163" height="81" rx="8"/>
+<text x="51" y="391">QKV ＋ RoPE</text><text class="s" x="51" y="418">产生新query</text>
+<rect class="box" x="222" y="359" width="163" height="81" rx="8"/>
+<text x="238" y="391">历史KV加载</text><text class="s" x="238" y="418">无需等待query</text>
+<path class="line" d="M116 440V466H210M303 440V466H210V488"/><path class="tip" d="M205 480L210 490L215 480Z"/>
+<text x="92" y="514">两者就绪 → attention</text>
+<path class="line" d="M210 529V550"/><path class="tip" d="M205 543L210 553L215 543Z"/>
+<text x="158" y="582">输出投影</text>
+<rect class="box dash" x="20" y="648" width="380" height="72" rx="10"/>
+<text class="s" x="37" y="676">数据必须已就绪；共享带宽仍可能争用。</text>
+<text class="s" x="37" y="703">原创依赖图；不是课堂截图或性能轨迹。</text>
+</svg>

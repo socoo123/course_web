@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "phase": "P8",
+  "owner": "P8Capstone",
+  "kind": "editorial_original_paper_examples_not_model_results",
+  "validation_status": "not_executed_by_worker; supplied for Main independent CPU verification",
+  "prohibited_execution": "No official assignment code, fixtures or tests; no models, datasets, training, GPU, cloud, scoring or paid APIs.",
+  "cases": [
+    {
+      "id": "capstone_training_budget_all_attempts",
+      "body": "labs/capstone/guide.zh.md",
+      "section": "阶段2.1",
+      "inputs": {"parameters": 12000000, "arms": 2, "seeds_per_arm": 4, "tokens_per_formal_run": 40000000, "pilot_runs": 2, "tokens_per_pilot": 4000000, "dense_training_multiplier": 6},
+      "expected": {"formal_runs": 8, "formal_training_tokens": 320000000, "pilot_training_tokens": 8000000, "all_training_tokens": 328000000, "formal_run_flop_proxy": 2880000000000000, "all_training_flop_proxy": 23616000000000000},
+      "reasoning": "D_all=arms*seeds_per_arm*tokens_per_formal_run+pilot_runs*tokens_per_pilot; C_proxy=6*N*D_all. This is cumulative token-accounting plus a rough dense-model proxy, not measured FLOPs, runtime, memory or money. Evaluation and infrastructure are excluded and require separate caps. Failed attempts still consume this budget."
+    },
+    {
+      "id": "capstone_development_generation_bound",
+      "body": "labs/capstone/guide.zh.md",
+      "section": "阶段2.2",
+      "inputs": {"arms": 2, "seeds_per_arm": 4, "development_evaluations_per_run": 5, "prompts_per_evaluation": 200, "samples_per_prompt": 1, "max_output_tokens_per_sample": 256, "alternative_samples_per_prompt": 8},
+      "expected": {"development_output_token_upper_bound": 2048000, "alternative_upper_bound": 16384000, "alternative_multiplier": 8},
+      "reasoning": "Multiply all six dimensions. These are output-token upper bounds, not actual generations or a total-project cap. Prompt prefill, unchanged-base reference, locked test, pilot evaluations and training rollouts are expressly excluded in the body and must be budgeted separately. Increasing k changes metric semantics and cost, not the number of independent training seeds."
+    },
+    {
+      "id": "capstone_nll_weighted_denominator",
+      "body": "labs/capstone/guide.zh.md",
+      "section": "阶段3.1",
+      "inputs": {"valid_target_token_counts": [2, 8], "assumed_document_nll_sums_nats": [6, 8]},
+      "expected": {"total_valid_tokens": 10, "total_nll_nats": 14, "token_mean_nll": 1.4, "token_perplexity": 4.0551999668446745, "document_equal_weight_mean_nll": 2.0},
+      "tolerance": 0.000000001,
+      "reasoning": "Token mean is sum(NLL)/sum(valid targets). The unweighted mean of per-document means computes a different estimand. PPL=exp(token_mean_nll), assuming natural logarithms and one fixed tokenizer/context/mask contract. The toy values were posited, not read from any model."
+    },
+    {
+      "id": "capstone_paired_uncertainty",
+      "body": "labs/capstone/guide.zh.md",
+      "section": "阶段5.1",
+      "inputs": {"assumed_paired_differences_percentage_points": [0, 1, 2, 1], "two_sided_t_multiplier_rounded_for_df3": 3.182, "preregistered_improvement_threshold_percentage_points": 1.5},
+      "expected": {"pairs": 4, "mean_difference": 1.0, "sum_squared_deviations": 2.0, "sample_variance": 0.6666666666666666, "sample_standard_deviation": 0.816496580927726, "standard_error": 0.408248290463863, "interval_lower_using_rounded_multiplier": -0.299046060256012, "interval_upper_using_rounded_multiplier": 2.299046060256012, "body_rounded_interval": [-0.30, 2.30]},
+      "tolerance": 0.000000001,
+      "reasoning": "Sample variance divides by S-1; SE divides sample SD by sqrt(S). This t interval assumes independent approximately normal paired differences. Four pairs cannot establish normality; show raw differences and limits. A positive mean with this interval does not establish improvement above zero or above 1.5 percentage points, and inclusion of zero does not prove equivalence. All four deltas are explicitly invented arithmetic inputs, never reported as performance."
+    },
+    {
+      "id": "capstone_device_time_and_replication_units",
+      "body": "labs/capstone/guide.zh.md",
+      "section": "自测与阶段4–5",
+      "inputs": {"plan_one_devices": 1, "plan_one_hours_each": 2, "plan_two_devices": 2, "plan_two_hours_each": 1, "independent_seed_pairs": 4, "arms": 2, "repeated_decodes_for_one_checkpoint": 8},
+      "expected": {"plan_one_device_hours": 2, "plan_two_device_hours": 2, "formal_training_runs": 8, "paired_training_comparison_units": 4, "training_seed_count_for_one_checkpoint_after_repeated_decodes": 1},
+      "reasoning": "Sum device hours across devices rather than using wall time alone. Equal device hours do not imply equal hardware, FLOPs, efficiency or price. Two arms times four paired seeds yields eight trained runs but only four paired differences. Eight decodes from one checkpoint do not create eight independent training runs."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 700" role="img" aria-labelledby="title desc">
+<title id="title">四对训练，四个配对差</title>
+<desc id="desc">编者原创概念图，不含实验成绩。四个独立seed配对中，各有基线与只改一项的实验组；每对使用同一冻结评价合同，得到一个配对差。不同配对间独立，同一模型增加输出采样不增加独立训练seed数量。失败配对单列，不能从账本删除。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:17px system-ui,-apple-system,"PingFang SC","Noto Sans CJK SC",sans-serif}.heading{font-size:22px;font-weight:700}.small{font-size:15px}.box,.line{fill:none;stroke:var(--border);stroke-width:1.7}.dash{stroke-dasharray:6 4}.tip{fill:var(--fg)}</style>
+<text class="heading" x="24" y="34">四对训练，四个配对差</text>
+<rect class="box" x="20" y="56" width="380" height="76" rx="10"/>
+<text x="38" y="86">冻结同一评价合同</text>
+<text class="small" x="38" y="113">数据 · 指标分母 · 解码 · 选择规则</text>
+<path class="line" d="M210 132V155"/><path class="tip" d="M204 148L210 160L216 148Z"/>
+<rect class="box" x="20" y="170" width="380" height="70" rx="9"/>
+<text x="38" y="197">第 1 对：基线 ⇄ 实验组</text>
+<text class="small" x="38" y="224">共享可共享的随机性 → 配对差 d₁</text>
+<rect class="box" x="20" y="254" width="380" height="70" rx="9"/>
+<text x="38" y="281">第 2 对：基线 ⇄ 实验组</text>
+<text class="small" x="38" y="308">共享可共享的随机性 → 配对差 d₂</text>
+<rect class="box" x="20" y="338" width="380" height="70" rx="9"/>
+<text x="38" y="365">第 3 对：基线 ⇄ 实验组</text>
+<text class="small" x="38" y="392">共享可共享的随机性 → 配对差 d₃</text>
+<rect class="box" x="20" y="422" width="380" height="70" rx="9"/>
+<text x="38" y="449">第 4 对：基线 ⇄ 实验组</text>
+<text class="small" x="38" y="476">共享可共享的随机性 → 配对差 d₄</text>
+<path class="line" d="M210 492V515"/><path class="tip" d="M204 508L210 520L216 508Z"/>
+<rect class="box" x="20" y="530" width="380" height="90" rx="9"/>
+<text x="38" y="560">先展示每对差值，再汇总波动</text>
+<text class="small" x="38" y="584">配对之间独立；失败配对另报</text>
+<text class="small" x="38" y="606">不能只保留成功者或最好 seed</text>
+<path class="line dash" d="M24 644H396"/>
+<text class="small" x="24" y="670">同一模型多采样 ≠ 多个独立训练 seed</text>
+<text class="small" x="24" y="691">原创证据结构；不是训练流程实现或成绩图。</text>
+</svg>
