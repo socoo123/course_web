@@ -1,14 +1,122 @@
 {
   "phase": "P7",
-  "status": "local_accepted_publication_pending",
+  "status": "published_Actions_success_live_verified",
   "repository": "https://github.com/socoo123/course_web",
   "branch": "main",
   "site": "https://socoo123.github.io/course_web/",
   "allowlist": "p7-allowlist.txt",
   "acceptance": "p7-acceptance.json",
-  "contentCommit": null,
-  "actionsRun": null,
-  "liveVerification": null,
+  "contentCommit": "196716dbf62588e58af72f9e1f4617cfdcfa2469",
+  "actionsRun": {
+    "id": 43697119159,
+    "url": "https://github.com/socoo123/course_web/actions/runs/43697119159",
+    "headSha": "196716dbf62588e58af72f9e1f4617cfdcfa2469",
+    "status": "completed",
+    "conclusion": "success",
+    "createdAt": "2026-11-15T09:00:30Z",
+    "updatedAt": "2026-11-15T09:01:14Z",
+    "jobs": [
+      {
+        "id": 132760046187,
+        "name": "deploy",
+        "conclusion": "success",
+        "startedAt": "2026-11-15T09:00:35Z",
+        "completedAt": "2026-11-15T09:01:13Z"
+      }
+    ],
+    "nonBlockingAnnotations": [
+      "Existing v4 actions target deprecated Node20 and runner forces Node24.",
+      "ubuntu-latest migration advisory;deployment succeeded."
+    ]
+  },
+  "liveVerification": {
+    "checkedAt": "2026-11-15T09:04:13.517Z",
+    "status": "passed",
+    "pageCount": 5,
+    "pages": [
+      {
+        "file": "lectures/lec15/notes.zh.md",
+        "url": "https://socoo123.github.io/course_web/?p7=196716d#/c/stanford-cs336-2026/lec/lec15",
+        "firstHeading": "1. 把“更像助手”拆成三个不同问题",
+        "selectedTab": "课程笔记",
+        "root": 1440,
+        "viewport": 1440,
+        "katexErrors": 0,
+        "images": [
+          {
+            "alt": "后训练的数据与反馈合同",
+            "loaded": true,
+            "delivery": "Vite-inlined SVG"
+          }
+        ],
+        "video": {
+          "text": "在YouTube打开79:54",
+          "href": "https://www.youtube.com/watch?v=2oH6PWPrYFo"
+        },
+        "screenshot": "p7-shared/screenshots/live-lectures-lec15-notes-1440.png"
+      },
+      {
+        "file": "lectures/lec16/materials.zh.md",
+        "url": "https://socoo123.github.io/course_web/?p7=196716d#/c/stanford-cs336-2026/lec/lec16?v=materials",
+        "firstHeading": "如何读这两篇论文",
+        "selectedTab": "课程资料",
+        "root": 390,
+        "viewport": 390,
+        "katexErrors": 0,
+        "images": [],
+        "video": {
+          "text": "在YouTube打开75:50",
+          "href": "https://www.youtube.com/watch?v=dIFAi87Ws4E"
+        },
+        "screenshot": "p7-shared/screenshots/live-lectures-lec16-materials-390.png"
+      },
+      {
+        "file": "lectures/lec17/materials.zh.md",
+        "url": "https://socoo123.github.io/course_web/?p7=196716d#/c/stanford-cs336-2026/lec/lec17?v=materials",
+        "firstHeading": "第一篇：CLIP 自主精读",
+        "selectedTab": "课程资料",
+        "root": 390,
+        "viewport": 390,
+        "katexErrors": 0,
+        "images": [],
+        "video": {
+          "text": "在YouTube打开77:39",
+          "href": "https://www.youtube.com/watch?v=26FtD08ZpOU"
+        },
+        "screenshot": "p7-shared/screenshots/live-lectures-lec17-materials-390.png"
+      },
+      {
+        "file": "labs/a5-reasoning/lab.zh.md",
+        "url": "https://socoo123.github.io/course_web/?p7=196716d#/c/stanford-cs336-2026/lab/a5-reasoning?v=zh",
+        "firstHeading": "0．先固定版本、权限与实验对象",
+        "selectedTab": "实验说明",
+        "root": 390,
+        "viewport": 390,
+        "katexErrors": 0,
+        "images": [],
+        "screenshot": "p7-shared/screenshots/live-labs-a5-reasoning-lab-390.png"
+      },
+      {
+        "file": "labs/a5-safety-optional/guide.zh.md",
+        "url": "https://socoo123.github.io/course_web/?p7=196716d#/c/stanford-cs336-2026/lab/a5-safety-optional?v=guide",
+        "firstHeading": "1．比较合同：指标不是脱离流程的属性",
+        "selectedTab": "实验指导",
+        "root": 390,
+        "viewport": 390,
+        "katexErrors": 0,
+        "images": [
+          {
+            "alt": "三阶段模型与三种参考角色",
+            "loaded": true,
+            "delivery": "Vite-inlined SVG"
+          }
+        ],
+        "screenshot": "p7-shared/screenshots/live-labs-a5-safety-optional-guide-390.png"
+      }
+    ],
+    "visualReview": "Opened actual deployed desktop L15 and mobile L17 screenshots;all5 routes exact headings/tabs/root widths/KaTeX checked,2 linked SVGs loaded.",
+    "screenshotsLocalOnly": true
+  },
   "rawSourcesUploaded": false,
   "localDistUploaded": false,
   "receiptPolicy": "After successful content deployment,record actual commit/Actions/live evidence in a separate [skip ci] receipt commit;this does not change deployed authored content."
