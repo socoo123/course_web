@@ -1,0 +1,23 @@
+{
+  "phase": "P6",
+  "date": "2026-11-15",
+  "reviewer": "Main",
+  "method": "Actual original-text reads independent of author fragments; static inspection only, not official execution or full-PDF visual audit.",
+  "assignment": {
+    "commit": "0555bea66369872d912652debf10b115ca0688c8",
+    "handout": {"file":"p1-assignments-a1-a4/a4/cs336_assignment4_data.txt","readLines":[[1,845]],"physicalPages":16,"version":"26.0.1"},
+    "completeFilesRead": ["p1-assignments-a1-a4/a4/README.txt","p1-assignments-a1-a4/a4/LICENSE","p1-assignments-a1-a4/a4/CHANGELOG.txt","p1-assignments-a1-a4/a4/scripts/download_data.py","p1-assignments-a1-a4/a4/cs336_data/wet_files.py","p1-assignments-a1-a4/a4/cs336_data/modal_utils.py","p1-assignments-a1-a4/a4/cs336_data/common.py","p1-assignments-a1-a4/a4/cs336_basics/train_config.py","p1-assignments-a1-a4/a4/scripts/train.py"],
+    "findings": ["25 more WET records follow the initial record; four applicable analyses require20 examples, including PII examples with a replacement.","Exact-line task removes every occurrence of repeated lines, not keep-one.","MinHash/LSH candidates require true normalized ngram Jaccard verification and transitive clustering.","filter_data requires per-filter kept counts and attribution as proportions of all discarded examples.","Validation may inform filters under A4 rules but its text may not become training data; DCLM AppendixC is stricter and must not replace A4 rules.","offline-only still downloads validation/example/classifier assets and imports SUNET guard; local Furu path list is not automatically english-wet-data symlinks.","2500 rawWET,group4,seed336,CC-MAIN-2026-17; observation example belongs2026-12.","8devices×128×512×16384=2^33 training tokens; fixed430M configuration, no staff training modifications.","Default save_checkpoints=false; finalmodel.pt is saved, but best logged validation loss is not automatically a best checkpoint."],
+    "officialExecution": false
+  },
+  "lectures": [
+    {"file":"p1-lectures/raw/lecture_13.py","readLines":[[90,238],[489,618]],"focus":"Access restrictions, copyright scope, FineWeb versusRefinedWeb, datasets and collection-versus-item licenses; declaration outline inspected separately, not full source read.","findings":["75-year copyright duration is not a universal rule; copying/training legality requires case-specific rights and exceptions.","Lecture-era lawsuit descriptions are not a current legal-status lookup.","Source corpus counts are dated claims, not live inventory."]},
+    {"file":"p1-lectures/raw/lecture_14.py","readLines":[[60,142],[217,321],[331,460]],"focus":"Filtering target,MinHash/LSH assumptions,mixture epochs andsynthetic data; declaration outline inspected separately.","findings":["100hashes do not guarantee <.01 error.","Source b20,r450 differs from RefinedWeb450bands×20rows; retain identity and correct comparison explicitly.","Epoch cap requires p_s D/N_s<=C; fixed source omits N_s.","No model-based filtering in that paragraph means quality filtering, not no language/toxicity classifiers."]}
+  ],
+  "papers": [
+    {"id":"paper08","version":"2406.17557v2","file":"p1-papers-01-08/paper08-2406.17557v2.txt","readLines":[[280,343],[368,459],[493,594],[1112,1123],[1130,1255]],"focus":"Global versus per-crawl dedup; thresholds; Edu annotations; domain-fit intentionally not decontaminated; dataODC-By separate from paperCC-BY; E.1 probabilistic match formula and compute tradeoff.","fullPaperRead":false},
+    {"id":"paper09","version":"2406.11794v4","file":"p1-papers-09-16/paper09-2406.11794v4.txt","readLines":[[201,396],[453,606],[2065,2147],[4088,4176]],"focus":"Five competition scales and fixed recipe; CORE22/EXTENDED53; classifiers,thresholds,mixing and decontamination tables; C.1–C.3 rules; AppendixO false-positive/negative limits.","fullPaperRead":false}
+  ],
+  "videoIdentity": {"source":"p1-videos/video-map.json","lectures":[{"id":"lec13","video":"-qm0ln33G24","seconds":4921,"cues":1419},{"id":"lec14","video":"5sxHosTLPF8","seconds":5086,"cues":1448}],"publisher":"Stanford Online","speaker":"Percy Liang","year":2026,"audioOrVideoWatched":false},
+  "limits": ["This record describes source reads, not yet final content or page acceptance.","Main did not fully read either subtitle track; authors own complete reading logs.","No models, datasets, classifier weights, cloud jobs or training services accessed."]
+}

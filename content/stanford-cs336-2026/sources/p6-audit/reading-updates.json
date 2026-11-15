@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "batch": "P6",
+  "slice": "p6-audit",
+  "read_at": "2026-11-15",
+  "merge_policy": "Add author-specific actual readings; do not overwrite canonical home, full-translation status, or other authors' coverage. No aggregate file edited.",
+  "updates": [
+    {
+      "paper_id": "paper08",
+      "fixed_version": "arXiv:2406.17557v2",
+      "home": "lec14",
+      "materialFile": "lectures/lec14/materials.zh.md",
+      "alsoUsedBy": "ext13",
+      "actual_reading": "Independent source-text reading of title/authors/version;3.1;3.4;selected3.7;4.2;B;completeE.1 prose/formula/Figure13 caption. Additional3.2 context read. Exact ranges in p6-audit/reading-log.json.",
+      "treatment": "Original extension explaining comparison contracts, dedup scope/probability/transitivity and claim boundaries; paper translation remains unique lec14 materials page.",
+      "full_core_reading_claim": false,
+      "full_paper_reading_claim": false,
+      "plot_pixel_audit_claim": false,
+      "experiments_executed": false
+    },
+    {
+      "paper_id": "paper09",
+      "fixed_version": "arXiv:2406.11794v4",
+      "home": "lec14",
+      "materialFile": "lectures/lec14/materials.zh.md",
+      "alsoUsedBy": "ext13",
+      "actual_reading": "Independent source-text reading of relevant3.1-3.5 prose;4.5-4.6/Tables6-7;completeC.1-C.3;completeAppendixO textual content,Table25 and Figures11-12 captions. Exact ranges in p6-audit/reading-log.json.",
+      "optional_scope_added": {"section": "O", "pdfPages": "69-70", "status": "actual_text_and_table_caption_read_for_ext13", "boundary": "Not graph-pixel reconstruction or implementation audit."},
+      "treatment": "Independent audit explanation distinguishing training-document flags, evaluation-token coverage, fixed-model evaluation subsets and deletion/retraining interventions.",
+      "full_core_reading_claim": false,
+      "full_paper_reading_claim": false,
+      "plot_pixel_audit_claim": false,
+      "experiments_executed": false
+    }
+  ]
+}

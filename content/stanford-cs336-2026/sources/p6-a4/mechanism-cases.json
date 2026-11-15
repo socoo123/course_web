@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "course": "stanford-cs336-2026",
+  "phase": "P6",
+  "slice": "A4",
+  "origin": "Editor-authored abstract arithmetic/sets; no official fixture, model or dataset",
+  "status": "Expected results supplied for Main independent verification; worker did not execute examples or official code",
+  "cases": [
+    {
+      "id": "sequential-filter-denominators",
+      "inputs": {
+        "counts": [
+          100,
+          80,
+          50
+        ]
+      },
+      "expected": {
+        "removed_per_step": [
+          20,
+          30
+        ],
+        "step_conditional_rates": [
+          0.2,
+          0.375
+        ],
+        "share_of_all_discarded": [
+          0.4,
+          0.6
+        ]
+      },
+      "teaches": "Per-step input denominator differs from total discarded denominator."
+    },
+    {
+      "id": "twenty-observation-miss-probability",
+      "inputs": {
+        "assumed_true_error_rate": 0.05,
+        "iid_observations": 20
+      },
+      "expression": "(1-0.05)^20",
+      "expected_approx": 0.3584859224,
+      "absolute_tolerance": 1e-09,
+      "teaches": "No observed error is not proof of zero risk; independence is an assumption."
+    },
+    {
+      "id": "lsh-candidate-probability",
+      "inputs": {
+        "true_jaccard": 0.5,
+        "bands": 3,
+        "rows_per_band": 2
+      },
+      "expression": "1-(1-0.5^2)^3",
+      "expected": 0.578125,
+      "teaches": "Candidate probability is not true Jaccard threshold or duplicate probability."
+    },
+    {
+      "id": "cluster-nontransitive-similarity",
+      "inputs": {
+        "A": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "B": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "C": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "illustrative_threshold": 0.7
+      },
+      "expected": {
+        "jaccard_AB": 0.8,
+        "jaccard_BC": 0.8,
+        "jaccard_AC": 0.6,
+        "connected_component_if_AB_BC_candidates": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "teaches": "Connected cluster does not imply all pair similarities exceed threshold."
+    },
+    {
+      "id": "eos-uint16-storage",
+      "inputs": {
+        "content_token_counts": [
+          3,
+          2
+        ],
+        "eos_per_document": 1,
+        "bytes_per_id": 2
+      },
+      "expected": {
+        "token_ids": 7,
+        "bytes": 14
+      },
+      "teaches": "Pure storage arithmetic; not claimed actual GPT-2 tokenization."
+    },
+    {
+      "id": "fixed-training-budget-arithmetic",
+      "inputs": {
+        "gpus": 8,
+        "batch_per_gpu": 128,
+        "context_length": 512,
+        "steps": 16384,
+        "gradient_accumulation_steps": 1
+      },
+      "expected": {
+        "tokens_per_step": 524288,
+        "training_tokens": 8589934592,
+        "power_of_two": 33
+      },
+      "teaches": "Training sample budget from official configuration, not produced dataset size."
+    },
+    {
+      "id": "wet-group-count",
+      "inputs": {
+        "raw_files": 2500,
+        "group_size": 4
+      },
+      "expected": {
+        "groups": 625,
+        "division_remainder": 0
+      },
+      "teaches": "File groups are not documents; reduced n_files must remain divisible by four."
+    }
+  ]
+}

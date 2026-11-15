@@ -1,0 +1,64 @@
+P6 / A4 author review and handoff
+Date: 2026-11-15
+Author slice: P6AssignmentFour; configured model openai-codex/gpt-6-astra:xhigh.
+Scope: labs/a4-data/{lab.zh.md,guide.zh.md,assets/*}; sources/p6-a4/* only. No aggregate metadata, course.json, catalog, status, resources, app source, official assignment code, or other slice edited.
+
+DELIVERED
+1. labs/a4-data/lab.zh.md: full Chinese first-party instruction restatement for all 13 scored Problems, all 27 lettered subquestions and four unlettered Problems. Official total is 71 points; no invented letter-level point split. Versioned Spring 2026 handout 26.0.1 and package 26.0.0 kept distinct. Full original English MIT notice is at the page bottom.
+2. labs/a4-data/guide.zh.md: substantive non-answer concept/API guide, evidence scopes, classification/quality boundaries, false-positive/negative sampling caveats, MinHash/LSH probability distinction, nontransitive clustering, denominator accounting, binary/EOS contract, data-only training/evaluation, static access limitations, original concept self-checks. No Python, pseudocode, regex, trained model, ready pipeline, optimal threshold, empirical observation or submission answer.
+3. labs/a4-data/assets/evidence-boundaries.svg: editor-original four-layer evidence illustration, no source screenshot; transparent; CSS light/dark CanvasText variables; title/desc; 560-wide viewBox; no scripts or external resources. Not browser-verified by author.
+4. task-coverage.json: 13 Problems / 31 leaf requirements, official IDs, original titles, points, handout sections/pages, every lettered question, requested sample counts/sentence lengths/deliverables, adapters, actual test selectors, lab/guide paths and heading locations, implementation and access constraints.
+5. course-task-metadata.json: suggested 13 task IDs/titles/points for Main's course.json integration; author did not edit shared metadata.
+6. manifest-fragment.json: 28 source records with exact URL/version/retrieved date/path/SHA256/rights/read ranges/treatment; 3 authored artifacts and SVG identity; no raw-source publication authorization inferred.
+7. mechanism-cases.json: 7 small original / configuration-arithmetic cases for Main independent verification. Author did not run them or any official code.
+
+ACTUAL READING, NOT P1 AUDIT SUBSTITUTION
+- Complete sources/NEXT-P6-PROMPT.txt and local shared contract read first; technical-video-notes skill read.
+- Reused pinned A4 handout at 0555bea66369872d912652debf10b115ca0688c8. Independently read ALL extracted reader lines 1–845, covering physical PDF pp.1–16, official code-example context and bibliography. Extraction is not a visual PDF review.
+- Complete README, LICENSE and all CHANGELOG history read, not just 2026 release headlines.
+- Complete pyproject.toml, configs/config.yaml and configs/experiment/your_data.yaml read.
+- Complete common.py (13 lines), modal_utils.py (37), wet_files.py (157), download_data.py (129), train_config.py (52), train.py (391) read. No import/run.
+- Acquired only missing small, known pinned first-party source files, after discovering their paths in pinned tree inventory. Saved .txt evidence in p6-a4/upstream/: AGENTS.md; adapters.py; tests/common.py; all six test modules; generate_with_gpt2_tok.py; test_and_make_submission.sh; cs336_basics/data.py. All acquired files read completely. Referenced fixture bodies were not fetched/read; no claim otherwise.
+- Complete public course AI policy text independently read. Its unspecified translation license is respected through finite independent policy summary, not full translated reproduction.
+- tree.json used only as file-path inventory, not counted as reading every repository blob. uv.lock and full model/optimizer/DDP implementations were not read and are not claimed necessary verification.
+
+COVERAGE DETAILS THAT MUST SURVIVE INTEGRATION
+- look_at_cc: first WARC URL/access/topic (2–3 sentences); first WET unwanted extraction/train risk/useful info (3–4); useful/not-useful domain (1–2); then 25 MORE WET documents with language/domain/type/notes and first high-quality position. This is not 25 lines or total 25 including first.
+- extract_text: Resiliparse bytes→Unicode→extraction, non-UTF8 fallback detection, correct adapter and one-WARC versus corresponding-WET comparison (2–3); no invented 20-example requirement.
+- language: lid.176 top language and [0,1] score, en/zh adapter labels; risk answer (2–5); 20 random own-extracted WARC examples, errors, English fraction and threshold discussion (2–5).
+- PII: exact three markers, counted new replacements, common US phones and IPv4 bounds; risk answer (2–5); 20 random examples CONDITIONED ON a replacement, false-positive/negative examples (2–5). No false claim this samples all no-hit false negatives or removes all PII.
+- harmful content: distinct Dolma NSFW and hatespeech/toxicity models; nsfw/non-nsfw and toxic/non-toxic labels; both APIs; Jigsaw sanity tests are not independent accuracy tests; risk answer (2–5); 20 random examples with error/fraction/threshold(s) analysis (2–5).
+- Gopher: four threshold rules with correct strictness: words <50 or >100000, mean word length outside [3,10], ellipsis-ending line fraction >0.30, alphabetic-containing-word fraction <0.80. bool interface; optional NLTK; 20 random examples and 2–5 sentence disagreement analysis.
+- Quality classifier: learner-trained fastText, not a pretrained replacement or rules-only shim; May 2026 English Wikipedia external URL sampling and subsequent page collection/extraction as positives, random CC negatives, prior filtering optional; function/score and wiki/cc test label mapping; two sanity examples do not establish general quality.
+- Exact-line: hash corpus-wide occurrence counts, remove ALL occurrences of lines occurring more than once, not retain first; same-named output for every input file. Both intra- and cross-document repeats count.
+- MinHash/LSH: word n-gram sets, normalization lowercase/punctuation/whitespace/accents/NFD, k divisible by b, same-band candidate identity, true n-gram Jaccard threshold after candidates, cross-bucket duplicate-edge clustering, random one per cluster. Adapter explicitly takes jaccard_threshold despite handout's abbreviated argument list. Kept original document bodies / names; deleted document files not written. Connected clusters are not all-pairs threshold cliques.
+- filter_data: already English-filtered WET inputs; parallel script(s), each step's kept count AND fraction of ALL discarded examples attributable to each step; real provided-input runtime and separately qualified full-crawl extrapolation. Mutations not silently counted as deletions.
+- inspect_filtered_data: 5 random kept + 5 random deleted/modified documents, relevant excerpts allowed, 1–2 sentences each with justification; actual changes/iterations described.
+- tokenize_data: Transformers GPT-2, EOS after each document, np.uint16 array.tofile raw .bin, actual produced count including EOS. Multiline document boundary not blindly each line. Dataset size != fixed training sample tokens.
+- train_model: actual best recorded C4 100 validation loss, associated learning curve and description. No invented results. Best log observation != automatically saved best checkpoint (default save_checkpoints false; final model.pt saved). Periodic validation is sampled batches.
+- Deliverables: writeup.pdf plus code.zip; script filename is cs336-assignment4-submission.zip, not a tarball; || true masks pytest exit for packaging, therefore zip success != tests pass. Common assets/weights/text/json exclusions need student attention.
+
+STATIC SOURCE FINDINGS / ACCESS LIMITS
+1. Observation inputs are CC-MAIN-2026-12; full pipeline source CC-MAIN-2026-17. Do not merge these or old 2025 5000-WET assignment. Handout gives a concrete 2026-12 segment/basename; download_data chooses the first entries of warc.paths.gz and wet.paths.gz separately and does not code-check pairing. No download performed to assert they are identical.
+2. EnglishWetFiles defaults n_files=2500, group_size=4, shuffle_seed=336, no-replacement sample, lid.176 English probability >=0.7. 625 output groups is pure configuration arithmetic, not observed produced files. is_english remains student implementation placeholder.
+3. get_shared_assets_path returns resolved local-shared-data locally; remote /shared-data. Furu stores under root/furu and returns actual group paths. Only remote branch creates english-wet-data numbered links and .source; local route does not automatically mirror that path. Furu exact cache subpaths were not inferred or executed.
+4. Reduced n_files must remain divisible by group_size=4 (source assertion). Reduced download route is explicitly pedagogical adaptation, not completion of 2500 raw WET requirement.
+5. SUNET_ID='TODO' is a top-level import guard in modal_utils.py; download, train and generation import it. README local/offline routes are therefore not unconfigured turnkey commands.
+6. --offline-only still downloads Paloma validation .bin, WARC/WET examples, lid.176 and two Dolma classifiers. It skips full Wiki/WET construction, not networking. No such files acquired here.
+7. a4-shared-data is in cs336-shared-data environment, shared mount read_only(); personal data-SUNET_ID volume is /root/data. Public repo is not permission. Remote english-wet-data mkdir(exist_ok=False) and readonly mount prevent any promise that downloading/creating in the default environment will succeed. No credentials sought or volumes accessed.
+8. max_containers=128 and ephemeral_disk=524288 MB are static resource requests/configuration, not actual usage or suggestions to launch. Staff historical approx 2h runtime is not current measurement/free credit.
+9. Model configuration: approximately 430M, vocab50257/context512/d_model1024/d_ff3072/layers24/heads16/RoPE10000/BF16. Eight B200, batch128 per device, gradient accumulation1, 16384 steps => 2^33 training tokens. Data-only comparison: no architecture/training procedure/staff script modifications. No GPT-2 124M substitution.
+10. Current train.py uses dataclasses in train_config.py, not old Hydra YAML. Its single-GPU local entry is not formal eight-GPU budget. Defaults and output path are documented without altering scripts.
+11. Paloma C4 100 can inform filter/classifier design under this specific assignment, but validation contents cannot be copied into LM training; the model must not see validation data. Data design conditioned on validation is not independent-test generalization evidence.
+
+COPYRIGHT / TEACHING / PAGE SEMANTICS
+- Both pages retain full Stanford University 2026 MIT copyright, grant, notice condition and warranty/liability paragraphs, not merely a license link.
+- MIT is not extended to Common Crawl/Wikipedia/Paloma contents, classifier weights, papers or services. Chinese text explicitly unofficial and edited; raw first-party mirrors remain evidence only.
+- No real webpage PII or unnecessary Jigsaw toxic prose reproduced in pages; no fabricated screenshots.
+- FineWeb/DataComp-LM link only to unique lec14 materials home as editorial additions, not official A4 full-paper required reading. RefinedWeb citation remains distinct from FineWeb.
+- Responded to Main rendering finding: removed every instructional paragraph's leading '来源：§…' prefix and consolidated physical page/section locators in a footer source table, preventing prose from being collected as standalone source metadata.
+- Incorporated Main checkpoint correction directly: best observed log value is not automatically a saved best checkpoint.
+
+VERIFICATION / HONEST REMAINING LIMITS
+Worker ran NO build, lint, tests, formatter, smoke script, official assignment command or official module import. No code implementation supplied. No dataset/model/classifier/tokenizer/media acquisition, no Wikipedia scrape, no Modal job/private volume, no GPU/cloud compute, no submission endpoint. No actual observation annotations, classifier thresholds, rejection metrics, runtime, token total or validation loss are claimed. Source SHA256 recording only is provenance, not experiment verification.
+Main should independently check the seven arithmetic/semantic cases, all task IDs/counts/page links, SVG parse/render, 390px and desktop geometry/KaTeX/source-footer placement, and integrated site build once all slices land. Worker did not perform or claim those checks. No PDF visual-layout inspection, no live asset/service availability check. Raw upstream .txt and reused PDF/text mirrors should not enter publication; publish only allowed pages/SVG/lightweight JSON/txt evidence under Main whitelist policy.

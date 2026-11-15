@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 930" role="img" aria-labelledby="title desc">
+<title id="title">近似去重的四个合同：表示、候选、验证、保留</title>
+<desc id="desc">文档先变为ngram集合，经MinHash签名和LSH分桶产生候选，再以真实集合Jaccard验证边，最后按聚类规则保留代表。底部例子显示A与B、B与C均达到阈值，而A与C不达到，连通分量不是两两相似。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:22px system-ui,-apple-system,"PingFang SC",sans-serif}.title{font-size:27px;font-weight:700}.small{font-size:20px}.box,.line{fill:none;stroke:var(--border);stroke-width:2}.dash{stroke-dasharray:7 6}.bold{font-weight:700}</style>
+<text class="title" x="28" y="42">碰撞只是候选，不是删除判决</text>
+<rect class="box" x="30" y="66" width="580" height="96" rx="10"/>
+<text class="bold" x="52" y="102">1  固定比较对象</text>
+<text x="52" y="136">规范化文本 → ngram集合 A、B</text>
+<path class="line" d="M320 162V194m-8-10 8 10 8-10"/>
+<rect class="box" x="30" y="196" width="580" height="112" rx="10"/>
+<text class="bold" x="52" y="232">2  MinHash签名 → LSH候选</text>
+<text x="52" y="267">同一band各位置全相同，即进入候选</text>
+<text class="small" x="52" y="294">可能误报，也可能漏掉真正相似的文档</text>
+<path class="line" d="M320 308V340m-8-10 8 10 8-10"/>
+<rect class="box" x="30" y="342" width="580" height="112" rx="10"/>
+<text class="bold" x="52" y="378">3  按真实集合验证</text>
+<text x="52" y="413">J(A,B) ≥ τ 才建立相似边</text>
+<text class="small" x="52" y="440">验证能去掉误报，不能找回未进入候选的对</text>
+<path class="line" d="M320 454V486m-8-10 8 10 8-10"/>
+<rect class="box" x="30" y="488" width="580" height="96" rx="10"/>
+<text class="bold" x="52" y="524">4  聚类及代表保留规则</text>
+<text x="52" y="558">记录为何删除、保留谁，以及所属来源</text>
+<text class="title" x="30" y="633">连通，不代表任意两点相似</text>
+<circle class="box" cx="105" cy="704" r="42"/><circle class="box" cx="320" cy="704" r="42"/><circle class="box" cx="535" cy="704" r="42"/>
+<text x="105" y="712" text-anchor="middle">A</text><text x="320" y="712" text-anchor="middle">B</text><text x="535" y="712" text-anchor="middle">C</text>
+<path class="line" d="M147 704H278 M362 704H493"/>
+<text class="small" x="212" y="685" text-anchor="middle">2/3</text><text class="small" x="428" y="685" text-anchor="middle">2/3</text>
+<path class="line dash" d="M105 750V785H535V750"/>
+<text x="320" y="820" text-anchor="middle">A与C只有1/3；阈值为0.6</text>
+<text class="small" x="30" y="865">A={1,2}；B={1,2,3}；C={2,3}</text>
+<text class="small" x="30" y="905">原创示意；数值为自拟集合，不是网页或实验结果。</text>
+</svg>

@@ -1,0 +1,52 @@
+CS336-2026 P6｜数据流水线与污染审计
+日期：2026-11-15
+结论：正文、来源和本地页面验收通过，保留明确边界；发布回执另见p6-publication-record.json。
+
+一、范围与所有权
+新增8份正文：lec13/notes、lec13/draft、lec14/notes、lec14/draft、lec14/materials、ext13/notes、a4-data/lab、a4-data/guide（均为zh.md）。新增5张原创SVG：data-lineage、pipeline-distribution、dedup-contract、recipe-audit-contract、evidence-boundaries。内容目录外未作功能改动；未实现官方作业。
+累计：64份正文、38张原创SVG；14讲笔记/有限译述，8篇桥接、13篇专题；11篇论文指定核心，7份材料页；A1–A4说明和指导。论文全文精读计数仍为0。
+
+二、模型身份
+5个独立正文任务全部交付。Main核对各任务model_change、thinking_level_change及首条assistant；实际openai-codex/gpt-6-astra、xhigh，无fallback。原始事件编号及时间在p6-model-preflight.json。身份核验不替代内容验收。
+
+三、实际来源读取
+L13：官方2026视频-qm0ln33G24，82:01；1419条字幕全部读取，21处内部大于2秒缺口。L14：5sxHosTLPF8，84:46；1448条全部读取，36处内部缺口。固定讲次文字来源全文读取；时间顺序使用各自2026录影，不套2025。累计字幕22923条。
+两份draft只做按时间整理的有限中文译述，不发布原字幕、近逐字全文或课堂截图；未核音、未逐帧观看。Main独立读106条抽样字幕，覆盖6个易错窗口，不把抽样称为全读。证据：p6-lec13、p6-lec14的reading-log/time-intervals，以及p6-shared/caption-spotcheck.json。
+
+FineWeb arXiv:2406.17557v2：完整指定核心为§§3.1–3.7、§4主节及4.1–4.2、§5、附录B、E.1，相关图1–13图注与脚注1。
+DataComp-LM arXiv:2406.11794v4：完整指定核心为§§3.1–3.5、4.1–4.6、C.1–C.3，表1–7及图2–4图注。物理PDF页4含§3引导和表1，§3.1从页5开始，已校正reading-map定位。
+两篇均CC BY4.0，核心完整中译唯一正文位于lec14/materials；保留作者、固定版本、许可、改动和非官方声明。共18个指定原始PDF页面由正文作者实际视觉核对；不是全PDF或曲线逐点审计。ext13另独立读取DCLM附录O正文/表25/图11–12图注；不另写重复译文。reading-map保留P1实际范围，并明确当前P6读取状态。
+Main读全部8份最终正文、A4全部16页抽取文本及关键README/LICENSE/CHANGELOG、下载/预过滤/Modal/训练静态合同；抽查两讲与论文原文中的关键数值和限定。详细定位见p6-shared/source-spotcheck.json；Main未声称独立逐段复读全部论文核心。
+
+四、技术边界与纠错
+1. L13区分访问权限、作品许可与CC，不写成公共领域；书籍的75年期限不作为通用法律规则。PG-19为1919前作品，不是2019；课堂LLaMA年份误差注为2023。诉讼仅按课堂时点表述，不冒充当前法律结论。
+2. 抽取、过滤、去重、混合分别有输入总体、分母与保留规则。文档占比、token占比和训练曝光不能互换。UniMax重复上限须除以该来源库存；水位不是重复轮数。
+3. MinHash估计、LSH候选和真实Jaccard复核分开。100个hash不保证误差小于0.01；同簇不保证任意两点相似。课堂20 bands/450 rows与RefinedWeb/FineWeb方法参数明确分开。
+4. FineWeb每crawl去重优于全局的结论只在对应配方下成立；14bands×8rows是候选概率设计，不是精确75%阈值。Paloma域拟合不去污染是论文设计，不能偷偷补写为已去污。论文CC许可与数据ODC-By/原站权利分开。
+5. DCLM五种固定预算；CORE为EXTENDED53项中的22项。污染协议只对应声明的评测集合/题目字段/训练覆盖；题干及选项片段删除不写成整篇删除。质量正例标签不等于去污染真值。未观察分数下降、零命中均不能证明无污染。
+6. ext13按固定模型/tokenizer/预算/评测定义配方效应，记录搜索成本；脱敏、版权和污染是不同审计轴；假阴性和未覆盖通道明确列出。只使用原创小集合/算例，无真实评测泄漏物。
+
+五、A4完整性
+固定SHA：0555bea66369872d912652debf10b115ca0688c8。
+handout26.0.1/16页；package26.0.0。13个正式Problem、27个字母子问、31个叶级要求、71分；course.json已迁移为13个正式任务，无旧主题占位。
+任务及分值：look_at_cc4；extract_text3；language_identification6；mask_pii3；harmful_content6；gopher_quality_filters3；quality_classifier15；exact_deduplication3；minhash_deduplication8；filter_data6；inspect_filtered_data4；tokenize_data2；train_model8。
+覆盖额外25个WET抽样、四组各20条质量检查、保留5/删除5人工检查；完整行去重删除所有重复出现，不是保留一个；MinHash候选须真实Jaccard复核并做传递聚类。文档各加EOS、GPT-2 tokenizer与uint16保存分开说明。
+固定训练430M、8×B200、16,384步、8,589,934,592 tokens，不改staff配方冒充等价。2500个原始WET按4个一组形成625个English-only输出，不把输入数量当输出路径数量。SUNET占位guard、本地furu与远程symlink差异、WANDB_MODE=offline仍会下载资产、默认save_checkpoints=false及最佳日志值不等于最佳权重，均已写明。
+校外CPU路线仅验证原理；不运行下载脚本/官方测试/Modal/训练/API，不下载模型、分类器或语料，不提供完整作业答案。
+
+六、验收证据
+check-p6.py第一次运行指出分片缺material_files与字段命名不一致；修正来源记录后第二次通过，未弱化检查。
+最终结构：8正文、5SVG、119站内链接、222合法时间范围、54来源记录/44唯一文件哈希；16个论文唯一归属保持；A4任务和71分匹配。
+独立CPU算例一次运行：12组通过，Python3.11.8；包含有限排列MinHash、LSH概率、真实集合/传递聚类、分母/混合/重复、污染字段与EOS/uint16、预算/文件分组。原创合成数据，不导入官方代码，不表示官方实验通过。见p6-shared/cpu-smoke.json。
+一次npm run build通过：tsc --noEmit与Vite，Vite6.10s。构建发生于最终正文和手机修正之后。之后仅汇总来源/状态记录，使用窄JSON解析；不重复跑构建。原始缓存可能进入本地dist，发布只用白名单提交后的Actions干净检出，绝不上传本地dist。
+
+页面：8份正文及公共资料共9页，1440×1000与390×844各检查，准确标题就绪后测量。最终根宽1440/390，KaTeX错误与display-math溢出均0。初检发现ext13长公式与A4长API/文件名溢出；公式分行、模块/函数分开和wbr后针对性复核通过。没有用全局样式掩盖问题。
+5SVG全部在浅色手机和深色桌面实际加载并视觉核对，可读、无文本/箭头交叠。论文宽表用真实横向滚轮，scrollLeft由0到138；表格横向滚动保留而整页不横溢。
+L13/L14页头视频ID/82:01和84:46分别正确；默认课程笔记。实际L13桌面、L14手机点击均打开对应新标签，原阅读页及选中笔记保留。未声称播放视频。页面记录和31张本地截图索引见p6-shared/page-check.json，截图不提交。
+一次过早等待懒加载图片decode造成浏览器检查暂停，重新连接后按先滚动再decode恢复；不声称整段会话无控制台错误。
+
+七、出版与停止边界
+最终正文身份见p6-shared/final-artifacts.json；作者分片中pending/hash是交付时快照，最终验收以本文件、p6-acceptance.json和status.json为准。
+提交严格白名单：8正文、5原创SVG、共享元数据和轻量审计记录。排除原始/标准化字幕、完整PDF/HTML/源镜像、原文摘录缓存、页面渲染图、截图、环境文件和dist。不得git add -f整个sources。
+Actions状态和线上页面的实际结果独立写入p6-publication-record.json；此文的本地通过不冒充已经部署。
+P7提示已写：NEXT-P7-PROMPT.txt。关键词CS336-2026-P7-后训练与多模态；只在用户明确接续后启动L15–L17、A5必做/官方选做、ext14/15及5篇论文。ext16、嘉宾课与综合项目留P8。

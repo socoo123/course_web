@@ -1,0 +1,36 @@
+{
+  "lecture_id": "lec13",
+  "created_at": "2026-11-15",
+  "origin": "Editor-original hypothetical data; no real web text, PII, official assignment implementation or model results",
+  "execution_status": "Inputs and analytical expectations only; author did not run tests. Main may independently verify arithmetic.",
+  "cases": [
+    {
+      "id": "selection-shifts-source-mixture",
+      "body_section": "notes.zh.md §4.2",
+      "input": {"technical_before": 100, "forum_before": 100, "technical_kept": 80, "forum_kept": 20},
+      "expected": {"total_retention": 0.5, "technical_retention": 0.8, "forum_retention": 0.2, "technical_share_before": 0.5, "technical_share_after": 0.8},
+      "interpretation": "Overall retention alone hides a source-distribution shift; no human quality ground truth is assumed."
+    },
+    {
+      "id": "conditional-filter-retention",
+      "body_section": "notes.zh.md §4.3",
+      "input": {"language_and_quality": 20, "language_only": 40, "quality_only": 30, "neither": 10},
+      "expected": {"total": 100, "language_pass": 60, "quality_pass": 50, "joint_pass": 20, "joint_fraction": 0.2, "incorrect_independent_product": 0.3, "quality_given_language_fraction": {"numerator": 20, "denominator": 60}},
+      "interpretation": "Fixed predicates on unchanged documents commute as set intersections; conditional retention differs from standalone retention. Text modification or representative selection invalidates that assumption."
+    },
+    {
+      "id": "documents-are-not-token-weights",
+      "body_section": "notes.zh.md §7.1",
+      "input": {"web_documents": 100, "web_average_tokens": 1000, "short_code_documents": 100, "short_code_average_tokens": 100, "same_fixed_tokenizer": true},
+      "expected": {"web_document_share": 0.5, "web_tokens": 100000, "short_code_tokens": 10000, "total_tokens": 110000, "web_token_share_fraction": {"numerator": 10, "denominator": 11}, "web_token_share_percent_rounded_1dp": 90.9},
+      "interpretation": "Uniform complete-document sampling produces length-weighted token exposure; truncation or fixed-block sampling changes the question."
+    },
+    {
+      "id": "inventory-versus-training-exposure",
+      "body_section": "notes.zh.md §7.2",
+      "input": {"training_token_budget": 120000000, "sources": [{"name": "web", "available_tokens": 60000000, "token_weight": 0.5}, {"name": "encyclopedia", "available_tokens": 10000000, "token_weight": 0.3}, {"name": "code", "available_tokens": 30000000, "token_weight": 0.2}]},
+      "expected": {"available_total": 100000000, "weight_sum": 1.0, "sources": [{"name": "web", "planned_consumption": 60000000, "average_exposure": 1.0}, {"name": "encyclopedia", "planned_consumption": 36000000, "average_exposure": 3.6}, {"name": "code", "planned_consumption": 24000000, "average_exposure": 0.8}], "planned_total": 120000000},
+      "interpretation": "Budget accounting under token-level weighting; not an optimal recipe, effective-sample-size estimate, or performance law."
+    }
+  ]
+}

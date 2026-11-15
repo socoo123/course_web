@@ -1,0 +1,21 @@
+{
+  "phase": "P6",
+  "checkedAt": "2026-11-15",
+  "requestedModel": "openai-codex/gpt-6-astra:xhigh",
+  "observedConfiguration": {"taskPerCallModel":"on","taskEnableEffort":false,"taskAgentModelOverrides":{},"taskPrewalk":false},
+  "configurationChangedThisRun": false,
+  "resolvedSubagentModel": "openai-codex/gpt-6-astra",
+  "resolvedSubagentEffort": "xhigh",
+  "resolvedModelIsFallback": false,
+  "subagentsStarted": 5,
+  "subagentsCompleted": 5,
+  "runtimeEvidence": [
+    {"agent":"P6LectureThirteen","modelEvent":"5e7ed6a6","effortEvent":"5be46be4","firstAssistantEvent":"ec0975c9","timestamp":"2026-11-15T07:27:41.820Z"},
+    {"agent":"P6LectureFourteen","modelEvent":"e2f76901","effortEvent":"c996b173","firstAssistantEvent":"2e85ac26","timestamp":"2026-11-15T07:27:41.834Z"},
+    {"agent":"P6DatasetPapers","modelEvent":"07645b44","effortEvent":"7bfeb85f","firstAssistantEvent":"9be5c4e8","timestamp":"2026-11-15T07:27:41.798Z"},
+    {"agent":"P6ContaminationAudit","modelEvent":"a2dfd40f","effortEvent":"fbefa98c","firstAssistantEvent":"165c3a59","timestamp":"2026-11-15T07:27:41.811Z"},
+    {"agent":"P6AssignmentFour","modelEvent":"0b5cf328","effortEvent":"88da2522","firstAssistantEvent":"feacd800","timestamp":"2026-11-15T07:27:41.825Z"}
+  ],
+  "verification": "Main read cfg://task before explicit dispatch, then inspected each current worker's model_change, thinking_level_change and first assistant provider/model. All five resolved to openai-codex/gpt-6-astra, xhigh, fallback=false. No configuration writes or substitutions. Identity does not imply content completion.",
+  "nextDispatchGate": "Any additional worker requires the same exact identity and verification; unavailable means stop, not substitute."
+}

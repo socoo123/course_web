@@ -1,0 +1,123 @@
+{
+  "batch": "P6",
+  "owner": "P6DatasetPapers",
+  "status": "original_tiny_cases_for_Main_independent_verification_not_executed_here",
+  "official_assignment_solution": false,
+  "cases": [
+    {
+      "id": "minhash-collision-curve",
+      "kind": "probability",
+      "expression": "1-(1-s**8)**14",
+      "inputs": [
+        0.7,
+        0.75,
+        0.8,
+        0.85
+      ],
+      "expected_intervals": [
+        [
+          0.56,
+          0.57
+        ],
+        [
+          0.77,
+          0.78
+        ],
+        [
+          0.92,
+          0.93
+        ],
+        [
+          0.987,
+          0.989
+        ]
+      ],
+      "reason": "PaperE.1rounded56%,77%,92%,98.8%;not deterministic75%cutoff."
+    },
+    {
+      "id": "centered-four-choice",
+      "kind": "arithmetic",
+      "expression": "(accuracy-random_baseline)/(1-random_baseline)",
+      "inputs": {
+        "accuracy": 0.55,
+        "random_baseline": 0.25
+      },
+      "expected": 0.4,
+      "tolerance": 1e-12,
+      "reason": "DCLMmetric explanatory toy, not a downloaded evaluation sample."
+    },
+    {
+      "id": "education-relative-vs-points",
+      "kind": "arithmetic",
+      "inputs": {
+        "mmlu_before": 0.33,
+        "mmlu_after": 0.37,
+        "arc_before": 0.46,
+        "arc_after": 0.57
+      },
+      "expected": {
+        "mmlu_percentage_point_gain": 4,
+        "mmlu_relative_gain_interval": [
+          0.121,
+          0.122
+        ],
+        "arc_percentage_point_gain": 11,
+        "arc_relative_gain_interval": [
+          0.239,
+          0.24
+        ]
+      },
+      "reason": "Keep percentage-point and relative-percent gains distinct."
+    },
+    {
+      "id": "dclm-original-document-denominator",
+      "kind": "arithmetic",
+      "inputs": {
+        "heuristic_kept": 19.9,
+        "bloom_removed": 6.2,
+        "fasttext_removed": 12.3
+      },
+      "expected": {
+        "after_bloom": 13.7,
+        "final_kept": 1.4
+      },
+      "tolerance": 1e-12,
+      "reason": "Figure4percentagesuseoriginaldocumentdenominator;token ratios differ."
+    },
+    {
+      "id": "transitive-cluster-not-clique",
+      "kind": "graph_logic",
+      "vertices": [
+        "A",
+        "B",
+        "C"
+      ],
+      "candidate_edges": [
+        [
+          "A",
+          "C"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ],
+      "expected_connected_components": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "unjustified_conclusion": "A-B Jaccard >=0.75",
+      "reason": "Connectivity alone does not imply pairwise similarity; collision also probabilistic."
+    },
+    {
+      "id": "dclm-7b-2x-budget",
+      "kind": "arithmetic",
+      "expression": "20*6.9e9*2",
+      "expected": 276000000000.0,
+      "reason": "Illustrates the rounded table7B-2x budget;do not force all rounded table rows to exact equality."
+    }
+  ]
+}

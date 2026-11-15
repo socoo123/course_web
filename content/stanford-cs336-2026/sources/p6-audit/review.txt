@@ -1,0 +1,44 @@
+P6 ext13 author review — 2026-11-15
+
+Owned outputs
+- lectures/ext13/notes.zh.md: standalone original Chinese deep dive, 13 teaching sections plus source/license boundary; no draft/materials page.
+- lectures/ext13/assets/recipe-audit-contract.svg: original conceptual vertical flow, title/desc, transparent, viewBox640x1080, CanvasText CSS variables and standalone light/dark pattern.
+- sources/p6-audit/manifest-fragment.json, reading-log.json, reading-updates.json, toy-cases.json, review.txt.
+No aggregate course/source/status file, other author page, official assignment code, or configuration changed.
+
+Scope achieved
+1. Defines a data-recipe comparison estimand and fixes model, tokenizer, training/evaluation protocol and budget; distinguishes total recipe effects from mechanism-controlled comparisons and search cost.
+2. Per-stage lineage records preserve original and transformed identity, parent-child links, reasons and actual training exposure. Hashes explicitly not treated as anonymization.
+3. Original900→600→480→400 document/100k→72k→60k→50k token ledger distinguishes stage/cumulative and document/token denominators; independent overlapping-rule example distinguishes reasons from incremental deletions.
+4. Exact/raw/normalized/line/subsequence/ngram relations separated from within-doc, site, cross-site, per-crawl, cross-crawl and cross-split scope/direction.
+5. Fully deterministic original ASCII strings and specified normalization give exact and bigram-Jaccard counterexamples; empty-ngram policy is explicit rather than accidental.
+6. Derives ideal MinHash collision probability and banded LSH1-(1-s^r)^b, labels independence assumptions, fixed-seed determinism and candidate-vs-verified-edge contracts.
+7. OriginalU/V/W sets exhibit verified-threshold transitivity failure. Representative selection/time/source effects explained without replacing FineWeb's actual algorithm with A4's contract.
+8. Separates stored tokens, unique content and exposure; original reweighting, duplicate-content inverse-concentration and expected-distinct-draw examples.
+9. Audit contract explicitly covers train population, protected materials/fields, timestamps, units/tokenizer, detection/verification boundaries and reporting.
+10. Original interval union, confusion matrix and zero-detection binomial upper-bound derivations. No raw PII/harmful text, no unsupported perfect decontamination or simulated audit passed off as real.
+11. Twelve questions have substantive answers. L12 measurement/contamination/statistical concepts linked instead of duplicated as lecture content. All FineWeb/DCLM paper-body links use lec14/materials uniquely.
+
+Primary evidence actually read
+- FineWeb fixed2406.17557v2: source text around3.1,3.4,3.7,4.2,AppendixB and completeE.1 prose/formula/Figure13 caption; exact selected lines in reading-log. Extra3.2 prose contextual only.
+- DCLM fixed2406.11794v4: relevant3.1–3.5;4.5–4.6/Tables6–7;AppendixC.1–C.3;completeAppendixO text,Table25 and Fig11/12 captions. Thus the optional contamination appendix was independently read, not borrowed from P1 summary.
+- Both fixed article metadata license markers independently inspected. Existing source files reused, checksums recorded; no raw copies created. Paper CC BY4.0 is distinguished from FineWeb dataset ODC-By/CommonCrawl terms and third-party rights.
+
+Technical boundaries emphasized
+- FineWeb75% is a probabilistic matching region, not a hard threshold. It describes band-match graph/transitive clustering, not a secretly added exact-Jaccard postfilter.
+- FineWeb domain-fit explicitly lacks decontamination; not evidence of leakage-free generalization. Cross-crawl dedup result is conditional, not universal.
+- DCLM pool releases tools rather than claiming global decontamination. AppendixC protects evaluation data uses and freezes training/eval code. Mixing improvements are conditional on tested base data, scale and proportions.
+- DCLM4.6 question/option removal and retraining is different from AppendixO token-overlap evaluation-subset analysis. Table25 uses training-document denominators and unequal selected comparison subsets.
+- AppendixO strict20%/80% wording does not fully resolve equality implementation; the page labels its own complementary >80%/<=80% example rather than silently attributing it.
+- A nondecreasing score after restricted removal does not establish globally absent pollution; a fixed model's clean-subset score is not the causal effect of training removal.
+
+Original arithmetic evidence
+12 original cases in toy-cases.json: stage denominators, union of deletion reasons, line scope, normalized strings/Jaccard, band probabilities, cluster transitivity, token exposure, inverse concentration, expected unique draws, interval union, confusion matrix, zero-detection bounds. One separately labeled source-derived E.1 rounded-probability check. Expected results authored but not executed by worker; Main may independently evaluate them. No official assignment implementation or original-scale training is represented.
+
+Verification and remaining limits
+- Worker followed no-build/no-tests/no-lint/no-formatter instruction. No browser/390px acceptance or runtime check claimed.
+- Main should include this page/SVG in integrated Markdown/math/link/SVG checks, desktop/390px light-dark viewing, and tiny arithmetic verification; draft/materials tabs should not be created for ext13.
+- Figure13 and DCLM plot captions/text read, not graph pixels or underlying experimental data. Complete papers/core translations are another owner's work, not claimed here.
+- No lecture video/caption re-read is needed or claimed for this editorial extension; no fabricated timestamps/screenshots.
+- No real corpus inspected, no benchmark audit performed, no model trained, no classifier downloaded, no private volume/credentials/cloud/Modal/official A4 execution. This page is substantive study material and an audit design, not a result certificate.
+- Authoring complete; course integration/publication acceptance remains Main's responsibility.

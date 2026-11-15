@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+<title id="title">流水线每一步都改变最后的训练分布</title>
+<desc id="desc">原始网页经过抽取、过滤、跨来源去重和token混合，每一步留下不同的证据。右侧箭头表示顺序，不代表普适最优顺序。最后提示混合权重、清洗后库存和总训练token预算必须一起决定。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:22px system-ui,-apple-system,"PingFang SC",sans-serif}.title{font-size:26px;font-weight:700}.small{font-size:20px}.box,.line{fill:none;stroke:var(--border);stroke-width:2}.dash{stroke-dasharray:7 6}</style>
+<text class="title" x="28" y="42">不是“清洁度”，而是分布的选择</text>
+<rect class="box" x="30" y="70" width="580" height="100" rx="10"/>
+<text x="50" y="107">原始来源：网页、PDF、代码仓库</text>
+<text class="small" x="50" y="143">保留来源、时间、版本与许可边界</text>
+<path class="line" d="M320 170V202m-8-10 8 10 8-10"/>
+<rect class="box" x="30" y="204" width="580" height="100" rx="10"/>
+<text x="50" y="241">抽取：结构 → 文本</text>
+<text class="small" x="50" y="277">检查正文丢失、表格错位与模板残留</text>
+<path class="line" d="M320 304V336m-8-10 8 10 8-10"/>
+<rect class="box" x="30" y="338" width="580" height="100" rx="10"/>
+<text x="50" y="375">过滤：文本 → 保留子集</text>
+<text class="small" x="50" y="411">分数不是标签；按来源统计误删与漏放</text>
+<path class="line" d="M320 438V470m-8-10 8 10 8-10"/>
+<rect class="box" x="30" y="472" width="580" height="100" rx="10"/>
+<text x="50" y="509">去重：多份内容 → 代表内容</text>
+<text class="small" x="50" y="545">跨来源比较；聚类、保留策略影响库存</text>
+<path class="line" d="M320 572V604m-8-10 8 10 8-10"/>
+<rect class="box" x="30" y="606" width="580" height="100" rx="10"/>
+<text x="50" y="643">混合：独特库存 → 训练抽样分布</text>
+<text class="small" x="50" y="679">同时记录来源权重、token预算与重复轮数</text>
+<text class="small" x="30" y="745">顺序可改变结果；示意不是唯一正确的工程顺序。</text>
+<text class="small" x="30" y="779">原创图；清洗不能自动赋予许可或证明没有污染。</text>
+</svg>

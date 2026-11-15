@@ -1,0 +1,983 @@
+{
+  "schema_version": 1,
+  "course": "stanford-cs336-2026",
+  "phase": "P6",
+  "slice": "A4 full instructions and non-answer guide",
+  "created_at": "2026-11-15T07:41:21.731330+00:00",
+  "document_date": "2026-11-15",
+  "actual_model": "openai-codex/gpt-6-astra:xhigh",
+  "ownership": [
+    "labs/a4-data/lab.zh.md",
+    "labs/a4-data/guide.zh.md",
+    "labs/a4-data/assets/*",
+    "sources/p6-a4/*"
+  ],
+  "aggregate_files_edited": false,
+  "source_commit": "0555bea66369872d912652debf10b115ca0688c8",
+  "source_reading": {
+    "handout": "all 16 pages; extracted-text reader lines 1–845",
+    "readme_license_changelog": "complete",
+    "adapters_and_tests": "adapters.py plus all six test modules and tests/common.py complete",
+    "scripts": "download_data.py, train.py, generate_with_gpt2_tok.py, test_and_make_submission.sh complete",
+    "support": "train_config.py, data.py, common.py, modal_utils.py, wet_files.py, pyproject.toml and two YAML files complete",
+    "not_read": [
+      "uv.lock dependency internals",
+      "test fixture bodies",
+      "full staff model.py/optimizer.py/DDP helper implementations",
+      "external referenced papers for this slice"
+    ],
+    "no_visual_pdf_review": true
+  },
+  "sources": [
+    {
+      "id": "p6-a4-changelog-txt",
+      "kind": "repository_changelog",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/CHANGELOG.md",
+      "status": "fully_read_static",
+      "read_scope": "Complete file read, lines 1–101; no import/execution.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/CHANGELOG.txt",
+      "sha256": "7d79c210ee2db7fe03d913b7db8f5afce17e8c795b9546568299aa9a980a1752",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:39:23Z",
+      "upstream_path": "CHANGELOG.md",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-changelog-txt"
+      },
+      "actual_read_range": {
+        "lines": [
+          1,
+          101
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static interface/version/path/config analysis and independent Chinese explanation."
+    },
+    {
+      "id": "p6-a4-license",
+      "kind": "license",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/LICENSE",
+      "status": "fully_read_static",
+      "read_scope": "Complete file read, lines 1–7; no import/execution.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/LICENSE",
+      "sha256": "b51b84ea0047227436109908f0edb347231d7a07398b746464f0a8f94295e19d",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:38:02Z",
+      "upstream_path": "LICENSE",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-license"
+      },
+      "actual_read_range": {
+        "lines": [
+          1,
+          7
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static interface/version/path/config analysis and independent Chinese explanation."
+    },
+    {
+      "id": "p6-a4-readme-txt",
+      "kind": "repository_readme",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/README.md",
+      "status": "fully_read_static",
+      "read_scope": "Complete file read, lines 1–80; no import/execution.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/README.txt",
+      "sha256": "adc51b90e2ef0bcea6c599052853106facd6bd70207c25f30f7f0051647f38cd",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:38:02Z",
+      "upstream_path": "README.md",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-readme-txt"
+      },
+      "actual_read_range": {
+        "lines": [
+          1,
+          80
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static interface/version/path/config analysis and independent Chinese explanation."
+    },
+    {
+      "id": "p6-a4-configs-config-yaml",
+      "kind": "runtime_config",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/configs/config.yaml",
+      "status": "fully_read_static",
+      "read_scope": "Complete file read, lines 1–5; no import/execution.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/configs/config.yaml",
+      "sha256": "1cb4bc385e2448dcaa25c4893bb57b808f3081cf0d54242bf671b7f4667150bc",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:40:08Z",
+      "upstream_path": "configs/config.yaml",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-configs-config-yaml"
+      },
+      "actual_read_range": {
+        "lines": [
+          1,
+          5
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static interface/version/path/config analysis and independent Chinese explanation."
+    },
+    {
+      "id": "p6-a4-configs-experiment-your-data-yaml",
+      "kind": "runtime_config",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/configs/experiment/your_data.yaml",
+      "status": "fully_read_static",
+      "read_scope": "Complete file read, lines 1–14; no import/execution.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/configs/experiment/your_data.yaml",
+      "sha256": "f410aa54e926ec9eaf36afebfa91f7ab066067ba2a969b6c0a11f93afb198eae",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:40:08Z",
+      "upstream_path": "configs/experiment/your_data.yaml",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-configs-experiment-your-data-yaml"
+      },
+      "actual_read_range": {
+        "lines": [
+          1,
+          14
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static interface/version/path/config analysis and independent Chinese explanation."
+    },
+    {
+      "id": "p6-a4-handout",
+      "kind": "assignment_handout",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/cs336_assignment4_data.pdf",
+      "status": "read_via_complete_extracted_text",
+      "read_scope": "Complete 16-page handout through cs336_assignment4_data.txt lines 1–845; no PDF visual-layout inspection.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/cs336_assignment4_data.pdf",
+      "sha256": "2b0660d0d1e96366c4688f9606c707c668a1fa76396c563b21a6fc75863fb59e",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:38:09Z",
+      "upstream_path": "cs336_assignment4_data.pdf",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-handout"
+      },
+      "actual_read_range": {
+        "physical_pages": [
+          1,
+          16
+        ],
+        "mode": "complete extracted text",
+        "visual_review": false
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Full faithful Chinese first-party task/instruction restatement; no implementation solution; complete MIT notice."
+    },
+    {
+      "id": "p6-a4-handout-text",
+      "kind": "assignment_handout_text",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/cs336_assignment4_data.pdf",
+      "status": "derived_and_fully_read",
+      "read_scope": "Independently read all reader lines 1–845 in three ranged calls covering all 16 physical pages, all 13 scored Problems, all 27 lettered subquestions, code-example/API context and bibliography. P1 summaries used only for navigation.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/cs336_assignment4_data.txt",
+      "sha256": "e13cd4fd3dbf27424f971e5015ed619ad25e317e365276c75b3fa25be57d2ce6",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:38:40Z",
+      "upstream_path": "cs336_assignment4_data.pdf",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "derived_from": "p1-a4-handout",
+      "extraction": "pdftotext -layout; page breaks retained; no OCR or visual verification",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-handout-text"
+      },
+      "actual_read_range": {
+        "reader_lines": [
+          1,
+          845
+        ],
+        "physical_pages": [
+          1,
+          16
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Complete task translation/reexpression; code examples documented as API/output contracts, not supplied as solutions."
+    },
+    {
+      "id": "p6-a4-cs336-basics-train-config-py",
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/cs336_basics/train_config.py",
+      "status": "fully_read_static",
+      "read_scope": "Complete file read, lines 1–52; no import/execution.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/cs336_basics/train_config.py",
+      "sha256": "2d478f34d01fd38f0912b3701cd461b0dd088ed38c5f2c81fc0342cb9bbf107d",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:40:06Z",
+      "upstream_path": "cs336_basics/train_config.py",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-cs336-basics-train-config-py"
+      },
+      "actual_read_range": {
+        "lines": [
+          1,
+          52
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static interface/version/path/config analysis and independent Chinese explanation."
+    },
+    {
+      "id": "p6-a4-cs336-data-common-py",
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/cs336_data/common.py",
+      "status": "fully_read_static",
+      "read_scope": "Complete file read, lines 1–13; no import/execution.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/cs336_data/common.py",
+      "sha256": "425504b090049187e0e1799c41c83d41fdcf1bdb62d343731a49b73234bae687",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:40:05Z",
+      "upstream_path": "cs336_data/common.py",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-cs336-data-common-py"
+      },
+      "actual_read_range": {
+        "lines": [
+          1,
+          13
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static interface/version/path/config analysis and independent Chinese explanation."
+    },
+    {
+      "id": "p6-a4-cs336-data-modal-utils-py",
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/cs336_data/modal_utils.py",
+      "status": "fully_read_static",
+      "read_scope": "Complete file read, lines 1–37; no import/execution.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/cs336_data/modal_utils.py",
+      "sha256": "d8ae956df23f2a6aa6812634ffd4fe7d0ace698284525a12a7ee921939cf3ff0",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:40:07Z",
+      "upstream_path": "cs336_data/modal_utils.py",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-cs336-data-modal-utils-py"
+      },
+      "actual_read_range": {
+        "lines": [
+          1,
+          37
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static interface/version/path/config analysis and independent Chinese explanation."
+    },
+    {
+      "id": "p6-a4-cs336-data-wet-files-py",
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/cs336_data/wet_files.py",
+      "status": "fully_read_static",
+      "read_scope": "Complete file read, lines 1–157; no import/execution.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/cs336_data/wet_files.py",
+      "sha256": "aef77e29e38aaaed24aedc28d2d57997980e59db6cb1bb990cac6dcae0438a6a",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:40:05Z",
+      "upstream_path": "cs336_data/wet_files.py",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-cs336-data-wet-files-py"
+      },
+      "actual_read_range": {
+        "lines": [
+          1,
+          157
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static interface/version/path/config analysis and independent Chinese explanation."
+    },
+    {
+      "id": "p6-a4-pyproject-toml",
+      "kind": "dependency_manifest",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/pyproject.toml",
+      "status": "fully_read_static",
+      "read_scope": "Complete file read, lines 1–66; no import/execution.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/pyproject.toml",
+      "sha256": "6bae5cb547f7bc7a2e035bb50491deee55814205e9b376041801a19f27342a30",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:38:02Z",
+      "upstream_path": "pyproject.toml",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-pyproject-toml"
+      },
+      "actual_read_range": {
+        "lines": [
+          1,
+          66
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static interface/version/path/config analysis and independent Chinese explanation."
+    },
+    {
+      "id": "p6-a4-scripts-download-data-py",
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/scripts/download_data.py",
+      "status": "fully_read_static",
+      "read_scope": "Complete file read, lines 1–129; no import/execution.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/scripts/download_data.py",
+      "sha256": "1a89325d770b26a78e7125e435339556e9054562a1bd19f61d1a405556b35c3e",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:40:06Z",
+      "upstream_path": "scripts/download_data.py",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-scripts-download-data-py"
+      },
+      "actual_read_range": {
+        "lines": [
+          1,
+          129
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static interface/version/path/config analysis and independent Chinese explanation."
+    },
+    {
+      "id": "p6-a4-scripts-train-py",
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/scripts/train.py",
+      "status": "fully_read_static",
+      "read_scope": "Complete file read, lines 1–391; no import/execution.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/scripts/train.py",
+      "sha256": "28ae9d79e684ce8f1dc2392ed31d3a364cb9c43d48c7d08d942f5854dac14620",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:40:06Z",
+      "upstream_path": "scripts/train.py",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-scripts-train-py"
+      },
+      "actual_read_range": {
+        "lines": [
+          1,
+          391
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static interface/version/path/config analysis and independent Chinese explanation."
+    },
+    {
+      "id": "p6-a4-tree-json",
+      "kind": "repository_tree",
+      "url": "https://api.github.com/repos/stanford-cs336/assignment4-data/git/trees/0555bea66369872d912652debf10b115ca0688c8?recursive=1",
+      "status": "read_as_path_inventory_only",
+      "read_scope": "Parsed complete tree path/type list to locate pinned missing source files; not counted as reading their content.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages.",
+      "file": "p1-assignments-a1-a4/a4/tree.json",
+      "sha256": "a47312bd0e6651c6bd8f2c9ff9337ac5005c264534e61ed8b00fb846d5863ab5",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:38:01Z",
+      "upstream_path": "tree.json",
+      "publication_status": "local_source_evidence_only; do not publish raw mirrors",
+      "reused_from": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a4-tree-json"
+      },
+      "actual_read_range": {
+        "selector": "tree[].path for all blob entries"
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Navigation only."
+    },
+    {
+      "upstream_path": "AGENTS.md",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/AGENTS.md",
+      "file": "p6-a4/upstream/AGENTS.md.txt",
+      "sha256": "afefa0d2b55acc7add9f0f3a8fe90042db3985d1928462040382d11a23c065e1",
+      "retrieved_at": "2026-11-15T07:28:38.781436+00:00",
+      "lines": 74,
+      "id": "p6-a4-AGENTS-md",
+      "kind": "assignment_policy",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0"
+      },
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages. Test embedded Jigsaw text and external fixtures are not granted blanket MIT rights by this record; no harmful fixture prose reproduced in Chinese pages.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "status": "fully_read_static",
+      "read_scope": "Complete file lines 1–74 read; no imports, execution or test runs. Referenced fixture bodies not fetched/read; tests themselves fully read.",
+      "actual_read_range": {
+        "lines": [
+          1,
+          74
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static contract summary; no student implementation or report answer generated.",
+      "publication_status": "local_raw_source_evidence_only; do not publish upstream mirrors"
+    },
+    {
+      "upstream_path": "tests/adapters.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/tests/adapters.py",
+      "file": "p6-a4/upstream/tests__adapters.py.txt",
+      "sha256": "7c201ebed491e85af05fcbcaac9608f8b69b1e0943925950da3b8d488ddc38b7",
+      "retrieved_at": "2026-11-15T07:28:39.798732+00:00",
+      "lines": 58,
+      "id": "p6-a4-tests-adapters-py",
+      "kind": "official_source_contract",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0"
+      },
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages. Test embedded Jigsaw text and external fixtures are not granted blanket MIT rights by this record; no harmful fixture prose reproduced in Chinese pages.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "status": "fully_read_static",
+      "read_scope": "Complete file lines 1–58 read; no imports, execution or test runs. Referenced fixture bodies not fetched/read; tests themselves fully read.",
+      "actual_read_range": {
+        "lines": [
+          1,
+          58
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static contract summary; no student implementation or report answer generated.",
+      "publication_status": "local_raw_source_evidence_only; do not publish upstream mirrors"
+    },
+    {
+      "upstream_path": "tests/common.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/tests/common.py",
+      "file": "p6-a4/upstream/tests__common.py.txt",
+      "sha256": "a049c29e83b673f13088f91aadbfd746ffb940f06f652159ff64e3227eab3fde",
+      "retrieved_at": "2026-11-15T07:28:40.564105+00:00",
+      "lines": 3,
+      "id": "p6-a4-tests-common-py",
+      "kind": "official_source_contract",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0"
+      },
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages. Test embedded Jigsaw text and external fixtures are not granted blanket MIT rights by this record; no harmful fixture prose reproduced in Chinese pages.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "status": "fully_read_static",
+      "read_scope": "Complete file lines 1–3 read; no imports, execution or test runs. Referenced fixture bodies not fetched/read; tests themselves fully read.",
+      "actual_read_range": {
+        "lines": [
+          1,
+          3
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static contract summary; no student implementation or report answer generated.",
+      "publication_status": "local_raw_source_evidence_only; do not publish upstream mirrors"
+    },
+    {
+      "upstream_path": "tests/test_deduplication.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/tests/test_deduplication.py",
+      "file": "p6-a4/upstream/tests__test_deduplication.py.txt",
+      "sha256": "81fcd752d1b5cb3460c770341c8eed13176ee1073c2f9772d2c374fe70af8128",
+      "retrieved_at": "2026-11-15T07:28:41.564272+00:00",
+      "lines": 132,
+      "id": "p6-a4-tests-test-deduplication-py",
+      "kind": "official_source_contract",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0"
+      },
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages. Test embedded Jigsaw text and external fixtures are not granted blanket MIT rights by this record; no harmful fixture prose reproduced in Chinese pages.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "status": "fully_read_static",
+      "read_scope": "Complete file lines 1–132 read; no imports, execution or test runs. Referenced fixture bodies not fetched/read; tests themselves fully read.",
+      "actual_read_range": {
+        "lines": [
+          1,
+          132
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static contract summary; no student implementation or report answer generated.",
+      "publication_status": "local_raw_source_evidence_only; do not publish upstream mirrors"
+    },
+    {
+      "upstream_path": "tests/test_extract.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/tests/test_extract.py",
+      "file": "p6-a4/upstream/tests__test_extract.py.txt",
+      "sha256": "4f7d6be31c1d44bb2992d60bdee421c47a1fd6476862132eb7531eceacdaac52",
+      "retrieved_at": "2026-11-15T07:28:42.533240+00:00",
+      "lines": 16,
+      "id": "p6-a4-tests-test-extract-py",
+      "kind": "official_source_contract",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0"
+      },
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages. Test embedded Jigsaw text and external fixtures are not granted blanket MIT rights by this record; no harmful fixture prose reproduced in Chinese pages.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "status": "fully_read_static",
+      "read_scope": "Complete file lines 1–16 read; no imports, execution or test runs. Referenced fixture bodies not fetched/read; tests themselves fully read.",
+      "actual_read_range": {
+        "lines": [
+          1,
+          16
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static contract summary; no student implementation or report answer generated.",
+      "publication_status": "local_raw_source_evidence_only; do not publish upstream mirrors"
+    },
+    {
+      "upstream_path": "tests/test_langid.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/tests/test_langid.py",
+      "file": "p6-a4/upstream/tests__test_langid.py.txt",
+      "sha256": "0405f6910038126cd3cd133d42ce1bab100944adb061ba1d4fdd8c7fd4f2a577",
+      "retrieved_at": "2026-11-15T07:28:43.488284+00:00",
+      "lines": 27,
+      "id": "p6-a4-tests-test-langid-py",
+      "kind": "official_source_contract",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0"
+      },
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages. Test embedded Jigsaw text and external fixtures are not granted blanket MIT rights by this record; no harmful fixture prose reproduced in Chinese pages.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "status": "fully_read_static",
+      "read_scope": "Complete file lines 1–27 read; no imports, execution or test runs. Referenced fixture bodies not fetched/read; tests themselves fully read.",
+      "actual_read_range": {
+        "lines": [
+          1,
+          27
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static contract summary; no student implementation or report answer generated.",
+      "publication_status": "local_raw_source_evidence_only; do not publish upstream mirrors"
+    },
+    {
+      "upstream_path": "tests/test_pii.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/tests/test_pii.py",
+      "file": "p6-a4/upstream/tests__test_pii.py.txt",
+      "sha256": "b49f11a15a730e58894d9dd36d1ede8349efb6bf78ac8398829f1feffe45645b",
+      "retrieved_at": "2026-11-15T07:28:44.421178+00:00",
+      "lines": 59,
+      "id": "p6-a4-tests-test-pii-py",
+      "kind": "official_source_contract",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0"
+      },
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages. Test embedded Jigsaw text and external fixtures are not granted blanket MIT rights by this record; no harmful fixture prose reproduced in Chinese pages.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "status": "fully_read_static",
+      "read_scope": "Complete file lines 1–59 read; no imports, execution or test runs. Referenced fixture bodies not fetched/read; tests themselves fully read.",
+      "actual_read_range": {
+        "lines": [
+          1,
+          59
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static contract summary; no student implementation or report answer generated.",
+      "publication_status": "local_raw_source_evidence_only; do not publish upstream mirrors"
+    },
+    {
+      "upstream_path": "tests/test_quality.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/tests/test_quality.py",
+      "file": "p6-a4/upstream/tests__test_quality.py.txt",
+      "sha256": "1cd1a3c29bc8669ccdb48c3bc251a659da76633388c2cf045cc00e19d9fdcaa0",
+      "retrieved_at": "2026-11-15T07:28:45.198898+00:00",
+      "lines": 94,
+      "id": "p6-a4-tests-test-quality-py",
+      "kind": "official_source_contract",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0"
+      },
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages. Test embedded Jigsaw text and external fixtures are not granted blanket MIT rights by this record; no harmful fixture prose reproduced in Chinese pages.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "status": "fully_read_static",
+      "read_scope": "Complete file lines 1–94 read; no imports, execution or test runs. Referenced fixture bodies not fetched/read; tests themselves fully read.",
+      "actual_read_range": {
+        "lines": [
+          1,
+          94
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static contract summary; no student implementation or report answer generated.",
+      "publication_status": "local_raw_source_evidence_only; do not publish upstream mirrors"
+    },
+    {
+      "upstream_path": "tests/test_toxicity.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/tests/test_toxicity.py",
+      "file": "p6-a4/upstream/tests__test_toxicity.py.txt",
+      "sha256": "7f3d9cc4142eca7557dba7f60a870837b957fef9bdec8f1f9b7a272b23970374",
+      "retrieved_at": "2026-11-15T07:28:45.877973+00:00",
+      "lines": 57,
+      "id": "p6-a4-tests-test-toxicity-py",
+      "kind": "official_source_contract",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0"
+      },
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages. Test embedded Jigsaw text and external fixtures are not granted blanket MIT rights by this record; no harmful fixture prose reproduced in Chinese pages.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "status": "fully_read_static",
+      "read_scope": "Complete file lines 1–57 read; no imports, execution or test runs. Referenced fixture bodies not fetched/read; tests themselves fully read.",
+      "actual_read_range": {
+        "lines": [
+          1,
+          57
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static contract summary; no student implementation or report answer generated.",
+      "publication_status": "local_raw_source_evidence_only; do not publish upstream mirrors"
+    },
+    {
+      "upstream_path": "scripts/generate_with_gpt2_tok.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/scripts/generate_with_gpt2_tok.py",
+      "file": "p6-a4/upstream/scripts__generate_with_gpt2_tok.py.txt",
+      "sha256": "0fa9d3f419808b42ec5bebaa6f2dfc0a2300d07d0b239c300457a1f6f4bdf5bf",
+      "retrieved_at": "2026-11-15T07:28:46.785146+00:00",
+      "lines": 91,
+      "id": "p6-a4-scripts-generate-with-gpt2-tok-py",
+      "kind": "official_source_contract",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0"
+      },
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages. Test embedded Jigsaw text and external fixtures are not granted blanket MIT rights by this record; no harmful fixture prose reproduced in Chinese pages.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "status": "fully_read_static",
+      "read_scope": "Complete file lines 1–91 read; no imports, execution or test runs. Referenced fixture bodies not fetched/read; tests themselves fully read.",
+      "actual_read_range": {
+        "lines": [
+          1,
+          91
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static contract summary; no student implementation or report answer generated.",
+      "publication_status": "local_raw_source_evidence_only; do not publish upstream mirrors"
+    },
+    {
+      "upstream_path": "test_and_make_submission.sh",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/test_and_make_submission.sh",
+      "file": "p6-a4/upstream/test_and_make_submission.sh.txt",
+      "sha256": "7618898313173c034f22c8524d5d35c32d252f3cb717ff11f986c3c7d8d8b9c7",
+      "retrieved_at": "2026-11-15T07:28:47.439956+00:00",
+      "lines": 36,
+      "id": "p6-a4-test-and-make-submission-sh",
+      "kind": "official_source_contract",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0"
+      },
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages. Test embedded Jigsaw text and external fixtures are not granted blanket MIT rights by this record; no harmful fixture prose reproduced in Chinese pages.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "status": "fully_read_static",
+      "read_scope": "Complete file lines 1–36 read; no imports, execution or test runs. Referenced fixture bodies not fetched/read; tests themselves fully read.",
+      "actual_read_range": {
+        "lines": [
+          1,
+          36
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static contract summary; no student implementation or report answer generated.",
+      "publication_status": "local_raw_source_evidence_only; do not publish upstream mirrors"
+    },
+    {
+      "upstream_path": "cs336_basics/data.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/cs336_basics/data.py",
+      "file": "p6-a4/upstream/cs336_basics__data.py.txt",
+      "sha256": "7705559bd8c67c26257b7f3ba819b131d5aef552c5de273859c35f8ed7f12c62",
+      "retrieved_at": "2026-11-15T07:28:48.354406+00:00",
+      "lines": 28,
+      "id": "p6-a4-cs336-basics-data-py",
+      "kind": "official_source_contract",
+      "version": {
+        "repository": "stanford-cs336/assignment4-data",
+        "commit": "0555bea66369872d912652debf10b115ca0688c8",
+        "handout": "26.0.1",
+        "package": "26.0.0"
+      },
+      "license": "MIT (Stanford first-party software and associated documentation; excludes third-party content/data/models/services)",
+      "license_evidence": "p1-assignments-a1-a4/a4/LICENSE; complete Copyright 2026 Stanford University and MIT notice preserved at bottom of both Chinese pages. Test embedded Jigsaw text and external fixtures are not granted blanket MIT rights by this record; no harmful fixture prose reproduced in Chinese pages.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "status": "fully_read_static",
+      "read_scope": "Complete file lines 1–28 read; no imports, execution or test runs. Referenced fixture bodies not fetched/read; tests themselves fully read.",
+      "actual_read_range": {
+        "lines": [
+          1,
+          28
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Static contract summary; no student implementation or report answer generated.",
+      "publication_status": "local_raw_source_evidence_only; do not publish upstream mirrors"
+    },
+    {
+      "id": "p6-a4-course-ai-policy",
+      "kind": "course_policy",
+      "url": "https://docs.google.com/document/d/1SZAlExB1qAc9izHt54gwunNpjKE6wXb8Y7yA_e-baK8/export?format=txt",
+      "file": "p1-shared/ai-policy.txt",
+      "sha256": "127b697e3a67d9a3d86e0aa6cfdd6bb2ddc74a28c5786198b8d24008b9d6ef01",
+      "version": "CS336 AI Policy Spring 2025-2026, live document snapshot",
+      "status": "acquired_and_read",
+      "read_scope": "Complete policy text lines 1–21 independently read in this author slice.",
+      "read_at": "2026-11-15T07:41:21.731330+00:00",
+      "license": "No explicit reuse license in document; independent summary only",
+      "license_evidence": "Full text inspected",
+      "retrieved_at": "2026-11-14T13:42:10Z",
+      "actual_read_range": {
+        "lines": [
+          1,
+          21
+        ]
+      },
+      "material_files": ["labs/a4-data/lab.zh.md", "labs/a4-data/guide.zh.md"],
+      "chinese_treatment": "Finite independent policy summary with official link; no full translation under unverified license.",
+      "reused_from": {
+        "file": "p1-shared/policy-audit.json",
+        "id": "ai-policy-2026"
+      }
+    }
+  ],
+  "authored_artifacts": [
+    {
+      "file": "labs/a4-data/lab.zh.md",
+      "sha256": "ba68daed70cdb7cc5302c64a7564f794341b9aa3a9426af1590bc3e3831aef14",
+      "type": "Chinese_instruction_or_concept_guide",
+      "status": "authored; integrated verification owned by Main"
+    },
+    {
+      "file": "labs/a4-data/guide.zh.md",
+      "sha256": "2e0ab4cee9e541ef4c322df7590b5b7e2f4dabedef6ce3f2929c6a7dd549c9b5",
+      "type": "Chinese_instruction_or_concept_guide",
+      "status": "authored; integrated verification owned by Main"
+    },
+    {
+      "file": "labs/a4-data/assets/evidence-boundaries.svg",
+      "sha256": "842337dd17b2eb4a070bc8297f76593e11069a643f0c1d067a7f4ce1fe7ab62c",
+      "type": "original_svg",
+      "status": "authored; integrated verification owned by Main"
+    }
+  ],
+  "image_identities": [
+    {
+      "file": "labs/a4-data/assets/evidence-boundaries.svg",
+      "identity": "Original editorial four-layer evidence diagram",
+      "source_material": "Generalized A4 contract relationships, not copied illustration",
+      "third_party_image": false,
+      "screenshot": false,
+      "external_resources": false,
+      "scripts": false,
+      "viewBox": "0 0 560 740",
+      "theme": "transparent; color-scheme light dark; CanvasText CSS variables; title/desc",
+      "visual_acceptance": "not run by worker; Main pending"
+    }
+  ],
+  "task_map": "p6-a4/task-coverage.json",
+  "suggested_course_metadata": "p6-a4/course-task-metadata.json",
+  "mechanism_cases": "p6-a4/mechanism-cases.json",
+  "official_experiments_executed": false,
+  "official_tests_executed": false,
+  "datasets_models_tokenizers_downloaded": false,
+  "modal_gpu_private_volume_or_submission_accessed": false,
+  "build_lint_tests_formatters_run": false,
+  "remaining_limits": [
+    "No original-scale observations/metrics claimed",
+    "No full PDF visual inspection",
+    "No actual official runtime/path/permission behavior tested",
+    "No guarantee live public URLs, course services, models or private assets remain accessible",
+    "Main owns integrated source checks, browser/mobile/build and publication"
+  ]
+}

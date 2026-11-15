@@ -1,0 +1,1101 @@
+{
+  "schema_version": 1,
+  "course": "stanford-cs336-2026",
+  "phase": "P6",
+  "assignment": "A4",
+  "commit": "0555bea66369872d912652debf10b115ca0688c8",
+  "handout_version": "26.0.1",
+  "package_version": "26.0.0",
+  "source_text": "p1-assignments-a1-a4/a4/cs336_assignment4_data.txt",
+  "actual_read_scope": {
+    "pages": "1–16 complete extracted text",
+    "reader_lines": "1–845",
+    "visual_pdf_review": false
+  },
+  "totals": {
+    "scored_problems": 13,
+    "lettered_subquestions": 27,
+    "unlettered_problems": 4,
+    "leaf_requirements": 31,
+    "points": 71
+  },
+  "tasks": [
+    {
+      "official_id": "look_at_cc",
+      "official_title": "Looking at Common Crawl",
+      "title_zh": "观察 Common Crawl",
+      "points": 4,
+      "source_pages": [
+        2,
+        3
+      ],
+      "source_section": "2.1",
+      "lab": {
+        "path": "labs/a4-data/lab.zh.md",
+        "heading": "1．观察 Common Crawl"
+      },
+      "guide": {
+        "path": "labs/a4-data/guide.zh.md",
+        "sections": [
+          "1．先分清四个对象",
+          "2．观察不是装饰：抽样决定结论范围"
+        ]
+      },
+      "subquestions": [
+        {
+          "letter": "a",
+          "title_zh": "首个 WARC 网页",
+          "requirement_zh": "Find URL of first web page, check still accessible, infer topic from raw HTML.",
+          "deliverables": [
+            "2–3 sentence response"
+          ],
+          "sample_requirement": {
+            "first_webpage": 1
+          },
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "1．观察 Common Crawl",
+            "subheading": "（a）首个 WARC 网页"
+          }
+        },
+        {
+          "letter": "b",
+          "title_zh": "对应 WET 文本",
+          "requirement_zh": "Distinguish record headers from extracted text; identify unwanted extraction, training risks and useful information.",
+          "deliverables": [
+            "3–4 sentence response"
+          ],
+          "sample_requirement": {
+            "corresponding_first_wet_record": 1
+          },
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "1．观察 Common Crawl",
+            "subheading": "（b）对应 WET 文本"
+          }
+        },
+        {
+          "letter": "c",
+          "title_zh": "质量的使用场景",
+          "requirement_zh": "One application domain where useful and one where not useful.",
+          "deliverables": [
+            "1–2 sentence response"
+          ],
+          "sample_requirement": null,
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "1．观察 Common Crawl",
+            "subheading": "（c）质量的使用场景"
+          }
+        },
+        {
+          "letter": "d",
+          "title_zh": "另外 25 条 WET 记录",
+          "requirement_zh": "Inspect 25 more WET records; annotate language, domain, page type, other notes; count until first high-quality example.",
+          "deliverables": [
+            "25 document annotations",
+            "number observed until first high-quality example"
+          ],
+          "sample_requirement": {
+            "additional_wet_records": 25,
+            "not_including_first": true
+          },
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "1．观察 Common Crawl",
+            "subheading": "（d）另外 25 条 WET 记录"
+          }
+        }
+      ],
+      "implementation_contract": {},
+      "status": "requirements_authored_not_executed"
+    },
+    {
+      "official_id": "extract_text",
+      "official_title": "HTML to text conversion",
+      "title_zh": "HTML 转文本",
+      "points": 3,
+      "source_pages": [
+        3,
+        4
+      ],
+      "source_section": "2.2",
+      "lab": {
+        "path": "labs/a4-data/lab.zh.md",
+        "heading": "2．HTML 转文本"
+      },
+      "guide": {
+        "path": "labs/a4-data/guide.zh.md",
+        "sections": [
+          "3．抽取与语言：先理解接口里的承诺"
+        ]
+      },
+      "subquestions": [
+        {
+          "letter": "a",
+          "title_zh": "字节输入与编码",
+          "requirement_zh": "Use Resiliparse extract_plain_text after decoding bytes; detect non-UTF-8 encoding when UTF-8 fails.",
+          "deliverables": [
+            "HTML bytes to extracted Unicode string function"
+          ],
+          "sample_requirement": null,
+          "adapter": "run_extract_text_from_html_bytes",
+          "official_test_selectors": [
+            "test_extract_text_from_html_bytes"
+          ],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "2．HTML 转文本",
+            "subheading": "（a）字节输入与编码"
+          }
+        },
+        {
+          "letter": "b",
+          "title_zh": "与 WET 比较",
+          "requirement_zh": "Run extractor on one WARC; compare with corresponding WET; state differences/similarities and which better.",
+          "deliverables": [
+            "2–3 sentence response"
+          ],
+          "sample_requirement": {
+            "warc_files": 1,
+            "specified_example_count": null
+          },
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "2．HTML 转文本",
+            "subheading": "（b）与 WET 比较"
+          }
+        }
+      ],
+      "implementation_contract": {},
+      "status": "requirements_authored_not_executed"
+    },
+    {
+      "official_id": "language_identification",
+      "official_title": "Language identification",
+      "title_zh": "语言识别",
+      "points": 6,
+      "source_pages": [
+        4,
+        5
+      ],
+      "source_section": "2.3",
+      "lab": {
+        "path": "labs/a4-data/lab.zh.md",
+        "heading": "3．语言识别"
+      },
+      "guide": {
+        "path": "labs/a4-data/guide.zh.md",
+        "sections": [
+          "2．观察不是装饰：抽样决定结论范围",
+          "3．抽取与语言：先理解接口里的承诺"
+        ]
+      },
+      "subquestions": [
+        {
+          "letter": "a",
+          "title_zh": "主语言与分数",
+          "requirement_zh": "fastText lid.176: Unicode input, main language identifier and confidence score in [0,1]; adapter labels en/zh.",
+          "deliverables": [
+            "function returning (language, score)"
+          ],
+          "sample_requirement": null,
+          "adapter": "run_identify_language",
+          "official_test_selectors": [
+            "test_identify_language_english",
+            "test_identify_language_chinese_simplified"
+          ],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "3．语言识别",
+            "subheading": "（a）主语言与分数"
+          }
+        },
+        {
+          "letter": "b",
+          "title_zh": "下游风险",
+          "requirement_zh": "Discuss downstream consequences and mitigation in higher-stakes user-facing deployment.",
+          "deliverables": [
+            "2–5 sentence response"
+          ],
+          "sample_requirement": null,
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "3．语言识别",
+            "subheading": "（b）下游风险"
+          }
+        },
+        {
+          "letter": "c",
+          "title_zh": "20 例人工比较",
+          "requirement_zh": "On own WARC-extracted text manually label 20 random examples; report errors, English fraction, suitable threshold based on observations.",
+          "deliverables": [
+            "2–5 sentence response including empirical fraction/errors/threshold"
+          ],
+          "sample_requirement": {
+            "random_examples": 20,
+            "population": "text extracted from WARC via student extractor"
+          },
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "3．语言识别",
+            "subheading": "（c）20 例人工比较"
+          }
+        }
+      ],
+      "implementation_contract": {},
+      "status": "requirements_authored_not_executed"
+    },
+    {
+      "official_id": "mask_pii",
+      "official_title": "Personally identifiable information",
+      "title_zh": "个人信息",
+      "points": 3,
+      "source_pages": [
+        5,
+        6
+      ],
+      "source_section": "2.4",
+      "lab": {
+        "path": "labs/a4-data/lab.zh.md",
+        "heading": "4．个人信息"
+      },
+      "guide": {
+        "path": "labs/a4-data/guide.zh.md",
+        "sections": [
+          "2．观察不是装饰：抽样决定结论范围",
+          "4．掩码与有害内容：局部正确不等于整体安全"
+        ]
+      },
+      "subquestions": [
+        {
+          "letter": "a",
+          "title_zh": "Email",
+          "requirement_zh": "Replace detected emails with |||EMAIL_ADDRESS|||; count new replacements, not existing placeholders.",
+          "deliverables": [
+            "function returning (masked text, count)"
+          ],
+          "sample_requirement": null,
+          "adapter": "run_mask_emails",
+          "official_test_selectors": [
+            "test_mask_emails_single",
+            "test_mask_emails_multiple",
+            "test_mask_emails_existing_string"
+          ],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "4．个人信息",
+            "subheading": "（a）Email"
+          }
+        },
+        {
+          "letter": "b",
+          "title_zh": "美国电话号码",
+          "requirement_zh": "Replace common US phone formats robust to minor syntax differences with |||PHONE_NUMBER|||.",
+          "deliverables": [
+            "function returning (masked text, count)"
+          ],
+          "sample_requirement": null,
+          "adapter": "run_mask_phone_numbers",
+          "official_test_selectors": [
+            "test_mask_phones_single"
+          ],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "4．个人信息",
+            "subheading": "（b）美国电话号码"
+          }
+        },
+        {
+          "letter": "c",
+          "title_zh": "IPv4",
+          "requirement_zh": "Mask IPv4 four 0–255 components with |||IP_ADDRESS|||.",
+          "deliverables": [
+            "function returning (masked text, count)"
+          ],
+          "sample_requirement": null,
+          "adapter": "run_mask_ips",
+          "official_test_selectors": [
+            "test_mask_ips"
+          ],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "4．个人信息",
+            "subheading": "（c）IPv4"
+          }
+        },
+        {
+          "letter": "d",
+          "title_zh": "下游风险",
+          "requirement_zh": "Discuss downstream problems and mitigations from naive PII filtering.",
+          "deliverables": [
+            "2–5 sentence response"
+          ],
+          "sample_requirement": null,
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "4．个人信息",
+            "subheading": "（d）下游风险"
+          }
+        },
+        {
+          "letter": "e",
+          "title_zh": "20 个发生替换的例子",
+          "requirement_zh": "Inspect 20 random WARC-extracted documents where a replacement was made; give false positives and false negatives.",
+          "deliverables": [
+            "2–5 sentence response"
+          ],
+          "sample_requirement": {
+            "random_examples": 20,
+            "condition": "a replacement was made",
+            "population": "own WARC-extracted text"
+          },
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "4．个人信息",
+            "subheading": "（e）20 个发生替换的例子"
+          }
+        }
+      ],
+      "implementation_contract": {},
+      "status": "requirements_authored_not_executed"
+    },
+    {
+      "official_id": "harmful_content",
+      "official_title": "Harmful content",
+      "title_zh": "有害内容",
+      "points": 6,
+      "source_pages": [
+        6,
+        7
+      ],
+      "source_section": "2.5",
+      "lab": {
+        "path": "labs/a4-data/lab.zh.md",
+        "heading": "5．有害内容"
+      },
+      "guide": {
+        "path": "labs/a4-data/guide.zh.md",
+        "sections": [
+          "4．掩码与有害内容：局部正确不等于整体安全"
+        ]
+      },
+      "subquestions": [
+        {
+          "letter": "a",
+          "title_zh": "NSFW 分类",
+          "requirement_zh": "Use Dolma Jigsaw-trained NSFW fastText classifier; labels nsfw/non-nsfw and score.",
+          "deliverables": [
+            "function returning (label, confidence)"
+          ],
+          "sample_requirement": null,
+          "adapter": "run_classify_nsfw",
+          "official_test_selectors": [
+            "test_classify_nsfw"
+          ],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "5．有害内容",
+            "subheading": "（a）NSFW 分类"
+          }
+        },
+        {
+          "letter": "b",
+          "title_zh": "有毒言论分类",
+          "requirement_zh": "Use Dolma Jigsaw-trained hatespeech classifier for toxic/non-toxic and score.",
+          "deliverables": [
+            "function returning (label, confidence)"
+          ],
+          "sample_requirement": null,
+          "adapter": "run_classify_toxic_speech",
+          "official_test_selectors": [
+            "test_classify_toxic_speech"
+          ],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "5．有害内容",
+            "subheading": "（b）有毒言论分类"
+          }
+        },
+        {
+          "letter": "c",
+          "title_zh": "下游风险",
+          "requirement_zh": "Discuss training-set filtering risks and mitigations.",
+          "deliverables": [
+            "2–5 sentence response"
+          ],
+          "sample_requirement": null,
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "5．有害内容",
+            "subheading": "（c）下游风险"
+          }
+        },
+        {
+          "letter": "d",
+          "title_zh": "20 例人工比较",
+          "requirement_zh": "Inspect 20 random WARC-extracted examples, compare labels with judgments; errors, harmful fraction and suitable threshold(s).",
+          "deliverables": [
+            "2–5 sentence response with observed errors/fraction/threshold(s)"
+          ],
+          "sample_requirement": {
+            "random_examples": 20,
+            "population": "own WARC-extracted text"
+          },
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "5．有害内容",
+            "subheading": "（d）20 例人工比较"
+          }
+        }
+      ],
+      "implementation_contract": {
+        "test_limit": "Jigsaw sanity examples are not independent accuracy evidence."
+      },
+      "status": "requirements_authored_not_executed"
+    },
+    {
+      "official_id": "gopher_quality_filters",
+      "official_title": "Gopher quality filters",
+      "title_zh": "Gopher 规则",
+      "points": 3,
+      "source_pages": [
+        7,
+        8
+      ],
+      "source_section": "2.6",
+      "lab": {
+        "path": "labs/a4-data/lab.zh.md",
+        "heading": "6．Gopher 规则"
+      },
+      "guide": {
+        "path": "labs/a4-data/guide.zh.md",
+        "sections": [
+          "5．规则与学习型质量：分清约束和弱标签"
+        ]
+      },
+      "subquestions": [
+        {
+          "letter": "a",
+          "title_zh": "规则函数",
+          "requirement_zh": "At least reject words<50 or >100000; mean word length outside [3,10]; ellipsis-ending lines>30%; words with alphabetic character<80%. NLTK optional.",
+          "deliverables": [
+            "string to bool function"
+          ],
+          "sample_requirement": null,
+          "adapter": "run_gopher_quality_filter",
+          "official_test_selectors": [
+            "test_gopher"
+          ],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "6．Gopher 规则",
+            "subheading": "（a）规则函数"
+          }
+        },
+        {
+          "letter": "b",
+          "title_zh": "20 例人工比较",
+          "requirement_zh": "Inspect 20 random own WARC-extracted examples and discuss disagreements with personal quality judgments.",
+          "deliverables": [
+            "2–5 sentence response"
+          ],
+          "sample_requirement": {
+            "random_examples": 20,
+            "population": "own WARC-extracted text"
+          },
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "6．Gopher 规则",
+            "subheading": "（b）20 例人工比较"
+          }
+        }
+      ],
+      "implementation_contract": {},
+      "status": "requirements_authored_not_executed"
+    },
+    {
+      "official_id": "quality_classifier",
+      "official_title": "Quality classifier",
+      "title_zh": "学习型质量",
+      "points": 15,
+      "source_pages": [
+        8,
+        9
+      ],
+      "source_section": "2.7",
+      "lab": {
+        "path": "labs/a4-data/lab.zh.md",
+        "heading": "7．学习型质量"
+      },
+      "guide": {
+        "path": "labs/a4-data/guide.zh.md",
+        "sections": [
+          "5．规则与学习型质量：分清约束和弱标签"
+        ]
+      },
+      "subquestions": [
+        {
+          "letter": "a",
+          "title_zh": "训练自己的分类器",
+          "requirement_zh": "Learner trains fastText quality classifier; subsample May 2026 English Wikipedia external reference URLs, scrape and extract as positive examples, random CC negative examples; earlier filtering primitives may refine positives.",
+          "deliverables": [
+            "learner-trained quality classifier returning numerical score"
+          ],
+          "sample_requirement": {
+            "training_sample_count": "not fixed by official handout"
+          },
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "7．学习型质量",
+            "subheading": "（a）训练自己的分类器"
+          }
+        },
+        {
+          "letter": "b",
+          "title_zh": "标签与置信度接口",
+          "requirement_zh": "Classify high/low quality and confidence; adapter test labels wiki/cc; two examples are sanity checks.",
+          "deliverables": [
+            "function returning (quality label, score)"
+          ],
+          "sample_requirement": {
+            "provided_sanity_examples": 2
+          },
+          "adapter": "run_classify_quality",
+          "official_test_selectors": [
+            "test_classify_quality"
+          ],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "7．学习型质量",
+            "subheading": "（b）标签与置信度接口"
+          }
+        }
+      ],
+      "implementation_contract": {
+        "positive_urls": "/shared-data/wiki/enwiki-20260501-extracted_urls.txt.gz",
+        "not_acceptable_substitute": "pretrained quality model, language classifier, rule-only bool, hardcoded fixture labels"
+      },
+      "status": "requirements_authored_not_executed"
+    },
+    {
+      "official_id": "exact_deduplication",
+      "official_title": "Exact line deduplication",
+      "title_zh": "精确行去重",
+      "points": 3,
+      "source_pages": [
+        9,
+        10
+      ],
+      "source_section": "3.1",
+      "lab": {
+        "path": "labs/a4-data/lab.zh.md",
+        "heading": "8．精确行去重"
+      },
+      "guide": {
+        "path": "labs/a4-data/guide.zh.md",
+        "sections": [
+          "6．去重的三个层次不能合并"
+        ]
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "title_zh": "整题",
+          "requirement_zh": "Hash lines for corpus-wide frequency counting; retain only lines occurring exactly once, not one copy of every repeated line.",
+          "deliverables": [
+            "function taking input paths and output directory; rewrite every input under same filename"
+          ],
+          "sample_requirement": null,
+          "adapter": "run_exact_line_deduplication",
+          "official_test_selectors": [
+            "test_exact_line_deduplication"
+          ],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "8．精确行去重",
+            "subheading": "整题要求与交付合同"
+          }
+        }
+      ],
+      "implementation_contract": {
+        "input": "list[os.PathLike]",
+        "output": "same filename per input even when lines removed",
+        "duplicate_scope": "all occurrences in all input files including within-document repeats",
+        "fixture_output_files": 5
+      },
+      "status": "requirements_authored_not_executed"
+    },
+    {
+      "official_id": "minhash_deduplication",
+      "official_title": "MinHash + LSH document deduplication",
+      "title_zh": "MinHash＋LSH",
+      "points": 8,
+      "source_pages": [
+        10,
+        11,
+        12
+      ],
+      "source_section": "3.2",
+      "lab": {
+        "path": "labs/a4-data/lab.zh.md",
+        "heading": "9．MinHash＋LSH"
+      },
+      "guide": {
+        "path": "labs/a4-data/guide.zh.md",
+        "sections": [
+          "6．去重的三个层次不能合并"
+        ]
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "title_zh": "整题",
+          "requirement_zh": "Compute normalized word-ngram MinHash signatures; same-band LSH candidates; compute TRUE ngram Jaccard against threshold; cluster duplicate edges across buckets; randomly retain one document per cluster.",
+          "deliverables": [
+            "fuzzy document deduplication function, retained original documents under original filenames"
+          ],
+          "sample_requirement": null,
+          "adapter": "run_minhash_deduplication",
+          "official_test_selectors": [
+            "test_minhash_deduplication_exact_duplicates",
+            "test_minhash_deduplication_fuzzy_duplicates"
+          ],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "9．MinHash＋LSH",
+            "subheading": "整题要求与交付合同"
+          }
+        }
+      ],
+      "implementation_contract": {
+        "adapter_parameters": [
+          "input_files",
+          "num_hashes",
+          "num_bands",
+          "ngrams",
+          "jaccard_threshold",
+          "output_directory"
+        ],
+        "normalization": [
+          "lowercase",
+          "remove punctuation",
+          "normalize whitespace",
+          "remove accents",
+          "NFD Unicode normalization"
+        ],
+        "num_hashes_divisible_by_num_bands": true,
+        "output": "Only retained documents have output files; preserve original text rather than silently normalized text.",
+        "threshold_note": "Handout says exceed threshold; actual adapter includes jaccard_threshold omitted from abbreviated handout argument list.",
+        "tests": [
+          {
+            "hashes": 100,
+            "bands": 10,
+            "word_ngram": 5,
+            "jaccard_threshold": 0.8,
+            "output_files": 4
+          },
+          {
+            "hashes": 500,
+            "bands": 50,
+            "word_ngram": 5,
+            "jaccard_threshold": 0.8,
+            "output_files": 2
+          }
+        ],
+        "not_a_solution": "No implementation supplied."
+      },
+      "status": "requirements_authored_not_executed"
+    },
+    {
+      "official_id": "filter_data",
+      "official_title": "Filter data for language modeling",
+      "title_zh": "并行过滤",
+      "points": 6,
+      "source_pages": [
+        12,
+        13,
+        14
+      ],
+      "source_section": "4",
+      "lab": {
+        "path": "labs/a4-data/lab.zh.md",
+        "heading": "10．并行过滤"
+      },
+      "guide": {
+        "path": "labs/a4-data/guide.zh.md",
+        "sections": [
+          "7．流水线统计：先问分母，再谈改善",
+          "9．数据-only 比较与验证的边界",
+          "10．在运行之前，先辨认访问层级"
+        ]
+      },
+      "subquestions": [
+        {
+          "letter": "a",
+          "title_zh": "并行流水线与逐步统计",
+          "requirement_zh": "Process staff English-WET inputs in parallel with chosen earlier or additional primitives to minimize C4 100 perplexity; report kept examples per filter and proportions of all discarded examples attributed to each step.",
+          "deliverables": [
+            "parallel filtering script or sequence",
+            "written breakdown of discarded-example proportions"
+          ],
+          "sample_requirement": {
+            "original_raw_wet_files": 2500,
+            "group_size": 4,
+            "output_groups": 625
+          },
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "10．并行过滤",
+            "subheading": "（a）并行流水线与逐步统计"
+          }
+        },
+        {
+          "letter": "b",
+          "title_zh": "真实耗时与外推",
+          "requirement_zh": "Measure filtering runtime for supplied WETs from 2500 raw WET files; estimate full Common Crawl dump time.",
+          "deliverables": [
+            "pipeline runtime and full-dump extrapolation with units/assumptions"
+          ],
+          "sample_requirement": null,
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "10．并行过滤",
+            "subheading": "（b）真实耗时与外推"
+          }
+        }
+      ],
+      "implementation_contract": {
+        "crawl": "CC-MAIN-2026-17",
+        "shuffle_seed": 336,
+        "n_files": 2500,
+        "group_size": 4,
+        "english_probability_minimum": 0.7,
+        "model": "lid.176.bin",
+        "validation": "Paloma C4 100 domains GPT-2 uint16 bin",
+        "allowed": "Inspect validation to design filters/classifiers",
+        "forbidden": "Copy validation data into training; change architecture/training procedure/staff scripts",
+        "local_path": "Furu returned paths under local-shared-data/furu",
+        "remote_only_links": "english-wet-data plus .source",
+        "source_trace": "wet_files.py 88–157; download_data.py 36–129; modal_utils.py 7–35"
+      },
+      "status": "requirements_authored_not_executed"
+    },
+    {
+      "official_id": "inspect_filtered_data",
+      "official_title": "Inspect filtered data",
+      "title_zh": "人工检查",
+      "points": 4,
+      "source_pages": [
+        14
+      ],
+      "source_section": "4",
+      "lab": {
+        "path": "labs/a4-data/lab.zh.md",
+        "heading": "11．人工检查"
+      },
+      "guide": {
+        "path": "labs/a4-data/guide.zh.md",
+        "sections": [
+          "2．观察不是装饰：抽样决定结论范围",
+          "7．流水线统计：先问分母，再谈改善"
+        ]
+      },
+      "subquestions": [
+        {
+          "letter": "a",
+          "title_zh": "随机 5 条保留文档",
+          "requirement_zh": "Assess quality and suitability especially for C4 100.",
+          "deliverables": [
+            "5 examples, relevant excerpts allowed",
+            "1–2 sentence description/judgment for each"
+          ],
+          "sample_requirement": {
+            "random_retained_documents": 5
+          },
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "11．人工检查",
+            "subheading": "（a）随机 5 条保留文档"
+          }
+        },
+        {
+          "letter": "b",
+          "title_zh": "随机 5 条删除／修改文档",
+          "requirement_zh": "Identify which step removed/modified each random document and judge justification.",
+          "deliverables": [
+            "5 discarded/modified examples from original WETs, excerpts allowed",
+            "1–2 sentence description/judgment for each"
+          ],
+          "sample_requirement": {
+            "random_discarded_or_modified_documents": 5,
+            "not_five_compressed_files": true
+          },
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "11．人工检查",
+            "subheading": "（b）随机 5 条删除／修改文档"
+          }
+        },
+        {
+          "letter": "c",
+          "title_zh": "迭代说明",
+          "requirement_zh": "May revise pipeline before training based on analysis; report actual changes/iterations tried.",
+          "deliverables": [
+            "description of data changes and iterations; honest if none"
+          ],
+          "sample_requirement": null,
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "11．人工检查",
+            "subheading": "（c）迭代说明"
+          }
+        }
+      ],
+      "implementation_contract": {},
+      "status": "requirements_authored_not_executed"
+    },
+    {
+      "official_id": "tokenize_data",
+      "official_title": "Tokenize data",
+      "title_zh": "分词与序列化",
+      "points": 2,
+      "source_pages": [
+        14,
+        15
+      ],
+      "source_section": "4",
+      "lab": {
+        "path": "labs/a4-data/lab.zh.md",
+        "heading": "12．分词与序列化"
+      },
+      "guide": {
+        "path": "labs/a4-data/guide.zh.md",
+        "sections": [
+          "8．token 文件是一个二进制合同"
+        ]
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "title_zh": "整题",
+          "requirement_zh": "GPT-2 tokenizer via transformers; append <|endoftext|> after each document; serialize np.uint16 array using tofile; report actual produced token count.",
+          "deliverables": [
+            "tokenization/serialization script",
+            "actual dataset token count including EOS"
+          ],
+          "sample_requirement": null,
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "12．分词与序列化",
+            "subheading": "整题要求与交付合同"
+          }
+        }
+      ],
+      "implementation_contract": {
+        "format": "raw np.uint16 .bin, not .npy container or text/int64",
+        "document_eos": "per document, not blindly per arbitrary text line",
+        "training_sample_count_is_not_dataset_size": true
+      },
+      "status": "requirements_authored_not_executed"
+    },
+    {
+      "official_id": "train_model",
+      "official_title": "Train model",
+      "title_zh": "固定训练",
+      "points": 8,
+      "source_pages": [
+        15,
+        16
+      ],
+      "source_section": "4",
+      "lab": {
+        "path": "labs/a4-data/lab.zh.md",
+        "heading": "13．固定训练"
+      },
+      "guide": {
+        "path": "labs/a4-data/guide.zh.md",
+        "sections": [
+          "9．数据-only 比较与验证的边界"
+        ]
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "title_zh": "整题",
+          "requirement_zh": "Train fixed approximately 430M GPT-2 small-shaped staff model on learner data, periodically evaluate C4 100; data-only comparison.",
+          "deliverables": [
+            "best actually recorded validation loss",
+            "associated learning curve",
+            "description of what was done"
+          ],
+          "sample_requirement": null,
+          "adapter": null,
+          "official_test_selectors": [],
+          "points": null,
+          "points_note": "Official handout assigns points only to whole Problem; no invented subquestion points.",
+          "chinese_location": {
+            "path": "labs/a4-data/lab.zh.md",
+            "parent_section": "13．固定训练",
+            "subheading": "整题要求与交付合同"
+          }
+        }
+      ],
+      "implementation_contract": {
+        "model": {
+          "parameters_approx": 430000000,
+          "vocab_size": 50257,
+          "context_length": 512,
+          "d_model": 1024,
+          "d_ff": 3072,
+          "num_layers": 24,
+          "num_heads": 16,
+          "rope_theta": 10000,
+          "dtype": "bfloat16"
+        },
+        "training": {
+          "gpus": "8 B200",
+          "batch_per_device": 128,
+          "gradient_accumulation_steps": 1,
+          "steps": 16384,
+          "training_tokens": 8589934592,
+          "lr": 0.0006,
+          "warmup_ratio": 0.03,
+          "min_lr_factor": 0.1,
+          "weight_decay": 0.1,
+          "adam_betas": [
+            0.9,
+            0.98
+          ],
+          "adam_eps": 1e-09,
+          "max_grad_norm": 1.0,
+          "seed": 0,
+          "compile": true,
+          "eval_batch_size": 128,
+          "eval_interval": 2000,
+          "eval_iterations": 1000,
+          "save_checkpoints": false
+        },
+        "runtime_report": "staff historical approximately 2 hours, not current measurement or entitlement",
+        "ephemeral_disk_request_mb": 524288,
+        "best_checkpoint_note": "Best observed validation log value not necessarily a saved checkpoint; default periodic checkpoint saving false; final model saved.",
+        "final_output": "/root/data/output/your_data",
+        "no_modification": "model architecture, optimization/training procedure or staff script",
+        "generation": "optional staff generation command is not a replacement for loss and curve; no generation executed"
+      },
+      "status": "requirements_authored_not_executed"
+    }
+  ],
+  "global_deliverables": [
+    "typeset writeup.pdf answering all written questions",
+    "all independently written code in code.zip / script-generated cs336-assignment4-submission.zip"
+  ],
+  "official_runs_executed": false,
+  "official_tests_executed": false,
+  "student_observations_fabricated": false,
+  "remaining_limits": [
+    "No datasets/classifiers/models/tokenizer acquired",
+    "No Modal/private volume/GPU/training/submission access",
+    "No actual observations, runtimes, filter metrics, token totals or validation loss claimed",
+    "Main owns integrated build/browser/source acceptance"
+  ],
+  "ai_policy": "Concept/API help only; no implementation, pseudocode, report answer or leaderboard code."
+}

@@ -1,0 +1,115 @@
+{
+  "courseId": "stanford-cs336-2026",
+  "phase": "P6",
+  "date": "2026-11-15",
+  "status": "passed_with_documented_limits",
+  "scope": {
+    "bodies": [
+      "lectures/lec13/notes.zh.md",
+      "lectures/lec13/draft.zh.md",
+      "lectures/lec14/notes.zh.md",
+      "lectures/lec14/draft.zh.md",
+      "lectures/lec14/materials.zh.md",
+      "lectures/ext13/notes.zh.md",
+      "labs/a4-data/lab.zh.md",
+      "labs/a4-data/guide.zh.md"
+    ],
+    "originalSvg": [
+      "lectures/lec13/assets/data-lineage.svg",
+      "lectures/lec14/assets/pipeline-distribution.svg",
+      "lectures/lec14/assets/dedup-contract.svg",
+      "lectures/ext13/assets/recipe-audit-contract.svg",
+      "labs/a4-data/assets/evidence-boundaries.svg"
+    ],
+    "newBodyCount": 8,
+    "newSvgCount": 5,
+    "cumulativeBodies": 64,
+    "cumulativeSvg": 38
+  },
+  "review": "P6-REVIEW.txt",
+  "modelEvidence": "p6-model-preflight.json",
+  "source": {
+    "records": 54,
+    "uniqueFileHashes": 44,
+    "newCaptionCues": 2867,
+    "cumulativeCaptionCues": 22923,
+    "internalGapsOverTwoSeconds": 57,
+    "newSpecifiedPaperCores": 2,
+    "cumulativeSpecifiedPaperCores": 11,
+    "completePaperCloseRead": 0,
+    "authorVisualPdfPages": 18,
+    "mainSelectedCaptionCues": 106,
+    "a4": {
+      "commit": "0555bea66369872d912652debf10b115ca0688c8",
+      "handoutVersion": "26.0.1",
+      "packageVersion": "26.0.0",
+      "pagesTextRead": 16,
+      "tasks": 13,
+      "letteredSubquestions": 27,
+      "leafRequirements": 31,
+      "points": 71
+    },
+    "evidence": [
+      "p6-shared/structure-check.json",
+      "p6-shared/source-spotcheck.json",
+      "p6-shared/caption-spotcheck.json",
+      "p6-papers/reading-updates.json",
+      "p6-a4/task-coverage.json"
+    ]
+  },
+  "verification": {
+    "structure": "passed after fixing missing manifest fields; two invocations,check not weakened",
+    "internalLinks": 119,
+    "validTimeRanges": 222,
+    "cpuGroups": 12,
+    "cpuRuns": 1,
+    "cpuEvidence": "p6-shared/cpu-smoke.json",
+    "build": {
+      "command": "npm run build",
+      "runs": 1,
+      "exitCode": 0,
+      "viteSeconds": 6.1,
+      "logLocalOnly": "p6-shared/build.log",
+      "afterBuildChanges": "source/status/acceptance records only;JSON parsed separately"
+    },
+    "pages": {
+      "bodyAndResourcesRoutes": 9,
+      "viewports": [
+        [
+          1440,
+          1000
+        ],
+        [
+          390,
+          844
+        ]
+      ],
+      "checks": 18,
+      "status": "passed_after_mobile_content_corrections",
+      "evidence": "p6-shared/page-check.json",
+      "rootWidths": [
+        1440,
+        390
+      ],
+      "katexErrors": 0,
+      "displayMathOverflow": 0,
+      "svgsInspectedInBothThemes": 5,
+      "actualHorizontalTableScroll": true,
+      "actualVideoNewTabClicks": 2
+    }
+  },
+  "publication": "p6-publication-record.json",
+  "artifactIdentities": "p6-shared/final-artifacts.json",
+  "limits": [
+    "No classroom audio/frame verification;drafts are limited caption-based paraphrases,not unauthorized full transcripts.",
+    "Only specified paper cores translated/read;not complete papers. FineWeb data rights differ from paper rights.",
+    "A4 and other official assignments not executed;no official tests,training,data/model downloads,Modal/API/GPU or paid jobs.",
+    "Local original/PDF/caption/mirror/excerpt/screenshot artifacts remain excluded from publication.",
+    "Local build is not the deployment artifact;clean Actions checkout builds the allowlist."
+  ],
+  "nextStage": {
+    "keyword": "CS336-2026-P7-后训练与多模态",
+    "prompt": "NEXT-P7-PROMPT.txt",
+    "autoStart": false
+  }
+}

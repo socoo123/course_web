@@ -1,10 +1,10 @@
 {
   "course_id": "stanford-cs336-2026",
   "updated_at": "2026-11-15",
-  "phase": "P5",
+  "phase": "P6",
   "linked_sources_default_status": "registered_only_unless_explicitly_recorded",
-  "source_fragments": ["p1-shared/manifest-fragment.json", "p1-lectures/manifest-fragment.json", "p1-videos/manifest-fragment.json", "p1-assignments-a1-a4/manifest-fragment.json", "p1-assignment-a5/manifest-fragment.json", "p1-papers-01-08/manifest-fragment.json", "p1-papers-09-16/manifest-fragment.json", "p2-lec01/manifest-fragment.json", "p2-lec02/manifest-fragment.json", "p2-bridge-foundations/manifest-fragment.json", "p2-bridge-systems/manifest-fragment.json", "p2-a1/manifest-fragment.json", "p3-lec03/manifest-fragment.json", "p3-lec04/manifest-fragment.json", "p3-bridges/manifest-fragment.json", "p3-extensions/manifest-fragment.json", "p3-papers/manifest-fragment.json", "p3-a1/manifest-fragment.json", "p4-lec05/manifest-fragment.json", "p4-lec06/manifest-fragment.json", "p4-lec07/manifest-fragment.json", "p4-lec08/manifest-fragment.json", "p4-attention-profiling/manifest-fragment.json", "p4-distributed/manifest-fragment.json", "p4-papers/manifest-fragment.json", "p4-a2/manifest-fragment.json", "p5-lec09/manifest-fragment.json", "p5-lec10/manifest-fragment.json", "p5-lec11/manifest-fragment.json", "p5-lec12/manifest-fragment.json", "p5-statistics/manifest-fragment.json", "p5-serving/manifest-fragment.json", "p5-adapters/manifest-fragment.json", "p5-papers/manifest-fragment.json", "p5-a3/manifest-fragment.json"],
-  "canonical_record_scope": "The 70 records below preserve the P1 acquisition snapshot. Subsequent reading/writing is recorded in five P2, six P3, eight P4 and nine P5 fragments. Their pending flags describe worker handoff; final acceptance belongs to each phase acceptance file and ../status.json. Earlier stop fields are historical snapshots, not the latest phase. Acquisition never implies full reading.",
+  "source_fragments": ["p1-shared/manifest-fragment.json", "p1-lectures/manifest-fragment.json", "p1-videos/manifest-fragment.json", "p1-assignments-a1-a4/manifest-fragment.json", "p1-assignment-a5/manifest-fragment.json", "p1-papers-01-08/manifest-fragment.json", "p1-papers-09-16/manifest-fragment.json", "p2-lec01/manifest-fragment.json", "p2-lec02/manifest-fragment.json", "p2-bridge-foundations/manifest-fragment.json", "p2-bridge-systems/manifest-fragment.json", "p2-a1/manifest-fragment.json", "p3-lec03/manifest-fragment.json", "p3-lec04/manifest-fragment.json", "p3-bridges/manifest-fragment.json", "p3-extensions/manifest-fragment.json", "p3-papers/manifest-fragment.json", "p3-a1/manifest-fragment.json", "p4-lec05/manifest-fragment.json", "p4-lec06/manifest-fragment.json", "p4-lec07/manifest-fragment.json", "p4-lec08/manifest-fragment.json", "p4-attention-profiling/manifest-fragment.json", "p4-distributed/manifest-fragment.json", "p4-papers/manifest-fragment.json", "p4-a2/manifest-fragment.json", "p5-lec09/manifest-fragment.json", "p5-lec10/manifest-fragment.json", "p5-lec11/manifest-fragment.json", "p5-lec12/manifest-fragment.json", "p5-statistics/manifest-fragment.json", "p5-serving/manifest-fragment.json", "p5-adapters/manifest-fragment.json", "p5-papers/manifest-fragment.json", "p5-a3/manifest-fragment.json", "p6-lec13/manifest-fragment.json", "p6-lec14/manifest-fragment.json", "p6-papers/manifest-fragment.json", "p6-audit/manifest-fragment.json", "p6-a4/manifest-fragment.json"],
+  "canonical_record_scope": "The 70 records below preserve the P1 acquisition snapshot. Subsequent reading/writing is recorded in five P2, six P3, eight P4, nine P5 and five P6 fragments. Worker pending flags describe handoff; final acceptance belongs to each phase acceptance file and ../status.json. Earlier stop fields are historical. Acquisition never implies full reading.",
   "p2_processing": {
     "source_records": 52,
     "verified_unique_file_hashes": 45,
@@ -47,6 +47,17 @@
     "accepted": "p5-acceptance.json",
     "publication": "Only bodies, original SVGs and an explicit lightweight evidence allowlist. Raw captions, fulltexts/PDFs, document mirrors, trace extracts, rendered original pages and browser screenshots remain local. Author asset hashes are pre-integration snapshots; final delivered identities are in p5-shared/final-artifacts.json. Local dist is not uploaded.",
     "next": "P6 only after P5 acceptance and explicit user continuation; see NEXT-P6-PROMPT.txt"
+  },
+  "p6_processing": {
+    "source_check": "p6-shared/structure-check.json",
+    "source_records": 54,
+    "verified_unique_file_hashes": 44,
+    "reading": "L13 all1419 cues and fixed lecture text; L14 all1448 cues and fixed lecture text. FineWeb v2 and DCLM v4 specified cores completely read and translated,18 original PDF pages visually inspected by author; ext13 independently read AppendixO text. A4 all16 extracted pages and static contracts,13tasks/27letteredquestions/71points. Not whole-paper or audio verification.",
+    "written": {"lecture_notes":3,"classroom_limited_paraphrases":2,"materials":1,"assignment_instructions":1,"assignment_guide":1,"original_svgs":5},
+    "reviewed": "Main read all8 bodies, originalA4 requirements and relevant sources,106 selected caption cues and12 independent CPU mathematical groups. Scope/corrections in P6-REVIEW.txt and p6-shared/source-spotcheck.json.",
+    "accepted": "p6-acceptance.json",
+    "publication": "Explicit allowlist only: authored bodies, originalSVG and lightweight evidence. No raw/normalized captions, fulltext/PDF, mirrors, source excerpts, source-page images or browser screenshots. Original author asset hashes precede Main mobile edits; delivered identities in p6-shared/final-artifacts.json. Localdist not uploaded.",
+    "next": "P7 only after explicit user continuation; NEXT-P7-PROMPT.txt"
   },
   "reading_map": "reading-map.json",
   "path_convention": "file paths relative to sources/; material paths relative to course root",

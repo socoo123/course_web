@@ -1,0 +1,306 @@
+{
+  "lecture_id": "lec13",
+  "read_at": "2026-11-15",
+  "identity": {
+    "video_id": "-qm0ln33G24",
+    "url": "https://www.youtube.com/watch?v=-qm0ln33G24",
+    "title": "Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 13: Data (Sources, Datasets)",
+    "course_year": 2026,
+    "speaker": "Percy Liang",
+    "speaker_evidence": "P1 official course schedule record read in video-map; no visual identity verification",
+    "uploader": "Stanford Online",
+    "scheduled_date": "2026-05-11",
+    "upload_date": "2026-05-19",
+    "duration_seconds": 4921,
+    "playlist_duration_seconds_not_used": 4922
+  },
+  "source_paths": {
+    "original_captions": "sources/p1-videos/captions/-qm0ln33G24.en-US.manual.json3",
+    "metadata": "sources/p1-videos/metadata/lec13--qm0ln33G24.json",
+    "handout": "sources/p1-lectures/raw/lecture_13.py",
+    "normalized": "sources/p6-lec13/captions.normalized.json",
+    "reading_copy": "sources/p6-lec13/transcript.en.txt"
+  },
+  "normalization": {
+    "based_on": "technical-video-notes/scripts/normalize_captions.py algorithm read in full",
+    "implementation": "Equivalent json3 event segmentation in eval: concatenate utf8 segments, strip outer whitespace, retain every nonempty event and exact start/end; add 1-based cue index",
+    "difference": "No VTT created because P6 evidence filenames are restricted to .json/.txt; reading TXT preserves each cue on one line with original newlines shown as /; JSON preserves original cue text",
+    "no_text_correction": true,
+    "license_boundary": "Raw caption and full English derivative are local evidence, not publication-approved"
+  },
+  "caption_actual_read_blocks": [
+    {
+      "tool": "functions.read",
+      "path": "sources/p6-lec13/transcript.en.txt:1-240:raw",
+      "first_cue": 1,
+      "last_cue": 240,
+      "actual_read_count": 240,
+      "first_start_ms": 4640,
+      "last_end_ms": 787150,
+      "read_at": "2026-11-15",
+      "status": "Complete block actually displayed and read, not just parsed or inventoried"
+    },
+    {
+      "tool": "functions.read",
+      "path": "sources/p6-lec13/transcript.en.txt:241-480:raw",
+      "first_cue": 241,
+      "last_cue": 480,
+      "actual_read_count": 240,
+      "first_start_ms": 787150,
+      "last_end_ms": 1589560,
+      "read_at": "2026-11-15",
+      "status": "Complete block actually displayed and read, not just parsed or inventoried"
+    },
+    {
+      "tool": "functions.read",
+      "path": "sources/p6-lec13/transcript.en.txt:481-720:raw",
+      "first_cue": 481,
+      "last_cue": 720,
+      "actual_read_count": 240,
+      "first_start_ms": 1589560,
+      "last_end_ms": 2452430,
+      "read_at": "2026-11-15",
+      "status": "Complete block actually displayed and read, not just parsed or inventoried"
+    },
+    {
+      "tool": "functions.read",
+      "path": "sources/p6-lec13/transcript.en.txt:721-960:raw",
+      "first_cue": 721,
+      "last_cue": 960,
+      "actual_read_count": 240,
+      "first_start_ms": 2452430,
+      "last_end_ms": 3269800,
+      "read_at": "2026-11-15",
+      "status": "Complete block actually displayed and read, not just parsed or inventoried"
+    },
+    {
+      "tool": "functions.read",
+      "path": "sources/p6-lec13/transcript.en.txt:961-1200:raw",
+      "first_cue": 961,
+      "last_cue": 1200,
+      "actual_read_count": 240,
+      "first_start_ms": 3269800,
+      "last_end_ms": 4172899,
+      "read_at": "2026-11-15",
+      "status": "Complete block actually displayed and read, not just parsed or inventoried"
+    },
+    {
+      "tool": "functions.read",
+      "path": "sources/p6-lec13/transcript.en.txt:1201-1419:raw",
+      "first_cue": 1201,
+      "last_cue": 1419,
+      "actual_read_count": 219,
+      "first_start_ms": 4172899,
+      "last_end_ms": 4916080,
+      "read_at": "2026-11-15",
+      "status": "Complete block actually displayed and read, not just parsed or inventoried"
+    }
+  ],
+  "all_cues_read": true,
+  "handout_actual_read_blocks": [
+    {
+      "path": "sources/p1-lectures/raw/lecture_13.py:1-210:raw",
+      "actual_lines": [
+        1,
+        210
+      ]
+    },
+    {
+      "path": "sources/p1-lectures/raw/lecture_13.py:211-430:raw",
+      "actual_lines": [
+        211,
+        430
+      ]
+    },
+    {
+      "path": "sources/p1-lectures/raw/lecture_13.py:431-660:raw",
+      "actual_lines": [
+        431,
+        622
+      ],
+      "note": "Read tool returned through EOF, line 622"
+    }
+  ],
+  "handout_lines_total": 622,
+  "handout_commit": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+  "handout_boundary": "Post-term source is not a recording transcript; its image pixels and all linked papers not read",
+  "uncertain_caption_cues": [
+    {
+      "cue": 42,
+      "start_ms": 129009,
+      "end_ms": 130910,
+      "original": "you can [? paralyze ?]\nthat effort easily.",
+      "treatment": "Possible parallelize by context, not audio-confirmed; preserve original uncertain wording"
+    },
+    {
+      "cue": 117,
+      "start_ms": 372460,
+      "end_ms": 375220,
+      "original": "The URL isn't even as full\n[? of ?] specification",
+      "treatment": "Dynamic URL wording partly uncertain; no exact reconstruction"
+    },
+    {
+      "cue": 554,
+      "start_ms": 1852190,
+      "end_ms": 1855530,
+      "original": "[INAUDIBLE]",
+      "treatment": "Question inaudible; lecturer later paraphrases voice data / ElevenLabs"
+    },
+    {
+      "cue": 558,
+      "start_ms": 1865310,
+      "end_ms": 1867510,
+      "original": "[INAUDIBLE]",
+      "treatment": "Beginning of licensing question inaudible; not reconstructed"
+    },
+    {
+      "cue": 560,
+      "start_ms": 1871790,
+      "end_ms": 1874190,
+      "original": "to be like [INAUDIBLE].",
+      "treatment": "Interior of licensing question inaudible; not reconstructed"
+    },
+    {
+      "cue": 774,
+      "start_ms": 2614640,
+      "end_ms": 2616400,
+      "original": "I mean, [? synthetic ?]\n[? data ?] models.",
+      "treatment": "synthetic data uncertain here, clarified by lecturer in subsequent cues"
+    },
+    {
+      "cue": 782,
+      "start_ms": 2629840,
+      "end_ms": 2632760,
+      "original": "When using crawlers\nlike [INAUDIBLE] Crawl",
+      "treatment": "Crawler name partly inaudible; not reconstructed"
+    },
+    {
+      "cue": 1204,
+      "start_ms": 4181180,
+      "end_ms": 4184620,
+      "original": "because when you look at\n[INAUDIBLE] counts in language",
+      "treatment": "Word before counts inaudible; neighboring cues explicitly discuss repeat epochs"
+    }
+  ],
+  "substantive_corrections": [
+    {
+      "cues": [
+        329,
+        330
+      ],
+      "issue": "Universal 75-year copyright term",
+      "resolution": "US Copyright Office duration FAQ; qualified statutory categories, no legal advice"
+    },
+    {
+      "cues": [
+        358,
+        374
+      ],
+      "issue": "CC paraphrased as public domain",
+      "resolution": "CC official six-license overview; distinguish BY/SA/NC/ND conditions"
+    },
+    {
+      "cues": [
+        979,
+        982
+      ],
+      "issue": "PG-19 before 2019 in caption and fixed source",
+      "resolution": "Official README says books published before 1919"
+    },
+    {
+      "cues": [
+        1041,
+        1041
+      ],
+      "issue": "LLaMA in 2022",
+      "resolution": "arXiv metadata first published 2023-02-27"
+    }
+  ],
+  "other_differences_recorded_in_draft": [
+    "Copying potentially vs categorically infringing",
+    "Unclear NYT lawsuit negation and dated legal statuses",
+    "Changing licenses question is not universal legal advice",
+    "Common Crawl raw/cumulative/snapshot units",
+    "Historical Wikipedia poisoning not current safety claim",
+    "Handout GitHub Archive URL incorrectly points to arXiv bulk page",
+    "arXiv per-work rights and metadata separate",
+    "Reddit greater-than-three vs handout at-least-three",
+    "C4 word-count comparison boundary discrepancy",
+    "Rules do not imply absence of bias",
+    "DCLM-pool unfiltered shorthand and incompatible count denominators",
+    "The Stack 137 repos vs fixed handout 137M",
+    "Stack v2 corpus vs later training mixture not independently resolved",
+    "Model ranking not a universal licensed-data capability bound"
+  ],
+  "finite_paraphrase_ranges": [
+    {
+      "label": "A",
+      "first_cue": 1,
+      "last_cue": 44,
+      "start_ms": 4640,
+      "end_ms": 138410,
+      "topic": "数据工作与披露",
+      "boundary": "One short independently worded paragraph; does not translate all speech/examples/QA in the interval",
+      "body_section": "draft.zh.md §3 A"
+    },
+    {
+      "label": "B",
+      "first_cue": 45,
+      "last_cue": 87,
+      "start_ms": 138410,
+      "end_ms": 276730,
+      "topic": "阶段名称",
+      "boundary": "One short independently worded paragraph; does not translate all speech/examples/QA in the interval",
+      "body_section": "draft.zh.md §3 B"
+    },
+    {
+      "label": "C",
+      "first_cue": 88,
+      "last_cue": 188,
+      "start_ms": 276730,
+      "end_ms": 600360,
+      "topic": "取得范围",
+      "boundary": "One short independently worded paragraph; does not translate all speech/examples/QA in the interval",
+      "body_section": "draft.zh.md §3 C"
+    },
+    {
+      "label": "D",
+      "first_cue": 579,
+      "last_cue": 644,
+      "start_ms": 1932240,
+      "end_ms": 2168900,
+      "topic": "抽取表示",
+      "boundary": "One short independently worded paragraph; does not translate all speech/examples/QA in the interval",
+      "body_section": "draft.zh.md §3 D"
+    },
+    {
+      "label": "E",
+      "first_cue": 1296,
+      "last_cue": 1359,
+      "start_ms": 4484800,
+      "end_ms": 4716100,
+      "topic": "许可沿袭",
+      "boundary": "One short independently worded paragraph; does not translate all speech/examples/QA in the interval",
+      "body_section": "draft.zh.md §3 E"
+    },
+    {
+      "label": "F",
+      "first_cue": 1375,
+      "last_cue": 1419,
+      "start_ms": 4769900,
+      "end_ms": 4916080,
+      "topic": "数据处理研究问题",
+      "boundary": "One short independently worded paragraph; does not translate all speech/examples/QA in the interval",
+      "body_section": "draft.zh.md §3 F"
+    }
+  ],
+  "not_done": [
+    "Audio listening",
+    "Video watching",
+    "Classroom screenshot acquisition",
+    "Full audit of linked paper bodies",
+    "Dataset/model/classifier/media download",
+    "Official assignment execution",
+    "Build/lint/test/formatter/browser verification"
+  ]
+}

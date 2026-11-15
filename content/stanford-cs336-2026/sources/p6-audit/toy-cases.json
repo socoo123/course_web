@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "batch": "P6",
+  "slice": "p6-audit",
+  "purpose": "Original deterministic mechanisms and arithmetic for Main's independent integrated verification; not official A4 solutions, real corpus statistics, or executed audit results.",
+  "execution_status": "not_run_by_author",
+  "page": "lectures/ext13/notes.zh.md",
+  "cases": [
+    {
+      "id": "stage_denominators",
+      "section": "3.2",
+      "input": {"raw_records": 1000, "stage_documents": [900, 600, 480, 400], "stage_tokens": [100000, 72000, 60000, 50000], "eos_counted": false, "tokenizer_fixed": true},
+      "expected": {"extraction_success": 0.9, "quality_document_retention": 0.8, "quality_token_retention_fraction": [5, 6], "final_document_retention_fraction": [4, 9], "final_token_retention": 0.5}
+    },
+    {
+      "id": "overlapping_filter_reasons",
+      "section": "3.3",
+      "input": {"population": 1000, "a": 200, "b": 150, "intersection": 100, "order": ["a", "b"]},
+      "expected": {"union": 250, "second_stage_removed": 50, "second_stage_input": 800, "second_stage_removal_rate": 0.0625, "final_retained": 750}
+    },
+    {
+      "id": "exact_line_scope",
+      "section": "4.2",
+      "input": {"documents": [["maple fern", "river stone"], ["maple fern", "cloud cedar"]], "representative_rule": "first occurrence in document order"},
+      "expected": {"within_document_lines_removed": 0, "global_lines_removed": 1, "global_output": [["maple fern", "river stone"], ["cloud cedar"]], "whole_document_duplicates": 0}
+    },
+    {
+      "id": "deterministic_string_sets",
+      "section": "5.1",
+      "input": {"documents": {"a": "maple fern lake", "a_prime": " MAPLE  fern lake ", "b": "maple fern stone", "c": "lake fern maple"}, "normalization": "ASCII lowercase; trim surrounding whitespace; collapse whitespace runs to one ASCII space; retain punctuation", "tokenization": "split on the normalized space", "ngrams": 2, "set_semantics": true},
+      "expected": {"a_equals_a_prime_raw": false, "a_equals_a_prime_normalized": true, "sets": {"a": ["maple fern", "fern lake"], "b": ["maple fern", "fern stone"], "c": ["lake fern", "fern maple"]}, "jaccard_a_b_fraction": [1, 3], "jaccard_a_c": 0, "unigram_jaccard_a_c": 1, "empty_union_policy": "undefined by the displayed fraction; caller must declare separate short-text behavior"}
+    },
+    {
+      "id": "lsh_band_probability",
+      "section": "6.1",
+      "assumptions": ["independent ideal MinHash components", "nonempty set union", "probability over random signature construction"],
+      "formula": "1 - (1 - similarity ** rows_per_band) ** bands",
+      "input": {"bands": 2, "rows_per_band": 2, "similarities": [0.5, 0.8]},
+      "expected": {"candidate_probabilities": [0.4375, 0.8704], "fractions": [[7, 16], [544, 625]]}
+    },
+    {
+      "id": "transitive_cluster_counterexample",
+      "section": "7",
+      "input": {"sets": {"u": ["maple", "fern"], "v": ["maple", "fern", "lake"], "w": ["fern", "lake"]}, "threshold": 0.6, "edge_rule": "Jaccard >= threshold"},
+      "expected": {"jaccard_u_v_fraction": [2, 3], "jaccard_v_w_fraction": [2, 3], "jaccard_u_w_fraction": [1, 3], "edges": [["u", "v"], ["v", "w"]], "connected_components": [["u", "v", "w"]], "all_pairs_meet_threshold": false}
+    },
+    {
+      "id": "token_exposure_reweighting",
+      "section": "8.1",
+      "input": {"available_tokens": [20000, 80000], "total_training_tokens": 100000, "natural_weights": [0.2, 0.8], "reweighted_weights": [0.5, 0.5]},
+      "formula": "total_training_tokens * token_weight / available_tokens",
+      "expected": {"natural_mean_exposures": [1, 1], "reweighted_mean_exposures": [2.5, 0.625]}
+    },
+    {
+      "id": "semantic_duplicate_concentration",
+      "section": "8.2",
+      "input": {"equal_length_physical_records": ["x", "x", "x", "x", "y", "z"], "record_sampling": "uniform_with_replacement"},
+      "expected": {"content_probability_fractions": {"x": [2, 3], "y": [1, 6], "z": [1, 6]}, "same_content_two_draw_probability": 0.5, "inverse_concentration": 2, "uniform_after_dedup_inverse_concentration": 3},
+      "boundary": "Inverse concentration is a collision diagnostic, not a universal training information count or a guaranteed statistical ESS."
+    },
+    {
+      "id": "expected_unique_documents",
+      "section": "8.3",
+      "input": {"distinct_documents": 2, "draws": 4, "sampling": "uniform_with_replacement"},
+      "formula": "N * (1 - (1 - 1 / N) ** m)",
+      "expected": {"expected_unique": 1.875}
+    },
+    {
+      "id": "overlap_position_union",
+      "section": "9.2",
+      "input": {"evaluation_length": 10, "half_open_intervals": [[0, 6], [4, 9]]},
+      "expected": {"summed_interval_lengths": 11, "covered_positions": [0, 1, 2, 3, 4, 5, 6, 7, 8], "union_length": 9, "coverage": 0.9},
+      "boundary": "Original interval arithmetic only; not a claim to instantiate DCLM's 10-gram rule."
+    },
+    {
+      "id": "adjudication_confusion_matrix",
+      "section": "10.1",
+      "input": {"tp": 8, "fp": 12, "fn": 2, "tn": 78},
+      "expected": {"population": 100, "flag_rate": 0.2, "precision": 0.4, "recall": 0.8, "false_positive_rate_fraction": [2, 15], "pollution_among_negatives": 0.025}
+    },
+    {
+      "id": "zero_detection_upper_bound",
+      "section": "10.2",
+      "input": {"n": 100, "alpha": 0.05, "detected": 0, "sensitivity_values": [1, 0.8]},
+      "assumptions": ["independent uniform with-replacement sampling from defined population", "known homogeneous sensitivity", "zero false-positive probability", "independent detection across samples"],
+      "formula": "min(1, (1 - alpha ** (1 / n)) / sensitivity)",
+      "expected": {"upper_bounds_rounded": [0.02951305, 0.03689131], "absolute_tolerance": 0.00000001},
+      "boundary": "Hypothetical binomial construction; not a performed audit, and not applicable to unknown recall or convenience/cluster sampling."
+    }
+  ],
+  "reference_formula_check": {
+    "id": "fineweb_e1_rounding",
+    "provenance": "FineWeb arXiv:2406.17557v2 Appendix E.1, directly read; source-derived parameters, not an original experimental result",
+    "formula": "1 - (1 - similarity ** 8) ** 14",
+    "similarities": [0.7, 0.75, 0.8, 0.85],
+    "paper_rounded_probabilities": [0.56, 0.77, 0.92, 0.988],
+    "rounding_absolute_tolerance": 0.005
+  }
+}

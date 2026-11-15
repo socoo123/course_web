@@ -1,7 +1,7 @@
 {
   "courseId": "stanford-cs336-2026",
   "updatedAt": "2026-11-15",
-  "status": "P5_nine_cumulative_specified_core_readings_reviewed_and_page_accepted_with_documented_limits",
+  "status": "P6_eleven_cumulative_specified_core_readings_reviewed_and_page_accepted_with_documented_limits",
   "policy": "每篇单一正文归属不变。16篇全文已本地获取，但实际已读仅各记录所列范围；未称全文精读。官方明确推荐/任务必查与编者必读/选读分开。授权不明或ND材料仅自主精读。",
   "readings": [
     {
@@ -1895,8 +1895,8 @@
       "chineseTreatment": "authorized_translation",
       "version": "arXiv:2406.17557v2",
       "license": "CC-BY-4.0",
-      "status": "P1_source_and_scope_reviewed_not_full_close_read",
-      "readingEvidence": "题名/作者/v2；§3.1–3.7的主要正文（跳过图曲线逐点复核）、§4主节与4.1–4.2、§5正文；附录B、D.1–D.3表格、E.1正文；扫描主文及A–G附录标题。",
+      "status": "P6_specified_core_translation_reviewed_page_accepted",
+      "readingEvidence": "P6完整读取并翻译§§3.1–3.7、§4主节/4.1–4.2、§5、B、E.1及相关图1–13图注/脚注1；视觉核对9页。指定核心不是全文精读；逐段范围见p6-papers/reading-updates.json#paper08。原P1记录保留。",
       "authors": [
         "Penedo, Guilherme",
         "Kydlíček, Hynek",
@@ -1919,8 +1919,8 @@
         "note": "a4-data：文本提取、质量过滤、MinHash去重及数据消融的概念参考；原home lec14保留，lec13/ext13只回链。此论文1.71B训练/海量语料不视为课程必须复现实验。",
         "officialCrosscheckFile": "p1-assignments-a1-a4/reading-updates.json"
       },
-      "chineseTreatmentStatus": "P1_permission_decision_only; no_translation_or_course_body_written",
-      "chineseTreatmentConditions": "未来译文保留全体作者/题名/固定版本链接/CC BY 4.0链接和翻译改动说明，标明非作者或Stanford官方译文，并检查第三方素材。",
+      "chineseTreatmentStatus": "P6_complete_designated_core_translation_written_not_whole_paper",
+      "chineseTreatmentConditions": "保留全体作者、固定版本、CC BY4.0链接、中文修改说明、非官方身份及第三方边界；数据ODC-By与论文许可分开。已落实于lec14/materials.zh.md页底。",
       "versionDate": "2024-10-31",
       "licenseEvidence": {
         "url": "http://creativecommons.org/licenses/by/4.0/",
@@ -1934,7 +1934,8 @@
         "readAt": "2026-11-14T13:47:55.076422Z",
         "notes": "论文arXiv许可为CC BY 4.0；附录B明确数据集另为ODC-By v1.0并受CommonCrawl Terms约束，不能混写。"
       },
-      "actualReading": {
+      "actualReading": {"phase":"P6","specifiedCoreCloseRead":true,"completePaperCloseRead":false,"completeSelectedCoreTranslation":true,"visualPdfPages":[4,5,6,7,8,9,10,21,22],"detailedRecord":"p6-papers/reading-updates.json#paper08.actualReading","additionalEditorialReading":"p6-audit/reading-log.json","readAt":"2026-11-15"},
+      "priorActualReading": {
         "method": "pdftotext -layout",
         "scope": "题名/作者/v2；§3.1–3.7的主要正文（跳过图曲线逐点复核）、§4主节与4.1–4.2、§5正文；附录B、D.1–D.3表格、E.1正文；扫描主文及A–G附录标题。",
         "pdfPageSelections": [
@@ -2014,7 +2015,7 @@
       ],
       "sha256": "ae632bd6618d2566e708962670f27ab1fbc5ba9bc8de3acaceee8fbda85fbdd4",
       "retrievedAt": "2026-11-14T13:43:44.626966Z",
-      "readAt": "2026-11-14T13:47:55.076422Z",
+      "readAt": "2026-11-15",
       "p1Cautions": [
         "论文arXiv许可为CC BY 4.0；附录B明确数据集另为ODC-By v1.0并受CommonCrawl Terms约束，不能混写。",
         "§4.2的domain-fit试验明确未做decontamination，不能当作无污染的下游泛化证据。",
@@ -2030,9 +2031,9 @@
       "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review.",
       "officialCrosscheck": "L13 mentions FineWeb dataset around line513, not an explicit assignment of the FineWeb paper. A4 cites RefinedWeb, a distinct paper.",
       "officialRequirement": "未发现明确论文阅读指令；中文精读范围为编者安排",
-      "written": "not_started",
-      "reviewed": "P1_source_version_license_and_selected_scope_only",
-      "accepted": "placement_only_no_body_page"
+      "written": "P6_complete_designated_core_translation",
+      "reviewed": "P6_author_full_core_and_visual_review_plus_Main_source_and_body_review",
+      "accepted": "P6_desktop_mobile_page_accepted; p6-acceptance.json"
     },
     {
       "id": "paper09",
@@ -2057,7 +2058,7 @@
           {
             "section": "3.1–3.5",
             "title": "The DataComp for language models (DCLM) benchmark",
-            "pdfPages": "4–6",
+            "pdfPages": "5–6; §3 lead and Table1 are on physical p4",
             "focus": "数据池、五种固定计算规模、filtering/mixing赛道、固定训练配方、53项评测及CORE/EXTENDED指标",
             "readStatus": "text_read_for_P1"
           },
@@ -2111,8 +2112,8 @@
       "chineseTreatment": "authorized_translation_with_attribution_and_change_notice",
       "version": "arXiv:2406.11794v4",
       "license": "CC-BY-4.0",
-      "status": "p1_fixed_fulltext_and_core_scope_verified_not_full_close_reading",
-      "readingEvidence": "题名、59名作者元数据、v4标记；正文§3–6、附录目录及C.1–C.3实际读取。仅按章节标题扫描其余全文结构。 已取得固定版本完整PDF后按所列页/节核查，不以摘要或搜索片段代替全文；§1–2未完整精读；参考文献及除C以外的大多数附录正文未完整读取。所有章节均未完成P2级逐式、逐表、逐引文精读。",
+      "status": "P6_specified_core_translation_reviewed_page_accepted",
+      "readingEvidence": "P6完整读取并翻译§§3.1–3.5、4.1–4.6、C.1–C.3及表1–7/图2–4图注；视觉核对9页。ext13另独立读附录O，不新增第二译文正文；详细范围见p6-papers/reading-updates.json#paper09与p6-audit/reading-log.json。P1实际范围保留，不称全文精读。",
       "canonicalTitle": "DataComp-LM: In search of the next generation of training sets for language models",
       "authors": [
         "Li, Jeffrey",
@@ -2223,7 +2224,9 @@
         "p1-paper09-text-v4"
       ],
       "retrievedAt": "2026-11-14T13:39:11.874417Z",
-      "actualRead": {
+      "chineseTreatmentStatus": "P6_complete_designated_core_translation_written_not_whole_paper",
+      "actualReading": {"phase":"P6","specifiedCoreCloseRead":true,"completePaperCloseRead":false,"completeSelectedCoreTranslation":true,"visualPdfPages":[4,5,6,7,8,9,10,38,39],"detailedRecord":"p6-papers/reading-updates.json#paper09.actualReading","additionalEditorialReading":"p6-audit/reading-log.json; AppendixO text/Table25/Fig11–12 captions","readAt":"2026-11-15"},
+      "priorActualReading": {
         "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
         "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
         "pagesRead": "1, 4–11, 33–34, 38–39",
@@ -2260,9 +2263,9 @@
       "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review.",
       "officialAssignmentStatus": "固定2026 A1–A5作业证据已交叉；普通引用和方法实现不等于论文必读。",
       "officialRequirement": "未发现明确论文阅读指令；中文精读范围为编者安排",
-      "written": "not_started",
-      "reviewed": "P1_source_version_license_and_selected_scope_only",
-      "accepted": "placement_only_no_body_page"
+      "written": "P6_complete_designated_core_translation",
+      "reviewed": "P6_author_full_core_and_visual_review_plus_Main_source_and_body_review",
+      "accepted": "P6_desktop_mobile_page_accepted; p6-acceptance.json"
     },
     {
       "id": "paper10",

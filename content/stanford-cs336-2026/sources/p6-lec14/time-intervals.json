@@ -1,0 +1,801 @@
+{
+  "schema_version": 1,
+  "lecture_id": "lec14",
+  "video_id": "5sxHosTLPF8",
+  "duration_seconds": 5086,
+  "caption_file": "p1-videos/captions/5sxHosTLPF8.en-US.manual.json3",
+  "normalized_file": "p6-lec14/captions.normalized.json",
+  "transcript_file": "p6-lec14/transcript.en.txt",
+  "caption_cue_count": 1448,
+  "caption_first_start_seconds": 5.24,
+  "caption_last_end_seconds": 5080.18,
+  "caption_timed_union_seconds": 4921.65,
+  "cue_assignment_rule": "Half-open editorial blocks; each cue assigned by start. Topic boundaries are actual cue starts or final cue end. mm:ss display floors milliseconds. Navigation continuity is not speech continuity.",
+  "blocks": [
+    {
+      "id": "lec14-block-00",
+      "kind": "uncaptioned_leading",
+      "title": "片头无字幕",
+      "start_seconds": 0,
+      "end_seconds": 5.24,
+      "cue_indices_1_based_by_start": null
+    },
+    {
+      "id": "lec14-block-01",
+      "kind": "editorial_topic",
+      "title": "来源回顾与本讲路线",
+      "start_seconds": 5.24,
+      "end_seconds": 77.8,
+      "cue_indices_1_based_by_start": [
+        1,
+        21
+      ],
+      "navigation_question": "四类处理解决的不是同一个问题",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-02",
+      "kind": "editorial_topic",
+      "title": "HTML正文抽取与结构丢失",
+      "start_seconds": 77.8,
+      "end_seconds": 260.1,
+      "cue_indices_1_based_by_start": [
+        22,
+        72
+      ],
+      "navigation_question": "导航、表格和代码如何影响目标任务？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-03",
+      "kind": "editorial_topic",
+      "title": "PDF、OCR与抽取成本",
+      "start_seconds": 260.1,
+      "end_seconds": 416.77,
+      "cue_indices_1_based_by_start": [
+        73,
+        114
+      ],
+      "navigation_question": "有文字不等于保留了结构",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-04",
+      "kind": "editorial_topic",
+      "title": "目标集合、评分器与保留规则",
+      "start_seconds": 416.77,
+      "end_seconds": 687.39,
+      "cue_indices_1_based_by_start": [
+        115,
+        197
+      ],
+      "navigation_question": "模型分数代表哪种代理标签？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-05",
+      "kind": "editorial_topic",
+      "title": "语言识别与数学内容筛选",
+      "start_seconds": 687.39,
+      "end_seconds": 867.29,
+      "cue_indices_1_based_by_start": [
+        198,
+        253
+      ],
+      "navigation_question": "语言、领域和质量如何区分？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-06",
+      "kind": "editorial_topic",
+      "title": "GPT-3、LLaMA、phi-1与毒性过滤",
+      "start_seconds": 867.29,
+      "end_seconds": 1045.88,
+      "cue_indices_1_based_by_start": [
+        254,
+        299
+      ],
+      "navigation_question": "正例是文章本身还是被引用网页？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-07",
+      "kind": "editorial_topic",
+      "title": "过滤阈值与训练长度",
+      "start_seconds": 1045.88,
+      "end_seconds": 1214.58,
+      "cue_indices_1_based_by_start": [
+        300,
+        353
+      ],
+      "navigation_question": "短训练最优为何可能在长训练中失效？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-08",
+      "kind": "editorial_topic",
+      "title": "问答：重复实验与有限库存",
+      "start_seconds": 1214.58,
+      "end_seconds": 1316.03,
+      "cue_indices_1_based_by_start": [
+        354,
+        388
+      ],
+      "navigation_question": "单次训练经验不能替代不确定性报告",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-09",
+      "kind": "editorial_topic",
+      "title": "过滤总结",
+      "start_seconds": 1316.03,
+      "end_seconds": 1375.73,
+      "cue_indices_1_based_by_start": [
+        389,
+        408
+      ],
+      "navigation_question": "怎样把昂贵的判断蒸馏为便宜筛选器？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-10",
+      "kind": "editorial_topic",
+      "title": "重复来源、效率、记忆与去污染",
+      "start_seconds": 1375.73,
+      "end_seconds": 1634.55,
+      "cue_indices_1_based_by_start": [
+        409,
+        484
+      ],
+      "navigation_question": "去重与跨split隔离的目的有何不同？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-11",
+      "kind": "editorial_topic",
+      "title": "去重设计空间与哈希",
+      "start_seconds": 1634.55,
+      "end_seconds": 1778.81,
+      "cue_indices_1_based_by_start": [
+        485,
+        534
+      ],
+      "navigation_question": "单位、匹配、删除动作分别是什么？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-12",
+      "kind": "editorial_topic",
+      "title": "精确去重与局部删除",
+      "start_seconds": 1778.81,
+      "end_seconds": 1886.64,
+      "cue_indices_1_based_by_start": [
+        535,
+        561
+      ],
+      "navigation_question": "删掉重复片段后文章还连贯吗？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-13",
+      "kind": "editorial_topic",
+      "title": "Jaccard、MinHash定义与证明",
+      "start_seconds": 1886.64,
+      "end_seconds": 2190.14,
+      "cue_indices_1_based_by_start": [
+        562,
+        647
+      ],
+      "navigation_question": "随机排列中的首元素为何来自交集？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-14",
+      "kind": "editorial_topic",
+      "title": "有限签名估计与单次碰撞限制",
+      "start_seconds": 2190.14,
+      "end_seconds": 2280.93,
+      "cue_indices_1_based_by_start": [
+        648,
+        671
+      ],
+      "navigation_question": "演示数值不是误差保证",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-15",
+      "kind": "editorial_topic",
+      "title": "LSH分band与候选概率",
+      "start_seconds": 2280.93,
+      "end_seconds": 2637.26,
+      "cue_indices_1_based_by_start": [
+        672,
+        758
+      ],
+      "navigation_question": "band内AND、band间OR如何组合？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-16",
+      "kind": "editorial_topic",
+      "title": "LSH参数、近似位置与问题停顿",
+      "start_seconds": 2637.26,
+      "end_seconds": 2935.15,
+      "cue_indices_1_based_by_start": [
+        759,
+        827
+      ],
+      "navigation_question": "概率曲线不是硬Jaccard阈值",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-17",
+      "kind": "editorial_topic",
+      "title": "跨数据集去重提醒",
+      "start_seconds": 2935.15,
+      "end_seconds": 2961.07,
+      "cue_indices_1_based_by_start": [
+        828,
+        834
+      ],
+      "navigation_question": "来源内去重后仍可能互相重叠",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-18",
+      "kind": "editorial_topic",
+      "title": "混合基线与质量/多样性",
+      "start_seconds": 2961.07,
+      "end_seconds": 3219.93,
+      "cue_indices_1_based_by_start": [
+        835,
+        903
+      ],
+      "navigation_question": "权重的抽样单位是什么？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-19",
+      "kind": "editorial_topic",
+      "title": "有限库存、50轮例子与追问",
+      "start_seconds": 3219.93,
+      "end_seconds": 3430.03,
+      "cue_indices_1_based_by_start": [
+        904,
+        969
+      ],
+      "navigation_question": "权重和总token预算如何决定重复？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-20",
+      "kind": "editorial_topic",
+      "title": "问答：混合怎样进入batch",
+      "start_seconds": 3430.03,
+      "end_seconds": 3505.55,
+      "cue_indices_1_based_by_start": [
+        970,
+        995
+      ],
+      "navigation_question": "按序列选来源，不是逐token随机换来源",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-21",
+      "kind": "editorial_topic",
+      "title": "UniMax与epoch上限",
+      "start_seconds": 3505.55,
+      "end_seconds": 3600.46,
+      "cue_indices_1_based_by_start": [
+        996,
+        1020
+      ],
+      "navigation_question": "轮数和token的量纲要对齐",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-22",
+      "kind": "editorial_topic",
+      "title": "回归式混合与两种外推风险",
+      "start_seconds": 3600.46,
+      "end_seconds": 3984.14,
+      "cue_indices_1_based_by_start": [
+        1021,
+        1135
+      ],
+      "navigation_question": "最优点上的预测仍然可靠吗？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-23",
+      "kind": "editorial_topic",
+      "title": "simulated epoching与混合总结",
+      "start_seconds": 3984.14,
+      "end_seconds": 4243.64,
+      "cue_indices_1_based_by_start": [
+        1136,
+        1207
+      ],
+      "navigation_question": "同比缩库存是在模拟什么约束？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-24",
+      "kind": "editorial_topic",
+      "title": "问答：小来源、主题与质量网格",
+      "start_seconds": 4243.64,
+      "end_seconds": 4376.87,
+      "cue_indices_1_based_by_start": [
+        1208,
+        1249
+      ],
+      "navigation_question": "下采样是否丢了整个小领域？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-25",
+      "kind": "editorial_topic",
+      "title": "任务相关数据与教师生成框架",
+      "start_seconds": 4376.87,
+      "end_seconds": 4492.66,
+      "cue_indices_1_based_by_start": [
+        1250,
+        1281
+      ],
+      "navigation_question": "环境、任务、响应各自来自哪里？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-26",
+      "kind": "editorial_topic",
+      "title": "OpenThoughts与教师/响应采样",
+      "start_seconds": 4492.66,
+      "end_seconds": 4666.77,
+      "cue_indices_1_based_by_start": [
+        1282,
+        1327
+      ],
+      "navigation_question": "响应条数不等于独立题目数",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-27",
+      "kind": "editorial_topic",
+      "title": "SWE-smith与真实环境中的合成任务",
+      "start_seconds": 4666.77,
+      "end_seconds": 4743.16,
+      "cue_indices_1_based_by_start": [
+        1328,
+        1347
+      ],
+      "navigation_question": "任务真实性和可验证性分别怎样保证？",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-28",
+      "kind": "editorial_topic",
+      "title": "SWE-Zero与无执行反馈轨迹",
+      "start_seconds": 4743.16,
+      "end_seconds": 4905.35,
+      "cue_indices_1_based_by_start": [
+        1348,
+        1391
+      ],
+      "navigation_question": "降低环境成本不等于证明补丁正确",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-29",
+      "kind": "editorial_topic",
+      "title": "SWE-rebench与扩展轨迹量级",
+      "start_seconds": 4905.35,
+      "end_seconds": 4975.78,
+      "cue_indices_1_based_by_start": [
+        1392,
+        1411
+      ],
+      "navigation_question": "仓库、任务和轨迹不能用同一个分母",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-30",
+      "kind": "editorial_topic",
+      "title": "合成路线与全讲总结",
+      "start_seconds": 4975.78,
+      "end_seconds": 5076.83,
+      "cue_indices_1_based_by_start": [
+        1412,
+        1447
+      ],
+      "navigation_question": "数据工作最终仍须看具体样本",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-31",
+      "kind": "caption_marker",
+      "title": "字幕掌声标记",
+      "start_seconds": 5076.83,
+      "end_seconds": 5080.18,
+      "cue_indices_1_based_by_start": [
+        1448,
+        1448
+      ],
+      "navigation_question": "仅记录字幕标签，不声称已听到音频",
+      "treatment": "navigation or selected limited independent paraphrase; not comprehensive translation"
+    },
+    {
+      "id": "lec14-block-32",
+      "kind": "uncaptioned_trailing",
+      "title": "片尾无字幕",
+      "start_seconds": 5080.18,
+      "end_seconds": 5086,
+      "cue_indices_1_based_by_start": null
+    }
+  ],
+  "first_cue": {
+    "cue": 1,
+    "event_index": 0,
+    "start_ms": 5240,
+    "end_ms": 7680,
+    "text": "OK, let's get started."
+  },
+  "last_cue": {
+    "cue": 1448,
+    "event_index": 1447,
+    "start_ms": 5076830,
+    "end_ms": 5080180,
+    "text": "[APPLAUSE]"
+  },
+  "leading_uncaptioned_seconds": 5.24,
+  "trailing_uncaptioned_seconds": 5.82,
+  "internal_gaps_over_two_seconds": [
+    {
+      "start_seconds": 23.86,
+      "end_seconds": 26.68,
+      "duration_seconds": 2.82,
+      "after_cue": 6,
+      "before_cue": 7,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 300.84,
+      "end_seconds": 303.64,
+      "duration_seconds": 2.8,
+      "after_cue": 83,
+      "before_cue": 84,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 752.8,
+      "end_seconds": 755.46,
+      "duration_seconds": 2.66,
+      "after_cue": 218,
+      "before_cue": 219,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 968.26,
+      "end_seconds": 970.9,
+      "duration_seconds": 2.64,
+      "after_cue": 279,
+      "before_cue": 280,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 989.62,
+      "end_seconds": 992.84,
+      "duration_seconds": 3.22,
+      "after_cue": 284,
+      "before_cue": 285,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 1255.52,
+      "end_seconds": 1258.78,
+      "duration_seconds": 3.26,
+      "after_cue": 368,
+      "before_cue": 369,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 1309.43,
+      "end_seconds": 1313.29,
+      "duration_seconds": 3.86,
+      "after_cue": 385,
+      "before_cue": 386,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 1667.2,
+      "end_seconds": 1670.08,
+      "duration_seconds": 2.88,
+      "after_cue": 496,
+      "before_cue": 497,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 1961.38,
+      "end_seconds": 1965.84,
+      "duration_seconds": 4.46,
+      "after_cue": 584,
+      "before_cue": 585,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2023.25,
+      "end_seconds": 2026.17,
+      "duration_seconds": 2.92,
+      "after_cue": 605,
+      "before_cue": 606,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2151.62,
+      "end_seconds": 2155.06,
+      "duration_seconds": 3.44,
+      "after_cue": 638,
+      "before_cue": 639,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2163.72,
+      "end_seconds": 2168.42,
+      "duration_seconds": 4.7,
+      "after_cue": 640,
+      "before_cue": 641,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2233.23,
+      "end_seconds": 2236.01,
+      "duration_seconds": 2.78,
+      "after_cue": 658,
+      "before_cue": 659,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2239.91,
+      "end_seconds": 2249.41,
+      "duration_seconds": 9.5,
+      "after_cue": 659,
+      "before_cue": 660,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2370.96,
+      "end_seconds": 2373.76,
+      "duration_seconds": 2.8,
+      "after_cue": 697,
+      "before_cue": 698,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2381.48,
+      "end_seconds": 2384.08,
+      "duration_seconds": 2.6,
+      "after_cue": 700,
+      "before_cue": 701,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2459.53,
+      "end_seconds": 2463.64,
+      "duration_seconds": 4.11,
+      "after_cue": 716,
+      "before_cue": 717,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2560.37,
+      "end_seconds": 2566.43,
+      "duration_seconds": 6.06,
+      "after_cue": 741,
+      "before_cue": 742,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2627.44,
+      "end_seconds": 2637.26,
+      "duration_seconds": 9.82,
+      "after_cue": 758,
+      "before_cue": 759,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2637.76,
+      "end_seconds": 2640.6,
+      "duration_seconds": 2.84,
+      "after_cue": 759,
+      "before_cue": 760,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2795.95,
+      "end_seconds": 2798.79,
+      "duration_seconds": 2.84,
+      "after_cue": 800,
+      "before_cue": 801,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2886.66,
+      "end_seconds": 2890.04,
+      "duration_seconds": 3.38,
+      "after_cue": 820,
+      "before_cue": 821,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2916.18,
+      "end_seconds": 2919.52,
+      "duration_seconds": 3.34,
+      "after_cue": 826,
+      "before_cue": 827,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 2923.21,
+      "end_seconds": 2935.15,
+      "duration_seconds": 11.94,
+      "after_cue": 827,
+      "before_cue": 828,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 3055.36,
+      "end_seconds": 3058.02,
+      "duration_seconds": 2.66,
+      "after_cue": 855,
+      "before_cue": 856,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 3059.56,
+      "end_seconds": 3062.58,
+      "duration_seconds": 3.02,
+      "after_cue": 856,
+      "before_cue": 857,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 3305.42,
+      "end_seconds": 3308.12,
+      "duration_seconds": 2.7,
+      "after_cue": 931,
+      "before_cue": 932,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 3364.26,
+      "end_seconds": 3374.8,
+      "duration_seconds": 10.54,
+      "after_cue": 948,
+      "before_cue": 949,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 3385.48,
+      "end_seconds": 3389.24,
+      "duration_seconds": 3.76,
+      "after_cue": 952,
+      "before_cue": 953,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 3501.77,
+      "end_seconds": 3505.55,
+      "duration_seconds": 3.78,
+      "after_cue": 995,
+      "before_cue": 996,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 4171.55,
+      "end_seconds": 4176.75,
+      "duration_seconds": 5.2,
+      "after_cue": 1188,
+      "before_cue": 1189,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 4239.18,
+      "end_seconds": 4243.64,
+      "duration_seconds": 4.46,
+      "after_cue": 1207,
+      "before_cue": 1208,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 4298.54,
+      "end_seconds": 4303.88,
+      "duration_seconds": 5.34,
+      "after_cue": 1223,
+      "before_cue": 1224,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 4471.3,
+      "end_seconds": 4474.06,
+      "duration_seconds": 2.76,
+      "after_cue": 1274,
+      "before_cue": 1275,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 4662.11,
+      "end_seconds": 4666.77,
+      "duration_seconds": 4.66,
+      "after_cue": 1327,
+      "before_cue": 1328,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    },
+    {
+      "start_seconds": 4914.12,
+      "end_seconds": 4916.86,
+      "duration_seconds": 2.74,
+      "after_cue": 1394,
+      "before_cue": 1395,
+      "interpretation": "Uncaptioned interval; may be pause, transition or missing speech; no audio verification"
+    }
+  ],
+  "internal_gaps_over_two_seconds_count": 36,
+  "actual_read_windows": [
+    {
+      "first_cue": 1,
+      "last_cue": 240,
+      "requested_path": "p6-lec14/transcript.en.txt:1-240:raw",
+      "first_start_seconds": 5.24,
+      "last_end_seconds": 824.41,
+      "actually_read": true,
+      "method": "Complete tool.read output inspected; not a keyword search or inventory"
+    },
+    {
+      "first_cue": 241,
+      "last_cue": 480,
+      "requested_path": "p6-lec14/transcript.en.txt:241-480:raw",
+      "first_start_seconds": 824.41,
+      "last_end_seconds": 1618.43,
+      "actually_read": true,
+      "method": "Complete tool.read output inspected; not a keyword search or inventory"
+    },
+    {
+      "first_cue": 481,
+      "last_cue": 720,
+      "requested_path": "p6-lec14/transcript.en.txt:481-720:raw",
+      "first_start_seconds": 1618.43,
+      "last_end_seconds": 2479.27,
+      "actually_read": true,
+      "method": "Complete tool.read output inspected; not a keyword search or inventory"
+    },
+    {
+      "first_cue": 721,
+      "last_cue": 960,
+      "requested_path": "p6-lec14/transcript.en.txt:721-960:raw",
+      "first_start_seconds": 2479.27,
+      "last_end_seconds": 3409.05,
+      "actually_read": true,
+      "method": "Complete tool.read output inspected; not a keyword search or inventory"
+    },
+    {
+      "first_cue": 961,
+      "last_cue": 1200,
+      "requested_path": "p6-lec14/transcript.en.txt:961-1200:raw",
+      "first_start_seconds": 3409.05,
+      "last_end_seconds": 4214.48,
+      "actually_read": true,
+      "method": "Complete tool.read output inspected; not a keyword search or inventory"
+    },
+    {
+      "first_cue": 1201,
+      "last_cue": 1448,
+      "requested_path": "p6-lec14/transcript.en.txt:1201-1448:raw",
+      "first_start_seconds": 4214.48,
+      "last_end_seconds": 5080.18,
+      "actually_read": true,
+      "method": "Complete tool.read output inspected; not a keyword search or inventory"
+    }
+  ],
+  "all_cues_actually_read": true,
+  "audio_verified": false,
+  "interpretation": "Caption timestamps only. Neither continuous speech nor absence of speech in gaps is established. Shorter gaps are also not audio-verified."
+}

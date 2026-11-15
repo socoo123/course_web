@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1080" role="img" aria-labelledby="title desc">
+<title id="title">数据配方与污染审计的两条证据链</title>
+<desc id="desc">上方依次是固定比较合同、原始快照、提取过滤、去重关系和实际采样曝光，各阶段记录输入输出及计数分母。下方单独固定评测材料、时间和粒度，通过检测及核验得到有限审计结论。虚线提醒审计连接到哪一层就只能声明相应覆盖，零命中不能证明没有污染。所有内容为原创概念示意，无真实审计数据。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:24px system-ui,-apple-system,"PingFang SC",sans-serif}.heading{font-size:28px;font-weight:700}.small{font-size:21px}.box,.arrow,.audit{fill:none;stroke:var(--border);stroke-width:2}.audit{stroke-dasharray:8 6}.tip{fill:var(--fg)}</style>
+<text class="heading" x="30" y="42">配方效果与审计覆盖，分别立约</text>
+<rect class="box" x="30" y="64" width="580" height="94" rx="10"/>
+<text x="50" y="98">固定：模型 · tokenizer · 预算 · 评测</text>
+<text class="small" x="50" y="134">只改变声明的数据干预；记录搜索成本</text>
+<path class="arrow" d="M320 158V185"/><path class="tip" d="M314 178L320 190L326 178Z"/>
+<rect class="box" x="30" y="192" width="580" height="90" rx="10"/>
+<text x="50" y="228">原始快照 → 提取后的文本</text>
+<text class="small" x="50" y="262">来源 · 时间 · 输入/输出摘要 · 提取失败</text>
+<path class="arrow" d="M320 282V309"/><path class="tip" d="M314 302L320 314L326 302Z"/>
+<rect class="box" x="30" y="316" width="580" height="90" rx="10"/>
+<text x="50" y="352">过滤与改写 → 有谱系的输出</text>
+<text class="small" x="50" y="386">文档/token分母 · 阶段/累计比例 · 原因</text>
+<path class="arrow" d="M320 406V433"/><path class="tip" d="M314 426L320 438L326 426Z"/>
+<rect class="box" x="30" y="440" width="580" height="90" rx="10"/>
+<text x="50" y="476">候选 → 核验 → 重复图 → 簇代表</text>
+<text class="small" x="50" y="510">先声明合同；同簇不保证两两相似</text>
+<path class="arrow" d="M320 530V557"/><path class="tip" d="M314 550L320 562L326 550Z"/>
+<rect class="box" x="30" y="564" width="580" height="90" rx="10"/>
+<text x="50" y="600">采样与打包 → 模型实际消费</text>
+<text class="small" x="50" y="634">来源权重 · 重复曝光 · 截断/EOS · 版本</text>
+<path class="audit" d="M610 237H625V704H320"/>
+<path class="audit" d="M610 361H625 M610 485H625 M610 609H625"/>
+<text class="small" x="36" y="687">审计须注明连接哪一层；不是自动全覆盖</text>
+<rect class="audit" x="30" y="724" width="580" height="106" rx="10"/>
+<text x="50" y="760">另固定：评测材料 · 时间 · 粒度</text>
+<text class="small" x="50" y="794">明确训练总体、题目字段与检测规则</text>
+<text class="small" x="50" y="818">不把测试答案用作质量监督信号</text>
+<path class="arrow" d="M320 830V857"/><path class="tip" d="M314 850L320 862L326 850Z"/>
+<rect class="box" x="30" y="864" width="580" height="90" rx="10"/>
+<text x="50" y="900">检测与人工核验 → 有限结论</text>
+<text class="small" x="50" y="934">命中分母 · 误报/漏报 · 未覆盖通道</text>
+<text class="heading" x="40" y="1002">零命中 ≠ 完美去污染</text>
+<text class="small" x="40" y="1038">原创概念流程，不含真实语料或实测结果。</text>
+</svg>

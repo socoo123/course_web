@@ -1,0 +1,150 @@
+{
+  "phase": "P6",
+  "date": "2026-11-15",
+  "status": "passed",
+  "groups": [
+    {
+      "group": "source_mixture_conditional_retention_and_inventory",
+      "status": "passed",
+      "observed": {
+        "joint_retention": 0.2,
+        "incorrect_independent_product": 0.3,
+        "token_share": 0.9090909090909091,
+        "exposures": [
+          1,
+          3.6,
+          0.8
+        ]
+      }
+    },
+    {
+      "group": "filter_precision_reweighting_and_prior",
+      "status": "passed",
+      "observed": {
+        "precision": 0.5,
+        "source_weights": [
+          0.3333333333333333,
+          0.6666666666666666
+        ],
+        "posterior_prior_half": 0.6666666666666666,
+        "posterior_prior_tenth": 0.18181818181818182
+      }
+    },
+    {
+      "group": "stage_denominators_and_overlap",
+      "status": "passed",
+      "observed": {
+        "cumulative_documents": 0.4444444444444444,
+        "conditional_quality_tokens": 0.8333333333333334,
+        "filter_union": 250,
+        "discard_shares": [
+          0.4,
+          0.6
+        ]
+      }
+    },
+    {
+      "group": "ngram_representation_and_exact_minhash_enumeration",
+      "status": "passed",
+      "observed": {
+        "permutations": 24,
+        "collisions": 12,
+        "bigram_jaccard": 0.3333333333333333,
+        "signature_variance": 0.0024
+      }
+    },
+    {
+      "group": "lsh_probability_and_band_orientation",
+      "status": "passed",
+      "observed": {
+        "fineweb_probabilities": [
+          0.5645040423914174,
+          0.7716335687619111,
+          0.9235475586325811,
+          0.9883656759977398
+        ],
+        "classroom_transition": 0.9933649271209614,
+        "transposed_transition": 0.7367826227053224
+      }
+    },
+    {
+      "group": "verified_edges_do_not_form_clique",
+      "status": "passed",
+      "observed": {
+        "small_endpoints": 0.3333333333333333,
+        "large_endpoints": 0.6,
+        "chain_edges_above_threshold": true
+      }
+    },
+    {
+      "group": "mixture_exposure_cap_and_simulated_epoching",
+      "status": "passed",
+      "observed": {
+        "large_and_scaled_small": [
+          0.16,
+          10
+        ],
+        "max_specialized_weight": 0.06,
+        "reweighted_exposures": [
+          2.5,
+          0.625
+        ]
+      }
+    },
+    {
+      "group": "duplicate_concentration_and_unique_draws",
+      "status": "passed",
+      "observed": {
+        "same_content_probability": 0.5,
+        "inverse_concentration": 2,
+        "expected_unique": 1.875
+      }
+    },
+    {
+      "group": "contamination_denominators_and_confusion",
+      "status": "passed",
+      "observed": {
+        "coverage": 0.9,
+        "flag_rate": 0.2,
+        "precision": 0.4,
+        "recall": 0.8,
+        "false_positive_rate": 0.13333333333333333,
+        "negative_pollution": 0.025
+      }
+    },
+    {
+      "group": "zero_detection_binomial_bound_and_small_sample_miss",
+      "status": "passed",
+      "observed": {
+        "perfect_detection_upper95": 0.029513049607039932,
+        "sensitivity_point8_upper95": 0.036891312008799915,
+        "twenty_miss_probability": 0.3584859224085419
+      }
+    },
+    {
+      "group": "paper_centering_relative_gains_and_budget",
+      "status": "passed",
+      "observed": {
+        "centered_accuracy": 0.4,
+        "mmlu_relative": 0.12121212121212115,
+        "arc_relative": 0.23913043478260854,
+        "dclm_final_document_percent": 1.4,
+        "7b_2x_tokens": 276000000000
+      }
+    },
+    {
+      "group": "eos_uint16_and_official_configuration_arithmetic_only",
+      "status": "passed",
+      "observed": {
+        "ids": 7,
+        "bytes": 14,
+        "tokens_per_step": 524288,
+        "training_tokens": 8589934592,
+        "wet_groups": 625
+      }
+    }
+  ],
+  "group_count": 12,
+  "python": "3.11.8",
+  "boundary": "Single in-memory independent arithmetic check; no official imports/tests, model, tokenizer, data, cloud or real contamination audit. No throwaway source file retained."
+}

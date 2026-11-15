@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1080" role="img" aria-labelledby="title desc">
+  <title id="title">从在线来源到训练暴露的可审计数据谱系</title>
+  <desc id="desc">五个阶段依次为取得版本化原始材料、抽取正文、过滤与去重、按来源混合、在不同训练阶段消费。每一步同时保留内容身份、来源权利与变换记录。原始页面数、保留文本量、独立token量和训练消费token量不是同一个数。图为编者原创，不是课堂截图。</desc>
+  <style>
+    :root { color-scheme: light dark; --fg: CanvasText; --muted: CanvasText; --border: CanvasText; color: var(--fg); }
+    text { font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; fill: currentColor; font-size: 24px; }
+    .title { font-size: 29px; font-weight: 700; }
+    .head { font-size: 27px; font-weight: 650; }
+    .small { font-size: 23px; }
+    .box { fill: none; stroke: currentColor; stroke-width: 2; }
+    .arrow { fill: none; stroke: currentColor; stroke-width: 2.5; }
+    .boundary { fill: none; stroke: currentColor; stroke-width: 2; stroke-dasharray: 7 5; }
+  </style>
+  <text class="title" x="320" y="42" text-anchor="middle">每次变换，都留下“从哪里来”</text>
+  <rect class="box" x="28" y="68" width="584" height="140" rx="12"/>
+  <text class="head" x="48" y="105">① 获取：在线服务 → 固定快照</text>
+  <text x="48" y="146">URL / 时间 / 内容哈希 / 取得方式</text>
+  <text class="small" x="48" y="183">访问允许、作品许可，分别保存证据。</text>
+  <path class="arrow" d="M320 208V236 M310 226L320 236L330 226"/>
+  <rect class="box" x="28" y="246" width="584" height="140" rx="12"/>
+  <text class="head" x="48" y="283">② 抽取：原始结构 → 可用正文</text>
+  <text x="48" y="324">HTML / PDF / 代码 / 讨论事件</text>
+  <text class="small" x="48" y="361">工具与配置决定保留、损失哪些信息。</text>
+  <path class="arrow" d="M320 386V414 M310 404L320 414L330 404"/>
+  <rect class="box" x="28" y="424" width="584" height="140" rx="12"/>
+  <text class="head" x="48" y="461">③ 筛选：过滤、脱敏、去重</text>
+  <text x="48" y="502">输出分数 / 决策 / 原因 / 对照范围</text>
+  <text class="small" x="48" y="539">质量分数不等于权利、隐私或事实真值。</text>
+  <path class="arrow" d="M320 564V592 M310 582L320 592L330 582"/>
+  <rect class="box" x="28" y="602" width="584" height="140" rx="12"/>
+  <text class="head" x="48" y="639">④ 混合：独立库存 → 采样配方</text>
+  <text x="48" y="680">固定tokenizer、权重、重复与预算</text>
+  <text class="small" x="48" y="717">文档占比 ≠ token占比 ≠ 训练暴露占比。</text>
+  <path class="arrow" d="M320 742V770 M310 760L320 770L330 760"/>
+  <rect class="box" x="28" y="780" width="584" height="140" rx="12"/>
+  <text class="head" x="48" y="817">⑤ 消费：预训练 / 中期 / 后训练</text>
+  <text x="48" y="858">记录阶段、样本父节点与实际消费量</text>
+  <text class="small" x="48" y="895">改写、问答化、重采样，都不清零谱系。</text>
+  <rect class="boundary" x="28" y="955" width="584" height="95" rx="12"/>
+  <text x="320" y="991" text-anchor="middle">每一步可回溯内容、权利与变换</text>
+  <text class="small" x="320" y="1027" text-anchor="middle">不是“下载一个数据集”就完成审计</text>
+</svg>

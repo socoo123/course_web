@@ -470,14 +470,19 @@
       "url": "https://github.com/stanford-cs336/assignment4-data",
       "goal": "处理官方提供的英语过滤 WET 数据，通过过滤与去重研究数据质量；原规模采用约 430M 固定模型、8×B200 和 8.6B tokens，低资源示例不能等同完成。",
       "tasks": [
-        {
-          "id": "processing",
-          "title": "处理原始网页数据"
-        },
-        {
-          "id": "quality",
-          "title": "过滤、去重并比较模型表现"
-        }
+        {"id": "look_at_cc", "title": "观察 WARC 与 WET（4 分）"},
+        {"id": "extract_text", "title": "HTML 转文本（3 分）"},
+        {"id": "language_identification", "title": "语言识别与人工分析（6 分）"},
+        {"id": "mask_pii", "title": "个人信息掩码（3 分）"},
+        {"id": "harmful_content", "title": "NSFW 与有毒言论识别（6 分）"},
+        {"id": "gopher_quality_filters", "title": "Gopher 质量规则（3 分）"},
+        {"id": "quality_classifier", "title": "自行训练质量分类器（15 分）"},
+        {"id": "exact_deduplication", "title": "精确行去重（3 分）"},
+        {"id": "minhash_deduplication", "title": "MinHash 与 LSH 文档去重（8 分）"},
+        {"id": "filter_data", "title": "并行过滤、统计与耗时（6 分）"},
+        {"id": "inspect_filtered_data", "title": "人工检查与迭代（4 分）"},
+        {"id": "tokenize_data", "title": "分词与二进制序列化（2 分）"},
+        {"id": "train_model", "title": "固定模型训练与验证（8 分）"}
       ]
     },
     {

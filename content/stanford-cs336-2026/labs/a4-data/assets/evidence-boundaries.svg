@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 740" role="img" aria-labelledby="title desc">
+  <title id="title">A4 数据决策的四层证据</title>
+  <desc id="desc">原始记录与抽取文本需要身份和编码证据；过滤与去重决策需要数量及误差证据；训练文件需要文档边界、GPT-2 EOS和uint16格式合同；固定模型训练需要真实验证曲线。图不指定实现顺序，不声称官方运行通过。</desc>
+  <style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}</style>
+  <g fill="none" stroke="var(--border,currentColor)" stroke-width="1.5">
+    <rect x="18" y="57" width="524" height="132" rx="12"/>
+    <rect x="18" y="220" width="524" height="132" rx="12"/>
+    <rect x="18" y="383" width="524" height="132" rx="12"/>
+    <rect x="18" y="546" width="524" height="132" rx="12"/>
+    <path d="M280 190v27m-6-8 6 8 6-8M280 353v27m-6-8 6 8 6-8M280 516v27m-6-8 6 8 6-8"/>
+  </g>
+  <g font-family="system-ui, sans-serif" fill="var(--fg,currentColor)">
+    <text x="23" y="32" font-size="24" font-weight="650">结果可信，需要四层证据</text>
+    <text x="38" y="91" font-size="22" font-weight="650">1 · 原始记录与抽取</text>
+    <text x="38" y="128" font-size="20">记录身份 ／ 字节编码 ／ 正文边界</text>
+    <text x="38" y="162" font-size="20">WARC、WET、文档不是同一个单位</text>
+    <text x="38" y="254" font-size="22" font-weight="650">2 · 过滤与去重决策</text>
+    <text x="38" y="291" font-size="20">各步保留数 ／ 丢弃归因 ／ 人工误差</text>
+    <text x="38" y="325" font-size="20">分数 ≠ 真值；候选 ≠ 真实相似度判定</text>
+    <text x="38" y="417" font-size="22" font-weight="650">3 · 训练数据文件</text>
+    <text x="38" y="454" font-size="20">每文档 EOS ／ GPT-2 ／ uint16</text>
+    <text x="38" y="488" font-size="20">磁盘 token 数 ≠ 训练采样 token 数</text>
+    <text x="38" y="580" font-size="22" font-weight="650">4 · 固定模型与验证</text>
+    <text x="38" y="617" font-size="20">数据-only 比较 ／ 真实学习曲线</text>
+    <text x="38" y="651" font-size="20">最佳日志观测 ≠ 自动保存最佳权重</text>
+    <text x="23" y="716" font-size="19">概念示意：没有数据下载或官方运行结果。</text>
+  </g>
+</svg>

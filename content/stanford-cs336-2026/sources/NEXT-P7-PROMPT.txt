@@ -1,0 +1,49 @@
+接续关键词：CS336-2026-P7-后训练与多模态
+
+继续 Stanford CS336 Spring 2026，仅执行 P7「后训练与多模态批」。
+项目：/Users/zy/ai_learn/course_web
+课程：content/stanford-cs336-2026/
+启用门槛：用户明确发送接续关键词，且status.json与p6-acceptance.json记录P6已验收。此提示提前准备不是P6完成声明，不自动开始P7。
+
+一、真实状态与模型
+先读status.json、sources/production-plan.json、P6-REVIEW.txt、p6-acceptance.json、p6-model-preflight.json和p6-publication-record.json，再按范围读manifest.json、reading-map.json与P1原始来源分片。发布未成功不得称已上线。保留所有前批来源/许可/实际读取/执行边界；作者分片pending可能仅为交接时状态，以Main总验收为准，不重做已验收正文。
+全部实际子agent（含审核）显式openai-codex/gpt-6-astra:xhigh；先读匹配技能与受支持cfg入口，核当次model_change、thinking_level_change或等效元数据及首条assistant provider/model。不可用即停止报告，不替换、不降级、不持久化配置。旧批身份不是当前可用性证据。
+
+二、完整范围与唯一正文归属
+1. L15中期/后训练SFT与RLHF、L16 RLVR、L17对齐与多模态：各notes.zh.md和有限课堂译述draft.zh.md，依2026实际时间轴。
+2. ext14后训练目标统一推导、ext15多模态连接方式：原创notes、推导/小例子/实现陷阱/自测和必要SVG，不重复论文正文。ext16技术报告与源码阅读方法留P8全课收尾；本批引用既有ext11量化/适配，不重写它。
+3. A5正篇a5-reasoning与官方选做a5-safety-optional各lab.zh.md/guide.zh.md：完整任务索引、约束、交付物、实验比较与非答案式概念指导。固定作业无明确开放全文翻译许可，采用完整要求索引+自主教学解读与必要短引，不能把整篇翻译称获授权，也不能用几段概览缩减任务覆盖。
+4. paper12 DPO唯一正文lectures/lec15/materials.zh.md；paper13 DeepSeekMath与paper14 DeepSeek-R1共同归lectures/lec16/materials.zh.md；paper15 CLIP与paper16 LLaVA共同归lectures/lec17/materials.zh.md。其他讲次/专题/实验仅回链；各材料页须有唯一编辑者。
+5. DPO和LLaVA固定论文CC BY4.0：指定核心完整中译，保留作者、固定版本/许可链接、修改说明、非官方身份与第三方权利边界。DeepSeekMath、DeepSeek-R1、CLIP的arXiv nonexclusive不是翻译许可，采用深入自主精读；不能套模型/软件MIT到论文。指定核心完成不等于全文精读。
+6. 不进入L18/L19、ext16或capstone；P7后停止，准备P8提示。
+
+三、课堂与固定论文
+课堂代码固定de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e；从manifest/tree定位lecture_15.py、lecture_16.py、lecture_17.py及必要trace/引用。课后版本不冒充录像逐字依据。
+P1已核视频：L15 2oH6PWPrYFo 4794s(79:54)；L16 dIFAi87Ws4E 4550s(75:50)；L17 26FtD08ZpOU 4659s(77:39)，均Stanford Online。复用各metadata与原始en-US字幕；逐讲全读所有cue，记录首尾、>2s内部空隙、疑词/公式/问答；manual仅平台分类，未核音不称人工校订。录像翻译权未明确：draft为有限独立译述加全片导航，非全译；无实际媒体不造截图，不下载音轨或片段。
+固定论文核心（精确标题/物理页码见reading-map，重读正文而非P1摘要）：
+- DPO 2305.18290v3（2024-07-29）：§§3–4、6.1–6.2、6.4–7；选读5.1–5.2、A.1–A.4、B。注意6.3不在既定核心；若额外读则如实登记。核心物理pp3–5、8–10；附录推导pp15–17、实现pp19–20。
+- DeepSeekMath 2402.03300v3：§§4.1.1–4.1.4、4.2（pp11–15）；选读5.2.1–5.2.3、6、A.1.4–A.1.6。算法1引用式21而完整目标在式3，保留并解释引用差异，不静默改原文。简化old=current不是通用训练假设。
+- DeepSeek-R1 2501.12948v2（2026-01-04，86页）：§§2.1–2.3、3.1–3.2.2、4、6（pp2–11对应节）；选读G.1–G.2、D.1、F–F.1。不可搬2025v1节号。aha moment是作者解释，不是独立因果验证；MIT模型许可不是论文许可。
+- CLIP 2103.00020v1：§§2.1–2.5、3.1.2、3.1.4、6（pp3–8及18–20）；选读3.2–3.3、7.1–7.3。双塔图文对比与零样本分类，不说成视觉自回归生成模型。
+- LLaVA 2304.08485v2：§3、4.1–4.2、5.2（pp2–5、8–9）；选读5.1、6/C、E/F。Stage1/Stage2是4.2内未编号标题，不虚构4.2.1/4.2.2。92.53%是LLaVA+GPT-4 judge集成，不是单模型90.92%；第三方COCO图像/模型/API另核权限。
+每个使用来源记录URL、固定版本、获取时间、文件、SHA256、许可、实际阅读范围与处理类型；原件缺失按固定URL重取，不将清单当备份。原文/PDF/字幕/截图留sources且不用.md后缀。
+
+四、A5正篇不可缩减的范围
+仓库固定c2734a26308710949fe13226960a1e8cece94b7e；主篇Spring2026 v26.0.0共39页，2026选做v26.0.0共18页。来源p1-assignment-a5/raw；逐份全部阅读讲义与README、实际helpers/adapters/tests/配置合同，P1审计只导航。固定完整tree未发现LICENSE，不虚构全文翻译权。
+正篇基座allenai/OLMo-2-0425-1B与GSM8K，不用任意TinyStories小模型冒充有推理基础的起点。完整保留每个计分题/字母子问/报告项：zero/few-shot/CoT baseline、输出与解析错误；prompt-response分词/response mask/logprobs/entropy；group advantage/loss reduction/gradient accumulation/train-step；on-policy GRPO及LR/prompt消融；GRPO_constant、Dr_GRPO、RFT、MaxRL；off-policy naive/noclip/token clip/GSPO sequence clip；§7只变一个因素的自拟估计器与多种子比较。
+辨明：一rollout batch一次optimizer step才是此处on-policy；微批梯度累加不等于多次optimizer更新。off-policy同一rollout做多次更新，从第二次起策略变旧。组相对baseline、std/mean归一化、sequence/constant reduction不是同一开关；作业MaxRL故意用constant而原论文按batch tokens归一化。
+基础建议：6400训练/1024验证题、200rollout steps、LR1e-5、rollout/train batch256 responses、group8、gradient accumulation32、temperature1/max512、AdamW(0.9,0.95),wd0；off-policy train batch8、accumulation1、token clip0.2、GSPO0.0003。这些只是导航，以完整原题最终核对。
+标准GRPO和算法比较要求4随机种子并展示方差，标准最终验证accuracy跨seed平均至少25%；消融/自拟估计器的各题具体要求不得一概缩成一次跑通。test.jsonl按题设用作validation，不能称从未调参的独立测试集。正确答案binary reward为total reward，format只记不加分；ground_truth取####后答案；question_only解析boxed，r1_zero解析answer标签。无真实实验就不生成学习曲线/成绩/答案图。
+
+五、A5官方选做的独立边界
+2026补充从固定仓库发现；官网旧spring2025链接404事实保留，历史2025v1.0.1仅对照，不搬旧Together/H100/接口。整份明确optional，不改成必做或Assignment6。
+完整覆盖MMLU/GSM8K/AlpacaEval/SimpleSafetyTests zero-shot baseline、单轮UltraChat-200K+SafetyTunedLlamas混合SFT、四基准重评/受控安全测试、HH四training collections过滤多轮human>1、DPO loss/训练/四基准复评。完整映射评分、交付物与约束，不给可直接提交实现或攻击性提示样本库。
+SFT：Llama3.1 8B、1epoch、context512、effectivebatch32、LR2e-5、cosine3%warmup、wd0.1、clip1、BF16/FA2，禁HFTrainer；DPO：冻结SFT reference而非rollout old policy、双GPU分工、建议RMSprop、batch64、beta0.1、LR1e-6、建议200validation、1epoch。AlpacaEval仓库预生成GPT4Turbo reference与本地Llama3.3 70B评委分开，不说必须付费GPT4API。实际精确参数以全文复核。
+Llama3.1/3.3权重manual gated，必须审批/许可，未下载。校内cs336-shared-data环境和cs336-a5-supplement卷不是公共URL；精确2026单轮SFT混合文件校外可达与字节一致性未核实。公开原料重新混合不等于官方文件。历史公开URL仅HEAD遇TLS/SSL失败，不能写404；不反复尝试、不索凭据。SafetyTunedLlamas数据CC-BY-NC、AlpacaEval CC-BY-NC、各权重/data许可不能统一写MIT。
+
+六、技术、执行与验收
+统一写清目标分布、行为策略/当前策略/冻结reference、采样与答案token mask、梯度是否穿过reward/baseline、log-ratio与KL方向、重要性权重与clip、长度/组归一化及零方差组。DPO理论偏好/支持集假设与离线实践分开；RLVR verifier不是无噪声真值，reward hacking/选择偏差/多次采样预算需说明。多模态区分输入表示、连接器、冻结/解冻、损失位置及数据来源，不重复论文译文。
+只运行独立编者原创小概率/张量算例，不是官方解答或性能复现。严禁安装作业环境、下载训练数据/权重、调用评测/奖励/提交服务、启动Modal/GPU/云费用；官方AI政策只允许概念/API帮助，禁止AI实现作业/排行榜代码与自动补全。
+按独立正文范围批量并行；Main独占course/catalog/resources/status、manifest/reading-map/plan、验收和发布。仅改本课程content，新文件write、已有edit，中途不build/lint/tests/formatters。390px分行长公式；SVG透明底、主题变量、title/desc、无外部资源/脚本，复用已验收外部img独立深浅色模式。
+Main整合后核源哈希、cue连续覆盖/时间界、任务覆盖、内链/图片/公式与原创小算例，实际访问所有新正文/SVG/表格的桌面和390px布局；L15/L16/L17逐页核视频ID/时长、默认notes，代表性实际点击新标签且原页保留。npm run build通过后才能提交；不把本地dist上传，Actions用干净检出。
+交付P7-REVIEW.txt、p7-acceptance.json、完整NEXT-P8-PROMPT.txt及真实累计状态。白名单仅正文/原创SVG/轻量证据，不整目录force-add sources，不发布原文镜像/PDF/字幕/渲染图/浏览器截图。推现有main，不强推/改远端；核实Actions成功与实际线上页面再记发布。最后简短报告内容、验证、提交/部署和限制；不自动进入P8。

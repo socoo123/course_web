@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "slice": "p6-lec14",
+  "compiled_at": "2026-11-15T07:38:42.494204+00:00",
+  "timestamp_note": "Compilation time after completed reads; not fabricated per-tool timestamps",
+  "caption_reading": {
+    "original_file": "p1-videos/captions/5sxHosTLPF8.en-US.manual.json3",
+    "original_sha256": "2ec80edabdc0c8dcecc7ff00adfd6f7f04784629837c73699f347b8e6f2f5a3c",
+    "normalized_file": "p6-lec14/captions.normalized.json",
+    "normalized_sha256": "56ed3e2ece7b7eeceb8bf04d5825e55658874d19220a85d57faf6938e955bda5",
+    "source": "p6-lec14/transcript.en.txt",
+    "source_sha256": "d3f2b9f4220c9949277906a4351288dbdf389f04f93e5cebcf75831106730d7d",
+    "one_line_per_cue": true,
+    "total_cues": 1448,
+    "windows": [
+      {
+        "first_cue": 1,
+        "last_cue": 240,
+        "requested_path": "p6-lec14/transcript.en.txt:1-240:raw",
+        "first_start_seconds": 5.24,
+        "last_end_seconds": 824.41,
+        "actually_read": true,
+        "method": "Complete tool.read output inspected; not a keyword search or inventory"
+      },
+      {
+        "first_cue": 241,
+        "last_cue": 480,
+        "requested_path": "p6-lec14/transcript.en.txt:241-480:raw",
+        "first_start_seconds": 824.41,
+        "last_end_seconds": 1618.43,
+        "actually_read": true,
+        "method": "Complete tool.read output inspected; not a keyword search or inventory"
+      },
+      {
+        "first_cue": 481,
+        "last_cue": 720,
+        "requested_path": "p6-lec14/transcript.en.txt:481-720:raw",
+        "first_start_seconds": 1618.43,
+        "last_end_seconds": 2479.27,
+        "actually_read": true,
+        "method": "Complete tool.read output inspected; not a keyword search or inventory"
+      },
+      {
+        "first_cue": 721,
+        "last_cue": 960,
+        "requested_path": "p6-lec14/transcript.en.txt:721-960:raw",
+        "first_start_seconds": 2479.27,
+        "last_end_seconds": 3409.05,
+        "actually_read": true,
+        "method": "Complete tool.read output inspected; not a keyword search or inventory"
+      },
+      {
+        "first_cue": 961,
+        "last_cue": 1200,
+        "requested_path": "p6-lec14/transcript.en.txt:961-1200:raw",
+        "first_start_seconds": 3409.05,
+        "last_end_seconds": 4214.48,
+        "actually_read": true,
+        "method": "Complete tool.read output inspected; not a keyword search or inventory"
+      },
+      {
+        "first_cue": 1201,
+        "last_cue": 1448,
+        "requested_path": "p6-lec14/transcript.en.txt:1201-1448:raw",
+        "first_start_seconds": 4214.48,
+        "last_end_seconds": 5080.18,
+        "actually_read": true,
+        "method": "Complete tool.read output inspected; not a keyword search or inventory"
+      }
+    ],
+    "normalization": "Same JSON3 segment concatenation and boundary whitespace stripping as skill helper; JSON preserves embedded newlines, event index, cue order and times. TXT flattens embedded newlines only. Original raw JSON3 untouched. No textual corrections applied.",
+    "read_completely": true,
+    "audio_verified": false
+  },
+  "handout_reading": {
+    "file": "p1-lectures/raw/lecture_14.py",
+    "sha256": "8e0e17f868002f2e8f73afed018b2dd787c0a1b371eec599c44d8dbfe555ae9b",
+    "commit": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+    "complete_text_lines": 464,
+    "requested_windows_1_based": [
+      [
+        1,
+        240
+      ],
+      [
+        244,
+        464
+      ]
+    ],
+    "actual_displayed_coverage": "First read displayed lines1–243; second displayed full244–464 with block context; all464 lines actually read",
+    "read_completely": true,
+    "trace_read": false,
+    "linked_papers_read": false,
+    "embedded_image_pixels_read": false,
+    "executed": false
+  },
+  "metadata_reading": {
+    "file": "p1-videos/metadata/lec14-5sxHosTLPF8.json",
+    "sha256": "6fe2529f5f5bf618256c4dd8e5e766d31448302218f8d7fa64ca6ec6556a88f5",
+    "complete_text_lines": 445,
+    "requested_windows_1_based": [
+      [
+        1,
+        125
+      ],
+      [
+        129,
+        445
+      ]
+    ],
+    "actual_displayed_coverage": "First output displayed1–128, second129–445; complete metadata actually read including caption label and timing limitations",
+    "speaker_identity": "Official schedule attribution in fixed metadata; not visually verified"
+  },
+  "suspect_words": [
+    {
+      "cues": [
+        240,
+        242
+      ],
+      "issue": "Spoken threshold direction self-correction",
+      "treatment": "Use corrected lower-bar direction; retain original cues"
+    },
+    {
+      "cues": [
+        269,
+        269
+      ],
+      "issue": "Negation/connector in Python subset sentence unclear",
+      "treatment": "Handout independently says raw source is Python subset of The Stack; not audio correction"
+    },
+    {
+      "cues": [
+        324,
+        324
+      ],
+      "issue": "100 works may mean WARC",
+      "treatment": "Unresolved without audio; no exact input-size claim"
+    },
+    {
+      "cues": [
+        522,
+        522
+      ],
+      "issue": "same age likely hash terminology error",
+      "treatment": "Explain mathematical hash collision, preserve raw caption"
+    },
+    {
+      "cues": [
+        706,
+        708
+      ],
+      "issue": "Within-band wording immediately corrected",
+      "treatment": "Corresponding coordinates across A and B match; not all hashes equal to each other"
+    },
+    {
+      "cues": [
+        951,
+        952
+      ],
+      "issue": "Two student cues contain INAUDIBLE",
+      "treatment": "Do not reconstruct; later explicit question only"
+    },
+    {
+      "cues": [
+        1171,
+        1172
+      ],
+      "issue": "downstream inconsistent with downsampling context",
+      "treatment": "Explain downsampling using fixed handout; no silent raw correction"
+    },
+    {
+      "cues": [
+        1236,
+        1240
+      ],
+      "issue": "INAUDIBLE and uncertain team attribution",
+      "treatment": "Omit team/tool attribution; retain topic-quality grouping concept"
+    },
+    {
+      "cues": [
+        1321,
+        1321
+      ],
+      "issue": "duplicate vs deduplicate in OpenThoughts pipeline unresolved",
+      "treatment": "Do not invent corrected pipeline operation without image/audio"
+    },
+    {
+      "cues": [
+        1378,
+        1378
+      ],
+      "issue": "set command name may be transcription issue",
+      "treatment": "No exact command allowlist quoted"
+    },
+    {
+      "cues": [
+        1387,
+        1388
+      ],
+      "issue": "Both stages labeled SWE-Zero; handout separately lists SWE-Hero",
+      "treatment": "No precise training-order claim or silent substitution"
+    },
+    {
+      "cues": [
+        1406,
+        1407
+      ],
+      "issue": "32,000 then 120; scale unclear",
+      "treatment": "Handout separately gives 32K executable and 120K nonexecutable; distinguish post-term source from recording"
+    }
+  ],
+  "bracketed_caption_markers": [
+    {
+      "cue": 951,
+      "event_index": 950,
+      "start_ms": 3376440,
+      "end_ms": 3382880,
+      "text": "I guess, for the high-quality\ndata, [INAUDIBLE]"
+    },
+    {
+      "cue": 952,
+      "event_index": 951,
+      "start_ms": 3382880,
+      "end_ms": 3385480,
+      "text": "as [INAUDIBLE] low quality."
+    },
+    {
+      "cue": 1236,
+      "event_index": 1235,
+      "start_ms": 4335150,
+      "end_ms": 4337430,
+      "text": "install the [INAUDIBLE]\nstuff as well."
+    },
+    {
+      "cue": 1448,
+      "event_index": 1447,
+      "start_ms": 5076830,
+      "end_ms": 5080180,
+      "text": "[APPLAUSE]"
+    }
+  ],
+  "technical_corrections": [
+    {
+      "source_scope": "lecture_14.py lines85–87",
+      "issue": "No model-based filtering is quality-filter context",
+      "editorial_treatment": "Not interpreted as no language/toxicity classifiers anywhere"
+    },
+    {
+      "source_scope": "lecture_14.py line263; cues648–654",
+      "issue": "100 MinHashes with error <.01 is a demonstration assertion",
+      "editorial_treatment": "At J=.6,k=100 ideal variance=.0024; no universal .01 error guarantee"
+    },
+    {
+      "source_scope": "lecture_14.py lines312–321; cues801–820",
+      "issue": "b20,r450 orientation and probabilistic threshold",
+      "editorial_treatment": "s*=(1/20)^(1/450) approx .993; not b450,r20, not a .75 hard boundary; candidate probability explicit"
+    },
+    {
+      "source_scope": "lecture_14.py line371; cues1016–1018",
+      "issue": "Epoch cap statement omits source inventory denominator",
+      "editorial_treatment": "e_s=p_s B / D_s <= C, equivalently p_s B <= C D_s"
+    },
+    {
+      "source_scope": "lecture_14.py lines200–204",
+      "issue": "Hash-group example treats equal MurmurHash values as duplicate",
+      "editorial_treatment": "Exact equality requires content verification under chosen normalization; hash collision not logical equality"
+    },
+    {
+      "source_scope": "lecture_14.py lines234,265,275; cues768–771",
+      "issue": "Near-linear aspiration and threshold shorthand",
+      "editorial_treatment": "LSH remains probabilistic; candidate explosion possible; exact verification does not recover missed candidates"
+    }
+  ],
+  "original_concepts": [
+    "sampling-prior interpretation of filter score",
+    "base-rate precision example",
+    "retention-induced source reweighting",
+    "commuting pure filters versus dataset-dependent stages",
+    "MinHash variance and LSH probability",
+    "transitive clustering counterexample",
+    "token-vs-document mixture",
+    "inventory epoch cap and simulated epoching",
+    "synthetic prompt-group independence"
+  ],
+  "single_home": {
+    "papers": "lectures/lec14/materials.zh.md",
+    "audit": "lectures/ext13/notes.zh.md",
+    "paper_full_read_claim": false
+  },
+  "status": {
+    "source_reading": "completed_with_recorded_audio_gaps",
+    "authoring": "completed",
+    "page_acceptance": "pending_main",
+    "official_experiments_run": false
+  }
+}

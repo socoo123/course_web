@@ -1,0 +1,59 @@
+P6 L14 author handoff — filtering / deduplication / mixing / synthetic data
+
+Ownership respected
+- Authored only lectures/lec14/notes.zh.md, draft.zh.md, assets/dedup-contract.svg, assets/pipeline-distribution.svg and sources/p6-lec14/*.
+- Did not edit materials.zh.md, aggregate manifest/reading-map/course/status/catalog, other slices, src, official assignment code or configuration.
+- No build, lint, formatter, test, browser acceptance, model/classifier execution, official experiment, cloud job, media acquisition, commit or publication was run by this author.
+
+Actual independent reading, not P1 inventory reuse
+1. P1 fixed caption raw file: p1-videos/captions/5sxHosTLPF8.en-US.manual.json3.
+   Derived normalized cue archive and one-line-per-cue transcript; then actually read every cue through six full tool.read windows:1–240,241–480,481–720,721–960,961–1200,1201–1448.
+   All1448 cue bodies were read, including student questions, disfluencies, unclear markers and final applause marker.
+2. lecture_14.py at de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e, all464 lines actually read. First request1–240 displayed through243; second244–464 displayed the remainder. No source execution.
+3. lec14-5sxHosTLPF8.json metadata, all445 lines actually read. First request1–125 displayed through128; second129–445 completed the file.
+4. Full NEXT-P6-PROMPT.txt, full shared contract and relevant technical-video-notes skill read. Prior accepted L12 note/navigation headers and L11 standalone SVG pattern used as presentation examples, not substitute source reading.
+
+Source identity and time coverage
+- Spring2026 Lecture14 Data; video5sxHosTLPF8; uploader/channel Stanford Online; duration5086s (84:46).
+- Official schedule attribution inside fixed metadata: Percy Liang, scheduled2026-05-13; uploaded2026-05-27. Recording date and visual identity not independently established.
+- Cue1 begins5.240s; cue1448 ends5080.180s. Leading uncovered5.24s; trailing uncovered5.82s.
+- Caption interval union4921.65s,36 internal gaps strictly greater than2s. Navigation has33 contiguous editorial/marker/uncovered blocks, with every cue assigned once by start.
+- Coverage is timestamp coverage, not proof of audible content or complete transcription. Gaps are not guessed to be silence. manual/non-ASR is a platform classification, not independent human-transcription or audio-quality confirmation.
+- time-intervals.json retains ordered blocks, first/last cue, gap boundaries and adjacent cue IDs. reading-log.json retains actual read windows, source hashes, raw-text preservation policy, uncertainty and correction records.
+
+Deliverable substance
+- notes: two original explanatory SVGs plus substantial independent Chinese pedagogy. Covers lossy extraction, target-versus-raw selection, posterior/quality distinction, sampling prior, base-rate precision, filter-induced source reweighting, fixed predicates versus noncommuting corpus operations, exact/near and document/line/scope semantics, MinHash proof/variance, LSH candidate probability, exact verification, cluster transitivity, finite-inventory mixing, token/document units, epoch caps, regression extrapolation, simulated epoching and synthesis evidence limits.
+- draft: separate real body with33-block full2026 timeline, eight selected original paraphrases, question-navigation cards, complete >2s gap table, source/version/copyright boundaries and explicit doubtful-caption treatment. Not a comprehensive transcript translation.
+- FineWeb/DataComp-LM point only to lec14/materials. Contamination methodology points to ext13 and measurement framing to L12. No duplicate papers or audit chapter created.
+- A4 route corrected to #/c/stanford-cs336-2026/lab/a4-data?v=guide per Main. No submitted implementation or answer code provided.
+
+Technical findings and corrections
+- A score from source labels is not objective quality or calibrated truth. Distinguish language, domain, quality, toxicity, privacy and legal permission.
+- The handout's “no model-based filtering” list is interpreted in quality-filter context, not as absence of language/toxicity classifiers throughout the pipeline.
+- Hard thresholds and random retention are both distribution-changing choices. Two fixed per-item boolean predicates commute on immutable text; transformations, fitted thresholds and duplicate representative selection may not.
+- MurmurHash equality alone is not exact string equality; the classroom grouping snippet is not represented as production collision-proof deduplication.
+- Ideal MinHash collision probability equals set Jaccard under uniform random ordering. The100-hash example assertion <.01 error is not a general guarantee; notes give ideal variance J(1-J)/k.
+- Band match means corresponding signature positions of A and B agree, not every hash function within one document producing the same value.
+- LSH probability is1-(1-s^r)^b. Candidate retrieval is not a hard threshold. Exact candidate verification can remove false positives but cannot recover unseen false negatives. Worst-case candidate buckets can be large.
+- Fixed classroom configuration b20,r450 has9000 positions and approximate transition about.993. Not interchangeable with b450,r20 or with FineWeb's75% configuration. Linked paper configuration interpretation remains in materials; no independent paper full-read claim made here.
+- True-pair edges do not make a connected component a clique. Original A={1,2},B={1,2,3},C={2,3} counterexample establishes2/3,2/3,1/3.
+- Epoch cap dimension corrected explicitly: e_s=p_s B/D_s<=C, equivalently p_s B<=C D_s. Fixed source line371's abbreviated token expression is not silently copied as an epoch formula.
+- Simulated epoching aligns average repeat exposure, not all model dynamics or rare-domain coverage.
+- Synthetic records, prompts, environments and independent tasks have different denominators. Teacher strength and distillation utility are not identical; “no answer-filtering benefit” in one classroom example is not a universal no-validation recommendation. No-execution trajectories are not certified correct patches.
+
+Uncertainties retained rather than silently repaired
+- cue269 awkward negation; cue324 “100 works”; cue522 “same age”; cues951–952 student INAUDIBLE; cue1171 “downstream”; cue1236 INAUDIBLE and1240 uncertain team; cue1321 duplicate/deduplicate; cue1378 command name; cues1387–1388 repeated SWE-Zero stage name; cue1407 “120” versus handout120K.
+- Spoken self-corrections at240–242 and706–708 are kept conceptually distinct from editorial mathematical corrections.
+- Handout is a2026-09-12 post-term commit, not evidence of exact on-screen slide or spoken wording. No linked paper body, trace rendering or embedded image pixels were independently read by this slice.
+
+Copyright and image identity
+- No verified broad translation/republication grant for this individual video, captions or lecture repository. notes are independently authored; draft is finite paraphrase plus navigation, not full translation.
+- Original captions/normalized captions/transcript are local source evidence only; never infer publishability from acquisition or full reading.
+- Two SVGs are new original mechanism diagrams, not classroom screenshots, slide redraw copies or observed experimental figures. Both have title/desc, transparent background, no external resources/scripts, viewBox width640 and standalone Canvas/CanvasText color-scheme light/dark pattern.
+- No audio, video, screenshot, PDF render, third-party figure or real-world PII copied into authored bodies.
+
+Evidence and main acceptance queue
+- manifest-fragment.json: exact fixed URLs, retrieval dates, versions, source-local paths, SHA256, licenses, actual read scope/treatment; authored artifact hashes and image identities; pending_main status.
+- mechanism-cases.json:12 original declarative cases with expected values, not executed by author. Main may independently evaluate the simple probabilities, sets, weights and inventory arithmetic alongside integration checks. These are not official assignment tests or training results.
+- Main acceptance still required: integrated build and page/browser checks, both note/draft bodies, mathematical rendering at desktop/390px, both SVGs in light/dark modes, table scrolling, local images, navigation routes and materials/ext13 links, source hashes and cue coverage. No author claim that those checks have passed.
+- Publish only authored Markdown, original SVG and lightweight evidence JSON/review. Do not publish raw or normalized captions, transcript or any source/media mirror. No aggregate edits or publication actions performed.

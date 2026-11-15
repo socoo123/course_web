@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "batch": "P6",
+  "slice": "p6-audit",
+  "read_at": "2026-11-15",
+  "method": "Native read of fixed P1 pdftotext-layout artifacts; not inherited P1 summary claims. Ranges below record requested source lines. Metadata license markers independently inspected. Source SHA256 computed during source acquisition/identity recording.",
+  "items": [
+    {
+      "id": "fineweb-v2",
+      "url": "https://arxiv.org/pdf/2406.17557v2",
+      "file": "p1-papers-01-08/paper08-2406.17557v2.txt",
+      "read_ranges": [[1, 64], [139, 175], [176, 203], [229, 330], [437, 454], [569, 581], [1112, 1125], [1201, 1249]],
+      "used_sections": ["title/authors/version", "section3 introduction and 3.1 experimental setup", "3.4 deduplication including transitive clustering and global/per-crawl comparison", "3.7 selected release/PII paragraphs", "4.2 domain fit", "B license and hosting", "E.1 deduplication parameters including Figure13 caption"],
+      "additional_context_read": "3.2 extraction prose at lines180-195; no extraction-specific new conclusion asserted by ext13.",
+      "findings": ["Same architecture/tokenizer and within-experiment training tokens; filtering ~28B versus some dedup/cumulative runs350B.", "5-word-gram,112 signatures,14 bands of8; matching probability is1-(1-s^8)^14, not a hard75% threshold.", "Paper matches band signatures then clusters transitively and randomly keeps one; no claimed exact-Jaccard postfilter added to this description.", "Global and per-crawl strategies differ in retained distribution; conditional ablation does not establish universal preference.", "Paloma domain-fit deliberately does not decontaminate.", "Release anonymizes email/public IP; no perfect PII-removal claim.", "Dataset ODC-By/CommonCrawl terms distinct from article CC BY4.0."],
+      "not_claimed": ["complete FineWeb core/full-paper close reading by this author", "pixel inspection of plots", "reproduction of model scores", "running datatrove or downloading data"]
+    },
+    {
+      "id": "dclm-v4",
+      "url": "https://arxiv.org/pdf/2406.11794v4",
+      "file": "p1-papers-09-16/paper09-2406.11794v4.txt",
+      "read_ranges": [[1, 58], [210, 299], [343, 379], [377, 394], [548, 606], [2066, 2125], [4088, 4195], [4193, 4203]],
+      "used_sections": ["title/authors/version", "3.1 pool and released decontamination tooling", "3.2 five scales", "3.3 filtering/mixing", "3.4 fixed training recipe", "3.5 evaluation metrics context", "4.5 mixing and Table6", "4.6 decontamination and Table7", "C.1-C.3 complete rules", "O complete text,Table25 and Figures11-12 captions"],
+      "findings": ["Pool is not declared globally decontaminated; tooling/reporting requirements are explicit.", "Rules freeze training/evaluation code and provided tokenization/global shuffle; evaluation data only for evaluation/decontamination.", "Filtering-track external-model allowance is not permission to inject memorized external data.", "Mixing requires source weights and training-token-to-custom-pool ratio.", "4.6 question plus option detection, MMLU last sentence, acknowledged false positives; detected-string removal and7B-2x retraining is a limited intervention.", "O Table25 uses training-document flags and specific comparison subsets; general overlap analysis uses evaluation-token coverage from>=10-grams,20%/80% thresholds and fixed-model subset scores.", "Strict threshold wording does not fully settle equality-at-boundary implementation; ext13 explicitly labels its own complementary boundary example."],
+      "not_claimed": ["complete DCLM core/full89-page close reading by this author", "appendixF/G/L implementation verification", "pixel-level Figure11/12 point audit", "official code execution or data download", "global absence of contamination"]
+    },
+    {
+      "id": "license-markers",
+      "files_and_read_ranges": [
+        {"file": "p1-papers-01-08/paper08-2406.17557v2-abs.html", "lines": [172, 175]},
+        {"file": "p1-papers-09-16/paper09-2406.11794v4-metadata.html", "lines": [180, 183]}
+      ],
+      "observed": "Both fixed metadata Rights-to-this-article links point to http://creativecommons.org/licenses/by/4.0/.",
+      "boundary": "Article license only. Full legalcode was not independently re-read by this author; existing project rights review retained. No third-party dataset license inferred from article license."
+    },
+    {
+      "id": "internal-crosslinks-and-conventions",
+      "files": ["sources/NEXT-P6-PROMPT.txt", "sources/reading-map.json", "lectures/lec12/notes.zh.md", "lectures/ext12/notes.zh.md", "lectures/ext12/assets/design-and-holdout.svg"],
+      "read_scope": "Full P6 prompt; reading-map paper08 lines1804-1868/paper09 lines2038-2094; L12 heading/concept grep including measurement, contamination and uncertainty passages; ext12 lines1-75 and full original SVG theme pattern.",
+      "treatment": "Scope/navigation/style only; not a claim to re-read earlier lecture video, acquire new paper evidence, or re-audit P5."
+    }
+  ],
+  "lecture_timeline": "not_applicable_editorial_extension_no_video",
+  "source_mirrors_created": false,
+  "official_experiments_executed": false
+}

@@ -1,0 +1,50 @@
+P6DatasetPapers — author handoff, 2026-11-15
+
+OWNERSHIP / DELIVERABLES
+Only authored content/stanford-cs336-2026/lectures/lec14/materials.zh.md and sources/p6-papers/*.
+The page is new and is the single home for both papers. No other lec14 pages, aggregate sources, course metadata, official assignments, config, git, publication or unrelated files touched.
+Deliverables: materials.zh.md; reading-updates.json; manifest-fragment.json; arithmetic-cases.json; this review.txt. Local-only PDF page renderings remain under p6-papers/visual. No public figure/SVG assets were needed; no original screenshots are embedded.
+
+READING / TRANSLATION COMPLETENESS
+FineWeb fixed arXiv:2406.17557v2 (2024-10-31), 38 physical PDF pages. Fully translated designated §§3.1–3.7, §4 lead and4.1–4.2, §5, B, E.1; also §3lead, core Figures1–13 captions and footnote1. All actual core prose was read directly from the pinned local PDF extraction this run. Figure12 is on physicalp10 despite §4.2prose being p9; it was additionally read and visually inspected. No substitute of P1 summaries for source reading.
+DataComp-LM fixed arXiv:2406.11794v4 (2025-04-21), 89 physical PDF pages confirmed with pdfinfo. Fully translated §§3.1–3.5,4.1–4.6,C.1–C.3; also §3/4leads, Tables1–7 all cells/captions, Figures2–4captions, Figure4's complete flow percentages, and author-credit footnote. §3lead/Table1 are p4, §3.1begins p5. No old-version page numbering used.
+The page is full selected-core translation, not a topical summary. Source paragraph order, substantive caveats and author cross-references remain. Some long paragraphs are divided and two wide tables are split without dropping values. Original reference numbers refer to each paper's own bibliography; external cited papers are not represented as newly read.
+Exact selector ranges and section prose locators are in reading-updates.json and manifest-fragment.json. Additional FineWeb introduction/background and DCLM p4context were read but not translated into optional new sections. Neighboring visible text is not counted as a whole optional section.
+
+ORIGINAL PDF VISUAL INSPECTION
+FineWeb pages4,5,6,7,8,9,10,21,22 were displayed and inspected: extraction/base-filter plots; global/individual dedup comparisons; C4/custom-filter plots and inequalities; educational scaling plots; Paloma panel axes/legend; MinHash expression/curve and probability parameters.
+DCLM pages4,5,6,7,8,9,10,38,39 were displayed and inspected: five budgets/Table1; scale plot; Figure4's document-based Sankey labels; Tables2–7 including all signed mixing changes; complete C.1–C.3 rule boundaries.
+FineWeb pages3 and19 were rendered during the initial batch but not opened; manifest explicitly records generated-only, not visual-inspection credit. Their designated prose was read in the extraction. Figure2's caption was read; no claim to digitizing that schematic. No numerical curve digitization, full paper visual review, or experiment replication claimed.
+All source-image identities include SHA256, parent PDF identity, physical page, rendering command and inspected flag. The local evidence images MUST NOT be published.
+
+IMPORTANT CONTENT BOUNDARIES / VERSION CAUTIONS
+1. FineWeb is not RefinedWeb. It is an editorial linked reading, not an A4 full-paper requirement. P1 official-crosscheck history remains intact in reading-updates.json's exact p1History records.
+2. FineWeb MinHash112=14x8/5grams: 75% describes a probabilistic working region, not a hard exact-Jaccard cutoff. E.1probability1-(1-s^8)^14, reported56/77/92/98.8%, and450x20 RefinedWeb comparison are fully translated. FineWeb's collision edges are not silently supplemented with A4's exact-Jaccard candidate verification. Connected components do not guarantee pairwise similarity.
+3. FineWeb global deduplication can alter quality composition:36Tbasefiltered,4Tglobal,20Tper-snapshot,15Tfinal;2013-48's31Bretained versus460Bremoved reduced to171Bby independent dedup kept distinct. No 'more dedup always better' claim.
+4. Three custom filter thresholds and removal rates retained: punctuation<=0.12/10.14%;duplicate-linecharacterfraction>=0.1/12.47%;shortlinefraction>=0.67with<30characters/3.73%;combined~22%. Candidate discussion uses<0.12 while final rule uses<=0.12; difference explicitly noted. Individual removals not added as joint rate.
+5. FineWeb-Edu uses synthetic educational labels, not entirely synthetic webpage content.460kannotations,410k/50ksplit,20epochs/frozenencoder/lr3e-4,round0–5/min3,82%F1againstLLMlabels,6000H100h preserved.33→37 and46→57 distinguish percentage-point versus relative gains.300B/38Bfigure comparison versus 'almost10x' prose is explicitly contextualized.
+6. FineWeb§4.2 intentionally omits decontamination. Paloma domain-fit perplexity cannot be presented as uncontaminated downstream generalization. Bias findings limited to examined English subgroups; no 'bias-free' inference. Email/public-IP anonymization is not proof of no PII.
+7. DCLM has five fixed budgets and two tracks. All Table1numbers retained, including412M/1.4B/2.8B/6.9Bactualparametercounts and all pools/FLOPs/H100h. Displayed parameters are rounded; do not replace28.8Bwith28B. Reported 'rank correlation' is Pearsonr, not Spearman.
+8. DCLM53tasks: MMLU5shot separately; CORE22tasksubset with per-task chance-centering; EXTENDEDall53average. The original four-choice toy example clarifies this is not pooled question accuracy. No unsupported53+22interpretation.
+9. DCLM Figure4percentages use original document count:19.9%afterheuristics,13.7%afterBloom,1.4%final. Top10%fastText is a score rank retention fraction at that stage, not probability0.1, rawpooltokenretention10%, or all-metric optimum:15%hasEXTENDED21.5versus21.4.
+10. Every Table2–7numeric entry retained. RefinedWeb extraction comparison/quality-filterbaseline/mixingbaseline are not collapsed into a single repeated measurement.67/33mixing is a fixed-budget substitution; DCLM-baseline's negative mixing result is not a universal rule against Wikipedia/nonwebdata.
+11. DCLM decontamination flags question+atleastoneoption, removes matched strings rather than always deleting whole pages, detects last sentence for MMLU and admits false positives.51.8→52.7and77.9→78.4do not prove absence of all contamination or coverage of all53tasks.
+12. AppendixCcomplete: documentation; free data or fully working reproductioncode,withpossiblemarkedexception;providedtokenizer/globalshuffle;no training/evalcodechanges;evaldataonlyevaluation/decontamination. Filtering's HTMLre-extraction and externallytrainedmodel allowances are bounded by no external-data backdoor; mixing must disclose sources,weights,andtraining-token-to-poolratio.
+13. DCLM§4lead retains its '2T' wording; editor note prevents treating that outdated-looking lead as full token accounting for v4's later multistage scaled model. Optional§5/Qnot silently translated or claimed fully read.
+
+COPYRIGHT / ATTRIBUTION
+Both fixed article metadata license links checked: CC BY4.0. Legalcode source lines1–300read this run, including translation as AdaptedMaterial, adaptation permission, attribution/license/change conditions, noendorsement, privacy/trademarklimits and warranty provisions. Remaining legalcode lines301–396not claimed read.
+All8FineWebauthors and59DCLMauthors credited. DCLMsharedfirst4/sharedlast3and affiliation-history footnote retained. Fixed links/versiondates, changes, nonofficial identity, disclaimer and third-party boundaries are at page bottom.
+FineWeb dataset ODC-Byv1.0 and CommonCrawlTerms are explicitly separate from article CC-BY4.0. Neither is extended to all third-party webcontent/models/classifiers.
+Per Main's requested final layout change, introductory scope/processing blockquotes were moved intact into the bottom source area; appendixBkeeps license names and meaning while its ODC/CommonCrawlURLs appear only at the footer. No other already-reviewed translation passages were rewritten.
+
+SOURCE INTEGRITY / HISTORY
+Reused exact pinned P1 PDFs/extractions/metadata and CClegaltext; no reacquisition needed. SHA256recomputed for all seven source records and matched P1. Retrieved timestamps remain original P1 acquisitions; P6readAtseparate. Historical P1selective-reading status, license decision and official-assignment evidence are copied exactly under p1History rather than overwritten as if P1had performed today's reading.
+Main owns the merge of reading-updates into reading-map; preserve official evidence and placement. Author-side accepted=falsemeans pending Main integration, not a claim that prior batches failed acceptance.
+
+ORIGINAL TINY CASES / CHECKS FOR MAIN
+arithmetic-cases.json contains six original lightweight cases: LSHprobabilityintervals;chance-centeredfourchoiceaccuracy;relativeversuspercentage-pointgains;Sankeycommon-denominatorarithmetic;transitive-clusternotclique;7B-2xtokenbudget. Cases were authored but NOT executed here. They are not official assignment implementations or performance reproduction.
+No build, lint, tests, formatters, browser/page acceptance or official assignment runs were performed. Main should include this page in the single integrated build/browser pass, checking390pxwide tables/formulas, source-links/tab behavior and source hash evidence as required. Formula layouts already use short lines/aligned expressions; this is not a claim of actual mobile acceptance.
+
+REMAINING HONEST LIMITS
+No whole-paper claim. FineWebD/E.2–E.4/F/GandDCLM5–6/F/G/J/L/Oremain outside complete P6reading/translation; core's references to them are author statements, not newly independently verified optional conclusions. No training datasets/models/classifiers downloaded, no media/audio fetched, no GPU/cloud/Modal/private-volume/credentials used. No experiment reproduction. No posting of raw PDF/text/pageimages. Main alone verifies integration and publication.

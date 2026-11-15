@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "slice": "p6-lec14",
+  "kind": "original declarative mechanism cases, not assignment solutions",
+  "execution_status": "not executed by author; expected values for Main independent verification",
+  "cases": [
+    {
+      "id": "filter-base-rate",
+      "section": "notes §3.3",
+      "input": {
+        "population": 1000,
+        "target": 100,
+        "true_positive": 90,
+        "false_negative": 10,
+        "false_positive": 90,
+        "true_negative": 810
+      },
+      "expected": {
+        "kept": 180,
+        "recall": 0.9,
+        "precision": 0.5
+      }
+    },
+    {
+      "id": "filter-source-reweighting",
+      "section": "notes §3.4",
+      "input": {
+        "source_weights": [
+          0.8,
+          0.2
+        ],
+        "retention_probabilities": [
+          0.1,
+          0.8
+        ]
+      },
+      "expected": {
+        "unnormalized_kept_mass": [
+          0.08,
+          0.16
+        ],
+        "retained_fraction": 0.24,
+        "normalized_weights": [
+          "1/3",
+          "2/3"
+        ]
+      }
+    },
+    {
+      "id": "stage-order-representative",
+      "section": "notes §4.1",
+      "input": {
+        "a": {
+          "text_key": "same_body",
+          "source_eligible": false
+        },
+        "b": {
+          "text_key": "same_body",
+          "source_eligible": true
+        },
+        "dedup_rule": "keep first record for text key"
+      },
+      "expected": {
+        "dedup_then_eligibility_filter": [],
+        "eligibility_filter_then_dedup": [
+          "b"
+        ]
+      },
+      "boundary": "For immutable per-item boolean filters alone, intersections commute; this case includes corpus-dependent representative selection"
+    },
+    {
+      "id": "minhash-similarity",
+      "section": "notes §6.1",
+      "input": {
+        "A": [
+          "a",
+          "b",
+          "c"
+        ],
+        "B": [
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      "expected": {
+        "intersection": 2,
+        "union": 4,
+        "jaccard": 0.5,
+        "ideal_random_permutation_collision_probability": 0.5
+      }
+    },
+    {
+      "id": "minhash-variance",
+      "section": "notes §6.2",
+      "input": {
+        "jaccard": 0.6,
+        "independent_hashes": 100
+      },
+      "expected": {
+        "variance": 0.0024,
+        "standard_deviation_approx": 0.049
+      },
+      "boundary": "Ideal independent signature positions; not guaranteed error <= .01"
+    },
+    {
+      "id": "lsh-probability",
+      "section": "notes §7.1",
+      "input": {
+        "bands": 4,
+        "rows_per_band": 3,
+        "similarities": [
+          0.5,
+          0.8
+        ]
+      },
+      "formula": "1-(1-s**r)**b",
+      "expected": {
+        "candidate_probabilities": [
+          0.413818359375,
+          0.943287435264
+        ],
+        "approx_transition_similarity": 0.6299605249474366,
+        "probability_at_transition": 0.68359375
+      },
+      "boundary": "Candidate probabilities, not hard Jaccard decisions"
+    },
+    {
+      "id": "classroom-lsh-orientation",
+      "section": "notes §7.1 editorial clarification",
+      "input": {
+        "bands": 20,
+        "rows_per_band": 450
+      },
+      "expected": {
+        "signature_positions": 9000,
+        "transition_formula": "(1/20)**(1/450)",
+        "transition_approx": 0.993,
+        "candidate_probability_at_transition_formula": "1-(1-1/20)**20"
+      },
+      "boundary": "Classroom configuration must not be transposed to450 bands×20 rows or confused with FineWeb75% configuration"
+    },
+    {
+      "id": "cluster-transitivity",
+      "section": "notes §7.3",
+      "input": {
+        "A": [
+          1,
+          2
+        ],
+        "B": [
+          1,
+          2,
+          3
+        ],
+        "C": [
+          2,
+          3
+        ],
+        "threshold": 0.6
+      },
+      "expected": {
+        "jaccard_AB": "2/3",
+        "jaccard_BC": "2/3",
+        "jaccard_AC": "1/3",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "connected_components": [
+          [
+            "A",
+            "B",
+            "C"
+          ]
+        ],
+        "all_pairs_pass_threshold": false
+      }
+    },
+    {
+      "id": "document-token-weight",
+      "section": "notes §8.1",
+      "input": {
+        "document_probabilities": [
+          0.5,
+          0.5
+        ],
+        "mean_tokens": [
+          100,
+          900
+        ]
+      },
+      "expected": {
+        "token_weights": [
+          0.1,
+          0.9
+        ]
+      }
+    },
+    {
+      "id": "finite-inventory-and-cap",
+      "section": "notes §8.2",
+      "input": {
+        "inventories": [
+          5000000000,
+          20000000
+        ],
+        "train_tokens": 1000000000,
+        "token_weights": [
+          0.8,
+          0.2
+        ],
+        "epoch_cap": 3
+      },
+      "expected": {
+        "allocated_training_tokens": [
+          800000000,
+          200000000
+        ],
+        "epochs": [
+          0.16,
+          10
+        ],
+        "specialized_source_max_weight": 0.06
+      }
+    },
+    {
+      "id": "simulated-epoching",
+      "section": "notes §9.1",
+      "input": {
+        "large_budget": 1000000000,
+        "small_budget": 10000000,
+        "inventories": [
+          5000000000,
+          20000000
+        ],
+        "token_weights": [
+          0.8,
+          0.2
+        ]
+      },
+      "expected": {
+        "downsample_ratio": 0.01,
+        "small_inventories": [
+          50000000,
+          200000
+        ],
+        "unscaled_inventory_small_epochs": [
+          0.0016,
+          0.1
+        ],
+        "scaled_inventory_small_epochs": [
+          0.16,
+          10
+        ],
+        "large_epochs": [
+          0.16,
+          10
+        ]
+      },
+      "boundary": "Preserves average exposure; not all dynamics, rare-domain coverage, or best mixture"
+    },
+    {
+      "id": "synthetic-prompt-count",
+      "section": "notes §10.2",
+      "input": {
+        "unique_prompts": 100,
+        "responses_per_prompt": 8
+      },
+      "expected": {
+        "records": 800,
+        "prompt_groups": 100
+      },
+      "boundary": "Responses are not independent tasks; split by lineage where appropriate"
+    }
+  ]
+}
