@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 670" role="img" aria-labelledby="title desc">
+<title id="title">相同token项，不同归一化得到不同更新权重</title>
+<desc id="desc">原创算例。回答甲有两个加一的token项，回答乙有四个减一的token项。先按每条长度平均再按两条平均得到零，全体六个token平均得到负三分之一，每条用固定四token分母再平均得到负四分之一。这是更新权重的差别，不是无关紧要的排版。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:17px system-ui,-apple-system,"PingFang SC",sans-serif}.h{font-size:20px;font-weight:700}.s{font-size:15px}.box{fill:none;stroke:var(--border);stroke-width:1.6}</style>
+<text class="h" x="24" y="34">分母决定谁的梯度更重</text>
+<text x="24" y="76">甲：2个有效token，每项 +1</text>
+<rect class="box" x="28" y="94" width="62" height="45" rx="6"/><rect class="box" x="104" y="94" width="62" height="45" rx="6"/>
+<text x="48" y="124">+1</text><text x="124" y="124">+1</text>
+<text x="24" y="179">乙：4个有效token，每项 −1</text>
+<rect class="box" x="28" y="197" width="62" height="45" rx="6"/><rect class="box" x="104" y="197" width="62" height="45" rx="6"/><rect class="box" x="180" y="197" width="62" height="45" rx="6"/><rect class="box" x="256" y="197" width="62" height="45" rx="6"/>
+<text x="48" y="227">−1</text><text x="124" y="227">−1</text><text x="200" y="227">−1</text><text x="276" y="227">−1</text>
+<rect class="box" x="24" y="275" width="372" height="90" rx="8"/>
+<text x="42" y="307">每条先平均：两条等权</text>
+<text x="42" y="340">(2 / 2 − 4 / 4) / 2 = 0</text>
+<rect class="box" x="24" y="386" width="372" height="90" rx="8"/>
+<text x="42" y="418">全体token平均：长回答权重更大</text>
+<text x="42" y="451">(2 − 4) / 6 = −1/3</text>
+<rect class="box" x="24" y="497" width="372" height="90" rx="8"/>
+<text x="42" y="529">固定分母4，再平均两条</text>
+<text x="42" y="562">(2 / 4 − 4 / 4) / 2 = −1/4</text>
+<text class="s" x="24" y="625">数值为自拟代理项，不是模型训练成绩。</text>
+<text class="s" x="24" y="650">prompt与padding不计入有效token。</text>
+</svg>

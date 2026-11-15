@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "phase": "P7",
+  "owner": "P7ReasoningAssignment",
+  "kind": "original independent mathematical teaching cases; not official fixtures or implementations",
+  "execution_status": "not_run_by_author; expected values are analytic; Main verifies once",
+  "material_files": [
+    "labs/a5-reasoning/guide.zh.md"
+  ],
+  "cases": [
+    {
+      "id": "shifted-label-mask",
+      "check_kind": "sequence_alignment",
+      "body_section": "3.2",
+      "inputs": {
+        "prompt_ids": [
+          11,
+          12,
+          13
+        ],
+        "response_ids": [
+          21,
+          22
+        ]
+      },
+      "definition": "Concatenated token sequence; inputs omit final token, labels omit first; mask classifies origin of each label.",
+      "expected": {
+        "input_ids": [
+          11,
+          12,
+          13,
+          21
+        ],
+        "labels": [
+          12,
+          13,
+          21,
+          22
+        ],
+        "response_mask": [
+          0,
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "entropy-versus-surprisal",
+      "check_kind": "categorical_entropy",
+      "body_section": "3.3",
+      "inputs": {
+        "probabilities": [
+          0.5,
+          0.25,
+          0.25
+        ],
+        "selected_index": 0
+      },
+      "definition": "Natural-log entropy −sum(p ln p); surprisal −ln(selected probability).",
+      "expected": {
+        "entropy_nats": 1.0397207708399179,
+        "selected_surprisal_nats": 0.6931471805599453
+      }
+    },
+    {
+      "id": "reduction-and-microbatch-weights",
+      "check_kind": "masked_reduction_and_accumulation",
+      "body_section": "4.3 and 5.2",
+      "inputs": {
+        "sequence_values": [
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            1,
+            3,
+            3
+          ],
+          [
+            -2
+          ]
+        ],
+        "fixed_Z": 14,
+        "microbatch_sequence_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      "definition": "Sequence reducer is mean of sequence means; constant reducer is all sums/Z; microbatch sequence means weighted by original sequence counts.",
+      "expected": {
+        "sequence_means": [
+          3,
+          2,
+          -2
+        ],
+        "sequence_reduction": 1,
+        "total_sum": 12,
+        "constant_reduction": 0.8571428571428571,
+        "microbatch_means": [
+          2.5,
+          -2
+        ],
+        "weighted_microbatch_mean": 1,
+        "incorrect_equal_microbatch_mean": 0.25
+      }
+    },
+    {
+      "id": "zero-contribution-pruning",
+      "check_kind": "constant_pruning",
+      "body_section": "5.3",
+      "inputs": {
+        "sequence_contributions": [
+          3,
+          0,
+          7,
+          0,
+          0
+        ],
+        "fixed_Z": 20
+      },
+      "definition": "Removing exactly zero summands preserves sum/Z; changing denominator to survivor count changes objective.",
+      "expected": {
+        "original": 0.5,
+        "pruned_preserving_Z": 0.5,
+        "incorrect_survivor_mean": 5
+      }
+    },
+    {
+      "id": "optimizer-clock",
+      "check_kind": "update_count",
+      "body_section": "5.1",
+      "inputs": {
+        "rollout_responses": 30,
+        "partitions": 6,
+        "onpolicy_update_after_all": true
+      },
+      "definition": "One update after six accumulated microbatches versus one update per each of six train batches. The latter has five post-first-update stale steps.",
+      "expected": {
+        "onpolicy_updates": 1,
+        "offpolicy_updates": 6,
+        "offpolicy_post_first_stale_updates": 5
+      }
+    },
+    {
+      "id": "signed-clipping",
+      "check_kind": "ppo_clipped_surrogate",
+      "body_section": "6.3",
+      "inputs": {
+        "epsilon": 0.2,
+        "advantages": [
+          0.7,
+          -0.7,
+          0.7,
+          -0.7
+        ],
+        "ratios": [
+          1.4,
+          0.6,
+          0.6,
+          1.4
+        ]
+      },
+      "definition": "Ascent objective min(A*w,A*clip(w,1−eps,1+eps)); descent loss has opposite sign. This case avoids boundaries.",
+      "expected": {
+        "unclipped_products": [
+          0.98,
+          -0.42,
+          0.42,
+          -0.98
+        ],
+        "ascent_objectives": [
+          0.84,
+          -0.56,
+          0.42,
+          -0.98
+        ],
+        "clipped_branch_active": [
+          true,
+          true,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "id": "masked-geometric-ratio",
+      "check_kind": "geometric_mean_ratio",
+      "body_section": "6.4",
+      "inputs": {
+        "ratios": [
+          1.44,
+          0.64,
+          100
+        ],
+        "response_mask": [
+          1,
+          1,
+          0
+        ]
+      },
+      "definition": "Product and geometric mean only over response positions; padding ratio deliberately extreme and excluded.",
+      "expected": {
+        "product": 0.9216,
+        "geometric_mean": 0.96,
+        "arithmetic_mean": 1.04
+      }
+    },
+    {
+      "id": "equal-mean-different-variance",
+      "check_kind": "sample_statistics",
+      "body_section": "7.3",
+      "inputs": {
+        "synthetic_a": [
+          0.2,
+          0.24,
+          0.28,
+          0.32
+        ],
+        "synthetic_b": [
+          0.25,
+          0.26,
+          0.26,
+          0.27
+        ]
+      },
+      "definition": "Synthetic non-model observations; means and sample variances with denominator n−1.",
+      "expected": {
+        "mean_a": 0.26,
+        "mean_b": 0.26,
+        "sample_variance_a": 0.0026666666666666666,
+        "sample_variance_b": 6.666666666666667e-05
+      }
+    }
+  ]
+}

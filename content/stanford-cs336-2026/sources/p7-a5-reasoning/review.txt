@@ -1,0 +1,64 @@
+P7 A5 reasoning main — author handoff
+Owner: P7ReasoningAssignment
+Scope: only labs/a5-reasoning/{lab.zh.md,guide.zh.md,assets/policy-clock.svg} and sources/p7-a5-reasoning/*.
+Fixed upstream: stanford-cs336/assignment5-alignment @ c2734a26308710949fe13226960a1e8cece94b7e.
+No P8 work; no shared metadata edited. Model was the assigned openai-codex/gpt-6-astra:xhigh; no nested workers.
+
+DELIVERED
+- labs/a5-reasoning/lab.zh.md: substantive independent task/contract guide, all 28 official Problems,90points,11formal lettered subquestions,exact model/data/prompt/parser/train/normalization/off-policy/experiment/seed contracts. It is not a full translated mirror and contains no answer implementations or submitted derivations.
+- labs/a5-reasoning/guide.zh.md: staged conceptual/debugging decisions; target/behavior/current policy separation,gradient paths,parser errors,shifted labels,entropy,reduction/accumulation/pruning,old-policy provenance,PPO sign-sensitive clipping,GSPO geometric mean,controlled comparisons and evidence limits. Does not answer baseline_calcs,derive_difficulty_reweightings,derive_surrogate_objectives or supply a try_your_own estimator.
+- labs/a5-reasoning/assets/policy-clock.svg: original420-wide vertical transparent concept diagram,title/desc,self-contained CanvasText theme variables,no scripts/external resources; not a screenshot or experiment chart.
+- task-coverage.json:28tasks,90points,11formal lettered subquestions,24unlettered Problems,35leaf parts,133atomic scored-task requirements,40unnumbered constraints,16source-contract-map entries. Every scored requirement has source locator and body locator. T24(a)(b)(c)are strategy labels inside one unlettered discussion,not separately counted formal subquestions.
+- course-task-metadata.json:all actual official IDs/titles/points/pages for Main; no invented child scores.
+- manifest-fragment.json:22external source entries,all with status and mandatory provenance fields;7selected actual PDF visual checks;original diagram/case artifacts separate from external permissions.
+- mechanism-cases.json:8independent original analytic cases for Main to verify;no official fixtures or imports.
+- acquisition.json:12missing pinned text-source acquisitions with actual timestamps/SHA256;successful earlier downloads retained,not repeatedly rewritten.
+
+ACTUAL SOURCE READING
+1. Reused p1-assignment-a5/raw/main-2026.txt,all lines1–2110,in five contiguous raw reads:1–390,391–760,761–1170,1171–1590,1591–2110. This covers the complete39physical pages,including introduction,all derivation background,all Problems,unnumbered instructions and bibliography. P1 audit was navigation only,not treated as source reading.
+2. Original PDF rendered and actually viewed at physical pp11,21,28,29,35,36,38. Files:visual/main-p11.png,... etc. Confirmed default torch.std note versus displayed population formula,finite-group factor,accumulation weighting,MaxRL constant deviation,three formal difficulty subquestions,PPO sign branches,GSPO exponent/reduction,CISPO optional,and exact final experiments. Not all39pages visually inspected;manifest explicitly limits visual scope.
+3. P1 README.txt lines1–29 complete;CHANGELOG.txt1–107 complete;pyproject.toml1–55 complete;modal_utils.py.txt1–100 complete.
+4. Fixed recursive repository-tree full path listing read to locate missing contracts;end metadata read confirms truncated=false. No LICENSE/COPYING path exists in that complete listing;no blanket course-doc translation permission inferred.
+5. Newly acquired fixed sources,read completely:
+   AGENTS.md:full exact pinned raw URL text;stored as upstream/AGENTS.md.txt.
+   cs336_alignment/vllm_utils.py:1–292.
+   cs336_alignment/drgrpo_grader.py:1–1080,contiguous1–300,301–690,691–1080.
+   cs336_alignment/checkpoint.py:1–12.
+   prompts/question_only.prompt:1; r1_zero.prompt:1–3; r1_zero_three_shot_gsm8k.prompt:1–9.
+   tests/adapters.py:1–461(main interface1–326,optional boundary327–461 also read but not expanded into main assignment).
+   tests/test_grpo.py:1–353.
+   tests/conftest.py:1–424.
+   tests/common.py:1–3.
+   test_and_make_submission.sh:1–34.
+6. P1 OLMo card displayed/read lines1–68 only:license header,model stages/4T tokens/specification/loading context. P1 GSM8K card displayed/read1–58 only:license andmain/socratic train/test split metadata. No full-card reread claim. Official shared AI policy p1-shared/ai-policy.txt1–21 complete.
+7. Read existing A4 frontmatter/task metadata convention and ext13 recipe-audit-contract.svg styling as local authoring patterns,not external factual sources for A5.
+
+PRECISE TECHNICAL BOUNDARIES PRESERVED
+- Formal base is allenai/OLMo-2-0425-1B,not classroom weak models,not SFT/Instruct. Official tests' tiny GPT2 is a fixture only.
+- Main handout cover26.0.0 differs from latest changelog2.0.1 and pyproject package1.0.0;none silently overwrites others.
+- question_only uses boxed parsing,not optional safety last-number parser. r1 requires exact '</think> <answer>' substring and closing answer,uses last opening answer extraction;default grader fast=True. total=answer binary reward,format only logged;truth takes text after####.
+- Prompt and response separately tokenize without special tokens;no EOS/BOS/separator inserted;mask aligns shifted labels,not input positions.
+- entropy refers whole next-token distribution;current scoring must retain gradient where trained;reward/group stats/behavior scores fixed for updates.
+- baseline subtraction,advantage normalizer,andsequence/constant reduction distinct. Default torch.std sample correction explicitly required despite population-std displayed derivation. G=1 not magically fixed byepsilon.
+- Accumulated microbatches are one optimizer update;sequence means weighted by sequence count;constant keeps fullbatchZ;clip total gradient after accumulation,log preclip norm,then cleargrad;tests assertgrad isNone andupdatedparameters,not justloss.
+- Zero-advantage pruning preserves original group anddenominator. Whole-zero batches needoptimizer-state semantics,not casual 'skip means identical' claims.
+- Standard final validationaccuracy meansatleast25% averageacrossseeds;test.jsonl isusedasvalidation,notuntouchedtest. Standard/algorithmcomparison/offpolicycomparison explicitly4seeds each;LR hasvariance-basedchosen count,promptablation few,separatecustom multiple. No fabricated exactseed integers.
+- On-policy default6400/1024examples,200rollouts,LR1e-5,256responses,group8,accumulation32,temp1/top-p1/max512,AdamW(.9,.95),wd0,maxnorm1. Off-policy256/8/1 yields32updates;tokenclip.2,GSPO.0003.
+- Old policy meansrolloutbehavior snapshot,notDPOreference. Oldscores remainfixed. None/naive differsfromnoclip tokenreweighting;tokenratio andGSPOgeometricmean do not equalfullsequence unbiased correction. No extraneousKLpenalty added.
+- MaxRL intentionallyconstant here,unlikeoriginalbatch-token normalizer. GSPO sequence exponent naturallyintroduceslengthfactor;constant-GSPO andCISPOremainoptional.
+- Helper request doesnotexplicitlyforward top_p;body doesnotclaim thatsetting caller dict suffices. Source default compatibility remainsa runtime fact not tested here. Actualweightsync includespause/transfer/cache-reset/resume.
+- Packaging usespytest||true andexcludesmany artifacts;zipcreation nottestpass. Modal accessgate/secret/GPUcosts clear;no unapprovedoperations.
+
+RIGHTS / ACCESS / EXECUTION
+- No overall LICENSE in fixedtree. Body iscomplete taskindex plusoriginal Chinese explanatoryteaching,notfull unauthorizedtranslation. RawPDF/text/source/renderings remainlocal sources,notpublicbody.
+- Grader file carriesGarena2025 Apache-2.0;OLMo cardApache-2.0;GSM8KcardMIT. Theirpermissions do notlicensecoursehandout. NewauthoredSVG/cases notexternalpermissionevidence.
+- OfficialAI policy summarized:concept/APIhelponly;noAI implementation,assignmentanswers,leaderboardcode orautocomplete. NoPython/pseudocodeimplementation providedinthebody;onlyindependentoriginalscalar examples/data.
+- Noofficialenvironmentinstallation,pytest,submission packaging,model/dataset/fixture/snapshotbinarydownload,generation,training,verifierexecution,GPU,Modal,cloudjobs,paidmodelAPIorGradescopeaccess.
+- Sourceacquisitionattempts:urllib failedSSLunexpectedEOF;curl HTTP2failedatgrader;resumedonlymissingfileswithcurl--http1.1 successfully,withoutdisablingTLSverification. Thiswaspublicpinnedsourcefetching,notmodel/dataacquisition.
+- Original8case expectedvalues areanalytic authorclaims,NOT executedverification. Main must verifythem independently once andrecordactualresults. No officialtestorexperimentpassclaims made.
+
+EDITORIAL HANDOFF
+- Parent-reported internalroute issue fixed:lecture references use /lec/lec16 and /lec/ext14,not/lecture/.
+- Parent-reportedCommonMarkbold punctuation issue addressed in guide labels and adjacenttext;noformattersorpagechecksrunbyworker.
+- PendingMain work:sourcehash/integrationcoverage checks,8syntheticcases,internalroutes,realdesktop/390px/light-dark SVG/formula/tablelayout,buildandpublication. No pendingauthorcontent blocker andnoP8 work.
+- Limits retained:notwhole-PDFvisualaudit;noformalruntimeverifications;noactualexperimentalresults;noverifiedblankethandouttranslationlicense. Do notturnauthorhandoffstatusintoacceptance/deploymentclaim.

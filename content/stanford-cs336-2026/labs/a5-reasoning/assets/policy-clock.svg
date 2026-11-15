@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 900" role="img" aria-labelledby="title desc">
+<title id="title">一次采样，两种更新时钟</title>
+<desc id="desc">原创概念图。上半部说明on-policy把同一rollout批拆成microbatch累积梯度，只更新参数一次。下半部说明off-policy把同一rollout批拆成多个训练batch各自更新；第二次起行为策略旧于当前策略，old log probabilities必须保持不变。图不表示真实实验结果。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:17px system-ui,-apple-system,"PingFang SC",sans-serif}.heading{font-size:21px;font-weight:700}.small{font-size:15px}.box,.arrow{fill:none;stroke:var(--border);stroke-width:1.7}.old{stroke-dasharray:6 4}.tip{fill:var(--fg)}</style>
+<text class="heading" x="22" y="32">一次采样，不等于一次前向</text>
+<rect class="box" x="20" y="54" width="380" height="72" rx="9"/>
+<text x="38" y="82">固定：行为策略 π₀ → rollout batch</text>
+<text class="small" x="38" y="108">题目 · responses · reward · token 对齐</text>
+<path class="arrow" d="M210 126V153"/><path class="tip" d="M204 146L210 158L216 146Z"/>
+<text class="heading" x="24" y="185">On-policy：只更新一次</text>
+<rect class="box" x="20" y="203" width="380" height="90" rx="9"/>
+<text x="38" y="233">微批 1 → 微批 2 → … → 微批 K</text>
+<text class="small" x="38" y="259">只累积梯度；参数在此期间不变</text>
+<text class="small" x="38" y="281">按原全批目标保留各微批权重</text>
+<path class="arrow" d="M210 293V320"/><path class="tip" d="M204 313L210 325L216 313Z"/>
+<rect class="box" x="20" y="334" width="380" height="80" rx="9"/>
+<text x="38" y="364">总梯度裁剪 → optimizer step 一次</text>
+<text class="small" x="38" y="392">清梯度；下一轮同步权重后重新采样</text>
+<path class="arrow old" d="M20 447H400"/>
+<text class="heading" x="24" y="486">Off-policy：同批多次更新</text>
+<rect class="box" x="20" y="504" width="380" height="78" rx="9"/>
+<text x="38" y="535">训练批 1 → optimizer step 1</text>
+<text class="small" x="38" y="561">第一次更新后，当前策略已改变</text>
+<path class="arrow" d="M210 582V609"/><path class="tip" d="M204 602L210 614L216 602Z"/>
+<rect class="box" x="20" y="624" width="380" height="91" rx="9"/>
+<text x="38" y="655">训练批 2 … M → 各自更新</text>
+<text class="small" x="38" y="681">rollout 仍来自 π₀；当前策略继续变</text>
+<text class="small" x="38" y="703">第二次起需要面对 stale samples</text>
+<path class="arrow" d="M210 715V742"/><path class="tip" d="M204 735L210 747L216 735Z"/>
+<rect class="box old" x="20" y="760" width="380" height="79" rx="9"/>
+<text x="38" y="791">old log-probs 固定为采样时策略</text>
+<text class="small" x="38" y="817">不能每次用 current 分数刷新分母</text>
+<text class="small" x="24" y="874">原创机制示意；非官方算法实现或运行记录。</text>
+</svg>

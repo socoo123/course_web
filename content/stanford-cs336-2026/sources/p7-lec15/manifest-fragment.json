@@ -1,0 +1,297 @@
+{
+  "phase": "P7",
+  "owner": "P7SftLectureObjectives",
+  "created_at": "2026-11-15T08:27:04.953093+00:00",
+  "material_files": [
+    "lectures/lec15/notes.zh.md",
+    "lectures/lec15/draft.zh.md",
+    "lectures/ext14/notes.zh.md"
+  ],
+  "sources": [
+    {
+      "kind": "video_recording",
+      "url": "https://www.youtube.com/watch?v=2oH6PWPrYFo",
+      "version": "Spring 2026; Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 15: Mid/Post-Training; upload_date=20260527; yt-dlp 2026.08.19",
+      "retrieved_at": "2026-11-14T13:39:37.473054Z",
+      "file": "p1-videos/metadata/lec15-2oH6PWPrYFo.json",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository.",
+      "id": "p7-lec15-video",
+      "sha256": "58c5b81f2757217823620fb493d24f0abb13bd6351d8830efaa87c9548e7a733",
+      "read_scope": "Read complete individual metadata, including4794s duration, identity and license-null; no media playback.",
+      "read_at": "2026-11-15",
+      "chinese_treatment": "Limited autonomous Chinese notes and chronological discussion; no full translation or raw publication.",
+      "material_files": [
+        "lectures/lec15/notes.zh.md",
+        "lectures/lec15/draft.zh.md"
+      ],
+      "status": "reused_fixed_source_actual_read_completed"
+    },
+    {
+      "kind": "video_captions",
+      "url": "https://www.youtube.com/watch?v=2oH6PWPrYFo",
+      "version": "YouTube en-US manual/non-ASR JSON3 track; video 2oH6PWPrYFo; retrieved 2026-11-14T13:39:48.838467Z",
+      "retrieved_at": "2026-11-14T13:39:48.838467Z",
+      "file": "p1-videos/captions/2oH6PWPrYFo.en-US.manual.json3",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository. No separate caption license established.",
+      "id": "p7-lec15-captions-en-US-manual",
+      "sha256": "a4ac598dd86748ba7ecd231faad5e854d1614c7fdca69049c9838d359a8b569d",
+      "read_scope": "All1872 cues actually read through normalized faithful text transcript lines1–3321; first5.240s,last4788.060s;6 internal gaps>2s;12 inaudible cues/9windows. No audio verification.",
+      "read_at": "2026-11-15",
+      "chinese_treatment": "Limited autonomous Chinese notes and chronological discussion; no full translation or raw publication.",
+      "material_files": [
+        "lectures/lec15/notes.zh.md",
+        "lectures/lec15/draft.zh.md"
+      ],
+      "status": "reused_fixed_source_actual_read_completed"
+    },
+    {
+      "kind": "classroom_handout",
+      "url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_15.pdf",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:44:52.818523+00:00",
+      "file": "p1-lectures/raw/lecture_15.pdf",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "id": "p7-lec15-handout",
+      "sha256": "42a4bc02408a96e0b414f789f32780ae1d8461000f872d93aa38c94fe369e862",
+      "read_scope": "All extracted text lines1–622,65physical pages; only PDF pp56–58 visually inspected. Actual fixed tree is lecture_15.pdf, not.py; post-term revision is not recording-identical.",
+      "read_at": "2026-11-15",
+      "chinese_treatment": "Independent pedagogical treatment, no full handout translation or slide republication.",
+      "material_files": [
+        "lectures/lec15/notes.zh.md",
+        "lectures/lec15/draft.zh.md"
+      ],
+      "status": "reused_fixed_source_text_read_selected_visual_checked",
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_15.pdf"
+    },
+    {
+      "kind": "classroom_handout_text_extraction",
+      "url": "https://github.com/stanford-cs336/lectures/blob/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_15.pdf",
+      "version": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e; current 2026-linked handout, post-term revision; no claim of recording identity",
+      "retrieved_at": "2026-11-14T13:44:52.818523+00:00",
+      "file": "p1-lectures/lecture_15.txt",
+      "license": "unverified; no repository-wide license found",
+      "license_evidence": "p1-lectures/tree.json complete tree and version-review.json; no grant for external figures",
+      "id": "p7-lec15-handout-text",
+      "sha256": "6cbdc91210302b6ed1867e08ad8d74a3f386c5bcc3170892d23b800af71be2b1",
+      "read_scope": "Complete622 extracted text lines read; missing image-only mathematical content resolved by selected original PDF pages56–58.",
+      "read_at": "2026-11-15",
+      "chinese_treatment": "Local evidence for independent Chinese notes; raw text not published.",
+      "material_files": [
+        "lectures/lec15/notes.zh.md",
+        "lectures/lec15/draft.zh.md"
+      ],
+      "status": "reused_fixed_extraction_fully_read",
+      "fixed_url": "https://raw.githubusercontent.com/stanford-cs336/lectures/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e/lecture_15.pdf"
+    },
+    {
+      "kind": "paper_fulltext_pdf",
+      "url": "https://arxiv.org/pdf/2305.18290v3",
+      "version": "arXiv:2305.18290v3",
+      "retrieved_at": "2026-11-14T13:39:02.397167Z",
+      "file": "p1-papers-09-16/paper12-2305.18290v3.pdf",
+      "license": "CC-BY-4.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper12-2305.18290v3-metadata.html",
+        "url": "https://arxiv.org/abs/2305.18290v3",
+        "link_observed": "http://creativecommons.org/licenses/by/4.0/",
+        "terms_file": "p1-papers-09-16/license-cc-by-4.0.txt",
+        "interpretation": "固定版本arXiv元数据页view license指向CC BY 4.0；legalcode §1(a)将翻译列入Adapted Material，§2(a)(1)(B)允许制作/传播改编，§3要求署名、许可链接及改动说明。仅覆盖许可人有权许可的内容；第三方图片/数据/权重另核查。"
+      },
+      "id": "p7-ext14-paper12-pdf",
+      "sha256": "92cb3a2b71362acda98a789b03d88688fd33cf5fcf13f81d2b1de30ee7d3b67a",
+      "read_scope": "§§3–4, A.1–A.2; core-used text139–276,888–981; physicalpp3–5,15–16; selected visuals4,16. No entire specified-core completion claim by this author.",
+      "read_at": "2026-11-15",
+      "chinese_treatment": "Original comparative derivations and self-authored probability examples; canonical full paper treatment remains at lec15/materials.",
+      "material_files": [
+        "lectures/lec15/notes.zh.md",
+        "lectures/ext14/notes.zh.md"
+      ],
+      "status": "reused_fixed_source_independent_derivation_passages_read",
+      "paper_id": "paper12"
+    },
+    {
+      "kind": "paper_text_extraction",
+      "url": "https://arxiv.org/pdf/2305.18290v3",
+      "version": "arXiv:2305.18290v3",
+      "retrieved_at": "2026-11-14T13:39:02.397167Z",
+      "file": "p1-papers-09-16/paper12-2305.18290v3.txt",
+      "license": "CC-BY-4.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper12-2305.18290v3-metadata.html",
+        "url": "https://arxiv.org/abs/2305.18290v3",
+        "link_observed": "http://creativecommons.org/licenses/by/4.0/",
+        "terms_file": "p1-papers-09-16/license-cc-by-4.0.txt",
+        "interpretation": "固定版本arXiv元数据页view license指向CC BY 4.0；legalcode §1(a)将翻译列入Adapted Material，§2(a)(1)(B)允许制作/传播改编，§3要求署名、许可链接及改动说明。仅覆盖许可人有权许可的内容；第三方图片/数据/权重另核查。"
+      },
+      "id": "p7-ext14-paper12-text",
+      "sha256": "6a642d7cbf18618e8965b039147dcd7ce25b1cab2f225ce252e76f8ac87d8ced",
+      "read_scope": "§§3–4, A.1–A.2; core-used text139–276,888–981; physicalpp3–5,15–16; selected visuals4,16. No entire specified-core completion claim by this author.",
+      "read_at": "2026-11-15",
+      "chinese_treatment": "Original comparative derivations and self-authored probability examples; canonical full paper treatment remains at lec15/materials.",
+      "material_files": [
+        "lectures/lec15/notes.zh.md",
+        "lectures/ext14/notes.zh.md"
+      ],
+      "status": "reused_fixed_source_independent_derivation_passages_read",
+      "paper_id": "paper12"
+    },
+    {
+      "kind": "paper_fulltext_pdf",
+      "url": "https://arxiv.org/pdf/2402.03300v3",
+      "version": "arXiv:2402.03300v3",
+      "retrieved_at": "2026-11-14T13:39:34.471062Z",
+      "file": "p1-papers-09-16/paper13-2402.03300v3.pdf",
+      "license": "arXiv-nonexclusive-distrib-1.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper13-2402.03300v3-metadata.html",
+        "url": "https://arxiv.org/abs/2402.03300v3",
+        "link_observed": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "terms_file": "p1-papers-09-16/license-arxiv-nonexclusive-1.0.html",
+        "interpretation": "固定版本arXiv元数据页view license指向arXiv non-exclusive 1.0；该许可仅向arXiv授予永久非独占分发权，未授予公众翻译或改编权。因此中文处理限定自主精读，不复制完整中文翻译，不以代码/模型许可证替代文章授权。"
+      },
+      "id": "p7-ext14-paper13-pdf",
+      "sha256": "6cc20b3c5b8d25b8b53868fc4ec1792c144f07d67bdf7395138efd4422197e7b",
+      "read_scope": "§§4.1.1–4.1.4,4.2 lines511–752;5.2.1 opening/Table10 lines904–939;A.1.4–A.1.6 lines1475–1575;physicalpp11–15,18–19,29–30;visual13,14,29. Neighbor context not full optional reading.",
+      "read_at": "2026-11-15",
+      "chinese_treatment": "Original comparative derivations and self-authored probability examples; canonical full paper treatment remains at lec16/materials.",
+      "material_files": [
+        "lectures/ext14/notes.zh.md"
+      ],
+      "status": "reused_fixed_source_independent_derivation_passages_read",
+      "paper_id": "paper13"
+    },
+    {
+      "kind": "paper_text_extraction",
+      "url": "https://arxiv.org/pdf/2402.03300v3",
+      "version": "arXiv:2402.03300v3",
+      "retrieved_at": "2026-11-14T13:39:34.471062Z",
+      "file": "p1-papers-09-16/paper13-2402.03300v3.txt",
+      "license": "arXiv-nonexclusive-distrib-1.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper13-2402.03300v3-metadata.html",
+        "url": "https://arxiv.org/abs/2402.03300v3",
+        "link_observed": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "terms_file": "p1-papers-09-16/license-arxiv-nonexclusive-1.0.html",
+        "interpretation": "固定版本arXiv元数据页view license指向arXiv non-exclusive 1.0；该许可仅向arXiv授予永久非独占分发权，未授予公众翻译或改编权。因此中文处理限定自主精读，不复制完整中文翻译，不以代码/模型许可证替代文章授权。"
+      },
+      "id": "p7-ext14-paper13-text",
+      "sha256": "384a7f66ae93a5d490c4cdc1da0e1d37023c2d61eae61fc59df574e02f421fc1",
+      "read_scope": "§§4.1.1–4.1.4,4.2 lines511–752;5.2.1 opening/Table10 lines904–939;A.1.4–A.1.6 lines1475–1575;physicalpp11–15,18–19,29–30;visual13,14,29. Neighbor context not full optional reading.",
+      "read_at": "2026-11-15",
+      "chinese_treatment": "Original comparative derivations and self-authored probability examples; canonical full paper treatment remains at lec16/materials.",
+      "material_files": [
+        "lectures/ext14/notes.zh.md"
+      ],
+      "status": "reused_fixed_source_independent_derivation_passages_read",
+      "paper_id": "paper13"
+    },
+    {
+      "kind": "paper_fulltext_pdf",
+      "url": "https://arxiv.org/pdf/2501.12948v2",
+      "version": "arXiv:2501.12948v2",
+      "retrieved_at": "2026-11-14T13:40:13.975139Z",
+      "file": "p1-papers-09-16/paper14-2501.12948v2.pdf",
+      "license": "arXiv-nonexclusive-distrib-1.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper14-2501.12948v2-metadata.html",
+        "url": "https://arxiv.org/abs/2501.12948v2",
+        "link_observed": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "terms_file": "p1-papers-09-16/license-arxiv-nonexclusive-1.0.html",
+        "interpretation": "固定版本arXiv元数据页view license指向arXiv non-exclusive 1.0；该许可仅向arXiv授予永久非独占分发权，未授予公众翻译或改编权。因此中文处理限定自主精读，不复制完整中文翻译，不以代码/模型许可证替代文章授权。"
+      },
+      "id": "p7-ext14-paper14-pdf",
+      "sha256": "b191b0a365a64b4ab2791d117069ed17a2933d03554a662ced58b37df52018f4",
+      "read_scope": "Fixed2026 v2 §§2.1–2.2 lines85–220,physicalpp2–4;read neighbor context75–238;visualp3. Not whole specified core or fullpaper.",
+      "read_at": "2026-11-15",
+      "chinese_treatment": "Original comparative derivations and self-authored probability examples; canonical full paper treatment remains at lec16/materials.",
+      "material_files": [
+        "lectures/ext14/notes.zh.md"
+      ],
+      "status": "reused_fixed_source_independent_derivation_passages_read",
+      "paper_id": "paper14"
+    },
+    {
+      "kind": "paper_text_extraction",
+      "url": "https://arxiv.org/pdf/2501.12948v2",
+      "version": "arXiv:2501.12948v2",
+      "retrieved_at": "2026-11-14T13:40:13.975139Z",
+      "file": "p1-papers-09-16/paper14-2501.12948v2.txt",
+      "license": "arXiv-nonexclusive-distrib-1.0",
+      "license_evidence": {
+        "file": "p1-papers-09-16/paper14-2501.12948v2-metadata.html",
+        "url": "https://arxiv.org/abs/2501.12948v2",
+        "link_observed": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "terms_file": "p1-papers-09-16/license-arxiv-nonexclusive-1.0.html",
+        "interpretation": "固定版本arXiv元数据页view license指向arXiv non-exclusive 1.0；该许可仅向arXiv授予永久非独占分发权，未授予公众翻译或改编权。因此中文处理限定自主精读，不复制完整中文翻译，不以代码/模型许可证替代文章授权。"
+      },
+      "id": "p7-ext14-paper14-text",
+      "sha256": "04a64ae852b334dc0fbda2a7b37c55bf98d12ab44d16d8a2e243971a448813d0",
+      "read_scope": "Fixed2026 v2 §§2.1–2.2 lines85–220,physicalpp2–4;read neighbor context75–238;visualp3. Not whole specified core or fullpaper.",
+      "read_at": "2026-11-15",
+      "chinese_treatment": "Original comparative derivations and self-authored probability examples; canonical full paper treatment remains at lec16/materials.",
+      "material_files": [
+        "lectures/ext14/notes.zh.md"
+      ],
+      "status": "reused_fixed_source_independent_derivation_passages_read",
+      "paper_id": "paper14"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=2oH6PWPrYFo",
+      "version": "YouTube en-US manual/non-ASR JSON3 track; video 2oH6PWPrYFo; retrieved 2026-11-14T13:39:48.838467Z",
+      "retrieved_at": "2026-11-14T13:39:48.838467Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository. No separate caption license established.",
+      "id": "p7-lec15-normalized-captions",
+      "kind": "normalized_captions",
+      "file": "p7-lec15/captions.normalized.json",
+      "sha256": "2f1bda09cbeebf1149550bf4523318a8f12e678a953c95dc70bc57b85abb39c2",
+      "status": "derived_local_evidence_all_cue_text_read",
+      "read_scope": "Faithful normalization of fixed JSON3;1872 cues; transcript actual lines1–3321 all read. Normalizer preserves spoken repetitions and multiline text.",
+      "read_at": "2026-11-15",
+      "chinese_treatment": "Local provenance evidence only; never publish complete raw or translated transcript.",
+      "material_files": [
+        "lectures/lec15/notes.zh.md",
+        "lectures/lec15/draft.zh.md"
+      ],
+      "derived_at": "2026-11-15T08:12:39.718484+00:00",
+      "derived_from": "p1-videos/captions/2oH6PWPrYFo.en-US.manual.json3"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=2oH6PWPrYFo",
+      "version": "YouTube en-US manual/non-ASR JSON3 track; video 2oH6PWPrYFo; retrieved 2026-11-14T13:39:48.838467Z",
+      "retrieved_at": "2026-11-14T13:39:48.838467Z",
+      "license": "unverified; no explicit open-content or full-translation permission established",
+      "license_evidence": "Individual yt-dlp metadata license field is null; no positive license grant found in the retrieved title/description. Do not infer a video license from the course or code repository. No separate caption license established.",
+      "id": "p7-lec15-transcript",
+      "kind": "caption_text_transcript",
+      "file": "p7-lec15/transcript.en.txt",
+      "sha256": "fad69309f01d56f234153cc8c6339c7f775dc105dce5b313cfc5aeb28f74fcf0",
+      "status": "derived_local_evidence_all_cue_text_read",
+      "read_scope": "Faithful normalization of fixed JSON3;1872 cues; transcript actual lines1–3321 all read. Normalizer preserves spoken repetitions and multiline text.",
+      "read_at": "2026-11-15",
+      "chinese_treatment": "Local provenance evidence only; never publish complete raw or translated transcript.",
+      "material_files": [
+        "lectures/lec15/notes.zh.md",
+        "lectures/lec15/draft.zh.md"
+      ],
+      "derived_at": "2026-11-15T08:12:39.723609+00:00",
+      "derived_from": "p1-videos/captions/2oH6PWPrYFo.en-US.manual.json3"
+    }
+  ],
+  "original_assets": [
+    "lectures/lec15/assets/behavior-feedback-contract.svg",
+    "lectures/ext14/assets/four-policy-roles.svg",
+    "lectures/ext14/assets/reduction-contract.svg"
+  ],
+  "canonical_paper_homes": {
+    "paper12": "lectures/lec15/materials.zh.md",
+    "paper13": "lectures/lec16/materials.zh.md",
+    "paper14": "lectures/lec16/materials.zh.md"
+  },
+  "publication_boundary": "Only authored bodies/originalSVG and lightweight audit metadata may be allowlisted. Exclude raw/normalized captions,transcript,VTT,PDF mirrors and visual PNGs. Existing ext11 is only linked,never rewritten.",
+  "verification_boundary": "Author has not run build/lint/tests/formatters, CPU cases or browser checks. Main integrates and verifies once.",
+  "review_file": "p7-lec15/review.txt"
+}

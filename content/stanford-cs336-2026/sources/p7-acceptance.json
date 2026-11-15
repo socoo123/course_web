@@ -1,0 +1,121 @@
+{
+  "phase": "P7",
+  "date": "2026-11-15",
+  "status": "complete_with_documented_limits",
+  "modelEvidence": "p7-model-preflight.json",
+  "scope": {
+    "newBodyPages": 15,
+    "originalSvg": 9,
+    "lectures": [
+      "lec15",
+      "lec16",
+      "lec17"
+    ],
+    "extensions": [
+      "ext14",
+      "ext15"
+    ],
+    "papers": [
+      "paper12",
+      "paper13",
+      "paper14",
+      "paper15",
+      "paper16"
+    ],
+    "labs": [
+      "a5-reasoning",
+      "a5-safety-optional"
+    ]
+  },
+  "reading": {
+    "cues": 4823,
+    "internalCaptionGapsOver2s": 44,
+    "sourceRecords": 119,
+    "verifiedUniqueFileHashes": 101,
+    "mainCaptionCues": 192,
+    "mainSourceVisualPages": 4,
+    "paperAuthorVisualPages": 33,
+    "wholePaperCloseReading": false,
+    "audioVerified": false
+  },
+  "assignmentCoverage": [
+    {
+      "id": "a5-reasoning",
+      "handoutPages": 39,
+      "tasks": 28,
+      "points": 90,
+      "letteredSubquestions": 11
+    },
+    {
+      "id": "a5-safety-optional",
+      "optional": true,
+      "handoutPages": 18,
+      "tasks": 16,
+      "points": 61,
+      "letteredSubquestions": 42
+    }
+  ],
+  "checks": {
+    "structure": "p7-shared/structure-check.json",
+    "technicalReview": "P7-REVIEW.txt",
+    "mainSourceReview": "p7-shared/source-spotcheck.json",
+    "arithmetic": {
+      "groups": 53,
+      "passed": 53,
+      "evidence": "p7-shared/cpu-smoke.json"
+    },
+    "build": {
+      "command": "npm run build",
+      "passed": true,
+      "runs": 1,
+      "evidence": "p7-shared/build-summary.json"
+    },
+    "browser": {
+      "routes": 16,
+      "viewportChecks": 32,
+      "allFinalRootsFit": true,
+      "katexErrors": 0,
+      "displayMathOverflow": 0,
+      "svgCount": 9,
+      "headers": 3,
+      "actualNewTabClicks": 2,
+      "horizontalWheel": "0→133",
+      "evidence": "p7-shared/page-check.json"
+    },
+    "deliveredContentHashes": "p7-shared/final-artifacts.json"
+  },
+  "cumulative": {
+    "bodyPages": 79,
+    "lectureDocuments": 67,
+    "labDocuments": 12,
+    "originalSvg": 47,
+    "officialLecturesWithNotesAndDraft": 17,
+    "captionCuesFullyRead": 27746,
+    "specifiedPaperCores": 16,
+    "wholePapersCloseRead": 0,
+    "bridges": 8,
+    "extensions": 15,
+    "officialAssignmentsExecuted": 0
+  },
+  "publication": {
+    "allowlist": "p7-allowlist.txt",
+    "record": "p7-publication-record.json",
+    "rawSourcesAndScreenshotsExcluded": true,
+    "localDistNotUploaded": true
+  },
+  "limits": [
+    "L18 official classroom source remains missing;L19 only P1 scope;ext16/capstone not started.",
+    "No complete classroom translation without permission,no audio/frame verification.",
+    "Specified paper cores plus explicitly recorded optional ranges,not whole-paper reading.",
+    "No official assignment implementation/tests/training,model/data download,GPU/cloud/Modal/scoring API or paid compute.",
+    "Llama gating and exact course SFT mixture access/identity remain unverified;no permission bypass.",
+    "Local source bytes and screenshots are not remotely backed up merely because manifests are committed."
+  ],
+  "next": {
+    "phase": "P8",
+    "keyword": "CS336-2026-P8-嘉宾课与全课收尾",
+    "prompt": "NEXT-P8-PROMPT.txt",
+    "status": "not_started",
+    "explicitUserContinuationRequired": true
+  }
+}

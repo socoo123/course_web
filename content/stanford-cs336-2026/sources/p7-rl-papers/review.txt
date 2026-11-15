@@ -1,0 +1,52 @@
+P7 post-training papers author review
+Owner: P7PosttrainingPapers
+Delivery date: 2026-11-15
+Scope: only lectures/lec15/materials.zh.md, lectures/lec16/materials.zh.md and sources/p7-rl-papers/. No lecture notes/drafts/shared metadata edited. No P8 work, nested workers, training, dataset/model downloads or paid services.
+
+DELIVERABLES
+2 substantial new materials pages; 3 specified paper cores complete; 0 whole-paper completion claims; 0 new published SVG assets. 18 actual original-PDF visual pages, stored only as local evidence. 29 source manifest records: 9 fixed paper metadata/PDF/text sources, 2 license texts, 18 derived visual pages. 9 independent original arithmetic case groups for Main to execute. Reading updates keyed by paper12,paper13,paper14, retaining home/materialFile/fixed versions/P1 actualRead separately.
+
+RIGHTS/TREATMENT
+DPO fixed 2305.18290v3,2024-07-29,CC BY4.0: complete Chinese translation of specified §§3–4,6.1–6.2,6.4–7; also translates §6 setup and Figure2/3 captions/Table2, so readers have the complete experiment context. Author attribution, version/source/license links, modification/non-official/no-warranty notices and third-party asset boundaries appear in footer/frontmatter. Optional §§5.1–5.2,A.1–A.4,B are read and explained, not advertised as complete appendix translation. §6.3 is explicitly excluded; not extra-read this run. Source numbered citations preserved and mapped to 21 named bibliography entries/physical reference pages in footer; the cited external works themselves were not independently read.
+Math 2402.03300v3,2024-04-27 and R1 2501.12948v2,2026-01-04: arXiv nonexclusive grants distribution to arXiv, not public translation rights. Independent close reading, equations, factual numerical comparisons and original exercises, not near-verbatim complete translation. R1 model MIT does not authorize article translation. No original paper screenshots/figures or reasoning traces included in published bodies.
+
+ACTUAL TEXT READING (P1 fixed pdftotext-layout bytes; 1-based physical PDF pages)
+DPO:
+- Core §3 lines139–185 pp3–4; §4 lines187–276 pp4–5; §6.1 lines505–526 pp8–9; §6.2 lines529–562 p9; §6.4 lines590–615 p10; §7 lines618–639 p10.
+- Extra §6 setup/Figures2–3 lines381–504 pp7–8; §§5.1–5.2 and section5 introduction lines278–377 pp5–6; A.1–A.4 lines888–1056 pp15–17; B lines1186–1220 pp19–20; bibliography identification lines651–860 pp11–14.
+- No complete §§1–2,6.3,A.5–A.6,C/D reading. Adjacent visible C text on visual p20 and A.5 on p17 does not count as complete sections. No claim of having read paper12 p19 as an image this run; B text on p19 read, actual code visually read p20.
+Math:
+- Core §4/4.1 introduction and §§4.1.1–4.1.4,4.2 lines511–752 pp11–15; includes Table5 p12,Figure4 p13,Algorithm1 p14,Eq1–4. Exact subsection map in reading-updates.
+- Optional §§5.2.1–5.2.3,6 lines902–1150 pp18–22; A.1.4–A.1.6 lines1475–1575 pp29–30. Additional analytic context A.1.1–A.1.3 lines1413–1471 p28 was also actually read and is registered as extra, not silently omitted from log.
+- §§2–3/5.1 not fully read. Adjacent5.1 passages in extracted range not counted as complete. External baseline papers, PRM800K annotations and training code not independently audited.
+R1:
+- §2 introduction85–88; §§2.1–2.3 lines90–288 pp2–5. §3/Figure2 introduction293–342 p6; §§3.1–3.2.2 lines345–441 pp6–8. §4 lines444–509 pp8–9 including all21 Table3 rows. §6 lines531–596 pp10–11, ending before author list.
+- Optional D.1 lines2189–2281 pp39–41; F–F.1 lines3651–3749 pp60–62; G.1–G.2 lines3754–3839 pp62–64. Adjacent H text appeared but not counted as full H reading.
+- Full B,D.2/D.3,E,H–J not read; no whole86-page visual/close-reading claim.
+Metadata/version/license HTML lines inspected for all three; full creator lists preserved from P1 rather than claiming biography verification. CC definitions/grant/attribution and complete nonexclusive grant read. Fixed byte SHA256 computed for provenance; retrieval timestamps retained from P1. read_at is actual P7 recorded reading-completion time, not invented individual passage timings. New PNG generation timestamps are filesystem mtimes, not fictional remote retrieval dates.
+
+ACTUAL VISUAL CHECKS (all rendered locally with pdftoppm and individually opened through read)
+DPO physical4,5,7,8,10,17,20 (7 pages): main Eq4–7/sign; gradient; reward–KL/temperature curves and captions; human Table2; A.4 inconsistent signs; B implementation and hyperparameters.
+Math12,13,14,15,30 (5 pages): Table5 gray vs Top1 styling; double-normalized full objective; Algorithm1 literal Equation21; KL/process reward formula;144K/64/1024 settings; Eq21 is gradient coefficient.
+R1 3,4,6,7,8,9 (6 pages): sequence-level displayed Eq1–3 and Zero schedule; cons@16 plot label; stage diagram/data-vs-weight arrows; RM counts,epsilon10 and word denominator; last400-of1700stage routing; full21-row Table3.
+Visual filenames and SHA256 are in reading-updates.json/manifest-fragment.json. Original renders excluded from publication. These are source checks, not website screenshots or full-PDF visual review.
+
+TECHNICAL DECISIONS/CAVEATS
+1. DPO main Eq7/p5 gradient/B agree; A.4 p17 Eq21 and its final sigmoid signs do not. Explicit editorial chain-rule derivation uses main Eq7, not silent correction. Preferred-minus-rejected log-ratio and negative sigmoid derivative preserved. A.2 probability-vs-loss wording explained.
+2. DPO reference stays target anchor, not PPO old policy. Sequence log-probs summed over response tokens, not length averaged; mask/EOS/reference freezing and support/partition/BT assumptions explicit. Theory distribution optimum not a finite-network guarantee. Human win-rate vs agreement denominators separate. Figure3 caption only/summaries inconsistency qualified using actual graph and computational-efficiency statement. §6.3 excluded.
+3. Math GRPO Algorithm1 line11 literally cites21; complete objective is3. Eq21 only simplified gradient coefficient. Both source identities preserved.
+4. old=current is equality at the evaluation point; old is detached/frozen. Differentiable numerator still has gradient. Multiupdate batches do not retain numerical equality.
+5. KL u-log(u)-1 is nonnegative, not strictly positive; unbiased numerical value requires correct sampling distribution/support. Frozen-old samples and current distribution differ; local surrogate gradient is not full derivative through the sampling measure. No unannounced corrected loss added to original source.
+6. Group std/mean, per-response token average, process step pooling and future-step sums are distinct. Core does not specify ddof/zero-variance policy or further batch1024 unit detail; no invented implementation. Original numerical exercises choose population std explicitly.
+7. Math Table5 all own-model16 scores retained; Gemini Ultra94.4 gray is majority32, not same Top1 budget. Domain means relative to RL stage, not all training history. Figure5 is1.3B, main result7B. Maj@K improvement vs Pass@K is author interpretation, not universal no-new-capability theorem.
+8. R1 is86-page2026v2: Zero AIME15.6→77.9,cons@16 86.7; no v1 numbers substituted. Displayed sequence ratios distinguished from Math token formula; actual kernel not audited.
+9. Zero32questions×16=512/update;8192rollout/512=16mini-batches. Single inner epoch is not one optimizer update per rollout. Reference every400 updates is separate from old sampling snapshot.32,768→65,536at8.2k is a recorded external setting change; not all length/performance jump attributed to spontaneous emergence.
+10. R1 rule accuracy+format same-weight is distinct from A5's correctness-only total reward. Helpfulness sees final summary; safety sees entire output. Helpful66,000pairs/4judgments/Delta>1 vs safety106,000prompts. Training batch256,LR6e-6,1epoch,max8192. General sample routes to its appropriate RM.
+11. R1 epsilon10 retained; no automatic replacement with0.2. Language reward denominator is words. SecondRL temp0.7,total1700steps,preference/general data only final400. Dev2→Dev3 diagram includes generated-data arrows and V3Base SFT reinitialization, not all weight continuation.
+12. R1 Table3 contains21metrics; some final results lower thanZero/earlier stages. Alpaca62.1→87.6=25.5percentage points; Arena75.6→92.3=16.7points, not relative25%/17% gains. D.1pass@1 uses repeated samples attemp0.6/top-p0.95; AIME/GPQA64,MATH/Codeforces16,LCB8;cons64 distinct fromFigure1cons16.10-gram filtering doesn't exclude paraphrase; AIME's development validation use explicitly stated.
+13. Distillation gets strong-teacher information; comparison is not equal-information SFT-vs-RL. G's early small-base failures not universal threshold. PRM/MCTS failures scoped to authors' setting. Aha is author interpretation not independent causal validation.
+
+PRESENTATION/HANDOFF
+Main requested source-scope scaffolding moved from openings to footer and hash-router internal links: applied to both pages. DPO bibliography locator added. Long equations use auxiliary variables and real aligned line breaks; no global CSS workaround. Bold labels ending punctuation already have trailing spaces; do not create CommonMark punctuation-boundary ambiguity.
+Main should run the9 arithmetic groups, source hashes, JSON/route/KaTeX, actual desktop/390px page/table checks and final build once with integrated batch. No build/lint/test/formatter/browser check or numerical smoke run was executed by this author. No performance reproduction or publication claim. One initial edit was rejected for unseen anchors then reread and applied; one eval edit call had wrong argument type, then exact file anchor reread and dict-form edit applied. No failed official commands or charged operations.
+Unresolved limits are source/reproduction boundaries above, not missing assigned core. Integration/page/publication acceptance remains exclusively Main-owned.

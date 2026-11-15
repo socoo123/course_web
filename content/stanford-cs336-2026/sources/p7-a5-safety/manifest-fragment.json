@@ -1,0 +1,838 @@
+{
+  "phase": "P7",
+  "owner": "P7SafetyAssignment",
+  "material_files": [
+    "labs/a5-safety-optional/lab.zh.md",
+    "labs/a5-safety-optional/guide.zh.md",
+    "labs/a5-safety-optional/assets/safety-comparison-contract.svg"
+  ],
+  "sources": [
+    {
+      "kind": "repository_tree",
+      "url": "https://api.github.com/repos/stanford-cs336/assignment5-alignment/git/trees/c2734a26308710949fe13226960a1e8cece94b7e?recursive=1",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:35Z",
+      "file": "p1-assignment-a5/raw/repository-tree.json",
+      "sha256": "64a57b7b1c149f75a356755d75792f8cc465971de02a4f3bf6e1dd9529bbf539",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "id": "p7-safety-a5-repository-tree",
+      "status": "read_with_declared_scope",
+      "read_scope": "Complete tree path inventory via jq .tree[].path; fixed SHA; no LICENSE/COPYING in path list; source metadata not corpus/model contents.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "assignment_handout",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_spring2026_assignment5_supplement_safety_rlhf.pdf",
+      "version": {
+        "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+        "cover_term": "Spring 2026",
+        "cover_version": "26.0.0",
+        "pages": 18
+      },
+      "retrieved_at": "2026-11-14T13:38:51Z",
+      "file": "p1-assignment-a5/raw/optional-safety-2026.pdf",
+      "sha256": "30a2de73c2b95b9302bf31640f5f6016ef884d611cba94c9a0fdb1e505ad07e3",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "id": "p7-safety-a5-safety-handout-2026",
+      "status": "read_with_declared_scope",
+      "read_scope": "All 18 physical pages read through complete layout extraction lines 1–919; original PDF pages 9,15,16,17 rendered and visually inspected; not all-page visual review.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "pdf_text_extraction",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_spring2026_assignment5_supplement_safety_rlhf.pdf",
+      "version": {
+        "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+        "cover_term": "Spring 2026",
+        "cover_version": "26.0.0",
+        "pages": 18
+      },
+      "retrieved_at": "2026-11-14T13:38:51Z",
+      "file": "p1-assignment-a5/raw/optional-safety-2026.txt",
+      "sha256": "afc29a0cdc11ff67fc686e3c27bfb22f8b15a7800db7b0daa62ce4ef863b2654",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "id": "p7-safety-a5-safety-handout-2026-text",
+      "status": "read_with_declared_scope",
+      "read_scope": "Complete extraction lines 1–919, all sections 1–6.4 and bibliography, including every task and lettered/report item.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "repository_readme",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/README.md",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:37Z",
+      "file": "p1-assignment-a5/raw/README.txt",
+      "sha256": "a3c61c9a6adc99e0910190a7abfe1daaefd70943bf331711c04e4eea1afe639e",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "id": "p7-safety-a5-README-txt",
+      "status": "read_with_declared_scope",
+      "read_scope": "Full lines 1–30.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "repository_changelog",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/CHANGELOG.md",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:38Z",
+      "file": "p1-assignment-a5/raw/CHANGELOG.txt",
+      "sha256": "e536d0f02c6654bbf8e218e33e5efaf2d41133a5ee36811756d53cebee8b456b",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "id": "p7-safety-a5-CHANGELOG-txt",
+      "status": "read_with_declared_scope",
+      "read_scope": "Full lines 1–107; distinguish handout v26.0.0, changelog2.0.1, package1.0.0.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "dependency_manifest",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/pyproject.toml",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:39Z",
+      "file": "p1-assignment-a5/raw/pyproject.toml",
+      "sha256": "c724414eef01a9e74df29426de7a9411e1716acb97f9fab5b1019b173ac9a94d",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "id": "p7-safety-a5-pyproject-toml",
+      "status": "read_with_declared_scope",
+      "read_scope": "Full lines 1–55; dependency declaration, GPU extras, supported platform conditions, pytest settings; no install or lockfile-resolution claim.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "runtime_guide",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_alignment/modal_utils.py",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:47Z",
+      "file": "p1-assignment-a5/raw/modal_utils.py.txt",
+      "sha256": "5da352044a85019c3719a24e120de87b8830e282f19da042d59ca469a41904e1",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "id": "p7-safety-a5-modal-utils-py-txt",
+      "status": "read_with_declared_scope",
+      "read_scope": "Full lines 1–100, including SUNET import guard, B200:2/maxcontainers4, image, secret, subprocess execution.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "runtime_guide",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_alignment/modal_utils_safety.py",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:38:48Z",
+      "file": "p1-assignment-a5/raw/modal_utils_safety.py.txt",
+      "sha256": "369116fcbfd751655380007dfe22d62ba7ca304a2574d1d1f9bbcaf0c3b2312a",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "id": "p7-safety-a5-modal-utils-safety-py-txt",
+      "status": "read_with_declared_scope",
+      "read_scope": "Full lines 1–87, environment/volume/model/data/result paths, 20h timeout, inherited config.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "evaluation_configuration",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/scripts/alpaca_eval_vllm_llama3_3_70b_fn/configs.yaml",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:41:50Z",
+      "file": "p1-assignment-a5/raw/alpaca-annotator-config.yaml",
+      "sha256": "e11e7b83d3923fceffeaab7b9253c22a148cce33d4e04d14cd557590834ada31",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "id": "p7-safety-a5-alpaca-annotator-config-yaml",
+      "status": "read_with_declared_scope",
+      "read_scope": "Full lines 1–15; local vLLM 70B judge and parser/config parameters.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "evaluation_helper",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/scripts/evaluate_safety.py",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:41:52Z",
+      "file": "p1-assignment-a5/raw/evaluate_safety.py.txt",
+      "sha256": "af6d75a680057c76f2faf1600fb6c5a361e9bb43c801ac03811e6c055bbb87c3",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "完整 recursive tree 的 truncated=false；文件名检查无 LICENSE/COPYING，README与pyproject没有许可声明。公开可读不等于可全文翻译/再分发。"
+      },
+      "id": "p7-safety-a5-evaluate-safety-py-txt",
+      "status": "read_with_declared_scope",
+      "read_scope": "Full lines 1–136; JSONL fields, chat-template judge, context6144/max16, True unsafe, fallback-all-other-safe, saved raw judge evidence.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "model_access_metadata",
+      "url": "https://huggingface.co/api/models/meta-llama/Llama-3.1-8B",
+      "version": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+      "retrieved_at": "2026-11-14T13:40:27Z",
+      "file": "p1-assignment-a5/raw/llama31-model-api.json",
+      "sha256": "09cae81cbb17cd9e5e33e9fbdfabd1716645b65ab44607725c9e0f5b932d6f99",
+      "license": "llama3.1",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/llama31-model-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。",
+        "additional_fields": "cardData.extra_gated_prompt含Community License及Acceptable Use Policy；gated=manual；直接固定README/LICENSE请求401。"
+      },
+      "id": "p7-safety-a5-llama31-model-metadata",
+      "status": "read_with_declared_scope",
+      "read_scope": "Selected JSON fields id, sha, gated, cardData.license, extra_gated_fields and extra_gated_prompt license heading; not full legal analysis and no weight access.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "model_access_metadata",
+      "url": "https://huggingface.co/api/models/meta-llama/Llama-3.3-70B-Instruct",
+      "version": "6f6073b423013f6a7d4d9f39144961bfbfbc386b",
+      "retrieved_at": "2026-11-14T13:40:28Z",
+      "file": "p1-assignment-a5/raw/llama33-model-api.json",
+      "sha256": "d3c27e9e8d6d88d5f2192649884d3bc6ebfaf36179bf32d964294dc7c04a33a0",
+      "license": "llama3.3",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/llama33-model-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。",
+        "additional_fields": "cardData.extra_gated_prompt含Community License及Acceptable Use Policy；gated=manual；直接固定README/LICENSE请求401。"
+      },
+      "id": "p7-safety-a5-llama33-model-metadata",
+      "status": "read_with_declared_scope",
+      "read_scope": "Selected JSON fields id, sha, gated, cardData.license, extra_gated_fields and extra_gated_prompt license heading; not full legal analysis and no weight access.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "dataset_access_metadata",
+      "url": "https://huggingface.co/api/datasets/cais/mmlu",
+      "version": "c30699e8356da336a370243923dbaf21066bb9fe",
+      "retrieved_at": "2026-11-14T13:42:47Z",
+      "file": "p1-assignment-a5/raw/mmlu-dataset-api.json",
+      "sha256": "c1a22d69ab832d3606b2e90e1c79961c49bcab155832da5496a5af1f39ef61f7",
+      "license": "mit",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/mmlu-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "id": "p7-safety-a5-mmlu-dataset-metadata",
+      "status": "read_with_declared_scope",
+      "read_scope": "Selected id,sha,gated,cardData.license metadata; not dataset contents.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "dataset_access_metadata",
+      "url": "https://huggingface.co/api/datasets/openai/gsm8k",
+      "version": "740312add88f781978c0658806c59bc2815b9866",
+      "retrieved_at": "2026-11-14T13:40:29Z",
+      "file": "p1-assignment-a5/raw/gsm8k-dataset-api.json",
+      "sha256": "afeea7e09e90a48cc5275097ec6619233d952f1ab653a6dcefdf625e1c3bb2ca",
+      "license": "mit",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/gsm8k-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "id": "p7-safety-a5-gsm8k-dataset-metadata",
+      "status": "read_with_declared_scope",
+      "read_scope": "Selected id,sha,gated,cardData.license metadata; not dataset contents.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "dataset_access_metadata",
+      "url": "https://huggingface.co/api/datasets/tatsu-lab/alpaca_eval",
+      "version": "2edc6fad8be6b14ea7230aabfd08188da6b8b814",
+      "retrieved_at": "2026-11-14T13:42:49Z",
+      "file": "p1-assignment-a5/raw/alpaca-dataset-api.json",
+      "sha256": "4d44afedb7ea96b44490c862a5c86f4581c18c42169e4902c350cc6335368051",
+      "license": "cc-by-nc-4.0",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/alpaca-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "id": "p7-safety-a5-alpaca-dataset-metadata",
+      "status": "read_with_declared_scope",
+      "read_scope": "Selected id,sha,gated,cardData.license metadata; not dataset contents.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "dataset_card",
+      "url": "https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k/raw/8049631c405ae6576f93f445c6b8166f76f5505a/README.md",
+      "version": "8049631c405ae6576f93f445c6b8166f76f5505a",
+      "retrieved_at": "2026-11-14T13:41:47Z",
+      "file": "p1-assignment-a5/raw/ultrachat-dataset-README.txt",
+      "sha256": "d2b3bf76702b85b28172f4dd971ae80c03348cd3fee518c7e6e6f4d43dd33431",
+      "license": "mit",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/ultrachat-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "id": "p7-safety-a5-ultrachat-dataset-card",
+      "status": "read_with_declared_scope",
+      "read_scope": "Full lines1–124, MIT declaration, source filtering, four splits and messages schema; sample card text only, no dataset download.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "dataset_card",
+      "url": "https://huggingface.co/datasets/Anthropic/hh-rlhf/raw/09be8c5bbc57cb3887f3a9732ad6aa7ec602a1fa/README.md",
+      "version": "09be8c5bbc57cb3887f3a9732ad6aa7ec602a1fa",
+      "retrieved_at": "2026-11-14T13:41:47Z",
+      "file": "p1-assignment-a5/raw/hh-dataset-README.txt",
+      "sha256": "f75f40db0268656ba07736ec8e59a9720c1910ce554c85354cec74b1c8bda175",
+      "license": "mit",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/hh-dataset-api.json",
+        "field": "cardData.license",
+        "scope": "模型/数据发布者声明；不扩展为课程讲义授权。"
+      },
+      "id": "p7-safety-a5-hh-dataset-card",
+      "status": "read_with_declared_scope",
+      "read_scope": "Full lines1–68, MIT declaration, preference-vs-redteam distinction and not-SFT warnings, four source group rationale.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "dataset_provenance",
+      "url": "https://raw.githubusercontent.com/vinid/safety-tuned-llamas/36a4b8d5c2177ed165bf61f59b590161394f7f12/README.md",
+      "version": "36a4b8d5c2177ed165bf61f59b590161394f7f12",
+      "retrieved_at": "2026-11-14T13:42:45Z",
+      "file": "p1-assignment-a5/raw/safety-tuned-README.txt",
+      "sha256": "c3b9eef46ddeaedda7781f3b9cb2f9faa9431f536d578210d400b247146eb214",
+      "license": "code MIT; data CC-BY-NC-4.0 (SafeText caveat)",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/safety-tuned-README.txt",
+        "section": "Licensing"
+      },
+      "id": "p7-safety-a5-safety-tuned-README-txt",
+      "status": "read_with_declared_scope",
+      "read_scope": "Full lines1–89, especially Licensing lines83–89: code MIT/data CC-BY-NC4/SafeText caveat; did not execute shown code/APIs.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "dataset_provenance",
+      "url": "https://raw.githubusercontent.com/vinid/safety-tuned-llamas/36a4b8d5c2177ed165bf61f59b590161394f7f12/data/training/README.md",
+      "version": "36a4b8d5c2177ed165bf61f59b590161394f7f12",
+      "retrieved_at": "2026-11-14T13:42:46Z",
+      "file": "p1-assignment-a5/raw/safety-tuned-training-README.txt",
+      "sha256": "a654bc75f716e1ab017b3de4c0f8361d2614a7025f4d8fb7282789c1241b8cd5",
+      "license": "code MIT; data CC-BY-NC-4.0 (SafeText caveat)",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/safety-tuned-README.txt",
+        "section": "Licensing"
+      },
+      "id": "p7-safety-a5-safety-tuned-training-README-txt",
+      "status": "read_with_declared_scope",
+      "read_scope": "Full file, five file descriptions only; no training samples.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "dataset_card",
+      "url": "https://raw.githubusercontent.com/bertiev/SimpleSafetyTests/d7aee9a9422a5a5488f478fd79c2479c891c0f3b/README.md",
+      "version": "d7aee9a9422a5a5488f478fd79c2479c891c0f3b",
+      "retrieved_at": "2026-11-14T13:42:52Z",
+      "file": "p1-assignment-a5/raw/simple-safety-README.txt",
+      "sha256": "ca1a8620a9e3e443117052fc62de20864000c75f2ddc99d7fddc552d555f50de",
+      "license": "CC-BY-4.0",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/simple-safety-LICENSE.txt"
+      },
+      "id": "p7-safety-a5-simple-safety-README-txt",
+      "status": "read_with_declared_scope",
+      "read_scope": "Full file, content warning/100 English tests/five areas and CC-BY statement; no test-prompt download.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "license_evidence",
+      "url": "https://raw.githubusercontent.com/bertiev/SimpleSafetyTests/d7aee9a9422a5a5488f478fd79c2479c891c0f3b/LICENSE",
+      "version": "d7aee9a9422a5a5488f478fd79c2479c891c0f3b",
+      "retrieved_at": "2026-11-14T13:42:53Z",
+      "file": "p1-assignment-a5/raw/simple-safety-LICENSE.txt",
+      "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661",
+      "license": "CC-BY-4.0",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/simple-safety-LICENSE.txt"
+      },
+      "id": "p7-safety-a5-simple-safety-LICENSE-txt",
+      "status": "read_with_declared_scope",
+      "read_scope": "Lines1–48: Attribution4.0 International identity and general rights limitations; not full license legal review.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent requirement explanation and conceptual guide; limited identifiers/short quotations; no raw source mirror or authorized whole translation claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "access_policy",
+      "url": "https://docs.google.com/document/d/1cHE0iKVyXLJ3XpIs2XuXTmZ-HMmPk2hIPeCvy-AydMg/export?format=txt",
+      "version": "Live document explicitly CS336 Spring 2026; snapshot hash pins content",
+      "retrieved_at": "2026-11-14T13:42:10Z",
+      "file": "p1-shared/cluster-guide.txt",
+      "sha256": "007acc2a222ecd69301e02388469d38649216ac0e8f6f82ccdae9f65ffb39e9c",
+      "license": "No explicit reuse license in document; independent summary only",
+      "license_evidence": "Full text inspected",
+      "id": "p7-safety-cluster-guide-2026",
+      "status": "read_with_declared_scope",
+      "read_scope": "Selected lines1–28,48–52,109–119 for enrolled-student authorization, invitation, security and concurrency limits.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent policy/access summary; no claimed access, accounts, credentials or execution.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "kind": "course_policy",
+      "url": "https://docs.google.com/document/d/1SZAlExB1qAc9izHt54gwunNpjKE6wXb8Y7yA_e-baK8/export?format=txt",
+      "version": "CS336 AI Policy Spring 2025-2026, live document snapshot",
+      "retrieved_at": "2026-11-14T13:42:10Z",
+      "file": "p1-shared/ai-policy.txt",
+      "sha256": "127b697e3a67d9a3d86e0aa6cfdd6bb2ddc74a28c5786198b8d24008b9d6ef01",
+      "license": "No explicit reuse license in document; independent summary only",
+      "license_evidence": "Full text inspected",
+      "id": "p7-safety-ai-policy-2026",
+      "status": "read_with_declared_scope",
+      "read_scope": "Full exported policy lines1–21.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Independent policy/access summary; no claimed access, accounts, credentials or execution.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "id": "p7-safety-contract-AGENTS-md",
+      "kind": "assignment_policy",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/AGENTS.md",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-15T08:12:08.319256+00:00",
+      "file": "p7-a5-safety/upstream/AGENTS.md.txt",
+      "sha256": "f5a1037a48ef8b4e223cfd7831578ab0ba33e5d2a225615dbfe8b295b6675ad5",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "Complete fixed tree path inventory has no LICENSE/COPYING; README and pyproject do not declare assignment translation/reuse permission."
+      },
+      "status": "read_with_declared_scope",
+      "read_scope": "Full74 lines through known fixed URL; local identical source retained.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Source/API contract summarized independently; no implementation, pseudocode, complete solution or source mirror in published body.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "id": "p7-safety-contract-CLAUDE-md",
+      "kind": "assignment_policy",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/CLAUDE.md",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-15T08:12:09.474863+00:00",
+      "file": "p7-a5-safety/upstream/CLAUDE.md.txt",
+      "sha256": "f5a1037a48ef8b4e223cfd7831578ab0ba33e5d2a225615dbfe8b295b6675ad5",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "Complete fixed tree path inventory has no LICENSE/COPYING; README and pyproject do not declare assignment translation/reuse permission."
+      },
+      "status": "acquired_hash_identical_duplicate",
+      "read_scope": "Acquired; SHA256 identical to AGENTS.md whose full74 lines were read; no separate independent content read claimed.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Source/API contract summarized independently; no implementation, pseudocode, complete solution or source mirror in published body.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "id": "p7-safety-contract-tests-adapters-py",
+      "kind": "assignment_source_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/tests/adapters.py",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-15T08:12:10.579043+00:00",
+      "file": "p7-a5-safety/upstream/tests__adapters.py.txt",
+      "sha256": "836f3022a7df974b35428cf619c2cc97fe928563ce842eb1e8099b49e03a8b59",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "Complete fixed tree path inventory has no LICENSE/COPYING; README and pyproject do not declare assignment translation/reuse permission."
+      },
+      "status": "read_with_declared_scope",
+      "read_scope": "Full1–461; actual optional hooks333–461; main hooks read to avoid conflating response masks and old-policy semantics.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Source/API contract summarized independently; no implementation, pseudocode, complete solution or source mirror in published body.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "id": "p7-safety-contract-tests-test_data-py",
+      "kind": "assignment_source_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/tests/test_data.py",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-15T08:12:13.019113+00:00",
+      "file": "p7-a5-safety/upstream/tests__test_data.py.txt",
+      "sha256": "8c74c2ce265c6f05e40a80ff0cfcdae1f445f240497a59452de816dcee68ca1f",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "Complete fixed tree path inventory has no LICENSE/COPYING; README and pyproject do not declare assignment translation/reuse permission."
+      },
+      "status": "read_with_declared_scope",
+      "read_scope": "Full1–83, packed fixtures, two shuffles, last small batch and dtype.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Source/API contract summarized independently; no implementation, pseudocode, complete solution or source mirror in published body.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "id": "p7-safety-contract-tests-test_dpo-py",
+      "kind": "assignment_source_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/tests/test_dpo.py",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-15T08:12:52.554648+00:00",
+      "file": "p7-a5-safety/upstream/tests__test_dpo.py.txt",
+      "sha256": "69e0ea7ffee86ed15f4262ac682c265886a26bacafb920c50c7647ab98a144e5",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "Complete fixed tree path inventory has no LICENSE/COPYING; README and pyproject do not declare assignment translation/reuse permission."
+      },
+      "status": "read_with_declared_scope",
+      "read_scope": "Full1–63, handcrafted toy tokenizer plus two local model fixture identifiers; no binary fixture download or test run.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Source/API contract summarized independently; no implementation, pseudocode, complete solution or source mirror in published body.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "id": "p7-safety-contract-tests-test_metrics-py",
+      "kind": "assignment_source_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/tests/test_metrics.py",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-15T08:12:53.248614+00:00",
+      "file": "p7-a5-safety/upstream/tests__test_metrics.py.txt",
+      "sha256": "dcc67e3fb747443b57e3679b9fddf31c9d7743d0ca86b65a89e1307a192c28b9",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "Complete fixed tree path inventory has no LICENSE/COPYING; README and pyproject do not declare assignment translation/reuse permission."
+      },
+      "status": "read_with_declared_scope",
+      "read_scope": "Full1–54; success and failure contracts for both parsers.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Source/API contract summarized independently; no implementation, pseudocode, complete solution or source mirror in published body.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "id": "p7-safety-contract-tests-conftest-py",
+      "kind": "assignment_source_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/tests/conftest.py",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-15T08:12:54.228505+00:00",
+      "file": "p7-a5-safety/upstream/tests__conftest.py.txt",
+      "sha256": "5163c73fddfc8a870d0d297eb5f5f32e31daafca2f8600961641a3e8ce21704d",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "Complete fixed tree path inventory has no LICENSE/COPYING; README and pyproject do not declare assignment translation/reuse permission."
+      },
+      "status": "read_with_declared_scope",
+      "read_scope": "Lines1–300 read, including shared snapshot infrastructure and tiny fixture setup; remaining301–424 not fully read and not used as optional contracts.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Source/API contract summarized independently; no implementation, pseudocode, complete solution or source mirror in published body.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "id": "p7-safety-contract-tests-common-py",
+      "kind": "assignment_source_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/tests/common.py",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-15T08:12:56.707806+00:00",
+      "file": "p7-a5-safety/upstream/tests__common.py.txt",
+      "sha256": "a049c29e83b673f13088f91aadbfd746ffb940f06f652159ff64e3227eab3fde",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "Complete fixed tree path inventory has no LICENSE/COPYING; README and pyproject do not declare assignment translation/reuse permission."
+      },
+      "status": "read_with_declared_scope",
+      "read_scope": "Full1–3 FIXTURES_PATH.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Source/API contract summarized independently; no implementation, pseudocode, complete solution or source mirror in published body.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "id": "p7-safety-contract-test_and_make_submission-sh",
+      "kind": "assignment_source_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/test_and_make_submission.sh",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-15T08:12:57.439561+00:00",
+      "file": "p7-a5-safety/upstream/test_and_make_submission.sh.txt",
+      "sha256": "f19ea867e4c1f34b417bcc3b9e93b9f91c513be7854022374b2e146d474c713b",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "Complete fixed tree path inventory has no LICENSE/COPYING; README and pyproject do not declare assignment translation/reuse permission."
+      },
+      "status": "read_with_declared_scope",
+      "read_scope": "Full1–34; only GRPO pytest with ||true; code.zip exclusions.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Source/API contract summarized independently; no implementation, pseudocode, complete solution or source mirror in published body.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "id": "p7-safety-contract-cs336_alignment-prompts_safety-alpaca_sft-prompt",
+      "kind": "assignment_source_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/cs336_alignment/prompts_safety/alpaca_sft.prompt",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-15T08:12:58.392388+00:00",
+      "file": "p7-a5-safety/upstream/cs336_alignment__prompts_safety__alpaca_sft.prompt.txt",
+      "sha256": "fbd4a4672e92a2ecb3a849a6417ce7be683dc02382edc11a9ce0d58a9ac9449e",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "Complete fixed tree path inventory has no LICENSE/COPYING; README and pyproject do not declare assignment translation/reuse permission."
+      },
+      "status": "read_with_declared_scope",
+      "read_scope": "Full1–7; original template and terminal response field.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Source/API contract summarized independently; no implementation, pseudocode, complete solution or source mirror in published body.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "id": "p7-safety-contract-scripts-alpaca_eval_vllm_llama3_3_70b_fn-alpaca_eval_fn-txt",
+      "kind": "assignment_source_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/scripts/alpaca_eval_vllm_llama3_3_70b_fn/alpaca_eval_fn.txt",
+      "version": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-15T08:12:59.336662+00:00",
+      "file": "p7-a5-safety/upstream/scripts__alpaca_eval_vllm_llama3_3_70b_fn__alpaca_eval_fn.txt.txt",
+      "sha256": "82ac0970dd89617471289d34f2dc478fd5bfa3d8f4052fc9b37df03b96f3a555",
+      "license": "unverified_no_explicit_repository_license",
+      "license_evidence": {
+        "file": "p1-assignment-a5/raw/repository-tree.json",
+        "detail": "Complete fixed tree path inventory has no LICENSE/COPYING; README and pyproject do not declare assignment translation/reuse permission."
+      },
+      "status": "read_with_declared_scope",
+      "read_scope": "Full1–30; two-model ranking template, output order and format instructions; never executed.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Source/API contract summarized independently; no implementation, pseudocode, complete solution or source mirror in published body.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    },
+    {
+      "id": "p7-safety-retained-access-history",
+      "kind": "prior_acquisition_record",
+      "url": "https://github.com/stanford-cs336/assignment5-alignment/tree/c2734a26308710949fe13226960a1e8cece94b7e",
+      "version": "P1 authored acquisition record completed2026-11-14T13:43:54Z; fixed repo c2734a26308710949fe13226960a1e8cece94b7e",
+      "retrieved_at": "2026-11-14T13:43:54Z",
+      "file": "p1-assignment-a5/assignment-audit.json",
+      "sha256": "b7d84e70491d91289679625c047817a679777ccad570bb1e5a16746abb00662e",
+      "license": "Original provenance record; underlying source rights remain separate",
+      "license_evidence": "Authored P1 source audit; does not grant rights over PDFs/data/models.",
+      "status": "read_retained_historical_record",
+      "read_scope": "Lines36–66,207–340,440–515; historical404/TLS/401/access boundaries only; P1 summaries are navigation, not substitutes for actual source reading.",
+      "read_at": "2026-11-15T08:25:04.891697+00:00",
+      "chinese_treatment": "Explicitly preserves historical facts as prior observations; no repeat legacy data HEAD, gate credentials or new access claim.",
+      "material_files": [
+        "labs/a5-safety-optional/lab.zh.md",
+        "labs/a5-safety-optional/guide.zh.md"
+      ]
+    }
+  ],
+  "visual_checks": [
+    {
+      "physical_page": 9,
+      "file": "p7-a5-safety/visual/p09.png",
+      "sha256": "bda2936d45ca75756eedf074b0ebddcfb29928fe9ae8802152aedc00bb850213",
+      "method": "pdftoppm100dpi selected original page; inspected via read image",
+      "result": "Packed full-document LM, delimiter, non-overlapping fixed chunks and Dataset interface confirmed; no response-only mask specified.",
+      "publish": false
+    },
+    {
+      "physical_page": 15,
+      "file": "p7-a5-safety/visual/p15.png",
+      "sha256": "4ce43ffbc5d91f696fdd3edb17f66249b5694c2d54b8454870d2898286af70ab",
+      "method": "pdftoppm100dpi selected original page; inspected via read image",
+      "result": "Equation1 reward pair loss and Eq2 policy/reference ratio plus beta logZ; SFT reference role confirmed.",
+      "publish": false
+    },
+    {
+      "physical_page": 16,
+      "file": "p7-a5-safety/visual/p16.png",
+      "sha256": "cdec1822ed046f213034c57e066e750abc01cbad3a6a2b1afe44129236f8ae33",
+      "method": "pdftoppm100dpi selected original page; inspected via read image",
+      "result": "Equation3 sign and two reference ratios; all four HH files and human>1 filter confirmed.",
+      "publish": false
+    },
+    {
+      "physical_page": 17,
+      "file": "p7-a5-safety/visual/p17.png",
+      "sha256": "8d1770ab82f9508fd500abbbcbc5c5b99895df7f8dfbd287e3cf7bee44ec4de8",
+      "method": "pdftoppm100dpi selected original page; inspected via read image",
+      "result": "DPO appendEOS/device contract and raw chosen-vs-rejected validation accuracy wording confirmed; distinguish reference-adjusted theoretical metric.",
+      "publish": false
+    }
+  ],
+  "original_artifacts": [
+    {
+      "file": "labs/a5-safety-optional/assets/safety-comparison-contract.svg",
+      "kind": "original_conceptual_svg",
+      "source_permission_claim": false,
+      "execution_claim": false
+    },
+    {
+      "file": "sources/p7-a5-safety/mechanism-cases.json",
+      "kind": "original_benign_math_and_design_cases",
+      "official_assignment_solution": false
+    }
+  ],
+  "publication_boundary": "Only authored pages, original SVG and lightweight evidence; raw source texts/PDF/renders are local evidence, not publishable mirrors.",
+  "execution_boundary": "No official tests, data/models, cloud/GPU/Modal, model or evaluator APIs, training or result fabrication."
+}

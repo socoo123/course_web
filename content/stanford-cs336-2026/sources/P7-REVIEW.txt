@@ -1,0 +1,42 @@
+P7 后训练与多模态 — Main整合审查
+日期：2026-11-15
+状态：本地内容、来源、原创算例、构建与页面验收通过；发布结果独立见p7-publication-record.json。
+
+交付与边界
+新增15页正文：L15–L17各notes/draft/materials，ext14/ext15 notes，A5推理正篇及安全选做各lab/guide；9张原创SVG。公共资料、官方任务ID、视频入口、reading-map、manifest、plan、status同步。没有修改src或注册第二套内容约定。
+累计67讲次文档+12实验文档=79正文（公共资料另计），47SVG，17讲笔记/有限课堂译述，27746 cues，16篇指定核心，8桥接与ext01–15。不是全课全部讲次、论文全文精读或官方实验完成。
+
+模型
+7个独立任务均显式openai-codex/gpt-6-astra:xhigh；Main检查本次每个model_change、thinking_level_change及首条assistant provider/model。没有fallback、替代模型、嵌套agent或配置变更。7/7完成，身份与内容验收分开；见p7-model-preflight.json。
+
+来源与实际阅读
+L15 1872 cues、讲义622行；L16 1687 cues、讲义554行；L17 1264 cues、py302行与trace230条rendering，均实际全读。固定课后tree的L15/L16是PDF，不是原提示中的py。导航覆盖0至视频末尾，逐cue只分配一次；内部>2秒空隙分别6/9/29，共44。manual/non-ASR仅平台分类；未核音或观看课堂画面。
+论文唯一归属：DPO→lec15；DeepSeekMath/R1→lec16；CLIP/LLaVA→lec17。DPO v3与LLaVA v2依据CC BY4.0完成指定核心中译并保留署名、固定版本、许可和改编/第三方声明；Math v3、R1 2026v2、CLIP v1为自主核心精读，arXiv nonexclusive不当作全文翻译授权。两论文分片作者实际视觉核对33个原PDF选页，范围见各reading-updates；不是全文视觉审计。
+A5主篇39页、选做18页提取文本全读，含未编号要求与静态helper/adapters/tests合同。主篇28题/90分/11字母子问；选做16题/61分/42字母子问。保留原规模/预算和权限条件；非代码实现、提交答案或训练结果。选做仍属A5，不是Assignment6。
+Main独立读全部15页中文正文、两份A5完整原要求、README/CHANGELOG/helpers、五论文方法/疑点选段、192条字幕和4个原PDF页。它是独立抽查，不冒充再次全读所有论文/4823 cues。精确范围在p7-shared/source-spotcheck.json。
+
+关键校读
+1. current、实际behavior/old、reference分开；同值不等于相同梯度。参考更新窗口与rollout刷新分开。
+2. DPO采用chosen-minus-rejected序列log比，reference冻结。原附录A.4符号与主式不一致，经Main原PDF核实，编者订正与原文分开。
+3. Math算法1原文引用式21，完整目标在式3，式21是简化梯度系数；保留差异。KL非负样本量的测度、值与梯度条件分开。
+4. 组统计、长度归约、token/sequence比率分别定义；有限全同reward组中心化为零，加epsilon不会创造方向。总体/样本std不默默混用。
+5. R1采用86页2026v2：epsilon10、400步reference、8192 rollout/16更新、Zero77.9与cons@16 86.7均按固定原文；最后400/1700步偏好奖励与单模型/多采样口径分开。aha是作者解释而非独立因果证明。
+6. A5主篇total reward仅答案正确性，format另记；单rollout一次optimizer与梯度累积不同。保留四seed比较、最终跨seed平均25%和validation用途，不捏造达到结果。
+7. 选做packed完整文档SFT不同于正篇response-only mask；DPO追加EOS。§6.4正式raw log-prob排序与reference-adjusted隐式奖励排序不同，正文保留原任务并另给反例，不静默改评分。
+8. Llama3.3本地评委与GPT4Turbo预生成参考分开；SST无效标签被helper算safe的事实与额外解析诊断分开。gated权重、精确SFT混合文件可达/字节一致性和历史TLS失败边界保留，不绕过或重试权限。
+9. L17实际改讲多模态，不凭官方标题补造RLHF/安全课堂。CLIP匹配、LLaVA条件生成、视觉码生成出口分开；冻结LM仍可对输入求导，loss/attention mask/冻结参数不是同一开关。
+10. LLaVA表7单模型90.92、补充90.97、评委集成92.53及表8条件差异保留，不把所有差值当单因素因果效果。ext15重复的CLIP损失/导数/同算例删去，回链唯一材料页。
+
+可观察验证与修正
+- p7-shared/structure-check.json：15正文，131内链，9图引用/9可解析SVG，301合法时间范围，7分片119来源/101唯一文件哈希，4823 cue归属及44缺口，16论文归属、44 A5任务/151分/53字母子问通过。结构检查不是技术正确性的替代。
+- 第一次结构运行发现材料页残留?v=lab，改为?v=zh；第二次发现Main验证器误假设L17字段为blocks，按真实intervals/cue_first/cue_last适配，不改来源来迎合检查。第三次通过。
+- Main用Python3.11.8标准库独立计算53组原创小例，含16种Bernoulli组精确枚举及KL有限差分；一次计算通过。无官方代码/imports/fixtures、环境、模型、数据集、训练或评分API。
+- 全15正文+公共资料共16路由，1440×1000及390×844共32个页面几何检查；无KaTeX错误/显示公式溢出，最终根宽1440/390。A5长inline-code造成464/454根宽，改为局部可滚动code块；标点强调边界、错误站内路由、来源页底分类和ext15自测误入参考区均修正。没有全局CSS掩盖。
+- 9张SVG均实际加载，浅色手机/深色桌面截图逐图对照；无文字碰撞或图内截断。首批部分截图包含现有sticky header，已按原页面scrollTop0重截；代表性修正版再次目视。SVG截图不是课堂截图，不发布。
+- 3讲在两种宽度逐一核视频ID、79:54/75:50/77:39、默认notes。实际L15桌面/L17手机点击打开正确YouTube新标签，原笔记页保留；只关闭自己的新标签，未验证或声称观看音画。
+- 安全选做宽表实际横向wheel使scrollLeft0→133，容器宽356/内容489。浏览器初始route/闭包/旧DOM句柄/错误heading/lazy-image等待失误记录在page-check，按真实DOM修正后完成，不隐瞒失败或冒称首次即过。
+- 正文修正后npm run build仅一次通过：tsc --noEmit，Vite5.4.21，3657模块，6.51s（总8.27s）。其后仅状态/轻量证据/接续提示变更，作窄JSON解析，不再全量构建。
+
+发布与下一批
+显式白名单提交本批正文、原创SVG、共享元数据和轻量证据；绝不整目录force-add sources。原文/PDF/字幕/归一化转录/源码镜像/源页PNG/浏览器截图/本地dist不提交。本地build会收集ignored图像，所以只由Actions干净检出构建发布，不上传本地dist。作者分片是交接快照，Main最终内容身份见p7-shared/final-artifacts.json。
+NEXT-P8-PROMPT.txt已准备；P8未启动，需用户明确接续。L18可信课堂仍缺失，L19仅P1范围，ext16/capstone未写；不得把这些或未执行的官方实验标为完成。下一关键词：CS336-2026-P8-嘉宾课与全课收尾。

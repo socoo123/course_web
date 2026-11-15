@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 910" role="img" aria-labelledby="title desc">
+<title id="title">多模态的三种学习合同</title>
+<desc id="desc">图文对比从图和文分别得到向量，在批次匹配分数上计算损失。视觉指令模型把图像网格特征投影成连续输入，在助手答案上计算损失。离散视觉生成先学习可重建图像的码本，再预测视觉码编号。特征对齐不等于人类偏好或安全对齐。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:17px system-ui,-apple-system,"PingFang SC",sans-serif}.h{font-size:21px;font-weight:700}.s{font-size:15px}.box,.arrow{fill:none;stroke:var(--border);stroke-width:1.8}.tip{fill:var(--fg)}.dash{stroke-dasharray:5 4}</style>
+<text class="h" x="24" y="34">先找损失，再解释“对齐”</text>
+<rect class="box" x="20" y="58" width="380" height="218" rx="12"/>
+<text class="h" x="38" y="89">① 图文配对：CLIP</text>
+<text x="38" y="123">图像编码器 → 单图向量 u</text>
+<text x="38" y="155">文本编码器 → 整句向量 v</text>
+<path class="arrow" d="M210 166V190"/><path class="tip" d="M205 183L210 193L215 183Z"/>
+<text x="38" y="217">损失：批次内的双向匹配</text>
+<text class="s" x="38" y="250">能比较相似度，不等于能生成回答。</text>
+<rect class="box" x="20" y="300" width="380" height="245" rx="12"/>
+<text class="h" x="38" y="333">② 条件文本：LLaVA</text>
+<text x="38" y="367">图像 → 网格特征 → 投影器 W</text>
+<text x="38" y="399">连续视觉token ＋ 用户问题</text>
+<path class="arrow" d="M210 412V436"/><path class="tip" d="M205 429L210 439L215 429Z"/>
+<text x="38" y="466">语言模型 → 助手答案</text>
+<text x="38" y="497">损失：答案及停止符的预测</text>
+<text class="s" x="38" y="526">视觉token是条件，不是待预测词ID。</text>
+<rect class="box" x="20" y="569" width="380" height="204" rx="12"/>
+<text class="h" x="38" y="602">③ 离散视觉生成：概念路径</text>
+<text x="38" y="637">图像 ↔ 视觉码本与解码器</text>
+<text x="38" y="670">文本ID ＋ 视觉码ID → 自回归模型</text>
+<text x="38" y="708">损失：指定输出位置的码预测</text>
+<text class="s" x="38" y="746">生成像素还需要视觉解码器。</text>
+<rect class="box dash" x="20" y="798" width="380" height="89" rx="12"/>
+<text x="38" y="831">接口对齐 ≠ 偏好／安全对齐</text>
+<text class="s" x="38" y="861">原创概念图；不代表课堂截图或实测。</text>
+</svg>

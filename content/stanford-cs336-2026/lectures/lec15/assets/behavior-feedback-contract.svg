@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 800" role="img" aria-labelledby="title desc">
+<title id="title">后训练先决定反馈合同，再选择优化算法</title>
+<desc id="desc">原创纵向示意。预训练提供能力起点；示范数据进入SFT；候选回答、标注者与规则产生偏好。偏好可以训练显式奖励后进入策略优化，也可以直接进入DPO。最底部同时检查任务正确性、偏好、拒答边界和多样性，不能只看奖励。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:17px system-ui,-apple-system,"PingFang SC",sans-serif}.h{font-size:20px;font-weight:700}.s{font-size:15px}.box,.arrow{fill:none;stroke:var(--border);stroke-width:1.6}.tip{fill:var(--fg)}.dash{stroke-dasharray:5 4}</style>
+<text class="h" x="24" y="32">先定反馈，后选算法</text>
+<rect class="box" x="24" y="54" width="372" height="76" rx="8"/>
+<text x="42" y="84">预训练：提供能力与概率分布</text>
+<text class="s" x="42" y="111">不是“未经指令数据”的自动保证</text>
+<path class="arrow" d="M210 130V155"/><path class="tip" d="M205 149L210 159L215 149Z"/>
+<rect class="box" x="24" y="164" width="372" height="90" rx="8"/>
+<text x="42" y="195">示范 → SFT：学会怎样回答</text>
+<text class="s" x="42" y="220">审计：内容、风格、角色、答案mask</text>
+<text class="s" x="42" y="241">模仿正确序列 ≠ 保证正确泛化</text>
+<path class="arrow" d="M210 254V279"/><path class="tip" d="M205 273L210 283L215 273Z"/>
+<rect class="box" x="24" y="288" width="372" height="110" rx="8"/>
+<text x="42" y="318">候选 + 标注规则 → 偏好数据</text>
+<text class="s" x="42" y="344">谁提出问题？谁生成？谁判断？</text>
+<text class="s" x="42" y="370">长度、专业能力与核查时间都是变量</text>
+<path class="arrow" d="M210 398V420H112V442M210 420H308V442"/>
+<path class="tip" d="M107 436L112 446L117 436ZM303 436L308 446L313 436Z"/>
+<rect class="box" x="24" y="450" width="176" height="128" rx="8"/>
+<text x="42" y="481">显式奖励模型</text>
+<text class="s" x="42" y="508">采样 + 策略更新</text>
+<text class="s" x="42" y="534">需要控制分布漂移</text>
+<text class="s" x="42" y="560">奖励不是目标真值</text>
+<rect class="box" x="220" y="450" width="176" height="128" rx="8"/>
+<text x="238" y="481">DPO：直接偏好损失</text>
+<text class="s" x="238" y="508">固定离线偏好对</text>
+<text class="s" x="238" y="534">冻结reference</text>
+<text class="s" x="238" y="560">不等于无隐含奖励</text>
+<path class="arrow" d="M112 578V603H308V578M210 603V625"/><path class="tip" d="M205 619L210 629L215 619Z"/>
+<rect class="box dash" x="24" y="637" width="372" height="118" rx="8"/>
+<text class="h" x="42" y="667">独立评价，不只追训练奖励</text>
+<text class="s" x="42" y="695">正确性 · 偏好 · 误拒/漏拒 · 多样性</text>
+<text class="s" x="42" y="721">记录长度与预算，保留失败类型</text>
+<text class="s" x="24" y="785">原创概念图；不是实验结果或官方配方。</text>
+</svg>

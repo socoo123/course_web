@@ -1,0 +1,762 @@
+{
+  "paper12": {
+    "id": "paper12",
+    "home": "lec15",
+    "materialFile": "lectures/lec15/materials.zh.md",
+    "alsoUsedBy": [
+      "ext14",
+      "a5-safety-optional"
+    ],
+    "canonicalTitle": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+    "version": "arXiv:2305.18290v3",
+    "versionDate": "2024-07-29",
+    "license": "CC-BY-4.0",
+    "sourceFiles": {
+      "metadata": "p1-papers-09-16/paper12-2305.18290v3-metadata.html",
+      "fullTextPdf": "p1-papers-09-16/paper12-2305.18290v3.pdf",
+      "textExtraction": "p1-papers-09-16/paper12-2305.18290v3.txt"
+    },
+    "sourceSha256": {
+      "metadata": "08edfdec10277f58ef5b670abe5d4c12772011b485501756e09527c895948d2b",
+      "pdf": "92cb3a2b71362acda98a789b03d88688fd33cf5fcf13f81d2b1de30ee7d3b67a",
+      "text": "6a642d7cbf18618e8965b039147dcd7ce25b1cab2f225ce252e76f8ac87d8ced"
+    },
+    "retrievedAt": "2026-11-14T13:39:02.397167Z",
+    "designation": "editorial_supplement_with_official_citation",
+    "officialRequirement": "未发现明确论文阅读指令；中文精读范围为编者安排",
+    "phase": "P7",
+    "chineseTreatment": "authorized_specified_core_complete_Chinese_translation_CC_BY_4_0_with_editorial_notes",
+    "status": "p7_specified_core_complete_not_whole_paper",
+    "written": "complete_author_delivery",
+    "reviewed": "author_source_formula_table_review_complete_Main_integration_pending",
+    "accepted": "pending_Main_integrated_validation",
+    "p1ActualRead": {
+      "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
+      "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
+      "pagesRead": "1, 3–10, 19, 20（仅B，至C标题前）",
+      "sectionsRead": "题名/作者/v3；§3–7及B实际读取。第19页另经PDF图像查看，代码实际在第20页且已读取，未把第19页空白当作提取失败。",
+      "structureInspection": "实际全文文本中的章节标题索引；若有目录则读取目录（DataComp pp33–34）。没有目录的文章不声称读过不存在的目录。",
+      "notFullyRead": "§1–2未完整精读；附录A证明、C/D完整实验细节和样例未逐项复核；未运行代码。",
+      "readAt": "2026-11-14T13:48:38.816031Z",
+      "textExtraction": "pdftotext -layout; extracted text is a reading aid, original PDF is authoritative"
+    },
+    "actualRead": {
+      "mode": "P7_actual_complete_specified_core_reread_with_named_optional_sections",
+      "readAt": "2026-11-15T08:26:26.454518+00:00",
+      "pdfPageNumbering": "1-based physical PDF pages",
+      "sectionsRead": "Core §§3–4 (lines139–276),6.1–6.2(505–562),6.4–7(590–639). Extra §6 introduction/setup and Figures2–3(381–504),§§5.1–5.2(278–377),A.1–A.4(888–1056),B(1186–1220),bibliographic locators References(651–860). §6.3 lines565–579 NOT read this run.",
+      "notFullyRead": "§§1–2,6.3,A.5–A.6,C/D in full; adjacent visible passages do not imply complete sections. No external bibliography works independently read.",
+      "textExtraction": "P1 pdftotext -layout reused; raw PDF authoritative",
+      "wholePaperRead": false
+    },
+    "coreSectionMap": [
+      {
+        "section": "3",
+        "pages": [
+          3,
+          4
+        ],
+        "text_lines": [
+          139,
+          185
+        ],
+        "body": "§3 预备知识"
+      },
+      {
+        "section": "4",
+        "pages": [
+          4,
+          5
+        ],
+        "text_lines": [
+          187,
+          276
+        ],
+        "body": "§4 直接偏好优化"
+      },
+      {
+        "section": "6.1",
+        "pages": [
+          8,
+          9
+        ],
+        "text_lines": [
+          505,
+          526
+        ],
+        "body": "§6.1 DPO优化RLHF目标的效果如何？"
+      },
+      {
+        "section": "6.2",
+        "pages": [
+          9
+        ],
+        "text_lines": [
+          529,
+          562
+        ],
+        "body": "§6.2 DPO能扩展到真实偏好数据集吗？"
+      },
+      {
+        "section": "6.4",
+        "pages": [
+          10
+        ],
+        "text_lines": [
+          590,
+          615
+        ],
+        "body": "§6.4 用人类判断检验GPT-4判断"
+      },
+      {
+        "section": "7",
+        "pages": [
+          10
+        ],
+        "text_lines": [
+          618,
+          639
+        ],
+        "body": "§7 讨论"
+      }
+    ],
+    "additionalSectionMap": [
+      {
+        "section": "5.1–5.2",
+        "pages": [
+          5,
+          6
+        ],
+        "text_lines": [
+          278,
+          377
+        ]
+      },
+      {
+        "section": "A.1–A.4",
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "text_lines": [
+          888,
+          1056
+        ]
+      },
+      {
+        "section": "B",
+        "pages": [
+          19,
+          20
+        ],
+        "text_lines": [
+          1186,
+          1220
+        ]
+      },
+      {
+        "section": "6 introductory setup; Figures2–3",
+        "pages": [
+          7,
+          8
+        ],
+        "text_lines": [
+          381,
+          504
+        ]
+      },
+      {
+        "section": "References: bibliographic identification only",
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "text_lines": [
+          651,
+          860
+        ]
+      }
+    ],
+    "visualChecks": [
+      {
+        "file": "p7-rl-papers/visual/dpo-p4.png",
+        "physical_pdf_page": 4,
+        "sha256": "5f8d584d0881a8482a824e99a09b354951bf684aaeee8ac72543a8fab65ede4d",
+        "generated_at": "2026-11-15T08:12:49.234914+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Eq4–7 partition cancellation and preferred-minus-rejected sign",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/dpo-p5.png",
+        "physical_pdf_page": 5,
+        "sha256": "bc89328e20c0b45062008e8c453e3217c8922538354016fe75f9f4f25ed8df9e",
+        "generated_at": "2026-11-15T08:12:49.605944+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Main gradient sigmoid(rejected-preferred), DPO pipeline; optional theorem context",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/dpo-p7.png",
+        "physical_pdf_page": 7,
+        "sha256": "01a273bce62e424ac9f9af7d0ef858b06927d59c6117ab93313682fea5331ae2",
+        "generated_at": "2026-11-15T08:12:50.046044+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Figure2 axes/caption and experiment setting",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/dpo-p8.png",
+        "physical_pdf_page": 8,
+        "sha256": "fe898bccef1d96a8c295142cc4ce3da6d2536ccffeee7cb599ee70723f05a952",
+        "generated_at": "2026-11-15T08:12:50.450995+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Figure3 including Best-of-128 above0.5, caption wording inconsistency; hyperparameter sweep",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/dpo-p10.png",
+        "physical_pdf_page": 10,
+        "sha256": "d562836c8b9d65b7ecdcc3cccf837594b35ec744ca31526eed04a947e86e5418",
+        "generated_at": "2026-11-15T08:12:50.878352+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Table2 all values and §7 limitations",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/dpo-p17.png",
+        "physical_pdf_page": 17,
+        "sha256": "70cca757195d2debc0cd6f2a47bfc9a035d3bfa8e4374d11ad0c672d577da48e",
+        "generated_at": "2026-11-15T08:12:51.118379+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "A.4 Eq21/final gradient signs conflict with main Eq7/p5; adjacent A.5 not counted as complete reading",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/dpo-p20.png",
+        "physical_pdf_page": 20,
+        "sha256": "1786cc9bb4a83925b3b11bbc44e12f7e009d8c032f47ffb0d7baf1cc207eb1b0",
+        "generated_at": "2026-11-15T08:12:51.385440+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Appendix B code sign and beta/batch/RMSprop/LR/warmup; C visible but not complete optional read",
+        "publication": "local_only_not_publish"
+      }
+    ],
+    "cautions": [
+      "A.4 source PDF signs inconsistent with main Eq7/gradient/B; editorial chain-rule derivation explicitly separated.",
+      "Figure3 summaries/only-method wording retained with dialogue and computational-efficiency caveat.",
+      "Complete specified core is not full-paper translation; optional sections are analytic notes not full translations."
+    ],
+    "material_files": [
+      "lectures/lec15/materials.zh.md"
+    ],
+    "sourceEvidence": "p7-rl-papers/manifest-fragment.json",
+    "review": "p7-rl-papers/review.txt"
+  },
+  "paper13": {
+    "id": "paper13",
+    "home": "lec16",
+    "materialFile": "lectures/lec16/materials.zh.md",
+    "alsoUsedBy": [
+      "ext14",
+      "a5-reasoning"
+    ],
+    "canonicalTitle": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+    "version": "arXiv:2402.03300v3",
+    "versionDate": "2024-04-27",
+    "license": "arXiv-nonexclusive-distrib-1.0",
+    "sourceFiles": {
+      "metadata": "p1-papers-09-16/paper13-2402.03300v3-metadata.html",
+      "fullTextPdf": "p1-papers-09-16/paper13-2402.03300v3.pdf",
+      "textExtraction": "p1-papers-09-16/paper13-2402.03300v3.txt"
+    },
+    "sourceSha256": {
+      "metadata": "e5a39c364cebfb11f1a561ac7daf74f3c6692173af8494848443768d5887a590",
+      "pdf": "6cc20b3c5b8d25b8b53868fc4ec1792c144f07d67bdf7395138efd4422197e7b",
+      "text": "384a7f66ae93a5d490c4cdc1da0e1d37023c2d61eae61fc59df574e02f421fc1"
+    },
+    "retrievedAt": "2026-11-14T13:39:34.471062Z",
+    "designation": "editorial_supplement_with_official_citation",
+    "officialRequirement": "未发现明确论文阅读指令；中文精读范围为编者安排",
+    "phase": "P7",
+    "chineseTreatment": "independent_detailed_Chinese_close_reading_not_full_translation",
+    "status": "p7_specified_core_complete_not_whole_paper",
+    "written": "complete_author_delivery",
+    "reviewed": "author_source_formula_table_review_complete_Main_integration_pending",
+    "accepted": "pending_Main_integrated_validation",
+    "p1ActualRead": {
+      "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
+      "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
+      "pagesRead": "1, 11–15, 22, 29–30",
+      "sectionsRead": "题名/作者/v3；§4.1–4.2、表5、§6、附录A.1.4–A.1.6实际读取；全文标题扫描。",
+      "structureInspection": "实际全文文本中的章节标题索引；若有目录则读取目录（DataComp pp33–34）。没有目录的文章不声称读过不存在的目录。",
+      "notFullyRead": "预训练/SFT主体§2–3及§5.2主体未完整精读；表格未追溯全部外部基线。",
+      "readAt": "2026-11-14T13:48:38.816031Z",
+      "textExtraction": "pdftotext -layout; extracted text is a reading aid, original PDF is authoritative"
+    },
+    "actualRead": {
+      "mode": "P7_actual_complete_specified_core_reread_with_named_optional_sections",
+      "readAt": "2026-11-15T08:26:26.454518+00:00",
+      "pdfPageNumbering": "1-based physical PDF pages",
+      "sectionsRead": "Core §4.1.1–4.1.4 and4.2 lines511–752, including Table5/Figure4/Algorithm1/Eq1–4. Optional §§5.2.1–5.2.3,6 lines902–1150; A.1.4–A.1.6 lines1475–1575. Adjacent A.1.1–A.1.3 lines1413–1471 were also read as additional analytic context, not translated.",
+      "notFullyRead": "§§2–3 and5.1 not complete close reading; external model baselines and referenced PRM800K allegation not independently audited; whole-paper completion not claimed.",
+      "textExtraction": "P1 pdftotext -layout reused; raw PDF authoritative",
+      "wholePaperRead": false
+    },
+    "coreSectionMap": [
+      {
+        "section": "4.1.1",
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "text_lines": [
+          520,
+          683
+        ],
+        "body": "1–3 完整目标、分母和KL"
+      },
+      {
+        "section": "4.1.2",
+        "pages": [
+          14
+        ],
+        "text_lines": [
+          685,
+          694
+        ],
+        "body": "4 结果监督"
+      },
+      {
+        "section": "4.1.3",
+        "pages": [
+          14
+        ],
+        "text_lines": [
+          696,
+          713
+        ],
+        "body": "4 过程监督"
+      },
+      {
+        "section": "4.1.4",
+        "pages": [
+          15
+        ],
+        "text_lines": [
+          719,
+          727
+        ],
+        "body": "5 算法1与迭代"
+      },
+      {
+        "section": "4.2",
+        "pages": [
+          15
+        ],
+        "text_lines": [
+          730,
+          752
+        ],
+        "body": "6 配方与比较"
+      },
+      {
+        "section": "Table5",
+        "pages": [
+          12
+        ],
+        "text_lines": [
+          540,
+          581
+        ],
+        "body": "6 四行自身模型数值；外部榜单不完整镜像"
+      }
+    ],
+    "additionalSectionMap": [
+      {
+        "section": "5.2.1–5.2.3;6",
+        "pages": [
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "text_lines": [
+          902,
+          1150
+        ]
+      },
+      {
+        "section": "A.1.4–A.1.6",
+        "pages": [
+          29,
+          30
+        ],
+        "text_lines": [
+          1475,
+          1575
+        ]
+      },
+      {
+        "section": "A.1.1–A.1.3 additional context",
+        "pages": [
+          28
+        ],
+        "text_lines": [
+          1413,
+          1471
+        ]
+      }
+    ],
+    "visualChecks": [
+      {
+        "file": "p7-rl-papers/visual/math-p12.png",
+        "physical_pdf_page": 12,
+        "sha256": "f8dc8ba5511ee388dfe231f960fcbcf5b32ac98a5413756e49f28c1f04f1316c",
+        "generated_at": "2026-11-15T08:12:51.631692+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Table5 all entries read; Gemini Ultra94.4 gray=majority32; Instruct/RL rows black Top1",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/math-p13.png",
+        "physical_pdf_page": 13,
+        "sha256": "d1b3dd2ce04345c6616c73436058f576377b7efb8e0144dda89220c7524b006b",
+        "generated_at": "2026-11-15T08:12:51.927141+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Figure4 value-model removal; Eq3 1/G and1/|o_i|, token ratios and KL outside advantage",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/math-p14.png",
+        "physical_pdf_page": 14,
+        "sha256": "00b3fdb965604373dfad22f83e7e04720421381d52cdf8ae798e30beb9087252",
+        "generated_at": "2026-11-15T08:12:52.210258+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Algorithm1 line11 literally Equation21; Eq4; process rewards pooled across group steps and future-step sum",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/math-p15.png",
+        "physical_pdf_page": 15,
+        "sha256": "5e7929a2247e06c20328bd82ec37b654268dfca34077081a7d1ea7f8823c3853",
+        "generated_at": "2026-11-15T08:12:52.530280+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "10% replay; 144K,2e-5,1e-6,0.04,64,1024,1024,single update; in-domain qualifier",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/math-p30.png",
+        "physical_pdf_page": 30,
+        "sha256": "0953990c1586c833b7450a359cee0b1895b9589c3228296e69232367bc255b8d",
+        "generated_at": "2026-11-15T08:12:52.620728+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Eq21 is gradient coefficient not full scalar objective",
+        "publication": "local_only_not_publish"
+      }
+    ],
+    "cautions": [
+      "Algorithm1 Equation21 reference preserved; full objective is Equation3.",
+      "old=current is a local simplified-analysis condition, frozen denominator still has nonzero numerator derivative.",
+      "KL estimator nonnegative; unbiased value requires current-policy samples and support; frozen-sample gradient is not full KL derivative.",
+      "Std correction/zero-variance and batch unit not resolved by core formula; no invented implementation.",
+      "Math Appendix A.1.4 length-averaged DPO is not identical to original sequence-sum DPO."
+    ],
+    "material_files": [
+      "lectures/lec16/materials.zh.md"
+    ],
+    "sourceEvidence": "p7-rl-papers/manifest-fragment.json",
+    "review": "p7-rl-papers/review.txt"
+  },
+  "paper14": {
+    "id": "paper14",
+    "home": "lec16",
+    "materialFile": "lectures/lec16/materials.zh.md",
+    "alsoUsedBy": [
+      "ext14",
+      "a5-reasoning"
+    ],
+    "canonicalTitle": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+    "version": "arXiv:2501.12948v2",
+    "versionDate": "2026-01-04",
+    "license": "arXiv-nonexclusive-distrib-1.0",
+    "sourceFiles": {
+      "metadata": "p1-papers-09-16/paper14-2501.12948v2-metadata.html",
+      "fullTextPdf": "p1-papers-09-16/paper14-2501.12948v2.pdf",
+      "textExtraction": "p1-papers-09-16/paper14-2501.12948v2.txt"
+    },
+    "sourceSha256": {
+      "metadata": "baee792b4dcd1296978c3aef82dd39f0bc69fdc8219ef15e384f5567e5d644c6",
+      "pdf": "b191b0a365a64b4ab2791d117069ed17a2933d03554a662ced58b37df52018f4",
+      "text": "04a64ae852b334dc0fbda2a7b37c55bf98d12ab44d16d8a2e243971a448813d0"
+    },
+    "retrievedAt": "2026-11-14T13:40:13.975139Z",
+    "designation": "editorial_supplement_with_official_citation",
+    "officialRequirement": "未发现明确论文阅读指令；中文精读范围为编者安排",
+    "phase": "P7",
+    "chineseTreatment": "independent_detailed_Chinese_close_reading_not_full_translation",
+    "status": "p7_specified_core_complete_not_whole_paper",
+    "written": "complete_author_delivery",
+    "reviewed": "author_source_formula_table_review_complete_Main_integration_pending",
+    "accepted": "pending_Main_integrated_validation",
+    "p1ActualRead": {
+      "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
+      "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
+      "pagesRead": "1–10, 11（§6至作者名单前）, 62–64",
+      "sectionsRead": "题名/200项作者元数据/v2；§1–6及G.1–G.2实际读取；全篇标题索引扫描。",
+      "structureInspection": "实际全文文本中的章节标题索引；若有目录则读取目录（DataComp pp33–34）。没有目录的文章不声称读过不存在的目录。",
+      "notFullyRead": "附录A–F、H–J大部分正文未完整精读；安全报告D.3和全部评测提示未逐条核查；作者名单未逐人履历核实。",
+      "readAt": "2026-11-14T13:48:38.816031Z",
+      "textExtraction": "pdftotext -layout; extracted text is a reading aid, original PDF is authoritative"
+    },
+    "actualRead": {
+      "mode": "P7_actual_complete_specified_core_reread_with_named_optional_sections",
+      "readAt": "2026-11-15T08:26:26.454518+00:00",
+      "pdfPageNumbering": "1-based physical PDF pages",
+      "sectionsRead": "Core §§2.1–2.3 lines90–288 plus §2 introduction85–88;§§3.1–3.2.2 lines345–441 plus §3/Figure2 context293–342;§4 lines444–509 including Table3;§6 lines531–596. Optional D.1 lines2189–2281,F–F.1 lines3651–3749,G.1–G.2 lines3754–3839.",
+      "notFullyRead": "Most B systems/data/implementation details, D.2–D.3 full evaluation/safety, full E and H–J not read completely; no kernel audit, baseline re-run, model/data download or whole-paper claim.",
+      "textExtraction": "P1 pdftotext -layout reused; raw PDF authoritative",
+      "wholePaperRead": false
+    },
+    "coreSectionMap": [
+      {
+        "section": "2.1",
+        "pages": [
+          2,
+          3
+        ],
+        "text_lines": [
+          90,
+          144
+        ],
+        "body": "8–9 公式层级与训练账本"
+      },
+      {
+        "section": "2.2",
+        "pages": [
+          3,
+          4
+        ],
+        "text_lines": [
+          147,
+          220
+        ],
+        "body": "9 奖励与verifier边界"
+      },
+      {
+        "section": "2.3",
+        "pages": [
+          4,
+          5
+        ],
+        "text_lines": [
+          223,
+          288
+        ],
+        "body": "10 轨迹与aha证据"
+      },
+      {
+        "section": "3.1",
+        "pages": [
+          6,
+          7
+        ],
+        "text_lines": [
+          345,
+          392
+        ],
+        "body": "12 帮助性与安全奖励"
+      },
+      {
+        "section": "3.2.1",
+        "pages": [
+          7,
+          8
+        ],
+        "text_lines": [
+          396,
+          417
+        ],
+        "body": "13 第一轮RL"
+      },
+      {
+        "section": "3.2.2",
+        "pages": [
+          8
+        ],
+        "text_lines": [
+          419,
+          441
+        ],
+        "body": "13 第二轮RL"
+      },
+      {
+        "section": "4",
+        "pages": [
+          8,
+          9
+        ],
+        "text_lines": [
+          444,
+          509
+        ],
+        "body": "14 表3全部21指标与阶段解释"
+      },
+      {
+        "section": "6",
+        "pages": [
+          10,
+          11
+        ],
+        "text_lines": [
+          531,
+          596
+        ],
+        "body": "16 六项限制与未来设想"
+      }
+    ],
+    "additionalSectionMap": [
+      {
+        "section": "3 introduction and Figure2",
+        "pages": [
+          6
+        ],
+        "text_lines": [
+          293,
+          342
+        ]
+      },
+      {
+        "section": "D.1",
+        "pages": [
+          39,
+          40,
+          41
+        ],
+        "text_lines": [
+          2189,
+          2281
+        ]
+      },
+      {
+        "section": "F–F.1",
+        "pages": [
+          60,
+          61,
+          62
+        ],
+        "text_lines": [
+          3651,
+          3749
+        ]
+      },
+      {
+        "section": "G.1–G.2",
+        "pages": [
+          62,
+          63,
+          64
+        ],
+        "text_lines": [
+          3754,
+          3839
+        ]
+      }
+    ],
+    "visualChecks": [
+      {
+        "file": "p7-rl-papers/visual/r1-p3.png",
+        "physical_pdf_page": 3,
+        "sha256": "293a77d4b1d16868fbe21dedf7154ec8b48b83269153654b639855a7a9c580ce",
+        "generated_at": "2026-11-15T08:12:52.931209+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Sequence-level displayed Eq1–3; Zero LR/KL/group/length switch/batches/reference schedule and template structure",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/r1-p4.png",
+        "physical_pdf_page": 4,
+        "sha256": "fc1232947431b1eabb82c5e8d6677de28265f6a2f20e37f56c49122a2362a013",
+        "generated_at": "2026-11-15T08:12:53.284128+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Figure1 cons@16 and length axis; accuracy+format same weight;15.6→77.9",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/r1-p6.png",
+        "physical_pdf_page": 6,
+        "sha256": "95650135849e4bd8f0e01db705bb8b5f489e1cf9d46dbd2e6d87fa7cff3def16",
+        "generated_at": "2026-11-15T08:12:53.562002+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Figure2 arrows distinguish data production and parameter initialization; Dev3 from V3 Base",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/r1-p7.png",
+        "physical_pdf_page": 7,
+        "sha256": "790889eea99114014c9d979f13115bc3e2d43d2998fc3a7ff0f6b334cc7ec8d7",
+        "generated_at": "2026-11-15T08:12:53.874836+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "66000 helpful pairs,4judgments,Delta>1;106000 safety prompts;RM recipe;epsilon10 and language words denominator",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/r1-p8.png",
+        "physical_pdf_page": 8,
+        "sha256": "b78cdd12124dc7431b8309cc214ea390c8d00b345e8152b390bc8560cc11ad96",
+        "generated_at": "2026-11-15T08:12:54.232785+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "Second stage reward routes,temperature0.7,1700steps,last400only; stage context",
+        "publication": "local_only_not_publish"
+      },
+      {
+        "file": "p7-rl-papers/visual/r1-p9.png",
+        "physical_pdf_page": 9,
+        "sha256": "c7a9710be699e28b2e114ea9352502e422936be72b231c8947c976b57ef43fd7",
+        "generated_at": "2026-11-15T08:12:54.551960+00:00",
+        "viewed": true,
+        "read_at": "2026-11-15T08:26:26.454518+00:00",
+        "finding": "All21 Table3 rows; source25%/17% language corresponds25.5/16.7percentage points",
+        "publication": "local_only_not_publish"
+      }
+    ],
+    "cautions": [
+      "Fixed2026v2 not2025v1; 86pages; Zero AIME77.9 andcons@16 86.7.",
+      "R1 displayed sequence ratio not silently replaced by Math token formula; actual kernel not audited.",
+      "epsilon10 preserved; no guessed0.2 replacement.",
+      "8.2k length cap change limits all-self-emergence interpretation; aha is author interpretation not causal verification.",
+      "Dev2→Dev3 has data arrows, not necessarily direct weight continuation.",
+      "Table3 gains are percentage points; final model not best on every task.",
+      "D.1 pass@1 estimated by repeated samples; separate cons64 versus Figure1cons16.",
+      "MIT model terms do not authorize article translation."
+    ],
+    "material_files": [
+      "lectures/lec16/materials.zh.md"
+    ],
+    "sourceEvidence": "p7-rl-papers/manifest-fragment.json",
+    "review": "p7-rl-papers/review.txt"
+  }
+}

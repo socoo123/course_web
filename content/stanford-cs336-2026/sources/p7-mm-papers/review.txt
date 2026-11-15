@@ -1,0 +1,40 @@
+P7MultimodalPapers author handoff
+Date: 2026-11-15
+Scope: one new body lectures/lec17/materials.zh.md only; sources/p7-mm-papers/* only. No lecture notes/drafts/ext15/shared metadata/P8 edits. No nested workers.
+
+Delivered
+- One deep materials page: CLIP independent close reading plus LLaVA complete specified-core Chinese translation.
+- manifest-fragment.json: eight reused fixed-source records (two PDFs, two text extractions, two metadata pages, two license texts), all with status/read_scope/read_at/material_files and actual file SHA256. Retrieval times and URLs preserved from P1. No source reacquisition or version substitution.
+- reading-updates.json: keyed paper15/paper16, canonical home/materialFile/alsoUsedBy preserved; original P1 actualRead retained separately. Eight CLIP core sections and four LLaVA core sections = twelve specified-core units, not two entire papers. Fifteen actually opened source-page renders with paths, hashes and visual findings.
+- mechanism-cases.json: five independent original CPU arithmetic cases, expected mathematical values only; not run by worker.
+- review.txt: this handoff.
+- No public image asset required. Mobile formulas split; Table7 split into four smaller tables without losing any method/metric.
+
+Actual source reading
+CLIP arXiv2103.00020v1: title/authors/version p1; complete §§2.1–2.5 pp3–5 (including query footnote across pp3–4 and figure2/3 text), §3.1.2 p6, §3.1.4 pp7–8 including figure4, §6 p18 lower-right through p20 left column. Source two-column order inspected visually. Adjacent §3.1.1/3.1.3, start of3.1.5, end of§5, §7 introduction were read as context only; not whole-paper or optional-section completion. Visual pages3,4,5,6,7,8,18,19,20 (nine).
+LLaVA arXiv2304.08485v2: title/authors/version p1; §3 p2 bottom→p4 opening; §4.1 p4; §4.2 p4→p5 before§5; §5.2 p8 belowTable6→p9 before§6. All core paragraphs, Table1 textual example/caption, Figure1/caption and equations1–3, Table2/caption, Table7/8 and captions read. Table7:10 methods×9 metrics=90 numerical cells, fully included; Table8:five reported numerical cells, fully included. Visual pages2,3,4,5,8,9 (six). Adjacent §5 opening/§5.1 opening/Table6/§6 read as context only. §5.1 whole and appendicesC/E/F not fully reread or translated in P7.
+License evidence: fixed metadata license links actually checked. arXiv nonexclusive HTML lines1–33 full; CC BY legalcode plaintext lines69–259 (§§1–3) actually read. No software or model license substituted for article permission.
+
+Technical cautions deliberately preserved
+1. CLIP is a dual encoder with symmetric row/column contrastive cross-entropy, not a generative VLM. Explicit score-gradient derivation and tiny batch calculation are original instruction. Cached zero-shot classifier comes from prompt embeddings; ensemble is in embedding rather than probability space.
+2. v1 states text sequence limit76; body explicitly does not silently replace with a later software context length77. Figure3 exp(t) is inverse-temperature scale, not an extra division by tau; bound100 refers to logit multiplier.
+3. LLaVA Stage1/Stage2 are unnumbered within4.2, both freeze visual encoder. Stage1 W-only, Stage2 W+LLM. Frozen parameters do not imply detaching gradient through frozen LLM to W.
+4. Original LLaVA §3 twice points to Table14, while adjacent example is Table1. Translation retains and explains the discrepancy.
+5. Original Table2 colors system-message initial STOP green; user STOP is black. The page flags this rather than claiming a universally assistant-only separator rule. Full fixed training code was not inspected; no reproduction claim.
+6. §5.2 main result: LLaVA90.92; complement90.97; GPT4judge ensemble92.53. Two-shot pure-text GPT4 is82.69. GPT3.5 comparison75.17 corresponds to CoT row, not plain73.97.
+7. Table7 judge ensemble improves all categories relative to LLaVA, not relative to every external baseline. NAT95.91 of MM-CoTLarge remains above judge91.56. Group columns do not define an unweighted mean for overall accuracy.
+8. Table8 answer-first89.77 is in Last feature column; its−1.15 versus90.92 is not solely an answer-order effect. Main paragraph90.92 reasoning-first vs ablation prose89.77plateau remains a source inconsistency; no guessed condition or altered number.
+9. LLaVA “from scratch” ablation skips feature-alignment pretraining, not random initialization of CLIP/Vicuna. Uniform sampling sentence does not specify exact class-vs-sample mixture; no invented one-third mixture.
+10. §3 text-only teacher sees captions/boxes, not image pixels. Human seed claim does not erase inherited annotation labor.
+
+Rights and presentation
+CLIP: independent original exposition, no full core translation, no original figure reproduction. arXiv nonexclusive is not public translation permission.
+LLaVA: complete specified-core Chinese adaptation under fixed CC BY4.0, full authors, fixed version links, change notice/nonofficial status and third-party limits. Original source references retained; table1 text translated but its COCO photograph not reproduced. No raw image/media/model/dataset/API rights inferred from paper license. Translation/adaptation contributions explicitly CC BY4.0; no author endorsement.
+At Main request: opening provenance/scope table and narrative moved into footer references; only learning concept opens page. Internal ext15 crosslink converted to HashRouter #/c/stanford-cs336-2026/lec/ext15?v=notes. No other internal .md links remain in authored source.
+
+Local evidence and publication boundary
+paper15-2103.00020v1-pNN.txt and paper16-2304.08485v2-pNN.txt are exact per-page splits of existing P1 pdftotext output (17 files including title pages), not authored public body. Fifteen matching .png files are PyMuPDF1.5× original-page renders actually opened with image reader, not fake screenshots. LLaVA page4 text contains LaTeXiT noise; visual formula used instead. Do not publish any of these .txt/.png caches or P1 PDFs/metadata/text snapshots. Publish only materials.zh.md and lightweight manifest/reading-updates/mechanism-cases/review records if Main allowlists them.
+
+Execution/limits
+No builds/tests/lint/formatters/smoke runs or official assignment implementations; no model/data downloads, GPU, cloud, Modal or GPT/API use. Source extraction/rendering and immutable source hashes only. Five mechanism cases are unverified author expectations until Main executes independent checks. No body/page/build/publication acceptance asserted.
+Main checks requested: source hashes; core/visual evidence mapping; three long equation blocks on390px; all four Table7 slices and Table8; HashRouter link; rights/footer; original cases; integrated build and actual page review. No remaining authoring blocker. Source ambiguities above are documented limits, not silently repaired.

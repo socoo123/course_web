@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1115" role="img" aria-labelledby="title desc">
+<title id="title">三种多模态连接的张量合同</title>
+<desc id="desc">双塔把B个图和文本分别压缩到B乘d的矩阵，得到B乘B分数。逐位置投影把B乘P乘dv的网格变成B乘P乘d的连续token，再与T个文本位置拼接。交叉注意力以R个查询读取P个视觉位置，分数为B乘R乘P，输出R个连接token；若查询来自语言隐藏状态则R等于文本查询长度，属于另一放置方式。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:17px system-ui,-apple-system,"PingFang SC",sans-serif}.h{font-size:21px;font-weight:700}.s{font-size:15px}.box,.arrow{fill:none;stroke:var(--border);stroke-width:1.8}.tip{fill:var(--fg)}</style>
+<text class="h" x="22" y="32">连接器改变哪一根维度？</text>
+<rect class="box" x="18" y="55" width="384" height="245" rx="12"/>
+<text class="h" x="34" y="88">A　双塔匹配</text>
+<text x="34" y="124">图像 → U：[B, d]</text>
+<text x="34" y="158">文本 → V：[B, d]</text>
+<path class="arrow" d="M210 171V193"/><path class="tip" d="M205 186L210 196L215 186Z"/>
+<text x="34" y="224">U × Vᵀ → S：[B, B]</text>
+<text class="s" x="34" y="258">损失在匹配分数上；没有LLM连接器。</text>
+<text class="s" x="34" y="282">d相同，只保证内积有定义。</text>
+<rect class="box" x="18" y="324" width="384" height="309" rx="12"/>
+<text class="h" x="34" y="358">B　逐位置投影后拼接</text>
+<text x="34" y="393">视觉网格 Z：[B, P, dᵥ]</text>
+<text x="34" y="428">W：[dᵥ, d]；对最后一维映射</text>
+<path class="arrow" d="M210 441V463"/><path class="tip" d="M205 456L210 466L215 456Z"/>
+<text x="34" y="495">视觉token H：[B, P, d]</text>
+<text x="34" y="530">＋ 文本 E：[B, T, d]</text>
+<text x="34" y="565">LLM输入：[B, P + T, d]</text>
+<text class="s" x="34" y="603">P不变；答案损失反传到W。</text>
+<rect class="box" x="18" y="657" width="384" height="326" rx="12"/>
+<text class="h" x="34" y="691">C　查询读取视觉记忆</text>
+<text x="34" y="726">Q：[B, R, dₖ]</text>
+<text x="34" y="761">K：[B, P, dₖ]；V：[B, P, dᵥ′]</text>
+<path class="arrow" d="M210 774V796"/><path class="tip" d="M205 789L210 799L215 789Z"/>
+<text x="34" y="828">注意力权重 A：[B, R, P]</text>
+<text x="34" y="863">A × V → O：[B, R, dᵥ′]</text>
+<text class="s" x="34" y="900">学习查询：R可固定，与P无关。</text>
+<text class="s" x="34" y="929">语言查询：由当前文本状态决定。</text>
+<text class="s" x="34" y="958">头数与输出投影在正文另列。</text>
+<text x="24" y="1023">维度可接通，不代表语义已学会。</text>
+<text class="s" x="24" y="1054">冻结参数仍可对输入求导。</text>
+<text class="s" x="24" y="1084">原创张量示意；不是模型实现截图。</text>
+</svg>

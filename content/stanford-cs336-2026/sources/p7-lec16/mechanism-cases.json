@@ -1,0 +1,235 @@
+{
+  "phase": "P7",
+  "owner": "P7RlvrLecture",
+  "origin": "Independent original arithmetic examples; not official assignment inputs, code or answers.",
+  "execution_status": "not_run_by_author; Main to verify independently",
+  "cases": [
+    {
+      "id": "verifier-confusion",
+      "definition": "100examples per policy; intersection is truly_correct AND verifier_pass. false_accept=pass-intersection,false_reject=true-intersection.",
+      "inputs": {
+        "A": {
+          "n": 100,
+          "truly_correct": 90,
+          "verifier_pass": 80,
+          "intersection": 78
+        },
+        "B": {
+          "n": 100,
+          "truly_correct": 70,
+          "verifier_pass": 95,
+          "intersection": 68
+        }
+      },
+      "expected": {
+        "A_false_accept": 2,
+        "A_false_reject": 12,
+        "B_false_accept": 27,
+        "B_false_reject": 2,
+        "verifier_gain_percentage_points": 15,
+        "true_quality_gain_percentage_points": -20
+      }
+    },
+    {
+      "id": "group-centering-and-zero-variance",
+      "definition": "Population std of four rewards; zero-epsilon for nondegenerate example, positiveepsilon=1e-4 for equal-reward groups.",
+      "inputs": {
+        "rewards": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "all_equal_groups": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "epsilon_equal": 0.0001
+      },
+      "expected": {
+        "mean": 0.25,
+        "population_variance": 0.1875,
+        "std_exact": "sqrt(3)/4",
+        "centered": [
+          0.75,
+          -0.25,
+          -0.25,
+          -0.25
+        ],
+        "z_scores_exact": [
+          "sqrt(3)",
+          "-1/sqrt(3)",
+          "-1/sqrt(3)",
+          "-1/sqrt(3)"
+        ],
+        "all_equal_advantages": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "id": "self-mean-versus-loo",
+      "definition": "Four IID Bernoulli outcomes with p=.25; reward=y; score wrt Bernoulli logit is y-p. Average reward-score gradient=.1875; own-sample group mean reduces expectation by3/4. Enumerate16 outcomes independently if desired.",
+      "inputs": {
+        "group_size": 4,
+        "p": 0.25
+      },
+      "expected": {
+        "reward_gradient": 0.1875,
+        "self_mean_gradient": 0.140625,
+        "loo_gradient": 0.1875,
+        "observed_rewards": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "loo_advantages_exact": [
+          "1",
+          "-1/3",
+          "-1/3",
+          "-1/3"
+        ]
+      }
+    },
+    {
+      "id": "clip-sign",
+      "definition": "Maximized surrogate=min(rho*A,clip(rho,.8,1.2)*A); do not minimize this without a minus sign.",
+      "inputs": {
+        "epsilon": 0.2,
+        "pairs": [
+          [
+            2,
+            1.4
+          ],
+          [
+            2,
+            0.6
+          ],
+          [
+            -2,
+            0.6
+          ],
+          [
+            -2,
+            1.4
+          ]
+        ]
+      },
+      "expected": {
+        "surrogates": [
+          2.4,
+          1.2,
+          -1.6,
+          -2.8
+        ],
+        "active_clipped_branch": [
+          true,
+          false,
+          true,
+          false
+        ]
+      }
+    },
+    {
+      "id": "length-reductions",
+      "definition": "Scalar token contributions, not complete neural gradient. Firstresponse two+1 items; secondresponse six-1items. sequence=mean(per-response means),constant=sum/(N*L0),token=sum/total valid tokens.",
+      "inputs": {
+        "token_contributions": [
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        ],
+        "N": 2,
+        "L0": 6
+      },
+      "expected": {
+        "sequence_mean": 0,
+        "constant_exact": "-1/3",
+        "token_mean": -0.5,
+        "token_sum": -4,
+        "valid_tokens": 8
+      }
+    },
+    {
+      "id": "bernoulli-sampling-budget",
+      "definition": "IID samples, fixed successprobability p. pass@k=1-(1-p)^k; mixedgroup=1-p^G-(1-p)^G; failfilter=(1-p)^8. Not a claim about correlated real samples or imperfect verifier selection.",
+      "inputs": {
+        "G": 8,
+        "k": 8,
+        "p_values": [
+          0.01,
+          0.1,
+          0.5
+        ],
+        "total_responses": 64,
+        "group_sizes": [
+          8,
+          16
+        ]
+      },
+      "expected": {
+        "mixed_group_rounded8": [
+          0.07725531,
+          0.56953278,
+          0.9921875
+        ],
+        "pass_at_8_for_p_point1": 0.56953279,
+        "fail_filter_p_point1": 0.43046721,
+        "fail_filter_p_point5": 0.00390625,
+        "independent_prompts": [
+          8,
+          4
+        ]
+      }
+    },
+    {
+      "id": "token-versus-sequence-ratio",
+      "definition": "Same two-token trajectory; sequence probability ratio multiplies token ratios. This is not a statement that token and sequence clipped surrogates agree.",
+      "inputs": {
+        "token_ratios": [
+          1.4,
+          0.7
+        ]
+      },
+      "expected": {
+        "sequence_ratio": 0.98,
+        "token_ratios_within_point2_clip": [
+          false,
+          false
+        ],
+        "sequence_ratio_within_point2_clip": true
+      }
+    }
+  ]
+}

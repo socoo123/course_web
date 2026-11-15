@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1010" role="img" aria-labelledby="title desc">
+<title id="title">RLVR的一轮：冻结什么，更新什么，验证什么</title>
+<desc id="desc">原创流程图。题目分布经过冻结的行为策略生成同题多条响应，受保护的验证器产生奖励，组统计和旧概率停止梯度。当前策略用响应token学习，参考策略提供独立的偏移约束。同一批响应被第二次更新使用时已是旧数据；更高验证分数还须独立质量检查。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--line:CanvasText;color:var(--fg)}text{fill:var(--fg);font:16px system-ui,-apple-system,"PingFang SC",sans-serif}.head{font-size:20px;font-weight:700}.small{font-size:14px}.box,.arrow,.dash{fill:none;stroke:var(--line);stroke-width:1.6}.dash{stroke-dasharray:6 4}.tip{fill:var(--fg)}</style>
+<text class="head" x="24" y="30">一轮RLVR：三个策略，一道边界</text>
+<rect class="box" x="24" y="50" width="372" height="77" rx="9"/>
+<text x="42" y="80">题目 x 来自声明的训练分布</text>
+<text class="small" x="42" y="106">题目去重 · 难度筛选 · 独立评测隔离</text>
+<path class="arrow" d="M210 127V151"/><path class="tip" d="M205 145L210 155L215 145Z"/>
+<rect class="box" x="24" y="158" width="372" height="99" rx="9"/>
+<text x="42" y="188">行为策略 old：生成同题 G 个响应</text>
+<text class="small" x="42" y="213">保存快照身份、旧log概率、采样配置</text>
+<text class="small" x="42" y="238">温度、截断、EOS也定义实际采样分布</text>
+<path class="arrow" d="M210 257V281"/><path class="tip" d="M205 275L210 285L215 275Z"/>
+<rect class="dash" x="24" y="288" width="372" height="99" rx="9"/>
+<text x="42" y="318">验证器 V：响应 → 奖励</text>
+<text class="small" x="42" y="343">解析、等价判断、测试与环境都可能出错</text>
+<text class="small" x="42" y="368">受保护的规则 ≠ 对真实质量的完美判断</text>
+<path class="arrow" d="M210 387V411"/><path class="tip" d="M205 405L210 415L215 405Z"/>
+<rect class="box" x="24" y="418" width="372" height="99" rx="9"/>
+<text x="42" y="448">组相对优势：比较同题响应</text>
+<text class="small" x="42" y="473">reward、组统计、old概率：停止梯度</text>
+<text class="small" x="42" y="498">全同奖励 → 零优势；不是无限大信号</text>
+<path class="arrow" d="M210 517V541"/><path class="tip" d="M205 535L210 545L215 535Z"/>
+<rect class="box" x="24" y="548" width="372" height="110" rx="9"/>
+<text x="42" y="578">当前策略 current：只更新这一份参数</text>
+<text class="small" x="42" y="603">响应mask · current / old比率 · clip</text>
+<text class="small" x="42" y="628">长度分母与组标准差是两个不同选择</text>
+<text class="small" x="42" y="648">比率值为1时，导数仍不必为0</text>
+<path class="arrow" d="M210 658V682"/><path class="tip" d="M205 676L210 686L215 676Z"/>
+<rect class="box" x="24" y="689" width="372" height="92" rx="9"/>
+<text x="42" y="719">冻结参考 ref：若使用，约束策略偏移</text>
+<text class="small" x="42" y="744">ref不自动等于old，也不随每步更新</text>
+<text class="small" x="42" y="767">KL方向、采样分布、估计器须分别声明</text>
+<rect class="dash" x="24" y="805" width="372" height="84" rx="9"/>
+<text x="42" y="835">同批再次optimizer更新？</text>
+<text class="small" x="42" y="862">current已改变，rollout已旧；重新评估偏移</text>
+<text class="head" x="30" y="930">奖励上升，还不是能力证明</text>
+<text class="small" x="30" y="957">另看独立正确性、预算、种子与错误类型。</text>
+<text class="small" x="30" y="982">概念图；不是官方实现或训练实测。</text>
+</svg>

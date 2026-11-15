@@ -1,7 +1,7 @@
 ---
 source: Stanford CS336 Spring 2026 官网（课程介绍、先修要求、作业概述与课表）；本站 production-plan.json
 license: 本页为编者自主学习导航，不是官方讲义译文；外链材料分别核实许可，不据公开访问推定全文翻译权。
-status: 已写 L01–L14 笔记与限量课堂译述、全部8篇先修桥接、ext01–13、11篇论文指定核心的7份材料页及A1–A4完整说明与概念指导，共64份正文、38张原创SVG。十四讲22923条字幕已全文读取，未核音；论文仅指定核心和登记选读，不称全文精读。18条官方录像入口沿用已核元数据，L18仍缺失；没有官方作业实现、训练或收费算力。各批页面验收以status.json及验收记录为准。
+status: 已写 L01–L17 笔记与限量课堂译述、全部8篇先修桥接、ext01–15、16篇论文指定核心的10份材料页，以及A1–A5正篇和A5安全选做完整说明与概念指导，共79份正文、47张原创SVG。十七讲27746条字幕已全文读取，未核音；论文仅指定核心和登记选读，不称全文精读。18条官方录像入口沿用已核元数据，L18仍缺失；L19、ext16及综合项目留待P8。没有官方作业实现、训练或收费算力。各批页面验收以status.json及验收记录为准。
 ---
 
 # 从零构建语言模型：公共资料与学习路线
@@ -42,7 +42,7 @@ status: 已写 L01–L14 笔记与限量课堂译述、全部8篇先修桥接、
 | 训练系统 | [L05 GPU / TPU](#/c/stanford-cs336-2026/lec/lec05?v=notes)、[L06 Kernel / Triton](#/c/stanford-cs336-2026/lec/lec06?v=notes)、[L07](#/c/stanford-cs336-2026/lec/lec07?v=notes) / [L08 并行训练](#/c/stanford-cs336-2026/lec/lec08?v=notes) | [A2 完整说明](#/c/stanford-cs336-2026/lab/a2-systems?v=zh) / [概念与诊断指导](#/c/stanford-cs336-2026/lab/a2-systems?v=guide) | 瓶颈在计算、内存还是通信；优化前后是否仍算同一个东西？ |
 | 预算与评测 | [L09](#/c/stanford-cs336-2026/lec/lec09?v=notes) / [L11 Scaling Laws](#/c/stanford-cs336-2026/lec/lec11?v=notes)、[L10 推理](#/c/stanford-cs336-2026/lec/lec10?v=notes)、[L12 评测](#/c/stanford-cs336-2026/lec/lec12?v=notes) | [A3 完整说明](#/c/stanford-cs336-2026/lab/a3-scaling?v=zh) / [概念与实验设计指导](#/c/stanford-cs336-2026/lab/a3-scaling?v=guide) | 有限预算下怎样分配模型与数据，外推证据和评测协议是什么？ |
 | 数据流水线 | [L13 数据来源](#/c/stanford-cs336-2026/lec/lec13?v=notes)、[L14 数据处理](#/c/stanford-cs336-2026/lec/lec14?v=notes)、[数据配方与污染审计](#/c/stanford-cs336-2026/lec/ext13?v=notes) | [A4 完整说明](#/c/stanford-cs336-2026/lab/a4-data?v=zh) / [概念与自查指导](#/c/stanford-cs336-2026/lab/a4-data?v=guide) | 过滤、去重与混合改变了什么，污染审计能排除哪些风险、仍留下哪些未知？ |
-| 后训练 | [L15 SFT / RLHF](#/c/stanford-cs336-2026/lec/lec15?v=notes)、[L16 RLVR](#/c/stanford-cs336-2026/lec/lec16?v=notes)、[L17 对齐与多模态](#/c/stanford-cs336-2026/lec/lec17?v=notes) | [A5 推理强化学习](#/c/stanford-cs336-2026/lab/a5-reasoning?v=zh)、[A5 官方选做](#/c/stanford-cs336-2026/lab/a5-safety-optional?v=zh) | 学习信号来自示范、偏好还是可验证奖励；奖励变高意味着什么？ |
+| 后训练 | [L15 SFT / RLHF](#/c/stanford-cs336-2026/lec/lec15?v=notes)、[L16 RLVR](#/c/stanford-cs336-2026/lec/lec16?v=notes)、[L17 对齐与多模态](#/c/stanford-cs336-2026/lec/lec17?v=notes) | A5 推理：[说明](#/c/stanford-cs336-2026/lab/a5-reasoning?v=zh) / [概念指导](#/c/stanford-cs336-2026/lab/a5-reasoning?v=guide)；安全选做：[说明](#/c/stanford-cs336-2026/lab/a5-safety-optional?v=zh) / [概念指导](#/c/stanford-cs336-2026/lab/a5-safety-optional?v=guide) | 学习信号来自示范、偏好还是可验证奖励；奖励变高意味着什么，图像特征怎样接入语言模型？ |
 | 研究练习 | [L18 Daniel Selsam](#/c/stanford-cs336-2026/lec/lec18?v=notes)、[L19 Dan Fu](#/c/stanford-cs336-2026/lec/lec19?v=notes) | [自拟综合项目](#/c/stanford-cs336-2026/lab/capstone?v=zh) | 能否用清楚的对照实验支持一个有限结论，而非只展示最好的一次结果？ |
 
 L09 → L10 → L11 → L12 仍按官方顺序学习；表中把两次 Scaling Laws 合在同一问题下。嘉宾课只沿用官网姓名，不凭嘉宾研究方向猜测课堂主题。
@@ -51,7 +51,7 @@ L09 → L10 → L11 → L12 仍按官方顺序学习；表中把两次 Scaling L
 
 五份必做作业是 **A1–A5**。A5 安全对齐是同一作业的 **Optional Part 2**，不是 Assignment 6；自拟综合项目也不是官方作业。为了沿用站点的数字实验页头，A5 两个入口都用 `LAB 5`，自拟项目用 `LAB 0` 并在标题、目标中明示身份。
 
-难度星级、学习顺序和“核心 / 选读”是编者建议，不是 Stanford 评分权重。页面课程进度不计选读；实验任务进度会包含选做和自拟项目，表示个人阅读与实践勾选，不代表官方成绩。实验入口中的任务是主题级导航，正式小题、交付物、约束和测试以固定版本讲义为准。
+难度星级、学习顺序和“核心 / 选读”是编者建议，不是 Stanford 评分权重。页面课程进度不计选读；实验任务进度会包含选做和自拟项目，表示个人阅读与实践勾选，不代表官方成绩。A1–A5入口按固定讲义的正式任务编号导航；字母子问、交付物、约束与测试合同在各实验说明逐项展开，自拟项目另用编者任务。
 
 自拟项目分两条线：一条用自己训练的小模型研究数据、架构或优化；另一条选有相应基础能力的开放模型研究后训练。不要把 TinyStories 上的小模型直接当成已经具备 GSM8K 数学解题能力的基座。
 
@@ -122,8 +122,8 @@ nvidia-smi
 | A2 | Spring 2026 · 26.1.3 | 通信实验最高 6 GPU；8B 训练 step 排行榜用两张 B200 | CPU / Gloo 可调正确性，不能替代 CUDA / Triton / NCCL 性能证据；Triton 后向为选做 |
 | A3 | Spring 2026 · 26.0.5 | 单 B200；12 GPU 小时探索，预测 48 GPU 小时最终配置 | 合成数据仅 Part 1；自建路径需自备计算、数据、存储和服务，README 的 standalone 路径存在静态代码冲突，尚未运行验证 |
 | A4 | Spring 2026 · 26.0.1 | 约430M固定模型，8×B200，$2^{33}$训练tokens；CC-MAIN-2026-17中2500个原始WET经英语过滤、每4文件合并 | 13任务/71分；小样本是教学改编。offline-only仍会下载，SUNET导入检查、只读课程卷、本地Furu返回路径与远端软链不同，未运行验证 |
-| A5 正篇 | Spring 2026 · 26.0.0 | OLMo-2-0425-1B base + GSM8K；当前 helper 配置双 B200 | 模型和数据有公开路径；原任务还含 MaxRL、GSPO 与自拟估计器，不只是一次 GRPO 演示 |
-| A5 选做 | Spring 2026 · 26.0.0 | Llama 3.1 8B 的 SFT / DPO；70B 评委用双卡 | Llama 需要模型访问审批；2026 课程精确 SFT 混合文件的校外下载仍未核实可用 |
+| A5 正篇 | Spring 2026 · 26.0.0 | OLMo-2-0425-1B base + GSM8K；helper 配置双 B200 | 28任务／90分；标准、算法变体及off-policy比较各要求4随机种子。测试文件按题设用作验证集，不是未参与调参的独立测试 |
+| A5 选做 | Spring 2026 · 26.0.0 | Llama 3.1 8B 的 SFT / DPO；本地 Llama 3.3 70B 评委，GPT-4 Turbo 预生成对照 | 16任务／61分，整份选做。Llama需要访问审批；2026精确SFT混合文件校外可达性与字节一致性未核实 |
 
 这些是固定讲义 / 配置的要求或参考设置，**不是本机实测、最低显存保证或已获计算额度**。集群通用指南建议同时不超过 3 张 GPU，而具体作业有更多卡的配置；应向教学团队确认安排，不擅自开机，也不自行缩小后声称满足官方规模。
 
@@ -154,6 +154,8 @@ nvidia-smi
 | DP / TP / PP | 数据并行 / 张量并行 / 流水线并行 | 状态分片与计算划分分别说明；不靠缩写代替通信图 |
 | SFT / RLHF / RLVR | 监督微调 / 人类反馈强化学习 / 可验证奖励强化学习 | 人类偏好与可执行验证器提供的学习信号不同 |
 | DPO / GRPO | Direct Preference Optimization / Group Relative Policy Optimization | 保留目标和估计器约定，不仅凭算法名称判断具体实现 |
+| 当前策略 / 行为策略 / reference | 被优化模型 / 产生rollout的分布 / 用于相对约束的参照 | old与reference不是同一角色；DPO的SFT参照冻结，部分RL算法会另按周期更新参照 |
+| reward / advantage / loss reduction | 奖励 / 相对权重 / token与序列归约 | 减组均值、除组标准差、按长度平均是不同操作；全同奖励组不因分母很小就产生无限更新 |
 | checkpoint | 训练检查点 | 恢复训练可能还需要优化器、调度器、随机数及数据进度，不等于只保存权重 |
 
 ## 论文只在一个位置展开
@@ -180,10 +182,10 @@ PagedAttention、FineWeb、DataComp-LM、QLoRA、DPO、LLaVA 的固定论文版�
 ## 引用与来源
 
 - Stanford CS336 教学团队，[2026 官方课程主页与课表](https://cs336.stanford.edu/)，2026-11-14 读取：核对学期、教师 Percy Liang / Tatsunori Hashimoto、19 个官方讲次、先修要求、五份作业及 Optional Part 2 入口、CPU 先调试的建议与诚信政策。本站学习顺序、桥接、专题、星级、符号表与实验纪律为编者整理，不是官方要求逐字翻译。
-- 官方 [2026 YouTube 播放列表](https://www.youtube.com/playlist?list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV)：核实Stanford Online发布的L01–L17与L19共18条；L18 Daniel Selsam仍缺失。P2–P5已全读L01–L12共20056 cues；P6新增L13的1419条及L14的1448条，累计22923条，逐讲记录首尾、内部空隙与疑词。其余字幕仍仅P1阅读范围。视频开放翻译许可未确认，未全片观看或核音，不把平台manual/non-ASR分类当作人工准确性保证。
+- 官方 [2026 YouTube 播放列表](https://www.youtube.com/playlist?list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV)：核实Stanford Online发布的L01–L17与L19共18条；L18 Daniel Selsam仍缺失。P2–P6已全读L01–L14共22923 cues；P7新增L15的1872条、L16的1687条及L17的1264条，累计27746条，逐讲记录首尾、内部空隙与疑词。L19仍仅P1阅读范围。视频开放翻译许可未确认，未全片观看或核音，不把平台manual/non-ASR分类当作人工准确性保证。
 - [固定讲义仓库](https://github.com/stanford-cs336/lectures/tree/de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e)：保存17讲讲义及独立 L02 recording trace；这是课后更新的当前版本，不保证与录像完全一致，图片依赖未全部本地下载。仓库未找到统一许可证，不能据公开访问宣称可全文翻译。
 - 固定作业仓库：[A1](https://github.com/stanford-cs336/assignment1-basics/tree/a158843b20107949f1a8d7df1b05cd33b9166712)、[A2](https://github.com/stanford-cs336/assignment2-systems/tree/ca8bc81a59b70516f7ebb2da4808daade877c736)、[A3](https://github.com/stanford-cs336/assignment3-scaling/tree/03e9372992e913061b9e78b5cfcb62ad8a87de35)、[A4](https://github.com/stanford-cs336/assignment4-data/tree/0555bea66369872d912652debf10b115ca0688c8)、[A5](https://github.com/stanford-cs336/assignment5-alignment/tree/c2734a26308710949fe13226960a1e8cece94b7e)。五份正篇已由 PDF 内文核实 Spring 2026；A1 README 遗留的2025标题不是讲义年份。A1–A4 有 MIT 许可；A5 未找到明确作业许可证，第三方材料不能继承代码许可。
 - A5 官网的旧选做路径已失效。采用从固定仓库发现并核对封面的 [2026 补充讲义](https://github.com/stanford-cs336/assignment5-alignment/blob/c2734a26308710949fe13226960a1e8cece94b7e/cs336_spring2026_assignment5_supplement_safety_rlhf.pdf)（Spring 2026，26.0.0）；另行固定的2025旧版只作对照，不能搬用其 Together 路径、硬件预算或测试接口。
 - [2026 集群指南](https://docs.google.com/document/d/1cHE0iKVyXLJ3XpIs2XuXTmZ-HMmPk2hIPeCvy-AydMg/edit)与 [AI 政策](https://docs.google.com/document/d/1SZAlExB1qAc9izHt54gwunNpjKE6wXb8Y7yA_e-baK8/edit)已读取公开正文并存快照；指南公开不等于获得集群资格。未创建账号、获取凭据或运行云任务。
 - [Spring 2025 历史官网](https://cs336.stanford.edu/spring2025/)单独存档，只读取历史页身份元数据，不与2026共用视频时间轴。当前首页仍为动态页面，获取日期与哈希见快照记录。
-- 实施与审计记录：`sources/P1-REVIEW.txt`至`sources/P6-REVIEW.txt`、`sources/p6-acceptance.json`、`sources/production-plan.json`、`sources/manifest.json`、`sources/reading-map.json`、`sources/p6-model-preflight.json`和`status.json`。各分片保留作者交接时状态，最终审查/验收以相应批次总记录为准。登记、采集、实际阅读、撰写、审查、页面验收分别记录；原始大文件和授权不明全文留本地，GitHub仅提交正文与轻量审计记录，不把本地采集说成远端备份。
+- 实施与审计记录：`sources/P1-REVIEW.txt`至`sources/P7-REVIEW.txt`、`sources/p7-acceptance.json`、`sources/production-plan.json`、`sources/manifest.json`、`sources/reading-map.json`、`sources/p7-model-preflight.json`和`status.json`。各分片保留作者交接时状态，最终审查/验收以相应批次总记录为准。登记、采集、实际阅读、撰写、审查、页面验收分别记录；原始大文件和授权不明全文留本地，GitHub仅提交正文与轻量审计记录，不把本地采集说成远端备份。

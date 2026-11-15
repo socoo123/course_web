@@ -1,0 +1,778 @@
+{
+  "phase": "P7",
+  "status": "passed",
+  "engine": "Python 3.11.8 standard library only",
+  "case_groups": 53,
+  "method": "Main independently recomputed original synthetic numerical cases; one finite-difference KL gradient and exact enumeration of 16 Bernoulli groups. No official assignment code/imports/fixtures, model, dataset, GPU, cloud or API. No training/performance claims.",
+  "results": [
+    {
+      "group": "lec15",
+      "id": "sft_vs_reward",
+      "status": "passed",
+      "actual": [
+        -0.25,
+        [
+          0.75,
+          0.25
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "group": "lec15",
+      "id": "bt_comparison_frequency",
+      "status": "passed",
+      "actual": 1.0986122886681098
+    },
+    {
+      "group": "lec15",
+      "id": "answer_mask_and_reduction",
+      "status": "passed",
+      "actual": [
+        3,
+        0.1,
+        0.7675283643313485
+      ]
+    },
+    {
+      "group": "lec15",
+      "id": "kl_exponential_tilt",
+      "status": "passed",
+      "actual": [
+        1.4000000000000001,
+        [
+          0.7142857142857142,
+          0.21428571428571425,
+          0.07142857142857142
+        ],
+        0.336472236621213
+      ]
+    },
+    {
+      "group": "lec15",
+      "id": "dpo_reference_relative",
+      "status": "passed",
+      "actual": [
+        0.4700036292457356,
+        0.6153846153846154,
+        0.4855078157817008,
+        0.3846153846153846
+      ]
+    },
+    {
+      "group": "lec15",
+      "id": "importance_and_clip",
+      "status": "passed",
+      "actual": [
+        [
+          1.6,
+          0.4
+        ],
+        0.8,
+        0.5,
+        0.8,
+        [
+          1.2,
+          -0.8,
+          -1.6
+        ]
+      ]
+    },
+    {
+      "group": "lec15",
+      "id": "kl_value_measure_and_gradient",
+      "status": "passed",
+      "actual": [
+        0.19274475702175753,
+        0.22314355131420976,
+        [
+          0.09500362924573569,
+          0.5837092681258449
+        ],
+        0.3393564486857903,
+        0.19274475702175753,
+        0.30000000000000004,
+        0.22180709778329974
+      ]
+    },
+    {
+      "group": "lec15",
+      "id": "group_normalization",
+      "status": "passed",
+      "actual": [
+        [
+          -1.0,
+          -1.0,
+          1.0,
+          1.0
+        ],
+        [
+          -0.5773502691896258,
+          -0.5773502691896258,
+          -0.5773502691896258,
+          1.7320508075688774
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "group": "lec15",
+      "id": "self_included_group_baseline",
+      "status": "passed",
+      "actual": 0.75
+    },
+    {
+      "group": "lec15",
+      "id": "three_length_reductions",
+      "status": "passed",
+      "actual": [
+        0.0,
+        -0.3333333333333333,
+        -0.25
+      ]
+    },
+    {
+      "group": "lec15",
+      "id": "safety_tradeoff_counts",
+      "status": "passed",
+      "actual": [
+        0.2,
+        0.1,
+        0.1,
+        0.25
+      ]
+    },
+    {
+      "group": "lec16",
+      "id": "verifier-confusion",
+      "status": "passed",
+      "actual": [
+        2,
+        12,
+        27,
+        2,
+        15,
+        -20
+      ]
+    },
+    {
+      "group": "lec16",
+      "id": "group-centering-and-zero-variance",
+      "status": "passed",
+      "actual": [
+        0.25,
+        0.1875,
+        [
+          1.7320508075688774,
+          -0.5773502691896258,
+          -0.5773502691896258,
+          -0.5773502691896258
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "group": "lec16",
+      "id": "self-mean-versus-loo",
+      "status": "passed",
+      "actual": [
+        0.1875,
+        0.140625,
+        0.1875
+      ]
+    },
+    {
+      "group": "lec16",
+      "id": "clip-sign",
+      "status": "passed",
+      "actual": [
+        2.4,
+        1.2,
+        -1.6,
+        -2.8
+      ]
+    },
+    {
+      "group": "lec16",
+      "id": "length-reductions",
+      "status": "passed",
+      "actual": [
+        0.0,
+        -0.3333333333333333,
+        -0.5,
+        -4
+      ]
+    },
+    {
+      "group": "lec16",
+      "id": "bernoulli-sampling-budget",
+      "status": "passed",
+      "actual": [
+        [
+          0.07725530557207982,
+          0.5695327799999998,
+          0.9921875
+        ],
+        0.5695327899999999,
+        0.4304672100000001,
+        0.00390625,
+        [
+          8,
+          4
+        ]
+      ]
+    },
+    {
+      "group": "lec16",
+      "id": "token-versus-sequence-ratio",
+      "status": "passed",
+      "actual": [
+        0.9799999999999999,
+        [
+          false,
+          false
+        ],
+        true
+      ]
+    },
+    {
+      "group": "lec17",
+      "id": "clip_symmetric_two_pairs",
+      "status": "passed",
+      "actual": [
+        0.8807970779778824,
+        0.12692801104297252,
+        -0.05960146101105879,
+        0.05960146101105879
+      ]
+    },
+    {
+      "group": "lec17",
+      "id": "clip_singleton_degenerate",
+      "status": "passed",
+      "actual": [
+        -0.0,
+        0
+      ]
+    },
+    {
+      "group": "lec17",
+      "id": "linear_visual_projection",
+      "status": "passed",
+      "actual": [
+        [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            -2
+          ]
+        ],
+        [
+          2,
+          3
+        ],
+        15,
+        [
+          2,
+          4,
+          5
+        ],
+        [
+          2,
+          10,
+          5
+        ]
+      ]
+    },
+    {
+      "group": "lec17",
+      "id": "answer_target_mask_shift",
+      "status": "passed",
+      "actual": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        3,
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          4,
+          5,
+          6
+        ]
+      ]
+    },
+    {
+      "group": "lec17",
+      "id": "frozen_input_gradient",
+      "status": "passed",
+      "actual": [
+        3,
+        6,
+        18.0,
+        -36
+      ]
+    },
+    {
+      "group": "lec17",
+      "id": "cross_attention_weighted_read",
+      "status": "passed",
+      "actual": [
+        [
+          0.7500000000000001,
+          0.25
+        ],
+        4.0,
+        6.0
+      ]
+    },
+    {
+      "group": "lec17",
+      "id": "patch_and_video_budget",
+      "status": "passed",
+      "actual": [
+        [
+          256,
+          576
+        ],
+        64,
+        [
+          1024,
+          2560
+        ],
+        6.25
+      ]
+    },
+    {
+      "group": "rl-papers",
+      "id": "dpo_odds_not_absolute_probability",
+      "status": "passed",
+      "actual": [
+        0.4904146265058632,
+        0.6202041028867288,
+        0.47770665691243847,
+        [
+          -0.1898979485566356,
+          0.1898979485566356
+        ]
+      ]
+    },
+    {
+      "group": "rl-papers",
+      "id": "dpo_reward_equivalence_class",
+      "status": "passed",
+      "actual": [
+        2.0,
+        [
+          0.7500000000000001,
+          0.25
+        ],
+        [
+          0.40546510810816455,
+          -0.6931471805599453
+        ],
+        [
+          -0.6931471805599452,
+          -0.6931471805599453
+        ],
+        0.75
+      ]
+    },
+    {
+      "group": "rl-papers",
+      "id": "population_group_advantage",
+      "status": "passed",
+      "actual": [
+        0.5,
+        0.5,
+        [
+          -1.0,
+          -1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "group": "rl-papers",
+      "id": "sequence_mean_versus_token_mean",
+      "status": "passed",
+      "actual": [
+        [
+          2.0,
+          2.0
+        ],
+        [
+          3.0,
+          2.5
+        ]
+      ]
+    },
+    {
+      "group": "rl-papers",
+      "id": "future_process_rewards",
+      "status": "passed",
+      "actual": [
+        1.0,
+        1.0,
+        [
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ]
+        ]
+      ]
+    },
+    {
+      "group": "rl-papers",
+      "id": "clipped_signed_surrogate",
+      "status": "passed",
+      "actual": [
+        [
+          3.0,
+          -1.0,
+          -3.0,
+          1.0
+        ],
+        [
+          2.4,
+          -1.6,
+          -2.4,
+          1.6
+        ],
+        [
+          2.4,
+          -1.6,
+          -3.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "group": "rl-papers",
+      "id": "kl_sampling_distribution",
+      "status": "passed",
+      "actual": [
+        0.1438410362258905,
+        0.16849410839291795,
+        0.1438410362258905,
+        0.14384103622589042
+      ]
+    },
+    {
+      "group": "rl-papers",
+      "id": "pass1_not_any_success",
+      "status": "passed",
+      "actual": [
+        0.375,
+        1
+      ]
+    },
+    {
+      "group": "rl-papers",
+      "id": "r1_units_and_percentage_points",
+      "status": "passed",
+      "actual": [
+        512,
+        16.0,
+        25.499999999999993,
+        16.700000000000003
+      ]
+    },
+    {
+      "group": "mm-papers",
+      "id": "clip_identity_scale1",
+      "status": "passed",
+      "actual": [
+        0.31326168751822286,
+        0.7310585786300049
+      ]
+    },
+    {
+      "group": "mm-papers",
+      "id": "clip_identity_scale2",
+      "status": "passed",
+      "actual": [
+        0.1269280110429725,
+        0.8807970779778823,
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "group": "mm-papers",
+      "id": "clip_collapsed_vectors",
+      "status": "passed",
+      "actual": [
+        0.6931471805599453,
+        0.5
+      ]
+    },
+    {
+      "group": "mm-papers",
+      "id": "multiturn_target_shift",
+      "status": "passed",
+      "actual": [
+        [
+          3,
+          4,
+          5,
+          7,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "group": "mm-papers",
+      "id": "source_unit_arithmetic",
+      "status": "passed",
+      "actual": [
+        12800000000,
+        158000,
+        1.6099999999999994,
+        0.04999999999999716
+      ]
+    },
+    {
+      "group": "a5-reasoning",
+      "id": "shifted-label-mask",
+      "status": "passed",
+      "actual": [
+        [
+          11,
+          12,
+          13,
+          21
+        ],
+        [
+          12,
+          13,
+          21,
+          22
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "group": "a5-reasoning",
+      "id": "entropy-versus-surprisal",
+      "status": "passed",
+      "actual": [
+        1.0397207708399179,
+        0.6931471805599453
+      ]
+    },
+    {
+      "group": "a5-reasoning",
+      "id": "reduction-and-microbatch-weights",
+      "status": "passed",
+      "actual": [
+        [
+          3.0,
+          2.0,
+          -2.0
+        ],
+        1.0,
+        12,
+        0.8571428571428571,
+        [
+          2.5,
+          -2.0
+        ],
+        1.0,
+        0.25
+      ]
+    },
+    {
+      "group": "a5-reasoning",
+      "id": "zero-contribution-pruning",
+      "status": "passed",
+      "actual": [
+        0.5,
+        0.5,
+        5.0
+      ]
+    },
+    {
+      "group": "a5-reasoning",
+      "id": "optimizer-clock",
+      "status": "passed",
+      "actual": [
+        1,
+        6,
+        5
+      ]
+    },
+    {
+      "group": "a5-reasoning",
+      "id": "signed-clipping",
+      "status": "passed",
+      "actual": [
+        [
+          0.9799999999999999,
+          -0.42,
+          0.42,
+          -0.9799999999999999
+        ],
+        [
+          0.84,
+          -0.5599999999999999,
+          0.42,
+          -0.9799999999999999
+        ],
+        [
+          true,
+          true,
+          false,
+          false
+        ]
+      ]
+    },
+    {
+      "group": "a5-reasoning",
+      "id": "masked-geometric-ratio",
+      "status": "passed",
+      "actual": [
+        0.9216,
+        0.96,
+        1.04
+      ]
+    },
+    {
+      "group": "a5-reasoning",
+      "id": "equal-mean-different-variance",
+      "status": "passed",
+      "actual": [
+        0.26,
+        0.26,
+        0.002666666666666667,
+        6.666666666666679e-05
+      ]
+    },
+    {
+      "group": "a5-safety",
+      "id": "parse-and-accuracy-denominators",
+      "status": "passed",
+      "actual": [
+        0.75,
+        0.5,
+        0.6666666666666666
+      ]
+    },
+    {
+      "group": "a5-safety",
+      "id": "generation-vs-end-to-end",
+      "status": "passed",
+      "actual": [
+        2.0,
+        0.5
+      ]
+    },
+    {
+      "group": "a5-safety",
+      "id": "microbatch-weighting",
+      "status": "passed",
+      "actual": [
+        3.0,
+        2.0
+      ]
+    },
+    {
+      "group": "a5-safety",
+      "id": "dpo-frozen-equal-start",
+      "status": "passed",
+      "actual": [
+        0.0,
+        0.5,
+        0.6931471805599453
+      ]
+    },
+    {
+      "group": "a5-safety",
+      "id": "raw-versus-adjusted-dpo",
+      "status": "passed",
+      "actual": [
+        false,
+        true,
+        0.9808292530117264,
+        0.7272727272727273,
+        0.3184537311185346
+      ]
+    },
+    {
+      "group": "a5-safety",
+      "id": "safety-judge-invalid-labels",
+      "status": "passed",
+      "actual": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        0.75,
+        0.5,
+        0.5
+      ]
+    }
+  ]
+}

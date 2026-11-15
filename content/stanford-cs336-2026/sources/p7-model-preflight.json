@@ -1,0 +1,24 @@
+{
+  "phase": "P7",
+  "checkedAt": "2026-11-15",
+  "requestedModel": "openai-codex/gpt-6-astra:xhigh",
+  "observedConfiguration": {"taskPerCallModel":"on","taskEnableEffort":false,"taskAgentModelOverrides":{},"taskPrewalk":false,"enabledModels":[]},
+  "configurationChangedThisRun": false,
+  "resolvedSubagentModel": "openai-codex/gpt-6-astra",
+  "resolvedSubagentEffort": "xhigh",
+  "resolvedModelIsFallback": false,
+  "subagentsStarted": 7,
+  "subagentsCompleted": 7,
+  "runtimeEvidence": [
+    {"agent":"P7SftLectureObjectives","modelEvent":"21601960","effortEvent":"077d9401","firstAssistantEvent":"c0a24b37","timestamp":"2026-11-15T08:11:37.277Z"},
+    {"agent":"P7RlvrLecture","modelEvent":"5e609d66","effortEvent":"6339f224","firstAssistantEvent":"67475bd0","timestamp":"2026-11-15T08:11:36.125Z"},
+    {"agent":"P7MultimodalLecture","modelEvent":"e6c4e7bb","effortEvent":"71dfc05a","firstAssistantEvent":"7dbd9b5c","timestamp":"2026-11-15T08:11:39.714Z"},
+    {"agent":"P7PosttrainingPapers","modelEvent":"c13b0463","effortEvent":"5f240ae8","firstAssistantEvent":"2548bf5a","timestamp":"2026-11-15T08:11:39.435Z"},
+    {"agent":"P7MultimodalPapers","modelEvent":"0f25defb","effortEvent":"29090b6e","firstAssistantEvent":"0e01ac1d","timestamp":"2026-11-15T08:11:37.788Z"},
+    {"agent":"P7ReasoningAssignment","modelEvent":"72b4c63b","effortEvent":"aead36a7","firstAssistantEvent":"afa29e84","timestamp":"2026-11-15T08:11:39.069Z"},
+    {"agent":"P7SafetyAssignment","modelEvent":"e3fe4648","effortEvent":"ec0910a8","firstAssistantEvent":"cd2d3c82","timestamp":"2026-11-15T08:11:37.296Z"}
+  ],
+  "verification": "Main read cfg://task and enabledModels, dispatched seven explicit-model workers, then read each current worker model_change, thinking_level_change and first assistant provider/model. All seven resolve to openai-codex/gpt-6-astra/xhigh with fallback=false. No configuration mutation or substitution. Runtime identity does not imply content acceptance.",
+  "inspectionNote": "First jq pipeline stopped after the first worker because head closed its pipe (exit141); corrected extraction read the three selected events for all seven workers without truncating the stream.",
+  "nextDispatchGate": "Any additional worker requires the same exact identity and verification; unavailable means stop, not substitute."
+}

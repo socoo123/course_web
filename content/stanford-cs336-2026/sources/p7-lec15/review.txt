@@ -1,0 +1,59 @@
+P7 L15 + ext14 author review
+Owner: P7SftLectureObjectives
+Date: 2026-11-15
+Authoring complete; integrated verification is Main's responsibility. No build/lint/tests/formatters/browser checks or CPU case execution performed by this author.
+
+1. Owned delivery
+Three substantive bodies:
+- lectures/lec15/notes.zh.md
+- lectures/lec15/draft.zh.md
+- lectures/ext14/notes.zh.md
+Three original SVGs:
+- lectures/lec15/assets/behavior-feedback-contract.svg
+- lectures/ext14/assets/four-policy-roles.svg
+- lectures/ext14/assets/reduction-contract.svg
+All are independent conceptual diagrams, transparent-background SVG with title/desc, no external assets/scripts, color-scheme light dark and CanvasText-backed variables,420-wide vertical layouts. No generated classroom screenshot. Existing ext11 is referenced and untouched; no paper material home was edited; no shared metadata edited.
+
+2. Lecture identity and actual reading
+Video2oH6PWPrYFo, Stanford Online, Spring2026 L15, individual metadata4794s=79:54. Existing course.json already matches, so course-video-update.json says change_required=false. Playlist rounded4795s is not adopted.
+Reused P1 raw en-US JSON3: p1-videos/captions/2oH6PWPrYFo.en-US.manual.json3, acquired2026-11-14T13:39:48.838467Z. Raw SHA256 a4ac598dd86748ba7ecd231faad5e854d1614c7fdca69049c9838d359a8b569d.
+Ran the supplied normalization helper solely to create local source evidence;1872cues. Read every cue through faithful multiline transcript.en.txt,actual lines1–3321. Nine actual displayed read windows and line-to-cue mappings are recorded in reading-log.json; this is a real full text read, not just a parser coverage claim.
+First cue5.240s,last end4788.060s. Leading5.240s,trailing5.940s. Six internal gaps>2s using previous maximum cue end:1250.630–1253.650;1264.610–1267.750;2309.370–2312.890;2471.720–2474.340;3139.640–3142.740;3174.600–3177.540. Not asserted silence.
+Twelve cues have [INAUDIBLE], across9 question windows; indices471,604,788,805,889,907,951,1316,1317,1468,1469,1470. Uncertain student wording is not reconstructed. The63:02 question's70/7B discrepancy is explicitly left unresolved. FLAN/font and probableClaudeCode/CloudCode are contextual name notes, not audio corrections.
+Platform manual only means non-ASR/uploaded classification. No media download, playback, listening or audio-verified transcript. Lecture draft is deliberately limited independent chronological discussion with17-block complete navigation,not full translation. It does not claim sentence-by-sentence correspondence. Introductory processing statement moved to ending scope section as Main requested.
+
+3. Fixed lecture source correction
+The complete pinned tree at de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e contains lecture_15.pdf,not lecture_15.py. Reported discrepancy to Main; Main explicitly approved using the actual fixed PDF and not inventing/searching for a nonexistent .py.
+Read p1-lectures/lecture_15.txt all622lines,which represent65physical PDF pages. Only original physicalpages56,57,58 visually inspected. Equations are image-only/incomplete in extraction,so these images independently resolve exp(r/beta),KL direction,partition cancellation,BT substitution and DPO gradient weight. No claim of all65pages' pixels viewed. Pinned post-term revision is not passed off as recording-identical.
+
+4. Independent paper passages,not outsourced summaries
+DPO2305.18290v3: requested text lines139–280 and888–991; core-used139–276 (sections3–4,physicalpp3–5),888–981 (A.1–A.2,pp15–16). Neighbor A.3 opening appeared in read window,not claimed complete. Actually inspected originalPDFp4 andp16 images.
+DeepSeekMath2402.03300v3: requested511–777 (displayed510–780),904–949,1463–1581. Used511–752 (§§4.1.1–4.1.4,4.2,pp11–15),904–939 (§5.2.1 opening andTable10 only,pp18–19),1475–1575 (A.1.4–A.1.6,pp29–30). Table5 text was read in the contiguous range but no benchmark claims transplanted into ext14. Neighbor pretraining/OnlineRFT text is not whole-section reading. OriginalPDFp13,p14,p29 actually viewed.
+R1 fixed2501.12948v2,2026-01-04,86pages: requested75–207,211–238; tool context displayed74–241 continuously. Core-used85–220 (§§2.1–2.2,pp2–4); neighboring §2.3/Table2 header extends tophysicalp5 but not claimed completed. OriginalPDFp3 actually viewed. No v1 numbering imported; no independent all-core or whole-paper claim by this author.
+Total actual visual pages9 (3lecture+6paper). Paths,hashes and specific visual findings in reading-log.json. Original PNGs remain sources-only and must not be published.
+Canonical full treatments remain paper12 lec15/materials;paper13/paper14 lec16/materials. This author supplies original derivation comparisons,not competing paper translations. DPO attribution/license/change notice retained; DeepSeek arXiv nonexclusive treated as no public translation grant,not model/softwareMIT.
+
+5. Technical correctness and important caveats
+- SFT data conditional,actual behavior/old,current trainable policy,and reference anchor remain separate. Reference is frozen within the chosen optimization window,not universally forever; R1v2 explicitly refreshes every400steps. Standard offlineDPO does not inherit permission to refresh eachstep.
+- SFT forward-dataKL D||p differs from policy regularizer p||q. Answer mask versus attention mask,shifted target positions,EOS,padding,tool observations and prompt-supervision variants are explicit.
+- BT depends on reward differences; prompt-dependent shift unidentified; human preference need not satisfy scalarBT or be deterministic.
+- Exponential tilt derived with normalization multiplier and KL-to-optimum identity; beta>0,support,finiteZ and unrestricted-policy assumptions explicit.
+- DPO sequence sums,reference-relative score,adaptive logistic coefficient and actual finite/shared-parameter limitations are retained. Coefficient from differentiating loss cannot be turned into a new undetached weightedlogprob objective without changing gradient.
+- Policy gradient requires sample-measure derivative; actor reward/baseline detached. Action-independent baseline identity separate from group-mean baseline that includes own reward; latter scales expectation by1-1/G before randomstd normalization.
+- IS requires true behavior distribution and support. Temperature/truncation may change that distribution. Complete-sequence ratio,token-local surrogate and geometric-average ratio not equated. Clip min sign behavior explained;clip is not a hard probability/KL guarantee.
+- old=current may hold in value at first update; frozen-denominator ratio still has nonzero derivative. Multiplemicrobatches before a single optimizerstep distinguished from repeatedoptimizersteps using same rollout.
+- Important subtlety: k=q/p-log(q/p)-1 is nonnegative and has expectationKL(p||q) only under p sampling and appropriate common support. Under old sampling this identity need not hold. Unbiased value does not imply frozen-sample autograd gives unbiased trueKL gradient. Originalbinary case: directfixed-sample expectedgradient0.3 versus trueKLgradient0.16log4. Ext14 does NOT assert that this invalidates GRPO; it correctly labels sampleloss as a surrogate and distinguishes contracts.
+- GRPO group stats,reward,old andref are detached;current retains gradient. Population versus sample std,zero-variance group,KL remainingactive,group weighting and token/sequence/constant reduction are separate choices.
+- DeepSeekMath Algorithm1 line11 visibly says Eq21; fullclipped objective is Eq3. Preserved/explained discrepancy rather than silently fixing source. A.1.4 Eq12 has lengthnormalization unlike originalDPO; printedEq14 coefficient is not blindly adopted as universal derivative. The unified derivation here starts from explicit own loss.
+- R1 maintext uses response-level shorthand; our token audit formula is explicitly based onDeepSeekMath,not a claim to reconstruct allR1 implementation. R1format+accuracy reward is not confused withA5's assignment-specific totalreward.
+- Verifiers,preferencejudges and proxy rewards can err; rewardhacking,selectionbias,independentmetrics,calibration and sampling/tokenbudgets remain explicit. No thesis that SFT cannot addknowledge or RL guaranteescalibration. No demographicattribute asserted as solecause of annotationbehavior.
+
+6. Original cases and evidence schema
+mechanism-cases.json has11 independent mathematical cases: SFT/rewardoptimum,BTfrequency,responsemask,exponentialtilt,DPOreferenceratio,IS+clip,KLmeasure/gradient,groupnormalization,self-includedbaseline,lengthreductions,safetytradeoff. These are specified expectedvalues and symbolic expressions,not runresults; Main can verify independently using CPU arithmetic. No officialassignmentcode imported or implemented.
+manifest-fragment.json has12 source records,each including status and all shared required provenance fields;real sourceSHA256 values recomputed for provenance. Materialfiles list threebodies;originalassets listed separately. Source acquisition times inherited from P1,read_at2026-11-15 records thisactualread. Derived timestamps taken from actualfilemtime,not invented sourcefetches.
+time-intervals.json uses blocks with start_seconds,end_seconds,label,cue_indices_1_based_by_start;17blocks cover0–4794,including nullindices for opening/endingcaptiongaps. Contains six internalgaps and exactcaptionendpoints.
+
+7. Remaining limits and Main hand-off
+No technical source blocker remains. Audio ambiguity and rights uncertainty remain documented,not resolved by inference. No tests/build/page/CPU validation claimed. Main should perform integrated provenance,links,formula/mobile390layout,SVG external-img light/dark,header/tabbehavior and independentcase checks per sharedcontract.
+The long gradient displays have already been split/shortened via locally definedscore symbols for mobile; this is authoring,not a measured layoutpass. Bold boundaries use separation where punctuation-ending spans precede words; no renderclaim.
+Publication allowlist should include onlythreebodies,threeoriginalSVGs,review.txt,manifest-fragment.json,video-metadata.json,course-video-update.json,reading-log.json,time-intervals.json,mechanism-cases.json. EXCLUDE captions.normalized.json,captions.en.vtt,transcript.en.txt and visual/*.png. RawPDF/captions remain atP1paths and are not mirrored into publicbody. No P8,ext16,L18/L19/capstone work.

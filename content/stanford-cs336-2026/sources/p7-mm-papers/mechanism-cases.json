@@ -1,0 +1,48 @@
+{
+  "phase": "P7",
+  "owner": "P7MultimodalPapers",
+  "material_files": ["lectures/lec17/materials.zh.md"],
+  "policy": "Original tiny arithmetic inputs only; no official assignment implementation, training, API, model or data downloads. Expected values are mathematical authoring targets; worker did not run these as checks. Main may independently verify once.",
+  "verified_by_worker": false,
+  "cases": [
+    {
+      "id": "mm_clip_identity_batch",
+      "body_locator": "第一篇/7. 原创小算例",
+      "definition": "Normalize two image/text standard-basis vectors; logits=alpha*I*T^T. Row and column cross-entropies target diagonal, averaged across samples and directions.",
+      "input": {"image_vectors": [[1,0],[0,1]], "text_vectors": [[1,0],[0,1]], "alpha": 1},
+      "expected": {"logits": [[1,0],[0,1]], "correct_probability": 0.7310585786300049, "symmetric_loss": 0.31326168751822286, "exact_loss": "log(1+exp(-1))"},
+      "tolerance": 1e-12
+    },
+    {
+      "id": "mm_clip_scale_without_ranking_change",
+      "body_locator": "第一篇/7. 原创小算例",
+      "definition": "Same vectors as previous case, alpha=2; diagonal remains highest but softmax sharpens.",
+      "input": {"image_vectors": [[1,0],[0,1]], "text_vectors": [[1,0],[0,1]], "alpha": 2},
+      "expected": {"logits": [[2,0],[0,2]], "correct_probability": 0.8807970779778823, "symmetric_loss": 0.1269280110429726, "exact_loss": "log(1+exp(-2))", "argmax_rows": [0,1]},
+      "tolerance": 1e-12
+    },
+    {
+      "id": "mm_clip_collapsed_representations",
+      "body_locator": "第一篇/7. 原创小算例；自测1",
+      "definition": "Every image/text vector is identical; positive cosine1 alone does not imply contrastive discrimination.",
+      "input": {"image_vectors": [[1,0],[1,0]], "text_vectors": [[1,0],[1,0]], "alpha": 1},
+      "expected": {"logits": [[1,1],[1,1]], "correct_probability": 0.5, "symmetric_loss": 0.6931471805599453, "exact_loss": "log(2)"},
+      "tolerance": 1e-12
+    },
+    {
+      "id": "mm_answer_mask_causal_shift",
+      "body_locator": "编者对照/一份原创mask练习",
+      "definition": "Synthetic teaching sequence only, not Vicuna template. Target at absolute position j is predicted by logit at j-1; score answers and their stop tokens, not system/user tokens.",
+      "input": {"tokens": ["system","image-placeholder","user-question","assistant-marker","answer-A","answer-B","stop","user-followup","answer-C","stop"], "answer_target_positions": [4,5,6,8,9]},
+      "expected": {"full_target_mask": [0,0,0,0,1,1,1,0,1,1], "shifted_logit_positions": [3,4,5,7,8], "shifted_target_mask": [0,0,0,1,1,1,0,1,1], "scored_target_count": 5}
+    },
+    {
+      "id": "mm_data_and_metric_denominators",
+      "body_locator": "CLIP训练设置；LLaVA§3、§5.2编者校读",
+      "definition": "Bookkeeping over explicitly stated paper numbers; not reproduction of an experiment or an assertion that exposure count equals unique-image count. Percentage-point differences not relative gains.",
+      "input": {"clip_unique_pairs": 400000000, "clip_base_epochs": 32, "llava_instruction_types": [58000,23000,77000], "single_model_accuracy_percent": 90.92, "complement_accuracy_percent": 90.97, "judge_accuracy_percent": 92.53},
+      "expected": {"clip_base_pair_exposures": 12800000000, "llava_instruction_total": 158000, "judge_minus_single_percentage_points": 1.61, "complement_minus_single_percentage_points": 0.05},
+      "tolerance": 1e-10
+    }
+  ]
+}

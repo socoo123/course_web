@@ -1,0 +1,77 @@
+{
+  "phase": "P7",
+  "owner": "P7PosttrainingPapers",
+  "origin": "Original editorial finite arithmetic; not official assignment code or paper experiment reproduction",
+  "execution_status": "not_run_by_author_Main_independent_verification_required",
+  "material_files": ["lectures/lec15/materials.zh.md", "lectures/lec16/materials.zh.md"],
+  "cases": [
+    {
+      "id": "dpo_odds_not_absolute_probability",
+      "body": "lec15 第二部分4",
+      "inputs": {"reference": [0.2, 0.8], "policy": [0.4, 0.6], "preferred_index": 0, "beta": 0.5},
+      "definitions": ["z=beta*log((policy[0]/reference[0])/(policy[1]/reference[1]))", "preference_probability=1/(1+exp(-z))", "loss=log(1+exp(-z))", "gradient_wrt_independent_sequence_logps=[-beta*(1-probability),beta*(1-probability)]"],
+      "expected_exact": {"z": "log(8/3)/2", "preference_probability": "1/(1+sqrt(3/8))", "loss": "log(1+sqrt(3/8))"},
+      "expected_approximate": {"z": 0.490415, "preference_probability": 0.620204, "gradient": [-0.189898, 0.189898]},
+      "absolute_tolerance": 0.000001,
+      "caveat": "Sequence log-prob coordinates are explanatory; real network parameters couple outputs. Loss deliberately uses exact expression rather than unverified rounded decimal."
+    },
+    {
+      "id": "dpo_reward_equivalence_class",
+      "body": "lec15 第二部分4",
+      "inputs": {"reference": [0.5, 0.5], "reward": ["log(3)", 0], "beta": 1},
+      "definitions": ["unnormalized=reference*exp(reward/beta)", "Z=sum(unnormalized)", "optimal=unnormalized/Z", "implicit=beta*log(optimal/reference)"],
+      "expected_exact": {"Z": 2, "optimal": [0.75, 0.25], "implicit_reward": ["log(3/2)", "log(1/2)"], "shared_shift": "-log(2)", "BT_preference_probability": 0.75}
+    },
+    {
+      "id": "population_group_advantage",
+      "body": "lec16 算例A",
+      "inputs": {"rewards": [0, 0, 1, 1], "standard_deviation": "population_ddof0"},
+      "expected": {"mean": 0.5, "std": 0.5, "advantages": [-1, -1, 1, 1], "mean_advantage": 0},
+      "caveat": "Paper core writes std without correction; this example explicitly chooses population convention. Nonzero policy gradient can remain despite zero mean advantage."
+    },
+    {
+      "id": "sequence_mean_versus_token_mean",
+      "body": "lec16 算例A",
+      "inputs": {"same_means": [[1, 3], [2, 2, 2, 2, 2, 2]], "different_means": [[4, 4], [2, 2, 2, 2, 2, 2]]},
+      "definitions": ["sequence_mean=mean(mean(sequence_i))", "token_mean=sum(all_values)/count(all_values)"],
+      "expected": {"same_means": {"sequence_mean": 2, "token_mean": 2}, "different_means": {"sequence_mean": 3, "token_mean": 2.5}, "per_token_weights_sequence_mean": [0.25, "1/12"], "per_token_weight_token_mean": 0.125}
+    },
+    {
+      "id": "future_process_rewards",
+      "body": "lec16 算例B",
+      "inputs": {"step_rewards_by_output": [[0, 2], [0, 2]], "step_end_positions": [2, 4], "tokens_per_output": 4, "standard_deviation": "population_ddof0_over_all_group_steps"},
+      "definitions": ["normalize every step with the pooled group-step mean/std", "A_it=sum(normalized_step_reward for end_position>=token_position)"],
+      "expected": {"pooled_mean": 1, "pooled_std": 1, "normalized_step_rewards": [[-1, 1], [-1, 1]], "token_advantages": [[0, 0, 1, 1], [0, 0, 1, 1]]}
+    },
+    {
+      "id": "clipped_signed_surrogate",
+      "body": "lec16 算例C",
+      "inputs": {"epsilon": 0.2, "ratio_advantage_pairs": [[1.5, 2], [0.5, -2], [1.5, -2], [0.5, 2]]},
+      "definition": "min(ratio*advantage,clip(ratio,1-epsilon,1+epsilon)*advantage)",
+      "expected": {"unclipped": [3, -1, -3, 1], "clipped_product": [2.4, -1.6, -2.4, 1.6], "surrogate": [2.4, -1.6, -3, 1]},
+      "caveat": "0.2 is only an original teaching input; R1v2 core reports epsilon10."
+    },
+    {
+      "id": "kl_sampling_distribution",
+      "body": "lec16 算例D",
+      "inputs": {"current_p": [0.5, 0.5], "reference_r": [0.25, 0.75], "behavior_b": [0.75, 0.25]},
+      "definitions": ["u=r/p", "k=u-log(u)-1", "mean_current=sum(p*k)", "mean_behavior=sum(b*k)", "weighted_behavior=sum(b*(p/b)*k)"],
+      "expected_exact": {"u": [0.5, 1.5], "mean_current": "log(4/3)/2", "mean_behavior": "-1/4+3*log(2)/4-log(3/2)/4", "weighted_behavior": "log(4/3)/2", "KL_current_to_reference": "log(4/3)/2"},
+      "caveat": "Fixed prefix only; does not solve trajectory prefix-distribution correction or differentiate the sampling distribution."
+    },
+    {
+      "id": "pass1_not_any_success",
+      "body": "lec16 算例E",
+      "inputs": {"correctness": [1, 0, 0, 1, 0, 1, 0, 0]},
+      "expected": {"empirical_pass1": 0.375, "any_success_indicator_for_this_sample_set": 1},
+      "caveat": "Consensus not determined by correctness vector without answer identities; do not invent expected cons@8."
+    },
+    {
+      "id": "r1_units_and_percentage_points",
+      "body": "lec16 第9与14节",
+      "inputs": {"questions_per_update": 32, "responses_per_question": 16, "responses_per_rollout": 8192, "alpaca_dev3_r1": [62.1, 87.6], "arena_dev3_r1": [75.6, 92.3]},
+      "expected": {"responses_per_update": 512, "updates_per_rollout_if_each_minibatch_updates": 16, "alpaca_gain_percentage_points": 25.5, "arena_gain_percentage_points": 16.7},
+      "caveat": "Unit arithmetic on source-reported constants, not an executed training loop or causal effect estimate."
+    }
+  ]
+}

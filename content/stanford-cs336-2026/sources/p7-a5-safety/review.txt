@@ -1,0 +1,57 @@
+P7 — A5 optional safety supplement author handoff
+Owner: P7SafetyAssignment
+Scope: labs/a5-safety-optional/{lab.zh.md,guide.zh.md,assets/safety-comparison-contract.svg} and sources/p7-a5-safety/* only.
+Model requirement: delegated under openai-codex/gpt-6-astra:xhigh; Main owns runtime identity evidence and final integrated validation. No nested agents.
+
+DELIVERED
+- lab.zh.md: full independent requirement explanation, all 16 Problems / 61 printed points / 42 lettered subparts / 4 nonlettered Problem deliverable blocks (46 total task-level deliverable blocks), plus unnumbered constraints, access/license/version and source-contract details.
+- guide.zh.md: independent conceptual guide, distributions/masks, packed full-document SFT, frozen-reference DPO, two validation-accuracy definitions, measurement denominators/judge caveats, six original arithmetic cases, three original benign control-design situations, seven self-checks.
+- assets/safety-comparison-contract.svg: original transparent/theme-aware vertical 430px conceptual diagram; roles separated, no experimental data. It has title/desc and no script/external resource. Main still needs rendered visual/mobile check.
+- task-coverage.json: 16 exact official IDs/titles/points; all 42 letters and four unlettered blocks with extracted-source line locator and body heading/letter; 14 unnumbered handout constraint groups; helper/adapters/tests/config/policy map. physical_pages on each subpart repeats the containing Problem page range; exact narrow location is source_locator.
+- course-task-metadata.json: official task list, titles/points/grade/source pages for Main; optional=true, not Assignment6.
+- manifest-fragment.json: 35 source records, each status/read_scope/read_at/version/retrieved_at/file/hash/license/treatment/materials; preserves actual P1 acquisition metadata for reused sources, new static contract acquisition for others; four selected PDF visual checks; original artifacts separate.
+- mechanism-cases.json: six numerical definition/input/expected cases and three benign control designs, no official fixture or implementation. Worker did NOT execute them; Main may independently verify arithmetic.
+- acquisition.json and upstream/*.txt: fixed-SHA static-source evidence, raw not .md. visual/*.png: original selected PDF render evidence only, not publication assets.
+
+ACTUAL SOURCE READING
+1. Required local continuation contract and NEXT-P7-PROMPT.txt: full files.
+2. Current official supplement: P1 raw/optional-safety-2026.txt, ALL lines1–919, all18 physical pages including bibliography. Calls covered1–273,274–563,561–919; overlap only at pagination. Source SHA c2734a26308710949fe13226960a1e8cece94b7e; cover Spring2026 Version26.0.0. P1 audit was navigation, not a replacement for this reading.
+3. Original PDF pages9,15,16,17: rendered from preserved PDF via pdftoppm at100dpi and actually inspected using read-image. Page9 confirms full-document packing/data interface. Page15 confirms Eq1/Eq2 and reference role. Page16 confirms Eq3 signs/ratios and four HH collections/filter. Page17 confirms EOS/device requirements and verbatim raw-logprob accuracy wording. No claim all18 pages visually inspected. Raw PDF and render hashes in manifest; do not publish them.
+4. Reused first-party full text: README1–30; CHANGELOG1–107; pyproject1–55; modal_utils1–100; modal_utils_safety1–87; evaluate_safety1–136; alpaca annotator YAML1–15. Fixed repository complete path inventory read through jq .tree[].path; no LICENSE/COPYING found; no model/data contents retrieved.
+5. Newly acquired first-party full text: tests/adapters.py1–461 (optional hooks333–461); test_data1–83; test_dpo1–63; test_metrics1–54; common1–3; submission shell1–34; Alpaca SFT prompt1–7; Alpaca judge template1–30. conftest1–300 read; remaining301–424 not fully read and not used to claim optional coverage. No fixture data, tokenizer JSON, model binary, official snapshot or test execution.
+6. AGENTS full74 lines read from exact raw URL, retained identical local bytes. CLAUDE acquired and has same SHA256 as AGENTS; no separate full reading claimed. No student assignment files modified.
+7. Third-party source reading: UltraChat card full1–124; HH card full1–68; SafetyTunedLlamas README full1–89 and training-file README full; SimpleSafetyTests README full; its LICENSE1–48 for Attribution4.0 identity/rights limits, not full legal review. Llama3.1/3.3 metadata selected id/sha/gated/license/extra-gated fields/license heading; MMLU/GSM8K/Alpaca selected id/sha/gated/license. No claims to have read corpora or all licenses.
+8. Policies: P1 shared AI policy full1–21; cluster guide1–28,48–52,109–119. P1 assignment-audit36–66,207–340,440–515 read for retained historical acquisition facts and navigation only. Existing A4 lab1–88 read only for authoring convention; existing ext13 SVG full read only for style convention.
+9. Source metadata timestamps copied from preserved manifests; new acquisition timestamps use actual saved-file mtime converted to UTC. Newly fetched source hashes recorded from bytes. read_at uses actual timestamp after source reading, not invented clock values.
+
+TECHNICAL DECISIONS / IMPORTANT CAVEATS
+- 2026 optional supplement is not a new Assignment6 or a mandatory task. Handout v26.0.0, CHANGELOG2.0.1, package1.0.0 are separate identifiers. Historic2025 material was not used for task requirements.
+- Four baseline plus four SFT evaluations explicitly retain all parser/failure/throughput/metric/error-analysis requirements. AlpacaEval JSON array differs from SST JSONL. DPO reevaluates all four, not only the two preference/safety benchmarks.
+- GPT4Turbo pre-generated reference outputs are distinct from local Llama3.3 70B annotator. No required paid GPT4 API claim. Judge context/generation configs are not candidate-generation defaults.
+- evaluate_safety maps True to unsafe; any non-true-prefixed response maps safe, including invalid strings. Guide adds separately named diagnostic coverage without silently changing official score.
+- SFT specified packed full-document LM, not main-assignment response-only masking. Document shuffle vs packed-example shuffle distinguished; incomplete token chunk vs small final batch distinguished. DPO explicit response EOS is separate from main prompt-response tokenizer rules.
+- HH loads all four training collections, filters human-message count>1 rather than blindly truncating, keeps common condition and file origin. HH helpful-online is historical source-collection provenance, not online DPO sampling.
+- DPO reference is a frozen copy of the student's SFT checkpoint, not rollout old policy. Current/ref sequence logprob uses summed response token likelihood including EOS; not silently length-averaged. Cross-device loss returns on training-model device. No PPO/GRPO clip or group normalization imported.
+- §6.4 calls the metric implicit-reward accuracy but defines raw chosen-vs-rejected conditional logprob ranking. Both pages preserve that exact requested metric and checkpoint criterion. Guide explicitly recommends recording raw accuracy and separately named reference-adjusted reward accuracy; original valid-distribution counterexample shows they differ. No silent erratum or redefinition of official selection.
+- SFT3 B200hrs and DPO1 B200hr are official budget labels, not measured runtime. Helper B200:2 and containers4 are config facts, not entitlement or verified launchability; inherited SUNET import guard/secret retained.
+- Full task requirements are re-expressed in original Chinese structure; not an authorized whole-PDF translation. No complete solution/pseudocode, no answer implementation, no actual experiment claims, no harmful prompt library. Three benign design cases are explicitly NOT substitutes for actual official red_teaming(b).
+
+ACCESS / RIGHTS / HISTORICAL FACTS
+- P1 old spring2025 filename request at fixed current SHA returned HTTP404; current2026 source independently located in tree/README. Preserve that as history, not a new check.
+- Historical public SFT file HEAD attempts got TLS EOF/SSL_ERROR_SYSCALL with NO HTTP response; do not call404/deleted. Not retried this run, no credential request, no data download.
+- Exact2026 single-turn SFT mix outside-course availability and byte identity remain unverified. Public UltraChat/SafetyTunedLlamas raw ingredients are not an authenticated substitute. No made-up mixture ratio/count.
+- Llama3.1 and3.3 are manual gated, separate community licenses/AUP; no approval requested or weights retrieved. P1 anonymous raw401 history retained, not bypassed.
+- cs336-shared-data / cs336-a5-supplement are course environment/volume, not public URL. No private volume mounted; no student account or credentials requested.
+- UltraChat/HH cards and MMLU/GSM8K metadata declare MIT; SafetyTunedLlamas code MIT but DATA CC-BY-NC4 with SafeText caveat; Alpaca data CC-BY-NC4; SST CC-BY4. These do not license the assignment PDF. Fixed repository tree lacks explicit LICENSE/COPYING.
+- New static GitHub source acquisition initially succeeded for four files, then Python urllib TLS EOF on test_dpo; missing static files acquired via curl without auth or disabling TLS validation. No previously successful file was fetched again in that recovery. This was source-code acquisition, not retrying historical gated/data URLs.
+
+UNRESOLVED / EXECUTION BOUNDARY
+No official env installation, official pytest, official data/model download, training/inference, GPU, Modal, cloud billing, model/evaluator APIs, submission, or synthetic learning-curve generation. No build/lint/formatter/smoke/browser checks by worker. Therefore no implementation/test/performance/page/build/publication pass claims. Main owns all integrated validation and all shared metadata/publication. P8 untouched.
+
+CHECKS FOR MAIN (NOT RUN HERE)
+- Source hash/required source-key validation; task count61/16/42 and every source/body mapping; source evidence allowlist excludes raw/PDF/render.
+- Check new internal routes use /lec/lec15 and /lec/ext14 (corrected from /lecture after Main notice), /lab/a5-safety-optional and v=guide/v=zh behavior (guide backlink corrected from v=lab); validate image resolution.
+- Independently verify six original arithmetic cases, especially DPO ln(11/8) and raw-vs-adjusted margin; do not run official assignment tests or models.
+- Render both pages/SVG desktop and390px, inspect long helper names and formulas; all displayed formulas were split into short definitions. Confirm controls/layout with full final course integration.
+- Required final build/publication validation remains Main's responsibility. No additional audit or git validation run by worker.
+- Main's later CommonMark notice addressed: added outer spaces to punctuation-ending bold labels/sentences in both owned pages, including parenthesized letter labels. No rendering or build checks run by worker.

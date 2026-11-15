@@ -1,0 +1,3313 @@
+{
+  "schema_version": 1,
+  "course": "stanford-cs336-2026",
+  "phase": "P7",
+  "assignment": "A5 reasoning main",
+  "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+  "handout_version": "26.0.0",
+  "handout_pages": 39,
+  "package_version": "1.0.0",
+  "changelog_latest_release": "2.0.1 (2026-06-03)",
+  "source_text": "p1-assignment-a5/raw/main-2026.txt",
+  "actual_read_scope": {
+    "text_lines": "1–2110, contiguous five ranges:1–390,391–760,761–1170,1171–1590,1591–2110",
+    "pages": "1–39 complete extracted text including bibliography",
+    "visual_pages": [
+      11,
+      21,
+      28,
+      29,
+      35,
+      36,
+      38
+    ],
+    "visual_paths": [
+      "p7-a5-reasoning/visual/main-p11.png",
+      "p7-a5-reasoning/visual/main-p21.png",
+      "p7-a5-reasoning/visual/main-p28.png",
+      "p7-a5-reasoning/visual/main-p29.png",
+      "p7-a5-reasoning/visual/main-p35.png",
+      "p7-a5-reasoning/visual/main-p36.png",
+      "p7-a5-reasoning/visual/main-p38.png"
+    ],
+    "visual_scope_note": "Selected pages actually viewed, not whole-PDF visual audit."
+  },
+  "totals": {
+    "scored_problems": 28,
+    "points": 90,
+    "formal_lettered_subquestions": 11,
+    "unlettered_problems": 24,
+    "leaf_parts": 35,
+    "atomic_task_requirements": 133,
+    "unnumbered_requirements": 40,
+    "source_contract_entries": 16
+  },
+  "count_note": "think_about_importance_reweighting的(a)(b)(c)为方法标签，不是另计正式子问；无每子问单独points。",
+  "tasks": [
+    {
+      "index": "T01",
+      "official_id": "prompting_baselines",
+      "official_title": "Run OLMo-2-0425-1B on GSM8K",
+      "title_zh": "三种baseline",
+      "points": 5.0,
+      "source_pages": [
+        7
+      ],
+      "source_section": "3.4",
+      "source_text_start_line": 309,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T01．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "2"
+      },
+      "subquestions": [
+        {
+          "letter": "a",
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              7
+            ],
+            "section": "3.4",
+            "problem": "prompting_baselines",
+            "subpart": "a",
+            "problem_start_line": 309
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T01．",
+            "subpart": "a"
+          },
+          "requirements": [
+            {
+              "id": "prompting_baselines.a.1",
+              "requirement_zh": "编写并运行OLMo-2-0425-1B/GSM8K的question_only、r1_zero、r1_zero_three_shot评估",
+              "source_locator": "handout pp[7]; §3.4; Problem(prompting_baselines) (a)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T01．",
+                "subpart": "a"
+              }
+            },
+            {
+              "id": "prompting_baselines.a.2",
+              "requirement_zh": "逐prompt统计(格式1正确1)、(格式1正确0)、(格式0正确0)三类数量",
+              "source_locator": "handout pp[7]; §3.4; Problem(prompting_baselines) (a)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T01．",
+                "subpart": "a"
+              }
+            },
+            {
+              "id": "prompting_baselines.a.3",
+              "requirement_zh": "至少观察十条第2类，报告实际正确但解析失败数量；也检查第3类",
+              "source_locator": "handout pp[7]; §3.4; Problem(prompting_baselines) (a)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T01．",
+                "subpart": "a"
+              }
+            },
+            {
+              "id": "prompting_baselines.a.4",
+              "requirement_zh": "交付几句评论、评估metrics、实际prompts/responses示例",
+              "source_locator": "handout pp[7]; §3.4; Problem(prompting_baselines) (a)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T01．",
+                "subpart": "a"
+              }
+            }
+          ]
+        },
+        {
+          "letter": "b",
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              7
+            ],
+            "section": "3.4",
+            "problem": "prompting_baselines",
+            "subpart": "b",
+            "problem_start_line": 309
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T01．",
+            "subpart": "b"
+          },
+          "requirements": [
+            {
+              "id": "prompting_baselines.b.1",
+              "requirement_zh": "观察是否回答问题及其他续写行为",
+              "source_locator": "handout pp[7]; §3.4; Problem(prompting_baselines) (b)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T01．",
+                "subpart": "b"
+              }
+            },
+            {
+              "id": "prompting_baselines.b.2",
+              "requirement_zh": "比较zero-shot r1与three-shot如何塑造行为",
+              "source_locator": "handout pp[7]; §3.4; Problem(prompting_baselines) (b)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T01．",
+                "subpart": "b"
+              }
+            },
+            {
+              "id": "prompting_baselines.b.3",
+              "requirement_zh": "交付几句有实例支持的评论",
+              "source_locator": "handout pp[7]; §3.4; Problem(prompting_baselines) (b)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T01．",
+                "subpart": "b"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T02",
+      "official_id": "baseline_calcs",
+      "official_title": "Compute the variance of the policy gradient estimator",
+      "title_zh": "baseline方差分析",
+      "points": 5.0,
+      "source_pages": [
+        10,
+        11
+      ],
+      "source_section": "4.1.5",
+      "source_text_start_line": 509,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T02．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "4.2"
+      },
+      "subquestions": [
+        {
+          "letter": "a",
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              10,
+              11
+            ],
+            "section": "4.1.5",
+            "problem": "baseline_calcs",
+            "subpart": "a",
+            "problem_start_line": 509
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T02．",
+            "subpart": "a"
+          },
+          "requirements": [
+            {
+              "id": "baseline_calcs.a.1",
+              "requirement_zh": "二元sigmoid policy、iid n样本、reward=动作1指示下，无baseline方差",
+              "source_locator": "handout pp[10, 11]; §4.1.5; Problem(baseline_calcs) (a)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T02．",
+                "subpart": "a"
+              }
+            },
+            {
+              "id": "baseline_calcs.a.2",
+              "requirement_zh": "以n,p表达并推导",
+              "source_locator": "handout pp[10, 11]; §4.1.5; Problem(baseline_calcs) (a)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T02．",
+                "subpart": "a"
+              }
+            }
+          ]
+        },
+        {
+          "letter": "b",
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              10,
+              11
+            ],
+            "section": "4.1.5",
+            "problem": "baseline_calcs",
+            "subpart": "b",
+            "problem_start_line": 509
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T02．",
+            "subpart": "b"
+          },
+          "requirements": [
+            {
+              "id": "baseline_calcs.b.1",
+              "requirement_zh": "减常数b后方差，以n,b,p表达",
+              "source_locator": "handout pp[10, 11]; §4.1.5; Problem(baseline_calcs) (b)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T02．",
+                "subpart": "b"
+              }
+            },
+            {
+              "id": "baseline_calcs.b.2",
+              "requirement_zh": "给推导与讨论",
+              "source_locator": "handout pp[10, 11]; §4.1.5; Problem(baseline_calcs) (b)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T02．",
+                "subpart": "b"
+              }
+            }
+          ]
+        },
+        {
+          "letter": "c",
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              10,
+              11
+            ],
+            "section": "4.1.5",
+            "problem": "baseline_calcs",
+            "subpart": "c",
+            "problem_start_line": 509
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T02．",
+            "subpart": "c"
+          },
+          "requirements": [
+            {
+              "id": "baseline_calcs.c.1",
+              "requirement_zh": "代入population baseline b=p",
+              "source_locator": "handout pp[10, 11]; §4.1.5; Problem(baseline_calcs) (c)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T02．",
+                "subpart": "c"
+              }
+            },
+            {
+              "id": "baseline_calcs.c.2",
+              "requirement_zh": "比较未调整估计器，判断方差始终较低/较高或依赖p",
+              "source_locator": "handout pp[10, 11]; §4.1.5; Problem(baseline_calcs) (c)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T02．",
+                "subpart": "c"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T03",
+      "official_id": "tokenize_prompt_and_output",
+      "official_title": "Prompt and output tokenization",
+      "title_zh": "分词与response mask",
+      "points": 1.0,
+      "source_pages": [
+        14,
+        15
+      ],
+      "source_section": "4.2.1",
+      "source_text_start_line": 710,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T03．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "3"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              14,
+              15
+            ],
+            "section": "4.2.1",
+            "problem": "tokenize_prompt_and_output",
+            "subpart": "unlettered",
+            "problem_start_line": 710
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T03．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "tokenize_prompt_and_output.unlettered.1",
+              "requirement_zh": "实现tokenize_prompt_and_output",
+              "source_locator": "handout pp[14, 15]; §4.2.1; Problem(tokenize_prompt_and_output)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T03．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "tokenize_prompt_and_output.unlettered.2",
+              "requirement_zh": "prompt/output分别无special tokens分词，直接拼接，不插EOS/BOS/separator",
+              "source_locator": "handout pp[14, 15]; §4.2.1; Problem(tokenize_prompt_and_output)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T03．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "tokenize_prompt_and_output.unlettered.3",
+              "requirement_zh": "返回input_ids、labels、response_mask，均(batch,max_concat_length−1)",
+              "source_locator": "handout pp[14, 15]; §4.2.1; Problem(tokenize_prompt_and_output)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T03．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "tokenize_prompt_and_output.unlettered.4",
+              "requirement_zh": "input去末位，labels去首位，mask与labels对齐，response为1、prompt/pad为0",
+              "source_locator": "handout pp[14, 15]; §4.2.1; Problem(tokenize_prompt_and_output)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T03．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "tokenize_prompt_and_output.unlettered.5",
+              "requirement_zh": "连接adapter并通过原test_tokenize_prompt_and_output",
+              "source_locator": "handout pp[14, 15]; §4.2.1; Problem(tokenize_prompt_and_output)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T03．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T04",
+      "official_id": "get_response_log_probs",
+      "official_title": "Response log-probs (and entropy)",
+      "title_zh": "log-prob与entropy",
+      "points": 1.0,
+      "source_pages": [
+        15,
+        16
+      ],
+      "source_section": "4.2.1",
+      "source_text_start_line": 764,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T04．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "3.3"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              15,
+              16
+            ],
+            "section": "4.2.1",
+            "problem": "get_response_log_probs",
+            "subpart": "unlettered",
+            "problem_start_line": 764
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T04．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "get_response_log_probs.unlettered.1",
+              "requirement_zh": "实现get_response_log_probs，输入model/input_ids/labels/return_token_entropy",
+              "source_locator": "handout pp[15, 16]; §4.2.1; Problem(get_response_log_probs)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T04．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "get_response_log_probs.unlettered.2",
+              "requirement_zh": "返回指定labels的条件log_probs，同形(batch,sequence_length)",
+              "source_locator": "handout pp[15, 16]; §4.2.1; Problem(get_response_log_probs)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T04．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "get_response_log_probs.unlettered.3",
+              "requirement_zh": "开关为真时返回完整next-token分布token_entropy，同形",
+              "source_locator": "handout pp[15, 16]; §4.2.1; Problem(get_response_log_probs)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T04．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "get_response_log_probs.unlettered.4",
+              "requirement_zh": "模型设备与是否保留梯度由使用场景正确设置",
+              "source_locator": "handout pp[15, 16]; §4.2.1; Problem(get_response_log_probs)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T04．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "get_response_log_probs.unlettered.5",
+              "requirement_zh": "连接adapter并通过原test_get_response_log_probs",
+              "source_locator": "handout pp[15, 16]; §4.2.1; Problem(get_response_log_probs)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T04．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T05",
+      "official_id": "compute_rollout_rewards",
+      "official_title": "Computing the rewards of rollouts",
+      "title_zh": "rollout rewards",
+      "points": 1.0,
+      "source_pages": [
+        16,
+        17
+      ],
+      "source_section": "4.2.3",
+      "source_text_start_line": 849,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T05．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "2"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              16,
+              17
+            ],
+            "section": "4.2.3",
+            "problem": "compute_rollout_rewards",
+            "subpart": "unlettered",
+            "problem_start_line": 849
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T05．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "compute_rollout_rewards.unlettered.1",
+              "requirement_zh": "实现compute_rollout_rewards，接收reward_fn/responses/repeated_ground_truths",
+              "source_locator": "handout pp[16, 17]; §4.2.3; Problem(compute_rollout_rewards)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T05．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_rollout_rewards.unlettered.2",
+              "requirement_zh": "返回flattened raw_rewards，长度=prompt数×group_size",
+              "source_locator": "handout pp[16, 17]; §4.2.3; Problem(compute_rollout_rewards)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T05．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_rollout_rewards.unlettered.3",
+              "requirement_zh": "metadata至少含rollout batch平均total和format reward",
+              "source_locator": "handout pp[16, 17]; §4.2.3; Problem(compute_rollout_rewards)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T05．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_rollout_rewards.unlettered.4",
+              "requirement_zh": "连接adapter并通过原compute_rollout_rewards选择器",
+              "source_locator": "handout pp[16, 17]; §4.2.3; Problem(compute_rollout_rewards)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T05．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T06",
+      "official_id": "compute_group_normalized_rewards_grpo",
+      "official_title": "Group normalization",
+      "title_zh": "标准GRPO组归一化",
+      "points": 1.0,
+      "source_pages": [
+        17,
+        18
+      ],
+      "source_section": "4.2.3",
+      "source_text_start_line": 892,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T06．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "4"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              17,
+              18
+            ],
+            "section": "4.2.3",
+            "problem": "compute_group_normalized_rewards_grpo",
+            "subpart": "unlettered",
+            "problem_start_line": 892
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T06．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "compute_group_normalized_rewards_grpo.unlettered.1",
+              "requirement_zh": "实现compute_group_normalized_rewards，将flattened rewards按group_size分组",
+              "source_locator": "handout pp[17, 18]; §4.2.3; Problem(compute_group_normalized_rewards_grpo)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T06．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_group_normalized_rewards_grpo.unlettered.2",
+              "requirement_zh": "支持baseline=mean、advantage_normalizer=std",
+              "source_locator": "handout pp[17, 18]; §4.2.3; Problem(compute_group_normalized_rewards_grpo)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T06．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_group_normalized_rewards_grpo.unlettered.3",
+              "requirement_zh": "分母加advantage_eps，默认1e−6；p11要求torch.std默认样本校正",
+              "source_locator": "handout pp[17, 18]; §4.2.3; Problem(compute_group_normalized_rewards_grpo)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T06．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_group_normalized_rewards_grpo.unlettered.4",
+              "requirement_zh": "返回flattened advantages和自选统计",
+              "source_locator": "handout pp[17, 18]; §4.2.3; Problem(compute_group_normalized_rewards_grpo)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T06．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_group_normalized_rewards_grpo.unlettered.5",
+              "requirement_zh": "连接adapter并通过原compute_group_normalized_rewards_grpo",
+              "source_locator": "handout pp[17, 18]; §4.2.3; Problem(compute_group_normalized_rewards_grpo)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T06．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T07",
+      "official_id": "compute_policy_gradient_loss_on_policy",
+      "official_title": "On-policy policy gradient",
+      "title_zh": "on-policy token loss",
+      "points": 1.0,
+      "source_pages": [
+        19,
+        20
+      ],
+      "source_section": "4.2.3",
+      "source_text_start_line": 960,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T07．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "1.2"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              19,
+              20
+            ],
+            "section": "4.2.3",
+            "problem": "compute_policy_gradient_loss_on_policy",
+            "subpart": "unlettered",
+            "problem_start_line": 960
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T07．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "compute_policy_gradient_loss_on_policy.unlettered.1",
+              "requirement_zh": "实现compute_policy_gradient_loss，reward/advantage形(batch,)或(batch,1)，policy logprobs形(batch,sequence)",
+              "source_locator": "handout pp[19, 20]; §4.2.3; Problem(compute_policy_gradient_loss_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T07．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_policy_gradient_loss_on_policy.unlettered.2",
+              "requirement_zh": "支持importance_reweighting_method=none，当前忽略old/clip",
+              "source_locator": "handout pp[19, 20]; §4.2.3; Problem(compute_policy_gradient_loss_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T07．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_policy_gradient_loss_on_policy.unlettered.3",
+              "requirement_zh": "返回负上升目标的per-token loss及metadata，不提前reduce",
+              "source_locator": "handout pp[19, 20]; §4.2.3; Problem(compute_policy_gradient_loss_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T07．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_policy_gradient_loss_on_policy.unlettered.4",
+              "requirement_zh": "连接adapter并通过原test_compute_policy_gradient_loss_on_policy",
+              "source_locator": "handout pp[19, 20]; §4.2.3; Problem(compute_policy_gradient_loss_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T07．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T08",
+      "official_id": "aggregate_loss_across_microbatch_sequence",
+      "official_title": "Aggregate loss across tokens and sequences",
+      "title_zh": "sequence reduction",
+      "points": 0.5,
+      "source_pages": [
+        20
+      ],
+      "source_section": "4.2.3",
+      "source_text_start_line": 1022,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T08．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "4.3"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              20
+            ],
+            "section": "4.2.3",
+            "problem": "aggregate_loss_across_microbatch_sequence",
+            "subpart": "unlettered",
+            "problem_start_line": 1022
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T08．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "aggregate_loss_across_microbatch_sequence.unlettered.1",
+              "requirement_zh": "实现aggregate_loss_across_microbatch的sequence模式",
+              "source_locator": "handout pp[20]; §4.2.3; Problem(aggregate_loss_across_microbatch_sequence)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T08．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "aggregate_loss_across_microbatch_sequence.unlettered.2",
+              "requirement_zh": "按mask每条response有效token均值，再跨序列均值",
+              "source_locator": "handout pp[20]; §4.2.3; Problem(aggregate_loss_across_microbatch_sequence)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T08．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "aggregate_loss_across_microbatch_sequence.unlettered.3",
+              "requirement_zh": "返回可backward标量",
+              "source_locator": "handout pp[20]; §4.2.3; Problem(aggregate_loss_across_microbatch_sequence)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T08．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "aggregate_loss_across_microbatch_sequence.unlettered.4",
+              "requirement_zh": "连接adapter并通过原test_aggregate_loss_across_microbatch_sequence",
+              "source_locator": "handout pp[20]; §4.2.3; Problem(aggregate_loss_across_microbatch_sequence)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T08．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T09",
+      "official_id": "grpo_train_step_standard_on_policy",
+      "official_title": "GRPO train step",
+      "title_zh": "标准on-policy train step",
+      "points": 5.0,
+      "source_pages": [
+        22,
+        23,
+        24
+      ],
+      "source_section": "4.2.4",
+      "source_text_start_line": 1139,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T09．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "5"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              22,
+              23,
+              24
+            ],
+            "section": "4.2.4",
+            "problem": "grpo_train_step_standard_on_policy",
+            "subpart": "unlettered",
+            "problem_start_line": 1139
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T09．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "grpo_train_step_standard_on_policy.unlettered.1",
+              "requirement_zh": "实现grpo_train_step的mean/std/none/sequence组合",
+              "source_locator": "handout pp[22, 23, 24]; §4.2.4; Problem(grpo_train_step_standard_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T09．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_train_step_standard_on_policy.unlettered.2",
+              "requirement_zh": "输入完整model/tokenizer/optimizer/repeated prompts/responses/ground_truths与超参",
+              "source_locator": "handout pp[22, 23, 24]; §4.2.4; Problem(grpo_train_step_standard_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T09．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_train_step_standard_on_policy.unlettered.3",
+              "requirement_zh": "gradient accumulation保持完整batch目标，一次optimizer step并清梯度",
+              "source_locator": "handout pp[22, 23, 24]; §4.2.4; Problem(grpo_train_step_standard_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T09．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_train_step_standard_on_policy.unlettered.4",
+              "requirement_zh": "max_grad_norm非None时在更新前裁剪，metadata含裁剪前norm",
+              "source_locator": "handout pp[22, 23, 24]; §4.2.4; Problem(grpo_train_step_standard_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T09．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_train_step_standard_on_policy.unlettered.5",
+              "requirement_zh": "记录loss、gradient norm、token entropy、train total/format rewards",
+              "source_locator": "handout pp[22, 23, 24]; §4.2.4; Problem(grpo_train_step_standard_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T09．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_train_step_standard_on_policy.unlettered.6",
+              "requirement_zh": "返回正确累积权重的batch scalar loss和metadata",
+              "source_locator": "handout pp[22, 23, 24]; §4.2.4; Problem(grpo_train_step_standard_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T09．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_train_step_standard_on_policy.unlettered.7",
+              "requirement_zh": "连接adapter并通过原test_grpo_train_step_standard_on_policy",
+              "source_locator": "handout pp[22, 23, 24]; §4.2.4; Problem(grpo_train_step_standard_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T09．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T10",
+      "official_id": "grpo_experiments_standard_on_policy",
+      "official_title": "Use GRPO to improve OLMo-2-0425-1B performance on GSM8K (2 B200 hrs)",
+      "title_zh": "标准GRPO实验",
+      "points": 10.0,
+      "source_pages": [
+        25
+      ],
+      "source_section": "4.3",
+      "source_text_start_line": 1285,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T10．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "7"
+      },
+      "subquestions": [
+        {
+          "letter": "a",
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              25
+            ],
+            "section": "4.3",
+            "problem": "grpo_experiments_standard_on_policy",
+            "subpart": "a",
+            "problem_start_line": 1285
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T10．",
+            "subpart": "a"
+          },
+          "requirements": [
+            {
+              "id": "grpo_experiments_standard_on_policy.a.1",
+              "requirement_zh": "脚本接受model name、prompt、train/val paths、sampling/training超参",
+              "source_locator": "handout pp[25]; §4.3; Problem(grpo_experiments_standard_on_policy) (a)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T10．",
+                "subpart": "a"
+              }
+            },
+            {
+              "id": "grpo_experiments_standard_on_policy.a.2",
+              "requirement_zh": "初始化vLLM/wandb/datasets/model/optimizer",
+              "source_locator": "handout pp[25]; §4.3; Problem(grpo_experiments_standard_on_policy) (a)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T10．",
+                "subpart": "a"
+              }
+            },
+            {
+              "id": "grpo_experiments_standard_on_policy.a.3",
+              "requirement_zh": "循环同步权重、生成rollouts、训练batch更新、周期validation并记录generations",
+              "source_locator": "handout pp[25]; §4.3; Problem(grpo_experiments_standard_on_policy) (a)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T10．",
+                "subpart": "a"
+              }
+            },
+            {
+              "id": "grpo_experiments_standard_on_policy.a.4",
+              "requirement_zh": "交付标准on-policy OLMo-2-0425-1B/GSM8K脚本",
+              "source_locator": "handout pp[25]; §4.3; Problem(grpo_experiments_standard_on_policy) (a)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T10．",
+                "subpart": "a"
+              }
+            }
+          ]
+        },
+        {
+          "letter": "b",
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              25
+            ],
+            "section": "4.3",
+            "problem": "grpo_experiments_standard_on_policy",
+            "subpart": "b",
+            "problem_start_line": 1285
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T10．",
+            "subpart": "b"
+          },
+          "requirements": [
+            {
+              "id": "grpo_experiments_standard_on_policy.b.1",
+              "requirement_zh": "先约50steps，检查validation rewards改善与合理rollouts",
+              "source_locator": "handout pp[25]; §4.3; Problem(grpo_experiments_standard_on_policy) (b)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T10．",
+                "subpart": "b"
+              }
+            },
+            {
+              "id": "grpo_experiments_standard_on_policy.b.2",
+              "requirement_zh": "奖励起点近零及若干步后出现正例可属正常",
+              "source_locator": "handout pp[25]; §4.3; Problem(grpo_experiments_standard_on_policy) (b)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T10．",
+                "subpart": "b"
+              }
+            },
+            {
+              "id": "grpo_experiments_standard_on_policy.b.3",
+              "requirement_zh": "交付令本人相信脚本正确的实际证据",
+              "source_locator": "handout pp[25]; §4.3; Problem(grpo_experiments_standard_on_policy) (b)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T10．",
+                "subpart": "b"
+              }
+            }
+          ]
+        },
+        {
+          "letter": "c",
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              25
+            ],
+            "section": "4.3",
+            "problem": "grpo_experiments_standard_on_policy",
+            "subpart": "c",
+            "problem_start_line": 1285
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T10．",
+            "subpart": "c"
+          },
+          "requirements": [
+            {
+              "id": "grpo_experiments_standard_on_policy.c.1",
+              "requirement_zh": "按p24建议超参、zero-shot r1_zero、4seeds或4独立运行",
+              "source_locator": "handout pp[25]; §4.3; Problem(grpo_experiments_standard_on_policy) (c)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T10．",
+                "subpart": "c"
+              }
+            },
+            {
+              "id": "grpo_experiments_standard_on_policy.c.2",
+              "requirement_zh": "逐项画loss、gradient norm、token entropy、train total/format、val total/format、val平均response length",
+              "source_locator": "handout pp[25]; §4.3; Problem(grpo_experiments_standard_on_policy) (c)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T10．",
+                "subpart": "c"
+              }
+            },
+            {
+              "id": "grpo_experiments_standard_on_policy.c.3",
+              "requirement_zh": "每图展示跨运行变化，不只均值；其他排错指标可加",
+              "source_locator": "handout pp[25]; §4.3; Problem(grpo_experiments_standard_on_policy) (c)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T10．",
+                "subpart": "c"
+              }
+            },
+            {
+              "id": "grpo_experiments_standard_on_policy.c.4",
+              "requirement_zh": "周期记录并观察rollouts是否改善",
+              "source_locator": "handout pp[25]; §4.3; Problem(grpo_experiments_standard_on_policy) (c)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T10．",
+                "subpart": "c"
+              }
+            },
+            {
+              "id": "grpo_experiments_standard_on_policy.c.5",
+              "requirement_zh": "交付几句趋势/方差评论、每指标图、训练前后rollout例",
+              "source_locator": "handout pp[25]; §4.3; Problem(grpo_experiments_standard_on_policy) (c)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T10．",
+                "subpart": "c"
+              }
+            },
+            {
+              "id": "grpo_experiments_standard_on_policy.c.6",
+              "requirement_zh": "最终validation accuracy跨seed平均至少25%的procedure",
+              "source_locator": "handout pp[25]; §4.3; Problem(grpo_experiments_standard_on_policy) (c)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T10．",
+                "subpart": "c"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T11",
+      "official_id": "grpo_learning_rate",
+      "official_title": "Tune the learning rate (4 B200 hrs)",
+      "title_zh": "学习率扫描",
+      "points": 3.0,
+      "source_pages": [
+        26
+      ],
+      "source_section": "4.3",
+      "source_text_start_line": 1330,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T11．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "7.2"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              26
+            ],
+            "section": "4.3",
+            "problem": "grpo_learning_rate",
+            "subpart": "unlettered",
+            "problem_start_line": 1330
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T11．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "grpo_learning_rate.unlettered.1",
+              "requirement_zh": "从建议超参起至少1个LR低于1e−5、1个高于1e−5",
+              "source_locator": "handout pp[26]; §4.3; Problem(grpo_learning_rate)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T11．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_learning_rate.unlettered.2",
+              "requirement_zh": "报告final val reward，发散须注明",
+              "source_locator": "handout pp[26]; §4.3; Problem(grpo_learning_rate)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T11．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_learning_rate.unlettered.3",
+              "requirement_zh": "基于前题方差决定各LR seed数量；不是固定4的要求",
+              "source_locator": "handout pp[26]; §4.3; Problem(grpo_learning_rate)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T11．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_learning_rate.unlettered.4",
+              "requirement_zh": "交付final val reward对LR图与几句评论；后续可用tuned LR",
+              "source_locator": "handout pp[26]; §4.3; Problem(grpo_learning_rate)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T11．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T12",
+      "official_id": "grpo_prompt_ablation",
+      "official_title": "Prompt ablation (4 B200 hrs)",
+      "title_zh": "prompt消融",
+      "points": 3.0,
+      "source_pages": [
+        26
+      ],
+      "source_section": "4.3",
+      "source_text_start_line": 1348,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T12．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "7"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              26
+            ],
+            "section": "4.3",
+            "problem": "grpo_prompt_ablation",
+            "subpart": "unlettered",
+            "problem_start_line": 1348
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T12．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "grpo_prompt_ablation.unlettered.1",
+              "requirement_zh": "question_only与r1_zero_three_shot各用few seeds运行GRPO",
+              "source_locator": "handout pp[26]; §4.3; Problem(grpo_prompt_ablation)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T12．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_prompt_ablation.unlettered.2",
+              "requirement_zh": "对比已有zero-shot r1_zero的平均reward与方差",
+              "source_locator": "handout pp[26]; §4.3; Problem(grpo_prompt_ablation)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T12．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_prompt_ablation.unlettered.3",
+              "requirement_zh": "比较其他logged metrics系统差异及结论信心",
+              "source_locator": "handout pp[26]; §4.3; Problem(grpo_prompt_ablation)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T12．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_prompt_ablation.unlettered.4",
+              "requirement_zh": "交付被引用metrics的图与评论",
+              "source_locator": "handout pp[26]; §4.3; Problem(grpo_prompt_ablation)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T12．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T13",
+      "official_id": "think_about_length_normalization",
+      "official_title": "Think about length normalization",
+      "title_zh": "长度归一化思考",
+      "points": 1.0,
+      "source_pages": [
+        27
+      ],
+      "source_section": "5.1",
+      "source_text_start_line": 1388,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T13．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "4.3"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              27
+            ],
+            "section": "5.1",
+            "problem": "think_about_length_normalization",
+            "subpart": "unlettered",
+            "problem_start_line": 1388
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T13．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "think_about_length_normalization.unlettered.1",
+              "requirement_zh": "实验前比较逐序列长度normalization与统一constant",
+              "source_locator": "handout pp[27]; §5.1; Problem(think_about_length_normalization)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T13．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "think_about_length_normalization.unlettered.2",
+              "requirement_zh": "讨论pros/cons和具体适用设置或例子",
+              "source_locator": "handout pp[27]; §5.1; Problem(think_about_length_normalization)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T13．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "think_about_length_normalization.unlettered.3",
+              "requirement_zh": "交付几句讨论",
+              "source_locator": "handout pp[27]; §5.1; Problem(think_about_length_normalization)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T13．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T14",
+      "official_id": "compute_group_normalized_rewards_drgrpo",
+      "official_title": "Dr. GRPO Group normalization",
+      "title_zh": "Dr.GRPO组开关",
+      "points": 0.5,
+      "source_pages": [
+        27
+      ],
+      "source_section": "5.1",
+      "source_text_start_line": 1398,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T14．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "4"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              27
+            ],
+            "section": "5.1",
+            "problem": "compute_group_normalized_rewards_drgrpo",
+            "subpart": "unlettered",
+            "problem_start_line": 1398
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T14．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "compute_group_normalized_rewards_drgrpo.unlettered.1",
+              "requirement_zh": "既有group函数增加advantage_normalizer=none",
+              "source_locator": "handout pp[27]; §5.1; Problem(compute_group_normalized_rewards_drgrpo)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T14．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_group_normalized_rewards_drgrpo.unlettered.2",
+              "requirement_zh": "除mean baseline外也支持baseline=none",
+              "source_locator": "handout pp[27]; §5.1; Problem(compute_group_normalized_rewards_drgrpo)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T14．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_group_normalized_rewards_drgrpo.unlettered.3",
+              "requirement_zh": "连接既有adapter并通过原compute_group_normalized_rewards_drgrpo",
+              "source_locator": "handout pp[27]; §5.1; Problem(compute_group_normalized_rewards_drgrpo)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T14．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T15",
+      "official_id": "aggregate_loss_across_microbatch_constant",
+      "official_title": "Dr. GRPO loss aggregation",
+      "title_zh": "constant reduction",
+      "points": 0.5,
+      "source_pages": [
+        27
+      ],
+      "source_section": "5.1",
+      "source_text_start_line": 1411,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T15．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "4.3"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              27
+            ],
+            "section": "5.1",
+            "problem": "aggregate_loss_across_microbatch_constant",
+            "subpart": "unlettered",
+            "problem_start_line": 1411
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T15．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "aggregate_loss_across_microbatch_constant.unlettered.1",
+              "requirement_zh": "既有aggregate函数支持loss_normalization=constant",
+              "source_locator": "handout pp[27]; §5.1; Problem(aggregate_loss_across_microbatch_constant)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T15．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "aggregate_loss_across_microbatch_constant.unlettered.2",
+              "requirement_zh": "masked总和除给定normalization_constant",
+              "source_locator": "handout pp[27]; §5.1; Problem(aggregate_loss_across_microbatch_constant)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T15．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "aggregate_loss_across_microbatch_constant.unlettered.3",
+              "requirement_zh": "连接既有adapter并通过原test_aggregate_loss_across_microbatch_constant",
+              "source_locator": "handout pp[27]; §5.1; Problem(aggregate_loss_across_microbatch_constant)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T15．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T16",
+      "official_id": "think_about_rft",
+      "official_title": "Think about RFT",
+      "title_zh": "RFT思考",
+      "points": 2.0,
+      "source_pages": [
+        28
+      ],
+      "source_section": "5.2",
+      "source_text_start_line": 1442,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T16．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "4.2"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              28
+            ],
+            "section": "5.2",
+            "problem": "think_about_rft",
+            "subpart": "unlettered",
+            "problem_start_line": 1442
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T16．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "think_about_rft.unlettered.1",
+              "requirement_zh": "按式35/36、binary reward、当前policy iid采样、constant Z比较RFT与Dr.GRPO",
+              "source_locator": "handout pp[28]; §5.2; Problem(think_about_rft)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T16．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "think_about_rft.unlettered.2",
+              "requirement_zh": "讨论期望是否相同、哪个预期方差较低、偏好情境",
+              "source_locator": "handout pp[28]; §5.2; Problem(think_about_rft)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T16．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "think_about_rft.unlettered.3",
+              "requirement_zh": "交付几句讨论；不改成离线固定SFT或保留token动态分母",
+              "source_locator": "handout pp[28]; §5.2; Problem(think_about_rft)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T16．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T17",
+      "official_id": "derive_difficulty_reweightings",
+      "official_title": "Derive difficulty reweightings induced by different advantage normalizers",
+      "title_zh": "难度重加权推导",
+      "points": 6.0,
+      "source_pages": [
+        29
+      ],
+      "source_section": "5.3",
+      "source_text_start_line": 1502,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T17．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "4.2"
+      },
+      "subquestions": [
+        {
+          "letter": "a",
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              29
+            ],
+            "section": "5.3",
+            "problem": "derive_difficulty_reweightings",
+            "subpart": "a",
+            "problem_start_line": 1502
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T17．",
+            "subpart": "a"
+          },
+          "requirements": [
+            {
+              "id": "derive_difficulty_reweightings.a.1",
+              "requirement_zh": "Z=G且G→∞，Dr.GRPO estimator对应stopgrad prompt权重w",
+              "source_locator": "handout pp[29]; §5.3; Problem(derive_difficulty_reweightings) (a)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T17．",
+                "subpart": "a"
+              }
+            },
+            {
+              "id": "derive_difficulty_reweightings.a.2",
+              "requirement_zh": "交付参数表达式与数句理由",
+              "source_locator": "handout pp[29]; §5.3; Problem(derive_difficulty_reweightings) (a)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T17．",
+                "subpart": "a"
+              }
+            }
+          ]
+        },
+        {
+          "letter": "b",
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              29
+            ],
+            "section": "5.3",
+            "problem": "derive_difficulty_reweightings",
+            "subpart": "b",
+            "problem_start_line": 1502
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T17．",
+            "subpart": "b"
+          },
+          "requirements": [
+            {
+              "id": "derive_difficulty_reweightings.b.1",
+              "requirement_zh": "同样极限与constant设定，std-normalized estimator的w",
+              "source_locator": "handout pp[29]; §5.3; Problem(derive_difficulty_reweightings) (b)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T17．",
+                "subpart": "b"
+              }
+            },
+            {
+              "id": "derive_difficulty_reweightings.b.2",
+              "requirement_zh": "交付参数表达式与数句理由",
+              "source_locator": "handout pp[29]; §5.3; Problem(derive_difficulty_reweightings) (b)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T17．",
+                "subpart": "b"
+              }
+            }
+          ]
+        },
+        {
+          "letter": "c",
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              29
+            ],
+            "section": "5.3",
+            "problem": "derive_difficulty_reweightings",
+            "subpart": "c",
+            "problem_start_line": 1502
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T17．",
+            "subpart": "c"
+          },
+          "requirements": [
+            {
+              "id": "derive_difficulty_reweightings.c.1",
+              "requirement_zh": "同样极限与constant设定，mean-normalized MaxRL estimator的w",
+              "source_locator": "handout pp[29]; §5.3; Problem(derive_difficulty_reweightings) (c)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T17．",
+                "subpart": "c"
+              }
+            },
+            {
+              "id": "derive_difficulty_reweightings.c.2",
+              "requirement_zh": "交付参数表达式与数句理由",
+              "source_locator": "handout pp[29]; §5.3; Problem(derive_difficulty_reweightings) (c)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T17．",
+                "subpart": "c"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T18",
+      "official_id": "think_about_advantage_normalization",
+      "official_title": "Think about advantage normalization",
+      "title_zh": "advantage normalization思考",
+      "points": 2.0,
+      "source_pages": [
+        29,
+        30
+      ],
+      "source_section": "5.3",
+      "source_text_start_line": 1555,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T18．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "4"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              29,
+              30
+            ],
+            "section": "5.3",
+            "problem": "think_about_advantage_normalization",
+            "subpart": "unlettered",
+            "problem_start_line": 1555
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T18．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "think_about_advantage_normalization.unlettered.1",
+              "requirement_zh": "实验前比较group std、group mean和none三种normalizer",
+              "source_locator": "handout pp[29, 30]; §5.3; Problem(think_about_advantage_normalization)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T18．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "think_about_advantage_normalization.unlettered.2",
+              "requirement_zh": "pros/cons及具体适用设置或例子",
+              "source_locator": "handout pp[29, 30]; §5.3; Problem(think_about_advantage_normalization)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T18．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "think_about_advantage_normalization.unlettered.3",
+              "requirement_zh": "交付几句讨论",
+              "source_locator": "handout pp[29, 30]; §5.3; Problem(think_about_advantage_normalization)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T18．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T19",
+      "official_id": "compute_group_normalized_rewards_maxrl",
+      "official_title": "MaxRL Group normalization",
+      "title_zh": "MaxRL组开关",
+      "points": 0.5,
+      "source_pages": [
+        30
+      ],
+      "source_section": "5.3",
+      "source_text_start_line": 1568,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T19．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "4"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              30
+            ],
+            "section": "5.3",
+            "problem": "compute_group_normalized_rewards_maxrl",
+            "subpart": "unlettered",
+            "problem_start_line": 1568
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T19．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "compute_group_normalized_rewards_maxrl.unlettered.1",
+              "requirement_zh": "既有group函数支持advantage_normalizer=mean",
+              "source_locator": "handout pp[30]; §5.3; Problem(compute_group_normalized_rewards_maxrl)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T19．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_group_normalized_rewards_maxrl.unlettered.2",
+              "requirement_zh": "分母加advantage_eps避免零除",
+              "source_locator": "handout pp[30]; §5.3; Problem(compute_group_normalized_rewards_maxrl)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T19．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_group_normalized_rewards_maxrl.unlettered.3",
+              "requirement_zh": "连接adapter并通过原compute_group_normalized_rewards_maxrl",
+              "source_locator": "handout pp[30]; §5.3; Problem(compute_group_normalized_rewards_maxrl)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T19．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T20",
+      "official_id": "grpo_train_step_variants_on_policy",
+      "official_title": "GRPO train step variants",
+      "title_zh": "on-policy变体train step",
+      "points": 2.5,
+      "source_pages": [
+        30,
+        31
+      ],
+      "source_section": "5.4",
+      "source_text_start_line": 1605,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T20．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "5.3"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              30,
+              31
+            ],
+            "section": "5.4",
+            "problem": "grpo_train_step_variants_on_policy",
+            "subpart": "unlettered",
+            "problem_start_line": 1605
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T20．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "grpo_train_step_variants_on_policy.unlettered.1",
+              "requirement_zh": "train step支持baseline两种/normalizer三种/reduction两种、importance=none",
+              "source_locator": "handout pp[30, 31]; §5.4; Problem(grpo_train_step_variants_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T20．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_train_step_variants_on_policy.unlettered.2",
+              "requirement_zh": "跳过零advantage序列的训练model前向",
+              "source_locator": "handout pp[30, 31]; §5.4; Problem(grpo_train_step_variants_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T20．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_train_step_variants_on_policy.unlettered.3",
+              "requirement_zh": "在原group计算advantage，剪枝后梯度须与未剪枝等价，允许相应减少累积数保持microbatch大小",
+              "source_locator": "handout pp[30, 31]; §5.4; Problem(grpo_train_step_variants_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T20．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_train_step_variants_on_policy.unlettered.4",
+              "requirement_zh": "连接adapter并通过原test_grpo_train_step_variants_on_policy",
+              "source_locator": "handout pp[30, 31]; §5.4; Problem(grpo_train_step_variants_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T20．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T21",
+      "official_id": "grpo_experiments_variants_on_policy",
+      "official_title": "Compare the performance of different RL algorithms (8 B200 hrs)",
+      "title_zh": "四种on-policy算法比较",
+      "points": 10.0,
+      "source_pages": [
+        31,
+        32
+      ],
+      "source_section": "5.4",
+      "source_text_start_line": 1638,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T21．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "7"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              31,
+              32
+            ],
+            "section": "5.4",
+            "problem": "grpo_experiments_variants_on_policy",
+            "subpart": "unlettered",
+            "problem_start_line": 1638
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T21．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "grpo_experiments_variants_on_policy.unlettered.1",
+              "requirement_zh": "与standard GRPO固定其他超参、可选此前LR、zero-shot r1_zero",
+              "source_locator": "handout pp[31, 32]; §5.4; Problem(grpo_experiments_variants_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T21．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_experiments_variants_on_policy.unlettered.2",
+              "requirement_zh": "GRPO_constant/Dr_GRPO/RFT/作业constant版MaxRL各4seeds",
+              "source_locator": "handout pp[31, 32]; §5.4; Problem(grpo_experiments_variants_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T21．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_experiments_variants_on_policy.unlettered.3",
+              "requirement_zh": "以已有standard GRPO为baseline，比较平均性能与方差",
+              "source_locator": "handout pp[31, 32]; §5.4; Problem(grpo_experiments_variants_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T21．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_experiments_variants_on_policy.unlettered.4",
+              "requirement_zh": "讨论哪些方法可能受益于更多调参及方差限制的信心",
+              "source_locator": "handout pp[31, 32]; §5.4; Problem(grpo_experiments_variants_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T21．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_experiments_variants_on_policy.unlettered.5",
+              "requirement_zh": "交付评论与被引用metrics图",
+              "source_locator": "handout pp[31, 32]; §5.4; Problem(grpo_experiments_variants_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T21．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_experiments_variants_on_policy.unlettered.6",
+              "requirement_zh": "RFT可省错误样本训练计算；不将原MaxRL动态token分母混入",
+              "source_locator": "handout pp[31, 32]; §5.4; Problem(grpo_experiments_variants_on_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T21．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T22",
+      "official_id": "derive_surrogate_objectives",
+      "official_title": "Derive surrogate objectives for importance reweighting approaches",
+      "title_zh": "pairwise surrogate推导",
+      "points": 2.0,
+      "source_pages": [
+        34
+      ],
+      "source_section": "6.2.1",
+      "source_text_start_line": 1786,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T22．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "6.2"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              34
+            ],
+            "section": "6.2.1",
+            "problem": "derive_surrogate_objectives",
+            "subpart": "unlettered",
+            "problem_start_line": 1786
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T22．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "derive_surrogate_objectives.unlettered.1",
+              "requirement_zh": "式55在old policy采样，将相邻成对token ratios相乘，配成对log-gradient",
+              "source_locator": "handout pp[34]; §6.2.1; Problem(derive_surrogate_objectives)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T22．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "derive_surrogate_objectives.unlettered.2",
+              "requirement_zh": "推导该pairwise estimator优化的surrogate objective",
+              "source_locator": "handout pp[34]; §6.2.1; Problem(derive_surrogate_objectives)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T22．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "derive_surrogate_objectives.unlettered.3",
+              "requirement_zh": "交付参数表达式与推导",
+              "source_locator": "handout pp[34]; §6.2.1; Problem(derive_surrogate_objectives)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T22．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T23",
+      "official_id": "compute_policy_gradient_loss_off_policy",
+      "official_title": "Off-policy policy gradient with token- level reweighting",
+      "title_zh": "token off-policy loss",
+      "points": 1.0,
+      "source_pages": [
+        35
+      ],
+      "source_section": "6.2.2",
+      "source_text_start_line": 1886,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T23．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "6.3"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              35
+            ],
+            "section": "6.2.2",
+            "problem": "compute_policy_gradient_loss_off_policy",
+            "subpart": "unlettered",
+            "problem_start_line": 1886
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T23．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "compute_policy_gradient_loss_off_policy.unlettered.1",
+              "requirement_zh": "既有loss支持noclip与grpo",
+              "source_locator": "handout pp[35]; §6.2.2; Problem(compute_policy_gradient_loss_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T23．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_policy_gradient_loss_off_policy.unlettered.2",
+              "requirement_zh": "old_log_probs来自生成rollout的model；grpo用cliprange",
+              "source_locator": "handout pp[35]; §6.2.2; Problem(compute_policy_gradient_loss_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T23．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_policy_gradient_loss_off_policy.unlettered.3",
+              "requirement_zh": "训练script增加取得old scores的工作；返回负上升目标",
+              "source_locator": "handout pp[35]; §6.2.2; Problem(compute_policy_gradient_loss_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T23．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_policy_gradient_loss_off_policy.unlettered.4",
+              "requirement_zh": "连接adapter并通过原test_compute_policy_gradient_loss_off_policy",
+              "source_locator": "handout pp[35]; §6.2.2; Problem(compute_policy_gradient_loss_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T23．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T24",
+      "official_id": "think_about_importance_reweighting",
+      "official_title": "Think about importance reweighting",
+      "title_zh": "importance策略思考",
+      "points": 2.0,
+      "source_pages": [
+        36
+      ],
+      "source_section": "6.3",
+      "source_text_start_line": 1957,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T24．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "6"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              36
+            ],
+            "section": "6.3",
+            "problem": "think_about_importance_reweighting",
+            "subpart": "unlettered",
+            "problem_start_line": 1957
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T24．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "think_about_importance_reweighting.unlettered.1",
+              "requirement_zh": "比较(a)none、(b)clipped token PPO/GRPO、(c)clipped sequence geometric GSPO",
+              "source_locator": "handout pp[36]; §6.3; Problem(think_about_importance_reweighting)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T24．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "think_about_importance_reweighting.unlettered.2",
+              "requirement_zh": "讨论bias/variance谱系和可能适用情境",
+              "source_locator": "handout pp[36]; §6.3; Problem(think_about_importance_reweighting)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T24．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "think_about_importance_reweighting.unlettered.3",
+              "requirement_zh": "交付几句评论；括号abc是三方法标签而非正式子问",
+              "source_locator": "handout pp[36]; §6.3; Problem(think_about_importance_reweighting)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T24．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T25",
+      "official_id": "compute_policy_gradient_loss_off_policy_gspo",
+      "official_title": "Off-policy policy gradient with sequence-level reweighting",
+      "title_zh": "GSPO loss",
+      "points": 1.0,
+      "source_pages": [
+        37
+      ],
+      "source_section": "6.3",
+      "source_text_start_line": 1973,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T25．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "6.4"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              37
+            ],
+            "section": "6.3",
+            "problem": "compute_policy_gradient_loss_off_policy_gspo",
+            "subpart": "unlettered",
+            "problem_start_line": 1973
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T25．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "compute_policy_gradient_loss_off_policy_gspo.unlettered.1",
+              "requirement_zh": "既有loss支持gspo、old scores、cliprange和response mask",
+              "source_locator": "handout pp[37]; §6.3; Problem(compute_policy_gradient_loss_off_policy_gspo)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T25．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_policy_gradient_loss_off_policy_gspo.unlettered.2",
+              "requirement_zh": "几何平均数值稳定计算，仅response token参与平均",
+              "source_locator": "handout pp[37]; §6.3; Problem(compute_policy_gradient_loss_off_policy_gspo)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T25．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_policy_gradient_loss_off_policy_gspo.unlettered.3",
+              "requirement_zh": "返回负上升目标，逐token接口与最终sequence objective保持一致",
+              "source_locator": "handout pp[37]; §6.3; Problem(compute_policy_gradient_loss_off_policy_gspo)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T25．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_policy_gradient_loss_off_policy_gspo.unlettered.4",
+              "requirement_zh": "训练script取得行为policy old scores",
+              "source_locator": "handout pp[37]; §6.3; Problem(compute_policy_gradient_loss_off_policy_gspo)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T25．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "compute_policy_gradient_loss_off_policy_gspo.unlettered.5",
+              "requirement_zh": "连接adapter并通过原test_compute_policy_gradient_loss_off_policy_gspo",
+              "source_locator": "handout pp[37]; §6.3; Problem(compute_policy_gradient_loss_off_policy_gspo)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T25．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T26",
+      "official_id": "grpo_train_step_off_policy",
+      "official_title": "Off-policy GRPO train step",
+      "title_zh": "off-policy train step",
+      "points": 2.5,
+      "source_pages": [
+        37
+      ],
+      "source_section": "6.4",
+      "source_text_start_line": 1993,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T26．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "6"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              37
+            ],
+            "section": "6.4",
+            "problem": "grpo_train_step_off_policy",
+            "subpart": "unlettered",
+            "problem_start_line": 1993
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T26．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "grpo_train_step_off_policy.unlettered.1",
+              "requirement_zh": "train step支持importance_reweighting_method/old_log_probs/cliprange",
+              "source_locator": "handout pp[37]; §6.4; Problem(grpo_train_step_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T26．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_train_step_off_policy.unlettered.2",
+              "requirement_zh": "支持完整参数范围并保留既有accumulation/logging/clip/zero-grad合同",
+              "source_locator": "handout pp[37]; §6.4; Problem(grpo_train_step_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T26．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_train_step_off_policy.unlettered.3",
+              "requirement_zh": "连接adapter并通过原test_grpo_train_step_off_policy",
+              "source_locator": "handout pp[37]; §6.4; Problem(grpo_train_step_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T26．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T27",
+      "official_id": "grpo_experiments_off_policy",
+      "official_title": "Compare the performance of different off-policy algorithms (8 B200 hrs)",
+      "title_zh": "四种off-policy实验",
+      "points": 10.0,
+      "source_pages": [
+        38
+      ],
+      "source_section": "6.4",
+      "source_text_start_line": 2024,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T27．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "7"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              38
+            ],
+            "section": "6.4",
+            "problem": "grpo_experiments_off_policy",
+            "subpart": "unlettered",
+            "problem_start_line": 2024
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T27．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "grpo_experiments_off_policy.unlettered.1",
+              "requirement_zh": "与standard GRPO固定其他超参/所选LR，zero-shot r1_zero，可选此前RL variant并注明",
+              "source_locator": "handout pp[38]; §6.4; Problem(grpo_experiments_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T27．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_experiments_off_policy.unlettered.2",
+              "requirement_zh": "rollout=256/train=8/accumulation=1，即每rollout batch32optimizer updates",
+              "source_locator": "handout pp[38]; §6.4; Problem(grpo_experiments_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T27．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_experiments_off_policy.unlettered.3",
+              "requirement_zh": "naive(none)/noclip(noclip)/clip(grpo)/gspo(gspo)各4seeds",
+              "source_locator": "handout pp[38]; §6.4; Problem(grpo_experiments_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T27．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_experiments_off_policy.unlettered.4",
+              "requirement_zh": "默认token clip=.2、GSPO clip=.0003，可自调并记录",
+              "source_locator": "handout pp[38]; §6.4; Problem(grpo_experiments_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T27．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_experiments_off_policy.unlettered.5",
+              "requirement_zh": "除既有metrics外记录clip fraction",
+              "source_locator": "handout pp[38]; §6.4; Problem(grpo_experiments_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T27．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_experiments_off_policy.unlettered.6",
+              "requirement_zh": "与fully on-policy比较表现、速度问题、稳定性和seed方差",
+              "source_locator": "handout pp[38]; §6.4; Problem(grpo_experiments_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T27．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_experiments_off_policy.unlettered.7",
+              "requirement_zh": "比较两clipping clip fraction与稳定性，讨论更多调参与信心",
+              "source_locator": "handout pp[38]; §6.4; Problem(grpo_experiments_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T27．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "grpo_experiments_off_policy.unlettered.8",
+              "requirement_zh": "交付评论与被引用metrics图",
+              "source_locator": "handout pp[38]; §6.4; Problem(grpo_experiments_off_policy)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T27．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": "T28",
+      "official_id": "try_your_own",
+      "official_title": "Try your own policy gradient estimator",
+      "title_zh": "自拟单因素估计器",
+      "points": 10.0,
+      "source_pages": [
+        38
+      ],
+      "source_section": "7",
+      "source_text_start_line": 2052,
+      "lab": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading_prefix": "T28．"
+      },
+      "guide": {
+        "path": "labs/a5-reasoning/guide.zh.md",
+        "section": "7.2"
+      },
+      "subquestions": [
+        {
+          "letter": null,
+          "points": null,
+          "points_note": "官方只为整个Problem赋分，不臆造子问分数。",
+          "source_locator": {
+            "file": "p1-assignment-a5/raw/main-2026.txt",
+            "physical_pages": [
+              38
+            ],
+            "section": "7",
+            "problem": "try_your_own",
+            "subpart": "unlettered",
+            "problem_start_line": 2052
+          },
+          "body_locator": {
+            "path": "labs/a5-reasoning/lab.zh.md",
+            "heading_prefix": "T28．",
+            "subpart": "unlettered"
+          },
+          "requirements": [
+            {
+              "id": "try_your_own.unlettered.1",
+              "requirement_zh": "学生自行提出policy-gradient estimator；可考虑advantage/importance/baseline方向",
+              "source_locator": "handout pp[38]; §7; Problem(try_your_own)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T28．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "try_your_own.unlettered.2",
+              "requirement_zh": "必须存在此前方法只差一个因素的直接baseline",
+              "source_locator": "handout pp[38]; §7; Problem(try_your_own)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T28．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "try_your_own.unlettered.3",
+              "requirement_zh": "固定OLMo-2-0425-1B/GSM8K与其他问题参数，多seeds比较已有baselines",
+              "source_locator": "handout pp[38]; §7; Problem(try_your_own)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T28．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "try_your_own.unlettered.4",
+              "requirement_zh": "说明理论依据/直觉与是否胜过baseline",
+              "source_locator": "handout pp[38]; §7; Problem(try_your_own)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T28．",
+                "subpart": "unlettered"
+              }
+            },
+            {
+              "id": "try_your_own.unlettered.5",
+              "requirement_zh": "交付评论与metrics图，可选有帮助的推导；不捏造4seeds硬要求",
+              "source_locator": "handout pp[38]; §7; Problem(try_your_own)",
+              "body_locator": {
+                "path": "labs/a5-reasoning/lab.zh.md",
+                "heading_prefix": "T28．",
+                "subpart": "unlettered"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "unnumbered_requirements": [
+    {
+      "id": "submission",
+      "requirement_zh": "提交排版writeup.pdf与本人code.zip；原脚本测试后打包，pytest || true不证明通过；多类文件被排除。",
+      "source_locator": "1, pp1–2",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.2"
+      }
+    },
+    {
+      "id": "scope",
+      "requirement_zh": "正篇必做推理RL；安全/SFT/DPO是完全optional补充，不混作主篇任务。",
+      "source_locator": "1–2, pp1–3",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.1"
+      }
+    },
+    {
+      "id": "official-tests",
+      "requirement_zh": "必做tests/test_grpo.py通过七个adapters接学生实现；保留原测试合同，可补自己的测试。",
+      "source_locator": "1, p1; README lines21–29",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.1"
+      }
+    },
+    {
+      "id": "model",
+      "requirement_zh": "正式allenai/OLMo-2-0425-1B base，而非SFT/Instruct或课堂弱小模型；GSM8K训练/验证。",
+      "source_locator": "2.2, pp2–3",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.3"
+      }
+    },
+    {
+      "id": "dataset-use",
+      "requirement_zh": "train.jsonl训练、test.jsonl按题设validation；不称独立未调参test。",
+      "source_locator": "2.2 p3; 4.3 p24",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.3"
+      }
+    },
+    {
+      "id": "prompt-protocol",
+      "requirement_zh": "固定question_only boxed、r1_zero、three-shot三种；模型卡8-shot不作等价baseline。",
+      "source_locator": "3.2, pp5–6",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T01"
+      }
+    },
+    {
+      "id": "generation",
+      "requirement_zh": "temperature1、top-p1、max512；仅r1两类stop=</answer>且include_stop_str_in_output=True。",
+      "source_locator": "3.4 p6; 4.2.2 p16",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T01"
+      }
+    },
+    {
+      "id": "reward",
+      "requirement_zh": "total=answer binary reward，不加format partial credit；ground_truth取####后答案去空白。",
+      "source_locator": "3.3 p6",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T01"
+      }
+    },
+    {
+      "id": "parser",
+      "requirement_zh": "question_only boxed parser、r1严格标签子串；format gate和fast matcher都可能误差；不替换选做last-number parser。",
+      "source_locator": "3.3 p6; grader lines961–1080",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T01"
+      }
+    },
+    {
+      "id": "notation",
+      "requirement_zh": "B为prompt数，G为每prompt responses，rollout/train batch单位均responses。",
+      "source_locator": "2.3 pp3–4",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "3"
+      }
+    },
+    {
+      "id": "gradient-objective",
+      "requirement_zh": "expected reward、score-function、action-independent baseline与self-included group-mean不同；std/length改变目标，loss为负surrogate。",
+      "source_locator": "4.1 pp8–12",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T02;T07"
+      }
+    },
+    {
+      "id": "std-contract",
+      "requirement_zh": "公式population std但实现按默认torch.std样本校正；epsilon不自动解决G=1。",
+      "source_locator": "4.1.6 p11",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T06"
+      }
+    },
+    {
+      "id": "on-policy-clock",
+      "requirement_zh": "一次rollout batch一次optimizer step；微批梯度累计不是off-policy。",
+      "source_locator": "4.1.8 p12; 4.2.4 p21",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "3;T09"
+      }
+    },
+    {
+      "id": "model-loader",
+      "requirement_zh": "HF base模型加载BF16，CPU eager、GPU FA2；可自写符合架构loader；可save_pretrained模型/tokenizer。",
+      "source_locator": "4.2.1 pp13–14; checkpoint lines1–12",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.3"
+      }
+    },
+    {
+      "id": "tokenization",
+      "requirement_zh": "prompt/output各自无特殊token分词后拼接，shifted-label response mask。",
+      "source_locator": "4.2.1 pp14–15",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T03"
+      }
+    },
+    {
+      "id": "weight-sync",
+      "requirement_zh": "训练/HF与推理/vLLM分置GPU，生成前同步参数；初始化NCCL、暂停/传权重/清prefix cache/恢复。",
+      "source_locator": "4.2.2 p16; vllm helper lines222–292",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "4.1"
+      }
+    },
+    {
+      "id": "helper-request",
+      "requirement_zh": "请求含temperature/max_tokens/n/seed及可选stop，未显式传top_p；choice index排序和text/token_ids/finish_reason要保持配对。",
+      "source_locator": "vllm helper lines180–219",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "4.1"
+      }
+    },
+    {
+      "id": "accumulation",
+      "requirement_zh": "sequence微批均值按样本占比加权；constant另核全局Z，不重复除累计数。",
+      "source_locator": "4.2.4 p21",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T09;T15"
+      }
+    },
+    {
+      "id": "train-step-logging",
+      "requirement_zh": "loss、裁剪前梯度norm、token entropy、train total/format；可选pass@k不替代accuracy。",
+      "source_locator": "4.2.4 pp22–23",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T09"
+      }
+    },
+    {
+      "id": "default-data",
+      "requirement_zh": "建议n_train6400、n_val1024；验证至少1024，注意噪声。",
+      "source_locator": "4.3 p24",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "4.1"
+      }
+    },
+    {
+      "id": "default-train",
+      "requirement_zh": "200rollout steps、LR1e−5、rollout=train=256responses、group8、accumulation32、max_grad_norm1。",
+      "source_locator": "4.3 p24",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "4.1"
+      }
+    },
+    {
+      "id": "default-optimizer",
+      "requirement_zh": "AdamW betas(.9,.95)、weight_decay0；采样temperature1/max512。",
+      "source_locator": "4.3 p24",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "4.1"
+      }
+    },
+    {
+      "id": "default-logs",
+      "requirement_zh": "建议每10rollout batches验证、每40保存当前训练rollouts用于观察。",
+      "source_locator": "4.3 p24",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "4.1"
+      }
+    },
+    {
+      "id": "variance",
+      "requirement_zh": "4seeds或非完全可复现情况下4独立运行；均值加各run、近似1.96SE区间或min/max；不可只均值。",
+      "source_locator": "4.3 pp24–25",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "4.1"
+      }
+    },
+    {
+      "id": "constant-Z",
+      "requirement_zh": "constant典型Z=train responses×max generation length，全训练固定，非实际token或存活样本数。",
+      "source_locator": "5.1 pp26–27",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "5"
+      }
+    },
+    {
+      "id": "variant-matrix",
+      "requirement_zh": "standard(mean,std,sequence);GRPO_constant(mean,std,constant);Dr_GRPO(mean,none,constant);RFT(none,none,constant);MaxRL(mean,mean,constant)。",
+      "source_locator": "5.4 p30",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "5"
+      }
+    },
+    {
+      "id": "maxrl-deviation",
+      "requirement_zh": "作业MaxRL用constant，原论文用batch tokens；保留差异不静默替换。",
+      "source_locator": "5.3 p28;5.4 p31",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "5;T21"
+      }
+    },
+    {
+      "id": "zero-advantage-pruning",
+      "requirement_zh": "mean baseline全同reward组为零；none baseline错误样本为零；剪枝/减累积须保持同一梯度。",
+      "source_locator": "5.4 pp30–31",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T20"
+      }
+    },
+    {
+      "id": "tuning-asymmetry",
+      "requirement_zh": "全部方法独立调参最理想但昂贵；共享baseline tuned LR时失败不证明最优表现差，声明预算限制。",
+      "source_locator": "5.4 p31",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T21"
+      }
+    },
+    {
+      "id": "off-policy-clock",
+      "requirement_zh": "同rollout多次optimizer更新，第二次后stale；naive与importance不同，old固定。",
+      "source_locator": "6.1 p32",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "6"
+      }
+    },
+    {
+      "id": "importance-bias",
+      "requirement_zh": "完整sequence比值与token surrogate/GSPO几何平均不同；前后缀偏差、长序列方差、clipping有偏。",
+      "source_locator": "6.1–6.3 pp32–36",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "6;T24"
+      }
+    },
+    {
+      "id": "old-probs",
+      "requirement_zh": "训练脚本取得行为策略old_log_probs，更新前固定；与当前同token/prefix/mask，非DPO reference。",
+      "source_locator": "6.2.2 p35;6.4 p37",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "6;T23;T25"
+      }
+    },
+    {
+      "id": "offpolicy-defaults",
+      "requirement_zh": "256rollout/8train/1accumulation=32steps；token clip .2、GSPO .0003；可调但记账。",
+      "source_locator": "6.4 p37",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T27"
+      }
+    },
+    {
+      "id": "cispo-optional",
+      "requirement_zh": "可选CISPO直接upper-bound gradient weight，不等于PPO零梯度分支；非必做第五实验。",
+      "source_locator": "6.2.2 pp35–36",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "未计分可选探索"
+      }
+    },
+    {
+      "id": "constant-gspo-optional",
+      "requirement_zh": "GSPO的1/L指数自然带长度梯度；constant-normalized扩展为optional，需要改指数/解释完整目标。",
+      "source_locator": "6.3 p36",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T25;未计分可选探索"
+      }
+    },
+    {
+      "id": "gpu-estimates",
+      "requirement_zh": "标注B200 hrs分别2/4/4/8/8，只是官方估时，不是本次结果或付费承诺。",
+      "source_locator": "Problems pp25,26,31,38",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T10;T11;T12;T21;T27"
+      }
+    },
+    {
+      "id": "ai-policy",
+      "requirement_zh": "AI限概念/API；不得代写代码/伪代码/作业答案/实验；禁自动补全；不改政策文件。",
+      "source_locator": "AGENTS full;AI policy lines1–21",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.2"
+      }
+    },
+    {
+      "id": "permissions",
+      "requirement_zh": "整体LICENSE未发现，不宣称全文翻译授权；grader Apache2、OLMo Apache2、GSM8K MIT独立。",
+      "source_locator": "repository tree;grader header;model/data cards",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.3"
+      }
+    },
+    {
+      "id": "runtime-access",
+      "requirement_zh": "Python>=3.12<3.13、vllm.19.1、gpu extras；SUNET未配置即抛错、B200:2/最多4容器/1h/secret；不绕过。",
+      "source_locator": "pyproject full;modal_utils full",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.3"
+      }
+    },
+    {
+      "id": "no-execution",
+      "requirement_zh": "本站只静态来源与原创概念；未官方测试/训练/数据模型下载/云服务/提交；不造实验结果。",
+      "source_locator": "P7 continuation contract §6",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.3;7.1"
+      }
+    }
+  ],
+  "source_contract_map": [
+    {
+      "upstream_path": "tests/adapters.py",
+      "file": "p7-a5-reasoning/upstream/tests__adapters.py.txt",
+      "read_lines": "13–326",
+      "contract": "七主篇adapter签名/shape；327–461为选做边界，本次完整读但不扩主篇。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T03–T09,T14–T15,T19–T20,T23,T25–T26"
+      }
+    },
+    {
+      "upstream_path": "tests/test_grpo.py",
+      "file": "p7-a5-reasoning/upstream/tests__test_grpo.py.txt",
+      "read_lines": "1–353",
+      "contract": "全部主篇测试：token/reward/advantage/loss/reduction及train-step参数化；参数快照与grad None；未执行/未下载npz。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T03–T09,T14–T15,T19–T20,T23,T25–T26"
+      }
+    },
+    {
+      "upstream_path": "tests/conftest.py",
+      "file": "p7-a5-reasoning/upstream/tests__conftest.py.txt",
+      "read_lines": "1–424",
+      "contract": "完整fixture与snapshot reader；测试reward可为分数；tiny GPT2/WordLevel是夹具非正式实验模型；未运行。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.1,T05,T09"
+      }
+    },
+    {
+      "upstream_path": "tests/common.py",
+      "file": "p7-a5-reasoning/upstream/tests__common.py.txt",
+      "read_lines": "1–3",
+      "contract": "FIXTURES_PATH只定位测试fixtures。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.1"
+      }
+    },
+    {
+      "upstream_path": "cs336_alignment/drgrpo_grader.py",
+      "file": "p7-a5-reasoning/upstream/cs336_alignment__drgrpo_grader.py.txt",
+      "read_lines": "1–1080",
+      "contract": "完整normalization/equality/boxed/r1/question-only流程；Apache2文件头；默认fast=True与严格字面格式门。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T01"
+      }
+    },
+    {
+      "upstream_path": "cs336_alignment/vllm_utils.py",
+      "file": "p7-a5-reasoning/upstream/cs336_alignment__vllm_utils.py.txt",
+      "read_lines": "1–292",
+      "contract": "完整服务生命周期、request字段、choice排序、NCCL同步及cache reset；top_p未显式转发。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "4.1"
+      }
+    },
+    {
+      "upstream_path": "cs336_alignment/checkpoint.py",
+      "file": "p7-a5-reasoning/upstream/cs336_alignment__checkpoint.py.txt",
+      "read_lines": "1–12",
+      "contract": "BF16/device/eager-vs-FA2 model/tokenizer loader。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.3"
+      }
+    },
+    {
+      "upstream_path": "cs336_alignment/prompts/question_only.prompt",
+      "file": "p7-a5-reasoning/upstream/cs336_alignment__prompts__question_only.prompt.txt",
+      "read_lines": "1",
+      "contract": "boxed模板。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T01"
+      }
+    },
+    {
+      "upstream_path": "cs336_alignment/prompts/r1_zero.prompt",
+      "file": "p7-a5-reasoning/upstream/cs336_alignment__prompts__r1_zero.prompt.txt",
+      "read_lines": "1–3",
+      "contract": "think/answer模板及未闭合think前缀。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T01"
+      }
+    },
+    {
+      "upstream_path": "cs336_alignment/prompts/r1_zero_three_shot_gsm8k.prompt",
+      "file": "p7-a5-reasoning/upstream/cs336_alignment__prompts__r1_zero_three_shot_gsm8k.prompt.txt",
+      "read_lines": "1–9",
+      "contract": "固定三例与最终query，不在公开正文复刻示例。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "T01"
+      }
+    },
+    {
+      "upstream_path": "pyproject.toml",
+      "file": "p1-assignment-a5/raw/pyproject.toml",
+      "read_lines": "1–55",
+      "contract": "Python/version/deps/gpu extras/vllm/Torch index/pytest路径。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.1,0.3"
+      }
+    },
+    {
+      "upstream_path": "cs336_alignment/modal_utils.py",
+      "file": "p1-assignment-a5/raw/modal_utils.py.txt",
+      "read_lines": "1–100",
+      "contract": "SUNET gate/B200:2/containers4/timeout1h/secret/uv gpu image/local directories。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.3"
+      }
+    },
+    {
+      "upstream_path": "test_and_make_submission.sh",
+      "file": "p7-a5-reasoning/upstream/test_and_make_submission.sh.txt",
+      "read_lines": "1–34",
+      "contract": "pytest || true及code.zip exclusions；未执行。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.2"
+      }
+    },
+    {
+      "upstream_path": "README.md",
+      "file": "p1-assignment-a5/raw/README.txt",
+      "read_lines": "1–29",
+      "contract": "uv说明、必做test_grpo与optional supplement。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.1,0.3"
+      }
+    },
+    {
+      "upstream_path": "CHANGELOG.md",
+      "file": "p1-assignment-a5/raw/CHANGELOG.txt",
+      "read_lines": "1–107",
+      "contract": "完整历史；新模型/任务/4seeds/MaxRL/GSPO及2.0.1与handout版本分离。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.1"
+      }
+    },
+    {
+      "upstream_path": "AGENTS.md",
+      "file": "p7-a5-reasoning/upstream/AGENTS.md.txt",
+      "read_lines": "complete",
+      "contract": "完整AI学术政策，来源正文仅用于独立概念导航。",
+      "body_locator": {
+        "path": "labs/a5-reasoning/lab.zh.md",
+        "heading": "0.2"
+      }
+    }
+  ],
+  "execution": "static source reading only; no official code/tests/experiments/data/model download; independent original teaching cases only"
+}

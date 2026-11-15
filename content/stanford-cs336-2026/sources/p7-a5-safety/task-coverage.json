@@ -1,0 +1,882 @@
+{
+  "schema_version": 1,
+  "phase": "P7",
+  "owner": "P7SafetyAssignment",
+  "lab_id": "a5-safety-optional",
+  "optional": true,
+  "not_assignment_six": true,
+  "fixed_commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+  "handout_version": "Spring 2026 v26.0.0",
+  "physical_pages": 18,
+  "counts": {
+    "tasks": 16,
+    "points": 61,
+    "lettered_subparts": 42,
+    "unlettered_task_deliverable_blocks": 4,
+    "task_deliverable_blocks": 46,
+    "unnumbered_handout_constraints": 14
+  },
+  "counting_rule": "Count each letter once even where it requests several artifacts; count 4 standalone nonlettered Problem deliverables; do not invent letter points.",
+  "tasks": [
+    {
+      "id": "mmlu_baseline",
+      "official_title": "Zero-shot MMLU baseline",
+      "title_zh": "MMLU 零样本基线",
+      "points": 4,
+      "physical_pages": [
+        4
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:161-183",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §1.1 `mmlu_baseline`",
+      "subparts": [
+        {
+          "letter": "a",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:164-169",
+          "physical_pages": [
+            4
+          ],
+          "requirement": "解析为 A/B/C/D；失败 None；接 run_parse_mmlu_response 与对应测试；交付解析函数",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.1 （a）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "b",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:170-173",
+          "physical_pages": [
+            4
+          ],
+          "requirement": "加载题目、格式化、生成、算指标、序列化 examples/generations/scores；交付脚本",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.1 （b）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "c",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:174-176",
+          "physical_pages": [
+            4
+          ],
+          "requirement": "运行后报告解析失败数量；非零时若干例子",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.1 （c）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "d",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:177-178",
+          "physical_pages": [
+            4
+          ],
+          "requirement": "生成耗时与 examples/s",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.1 （d）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "e",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:179-180",
+          "physical_pages": [
+            4
+          ],
+          "requirement": "1–2句总体指标",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.1 （e）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "f",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:181-183",
+          "physical_pages": [
+            4
+          ],
+          "requirement": "随机10个错误预测，2–4句分析，必要时例子/原输出",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.1 （f）",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "gsm8k_baseline",
+      "official_title": "Zero-shot GSM8K baseline",
+      "title_zh": "GSM8K 零样本基线",
+      "points": 4,
+      "physical_pages": [
+        5
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:217-239",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §1.2 `gsm8k_baseline`",
+      "subparts": [
+        {
+          "letter": "a",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:220-225",
+          "physical_pages": [
+            5
+          ],
+          "requirement": "取最后数字为数值字符串；失败 None；接 run_parse_gsm8k_response 与对应测试；交付函数",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.2 （a）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "b",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:226-229",
+          "physical_pages": [
+            5
+          ],
+          "requirement": "例子、提示、输出、分数流水线与序列化；交付脚本",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.2 （b）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "c",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:230-232",
+          "physical_pages": [
+            5
+          ],
+          "requirement": "解析失败数与非零时例子",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.2 （c）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "d",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:233-234",
+          "physical_pages": [
+            5
+          ],
+          "requirement": "生成耗时与 examples/s",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.2 （d）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "e",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:235-236",
+          "physical_pages": [
+            5
+          ],
+          "requirement": "1–2句指标",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.2 （e）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "f",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:237-239",
+          "physical_pages": [
+            5
+          ],
+          "requirement": "随机10个错误，2–4句分析，必要时例子/输出",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.2 （f）",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "alpaca_eval_baseline",
+      "official_title": "Zero-shot AlpacaEval baseline",
+      "title_zh": "AlpacaEval 零样本基线",
+      "points": 4,
+      "physical_pages": [
+        6,
+        7
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:272-316",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §1.3 `alpaca_eval_baseline`",
+      "subparts": [
+        {
+          "letter": "a",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:275-296",
+          "physical_pages": [
+            6,
+            7
+          ],
+          "requirement": "生成脚本；JSON数组；instruction/output/generator/dataset；统一generator、保留dataset",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.3 （a）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "b",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:297-298",
+          "physical_pages": [
+            6,
+            7
+          ],
+          "requirement": "生成耗时与 examples/s",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.3 （b）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "c",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:299-308",
+          "physical_pages": [
+            6,
+            7
+          ],
+          "requirement": "固定预生成GPT4Turbo参考和本地70B judge配置；1–2句普通与length-controlled winrate",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.3 （c）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "d",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:312-316",
+          "physical_pages": [
+            6,
+            7
+          ],
+          "requirement": "随机10条baseline输参考例子；2–4句分析并讨论是否同意自动评委",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.3 （d）",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "sst_baseline",
+      "official_title": "Zero-shot SimpleSafetyTests baseline",
+      "title_zh": "SimpleSafetyTests 零样本基线",
+      "points": 4,
+      "physical_pages": [
+        7,
+        8
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:341-372",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §1.4 `sst_baseline`",
+      "subparts": [
+        {
+          "letter": "a",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:344-351",
+          "physical_pages": [
+            7,
+            8
+          ],
+          "requirement": "生成脚本；JSONL；至少prompts_final/output",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.4 （a）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "b",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:352-353",
+          "physical_pages": [
+            7,
+            8
+          ],
+          "requirement": "生成耗时与examples/s",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.4 （b）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "c",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:354-369",
+          "physical_pages": [
+            7,
+            8
+          ],
+          "requirement": "evaluate_safety helper；本地Llama3.3 70B两卡；1–2句safe比例",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.4 （c）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "d",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:370-372",
+          "physical_pages": [
+            7,
+            8
+          ],
+          "requirement": "随机10条被判unsafe；2–4句失败分析并讨论评委异议",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §1.4 （d）",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "look_at_sft",
+      "official_title": "Inspect instruction tuning data",
+      "title_zh": "观察指令微调数据",
+      "points": 4,
+      "physical_pages": [
+        8
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:393-401",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §2.1 `look_at_sft`",
+      "subparts": [
+        {
+          "letter": null,
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:396-401",
+          "physical_pages": [
+            8
+          ],
+          "requirement": "随机看课程混合训练10条；2–4句说明隐含NLP任务及prompt/response质量，尽量具体引例",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §2.1 无字母交付块",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "data_loading",
+      "official_title": "Implement data loading",
+      "title_zh": "实现打包与批次数据合同",
+      "points": 3,
+      "physical_pages": [
+        9,
+        10
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:448-477",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §2.2 `data_loading`",
+      "subparts": [
+        {
+          "letter": "a",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:451-467",
+          "physical_pages": [
+            9,
+            10
+          ],
+          "requirement": "PyTorch Dataset；tokenizer/dataset_path/seq_length/shuffle接口；len与getitem；input_ids/labels shape(seq_length,)；文档shuffle；packed序列；adapter/test",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §2.2 （a）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "b",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:468-477",
+          "physical_pages": [
+            9,
+            10
+          ],
+          "requirement": "batch迭代函数；dataset/batch_size/shuffle；一遍一epoch；可用DataLoader；adapter/test",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §2.2 （b）",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "sft_script",
+      "official_title": "Training script: instruction tuning",
+      "title_zh": "指令微调训练脚本",
+      "points": 4,
+      "physical_pages": [
+        11
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:556-564",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §2.3 `sft_script`",
+      "subparts": [
+        {
+          "letter": null,
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:559-564",
+          "physical_pages": [
+            11
+          ],
+          "requirement": "自写Llama3.1 8B SFT脚本；建议可配置模型与优化器/累加/日志；可以复用自己脚本，禁HF Trainer",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §2.3 无字母交付块",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "sft",
+      "official_title": "Instruction tuning (3 B200 hrs)",
+      "title_zh": "执行指令微调",
+      "points": 6,
+      "physical_pages": [
+        11
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:568-578",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §2.4 `sft`",
+      "subparts": [
+        {
+          "letter": null,
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:571-578",
+          "physical_pages": [
+            11
+          ],
+          "requirement": "建议1epoch context512 effectivebatch32；LR2e-5 cosine3%warmup wd0.1 clip1；可探索LR；保存model/tokenizer；配置、final validation loss、学习曲线及序列化产物",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §2.4 无字母交付块",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "mmlu_sft",
+      "official_title": "Evaluate SFT on MMLU",
+      "title_zh": "SFT 后 MMLU 复评",
+      "points": 4,
+      "physical_pages": [
+        12
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:597-613",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §3.1 `mmlu_sft`",
+      "subparts": [
+        {
+          "letter": "a",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:600-606",
+          "physical_pages": [
+            12
+          ],
+          "requirement": "MMLU任务模板再Alpaca；写运行脚本、计时；1–2句吞吐与baseline比较",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.1 （a）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "b",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:607-609",
+          "physical_pages": [
+            12
+          ],
+          "requirement": "1–2句MMLU指标和baseline比较",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.1 （b）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "c",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:610-613",
+          "physical_pages": [
+            12
+          ],
+          "requirement": "随机10个错误预测；2–4句错误及相对baseline输出差异",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.1 （c）",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "gsm8k_sft",
+      "official_title": "Evaluate SFT on GSM8K",
+      "title_zh": "SFT 后 GSM8K 复评",
+      "points": 4,
+      "physical_pages": [
+        12,
+        13
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:618-634",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §3.2 `gsm8k_sft`",
+      "subparts": [
+        {
+          "letter": "a",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:621-626",
+          "physical_pages": [
+            12,
+            13
+          ],
+          "requirement": "本补充GSM8K任务模板再Alpaca；写运行脚本；1–2句吞吐比较",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.2 （a）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "b",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:627-629",
+          "physical_pages": [
+            12,
+            13
+          ],
+          "requirement": "1–2句GSM8K指标和baseline比较",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.2 （b）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "c",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:632-634",
+          "physical_pages": [
+            12,
+            13
+          ],
+          "requirement": "随机10个错误预测；2–4句错误和定性差异",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.2 （c）",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "alpaca_eval_sft",
+      "official_title": "Evaluate SFT on AlpacaEval",
+      "title_zh": "SFT 后 AlpacaEval 复评",
+      "points": 4,
+      "physical_pages": [
+        13
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:639-664",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §3.3 `alpaca_eval_sft`",
+      "subparts": [
+        {
+          "letter": "a",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:642-646",
+          "physical_pages": [
+            13
+          ],
+          "requirement": "Alpaca模板预测脚本；1–2句生成吞吐和baseline比较",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.3 （a）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "b",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:647-657",
+          "physical_pages": [
+            13
+          ],
+          "requirement": "本地70B评委与GPT4Turbo预生成reference；1–3句两种winrate及比较",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.3 （b）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "c",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:658-664",
+          "physical_pages": [
+            13
+          ],
+          "requirement": "10条输参考例子；固定次序preference1.0对应GPT4Turbo；2–4句分析与评委异议",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.3 （c）",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "sst_sft",
+      "official_title": "Evaluate SFT on SimpleSafetyTests",
+      "title_zh": "SFT 后安全基准复评",
+      "points": 4,
+      "physical_pages": [
+        13,
+        14
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:669-695",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §3.4 `sst_sft`",
+      "subparts": [
+        {
+          "letter": "a",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:672-676",
+          "physical_pages": [
+            13,
+            14
+          ],
+          "requirement": "Alpaca模板预测脚本；1–2句生成吞吐比较",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.4 （a）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "b",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:677-692",
+          "physical_pages": [
+            13,
+            14
+          ],
+          "requirement": "同helper与70B judge；1–2句safe比例和baseline比较",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.4 （b）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "c",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:693-695",
+          "physical_pages": [
+            13,
+            14
+          ],
+          "requirement": "10条被判unsafe；2–4句失败分析与评委异议",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.4 （c）",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "red_teaming",
+      "official_title": "Red-team the instruction-tuned model",
+      "title_zh": "受控安全失效探查",
+      "points": 4,
+      "physical_pages": [
+        14
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:705-718",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §3.5 `red_teaming`",
+      "subparts": [
+        {
+          "letter": "a",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:708-711",
+          "physical_pages": [
+            14
+          ],
+          "requirement": "另外3类潜在误用，1–3句说明",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.5 （a）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "b",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:712-718",
+          "physical_pages": [
+            14
+          ],
+          "requirement": "对3类不同恶意应用实际交互；每类2–4句方法、结果、定性发现；成功否/时间/策略；页面不提供攻击输入或代做结果",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §3.5 （b）",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "look_at_hh",
+      "official_title": "Inspect HH preference data",
+      "title_zh": "观察与过滤 HH 偏好对",
+      "points": 2,
+      "physical_pages": [
+        16
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:816-832",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §4.1 `look_at_hh`",
+      "subparts": [
+        {
+          "letter": "a",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:819-826",
+          "physical_pages": [
+            16
+          ],
+          "requirement": "四training files合并；剔除human>1多轮；共同instruction与chosen/rejected拆分；保留来源；交付加载函数",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §4.1 （a）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "b",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:827-832",
+          "physical_pages": [
+            16
+          ],
+          "requirement": "随机3helpful+3harmless；2–4句差异与是否认同偏好标签",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §4.1 （b）",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "dpo_loss",
+      "official_title": "DPO loss",
+      "title_zh": "单实例 DPO 目标",
+      "points": 2,
+      "physical_pages": [
+        17
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:849-858",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §4.2 `dpo_loss`",
+      "subparts": [
+        {
+          "letter": null,
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:852-858",
+          "physical_pages": [
+            17
+          ],
+          "requirement": "单实例DPO loss函数；Alpaca模板；每条response追加EOS；接run_compute_per_instance_dpo_loss及测试",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §4.2 无字母交付块",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    },
+    {
+      "id": "dpo_training",
+      "official_title": "DPO training (1 B200 hr)",
+      "title_zh": "DPO 训练与四基准复评",
+      "points": 4,
+      "physical_pages": [
+        17,
+        18
+      ],
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:878-899",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §4.3 `dpo_training`",
+      "subparts": [
+        {
+          "letter": "a",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:881-884",
+          "physical_pages": [
+            17,
+            18
+          ],
+          "requirement": "自写loop；HH1epoch；按题设最高validation accuracy checkpoint；训练脚本和真实validation accuracy截图",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §4.3 （a）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "b",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:889-891",
+          "physical_pages": [
+            17,
+            18
+          ],
+          "requirement": "AlpacaEval如alpaca_eval_sft；1–2句两种winrate与SFT比较",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §4.3 （b）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "c",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:892-893",
+          "physical_pages": [
+            17,
+            18
+          ],
+          "requirement": "SimpleSafetyTests；1–2句结果与SFT比较",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §4.3 （c）",
+          "coverage": "authored_requirements_not_solution"
+        },
+        {
+          "letter": "d",
+          "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:894-899",
+          "physical_pages": [
+            17,
+            18
+          ],
+          "requirement": "GSM8K及MMLU两者复评；2–3句观察与可能alignment tax",
+          "body_locator": "labs/a5-safety-optional/lab.zh.md §4.3 （d）",
+          "coverage": "authored_requirements_not_solution"
+        }
+      ]
+    }
+  ],
+  "unnumbered_constraints": [
+    {
+      "id": "optional-scope",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:1-55",
+      "requirement": "全份entirely optional；base Llama3.1 8B；允许vLLM/Transformers，不用Trainer；三份选做tests与adapters",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §0.1–0.2；§5.1"
+    },
+    {
+      "id": "volumes-models",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:67-78",
+      "requirement": "共享卷只读，课程environment与私人results卷分开；8B base/70B judge分工",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §0.3"
+    },
+    {
+      "id": "baseline-prompts",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:80-158",
+      "requirement": "共同zero-shot外层；PDF续行符非提示字符；# Query stop；MMLU任务格式；greedy0/top-p1",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §1；§1.1"
+    },
+    {
+      "id": "gsm8k-parser-distinct",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:186-214",
+      "requirement": "补充末数字parser不同于正篇boxed；共同greedy参数",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §1.2"
+    },
+    {
+      "id": "alpaca-roles",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:242-269",
+      "requirement": "GPT4Turbo参考与本地70B judge分开；greedy生成",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §1.3"
+    },
+    {
+      "id": "sst-proxy",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:319-338",
+      "requirement": "安全标签为不完美代理；greedy生成；敏感内容谨慎",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §1.4"
+    },
+    {
+      "id": "sft-mixture",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:383-390",
+      "requirement": "UltraChat200K+SafetyTunedLlamas课程单轮混合，train/test jsonl.gz prompt/response",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §0.3–0.4；§2.1"
+    },
+    {
+      "id": "packing-full-lm",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:418-445",
+      "requirement": "Alpaca整文档LM；EOS分隔；连续非重叠定长块；丢不完整尾块；每块epoch一次",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §2.2；guide §2"
+    },
+    {
+      "id": "sft-numerics-save",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:480-553",
+      "requirement": "BF16/FA2，logits自行CE，保存model/tokenizer，梯度累加缩放",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §2.3"
+    },
+    {
+      "id": "sft-eval-template",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:584-593",
+      "requirement": "四基准同生成设置；改Alpaca外层；MMLU/GSM任务层保留",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §3"
+    },
+    {
+      "id": "rlhf-background",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:722-795",
+      "requirement": "reward-model/PPO为背景，不是要实施；DPO无在线采样；冻结SFT reference",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §4；guide §4"
+    },
+    {
+      "id": "hh-collections",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:797-813",
+      "requirement": "四文件均training split；chosen/rejected起始共同prompt",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §4.1"
+    },
+    {
+      "id": "dpo-devices-cancellation",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:838-846",
+      "requirement": "loss返回训练模型设备；共同prompt logprob抵消有相同token前缀条件",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §4.2"
+    },
+    {
+      "id": "dpo-training-suggestions",
+      "source_locator": "p1-assignment-a5/raw/optional-safety-2026.txt:861-875",
+      "requirement": "双GPU分工、两个SFT副本、建议200validation、RMSprop、累加effective64 beta0.1 LR1e-6；原文raw accuracy和理论reward margin差异",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §4.3；guide §4.2"
+    }
+  ],
+  "helper_adapter_test_config_contracts": [
+    {
+      "source": "p7-a5-safety/upstream/tests__adapters.py.txt:333-461",
+      "contract": "5个选做hooks；full adapters 1–461已读以区分正篇",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §5.1"
+    },
+    {
+      "source": "p7-a5-safety/upstream/tests__test_data.py.txt:1-83",
+      "contract": "exact token IDs/labels与shuffle；batch余项保留、shape与整数dtype",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §2.2；§5.1"
+    },
+    {
+      "source": "p7-a5-safety/upstream/tests__test_metrics.py.txt:1-54",
+      "contract": "两类解析的可解析与不可解析合同；返回字母/数字字符串，不泄漏gold",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §1.1–1.2；§5.1"
+    },
+    {
+      "source": "p7-a5-safety/upstream/tests__test_dpo.py.txt:1-63",
+      "contract": "自建tokenizer+两本地tinyGPT2；只验证单标量，不是Llama实验",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §4.2；§5.1"
+    },
+    {
+      "source": "p7-a5-safety/upstream/tests__common.py.txt:1-3; tests__conftest.py.txt:1-300",
+      "contract": "fixture路径、local tiny models/tokenizer；其余RL fixtures不作为选做合同",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §5.1"
+    },
+    {
+      "source": "p1-assignment-a5/raw/evaluate_safety.py.txt:1-136",
+      "contract": "JSONL字段；True unsafe方向；startswith true之外均safe；context6144/max16；保留judge原输出",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §1.4；guide §5.2"
+    },
+    {
+      "source": "p1-assignment-a5/raw/alpaca-annotator-config.yaml:1-15; p7-a5-safety/upstream/scripts__alpaca_eval_vllm_llama3_3_70b_fn__alpaca_eval_fn.txt.txt:1-30",
+      "contract": "本地70B，tensorparallel2/context7000/max100/batch900；ranking_parser；参考次序",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §1.3；§3.3"
+    },
+    {
+      "source": "p7-a5-safety/upstream/cs336_alignment__prompts_safety__alpaca_sft.prompt.txt:1-7",
+      "contract": "Alpaca instruction/response模板；其他5个prompts_safety合同由手册全部读取，未另下载文件",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §1–3"
+    },
+    {
+      "source": "p1-assignment-a5/raw/modal_utils_safety.py.txt:1-87; modal_utils.py.txt:1-100",
+      "contract": "课程环境/volume/private results；SFT_DEV=test；SUNET import guard；B200:2/maxcontainers4/20h",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §0.3"
+    },
+    {
+      "source": "p1-assignment-a5/raw/pyproject.toml:1-55",
+      "contract": "Python>=3.12,<3.13；gpu extras；vLLM0.19.1；Linux特定FA2 wheel；不是安装成功声明",
+      "body_locator": "labs/a5-safety-optional/guide.zh.md §7"
+    },
+    {
+      "source": "p1-assignment-a5/raw/README.txt:1-30; CHANGELOG.txt:1-107",
+      "contract": "2026 optional身份；2.0.1新提示/卷/预生成GPT4Turbo reference；默认只测GRPO",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md 开篇；§0；§1.3；§5.1"
+    },
+    {
+      "source": "p7-a5-safety/upstream/test_and_make_submission.sh.txt:1-34",
+      "contract": "只跑GRPO且||true；code.zip排除多个交付资产；无独立选做提交入口可确认",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §5.1"
+    },
+    {
+      "source": "p7-a5-safety/upstream/AGENTS.md.txt:1-74; p1-shared/ai-policy.txt:1-21",
+      "contract": "只概念/API，不代写Python/伪代码/计分答案；关闭AI自动补全",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §0.2；guide 开篇"
+    },
+    {
+      "source": "p1-shared/cluster-guide.txt:1-28,48-52,109-119",
+      "contract": "选课身份/Stanford邀请、禁止私看他人、共享算力并发不等于配置授权",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md §0.3"
+    },
+    {
+      "source": "p1-assignment-a5/assignment-audit.json:36-66,207-340,440-515",
+      "contract": "P1保留历史旧PDF404 vs 数据HEAD TLS无HTTP；gated401；2026混合校外未核实；仅导航加历史记录，不替代本次原文阅读",
+      "body_locator": "labs/a5-safety-optional/lab.zh.md 开篇；§0.3–0.4"
+    }
+  ],
+  "execution": "No official tests/training/data/model/Modal/API execution; all reporting requirements are prospective student work.",
+  "copyright_treatment": "Independent full requirement coverage, not a whole-source translation; no answer implementations or harmful prompt library.",
+  "read_at": "2026-11-15T08:25:04.891697+00:00"
+}

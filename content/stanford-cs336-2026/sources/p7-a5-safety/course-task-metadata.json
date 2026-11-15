@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "course": "stanford-cs336-2026",
+  "lab_id": "a5-safety-optional",
+  "title": "A5 官方选做：指令微调与安全偏好对齐",
+  "optional": true,
+  "task_count": 16,
+  "official_points_total": 61,
+  "lettered_subparts": 42,
+  "note": "For Main integration only; not Assignment6, no invented per-letter points, no shared course metadata edited.",
+  "tasks": [
+    {
+      "id": "mmlu_baseline",
+      "title": "MMLU 零样本基线",
+      "official_title": "Zero-shot MMLU baseline",
+      "points": 4,
+      "grade": 4,
+      "source_pages": [
+        4
+      ]
+    },
+    {
+      "id": "gsm8k_baseline",
+      "title": "GSM8K 零样本基线",
+      "official_title": "Zero-shot GSM8K baseline",
+      "points": 4,
+      "grade": 4,
+      "source_pages": [
+        5
+      ]
+    },
+    {
+      "id": "alpaca_eval_baseline",
+      "title": "AlpacaEval 零样本基线",
+      "official_title": "Zero-shot AlpacaEval baseline",
+      "points": 4,
+      "grade": 4,
+      "source_pages": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "sst_baseline",
+      "title": "SimpleSafetyTests 零样本基线",
+      "official_title": "Zero-shot SimpleSafetyTests baseline",
+      "points": 4,
+      "grade": 4,
+      "source_pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "look_at_sft",
+      "title": "观察指令微调数据",
+      "official_title": "Inspect instruction tuning data",
+      "points": 4,
+      "grade": 4,
+      "source_pages": [
+        8
+      ]
+    },
+    {
+      "id": "data_loading",
+      "title": "实现打包与批次数据合同",
+      "official_title": "Implement data loading",
+      "points": 3,
+      "grade": 3,
+      "source_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "sft_script",
+      "title": "指令微调训练脚本",
+      "official_title": "Training script: instruction tuning",
+      "points": 4,
+      "grade": 4,
+      "source_pages": [
+        11
+      ]
+    },
+    {
+      "id": "sft",
+      "title": "执行指令微调",
+      "official_title": "Instruction tuning (3 B200 hrs)",
+      "points": 6,
+      "grade": 6,
+      "source_pages": [
+        11
+      ]
+    },
+    {
+      "id": "mmlu_sft",
+      "title": "SFT 后 MMLU 复评",
+      "official_title": "Evaluate SFT on MMLU",
+      "points": 4,
+      "grade": 4,
+      "source_pages": [
+        12
+      ]
+    },
+    {
+      "id": "gsm8k_sft",
+      "title": "SFT 后 GSM8K 复评",
+      "official_title": "Evaluate SFT on GSM8K",
+      "points": 4,
+      "grade": 4,
+      "source_pages": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "alpaca_eval_sft",
+      "title": "SFT 后 AlpacaEval 复评",
+      "official_title": "Evaluate SFT on AlpacaEval",
+      "points": 4,
+      "grade": 4,
+      "source_pages": [
+        13
+      ]
+    },
+    {
+      "id": "sst_sft",
+      "title": "SFT 后安全基准复评",
+      "official_title": "Evaluate SFT on SimpleSafetyTests",
+      "points": 4,
+      "grade": 4,
+      "source_pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "red_teaming",
+      "title": "受控安全失效探查",
+      "official_title": "Red-team the instruction-tuned model",
+      "points": 4,
+      "grade": 4,
+      "source_pages": [
+        14
+      ]
+    },
+    {
+      "id": "look_at_hh",
+      "title": "观察与过滤 HH 偏好对",
+      "official_title": "Inspect HH preference data",
+      "points": 2,
+      "grade": 2,
+      "source_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dpo_loss",
+      "title": "单实例 DPO 目标",
+      "official_title": "DPO loss",
+      "points": 2,
+      "grade": 2,
+      "source_pages": [
+        17
+      ]
+    },
+    {
+      "id": "dpo_training",
+      "title": "DPO 训练与四基准复评",
+      "official_title": "DPO training (1 B200 hr)",
+      "points": 4,
+      "grade": 4,
+      "source_pages": [
+        17,
+        18
+      ]
+    }
+  ]
+}

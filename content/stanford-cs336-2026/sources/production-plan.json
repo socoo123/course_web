@@ -48,12 +48,12 @@
     "requestedModel": "openai-codex/gpt-6-astra:xhigh",
     "observedConfiguration": {
       "defaultModelRole": "openai-codex/gpt-6-astra:xhigh",
-      "taskPerCallModel": "on (P6 observed existing configuration; no config mutation this run)",
+      "taskPerCallModel": "on (P7 observed existing configuration; no config mutation this run)",
       "taskEnableEffort": false,
       "taskAgentModelOverrides": {},
       "checkedAt": "2026-11-15"
     },
-    "dispatchPreflight": "P6显式派发5个独立正文任务；Main逐一核对model_change、thinking_level_change及首条assistant，均为openai-codex/gpt-6-astra/xhigh、无fallback。5任务全部交付，Main完成整合与验收；身份见p6-model-preflight.json。P4中断/恢复仅作历史。",
+    "dispatchPreflight": "P7七个独立正文任务全部完成；Main逐一核对当次model_change、thinking_level_change及首条assistant，均为openai-codex/gpt-6-astra/xhigh，无fallback或配置变更。15页正文、来源、算例、构建与页面已验收；身份与内容验收分开记录。",
     "concurrency": "建议每波 4 至 6 个相互独立的任务，按来源访问情况调整；不是一次性启动全课。",
     "ownership": "每个内容任务独占其讲次、实验和来源分片目录；主 agent 独占 catalog.json、course.json、resources.zh.md、status.json 和汇总来源清单。",
     "workerContract": "按分配范围完成来源核实、采集和正文制作；记录源 URL、版本、许可、读取范围与缺口；不跨目录改共享文件；中途不运行构建、lint、测试或格式化。",
@@ -134,14 +134,14 @@
     {"title": "Learning Transferable Visual Models From Natural Language Supervision (CLIP)", "url": "https://arxiv.org/abs/2103.00020", "home": "lec17", "alsoUsedBy": ["ext15"], "priority": "图文对齐方法"},
     {"title": "Visual Instruction Tuning (LLaVA)", "url": "https://arxiv.org/abs/2304.08485", "home": "lec17", "alsoUsedBy": ["ext15"], "priority": "架构、数据和训练阶段"}
   ],
-  "readingStatus": "16篇固定全文均已本地获取。P3–P6累计完成11篇指定核心，非全文精读。P6新增FineWeb v2、DataComp-LM v4的获授权核心完整中译，唯一正文共同归lec14/materials；相关图注、表格与脚注保留，作者视觉核对18页。ext13另读DCLM附录O。剩余5篇保持P1实际范围；官方/编者阅读与各来源许可区分不变，详见reading-map.json。",
+  "readingStatus": "16篇固定全文本地获取，16篇指定核心已完成，全文精读仍为0。P7新增DPO/LLaVA获授权核心完整中译，DeepSeekMath/R1/CLIP自主核心精读；唯一正文分别归lec15/16/17材料页，论文作者实际视觉核对33选页。原文许可、固定版本、官方/编者阅读身份和未读范围保留，详见reading-map.json。",
   "assignments": [
     {"id": "a1-basics", "title": "从零训练 Transformer 语言模型", "url": "https://github.com/stanford-cs336/assignment1-basics", "commit": "a158843b20107949f1a8d7df1b05cd33b9166712", "handoutVersion": "Spring 2026 / 26.0.3", "scope": "BPE、Transformer、交叉熵、AdamW、训练与保存恢复、采样和困惑度；单B200参考训练，官方低资源路线另有token预算与目标，不与原规模等同"},
     {"id": "a2-systems", "title": "系统优化与分布式训练", "url": "https://github.com/stanford-cs336/assignment2-systems", "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736", "handoutVersion": "Spring 2026 / 26.1.3", "scope": "性能分析、激活重算、Triton FlashAttention-2前向、PyTorch+compile后向、DDP、优化器状态分片、FSDP、TP/2D分析；Triton后向选做；通信实验最高6GPU，8B完整training-step排行榜用双B200"},
     {"id": "a3-scaling", "title": "Scaling Laws 与实验设计", "url": "https://github.com/stanford-cs336/assignment3-scaling", "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35", "handoutVersion": "Spring 2026 / 26.0.5", "scope": "Part1合成IsoFLOPs数据拟合；Part2真实训练API用12 B200小时探索并预测48小时配置。校内ID/网络资格与校外自建路径分开；standalone路径有静态依赖冲突，尚未运行验证"},
     {"id": "a4-data", "title": "预训练数据流水线", "url": "https://github.com/stanford-cs336/assignment4-data", "commit": "0555bea66369872d912652debf10b115ca0688c8", "handoutVersion": "Spring 2026 / 26.0.1", "scope": "2500个raw WET来源的英语过滤数据，语言/质量/PII过滤、去重、数据比较；固定约430M模型、8×B200和8.6B tokens。小样本路径不是原规模等效完成，不能混写旧124M/单卡要求"},
     {"id": "a5-reasoning", "title": "推理强化学习", "url": "https://github.com/stanford-cs336/assignment5-alignment", "commit": "c2734a26308710949fe13226960a1e8cece94b7e", "handoutVersion": "Spring 2026 / 26.0.0", "scope": "OLMo-2-0425-1B base与GSM8K；zero/few-shot/CoT提示，on-policy GRPO、GRPO_constant、Dr_GRPO、RFT、MaxRL，off-policy naive/noclip/token clip/GSPO，§7自拟估计器；原规模双B200配置"},
-    {"id": "a5-safety-optional", "title": "官方选做：指令微调与安全对齐", "url": "https://github.com/stanford-cs336/assignment5-alignment", "commit": "c2734a26308710949fe13226960a1e8cece94b7e", "handoutVersion": "Spring 2026 / 26.0.0", "optional": true, "scope": "固定仓库2026补充讲义已读封面：Llama3.1 8B基线/SFT/DPO及Llama3.3 70B评委；官网spring2025旧链接404，历史2025版仅对照。Llama审批和精确课程SFT混合数据校外访问缺口保留"},
+    {"id": "a5-safety-optional", "title": "官方选做：指令微调与安全对齐", "url": "https://github.com/stanford-cs336/assignment5-alignment", "commit": "c2734a26308710949fe13226960a1e8cece94b7e", "handoutVersion": "Spring 2026 / 26.0.0", "optional": true, "scope": "2026补充讲义18页完整文本及静态合同已读，16题/61分/42字母子问。Llama3.1 8B基线/SFT/DPO及本地Llama3.3 70B评委；不是Assignment6。Llama审批与精确SFT混合数据校外访问缺口保留；无官方执行。"},
     {"id": "capstone", "title": "自拟综合项目：可解释的小模型研究", "editorial": true, "scope": "自建小模型的预训练研究与较强开放基础模型的后训练分别成线；不假定 TinyStories 小模型具有 GSM8K 基础能力"}
   ],
   "productionPhases": [
@@ -152,7 +152,7 @@
     {"id": "phase4", "title": "硬件与训练系统批", "deliverables": ["L05–L08", "A2 完整说明和指导", "关联专题与论文材料"], "status": "complete_with_documented_limits", "completedAt": "2026-11-15", "priorInterruption": "P4-BLOCKED.txt", "acceptance": "p4-acceptance.json", "review": "P4-REVIEW.txt", "note": "原6任务恢复后完成18份正文、15张SVG；6659 cues全读，三篇论文指定核心精读；A2覆盖27任务/47字母子问/6罗马子项。Main通过来源、算例、构建和桌面手机验收；未执行官方实验。"},
     {"id": "phase5", "title": "缩放推理与评测批", "deliverables": ["L09–L12", "A3 完整说明和指导", "关联专题与论文材料"], "status": "complete_with_documented_limits", "startedAt": "2026-11-15", "completedAt": "2026-11-15", "modelEvidence": "p5-model-preflight.json", "acceptance": "p5-acceptance.json", "review": "P5-REVIEW.txt", "note": "16份新正文、11张原创SVG；6505 cues全读；四篇论文指定核心完成，非全文精读；A3覆盖2任务/55分及完整API与预算合同。Main通过来源、11组CPU算例、一次构建及桌面手机页面验收；未执行官方实验。"},
     {"id": "phase6", "title": "数据批", "deliverables": ["L13–L14", "A4 完整说明和指导", "关联专题与论文材料"], "status": "complete_with_documented_limits", "startedAt": "2026-11-15", "completedAt": "2026-11-15", "modelEvidence": "p6-model-preflight.json", "acceptance": "p6-acceptance.json", "review": "P6-REVIEW.txt", "note": "8份新正文、5张原创SVG；2867 cues全读；FineWeb/DCLM指定核心完整中译；A4覆盖13任务/27字母子问/71分。来源、12组独立CPU算例、一次构建及桌面/390px页面通过；无官方实验执行。"},
-    {"id": "phase7", "title": "后训练与多模态批", "deliverables": ["L15–L17", "A5 必做及官方选做说明和指导", "关联专题与论文材料"]},
+    {"id": "phase7", "title": "后训练与多模态批", "deliverables": ["L15–L17", "A5 必做及官方选做说明和指导", "关联专题与论文材料"], "status": "complete_with_documented_limits", "startedAt": "2026-11-15", "completedAt": "2026-11-15", "modelEvidence": "p7-model-preflight.json", "acceptance": "p7-acceptance.json", "review": "P7-REVIEW.txt", "note": "15份新正文、9张原创SVG；4823 cues全读；5篇指定核心完成。A5正篇28题/90分/11字母子问，安全选做16题/61分/42字母子问。119来源记录/101哈希、53组CPU算例、一次构建及桌面/390px验收通过；无官方实验执行。"},
     {"id": "phase8", "title": "嘉宾课与全课收尾", "deliverables": ["按实际来源制作 L18–L19", "综合项目说明与指导", "补齐剩余桥接与专题", "总学习路线及真实完成度清单"]}
   ],
   "acceptance": {
@@ -169,14 +169,14 @@
     "https://github.com/stanford-cs336/lectures",
     "https://cs336.stanford.edu/spring2025/"
   ],
-  "currentDelivery": "P6已验收：累计64份正文、38张原创SVG，L01–L14、8篇桥接、ext01–13、11篇论文指定核心及A1–A4说明/指导。累计22923 cues全读；无核音/课堂截图/官方实验或收费计算。P7完整提示已准备，只在用户明确接续后启动；ext16与嘉宾课/综合项目归P8。",
+  "currentDelivery": "P7已验收15份新正文、9张原创SVG；累计79份正文、47张SVG、17讲笔记与有限译述、27746 cues、16篇论文指定核心、8桥接、ext01–15、A1–A5正篇及A5安全选做说明/指导。不是全文翻译/全文精读或官方实验完成。P8接续提示已准备，L18缺口、L19、ext16和capstone未启动；发布证据另见p7-publication-record.json。",
   "actualProgressFile": "../status.json",
-  "modelPreflightFile": "p6-model-preflight.json",
+  "modelPreflightFile": "p7-model-preflight.json",
   "nextStage": {
-    "id": "phase7",
-    "keyword": "CS336-2026-P7-后训练与多模态",
-    "promptFile": "NEXT-P7-PROMPT.txt",
-    "status": "awaiting_explicit_user_continuation",
+    "id": "phase8",
+    "keyword": "CS336-2026-P8-嘉宾课与全课收尾",
+    "promptFile": "NEXT-P8-PROMPT.txt",
+    "status": "not_started_requires_explicit_user_continuation",
     "autoStart": false
   }
 }

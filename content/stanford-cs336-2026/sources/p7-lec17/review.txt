@@ -1,0 +1,41 @@
+P7MultimodalLecture author handoff — 2026-11-15
+
+OWNED OUTPUTS
+Three substantive bodies: lectures/lec17/notes.zh.md; lectures/lec17/draft.zh.md; lectures/ext15/notes.zh.md.
+Three original SVGs: lec17/assets/objective-boundaries.svg; ext15/assets/connector-shapes.svg; ext15/assets/frozen-gradient.svg. All transparent backgrounds, self-contained color-scheme/light-dark CanvasText theme variables, title/desc,420-wide vertical viewBoxes, no external resources or scripts.
+No materials.zh.md/shared metadata edited. CLIP/LLaVA unique bodies remain lec17/materials; all other pages link instead of duplicating core translation. No P8 work.
+
+ACTUAL SOURCES READ
+All1264 L17 cues, using transcript.en.txt exact inclusive ranges1–320,321–640,641–960,961–1264. First5.000s,last4654.060s,total video4659s(77:39). Individual metadata agrees existing course video; no duration/ID correction required.29 internal gaps>2s;11 cues contain INA U DIBLE marker (actual literal marker preserved in raw/normalized text). Timed union4548.174s includes inaudible spans. Leading5s/trailing4.940s no captions. No audio/video watched or downloaded; manual is platform classification, not audio-correction claim.
+lecture_17.py all302 lines: read1–300 then301–302. Fixedde53a9f979a6ee35f7d13a5e1aadee5ea1afc58e is post-term source, not claimed recording identity. All235 trace step structures parsed; all230 semantic renderings independently read via trace-renderings.txt lines1–115 and116–230, including links/reference metadata/image paths/stack locations. Raw environments not line-by-line audited; no lecture figure pixel inspection claimed.
+CLIP text actual lines145–405,447–527: methods§§2.1–2.5,zero-shot§3.1.2,prompt§3.1.4 and nearby context; selected physicalpp3–8, not every item on these pages. Original physicalpp4–5 rendered and visually read, including Fig3, ResNet attention pooling paragraph and V100 training. No§6/full-core/full-paper completion claimed by this worker.
+LLaVA text lines91–273,274–326: §3,§§4.1–4.2 and nearby context/§5 intro. Originalpp4–5 rendered and visually read: Fig1,eqs1–3,Table2 green answer+STOP targets,Stage1/2 and data/freeze states. Actual row/column conventions and extraction LaTeXiT noise resolved; no§5.2/full-core/full-paper completion claimed by this worker. Paper owner separately handles specified cores.
+All8 fixed source file SHA256 values computed for provenance and recorded; original P1 retrieval times retained, no redownload or guessed timestamps. Source read completion recording timestamp observed2026-11-15T08:26:58.668810+00:00.
+
+CONTENT DISTINCTIONS
+Notes: learning-objective/representation/data/information budget framework, honest model-family limits, alignment and sampling/freeze distinctions, seven conceptual self-tests.
+Draft:31 cue-based substantive timeline blocks plus leading/trailing captionless intervals (33 intervals total), eight limited independent selected discussions, all29 gaps and11 inaudible cues, explicit corrections separate from discussion. It is not a full or near-verbatim translation. No external URLs in draft body; source URLs in metadata/manifest.
+ext15: original tensor tutorial separating dual-encoder matching, projected visual prefixes, learned-query resampling and text-query cross-attention; dimensions, CE axes, gradient derivation, masks and next-token shift, freeze/input-gradient distinction, data provenance, mechanism debugging and8 self-test answers. Original cases A–E plus degenerate-batch and resolution/video-budget cases are7 independent groups in mechanism-cases.json; author did not execute them.
+
+OFFICIAL TITLE VS ACTUAL RECORDING
+Main notified decision and instructed preserving official title. Openingcues1–10/00:05–00:35 explicitly switches originally planned further RL lecture to multimodality. Both notes/draft footers explain official Alignment - Multimodality title versus actual main topic. Actual alignment fully covered: CLIP matching; LLaVA33:24–34:37 freeze/projector phases; OneVision42:36–43:25; alignment prerequisite question63:23–64:00. Qwen3 SFT/distillation/RL briefly described58:32–60:39 without inventing reward/KL/rollout implementation. No fabricated standalone RLHF/safety lecture.
+
+TECHNICAL CAVEATS RETAINED
+1 CLIP global vector not same as LLaVA grid features; continuous projected visual token not a text ID. Stage1 and2 use answer likelihood, not CLIP loss.
+2 CLIP attention pooling with global-average query belongs to modified ResNet (§2.4); lecture adjacent ViT discussion not copied as universal mechanism.
+3 CLIP training hardware in original§2.5 isV100; lectureTPU comparison not treated as reliable efficiency result.
+4 WIT up to20K/query, not exactly20K;500Kqueries×20K not final400Mpairs. WIT not conflated with OpenCLIP/LAION.
+5 SigLIP single-pair decomposition does not imply invariance to arbitrary negative sampling/weighting. SmallB/largeB statements not universal impossibility claims; singleton CLIP degeneracy derived.
+6 LLaVA Stage2 End-to-End still freezes vision. Stage1CC595K andStage2 synthetic158K separated. Teacher GPT4 accepts text captions/boxes, not original images. Stage1 frozenLM retains input gradients to W. No fabricated§4.2.1/4.2.2 headings.
+7 224/14 then2x2 merge yields64 grid positions; classroom66 extra2 unexplained, not silently invented. AnyRes historical attribution not independently confirmed. Square-root length loss denominator not specified beyond source uncertainty.
+8 DeepStack spoken team attribution not repeated; exact report family details not independently verified. ViT not incorrectly described as isolated per-patch computation merely because of spoken local intuition.
+9 Closed-model continuous-encoder/diffusion claims remain speaker speculation. Input video/box-text outputs not misrepresented as image/video generation. No performance reproduction or made-up curves.
+
+SOURCE/RIGHTS HANDLING
+Recording/captions/lecture source lack confirmed full translation permission: only independent explanation and limited discussions. CLIP arXiv nonexclusive not a translation grant. LLaVA CC BY4.0 attribution/authors/version/license/change notices retained; own bodies use original explanation, not duplicate authorized core. COCO imagery, teacher API, data and model rights separate. Raw original/normalized captions, trace-renderings and PDF-page PNGs remain local sources, not publication candidates. No screenshots or synthetic media posed as original lecture imagery.
+
+TIMELINE SCHEMA NOTE FOR MAIN
+Existing time-intervals.json uses intervals:[{start_seconds,end_seconds,label,cue_first,cue_last}], with nullcue bounds for leading/trailing gaps. Equivalent to requested blocks/cue_indices_1_based_by_start; do not treat interval count33 as31 substantive topics. Gaps calculated using maximum earlier cue end. Allcue ranges also explicitly recorded. Main said existing schema need not be reordered; kept intact.
+
+VERIFICATION HANDOFF
+No build/lint/tests/formatter/smoke or authored-content re-audit run. Only source normalization, selected original PDF rendering and source hashing executed. Main should run integrated source/cue/link/math/SVG/mobile checks and seven independent arithmetic groups once after all workers land, then publication checks. No claim that pages, build, integration or publication passed. Existing course video already77:39/26FtD08ZpOU, so no course-video-update.json needed; only course.note actual-theme clarification requested by Main. All actionable assigned authoring complete; unresolved limits are explicit source/media/rights limits, not deferred bodies.

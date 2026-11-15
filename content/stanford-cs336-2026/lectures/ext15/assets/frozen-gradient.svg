@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 650" role="img" aria-labelledby="title desc">
+<title id="title">冻结语言模型不等于切断投影器的梯度</title>
+<desc id="desc">前向从冻结视觉编码器的特征经过可训练投影器和冻结语言模型到助手答案损失。反向的梯度穿过语言模型对输入的导数回到投影器，语言模型参数不更新。视觉特征不需要在此阶段反传；把整个语言模型放在无梯度区会切断投影器训练。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:17px system-ui,-apple-system,"PingFang SC",sans-serif}.h{font-size:21px;font-weight:700}.s{font-size:15px}.box,.arrow,.grad{fill:none;stroke:var(--border);stroke-width:1.8}.grad{stroke-dasharray:6 4}.tip{fill:var(--fg)}</style>
+<text class="h" x="20" y="33">Stage 1：谁更新，谁求导？</text>
+<rect class="box" x="55" y="62" width="310" height="83" rx="10"/>
+<text x="75" y="96">视觉编码器：参数冻结</text>
+<text class="s" x="75" y="126">输出网格 Z；可不保留其反向图</text>
+<path class="arrow" d="M210 145V175"/><path class="tip" d="M205 167L210 178L215 167Z"/>
+<rect class="box" x="55" y="184" width="310" height="76" rx="10"/>
+<text x="75" y="217">投影器 W：参数更新</text>
+<text class="s" x="75" y="246">连续输入 H = ZW</text>
+<path class="arrow" d="M210 260V290"/><path class="tip" d="M205 282L210 293L215 282Z"/>
+<rect class="box" x="55" y="301" width="310" height="91" rx="10"/>
+<text x="75" y="335">语言模型：参数冻结</text>
+<text class="s" x="75" y="366">仍须保留损失对H的导数</text>
+<path class="arrow" d="M210 392V422"/><path class="tip" d="M205 414L210 425L215 414Z"/>
+<rect class="box" x="55" y="433" width="310" height="76" rx="10"/>
+<text x="75" y="466">助手答案／停止符损失</text>
+<text class="s" x="75" y="495">用户与视觉位置不作为目标</text>
+<path class="grad" d="M365 470H389V222H365"/><path class="tip" d="M373 217L362 222L373 227Z"/>
+<text x="25" y="554">虚线：梯度回到W，不更新LM参数。</text>
+<text class="s" x="25" y="587">禁止把冻结误写成整个LM的no_grad。</text>
+<text class="s" x="25" y="620">原创概念图；不含官方作业实现。</text>
+</svg>

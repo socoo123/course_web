@@ -1,0 +1,86 @@
+{
+  "phase": "P7",
+  "owner": "P7MultimodalLecture",
+  "read_completion_recorded_at": "2026-11-15T08:26:58.668810+00:00",
+  "material_files": ["lectures/lec17/notes.zh.md", "lectures/lec17/draft.zh.md", "lectures/ext15/notes.zh.md"],
+  "caption_reading": {
+    "source": "p1-videos/captions/26FtD08ZpOU.en-US.manual.json3",
+    "normalized": "p7-lec17/captions.normalized.json",
+    "readable_archive": "p7-lec17/transcript.en.txt",
+    "normalization": "Concatenate utf8 segments; strip outer whitespace; one text cue per line; replace embedded newlines with slash only in readable archive. No spelling correction or audio reconstruction.",
+    "cue_count": 1264,
+    "actually_read_ranges_inclusive": [[1,320],[321,640],[641,960],[961,1264]],
+    "all_cues_actually_read": true,
+    "first_start_seconds": 5.0,
+    "last_end_seconds": 4654.06,
+    "duration_seconds": 4659,
+    "internal_gaps_over_two_seconds": 29,
+    "inaudible_cue_count": 11,
+    "timing_artifact": "p7-lec17/time-intervals.json",
+    "audio_verified": false,
+    "video_watched": false,
+    "manual_track_is_platform_classification_only": true
+  },
+  "lecture_source_reading": {
+    "python_file": "p1-lectures/raw/lecture_17.py",
+    "python_lines_read_inclusive": [[1,300],[301,302]],
+    "commit": "de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e",
+    "version_boundary": "Post-term pinned handout, not a claim of identity with recording slides.",
+    "trace_file": "p1-lectures/raw/var/traces/lecture_17.json",
+    "trace_steps_structurally_parsed": 235,
+    "trace_renderings_extracted": 230,
+    "trace_renderings_file": "p7-lec17/trace-renderings.txt",
+    "trace_rendering_lines_actually_read": [[1,115],[116,230]],
+    "trace_read_scope": "All textual renderings, embedded reference metadata, image paths, stack function/line locators; semantic renderings read, raw JSON environments not line-by-line audited.",
+    "lecture_figure_pixels_inspected": false
+  },
+  "paper_reading": [
+    {
+      "id": "paper15",
+      "version": "2103.00020v1",
+      "file": "p1-papers-09-16/paper15-2103.00020v1.txt",
+      "actual_text_lines_inclusive": [[145,405],[447,527]],
+      "section_scope": "§§2.1–2.5, §3.1.2, §3.1.4 method/prompt paragraphs; adjacent extraction context read. Text is two-column layout: paragraphs understood by column, not linear left/right concatenation.",
+      "physical_pages": "3–8 selected method/inference paragraphs, not all content on those pages",
+      "full_paper_read": false,
+      "specified_core_completion_claimed_by_this_worker": false,
+      "visual_pages": [
+        {"physical_page":4,"file":"p7-lec17/visual/paper15-2103.00020v1-p04.png","actually_inspected":true,"result":"Confirmed two-column §2.3 ordering, pairwise matrix objective, linear representations and ResNet attention-pooling paragraph continuing on next page."},
+        {"physical_page":5,"file":"p7-lec17/visual/paper15-2103.00020v1-p05.png","actually_inspected":true,"result":"Read Fig3 shapes/projections/L2 normalization/exp(t)/both CE axes; confirmed EOS representation and V100 training configuration. No paper image copied to published body."}
+      ],
+      "treatment": "Original mechanism discussion and numerical examples, link to unique lec17/materials close reading; no full translation authorization inferred from arXiv nonexclusive."
+    },
+    {
+      "id": "paper16",
+      "version": "2304.08485v2",
+      "file": "p1-papers-09-16/paper16-2304.08485v2.txt",
+      "actual_text_lines_inclusive": [[91,273],[274,326]],
+      "section_scope": "§3 and §§4.1–4.2, with adjacent related-work and §5 hyperparameter introduction. Extraction LaTeXiT noise in architecture/equation region resolved using original pp4–5.",
+      "physical_pages": "2–5 relevant passages; not the full article",
+      "full_paper_read": false,
+      "specified_core_completion_claimed_by_this_worker": false,
+      "visual_pages": [
+        {"physical_page":4,"file":"p7-lec17/visual/paper16-2304.08485v2-p04.png","actually_inspected":true,"result":"Read Fig1 and equations1–3: grid-feature sequence, trainable W, first-turn alternative image/question order, answer-conditioned autoregressive product; paper uses column-vector convention."},
+        {"physical_page":5,"file":"p7-lec17/visual/paper16-2304.08485v2-p05.png","actually_inspected":true,"result":"Read Table2 green answer/STOP tokens and caption; Stage1/Stage2 are unnumbered headings inside4.2; vision frozen in both, W only then W+LM; CC595K versus158K teacher data distinguished."}
+      ],
+      "treatment": "Nonofficial original instructional paraphrase and row-vector notation; paper CC BY4.0 attribution retained, full authorized core translation only at unique lec17/materials page. Third-party images/data/weights/API rights not inherited."
+    }
+  ],
+  "editorial_cautions": [
+    {"cue_ranges":[[1,10]],"issue":"Official title says Alignment - Multimodality; opening changes planned further RL coverage to a multimodal overview. Do not fabricate a separate RLHF/safety lecture."},
+    {"cue_ranges":[[228,240]],"issue":"Attention pooling from global-average query belongs to modified ResNet in CLIP §2.4, not a universal ViT pooling description."},
+    {"cue_ranges":[[393,401]],"issue":"Caption repeats diagonal for negatives; later cue401 clarifies off-diagonal negative, diagonal positive."},
+    {"cue_ranges":[[431,439]],"issue":"Classroom CLIP TPU claim conflicts with original CLIP §2.5 V100 configuration; do not present hardware efficiency ratios as verified."},
+    {"cue_ranges":[[471,473]],"issue":"Model-name slip in batch discussion; do not silently turn it into a theorem that arbitrary negative sampling is unbiased."},
+    {"cue_ranges":[[538,553],[554,573],[1028,1042]],"issue":"Actual feature alignment; continuous visual embeddings are not text IDs, frozen LM still needs input derivatives, no adaptive convergence threshold supplied."},
+    {"cue_ranges":[[622,623]],"issue":"AnyRes attribution not independently checked; describe operation without asserting historical priority."},
+    {"cue_ranges":[[825,834]],"issue":"224/14 grid with2x2 merge gives64, while lecture says66; extra2 not explained by read sources. Preserve uncertainty rather than inventing special tokens."},
+    {"cue_ranges":[[924,934]],"issue":"Speaker marks square-root length-normalization details unclear; do not invent exact reduction or answer/input token denominator."},
+    {"cue_ranges":[[944,952]],"issue":"Do not repeat spoken DeepStack team attribution; pinned trace lists Meng et al.2024 and general cross-layer fusion."},
+    {"cue_ranges":[[1043,1074]],"issue":"Parameter comparison includes corrections72B/72M for different components; local-operation intuition is not a claim that ViT has no cross-patch context."},
+    {"cue_ranges":[[1076,1083]],"issue":"SOTA mistranscribed as Save Our Performance; AI2 paper title inaudible. No audio correction claim."},
+    {"cue_ranges":[[1226,1229]],"issue":"Closed model continuous-encoder/diffusion structure is speaker speculation, not established architecture."}
+  ],
+  "not_read_as_primary_fulltexts": ["SigLIP", "LLaVA-OneVision", "Flamingo", "BLIP-2", "Qwen-VL", "Qwen2-VL", "Qwen3-VL", "DeepStack", "Chameleon", "VQ-VAE"],
+  "execution_boundary": "Source normalization/PDF-page rendering/source hashing only; no author tests, build, lint, formatter, model/data downloads, training, official assignment execution or paid APIs."
+}

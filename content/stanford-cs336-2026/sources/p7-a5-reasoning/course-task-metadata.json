@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "course": "stanford-cs336-2026",
+  "lab_id": "a5-reasoning",
+  "title": "A5 推理强化学习",
+  "task_count": 28,
+  "official_points_total": 90,
+  "lettered_subquestions": 11,
+  "note": "Suggested metadata for Main; no course.json edited; all official IDs/titles/points retained.",
+  "tasks": [
+    {
+      "id": "prompting_baselines",
+      "title": "三种baseline",
+      "points": 5.0,
+      "official_title": "Run OLMo-2-0425-1B on GSM8K",
+      "source_pages": [
+        7
+      ]
+    },
+    {
+      "id": "baseline_calcs",
+      "title": "baseline方差分析",
+      "points": 5.0,
+      "official_title": "Compute the variance of the policy gradient estimator",
+      "source_pages": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "tokenize_prompt_and_output",
+      "title": "分词与response mask",
+      "points": 1.0,
+      "official_title": "Prompt and output tokenization",
+      "source_pages": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "get_response_log_probs",
+      "title": "log-prob与entropy",
+      "points": 1.0,
+      "official_title": "Response log-probs (and entropy)",
+      "source_pages": [
+        15,
+        16
+      ]
+    },
+    {
+      "id": "compute_rollout_rewards",
+      "title": "rollout rewards",
+      "points": 1.0,
+      "official_title": "Computing the rewards of rollouts",
+      "source_pages": [
+        16,
+        17
+      ]
+    },
+    {
+      "id": "compute_group_normalized_rewards_grpo",
+      "title": "标准GRPO组归一化",
+      "points": 1.0,
+      "official_title": "Group normalization",
+      "source_pages": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "compute_policy_gradient_loss_on_policy",
+      "title": "on-policy token loss",
+      "points": 1.0,
+      "official_title": "On-policy policy gradient",
+      "source_pages": [
+        19,
+        20
+      ]
+    },
+    {
+      "id": "aggregate_loss_across_microbatch_sequence",
+      "title": "sequence reduction",
+      "points": 0.5,
+      "official_title": "Aggregate loss across tokens and sequences",
+      "source_pages": [
+        20
+      ]
+    },
+    {
+      "id": "grpo_train_step_standard_on_policy",
+      "title": "标准on-policy train step",
+      "points": 5.0,
+      "official_title": "GRPO train step",
+      "source_pages": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "id": "grpo_experiments_standard_on_policy",
+      "title": "标准GRPO实验",
+      "points": 10.0,
+      "official_title": "Use GRPO to improve OLMo-2-0425-1B performance on GSM8K (2 B200 hrs)",
+      "source_pages": [
+        25
+      ]
+    },
+    {
+      "id": "grpo_learning_rate",
+      "title": "学习率扫描",
+      "points": 3.0,
+      "official_title": "Tune the learning rate (4 B200 hrs)",
+      "source_pages": [
+        26
+      ]
+    },
+    {
+      "id": "grpo_prompt_ablation",
+      "title": "prompt消融",
+      "points": 3.0,
+      "official_title": "Prompt ablation (4 B200 hrs)",
+      "source_pages": [
+        26
+      ]
+    },
+    {
+      "id": "think_about_length_normalization",
+      "title": "长度归一化思考",
+      "points": 1.0,
+      "official_title": "Think about length normalization",
+      "source_pages": [
+        27
+      ]
+    },
+    {
+      "id": "compute_group_normalized_rewards_drgrpo",
+      "title": "Dr.GRPO组开关",
+      "points": 0.5,
+      "official_title": "Dr. GRPO Group normalization",
+      "source_pages": [
+        27
+      ]
+    },
+    {
+      "id": "aggregate_loss_across_microbatch_constant",
+      "title": "constant reduction",
+      "points": 0.5,
+      "official_title": "Dr. GRPO loss aggregation",
+      "source_pages": [
+        27
+      ]
+    },
+    {
+      "id": "think_about_rft",
+      "title": "RFT思考",
+      "points": 2.0,
+      "official_title": "Think about RFT",
+      "source_pages": [
+        28
+      ]
+    },
+    {
+      "id": "derive_difficulty_reweightings",
+      "title": "难度重加权推导",
+      "points": 6.0,
+      "official_title": "Derive difficulty reweightings induced by different advantage normalizers",
+      "source_pages": [
+        29
+      ]
+    },
+    {
+      "id": "think_about_advantage_normalization",
+      "title": "advantage normalization思考",
+      "points": 2.0,
+      "official_title": "Think about advantage normalization",
+      "source_pages": [
+        29,
+        30
+      ]
+    },
+    {
+      "id": "compute_group_normalized_rewards_maxrl",
+      "title": "MaxRL组开关",
+      "points": 0.5,
+      "official_title": "MaxRL Group normalization",
+      "source_pages": [
+        30
+      ]
+    },
+    {
+      "id": "grpo_train_step_variants_on_policy",
+      "title": "on-policy变体train step",
+      "points": 2.5,
+      "official_title": "GRPO train step variants",
+      "source_pages": [
+        30,
+        31
+      ]
+    },
+    {
+      "id": "grpo_experiments_variants_on_policy",
+      "title": "四种on-policy算法比较",
+      "points": 10.0,
+      "official_title": "Compare the performance of different RL algorithms (8 B200 hrs)",
+      "source_pages": [
+        31,
+        32
+      ]
+    },
+    {
+      "id": "derive_surrogate_objectives",
+      "title": "pairwise surrogate推导",
+      "points": 2.0,
+      "official_title": "Derive surrogate objectives for importance reweighting approaches",
+      "source_pages": [
+        34
+      ]
+    },
+    {
+      "id": "compute_policy_gradient_loss_off_policy",
+      "title": "token off-policy loss",
+      "points": 1.0,
+      "official_title": "Off-policy policy gradient with token- level reweighting",
+      "source_pages": [
+        35
+      ]
+    },
+    {
+      "id": "think_about_importance_reweighting",
+      "title": "importance策略思考",
+      "points": 2.0,
+      "official_title": "Think about importance reweighting",
+      "source_pages": [
+        36
+      ]
+    },
+    {
+      "id": "compute_policy_gradient_loss_off_policy_gspo",
+      "title": "GSPO loss",
+      "points": 1.0,
+      "official_title": "Off-policy policy gradient with sequence-level reweighting",
+      "source_pages": [
+        37
+      ]
+    },
+    {
+      "id": "grpo_train_step_off_policy",
+      "title": "off-policy train step",
+      "points": 2.5,
+      "official_title": "Off-policy GRPO train step",
+      "source_pages": [
+        37
+      ]
+    },
+    {
+      "id": "grpo_experiments_off_policy",
+      "title": "四种off-policy实验",
+      "points": 10.0,
+      "official_title": "Compare the performance of different off-policy algorithms (8 B200 hrs)",
+      "source_pages": [
+        38
+      ]
+    },
+    {
+      "id": "try_your_own",
+      "title": "自拟单因素估计器",
+      "points": 10.0,
+      "official_title": "Try your own policy gradient estimator",
+      "source_pages": [
+        38
+      ]
+    }
+  ]
+}

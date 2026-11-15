@@ -1,0 +1,35 @@
+接续关键词：CS336-2026-P8-嘉宾课与全课收尾
+
+P7已通过本地来源、内容、算例、构建与页面验收。仅在用户明确接续且核对p7-publication-record.json实际发布结果后，执行P8「嘉宾课与全课收尾」；本提示不启动P8。
+项目 /Users/zy/ai_learn/course_web；仅改content/stanford-cs336-2026/，目录卡片仅在收尾状态确有需要时由Main修改content/catalog.json。不改src，不执行官方作业。
+
+一、起点与模型门槛
+先读status.json、production-plan.json、P7-REVIEW.txt、p7-acceptance.json、p7-model-preflight.json与p7-publication-record.json，继承每批实际证据/许可/缺口。发布失败不得称已上线；作者分片pending是交付时快照，总验收优先。不重做已验收P2–P7正文，不把已采集说成已读或远端备份。
+所有实际子agent（含审核）显式openai-codex/gpt-6-astra:xhigh；先核受支持cfg://task和当次运行model_change、thinking_level_change及首条assistant provider/model。不可用即停止报告，不替代、不降级、不持久化配置。旧批可用不证明本次可用。
+Main独占共享course/catalog/resources/status、manifest/reading-map/plan、总验收与发布；每个正文/材料页唯一编辑者，独立切片同批派发，中途不build/lint/tests/formatters。
+
+二、范围，禁止凭姓名猜嘉宾内容
+1. L18 Daniel Selsam：P1官网课表确有其人，但官方2026播放列表未发现对应视频，固定讲义tree无L18文件；已做一次针对性检索无果。先复用来源证据，只做一次有目标的官方新发布核查（2026官网/官方播放列表/本人官方关联材料）；仍不可达则保留真实缺口，不反复搜索、不借2025或Dan Fu替代、不按研究方向写课堂，不虚构时间轴/讲义/截图。
+   如仍无可靠课堂来源，不创建notes/draft占位正文，不把L18视为已交付；P8总体应明确complete_with_documented_gaps而非全课完整。
+2. L19 Dan Fu：P1核得Stanford Online官方录像9EEm4iMAF5s，4300s=71:40。P1只读开头5.20–180.76s，29.24–55.48s介绍serving/inference，不能据此认定全讲细节。复用p1-videos/video-map.json、对应metadata与原始en-US.manual.json3，全文读取所有cue，核完整真实主题/问答/术语，再制作notes.zh.md与有限独立课堂译述draft.zh.md。官方课表只写姓名，course.note可说明实际主题，不臆造官方标题。
+   当前固定讲义仓库无L19讲义，不把公开源码或嘉宾论文当作录像逐字依据；如查到官方关联阅读，记录版本和实际范围，正文只展开一次。
+3. ext16技术报告与源码阅读方法：原创notes、必要SVG、对照例子、自测/答案。用已固定实际读过的技术报告/代码合同教证据链，而非另写全篇报告译文。结合主张→配置→目标/采样/指标→代码/测试→实验→结论；记录版本、支持集/分母、训练/推理预算、统计方差、数据可达/许可、源码与报告不一致。可用既有P7发现DPO附录符号、R1v2、A5任务/代码差异，但回链唯一正文，避免重复。不要在教程中输出官方作业答案实现。
+4. capstone：labs/capstone/lab.zh.md与guide.zh.md，明确编者自拟研究项目非官方作业/Assignment6。两条独立路线：自己训练的小模型预训练研究；具备适当能力的开放基座后训练研究。不能把TinyStories小模型等同GSM8K基座。设计问题、一个主变化/基线、数据与许可、预算上限、评测与多种子、失败/负结果、可复现工件与报告。指导只给可操作研究骨架/验收合同，不代写完整训练与实验答案、不伪造曲线/成绩。无用户计算授权不执行模型/数据下载、训练、云/评测服务。
+5. 总学习路线与真实完成度：8桥接和ext01–15已验收；本批只补ext16，不重写。继承P7累计79份正文/47张SVG/17讲/27746 cues/16篇指定核心、A5正篇28题90分与选做16题61分，核总记录不沿用作者pending快照。整合五官方作业及同属A5的选做，非LAB6；capstone保留LAB0与非官方身份。课程intro只写学习内容，状态/覆盖缺口放status与frontmatter，不把未完成L18藏起来。catalog是否done依真实缺口和既有语义决策，不暗示官方实验已完成。
+
+三、来源、时间与版权
+视频与讲义各自独立授权。录像翻译权未明确，draft仅有限改写译述+完整时间导航，不发布近逐字全文；无实际媒体不造课堂截图，不下载音轨/片段。每条字幕实际阅读，首尾、>2s内部空隙、静音/INAUDIBLE、疑词/公式/问答单列；manual只平台分类，未核音不称人工校订。图放notes原创SVG，课堂真实截图仅draft。
+讲义仓库固定de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e是课后版本，不冒充录像版本；P7纠正L15/L16实际是PDF而非py。原始来源如缺失按固定URL重取，不将清单当备份。
+每个实际用源保存URL、固定版本、获取日期、本地文件、SHA256、许可证据、实际范围与处理类型。CC BY4的指定核心中译保留作者/固定版本/许可/修改/第三方边界；nonexclusive或软件MIT不等于论文翻译许可。P7已完成核心不等于整篇精读。
+原文/PDF/字幕/截图放sources且不用.md后缀。站内所有.md会上线，不能把原文藏sources/*.md。
+
+四、继承的关键技术与访问边界
+A5正篇28计分任务/90分/11字母子问，安全选做16任务/61分/42字母子问，已由P7验收核对。正篇OLMo-2-0425-1B/GSM8K，四seed比较、on-policy每rollout一次optimizer更新，sample std与显示总体公式分开。选做packed whole-document SFT与主篇response mask不同；DPO冻结SFT reference与old rollout不同；任务§6.4原始chosen/rejected logprob验证指标不同于reference-adjusted隐式奖励margin，保留编者说明。
+Llama权重manual gated，课程精确SFT混合文件校外可达/字节一致性未核；共享卷不是公共URL。历史URL TLS失败不写404，官网旧2025选做链接404与之分开。不索凭据/绕过访问、不重复重试。
+官方AI政策允许概念/API帮助，禁止AI实现作业或排行榜代码及自动补全；严禁安装作业环境、运行官方测试、下载训练数据/权重、调用评分/提交服务、启动Modal/GPU/付费计算。本批只可验证编者原创的小概率/张量/预算算例。
+
+五、一次整合验收与发布
+Main独立读所有新增正文，抽查主张/源码/字幕；核源哈希、时间连续覆盖及上界、任务覆盖、内链/图片、SVG可解析(title/desc、透明、主题颜色、无外部资源)、公式与原创CPU小算例。不要把结构计数当技术正确证明。
+实际打开每个新增正文、SVG和公共资料：桌面1440×1000、手机390×844；看公式/表格/图的真实可读性、根宽及KaTeX错误，宽表局部滚动。外部img SVG沿用独立浅/深主题模式。新讲次逐一核页头视频ID/实际时长/默认notes，代表性实际点击新标签且原页保留；只有写metadata不算验收。
+正文修正后仅一次npm run build，通过后才提交；仅状态证据后改则窄JSON解析，不再全量检查。交付P8-REVIEW.txt、p8-acceptance.json、p8-model-preflight.json、更新累计status/plan/manifest/reading-map及公共学习路线。不编造下一自动批；完成后停止，明确仍未获得的来源/未执行的实验。
+发布白名单仅本批正文/原创SVG/共享元数据/轻量证据，不整目录force-add sources，不上传原文镜像/PDF/字幕/渲染图/浏览器截图/本地dist。推现有main，不force、不改remote；Actions干净检出构建。实际核成功Actions和代表性线上页面后记录p8-publication-record.json；只完成本地不得称已上线。最后简短报告范围、验证、提交/部署及遗留限制。

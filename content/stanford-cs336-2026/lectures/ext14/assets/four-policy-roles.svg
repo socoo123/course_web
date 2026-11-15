@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 830" role="img" aria-labelledby="title desc">
+<title id="title">数据、行为、当前和参考策略是四种不同角色</title>
+<desc id="desc">原创四角色账本。数据分布决定问题与示范，行为策略生成固定样本和旧log概率，当前策略产生可求导log概率，reference提供冻结比较锚点。重要性比用当前除行为，KL与DPO的比较用当前相对reference。冻结旧概率仍允许当前概率梯度。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:17px system-ui,-apple-system,"PingFang SC",sans-serif}.h{font-size:20px;font-weight:700}.s{font-size:15px}.box,.line{fill:none;stroke:var(--border);stroke-width:1.6}.dash{stroke-dasharray:5 4}</style>
+<text class="h" x="22" y="34">同一权重快照，也可能有不同角色</text>
+<rect class="box" x="22" y="57" width="376" height="111" rx="8"/>
+<text class="h" x="40" y="89">① 数据分布 D</text>
+<text x="40" y="119">问题、示范或偏好对从哪里来？</text>
+<text class="s" x="40" y="146">固定数据不因当前参数改变采样概率</text>
+<rect class="box" x="22" y="190" width="376" height="111" rx="8"/>
+<text class="h" x="40" y="222">② 行为策略 μ / old</text>
+<text x="40" y="252">真正生成这批回答的分布</text>
+<text class="s" x="40" y="279">旧log概率冻结；更新后样本会变旧</text>
+<rect class="box" x="22" y="323" width="376" height="111" rx="8"/>
+<text class="h" x="40" y="355">③ 当前策略 πθ</text>
+<text x="40" y="385">在固定样本上重新计算log概率</text>
+<text class="s" x="40" y="412">这里保留梯度，优化器只更新这一支</text>
+<rect class="box" x="22" y="456" width="376" height="111" rx="8"/>
+<text class="h" x="40" y="488">④ 参考策略 q / ref</text>
+<text x="40" y="518">KL与偏好目标的比较锚点</text>
+<text class="s" x="40" y="545">更新窗口内冻结；换锚点须明确记录</text>
+<rect class="box dash" x="22" y="590" width="376" height="166" rx="8"/>
+<text x="40" y="623">重要性比：πθ / μ</text>
+<text class="s" x="40" y="650">回答“采样分布变了多少？”</text>
+<text x="40" y="684">参考log比：log πθ − log q</text>
+<text class="s" x="40" y="711">回答“相对锚点偏移了多少？”</text>
+<text class="s" x="40" y="738">两处分母不能因为数值相等就混用</text>
+<text class="s" x="22" y="795">特别注意：比值为1，不代表导数为0。</text>
+<text class="s" x="22" y="819">冻结分母 ≠ 删除整个比值。</text>
+</svg>

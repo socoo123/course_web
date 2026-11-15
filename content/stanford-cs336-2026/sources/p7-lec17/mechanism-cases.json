@@ -1,0 +1,61 @@
+{
+  "phase": "P7",
+  "owner": "P7MultimodalLecture",
+  "kind": "original independent CPU arithmetic definitions; not executed by author",
+  "official_assignment_code": false,
+  "cases": [
+    {
+      "id": "clip_symmetric_two_pairs",
+      "body": "lectures/lec17/materials.zh.md 第一篇§2、§7；ext15§2.2仅回链，整合时删除重复展开",
+      "input": {"logits": [[2,0],[0,2]], "labels": [0,1]},
+      "definition": "Average row cross entropy and column cross entropy, each averaged over B=2. Gradients are with respect to raw logits.",
+      "expected_expression": {"positive_probability": "exp(2)/(exp(2)+1)", "loss": "log(1+exp(-2))", "diagonal_gradient": "(exp(2)/(exp(2)+1)-1)/2", "off_diagonal_gradient": "1/(2*(exp(2)+1))"},
+      "expected_rounded": {"positive_probability": 0.880797, "loss": 0.126928, "diagonal_gradient": -0.059601, "off_diagonal_gradient": 0.059601},
+      "tolerance_for_rounded": 0.000001
+    },
+    {
+      "id": "clip_singleton_degenerate",
+      "body": "lectures/ext15/notes.zh.md §2.2",
+      "input": {"batch_size": 1},
+      "definition": "A singleton softmax is identically one in both directions; no cross-example negatives exist.",
+      "expected": {"loss": 0, "logit_gradient": 0}
+    },
+    {
+      "id": "linear_visual_projection",
+      "body": "lectures/ext15/notes.zh.md §3.2",
+      "input": {"Z": [[1,0],[0,2]], "W": [[1,0,1],[0,1,-1]]},
+      "definition": "Row-vector H=Z@W without bias.",
+      "expected": {"H": [[1,0,1],[0,2,-2]], "output_shape": [2,3]},
+      "batch_case": {"B": 2, "P": 4, "dv": 3, "d": 5, "T": 6, "projector_parameter_count": 15, "visual_shape": [2,4,5], "concatenated_shape": [2,10,5]}
+    },
+    {
+      "id": "answer_target_mask_shift",
+      "body": "lectures/ext15/notes.zh.md §3.3",
+      "input": {"positions": ["V1","V2","U1","U2","A1","A2","STOP"]},
+      "definition": "One-based target positions; next-token logit is at previous position. Visual/user positions are context only.",
+      "expected": {"target_mask": [0,0,0,0,1,1,1], "valid_target_count": 3, "target_positions": [5,6,7], "predictor_positions": [4,5,6]}
+    },
+    {
+      "id": "frozen_input_gradient",
+      "body": "lectures/ext15/notes.zh.md §3.4",
+      "input": {"z": 3, "w": 1, "frozen_multiplier": 2, "target": 12},
+      "definition": "h=w*z; output=frozen_multiplier*h; loss=0.5*(output-target)^2. Freeze multiplier but retain derivative through its multiplication.",
+      "expected": {"h": 3, "output": 6, "loss": 18, "gradient_w": -36}
+    },
+    {
+      "id": "cross_attention_weighted_read",
+      "body": "lectures/ext15/notes.zh.md §4.3",
+      "input": {"scaled_scores_expression": ["log(3)","0"], "values": [2,10]},
+      "definition": "Softmax over two key positions, weighted sum of scalar values.",
+      "expected": {"weights": [0.75,0.25], "output": 4, "zero_score_output": 6}
+    },
+    {
+      "id": "patch_and_video_budget",
+      "body": "lectures/lec17/notes.zh.md §§3,7,8",
+      "input": {"patch_side": 14, "image_sides": [224,336], "text_positions": 512, "visual_positions_per_frame": 64, "frame_counts": [8,32]},
+      "definition": "No special tokens. Patch count=(side/14)^2; length=512+64*frames; dense attention-score proxy scales as length squared.",
+      "expected": {"patch_counts": [256,576], "merged_224_grid_2x2": 64, "lengths": [1024,2560], "attention_score_ratio": 6.25},
+      "caveat": "Not actual latency/FLOPs and not a verified full Qwen2 token accounting; lecture's 66 remains unexplained beyond 64 grid tokens."
+    }
+  ]
+}

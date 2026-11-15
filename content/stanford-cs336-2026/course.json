@@ -367,6 +367,7 @@
       "title": "对齐与多模态",
       "titleEn": "Alignment and Multimodality",
       "video": {"label": "2026 L17", "youtube": "https://www.youtube.com/watch?v=26FtD08ZpOU", "duration": "77:39", "language": "en"},
+      "note": "沿用官方课表标题；录像开场说明改讲多模态概览，主要涉及表征对齐、视觉语言接口与多模态训练，不是另一讲完整 RLHF／安全对齐教程。",
       "core": true
     },
     {
@@ -495,14 +496,34 @@
       "url": "https://github.com/stanford-cs336/assignment5-alignment",
       "goal": "在 OLMo-2-0425-1B base 与 GSM8K 上建立提示基线，比较 GRPO、Dr. GRPO、RFT、MaxRL 及 off-policy/GSPO，并设计估计器；采用固定 2026 讲义。",
       "tasks": [
-        {
-          "id": "baseline",
-          "title": "建立数学推理评测基线"
-        },
-        {
-          "id": "rl",
-          "title": "实现并比较推理强化学习训练"
-        }
+        {"id":"prompting_baselines","title":"三种baseline（5 分）"},
+        {"id":"baseline_calcs","title":"baseline方差分析（5 分）"},
+        {"id":"tokenize_prompt_and_output","title":"分词与response mask（1 分）"},
+        {"id":"get_response_log_probs","title":"log-prob与entropy（1 分）"},
+        {"id":"compute_rollout_rewards","title":"rollout rewards（1 分）"},
+        {"id":"compute_group_normalized_rewards_grpo","title":"标准GRPO组归一化（1 分）"},
+        {"id":"compute_policy_gradient_loss_on_policy","title":"on-policy token loss（1 分）"},
+        {"id":"aggregate_loss_across_microbatch_sequence","title":"sequence reduction（0.5 分）"},
+        {"id":"grpo_train_step_standard_on_policy","title":"标准on-policy train step（5 分）"},
+        {"id":"grpo_experiments_standard_on_policy","title":"标准GRPO实验（10 分）"},
+        {"id":"grpo_learning_rate","title":"学习率扫描（3 分）"},
+        {"id":"grpo_prompt_ablation","title":"prompt消融（3 分）"},
+        {"id":"think_about_length_normalization","title":"长度归一化思考（1 分）"},
+        {"id":"compute_group_normalized_rewards_drgrpo","title":"Dr.GRPO组开关（0.5 分）"},
+        {"id":"aggregate_loss_across_microbatch_constant","title":"constant reduction（0.5 分）"},
+        {"id":"think_about_rft","title":"RFT思考（2 分）"},
+        {"id":"derive_difficulty_reweightings","title":"难度重加权推导（6 分）"},
+        {"id":"think_about_advantage_normalization","title":"advantage normalization思考（2 分）"},
+        {"id":"compute_group_normalized_rewards_maxrl","title":"MaxRL组开关（0.5 分）"},
+        {"id":"grpo_train_step_variants_on_policy","title":"on-policy变体train step（2.5 分）"},
+        {"id":"grpo_experiments_variants_on_policy","title":"四种on-policy算法比较（10 分）"},
+        {"id":"derive_surrogate_objectives","title":"pairwise surrogate推导（2 分）"},
+        {"id":"compute_policy_gradient_loss_off_policy","title":"token off-policy loss（1 分）"},
+        {"id":"think_about_importance_reweighting","title":"importance策略思考（2 分）"},
+        {"id":"compute_policy_gradient_loss_off_policy_gspo","title":"GSPO loss（1 分）"},
+        {"id":"grpo_train_step_off_policy","title":"off-policy train step（2.5 分）"},
+        {"id":"grpo_experiments_off_policy","title":"四种off-policy实验（10 分）"},
+        {"id":"try_your_own","title":"自拟单因素估计器（10 分）"}
       ]
     },
     {
@@ -515,10 +536,22 @@
       "url": "https://github.com/stanford-cs336/assignment5-alignment",
       "goal": "官方 A5 Optional Part 2，不是 Assignment 6。采用仓库中已核封面的 Spring 2026 v26.0.0 补充讲义：Llama 3.1 8B 的 SFT/DPO；官网旧链接失效，2025 历史版不混用。",
       "tasks": [
-        {
-          "id": "alignment",
-          "title": "实现并评估安全对齐方法"
-        }
+        {"id": "mmlu_baseline", "title": "MMLU 零样本基线（4 分）"},
+        {"id": "gsm8k_baseline", "title": "GSM8K 零样本基线（4 分）"},
+        {"id": "alpaca_eval_baseline", "title": "AlpacaEval 零样本基线（4 分）"},
+        {"id": "sst_baseline", "title": "SimpleSafetyTests 零样本基线（4 分）"},
+        {"id": "look_at_sft", "title": "观察指令微调数据（4 分）"},
+        {"id": "data_loading", "title": "打包与批次数据合同（3 分）"},
+        {"id": "sft_script", "title": "指令微调训练脚本（4 分）"},
+        {"id": "sft", "title": "指令微调与训练记录（6 分）"},
+        {"id": "mmlu_sft", "title": "SFT 后 MMLU 复评（4 分）"},
+        {"id": "gsm8k_sft", "title": "SFT 后 GSM8K 复评（4 分）"},
+        {"id": "alpaca_eval_sft", "title": "SFT 后 AlpacaEval 复评（4 分）"},
+        {"id": "sst_sft", "title": "SFT 后安全基准复评（4 分）"},
+        {"id": "red_teaming", "title": "受控安全失效探查（4 分）"},
+        {"id": "look_at_hh", "title": "观察与过滤 HH 偏好对（2 分）"},
+        {"id": "dpo_loss", "title": "单实例 DPO 目标（2 分）"},
+        {"id": "dpo_training", "title": "DPO 训练与四基准复评（4 分）"}
       ]
     },
     {
