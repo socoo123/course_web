@@ -1,7 +1,7 @@
 {
   "courseId": "cmu-15-445-2025",
   "updatedOn": "2026-11-15",
-  "phase": "P2_accepted_pending_push",
+  "phase": "P2_complete_with_documented_source_limits",
   "planConfirmed": true,
   "versions": {
     "course": "CMU 15-445/645 Fall 2025",
@@ -37,7 +37,7 @@
       "scope": "L2–3；HW1 SQL；官方 Project 0 Count–Min Sketch 指导"
     },
     "P2": {
-      "status": "accepted_pending_push_with_documented_source_limits",
+      "status": "accepted_and_pushed_with_documented_source_limits",
       "scope": "L4–6；HW2；官方 Project 1 ARC / Disk Scheduler / Page Guards"
     },
     "P3": {
@@ -438,18 +438,19 @@
   },
   "delivery": {
     "batch": "P2",
-    "contentCommit": null,
-    "push": {"status":"pending","remote":"origin","branch":"main"},
-    "ci": {"status":"not_run"},
-    "online": {"status":"not_verified"},
+    "contentCommit": "19f2d8fa73ca1f5bae5eae4118d7adbe4be86e5e",
+    "contentCommitUrl": "https://github.com/socoo123/course_web/commit/19f2d8fa73ca1f5bae5eae4118d7adbe4be86e5e",
+    "push": {"status":"succeeded","remote":"origin","branch":"main"},
+    "ci": {"status":"passed","contentCommit":"19f2d8fa73ca1f5bae5eae4118d7adbe4be86e5e","run":"https://github.com/socoo123/course_web/actions/runs/43731217987","cleanCheckoutBuild":true,"pagesDeploy":"succeeded"},
+    "online": {"url":"https://socoo123.github.io/course_web/#/c/cmu-15-445-2025/lec/lec04?v=notes","status":"visual_not_verified","attempt":"After successful Pages deployment, Chromium domcontentloaded navigation reached site title, but 45s wait for L4 note heading timed out. Actual screenshot blank and zero interactive elements. No successful online visual claim; all local desktop/mobile views accepted independently."},
     "policy": "选择性提交公开content；不提交sources或上传本地dist。验收并推送后，用后续交接提交记录内容SHA。"
   },
   "next": {
-    "keyword": "CMU15445-P2",
-    "batch": "P2",
-    "mode": "finish_acceptance_and_delivery",
-    "scope": "P2正文、构建及桌面/手机验收已通过，待提交推送；不执行P3",
+    "keyword": "CMU15445-P3",
+    "batch": "P3",
+    "mode": "await_user_trigger",
+    "scope": "仅L7–9、HW3完整导读与指导；不执行P4或官方Project2完整指导",
     "promptFile": "content/cmu-15-445-2025/sources/NEXT-EXECUTION-PROMPT.txt",
-    "publicRecovery": "P2已通过本地验收及一次build，先恢复未完成提交推送，不重新生成正文或重复构建。仅L4–6、HW2、官方Project1。固定Fall2025及BusTub v20251119-2025fall@d49b823f829a4bf311a2c80b239ab5a9864c9c41。L1–6字幕已全文读，L7–25未读；推送后切CMU15445-P3，仍须用户另行启动。"
+    "publicRecovery": "P2内容19f2d8fa73ca1f5bae5eae4118d7adbe4be86e5e已验收推送，CI/Pages部署成功；线上视觉未核实，实际代表页加载超时且截图空白，不能冒称线上验收。用户另行启动才做P3，不重复P0–P2。先读status/source-manifest、technical-video-notes及本地PLAN/NEXT；sources缺失按公开来源有限补取。固定Fall2025与BusTub v20251119-2025fall@d49b823f829a4bf311a2c80b239ab5a9864c9c41。L1–6字幕全文读；L7–25只取得未读。P3四包独占：lec07、lec08、lec09、HW3(labs/hw03及sources/p3-indexes)，主agent独占共享元数据和交接；worker不构建提交。L7 nuNW8IfgPNU 1:20:30含YugabyteDB；L8 u7ii_Lvm9rM 1:24:42；L9 PjST2n7abAY 1:23:29。复用inventory/captions对应en-orig.json3，顺序全文读、不重下载成功原件、不按标题截断嘉宾/问答。HW3原件inventory/homework/hw3-clean.pdf未全文读；索引截止10/05与PDF Sunday October3rd冲突保留。只做原创无答案完整题目导读；未知许可不冒称全译。教材正文仍未取得/未读；独立阅读才建materials，真实帧仅draft，notes原创图/推导/全片索引/自测。复用Project0/1先修，不做Project2–4完整指导或学生实现。只改content；tag不填lab.branch触发旧qemu卡。主审全文读中文、独立重算覆盖、一次build、全部标签桌面与390px实际视觉及视频点击验收；选择性commit/push后切P4提示并停止。核心译稿或必需题面阻塞则保留P3不放行P4。"
   }
 }
