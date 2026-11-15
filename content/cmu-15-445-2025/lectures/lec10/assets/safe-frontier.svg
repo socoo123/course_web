@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 590" role="img" aria-labelledby="title desc">
+<title id="title">安全节点阻断结构变化的向上传播</title>
+<desc id="desc">从根到叶持有路径保护。叶子分裂导致父节点新增一个项；父节点有余量可吸收，变化不再传播到祖先，因此祖先可释放，父叶仍需写保护。</desc>
+<style>text{font-family:system-ui,-apple-system,'Noto Sans SC',sans-serif;fill:var(--fg,currentColor);text-anchor:middle} .edge{fill:none;stroke:var(--border,currentColor);stroke-width:2}.box{stroke:var(--border,currentColor);stroke-width:1.5}</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--border,currentColor)"/></marker></defs>
+<text x="195" y="34" font-size="21" font-weight="700">safe 是传播边界，不是免锁</text>
+<rect class="box" x="85" y="62" width="220" height="69" rx="10" fill="none"/>
+<text x="195" y="90" font-size="18">祖先 A</text><text x="195" y="115" font-size="16">已证明无需修改 → 可释放</text>
+<path class="edge" d="M195 132V183" marker-end="url(#arrow)"/>
+<rect class="box" x="65" y="190" width="260" height="91" rx="10" fill="none"/>
+<text x="195" y="218" font-size="19" font-weight="700">父节点 P：写保护仍在</text><text x="195" y="244" font-size="17">有余量接住一个新增项</text><text x="195" y="267" font-size="16">影响不越过 P → A 的边</text>
+<path class="edge" d="M162 282L114 345M228 282L285 345" marker-end="url(#arrow)"/>
+<rect class="box" x="27" y="352" width="159" height="83" rx="9" fill="none"/>
+<text x="106" y="380" font-size="18">旧叶子 L</text><text x="106" y="406" font-size="16">满 → 分裂</text><text x="106" y="426" font-size="14">修改时写保护</text>
+<rect class="box" x="204" y="352" width="159" height="83" rx="9" fill="none"/>
+<text x="283" y="380" font-size="18">新叶子 N</text><text x="283" y="406" font-size="16">初始化后发布</text><text x="283" y="426" font-size="14">路径与链保持一致</text>
+<rect x="23" y="463" width="344" height="103" rx="10" fill="none"/>
+<text x="195" y="490" font-size="17">若 P 也满，便不能释放更高祖先。</text>
+<text x="195" y="518" font-size="17">若叶子本身 safe，可释放 P 与 A。</text>
+<text x="195" y="546" font-size="15">容量、计数单位与操作规则必须先固定。</text>
+</svg>

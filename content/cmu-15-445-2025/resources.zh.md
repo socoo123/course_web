@@ -37,7 +37,9 @@ L2–3 的动手入口：[HW1 SQL 要求导读](#/c/cmu-15-445-2025/lab/hw01?v=z
 
 L4–6 的动手入口：[HW2 Storage 要求导读](#/c/cmu-15-445-2025/lab/hw02?v=zh)与[无答案指导](#/c/cmu-15-445-2025/lab/hw02?v=guide)；[Project 1 要求导读](#/c/cmu-15-445-2025/lab/project1?v=zh)与[ARC、异步 I/O、页守卫指导](#/c/cmu-15-445-2025/lab/project1?v=guide)。先用纸面状态表区分页面身份、内存槽位、使用权与读写互斥，再写并发代码；实验环境与 C++ 先修仍复用本页和 Project 0。
 
-L7–9 的动手入口：[HW3 Indexes & Filters 要求导读](#/c/cmu-15-445-2025/lab/hw03?v=zh)与[无答案指导](#/c/cmu-15-445-2025/lab/hw03?v=guide)。先比较哈希点查、有序索引范围扫描和过滤器排除不可能命中的语义，再手推维护操作。概率先修复用 Project 0，页身份与守卫复用 Project 1；课堂普通 B+Tree 不等于 Project 2 的 tombstone 变体，后者完整指导安排在制作 P4。
+L7–9 的动手入口：[HW3 Indexes & Filters 要求导读](#/c/cmu-15-445-2025/lab/hw03?v=zh)与[无答案指导](#/c/cmu-15-445-2025/lab/hw03?v=guide)。先比较哈希点查、有序索引范围扫描和过滤器排除不可能命中的语义，再手推维护操作。概率先修复用 Project 0，页身份与守卫复用 Project 1；课堂普通 B+Tree 不等于 Project 2 的 tombstone 变体。
+
+L10–12 的动手入口：[Project 2 要求导读](#/c/cmu-15-445-2025/lab/project2?v=zh)与[tombstone B+Tree 无答案指导](#/c/cmu-15-445-2025/lab/project2?v=guide)。先解释并发修改为何仍能保持树的物理结构，再计算外部排序和连接的页 I/O；不把这些纸面练习当成已经运行 BusTub。
 
 ## C++ 先修：先把资源归属说清楚
 
@@ -71,6 +73,8 @@ L2 指定 **Chapters 3–5**，L3 指定 **§12.1–12.4、§13.2–13.3**。按
 L4 指定 **§13.2–13.5**，L5 指定 **§14.8.1、24.2**，L6 指定 **§11.2、13.6**。这些章节分别连接缓冲管理、日志结构/写优化及列式存储；课表指定章节与实际取得正文是两件事。带着各讲笔记中的问题阅读自己的合法教材，不把目录定位当作全文精读。L4、L5没有独立资料页；L6的[Parquet导读](#/c/cmu-15-445-2025/lec/lec06?v=materials)是另行读过的当前官方文档，不代替指定教材，也不倒填成2025课堂。
 
 L7 指定 **§14.5、24.5（Hash Indices）**，L8 指定 **§14.1–14.4（基础概念、有序索引、B+Tree 及扩展）**，L9 另含 **§24.1（Bloom Filter）**。这里只核对第七版目录定位，未取得或通读这些教材正文。读自己的教材时分别记录“查找键是什么、索引项指向什么、更新会破坏哪条不变量”；不要把过滤器的可能命中当成已经找到记录。
+
+L10 指定 **§18.10.2**，L11 指定 **§15.4–15.5**，L12 指定 **§15.4–15.6**。这些是官方课表的阅读定位，不代表已取得教材正文；用合法教材补读并发索引与查询处理。下列阶段自测限定 L1–11；L12 的连接算法自测留在[该讲笔记](#/c/cmu-15-445-2025/lec/lec12?v=notes)，不擅自扩大官方期中范围。
 
 ## 版本冻结与实验工作区
 
@@ -145,6 +149,138 @@ FAQ 提供校外 Gradescope 入口，但本批**未登录核实当前能否加�
 
 HW1 对应 SQL，HW2–6 分别衔接存储、索引、执行、事务、恢复与分布式阶段；官方题面和历史日期见页底作业索引。旧学期截止日期不是当前自学期限。L3 官方标注 **No In-Class Lecture**，仍有课表指定录像；L25 没有官方 Notes 链接，不补造文件。
 
+## 期中阶段自测：把 L1–11 串成一条访问路径
+
+先独立作答，再展开核对。以下十二题是编者自拟，不是 CMU 原卷、官方模拟卷或评分答案；可以回看笔记，不必计时。每题至少写清**语义、前提、状态变化**中的两项，而非只报结论。
+
+### 1. 相同的输出列，是否就是相同的关系？
+
+`Orders(id, sku, qty)` 中有三行 `(1,A,2)`、`(2,A,3)`、`(3,B,NULL)`。SQL 的 `SELECT sku FROM Orders` 与经典关系代数投影有什么差别？SQL 若没有 `ORDER BY`，能否依赖结果顺序？
+
+<details><summary>展开核对：多重集与集合</summary>
+
+SQL 默认保留重复项，得到两个 A 和一个 B；经典集合关系代数的投影会去重，只保留 A、B。SQL 用 `DISTINCT` 才明确要求去重。两者都不能凭这张小表的书写顺序推断 SQL 输出顺序；只有恰当的 `ORDER BY` 才给出相应排序保证。
+
+</details>
+
+### 2. NULL 会在哪一步改变聚合？
+
+仍用上题三行。比较 `COUNT(*)`、`COUNT(qty)`、`SUM(qty)`、`AVG(qty)`；再问 `WHERE qty <> 2` 保留哪一行。不能把 NULL 偷换成零。
+
+<details><summary>展开核对：行数、非空数与三值逻辑</summary>
+
+结果分别为 3、2、5、2.5。AVG 的分母是参与计算的非空值数量。`qty <> 2` 对 NULL 得到 UNKNOWN，WHERE 只保留 TRUE，因此只剩 id=2。若业务要求保留未知数量，必须明确写出这项语义，而不是依赖“不等于”。
+
+</details>
+
+### 3. 记录移动后，哪个身份应当不变？
+
+假设 RID 由 page id 与 slot id 组成。页内压缩把记录的字节从偏移 300 搬到 120，槽位编号保持不变。外部索引要不要跟着修改？如果记录搬到另一页，又缺少转发机制呢？
+
+<details><summary>展开核对：业务键、RID、页与 frame</summary>
+
+页内移动只需更新槽目录里的字节偏移，原 RID 仍能定位记录；索引不应把字节偏移当稳定 RID。跨页移动则改变 page id，若没有稳定间接层或转发机制，引用必须维护。业务键是查询/约束意义上的身份；page id 是存储页身份；frame id 是当前缓存槽位，页面重新载入后可以换 frame，不能写入持久索引代替 RID。
+
+</details>
+
+### 4. pin 了页面，为什么仍可能读到中间状态？
+
+线程 A 持有页的 pin，线程 B 同时修改其槽目录和 tuple 区。A 是否已经安全？再区分“释放读写互斥”“允许淘汰”“需要写回”三个状态。
+
+<details><summary>展开核对：三个互不替代的条件</summary>
+
+pin 只防止页面在使用期间被淘汰或复用，不让多字段读写自动原子化；仍需正确的 latch 协议。释放 latch 表示不再占用读写互斥，pin 降为零才可能成为可淘汰候选，dirty 表示内存页与持久副本不同。dirty 页也可以在安全写回后被淘汰；pin 数为零并不等于已经写回。guard 的生命周期要同时考虑这些资源，但不能把三者合并成一个布尔值。
+
+</details>
+
+### 5. 只求一列之和，为什么行存可能读得更多？
+
+给定 10 万行、每行十个等宽 8 字节属性；每页可用负载 4000 字节，忽略元数据、压缩与缓存。列各自紧密存放。全表求一个属性之和时，行存与列存分别至少读取多少数据页？若改成按主键查一整行呢？
+
+<details><summary>展开核对：布局收益取决于访问形状</summary>
+
+行存每页 50 行，共 2000 页；目标列共 800000 字节，占 200 页。该简化模型下列存少读十倍数据，不能泛化成所有查询都快十倍。整行点查还涉及索引访问、十列位置与缓存局部性；列存可能要访问多处。这里没有计算页头、对齐、解码与输出成本。
+
+</details>
+
+### 6. 字典编码能否直接用编号比较大小？
+
+编码表为 `A→7, B→2, C→5`。按字符串排序的谓词 `sku < 'B'` 能否改为 `code < 2`？什么时候才可能直接用编码做范围比较？
+
+<details><summary>展开核对：相等保持不等于顺序保持</summary>
+
+不能。A 的编码是 7，却满足字符串谓词。普通唯一字典编码可保持相等关系，未必保持字典序；只有编码顺序与所用字符串排序规则一致，且相关值使用兼容字典时，才可直接比较编号。压缩节省 I/O 与是否能够在压缩域执行谓词是两个问题。
+
+</details>
+
+### 7. 目录翻倍是不是每次桶分裂都要做？
+
+可扩展哈希的 global depth 为 3，某满桶 local depth 为 2。插入触发分裂时，是否必然把整个目录翻倍？如果该桶 local depth 已是 3 呢？
+
+<details><summary>展开核对：区分目录位数与桶的区分位数</summary>
+
+第一种情况可把桶深度增加到 3，重新分配该桶记录并更新原有目录别名，无须目录翻倍。第二种情况需要更多目录位来区分两个新桶，通常先把 global depth 增至 4。分裂仍只重分配目标桶的条目，不是重哈希整张表；连续共享前缀还可能导致进一步分裂。
+
+</details>
+
+### 8. Bloom 的“可能存在”能否跳过回表？
+
+只插入未删除的标准 Bloom filter 对某业务键返回阳性。能否直接返回订单记录？若为了删除一个键而清除其所有对应位，会破坏什么？
+
+<details><summary>展开核对：过滤与精确定位</summary>
+
+阳性只说明不能排除，仍要精确索引/存储层核实；filter 不携带完整记录或 RID。其他键可能共享这些位，直接清零会产生假阴性。标准“无假阴性”结论依赖正确插入、维护及可见性前提；可删除的变体需要额外计数或其他协议，不能给标准位图强加删除。
+
+</details>
+
+### 9. 分隔键与实际索引项有什么区别？
+
+根分隔键为 50，左叶含 10、20、40，右叶含 50、60。范围 `[20,60)` 怎样遍历？如果叶页中的 50 被 tombstone 标记，能否因此立即删掉父分隔键 50？
+
+<details><summary>展开核对：路由边界与逻辑记录</summary>
+
+先从根定位 20 所在叶，取 20、40，再沿叶链继续取小于 60 的有效项。父分隔键表达子树的路由范围，不是另一条业务记录；叶项逻辑删除并不单独证明孩子指针或分隔键应被移除。带 tombstone 的实现还要区分物理槽与逻辑可见项，具体重平衡和边界维护按 Project 2 固定规则，不能套用“删除一次就立刻合并”。
+
+</details>
+
+### 10. optimistic crabbing 为什么不能直接升级？
+
+更新沿读 latch 路径到达叶页后发现可能分裂。线程如果一边保留自己持有的读 latch，一边等待改成写 latch，可能出现什么问题？安全快路径究竟要证明什么？
+
+<details><summary>展开核对：重新开始不是失败兜底</summary>
+
+若两个更新线程都持有同一读 latch 并等待独占升级，各自都挡住对方。协议通常释放乐观路径资源后，从根按正确写 latch 顺序重新取得所需保护；重新读取时树可能已变，不能继续使用旧裸指针。安全快路径要证明当前操作不会向未受保护祖先传播结构修改。判断依赖操作种类、容量、根状态和 tombstone 规则，不是泛泛一句“叶子还有空位”。latch 保证的是物理结构访问安全，不是完整事务隔离。
+
+</details>
+
+### 11. 排序的“第几趟”有没有算输出？
+
+有 N=1000 页输入、B=11 个缓冲页。生成初始 run 时每批最多排序 B 页；归并时用一页输出，其余每路各用一页。假设各趟页数仍为 N，所有 run 都写入磁盘。不使用 replacement selection。求初始 run 数、归并趟数、总页 I/O；若最终输出直接流入下游呢？
+
+<details><summary>展开核对：先写 run 递推，再算 I/O</summary>
+
+初始 91 个 run，每次最多十路归并，run 数依次为 91→10→1。因此有一次生成趟与两次归并趟，不能把两次归并误称为总共两趟。
+
+$$
+R_0=\lceil1000/11\rceil=91
+$$
+
+全部物化时，每趟读取并写出 1000 页，共 6000 次页 I/O。最后一趟直接交给下游，可省最终 1000 页写出，排序自身共 5000 次；并未省掉读中间 run，也未计下游额外 I/O。内存里的归并比较、页预取和运行时间不在这个模型中。
+
+</details>
+
+### 12. 分区聚合能不能平均各分区的 AVG？
+
+同一 sku 的非空 qty 在一个分区是 `[2,4]`，另一个分区是 `[100]`。两个局部平均为 3 和 100。总平均是不是 51.5？当 GROUP BY 状态超过预算时，仅换成哈希表就能避免落盘吗？
+
+<details><summary>展开核对：聚合状态必须能够正确合并</summary>
+
+总平均是 106/3，约 35.333；局部平均的平均丢失了每组数量。AVG 可保存并合并 `(sum,count)`，最后除法；NULL 仍遵守 SQL 聚合语义。哈希表并不消除内存上限，组数/状态过多时需分区溢写或采用排序等方法；极端倾斜也不能仅靠“再换一个哈希函数”保证解决。以上是自拟数据与推导，不是 Project 3 的实现答案。
+
+</details>
+
+若第 3–4 题解释不清，回到 Project 1 页面生命周期；若第 9–10 题解释不清，先看 L8/L10 再做 Project 2；若第 11–12 题只会套公式，回到 L11 重写内存与输出成本假设。答对这些题不等于完成任何官方实验。
+
 ## 引用与来源
 
 - CMU Database Group / Andy Pavlo：[Fall 2025 官方课表](https://15445.courses.cs.cmu.edu/fall2025/schedule.html)、[课程大纲](https://15445.courses.cs.cmu.edu/fall2025/syllabus.html)、[FAQ](https://15445.courses.cs.cmu.edu/fall2025/faq.html)、[官方视频列表](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYMAgsGH-GtY5rJYZ6zjsd5)。逐讲视频入口显示在各讲页头。
@@ -152,5 +288,6 @@ HW1 对应 SQL，HW2–6 分别衔接存储、索引、执行、事务、恢复�
 - CMU Database Group：[BusTub 固定源码](https://github.com/cmu-db/bustub/tree/v20251119-2025fall)、[固定提交](https://github.com/cmu-db/bustub/commit/d49b823f829a4bf311a2c80b239ab5a9864c9c41)。代码许可与课程网页、视频、第三方依赖许可分别适用。
 - 官方 [作业与项目索引](https://15445.courses.cs.cmu.edu/fall2025/assignments.html)：[Project 0](https://15445.courses.cs.cmu.edu/fall2025/project0/)、[Project 1](https://15445.courses.cs.cmu.edu/fall2025/project1/)、[Project 2](https://15445.courses.cs.cmu.edu/fall2025/project2/)、[Project 3](https://15445.courses.cs.cmu.edu/fall2025/project3/)、[Project 4](https://15445.courses.cs.cmu.edu/fall2025/project4/)。任务与测试范围经网页和固定源码静态核对；不是已运行的验证结果。
 - 工具链依据：固定提交的 [README](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/README.md)、[CMakeLists.txt](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/CMakeLists.txt)、[packages.sh](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/build_support/packages.sh)。原生开发与 Linux 验证路线为编者建议，未实际配置或运行。
-- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1–3已阅读全文并制作原创要求导读；HW3全部5大题及图形条件已读，必要补读L10 notes仅服务Q3(d)，不等于L10视频或Project 2完整指导完成。不提供选项答案。HW4–6仍仅登记、获取并核对元数据。HW3索引截止日为2025-10-05，PDF却印“Sunday October 3rd”；HW5索引为11-23，PDF为11-16。保留冲突，不猜测延期原因。
+- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1–3已阅读全文并制作原创要求导读；HW3全部5大题及图形条件已读，不提供选项答案。L10 notes在P3仅为HW3依赖阅读；P4另行完成L10–12字幕阅读及Project 2题面/固定源码导读，不能混淆两批阅读范围。L12片尾短音段仍阻塞严格验收，具体见status.json。HW4–6仍仅登记、获取并核对元数据。HW3索引截止日为2025-10-05，PDF却印“Sunday October 3rd”；HW5索引为11-23，PDF为11-16。保留冲突，不猜测延期原因。
+- 期中范围依据：L8 课堂通知 **01:31–01:48** 明确为 Lecture 1–11 inclusive，见[L8 中文译稿 00:00–01:54](#/c/cmu-15-445-2025/lec/lec08?v=draft)。本页自测为原创，未取用官方考卷或解答；L12 虽同属制作 P4，未据此纳入官方期中考纲。
 - 全课逐来源版本、访问与阅读范围见仓库 `content/cmu-15-445-2025/source-manifest.json`；制作与恢复状态见同目录 `status.json`。原始字幕、媒体与网页快照只保存在本地忽略的 `sources/`，不随站点发布。

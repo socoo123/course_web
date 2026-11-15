@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 650" role="img" aria-labelledby="title desc">
+<title id="title">乐观下行的成功与清理重启路径</title>
+<desc id="desc">内部节点读保护交接，到叶子取得写保护并判断是否可局部完成。安全则释放祖先并完成；不安全则释放本次全部资源，从根使用基础写路径重试。不可持叶子向上追讨锁。</desc>
+<style>text{font-family:system-ui,-apple-system,'Noto Sans SC',sans-serif;fill:var(--fg,currentColor);text-anchor:middle}.edge{fill:none;stroke:var(--border,currentColor);stroke-width:2}.box{stroke:var(--border,currentColor);stroke-width:1.5}</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--border,currentColor)"/></marker></defs>
+<text x="195" y="34" font-size="21" font-weight="700">乐观 ≠ 无保护</text>
+<rect class="box" x="43" y="60" width="304" height="73" rx="10" fill="none"/>
+<text x="195" y="89" font-size="18">内部节点：读 latch coupling</text><text x="195" y="115" font-size="16">拿到孩子，再释放父亲</text>
+<path class="edge" d="M195 134V175" marker-end="url(#arrow)"/>
+<rect class="box" x="43" y="182" width="304" height="90" rx="10" fill="none"/>
+<text x="195" y="210" font-size="18">父层仍受保护 → 取得叶写 latch</text><text x="195" y="236" font-size="17">在稳定状态下判断操作 safe</text><text x="195" y="258" font-size="15">无需向父层传播吗？</text>
+<path class="edge" d="M140 273L97 327M250 273L293 327" marker-end="url(#arrow)"/>
+<text x="103" y="304" font-size="16">是</text><text x="288" y="304" font-size="16">否</text>
+<rect class="box" x="18" y="335" width="169" height="126" rx="10" fill="none"/>
+<text x="102" y="366" font-size="18" font-weight="700">局部完成</text><text x="102" y="396" font-size="16">释放不需用的祖先</text><text x="102" y="422" font-size="16">修改叶子</text><text x="102" y="447" font-size="16">释放叶子资源</text>
+<rect class="box" x="203" y="335" width="169" height="126" rx="10" fill="none"/>
+<text x="287" y="366" font-size="18" font-weight="700">清理并重启</text><text x="287" y="396" font-size="16">释放本次持有资源</text><text x="287" y="422" font-size="16">丢弃旧路径权限</text><text x="287" y="447" font-size="16">重新建立访问依据</text>
+<path class="edge" d="M287 462V505" marker-end="url(#arrow)"/>
+<rect class="box" x="85" y="512" width="287" height="64" rx="10" fill="none"/>
+<text x="228" y="539" font-size="18">从根重走基础写路径</text><text x="228" y="563" font-size="15">到 safe 边界才能释放祖先</text>
+<text x="195" y="617" font-size="17">禁止把“记得旧路径”当成当前保护。</text>
+</svg>

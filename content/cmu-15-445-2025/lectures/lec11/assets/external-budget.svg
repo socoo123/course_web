@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 600" role="img" aria-labelledby="title desc">
+<title id="title">外部归并的页预算与物化成本</title>
+<desc id="desc">原创示例：四十页输入、五页工作内存，初始八个五页run，之后四路归并为两个二十页run，再合并为四十页结果。每轮全物化读写八十页，总二百四十次页I/O。最后只流出可省四十页写入。</desc>
+<style>text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:var(--fg,currentColor);font-size:13px} .box{fill:none;stroke:var(--accent,currentColor);stroke-width:1.5} .sub{font-size:11px;fill:var(--muted,currentColor)} .line{stroke:var(--accent,currentColor);stroke-width:2;fill:none}</style>
+<text x="180" y="29" text-anchor="middle" font-size="17">预算 B = 5 页，输入 N = 40 页</text>
+<rect class="box" x="20" y="48" width="320" height="56" rx="7"/>
+<text x="180" y="71" text-anchor="middle">pass 0：每次内存排序 5 页</text>
+<text class="sub" x="180" y="91" text-anchor="middle">8 个初始 run；读 40 + 写 40</text>
+<path class="line" d="M180 105v26m-5-6 5 6 5-6"/>
+<text x="180" y="151" text-anchor="middle">归并时：4 个输入页 + 1 个输出页</text>
+<g class="box"><rect x="20" y="168" width="54" height="43" rx="5"/><rect x="82" y="168" width="54" height="43" rx="5"/><rect x="144" y="168" width="54" height="43" rx="5"/><rect x="206" y="168" width="54" height="43" rx="5"/><rect x="280" y="168" width="60" height="43" rx="5"/></g>
+<g text-anchor="middle"><text x="47" y="194">输入1</text><text x="109" y="194">输入2</text><text x="171" y="194">输入3</text><text x="233" y="194">输入4</text><text x="310" y="194">输出</text></g>
+<text class="sub" x="180" y="234" text-anchor="middle">每路只驻留当前页，不驻留整个 run</text>
+<path class="line" d="M180 246v26m-5-6 5 6 5-6"/>
+<rect class="box" x="20" y="286" width="320" height="58" rx="7"/>
+<text x="180" y="310" text-anchor="middle">pass 1：8 个 run → 2 个 run</text>
+<text class="sub" x="180" y="330" text-anchor="middle">每个 20 页；读 40 + 写 40</text>
+<path class="line" d="M180 345v26m-5-6 5 6 5-6"/>
+<rect class="box" x="20" y="385" width="320" height="58" rx="7"/>
+<text x="180" y="409" text-anchor="middle">pass 2：2 个 run → 1 个 run</text>
+<text class="sub" x="180" y="429" text-anchor="middle">完整结果 40 页；读 40 + 写 40</text>
+<text x="180" y="476" text-anchor="middle">全部物化：3 × 80 = 240 页 I/O</text>
+<text x="180" y="501" text-anchor="middle">末轮直接流出：240 − 40 = 200</text>
+<text class="sub" x="180" y="533" text-anchor="middle">后继算子的状态也要有预算</text>
+<text class="sub" x="180" y="554" text-anchor="middle">双缓冲占额外页，须重新计算扇入</text>
+<text class="sub" x="180" y="578" text-anchor="middle">原创推导；非课堂截图；不计 CPU / 网络</text>
+</svg>
