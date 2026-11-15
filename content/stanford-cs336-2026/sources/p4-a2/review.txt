@@ -1,0 +1,80 @@
+CS336 Spring2026 P4 — A2 author handoff / source-reading review
+Author: P4AssignmentTwo; requested worker model openai-codex/gpt-6-astra:xhigh.
+Status: author-complete, reviewed=true (own source/technical review only), accepted=false; main acceptance/page verification pending. No execution completion implied.
+
+Owned publication bodies/assets
+- labs/a2-systems/lab.zh.md
+- labs/a2-systems/guide.zh.md
+- labs/a2-systems/assets/evidence-lanes.svg
+Owned lightweight source evidence
+- sources/p4-a2/task-coverage.json
+- sources/p4-a2/manifest-fragment.json
+- sources/p4-a2/review.txt
+Local-only raw evidence under sources/p4-a2/upstream/: AGENTS.txt, test_and_make_submission.txt, tests_adapters.txt, tests_test_attention.txt, tests_test_ddp.txt, tests_test_fsdp.txt, tests_test_sharded_optimizer.txt, tests_common.txt, leaderboard-README.txt, course-home.html. Do not force-add raw mirrors. Existing P1 originals reused unchanged.
+No shared course/status/catalog/resources/reading-map files edited. No src or official assignment implementation edited. No nested agents. No commit/push.
+
+Actual reading — complete handout, not merely acquisition
+Fixed repository ca8bc81a59b70516f7ebb2da4808daade877c736.
+Handout Spring2026 v26.1.3,48printed pages; outer package26.1.4,packaged basics26.0.4 are independent version fields.
+Saved extraction: p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt,2696lines.
+Requested sequential windows1–450,454–900,904–1350,1354–1800,1804–2250,2254–2696.
+Actual displayed bounds (reader context overlaps):1–453,453–903,903–1353,1353–1803,1803–2253,2253–2696.
+Together these cover every line, including introduction/setup,all27Problems,all47lettered subquestions,all algorithms and explanatory code examples,optionalTriton backward,distributed primers,all§8derivations,leaderboard timing/example suggestions,and bibliography. This is full text-extraction reading,not page-by-page PDF visual review. No snippets-only or heading-search-only full-read claim.
+The PDF itself is linked to the full extracted-text reading; no claim that its48pages were visually inspected.
+
+Other actual reads
+- README.txt lines1–65 full.
+- LICENSE lines1–7 full including copyright,permission,condition,warranty.
+- outer pyproject.toml lines1–58 full.
+- CHANGELOG.txt lines1–149 full,including old entries; current2026 cutovers kept distinct.
+- cs336-basics/pyproject.toml lines1–50 full.
+- Fixed tree complete path list via jq .tree[].path; only inventory,not all repository blobs read.
+- P1 assignment-audit A2 section lines185–324 complete plus relevant sharedaccess/citation matches. Other A1/A3/A4 audit sections not claimed full-read.
+- p1-shared/ai-policy.txt lines1–21 full.
+- p1-shared/cluster-guide.txt lines1–185 full.
+- Actual fixed-SHA raw URL reader full texts of AGENTS.md,tests/adapters.py,tests/test_attention.py,tests/test_ddp.py,tests/test_fsdp.py,tests/test_sharded_optimizer.py,tests/common.py,test_and_make_submission.sh. Saved line counts are in manifest records. Read only to learn test/interface/policy contracts;no staff solution implementation imported/executed.
+- Official course homepage full rendered-reader text,includinghardware self-study,HonorCode,submission andschedule. HTML snapshot saved foridentity;not claiming rawHTML line-by-line review.
+- Leaderboard repository README full reader text including2026rules,global table,old2025comparison,timing/example andoptimization suggestions; separately resolved latest commitdf82f2f05c43273096bedffced4d7a035bcbf1fc and saved its README. This is independent provenance fromA2 fixedSHA. Did not visit student solution repos or copystandings.
+
+Acquisition notes
+The first curl batch acquired AGENTS,submission,adapters,andattentiontest,then hit HTTP2 framing error on subsequentfile. Inspected resultingdirectory;kept successfulfiles;retried only remainingDDP/FSDP/optimizer/common files with HTTP1.1 successfully. Leaderboard andhomepage snapshotacquisition then succeeded. No paid/APItraining actions involved.
+Hashes were calculated as provenance for newly acquiredsources and audit,not as a test/build or a retroactive claim of experiment correctness. P1 known hashes/retrieval timestamps reused;P4 read scopes appended in separate fragment,not rewritingP1 historical record.
+
+Task coverage
+27scoredProblems,137sourcepoints,47lettered subquestions. Each task has id,points,sourcepages/textlines,lab_section,guide_sections,coverage_items. Each letter has a single-letterid;romanitems and nonnumbered interfaces/configuration/deliverables have separate IDs. Sharedcontracts cover unscoredexposition,environment/policy,optionalboundary,fullmath/communication premises,rights/execution.
+No numeric answers to scoredshort questions,optimalcheckpointstrategy,TPbackwardsolution orparallelismbounds supplied. No Python/pseudocode/kernel/benchmark/leaderboard implementation generated. Official suggestions summarized as optionaldirections,not a readyoptimizationrecipe.
+Two complete bodies: requirements page mirrorsall tasks/configs/deliverables;guide usesG0–G10conceptual/debugging organization,independent small numerical examples andselfchecks that are not answers togradedcases. Guide links each taskfamily tolecture/paper/extensionhomes.
+
+Technical source discrepancies and treatments
+1. PDF26.1.3 vs package26.1.4:both explicit;2026 scope includescheckpointing/FSDP,excludesoldbucketedDDP. OldH100attentionleaderboard is notcurrent.
+2. Handoutflash_forward(b) saysget_flash_autograd_function_triton;actualadapter isget_flashattention_autograd_function_triton. Labexplicitly correctsname andclass-not-instance/.apply returncontract.
+3. Adapterdocstring saysTriton forward/backward;mandatory handoutbackward isPyTorch+torch.compile;§4.2.3 isoptional. Preservemandatory/optionalpriority,do notupgradeviaoutdateddocstring.
+4. flash_forward(a) computesOandL,butreturnsOandsavesLQKVO. Testrequires exactlyone saved[batch,Nq]L. causaldefaultFalseandconstexprparameter retained.
+5. Handoutmask saysadd−1e6;testreference replaceswith−1e6. Bodiesseparateexactsourcecontractfromfinite-mask/extreme-inputcaveat. Neither describedas universallyidentical to−infinity. Bq×Bk notednotnecessarily square.
+6. §3.2p12single-blockdemo callsitxlbut uses16heads,Table1xl32heads. Bodiesflagdiscrepancy;original printed3651.31MiB/160MiB not treatedas ownmeasurementorunqualifiedstandardxlvalue.
+7. mixedprecisionToyModelloss notdefined. Ratherthan inventuniversal dtype,thelab asksstudenttostateactualoperation/autocastassumption;nogradedanswersprovided.
+8. FSDPexactprefetchrestriction:onlyafterlayertwobeforetargetcompletesforward. compute_dtype conversionbeforecommunication;master/updateFP32;releasefullgatheredweights;backwardregather;reduce-scatter;replicatednormgradientsstillglobal.
+9. ActualFSDPtestsneedfsdp_on_after_backwardandfsdp_gather_full_paramsbesidesget_fsdp;usecustombasicsLinear/EmbeddingandFP32/FP16compute;SGDtestnotreplacementforAdamWcompatibility.
+10. DDP/optimizer testscontaintiedweightsandfrozenparameters. Guideemphasizesglobalobjective/accumulation/aliasmeaningwithoutfixcode. Paramgroups,closure/kwargs,anddynamicadd_param_group remainrequired evenif testsare narrower.
+11. READMEclaimsgzippedtarball;actualscriptzipnamecontainsspring2024. Scriptcontinuesaftertestfailure andexcludesmanyresults/datafiles. Packagingnotpass;legacynamenotcourseedition.
+12. §4exposition'sbroadIO/sequenceclaimnotpropagatedasunqualifiedwhole-modelorwhole-backwardguarantee. Mandatorycompiledbackwardmayhavefullscoretemporaries;measureactualpeak.
+13. §8unitsperdeviceC/W,fullSvsS/N,FP16twoBytes,FLOPvsFLOP/s,partialsumvsshard,DP/FSDP/TPaxes,andmax-vs-sum2Dnetworkassumptionsallkeptdistinct. Gradedexpressionsnotanswered.
+14. Leaderboardpreservesvocab151936,dmodel4096,dff11008,layers34,heads32,ctx32768,batch2,BF16causal,2B200;cleargrad→forward→CEsum→backward→AdamW. rep30000/warmup10000arems,notiterations. EmptyPyTorch/Tritoncachetotalrun≤10min,notonlyhotkernel. Goal<10s/step.
+15. CPU/GloocorrectnessnotCUDA/Triton/NCCL/Nsightbenchmark;MPSnot equivalent;interpreterbugwarning;noGPUtestskipclaimedpass. Modaleligibility/concurrencycoordinationnotautomaticresourcegrant.
+
+Rights
+Bothbodies retainexactcompleteMITcopyright/permission/condition/warranty noticefromfixedLICENSE(2025StanfordUniversity). Noticecoversfirst-partysoftware/associateddocs;papers,Lightningfigure,externalarticles,dependencycode/services,coursepoliciesandseparateleaderboardnotassumedMIT. No third-partyfigure/fulltranslationreproduced. Paperclaims/algorithms/evidencehomelec06materials(FA/FA2),lec08materials(ZeRO);linksavoidduplicatefullpapers. NewSVGisevidence-lanes.svg,originaldiagram,title/desc,themevariables/currentColor,nobackground/externalrefs/scripts;notprofilerorclassroomimage.
+
+Execution and acceptance limits
+Notrun:build,lint,formatter,tests,officialassignmentcode,torch/CUDA/Triton/NCCL/Nsight execution,Gloo demo,training,GPU allocation,paidcompute,pretrainedweights/datasetsdownload. Noactualtiming,throughput,peakmemory orleaderboardrecordclaimed. No ownbrowser/renderacceptance;mainmustrecordthatseparately. Sourcefetches/metadata generation are not experiment execution.
+
+Main verification suggestions (not executed by worker)
+- Parse task-coverage/manifest JSON;compare27Problem IDs,137points,47letteridsagainstfixedsource;ensureeverynonnumbered/optionalrequirementhasbodymapping.
+- Checkrequiredsourcefields,fileexistence/hashesandactualreadscopes;do notforce-addrawsnapshots/PDF.
+- Reviewsourcecorrectionsabove,especiallyFSDPprefetch/compute dtype,finitecausalmask,mandatorycompilebackward,global/localbatch,fulltrainingstepandmilliseconds/coldcache.
+- P4scopedlink/asset/SVG validation;verifyalllecture/ext/materialroutesandtheA2 guideasset.
+- Desktop/mobileactualpage reviewoftables/math/longadapteridentifiersandSVG;noanchor-IDassumption.
+- Main-only finalbuild/integrationchecks perparentassignment;noofficialGPUassignmentexecutionneededforcontentacceptance.
+
+Main review wording correction
+Following Main's full-body review, changed guide G7.2 heading from “完整权重通常是临时视图” to “完整权重通常是临时物化结果”, avoiding the implication of a zero-allocation torch view. Body storage/lifetime discussion unchanged. Coverage mappings use G7 and remain valid; declared counts remain27scoredTasks/47letteredSubquestions/137points. This wording change does not claim main acceptance or execution verification.

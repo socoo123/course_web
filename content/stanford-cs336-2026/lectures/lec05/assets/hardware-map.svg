@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 570" role="img" aria-labelledby="title desc">
+<style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}</style>
+<title id="title">GPU执行身份与存储作用域</title><desc id="desc">Grid包含多个block，block在SM上执行且可与其他block共驻。一个普通block的线程合作使用该block的shared memory，线程使用寄存器。L2服务全芯片，HBM提供较大的全局存储。图不表示物理面积或实际芯片数量。</desc>
+<style>text{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;fill:var(--fg,#64748b);font-size:22px}.head{font-size:25px;font-weight:700}.small{font-size:20px}.box{fill:none;stroke:var(--border,#64748b);stroke-width:2}.accent{fill:none;stroke:var(--accent,#64748b);stroke-width:3}.line{stroke:var(--muted,#64748b);stroke-width:2}</style>
+<text class="head" x="25" y="37">逻辑任务，不等于物理核心</text>
+<rect class="box" x="25" y="58" width="550" height="65" rx="10"/><text x="48" y="86">Grid：许多block，不保证同时驻留</text><text class="small" x="48" y="111">HBM：全局数据；L2：全芯片缓存</text>
+<path class="line" d="M300 123V157"/><path class="line" d="M291 148L300 157L309 148" fill="none"/>
+<rect class="accent" x="25" y="165" width="550" height="282" rx="14"/><text class="head" x="48" y="202">一个SM的资源视图</text>
+<rect class="box" x="45" y="222" width="245" height="154" rx="10"/><text x="65" y="252">Block A</text><text x="65" y="286">本block的shared</text><text class="small" x="65" y="319">多个warp参与协作</text><text class="small" x="65" y="351">每warp：32线程</text>
+<rect class="box" x="310" y="222" width="245" height="154" rx="10"/><text x="330" y="252">Block B</text><text x="330" y="286">本block的shared</text><text class="small" x="330" y="319">资源足够才可共驻</text><text class="small" x="330" y="351">不自动共享A的数据</text>
+<text class="small" x="48" y="409">线程私有寄存器；L1与shared有容量取舍</text>
+<text class="small" x="25" y="485">容量、带宽、延迟：三个不同维度</text>
+<text class="small" x="25" y="520">普通block模型；cluster等扩展需另行声明</text>
+<text class="small" x="25" y="552">原创概念图，不按面积或资源数量绘制</text>
+</svg>

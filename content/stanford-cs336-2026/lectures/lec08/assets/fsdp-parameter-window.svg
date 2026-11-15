@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 740" role="img" aria-labelledby="title desc">
+<style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}</style>
+  <title id="title">FSDP参数物化与下一单元预取窗口</title>
+  <desc id="desc">每个rank永久保存参数和更新状态分片。当前单元参数all-gather完成后才可前向；当前前向可以与下一单元的参数all-gather重叠，但同时需要两个完整参数缓冲。当前单元使用完成后可释放其完整缓冲，不释放常驻分片；下一单元仍须等自己的参数和输入都可用。图示为依赖示意而非实测时间线。</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; fill: var(--fg, #64748b); font-size: 22px; }
+    .head { font-size: 27px; font-weight: 700; }
+    .bold { font-weight: 650; }
+    .small { font-size: 20px; }
+    .box { fill: none; stroke: var(--border, #64748b); stroke-width: 2; }
+    .comm { fill: none; stroke: var(--accent, #3b82f6); stroke-width: 2.5; }
+    .comp { fill: none; stroke: var(--success, #10b981); stroke-width: 2.5; }
+    .flow { fill: none; stroke: var(--fg, #64748b); stroke-width: 2; }
+    .arrow { fill: var(--fg, #64748b); }
+    .window { fill: none; stroke: var(--warning, #d97706); stroke-width: 2; stroke-dasharray: 7 5; }
+  </style>
+  <text class="head" x="30" y="43">省常驻存储，不等于没有临时完整参数</text>
+  <rect class="box" x="30" y="65" width="580" height="75" rx="12"/>
+  <text class="bold" x="320" y="97" text-anchor="middle">每个数据 rank：一直保有自己的状态分片</text>
+  <text class="small" x="320" y="126" text-anchor="middle">本地数据仍经过完整模型，不是只算一段层</text>
+  <text class="small" x="30" y="179">时间向右 →　下图只画前向，长度不表示实测时长</text>
+  <text class="bold" x="30" y="225">通信</text>
+  <rect class="comm" x="120" y="195" width="150" height="65" rx="8"/>
+  <text x="195" y="235" text-anchor="middle">AG 单元 i</text>
+  <rect class="comm" x="285" y="195" width="180" height="65" rx="8"/>
+  <text x="375" y="235" text-anchor="middle">AG 单元 i+1</text>
+  <text class="bold" x="30" y="334">计算</text>
+  <rect class="comp" x="285" y="303" width="180" height="65" rx="8"/>
+  <text x="375" y="343" text-anchor="middle">前向 i</text>
+  <rect class="comp" x="480" y="303" width="130" height="65" rx="8"/>
+  <text x="545" y="343" text-anchor="middle">前向 i+1</text>
+  <path class="flow" d="M270 227H277V335H281 M465 227H472V335H476"/>
+  <path class="arrow" d="M275 329L284 335L275 341Z M470 329L479 335L470 341Z"/>
+  <path class="window" d="M280 185H470V383H280Z"/>
+  <text class="small" x="320" y="415" text-anchor="middle">同一窗口：计算 i 与收集 i+1 可重叠</text>
+  <text class="small" x="320" y="447" text-anchor="middle">但前向 i+1 必须等输入及参数都准备好</text>
+  <rect class="box" x="30" y="475" width="580" height="125" rx="12"/>
+  <text class="bold" x="50" y="511">这个窗口要算的存储：</text>
+  <text x="50" y="549">常驻片 + 当前完整参数 + 预取完整参数</text>
+  <text x="50" y="581">+ 保存激活 + 其他工作区（按唯一存储计）</text>
+  <text class="small" x="30" y="640">单元 i 用完：释放其完整临时缓冲，不是删掉状态片。</text>
+  <text class="small" x="30" y="674">反向通常再收集参数、计算，再归约梯度片。</text>
+  <text class="small" x="30" y="708">预取越深：可能少等待，也可能增大峰值显存。</text>
+</svg>

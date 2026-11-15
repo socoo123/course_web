@@ -1,0 +1,54 @@
+接续关键词：CS336-2026-P5-缩放推理与评测
+
+继续 Stanford CS336 Spring 2026，仅执行 P5「缩放推理与评测批」。
+项目：/Users/zy/ai_learn/course_web
+课程：content/stanford-cs336-2026/
+启用门槛：先确认status.json与p4-acceptance.json已记录P4验收完成；本文件提前准备不代表P4或P5已完成，不自动启动。
+
+一、按真实验收状态接续
+先读status.json、production-plan.json、P4-REVIEW.txt、p4-acceptance.json、p4-model-preflight.json、p4-publication-record.json，再读manifest.json、reading-map.json及所复用P1分片。P4-BLOCKED.txt与p4-interruption-check.json仅记录首次模型用量中断；后来用户明确恢复原6会话，不能把历史阻断当成新一轮结果。每轮重新核实模型身份和可用性。
+保留P1/P2/P3/P4来源、许可、读取范围、执行和发布边界；登记/下载/阅读/撰写/审查/页面验收/官方实验执行分开统计。分片的pending/false可能是作者交接状态，最终以主验收为准。
+仅在发现具体问题时修正已验收正文，不重做旧批次。
+
+二、P5范围与单一正文归属
+1. L09 Scaling Laws（一）、L10 推理、L11 Scaling Laws（二）、L12 评测：各自notes/draft，依真实2026课堂时间轴。
+2. ext10 推理服务与KV内存管理、ext11 量化与参数高效微调、ext12 Scaling Laws的统计方法：编者notes。ext11与L15关联不代表本批进入L15。
+3. A3完整lab.zh.md及guide.zh.md，忠实所有任务和子问；指导给概念/实验设计/诊断，不给可提交答案或自动实现。
+4. paper06 Chinchilla固定2203.15556v1，唯一正文lec09/materials；L11/ext12/A3回链。
+5. paper07 PagedAttention固定2309.06180v1，唯一正文lec10/materials；ext10回链。
+6. paper10 LoRA固定2106.09685v2、paper11 QLoRA固定2305.14314v1，唯一正文ext11/materials；后续L15回链，不重复论文正文。
+7. 精确核心/选读章节以reading-map.json为准。Chinchilla与LoRA没有已确认公开全文翻译授权，做自主精读；PagedAttention与QLoRA固定版CC BY4.0，可对指定范围完整翻译并保留作者、版本、许可、修改说明和第三方权利限制。不能将编者选定章节称官方全文必读。
+8. 复用P4 ext04资源账本、L06 FlashAttention、ext05推导、ext06测量，不复刻基础正文。无独立课外阅读不建L11/L12占位materials。
+9. 不进入L13/A4/ext13及后续内容。
+
+三、固定来源与视频
+课堂讲义仓库固定de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e（2026-09-12课后版本）；L09/L11 PDF，L10/L12源码/trace按manifest实际路径查找，不能用课后文件覆盖录像时间线。
+P1已核视频：L09 Q15rhEWZPQ4 / 4677s(77:57)，L10 EfM546A79aM / 5130s(85:30)，L11 vTfEyOyzV9E / 4623s(77:03)，L12 JpAxdTWQJxM / 4714s(78:34)。复用各自p1-videos/metadata与caption原件，再核讲次、作者、时长；不拿其他年或列表位置替代。
+逐讲实际全读字幕并记录cue读取范围/首尾/内部空隙/疑词；平台manual/non-ASR不是已核音保证。开放翻译许可未确认，draft仅限量译述与全片导航，notes自主教学，不声称完整翻译。无实际媒体不造课堂截图，不下载音轨/片段。
+每个使用来源记录URL/版本/获取日期/文件/SHA256/许可/实际读取范围/处理类型；本地原件缺失按固定URL重取，不将路径登记当完整备份。
+
+四、A3不可缩减的要求与访问边界
+固定仓库03e9372992e913061b9e78b5cfcb62ad8a87de35；PDF Spring2026 v26.0.5、8页，package26.0.2另记。全文重读README/LICENSE/CHANGELOG与题目；P1审计是导航，不替代这次阅读。
+Part1 chinchilla_isoflops 5分：公开data/isoflops_curves.json的72条合成run、9档预算(6e18..3e21 FLOPs)，按最低观察loss选择、拟合模型/数据幂律，外推1e23/1e24并交图与预测。它只覆盖Part1，不是官方Part2真实API数据。
+Part2 scaling_laws 50分：实际训练实验API，累计探索12 B200小时，预测48 B200小时最终run的超参数与validation loss。2026主要预算是wall-clock，不拿2024 CHANGELOG的2e18 FLOPs旧预算替代。
+运行单B200；seq512、32k Llama-2 tokenizer、最多500B token固定顺序无epoching、validation2^18 tokens（最终更大）。JAX/Equinox模型不是直接执行A1 PyTorch，具体配置/优化器/精度/头数限制需读固定源码；num_kv_heads==num_attention_heads，不擅自承诺GQA支持。
+正式课程学生题设要求训练经API；POST /final_submission是最终配置/预测提交，不是反复消耗48h的探索接口。writeup.pdf与code.zip要求完整保留。
+API需课程已登记8位Stanford ID及Stanford网络/VPN，不是任意公开用户可用。不要获取/保存学生ID、密钥或私有名册；不调用submit/final_submission、不消费预算、不启动收费资源。
+非学生README另有自建路线，但direct-run与modal.current_function_call_id检查有静态矛盾，且含staff namespace、W&B entity和服务回报配置。未经实际验证不得写成开箱即跑；自建须自备GPU/数据/存储/服务，不借用校内资源。
+默认数据路径可涉及约1TB token载荷、3333 shards/max_containers100；不要把这些命令当小样例执行。CPU只验证编者独立拟合/量纲例，不将其冒充50分Part2或正式实验完成。
+A3第一方MIT须完整保留版权/许可，不扩展至论文/数据/服务。官方AI政策禁止AI实现作业与排行榜代码，关闭自动补全；仅概念/API辅助。
+
+五、技术审查重点
+Chinchilla训练最优不等于含推理成本的部署最优；固定v1的67.5/67.6 MMLU表述冲突保留，不静默混入后续修订。
+区分N参数、D tokens、FLOPs与时间、训练/推理成本、固定预算与固定数据；拟合方法、可识别性、损失下限、训练终止/调度器、外推区间不能隐藏。不要给A3全部最终公式/拟合实现作为解答。
+PagedAttention是KV内存管理/共享/调度的系统收益，不保证单核更快；固定论文Orca比较是作者重实现且有Oracle/Pow2/Max假设。prefill/decode、吞吐/TTFT/TPOT、排队和分位数分别说清。
+LoRA低秩增量与权重低秩不是同一主张；初始化与可合并条件精确。QLoRA4位存储不等于4位算术或所有状态4位；NF4、double quantization、paged optimizer分别记账，不能把33B/65B结果说成证明与全16位全参微调等效。
+L12评测保留数据污染/协议/题型/评分器/置信不确定性和可复现边界；只引用实际读过的源，不造现代榜单成绩。
+
+六、分工与验收
+所有实际子agent（含审核）显式openai-codex/gpt-6-astra:xhigh；派发前读匹配技能和受支持cfg入口，核实当次model_change/thinking_level_change或等效元数据以及assistant字段。不可用就报告，不替换、不降级、不持久化配置。
+按独立内容范围并行，先定共享合同和正文单一归属；Main独占course/catalog/resources/status、汇总manifest/reading-map/plan；workers独占正文及来源分片。中途不build/lint/tests/formatters，Main整合后一次必要验证。
+仅改本课程content，不改src/其他课程/官方作业代码。新文件write，已有edit；sources原始物不用.md。公式主动分行适配390px，完整SHA留来源清单，SVG主题色/title/desc、无外部脚本资源。
+逐讲验收真实页头视频ID/讲次/时长，代表性实际点击新标签且原笔记保留。桌面和390px手机实际看所有新正文、SVG、表格与数学；检查根宽、KaTeX错误、图片、站内链接、时间/cue覆盖和源哈希。独立小例只做必要验证，不执行官方作业。npm run build通过才可提交。
+完工更新真实状态并写P5-REVIEW/p5-acceptance与完整NEXT-P6-PROMPT。明确白名单提交正文、原创图与轻量证据；不整目录force-add sources，不发布字幕/PDF/原文镜像/浏览器截图。推送现有仓库main，不强推或改远端；Pages成功以实际Actions和部署页为据。
+P5验收后停止，不自动进入P6；最终简短报告正文、验证、提交/部署与未解除限制。

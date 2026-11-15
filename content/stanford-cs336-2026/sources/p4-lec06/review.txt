@@ -1,0 +1,38 @@
+P4 L06作者交接审查（不是主验收）
+状态：worker_self_reviewed=true；accepted=false；Main定向验收待做。
+
+一、独占产物与发布边界
+正文：lectures/lec06/notes.zh.md；lectures/lec06/draft.zh.md。
+原创SVG：lectures/lec06/assets/program-mask.svg；lectures/lec06/assets/tile-lifetime.svg。
+轻量证据：sources/p4-lec06/manifest-fragment.json、video-metadata.json、reading-log.json、time-intervals.json、review.txt。
+本地证据不发布：sources/p4-lec06/captions.normalized.json、transcript.en.txt，以及raw/下OpenXLA、两篇Triton、CUDA programming-model/simt-kernels/best-practices七篇中的本片六份HTML。
+没有碰lec06/materials或paper-*、共享文件、src、官方作业。FlashAttention原论文归另一个owner；本片只回链，不建第二正文。
+
+二、真实阅读范围
+完整skill、合同/NEXT-P4、版本审查/variant-audit、Sep12 files patch87–135、P4-BLOCKED与保存的模型预检。初始及恢复runtime attest由Main负责，本片没有换模型/推理级或嵌套委派。
+全读1552字幕cues：1–350、351–750、751–1150、1151–1552；标准化TXT每行一cue，原词不校写，只展平换行。原JSON3与新JSON全部时间保留。时间5.240–5196.600秒、总片长5201秒；44内部gap>2秒；12个INAUDIBLE cues；每个缺口/疑词均入证据。
+固定lecture_06.py完整745行：请求1–280实际显示至283；请求284–540实际显示至543；544–745读至末尾。辅助函数、实际mask、求和、matmul、benchmark全部读过；trace事件流未全读，代码未执行，外链图未全部下载。
+元数据与video-map映射、duration5201、videoID xnDHaNUvHBg、Spring2026讲次、上传20260428、Stanford Online频道、字幕manual类别和license=null实际核对。未声称观看原画面或live watch页。
+Triton Vector Addition完整；Fused Softmax实际渲染1–300行（主体、示例、benchmark开头及部分表格，最后表格和footer不虚报阅读）。OpenXLA短概览完整含许可footer。CUDA13.5 Programming Model整页；Writing SIMT Kernels1–300行；Best Practices1–300及614–663/815–832/890–915/1580–1610。只读，不执行示例，不转载实现或厂商图。各HTML获取UTC、SHA与read_scope在manifest。
+
+三、原讲、课后修改和编者纠错
+1. Sep12 de53a9f是学期后修订：B200 L1/shared19→40 TB/s、L2 9→17 TB/s，加粗略估计说明。字幕开头只明确层级与HBM8 TB/s；未看到录制画面，不从父提交推定课堂表格，更不倒填新值。
+2. 占用率源码文字64线程与实际128变量冲突，录像采用128；toy寄存器限制得到12warps/64=18.75%。未计资源分配粒度/其他驻留限额，不作为实测。
+3. blocks“divide SMs”方向需改为在一SM一block假设下考虑SM数的倍数；多block共驻是可能的，不把148+12波次说成硬保证。
+4. BLOCK_SIZE是逻辑tile元素，不等于thread数。程序ID不是SM编号；tl.load不保证shared-memory驻留；累加状态存储/溢出由实现决定。
+5. 传统CUDA同步分别保写完再读/读完再覆盖；作用域与到达规则明确，普通block barrier不等于grid barrier。Triton抽象不免除跨program依赖设计。
+6. 三轴mask、typed-pointer stride单位、有效输出独占、求和0/softmax负无穷填充、全mask及非有限数的契约都讲清；只有store mask不能修正归约污染。未给A2提交代码。
+7. Softmax源码5MN+M读数漏最后分母M，完整理想账5MN+2M读、3MN+2M写；补充Triton文字把元素称bytes也不照抄，明确乘dtype字节。
+8. matmul源码K行/列注释相反之处按A(M,K)、B(K,N)校正；非线性只在完整K归约后融合，用-2与3给出反例。
+9. CUDA event elapsed_time返回ms，不等于CPU端到端；同shape、dtype、layout、编译/cache与分配口径先固定。GELU exp构造tanh可能极值溢出；不将随机小值allclose泛化全数域，也不复制问题实现。
+10. 视频标题含XLA但全字幕没有实质独立段；XLA定位按官方概览作编者补充，不编时间。torch.compile不是XLA，Triton不是PTX或GPU硬件别名。
+11. warp lockstep、128B事务与bank描述均说明简化条件；CUDA13.5校正不是课堂依赖升级。
+
+四、正文完成范围
+notes为原创教学：语义/性能两关、program归属证明、stride与mask、行归约、tile不变量与资源账、同步依赖、occupancy/bank/波次、测量陷阱、编译器分层；有假设算例、自测答案、完整时间导航和来源。
+draft按原顺序有限释义、完整导航、可辨问答定位、源冲突和缺口说明；不复刻课堂代码，不称逐字或全文翻译。未下载或伪造截图。SVG透明、title/desc、主题变量、无脚本/外链，主题分别是尾块mask和共享buffer生命周期。
+notes与draft公式主动缩短/分行，正文不含完整hash长串；手机仍需Main实看。数学算例是原创假设，不是硬件实测。
+
+五、后续主验收项（本片未运行）
+请Main统一做源hash/时间/cue覆盖/本地链接图片/SVG校验，桌面及390px数学、2列表格和字体实看；真人可访问视频入口与新标签行为；必要build。特别复核两个cue ledger与source correction日期边界、论文主页回链，避免把补充文档版本当课程环境。
+本片未build/lint/tests/formatter、未CPU/GPU性能运行、未执行官方作业、未看音画、未开付费算力、未commit/push。不能由作者交接推定验收/部署成功。原字幕与HTML仅本地，发布严格采用manifest明确轻量清单，不force-add raw。

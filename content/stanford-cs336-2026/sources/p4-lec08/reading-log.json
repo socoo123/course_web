@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "slice": "p4-lec08",
+  "read_at": "2026-11-14T16:42:47.666267+00:00",
+  "method": "All listed caption and handout text was actually displayed and read. No download/grep-only full-read claim. All read_at timestamps record evidence compilation after the completed reads, not fabricated per-call clock logs.",
+  "caption_reading": {
+    "source": "p4-lec08/transcript.en.txt",
+    "source_sha256": "1126699d4706080e6e6331fd02c1c9702d4a0d59c325a1b4a23a9d34dd78b9ce",
+    "original_file": "p1-videos/captions/6-cXp-aOmdg.en-US.manual.json3",
+    "original_sha256": "ad75fe3875cf5eafb76b0a8bdd0fe454cc984fd2d6783267adaf6b9444473dc4",
+    "normalized_sha256": "1c37f56649271387685a03aa9a4069064aa6bed80450d2fa043839e68d421ece",
+    "one_line_per_cue": true,
+    "total_lines": 1870,
+    "total_cues": 1870,
+    "windows": [
+      {
+        "requested_lines_1_based": [
+          1,
+          300
+        ],
+        "cue_range_1_based": [
+          1,
+          300
+        ],
+        "first_start_seconds": 5.24,
+        "last_end_seconds": 743.48,
+        "method": "functions.read exact raw range; complete displayed text read"
+      },
+      {
+        "requested_lines_1_based": [
+          301,
+          600
+        ],
+        "cue_range_1_based": [
+          301,
+          600
+        ],
+        "first_start_seconds": 743.48,
+        "last_end_seconds": 1476.92,
+        "method": "functions.read exact raw range; complete displayed text read"
+      },
+      {
+        "requested_lines_1_based": [
+          601,
+          900
+        ],
+        "cue_range_1_based": [
+          601,
+          900
+        ],
+        "first_start_seconds": 1476.92,
+        "last_end_seconds": 2233.1,
+        "method": "functions.read exact raw range; complete displayed text read"
+      },
+      {
+        "requested_lines_1_based": [
+          901,
+          1200
+        ],
+        "cue_range_1_based": [
+          901,
+          1200
+        ],
+        "first_start_seconds": 2233.1,
+        "last_end_seconds": 2997.8,
+        "method": "functions.read exact raw range; complete displayed text read"
+      },
+      {
+        "requested_lines_1_based": [
+          1201,
+          1500
+        ],
+        "cue_range_1_based": [
+          1201,
+          1500
+        ],
+        "first_start_seconds": 2997.8,
+        "last_end_seconds": 3812.42,
+        "method": "functions.read exact raw range; complete displayed text read"
+      },
+      {
+        "requested_lines_1_based": [
+          1501,
+          1800
+        ],
+        "cue_range_1_based": [
+          1501,
+          1800
+        ],
+        "first_start_seconds": 3812.42,
+        "last_end_seconds": 4607.58,
+        "method": "functions.read exact raw range; complete displayed text read"
+      },
+      {
+        "requested_lines_1_based": [
+          1801,
+          1870
+        ],
+        "cue_range_1_based": [
+          1801,
+          1870
+        ],
+        "first_start_seconds": 4607.58,
+        "last_end_seconds": 4805.22,
+        "method": "functions.read exact raw range; complete displayed text read"
+      }
+    ],
+    "normalization": "Same JSON3 event concatenation/strip semantics as inspected technical-video-notes normalizer; tool.write created new normalized JSON and one-line-per-cue indexed TXT via eval. Original segment text/order/timestamps preserved; only TXT linebreaks flattened. Skill script not executed.",
+    "not_done": [
+      "audio listening",
+      "video playback",
+      "speaker voice attribution",
+      "frame extraction",
+      "official lecture execution"
+    ]
+  },
+  "handout_reading": {
+    "file": "p1-lectures/lecture_08.txt",
+    "sha256": "b20e3d45ea6af70bced5e0ab3c1abcd86fbdc760158fa3f911bff2b4a8fda4bc",
+    "complete_text_lines": 675,
+    "requested_windows_1_based": [
+      [
+        1,
+        280
+      ],
+      [
+        284,
+        550
+      ],
+      [
+        551,
+        675
+      ]
+    ],
+    "displayed_windows_1_based": [
+      [
+        1,
+        283
+      ],
+      [
+        283,
+        553
+      ],
+      [
+        550,
+        675
+      ]
+    ],
+    "pdf_file": "p1-lectures/raw/lecture_08.pdf",
+    "pdf_sha256": "4c4d7674b333693f20f328935d84dd8a073362c9725c5e05302b6650751ad4d1",
+    "pdf_pages": 73,
+    "pdf_original_pages_visually_read": [
+      25,
+      26,
+      28,
+      34,
+      38,
+      40,
+      46,
+      47,
+      48,
+      49,
+      55,
+      66
+    ],
+    "visual_method": "pdftoppm PNG rendering in memory through eval; actually displayed attached images read; no render files published.",
+    "not_claimed": "Not all other embedded diagrams or linked papers visually/full-text read. No video-to-slide image matching."
+  },
+  "metadata_reading": {
+    "file": "p1-videos/metadata/lec08-6-cXp-aOmdg.json",
+    "windows_1_based": [
+      [
+        1,
+        300
+      ],
+      [
+        301,
+        305
+      ]
+    ],
+    "complete": true
+  },
+  "prerequisites_read": [
+    "skill://technical-video-notes and scripts/normalize_captions.py",
+    "local://cs336-p4-contract.txt complete",
+    "sources/NEXT-P4-PROMPT.txt complete",
+    "sources/P4-BLOCKED.txt complete",
+    "lectures/lec02/notes.zh.md complete300 lines",
+    "lectures/lec04/notes.zh.md lines1–300: conceptual foundations, including MoE; source footer not counted as fully read",
+    "p1-lectures/version-review.json complete",
+    "p1-lectures/variant-audit.json complete",
+    "p1-videos/video-map.json lec07/lec08 entries",
+    "p1-lectures/manifest-fragment.json lec07/lec08 records"
+  ],
+  "single_home_boundary": "ZeRO paper derivation only lec08/materials; ring/tree only ext07; sharded recovery only ext08; MoE model foundations stay lec04, dispatch detail ext09.",
+  "model_evidence": {
+    "requested": "openai-codex/gpt-6-astra:xhigh",
+    "runtime_evidence_owner": "Main",
+    "runtime_evidence_file": "p4-model-preflight.json",
+    "worker_did_not_independently_audit_runtime_events": true
+  },
+  "status": {
+    "caption_full_read": true,
+    "handout_text_full_read": true,
+    "worker_self_reviewed": true,
+    "accepted": false,
+    "main_review_pending": true,
+    "page_checked": false,
+    "build_run": false,
+    "tests_run": false,
+    "official_assignment_run": false
+  }
+}

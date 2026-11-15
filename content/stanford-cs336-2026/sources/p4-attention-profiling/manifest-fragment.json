@@ -1,0 +1,395 @@
+{
+  "schema_version": 1,
+  "course_id": "stanford-cs336-2026",
+  "phase": "P4",
+  "slice": "p4-attention-profiling",
+  "created_at": "2026-11-14T16:39:34.208158+00:00",
+  "scope": [
+    "lectures/ext04/",
+    "lectures/ext05/",
+    "lectures/ext06/",
+    "sources/p4-attention-profiling/"
+  ],
+  "path_convention": "Source files relative to sources/; ../lectures paths explicitly identify existing editorial baselines; material_files relative to course root.",
+  "model_requirement": "openai-codex/gpt-6-astra:xhigh; no nested delegation; runtime model evidence owned by Main, not independently inspected here.",
+  "sources": [
+    {
+      "id": "p4-attention-profiling-paper03",
+      "kind": "fixed_paper_selected_read",
+      "url": "https://arxiv.org/pdf/2205.14135v2",
+      "file": "p1-papers-01-08/paper03-2205.14135v2.pdf",
+      "sha256": "ca7f9fda10b90fc05dd291a3accc85e9c1a4a860b99b31928dab03ed3fcb14e4",
+      "version": "arXiv:2205.14135v2",
+      "retrieved_at": "2026-11-14T13:40:46.479936Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0; public full-translation grant not established; original pedagogical treatment only",
+      "read_scope": "Actually read existing pdftotext extraction lines 207-320, 994-1085, 1087-1100, 1163-1170: section 2.2, section 3.1 including Algorithm 1 and Theorem 1, Appendix B.1-B.2, opening B.3 scale/mask/dropout definitions and B.4 recomputation observations. Text only; no PDF visual review, no full paper or experimental-table reading claim.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Independent attention resource ledger and online-softmax/backward teaching. Paper narrative, claim evaluation, algorithm close-reading and errata belong only to lectures/lec06/materials.zh.md. No paper prose or figure reproduction.",
+      "material_files": [
+        "lectures/ext04/notes.zh.md",
+        "lectures/ext05/notes.zh.md"
+      ],
+      "reused_from": "manifest.json:paper03",
+      "supporting_files": [
+        {
+          "file": "p1-papers-01-08/paper03-2205.14135v2.txt",
+          "sha256": "ccf3afd42b8e3bb8ee0de771ef6184713abce60685925aef971fedc21bf0144b",
+          "kind": "existing_text_extraction_actually_read"
+        }
+      ],
+      "raw_publication": "local_only",
+      "status": "selected_scope_actually_read"
+    },
+    {
+      "id": "p4-attention-profiling-paper04",
+      "kind": "fixed_paper_selected_read",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T13:40:55.676290Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0; public full-translation grant not established; original pedagogical treatment only",
+      "read_scope": "Actually read existing pdftotext extraction lines 107-223, 234-280, 331-339, 377-387: sections 2.2-2.3, 3.1.1 prose/equations, correctness paragraph and opening 3.1.2, MQA/GQA paragraph. Text only. Algorithm 1/2 complete blocks not read by this worker; no PDF visual review or benchmark audit. Source equation concerns referred to paper-material owner; ext05 independently derives consistent shapes and scaling.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Independent attention resource ledger and online-softmax/backward teaching. Paper narrative, claim evaluation, algorithm close-reading and errata belong only to lectures/lec06/materials.zh.md. No paper prose or figure reproduction.",
+      "material_files": [
+        "lectures/ext04/notes.zh.md",
+        "lectures/ext05/notes.zh.md"
+      ],
+      "reused_from": "manifest.json:paper04",
+      "supporting_files": [
+        {
+          "file": "p1-papers-01-08/paper04-2307.08691v1.txt",
+          "sha256": "4deeb620cfe6b84095023a49ad5e63239169b4c346fe2e8922afe556716cd6d8",
+          "kind": "existing_text_extraction_actually_read"
+        }
+      ],
+      "raw_publication": "local_only",
+      "status": "selected_scope_actually_read"
+    },
+    {
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/notes/cuda.html",
+      "file": "p2-bridge-systems/raw/cuda.html",
+      "sha256": "6b22568501a65790143039a3001b1bb484bd757cae6b7ca61ee977474e81c41f",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "retrieved_at": "2026-11-14T15:04:53.934268+00:00",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "id": "p4-attention-profiling-pytorch29-cuda",
+      "read_scope": "Actual extracted text lines 163-235 and 304-322: Asynchronous execution, CUDA streams through first synchronization/lifetime example and beginning of next example; Memory management opening. No full CUDA semantics claim.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Original Chinese mathematical or measurement explanation; API facts and limitations only, not whole-page translation.",
+      "material_files": [
+        "lectures/ext04/notes.zh.md",
+        "lectures/ext06/notes.zh.md"
+      ],
+      "reused_from": "p2-bridge-systems/manifest-fragment.json:p2-bridge-systems-pytorch29-cuda",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/cuda.txt",
+          "sha256": "46183757757b4f7e480d2f41f401cf9599cb9300410a6ed310e6a7b52dc69602",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ],
+      "raw_publication": "local_only",
+      "status": "selected_scope_actually_read"
+    },
+    {
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/benchmark_utils.html",
+      "file": "p2-bridge-systems/raw/benchmark.html",
+      "sha256": "ec885ed40df019885b96aa6c75264e01fb6051b6abe8b24f86507a3d4f33c5cc",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "retrieved_at": "2026-11-14T15:04:54.348137+00:00",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "id": "p4-attention-profiling-pytorch29-benchmark",
+      "read_scope": "Actual extracted text lines 1-79 and 105-134: Timer introduction, parameters, automatic synchronization and replication, blocked_autorange. Remaining utilities not read.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Original Chinese mathematical or measurement explanation; API facts and limitations only, not whole-page translation.",
+      "material_files": [
+        "lectures/ext06/notes.zh.md"
+      ],
+      "reused_from": "p2-bridge-systems/manifest-fragment.json:p2-bridge-systems-pytorch29-benchmark",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/benchmark.txt",
+          "sha256": "e34f5c7c64f743ff20a2f80034746ee2f23a952e96920c24ca8b8188a7029340",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ],
+      "raw_publication": "local_only",
+      "status": "selected_scope_actually_read"
+    },
+    {
+      "kind": "official_versioned_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/notes/numerical_accuracy.html",
+      "file": "p2-bridge-systems/raw/numerical-accuracy.html",
+      "sha256": "9605f8ef9d70eaff62a9748399a65d1649b135c627c2721d4aec5ce2552664fe",
+      "version": "PyTorch 2.9 documentation URL; snapshot fixed by SHA256 and retrieved_at; not a claim about the course or local runtime version",
+      "retrieved_at": "2026-11-14T15:04:49.349652+00:00",
+      "license": "Upstream PyTorch v2.9.0 BSD-3-Clause-style LICENSE verified; no blanket permission claimed for documentation-site shell, linked media or third-party assets",
+      "id": "p4-attention-profiling-pytorch29-numerical-accuracy",
+      "read_scope": "Actual extracted text lines 1-43, with reader context through 46: introductory floating-point associativity, batched/sliced operations, extremal values and beginning non-finite linalg caveat. No full numerical-accuracy article claim.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Original Chinese mathematical or measurement explanation; API facts and limitations only, not whole-page translation.",
+      "material_files": [
+        "lectures/ext04/notes.zh.md",
+        "lectures/ext05/notes.zh.md"
+      ],
+      "reused_from": "p2-bridge-systems/manifest-fragment.json:p2-bridge-systems-pytorch29-numerical-accuracy",
+      "supporting_files": [
+        {
+          "file": "p2-bridge-systems/text/numerical-accuracy.txt",
+          "sha256": "def0e6a4361b4e690114471d958c1cf349f2c4d11c8b78dcf72f705d54d0e7bd",
+          "kind": "derived_main_article_text",
+          "note": "HTMLParser extraction; mathematical markup may duplicate visual/TeX text; original HTML retained"
+        }
+      ],
+      "raw_publication": "local_only",
+      "status": "selected_scope_actually_read"
+    },
+    {
+      "url": "https://archive.docs.nvidia.com/nsight-systems/2025.3/UserGuide/index.html",
+      "file": "p4-attention-profiling/raw/nsight-systems-2025.3.html",
+      "sha256": "1d42e35005fa9a4cb21b2c65d0018e4b065c3756dbba308dc0c41f79746e751f",
+      "retrieved_at": "2026-11-14T16:19:24.031099+00:00",
+      "id": "p4-attention-profiling-nsight-systems-2025.3",
+      "kind": "official_documentation_snapshot",
+      "version": "Nsight Systems 2025.3 User Guide archive; HTML title confirms 2025.3",
+      "license": "NVIDIA documentation; no blanket open-content or full-translation grant established. Original explanation, factual API references and links only.",
+      "read_scope": "Static reader lines 1-163: Profiling from the CLI opening, CLI command switches and displayed profile options including capture range, tracing overhead, CUDA graph granularity, memory usage and backtraces; lines 2358-2400: NVTX Trace opening and supported range types; lines 2510-2645: Basic CUDA trace and Launching NVIDIA Nsight Compute from a CUDA Kernel. The long guide was acquired in full but only these scopes were read; no screenshot/image visual audit.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Independent Chinese profiling methodology. No source-page full translation, screenshots or executable assignment code.",
+      "material_files": [
+        "lectures/ext06/notes.zh.md"
+      ],
+      "raw_publication": "local_only",
+      "status": "selected_scope_actually_read",
+      "acquisition": "Direct urllib UTF-8 HTML snapshot; actual source content read separately through static reader"
+    },
+    {
+      "url": "https://archive.docs.nvidia.com/nsight-compute/2025.3/ProfilingGuide/index.html",
+      "file": "p4-attention-profiling/raw/nsight-compute-2025.3.html",
+      "sha256": "c9f3b812ce50a46a751f2c92eff628177554f4f6678bb3381468b1dac91b607e",
+      "retrieved_at": "2026-11-14T16:19:25.250288+00:00",
+      "id": "p4-attention-profiling-nsight-compute-2025.3",
+      "kind": "official_documentation_snapshot",
+      "version": "Archive URL 2025.3; page title is NsightCompute 13.0 documentation; both preserved; not an installed-version assertion",
+      "license": "NVIDIA documentation; no blanket open-content or full-translation grant established. Original explanation, factual profiler references and links only.",
+      "read_scope": "Static reader lines 1-300: Introduction, Metric Collection sets/sections, Sections and Rules, Replay (Kernel, Application, Range, defining ranges and partial Supported APIs list); lines 487-512: Overhead through start of GPU Architecture; lines 1319-1376: Reproducibility, Serialization, Clock Control, Cache Control, Persistence Mode and next heading. Long serialization lock-file paragraph was display-truncated; no claim to its undisplayed ending. No full-guide or screenshots claim.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Independent Chinese profiling methodology. No source-page full translation, screenshots or executable assignment code.",
+      "material_files": [
+        "lectures/ext06/notes.zh.md"
+      ],
+      "raw_publication": "local_only",
+      "status": "selected_scope_actually_read",
+      "acquisition": "Direct urllib UTF-8 HTML snapshot; actual source content read separately through static reader"
+    },
+    {
+      "url": "https://triton-lang.org/main/python-api/generated/triton.testing.do_bench.html",
+      "file": "p4-attention-profiling/raw/triton-do-bench-main.html",
+      "sha256": "220a221ee83dec4ab839317601e467a88f1a3798fb6590daec56c28807dfde67",
+      "retrieved_at": "2026-11-14T16:19:59.558863+00:00",
+      "id": "p4-attention-profiling-triton-do-bench-main",
+      "kind": "official_documentation_snapshot",
+      "version": "Triton main API documentation, retrieval-time and SHA256 pinned snapshot; no release version displayed; not course dependency version",
+      "license": "Triton documentation page; no blanket documentation-site/full-translation grant inferred from repository license. No copied implementation or whole-page translation.",
+      "read_scope": "Complete main API body, function signature, warmup/rep millisecond units, grad_to_none, quantiles, return_mode and return type. No implementation source, fused-attention tutorial or benchmarking execution read/run.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Independent Chinese profiling methodology. No source-page full translation, screenshots or executable assignment code.",
+      "material_files": [
+        "lectures/ext06/notes.zh.md"
+      ],
+      "raw_publication": "local_only",
+      "status": "api_main_body_actually_read",
+      "acquisition": "read URL :raw; UTF-8 tool raw response; not a binary HTTP archive"
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.9/generated/torch.cuda.Event.html",
+      "file": "p4-attention-profiling/raw/pytorch-2.9-cuda-event.html",
+      "sha256": "126926063588c72cb07cc7113e59eb2af1944670914c072e99b669501a26c174",
+      "retrieved_at": "2026-11-14T16:26:27.795828+00:00",
+      "id": "p4-attention-profiling-pytorch-2.9-cuda-event",
+      "kind": "official_documentation_snapshot",
+      "version": "PyTorch 2.9 URL snapshot; source links point to v2.9.1 torch/cuda/streams.py; not installed/course version",
+      "license": "PyTorch first-party API facts; v2.9.0 BSD-3-Clause-style license reused as bounded project evidence, not a blanket grant for site shell, v2.9.1 file contents or third-party images. Original explanation only.",
+      "read_scope": "Complete Event main API body: initialization, constructor parameters, elapsed_time, from_ipc_handle, ipc_handle, query, record, synchronize, wait. Source-linked implementation not read.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Independent Chinese profiling methodology. No source-page full translation, screenshots or executable assignment code.",
+      "material_files": [
+        "lectures/ext06/notes.zh.md"
+      ],
+      "raw_publication": "local_only",
+      "status": "api_main_body_actually_read",
+      "acquisition": "Complete raw-response artifact from read URL :raw; UTF-8 snapshot"
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.9/profiler.html",
+      "file": "p4-attention-profiling/raw/pytorch-2.9-profiler.html",
+      "sha256": "71e477b1d9e536643cbca30c533f343a47de6c6d10134d502707a418736e4da3",
+      "retrieved_at": "2026-11-14T16:26:27.798755+00:00",
+      "id": "p4-attention-profiling-pytorch-2.9-profiler",
+      "kind": "official_documentation_snapshot",
+      "version": "PyTorch 2.9 URL snapshot; source links point to v2.9.1; page Last Updated Jun 13, 2025",
+      "license": "PyTorch first-party API facts; v2.9.0 BSD-3-Clause-style license reused as bounded project evidence, not a blanket grant for site shell, v2.9.1 file contents or third-party images. Original explanation only.",
+      "read_scope": "Static reader lines 1-300: Overview, _KinetoProfile parameters and overhead note, metadata/event/export functions, key_averages, profile parameters and notes through start of schedule example; lines 381-398: schedule signature and complete semantics, beginning tensorboard_trace_handler. Other methods/examples not read in full; implementation source not read.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Independent Chinese profiling methodology. No source-page full translation, screenshots or executable assignment code.",
+      "material_files": [
+        "lectures/ext06/notes.zh.md"
+      ],
+      "raw_publication": "local_only",
+      "status": "selected_scope_actually_read",
+      "acquisition": "Complete raw-response artifact from read URL :raw; UTF-8 snapshot"
+    },
+    {
+      "kind": "license_evidence",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.9.0/LICENSE",
+      "file": "p2-bridge-systems/raw/pytorch-v2.9.0-LICENSE.txt",
+      "sha256": "a8a2c6b67cf8a597ffaa5c82380a6bd1b82629c0417e00673d8013d662eb500a",
+      "version": "PyTorch v2.9.0 LICENSE",
+      "retrieved_at": "2026-11-14T15:09:02.295595+00:00",
+      "license": "BSD-3-Clause-style, copyright holder names and disclaimer retained in original file",
+      "id": "p4-attention-profiling-pytorch-license",
+      "read_scope": "Full existing LICENSE, lines 1-84, including contributors, conditions and disclaimer.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Bounded license provenance only; no blanket extension to third-party sites or papers.",
+      "material_files": [
+        "lectures/ext04/notes.zh.md",
+        "lectures/ext05/notes.zh.md",
+        "lectures/ext06/notes.zh.md"
+      ],
+      "reused_from": "p2-bridge-systems/manifest-fragment.json:p2-bridge-systems-pytorch-license",
+      "raw_publication": "local_only",
+      "status": "actually_read"
+    },
+    {
+      "id": "p4-attention-profiling-ai-policy",
+      "kind": "course_policy",
+      "url": "https://docs.google.com/document/d/1SZAlExB1qAc9izHt54gwunNpjKE6wXb8Y7yA_e-baK8/export?format=txt",
+      "file": "p1-shared/ai-policy.txt",
+      "sha256": "127b697e3a67d9a3d86e0aa6cfdd6bb2ddc74a28c5786198b8d24008b9d6ef01",
+      "version": "CS336 AI Policy Spring 2025-2026; fixed P1 snapshot",
+      "retrieved_at": "2026-11-14T13:42:10Z",
+      "license": "No explicit reuse license; independent short summary and shared-resource link only.",
+      "read_scope": "Complete existing policy lines 1-21. Conceptual/API support allowed; AI implementation/autocomplete for assignments and leaderboards prohibited.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Boundary statement; no assignment implementation, benchmark implementation or leaderboard code.",
+      "material_files": [
+        "lectures/ext04/notes.zh.md",
+        "lectures/ext05/notes.zh.md",
+        "lectures/ext06/notes.zh.md"
+      ],
+      "raw_publication": "local_only",
+      "status": "actually_read"
+    },
+    {
+      "id": "p4-attention-profiling-baseline-bridge08",
+      "kind": "existing_editorial_baseline",
+      "url": "#/c/stanford-cs336-2026/lec/bridge08?v=notes",
+      "file": "../lectures/bridge08/notes.zh.md",
+      "sha256": "3e1017ac533eb9f6052cb3b756e40577dee18fc33742f0b444f5f98ef10837f2",
+      "version": "P2/P3 accepted editorial baseline; exact content fixed by current SHA256",
+      "retrieved_at": "2026-11-14T16:39:34.208158+00:00",
+      "retrieval_note": "Local reuse/read timestamp, not original primary-source acquisition time. Underlying primary sources remain recorded by that page.",
+      "license": "Existing project-authored notes; no new third-party translation grant inferred.",
+      "read_scope": "Complete existing notes lines 1-274: units, storage lifetime, FLOP accounting and baseline timing discipline.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Reuse by link; foundational content not duplicated and prior source-reading claims not inherited as this worker's reads.",
+      "material_files": [
+        "lectures/ext04/notes.zh.md",
+        "lectures/ext05/notes.zh.md",
+        "lectures/ext06/notes.zh.md"
+      ],
+      "raw_publication": "already_authored_project_body",
+      "status": "stated_scope_actually_read"
+    },
+    {
+      "id": "p4-attention-profiling-baseline-lec02",
+      "kind": "existing_editorial_baseline",
+      "url": "#/c/stanford-cs336-2026/lec/lec02?v=notes",
+      "file": "../lectures/lec02/notes.zh.md",
+      "sha256": "a8be0e49f78b2860015b91e9b6e0f868769fe3d9048521677d9ecbed598de033",
+      "version": "P2/P3 accepted editorial baseline; exact content fixed by current SHA256",
+      "retrieved_at": "2026-11-14T16:39:34.208158+00:00",
+      "retrieval_note": "Local reuse/read timestamp, not original primary-source acquisition time. Underlying primary sources remain recorded by that page.",
+      "license": "Existing project-authored notes; no new third-party translation grant inferred.",
+      "read_scope": "Existing notes lines 1-193: axes, linear-layer gradients, model/state ledgers, FLOP conventions, roofline and opening accumulation section. No full-lecture/captions reading claim by this slice.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Reuse by link; foundational content not duplicated and prior source-reading claims not inherited as this worker's reads.",
+      "material_files": [
+        "lectures/ext04/notes.zh.md",
+        "lectures/ext05/notes.zh.md",
+        "lectures/ext06/notes.zh.md"
+      ],
+      "raw_publication": "already_authored_project_body",
+      "status": "stated_scope_actually_read"
+    },
+    {
+      "id": "p4-attention-profiling-baseline-lec04",
+      "kind": "existing_editorial_baseline",
+      "url": "#/c/stanford-cs336-2026/lec/lec04?v=notes",
+      "file": "../lectures/lec04/notes.zh.md",
+      "sha256": "aa40532690e3abe01fc06dc21a6e32d401ab9d5456c0bdc994a5db69b9fcbef1",
+      "version": "P2/P3 accepted editorial baseline; exact content fixed by current SHA256",
+      "retrieved_at": "2026-11-14T16:39:34.208158+00:00",
+      "retrieval_note": "Local reuse/read timestamp, not original primary-source acquisition time. Underlying primary sources remain recorded by that page.",
+      "license": "Existing project-authored notes; no new third-party translation grant inferred.",
+      "read_scope": "Existing notes lines 1-85 and 324-332, plus heading/KV keyword context: established GQA/KV and exact-evaluation versus changed-operator distinction; source boundaries. No new reading of L04 source PDF or captions by this slice.",
+      "read_at": "2026-11-14T16:39:34.208158+00:00",
+      "chinese_treatment": "Reuse by link; foundational content not duplicated and prior source-reading claims not inherited as this worker's reads.",
+      "material_files": [
+        "lectures/ext04/notes.zh.md",
+        "lectures/ext05/notes.zh.md",
+        "lectures/ext06/notes.zh.md"
+      ],
+      "raw_publication": "already_authored_project_body",
+      "status": "stated_scope_actually_read"
+    }
+  ],
+  "material_files": [
+    "lectures/ext04/notes.zh.md",
+    "lectures/ext05/notes.zh.md",
+    "lectures/ext06/notes.zh.md"
+  ],
+  "original_assets": [
+    "lectures/ext04/assets/attention-ledger.svg",
+    "lectures/ext05/assets/softmax-common-scale.svg",
+    "lectures/ext06/assets/timing-boundaries.svg"
+  ],
+  "mechanism_cases_file": "p4-attention-profiling/mechanism-cases.json",
+  "review_file": "p4-attention-profiling/review.txt",
+  "review_state": {
+    "author_reviewed": true,
+    "accepted": false,
+    "main_review": "pending",
+    "worker_tests_builds_linters_formatters": "not_run",
+    "gpu_or_official_assignment_execution": "not_run"
+  },
+  "publication_allowlist": [
+    "lectures/ext04/notes.zh.md",
+    "lectures/ext05/notes.zh.md",
+    "lectures/ext06/notes.zh.md",
+    "lectures/ext04/assets/attention-ledger.svg",
+    "lectures/ext05/assets/softmax-common-scale.svg",
+    "lectures/ext06/assets/timing-boundaries.svg",
+    "sources/p4-attention-profiling/manifest-fragment.json",
+    "sources/p4-attention-profiling/mechanism-cases.json",
+    "sources/p4-attention-profiling/review.txt"
+  ],
+  "local_only": [
+    "sources/p4-attention-profiling/raw/",
+    "reused fixed paper PDFs/text, prior documentation HTML and original policy snapshots"
+  ],
+  "limits": [
+    "No video metadata: these are editorial extensions with no independent official recording.",
+    "No full paper/document translation; paper narrative and algorithm close-reading only in lec06/materials.",
+    "No PDF visual review by this slice; FA2 source anomalies independently discussed with paper owner, who owns visual evidence.",
+    "No GPU trace, performance measurements, benchmark numbers, official assignment implementation or execution.",
+    "Only original arithmetic examples and symbolic timeline; Main may verify separately.",
+    "New vendor and Triton snapshots are supplemental documentation, not classroom or official dependency versions."
+  ]
+}

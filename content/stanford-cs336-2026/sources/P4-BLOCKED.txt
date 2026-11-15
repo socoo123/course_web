@@ -1,0 +1,28 @@
+CS336-2026 P4 — 中断记录（不是验收）
+日期：2026-11-15
+状态：blocked_requested_model_usage_limit。P3已验收内容不变；P4未完成、不发布、不进入P5。
+恢复补记：用户随后明确通知额度恢复并要求继续；原6会话已恢复。本文件以下为首次中断历史，不是当前阻断状态；当前进度以status.json及后续P4验收为准。
+
+一、阻断证据
+六个任务均显式openai-codex/gpt-6-astra:xhigh，Main核对当次model_change、thinking_level_change和首assistant字段，全部gpt-6-astra/xhigh、fallback=false；配置未改变。证据p4-model-preflight.json。
+P4HardwareKernels、P4PaperMaterials、P4AttentionProfiling、P4DistributedSystems、P4TrainingParallelism全部失败，工具原文：[openai-codex/gpt-6-astra] Codex error event: The usage limit has been reached (code=usage_limit_reached)。不重试、不降级、不替换。
+P4AssignmentTwo当时仍运行，Main在明确模型阻断后取消；未收到成功交付。六个任务均无完成交付。
+
+二、已做与未做
+已核对完整NEXT-P4-PROMPT、production-plan、P1/P2/P3主审/验收/许可和访问边界、P4固定来源与paper03–05单一归属。P4全部18篇正文目标保持不变：四讲notes/draft(8)、六专题notes(6)、两篇materials(2)、A2 lab/guide(2)。没有新正文或原创SVG完成，没有任何P4页面验收。
+来源准备保留在sources/p4-lec05、p4-lec06、p4-lec07、p4-lec08（normalized字幕和英文提取）；p4-papers/visual（PDF选择页渲染）；p4-attention-profiling/raw；p4-distributed/raw与text；p4-a2/upstream。部分下载中断，不能只看文件存在就当有效原件。待按固定URL、内容/哈希核对后纳入正式分片；不得整目录force-add。
+Main写了check-p4.py定向检查脚本，但因正文/来源分片/时间图尚未产出而未运行，脚本本身尚未验收。没有npm build、浏览器正文检查、官方实验/CPU微例、GPU、付费算力、commit或push。最终只对中断状态JSON和未产出正文的事实做窄检查。
+已验收统计仍保持P3的22份正文、7张原创SVG、4讲字幕计数；本轮来源阅读不自动升级这些已验收计数。原始资料只在本地，不等于远端备份。
+
+三、Main独立阅读范围与待处理问题
+1. L05讲义提取全文1–535行、L08提取全文1–675行；L06与L07固定Python各1–300行；讲义version-review/variant-audit及Sep12提交的L06带宽patch。
+2. A2提取文本实际读取1–167、249–482、730–856、1422–1579、1769–2147、2149–2558、2559–2696；另全文检索Problem/字母小题定位。不是A2全文阅读声明。任务worker读取了更多范围，但没有形成完整覆盖清单或最终审查。
+3. L05 ReLU“8 bytes/FLOP”是算术强度倒数，不能作为FLOP/byte使用；输出读写简化模型需写明。FP4页题为MXFP4却写16值组/E4M3缩放，需独立核对NVFP4/MXFP4；worker已访问NVIDIA官方解释但未产出正式来源证据。
+4. L06源码文字64线程但实际num_threads_per_block=128；玩具寄存器限制下12/64=18.75%。wave表述blocks“divide #SMs”方向有误；每SM一block假设下应考虑SM数的倍数。CUDA事件例子返回ms，不等于CPU端到端计时。warp/128B事务/bank描述不得写成所有架构通用硬保证。
+5. L06 Sep12课后patch把B200 L1估计19改40TB/s、L2估计9改17TB/s并加粗略估计说明；不能倒填课堂时间轴。
+6. L08汇总表写FSDP梯度all-reduce而前文是AG/RS；TP8/node、EP与DP大小关系是案例/布局假设，不是一般定律。L07 NVL72“每tray8卡×9”的包装数待核，NVLink1.8TB/s双向汇总与单向带宽要分开。
+7. A2不可漏FSDP预取窗口（当前层前两层完成后才开始收集）、FP32 master与计算dtype、causal mask原要求-1e6及编者数值边界、可选Triton后向、full-training-step排行榜10s基线/空cache10min。do_bench rep30000/warmup10000单位为ms，不是次数。
+8. 论文worker在与专题worker的当次通信报告FA2 v1原PDF存在dK乘法顺序、缩放脚注及online缩放逆号/遗漏问题（已看pp3–7）；后续必须自己核对保存PDF页与数学不变量后写独立编者注，不能仅据此记录升格为Main已核事实。不要静默照抄错误或把原PDF问题归因于文本提取。
+
+四、接续
+仍用CS336-2026-P4-硬件与训练系统。先读本文件和p4-model-preflight.json，再读完整NEXT-P4-PROMPT.txt。指定模型恢复可用后重核实际模型/推理等级；不替换。复用固定原件和本轮本地准备，核实实际读取与缺失分片；生产全部18篇，完成主审/构建/桌面手机/视频入口验收后才允许发布。check-p4.py的分片与task-coverage字段契约需与实际产物对齐，不能削弱完整任务与时间覆盖检查。P5仍未开始；其交接只在P4完成后生成。

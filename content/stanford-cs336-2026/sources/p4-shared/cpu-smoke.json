@@ -1,0 +1,179 @@
+{
+  "status": "passed",
+  "python": "3.11.8",
+  "device": "cpu",
+  "groups": 10,
+  "checks": [
+    {
+      "name": "hardware_lower_bounds_and_discrete_tiles",
+      "values": {
+        "roofline_us": [
+          20,
+          10
+        ],
+        "wave_blocks": [
+          98,
+          120
+        ],
+        "register_limited_occupancy": 0.1875
+      },
+      "status": "passed"
+    },
+    {
+      "name": "attention_shape_and_byte_ledger",
+      "values": {
+        "io_MiB": 16,
+        "each_FP32_score_MiB": 256,
+        "conditional_live_MiB": 528,
+        "LSE_KiB": 128,
+        "dense_forward_FLOPs": 17179869184,
+        "causal_useful_FLOPs": 8594128896
+      },
+      "status": "passed"
+    },
+    {
+      "name": "online_normalization_and_local_derivatives",
+      "values": {
+        "output": "9/4",
+        "score_gradients": [
+          "-1/16",
+          "-13/8",
+          "3/4",
+          "15/16"
+        ],
+        "gradient_sum": "0",
+        "finite_difference": "all_four_components_passed"
+      },
+      "status": "passed"
+    },
+    {
+      "name": "FA2_rescaling_erratum_counterexample",
+      "values": {
+        "correct": "13/5",
+        "wrong_inverse": "28/5"
+      },
+      "status": "passed"
+    },
+    {
+      "name": "distributed_objective_and_tensor_layout",
+      "values": {
+        "weighted_gradient": 2.5,
+        "column_outputs": [
+          11,
+          17
+        ],
+        "paired_TP_output": [
+          5,
+          11
+        ]
+      },
+      "status": "passed"
+    },
+    {
+      "name": "ZeRO_precision_and_direction_accounting",
+      "values": {
+        "per_rank_states_GB": [
+          32.0,
+          11.0,
+          7.5,
+          4.0
+        ],
+        "DP_send_GB": 7,
+        "stage3_send_GB": 10.5,
+        "mixed_wire_dtype_comparison": "equal_bytes_under_stated_schedule"
+      },
+      "status": "passed"
+    },
+    {
+      "name": "pipeline_and_activation_layout",
+      "values": {
+        "bubble_over_useful": "3/8",
+        "bubble_over_total": "3/11",
+        "boundary_forward_MiB": 32,
+        "global_batch": 64,
+        "linear_activation_MiB": [
+          272,
+          128,
+          68
+        ]
+      },
+      "status": "passed"
+    },
+    {
+      "name": "collective_direction_and_latency_models",
+      "values": {
+        "per_rank_send_MiB": 192,
+        "all_rank_send_MiB": 768,
+        "model_us_ring_tree": [
+          [
+            70.36,
+            31.23
+          ],
+          [
+            161.75,
+            344.57
+          ]
+        ]
+      },
+      "status": "passed"
+    },
+    {
+      "name": "checkpoint_lifetime_and_replay_boundaries",
+      "values": {
+        "declared_live_GiB": 6.75,
+        "global_batch_before_after": [
+          64,
+          48
+        ],
+        "prefetched_but_unconsumed_positions": 32
+      },
+      "status": "passed"
+    },
+    {
+      "name": "MoE_assignment_capacity_and_round_trip",
+      "values": {
+        "expert_loads": [
+          7,
+          4,
+          3,
+          2
+        ],
+        "retained_dropped_padding": [
+          [
+            13,
+            3,
+            3
+          ],
+          [
+            14,
+            2,
+            6
+          ],
+          [
+            16,
+            0,
+            12
+          ]
+        ],
+        "dispatch_matrix": [
+          [
+            6,
+            2
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "dispatch_send_KiB": 14,
+        "forward_send_KiB": 28,
+        "weighted_output": [
+          "5/4",
+          "15/4"
+        ]
+      },
+      "status": "passed"
+    }
+  ],
+  "boundary": "Original arithmetic and local mathematical mechanisms only. No course implementation, distributed runtime, CUDA/Triton/NCCL/Nsight or official performance/completion evidence."
+}

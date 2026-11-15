@@ -1,0 +1,21 @@
+{
+  "phase": "P4",
+  "workingDate": "2026-11-15",
+  "status": "accepted_with_documented_limits",
+  "review": "P4-REVIEW.txt",
+  "modelEvidence": "p4-model-preflight.json",
+  "workers": {"resumed": 6, "completed": 6, "model": "openai-codex/gpt-6-astra:xhigh", "fallback": false},
+  "delivery": {"newBodyDocuments":18,"lectureNotes":10,"limitedClassroomParaphrases":4,"paperMaterialPages":2,"assignmentDocuments":2,"newOriginalSvgs":15,"cumulativeBodyDocuments":40,"cumulativeOriginalSvgs":22},
+  "reading": {"fullCaptionTracksThisBatch":4,"cuesThisBatch":6659,"cumulativeFullyReadCues":13551,"internalGapsOverTwoSeconds":125,"specifiedPaperCoresThisBatch":3,"cumulativeSpecifiedPaperCores":5,"fullPaperCloseReads":0,"selectedHandoutPdfPages":17,"selectedPaperPdfPages":22,"audioOrClassroomFrameVerification":false},
+  "a2": {"fixedCommit":"ca8bc81a59b70516f7ebb2da4808daade877c736","handoutVersion":"26.1.3","packageVersion":"26.1.4","extractedPagesRead":48,"scoredTasks":27,"letteredSubquestions":47,"nestedRomanSubitems":6,"sourcePoints":137,"coverage":"p4-a2/task-coverage.json","officialExecution":false},
+  "sourceValidation": {"status":"passed","evidence":"p4-shared/structure-check.json","script":"check-p4.py","fragments":8,"records":109,"uniqueFileHashIdentities":98,"internalLinks":203,"inBoundsTimeRanges":307,"solePaperHomesPreserved":16,"note":"PDF question parser corrected for nested Roman labels and form-feed whitespace;requirements were not weakened. Worker asset hashes are author-handoff snapshots;final artifacts are recorded separately."},
+  "cpuMechanisms": {"status":"passed","groups":10,"python":"3.11.8","evidence":"p4-shared/cpu-smoke.json","throwawayScriptRemoved":true,"boundary":"Original arithmetic/local mechanisms only;not official implementation or hardware performance."},
+  "build": {"status":"passed","command":"npm run build","checks":["tsc --noEmit","Vite5.4.21"],"finalLocalModules":3253,"finalViteSeconds":5.63,"runs":3,"reason":"Initial build plus two necessary rebuilds after observed mobile and standalone-SVG theme defects.","logs":["p4-shared/build.log","p4-shared/build-after-mobile-fixes.log","p4-shared/build-final.log"],"localOnlyAssets":"Existing image glob sees local untracked evidence;publication uses clean GitHub checkout,not local dist."},
+  "pageAcceptance": {"status":"passed","evidence":"p4-shared/page-check.json","routes":19,"desktopAndMobileVisits":38,"viewports":["1440x1000","390x844"],"finalRootWidths":[1440,390],"katexErrors":0,"displayMathOverflow":0,"finalSvgLoads":15,"lightDarkContrast":"verified after content-only CanvasText/color-scheme fix","selfCheckDisclosure":"ext05 opened","horizontalTable":"A2 scrollLeft0 to218,root remains390","runtimeErrorsAfterFreshShell":0,"setupFailures":"Stale pre-build shell and premature lazy-reader measurements discarded,not counted as acceptance."},
+  "videoHeaders": {"checked":[{"lecture":"lec05","id":"izZba4UA7iY","duration":"78:39"},{"lecture":"lec06","id":"xnDHaNUvHBg","duration":"86:41"},{"lecture":"lec07","id":"SzpOcwdIL0Y","duration":"81:02"},{"lecture":"lec08","id":"6-cXp-aOmdg","duration":"80:10"}],"default":"notes","actualNewTabClicks":["lec05_desktop","lec08_mobile"],"originalNotesPreserved":true},
+  "finalArtifactIdentities": "p4-shared/final-artifacts.json",
+  "publication": "p4-publication-record.json",
+  "rights": "Limited original lecture paraphrases and independent paper close readings;A2 first-party MIT preserved;no unauthorized full captions/paper translations/third-party figures published.",
+  "notPerformed": ["official assignment execution","CUDA/Triton/NCCL/Nsight performance work","training or paid compute","model/dataset/audio/video downloads","full-paper close reading","audio verification"],
+  "nextStage": {"id":"P5","keyword":"CS336-2026-P5-缩放推理与评测","prompt":"NEXT-P5-PROMPT.txt","state":"not_started","autoStart":false}
+}

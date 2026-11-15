@@ -1,0 +1,1233 @@
+{
+  "paper03": {
+    "home": "lec06",
+    "materialFile": "lectures/lec06/materials.zh.md",
+    "alsoUsedBy": [
+      "ext05",
+      "a2-systems"
+    ],
+    "prerequisites": [
+      "lec02",
+      "lec04",
+      "lec05"
+    ],
+    "relatedAssignments": [
+      "a2-systems"
+    ],
+    "version": "arXiv:2205.14135v2",
+    "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+    "verifiedScope": {
+      "fixedVersion": "arXiv:2205.14135v2",
+      "pageNumbering": "1-based physical PDF pages",
+      "core": [
+        {
+          "section": "2.1–2.2",
+          "title": "Hardware Performance; Standard Attention Implementation",
+          "pdfPages": "3–4",
+          "requirement": "编者推荐必读"
+        },
+        {
+          "section": "3.1",
+          "title": "An Efficient Attention Algorithm With Tiling and Recomputation",
+          "pdfPages": "4–5",
+          "requirement": "编者推荐必读"
+        },
+        {
+          "section": "3.2",
+          "title": "Analysis: IO Complexity of FlashAttention",
+          "pdfPages": "5–6",
+          "requirement": "编者推荐必读"
+        },
+        {
+          "section": "B.3–B.4",
+          "title": "FlashAttention: Forward Pass; FlashAttention: Backward Pass",
+          "pdfPages": "19–21",
+          "requirement": "编者推荐必读"
+        }
+      ],
+      "optional": [
+        {
+          "section": "B.1–B.2",
+          "title": "Memory-efficient forward pass; Memory-efficient backward pass",
+          "pdfPages": "18–19",
+          "requirement": "编者推荐选读"
+        },
+        {
+          "section": "C",
+          "title": "Proofs",
+          "pdfPages": "22–25",
+          "requirement": "编者推荐选读"
+        },
+        {
+          "section": "3.3",
+          "title": "Extension: Block-Sparse FlashAttention",
+          "pdfPages": "6–7",
+          "requirement": "编者推荐选读"
+        },
+        {
+          "section": "4.3",
+          "title": "Benchmarking Attention",
+          "pdfPages": "9–10",
+          "requirement": "编者推荐选读"
+        },
+        {
+          "section": "5",
+          "title": "Limitations and Future Directions",
+          "pdfPages": "10",
+          "requirement": "编者推荐选读"
+        },
+        {
+          "section": "E.5–E.6",
+          "title": "Speedup On Different Hardware and Configurations; Full Benchmarking Results",
+          "pdfPages": "28–34",
+          "requirement": "编者推荐选读"
+        }
+      ],
+      "summary": "§§2.1–2.2、3.1–3.2（Algorithm 1与Theorems 1–2 / Proposition 3）、附录B.3–B.4（Algorithms 2–4）；B.1–B.2、C证明和4.3/E测量作选读。",
+      "designation": "editorial_supplement_pending_fixed_lecture_crosscheck"
+    },
+    "designation": "official_recommended_reading_with_editorial_section_scope",
+    "requirement": "编者核心必读（指定核心节）；扩展节选读",
+    "officialRequirement": "A2明确推荐阅读；不是强制全文必读；精确论文节次由编者选定",
+    "officialAssignmentEvidence": [
+      {
+        "assignment": "a2-systems",
+        "source_id": "p1-a2-handout",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout_version": "26.1.3",
+        "pdf_pages": [
+          23,
+          24,
+          48
+        ],
+        "handout_section": "§4.2.2 FlashAttention-2 Forward Pass; bibliography [2]",
+        "classification": "explicit_strong_recommendation_not_mandatory",
+        "wording": "Before jumping into this section, we highly recommend reading at least the original FlashAttention paper [T. Dao et al., 2022].",
+        "scope_limit": "Official strong reading recommendation, not a hard requirement; no precise paper section/page range is specified. p24 also recommends both FlashAttention papers for intuition."
+      }
+    ],
+    "sourcePaths": {
+      "metadata": "p1-papers-01-08/paper03-2205.14135v2-abs.html",
+      "fullText": "p1-papers-01-08/paper03-2205.14135v2.pdf",
+      "extractedText": "p1-papers-01-08/paper03-2205.14135v2.txt",
+      "licenseTerms": "p1-papers-01-08/license-arxiv-nonexclusive-1.0.html"
+    },
+    "sha256": "ca7f9fda10b90fc05dd291a3accc85e9c1a4a860b99b31928dab03ed3fcb14e4",
+    "retrievedAt": "2026-11-14T13:40:46.479936Z",
+    "placementPolicy": "既有home、materialFile、alsoUsedBy保持不变；不新建第二正文归属。",
+    "status": "P4_specified_core_close_read_and_written_pending_main_review",
+    "chineseTreatment": "independent_close_reading",
+    "chineseTreatmentStatus": "P4_original_question_organized_close_reading_written_not_translation",
+    "chineseTreatmentConditions": "Independent Chinese pedagogy, selected source discussion and original diagrams; not a paragraph substitute or unauthorized full translation. No third-party figures or full tables republished.",
+    "readingEvidence": "本批连续读取既有提取文本1–394、1086–1235、1391–1483行；核心§2.1–2.2、§3.1–3.2、B.3–B.4全部实际精读（Algorithms1–4、Theorems1–2/5、Proposition3）。另读题名/作者/摘要/§1；选读Appendix C的Proposition3及Theorem5证明1393–1437行；3.3开头与Algorithm5部分是相邻窗口阅读，不扩称该节精读。视觉核对物理页5–6、20–21。非34页全文精读。",
+    "readAt": "2026-11-14T16:35:39Z",
+    "written": "P4_written",
+    "reviewed": "P4_author_review_only_pending_main",
+    "accepted": false,
+    "sourceIds": [
+      "p1-paper03-version-metadata",
+      "p1-paper03-fulltext",
+      "p1-paper03-extracted-text",
+      "p4-paper03-pdf",
+      "p4-paper03-text",
+      "p4-paper03-metadata"
+    ],
+    "priorActualReading": {
+      "method": "pdftotext -layout",
+      "scope": "题名/作者/v2；§§2–3.2的算法和IO分析正文、Algorithm 1、Theorems 1–2/Proposition 3；§4.3和§5正文；B.3–B.4和Algorithms 2–4提取文本；扫描完整主文/附录标题。",
+      "pdfPageSelections": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        19,
+        20,
+        21
+      ],
+      "pageNumbering": "1-based physical PDF pages; selected passages, not whole-page reading",
+      "textFile": "p1-papers-01-08/paper03-2205.14135v2.txt",
+      "textLineSelections": [
+        [
+          1,
+          35
+        ],
+        [
+          171,
+          324
+        ],
+        [
+          355,
+          391
+        ],
+        [
+          583,
+          631
+        ],
+        [
+          1087,
+          1237
+        ]
+      ],
+      "outlineMethod": "正文和附录标题重建目录；非声称原文有独立目录页",
+      "completePaperCloseRead": false,
+      "formulaAndFigureVisualAudit": false,
+      "notYetFullyRead": [
+        "Appendix C证明未逐步推演",
+        "B.1–B.2与B.5未完整精读",
+        "§4.1–4.2及附录D/E实验详表未完整阅读",
+        "图表和公式未逐项PDF视觉复核"
+      ],
+      "readAt": "2026-11-14T13:47:55.076422Z"
+    },
+    "actualReading": {
+      "phase": "P4",
+      "method": "Existing fixed P1 pdftotext-layout text actually read; selected original PDF pages rendered with pdftoppm then visually inspected",
+      "scope": "本批连续读取既有提取文本1–394、1086–1235、1391–1483行；核心§2.1–2.2、§3.1–3.2、B.3–B.4全部实际精读（Algorithms1–4、Theorems1–2/5、Proposition3）。另读题名/作者/摘要/§1；选读Appendix C的Proposition3及Theorem5证明1393–1437行；3.3开头与Algorithm5部分是相邻窗口阅读，不扩称该节精读。视觉核对物理页5–6、20–21。非34页全文精读。",
+      "textFile": "p1-papers-01-08/paper03-2205.14135v2.txt",
+      "textLineSelections": [
+        [
+          1,
+          394
+        ],
+        [
+          1086,
+          1235
+        ],
+        [
+          1391,
+          1483
+        ]
+      ],
+      "lineSelectionMeaning": "Ranges are actual displayed continuous read windows, including non-raw boundary context; incidental adjacent text is explicitly distinguished below from core close reading. Heading/term search snippets do not constitute whole-section reading.",
+      "specifiedCoreCloseRead": true,
+      "completePaperTextRead": false,
+      "completePaperCloseRead": false,
+      "formulaAndFigureVisualAudit": false,
+      "visualAuditStatus": "partial_selected_original_pages_actually_inspected",
+      "visualAuditPdfPages": [
+        5,
+        6,
+        20,
+        21
+      ],
+      "visualAuditEvidence": [
+        {
+          "page": 5,
+          "file": "p4-papers/visual/paper03-05.png",
+          "sha256": "ff6edc0ba7149de608526f1f8ee45eb6123a21a734bf2410788281a5e01ff995",
+          "scope": "§3.1在线合并与Algorithm1：Bc=floor(M/(4d))、Br=min(floor(M/(4d)),d)，K/V外循环、Q内循环、归一化O更新、Theorem1的O(N²d)与额外O(N)限定。",
+          "created_at": "2026-11-14T16:19:12Z"
+        },
+        {
+          "page": 6,
+          "file": "p4-papers/visual/paper03-06.png",
+          "sha256": "e91ff75271c487e4a3e46d9ac5bcc9440d23422f68ddd515c5b02fe8b6062250",
+          "scope": "Figure2设定与代表性FLOPs/HBM GB/runtime数据；Theorem2容量范围和Proposition3的for all M量词；块尺寸收益饱和说明。未逐点审核右侧稀疏曲线。",
+          "created_at": "2026-11-14T16:19:13Z"
+        },
+        {
+          "page": 20,
+          "file": "p4-papers/visual/paper03-20.png",
+          "sha256": "f4592a1803317cfb45b52834a1a5dae1c8e25b50cae6ba5a48da823528378e23",
+          "scope": "Algorithm2缩放/先mask/softmax分母不dropout/保存R；Algorithm3中dK=dS^T Q；B.4的D=dO·O与随机mask重生。",
+          "created_at": "2026-11-14T16:19:13Z"
+        },
+        {
+          "page": 21,
+          "file": "p4-papers/visual/paper03-21.png",
+          "sha256": "5a9b543c72f8a31cfbca66f0172865b62b1ecb8b74db9dc52a7cc70916031486",
+          "scope": "Algorithm4所有步骤的梯度维度、tau、dropout重生、D逐行归约、dQ累加与dK/dV片上所有权；Theorem5与内存排除项。",
+          "created_at": "2026-11-14T16:19:13Z"
+        }
+      ],
+      "pageNumbering": "1-based physical PDF page; a listed page means the named region was inspected, not every character or plotted value audited",
+      "notYetFullyRead": [
+        "§4全部实验、D/E未在本批精读；摘要和Figure2不替代实验全读",
+        "B.1–B.2、B.5和C其余证明未完整精读",
+        "§3.3/Algorithm5仅邻接选段，非完整稀疏算法精读",
+        "未全部34页视觉审校、未审计代码或复现benchmark",
+        "Theorem2的M按标量存储规模处理，实际bytes另计；固定M,d时IO仍为N²阶。",
+        "Proposition3为不存在对所有M统一little-o改进的量词，不是每个M逐点最强下界。"
+      ],
+      "readAt": "2026-11-14T16:35:39Z",
+      "priorReadingRetention": "P1 acquisition/scope reading remains in priorActualReading and original P1 slice; P4 does not reinterpret acquired as read or claim historical visual review."
+    },
+    "p4CoreReading": [
+      {
+        "section": "2.1–2.2",
+        "pdfPages": "3–4",
+        "textLineRange": [
+          175,
+          232
+        ],
+        "p4Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "材料§2/5：硬件约束与物化成本"
+      },
+      {
+        "section": "3.1",
+        "pdfPages": "4–5",
+        "textLineRange": [
+          242,
+          321
+        ],
+        "p4Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "材料§2–4：精确计算、在线状态、两种输出累加"
+      },
+      {
+        "section": "3.2",
+        "pdfPages": "5–6",
+        "textLineRange": [
+          322,
+          391
+        ],
+        "p4Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "材料§5：IO模型/单位、固定M仍二次、量词与Figure2条件"
+      },
+      {
+        "section": "B.3–B.4",
+        "pdfPages": "19–21",
+        "textLineRange": [
+          1087,
+          1232
+        ],
+        "p4Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "材料§3.3/4：缩放、mask、dropout重生、梯度依赖与反向IO"
+      }
+    ],
+    "p4OptionalReading": [
+      {
+        "section": "题名、摘要、§1",
+        "textLineRanges": [
+          [
+            1,
+            170
+          ]
+        ],
+        "status": "read_background_not_empirical_replication"
+      },
+      {
+        "section": "Appendix C：Proof of Proposition3；Proof of Theorem5",
+        "textLineRanges": [
+          [
+            1393,
+            1437
+          ]
+        ],
+        "status": "selected_proofs_read_not_all_appendix_C"
+      },
+      {
+        "section": "§3.3开头；Algorithm5部分",
+        "textLineRanges": [
+          [
+            392,
+            394
+          ],
+          [
+            1443,
+            1483
+          ]
+        ],
+        "status": "adjacent_window_read_not_used_as_full_section_close_read"
+      }
+    ],
+    "p4Review": {
+      "authorReviewed": true,
+      "mainAccepted": false,
+      "officialAssignmentExecuted": false,
+      "benchmarkReplicated": false,
+      "reviewFile": "p4-papers/review.txt"
+    },
+    "p4SourceCautions": [
+      "§4全部实验、D/E未在本批精读；摘要和Figure2不替代实验全读",
+      "B.1–B.2、B.5和C其余证明未完整精读",
+      "§3.3/Algorithm5仅邻接选段，非完整稀疏算法精读",
+      "未全部34页视觉审校、未审计代码或复现benchmark",
+      "Theorem2的M按标量存储规模处理，实际bytes另计；固定M,d时IO仍为N²阶。",
+      "Proposition3为不存在对所有M统一little-o改进的量词，不是每个M逐点最强下界。"
+    ]
+  },
+  "paper04": {
+    "home": "lec06",
+    "materialFile": "lectures/lec06/materials.zh.md",
+    "alsoUsedBy": [
+      "ext05",
+      "a2-systems"
+    ],
+    "prerequisites": [
+      "lec02",
+      "lec04",
+      "lec05"
+    ],
+    "relatedAssignments": [
+      "a2-systems"
+    ],
+    "version": "arXiv:2307.08691v1",
+    "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+    "verifiedScope": {
+      "fixedVersion": "arXiv:2307.08691v1",
+      "pageNumbering": "1-based physical PDF pages",
+      "core": [
+        {
+          "section": "2.1",
+          "title": "Hardware characteristics",
+          "pdfPages": "2",
+          "requirement": "编者推荐必读"
+        },
+        {
+          "section": "3.1",
+          "title": "Algorithm, including 3.1.1 Forward pass and 3.1.2 Backward pass",
+          "pdfPages": "5–7",
+          "requirement": "编者推荐必读"
+        },
+        {
+          "section": "3.2",
+          "title": "Parallelism",
+          "pdfPages": "7–8",
+          "requirement": "编者推荐必读"
+        },
+        {
+          "section": "3.3",
+          "title": "Work Partitioning Between Warps",
+          "pdfPages": "9",
+          "requirement": "编者推荐必读"
+        },
+        {
+          "section": "4.1–4.2",
+          "title": "Benchmarking Attention; End-to-end Performance",
+          "pdfPages": "10–11",
+          "requirement": "编者推荐必读"
+        }
+      ],
+      "optional": [
+        {
+          "section": "2.2–2.3",
+          "title": "Standard Attention Implementation; FlashAttention",
+          "pdfPages": "3–5",
+          "requirement": "编者推荐选读"
+        },
+        {
+          "section": "5",
+          "title": "Discussion and Future Directions",
+          "pdfPages": "11–13",
+          "requirement": "编者推荐选读"
+        }
+      ],
+      "summary": "§2.1、§§3.1–3.3（Algorithms 1–2）、§§4.1–4.2的测量设定/指标；§2.2–2.3补背景，§5选读。",
+      "designation": "editorial_supplement_pending_fixed_lecture_crosscheck"
+    },
+    "designation": "official_recommended_reading_with_editorial_section_scope",
+    "requirement": "编者核心必读（指定核心节）；扩展节选读",
+    "officialRequirement": "A2明确推荐阅读；不是强制全文必读；精确论文节次由编者选定",
+    "officialAssignmentEvidence": [
+      {
+        "assignment": "a2-systems",
+        "source_id": "p1-a2-handout",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout_version": "26.1.3",
+        "pdf_pages": [
+          15,
+          22,
+          24,
+          26,
+          27,
+          28,
+          48
+        ],
+        "handout_section": "§4.1; §4.2.2; §4.2.3",
+        "classification": "required_implementation_plus_recommended_reference",
+        "wording": "For more intuition on these techniques, check out the FlashAttention papers [T. Dao et al., 2022; T. Dao, 2023].",
+        "scope_limit": "FA2 implementation is required; handout Algorithm 1 supplies forward details. Required backward uses PyTorch+torch.compile, whereas Triton backward in §4.2.3 p28 is optional. No precise paper chapter range or mandatory whole-paper reading."
+      }
+    ],
+    "sourcePaths": {
+      "metadata": "p1-papers-01-08/paper04-2307.08691v1-abs.html",
+      "fullText": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "extractedText": "p1-papers-01-08/paper04-2307.08691v1.txt",
+      "licenseTerms": "p1-papers-01-08/license-arxiv-nonexclusive-1.0.html"
+    },
+    "sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+    "retrievedAt": "2026-11-14T13:40:55.676290Z",
+    "placementPolicy": "既有home、materialFile、alsoUsedBy保持不变；不新建第二正文归属。",
+    "status": "P4_specified_core_close_read_and_written_pending_main_review",
+    "chineseTreatment": "independent_close_reading",
+    "chineseTreatmentStatus": "P4_original_question_organized_close_reading_written_not_translation",
+    "chineseTreatmentConditions": "Independent Chinese pedagogy, selected source discussion and original diagrams; not a paragraph substitute or unauthorized full translation. No third-party figures or full tables republished.",
+    "readingEvidence": "本批连续读取既有提取文本1–843行；核心§2.1、§3.1–3.3、§4.1–4.2全部；选读§2.2–2.3及§5正文。Table1实际在物理p12，四行三列已视觉核对；Figures4–7只检查坐标/设定/代表性数字，非逐点数据审计。视觉核对物理pp3–13，明确区分PDF原有公式笔误与编者修正。未读完参考文献，非14页全文精读。",
+    "readAt": "2026-11-14T16:35:39Z",
+    "written": "P4_written",
+    "reviewed": "P4_author_review_only_pending_main",
+    "accepted": false,
+    "sourceIds": [
+      "p1-paper04-version-metadata",
+      "p1-paper04-fulltext",
+      "p1-paper04-extracted-text",
+      "p4-paper04-pdf",
+      "p4-paper04-text",
+      "p4-paper04-metadata"
+    ],
+    "priorActualReading": {
+      "method": "pdftotext -layout",
+      "scope": "题名/作者/v1；§2.1，§§3.1–3.3正文及Algorithms 1–2；§4引导、§4.1 benchmark设置和FLOPs口径、§4.2正文；扫描§1–5标题。图4–7未逐数据点审读，§5仅开头。",
+      "pdfPageSelections": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pageNumbering": "1-based physical PDF pages; selected passages, not whole-page reading",
+      "textFile": "p1-papers-01-08/paper04-2307.08691v1.txt",
+      "textLineSelections": [
+        [
+          1,
+          35
+        ],
+        [
+          88,
+          110
+        ],
+        [
+          226,
+          501
+        ],
+        [
+          643,
+          669
+        ]
+      ],
+      "outlineMethod": "正文和附录标题重建目录；非声称原文有独立目录页",
+      "completePaperCloseRead": false,
+      "formulaAndFigureVisualAudit": false,
+      "notYetFullyRead": [
+        "§2.2–2.3背景回顾未全文阅读",
+        "图4–7及Table 1未逐数据点核查",
+        "§5余文与参考文献未完整精读",
+        "算法公式未逐式视觉校对"
+      ],
+      "readAt": "2026-11-14T13:47:55.076422Z"
+    },
+    "actualReading": {
+      "phase": "P4",
+      "method": "Existing fixed P1 pdftotext-layout text actually read; selected original PDF pages rendered with pdftoppm then visually inspected",
+      "scope": "本批连续读取既有提取文本1–843行；核心§2.1、§3.1–3.3、§4.1–4.2全部；选读§2.2–2.3及§5正文。Table1实际在物理p12，四行三列已视觉核对；Figures4–7只检查坐标/设定/代表性数字，非逐点数据审计。视觉核对物理pp3–13，明确区分PDF原有公式笔误与编者修正。未读完参考文献，非14页全文精读。",
+      "textFile": "p1-papers-01-08/paper04-2307.08691v1.txt",
+      "textLineSelections": [
+        [
+          1,
+          843
+        ]
+      ],
+      "lineSelectionMeaning": "Ranges are actual displayed continuous read windows, including non-raw boundary context; incidental adjacent text is explicitly distinguished below from core close reading. Heading/term search snippets do not constitute whole-section reading.",
+      "specifiedCoreCloseRead": true,
+      "completePaperTextRead": false,
+      "completePaperCloseRead": false,
+      "formulaAndFigureVisualAudit": false,
+      "visualAuditStatus": "partial_selected_original_pages_actually_inspected",
+      "visualAuditPdfPages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "visualAuditEvidence": [
+        {
+          "page": 3,
+          "file": "p4-papers/visual/paper04-03.png",
+          "sha256": "4ffcecc45660edb531984517d6d429077dedf094a03a86347bd85e2c93a542d6",
+          "scope": "§2.2的Q/K/V与梯度式；确认原PDF dK=Q dS^T顺序不合维度，脚注2的typically 1/d确在原件；并非提取错误。",
+          "created_at": "2026-11-14T16:19:14Z"
+        },
+        {
+          "page": 4,
+          "file": "p4-papers/visual/paper04-04.png",
+          "sha256": "63569079dd970c51fce01eee0fc92d664670025bdc8457672a917d62ccff8f17",
+          "scope": "§2.3.1标准输出展开与online更新；确认第二贡献的共同分母、旧输出比例/最大值修正有排版问题；Figure1只核对概念与省略max-shift注。",
+          "created_at": "2026-11-14T16:19:14Z"
+        },
+        {
+          "page": 5,
+          "file": "p4-papers/visual/paper04-05.png",
+          "sha256": "888e92064d599c02a3b23606c46c008e68b6a73c71edafef8a546519c445a14f",
+          "scope": "§3.1的312/19.5 TFLOP/s峰值比较，§3.1.1未归一化累加与L=m+log(l)；确认原PDF旧O缩放中逆号/遗漏。",
+          "created_at": "2026-11-14T16:19:15Z"
+        },
+        {
+          "page": 6,
+          "file": "p4-papers/visual/paper04-06.png",
+          "sha256": "ea6c2cd11b5b35fc3dd5c38abee8eb6c0f983edef4e917f78bc88113d6d966a0",
+          "scope": "两块更新与Algorithm1全部步骤；确认step10 diag(exp(m_old-m_new))外多逆号；causal段第二点row less than column方向反；正确修正由不变量独立推导。",
+          "created_at": "2026-11-14T16:19:15Z"
+        },
+        {
+          "page": 7,
+          "file": "p4-papers/visual/paper04-07.png",
+          "sha256": "154363fcab185ab1f5b3a86c0ad2ae5485ea011dcde2601f55e3454b703c3ff9",
+          "scope": "Algorithm2的矩阵/行向量维度；确认D标R^d而应R^N，step16 dK累加次序正确；MQA/GQA共享K/V的反向求和说明。",
+          "created_at": "2026-11-14T16:19:15Z"
+        },
+        {
+          "page": 8,
+          "file": "p4-papers/visual/paper04-08.png",
+          "sha256": "88a3cecf3337ee8176271ee4631bebb1a02bdb79c28fca520efa61bc5e581c74",
+          "scope": "§3.2与Figure2：前向行块独立、后向列块独占dK/dV且用atomics累计dQ；循环互换的Triton归属说明。",
+          "created_at": "2026-11-14T16:19:16Z"
+        },
+        {
+          "page": 9,
+          "file": "p4-papers/visual/paper04-09.png",
+          "sha256": "bd2de2bbf6bdf05c68fa773baba00fc3cabdcd2d2d2734b73d8644ed8fc13551",
+          "scope": "§3.3与Figure3 split-K/split-Q依赖；后向同步仍存在；块尺寸/寄存器spill/共享内存限制。",
+          "created_at": "2026-11-14T16:19:16Z"
+        },
+        {
+          "page": 10,
+          "file": "p4-papers/visual/paper04-10.png",
+          "sha256": "e4af144e0fc5f15ca3139879522ba9d0f1338f5a6949ee900a35dd65d6c8f658",
+          "scope": "§4.1 A10080GB SXM4、固定16k tokens、hidden2048、d64/128、有无causal、前向FLOP式未显式batch与后向2.5倍口径；Figure4只核对坐标/设定/代表值，非全数据点。",
+          "created_at": "2026-11-14T16:19:42Z"
+        },
+        {
+          "page": 11,
+          "file": "p4-papers/visual/paper04-11.png",
+          "sha256": "feeeaf6b1a0d4d97433cdc912e74929133512074bd42a6fae6374973802b57a8",
+          "scope": "Figure5坐标/设定；§4.2自比较compared to FlashAttention-2原文、8×A100与模型FLOP式不对causal减半；H100未来工作边界。",
+          "created_at": "2026-11-14T16:19:16Z"
+        },
+        {
+          "page": 12,
+          "file": "p4-papers/visual/paper04-12.png",
+          "sha256": "c7c9416701ba791825fc02c160eab5b374a9d730892bbef7c31eaa3e8de1bd5e",
+          "scope": "Table1四行三列训练吞吐、单位TFLOP/s/GPU与8×A100；核对2.7B8k的80/175/225及1.3B8k的72/170/220，识别概括2.8倍不是全表严格上界；Figure6只核坐标/代表值；§5。",
+          "created_at": "2026-11-14T16:19:42Z"
+        },
+        {
+          "page": 13,
+          "file": "p4-papers/visual/paper04-13.png",
+          "sha256": "3d6a8ebe188de957579da4e8bf7d33bab63cd4b810be2388f9c0b6ae4a5c20b6",
+          "scope": "Figure7 H10080GB SXM5坐标、causal/head配置和代表性数值，不作逐点数据审计或把未来指令收益当已测结果。",
+          "created_at": "2026-11-14T16:19:17Z"
+        }
+      ],
+      "pageNumbering": "1-based physical PDF page; a listed page means the named region was inspected, not every character or plotted value audited",
+      "notYetFullyRead": [
+        "参考文献未完整阅读；未阅读引文中的全部原始来源",
+        "Figures4–7未逐数据点审计；没有源码审计/硬件性能复现",
+        "视觉范围pp3–13不等于全部14页逐式审校",
+        "固定v1原文笔误保留，通过编者注独立推导，不宣称官方代码具有同样错误"
+      ],
+      "readAt": "2026-11-14T16:35:39Z",
+      "priorReadingRetention": "P1 acquisition/scope reading remains in priorActualReading and original P1 slice; P4 does not reinterpret acquired as read or claim historical visual review."
+    },
+    "p4CoreReading": [
+      {
+        "section": "2.1",
+        "pdfPages": "2",
+        "textLineRange": [
+          92,
+          110
+        ],
+        "p4Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "材料§6：执行单元与内存/warp模型"
+      },
+      {
+        "section": "3.1",
+        "pdfPages": "5–7",
+        "textLineRange": [
+          234,
+          388
+        ],
+        "p4Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "材料§3–4/6.1/8：未归一化输出、L、后向维度与原文勘误"
+      },
+      {
+        "section": "3.2",
+        "pdfPages": "7–8",
+        "textLineRange": [
+          389,
+          432
+        ],
+        "p4Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "材料§4/6.2：Q块并行与列块后向dQ共享累加"
+      },
+      {
+        "section": "3.3",
+        "pdfPages": "9",
+        "textLineRange": [
+          433,
+          469
+        ],
+        "p4Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "材料§6.3：split-K与split-Q、同步/寄存器资源"
+      },
+      {
+        "section": "4.1–4.2",
+        "pdfPages": "10–11；相关Table1在12",
+        "textLineRange": [
+          486,
+          665
+        ],
+        "p4Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "材料§7：设定、FLOP口径、MFU、自比较原文；Table1另读738–746"
+      }
+    ],
+    "p4OptionalReading": [
+      {
+        "section": "题名/摘要/§1",
+        "textLineRanges": [
+          [
+            1,
+            87
+          ]
+        ],
+        "status": "read"
+      },
+      {
+        "section": "§2.2–2.3",
+        "textLineRanges": [
+          [
+            111,
+            225
+          ]
+        ],
+        "status": "read_and_used_for_background_and_errata"
+      },
+      {
+        "section": "§5",
+        "textLineRanges": [
+          [
+            667,
+            669
+          ],
+          [
+            749,
+            757
+          ]
+        ],
+        "status": "read_future_work_not_performance_claim"
+      },
+      {
+        "section": "Table1及Figures4–7",
+        "textLineRanges": [
+          [
+            503,
+            646
+          ],
+          [
+            673,
+            746
+          ],
+          [
+            763,
+            820
+          ]
+        ],
+        "status": "Table1_all_entries_checked_figures_axes_and_selected_values_only"
+      },
+      {
+        "section": "致谢与参考文献开头",
+        "textLineRanges": [
+          [
+            823,
+            843
+          ]
+        ],
+        "status": "read_not_complete_bibliography"
+      }
+    ],
+    "p4Review": {
+      "authorReviewed": true,
+      "mainAccepted": false,
+      "officialAssignmentExecuted": false,
+      "benchmarkReplicated": false,
+      "reviewFile": "p4-papers/review.txt"
+    },
+    "p4SourceCautions": [
+      "参考文献未完整阅读；未阅读引文中的全部原始来源",
+      "Figures4–7未逐数据点审计；没有源码审计/硬件性能复现",
+      "视觉范围pp3–13不等于全部14页逐式审校",
+      "固定v1原文笔误保留，通过编者注独立推导，不宣称官方代码具有同样错误"
+    ],
+    "p4SourceErrata": [
+      {
+        "pdfPage": 3,
+        "location": "§2.2 dK equation",
+        "printed": "dK = Q dS^T",
+        "editorialCorrection": "按Q,K∈R^(N×d)与S=QK^T，应为dK=dS^T Q；若S含tau再乘tau。",
+        "confirmedInOriginalPdf": true
+      },
+      {
+        "pdfPage": 3,
+        "location": "footnote2",
+        "printed": "typically by 1/d",
+        "editorialCorrection": "标准scaled dot-product attention为1/sqrt(d)；与FA1 B.3及固定A2一致。",
+        "confirmedInOriginalPdf": true
+      },
+      {
+        "pdfPage": 4,
+        "location": "§2.3.1 standard O expansion",
+        "printed": "second block contribution lacks the common diag(l)^(-1)",
+        "editorialCorrection": "两个未归一化贡献相加后统一除以l。",
+        "confirmedInOriginalPdf": true
+      },
+      {
+        "pdfPage": "4–5",
+        "location": "§2.3.1 / §3.1.1 old normalized O update",
+        "printed": "inverse l_old/l_new and missing max rescaling; inverse l_old in unscaled form",
+        "editorialCorrection": "旧归一化O系数应alpha*l_old/l_new；旧未归一化U系数应alpha。alpha=exp(m_old-m_new)。",
+        "confirmedInOriginalPdf": true
+      },
+      {
+        "pdfPage": 6,
+        "location": "two-block recurrence and Algorithm1 step10",
+        "printed": "diag(exp(m_old-m_new))^(-1)",
+        "editorialCorrection": "去掉外部逆号：U_new=diag(exp(m_old-m_new))U_old+P_tilde V。m_new≥m_old时旧贡献缩小。",
+        "confirmedInOriginalPdf": true
+      },
+      {
+        "pdfPage": 6,
+        "location": "Causal masking item2",
+        "printed": "row indices strictly less than column indices for no mask",
+        "editorialCorrection": "免mask块应所有key列索引≤query行索引；上三角应跳过，对角边界逐元素mask。",
+        "confirmedInOriginalPdf": true
+      },
+      {
+        "pdfPage": 7,
+        "location": "Algorithm2 step4",
+        "printed": "D∈R^d",
+        "editorialCorrection": "D=rowsum(dO⊙O)∈R^N；该算法step16的dK次序是正确的。",
+        "confirmedInOriginalPdf": true
+      },
+      {
+        "pdfPage": 11,
+        "location": "§4.2 self comparison",
+        "printed": "compared to FlashAttention-2",
+        "editorialCorrection": "保留原文短引，结合§4引导与Table1解读为对FA1；2.7B8k的225/175≈1.29。",
+        "confirmedInOriginalPdf": true
+      },
+      {
+        "pdfPage": "10–12",
+        "location": "§4.1 FLOP axis and §4.2 summary vs Table1",
+        "printed": "§4.1 formula omits explicit batch; §4.2 says2.8x vs baseline",
+        "editorialCorrection": "另列整个batch的4BHN²d，注明编者补轴；Table1的1.3B8k为220/72，故2.8不是全表严格最大比值；不静默重写原数据。",
+        "confirmedInOriginalPdf": true
+      }
+    ]
+  },
+  "paper05": {
+    "home": "lec08",
+    "materialFile": "lectures/lec08/materials.zh.md",
+    "alsoUsedBy": [
+      "ext08",
+      "a2-systems"
+    ],
+    "prerequisites": [
+      "lec07"
+    ],
+    "relatedAssignments": [
+      "a2-systems"
+    ],
+    "version": "arXiv:1910.02054v3",
+    "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+    "verifiedScope": {
+      "fixedVersion": "arXiv:1910.02054v3",
+      "pageNumbering": "1-based physical PDF pages",
+      "core": [
+        {
+          "section": "3.1–3.2",
+          "title": "Model States: Optimizer States, Gradients and Parameters; Residual Memory Consumption",
+          "pdfPages": "7–8",
+          "requirement": "编者推荐必读"
+        },
+        {
+          "section": "4.1",
+          "title": "Insights and Overview: ZeRO-DP",
+          "pdfPages": "9",
+          "requirement": "编者推荐必读"
+        },
+        {
+          "section": "5.1–5.4",
+          "title": "Deep Dive into ZeRO-DP: optimizer, gradient, parameter partitioning and model size",
+          "pdfPages": "10–11",
+          "requirement": "编者推荐必读"
+        },
+        {
+          "section": "7.1–7.2.2",
+          "title": "Data Parallel Communication Volume; ZeRO-DP Communication Volume",
+          "pdfPages": "13–14",
+          "requirement": "编者推荐必读"
+        }
+      ],
+      "optional": [
+        {
+          "section": "4.2",
+          "title": "Insights and Overview: ZeRO-R",
+          "pdfPages": "9",
+          "requirement": "编者推荐选读"
+        },
+        {
+          "section": "6.1–6.3",
+          "title": "Deep Dive into ZeRO-R",
+          "pdfPages": "12–13",
+          "requirement": "编者推荐选读"
+        },
+        {
+          "section": "8",
+          "title": "Communication Analysis of ZeRO-R",
+          "pdfPages": "14–15",
+          "requirement": "编者推荐选读"
+        },
+        {
+          "section": "10.1–10.2",
+          "title": "Implementation and Methodology; Speed and Model Size",
+          "pdfPages": "17",
+          "requirement": "编者推荐选读"
+        },
+        {
+          "section": "10.5",
+          "title": "Memory and Performance Analysis",
+          "pdfPages": "18–19",
+          "requirement": "编者推荐选读"
+        }
+      ],
+      "summary": "§§3.1–3.2、4.1、5.1–5.4、7.1–7.2.2；ZeRO-R的§4.2/6/8和§10.1–10.2/10.5评测选读。",
+      "designation": "editorial_supplement_pending_fixed_lecture_crosscheck"
+    },
+    "designation": "official_required_targeted_paper_reference_with_editorial_extension",
+    "requirement": "官方任务必查：ZeRO stage1；其余核心节为编者必读、扩展节选读",
+    "officialRequirement": "A2 §6 p38要求对照ZeRO-DP P_os/stage1；仅该任务所需针对性查阅，不是全文必读",
+    "officialAssignmentEvidence": [
+      {
+        "assignment": "a2-systems",
+        "source_id": "p1-a2-handout",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout_version": "26.1.3",
+        "pdf_pages": [
+          37,
+          38,
+          48
+        ],
+        "handout_section": "§6; optimizer_state_sharding_accounting(c); bibliography [5]",
+        "classification": "required_targeted_comparison_to_paper",
+        "wording": "How does our approach to optimizer state sharding differ from ZeRO stage 1 (described as ZeRO-DP P_os in S. Rajbhandari, J. Rasley, O. Ruwase, and Y. He [5])?",
+        "scope_limit": "Required deliverable is a 2–3 sentence comparison, especially memory and communication volume. This is stronger than a mere citation: targeted consultation of ZeRO stage 1 is needed. Handout gives no paper page/section number and does not require reading the entire paper."
+      }
+    ],
+    "sourcePaths": {
+      "metadata": "p1-papers-01-08/paper05-1910.02054v3-abs.html",
+      "fullText": "p1-papers-01-08/paper05-1910.02054v3.pdf",
+      "extractedText": "p1-papers-01-08/paper05-1910.02054v3.txt",
+      "licenseTerms": "p1-papers-01-08/license-arxiv-nonexclusive-1.0.html"
+    },
+    "sha256": "c531734c7d9ee647fda9b4f0e1a6abd6d58ad34e862bc945451b09032be3167e",
+    "retrievedAt": "2026-11-14T13:41:08.713404Z",
+    "placementPolicy": "既有home、materialFile、alsoUsedBy保持不变；不新建第二正文归属。",
+    "status": "P4_specified_core_close_read_and_written_pending_main_review",
+    "chineseTreatment": "independent_close_reading",
+    "chineseTreatmentStatus": "P4_original_question_organized_close_reading_written_not_translation",
+    "chineseTreatmentConditions": "Independent Chinese pedagogy, selected source discussion and original diagrams; not a paragraph substitute or unauthorized full translation. No third-party figures or full tables republished.",
+    "readingEvidence": "本批读取既有提取文本1–38、275–943行；核心§3.1–3.2、§4.1、§5.1–5.4、§7.1–7.2.2全部；选读§4.2、§6、§8、§10导言/10.1–10.2/10.5并用于正文，另连续读到§9、§10.3–10.4/10.6、§11、致谢和参考文献开头。视觉核对物理pp8、10–11、13–14、17–18。未全文精读§1–2、参考文献与AE附录，非24页全文精读。",
+    "readAt": "2026-11-14T16:35:39Z",
+    "written": "P4_written",
+    "reviewed": "P4_author_review_only_pending_main",
+    "accepted": false,
+    "sourceIds": [
+      "p1-paper05-version-metadata",
+      "p1-paper05-fulltext",
+      "p1-paper05-extracted-text",
+      "p4-paper05-pdf",
+      "p4-paper05-text",
+      "p4-paper05-metadata"
+    ],
+    "priorActualReading": {
+      "method": "pdftotext -layout",
+      "scope": "题名/作者/v3；§3、§4导言与4.1、§5全部、§7全部正文和内存/通信式；§10导言、10.1–10.2、10.5的实验方法与正文；扫描所有主文节标题。",
+      "pdfPageSelections": [
+        1,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19
+      ],
+      "pageNumbering": "1-based physical PDF pages; selected passages, not whole-page reading",
+      "textFile": "p1-papers-01-08/paper05-1910.02054v3.txt",
+      "textLineSelections": [
+        [
+          1,
+          35
+        ],
+        [
+          276,
+          380
+        ],
+        [
+          415,
+          510
+        ],
+        [
+          587,
+          643
+        ],
+        [
+          736,
+          788
+        ],
+        [
+          823,
+          875
+        ]
+      ],
+      "outlineMethod": "正文和附录标题重建目录；非声称原文有独立目录页",
+      "completePaperCloseRead": false,
+      "formulaAndFigureVisualAudit": false,
+      "notYetFullyRead": [
+        "§4.2、§6和§8的ZeRO-R细节未完整阅读",
+        "§9以及§10.3–10.4/10.6未完整精读",
+        "图表/AE附录/实现未复现"
+      ],
+      "readAt": "2026-11-14T13:47:55.076422Z"
+    },
+    "actualReading": {
+      "phase": "P4",
+      "method": "Existing fixed P1 pdftotext-layout text actually read; selected original PDF pages rendered with pdftoppm then visually inspected",
+      "scope": "本批读取既有提取文本1–38、275–943行；核心§3.1–3.2、§4.1、§5.1–5.4、§7.1–7.2.2全部；选读§4.2、§6、§8、§10导言/10.1–10.2/10.5并用于正文，另连续读到§9、§10.3–10.4/10.6、§11、致谢和参考文献开头。视觉核对物理pp8、10–11、13–14、17–18。未全文精读§1–2、参考文献与AE附录，非24页全文精读。",
+      "textFile": "p1-papers-01-08/paper05-1910.02054v3.txt",
+      "textLineSelections": [
+        [
+          1,
+          38
+        ],
+        [
+          275,
+          943
+        ]
+      ],
+      "lineSelectionMeaning": "Ranges are actual displayed continuous read windows, including non-raw boundary context; incidental adjacent text is explicitly distinguished below from core close reading. Heading/term search snippets do not constitute whole-section reading.",
+      "specifiedCoreCloseRead": true,
+      "completePaperTextRead": false,
+      "completePaperCloseRead": false,
+      "formulaAndFigureVisualAudit": false,
+      "visualAuditStatus": "partial_selected_original_pages_actually_inspected",
+      "visualAuditPdfPages": [
+        8,
+        10,
+        11,
+        13,
+        14,
+        17,
+        18
+      ],
+      "visualAuditEvidence": [
+        {
+          "page": 8,
+          "file": "p4-papers/visual/paper05-08.png",
+          "sha256": "607f584af09f2376840e182c7ae40cc6b6c9d86fc4838391c6dbd70b61f03764",
+          "scope": "§3.1续文K=12与16Psi bytes；§3.2的激活/临时buffer/碎片区分。",
+          "created_at": "2026-11-14T16:19:17Z"
+        },
+        {
+          "page": 10,
+          "file": "p4-papers/visual/paper05-10.png",
+          "sha256": "7d7c8e563389344213b804fd4c64989d070c807c413e7b6432734f9681a4c262",
+          "scope": "§5.1–5.2内存式4Psi+12Psi/n、2Psi+14Psi/n、更新后参数all-gather与梯度reduce-scatter；未据式直接承诺峰值。",
+          "created_at": "2026-11-14T16:19:17Z"
+        },
+        {
+          "page": 11,
+          "file": "p4-papers/visual/paper05-11.png",
+          "sha256": "a42212205f9fd9fc28603a0b4e1478c73bf934bdc547de5a307aa4493cc5de1b",
+          "scope": "Table1标为模型状态容量估算；§5.3阶段3的16Psi/n、§5.4极限倍数，非全工作区实测。",
+          "created_at": "2026-11-14T16:19:18Z"
+        },
+        {
+          "page": 13,
+          "file": "p4-papers/visual/paper05-13.png",
+          "sha256": "df6db69b1a996cef68d2a52f9f3a8dadd7958aabb8f128125f5b46508ce6673a",
+          "scope": "Table2理论/实测分栏，实测标Pos；§7.1的带宽主导/每rank元素移动2Psi口径，原send to and from措辞不可混成严格双向总bytes。",
+          "created_at": "2026-11-14T16:19:18Z"
+        },
+        {
+          "page": 14,
+          "file": "p4-papers/visual/paper05-14.png",
+          "sha256": "6b27e04ebdbe0471f6127da262b44a33a02914d764e2a3470e2b0d62ba5e8604",
+          "scope": "§7.2.1的RS梯度+AG更新参数；§7.2.2前反向两次参数获取+一次RS；§8初始条件为特定Megatron checkpoint/MP方案。",
+          "created_at": "2026-11-14T16:19:19Z"
+        },
+        {
+          "page": 17,
+          "file": "p4-papers/visual/paper05-17.png",
+          "sha256": "1032149347ab992960b23a907cc7c367380bf5caaa5cea68c0f5448bda381621",
+          "scope": "§10.1明确Pos+g与ZeRO-R，400 V100/25 DGX2/800Gbps与2019年9月Megatron基线；§10.2条件，非当前硬件复现。",
+          "created_at": "2026-11-14T16:19:19Z"
+        },
+        {
+          "page": 18,
+          "file": "p4-papers/visual/paper05-18.png",
+          "sha256": "81a789773b053dbf1453e1db20f97bc99bf400544dc88a9b1807a78713e54670",
+          "scope": "Table3五配置均为Pos或Pos+g搭配ZeRO-R，无Pp；§10.5固定batch与MP16、cached memory语义；非性能曲线逐点视觉审计。",
+          "created_at": "2026-11-14T16:19:19Z"
+        }
+      ],
+      "pageNumbering": "1-based physical PDF page; a listed page means the named region was inspected, not every character or plotted value audited",
+      "notYetFullyRead": [
+        "§1–2未完整阅读；参考文献与AE附录未完整精读",
+        "性能曲线未逐点视觉核对；未审计实现、未复现训练",
+        "只把§10实测归于Pos+g及ZeRO-R子集，不称三阶段全测或万亿收敛训练",
+        "各公式区分模型状态与峰值、通信元素与bytes、每rank发送/接收/全体发送",
+        "§7概括Pos/Pg无额外通信，但§7.2.1显式推导Pos+g；状态存储布局不单独决定通信调度。",
+        "§7 send to and from措辞与2Psi近似数不能冒充精确收发双向合计；正文采用每rank发送口径补rho=(n-1)/n与线上dtype。"
+      ],
+      "readAt": "2026-11-14T16:35:39Z",
+      "priorReadingRetention": "P1 acquisition/scope reading remains in priorActualReading and original P1 slice; P4 does not reinterpret acquired as read or claim historical visual review."
+    },
+    "p4CoreReading": [
+      {
+        "section": "3.1–3.2",
+        "pdfPages": "7–8",
+        "textLineRange": [
+          286,
+          342
+        ],
+        "p4Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "材料§2：16bytes口径、master、梯度/参数dtype与residual"
+      },
+      {
+        "section": "4.1",
+        "pdfPages": "9",
+        "textLineRange": [
+          360,
+          380
+        ],
+        "p4Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "材料§1/3：状态生命周期与DP计算语义"
+      },
+      {
+        "section": "5.1–5.4",
+        "pdfPages": "10–11",
+        "textLineRange": [
+          424,
+          510
+        ],
+        "p4Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "材料§3：各阶段公式、极限与独立2B/8rank算例"
+      },
+      {
+        "section": "7.1–7.2.2",
+        "pdfPages": "13–14",
+        "textLineRange": [
+          597,
+          643
+        ],
+        "p4Status": "specified_core_close_read_and_explained",
+        "teachingEvidence": "材料§4–5：RS/AG调度、每rank发送/接收/全体口径、dtype与有限rank因子"
+      }
+    ],
+    "p4OptionalReading": [
+      {
+        "section": "题名/摘要",
+        "textLineRanges": [
+          [
+            1,
+            38
+          ]
+        ],
+        "status": "read"
+      },
+      {
+        "section": "§4.2；§6；§8",
+        "textLineRanges": [
+          [
+            381,
+            413
+          ],
+          [
+            512,
+            586
+          ],
+          [
+            644,
+            688
+          ]
+        ],
+        "status": "read_and_used"
+      },
+      {
+        "section": "§10导言/10.1–10.2/10.5",
+        "textLineRanges": [
+          [
+            736,
+            788
+          ],
+          [
+            823,
+            875
+          ]
+        ],
+        "status": "read_and_used_evaluation_scope_not_curve_reproduction"
+      },
+      {
+        "section": "§9；§10.3–10.4/10.6；§11",
+        "textLineRanges": [
+          [
+            689,
+            735
+          ],
+          [
+            789,
+            822
+          ],
+          [
+            876,
+            901
+          ]
+        ],
+        "status": "continuous_window_text_read_not_additional_empirical_audit"
+      },
+      {
+        "section": "致谢与参考文献开头",
+        "textLineRanges": [
+          [
+            902,
+            943
+          ]
+        ],
+        "status": "read_not_complete_bibliography"
+      }
+    ],
+    "p4Review": {
+      "authorReviewed": true,
+      "mainAccepted": false,
+      "officialAssignmentExecuted": false,
+      "benchmarkReplicated": false,
+      "reviewFile": "p4-papers/review.txt"
+    },
+    "p4SourceCautions": [
+      "§1–2未完整阅读；参考文献与AE附录未完整精读",
+      "性能曲线未逐点视觉核对；未审计实现、未复现训练",
+      "只把§10实测归于Pos+g及ZeRO-R子集，不称三阶段全测或万亿收敛训练",
+      "各公式区分模型状态与峰值、通信元素与bytes、每rank发送/接收/全体发送",
+      "§7概括Pos/Pg无额外通信，但§7.2.1显式推导Pos+g；状态存储布局不单独决定通信调度。",
+      "§7 send to and from措辞与2Psi近似数不能冒充精确收发双向合计；正文采用每rank发送口径补rho=(n-1)/n与线上dtype。"
+    ]
+  }
+}

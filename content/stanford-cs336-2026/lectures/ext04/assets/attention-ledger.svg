@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 480" role="img" aria-labelledby="title desc">
+<style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}</style>
+  <title id="title">Attention的配对、物化与KV缓存分别计账</title>
+  <desc id="desc">第一张卡片表示每个query与允许的key配对，完整自注意配对数随长度平方增长；第二张表示同样的配对可选择保存整张score与概率，或只在片上处理小块而保存逐行统计；第三张表示KV缓存按历史位置保存向量，不是score矩阵。图示不按实际显存比例绘制。</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; fill: var(--fg, #64748b); }
+    .heading { font-size: 22px; font-weight: 700; }
+    .body { font-size: 18px; }
+    .small { font-size: 17px; }
+    .card { fill: none; stroke: var(--border, #64748b); stroke-width: 1.6; }
+    .rule { stroke: var(--accent, #64748b); stroke-width: 2; fill: none; }
+  </style>
+  <text class="heading" x="24" y="34">三种资源，不是一笔“二次内存”</text>
+  <rect class="card" x="20" y="55" width="460" height="100" rx="12"/>
+  <text class="heading" x="38" y="85">逻辑配对</text>
+  <text class="body" x="38" y="115">每个query → 所有允许的key</text>
+  <text class="small" x="38" y="141">整段全局自注意：配对数随 S² 增长</text>
+  <path class="rule" d="M250 158 V180 M243 173 L250 180 L257 173"/>
+  <rect class="card" x="20" y="188" width="460" height="136" rx="12"/>
+  <text class="heading" x="38" y="218">实现选择：中间量在哪里？</text>
+  <text class="body" x="38" y="248">分解：完整score / 概率写入HBM</text>
+  <text class="body" x="38" y="276">融合：块内消费，只保留行级统计</text>
+  <text class="small" x="38" y="306">不存完整矩阵 ≠ 不算全局配对</text>
+  <rect class="card" x="20" y="346" width="460" height="112" rx="12"/>
+  <text class="heading" x="38" y="377">另一账户：推理KV缓存</text>
+  <text class="body" x="38" y="408">逐历史位置保存K、V向量</text>
+  <text class="small" x="38" y="438">随历史长度线性增长；不等于score</text>
+</svg>

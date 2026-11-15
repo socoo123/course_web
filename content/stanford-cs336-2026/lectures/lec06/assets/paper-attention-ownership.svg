@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 560" role="img" aria-labelledby="title desc">
+<style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}</style>
+  <title id="title">FlashAttention-2 前后向的读写所有权</title>
+  <desc id="desc">前向不同线程块读取相同键值，各自拥有查询行输出。论文后向不同键列块各自拥有键值梯度，却对共同的查询梯度贡献，因此需要安全累加。原创依赖图，不是性能测量。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="var(--fg, currentColor)"/></marker>
+  </defs>
+  <g font-family="system-ui, sans-serif" fill="var(--fg, currentColor)" font-size="22">
+    <text x="24" y="34" font-weight="700">前向：输出按查询行分开</text>
+    <rect x="195" y="58" width="250" height="52" rx="9" fill="none" stroke="var(--border, currentColor)" stroke-width="2"/>
+    <text x="320" y="92" text-anchor="middle">共同读取 K / V</text>
+    <path d="M250 111 L154 160 M390 111 L486 160" fill="none" stroke="var(--fg, currentColor)" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="24" y="170" width="270" height="82" rx="9" fill="none" stroke="var(--c1, currentColor)" stroke-width="3"/>
+    <rect x="346" y="170" width="270" height="82" rx="9" fill="none" stroke="var(--c2, currentColor)" stroke-width="3"/>
+    <text x="159" y="204" text-anchor="middle">线程块 A：Q 的行块 A</text>
+    <text x="159" y="235" text-anchor="middle">独占 O 的行块 A</text>
+    <text x="481" y="204" text-anchor="middle">线程块 B：Q 的行块 B</text>
+    <text x="481" y="235" text-anchor="middle">独占 O 的行块 B</text>
+    <path d="M24 281 H616" stroke="var(--border, currentColor)" stroke-width="2"/>
+    <text x="24" y="318" font-weight="700">后向：列块共享查询梯度的写入</text>
+    <rect x="24" y="345" width="270" height="82" rx="9" fill="none" stroke="var(--c1, currentColor)" stroke-width="3"/>
+    <rect x="346" y="345" width="270" height="82" rx="9" fill="none" stroke="var(--c2, currentColor)" stroke-width="3"/>
+    <text x="159" y="379" text-anchor="middle">线程块 A：K/V 列块 A</text>
+    <text x="159" y="410" text-anchor="middle">独占 dK / dV 的 A 行</text>
+    <text x="481" y="379" text-anchor="middle">线程块 B：K/V 列块 B</text>
+    <text x="481" y="410" text-anchor="middle">独占 dK / dV 的 B 行</text>
+    <path d="M159 428 L260 478 M481 428 L380 478" fill="none" stroke="var(--fg, currentColor)" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="147" y="487" width="346" height="52" rx="9" fill="none" stroke="var(--warning, currentColor)" stroke-width="3"/>
+    <text x="320" y="521" text-anchor="middle">共同累加 dQ：不可覆盖彼此</text>
+  </g>
+</svg>

@@ -1,0 +1,568 @@
+{
+  "schema_version": 1,
+  "course_id": "stanford-cs336-2026",
+  "phase": "P4",
+  "slice": "a2-systems",
+  "created_at": "2026-11-14T16:35:17Z",
+  "model": "openai-codex/gpt-6-astra:xhigh",
+  "material_files": [
+    "labs/a2-systems/lab.zh.md",
+    "labs/a2-systems/guide.zh.md"
+  ],
+  "assets": [
+    "labs/a2-systems/assets/evidence-lanes.svg"
+  ],
+  "source_audit": "p1-assignments-a1-a4/assignment-audit.json",
+  "task_coverage": "p4-a2/task-coverage.json",
+  "review": "p4-a2/review.txt",
+  "status": "author_complete_pending_main",
+  "reviewed": true,
+  "accepted": false,
+  "official_experiments_executed": false,
+  "sources": [
+    {
+      "kind": "repository_changelog",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/CHANGELOG.md",
+      "file": "p1-assignments-a1-a4/a2/CHANGELOG.txt",
+      "sha256": "35a8b1363b6af6d90a83f2344ebd122490a4029d74f843bf98cc076bc06b761f",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:37:59Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p4-a2-changelog-txt",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a2-changelog-txt"
+      },
+      "status": "read_scope_completed_for_P4",
+      "read_scope": "Full lines1–149, including all2026 and historical entries; current scope cutovers reviewed.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Authorized first-party task requirements Chinese restatement, exact task/config/optional boundaries, plus independent conceptual debugging guidance; no submit-ready implementation or scored answers.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; https://github.com/stanford-cs336/assignment2-systems/blob/ca8bc81a59b70516f7ebb2da4808daade877c736/LICENSE; copyright Stanford University 2025. Preserve copyright and permission notices; no blanket rights to cited papers, images, datasets, pretrained models, services or dependency packages."
+    },
+    {
+      "kind": "license",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/LICENSE",
+      "file": "p1-assignments-a1-a4/a2/LICENSE",
+      "sha256": "b3ccacaf9286910f22ba98681601f426288297f17004699f99d9fdd5f7432751",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:37:58Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p4-a2-license",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a2-license"
+      },
+      "status": "read_scope_completed_for_P4",
+      "read_scope": "Full lines1–7; copyright, permission, condition and warranty.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Authorized first-party task requirements Chinese restatement, exact task/config/optional boundaries, plus independent conceptual debugging guidance; no submit-ready implementation or scored answers.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; https://github.com/stanford-cs336/assignment2-systems/blob/ca8bc81a59b70516f7ebb2da4808daade877c736/LICENSE; copyright Stanford University 2025. Preserve copyright and permission notices; no blanket rights to cited papers, images, datasets, pretrained models, services or dependency packages."
+    },
+    {
+      "kind": "repository_readme",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/README.md",
+      "file": "p1-assignments-a1-a4/a2/README.txt",
+      "sha256": "e0edbbee0311aa85ce704d3d3f9cb5d5dc050195c4f55de3adf15692fb5dee21",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:37:58Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p4-a2-readme-txt",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a2-readme-txt"
+      },
+      "status": "read_scope_completed_for_P4",
+      "read_scope": "Full lines1–65; structure,environment,ownA1 option and submission.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Authorized first-party task requirements Chinese restatement, exact task/config/optional boundaries, plus independent conceptual debugging guidance; no submit-ready implementation or scored answers.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; https://github.com/stanford-cs336/assignment2-systems/blob/ca8bc81a59b70516f7ebb2da4808daade877c736/LICENSE; copyright Stanford University 2025. Preserve copyright and permission notices; no blanket rights to cited papers, images, datasets, pretrained models, services or dependency packages."
+    },
+    {
+      "kind": "dependency_manifest",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/cs336-basics/pyproject.toml",
+      "file": "p1-assignments-a1-a4/a2/cs336-basics/pyproject.toml",
+      "sha256": "d45c37636972a71f859497df06d1694364c1f8ca2b04c37f46215ba4c1a63639",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:40:01Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p4-a2-cs336-basics-pyproject-toml",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a2-cs336-basics-pyproject-toml"
+      },
+      "status": "read_scope_completed_for_P4",
+      "read_scope": "Full lines1–50; packaged basics26.0.4 and Python/runtime constraints.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Authorized first-party task requirements Chinese restatement, exact task/config/optional boundaries, plus independent conceptual debugging guidance; no submit-ready implementation or scored answers.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; https://github.com/stanford-cs336/assignment2-systems/blob/ca8bc81a59b70516f7ebb2da4808daade877c736/LICENSE; copyright Stanford University 2025. Preserve copyright and permission notices; no blanket rights to cited papers, images, datasets, pretrained models, services or dependency packages."
+    },
+    {
+      "kind": "assignment_handout",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/cs336_assignment2_systems.pdf",
+      "file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.pdf",
+      "sha256": "f5667e3b6fac23c3a6d4ad4a999445b96aab3fb2246904d13ec86b79320b1a84",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:38:40Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p4-a2-handout",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a2-handout"
+      },
+      "status": "read_scope_completed_for_P4",
+      "read_scope": "Entire48-page PDF through saved pdftotext-layout extraction lines1–2696; six sequential reading windows cover every line, including algorithms/examples/bibliography. No page-by-page visual review or assignment execution.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Authorized first-party task requirements Chinese restatement, exact task/config/optional boundaries, plus independent conceptual debugging guidance; no submit-ready implementation or scored answers.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; https://github.com/stanford-cs336/assignment2-systems/blob/ca8bc81a59b70516f7ebb2da4808daade877c736/LICENSE; copyright Stanford University 2025. Preserve copyright and permission notices; no blanket rights to cited papers, images, datasets, pretrained models, services or dependency packages."
+    },
+    {
+      "kind": "assignment_handout_text",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/cs336_assignment2_systems.pdf",
+      "file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "sha256": "afa08ed088b7bcd9ca81f5543c232cb5f03238ed4e076d53e55cb41f1695c6b5",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:38:40Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p4-a2-handout-text",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a2-handout-text"
+      },
+      "status": "read_scope_completed_for_P4",
+      "read_scope": "Entire lines1–2696; observed read bounds1–453,453–903,903–1353,1353–1803,1803–2253,2253–2696. All48pages. Extraction only, not visual review.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Authorized first-party task requirements Chinese restatement, exact task/config/optional boundaries, plus independent conceptual debugging guidance; no submit-ready implementation or scored answers.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; https://github.com/stanford-cs336/assignment2-systems/blob/ca8bc81a59b70516f7ebb2da4808daade877c736/LICENSE; copyright Stanford University 2025. Preserve copyright and permission notices; no blanket rights to cited papers, images, datasets, pretrained models, services or dependency packages."
+    },
+    {
+      "kind": "dependency_manifest",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/pyproject.toml",
+      "file": "p1-assignments-a1-a4/a2/pyproject.toml",
+      "sha256": "a6cb1d174906de986d7d0bc50c04763c48483aea17106fd0853a53033def1fd8",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:37:58Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p4-a2-pyproject-toml",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a2-pyproject-toml"
+      },
+      "status": "read_scope_completed_for_P4",
+      "read_scope": "Full lines1–58; outer package26.1.4,Python>=3.12,<3.14,torch~=2.11.0; no install.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Authorized first-party task requirements Chinese restatement, exact task/config/optional boundaries, plus independent conceptual debugging guidance; no submit-ready implementation or scored answers.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; https://github.com/stanford-cs336/assignment2-systems/blob/ca8bc81a59b70516f7ebb2da4808daade877c736/LICENSE; copyright Stanford University 2025. Preserve copyright and permission notices; no blanket rights to cited papers, images, datasets, pretrained models, services or dependency packages."
+    },
+    {
+      "kind": "repository_tree",
+      "url": "https://api.github.com/repos/stanford-cs336/assignment2-systems/git/trees/ca8bc81a59b70516f7ebb2da4808daade877c736?recursive=1",
+      "file": "p1-assignments-a1-a4/a2/tree.json",
+      "sha256": "d4edaf42b901fad8870ab1addbc11ac712562147a5f125dca6bf3f0979f87c67",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:37:59Z",
+      "license": "GitHub repository metadata; no independent license asserted",
+      "id": "p4-a2-tree-json",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a2-tree-json"
+      },
+      "status": "read_scope_completed_for_P4",
+      "read_scope": "Complete path inventory via jq .tree[].path; used to locate actual AGENTS,adapters,tests,submission paths. Not all blob contents read.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Authorized first-party task requirements Chinese restatement, exact task/config/optional boundaries, plus independent conceptual debugging guidance; no submit-ready implementation or scored answers.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "license_evidence": "GitHub API inventory of the pinned repository. Each listed content file retains its own license; repository LICENSE retained separately."
+    },
+    {
+      "kind": "course_policy",
+      "url": "https://docs.google.com/document/d/1SZAlExB1qAc9izHt54gwunNpjKE6wXb8Y7yA_e-baK8/export?format=txt",
+      "file": "p1-shared/ai-policy.txt",
+      "sha256": "127b697e3a67d9a3d86e0aa6cfdd6bb2ddc74a28c5786198b8d24008b9d6ef01",
+      "version": "CS336 AI Policy Spring 2025-2026, live document snapshot",
+      "retrieved_at": "2026-11-14T13:42:10Z",
+      "license": "No explicit reuse license in document; independent summary only",
+      "id": "p4-a2-ai-policy-2026",
+      "source_record": {
+        "fragment": "manifest.json",
+        "id": "ai-policy-2026"
+      },
+      "status": "read",
+      "read_scope": "Full saved policy text lines1–21.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Independent limited policy/access summary, not full document translation; no resource provisioning.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish"
+    },
+    {
+      "kind": "access_policy",
+      "url": "https://docs.google.com/document/d/1cHE0iKVyXLJ3XpIs2XuXTmZ-HMmPk2hIPeCvy-AydMg/export?format=txt",
+      "file": "p1-shared/cluster-guide.txt",
+      "sha256": "007acc2a222ecd69301e02388469d38649216ac0e8f6f82ccdae9f65ffb39e9c",
+      "version": "Live document explicitly CS336 Spring 2026; snapshot hash pins content",
+      "retrieved_at": "2026-11-14T13:42:10Z",
+      "license": "No explicit reuse license in document; independent summary only",
+      "id": "p4-a2-cluster-guide-2026",
+      "source_record": {
+        "fragment": "manifest.json",
+        "id": "cluster-guide-2026"
+      },
+      "status": "read",
+      "read_scope": "Full saved guide text lines1–185, including eligibility,concurrency,volumes,security and local/remoteGPU distinction.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Independent limited policy/access summary, not full document translation; no resource provisioning.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish"
+    },
+    {
+      "id": "p4-a2-agents",
+      "kind": "assignment_ai_policy",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/AGENTS.md",
+      "file": "p4-a2/upstream/AGENTS.txt",
+      "sha256": "e1bb744d75f4fe7eed7328753d46f47099c4a19aab1cedadfa7ef427f35170b9",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "package": "26.1.4"
+      },
+      "retrieved_at": "2026-11-14T16:19:03Z",
+      "license": "MIT first-party repository software and associated documentation; third-party material excluded",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; full notice preserved in both bodies.",
+      "status": "read",
+      "read_scope": "Full fixed-URL reader text (72 saved lines); interface/testing semantics only, not official solution implementation. No test or code execution.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Independent contract explanation and source discrepancy notes; do not publish implementation/solutions.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "id": "p4-a2-test-and-make-submission",
+      "kind": "submission_interface",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/test_and_make_submission.sh",
+      "file": "p4-a2/upstream/test_and_make_submission.txt",
+      "sha256": "7ea1fc41f6b34281c7b65153a988ac916c6d03087104f0581a7a7714ace5378d",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "package": "26.1.4"
+      },
+      "retrieved_at": "2026-11-14T16:19:04Z",
+      "license": "MIT first-party repository software and associated documentation; third-party material excluded",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; full notice preserved in both bodies.",
+      "status": "read",
+      "read_scope": "Full fixed-URL reader text (32 saved lines); interface/testing semantics only, not official solution implementation. No test or code execution.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Independent contract explanation and source discrepancy notes; do not publish implementation/solutions.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "id": "p4-a2-tests-adapters",
+      "kind": "assignment_test_interface",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/tests/adapters.py",
+      "file": "p4-a2/upstream/tests_adapters.txt",
+      "sha256": "d9e8e1eda4adf2c00e7e51107160d354aff9d482252ce121c85e304df965b190",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "package": "26.1.4"
+      },
+      "retrieved_at": "2026-11-14T16:19:05Z",
+      "license": "MIT first-party repository software and associated documentation; third-party material excluded",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; full notice preserved in both bodies.",
+      "status": "read",
+      "read_scope": "Full fixed-URL reader text (136 saved lines); interface/testing semantics only, not official solution implementation. No test or code execution.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Independent contract explanation and source discrepancy notes; do not publish implementation/solutions.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "id": "p4-a2-tests-test-attention",
+      "kind": "assignment_test_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/tests/test_attention.py",
+      "file": "p4-a2/upstream/tests_test_attention.txt",
+      "sha256": "88da8191dbfd36362d720c635a6161175dbdac5fe5663d32d2405367b77ec6e3",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "package": "26.1.4"
+      },
+      "retrieved_at": "2026-11-14T16:19:07Z",
+      "license": "MIT first-party repository software and associated documentation; third-party material excluded",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; full notice preserved in both bodies.",
+      "status": "read",
+      "read_scope": "Full fixed-URL reader text (105 saved lines); interface/testing semantics only, not official solution implementation. No test or code execution.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Independent contract explanation and source discrepancy notes; do not publish implementation/solutions.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "id": "p4-a2-tests-test-ddp",
+      "kind": "assignment_test_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/tests/test_ddp.py",
+      "file": "p4-a2/upstream/tests_test_ddp.txt",
+      "sha256": "c8cc4e947d69ec8e2ce55497c852a412cc1b3039fa9c54fce51c1d48701893e4",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "package": "26.1.4"
+      },
+      "retrieved_at": "2026-11-14T16:21:30Z",
+      "license": "MIT first-party repository software and associated documentation; third-party material excluded",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; full notice preserved in both bodies.",
+      "status": "read",
+      "read_scope": "Full fixed-URL reader text (152 saved lines); interface/testing semantics only, not official solution implementation. No test or code execution.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Independent contract explanation and source discrepancy notes; do not publish implementation/solutions.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "id": "p4-a2-tests-test-fsdp",
+      "kind": "assignment_test_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/tests/test_fsdp.py",
+      "file": "p4-a2/upstream/tests_test_fsdp.txt",
+      "sha256": "bdb02a8aa961107e222b7b5681258146fc3781256b40aa7de1abc69e5c0d4bd1",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "package": "26.1.4"
+      },
+      "retrieved_at": "2026-11-14T16:21:31Z",
+      "license": "MIT first-party repository software and associated documentation; third-party material excluded",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; full notice preserved in both bodies.",
+      "status": "read",
+      "read_scope": "Full fixed-URL reader text (249 saved lines); interface/testing semantics only, not official solution implementation. No test or code execution.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Independent contract explanation and source discrepancy notes; do not publish implementation/solutions.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "id": "p4-a2-tests-test-sharded-optimizer",
+      "kind": "assignment_test_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/tests/test_sharded_optimizer.py",
+      "file": "p4-a2/upstream/tests_test_sharded_optimizer.txt",
+      "sha256": "80e927b623ecdd80b5a31daea95fe927bc30ba30608b33504aab1fdc81e55d0c",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "package": "26.1.4"
+      },
+      "retrieved_at": "2026-11-14T16:21:32Z",
+      "license": "MIT first-party repository software and associated documentation; third-party material excluded",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; full notice preserved in both bodies.",
+      "status": "read",
+      "read_scope": "Full fixed-URL reader text (85 saved lines); interface/testing semantics only, not official solution implementation. No test or code execution.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Independent contract explanation and source discrepancy notes; do not publish implementation/solutions.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "id": "p4-a2-tests-common",
+      "kind": "assignment_test_contract",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/tests/common.py",
+      "file": "p4-a2/upstream/tests_common.txt",
+      "sha256": "49c3a2393b8b38b03cc6bd4a890ee522333de5a7dc0e54cf012feb8e6fbe3065",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "package": "26.1.4"
+      },
+      "retrieved_at": "2026-11-14T16:21:32Z",
+      "license": "MIT first-party repository software and associated documentation; third-party material excluded",
+      "license_evidence": "p1-assignments-a1-a4/a2/LICENSE; full notice preserved in both bodies.",
+      "status": "read",
+      "read_scope": "Full fixed-URL reader text (94 saved lines); interface/testing semantics only, not official solution implementation. No test or code execution.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Independent contract explanation and source discrepancy notes; do not publish implementation/solutions.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "id": "p4-a2-leaderboard-readme",
+      "kind": "leaderboard_rules",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems-leaderboard/df82f2f05c43273096bedffced4d7a035bcbf1fc/README.md",
+      "file": "p4-a2/upstream/leaderboard-README.txt",
+      "sha256": "1a56dfa0bb93ab59790964b12ce5942038fac2f9382ed2b1b2561f6902c60e1e",
+      "version": "df82f2f05c43273096bedffced4d7a035bcbf1fc (2026-05-13); separately pinned from A2",
+      "retrieved_at": "2026-11-14T16:21:35Z",
+      "license": "No explicit open reuse/full-translation permission established; independent limited summary only; no inherited assignment MIT",
+      "read_scope": "Full GitHub repository README reader text:2026 submission rules,global table,legacy2025 table,timing code and optional ideas; saved fixed-SHA snapshot. No solution repository visited.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "status": "read_scope_completed",
+      "chinese_treatment": "Limited independent submission-rule summary; no copied standings or timing implementation.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "id": "p4-a2-course-home",
+      "kind": "course_policy",
+      "url": "https://cs336.stanford.edu/",
+      "file": "p4-a2/upstream/course-home.html",
+      "sha256": "bd57fae299fec60afedb5a22edb325a68107fa1af0cd83641695470587f7a4a7",
+      "version": "Live Spring2026 course root snapshot; not historical release",
+      "retrieved_at": "2026-11-14T16:33:35Z",
+      "license": "No explicit open reuse/full-translation permission established; independent limited summary only; no inherited assignment MIT",
+      "read_scope": "Full reader text including prerequisites,assignments,self-study hardware,HonorCode,submission and entire schedule. HTML bytes saved for identity,not rawHTML line-by-line reading.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "status": "read_scope_completed",
+      "chinese_treatment": "Independent policy/hardware summary; no price guarantee or full translation.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "id": "p4-a2-p1-assignment-audit",
+      "kind": "prior_editorial_audit",
+      "url": "file:content/stanford-cs336-2026/sources/p1-assignments-a1-a4/assignment-audit.json",
+      "file": "p1-assignments-a1-a4/assignment-audit.json",
+      "sha256": "53e79522b2b924c69f9b17576757c26f0271e4844a0f5b44dacedb243226494e",
+      "version": "P1 immutable audit;A2 fixed ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "retrieved_at": "2026-11-14T13:43:29Z",
+      "license": "Project editorial audit; underlying source rights unchanged",
+      "read_scope": "A2 complete section lines185–324 and relevant shared policy/access/citation matches; not other assignment sections read in full.",
+      "read_at": "2026-11-14T16:35:17Z",
+      "chinese_treatment": "Carry forward version,access and optional boundaries; expanded own reading does not overwrite P1 partial-read record.",
+      "material_files": [
+        "labs/a2-systems/lab.zh.md",
+        "labs/a2-systems/guide.zh.md"
+      ],
+      "publication_status": "existing_lightweight_evidence"
+    }
+  ],
+  "publication_allowlist": [
+    "labs/a2-systems/lab.zh.md",
+    "labs/a2-systems/guide.zh.md",
+    "labs/a2-systems/assets/evidence-lanes.svg",
+    "sources/p4-a2/task-coverage.json",
+    "sources/p4-a2/manifest-fragment.json",
+    "sources/p4-a2/review.txt"
+  ],
+  "execution_boundary": "No builds/lints/tests/formatters, official assignment execution, environment install, GPU allocation, benchmark, model download or paid compute. Source acquisition/hash metadata only.",
+  "reading_limit": "Complete48page extracted text; no page-by-page visualPDF review; no audio/video. Static tests read for contracts,not executed."
+}

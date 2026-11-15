@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 575" role="img" aria-labelledby="title desc">
+<style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}</style>
+<title id="title">共享tile的写入、读取和重用依赖</title><desc id="desc">一个block合作加载tile，先等待所有需要的写入完成，再计算使用旧tile；确认消费者不再读取之后，才能覆盖同一buffer加载下一tile。两个不同依赖分别防止读到未完成数据和下一轮过早覆盖。普通block同步不能同步整个grid。</desc>
+<style>text{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;fill:var(--fg,#64748b);font-size:22px}.head{font-size:25px;font-weight:700}.small{font-size:20px}.box{fill:none;stroke:var(--border,#64748b);stroke-width:2}.barrier{fill:none;stroke:var(--accent,#64748b);stroke-width:3}.arrow{fill:none;stroke:var(--muted,#64748b);stroke-width:2}</style>
+<text class="head" x="25" y="36">共享buffer的两道依赖</text><text class="small" x="25" y="70">普通block、单缓冲的概念例子</text>
+<rect class="box" x="55" y="92" width="490" height="61" rx="10"/><text x="85" y="130">1. 合作加载第t个tile，写入buffer</text>
+<path class="arrow" d="M300 153V179M292 171L300 179L308 171"/>
+<rect class="barrier" x="55" y="185" width="490" height="61" rx="10"/><text x="85" y="223">2. 写完且可见，消费者才开始读</text>
+<path class="arrow" d="M300 246V272M292 264L300 272L308 264"/>
+<rect class="box" x="55" y="278" width="490" height="61" rx="10"/><text x="85" y="316">3. 消费旧tile，更新局部累加状态</text>
+<path class="arrow" d="M300 339V365M292 357L300 365L308 357"/>
+<rect class="barrier" x="55" y="371" width="490" height="61" rx="10"/><text x="85" y="409">4. 读完以后，下一轮才覆盖buffer</text>
+<path class="arrow" d="M545 401H574V122H545M554 114L545 122L554 130"/>
+<text class="small" x="25" y="482">这不是两次主机synchronize，而是块内依赖</text>
+<text class="small" x="25" y="517">同步作用域与参与线程必须匹配</text>
+<text class="small" x="25" y="552">普通block barrier不保证其他block已完成</text>
+</svg>

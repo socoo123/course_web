@@ -1,0 +1,48 @@
+{
+  "phase": "P4",
+  "checkedAt": "2026-11-15",
+  "requestedModel": "openai-codex/gpt-6-astra:xhigh",
+  "observedConfiguration": {"taskPerCallModel":"on","taskEnableEffort":false,"taskAgentModelOverrides":{},"taskPrewalk":false},
+  "configurationChangedThisRun": false,
+  "resolvedSubagentModel": "openai-codex/gpt-6-astra",
+  "resolvedSubagentEffort": "xhigh",
+  "resolvedModelIsFallback": false,
+  "subagentsStarted": 6,
+  "runtimeEvidence": [
+    {"agent":"P4HardwareKernels","modelEvent":"2b62ebf4","effortEvent":"8e808ec5","firstAssistantEvent":"4d2d635c","timestamp":"2026-11-14T16:17:39.856Z"},
+    {"agent":"P4TrainingParallelism","modelEvent":"23c87cbf","effortEvent":"c09cb956","firstAssistantEvent":"c6ffb092","timestamp":"2026-11-14T16:17:39.814Z"},
+    {"agent":"P4AttentionProfiling","modelEvent":"4014feed","effortEvent":"ee43bbe7","firstAssistantEvent":"5aa587c5","timestamp":"2026-11-14T16:17:39.850Z"},
+    {"agent":"P4DistributedSystems","modelEvent":"672a2879","effortEvent":"e0819faa","firstAssistantEvent":"90585b13","timestamp":"2026-11-14T16:17:39.864Z"},
+    {"agent":"P4PaperMaterials","modelEvent":"184c88ee","effortEvent":"0d1000f1","firstAssistantEvent":"7ab10348","timestamp":"2026-11-14T16:17:39.823Z"},
+    {"agent":"P4AssignmentTwo","modelEvent":"19323cd3","effortEvent":"f30bceb8","firstAssistantEvent":"0baf87bd","timestamp":"2026-11-14T16:17:39.839Z"}
+  ],
+  "verification": "Main read supported cfg://task before dispatch and inspected model_change, thinking_level_change and first assistant provider/model for all six current workers. All resolved gpt-6-astra/xhigh with fallback=false. No configuration writes or substitutions.",
+  "initialDispatchOutcome": {
+    "status": "blocked_requested_model_usage_limit",
+    "failedAgents": ["P4HardwareKernels", "P4PaperMaterials", "P4AttentionProfiling", "P4DistributedSystems", "P4TrainingParallelism"],
+    "error": "[openai-codex/gpt-6-astra] Codex error event: The usage limit has been reached (code=usage_limit_reached)",
+    "cancelledAfterBlock": ["P4AssignmentTwo"],
+    "completedWorkers": 0,
+    "fallbackOrRetry": false,
+    "record": "P4-BLOCKED.txt"
+  },
+  "resumption": {
+    "date": "2026-11-15",
+    "authority": "User explicitly reported restored availability and requested restarting the subagents",
+    "mode": "Resume the same six sessions through agent messages; retain context and ownership",
+    "configurationRechecked": {"taskPerCallModel":"on","taskAgentModelOverrides":{},"taskPrewalk":false},
+    "configurationChanged": false,
+    "status": "six_workers_completed",
+    "modelChangedOrSubstituted": false,
+    "runtimeEvidence": [
+      {"agent":"P4HardwareKernels","assistantEvent":"af2a6c16","timestamp":"2026-11-14T16:25:49.158Z"},
+      {"agent":"P4TrainingParallelism","assistantEvent":"67da0a3a","timestamp":"2026-11-14T16:25:53.420Z"},
+      {"agent":"P4AttentionProfiling","assistantEvent":"17d79532","timestamp":"2026-11-14T16:26:12.740Z"},
+      {"agent":"P4DistributedSystems","assistantEvent":"444c6026","timestamp":"2026-11-14T16:25:47.136Z"},
+      {"agent":"P4PaperMaterials","assistantEvent":"6d895740","timestamp":"2026-11-14T16:26:00.881Z"},
+      {"agent":"P4AssignmentTwo","assistantEvent":"ff78f5fe","timestamp":"2026-11-14T16:26:47.663Z"}
+    ],
+    "verification": "Each resumed assistant event has provider=openai-codex/model=gpt-6-astra; latest model/effort events remain the original verified xhigh, fallback=false. The cancelled A2 session was observed running and emitted a new assistant event after explicit resumption."
+  },
+  "nextDispatchGate": "Recheck supported configuration and actual runtime evidence; never substitute or downgrade."
+}

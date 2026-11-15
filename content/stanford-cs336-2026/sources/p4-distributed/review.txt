@@ -1,0 +1,67 @@
+CS336-2026 P4 — p4-distributed 作者交接审查
+状态：author_reviewed=true；independent_reviewed=false；accepted=false。主集成/构建/页面验收尚由Main负责。
+模型：openai-codex/gpt-6-astra:xhigh；已读sources/p4-model-preflight.json的原始派发与恢复证据。未替换模型、未嵌套委派。
+
+一、所有权内完整交付
+正文（相对课程根）：
+1. lectures/ext07/notes.zh.md
+2. lectures/ext08/notes.zh.md
+3. lectures/ext09/notes.zh.md
+原创SVG：
+4. lectures/ext07/assets/ring-two-phases.svg
+5. lectures/ext08/assets/shard-snapshot-lifecycle.svg
+6. lectures/ext09/assets/moe-dispatch-combine.svg
+轻量证据：
+7. sources/p4-distributed/manifest-fragment.json
+8. sources/p4-distributed/review.txt
+本地原件/提取：sources/p4-distributed/raw/与text/各7份。它们是第三方快照，只供本地证据，不加入公开发布白名单，不force-add。
+未改共享course/status/catalog/resources/汇总manifest/reading-map；未改src、其他课程或官方作业代码。
+
+二、内容完整性与单一归属
+ext07：集合结果契约；4rank ring逐轮跟踪块0、同时流动的其他块、reduce-scatter完成块循环编号与API输出顺序差别；两阶段各p-1轮；每rank发送/接收/收发合计/全体发送/byte-hop/显存流量分开；整向量二项树8rank六轮；recursive doubling与halving/doubling及NCCL互补双树不混同；非2次幂6rank显式树调度与等分条件；alpha/B理论时间模型；层次通信与共享NIC；进程组/顺序/异步stream契约；五个问答。
+ext08：参数持久所有权、临时物化、逻辑身份；FSDP2 reshard_after_forward=True生命周期；live working set与预取/分组；C_t完整状态向量；步间与步内检查点区别；一致代、training-safe staging与持久化完成分别定义；目标布局先分配再加载；12元素4→3重分片；优化器同一参数身份与标量状态；world size变化不自动支持精确轨迹重放；全局batch、消费游标/预取、RNG、软件兼容和可信加载；未执行的恢复检验协议；五个问答。
+ext09：L04基础回链；[T,h]/[T,k]与Tk分派边；dispatch/本地重排/expert/回程/加权combine；8token完整路由；top-k行约束不保证列均衡；容量的域和自定ceil约定；padding/drop/dropless与权重重归一化语义；专家级与rank级不均；通信矩阵Q与跨rank有效载荷、去重适用边界；反向流量及门权重梯度；EP/ETP/EDP与同一逻辑专家同步；布局、拓扑和测量指标；六个问答。
+ZeRO完整阶段推导仍只归lec08/materials；L04 MoE基础、bridge06检查点基础均通过链接复用。所有专题只有notes，没有虚构录像、draft、materials或时间轴。
+三页均为原创建模教学，不是来源全文翻译；不给A2可提交实现、leaderboard代码或完整训练/恢复代码。
+
+三、实际阅读证据（详细URL/版本/获取时间/完整SHA256见manifest）
+1. NCCL Collectives：网页所有集合正文实际读；本地提取对应602–647行，页题NCCL2.32.3。图像没有复用/视觉核审。导航不计正文阅读。
+2. NCCL2.4 Jeaugey文章：本地提取1–136全部读，文章主体34–96；双树37–44、层次环/拓扑45–55。24–33的后来AI摘要明确排除，历史性能图不作为本页测量。
+3. PyTorch distributed：URL reader返回最前300行实际读；本地551–590、1160–1205、1283–1310、1785–1807、1835–1874；1164长句raw完整补读。未声称全文3323行精读。
+4. PyTorch DCP：URL reader最前300行，覆盖概述/save/async_save/load核心；本地349–393（AsyncStager）、1320–1345与1451–1462（后两段raw）。未声称全文1781行或后端代码审计。
+5. PyTorch FSDP2：URL reader最前300行实际读，用户契约、fully_shard参数、物化/释放、prefetch与相关FSDPModule说明；后部未读。仅使用显示过的生命周期信息。
+6. PyTorch Reproducibility：网页正文全部实际读，对应本地82–213行；代码读而未运行/复制。
+7. Megatron MoE：固定05c4a8ba04e2d3422f56ffdda7ff2059da431e18，提交2026-11-14；本地298–336、434–475、736–778实际读。固定前main页面发现读取最前300行概述/建议，不冒充固定945行全文。未读dispatcher实现或新增后端全部细节。
+8. ZeRO固定v3：复用P1文本1–65、245–525、587–705实际读。§3–5/§7支撑所有权与通信口径；相邻§6.1/§8/§9读到的范围仅如实登记，不扩写成第二份论文精读。无PDF图表视觉核审、无实验复现。
+9. arXiv非独占分发许可：现有33行HTML全读；不把对arXiv的授权误当公众全文翻译权。
+10. CS336 AI政策：21行全读；概念/API辅助与禁止AI实现作业/排行榜边界明确。
+内部复用：bridge06整篇读、L04的165–271实际读、ext03只用于格式惯例。旧批次来源不重做。
+来源记录10项。新下载日期与读取完成时间按工具实际UTC登记；用户所述工作日期不用于伪造下载时间。
+
+四、技术作者审查与显式限制
+- Ring128MiB/4rank：每阶段每rank发送96MiB，整个发送192MiB、接收192MiB，全体发送768MiB；6rank120MiB自测为200MiB/每rank发送、1200MiB/全体发送。理论口径不当GPU测量。
+- Ring模型2(p-1)alpha+2(p-1)M/(pB)，整向量树2log2(p)(alpha+M/B)分别限定其调度/同速无争用/可同时收发假设。用alpha5us/B20GB/s比较4KiB与1MiB，不声称预测现代NCCL实际交叉点。
+- Tree全体发送2(p-1)M不代表每rank相同；root/叶子流量差异明确。NCCL双树不是本文单树示例。无修改XOR/等半递归调度的2次幂限制，不上升为集合API限制。
+- ZeRO元素量、大p近似与当前每rank单向发送/收发合计不混用；具体论文评议回链唯一材料页。
+- FSDP持久2GiB与瞬态1+0.5+3+0.25GiB是互不重叠存储假设下的6.75GiB；不把所有状态除以world size当峰值。明确参数副本释放可无通信。
+- ext08根据Main指出的390px已知宽公式风险，已把M_live五项拆成aligned两行，再单列M_peak=max_t M_live；这是定点布局修正，未自行跑页面。
+- DCP只存应用提供的受支持状态；training-safe副本不等于最终持久化完成，barrier不等于跨文件原子事务，完整代发布是原创建议而非库的无条件保证。
+- Canonical FQN/shape/切片匹配优化器状态；12元素4→3只说明受支持张量布局的交集原理。非张量标量和自定义优化器不能机械切分。
+- RNG初始seed不等于流当前位置；1024已消费/1056预取例避免跳32位置；4x8x2=64变为3x8x2=48。重分片成功不证明数据/优化器轨迹或逐位重放。
+- MoE负载(7,4,3,2)共16条；C4/5/7时保留13/14/16、丢3/2/0、pad空槽3/6/12。capacity公式/取整/路由域是本页明确约定，不冒充所有库版本的统一定义。
+- MoE combine二维手算(1.25,3.75)，丢e0后不重归一化为(-0.25,0.75)；若重归一化是另一个函数。权重只正确施加一次，一般不能将f(Gx)替换Gf(x)。
+- Q=[[6,2],[5,3]]远端边7；h1024/b2下dispatch全体发送14KiB，combine同量，前向全体发送28KiB，收发端点合计56KiB。按每分派单独传输假设，可被目的地去重改变，不写成下界。反向/DP/TP另计。
+- 两rank负载11/5的72.7%只是等每边成本下的理论有效利用比例，不是GPU利用率。MoE EP/ETP/EDP分别定义，不将不同专家梯度混做DP归约；EP≤DP非一般定律。
+- Megatron固定文档335行allgather同时说收集到各GPU且无inter-GPU movement，正文与manifest明确拒绝“all-gather免费/不跨GPU”解释；没有静默照抄矛盾条目。文档后期新后端/默认值/性能数字不倒填课堂。
+- NCCL2.32.3、PyTorch2.9和Nov2026Megatron均为补充快照，不声称课程/A2依赖。第三方全文/图许可未确认，不公开原件或全文翻译。
+
+五、没有做的事情
+未运行build、lint、tests、formatter、smoke、CPU算例程序、Gloo/NCCL通信、GPU训练、官方作业或排行榜；没有付费算力、模型/语料/音视频下载，没有浏览器页面验收、截图、commit/push。所有数值来自正文声明的手工理论推演，而非输出日志。
+工具获取初次因本地缺bs4而在下载前失败，随后用标准库HTMLParser提取；成功下载未重复。源SHA记录在获取时生成；复用P1摘要未冒称worker重新验收全部原件。
+
+六、Main集中验证建议（本worker未运行）
+1. P4定向来源字段/本地哈希、站内链接、三张SVG结构与主题色检查；只发布本文件列出的8个轻量正文/图/证据文件，不发布raw/text。
+2. 独立小数值核对ring/tree理论表、MoE路由计数/容量/通信矩阵、6.75GiB与12元素重分片；不要使用官方A2实现作内容验收。
+3. 390px与桌面真实渲染三页，重点是ext07通信公式/模型表、ext08已拆行峰值式/恢复表、ext09容量六列表和梯度内积式；SVG小字、深浅主题可读性均待主页面验收。
+4. 核对L07/L08/L06、ext06、L04、bridge06与A2的回链在整合后存在；材料只回lec08。Main统一必要build。
+5. 把author_reviewed与独立主审/accepted严格分开。本记录不宣称Main验收、部署或官方实验完成。

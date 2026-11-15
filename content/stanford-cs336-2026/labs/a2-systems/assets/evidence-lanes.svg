@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-labelledby="title desc">
+<style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}</style>
+  <title id="title">A2 的三条证据链不能相互替代</title>
+  <desc id="desc">正确性链从明确的输入输出语义，经单进程基线到多步参数和梯度比较；性能链从指定硬件和配置，经完成边界计时到实际 GPU trace；完成度链从全任务与子问，经原始证据到可复现交付。CPU 机制、GPU 性能和文档状态互不等价。</desc>
+  <g font-family="system-ui, sans-serif" fill="var(--fg, currentColor)">
+    <text x="28" y="34" font-size="21" font-weight="650">同一个结论，需要对应的证据</text>
+    <g fill="none" stroke="var(--border, currentColor)" stroke-width="1.5">
+      <rect x="24" y="60" width="672" height="94" rx="12"/>
+      <rect x="24" y="170" width="672" height="94" rx="12"/>
+      <rect x="24" y="280" width="672" height="94" rx="12"/>
+    </g>
+    <g font-size="19" font-weight="600">
+      <text x="44" y="91" fill="var(--c1, currentColor)">正确性</text>
+      <text x="44" y="201" fill="var(--c2, currentColor)">性能</text>
+      <text x="44" y="311" fill="var(--c3, currentColor)">完成度</text>
+    </g>
+    <g font-size="17">
+      <text x="44" y="127">相同数学目标</text><text x="260" y="127">单进程基线</text><text x="482" y="127">多步数值比较</text>
+      <text x="44" y="237">指定硬件 / 配置</text><text x="260" y="237">完成边界计时</text><text x="482" y="237">真实 GPU trace</text>
+      <text x="44" y="347">全部任务 / 子问</text><text x="260" y="347">原始观测证据</text><text x="482" y="347">可复现交付</text>
+    </g>
+    <g fill="none" stroke="var(--muted, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M202 121h31m-7-6 7 6-7 6 M424 121h31m-7-6 7 6-7 6"/>
+      <path d="M202 231h31m-7-6 7 6-7 6 M424 231h31m-7-6 7 6-7 6"/>
+      <path d="M202 341h31m-7-6 7 6-7 6 M424 341h31m-7-6 7 6-7 6"/>
+    </g>
+    <text x="28" y="409" font-size="16" fill="var(--muted, currentColor)">CPU/Gloo 机制 ≠ CUDA/NCCL 性能 ≠ 文档已完成</text>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+P4 L05作者交接审查（不是主验收）
+状态：worker_self_reviewed=true；accepted=false；Main定向验收待做。
+
+一、仅本分片产物
+正文：lectures/lec05/notes.zh.md；lectures/lec05/draft.zh.md。
+原创SVG：lectures/lec05/assets/hardware-map.svg；lectures/lec05/assets/roofline.svg。
+轻量证据：sources/p4-lec05/manifest-fragment.json、video-metadata.json、reading-log.json、time-intervals.json、review.txt。
+本地不发布：sources/p4-lec05/captions.normalized.json、transcript.en.txt、raw/nvidia-nvfp4.html。共享CUDA补充原件位于p4-lec06/raw，仅由其分片持有，不复制一份。
+未改materials、共享course/catalog/resources/status/manifest/reading-map、src、官方作业代码。
+
+二、实际读过什么
+技术视频skill和完整分片合同/NEXT-P4-PROMPT；p1-lectures/version-review.json全25行、variant-audit.json全23行、commit.json files patch87–135行；P4-BLOCKED27行；保存的p4-model-preflight30行。模型运行证据与恢复后的更新由Main负责，未私改模型或配置。
+L05字幕从固定P1 JSON3无词汇改写正规化，逐条全读1925 cues：1–400、401–800、801–1200、1201–1600、1601–1925。每行一cue，精确起止均保留。范围5.120–4714.210秒；视频4719秒；8个内部>2秒gap；9个INAUDIBLE cues。不是依靠下载、搜索或关键词命中声称全读。
+L05讲义提取文本完整1–535行（1–300、301–535），55页原PDF额外真正渲染并看过p21/25/29/48/51；未逐图看全部55页，不声称音画对应。
+视频映射296–433行及L05原metadata身份、标题、年份、频道、时长、上传日、description、许可字段、manual类别及完整coverage读取对照。license=null不是标准YouTube/CC许可证明；manual/non-ASR不是核音。
+bridge08 notes全文274行已读，L02仅heading/topic检索用于去重，不虚报全读。NVIDIA NVFP4正文已读，采用Table1及格式定义，不用页面AI摘要。CUDA补充读范围明确见reading-log与对应源record；全部源hash实际计算存manifest。
+
+三、教学与技术处理
+notes不是顺序课堂替代稿：从逻辑/物理硬件分层、容量/带宽/延迟、roofline实现口径到fusion/coalescing/tiling、两类量化、低精度/重算权衡、TPU迁移边界组织；含维度、字节单位、假设算例、答案与跨页分工。
+draft限量独立释义+全片导航+可辨问答索引，未逐句翻译。原视频URL只在metadata/notes，不在draft嵌视频链接。不存在伪造截图；所有SVG均原创、透明底、title/desc、主题变量，无脚本/外链。
+重要纠错：
+1. ReLU slide25以byte/FLOP标Intensity，但讲者36:11.130–36:16.430已自纠为倒数，正文明确尊重课堂自纠；完整输出读写与conditional-write括注分开。
+2. A100字幕128/132与后段108前后不一，未静默合并；只在slide48的显式toy波次条件中用108。
+3. 原PDFp29确实将16值组/E4M3 scale写在MXFP4名下；NVIDIA原文区分MXFP4=32值+幂次scale、NVFP4=16值+E4M3且另有tensor FP32 scale。明确这是源内容冲突，不怪罪提取器。
+4. local memory作用域不等于片上物理位置；warp同指令不泛化到整个block/grid；if不一律导致divergence。
+5. 128B讲解不是所有设备唯一事务大小，采用CUDA>=6.0 32B段模型作编者补充；coalescing与shared-bank冲突分开。
+6. wave只在声明SM/block驻留假设下推导，padding必须保持原数学任务，性能不以2的幂迷信替代证据。
+7. 已给QKV的attention核心仅两次matmul，投影另外计；完整FA数学/论文留ext05及lec06/materials，未给A2解答。
+所有吞吐/时间数值若是编者算例均明确假设，不是GPU测量。低精度性能不从厂商推理示例推广到稳定训练。
+
+四、证据结构与移动端
+时间分块覆盖0–4719，首尾null cue，实质块采用cue_indices_1_based_by_start闭区间。每cue分配规则及8个gap的毫秒时刻保留；没有把gap解释为静音。reading-log列完整窗口、疑词与源纠错。
+公式按短display拆分；attention三式用aligned竖排；表格以2–3列为主；完整SHA不塞正文。SVG viewBox600宽、字体20–25，具体390px可读性与主题颜色仍需Main实际浏览器验收，作者未宣称渲染通过。
+
+五、未做与主验收建议
+未运行build/lint/tests/formatter/CPU或GPU作业；无音视频下载、核音、录像观看、课堂截图、付费资源、commit/push。
+请Main一次性核对：文件/图片可达、SVG解析与390px/桌面实看、公式和资源口径、两个视频真实入口/新标签行为、源hash、所有cue恰归一次与连续时间块/缺口，以及本站跨页路由。源文补充快照不等于课程依赖版本。
+来源许可不明原件、字幕和raw目录只能本地保存，不force-add；按manifest publication.publish明确清单发布轻量记录、正文和原创SVG。作者完成不等于主验收或Pages部署成功。

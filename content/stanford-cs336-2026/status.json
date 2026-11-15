@@ -2,11 +2,11 @@
   "courseId": "stanford-cs336-2026",
   "plannedAt": "2026-11-14",
   "updatedAt": "2026-11-15",
-  "phase": "P3_complete_with_documented_limits",
+  "phase": "P4_complete_with_documented_limits",
   "plan": "sources/production-plan.json",
   "sourcesManifest": "sources/manifest.json",
   "readingMap": "sources/reading-map.json",
-  "modelPreflight": "sources/p3-model-preflight.json",
+  "modelPreflight": "sources/p4-model-preflight.json",
   "p0Acceptance": "sources/p0-acceptance.json",
   "p0Review": "sources/P0-REVIEW.txt",
   "versions": {
@@ -28,20 +28,26 @@
     "officialOptionalAssignmentEntries": 1,
     "editorialCapstoneEntries": 1,
     "labEntries": 7,
-    "lectureDocumentsWritten": 20,
-    "labDocumentsWritten": 2,
-    "officialLecturesWithNotesAndDraft": 4,
+    "lectureDocumentsWritten": 36,
+    "labDocumentsWritten": 4,
+    "officialLecturesWithNotesAndDraft": 8,
     "bridgesWithNotes": 8,
-    "captionTracksFullyRead": 4,
-    "captionCuesRead": 6892,
+    "captionTracksFullyRead": 8,
+    "captionCuesRead": 13551,
     "a1HandoutPagesTextRead": 47,
     "a1ScoredTasksMapped": 38,
-    "originalSvgAssets": 7,
+    "originalSvgAssets": 22,
     "p2BodyPagesAccepted": 11,
     "p3BodyPagesAccepted": 12,
-    "editorialExtensionsWithNotes": 3,
-    "papersSpecifiedCoreCloseRead": 2,
+    "editorialExtensionsWithNotes": 9,
+    "papersSpecifiedCoreCloseRead": 5,
     "a1LetteredSubquestionsMapped": 25,
+    "p4BodyPagesAccepted": 18,
+    "a2HandoutPagesTextRead": 48,
+    "a2ScoredTasksMapped": 27,
+    "a2LetteredSubquestionsMapped": 47,
+    "a2NestedRomanSubitemsMapped": 6,
+    "a2SourcePointsMapped": 137,
     "officialAssignmentsExecuted": 0,
     "verifiedLectureVideoHeaders": 18,
     "captionTracksAcquired": 18,
@@ -56,7 +62,7 @@
     "P1": "complete_with_documented_gaps",
     "P2": "complete_with_documented_limits",
     "P3": "complete_with_documented_limits",
-    "P4": "not_started",
+    "P4": "complete_with_documented_limits",
     "P5": "not_started",
     "P6": "not_started",
     "P7": "not_started",
@@ -64,11 +70,11 @@
   },
   "sourceCoverage": {
     "officialHomepage": "2026 live and 2025 historical HTML snapshots with URL/UTC/SHA256; numbered 2026 schedule has19 rows. Historical page read only identity metadata.",
-    "videos": "P1 fixed18 official recordings/caption tracks, lec18 still missing. P2/P3 fully read L01–L04 all6892 cues. P3 adds L03 2020 and L04 1938 cues; all23 internal >2s gaps and uncertain wording recorded. Both new headers checked desktop/mobile and actually opened in new tabs; no audio/frame verification.",
-    "handouts": "P1 fixed17 lectures plus separate L02 recording at de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e. P2 fully read L01 Python762 lines and L02 recording embedded Python881 lines. P3 fully read L03 801 and L04 502 extracted lines and visually inspected13 selected handout pages. Not a full figure/trace audit.",
-    "papers": "16 numbered arXiv fulltexts acquired. P3 completes paper01/paper02 specified core reading at one materials home:977 extracted lines and11 selected PDF pages, plus ext03 experiment selections. Two core readings completed; full-paper close-read count remains0.",
-    "assignments": "P1 fixed5 SHAs and6 current2026 handouts. P3 reread all47 A1 extracted-text pages and fixed README/LICENSE/pyproject/CHANGELOG; complete instructions and concept guidance cover38 scored tasks and25 lettered subquestions. Not a full visual PDF audit or assignment completion.",
-    "experiments": "P2 ten and P3 eight independent authored code blocks plus selected numerical/semantic checks passed in existing Python3.11.8/PyTorch2.5.1 CPU environment. No course-environment installation, official tests, datasets/models, GPU training or paid compute."
+    "videos": "P1 fixed18 official recordings/caption tracks,lec18 still missing. P2–P4 fully read L01–L08 all13551 cues. P4 adds6659 cues and records125 internal >2s gaps. All four new lecture headers checked desktop/mobile;L05/L08 actually opened in new tabs with notes preserved. No audio/frame verification.",
+    "handouts": "P1 fixed17 lectures plus separate L02 recording at de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e. P2/P3 complete textual scopes retained. P4 fully read L05/L06/L07/L08 text/source535/745/619/675 lines and17 selected L05/L08 PDF pages. Not a full figure/trace audit;post-term source revisions remain distinct.",
+    "papers": "16 fixed arXiv fulltexts acquired. P3 paper01/02 and P4 paper03/04/05 specified cores completed at their sole materials homes. P4 visually inspected22 selected PDF pages;scope/errata recorded individually. Five core readings completed;full-paper close-read count remains0.",
+    "assignments": "P1 fixed5 SHAs and6 current2026 handouts. A1 instructions/guide cover38 tasks and25 lettered questions. P4 A2 all48 extracted pages read;27 scored tasks,47 lettered questions,6 nested Roman subitems and137 points mapped;actual adapters/tests read without execution. Not a full visual PDF audit or assignment completion.",
+    "experiments": "P2 ten and P3 eight authored code blocks plus selected checks passed on CPU. P4 ten independent arithmetic/mechanism groups passed in Python3.11.8;throwaway script removed. No course-environment installation,official tests,datasets/models,GPU training or paid compute."
   },
   "entries": {
     "lectures": {
@@ -214,87 +220,87 @@
       "lec05": {
         "kind": "official",
         "metadata": "source_checked",
-        "notes": "not_started",
-        "draft": "not_started",
+        "notes": "complete_independent_notes_reviewed_page_accepted",
+        "draft": "limited_paraphrase_full_timeline_reviewed_page_accepted",
         "materials": "no_separate_reading_assigned_in_P1",
-        "video": "verified_header_accepted_captions_acquired",
-        "page": "header_accepted_body_not_started",
-        "sourceRead": "See manifest per-source scope; not full classroom reading"
+        "video": "verified_header_accepted_full_captions_read",
+        "page": "notes_and_draft_accepted_desktop_mobile_P4",
+        "sourceRead": "All1925 cues and535 extracted handout lines;5 selected PDF pages;not audio/frame verification"
       },
       "lec06": {
         "kind": "official",
         "metadata": "source_checked",
-        "notes": "not_started",
-        "draft": "not_started",
-        "materials": "reading_map_scoped_body_not_started",
-        "video": "verified_header_accepted_captions_acquired",
-        "page": "header_accepted_body_not_started",
-        "sourceRead": "See manifest per-source scope; not full classroom reading"
+        "notes": "complete_independent_notes_reviewed_page_accepted",
+        "draft": "limited_paraphrase_full_timeline_reviewed_page_accepted",
+        "materials": "paper03_paper04_specified_core_close_read_reviewed_page_accepted",
+        "video": "verified_header_accepted_full_captions_read",
+        "page": "notes_draft_materials_accepted_desktop_mobile_P4",
+        "sourceRead": "All1552 cues and745 source lines;post-term bandwidth revision separated;no code execution"
       },
       "ext05": {
         "kind": "editorial_extension",
         "metadata": "registered",
-        "notes": "not_started",
+        "notes": "complete_independent_notes_reviewed_page_accepted",
         "draft": "not_applicable_no_official_classroom",
         "materials": "no_separate_reading_assigned_in_P1",
         "video": "not_applicable",
-        "page": "skeleton_accepted_body_not_started"
+        "page": "notes_accepted_desktop_mobile_P4"
       },
       "ext06": {
         "kind": "editorial_extension",
         "metadata": "registered",
-        "notes": "not_started",
+        "notes": "complete_independent_notes_reviewed_page_accepted",
         "draft": "not_applicable_no_official_classroom",
         "materials": "no_separate_reading_assigned_in_P1",
         "video": "not_applicable",
-        "page": "skeleton_accepted_body_not_started"
+        "page": "notes_accepted_desktop_mobile_P4"
       },
       "lec07": {
         "kind": "official",
         "metadata": "source_checked",
-        "notes": "not_started",
-        "draft": "not_started",
+        "notes": "complete_independent_notes_reviewed_page_accepted",
+        "draft": "limited_paraphrase_full_timeline_reviewed_page_accepted",
         "materials": "no_separate_reading_assigned_in_P1",
-        "video": "verified_header_accepted_captions_acquired",
-        "page": "header_accepted_body_not_started",
-        "sourceRead": "See manifest per-source scope; not full classroom reading"
+        "video": "verified_header_accepted_full_captions_read",
+        "page": "notes_and_draft_accepted_desktop_mobile_P4",
+        "sourceRead": "All1312 cues and619 source lines;teaching no-op trace not actual multi-rank execution"
       },
       "lec08": {
         "kind": "official",
         "metadata": "source_checked",
-        "notes": "not_started",
-        "draft": "not_started",
-        "materials": "reading_map_scoped_body_not_started",
-        "video": "verified_header_accepted_captions_acquired",
-        "page": "header_accepted_body_not_started",
-        "sourceRead": "See manifest per-source scope; not full classroom reading"
+        "notes": "complete_independent_notes_reviewed_page_accepted",
+        "draft": "limited_paraphrase_full_timeline_reviewed_page_accepted",
+        "materials": "paper05_specified_core_close_read_reviewed_page_accepted",
+        "video": "verified_header_accepted_full_captions_read",
+        "page": "notes_draft_materials_accepted_desktop_mobile_P4",
+        "sourceRead": "All1870 cues and675 extracted handout lines;12 selected PDF pages;no audio/frame verification"
       },
       "ext07": {
         "kind": "editorial_extension",
         "metadata": "registered",
-        "notes": "not_started",
+        "notes": "complete_independent_notes_reviewed_page_accepted",
         "draft": "not_applicable_no_official_classroom",
         "materials": "no_separate_reading_assigned_in_P1",
         "video": "not_applicable",
-        "page": "skeleton_accepted_body_not_started"
+        "page": "notes_accepted_desktop_mobile_P4"
       },
       "ext08": {
         "kind": "editorial_extension",
         "metadata": "registered",
-        "notes": "not_started",
+        "notes": "complete_independent_notes_reviewed_page_accepted",
         "draft": "not_applicable_no_official_classroom",
         "materials": "no_separate_reading_assigned_in_P1",
         "video": "not_applicable",
-        "page": "skeleton_accepted_body_not_started"
+        "page": "notes_accepted_desktop_mobile_P4"
       },
       "ext09": {
         "kind": "editorial_extension",
         "metadata": "registered",
-        "notes": "not_started",
+        "notes": "complete_independent_notes_reviewed_page_accepted",
         "draft": "not_applicable_no_official_classroom",
         "materials": "no_separate_reading_assigned_in_P1",
         "video": "not_applicable",
-        "page": "skeleton_accepted_body_not_started"
+        "page": "notes_accepted_desktop_mobile_P4"
       },
       "lec09": {
         "kind": "official",
@@ -319,11 +325,11 @@
       "ext04": {
         "kind": "editorial_extension",
         "metadata": "registered",
-        "notes": "not_started",
+        "notes": "complete_independent_notes_reviewed_page_accepted",
         "draft": "not_applicable_no_official_classroom",
         "materials": "no_separate_reading_assigned_in_P1",
         "video": "not_applicable",
-        "page": "skeleton_accepted_body_not_started"
+        "page": "notes_accepted_desktop_mobile_P4"
       },
       "ext10": {
         "kind": "editorial_extension",
@@ -491,11 +497,12 @@
       },
       "a2-systems": {
         "kind": "official_assignment",
-        "metadata": "2026_handout_version_scope_access_checked",
-        "lab": "not_started",
-        "guide": "not_started",
+        "metadata": "2026_fixed_handout_full_extracted_text_read_27_tasks_47_lettered_questions_6_roman_subitems_mapped",
+        "lab": "complete_official_requirements_restatement_reviewed_page_accepted",
+        "guide": "complete_concept_guidance_reviewed_page_accepted_without_solutions",
         "englishOriginal": "not_provided",
-        "page": "skeleton_accepted_body_not_started"
+        "page": "lab_and_guide_accepted_desktop_mobile_P4",
+        "execution": "not_performed"
       },
       "a3-scaling": {
         "kind": "official_assignment",
@@ -559,8 +566,8 @@
     },
     {
       "id": "reading-and-assets",
-      "detail": "P2/P3全读L01–L04字幕与对应文字来源，未核音或观看课堂画面；其他字幕仍为P1首尾/统计范围。两篇论文指定核心精读已完成，不冒充全文精读；P3讲义13页/论文11页为选择性视觉检查。trace事件流和讲义图像未全部读取/下载，不是完全离线运行包。",
-      "evidence": "P3-REVIEW.txt; p3-lec03/reading-log.json; p3-lec04/reading-log.json; p3-papers/reading-updates.json; P2-REVIEW.txt"
+      "detail": "P2–P4全读L01–L08字幕与对应文字来源，未核音或观看课堂画面；其余字幕仍为P1范围。五篇论文指定核心精读已完成，不冒充全文精读；P4讲义17页/论文22页为选择性视觉检查。trace事件流和全部讲义图像未完整读取/下载，不是完全离线运行包。",
+      "evidence": "P4-REVIEW.txt;p4-lec05/reading-log.json;p4-lec06/reading-log.json;p4-lec07/reading-log.json;p4-lec08/reading-log.json;p4-papers/reading-updates.json;prior P2/P3 records"
     },
     {
       "id": "post-term-lecture-revision",
@@ -604,20 +611,20 @@
     }
   ],
   "verification": {
-    "status": "passed_P3_content_and_page_acceptance_with_limits",
+    "status": "passed_P4_content_and_page_acceptance_with_limits",
     "date": "2026-11-15",
-    "evidence": "sources/p3-acceptance.json",
-    "build": "npm run build passed once: tsc --noEmit and Vite5.4.21;3152 modules;5.45s Vite",
-    "structure": "12 body documents,5 SVGs,166 internal links,176 in-bounds time ranges,69 source records/58 unique file-hash identities,16 paper homes and38 A1 task IDs/25 lettered subquestions passed",
-    "resourcesAndLabs": "All12 body pages plus resources visited desktop1440x1000/mobile390x844. Root widths1440/390, no KaTeX/display-math overflow/runtime errors. All5 SVGs visually inspected; L03 light/dark, A1 table horizontal scroll and ext02 answer expansion observed.",
-    "videoAcceptance": "sources/p3-shared/page-check.json: L03/L04 correct IDs and89:14/86:20, default notes; actual new-tab clicks preserve original notes",
+    "evidence": "sources/p4-acceptance.json",
+    "build": "npm run build passed;two targeted rebuilds after observed mobile/theme fixes. Final tsc --noEmit and Vite5.4.21:3253 local modules,5.63s Vite.",
+    "structure": "18 body documents,15 SVGs,203 internal links,307 in-bounds time ranges,109 source records/98 unique file-hash identities,16 paper homes,27 A2 tasks/47 lettered questions/6 nested Roman subitems passed",
+    "resourcesAndLabs": "All18 body pages plus resources visited desktop1440x1000/mobile390x844. Final root widths1440/390,no KaTeX/display-math overflow. All15 final SVGs loaded after scrolling;light/dark contrast corrected. A2 table horizontal scroll and ext05 answer expansion observed.",
+    "videoAcceptance": "sources/p4-shared/page-check.json:L05–L08 correct IDs and78:39/86:41/81:02/80:10,default notes;actual L05/L08 new-tab clicks preserve notes",
     "courseExperimentExecution": "not_run"
   },
   "nextStage": {
-    "id": "P4",
-    "title": "硬件与训练系统批",
-    "keyword": "CS336-2026-P4-硬件与训练系统",
-    "prompt": "sources/NEXT-P4-PROMPT.txt",
+    "id": "P5",
+    "title": "缩放推理与评测批",
+    "keyword": "CS336-2026-P5-缩放推理与评测",
+    "prompt": "sources/NEXT-P5-PROMPT.txt",
     "state": "not_started",
     "autoStart": false
   },
@@ -626,5 +633,26 @@
   "p2Acceptance": "sources/p2-acceptance.json",
   "p2Review": "sources/P2-REVIEW.txt",
   "p3Acceptance": "sources/p3-acceptance.json",
-  "p3Review": "sources/P3-REVIEW.txt"
+  "p3Review": "sources/P3-REVIEW.txt",
+  "p4Acceptance": "sources/p4-acceptance.json",
+  "p4Review": "sources/P4-REVIEW.txt",
+  "p4Publication": "sources/p4-publication-record.json",
+  "latestAttempt": {
+    "phase": "P4",
+    "date": "2026-11-15",
+    "status": "six_workers_completed_and_main_accepted",
+    "priorInterruption": "sources/P4-BLOCKED.txt",
+    "model": "openai-codex/gpt-6-astra:xhigh",
+    "workersFailedUsageLimit": 5,
+    "workersCancelledAfterBlock": 1,
+    "workersCompleted": 6,
+    "resumedWorkers": 6,
+    "resumptionAuthority": "User explicitly reported restored availability and requested restarting the subagents",
+    "newBodyDocuments": 18,
+    "preparedCheck": "sources/check-p4.py passed;PDF letter/Roman hierarchy parser corrected without changing source requirements",
+    "acceptedCounters": "P4 adds18 body documents and15 original SVGs;total40 body documents and22 original SVGs",
+    "buildAndPages": "passed_with_recorded_mobile_and_theme_corrections",
+    "publication": "see sources/p4-publication-record.json",
+    "resumeKeyword": "CS336-2026-P5-缩放推理与评测"
+  }
 }

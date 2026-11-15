@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "slice": "p4-lec05",
+  "read_at": "2026-11-14T16:27:23.742591+00:00",
+  "method": "Actual complete displayed text reading in the recorded windows; acquisition/parsing/keyword grep not counted as semantic full reading.",
+  "caption_reading": {
+    "source": "p4-lec05/transcript.en.txt",
+    "one_line_per_cue": true,
+    "total_lines": 1925,
+    "total_cues": 1925,
+    "windows": [
+      {
+        "lines_1_based": [
+          1,
+          400
+        ],
+        "cues_1_based": [
+          1,
+          400
+        ],
+        "start_seconds": 5.12,
+        "end_seconds": 1002.38,
+        "actually_read": true
+      },
+      {
+        "lines_1_based": [
+          401,
+          800
+        ],
+        "cues_1_based": [
+          401,
+          800
+        ],
+        "start_seconds": 1002.38,
+        "end_seconds": 1970.11,
+        "actually_read": true
+      },
+      {
+        "lines_1_based": [
+          801,
+          1200
+        ],
+        "cues_1_based": [
+          801,
+          1200
+        ],
+        "start_seconds": 1970.11,
+        "end_seconds": 2932.45,
+        "actually_read": true
+      },
+      {
+        "lines_1_based": [
+          1201,
+          1600
+        ],
+        "cues_1_based": [
+          1201,
+          1600
+        ],
+        "start_seconds": 2932.45,
+        "end_seconds": 3927.61,
+        "actually_read": true
+      },
+      {
+        "lines_1_based": [
+          1601,
+          1925
+        ],
+        "cues_1_based": [
+          1601,
+          1925
+        ],
+        "start_seconds": 3927.61,
+        "end_seconds": 4714.21,
+        "actually_read": true
+      }
+    ],
+    "normalization": "Concatenate original nonempty JSON3 event segments, preserve cue order/start/end and text. Transcript flattens internal linebreaks only; normalized JSON preserves text. No lexical corrections.",
+    "first_start_seconds": 5.12,
+    "last_end_seconds": 4714.21,
+    "gaps_file": "p4-lec05/time-intervals.json",
+    "not_done": [
+      "audio listening",
+      "video-frame viewing",
+      "source/media alignment",
+      "full translation"
+    ]
+  },
+  "metadata_reading": {
+    "video_map": "p1-videos/video-map.json lines296–433",
+    "raw_file": "p1-videos/metadata/lec05-izZba4UA7iY.json",
+    "read_scope": "Identity/title/channel/description/duration/upload/license/selected-caption fields and complete manual-language+coverage blocks. Automatic-language inventory and all machine-translated track lists not read.",
+    "matched_identity": true,
+    "live_page_check": "Deferred to Main; worker reused fixed P1 metadata, not a live-browser claim."
+  },
+  "handout_reading": {
+    "file": "p1-lectures/lecture_05.txt",
+    "windows_1_based": [
+      [
+        1,
+        300
+      ],
+      [
+        301,
+        535
+      ]
+    ],
+    "complete_text_lines": 535,
+    "actually_read": true,
+    "pdf_original_pages_visually_read": [
+      21,
+      25,
+      29,
+      48,
+      51
+    ],
+    "pdf_pages": 55,
+    "visual_method": "Original PDF selected pages rendered in memory via PyMuPDF and actually viewed, not exported to publication.",
+    "not_claimed": "No full visual read of every PDF figure, no all-linked-images read, no audio/frame correspondence. No course code executed. L06 trace exists but event stream not read."
+  },
+  "provenance_read": [
+    "p1-lectures/version-review.json complete25lines",
+    "p1-lectures/variant-audit.json complete23lines",
+    "p1-lectures/commit.json files patch lines87–135",
+    "p1-lectures/manifest-fragment.json lines255–300",
+    "P4-BLOCKED.txt complete27lines",
+    "p4-model-preflight.json complete30lines; Main owns resumed runtime attestation"
+  ],
+  "prerequisites_read": [
+    "skill://technical-video-notes complete",
+    "local://cs336-p4-contract.txt complete including raw6–12",
+    "NEXT-P4-PROMPT.txt complete",
+    "lectures/bridge08/notes.zh.md complete274lines",
+    "lectures/lec02/notes.zh.md section-heading/topic grep for deduplication; not full read claimed"
+  ],
+  "supplement_reading": [
+    {
+      "file": "p4-lec05/raw/nvidia-nvfp4.html",
+      "read_scope": "Rendered article body through Get started and attribution read in full; normative use restricted to Table1, What is NVFP4, high-precision/micro-block scaling and memory paragraphs. AI-generated summary not used as evidence. No figure reproduced."
+    },
+    {
+      "file": "p4-lec06/raw/cuda-programming-model.html",
+      "read_scope": "Entire rendered Programming Model page: heterogeneous/hardware model, blocks/grids/clusters, warps/SIMT, tile programming and memory. Citation use chiefly1.2.2 and on-chip/caches; no claim current CUDA tile API was taught in recording."
+    },
+    {
+      "file": "p4-lec06/raw/cuda-simt-kernels.html",
+      "read_scope": "Rendered lines1–300 through opening Constant Memory; §§2.3.2.1 and2.3.3.2–2.3.3.4 substantively read for synchronization, registers and local-memory corrections. Remainder not read."
+    },
+    {
+      "file": "p4-lec06/raw/cuda-best-practices.html",
+      "read_scope": "Rendered lines1–300; then exact ranges614–663,815–832,890–915,1580–1610. Used§10.2.1 coalescing,§10.2.3.1 banks, shared-matmul synchronization explanation and§13.1 divergence. No full-document read claim."
+    }
+  ],
+  "technical_uncertainties_and_corrections": [
+    {
+      "cue_indices_1_based": [
+        242,
+        242
+      ],
+      "time_seconds": [
+        608.38,
+        611.14
+      ],
+      "issue": "A100 SM count128 in caption; conflicts with later132 and108. Not audio verified. Preserve conflict, use108 only in explicitly defined slide48 wave example."
+    },
+    {
+      "cue_indices_1_based": [
+        496,
+        497
+      ],
+      "time_seconds": [
+        1253.32,
+        1261.38
+      ],
+      "issue": "A100 approximately132 SMs in caption; conflicting source numbers not harmonized silently."
+    },
+    {
+      "cue_indices_1_based": [
+        385,
+        388
+      ],
+      "time_seconds": [
+        967.55,
+        976.21
+      ],
+      "issue": "local-memory wording can suggest physically on-SM; CUDA local scope is thread-private but backed by device memory. External-doc correction separated."
+    },
+    {
+      "cue_indices_1_based": [
+        875,
+        886
+      ],
+      "time_seconds": [
+        2142.93,
+        2176.43
+      ],
+      "issue": "ReLU byte/FLOP inverse-intensity label is corrected by lecturer at2171.13–2176.43. Slide25 also mixes conditional store parenthesis with full-output read/write toy count."
+    },
+    {
+      "cue_indices_1_based": [
+        1054,
+        1067
+      ],
+      "time_seconds": [
+        2595.06,
+        2632.86
+      ],
+      "issue": "FP4 described as MXFP4 with16-element groups/E4M3 scales; original PDFp29 visually confirms conflict. NVIDIA format distinction identifies that grouping/scaling with NVFP4, not MXFP4."
+    },
+    {
+      "cue_indices_1_based": [
+        1792,
+        1799
+      ],
+      "time_seconds": [
+        4385.6,
+        4404.16
+      ],
+      "issue": "Three matmuls phrasing conflicts with given-QKV attention core having QK^T and PV. Projection scope separated."
+    },
+    {
+      "cue_indices_1_based": [
+        176,
+        177
+      ],
+      "time_seconds": [
+        436.64,
+        445.02
+      ],
+      "issue": "Caption FPGA in low-number-format list is uncertain; not silently transcribed as FP8."
+    },
+    {
+      "cue_indices_1_based": [
+        552,
+        553
+      ],
+      "time_seconds": [
+        1385.15,
+        1389.91
+      ],
+      "issue": "TTX is suspicious named entity; not audio verified."
+    },
+    {
+      "cue_indices_1_based": [
+        980,
+        980
+      ],
+      "time_seconds": [
+        2428.9,
+        2431.24
+      ],
+      "issue": "FPA caption token appears in FP8 context; terminology supported by slide, no audio correction claim."
+    },
+    {
+      "cue_indices_1_based": [
+        296,
+        298
+      ],
+      "time_seconds": [
+        754.57,
+        766.2
+      ],
+      "issue": "Grok/company acquisition anecdote unverified; not adopted as established hardware fact."
+    }
+  ],
+  "inaudible_cues": [
+    {
+      "cue_index_1_based": 304,
+      "start_seconds": 774.72,
+      "end_seconds": 778.38,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 477,
+      "start_seconds": 1211.86,
+      "end_seconds": 1214.0,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 679,
+      "start_seconds": 1691.51,
+      "end_seconds": 1693.91,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 1090,
+      "start_seconds": 2694.29,
+      "end_seconds": 2695.51,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 1136,
+      "start_seconds": 2787.11,
+      "end_seconds": 2789.37,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 1153,
+      "start_seconds": 2826.86,
+      "end_seconds": 2828.46,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 1505,
+      "start_seconds": 3686.302,
+      "end_seconds": 3688.07,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 1510,
+      "start_seconds": 3698.63,
+      "end_seconds": 3701.39,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 1511,
+      "start_seconds": 3701.39,
+      "end_seconds": 3702.948,
+      "marker": "INAUDIBLE"
+    }
+  ],
+  "status": {
+    "captions_actually_read_complete": true,
+    "handout_text_actually_read_complete": true,
+    "worker_self_reviewed": true,
+    "accepted": false,
+    "build_tests_formatters_run": false,
+    "gpu_execution": false,
+    "official_assignment_execution": false,
+    "main_verification_pending": true
+  }
+}

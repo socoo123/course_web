@@ -1,7 +1,7 @@
 {
   "courseId": "stanford-cs336-2026",
   "updatedAt": "2026-11-15",
-  "status": "P3_paper01_paper02_specified_core_readings_reviewed_and_page_accepted",
+  "status": "P4_paper01_through_paper05_specified_core_readings_reviewed_and_page_accepted",
   "policy": "每篇单一正文归属不变。16篇全文已本地获取，但实际已读仅各记录所列范围；未称全文精读。官方明确推荐/任务必查与编者必读/选读分开。授权不明或ND材料仅自主精读。",
   "readings": [
     {
@@ -594,8 +594,8 @@
       "chineseTreatment": "independent_close_reading",
       "version": "arXiv:2205.14135v2",
       "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
-      "status": "P1_source_and_scope_reviewed_not_full_close_read",
-      "readingEvidence": "题名/作者/v2；§§2–3.2的算法和IO分析正文、Algorithm 1、Theorems 1–2/Proposition 3；§4.3和§5正文；B.3–B.4和Algorithms 2–4提取文本；扫描完整主文/附录标题。",
+      "status": "P4_specified_core_close_read_written_reviewed_and_page_accepted",
+      "readingEvidence": "P4实际读取既有提取文本1–394、1086–1235、1391–1483行；指定核心§2.1–2.2、§3.1–3.2、B.3–B.4已读；视觉核对物理页5–6、20–21。附加选读和未读边界见p4-papers/reading-updates.json。非34页全文精读。",
       "authors": [
         "Dao, Tri",
         "Fu, Daniel Y.",
@@ -631,7 +631,7 @@
         "note": "a2-systems：分块attention、前反向重计算、显存占用/IO与实际运行时对比；只建立概念关联，未运行kernel或声称官方指定该论文。",
         "officialCrosscheckFile": "p1-assignments-a1-a4/reading-updates.json"
       },
-      "chineseTreatmentStatus": "P1_permission_decision_only; no_translation_or_course_body_written",
+      "chineseTreatmentStatus": "P4_original_question_organized_close_reading_written_not_translation",
       "chineseTreatmentConditions": "只写自主概括、推导和评论，必要的短引须标出处；不发布逐段改写/整篇译文替代品。",
       "versionDate": "2022-06-23",
       "licenseEvidence": {
@@ -647,6 +647,18 @@
         "notes": "许可逐份从本固定版arXiv页面核实，不由其他论文或代码仓库许可推断。"
       },
       "actualReading": {
+        "phase": "P4",
+        "method": "Fixed extracted text plus selected original PDF-page visual review",
+        "specifiedCoreCloseRead": true,
+        "completePaperTextRead": false,
+        "completePaperCloseRead": false,
+        "textLineSelections": [[1, 394], [1086, 1235], [1391, 1483]],
+        "visualAuditPdfPages": [5, 6, 20, 21],
+        "visualAuditStatus": "selected_regions_not_every_figure_or_equation",
+        "detailedRecord": "p4-papers/reading-updates.json#paper03.actualReading",
+        "readAt": "2026-11-14T16:35:39Z"
+      },
+      "priorActualReading": {
         "method": "pdftotext -layout",
         "scope": "题名/作者/v2；§§2–3.2的算法和IO分析正文、Algorithm 1、Theorems 1–2/Proposition 3；§4.3和§5正文；B.3–B.4和Algorithms 2–4提取文本；扫描完整主文/附录标题。",
         "pdfPageSelections": [
@@ -705,11 +717,14 @@
       "sourceIds": [
         "p1-paper03-version-metadata",
         "p1-paper03-fulltext",
-        "p1-paper03-extracted-text"
+        "p1-paper03-extracted-text",
+        "p4-paper03-pdf",
+        "p4-paper03-text",
+        "p4-paper03-metadata"
       ],
       "sha256": "ca7f9fda10b90fc05dd291a3accc85e9c1a4a860b99b31928dab03ed3fcb14e4",
       "retrievedAt": "2026-11-14T13:40:46.479936Z",
-      "readAt": "2026-11-14T13:47:55.076422Z",
+      "readAt": "2026-11-14T16:35:39Z",
       "p1Cautions": [
         "精确attention仍有二次FLOPs，降低的是中间存储和HBM IO；不要写成线性时间。",
         "Proposition 3的下界是在SRAM范围上的陈述，不能省略其量词/假设。"
@@ -740,9 +755,9 @@
       "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review.",
       "officialCrosscheck": "L05 outline explicitly includes unpacking FlashAttention; official reading recommendation is independently in A2.",
       "officialRequirement": "A2明确推荐阅读；不是强制全文必读；精确论文节次由编者选定",
-      "written": "not_started",
-      "reviewed": "P1_source_version_license_and_selected_scope_only",
-      "accepted": "placement_only_no_body_page"
+      "written": "P4_written",
+      "reviewed": "P4_author_and_main_body_review_source_spotchecked",
+      "accepted": "desktop_mobile_P4; p4-acceptance.json"
     },
     {
       "id": "paper04",
@@ -821,8 +836,8 @@
       "chineseTreatment": "independent_close_reading",
       "version": "arXiv:2307.08691v1",
       "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
-      "status": "P1_source_and_scope_reviewed_not_full_close_read",
-      "readingEvidence": "题名/作者/v1；§2.1，§§3.1–3.3正文及Algorithms 1–2；§4引导、§4.1 benchmark设置和FLOPs口径、§4.2正文；扫描§1–5标题。图4–7未逐数据点审读，§5仅开头。",
+      "status": "P4_specified_core_close_read_written_reviewed_and_page_accepted",
+      "readingEvidence": "P4连续读提取文本1–843行；核心§2.1、§3.1–3.3、§4.1–4.2及Table1已读；视觉核对物理pp3–13，明确PDF原有公式笔误。Table1全表已核，Figures4–7非逐点审计；非14页全文精读。详见p4-papers/reading-updates.json。",
       "authors": [
         "Dao, Tri"
       ],
@@ -858,7 +873,7 @@
         "note": "a2-systems：沿query序列块并行、warp工作划分、非matmul开销；比较kernel与端到端吞吐时需保留硬件/序列长度/causal设置。",
         "officialCrosscheckFile": "p1-assignments-a1-a4/reading-updates.json"
       },
-      "chineseTreatmentStatus": "P1_permission_decision_only; no_translation_or_course_body_written",
+      "chineseTreatmentStatus": "P4_original_question_organized_close_reading_written_not_translation",
       "chineseTreatmentConditions": "只写自主概括、推导和评论，必要的短引须标出处；不发布逐段改写/整篇译文替代品。",
       "versionDate": "2023-07-17",
       "licenseEvidence": {
@@ -874,6 +889,18 @@
         "notes": "许可逐份从本固定版arXiv页面核实，不由其他论文或代码仓库许可推断。"
       },
       "actualReading": {
+        "phase": "P4",
+        "method": "Fixed extracted text plus selected original PDF-page visual review",
+        "specifiedCoreCloseRead": true,
+        "completePaperTextRead": false,
+        "completePaperCloseRead": false,
+        "textLineSelections": [[1, 843]],
+        "visualAuditPdfPages": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        "visualAuditStatus": "selected_regions_and_Table1_not_all_chart_points",
+        "detailedRecord": "p4-papers/reading-updates.json#paper04.actualReading",
+        "readAt": "2026-11-14T16:35:39Z"
+      },
+      "priorActualReading": {
         "method": "pdftotext -layout",
         "scope": "题名/作者/v1；§2.1，§§3.1–3.3正文及Algorithms 1–2；§4引导、§4.1 benchmark设置和FLOPs口径、§4.2正文；扫描§1–5标题。图4–7未逐数据点审读，§5仅开头。",
         "pdfPageSelections": [
@@ -927,11 +954,14 @@
       "sourceIds": [
         "p1-paper04-version-metadata",
         "p1-paper04-fulltext",
-        "p1-paper04-extracted-text"
+        "p1-paper04-extracted-text",
+        "p4-paper04-pdf",
+        "p4-paper04-text",
+        "p4-paper04-metadata"
       ],
       "sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
       "retrievedAt": "2026-11-14T13:40:55.676290Z",
-      "readAt": "2026-11-14T13:47:55.076422Z",
+      "readAt": "2026-11-14T16:35:39Z",
       "p1Cautions": [
         "v1 §4.2有“compared to FlashAttention-2”的自比较文字；同文§4摘要写对比FlashAttention。来源登记保留原文，不据此生成未经核对的比较结论。",
         "P1仅核查章节和口径，未复现性能。"
@@ -966,9 +996,9 @@
       "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review.",
       "officialCrosscheck": "Official reading recommendation is in A2; retained sole materials home lec06.",
       "officialRequirement": "A2明确推荐阅读；不是强制全文必读；精确论文节次由编者选定",
-      "written": "not_started",
-      "reviewed": "P1_source_version_license_and_selected_scope_only",
-      "accepted": "placement_only_no_body_page"
+      "written": "P4_written",
+      "reviewed": "P4_author_and_main_body_review_source_spotchecked",
+      "accepted": "desktop_mobile_P4; p4-acceptance.json"
     },
     {
       "id": "paper05",
@@ -1057,8 +1087,8 @@
       "chineseTreatment": "independent_close_reading",
       "version": "arXiv:1910.02054v3",
       "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
-      "status": "P1_source_and_scope_reviewed_not_full_close_read",
-      "readingEvidence": "题名/作者/v3；§3、§4导言与4.1、§5全部、§7全部正文和内存/通信式；§10导言、10.1–10.2、10.5的实验方法与正文；扫描所有主文节标题。",
+      "status": "P4_specified_core_close_read_written_reviewed_and_page_accepted",
+      "readingEvidence": "P4读取提取文本1–38、275–943行；核心§3.1–3.2、§4.1、§5.1–5.4、§7.1–7.2.2已读；另读§4.2、§6、§8和§10指定评测范围；视觉核对物理pp8、10–11、13–14、17–18。非24页全文精读，详细范围见p4-papers/reading-updates.json。",
       "authors": [
         "Rajbhandari, Samyam",
         "Rasley, Jeff",
@@ -1093,7 +1123,7 @@
         "note": "a2-systems：优化器状态分片、梯度分片及通信量分析的理论关联；原reading-map关联保留，但具体作业必做项须由固定2026作业证据确认。",
         "officialCrosscheckFile": "p1-assignments-a1-a4/reading-updates.json"
       },
-      "chineseTreatmentStatus": "P1_permission_decision_only; no_translation_or_course_body_written",
+      "chineseTreatmentStatus": "P4_original_question_organized_close_reading_written_not_translation",
       "chineseTreatmentConditions": "只写自主概括、推导和评论，必要的短引须标出处；不发布逐段改写/整篇译文替代品。",
       "versionDate": "2020-05-13",
       "licenseEvidence": {
@@ -1109,6 +1139,18 @@
         "notes": "许可逐份从本固定版arXiv页面核实，不由其他论文或代码仓库许可推断。"
       },
       "actualReading": {
+        "phase": "P4",
+        "method": "Fixed extracted text plus selected original PDF-page visual review",
+        "specifiedCoreCloseRead": true,
+        "completePaperTextRead": false,
+        "completePaperCloseRead": false,
+        "textLineSelections": [[1, 38], [275, 943]],
+        "visualAuditPdfPages": [8, 10, 11, 13, 14, 17, 18],
+        "visualAuditStatus": "selected_regions_not_complete_performance_curve_audit",
+        "detailedRecord": "p4-papers/reading-updates.json#paper05.actualReading",
+        "readAt": "2026-11-14T16:35:39Z"
+      },
+      "priorActualReading": {
         "method": "pdftotext -layout",
         "scope": "题名/作者/v3；§3、§4导言与4.1、§5全部、§7全部正文和内存/通信式；§10导言、10.1–10.2、10.5的实验方法与正文；扫描所有主文节标题。",
         "pdfPageSelections": [
@@ -1172,11 +1214,14 @@
       "sourceIds": [
         "p1-paper05-version-metadata",
         "p1-paper05-fulltext",
-        "p1-paper05-extracted-text"
+        "p1-paper05-extracted-text",
+        "p4-paper05-pdf",
+        "p4-paper05-text",
+        "p4-paper05-metadata"
       ],
       "sha256": "c531734c7d9ee647fda9b4f0e1a6abd6d58ad34e862bc945451b09032be3167e",
       "retrievedAt": "2026-11-14T13:41:08.713404Z",
-      "readAt": "2026-11-14T13:47:55.076422Z",
+      "readAt": "2026-11-14T16:35:39Z",
       "p1Cautions": [
         "固定v3第10节评测的是Pos+g加ZeRO-R的ZeRO-100B子集；不能把三阶段理论内存结果都当作此版实测。",
         "官方submission history将v1标作withdrawn；本次使用有效的v3，不沿用v1。"
@@ -1207,9 +1252,9 @@
       "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review.",
       "officialCrosscheck": "L08 ZeRO stages discussed around extracted lines 164–282; A2 requires a targeted paper comparison.",
       "officialRequirement": "A2 §6 p38要求对照ZeRO-DP P_os/stage1；仅该任务所需针对性查阅，不是全文必读",
-      "written": "not_started",
-      "reviewed": "P1_source_version_license_and_selected_scope_only",
-      "accepted": "placement_only_no_body_page"
+      "written": "P4_written",
+      "reviewed": "P4_author_and_main_body_review_source_spotchecked",
+      "accepted": "desktop_mobile_P4; p4-acceptance.json"
     },
     {
       "id": "paper06",

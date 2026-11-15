@@ -1,0 +1,806 @@
+{
+  "schema_version": 1,
+  "course_id": "stanford-cs336-2026",
+  "phase": "P4",
+  "slice": "papers",
+  "updated_at": "2026-11-14T16:38:04Z",
+  "path_convention": "sources[].file relative to sources/; material_files and original_assets[].file relative to course root",
+  "reuse_policy": "11 existing P1 source files reused without redownload or editing. Existing hashes/retrieval times copied from canonical P1 manifests, not reverified by worker. 22 local page renders created and actually visually inspected; their creation-time SHA256 recorded. Original PDFs/text/metadata and page renders remain local-only, not published with course bodies.",
+  "model_evidence": {
+    "requested": "openai-codex/gpt-6-astra:xhigh",
+    "delegated_model": "openai-codex/gpt-6-astra:xhigh",
+    "nested_delegation": false,
+    "runtime_events_independently_read_by_worker": false,
+    "main_responsibility": "Main verifies actual model/effort in shared P4 runtime evidence; worker does not replace model or claim separate event audit."
+  },
+  "sources": [
+    {
+      "kind": "paper_pdf",
+      "url": "https://arxiv.org/pdf/2205.14135v2",
+      "file": "p1-papers-01-08/paper03-2205.14135v2.pdf",
+      "sha256": "ca7f9fda10b90fc05dd291a3accc85e9c1a4a860b99b31928dab03ed3fcb14e4",
+      "version": "arXiv:2205.14135v2",
+      "retrieved_at": "2026-11-14T13:40:46.479936Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "id": "p4-paper03-pdf",
+      "read_scope": "本批连续读取既有提取文本1–394、1086–1235、1391–1483行；核心§2.1–2.2、§3.1–3.2、B.3–B.4全部实际精读（Algorithms1–4、Theorems1–2/5、Proposition3）。另读题名/作者/摘要/§1；选读Appendix C的Proposition3及Theorem5证明1393–1437行；3.3开头与Algorithm5部分是相邻窗口阅读，不扩称该节精读。视觉核对物理页5–6、20–21。非34页全文精读。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "independent_close_reading; original Chinese questions, analysis and caveats; no full translation or paragraph replacement",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper03-fulltext",
+      "publication_status": "local_only_do_not_publish_raw_fulltext",
+      "complete_paper_close_read": false
+    },
+    {
+      "kind": "paper_text_extraction",
+      "url": "https://arxiv.org/pdf/2205.14135v2",
+      "file": "p1-papers-01-08/paper03-2205.14135v2.txt",
+      "sha256": "ccf3afd42b8e3bb8ee0de771ef6184713abce60685925aef971fedc21bf0144b",
+      "version": "arXiv:2205.14135v2",
+      "retrieved_at": "2026-11-14T13:40:46.479936Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "id": "p4-paper03-text",
+      "read_scope": "本批连续读取既有提取文本1–394、1086–1235、1391–1483行；核心§2.1–2.2、§3.1–3.2、B.3–B.4全部实际精读（Algorithms1–4、Theorems1–2/5、Proposition3）。另读题名/作者/摘要/§1；选读Appendix C的Proposition3及Theorem5证明1393–1437行；3.3开头与Algorithm5部分是相邻窗口阅读，不扩称该节精读。视觉核对物理页5–6、20–21。非34页全文精读。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "independent_close_reading; original Chinese questions, analysis and caveats; no full translation or paragraph replacement",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper03-extracted-text",
+      "publication_status": "local_only_do_not_publish_raw_fulltext",
+      "complete_paper_close_read": false
+    },
+    {
+      "kind": "arxiv_version_metadata",
+      "url": "https://arxiv.org/abs/2205.14135v2",
+      "file": "p1-papers-01-08/paper03-2205.14135v2-abs.html",
+      "sha256": "91b77dc2648cacb6df651c2e3223d53edcd9c8bb97a96e96d0b497f561071560",
+      "version": "arXiv:2205.14135v2",
+      "retrieved_at": "2026-11-14T13:39:54.689885Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "id": "p4-paper03-metadata",
+      "read_scope": "实际查看固定版HTML的题名/作者、版本/历史与许可链接；阅读窗口105–195行，长摘要和非相关HTML不作全文阅读声明。作者/版本另与论文题头交叉。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "independent_close_reading; original Chinese questions, analysis and caveats; no full translation or paragraph replacement",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper03-version-metadata",
+      "publication_status": "local_only_metadata_evidence",
+      "complete_paper_close_read": false
+    },
+    {
+      "kind": "paper_pdf",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T13:40:55.676290Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "id": "p4-paper04-pdf",
+      "read_scope": "本批连续读取既有提取文本1–843行；核心§2.1、§3.1–3.3、§4.1–4.2全部；选读§2.2–2.3及§5正文。Table1实际在物理p12，四行三列已视觉核对；Figures4–7只检查坐标/设定/代表性数字，非逐点数据审计。视觉核对物理pp3–13，明确区分PDF原有公式笔误与编者修正。未读完参考文献，非14页全文精读。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "independent_close_reading; original Chinese questions, analysis and caveats; no full translation or paragraph replacement",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper04-fulltext",
+      "publication_status": "local_only_do_not_publish_raw_fulltext",
+      "complete_paper_close_read": false
+    },
+    {
+      "kind": "paper_text_extraction",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p1-papers-01-08/paper04-2307.08691v1.txt",
+      "sha256": "4deeb620cfe6b84095023a49ad5e63239169b4c346fe2e8922afe556716cd6d8",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T13:40:55.676290Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "id": "p4-paper04-text",
+      "read_scope": "本批连续读取既有提取文本1–843行；核心§2.1、§3.1–3.3、§4.1–4.2全部；选读§2.2–2.3及§5正文。Table1实际在物理p12，四行三列已视觉核对；Figures4–7只检查坐标/设定/代表性数字，非逐点数据审计。视觉核对物理pp3–13，明确区分PDF原有公式笔误与编者修正。未读完参考文献，非14页全文精读。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "independent_close_reading; original Chinese questions, analysis and caveats; no full translation or paragraph replacement",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper04-extracted-text",
+      "publication_status": "local_only_do_not_publish_raw_fulltext",
+      "complete_paper_close_read": false
+    },
+    {
+      "kind": "arxiv_version_metadata",
+      "url": "https://arxiv.org/abs/2307.08691v1",
+      "file": "p1-papers-01-08/paper04-2307.08691v1-abs.html",
+      "sha256": "85c47b942e457bec75e76383cda006f7dbe70c377df88d142e1cd2ca7fd7b8a8",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T13:40:50.756626Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "id": "p4-paper04-metadata",
+      "read_scope": "实际查看固定版HTML的题名/作者、版本/历史与许可链接；阅读窗口105–195行，长摘要和非相关HTML不作全文阅读声明。作者/版本另与论文题头交叉。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "independent_close_reading; original Chinese questions, analysis and caveats; no full translation or paragraph replacement",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper04-version-metadata",
+      "publication_status": "local_only_metadata_evidence",
+      "complete_paper_close_read": false
+    },
+    {
+      "kind": "paper_pdf",
+      "url": "https://arxiv.org/pdf/1910.02054v3",
+      "file": "p1-papers-01-08/paper05-1910.02054v3.pdf",
+      "sha256": "c531734c7d9ee647fda9b4f0e1a6abd6d58ad34e862bc945451b09032be3167e",
+      "version": "arXiv:1910.02054v3",
+      "retrieved_at": "2026-11-14T13:41:08.713404Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "id": "p4-paper05-pdf",
+      "read_scope": "本批读取既有提取文本1–38、275–943行；核心§3.1–3.2、§4.1、§5.1–5.4、§7.1–7.2.2全部；选读§4.2、§6、§8、§10导言/10.1–10.2/10.5并用于正文，另连续读到§9、§10.3–10.4/10.6、§11、致谢和参考文献开头。视觉核对物理pp8、10–11、13–14、17–18。未全文精读§1–2、参考文献与AE附录，非24页全文精读。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "independent_close_reading; original Chinese questions, analysis and caveats; no full translation or paragraph replacement",
+      "material_files": [
+        "lectures/lec08/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper05-fulltext",
+      "publication_status": "local_only_do_not_publish_raw_fulltext",
+      "complete_paper_close_read": false
+    },
+    {
+      "kind": "paper_text_extraction",
+      "url": "https://arxiv.org/pdf/1910.02054v3",
+      "file": "p1-papers-01-08/paper05-1910.02054v3.txt",
+      "sha256": "3d3130d63be6f9f0942ce75faf1adfe40178cb208f8bce6fa77e086dcecfaba9",
+      "version": "arXiv:1910.02054v3",
+      "retrieved_at": "2026-11-14T13:41:08.713404Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "id": "p4-paper05-text",
+      "read_scope": "本批读取既有提取文本1–38、275–943行；核心§3.1–3.2、§4.1、§5.1–5.4、§7.1–7.2.2全部；选读§4.2、§6、§8、§10导言/10.1–10.2/10.5并用于正文，另连续读到§9、§10.3–10.4/10.6、§11、致谢和参考文献开头。视觉核对物理pp8、10–11、13–14、17–18。未全文精读§1–2、参考文献与AE附录，非24页全文精读。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "independent_close_reading; original Chinese questions, analysis and caveats; no full translation or paragraph replacement",
+      "material_files": [
+        "lectures/lec08/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper05-extracted-text",
+      "publication_status": "local_only_do_not_publish_raw_fulltext",
+      "complete_paper_close_read": false
+    },
+    {
+      "kind": "arxiv_version_metadata",
+      "url": "https://arxiv.org/abs/1910.02054v3",
+      "file": "p1-papers-01-08/paper05-1910.02054v3-abs.html",
+      "sha256": "0c2b85057dc30c4a1c6849701ad5f3bbbdd73218e32b1443d7b9360568d9c8b2",
+      "version": "arXiv:1910.02054v3",
+      "retrieved_at": "2026-11-14T13:40:59.588990Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "id": "p4-paper05-metadata",
+      "read_scope": "实际查看固定版HTML的题名/作者、版本/历史与许可链接；阅读窗口105–205行，长摘要和非相关HTML不作全文阅读声明。作者/版本另与论文题头交叉。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "independent_close_reading; original Chinese questions, analysis and caveats; no full translation or paragraph replacement",
+      "material_files": [
+        "lectures/lec08/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper05-version-metadata",
+      "publication_status": "local_only_metadata_evidence",
+      "complete_paper_close_read": false
+    },
+    {
+      "kind": "official_license_terms",
+      "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "file": "p1-papers-01-08/license-arxiv-nonexclusive-1.0.html",
+      "sha256": "1991765e2079370736d4dedf217375799ad19aab6700ebdf42ae3dd84690067a",
+      "version": "arXiv non-exclusive distribution license 1.0",
+      "retrieved_at": "2026-11-14T13:43:49.456532Z",
+      "license": "unverified_page_copyright; source used as evidence of the named license terms",
+      "id": "p4-papers-arxiv-license",
+      "read_scope": "实际全文读取本地官方HTML 1–33行，尤其18–21行授予arXiv的非独占分发许可；不从中推断公众翻译授权。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "license_boundary_explanation_not_translation",
+      "material_files": [
+        "lectures/lec06/materials.zh.md",
+        "lectures/lec08/materials.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-papers-license-arxiv-nonexclusive",
+      "publication_status": "local_only"
+    },
+    {
+      "kind": "assignment_handout_text",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment2-systems/ca8bc81a59b70516f7ebb2da4808daade877c736/cs336_assignment2_systems.pdf",
+      "file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "sha256": "afa08ed088b7bcd9ca81f5543c232cb5f03238ed4e076d53e55cb41f1695c6b5",
+      "version": {
+        "repository": "stanford-cs336/assignment2-systems",
+        "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+        "handout": "26.1.3",
+        "course": "Spring 2026"
+      },
+      "retrieved_at": "2026-11-14T13:38:40Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p4-papers-a2-reading-passages",
+      "read_scope": "实际连续读取提取文本1232–1297行（pp23–24推荐与概念），1532–1575行（pp27–28必做后向/测量条件/选做Triton后向），2018–2093行（§6 pp37–38及前页尾部）；另全文件关键词检索定位FlashAttention、ZeRO和任务，不称48页全读或实现审计。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "independent_contextual_description_of_reading_designation_and_algorithm_scope; no assignment solution",
+      "material_files": [
+        "lectures/lec06/materials.zh.md",
+        "lectures/lec08/materials.zh.md"
+      ],
+      "reused_from": "p1-assignments-a1-a4/manifest-fragment.json:p1-a2-handout-text",
+      "publication_status": "local_only_existing_text",
+      "source_pdf_id": "p1-a2-handout",
+      "complete_assignment_read": false
+    },
+    {
+      "id": "p4-paper03-visual-05",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2205.14135v2",
+      "file": "p4-papers/visual/paper03-05.png",
+      "sha256": "ff6edc0ba7149de608526f1f8ee45eb6123a21a734bf2410788281a5e01ff995",
+      "version": "arXiv:2205.14135v2",
+      "retrieved_at": "2026-11-14T16:19:12Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "§3.1在线合并与Algorithm1：Bc=floor(M/(4d))、Br=min(floor(M/(4d)),d)，K/V外循环、Q内循环、归一化O更新、Theorem1的O(N²d)与额外O(N)限定。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper03-2205.14135v2.pdf",
+      "derived_from_sha256": "ca7f9fda10b90fc05dd291a3accc85e9c1a4a860b99b31928dab03ed3fcb14e4",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:12Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper03-visual-06",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2205.14135v2",
+      "file": "p4-papers/visual/paper03-06.png",
+      "sha256": "e91ff75271c487e4a3e46d9ac5bcc9440d23422f68ddd515c5b02fe8b6062250",
+      "version": "arXiv:2205.14135v2",
+      "retrieved_at": "2026-11-14T16:19:13Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Figure2设定与代表性FLOPs/HBM GB/runtime数据；Theorem2容量范围和Proposition3的for all M量词；块尺寸收益饱和说明。未逐点审核右侧稀疏曲线。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper03-2205.14135v2.pdf",
+      "derived_from_sha256": "ca7f9fda10b90fc05dd291a3accc85e9c1a4a860b99b31928dab03ed3fcb14e4",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:13Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper03-visual-20",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2205.14135v2",
+      "file": "p4-papers/visual/paper03-20.png",
+      "sha256": "f4592a1803317cfb45b52834a1a5dae1c8e25b50cae6ba5a48da823528378e23",
+      "version": "arXiv:2205.14135v2",
+      "retrieved_at": "2026-11-14T16:19:13Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Algorithm2缩放/先mask/softmax分母不dropout/保存R；Algorithm3中dK=dS^T Q；B.4的D=dO·O与随机mask重生。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper03-2205.14135v2.pdf",
+      "derived_from_sha256": "ca7f9fda10b90fc05dd291a3accc85e9c1a4a860b99b31928dab03ed3fcb14e4",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:13Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper03-visual-21",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2205.14135v2",
+      "file": "p4-papers/visual/paper03-21.png",
+      "sha256": "5a9b543c72f8a31cfbca66f0172865b62b1ecb8b74db9dc52a7cc70916031486",
+      "version": "arXiv:2205.14135v2",
+      "retrieved_at": "2026-11-14T16:19:13Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Algorithm4所有步骤的梯度维度、tau、dropout重生、D逐行归约、dQ累加与dK/dV片上所有权；Theorem5与内存排除项。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper03-2205.14135v2.pdf",
+      "derived_from_sha256": "ca7f9fda10b90fc05dd291a3accc85e9c1a4a860b99b31928dab03ed3fcb14e4",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:13Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper04-visual-03",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p4-papers/visual/paper04-03.png",
+      "sha256": "4ffcecc45660edb531984517d6d429077dedf094a03a86347bd85e2c93a542d6",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T16:19:14Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "§2.2的Q/K/V与梯度式；确认原PDF dK=Q dS^T顺序不合维度，脚注2的typically 1/d确在原件；并非提取错误。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "derived_from_sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:14Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper04-visual-04",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p4-papers/visual/paper04-04.png",
+      "sha256": "63569079dd970c51fce01eee0fc92d664670025bdc8457672a917d62ccff8f17",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T16:19:14Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "§2.3.1标准输出展开与online更新；确认第二贡献的共同分母、旧输出比例/最大值修正有排版问题；Figure1只核对概念与省略max-shift注。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "derived_from_sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:14Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper04-visual-05",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p4-papers/visual/paper04-05.png",
+      "sha256": "888e92064d599c02a3b23606c46c008e68b6a73c71edafef8a546519c445a14f",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T16:19:15Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "§3.1的312/19.5 TFLOP/s峰值比较，§3.1.1未归一化累加与L=m+log(l)；确认原PDF旧O缩放中逆号/遗漏。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "derived_from_sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:15Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper04-visual-06",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p4-papers/visual/paper04-06.png",
+      "sha256": "ea6c2cd11b5b35fc3dd5c38abee8eb6c0f983edef4e917f78bc88113d6d966a0",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T16:19:15Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "两块更新与Algorithm1全部步骤；确认step10 diag(exp(m_old-m_new))外多逆号；causal段第二点row less than column方向反；正确修正由不变量独立推导。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "derived_from_sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:15Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper04-visual-07",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p4-papers/visual/paper04-07.png",
+      "sha256": "154363fcab185ab1f5b3a86c0ad2ae5485ea011dcde2601f55e3454b703c3ff9",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T16:19:15Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Algorithm2的矩阵/行向量维度；确认D标R^d而应R^N，step16 dK累加次序正确；MQA/GQA共享K/V的反向求和说明。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "derived_from_sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:15Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper04-visual-08",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p4-papers/visual/paper04-08.png",
+      "sha256": "88a3cecf3337ee8176271ee4631bebb1a02bdb79c28fca520efa61bc5e581c74",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T16:19:16Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "§3.2与Figure2：前向行块独立、后向列块独占dK/dV且用atomics累计dQ；循环互换的Triton归属说明。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "derived_from_sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:16Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper04-visual-09",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p4-papers/visual/paper04-09.png",
+      "sha256": "bd2de2bbf6bdf05c68fa773baba00fc3cabdcd2d2d2734b73d8644ed8fc13551",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T16:19:16Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "§3.3与Figure3 split-K/split-Q依赖；后向同步仍存在；块尺寸/寄存器spill/共享内存限制。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "derived_from_sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:16Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper04-visual-10",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p4-papers/visual/paper04-10.png",
+      "sha256": "e4af144e0fc5f15ca3139879522ba9d0f1338f5a6949ee900a35dd65d6c8f658",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T16:19:42Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "§4.1 A10080GB SXM4、固定16k tokens、hidden2048、d64/128、有无causal、前向FLOP式未显式batch与后向2.5倍口径；Figure4只核对坐标/设定/代表值，非全数据点。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "derived_from_sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:42Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper04-visual-11",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p4-papers/visual/paper04-11.png",
+      "sha256": "feeeaf6b1a0d4d97433cdc912e74929133512074bd42a6fae6374973802b57a8",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T16:19:16Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Figure5坐标/设定；§4.2自比较compared to FlashAttention-2原文、8×A100与模型FLOP式不对causal减半；H100未来工作边界。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "derived_from_sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:16Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper04-visual-12",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p4-papers/visual/paper04-12.png",
+      "sha256": "c7c9416701ba791825fc02c160eab5b374a9d730892bbef7c31eaa3e8de1bd5e",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T16:19:42Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Table1四行三列训练吞吐、单位TFLOP/s/GPU与8×A100；核对2.7B8k的80/175/225及1.3B8k的72/170/220，识别概括2.8倍不是全表严格上界；Figure6只核坐标/代表值；§5。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "derived_from_sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:42Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper04-visual-13",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/2307.08691v1",
+      "file": "p4-papers/visual/paper04-13.png",
+      "sha256": "3d6a8ebe188de957579da4e8bf7d33bab63cd4b810be2388f9c0b6ae4a5c20b6",
+      "version": "arXiv:2307.08691v1",
+      "retrieved_at": "2026-11-14T16:19:17Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Figure7 H10080GB SXM5坐标、causal/head配置和代表性数值，不作逐点数据审计或把未来指令收益当已测结果。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec06/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper04-2307.08691v1.pdf",
+      "derived_from_sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:17Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper05-visual-08",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/1910.02054v3",
+      "file": "p4-papers/visual/paper05-08.png",
+      "sha256": "607f584af09f2376840e182c7ae40cc6b6c9d86fc4838391c6dbd70b61f03764",
+      "version": "arXiv:1910.02054v3",
+      "retrieved_at": "2026-11-14T16:19:17Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "§3.1续文K=12与16Psi bytes；§3.2的激活/临时buffer/碎片区分。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec08/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper05-1910.02054v3.pdf",
+      "derived_from_sha256": "c531734c7d9ee647fda9b4f0e1a6abd6d58ad34e862bc945451b09032be3167e",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:17Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper05-visual-10",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/1910.02054v3",
+      "file": "p4-papers/visual/paper05-10.png",
+      "sha256": "7d7c8e563389344213b804fd4c64989d070c807c413e7b6432734f9681a4c262",
+      "version": "arXiv:1910.02054v3",
+      "retrieved_at": "2026-11-14T16:19:17Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "§5.1–5.2内存式4Psi+12Psi/n、2Psi+14Psi/n、更新后参数all-gather与梯度reduce-scatter；未据式直接承诺峰值。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec08/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper05-1910.02054v3.pdf",
+      "derived_from_sha256": "c531734c7d9ee647fda9b4f0e1a6abd6d58ad34e862bc945451b09032be3167e",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:17Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper05-visual-11",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/1910.02054v3",
+      "file": "p4-papers/visual/paper05-11.png",
+      "sha256": "a42212205f9fd9fc28603a0b4e1478c73bf934bdc547de5a307aa4493cc5de1b",
+      "version": "arXiv:1910.02054v3",
+      "retrieved_at": "2026-11-14T16:19:18Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Table1标为模型状态容量估算；§5.3阶段3的16Psi/n、§5.4极限倍数，非全工作区实测。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec08/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper05-1910.02054v3.pdf",
+      "derived_from_sha256": "c531734c7d9ee647fda9b4f0e1a6abd6d58ad34e862bc945451b09032be3167e",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:18Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper05-visual-13",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/1910.02054v3",
+      "file": "p4-papers/visual/paper05-13.png",
+      "sha256": "df6db69b1a996cef68d2a52f9f3a8dadd7958aabb8f128125f5b46508ce6673a",
+      "version": "arXiv:1910.02054v3",
+      "retrieved_at": "2026-11-14T16:19:18Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Table2理论/实测分栏，实测标Pos；§7.1的带宽主导/每rank元素移动2Psi口径，原send to and from措辞不可混成严格双向总bytes。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec08/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper05-1910.02054v3.pdf",
+      "derived_from_sha256": "c531734c7d9ee647fda9b4f0e1a6abd6d58ad34e862bc945451b09032be3167e",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:18Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper05-visual-14",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/1910.02054v3",
+      "file": "p4-papers/visual/paper05-14.png",
+      "sha256": "6b27e04ebdbe0471f6127da262b44a33a02914d764e2a3470e2b0d62ba5e8604",
+      "version": "arXiv:1910.02054v3",
+      "retrieved_at": "2026-11-14T16:19:19Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "§7.2.1的RS梯度+AG更新参数；§7.2.2前反向两次参数获取+一次RS；§8初始条件为特定Megatron checkpoint/MP方案。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec08/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper05-1910.02054v3.pdf",
+      "derived_from_sha256": "c531734c7d9ee647fda9b4f0e1a6abd6d58ad34e862bc945451b09032be3167e",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:19Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper05-visual-17",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/1910.02054v3",
+      "file": "p4-papers/visual/paper05-17.png",
+      "sha256": "1032149347ab992960b23a907cc7c367380bf5caaa5cea68c0f5448bda381621",
+      "version": "arXiv:1910.02054v3",
+      "retrieved_at": "2026-11-14T16:19:19Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "§10.1明确Pos+g与ZeRO-R，400 V100/25 DGX2/800Gbps与2019年9月Megatron基线；§10.2条件，非当前硬件复现。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec08/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper05-1910.02054v3.pdf",
+      "derived_from_sha256": "c531734c7d9ee647fda9b4f0e1a6abd6d58ad34e862bc945451b09032be3167e",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:19Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    },
+    {
+      "id": "p4-paper05-visual-18",
+      "kind": "local_pdf_visual_evidence",
+      "url": "https://arxiv.org/pdf/1910.02054v3",
+      "file": "p4-papers/visual/paper05-18.png",
+      "sha256": "81a789773b053dbf1453e1db20f97bc99bf400544dc88a9b1807a78713e54670",
+      "version": "arXiv:1910.02054v3",
+      "retrieved_at": "2026-11-14T16:19:19Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Table3五配置均为Pos或Pos+g搭配ZeRO-R，无Pp；§10.5固定batch与MP16、cached memory语义；非性能曲线逐点视觉审计。",
+      "read_at": "2026-11-14T16:35:39Z",
+      "chinese_treatment": "visual_source_check_only_not_republished_or_translated",
+      "material_files": [
+        "lectures/lec08/materials.zh.md"
+      ],
+      "derived_from": "p1-papers-01-08/paper05-1910.02054v3.pdf",
+      "derived_from_sha256": "c531734c7d9ee647fda9b4f0e1a6abd6d58ad34e862bc945451b09032be3167e",
+      "generation": "pdftoppm selected physical PDF page, PNG, scale-to1700; no OCR needed",
+      "generated_at": "2026-11-14T16:19:19Z",
+      "publication_status": "local_only_do_not_publish_pdf_page_images",
+      "actually_visually_inspected": true
+    }
+  ],
+  "original_assets": [
+    {
+      "file": "lectures/lec06/assets/paper-attention-ownership.svg",
+      "sha256": "df5a4d39832b0bc4128ef147fe48adc62eb4974b9c4fcfcdaf7784f1f9714ab7",
+      "kind": "original_svg",
+      "scope": "Original dependency/ownership diagram: forward query-row-exclusive output versus backward column blocks sharing dQ; not a reproduction of paper figures.",
+      "license": "course_original_content",
+      "publication_status": "publish_original_asset",
+      "source_figure_reproduction": false,
+      "render_validation": "pending_main"
+    },
+    {
+      "file": "lectures/lec08/assets/paper-zero-residency.svg",
+      "sha256": "5ba95ec202b2949149253ef97e7e7af8f81d79d3eea577342fc9cbbdbc4a7578",
+      "kind": "original_svg",
+      "scope": "Original residency layers: persistent sharded states, transient full compute unit, and other workspaces/reserved memory; no measured sizes.",
+      "license": "course_original_content",
+      "publication_status": "publish_original_asset",
+      "source_figure_reproduction": false,
+      "render_validation": "pending_main"
+    }
+  ],
+  "material_files": [
+    "lectures/lec06/materials.zh.md",
+    "lectures/lec08/materials.zh.md"
+  ],
+  "evidence_files": [
+    "p4-papers/manifest-fragment.json",
+    "p4-papers/reading-updates.json",
+    "p4-papers/review.txt"
+  ],
+  "placement": {
+    "paper03": {
+      "home": "lec06",
+      "materialFile": "lectures/lec06/materials.zh.md",
+      "alsoUsedBy": [
+        "ext05",
+        "a2-systems"
+      ],
+      "prerequisites": [
+        "lec02",
+        "lec04",
+        "lec05"
+      ],
+      "relatedAssignments": [
+        "a2-systems"
+      ]
+    },
+    "paper04": {
+      "home": "lec06",
+      "materialFile": "lectures/lec06/materials.zh.md",
+      "alsoUsedBy": [
+        "ext05",
+        "a2-systems"
+      ],
+      "prerequisites": [
+        "lec02",
+        "lec04",
+        "lec05"
+      ],
+      "relatedAssignments": [
+        "a2-systems"
+      ]
+    },
+    "paper05": {
+      "home": "lec08",
+      "materialFile": "lectures/lec08/materials.zh.md",
+      "alsoUsedBy": [
+        "ext08",
+        "a2-systems"
+      ],
+      "prerequisites": [
+        "lec07"
+      ],
+      "relatedAssignments": [
+        "a2-systems"
+      ]
+    }
+  },
+  "review": {
+    "author_reviewed": true,
+    "accepted": false,
+    "review_file": "p4-papers/review.txt",
+    "builds_tests_lints_formatters_run": false,
+    "official_assignment_executed": false,
+    "performance_reproduction": false,
+    "main_checks": "Source/hash/link/JSON/SVG/math/mobile/technical review after integration; no worker verification claimed."
+  }
+}

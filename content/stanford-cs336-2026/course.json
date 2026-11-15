@@ -424,19 +424,19 @@
       "stars": 5,
       "hours": "随实现基础与算力安排",
       "url": "https://github.com/stanford-cs336/assignment2-systems",
-      "goal": "在自己的 A1 模型上做性能分析、Triton Attention 优化和节省内存的分布式训练。",
+      "goal": "以官方 A1 基线或自己的模型开展性能与显存分析、激活重算、FlashAttention-2 和分布式训练；区分正确性调试与指定 GPU 上的性能实验。",
       "tasks": [
         {
           "id": "profile",
-          "title": "分析模型与层的性能瓶颈"
+          "title": "性能与显存分析、激活重算"
         },
         {
           "id": "attention",
-          "title": "使用 Triton 实现 FlashAttention-2"
+          "title": "FlashAttention-2 前向与编译后向（Triton 后向选做）"
         },
         {
           "id": "distributed",
-          "title": "构建节省内存的分布式训练"
+          "title": "DDP、优化器状态分片、FSDP 与并行策略分析"
         }
       ]
     },

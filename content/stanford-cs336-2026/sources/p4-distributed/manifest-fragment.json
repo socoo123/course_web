@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "course_id": "stanford-cs336-2026",
+  "phase": "P4",
+  "slice": "p4-distributed",
+  "created_at": "2026-11-14T16:41:15.919881+00:00",
+  "scope": [
+    "lectures/ext07/",
+    "lectures/ext08/",
+    "lectures/ext09/",
+    "sources/p4-distributed/"
+  ],
+  "path_convention": "source paths relative to sources/; authored body/asset paths relative to course root",
+  "model_evidence": {
+    "file": "p4-model-preflight.json",
+    "agent": "P4DistributedSystems",
+    "requested": "openai-codex/gpt-6-astra:xhigh",
+    "verified_by": "Main",
+    "note": "Read Main preflight and resumption runtime-evidence record; no worker model substitution or nested delegation."
+  },
+  "sources": [
+    {
+      "id": "p4-distributed-nccl-collectives",
+      "kind": "primary_vendor_documentation",
+      "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/collectives.html",
+      "resolved_url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/collectives.html",
+      "file": "p4-distributed/raw/nccl-collectives.txt",
+      "sha256": "2fdf602bcac6f039fe4b6d787ca94570bdc3c40352e052b890a591599e57f5aa",
+      "version": "NCCL 2.32.3 page-title snapshot; current documentation, not course dependency",
+      "retrieved_at": "2026-11-14T16:19:24.346163+00:00",
+      "license": "Public primary documentation/article; open full-document translation/republication permission not independently confirmed for this page. Independent original analysis and short factual citation only; raw snapshot local-only; no third-party figures/code copied.",
+      "read_scope": "Full rendered Collective Operations body: collective participation/signature warning, AllReduce, Broadcast, Reduce, AllGather, ReduceScatter, AlltoAll, Gather, Scatter. Corresponding saved extraction lines 602-647; navigation not evidence. Source diagrams were not reused or visually audited.",
+      "read_at": "2026-11-14T16:41:15.919881+00:00",
+      "chinese_treatment": "Original Chinese systems teaching, independently derived examples/figures, limited factual/API citation; not whole-document translation, implementation or performance reproduction.",
+      "material_files": [
+        "lectures/ext07/notes.zh.md",
+        "lectures/ext09/notes.zh.md"
+      ],
+      "supporting_files": [
+        {
+          "file": "p4-distributed/text/nccl-collectives.txt",
+          "sha256": "de42a7f50a7ace862c9a3921bcc22919081e7abd7f3768d8943cc1227af5ae7a",
+          "role": "readable snapshot/extraction; local-only",
+          "total_lines": 653
+        }
+      ],
+      "status": "selected_or_declared_scope_read_and_used_pending_main_review",
+      "raw_publication": "local_only_not_for_git_force_add"
+    },
+    {
+      "id": "p4-distributed-nccl-trees",
+      "kind": "primary_vendor_technical_article",
+      "url": "https://developer.nvidia.com/blog/massively-scale-deep-learning-training-nccl-2-4/",
+      "resolved_url": "https://developer.nvidia.com/blog/massively-scale-deep-learning-training-nccl-2-4/",
+      "file": "p4-distributed/raw/nccl-trees.txt",
+      "sha256": "1bd5136a0174748a09e294d695849745d3f1ae7cf31c104cd687353c564fe1c9",
+      "version": "Sylvain Jeaugey, 2019-02-04; NCCL 2.4 historical article",
+      "retrieved_at": "2026-11-14T16:19:25.507078+00:00",
+      "license": "Public primary documentation/article; open full-document translation/republication permission not independently confirmed for this page. Independent original analysis and short factual citation only; raw snapshot local-only; no third-party figures/code copied.",
+      "read_scope": "Saved text lines 1-136 fully read; technical article body 34-96. Double binary trees 37-44, topology/algorithm caveats 45-55, stream/error handling 56-82. Modern injected AI-generated summary lines 24-33 explicitly excluded as evidence; no source figure reuse or performance reproduction.",
+      "read_at": "2026-11-14T16:41:15.919881+00:00",
+      "chinese_treatment": "Original Chinese systems teaching, independently derived examples/figures, limited factual/API citation; not whole-document translation, implementation or performance reproduction.",
+      "material_files": [
+        "lectures/ext07/notes.zh.md"
+      ],
+      "supporting_files": [
+        {
+          "file": "p4-distributed/text/nccl-trees.txt",
+          "sha256": "413bcc7fcbc0ea6ee95379afdb61ba45d4a281cc7ba2d0a1994afd5bcf45c5e0",
+          "role": "readable snapshot/extraction; local-only",
+          "total_lines": 136
+        }
+      ],
+      "status": "selected_or_declared_scope_read_and_used_pending_main_review",
+      "raw_publication": "local_only_not_for_git_force_add"
+    },
+    {
+      "id": "p4-distributed-pytorch-distributed",
+      "kind": "primary_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/distributed.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/distributed.html",
+      "file": "p4-distributed/raw/pytorch-distributed.txt",
+      "sha256": "ee2ad6af32aa1a959ec46a2e63c17829f10ac4b33280a9c29248022f6720ab47",
+      "version": "PyTorch 2.9 documentation snapshot; generated source links v2.9.1",
+      "retrieved_at": "2026-11-14T16:19:26.263411+00:00",
+      "license": "Public primary documentation/article; open full-document translation/republication permission not independently confirmed for this page. Independent original analysis and short factual citation only; raw snapshot local-only; no third-party figures/code copied.",
+      "read_scope": "URL reader initial 300-line response: backends, basics, initialization and beginning of device mesh/API material. Saved text selected reads 551-590,1160-1205,1283-1310,1785-1807,1835-1874; long synchronous-CUDA sentence at1164 re-read raw. Used Groups/order, async stream dependency, all_reduce, reduce_scatter_tensor and all_to_all_single split contracts. Not a full 3323-line read or backend-code review.",
+      "read_at": "2026-11-14T16:41:15.919881+00:00",
+      "chinese_treatment": "Original Chinese systems teaching, independently derived examples/figures, limited factual/API citation; not whole-document translation, implementation or performance reproduction.",
+      "material_files": [
+        "lectures/ext07/notes.zh.md",
+        "lectures/ext09/notes.zh.md"
+      ],
+      "supporting_files": [
+        {
+          "file": "p4-distributed/text/pytorch-distributed.txt",
+          "sha256": "ee2ad6af32aa1a959ec46a2e63c17829f10ac4b33280a9c29248022f6720ab47",
+          "role": "readable snapshot/extraction; local-only",
+          "total_lines": 3323
+        }
+      ],
+      "status": "selected_or_declared_scope_read_and_used_pending_main_review",
+      "raw_publication": "local_only_not_for_git_force_add"
+    },
+    {
+      "id": "p4-distributed-pytorch-dcp",
+      "kind": "primary_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/distributed.checkpoint.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/distributed.checkpoint.html",
+      "file": "p4-distributed/raw/pytorch-dcp.txt",
+      "sha256": "f27ff1b8ef5cec6b48ea5a0cf6f21e1b25eaed7e428902f26b6e7a3b4b5c42b4",
+      "version": "PyTorch 2.9 documentation snapshot; generated source links v2.9.1",
+      "retrieved_at": "2026-11-14T16:19:27.015050+00:00",
+      "license": "Public primary documentation/article; open full-document translation/republication permission not independently confirmed for this page. Independent original analysis and short factual citation only; raw snapshot local-only; no third-party figures/code copied.",
+      "read_scope": "URL reader initial 300-line response: overview, save, async_save/AsyncSaveResponse and load core requirements through initial parameter descriptions. Saved text 349-393 (AsyncStager),1320-1345 and1451-1462 (canonical FQN/get_state_dict/set_state_dict) actually read, latter ranges raw to avoid long-line truncation. No full1781-line claim or arbitrary backend/format compatibility audit.",
+      "read_at": "2026-11-14T16:41:15.919881+00:00",
+      "chinese_treatment": "Original Chinese systems teaching, independently derived examples/figures, limited factual/API citation; not whole-document translation, implementation or performance reproduction.",
+      "material_files": [
+        "lectures/ext08/notes.zh.md"
+      ],
+      "supporting_files": [
+        {
+          "file": "p4-distributed/text/pytorch-dcp.txt",
+          "sha256": "f27ff1b8ef5cec6b48ea5a0cf6f21e1b25eaed7e428902f26b6e7a3b4b5c42b4",
+          "role": "readable snapshot/extraction; local-only",
+          "total_lines": 1781
+        }
+      ],
+      "status": "selected_or_declared_scope_read_and_used_pending_main_review",
+      "raw_publication": "local_only_not_for_git_force_add"
+    },
+    {
+      "id": "p4-distributed-pytorch-fsdp2",
+      "kind": "primary_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/distributed.fsdp.fully_shard.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/distributed.fsdp.fully_shard.html",
+      "file": "p4-distributed/raw/pytorch-fsdp2.txt",
+      "sha256": "5210ec1aaccca2f242e768c61d9ae8fe8670a92f0aeb884b2e686046430dde8e",
+      "version": "PyTorch 2.9 FSDP2 fully_shard documentation snapshot; generated source links v2.9.1",
+      "retrieved_at": "2026-11-14T16:19:27.504314+00:00",
+      "license": "Public primary documentation/article; open full-document translation/republication permission not independently confirmed for this page. Independent original analysis and short factual citation only; raw snapshot local-only; no third-party figures/code copied.",
+      "read_scope": "URL reader initial 300-line response: FSDP2 user contract, parameter all-gather/free, gradient reduce-scatter, grouping, fully_shard arguments/reshard_after_forward, FSDPModule through prefetch/post-optimizer/gradient-sync entry opening. Remaining page not read. Used only displayed lifecycle/prefetch contracts, not implementation or performance claims.",
+      "read_at": "2026-11-14T16:41:15.919881+00:00",
+      "chinese_treatment": "Original Chinese systems teaching, independently derived examples/figures, limited factual/API citation; not whole-document translation, implementation or performance reproduction.",
+      "material_files": [
+        "lectures/ext08/notes.zh.md"
+      ],
+      "supporting_files": [
+        {
+          "file": "p4-distributed/text/pytorch-fsdp2.txt",
+          "sha256": "5210ec1aaccca2f242e768c61d9ae8fe8670a92f0aeb884b2e686046430dde8e",
+          "role": "readable snapshot/extraction; local-only",
+          "total_lines": 471
+        }
+      ],
+      "status": "selected_or_declared_scope_read_and_used_pending_main_review",
+      "raw_publication": "local_only_not_for_git_force_add"
+    },
+    {
+      "id": "p4-distributed-pytorch-randomness",
+      "kind": "primary_api_documentation",
+      "url": "https://docs.pytorch.org/docs/2.9/notes/randomness.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.9/notes/randomness.html",
+      "file": "p4-distributed/raw/pytorch-randomness.txt",
+      "sha256": "82ce5e2c67b82c0f0c1d649300b181acc890a4f8d91956439d8cea0be4412836",
+      "version": "PyTorch 2.9 Reproducibility; page last-updated 2024-11-26",
+      "retrieved_at": "2026-11-14T16:19:28.016764+00:00",
+      "license": "Public primary documentation/article; open full-document translation/republication permission not independently confirmed for this page. Independent original analysis and short factual citation only; raw snapshot local-only; no third-party figures/code copied.",
+      "read_scope": "Full rendered article body actually read, corresponding saved text lines82-213: cross-release/platform/CPU-GPU caveat, PyTorch/Python/NumPy RNG, nondeterministic algorithms, uninitialized memory and DataLoader workers. Code examples read, not executed or copied into authored notes.",
+      "read_at": "2026-11-14T16:41:15.919881+00:00",
+      "chinese_treatment": "Original Chinese systems teaching, independently derived examples/figures, limited factual/API citation; not whole-document translation, implementation or performance reproduction.",
+      "material_files": [
+        "lectures/ext08/notes.zh.md"
+      ],
+      "supporting_files": [
+        {
+          "file": "p4-distributed/text/pytorch-randomness.txt",
+          "sha256": "82ce5e2c67b82c0f0c1d649300b181acc890a4f8d91956439d8cea0be4412836",
+          "role": "readable snapshot/extraction; local-only",
+          "total_lines": 275
+        }
+      ],
+      "status": "selected_or_declared_scope_read_and_used_pending_main_review",
+      "raw_publication": "local_only_not_for_git_force_add"
+    },
+    {
+      "id": "p4-distributed-megatron-moe",
+      "kind": "primary_project_documentation",
+      "url": "https://raw.githubusercontent.com/NVIDIA/Megatron-LM/05c4a8ba04e2d3422f56ffdda7ff2059da431e18/megatron/core/transformer/moe/README.md",
+      "resolved_url": "https://raw.githubusercontent.com/NVIDIA/Megatron-LM/05c4a8ba04e2d3422f56ffdda7ff2059da431e18/megatron/core/transformer/moe/README.md",
+      "file": "p4-distributed/raw/megatron-moe.txt",
+      "sha256": "18c620439ddb0c7ceb8fdf26b26176776d8c13615882c5f0eae27e1faa4792fa",
+      "version": "Megatron-LM commit 05c4a8ba04e2d3422f56ffdda7ff2059da431e18; commit timestamp 2026-11-14T00:51:22Z; supplemental post-term snapshot",
+      "retrieved_at": "2026-11-14T16:19:28.854408+00:00",
+      "license": "Public primary documentation/article; open full-document translation/republication permission not independently confirmed for this page. Independent original analysis and short factual citation only; raw snapshot local-only; no third-party figures/code copied.",
+      "read_scope": "Pinned saved text lines298-336,434-475,736-778 actually read: Router and Load Balancing, Token Dispatching, Parallel Folding and Memory Optimization context, core/router/token dispatch argument tables. Before pinning, main-branch URL discovery returned first300 lines (overview/parallelism/performance recommendations); this is not a full pinned945-line read. No implementation audit. Contradictory allgather wording at335 explicitly rejected; performance claims and latest experimental backends not adopted.",
+      "read_at": "2026-11-14T16:41:15.919881+00:00",
+      "chinese_treatment": "Original Chinese systems teaching, independently derived examples/figures, limited factual/API citation; not whole-document translation, implementation or performance reproduction.",
+      "material_files": [
+        "lectures/ext09/notes.zh.md"
+      ],
+      "supporting_files": [
+        {
+          "file": "p4-distributed/text/megatron-moe.txt",
+          "sha256": "18c620439ddb0c7ceb8fdf26b26176776d8c13615882c5f0eae27e1faa4792fa",
+          "role": "readable snapshot/extraction; local-only",
+          "total_lines": 945
+        }
+      ],
+      "status": "selected_or_declared_scope_read_and_used_pending_main_review",
+      "raw_publication": "local_only_not_for_git_force_add"
+    },
+    {
+      "id": "p4-distributed-zero-v3-text",
+      "kind": "paper_text_extraction",
+      "url": "https://arxiv.org/pdf/1910.02054v3",
+      "file": "p1-papers-01-08/paper05-1910.02054v3.txt",
+      "sha256": "3d3130d63be6f9f0942ce75faf1adfe40178cb208f8bce6fa77e086dcecfaba9",
+      "version": "arXiv:1910.02054v3, 2020-05-13; fixed P1 text extraction",
+      "retrieved_at": "2026-11-14T13:41:08.713404Z",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0; grants arXiv distribution, not public full-translation permission.",
+      "read_scope": "Actually read saved text1-65,245-525,587-705: title/abstract, related-work tail, §3/§4/§5, §6.1 opening, complete §7, §8 and §9 opening. Scope used: state ownership/live-working-set premise and §7 communication-accounting caution only. No whole-paper claim or PDF visual audit; no paper experiments reproduced. reading-map core/optional scope read987-1057 and1120-1180.",
+      "read_at": "2026-11-14T16:41:15.919881+00:00",
+      "chinese_treatment": "Limited conceptual bridge and explicit link to sole ZeRO close-reading home lectures/lec08/materials.zh.md. No repeated stage-by-stage derivation, original paper figures or full translation.",
+      "material_files": [
+        "lectures/ext07/notes.zh.md",
+        "lectures/ext08/notes.zh.md"
+      ],
+      "reused_from": "p1-papers-01-08/manifest-fragment.json:p1-paper05-extracted-text",
+      "supporting_files": [
+        {
+          "file": "p1-papers-01-08/paper05-1910.02054v3.pdf",
+          "sha256": "c531734c7d9ee647fda9b4f0e1a6abd6d58ad34e862bc945451b09032be3167e",
+          "role": "fixed PDF backing extraction; not newly visually audited"
+        }
+      ],
+      "raw_publication": "local_only",
+      "status": "selected_scope_actually_read_and_used_pending_main_review"
+    },
+    {
+      "id": "p4-distributed-arxiv-license",
+      "kind": "license",
+      "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "file": "p1-papers-01-08/license-arxiv-nonexclusive-1.0.html",
+      "sha256": "1991765e2079370736d4dedf217375799ad19aab6700ebdf42ae3dd84690067a",
+      "version": "arXiv nonexclusive distribution 1.0; existing P1 snapshot",
+      "retrieved_at": "2026-11-14",
+      "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+      "read_scope": "Entire existing33-line HTML source read; submission grants distribution to arXiv, not a public full-translation grant.",
+      "read_at": "2026-11-14T16:41:15.919881+00:00",
+      "chinese_treatment": "Brief rights boundary; no reproduction of full license/page needed.",
+      "material_files": [
+        "lectures/ext07/notes.zh.md",
+        "lectures/ext08/notes.zh.md"
+      ],
+      "retrieval_precision_note": "Original P1 date retained at day precision; this slice did not reacquire terms.",
+      "raw_publication": "local_only",
+      "status": "read_used_pending_main_review"
+    },
+    {
+      "id": "p4-distributed-ai-policy",
+      "kind": "course_policy",
+      "url": "https://docs.google.com/document/d/1SZAlExB1qAc9izHt54gwunNpjKE6wXb8Y7yA_e-baK8/export?format=txt",
+      "file": "p1-shared/ai-policy.txt",
+      "sha256": "127b697e3a67d9a3d86e0aa6cfdd6bb2ddc74a28c5786198b8d24008b9d6ef01",
+      "version": "CS336 AI Policy Spring2025-2026; fixed P1 snapshot",
+      "retrieved_at": "2026-11-14T13:42:10Z",
+      "license": "No explicit reuse license; brief independent policy summary only",
+      "read_scope": "Complete21-line policy actually read: concepts/APIs allowed; AI implementation/autocomplete forbidden for assignments and leaderboard.",
+      "read_at": "2026-11-14T16:41:15.919881+00:00",
+      "chinese_treatment": "Concept/API-only boundary with course/A2 links; no submitted implementation or experiment code.",
+      "material_files": [
+        "lectures/ext07/notes.zh.md",
+        "lectures/ext08/notes.zh.md",
+        "lectures/ext09/notes.zh.md"
+      ],
+      "reused_from": "p1-shared/manifest-fragment.json:ai-policy-2026",
+      "raw_publication": "local_only",
+      "status": "read_used_pending_main_review"
+    }
+  ],
+  "body_files": [
+    "lectures/ext07/notes.zh.md",
+    "lectures/ext08/notes.zh.md",
+    "lectures/ext09/notes.zh.md"
+  ],
+  "asset_files": [
+    "lectures/ext07/assets/ring-two-phases.svg",
+    "lectures/ext08/assets/shard-snapshot-lifecycle.svg",
+    "lectures/ext09/assets/moe-dispatch-combine.svg"
+  ],
+  "internal_prerequisites_read": [
+    {
+      "file": "lectures/bridge06/notes.zh.md",
+      "scope": "Full existing body; checkpoint foundations at190-210 reused via link, not rewritten as a second foundation."
+    },
+    {
+      "file": "lectures/lec04/notes.zh.md",
+      "scope": "165-271 actually read; MoE basics stay at L04; ext09 extends dispatch/capacity/parallel groups."
+    },
+    {
+      "file": "lectures/ext03/notes.zh.md",
+      "scope": "Read for established frontmatter/source/notes conventions only; not a technical source for these topics."
+    }
+  ],
+  "original_case_inventory": [
+    {
+      "body": "lectures/ext07/notes.zh.md",
+      "cases": [
+        "4-rank128MiB ring,96MiB/stage/rank send;192MiB total per-rank send",
+        "6-rank120MiB ring self-check:200MiB per-rank send,1200MiB global send",
+        "8-rank binomial reduce/broadcast exact round schedule and non-power-of-two6-rank schedule",
+        "alpha5us,B20GB/s small/large payload theoretical comparison",
+        "2node4GPU/node hierarchy cross-node payload model"
+      ]
+    },
+    {
+      "body": "lectures/ext08/notes.zh.md",
+      "cases": [
+        "Persistent2GiB plus1+0.5+3+0.25GiB live buffers gives6.75GiB before allocator margin",
+        "12-element4rank-to3rank interval reshard with optimizer-state identity",
+        "Consumed cursor1024 versus prefetched1056",
+        "Global batch4x8x2=64 versus3x8x2=48",
+        "Original unexecuted consistency/failure/recovery verification protocol"
+      ]
+    },
+    {
+      "body": "lectures/ext09/notes.zh.md",
+      "cases": [
+        "8token top2 routes yield loads7,4,3,2",
+        "Capacity4/5/7 retains13/14/16, drops3/2/0, pads3/6/12",
+        "Weighted2D combine(1.25,3.75);drop-without-renormalization(-0.25,0.75)",
+        "Two-rank Q=[[6,2],[5,3]],7remote edges,14KiB one-way global send,28KiB forward send",
+        "Idealized load efficiency16/(2x11),notGPUutilization",
+        "EP4,ETP1,EDP2 eight-rank logical layout"
+      ]
+    }
+  ],
+  "technical_cautions": [
+    "NCCL2.32.3 and Nov2026Megatron snapshot are supplemental, not lecture/A2 dependency pins.",
+    "Simple ring/tree timing ignores contention/reduction compute and is explicitly not measured. All traffic tables distinguish per-rank send, receive, endpoint sum, global send and physical byte-hop.",
+    "Double binary tree is not naive full-vector tree; non-power-of-two limits belong to schedules, not collective semantics.",
+    "FSDP2 parameter-lifetime example assumes reshard_after_forward=True; default/root behavior can differ.",
+    "DCP training-safe staging and final save completion are distinct; original application-level complete-generation protocol does not assert generic atomic filesystem/object-store transactions.",
+    "World-size resharding is not exact RNG/data/optimizer trajectory replay; global batch/data consumption rules must be redefined explicitly.",
+    "Megatron pinned token-dispatch table line335 contradictory allgather/no-inter-GPU-token-movement wording rejected; no silent adoption.",
+    "MoE capacity formula/rounding and per-assignment traffic are declared teaching models; deduplication/padding/precision/backends can change actual traffic.",
+    "No GPU measurements, official assignment execution, CPU mechanism execution, builds/tests/lints/formatters/browser checks were run by worker."
+  ],
+  "review": {
+    "author_reviewed": true,
+    "independent_reviewed": false,
+    "accepted": false,
+    "status": "authored_and_source_scoped_pending_main_integration_and_verification",
+    "record": "p4-distributed/review.txt"
+  },
+  "publication": {
+    "intended_files": [
+      "lectures/ext07/notes.zh.md",
+      "lectures/ext08/notes.zh.md",
+      "lectures/ext09/notes.zh.md",
+      "lectures/ext07/assets/ring-two-phases.svg",
+      "lectures/ext08/assets/shard-snapshot-lifecycle.svg",
+      "lectures/ext09/assets/moe-dispatch-combine.svg",
+      "sources/p4-distributed/manifest-fragment.json",
+      "sources/p4-distributed/review.txt"
+    ],
+    "excluded_local_only": [
+      "sources/p4-distributed/raw/",
+      "sources/p4-distributed/text/"
+    ],
+    "third_party_fulltext_not_forced_into_git": true
+  },
+  "checks_suggested_not_run": [
+    "Main targeted source/hash/link/SVG verification",
+    "Independent scalar arithmetic on original examples, not official A2 implementation",
+    "390px/desktop math/table/SVG visual checks, theme/light-dark checks",
+    "Full P4 build/integration only after all owners land"
+  ]
+}

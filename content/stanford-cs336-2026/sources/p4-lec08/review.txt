@@ -1,0 +1,65 @@
+P4 / L08 作者交接审查（不是主验收）
+时间：2026-11-15；UTC记录见manifest-fragment.json及reading-log.json。
+状态：正文、原创图、阅读与时间证据已写；worker_self_reviewed=true；accepted=false。最终来源/链接/页面/构建验收由Main。
+指定模型：openai-codex/gpt-6-astra:xhigh；实际运行事件证据由Main维护p4-model-preflight.json，worker没有独立读取运行元数据；无嵌套派发。
+
+一、精确交付与ownership
+课程根目录相对路径：
+- lectures/lec08/notes.zh.md
+- lectures/lec08/draft.zh.md
+- lectures/lec08/assets/fsdp-parameter-window.svg
+sources相对路径：
+- p4-lec08/video-metadata.json
+- p4-lec08/reading-log.json
+- p4-lec08/time-intervals.json
+- p4-lec08/manifest-fragment.json
+- p4-lec08/review.txt
+仅本地全文：
+- p4-lec08/captions.normalized.json
+- p4-lec08/transcript.en.txt
+没有编辑lec08/materials.zh.md或paper-*资源。ZeRO论文正文由其owner负责。没有编辑共享course/catalog/resources/status/reading-map等文件。
+
+二、真实读取范围
+1. 已完整阅读固定2026字幕1870 cues：原样显示1–300、301–600、601–900、901–1200、1201–1500、1501–1800、1801–1870。不是搜索摘要，也不是由已下载推断已读。
+2. JSON3规范化采用已读skill脚本相同的event文本拼接/strip语义，经eval调用tool.write创建新文件；没有执行该脚本。JSON词法不修改，TXT每cue一行、仅展平原换行并附起止与序号。所有疑词原文仍留存。
+3. 单视频总时长4810秒，首cue5.240秒，末cue4805.220秒。playlist平铺4811秒差异保留，不混作同一值。首尾无字幕5.240秒、4.780秒。内部>2秒空隙8处，全部以毫秒精度记录：1651.220–1654.280、2192.820–2195.380、2869.580–2872.360、3146.100–3150.600、3181.950–3184.880、3196.830–3199.710、4102.330–4105.670、4277.270–4280.210。
+4. 完整元数据305行读取窗口1–300、301–305；两讲video-map记录亦读。manual/non-ASR仅为平台分类，没有确认人工作者或逐词核音。标题、2026讲次、频道、上传日期、时长来自P1固定元数据；没有由worker重开watch页面或实点入口。
+5. lecture_08.txt完整675行。请求1–280、284–550、551–675，reader上下文实际显示1–283、283–553、550–675，所以无遗漏；阅读日志保留请求与实际显示的区别，不伪造精确窗口。
+6. 原PDF共73页，视觉读取25、26、28、34、38、40、46、47、48、49、55、66页。通过pdftoppm渲染到内存并在eval附图后实际阅读；没有创建或发布第三方页面图片。页25/26核AG/RS和重叠图，28核12字节容量表，34核气泡分母，38核两支后向，40核列/行TP与f/g，46–49核完整公式括号/系数/SP布局，55核总表矛盾，66核Llama3训练阶段表。未声称全部其他图片或嵌入论文全文已读，也没有录像—幻灯片视觉匹配。
+7. PDF原获取时间采用acquisition.json的2026-11-14T13:38:57.727747+00:00；P1讲义manifest稍后13:42:12.295884+00:00作为提取文本记录保存，不覆盖原二进制来源日期。PDF元数据显示2026-04-23Asia/Shanghai创建，不拿它推断录像日期。固定仓库提交2026-09-12晚于学期。
+8. L02 notes全读300行；L04 notes实际读1–300，已涵盖MoE核心正文及自测，未把剩余来源页脚记全读。合同、NEXT-P4、P4-BLOCKED、version-review/variant-audit完整读；来源记录与P3格式按相关范围读。所有SHA256在manifest，不塞进手机正文。
+
+三、内容组织、边界与去重
+notes以状态/执行分离、参数窗口、batch预算、TP配对、PP调度、SP残留激活和组布局组织，非课堂重放。数值例子独立设计：26GB物化窗口、3ms与1ms重叠、TP小矩阵、p4/m8气泡、32MiB边界、线性激活272/128/68MiB、32卡DP4/PP2/TP4下global batch64。均写明假设和口径，不是实测或A2答案。
+draft按时间有限改写，含完整导航、关键问答及编者纠错；不是完整版翻译或字幕替代品。没有视频链接或假截图。正文首部权限/阅读说明的版式调整由Main集成，不更改技术意义。
+L02拥有内存/矩阵导数/累积基础，L04拥有MoE模型，L07拥有同步正确性；L08不再推导这些全部基础。三阶段ZeRO论文推导归lec08/materials；ring/tree算法归ext07；恢复归ext08；MoE dispatch细节归ext09；FlashAttention论文归lec06/materials。
+SVG原创，只有前向AG预取窗口与存储账本，含title/desc、中文字体及主题变量；无外部资源、脚本、背景或课堂图复制。图的方块长度不声称实测时长。
+
+四、技术审查重点
+1. FSDP与PP/TP区分：FSDP每个数据rank仍走全模型，按需收集当前单元完整参数；常驻分片不等于只计算对应矩阵片。两次AG+一次RS限于前后向之间重新分片的课堂策略。
+2. 第55页“gradient all reduce”与第25页详细AG/RS不一致，明确采用详细流程而非悄悄照抄汇总表。ZeRO-1/2通信与释放仅为课堂机制说明，论文推导单一归属不重复。
+3. 峰值按同时活着的唯一storage计：状态片、当前/预取完整缓冲、激活及工作区。26GB例显式假设完整缓冲不alias状态片，16GB理想状态片不代表实际峰值；反向须重新计算。M_live、M_peak公式已按Main要求用aligned显式逐行，避免390px一条超长公式。
+4. “免费”限定足够独立计算、预取与内存窗口、资源竞争等条件。max(0,a_next-c_current)为局部理想暴露延迟，不保证全步无通信成本；没有实测延迟/吞吐/显存。
+5. DP全局batch=Dbm，token数再乘S。TP/PP不乘进独立样本量。计算/通信比使用一次同步前token数；FSDP每microbatch参数收集不因梯度累积自动省去。
+6. TP右乘X(M,h)、A(h,f)、B(f,h)，上投影列切/下投影行切，先局部非线性后部分和归约。f/g前后向按逻辑布局解释，不把物理重复loss额外计数。通信8*(T-1)/T*qMh是标准块四次all-reduce下每rank发送/一次前后向，非收发和、非全网、非所有架构固定值。
+7. PP气泡模型假设等速stage、忽略通信更新、flush调度；bubble/useful=(p-1)/m，bubble/total=(p-1)/(m+p-1)，利用率m/(m+p-1)。p4/m8对应37.5%、27.3%、72.7%，没有混分母。边界通信32MiB前向/64MiB前后向明确每个stage边界、每microbatch。
+8. zero-bubble权重梯度可延后但要满足输入/上游依赖、保存生存期和更新截止；不是“随时算”字面保证。
+9. 激活公式完整括号经原PDF核读。34/10/24/5含特定保存方案字节约定，不再整体乘2，不推广为SwiGLU/GQA等所有架构。24项不能仅按口述简称定为全部MLP；第47页语境是Attention+MLP矩阵计算分片。
+10. SP对序列位置独立，token完整hidden仍在本rank；norm并非沿hidden逐元素独立。SP与CP分开；CP仍需跨片Attention依赖，不教伪局部替代算法。
+11. 34Sbh/T为策略族参考而非信息论下界；52:33问答允许进一步MLP重算。272/128/68MiB例只比较线性项，不含二次项/层数/在途batch/工作区。
+12. 独立DP×PP×TP网格才可直接乘设备数。SP常复用TP域；EP可嵌DP设备集合，不能无脑把EP继续乘进去，也不把EP<DP当普适严格定理。TP8/node是所述历史拓扑启发式，不是所有GPU/TPU硬上限。
+13. Llama3第66页常规与长上下文两行8×1×16×128和8×16×16×8均16384卡；Stage1/2/3是训练阶段，非ZeRO编号。引用的是课堂报告表，不是本项目复现；Megatron推荐配方与模型作者实际训练记录分开。
+14. 第28页的12B/param与53B容量是忽略激活/临时量的上界，不复制成实训保证；“memory none”限定固定local batch及状态口径。未复报故障148为经独立审计的GPU失败统计。
+
+五、字幕风险记录
+全部INAUDIBLE、[? ?]标记逐cue登记。另记录：Grok/Groq、paralyze/parallelize、stage2/3、bubble分母、X左右、computation/communication hungry、a/8、all-to-all泛指/实际all-reduce、DPP/DeepEP疑名、expert apparel、循环模型传闻、Dolma→OLMo自纠、Gamma→Gemma、Mistral/Mixtral及推荐配置来源。未听音，不能判定错误源于讲者还是字幕。07:31的TPU8变化只作为课堂观察，不外推普遍硬件定律。
+
+六、权限和执行边界
+许可未确认：仅有限改写+自主教学，原PDF/字幕/讲义外部图都不是获得全文公开翻译授权。原始/规范化全文只留本地，不force-add。没有音视频下载、付费算力、官方课程代码修改、课程实验执行或可提交实现。没有build/lint/tests/formatter/smoke或独立CPU数值程序，算例是手算教学。
+
+七、Main最终验收建议（worker未执行）
+- 检查来源哈希、每个原cue恰好归属一次、0..4810连续块、8处>2秒缺口、首尾、正文全部时间不越界。
+- 检查全部站内回链/图片及SVG可解析，并在桌面与390px实际看公式、表格、图文字；M_peak换行已经按Main指示处理。
+- 核对与ZeRO materials、ext07/ext08/ext09的单一归属；技术/版权说明不因整合丢失。
+- 实际核对视频身份/时长和入口新标签行为；Main一次整合后必要构建。
+没有commit/push、部署或主验收通过声明；交接不等于accepted。

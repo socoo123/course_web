@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "slice": "p4-lec06",
+  "read_at": "2026-11-14T16:27:23.742591+00:00",
+  "method": "Actual complete displayed text reading in the recorded windows; acquisition/parsing/keyword grep not counted as semantic full reading.",
+  "caption_reading": {
+    "source": "p4-lec06/transcript.en.txt",
+    "one_line_per_cue": true,
+    "total_lines": 1552,
+    "total_cues": 1552,
+    "windows": [
+      {
+        "lines_1_based": [
+          1,
+          350
+        ],
+        "cues_1_based": [
+          1,
+          350
+        ],
+        "start_seconds": 5.24,
+        "end_seconds": 1132.8,
+        "actually_read": true
+      },
+      {
+        "lines_1_based": [
+          351,
+          750
+        ],
+        "cues_1_based": [
+          351,
+          750
+        ],
+        "start_seconds": 1132.8,
+        "end_seconds": 2521.59,
+        "actually_read": true
+      },
+      {
+        "lines_1_based": [
+          751,
+          1150
+        ],
+        "cues_1_based": [
+          751,
+          1150
+        ],
+        "start_seconds": 2521.59,
+        "end_seconds": 3883.15,
+        "actually_read": true
+      },
+      {
+        "lines_1_based": [
+          1151,
+          1552
+        ],
+        "cues_1_based": [
+          1151,
+          1552
+        ],
+        "start_seconds": 3883.15,
+        "end_seconds": 5196.6,
+        "actually_read": true
+      }
+    ],
+    "normalization": "Concatenate original nonempty JSON3 event segments, preserve cue order/start/end and text. Transcript flattens internal linebreaks only; normalized JSON preserves text. No lexical corrections.",
+    "first_start_seconds": 5.24,
+    "last_end_seconds": 5196.6,
+    "gaps_file": "p4-lec06/time-intervals.json",
+    "not_done": [
+      "audio listening",
+      "video-frame viewing",
+      "source/media alignment",
+      "full translation"
+    ]
+  },
+  "metadata_reading": {
+    "video_map": "p1-videos/video-map.json lines296–433",
+    "raw_file": "p1-videos/metadata/lec06-xnDHaNUvHBg.json",
+    "read_scope": "Identity/title/channel/description/duration/upload/license/selected-caption fields and complete manual-language+coverage blocks. Automatic-language inventory and all machine-translated track lists not read.",
+    "matched_identity": true,
+    "live_page_check": "Deferred to Main; worker reused fixed P1 metadata, not a live-browser claim."
+  },
+  "handout_reading": {
+    "file": "p1-lectures/raw/lecture_06.py",
+    "windows_1_based": [
+      [
+        1,
+        280
+      ],
+      [
+        281,
+        283
+      ],
+      [
+        284,
+        540
+      ],
+      [
+        541,
+        543
+      ],
+      [
+        544,
+        745
+      ]
+    ],
+    "complete_text_lines": 745,
+    "actually_read": true,
+    "pdf_original_pages_visually_read": [],
+    "pdf_pages": null,
+    "visual_method": null,
+    "not_claimed": "No full visual read of every PDF figure, no all-linked-images read, no audio/frame correspondence. No course code executed. L06 trace exists but event stream not read."
+  },
+  "provenance_read": [
+    "p1-lectures/version-review.json complete25lines",
+    "p1-lectures/variant-audit.json complete23lines",
+    "p1-lectures/commit.json files patch lines87–135",
+    "p1-lectures/manifest-fragment.json lines255–300",
+    "P4-BLOCKED.txt complete27lines",
+    "p4-model-preflight.json complete30lines; Main owns resumed runtime attestation"
+  ],
+  "prerequisites_read": [
+    "skill://technical-video-notes complete",
+    "local://cs336-p4-contract.txt complete including raw6–12",
+    "NEXT-P4-PROMPT.txt complete",
+    "lectures/bridge08/notes.zh.md complete274lines",
+    "lectures/lec02/notes.zh.md section-heading/topic grep for deduplication; not full read claimed"
+  ],
+  "supplement_reading": [
+    {
+      "file": "p4-lec06/raw/openxla-overview.html",
+      "read_scope": "Entire short rendered XLA overview including Key benefits, documentation pointers and license footer."
+    },
+    {
+      "file": "p4-lec06/raw/triton-vector-add.html",
+      "read_scope": "Rendered Vector Addition entire tutorial, helper, validation and benchmark explanation/output. Read only, not executed; examples not copied into bodies."
+    },
+    {
+      "file": "p4-lec06/raw/triton-fused-softmax.html",
+      "read_scope": "Rendered lines1–300: Motivations, Compute Kernel, Unit Test, Benchmark setup and partial output table. Remaining benchmark rows/footer not read; no claim of full tutorial read. Source reads/writes arithmetic and bytes wording separately corrected."
+    },
+    {
+      "file": "p4-lec06/raw/cuda-programming-model.html",
+      "read_scope": "Entire rendered Programming Model page: heterogeneous/hardware model, blocks/grids/clusters, warps/SIMT, tile programming and memory. Citation use chiefly1.2.2 and on-chip/caches; no claim current CUDA tile API was taught in recording."
+    },
+    {
+      "file": "p4-lec06/raw/cuda-simt-kernels.html",
+      "read_scope": "Rendered lines1–300 through opening Constant Memory; §§2.3.2.1 and2.3.3.2–2.3.3.4 substantively read for synchronization, registers and local-memory corrections. Remainder not read."
+    },
+    {
+      "file": "p4-lec06/raw/cuda-best-practices.html",
+      "read_scope": "Rendered lines1–300; then exact ranges614–663,815–832,890–915,1580–1610. Used§10.2.1 coalescing,§10.2.3.1 banks, shared-matmul synchronization explanation and§13.1 divergence. No full-document read claim."
+    }
+  ],
+  "technical_uncertainties_and_corrections": [
+    {
+      "cue_indices_1_based": [
+        238,
+        264
+      ],
+      "time_seconds": [
+        769.29,
+        861.42
+      ],
+      "issue": "Recording and source variables use128 threads/block; source prose line98 says64. Toy register-only occupancy12/64=18.75%, not benchmark."
+    },
+    {
+      "cue_indices_1_based": [
+        354,
+        355
+      ],
+      "time_seconds": [
+        1145.5,
+        1153.8
+      ],
+      "issue": "divide direction in block/SM statement ambiguous or reversed. One-block-per-SM toy full waves prefer block count multiple of SM count; actual multi-block residency caveat required."
+    },
+    {
+      "cue_indices_1_based": [
+        43,
+        51
+      ],
+      "time_seconds": [
+        155.83,
+        194.52
+      ],
+      "issue": "Recording states hierarchy and8TB/s HBM, not enough spoken evidence to recover displayed L1/L2 cells. Sep12 revision must not be backfilled."
+    },
+    {
+      "cue_indices_1_based": [
+        1227,
+        1227
+      ],
+      "time_seconds": [
+        4139.26,
+        4141.5
+      ],
+      "issue": "blocksize called number of threads; logical tile elements not necessarily physical thread count. Thread coarsening earlier disproves1:1."
+    },
+    {
+      "cue_indices_1_based": [
+        1068,
+        1069
+      ],
+      "time_seconds": [
+        3599.1,
+        3613.992
+      ],
+      "issue": "Recording gives5MN reads/3MN writes leading terms; source total5MN+M omits denominator M. Explicit idealized ledger5MN+2M and3MN+2M; multiply element bytes."
+    },
+    {
+      "cue_indices_1_based": [
+        1450,
+        1457
+      ],
+      "time_seconds": [
+        4868.86,
+        4894.54
+      ],
+      "issue": "Rows/columns described informally; matrix shape owns interpretation: A columns/B rows are K. Correct source line654 misleading comment without altering source."
+    },
+    {
+      "cue_indices_1_based": [
+        928,
+        932
+      ],
+      "time_seconds": [
+        3139.9,
+        3162.69
+      ],
+      "issue": "PTX discussed as executed code; editorial clarification virtual ISA still lowered to device machine code."
+    },
+    {
+      "cue_indices_1_based": [
+        1529,
+        1532
+      ],
+      "time_seconds": [
+        5114.07,
+        5126.05
+      ],
+      "issue": "cute, delirious DSLs transcription uncertain. Do not infer an authoritative complete alternative DSL list."
+    },
+    {
+      "cue_indices_1_based": [
+        1257,
+        1258
+      ],
+      "time_seconds": [
+        4247.978,
+        4252.66
+      ],
+      "issue": "Large accumulator/shared-memory location claim is simplified; compiler layout/spills need inspection, no automatic-register-to-shared guarantee."
+    },
+    {
+      "cue_indices_1_based": [
+        715,
+        821
+      ],
+      "time_seconds": [
+        2384.35,
+        2769.74
+      ],
+      "issue": "GELU source exp-derived tanh can overflow for extreme positive input; random-source test is not universal stability proof. No implementation reproduced or executed."
+    },
+    {
+      "cue_indices_1_based": [
+        1,
+        1552
+      ],
+      "time_seconds": [
+        5.24,
+        5196.6
+      ],
+      "issue": "Official title mentions XLA, but full captions lack a substantive XLA teaching segment. XLA comparison is editor supplement without invented video timestamp."
+    }
+  ],
+  "inaudible_cues": [
+    {
+      "cue_index_1_based": 378,
+      "start_seconds": 1231.59,
+      "end_seconds": 1235.45,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 648,
+      "start_seconds": 2141.82,
+      "end_seconds": 2144.38,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 825,
+      "start_seconds": 2782.8,
+      "end_seconds": 2786.493,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 877,
+      "start_seconds": 2960.84,
+      "end_seconds": 2962.8,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 947,
+      "start_seconds": 3201.21,
+      "end_seconds": 3203.69,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 986,
+      "start_seconds": 3352.49,
+      "end_seconds": 3355.635,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 1009,
+      "start_seconds": 3415.78,
+      "end_seconds": 3417.52,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 1012,
+      "start_seconds": 3421.14,
+      "end_seconds": 3423.02,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 1136,
+      "start_seconds": 3831.11,
+      "end_seconds": 3836.123,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 1153,
+      "start_seconds": 3887.61,
+      "end_seconds": 3888.99,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 1249,
+      "start_seconds": 4219.22,
+      "end_seconds": 4222.013,
+      "marker": "INAUDIBLE"
+    },
+    {
+      "cue_index_1_based": 1276,
+      "start_seconds": 4300.82,
+      "end_seconds": 4302.42,
+      "marker": "INAUDIBLE"
+    }
+  ],
+  "status": {
+    "captions_actually_read_complete": true,
+    "handout_text_actually_read_complete": true,
+    "worker_self_reviewed": true,
+    "accepted": false,
+    "build_tests_formatters_run": false,
+    "gpu_execution": false,
+    "official_assignment_execution": false,
+    "main_verification_pending": true
+  }
+}

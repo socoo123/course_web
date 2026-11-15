@@ -1,0 +1,96 @@
+P4 Attention / profiling extensions — author review
+Slice: p4-attention-profiling
+Author: P4AttentionProfiling
+Acceptance: accepted=false; author review only. Main owns integrated review, rendering, arithmetic verification, build and publication.
+
+1. Exact deliverables
+Authored Chinese notes:
+- lectures/ext04/notes.zh.md
+- lectures/ext05/notes.zh.md
+- lectures/ext06/notes.zh.md
+Original assets:
+- lectures/ext04/assets/attention-ledger.svg
+- lectures/ext05/assets/softmax-common-scale.svg
+- lectures/ext06/assets/timing-boundaries.svg
+Lightweight evidence:
+- sources/p4-attention-profiling/manifest-fragment.json
+- sources/p4-attention-profiling/mechanism-cases.json
+- sources/p4-attention-profiling/review.txt
+Local-only source acquisition:
+- sources/p4-attention-profiling/raw/nsight-systems-2025.3.html
+- sources/p4-attention-profiling/raw/nsight-compute-2025.3.html
+- sources/p4-attention-profiling/raw/triton-do-bench-main.html
+- sources/p4-attention-profiling/raw/pytorch-2.9-cuda-event.html
+- sources/p4-attention-profiling/raw/pytorch-2.9-profiler.html
+Only these assigned bodies/assets/source fragment were modified. No shared course/catalog/status/manifest/reading-map edits; no official assignment or source-code edits.
+
+2. Scope and single homes
+ext04 adds a concrete attention ledger: independent storage versus logical tensors; lifetimes versus allocation sums; traffic versus capacity; general Sq/Sk and dk/dv dimensions; MHA versus GQA physical KV; score/probability materialization; forward/backward/rematerialization FLOPs; useful causal pairs versus dense/tiled executed work; projection versus core costs; prefill, per-token decode and whole-history cumulative cost.
+Original B=2,H=8,S=2048,d=64 ledger gives explicit MiB bytes and declared storage dtypes. The 528 MiB sum is a deliberately specified six-storage simultaneous-lifetime example, never a measured total training peak. Length doubling, GQA payload and projection comparison are also assumptions-only examples.
+ext05 derives per-row (m,l,u) invariants from finite scores over nonempty allowed sets. Numerator and denominator scale together; normalized-output and unnormalized-accumulator forms are separated. Four-key natural-log example and scalar backward are original. Includes row/feature axes, LSE recovery, masks before normalization, empty block versus entirely masked row, finite mask replacement pitfalls, exp/exp2 convention, floating-point limitations, dQ/dK dimensions, tau chain rule, D=<G,O>, gradient row sum, grouped-head gradient accumulation and dropout replay conditions.
+ext06 extends bridge08 with event versus wall-clock causal boundaries, multistream join requirements, five kinds of first-use/warmup state, separate compile/allocator/hardware caches, tool API unit caveats, profiler schedules, Systems versus Compute, replay/serialization/cache/clock perturbations, critical-path/overlap interpretation, memory timeline scope, and reproducibility records. No measured GPU numbers or fabricated trace are presented.
+L02/L04/bridge08 are reused by links. Kernel mapping/roofline remain lec05/lec06. Paper narrative, claim assessment, experimental evidence, algorithm-by-algorithm reading and version errata remain only lec06/materials.zh.md. A2 task statements/guide remain the lab owner's files. These extensions have no independent official video; no fabricated video metadata, timeline or draft page was created.
+
+3. Actual source reads
+All source entries have id,kind,url,file,sha256,version,retrieved_at,license,read_scope,read_at,chinese_treatment,material_files. Source paths are relative to sources/; ../lectures paths explicitly identify reused local editorial baselines. Supporting extraction hashes remain with each paper/PyTorch entry. Raw acquisition does not imply a full read.
+
+Fixed paper03 arXiv:2205.14135v2:
+- Existing extracted text actually read lines 207-320, 994-1085, 1087-1100, 1163-1170.
+- Scope: section 2.2 standard materialization; section 3.1 including Algorithm 1 and Theorem 1; Appendix B.1/B.2 mathematical forward/backward; B.3 opening scale/mask/dropout definition; B.4 recomputation observations.
+- No visual PDF review, full-paper claim or independent experimental-table audit by this worker.
+Fixed paper04 arXiv:2307.08691v1:
+- Existing extracted text actually read lines 107-223, 234-280, 331-339, 377-387.
+- Scope: sections 2.2/2.3, selected section 3.1.1 equations/prose, correctness paragraph, opening 3.1.2 and MQA/GQA paragraph.
+- No complete Algorithm 1/2 block read by this worker, no visual PDF review or benchmark audit. Definitions/invariants were independently derived, not copied from questionable v1 equations.
+PyTorch 2.9 reused originals:
+- CUDA semantics extracted text 163-235 and 304-322: asynchronous execution; first stream-dependency/lifetime example and opening of next example; memory-management opening.
+- Benchmark Utils extracted text 1-79,105-134: Timer and blocked_autorange only.
+- Numerical accuracy extracted text 1-43, reader context to46: floating-point nonassociativity, batching/slicing, extremal values, beginning non-finite linalg caveat. No inference that the linalg warning specifies attention backend all-mask behavior.
+- v2.9.0 LICENSE full lines1-84 actually read. Existing versioned license provenance is not generalized to all new website content, v2.9.1 files, NVIDIA, Triton or third-party images.
+New PyTorch pages:
+- Event 2.9 complete main API body, including constructor and all displayed methods. Source links identify v2.9.1; implementation not read.
+- Profiler 2.9 static-reader lines1-300 and381-398. Overview, main parameters and overhead warnings, exports/key_averages, profile notes and schedule semantics; remaining examples/methods not fully read. Source links identify v2.9.1.
+NVIDIA Nsight Systems:
+- Fixed2025.3 archived User Guide. Static-reader lines1-163 (CLI introduction and displayed options);2358-2400 (NVTX opening/range types);2510-2645 (Basic CUDA trace and launching Compute from a kernel).
+- Original full HTML saved locally, but guide not fully read. No source screenshot visual reading or reproduction.
+NVIDIA Nsight Compute:
+- URL archive2025.3, page title literally NsightCompute13.0 documentation. Both are retained; no guessed resolution of version-label mismatch and no installed-version claim.
+- Static-reader lines1-300: introduction, sets/sections and rules, Kernel/Application/Range replay, range requirements and partially displayed Supported APIs;487-512: overhead opening;1319-1376: reproducibility/serialization/clock/cache/persistence.
+- A long lock-file paragraph in serialization was truncated by display; no claim to its undisplayed ending. The portions used to explain serialization and cache/clock effects were displayed.
+Triton:
+- Full do_bench main API page body read. warmup/rep are milliseconds; return_mode defaults mean; quantiles overrides return_mode in this snapshot.
+- main has no stable release label; retrieval time/hash pin this exact supplementary page. No course-dependency inference, implementation reading, fused-attention tutorial reading or execution.
+Policy/baselines:
+- Existing AI policy full21 lines read; assignments and leaderboards require student-written implementation, conceptual/API assistance only.
+- bridge08 notes full1-274; lec02 notes1-193; lec04 notes1-85 and324-332 plus headings/KV keyword context.
+- Existing lec02 linear-layer-ledger.svg fully read solely as visual style convention, not as an additional primary technical source.
+- NEXT-P4-PROMPT.txt and local shared contract read before writing. No inheritance of prior agents' full-caption/PDF-reading claims.
+
+4. Technical author review and source caveats
+- All score normalization is along keys; grouped KV head count does not replace query head count in score/FLOP ledgers.
+- FLOPs versus FLOP/s, byte versus MiB/GiB, allocated versus reserved, logical payload versus actual HBM traffic and useful pairs versus executed instructions are explicitly separated.
+- 12BHqSqSkd ordinary and14BHqSqSkd rematerialized forward+backward are stated matmul main terms for dk=dv, all Q/K/V gradients required, and one extra QK recomputation; softmax/scaling/mask etc. excluded or separately noted.
+- Per-row LSE is not a probability or an ordinary exponential sum. Alpha=exp(m_old-m_new) is at most1; both numerator and denominator use it. Global-max-with-row-sums is distinguished from incorrectly sharing normalization across rows.
+- Empty allowed sets are excluded from ordinary softmax derivation; no universal claim about any concrete all-mask backend return value. Empty tile is zero contribution; -infinity minus -infinity is not treated as safe arithmetic.
+- dK=tau*dS^T*Q is checked by symbolic shape; tau included once. Worked example only covers probability/value local gradients, not an invented Q/K numerical test.
+- Source text exposed FA2v1 transposition/scaling anomalies. Paper owner reported direct visual confirmation in PDF pp3-7; this slice did not visually inspect those pages. Full source errata and visual evidence belong to lec06/materials. ext05 explicitly links that home and independently derives the correct invariants rather than silently treating v1 errors as valid formulas.
+- Main's interim feedback on ext04 was applied: five objects corrected to six; six-term storage sum, input dimension declaration and three FLOP expressions explicitly split across lines for mobile width.
+- Event time is elapsed device timeline time, not necessarily sum of active kernels. Multistream work needs proper dependency inclusion. Profiler overhead, Compute replay/cache/clock controls and source-version boundaries are disclosed.
+- All3 SVGs are original, with title/desc and theme-variable colors, no scripts/external references/backgrounds. Their geometry is explanatory, not measured capacity/time.
+
+5. Acquisition and permission handling
+Fixed papers and PyTorch baseline originals reused from P1/P2; original acquisition times and hashes retained. Text extraction hashes identify the actual representation read. Supplemental full HTMLs remain local only; publish just allowlisted original bodies/assets and lightweight evidence.
+Initial optional BeautifulSoup import was unavailable; nothing was installed. An attempted simple HTML extraction found no supported main element and produced empty text files; those3 files were removed, not used as reading evidence. Two NVIDIA complete HTMLs were acquired directly; a later urllib request was HTTP403. Static reader successfully accessed the required primary pages; complete raw-reader artifacts were saved for the remaining pages. Truncated raw-response overwrite was refused, so the existing full NVIDIA originals were retained. No test/build/smoke run was used to diagnose or validate acquisition.
+Paper full-translation permission is unconfirmed. Vendor/site permissions are not inferred from source-code licenses. No paper prose translation, copied figures, official assignment code, sample solution, fused-attention implementation or leaderboard code was produced.
+
+6. Verification not performed by worker
+No builds, tests, linters, formatters, browser rendering, CUDA/Triton/NCCL benchmarks, Nsight captures, official assignment execution, paid compute, model downloads, audio/video downloads, commits or pushes.
+No measured hardware performance values exist in these notes. All numerical results are explicitly conditional arithmetic; ext06 uses symbolic intervals only. mechanism-cases.json is an unexecuted list of original inputs/expected local mathematical properties for Main, not an acceptance result or runnable A2 implementation.
+
+7. Suggested Main-only integration checks
+- Validate15 source records and supporting source hashes, allowlist/local-only separation,3 notes/3 SVGs and all internal links.
+- Evaluate the original attention byte/FLOP cases and four-key normalization/backward fractions from mechanism-cases.json using small CPU arithmetic; do not treat this as any official task completion.
+- Review complete ext05 remaining sections and ext06; in particular numerical boundaries, multistream/event scope, profiler units and source-version labels.
+- Render desktop/390px mobile, light/dark, all3 SVGs, formulas, tables and self-test details. Inspect long displayed formulas rather than assuming source line breaks imply mathematical breaks.
+- Reconcile the lec06/materials links with paper owner's v1 errata; do not duplicate paper narrative or algorithms in these extension homes.
+- Only Main runs the requested targeted final checks/build and records actual page/acceptance/publication status. This file remains accepted=false until that integration.

@@ -1,0 +1,2296 @@
+{
+  "phase": "P4",
+  "status": "passed",
+  "verifiedAt": "2026-11-14T17:15:16.624Z",
+  "base": "http://127.0.0.1:5414/#/c/stanford-cs336-2026",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "uniqueRoutes": 19,
+  "geometryVisits": 38,
+  "pages": [
+    {
+      "id": "lec05",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec05?v=notes",
+      "title": "GPU 与 TPU",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开78:39",
+          "href": "https://www.youtube.com/watch?v=izZba4UA7iY",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L5 · 78:39",
+          "href": "https://www.youtube.com/watch?v=izZba4UA7iY",
+          "target": "_blank"
+        },
+        {
+          "text": "Stanford Online录像",
+          "href": "https://www.youtube.com/watch?v=izZba4UA7iY",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "1. 本讲要解决的不是“GPU很快”",
+        "2. 一份计算有逻辑身份，也有物理落点",
+        "3. Roofline是上界，不是跑分预测器",
+        "4. 三种省搬运的方法，不能混成一句“用缓存”",
+        "5. 为什么更大的矩阵反而出现低谷",
+        "6. 低精度与重算：拿别的资源换搬运",
+        "7. TPU：迁移原则，不迁移GPU术语的全部含义",
+        "8. FlashAttention在这里负责串起直觉，不重做论文",
+        "9. 自测：先定位约束，再给建议",
+        "全片导航",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 735.984375
+        },
+        {
+          "loadedAtMeasurement": false,
+          "deferredLazyAtInitialViewport": true,
+          "width": 735.984375
+        }
+      ]
+    },
+    {
+      "id": "lec05",
+      "view": "draft",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec05?v=draft",
+      "title": "GPU 与 TPU",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "中文译稿",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 676,
+          "parentWidth": 676,
+          "parentScrollWidth": 676
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开78:39",
+          "href": "https://www.youtube.com/watch?v=izZba4UA7iY",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L5 · 78:39",
+          "href": "https://www.youtube.com/watch?v=izZba4UA7iY",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "全片覆盖表",
+        "顺序释义：只保留论证转折",
+        "可辨认问答索引",
+        "字幕与讲义不能相互无声覆盖",
+        "引用与来源"
+      ],
+      "images": []
+    },
+    {
+      "id": "lec06",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec06?v=notes",
+      "title": "Kernel 与 Triton",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开86:41",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L6 · 86:41",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        },
+        {
+          "text": "Stanford Online录像",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "1. 一条kernel要过两道关",
+        "2. Triton的block首先是逻辑数据块",
+        "3. 指针、stride与mask：三份契约不能省",
+        "4. 行归约：局部看像张量，全局必须共享分母",
+        "5. 矩阵分块：先写不变量，再讨论tile大小",
+        "6. 同步：共享地址不等于共享完成状态",
+        "7. 有限硬件如何改变映射",
+        "8. 先测正确目标，再决定是否手写kernel",
+        "9. Triton、torch.compile与XLA不在同一层",
+        "10. 自测与答案",
+        "全片导航",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 735.984375
+        },
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 735.984375
+        }
+      ]
+    },
+    {
+      "id": "lec06",
+      "view": "draft",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec06?v=draft",
+      "title": "Kernel 与 Triton",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "中文译稿",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开86:41",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L6 · 86:41",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "全片覆盖表",
+        "顺序释义：从测量到数据分块",
+        "问答定位与无法补写的部分",
+        "与课后源码分开看的编辑说明",
+        "引用与来源"
+      ],
+      "images": []
+    },
+    {
+      "id": "lec07",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec07?v=notes",
+      "title": "并行训练（一）",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开81:02",
+          "href": "https://www.youtube.com/watch?v=SzpOcwdIL0Y",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L7 · 81:02",
+          "href": "https://www.youtube.com/watch?v=SzpOcwdIL0Y",
+          "target": "_blank"
+        },
+        {
+          "text": "Stanford Online录像",
+          "href": "https://www.youtube.com/watch?v=SzpOcwdIL0Y",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "1. 先问“谁负责什么”，再问“怎样更快”",
+        "2. 同步DP的核心不变量",
+        "3. 集合通信是一种布局变换",
+        "4. TP：先看切的是保留轴还是收缩轴",
+        "5. PP：把一条依赖链变成多条交错的链",
+        "6. “已发起”“已完成”“可以读取”是三件事",
+        "7. 量通信时，先固定口径",
+        "8. 读教学源码时，不把演示当训练系统",
+        "9. 自测与答案",
+        "全片时间导航",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 736
+        }
+      ]
+    },
+    {
+      "id": "lec07",
+      "view": "draft",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec07?v=draft",
+      "title": "并行训练（一）",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "中文译稿",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开81:02",
+          "href": "https://www.youtube.com/watch?v=SzpOcwdIL0Y",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L7 · 81:02",
+          "href": "https://www.youtube.com/watch?v=SzpOcwdIL0Y",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "00:05–05:50｜把搬运问题扩展到多GPU",
+        "05:50–12:32｜先认识操作的输入和输出",
+        "12:32–21:53｜训练常用的三个collective和all-to-all",
+        "21:53–36:13｜网络层次决定什么通信值得做",
+        "36:13–46:38｜进程、通信缓冲与两层异步",
+        "46:38–55:08｜通信测量的数字必须带口径",
+        "55:08–62:59｜DP为什么能保持参数副本一致",
+        "62:59–69:38｜列TP及没有自动解决的后向",
+        "69:38–74:23｜有了分层，还需要microbatch与调度",
+        "74:23–80:57｜选择并行策略，也是在选择搬运地点",
+        "完整时间覆盖表",
+        "引用与来源"
+      ],
+      "images": []
+    },
+    {
+      "id": "lec08",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec08?v=notes",
+      "title": "并行训练（二）",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开80:10",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L8 · 80:10",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        },
+        {
+          "text": "Stanford Online录像",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "1. 要选的不是缩写，而是瓶颈的解法",
+        "2. 把“存在哪里”和“谁算这一层”分开",
+        "3. FSDP的核心是一个有生存期的参数窗口",
+        "4. DP的扩展预算不仅是GPU数，还有有效batch",
+        "5. TP的高效配对：别急着收集中间激活",
+        "6. PP用时间调度换较少的边界通信",
+        "7. SP补的是TP遗漏的激活，不是重命名Attention",
+        "8. 混合并行先画组，别把缩写度数全乘起来",
+        "9. 课堂案例应该怎样使用",
+        "10. 自测与答案",
+        "全片时间导航",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 736
+        }
+      ]
+    },
+    {
+      "id": "lec08",
+      "view": "draft",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec08?v=draft",
+      "title": "并行训练（二）",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "中文译稿",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开80:10",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L8 · 80:10",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "00:05–10:34｜为什么互连也属于计算系统",
+        "10:34–16:48｜DP让计算分开，却把状态复制多份",
+        "16:48–20:25｜先分更新状态，再缩短梯度生存期",
+        "20:25–28:53｜FSDP在需要时收集参数，不把层永久交给别的卡",
+        "28:53–36:35｜batch预算有限，流水线也有代价",
+        "36:35–39:27｜重排反向依赖，而不只是重排方块",
+        "39:27–44:55｜列/行TP配对与网络成本",
+        "44:55–53:19｜激活峰值、SP与重算的边界",
+        "53:19–61:51｜EP不是把TP改个名字，SP也不是CP",
+        "61:51–69:37｜把不同资源约束组合起来",
+        "69:37–80:05｜从历史曲线和模型案例读出条件，而非照抄配方",
+        "完整时间覆盖表",
+        "引用与来源"
+      ],
+      "images": []
+    },
+    {
+      "id": "ext04",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/ext04?v=notes",
+      "title": "专题 · Attention 的资源账本",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "1. 先把“Attention太贵”拆成四个问题",
+        "2. 固定形状，才有账本",
+        "3. 三张不能混在一起的表",
+        "4. 原创算例：16 MiB的输入输出，如何遇上512 MiB的中间矩阵？",
+        "5. FLOPs：内存省掉了，配对工作未必省掉",
+        "6. 把投影放回来：为什么参数估算会漏掉长序列项？",
+        "7. KV缓存、prefill与decode：名字里有attention，不代表同一账本",
+        "8. FlashAttention到底改了什么？",
+        "9. 自测与答案",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": false,
+          "deferredLazyAtInitialViewport": true,
+          "width": 735.984375
+        }
+      ]
+    },
+    {
+      "id": "ext05",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/ext05?v=notes",
+      "title": "专题 · FlashAttention 数学推导",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [],
+      "videoLinks": [],
+      "headings": [
+        "1. 这页要证明什么，不负责什么？",
+        "2. 先缩到一个query行",
+        "3. 三个统计量，就是我们维护的承诺",
+        "4. 合并时，分子和分母必须一起换尺度",
+        "5. 四个key的完整手算：最大值变了，旧贡献怎么办？",
+        "6. 从一行到行块：别把统计轴写错",
+        "7. mask、空集合与数值边界，是证明前提的一部分",
+        "8. 反向：先推导需要什么，再决定保存什么",
+        "9. 同一个四key例子的反向手算",
+        "10. 反向为什么不必保存完整P？",
+        "11. 自测与答案",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": false,
+          "deferredLazyAtInitialViewport": true,
+          "width": 735.984375
+        }
+      ]
+    },
+    {
+      "id": "ext06",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/ext06?v=notes",
+      "title": "专题 · GPU 性能分析方法",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "1. 核心问题：你测到的是提交、完成，还是整步？",
+        "2. 用一个实验问题约束所有计时选择",
+        "3. 异步时间线：CPU函数返回时，GPU可能刚入队",
+        "4. warmup、编译与缓存：至少五种“第一次”",
+        "5. 工具选择：先定位时间线，再下钻一个问题",
+        "6. 采集器也会改变被测程序",
+        "7. 读trace的五条反直觉规则",
+        "8. 显存profiling：容量证据也要有时间边界",
+        "9. 一份能被别人复核的记录应包含什么？",
+        "10. 一个完整的推理闭环，不需要先有漂亮截图",
+        "11. 自测与答案",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 735.984375
+        }
+      ]
+    },
+    {
+      "id": "ext07",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/ext07?v=notes",
+      "title": "专题 · 集合通信算法",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "学习问题与边界",
+        "1. 先确定结果，再讨论线路",
+        "2. Ring：把完整向量拆成同时流动的块",
+        "3. 一张表固定三种通信口径",
+        "4. Tree：减少依赖轮数，但不自动均衡每个端点",
+        "5. 延迟与带宽：先写单位，再比较",
+        "6. 拓扑：同一个逻辑环，可能走完全不同的路",
+        "7. 正确性先于“异步”：一份通信契约清单",
+        "8. 自测与答案",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": false,
+          "deferredLazyAtInitialViewport": true,
+          "width": 736
+        }
+      ]
+    },
+    {
+      "id": "ext08",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/ext08?v=notes",
+      "title": "专题 · 分片训练与恢复",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "学习问题与前置知识",
+        "1. “这张卡有参数”至少有三种含义",
+        "2. 长期状态变小，不代表峰值等比例下降",
+        "3. 检查点应当对应一个状态向量，而非一堆最新文件",
+        "4. 保存协议：同步、复制与持久化是三个事件",
+        "5. 加载协议：先确定目标布局，再搬数据",
+        "6. 从4个rank恢复到3个：重分片搬的是逻辑区间",
+        "7. 重分片成功，不等于原训练轨迹被完整重放",
+        "8. 数据游标与RNG：最容易被“step编号”遮住的状态",
+        "9. 一份可以证伪恢复声明的检查协议",
+        "10. 自测与答案",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": false,
+          "deferredLazyAtInitialViewport": true,
+          "width": 735.984375
+        }
+      ]
+    },
+    {
+      "id": "ext09",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/ext09?v=notes",
+      "title": "专题 · MoE 的系统问题",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "学习问题与单一归属",
+        "1. 从token集合变成“分派边”集合",
+        "2. Dispatch与combine：一去一回，中间不能丢身份",
+        "3. 八个token的完整负载案例",
+        "4. Capacity、padding和dropping分别改变哪一笔账",
+        "5. 专家均分到卡，为什么还是有慢卡",
+        "6. 一张通信矩阵，看清本地边与远端边",
+        "7. 反向还要走一遍依赖，不是只有两次前向all-to-all",
+        "8. EP、TP、DP：切分的是三种不同对象",
+        "9. 平均平衡、节点平衡与链路平衡是不同指标",
+        "10. 不写完整实现，也能检查哪些不变量",
+        "11. 自测与答案",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 735.984375
+        }
+      ]
+    },
+    {
+      "id": "lec06",
+      "view": "materials",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec06?v=materials",
+      "title": "Kernel 与 Triton",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "课程资料",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开86:41",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L6 · 86:41",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "1. 两篇论文分别回答什么问题？",
+        "2. “精确”究竟保留了什么？",
+        "3. 为什么一个很小的状态能代替整行概率？",
+        "4. 反向为何“多算一次”反而可能更快？",
+        "5. IO 定理究竟证明了多强的结论？",
+        "6. FA2 的三个改进为什么不能合成一句“更好的分块”？",
+        "7. 怎样读速度数字，而不把指标换掉？",
+        "8. 固定 FA2 v1 的公式应怎样带着勘误读？",
+        "9. 自测：能否保住结论的条件？",
+        "原文导航、署名与编写边界",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": false,
+          "deferredLazyAtInitialViewport": true,
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "lec08",
+      "view": "materials",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec08?v=materials",
+      "title": "并行训练（二）",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "课程资料",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开80:10",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L8 · 80:10",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "1. ZeRO 不是“把模型平均切开”这么简单",
+        "2. 先回答：一个参数到底有几个副本？",
+        "3. 三个阶段，分别消除哪一种冗余？",
+        "4. “通信量不变”为什么不等于“先 all-reduce，再随便广播”？",
+        "5. 为什么通信载荷相同，时间仍可能差很多？",
+        "6. ZeRO-R 补的不是“第四阶段”",
+        "7. 论文到底测了哪一部分？",
+        "8. 自测：能否区分状态、临时量和通信？",
+        "原文导航、署名与编写边界",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 736
+        }
+      ]
+    },
+    {
+      "id": "a2-systems",
+      "view": "zh",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lab/a2-systems?v=zh",
+      "title": "A2 · 系统优化与分布式训练",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "实验说明",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "0．版本、政策、硬件与公共配置",
+        "1．端到端计时、计算与显存（§2）",
+        "2．单卡重算（§3，pp.10–15）",
+        "3．Attention 与 GPU kernel（§4）",
+        "4．分布式通信与 DDP（§5）",
+        "5．优化器状态分片（§6）",
+        "6．FSDP（§7，pp.38–39）",
+        "7．并行策略分析（§8，pp.39–46）",
+        "8．完整训练步排行榜（§9，pp.46–48）",
+        "9．接口、交付与相关学习入口",
+        "引用与来源"
+      ],
+      "images": []
+    },
+    {
+      "id": "a2-systems",
+      "view": "guide",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lab/a2-systems?v=guide",
+      "title": "A2 · 系统优化与分布式训练",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "selectedTab": "实验指导",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "G0．先给每个结论写一个“适用标签”",
+        "G1．计时：你究竟让时钟覆盖了什么",
+        "G2．Profiler：把“哪里慢”变成可定位的证据",
+        "G3．显存：区分所有权、生命周期和峰值",
+        "G4．Checkpointing：不是“把激活删掉”",
+        "G5．FlashAttention：从形状合同到数值不变量",
+        "G6．DDP：让多进程仍优化同一个目标",
+        "G7．优化器分片与 FSDP：谁拥有可更新状态",
+        "G8．并行计算题：先做单位和轴的审校",
+        "G9．排行榜：完整工作量与冷启动是双重合同",
+        "G10．交付前的证据审阅，不是代做检查清单",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 735.984375
+        }
+      ]
+    },
+    {
+      "id": "resources",
+      "view": "resources",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026",
+      "title": "从零构建语言模型",
+      "viewport": 1440,
+      "rootWidth": 1440,
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        },
+        {
+          "width": 734,
+          "parentWidth": 734,
+          "parentScrollWidth": 734
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "从一条可解释的训练闭环开始",
+        "先修自检",
+        "主线与动手顺序",
+        "深挖专题怎么选",
+        "共享环境与实验纪律",
+        "术语与符号约定",
+        "论文只在一个位置展开",
+        "引用与来源"
+      ],
+      "images": []
+    },
+    {
+      "id": "lec05",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec05?v=notes",
+      "title": "GPU 与 TPU",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开78:39",
+          "href": "https://www.youtube.com/watch?v=izZba4UA7iY",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L5 · 78:39",
+          "href": "https://www.youtube.com/watch?v=izZba4UA7iY",
+          "target": "_blank"
+        },
+        {
+          "text": "Stanford Online录像",
+          "href": "https://www.youtube.com/watch?v=izZba4UA7iY",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "1. 本讲要解决的不是“GPU很快”",
+        "2. 一份计算有逻辑身份，也有物理落点",
+        "3. Roofline是上界，不是跑分预测器",
+        "4. 三种省搬运的方法，不能混成一句“用缓存”",
+        "5. 为什么更大的矩阵反而出现低谷",
+        "6. 低精度与重算：拿别的资源换搬运",
+        "7. TPU：迁移原则，不迁移GPU术语的全部含义",
+        "8. FlashAttention在这里负责串起直觉，不重做论文",
+        "9. 自测：先定位约束，再给建议",
+        "全片导航",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 357.984375
+        },
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 357.984375
+        }
+      ]
+    },
+    {
+      "id": "lec05",
+      "view": "draft",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec05?v=draft",
+      "title": "GPU 与 TPU",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "中文译稿",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 314,
+          "parentWidth": 314,
+          "parentScrollWidth": 314
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开78:39",
+          "href": "https://www.youtube.com/watch?v=izZba4UA7iY",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L5 · 78:39",
+          "href": "https://www.youtube.com/watch?v=izZba4UA7iY",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "全片覆盖表",
+        "顺序释义：只保留论证转折",
+        "可辨认问答索引",
+        "字幕与讲义不能相互无声覆盖",
+        "引用与来源"
+      ],
+      "images": []
+    },
+    {
+      "id": "lec06",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec06?v=notes",
+      "title": "Kernel 与 Triton",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开86:41",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L6 · 86:41",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        },
+        {
+          "text": "Stanford Online录像",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "1. 一条kernel要过两道关",
+        "2. Triton的block首先是逻辑数据块",
+        "3. 指针、stride与mask：三份契约不能省",
+        "4. 行归约：局部看像张量，全局必须共享分母",
+        "5. 矩阵分块：先写不变量，再讨论tile大小",
+        "6. 同步：共享地址不等于共享完成状态",
+        "7. 有限硬件如何改变映射",
+        "8. 先测正确目标，再决定是否手写kernel",
+        "9. Triton、torch.compile与XLA不在同一层",
+        "10. 自测与答案",
+        "全片导航",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 357.984375
+        },
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 357.984375
+        }
+      ]
+    },
+    {
+      "id": "lec06",
+      "view": "draft",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec06?v=draft",
+      "title": "Kernel 与 Triton",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "中文译稿",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开86:41",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L6 · 86:41",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "全片覆盖表",
+        "顺序释义：从测量到数据分块",
+        "问答定位与无法补写的部分",
+        "与课后源码分开看的编辑说明",
+        "引用与来源"
+      ],
+      "images": []
+    },
+    {
+      "id": "lec07",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec07?v=notes",
+      "title": "并行训练（一）",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开81:02",
+          "href": "https://www.youtube.com/watch?v=SzpOcwdIL0Y",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L7 · 81:02",
+          "href": "https://www.youtube.com/watch?v=SzpOcwdIL0Y",
+          "target": "_blank"
+        },
+        {
+          "text": "Stanford Online录像",
+          "href": "https://www.youtube.com/watch?v=SzpOcwdIL0Y",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "1. 先问“谁负责什么”，再问“怎样更快”",
+        "2. 同步DP的核心不变量",
+        "3. 集合通信是一种布局变换",
+        "4. TP：先看切的是保留轴还是收缩轴",
+        "5. PP：把一条依赖链变成多条交错的链",
+        "6. “已发起”“已完成”“可以读取”是三件事",
+        "7. 量通信时，先固定口径",
+        "8. 读教学源码时，不把演示当训练系统",
+        "9. 自测与答案",
+        "全片时间导航",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 358
+        }
+      ]
+    },
+    {
+      "id": "lec07",
+      "view": "draft",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec07?v=draft",
+      "title": "并行训练（一）",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "中文译稿",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开81:02",
+          "href": "https://www.youtube.com/watch?v=SzpOcwdIL0Y",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L7 · 81:02",
+          "href": "https://www.youtube.com/watch?v=SzpOcwdIL0Y",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "00:05–05:50｜把搬运问题扩展到多GPU",
+        "05:50–12:32｜先认识操作的输入和输出",
+        "12:32–21:53｜训练常用的三个collective和all-to-all",
+        "21:53–36:13｜网络层次决定什么通信值得做",
+        "36:13–46:38｜进程、通信缓冲与两层异步",
+        "46:38–55:08｜通信测量的数字必须带口径",
+        "55:08–62:59｜DP为什么能保持参数副本一致",
+        "62:59–69:38｜列TP及没有自动解决的后向",
+        "69:38–74:23｜有了分层，还需要microbatch与调度",
+        "74:23–80:57｜选择并行策略，也是在选择搬运地点",
+        "完整时间覆盖表",
+        "引用与来源"
+      ],
+      "images": []
+    },
+    {
+      "id": "lec08",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec08?v=notes",
+      "title": "并行训练（二）",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 493.125,
+          "parentWidth": 356,
+          "parentScrollWidth": 493
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开80:10",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L8 · 80:10",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        },
+        {
+          "text": "Stanford Online录像",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "1. 要选的不是缩写，而是瓶颈的解法",
+        "2. 把“存在哪里”和“谁算这一层”分开",
+        "3. FSDP的核心是一个有生存期的参数窗口",
+        "4. DP的扩展预算不仅是GPU数，还有有效batch",
+        "5. TP的高效配对：别急着收集中间激活",
+        "6. PP用时间调度换较少的边界通信",
+        "7. SP补的是TP遗漏的激活，不是重命名Attention",
+        "8. 混合并行先画组，别把缩写度数全乘起来",
+        "9. 课堂案例应该怎样使用",
+        "10. 自测与答案",
+        "全片时间导航",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 358
+        }
+      ]
+    },
+    {
+      "id": "lec08",
+      "view": "draft",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec08?v=draft",
+      "title": "并行训练（二）",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "中文译稿",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开80:10",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L8 · 80:10",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "00:05–10:34｜为什么互连也属于计算系统",
+        "10:34–16:48｜DP让计算分开，却把状态复制多份",
+        "16:48–20:25｜先分更新状态，再缩短梯度生存期",
+        "20:25–28:53｜FSDP在需要时收集参数，不把层永久交给别的卡",
+        "28:53–36:35｜batch预算有限，流水线也有代价",
+        "36:35–39:27｜重排反向依赖，而不只是重排方块",
+        "39:27–44:55｜列/行TP配对与网络成本",
+        "44:55–53:19｜激活峰值、SP与重算的边界",
+        "53:19–61:51｜EP不是把TP改个名字，SP也不是CP",
+        "61:51–69:37｜把不同资源约束组合起来",
+        "69:37–80:05｜从历史曲线和模型案例读出条件，而非照抄配方",
+        "完整时间覆盖表",
+        "引用与来源"
+      ],
+      "images": []
+    },
+    {
+      "id": "ext04",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/ext04?v=notes",
+      "title": "专题 · Attention 的资源账本",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "1. 先把“Attention太贵”拆成四个问题",
+        "2. 固定形状，才有账本",
+        "3. 三张不能混在一起的表",
+        "4. 原创算例：16 MiB的输入输出，如何遇上512 MiB的中间矩阵？",
+        "5. FLOPs：内存省掉了，配对工作未必省掉",
+        "6. 把投影放回来：为什么参数估算会漏掉长序列项？",
+        "7. KV缓存、prefill与decode：名字里有attention，不代表同一账本",
+        "8. FlashAttention到底改了什么？",
+        "9. 自测与答案",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 357.984375
+        }
+      ]
+    },
+    {
+      "id": "ext05",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/ext05?v=notes",
+      "title": "专题 · FlashAttention 数学推导",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [],
+      "videoLinks": [],
+      "headings": [
+        "1. 这页要证明什么，不负责什么？",
+        "2. 先缩到一个query行",
+        "3. 三个统计量，就是我们维护的承诺",
+        "4. 合并时，分子和分母必须一起换尺度",
+        "5. 四个key的完整手算：最大值变了，旧贡献怎么办？",
+        "6. 从一行到行块：别把统计轴写错",
+        "7. mask、空集合与数值边界，是证明前提的一部分",
+        "8. 反向：先推导需要什么，再决定保存什么",
+        "9. 同一个四key例子的反向手算",
+        "10. 反向为什么不必保存完整P？",
+        "11. 自测与答案",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 357.984375
+        }
+      ]
+    },
+    {
+      "id": "ext06",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/ext06?v=notes",
+      "title": "专题 · GPU 性能分析方法",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 364.859375,
+          "parentWidth": 356,
+          "parentScrollWidth": 365
+        },
+        {
+          "width": 444.75,
+          "parentWidth": 356,
+          "parentScrollWidth": 445
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "1. 核心问题：你测到的是提交、完成，还是整步？",
+        "2. 用一个实验问题约束所有计时选择",
+        "3. 异步时间线：CPU函数返回时，GPU可能刚入队",
+        "4. warmup、编译与缓存：至少五种“第一次”",
+        "5. 工具选择：先定位时间线，再下钻一个问题",
+        "6. 采集器也会改变被测程序",
+        "7. 读trace的五条反直觉规则",
+        "8. 显存profiling：容量证据也要有时间边界",
+        "9. 一份能被别人复核的记录应包含什么？",
+        "10. 一个完整的推理闭环，不需要先有漂亮截图",
+        "11. 自测与答案",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 357.984375
+        }
+      ]
+    },
+    {
+      "id": "ext07",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/ext07?v=notes",
+      "title": "专题 · 集合通信算法",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 363.28125,
+          "parentWidth": 356,
+          "parentScrollWidth": 363
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 486.09375,
+          "parentWidth": 356,
+          "parentScrollWidth": 486
+        },
+        {
+          "width": 377.140625,
+          "parentWidth": 356,
+          "parentScrollWidth": 377
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "学习问题与边界",
+        "1. 先确定结果，再讨论线路",
+        "2. Ring：把完整向量拆成同时流动的块",
+        "3. 一张表固定三种通信口径",
+        "4. Tree：减少依赖轮数，但不自动均衡每个端点",
+        "5. 延迟与带宽：先写单位，再比较",
+        "6. 拓扑：同一个逻辑环，可能走完全不同的路",
+        "7. 正确性先于“异步”：一份通信契约清单",
+        "8. 自测与答案",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 358
+        }
+      ]
+    },
+    {
+      "id": "ext08",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/ext08?v=notes",
+      "title": "专题 · 分片训练与恢复",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 397.28125,
+          "parentWidth": 356,
+          "parentScrollWidth": 397
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "学习问题与前置知识",
+        "1. “这张卡有参数”至少有三种含义",
+        "2. 长期状态变小，不代表峰值等比例下降",
+        "3. 检查点应当对应一个状态向量，而非一堆最新文件",
+        "4. 保存协议：同步、复制与持久化是三个事件",
+        "5. 加载协议：先确定目标布局，再搬数据",
+        "6. 从4个rank恢复到3个：重分片搬的是逻辑区间",
+        "7. 重分片成功，不等于原训练轨迹被完整重放",
+        "8. 数据游标与RNG：最容易被“step编号”遮住的状态",
+        "9. 一份可以证伪恢复声明的检查协议",
+        "10. 自测与答案",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 357.984375
+        }
+      ]
+    },
+    {
+      "id": "ext09",
+      "view": "notes",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/ext09?v=notes",
+      "title": "专题 · MoE 的系统问题",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "课程笔记",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 585.296875,
+          "parentWidth": 356,
+          "parentScrollWidth": 585
+        },
+        {
+          "width": 636.40625,
+          "parentWidth": 356,
+          "parentScrollWidth": 636
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "学习问题与单一归属",
+        "1. 从token集合变成“分派边”集合",
+        "2. Dispatch与combine：一去一回，中间不能丢身份",
+        "3. 八个token的完整负载案例",
+        "4. Capacity、padding和dropping分别改变哪一笔账",
+        "5. 专家均分到卡，为什么还是有慢卡",
+        "6. 一张通信矩阵，看清本地边与远端边",
+        "7. 反向还要走一遍依赖，不是只有两次前向all-to-all",
+        "8. EP、TP、DP：切分的是三种不同对象",
+        "9. 平均平衡、节点平衡与链路平衡是不同指标",
+        "10. 不写完整实现，也能检查哪些不变量",
+        "11. 自测与答案",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 357.984375
+        }
+      ]
+    },
+    {
+      "id": "lec06",
+      "view": "materials",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec06?v=materials",
+      "title": "Kernel 与 Triton",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "课程资料",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开86:41",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L6 · 86:41",
+          "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "1. 两篇论文分别回答什么问题？",
+        "2. “精确”究竟保留了什么？",
+        "3. 为什么一个很小的状态能代替整行概率？",
+        "4. 反向为何“多算一次”反而可能更快？",
+        "5. IO 定理究竟证明了多强的结论？",
+        "6. FA2 的三个改进为什么不能合成一句“更好的分块”？",
+        "7. 怎样读速度数字，而不把指标换掉？",
+        "8. 固定 FA2 v1 的公式应怎样带着勘误读？",
+        "9. 自测：能否保住结论的条件？",
+        "原文导航、署名与编写边界",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 358
+        }
+      ]
+    },
+    {
+      "id": "lec08",
+      "view": "materials",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec08?v=materials",
+      "title": "并行训练（二）",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "课程资料",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [
+        {
+          "text": "在YouTube打开80:10",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        },
+        {
+          "text": "2026 L8 · 80:10",
+          "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+          "target": "_blank"
+        }
+      ],
+      "headings": [
+        "1. ZeRO 不是“把模型平均切开”这么简单",
+        "2. 先回答：一个参数到底有几个副本？",
+        "3. 三个阶段，分别消除哪一种冗余？",
+        "4. “通信量不变”为什么不等于“先 all-reduce，再随便广播”？",
+        "5. 为什么通信载荷相同，时间仍可能差很多？",
+        "6. ZeRO-R 补的不是“第四阶段”",
+        "7. 论文到底测了哪一部分？",
+        "8. 自测：能否区分状态、临时量和通信？",
+        "原文导航、署名与编写边界",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 358
+        }
+      ]
+    },
+    {
+      "id": "a2-systems",
+      "view": "zh",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lab/a2-systems?v=zh",
+      "title": "A2 · 系统优化与分布式训练",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "实验说明",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 574.109375,
+          "parentWidth": 356,
+          "parentScrollWidth": 574
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "0．版本、政策、硬件与公共配置",
+        "1．端到端计时、计算与显存（§2）",
+        "2．单卡重算（§3，pp.10–15）",
+        "3．Attention 与 GPU kernel（§4）",
+        "4．分布式通信与 DDP（§5）",
+        "5．优化器状态分片（§6）",
+        "6．FSDP（§7，pp.38–39）",
+        "7．并行策略分析（§8，pp.39–46）",
+        "8．完整训练步排行榜（§9，pp.46–48）",
+        "9．接口、交付与相关学习入口",
+        "引用与来源"
+      ],
+      "images": []
+    },
+    {
+      "id": "a2-systems",
+      "view": "guide",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lab/a2-systems?v=guide",
+      "title": "A2 · 系统优化与分布式训练",
+      "viewport": 390,
+      "rootWidth": 390,
+      "selectedTab": "实验指导",
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 418.171875,
+          "parentWidth": 356,
+          "parentScrollWidth": 418
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "G0．先给每个结论写一个“适用标签”",
+        "G1．计时：你究竟让时钟覆盖了什么",
+        "G2．Profiler：把“哪里慢”变成可定位的证据",
+        "G3．显存：区分所有权、生命周期和峰值",
+        "G4．Checkpointing：不是“把激活删掉”",
+        "G5．FlashAttention：从形状合同到数值不变量",
+        "G6．DDP：让多进程仍优化同一个目标",
+        "G7．优化器分片与 FSDP：谁拥有可更新状态",
+        "G8．并行计算题：先做单位和轴的审校",
+        "G9．排行榜：完整工作量与冷启动是双重合同",
+        "G10．交付前的证据审阅，不是代做检查清单",
+        "引用与来源"
+      ],
+      "images": [
+        {
+          "loadedAtMeasurement": true,
+          "deferredLazyAtInitialViewport": false,
+          "width": 357.984375
+        }
+      ]
+    },
+    {
+      "id": "resources",
+      "view": "resources",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026",
+      "title": "从零构建语言模型",
+      "viewport": 390,
+      "rootWidth": 390,
+      "katexErrors": [],
+      "mathOverflows": [],
+      "tables": [
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 370.125,
+          "parentWidth": 356,
+          "parentScrollWidth": 370
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        },
+        {
+          "width": 437.875,
+          "parentWidth": 356,
+          "parentScrollWidth": 438
+        },
+        {
+          "width": 380.671875,
+          "parentWidth": 356,
+          "parentScrollWidth": 381
+        },
+        {
+          "width": 356,
+          "parentWidth": 356,
+          "parentScrollWidth": 356
+        }
+      ],
+      "videoLinks": [],
+      "headings": [
+        "从一条可解释的训练闭环开始",
+        "先修自检",
+        "主线与动手顺序",
+        "深挖专题怎么选",
+        "共享环境与实验纪律",
+        "术语与符号约定",
+        "论文只在一个位置展开",
+        "引用与来源"
+      ],
+      "images": []
+    }
+  ],
+  "finalSvgLoads": [
+    {
+      "id": "lec05",
+      "view": "notes",
+      "index": 1,
+      "file": "p4-shared/screenshots/final-dark-lec05-notes-1.png",
+      "loaded": true,
+      "width": 357.984375
+    },
+    {
+      "id": "lec05",
+      "view": "notes",
+      "index": 2,
+      "file": "p4-shared/screenshots/final-dark-lec05-notes-2.png",
+      "loaded": true,
+      "width": 357.984375
+    },
+    {
+      "id": "lec06",
+      "view": "notes",
+      "index": 1,
+      "file": "p4-shared/screenshots/final-dark-lec06-notes-1.png",
+      "loaded": true,
+      "width": 357.984375
+    },
+    {
+      "id": "lec06",
+      "view": "notes",
+      "index": 2,
+      "file": "p4-shared/screenshots/final-dark-lec06-notes-2.png",
+      "loaded": true,
+      "width": 357.984375
+    },
+    {
+      "id": "lec07",
+      "view": "notes",
+      "index": 1,
+      "file": "p4-shared/screenshots/final-dark-lec07-notes-1.png",
+      "loaded": true,
+      "width": 358
+    },
+    {
+      "id": "lec08",
+      "view": "notes",
+      "index": 1,
+      "file": "p4-shared/screenshots/final-dark-lec08-notes-1.png",
+      "loaded": true,
+      "width": 358
+    },
+    {
+      "id": "ext04",
+      "view": "notes",
+      "index": 1,
+      "file": "p4-shared/screenshots/final-dark-ext04-notes-1.png",
+      "loaded": true,
+      "width": 357.984375
+    },
+    {
+      "id": "ext05",
+      "view": "notes",
+      "index": 1,
+      "file": "p4-shared/screenshots/final-dark-ext05-notes-1.png",
+      "loaded": true,
+      "width": 357.984375
+    },
+    {
+      "id": "ext06",
+      "view": "notes",
+      "index": 1,
+      "file": "p4-shared/screenshots/final-dark-ext06-notes-1.png",
+      "loaded": true,
+      "width": 357.984375
+    },
+    {
+      "id": "ext07",
+      "view": "notes",
+      "index": 1,
+      "file": "p4-shared/screenshots/final-dark-ext07-notes-1.png",
+      "loaded": true,
+      "width": 358
+    },
+    {
+      "id": "ext08",
+      "view": "notes",
+      "index": 1,
+      "file": "p4-shared/screenshots/final-dark-ext08-notes-1.png",
+      "loaded": true,
+      "width": 357.984375
+    },
+    {
+      "id": "ext09",
+      "view": "notes",
+      "index": 1,
+      "file": "p4-shared/screenshots/final-dark-ext09-notes-1.png",
+      "loaded": true,
+      "width": 357.984375
+    },
+    {
+      "id": "lec06",
+      "view": "materials",
+      "index": 1,
+      "file": "p4-shared/screenshots/final-dark-lec06-materials-1.png",
+      "loaded": true,
+      "width": 358
+    },
+    {
+      "id": "lec08",
+      "view": "materials",
+      "index": 1,
+      "file": "p4-shared/screenshots/final-dark-lec08-materials-1.png",
+      "loaded": true,
+      "width": 358
+    },
+    {
+      "id": "a2-systems",
+      "view": "guide",
+      "index": 1,
+      "file": "p4-shared/screenshots/final-dark-a2-systems-guide-1.png",
+      "loaded": true,
+      "width": 357.984375
+    }
+  ],
+  "videoHeaders": [
+    {
+      "id": "lec05",
+      "title": "GPU 与 TPU",
+      "tab": "课程笔记",
+      "href": "https://www.youtube.com/watch?v=izZba4UA7iY",
+      "label": "在YouTube打开78:39",
+      "target": "_blank",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec05",
+      "popup": {
+        "url": "https://www.youtube.com/watch?v=izZba4UA7iY",
+        "originalUrl": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec05",
+        "originalTab": "课程笔记"
+      }
+    },
+    {
+      "id": "lec06",
+      "title": "Kernel 与 Triton",
+      "tab": "课程笔记",
+      "href": "https://www.youtube.com/watch?v=xnDHaNUvHBg",
+      "label": "在YouTube打开86:41",
+      "target": "_blank",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec06"
+    },
+    {
+      "id": "lec07",
+      "title": "并行训练（一）",
+      "tab": "课程笔记",
+      "href": "https://www.youtube.com/watch?v=SzpOcwdIL0Y",
+      "label": "在YouTube打开81:02",
+      "target": "_blank",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec07"
+    },
+    {
+      "id": "lec08",
+      "title": "并行训练（二）",
+      "tab": "课程笔记",
+      "href": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+      "label": "在YouTube打开80:10",
+      "target": "_blank",
+      "url": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec08",
+      "popup": {
+        "url": "https://www.youtube.com/watch?v=6-cXp-aOmdg",
+        "originalUrl": "http://127.0.0.1:5414/#/c/stanford-cs336-2026/lec/lec08",
+        "originalTab": "课程笔记"
+      }
+    }
+  ],
+  "interactions": {
+    "disclosure": {
+      "label": "1. 新最大值比旧最大值大log 4，旧分子应乘4还是1/4？",
+      "open": true,
+      "answer": "\n1. 新最大值比旧最大值大log 4，旧分子应乘4还是1/4？\n乘 e−log⁡4=1/4e^{-\\log4}=1/4e−log4=1/4，旧分母也乘同一个系数。它们是在更大的参考指数下表示同一批贡献，不能把旧贡献放大。\n"
+    },
+    "horizontalTable": {
+      "before": {
+        "client": 356,
+        "scroll": 574,
+        "left": 0
+      },
+      "after": {
+        "left": 218,
+        "client": 356,
+        "scroll": 574
+      },
+      "rootWidth": 390
+    }
+  },
+  "runtimeErrorsAfterFreshShell": [],
+  "screenshotsPublication": "local_only_not_committed",
+  "corrections": [
+    "L06 tile byte expression explicitly multiline",
+    "A2 long API prose references exact names in existing interface table;memory API namespace/name/argument separated",
+    "A2 task17 has a Chinese heading plus unchanged exact source ID in a horizontally scrollable text block;all coverage mappings migrated",
+    "ZeRO source citation uses Chinese task name to avoid an unbreakable identifier",
+    "All15 standalone SVGs use color-scheme with CanvasText mapped to foreground/muted/border variables;actual dark and light theme verified"
+  ],
+  "measurementLimits": [
+    "Initial old pre-build shell and lazy Reader readiness mistakes discarded;fresh document markers required",
+    "Lazy offscreen image incomplete flags are not broken-image conclusions;all15 final SVGs explicitly scrolled into view and loaded",
+    "No video audio/frame verification or GPU execution"
+  ]
+}

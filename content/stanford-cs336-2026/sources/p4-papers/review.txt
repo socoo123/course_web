@@ -1,0 +1,114 @@
+Stanford CS336 Spring 2026 — P4 paper03–paper05 author review
+Requested worker model: openai-codex/gpt-6-astra:xhigh. No nested delegation, fallback request, configuration change, official assignment implementation, training, paid compute, build/lint/test/formatter or commit/push.
+Reading completion timestamp recorded from actual runtime UTC clock: 2026-11-14T16:35:39Z. The conversation's displayed calendar date is not substituted for the source retrieval/read timestamps. Actual model-event audit belongs to Main; this worker did not independently inspect runtime event files.
+Status: author-reviewed; accepted=false pending Main integration, technical/render/link/hash verification. This document does not claim main acceptance or published deployment.
+
+OWNED PUBLIC BODY FILES (and no second paper homes)
+- lectures/lec06/materials.zh.md: FlashAttention2205.14135v2 and FlashAttention-2 2307.08691v1; original questions, invariants, algorithm evidence, IO quantifiers, execution ownership, performance conditions, explicit source errata, self-tests and bottom references.
+- lectures/lec08/materials.zh.md: ZeRO1910.02054v3; original model-state accounting, stages, communication schedule and per-rank/dtype conventions, ZeRO-R, evaluation limits, self-tests and bottom references.
+- lectures/lec06/assets/paper-attention-ownership.svg: original dependency/ownership diagram, not copied Figure2/3 or classroom screenshot.
+- lectures/lec08/assets/paper-zero-residency.svg: original residency diagram separating persistent state from transient complete compute unit and other workspaces, not an observed memory trace.
+Both SVGs contain title/desc, viewBox, theme colors/currentColor, no external resources/scripts/background page rectangle. Rendering is for Main to verify; worker did not run a render test.
+
+DELIVERED PROVENANCE
+- p4-papers/manifest-fragment.json: 33 sources = 11 reused P1 sources + 22 newly rendered and actually inspected local PDF page images; two original SVGs listed separately under original_assets.
+- p4-papers/reading-updates.json: keyed paper03/paper04/paper05, all original home/materialFile/alsoUsedBy/prerequisites/relatedAssignments preserved, verifiedScope copied unchanged, actualReading replaced with honest P4 scope and old record retained under priorActualReading. No source merely acquired is upgraded to fully read. Source IDs retain original P1 IDs and append P4 PDF/text/metadata references.
+- p4-papers/review.txt: this record.
+- p4-papers/visual/*.png: 22 local-only evidence images; not for publication or force-add. Rendered directly from already acquired fixed PDFs using pdftoppm, scale-to1700. No audio/video or paper redownload.
+Existing source SHA256/retrieval timestamps copied from P1 manifests rather than claiming new verification; creation-time hashes recorded for the newly generated images and original SVGs. Main owns final hash validation.
+
+ACTUAL READ WINDOWS AND CLOSE-READ LIMITS
+Ranges below refer to the immutable P1 pdftotext -layout files. Non-raw reader context was included in the continuous window accounting. Search returned additional heading/citation snippets; those are navigation, not entire-section reading. Physical PDF pages are 1-based.
+
+paper03 — p1-papers-01-08/paper03-2205.14135v2.txt
+Actual continuous displayed/read windows: 1–394; 1086–1235; 1391–1483.
+Core fully read:
+  §2.1–2.2 lines175–232 (PDF3–4)
+  §3.1 lines242–321 (PDF4–5), Algorithm1/Theorem1
+  §3.2 lines322–391 (PDF5–6), Theorem2/Proposition3/Figure2 setting
+  B.3–B.4 lines1087–1232 (PDF19–21), Algorithms2–4/Theorem5
+Additional actual reading:
+  title/authors/abstract/§1 lines1–170;
+  AppendixC Proof of Proposition3 and Proof of Theorem5 lines1393–1437, PDF24;
+  §3.3 opening lines392–394 and Algorithm5 selected lines1443–1483 were adjacent-window reading, not a complete sparse-attention chapter or algorithm audit.
+Not claimed: full34-page reading; complete B.1–B.2/B.5/C; complete §4 experimental sections or D/E appendices; all cited papers; source code or performance reproduction.
+Visual pages actually opened: paper03-05,06,20,21.png.
+  p5: online max/sum aggregation, block dimensions, K/V outer loop, normalized output update, O(N²d) and extra O(N) limitations.
+  p6: Figure2 setting and representative 66.6/75.2GFLOPs,40.3/4.4GB,41.7/7.3ms; Theorem2 M range and Proposition3 for-all-M quantifier; block-size saturation caveat. Not all sparse-curve points.
+  p20: scaling/mask/dropout/R in Algorithm2; Algorithm3 dK order; backward D identity.
+  p21: Algorithm4 complete dependency/shape/tau/dropout reading and Theorem5.
+Interpretation guard: M is a scalar storage-capacity parameter in the model, bytes must be converted; fixed M,d gives quadratic N dependence; Proposition3 does not prove a pointwise matching lower bound for every fixed M. O(N) extra storage excludes named inputs/outputs and is not whole-kernel bytes. No unfounded linear-time or universal memory-bound claim.
+
+paper04 — p1-papers-01-08/paper04-2307.08691v1.txt
+Actual continuous displayed/read window: 1–843.
+Core fully read:
+  §2.1 lines92–110 (PDF2)
+  §3.1 including3.1.1/3.1.2 lines234–388 (PDF5–7), Algorithms1–2
+  §3.2 lines389–432 (PDF7–8)
+  §3.3 lines433–469 (PDF9)
+  §4.1–4.2 lines486–665 (PDF10–11), plus Table1 lines738–746 (PDF12)
+Additional actual reading:
+  title/abstract/§1 lines1–87;
+  §2.2–2.3 lines111–225;
+  §5 prose lines667–669 and749–757;
+  Figures4–7 extracted labels, Table1, acknowledgments and beginning of references through843.
+Figures4–7 were not reviewed as a point-by-point dataset; axes/settings and selected values were checked. All four rows/three throughput columns of Table1 were visually checked. Not claimed: entire14-page close read, complete bibliography, implementations or performance replication.
+Visual pages actually opened: paper04-03 through paper04-13 inclusive (11 images).
+  p3–7: notation, all relevant online/max/output equations and both algorithm listings, causal paragraph, D shape.
+  p8–9: Figure2 block ownership, Figure3 warp split-K/split-Q dependencies, backward atomics/synchronization and resource tuning limits.
+  p10–13: hardware/length/batch/head/causal conventions, microbenchmark FLOP formula, end-to-end MFU formula, self-comparison wording, Table1 and selected chart values. H100 future optimizations remain future work.
+Original-PDF errata confirmed visually (not extraction corruption):
+  p3 §2.2: dK=Q dS^T is dimensionally wrong under N×d row convention; independent correction dS^T Q (times tau if logits scaled).
+  p3 footnote2: typical scaling1/d printed; standard target uses1/sqrt(d), consistent with FA1 B.3 and fixed A2.
+  p4 standard O expansion: second block term missing explicit common normalization; both unnormalized terms need division by l.
+  p4–5 online old-output expressions: inverse ratio and missing max-rescale; correct old normalized O coefficient alpha*l_old/l_new, unnormalized U coefficient alpha.
+  p6 two-block expression and Algorithm1 step10: inverse outside diag(exp(m_old-m_new)) printed; correction removes inverse. m_new≥m_old implies old contribution shrinks. Init empty state must not be used to justify reciprocal zero.
+  p6 causal second item: row-less-than-column direction contradicts no-mask lower triangle; correct all-key≤all-query legal block, upper triangle skipped.
+  p7 Algorithm2 step4: D∈R^d printed, but row reduction is R^N; Algorithm2 step16 dK ordering is correct.
+  p11 §4.2: compared to FlashAttention-2 self-comparison preserved as source note. §4 introduction and Table1 support interpreting≈1.3x relative to FA1, e.g.225/175; not silently rewriting original text. Table1 220/72 also means2.8x is not a strict maximum across all rows.
+Additional metric note: §4.1 printed FLOP expression lacks explicit batch; body labels 4BHN²d as an editorial full-batch accounting expression, not an alleged quotation. Microbenchmark causal halves its FLOPs, whereas §4.2 intentionally retains the conventional unhalved model attention term. These numerators must not be mixed.
+The paper prose and algorithms are treated independently from code; no claim that official implementations contain these PDF mistakes. Detailed elementary softmax examples remain at ext05, with back-link rather than duplicate paper home.
+
+paper05 — p1-papers-01-08/paper05-1910.02054v3.txt
+Actual displayed/read windows: 1–38; 275–943.
+Core fully read:
+  §3.1–3.2 lines286–342 (PDF7–8)
+  §4.1 lines360–380 (PDF9)
+  §5.1–5.4 lines424–510 (PDF10–11)
+  §7.1–7.2.2 lines597–643 (PDF13–14)
+Additional actual reading used:
+  §4.2 lines381–413; §6 lines512–586; §8 lines644–688;
+  §10 intro/10.1–10.2 lines736–788; §10.5 lines823–875.
+Also continuously read in those windows: §9 lines689–735; §10.3–10.4 lines789–822; §10.6 and§11 lines876–901; acknowledgments and references opening902–943. These are not extended empirical audits.
+Not claimed: complete §1–2, all references/AE appendix, full24-page close read, all curve points or code/experiment replication.
+Visual pages actually opened: paper05-08,10,11,13,14,17,18.png.
+  p8: master+moments K12, model-state16Psi, residual memory categories.
+  p10–11: stage memory formulas, partial-gradient ownership, Table1 theoretical capacity, finite-rank vs limiting ratios.
+  p13–14: Table2 theoretical/measured distinction; RS/AG communication data movement, parameter fetch twice vs gradient reduce once.
+  p17–18: Pos+g plus ZeRO-R scope, hardware/baselines, Table3 configurations without Pp, cached-memory terminology.
+Interpretation guards:
+  16 bytes/parameter assumes FP16 params and gradients + FP32 master/m/v; no claim this is universal BF16/PyTorch AdamW storage.
+  state formulas are not total peak memory; currently gathered layer/prefetch/activations/buffers/reserved space remain.
+  §7 intro covers Pos/Pg, while explicit§7.2.1 derivation is Pos+g. Storage and communication schedules are independent axes; no inference that any optimizer-sharded all-reduce-plus-broadcast implementation has unchanged communication.
+  Paper2Psi/3Psi are approximate per-rank element-volume units. Body explicitly defines per-rank send, rho=(n−1)/n, separate online gradient and parameter bytes; recv is separate, all-rank wire payload counts each transmission once. It does not present ambiguous send-to-and-from wording as an exact double-direction sum.
+  Stage3 1.5x depends on equal online dtype and the stated two parameter fetches + one gradient RS schedule; changed caching/recompute/accumulation may change the count.
+  ZeRO-R Pa acts on replicated activation checkpoints in the MP group, not arbitrary DP samples. §8 small-overhead claim is specific to its Megatron/checkpoint schedule; batch factor must be retained in a full byte ledger. Larger batch reduces communication per fixed sample workload, not automatically bytes per individual step.
+  §10 evaluates ZeRO-100B Pos+g + ZeRO-R subset, not all stages/1T convergence. Table2 measured column markedPos and Table3 includes noPp. Historical speed claims remain author-reported, not present-day guarantees.
+  Detailed ring walkthrough remains ext07; checkpoint recovery remains ext08.
+
+OTHER SOURCE READS
+- Three fixed-version arXiv HTML snapshots: metadata/title/author/version/license regions, paper03 and04 requested105–195, paper05 requested105–205 (reader showed boundary context104–198 /104–208). Long truncated abstracts were not a substitute for paper text. ZeRO submission history v1 withdrawn and valid fixedv3 distinguished.
+- p1-papers-01-08/license-arxiv-nonexclusive-1.0.html: complete33 lines read. Grant is to arXiv, not a public full-translation license.
+- A2 fixed text:1232–1297;1532–1575;2018–2093. Recommendation identity, required-vs-optional backward, and §6 targeted comparison examined. Whole-file term search located additional citations/tasks, not complete48-page reading. A2 PDF commitca8bc81a59b70516f7ebb2da4808daade877c736, handoutv26.1.3; no code execution.
+- Supporting records: contract/NEXT-P4 handoff, reading-map selected three records, P1 paper review and manifest identities, P1 assignment audit, selected P3 materials/provenance conventions. Shared records not edited.
+
+RIGHTS / PUBLICATION
+All three papers use their individually checked arXiv nonexclusive license. No confirmed public full-translation grant; bodies are original thematic close-reading and criticism, not paragraph-by-paragraph replacement. Original paper images/tables are not reproduced; a few cited performance facts remain explicitly author-reported. Source page images remain local-only. A2 or code MIT does not transfer to papers.
+Only assigned lecture materials/paper-prefixed assets and p4-papers source fragment files were created. No lecture notes/drafts, shared course/catalog/status/reading-map/manifest, official code or unrelated courses edited.
+
+MAIN VERIFICATION SUGGESTIONS (not run by worker)
+1. Parse fragment/update JSON, unique IDs, mandatory source fields and preservation of all placement arrays; merge without dropping prior provenance.
+2. Verify existing and generated source hashes and relative paths; ensure PDF/text/page renders are not force-added to publication.
+3. Independently inspect FA2p3/p6/p7/p11 and representative FA1/ZeRO pages; check equations, broadcast axes, IO quantifier, FP16/FP32 conventions, GB vsGiB and per-rank send/recv/global labels.
+4. Check both new material routes, ext05/ext07/A2 back-links, SVG load/theme/title/desc and formulas/tables on desktop and390px mobile. The worker has not run rendering or browser checks.
+5. Main performs only integrated P4 targeted validation/build, not official GPU work or unrelated historical suites; no fabricated throughput/memory claims.

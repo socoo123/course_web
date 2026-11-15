@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 740" role="img" aria-labelledby="title desc">
+<style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}</style>
+  <title id="title">两rank同步DP的一次更新合同</title>
+  <desc id="desc">两个rank从相同参数和优化器状态出发，各自处理不同数据并产生局部梯度。梯度按有效样本或token数加权归约后，两个rank使用同一个全局梯度更新，保持参数和优化器状态一致。归约必须在更新之前完成，不表示实际系统不能重叠其他层的反向计算。</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; fill: var(--fg, #64748b); font-size: 22px; }
+    .head { font-size: 27px; font-weight: 700; }
+    .bold { font-weight: 650; }
+    .small { font-size: 20px; }
+    .box { fill: none; stroke: var(--border, #64748b); stroke-width: 2; }
+    .same { fill: none; stroke: var(--success, #10b981); stroke-width: 2.5; }
+    .flow { fill: none; stroke: var(--accent, #3b82f6); stroke-width: 2.5; }
+    .arrow { fill: var(--accent, #3b82f6); }
+    .rule { fill: none; stroke: var(--warning, #d97706); stroke-width: 2; stroke-dasharray: 7 5; }
+  </style>
+  <text class="head" x="30" y="43">不是平均模型，而是合并同一步的贡献</text>
+  <rect class="same" x="30" y="68" width="580" height="73" rx="12"/>
+  <text class="bold" x="320" y="99" text-anchor="middle">共同起点：θₜ、优化器状态 sₜ、步数</text>
+  <text class="small" x="320" y="127" text-anchor="middle">整个有效 batch 完成之前，参数版本不变</text>
+  <path class="flow" d="M170 141V172 M470 141V172"/>
+  <path class="arrow" d="M164 165L170 175L176 165Z M464 165L470 175L476 165Z"/>
+  <rect class="box" x="30" y="179" width="280" height="146" rx="12"/>
+  <rect class="box" x="330" y="179" width="280" height="146" rx="12"/>
+  <text class="bold" x="170" y="213" text-anchor="middle">rank 0</text>
+  <text x="170" y="248" text-anchor="middle">数据片 B₀ → 前向 / 反向</text>
+  <text x="170" y="287" text-anchor="middle">局部梯度 g₀，计数 n₀</text>
+  <text class="bold" x="470" y="213" text-anchor="middle">rank 1</text>
+  <text x="470" y="248" text-anchor="middle">数据片 B₁ → 前向 / 反向</text>
+  <text x="470" y="287" text-anchor="middle">局部梯度 g₁，计数 n₁</text>
+  <path class="flow" d="M170 325V350H320V373 M470 325V350H320"/>
+  <path class="arrow" d="M314 366L320 376L326 366Z"/>
+  <rect class="box" x="80" y="380" width="480" height="100" rx="12"/>
+  <text class="bold" x="320" y="417" text-anchor="middle">归约成同一个全局均值梯度</text>
+  <text x="320" y="453" text-anchor="middle">g = (n₀g₀ + n₁g₁) / (n₀ + n₁)</text>
+  <path class="rule" d="M30 505H610"/>
+  <text class="small" x="320" y="535" text-anchor="middle">依赖门：梯度可用后，才能进入这次更新</text>
+  <path class="flow" d="M320 480V495 M320 548V567H170V587 M320 567H470V587"/>
+  <path class="arrow" d="M164 580L170 590L176 580Z M464 580L470 590L476 580Z"/>
+  <rect class="same" x="30" y="595" width="280" height="77" rx="12"/>
+  <rect class="same" x="330" y="595" width="280" height="77" rx="12"/>
+  <text x="170" y="628" text-anchor="middle">相同 U(θₜ, sₜ, g)</text>
+  <text x="170" y="658" text-anchor="middle">→ θₜ₊₁，sₜ₊₁</text>
+  <text x="470" y="628" text-anchor="middle">相同 U(θₜ, sₜ, g)</text>
+  <text x="470" y="658" text-anchor="middle">→ θₜ₊₁，sₜ₊₁</text>
+  <text class="small" x="320" y="712" text-anchor="middle">局部 loss 可以不同；更新状态必须遵守同一合同。</text>
+</svg>

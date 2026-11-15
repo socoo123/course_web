@@ -1,0 +1,58 @@
+P4 / L07 作者交接审查（不是主验收）
+时间：2026-11-15；实际UTC记录见manifest-fragment.json及reading-log.json。
+状态：正文与证据已写；worker_self_reviewed=true；accepted=false；主审、页面、构建尚待Main。
+指定模型：openai-codex/gpt-6-astra:xhigh。实际运行元数据由Main记录p4-model-preflight.json；本worker没有独立读取运行事件。无嵌套派发。
+
+一、精确交付
+课程根目录相对路径：
+- lectures/lec07/notes.zh.md
+- lectures/lec07/draft.zh.md
+- lectures/lec07/assets/dp-update-contract.svg
+sources相对路径：
+- p4-lec07/video-metadata.json
+- p4-lec07/reading-log.json
+- p4-lec07/time-intervals.json
+- p4-lec07/manifest-fragment.json
+- p4-lec07/review.txt
+仅本地全文证据：
+- p4-lec07/captions.normalized.json
+- p4-lec07/transcript.en.txt
+没有创建lec07 materials；没有修改lec08 materials或任何共享catalog/status/resources文件。
+
+二、实际阅读，不把采集冒充阅读
+1. technical-video-notes技能及normalize_captions.py完整读取。规范化采用相同JSON3事件拼接/strip语义，通过eval调用tool.write创建新JSON和每cue一行TXT；没有运行技能脚本。JSON保留文本内换行；TXT只将内换行展开为空格并加索引、起止时间。没有静默词法修订。
+2. 固定2026视频SzpOcwdIL0Y，人工/非ASR为平台类别，不是核音证明。1312条cue全部实际显示并阅读：1–300、301–600、601–900、901–1200、1201–1312。不是关键词命中或首尾抽查。
+3. 首条00:05.160，末尾80:57.680；单视频总长81:02。playlist平铺多1秒，保留差异，不混用。开头5.160秒、末尾4.320秒无字幕；内部65处>2秒的缺口按原毫秒数据完整列于time-intervals。没有给空隙贴上静音/讨论标签。最长72:17.770–72:28.750为10.980秒。
+4. 元数据完整读1–300和301–590；video-map两讲完整记录亦读。标题、2026、讲次、频道、单视频时长、上传日期和字幕类别来自P1保存的原始元数据；未重开watch页面，当前视频入口实点归Main。
+5. 固定lecture_07.py全部619行，原始完整窗口1–300、301–619。初次declarations-only读取遗漏的函数体全部由这两个raw窗口补读。未执行；未声称全文读trace事件、stdout、依赖实现和全部外链。
+6. 全读L02 notes300行；L04 notes实际读1–300，已覆盖模型及MoE概念正文和自测，未把后续来源页脚计作全读。完整读合同、NEXT-P4、P4-BLOCKED、p1讲义version-review/variant-audit，选读相关manifest/video-map记录及P3证据格式。
+7. 全部原始字幕、源码、元数据SHA256及原获取时间保存在manifest。lecture_07.py原获取时间采用acquisition.json的2026-11-14T13:38:57.440980+00:00，不误用trace稍后获取时间。固定提交晚于学期，未宣称录像版完全相同。
+
+三、正文分工与原创性
+notes不是按录像时间重放：围绕更新不变量、loss计数、布局语义、TP切轴与伴随、PP依赖、异步生存期、计数口径组织。加权梯度反例、局部列拼接/行求和反例及数学推导为编者自主组织；课堂归属与补充明确分开。
+draft仅有限改写及全片导航，不是逐句/完整翻译。包含课堂重要问答定位，但INAUDIBLE或不确定片段不补造。
+SVG为原创依赖图，含title/desc、中文字体、主题CSS变量、无外部资源/脚本或背景填充；不是课堂截图。
+L02负责基础矩阵梯度/内存/累积，L04负责MoE模型；L07不复刻其基础教程。FSDP及混合并行回L08；ZeRO论文只在lec08/materials；ring/tree只在ext07；恢复只在ext08；MoE系统只在ext09。
+
+四、技术审查与来源风险处置
+- DP：全局均值=按有效计数加权局部均值；等rank平均要求计数一致。示例2和6个token、均值梯度1和3的正确结果2.5，非2。padding零值须与mask/分母一致。
+- 状态一致：同参数、同优化器状态/超参/步计数、同归约梯度和更新规则才保持副本一致；没有把平均Adam本地更新写成平均梯度的等价物。数学等价、rank间一致、单卡逐位一致分开。
+- TP：右乘约定X(M,h)、W(h,k)；列切拼接不同坐标，行切相加同坐标局部贡献。逐元素非线性可在列片上做，不能随意移过部分和；给出2与−3的ReLU反例。
+- TP后向：参数片梯度与输入梯度贡献不同；all-gather/SUM reduce-scatter伴随需要明确消费者/逻辑loss，不复制loss后误加world size。源码TP后向未实现，不称autograd自动跨任意低层通信工作。
+- PP：边界反向是激活梯度，不是下一stage的参数梯度。分层布局不等于流水调度；完整训练/重叠未由源码演示。
+- 异步：进程、主机/GPU、stream和buffer生存期分开；没有把任意barrier当全设备所有工作完成证明。课堂同步顺序问答的“不确定”保留。
+- 通信：all-reduce因子2解释为RS与AG两phase，不抄源码send+receive注释；归一化指标不等于实际线缆字节。除1024³应GiB/s。因素趋近常数不证明实测带宽与拓扑和rank数无关。
+- 两benchmark载荷不同：RS input为(world_size,num_elements)，AR为num_elements；不把课堂计时直接比较成“同载荷二倍”。所有性能数值未作为本项目实测。
+- 教学trace的DisableDistributed将dist函数no-op；多进程通信没有被这一路径证明。DP默认一步，无zero_grad，不照搬成多步训练。每次初始化重置同seed，TP列块重复，不称任意参考W的真实独立分片。
+- NVLink方向/聚合口径必须先对齐；未复写NVL72每tray8卡×9的未核实包装数。TP8/node是课堂所述拓扑经验，不是普遍上限。
+- 原字幕疑词B21、scatter逆、SFTP、weight、参数/梯度混称、sequence术语等均分开登记；所有INAUDIBLE和[? ?]标记逐cue记录，未核音、不归咎某一方。
+
+五、权限与发布
+录像license=null不能推断标准YouTube或CC许可；讲义仓库没有已确认的全局翻译许可。正文有限改写/自主教学，外部图像不复制。原字幕、规范化全文、源码和原镜像不force-add发布。manifest的publication精确区分轻量证据、正文原创SVG与local-only。沒有音视频、付费算力或课程官方执行。
+
+六、Main最终验证建议（本worker未运行）
+- P4定向脚本：检查全部cue各归属一次、0..4862秒连续块、65处>2秒缺口、原件及derived哈希、链接/图片/SVG结构。
+- 主审notes的计数/TP伴随和无音视频边界，L07/L08之间去重，检查materials/ext07/ext08回链归属。
+- 浏览器桌面/390px检查数学、表格与SVG实际可读性；实际核对正确视频入口和新标签行为。
+- 与其他分片合并后由Main统一必要构建，不由worker执行。
+本worker未运行build、lint、tests、formatter、smoke、官方实验或任何CPU/GPU机制实验；只做读取、PDF材料阅读准备与文件生成/编辑。没有commit/push或页面验收声明。

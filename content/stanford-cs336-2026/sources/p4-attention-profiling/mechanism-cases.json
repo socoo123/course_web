@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "purpose": "Original arithmetic and local mathematical invariants for Main's optional CPU verification; not a GPU benchmark, assignment implementation or acceptance result.",
+  "execution_status": "not_executed_by_worker",
+  "accepted": false,
+  "cases": [
+    {
+      "id": "ext04-attention-ledger",
+      "body": "lectures/ext04/notes.zh.md",
+      "inputs": {"batch": 2, "query_heads": 8, "kv_heads": 8, "query_length": 2048, "key_length": 2048, "key_dim": 64, "value_dim": 64, "input_output_bytes_per_element": 2, "score_probability_bytes_per_element": 4},
+      "expected": {"each_q_k_v_o_bytes": 4194304, "q_k_v_o_sum_bytes": 16777216, "each_score_probability_elements": 67108864, "each_score_probability_bytes": 268435456, "specified_six_storage_sum_bytes": 553648128, "specified_six_storage_sum_mib": 528, "fp32_lse_bytes": 131072, "forward_matmul_flops": 17179869184, "causal_including_diagonal_pairs_per_head": 2098176, "causal_useful_forward_matmul_flops": 8594128896, "mha_projection_forward_matmul_flops": 8589934592},
+      "limits": "Matmul main terms use two FLOPs per multiply-add; no softmax/scaling/mask/projection in core count; storage sum requires declared simultaneous lifetime, excludes all other model/process states; causal count is useful allowed work, not measured executed instructions."
+    },
+    {
+      "id": "ext04-doubled-length",
+      "body": "lectures/ext04/notes.zh.md",
+      "inputs": {"length": 4096, "other_conditions": "same as ext04-attention-ledger"},
+      "expected": {"q_k_v_o_sum_mib": 32, "each_score_probability_mib": 1024, "specified_six_storage_sum_mib": 2080, "fp32_lse_kib": 256},
+      "limits": "Not measured peak memory."
+    },
+    {
+      "id": "ext04-gqa-cache",
+      "body": "lectures/ext04/notes.zh.md",
+      "inputs": {"batch": 2, "query_heads": 8, "history": 2048, "key_dim": 64, "value_dim": 64, "bytes_per_element": 2, "kv_heads_cases": [8, 2]},
+      "expected": {"per_layer_kv_mib": [8, 2], "query_heads_unchanged": 8},
+      "limits": "Logical payload only; no physical repetition, paging, metadata, alignment or quantization overhead."
+    },
+    {
+      "id": "ext05-four-key-softmax",
+      "body": "lectures/ext05/notes.zh.md",
+      "inputs": {"scores": "natural log of [1,2,4,1]", "values": [2, -1, 3, 6], "partition_zero_based": [[0, 1], [2, 3]]},
+      "expected_exact": {"block_a_max": "log(2)", "block_a_l": "3/2", "block_a_u": "0", "block_b_max": "log(4)", "block_b_l": "5/4", "block_b_u": "9/2", "alpha": "1/2", "beta": "1", "merged_l": "2", "merged_u": "9/2", "output": "9/4", "probabilities": ["1/8", "1/4", "1/2", "1/8"], "block_probability_masses": ["3/8", "5/8"], "incorrect_equal_block_average": "9/5"},
+      "invariants_to_check": ["Scalar reference direct normalized weights gives 9/4.", "Both numerator and denominator rescale together.", "Adding a common finite constant to all scores leaves probabilities and output unchanged.", "Replacing all values by the same constant returns that constant."],
+      "limits": "One scalar output; no tile scheduling, mask implementation, GPU layout or assignment code."
+    },
+    {
+      "id": "ext05-four-key-backward",
+      "body": "lectures/ext05/notes.zh.md",
+      "inputs": {"forward_case": "ext05-four-key-softmax", "upstream_gradient": 2},
+      "expected_exact": {"dP": ["4", "-2", "6", "12"], "row_D": "9/2", "dS": ["-1/16", "-13/8", "3/4", "15/16"], "dV": ["1/4", "1/2", "1", "1/4"], "dS_sum": "0"},
+      "limits": "No Q/K numerical values provided; not a dQ/dK implementation or full attention backward correctness claim; dropout excluded."
+    },
+    {
+      "id": "ext06-symbolic-overlap",
+      "body": "lectures/ext06/notes.zh.md",
+      "inputs": {"intervals": ["[a,c]", "[b,d]"], "ordering": "a<b<c<d"},
+      "expected": {"sum_of_durations": "(c-a)+(d-b)", "union_length": "d-a", "overlap": "c-b"},
+      "limits": "Symbolic interval algebra only; no latency unit, invented trace or benchmark sample."
+    }
+  ]
+}

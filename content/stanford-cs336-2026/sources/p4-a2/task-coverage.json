@@ -1,0 +1,1867 @@
+{
+  "schema_version": 1,
+  "course_id": "stanford-cs336-2026",
+  "assignment_id": "a2-systems",
+  "phase": "P4",
+  "created_at": "2026-11-14T16:35:17Z",
+  "source_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "edition": "Spring2026 PDF26.1.3 / package26.1.4",
+  "source_manifest": "p4-a2/manifest-fragment.json",
+  "historical_audit": "p1-assignments-a1-a4/assignment-audit.json",
+  "historical_policy": "P1 audit kept unchanged; P4 expands partial reading to complete 48-page extracted-text reading and task-level mapping. No retrospective acceptance changes.",
+  "material_files": [
+    "labs/a2-systems/lab.zh.md",
+    "labs/a2-systems/guide.zh.md"
+  ],
+  "assets": [
+    "labs/a2-systems/assets/evidence-lanes.svg"
+  ],
+  "route_map": {
+    "lab": "#/c/stanford-cs336-2026/lab/a2-systems?v=zh",
+    "guide": "#/c/stanford-cs336-2026/lab/a2-systems?v=guide"
+  },
+  "mapping_semantics": "Exact numbered Problem headings in lab; G-section prefixes in guide are conceptual support, not answers. Each lettered subquestion has a separate single-letter coverage_items.id; nonnumbered requirements and roman subitems separately mapped. Shared contracts include optional and unscored requirements. No HTML anchor assumption.",
+  "declared_coverage": {
+    "scored_tasks": 27,
+    "scored_problems": 27,
+    "lettered_subquestions": 47,
+    "points_total": 137,
+    "all_source_text_read": true,
+    "visual_pdf_review": false,
+    "main_review": "pending_main_record",
+    "page_acceptance": "pending_main_record",
+    "official_experiments_executed": false
+  },
+  "shared_contracts": [
+    {
+      "id": "version-environment",
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "source_text_lines": [
+        1,
+        111
+      ],
+      "lab_sections": [
+        "0.1 固定版本与工作目录",
+        "0.4 全局模型配置"
+      ],
+      "guide_sections": [
+        "G0"
+      ],
+      "coverage_items": [
+        {
+          "id": "edition",
+          "requirement": "Spring2026 PDF26.1.3/48p at ca8bc81; package26.1.4; basics26.0.4 separate; current CHANGELOG adds checkpoint/FSDP, removes bucketed DDP."
+        },
+        {
+          "id": "environment",
+          "requirement": "uv; Python>=3.12,<3.14; torch~=2.11.0; cs336-basics staff model or own dependency path; systems own module; original tests with adapters."
+        },
+        {
+          "id": "model-defaults",
+          "requirement": "vocab10000,batch4,context512 unless overwritten; small768/3072/12/12; medium1024/4096/24/16; large1280/5120/36/20; xl2560/10240/32/32;10B4608/12288/50/36."
+        },
+        {
+          "id": "randomness",
+          "requirement": "Performance-only benchmarks permit random weights/data; no pretrained8B download required."
+        }
+      ]
+    },
+    {
+      "id": "policy-and-submission",
+      "source_file": "p1-shared/ai-policy.txt",
+      "source_text_lines": [
+        1,
+        21
+      ],
+      "additional_sources": [
+        "p4-a2/upstream/AGENTS.txt",
+        "p4-a2/upstream/test_and_make_submission.txt"
+      ],
+      "lab_sections": [
+        "0.2 AI、现成代码与提交规则"
+      ],
+      "guide_sections": [
+        "G0",
+        "G10"
+      ],
+      "coverage_items": [
+        {
+          "id": "ai",
+          "requirement": "Conceptual/API help only; no AI code, pseudocode, assignment or leaderboard implementation/experiments; disable AI autocomplete, preserve AGENTS; no third-party implementations except explicit allowance."
+        },
+        {
+          "id": "submission",
+          "requirement": "Typeset writeup.pdf all written answers + own code.zip to Gradescope; official packaging script excludes logs/data and continues after pytest failure; legacy spring2024 zip name and README gzipped-tar mismatch explicitly noted."
+        },
+        {
+          "id": "collaboration",
+          "requirement": "Individual understanding/completion; identify study-group collaborators per homepage; leaderboard separate PR path."
+        }
+      ]
+    },
+    {
+      "id": "hardware-access",
+      "source_file": "p1-shared/cluster-guide.txt",
+      "source_text_lines": [
+        1,
+        185
+      ],
+      "lab_sections": [
+        "0.3 硬件与可达范围",
+        "4.1 共同通信语义"
+      ],
+      "guide_sections": [
+        "G0",
+        "G1",
+        "G6"
+      ],
+      "coverage_items": [
+        {
+          "id": "eligibility",
+          "requirement": "Course Modal only enrolled students; Stanford Google/invite/personal environment; public account not institutional entitlement."
+        },
+        {
+          "id": "concurrency",
+          "requirement": "Guide≤3GPU recommendation vs required6GPU benchmark must be coordinated with staff, not silently reduced or treated as grant."
+        },
+        {
+          "id": "cpu-boundary",
+          "requirement": "CPU/Gloo correctness useful, not CUDA/Triton/NCCL/Nsight/B200 performance; MPS not equivalent; Triton interpreter buggy warning; GPU skip not pass."
+        },
+        {
+          "id": "compute-boundary",
+          "requirement": "No official CPU/RAM universal minimum; possible naiveOOM; no execution/downloaded model/paid compute claimed."
+        }
+      ]
+    },
+    {
+      "id": "saved-tensor-checkpoint-primer",
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "source_text_lines": [
+        484,
+        745
+      ],
+      "lab_sections": [
+        "2.1 要理解和观察的非计分前置"
+      ],
+      "guide_sections": [
+        "G3",
+        "G4"
+      ],
+      "coverage_items": [
+        {
+          "id": "residuals",
+          "requirement": "FP32 RMSNorm [4,512,2560], saved_tensors_hooks shape/dtype/grad_fn; compiled fusion; repeated saves not unique allocation accounting."
+        },
+        {
+          "id": "checkpoint",
+          "requirement": "Save boundary inputs, suppress internal forward saves, recompute then backward; nonreentrant example; checkpoint vs recomputation short-term peak; four-block example not scored new task."
+        },
+        {
+          "id": "source-discrepancy",
+          "requirement": "p12 xl example heads16 vs Table1 heads32; original printed3651.31MiB/160MiB not current execution evidence."
+        }
+      ]
+    },
+    {
+      "id": "triton-attention-primer",
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "source_text_lines": [
+        858,
+        1421
+      ],
+      "lab_sections": [
+        "3.1 Triton 前置与共同 attention 合同"
+      ],
+      "guide_sections": [
+        "G5"
+      ],
+      "coverage_items": [
+        {
+          "id": "weighted-sum",
+          "requirement": "Unscored weighted-sum forward/backward teaching example: program tiles, pointer shape/stride/offset/order, constexpr blocks, boundary/load/store/advance, autograd and cross-tile reduction. No submit code reproduced."
+        },
+        {
+          "id": "math-and-shapes",
+          "requirement": "ScaledQK transpose, key-axis softmax, V; Q[Nq,d],K/V[Nk,d],O[Nq,d],L[Nq]; tiling q/k not hidden dimension; online normalization; Algorithm1 context."
+        },
+        {
+          "id": "backward-context",
+          "requirement": "Save QKVO/L rather than fullP; recomputation and rowwiseD context; full compiled backward not automatically tiled memory bound."
+        },
+        {
+          "id": "recommended-reading",
+          "requirement": "Strong FlashAttention recommendation and FA2 intuition; online-softmax/He references; not all cited papers full mandatory reading; single paper home lec06/materials."
+        }
+      ]
+    },
+    {
+      "id": "optional-triton-backward",
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "source_text_lines": [
+        1570,
+        1645
+      ],
+      "source_pages": [
+        28,
+        29
+      ],
+      "lab_sections": [
+        "3.2 明确选做：Triton backward"
+      ],
+      "guide_sections": [
+        "G5"
+      ],
+      "optional": true,
+      "points": null,
+      "coverage_items": [
+        {
+          "id": "boundary",
+          "requirement": "§4.2.3 explicitly OPTIONAL, no independent points; does not replace mandatory compiledPyTorch backward contract."
+        },
+        {
+          "id": "algorithm2",
+          "requirement": "Fixed26.1.3 two passes recomputeP separately dK/dV and dQ, avoid cross-block atomics/synchronization; original algorithm reference not solution code."
+        }
+      ]
+    },
+    {
+      "id": "distributed-primer",
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "source_text_lines": [
+        1649,
+        1786
+      ],
+      "lab_sections": [
+        "4.1 共同通信语义"
+      ],
+      "guide_sections": [
+        "G1",
+        "G6"
+      ],
+      "coverage_items": [
+        {
+          "id": "terms",
+          "requirement": "Node/worker/worldsize/globalrank/localrank; rank uniqueness/device binding; one node equivalence only."
+        },
+        {
+          "id": "measurement",
+          "requirement": "Same machine comparisons, warmup generally5, CUDA synchronize even async_opFalse, gather rank timings, CPU Gloo debug then NCCL GPU benchmark."
+        },
+        {
+          "id": "async",
+          "requirement": "Collective queue/dependency semantics distinct GPU physical completion; handles/streams must respect optimizer dependency."
+        }
+      ]
+    },
+    {
+      "id": "parallelism-premises",
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "source_text_lines": [
+        2163,
+        2556
+      ],
+      "lab_sections": [
+        "7.1 全部计算题共同题设",
+        "23 · data_parallel_calcs",
+        "24 · fsdp_calcs",
+        "25 · tp_calcs",
+        "26 · fsdp_tp_calcs"
+      ],
+      "guide_sections": [
+        "G8"
+      ],
+      "coverage_items": [
+        {
+          "id": "model",
+          "requirement": "Single gatedFFN x[B,D],W1/W2[D,Dff],W3[Dff,D]; f pointwise, z=f(xW1)*xW2,y=zW3; original nonsharded backward context eq24–30."
+        },
+        {
+          "id": "units",
+          "requirement": "C per-deviceFLOP/s,W per-device egressbyte/s,FP16twoBytes; matmul2abc; ignore nonmatmul/startup/topology; no global-bytes/singleW confusion."
+        },
+        {
+          "id": "collectives",
+          "requirement": "Ring AG/RS full tensorS: (N−1)S/(NW); AR RSthenAG twice; Snotshard."
+        },
+        {
+          "id": "dp-fsdp",
+          "requirement": "DP batch-sharded,fullW,AR grads;FSDP batch+weight shards,forwardAG,free,backwardAG,RS(fullweight partial sums to shard full sums)."
+        },
+        {
+          "id": "tp",
+          "requirement": "W1/W2 column-sharded,W3row-sharded;intermediate feature shards skipAG;outputAR. Input vs output sharding based xW convention."
+        },
+        {
+          "id": "2d",
+          "requirement": "GridiTP,jFSDP,Nproduct;W1/W2[D/NF,Dff/NT],W3[Dff/NT,D/NF],x[B/NF,D];gather fixedi acrossj,AR fixedj acrossi;forward focus,backward encouragement not added scored task."
+        },
+        {
+          "id": "scope",
+          "requirement": "PP/EP listed not added implementation;max communication/compute ideal overlap;2D independent vs sharednetwork assumptions separate;fixed batch/model not free tuning."
+        }
+      ]
+    },
+    {
+      "id": "rights-and-evidence",
+      "source_file": "p1-assignments-a1-a4/a2/LICENSE",
+      "source_text_lines": [
+        1,
+        7
+      ],
+      "lab_sections": [
+        "来源、修改与完整许可"
+      ],
+      "guide_sections": [
+        "来源与完整许可"
+      ],
+      "coverage_items": [
+        {
+          "id": "mit",
+          "requirement": "Copyright2025Stanford plus full permission/condition/warranty text in both bodies; first-party associated docs only."
+        },
+        {
+          "id": "third-party",
+          "requirement": "No inherited MIT for papers/images/dependencies/services/policies or separateleaderboard; original pedagogy/no third-party full translation."
+        },
+        {
+          "id": "execution",
+          "requirement": "All tasks written_not_executed; source reading distinct from acceptance; no official tests,GPU,training,paid compute or benchmark numbers invented."
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "benchmarking_script",
+      "points": 4,
+      "source_pages": [
+        3,
+        4
+      ],
+      "source_text_lines": [
+        133,
+        165
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "01 · benchmarking_script",
+      "guide_sections": [
+        "G1"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "初始化可配模型、随机batch、w预热/n测量，三模式：forward、forward-backward、含optimizer完整步；每步CUDA同步；交脚本。",
+          "lab_section": "01 · benchmarking_script",
+          "guide_sections": [
+            "G1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "a.configuration",
+          "requirement": "支持模型超参数和测量模式参数；计时可用timeit/default_timer。",
+          "lab_section": "01 · benchmarking_script",
+          "guide_sections": [
+            "G1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "Table1全部模型；5预热+10测量；forward/backward/optimizer均值和标准差；1–2句及时间。",
+          "lab_section": "01 · benchmarking_script",
+          "guide_sections": [
+            "G1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "无预热重复并解释；再试1/2预热；2–3句。",
+          "lab_section": "01 · benchmarking_script",
+          "guide_sections": [
+            "G1"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "nsys_profile",
+      "points": 5,
+      "source_pages": [
+        4,
+        6
+      ],
+      "source_text_lines": [
+        168,
+        279
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "02 · nsys_profile",
+      "guide_sections": [
+        "G2"
+      ],
+      "coverage_items": [
+        {
+          "id": "setup",
+          "requirement": "两种Table1模型，三个>128的2次幂context，最大为可装入的最长；profile forward/backward/optimizer，每份profile回答。",
+          "lab_section": "02 · nsys_profile",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "a",
+          "requirement": "forward总时间与Python计时比较，1–2句。",
+          "lab_section": "02 · nsys_profile",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "forward累计最久kernel及调用数；加入backward是否相同，1–2句。",
+          "lab_section": "02 · nsys_profile",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "非matmul显著耗时kernel，1–2句。",
+          "lab_section": "02 · nsys_profile",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "d",
+          "requirement": "自己的AdamW完整forward-loss-backward-step与inference的matmul/其他kernel占比，1–2句。",
+          "lab_section": "02 · nsys_profile",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "e",
+          "requirement": "attention softmax与matmul时间差对照FLOP差，1–2句。",
+          "lab_section": "02 · nsys_profile",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "instrumentation",
+          "requirement": "Nsight CUDA/API映射、Kernel Summary、NVTX分段并排除warmup；profiler/回溯开销与compile归因边界。",
+          "lab_section": "02 · nsys_profile",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "mixed_precision_accumulation",
+      "points": 1,
+      "source_pages": [
+        7,
+        8
+      ],
+      "source_text_lines": [
+        320,
+        351
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "03 · mixed_precision_accumulation",
+      "guide_sections": [
+        "G3"
+      ],
+      "coverage_items": [
+        {
+          "id": "experiment",
+          "requirement": "1000次加0.01：FP32/FP32、FP16/FP16、FP32/FP16、FP16先转FP32再累加FP32四组；实际运行并评论精度。",
+          "lab_section": "03 · mixed_precision_accumulation",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverable",
+          "requirement": "2–3句；本材料不提供输出数值。",
+          "lab_section": "03 · mixed_precision_accumulation",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "benchmarking_mixed_precision",
+      "points": 2,
+      "source_pages": [
+        8,
+        9
+      ],
+      "source_text_lines": [
+        358,
+        403
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "04 · benchmarking_mixed_precision",
+      "guide_sections": [
+        "G3"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "ToyModel无bias Linear(in,10)-ReLU-LayerNorm10-无bias Linear(10,out)，FP32参数GPU FP16 autocast；六dtype：参数、fc1、LN、logits、loss、grad。",
+          "lab_section": "04 · benchmarking_mixed_precision",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "LN敏感部分；BF16是否仍需特殊处理及理由，2–3句。",
+          "lab_section": "04 · benchmarking_mixed_precision",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "可选BF16 mixed precision，对Table1全部大小比较全精度forward/backward，2–3句附时延和趋势；nullcontext提示。",
+          "lab_section": "04 · benchmarking_mixed_precision",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "loss-caveat",
+          "requirement": "原题未定义loss运算，不能声称所有loss有固定dtype。",
+          "lab_section": "04 · benchmarking_mixed_precision",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "memory_profiling",
+      "points": 4,
+      "source_pages": [
+        9,
+        10
+      ],
+      "source_text_lines": [
+        435,
+        480
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "05 · memory_profiling",
+      "guide_sections": [
+        "G3"
+      ],
+      "coverage_items": [
+        {
+          "id": "configuration",
+          "requirement": "xl，context128和2048，完整forward-backward-optimizer范围。",
+          "lab_section": "05 · memory_profiling",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "a",
+          "requirement": "新增profiler选项；forward与完整一步Active memory timeline两图及阶段/峰判断，2–3句。",
+          "lab_section": "05 · memory_profiling",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "每context forward/full-step两个峰值数字表。",
+          "lab_section": "05 · memory_profiling",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "混合精度forward/full-step峰值比较，2–3句。",
+          "lab_section": "05 · memory_profiling",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "d",
+          "requirement": "xl FP32 residual stream单张量MiB推导，1–2句。",
+          "lab_section": "05 · memory_profiling",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "e",
+          "requirement": "降低Detail看最大分配、stack trace定位来源，1–2句。",
+          "lab_section": "05 · memory_profiling",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "f",
+          "requirement": "Nsight/NVTX量化单TransformerBlock saved residuals，五大算子及占比；用forward与backward净变化推梯度内存，截图与1–2段。",
+          "lab_section": "05 · memory_profiling",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "capture",
+          "requirement": "warmup后record memory history(max_entries1000000)，dump snapshot后停止，memory_viz查看。",
+          "lab_section": "05 · memory_profiling",
+          "guide_sections": [
+            "G3"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "gradient_checkpointing",
+      "points": 4,
+      "source_pages": [
+        15,
+        15
+      ],
+      "source_text_lines": [
+        748,
+        767
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "06 · gradient_checkpointing",
+      "guide_sections": [
+        "G4"
+      ],
+      "coverage_items": [
+        {
+          "id": "premise",
+          "requirement": "N相同顺序blocks，无checkpoint O(N)残差；可包任意区间和嵌套。",
+          "lab_section": "06 · gradient_checkpointing",
+          "guide_sections": [
+            "G4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "a",
+          "requirement": "忽略compute最小peak策略，单block residual主导bookkeeping；3–5句、N渐近内存和compute、学生自写代码草图。",
+          "lab_section": "06 · gradient_checkpointing",
+          "guide_sections": [
+            "G4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "xl batch4 sequence2048；仅一次重算、禁止嵌套；最优分块并profile，与相邻更小/大block比较；3–5句及peak。",
+          "lab_section": "06 · gradient_checkpointing",
+          "guide_sections": [
+            "G4"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "configuration-caveat",
+          "requirement": "Table1 xl32头与p12演示16头不一致；记录实际采用配置，不把演示打印值当本次实测。",
+          "lab_section": "06 · gradient_checkpointing",
+          "guide_sections": [
+            "G4"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "pytorch_attention",
+      "points": 2,
+      "source_pages": [
+        16,
+        16
+      ],
+      "source_text_lines": [
+        792,
+        814
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "07 · pytorch_attention",
+      "guide_sections": [
+        "G5"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "不同规模attention benchmark，全部计时/OOM，最小附近OOM配置核算、随seq保存内存与消除成本方向；表、计算、1–2段。",
+          "lab_section": "07 · pytorch_attention",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "a.i",
+          "requirement": "batch8，去head维，不做multihead。",
+          "lab_section": "07 · pytorch_attention",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "a.ii",
+          "requirement": "d=[16,32,64,128] × seq=[256,1024,4096,8192,16384]。",
+          "lab_section": "07 · pytorch_attention",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "a.iii",
+          "requirement": "随机QKV。",
+          "lab_section": "07 · pytorch_attention",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "a.iv",
+          "requirement": "100 forward。",
+          "lab_section": "07 · pytorch_attention",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "a.v",
+          "requirement": "backward前占用；100 backward。",
+          "lab_section": "07 · pytorch_attention",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "a.vi",
+          "requirement": "预热、每次forward/backward CUDA同步。",
+          "lab_section": "07 · pytorch_attention",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "torch_compile",
+      "points": 2,
+      "source_pages": [
+        16,
+        17
+      ],
+      "source_text_lines": [
+        834,
+        849
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "08 · torch_compile",
+      "guide_sections": [
+        "G1"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "题07同配置，对compiled/uncompiled attention forward/backward表。",
+          "lab_section": "08 · torch_compile",
+          "guide_sections": [
+            "G1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "compile完整Transformer；forward与forward-backward-optimizer对照表。",
+          "lab_section": "08 · torch_compile",
+          "guide_sections": [
+            "G1"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "flash_forward",
+      "points": 15,
+      "source_pages": [
+        26,
+        27
+      ],
+      "source_text_lines": [
+        1422,
+        1524
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "09 · flash_forward",
+      "guide_sections": [
+        "G5"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "纯PyTorch无Triton tiled FA2 autograd.Function；QKV/is_causal默认False，此子问可忽略causal；算O/L，保存LQKVO只返回O；tile至少16×16，测试至少16的2次幂；类adapter及pytorch forward测试。",
+          "lab_section": "09 · flash_forward",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "a.interface",
+          "requirement": "forward(ctx,Q,K,V,is_causal=False)；初期backward可暂未实现，但最终题10须完成；adapter返回类而非实例/apply。",
+          "lab_section": "09 · flash_forward",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "Triton fused Algorithm1 forward另一个autograd类；(Tq,batch) grid；一个querytile一个batch，单keytile循环、末尾advance；指针stride/N/scale及constexpr D/tile接口；triton forward测试。",
+          "lab_section": "09 · flash_forward",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b.precision",
+          "requirement": "O/l/m FP32；tl.dot acc；Ptilde转V dtype再乘，O写回转换；逐tile对照PyTorch提示。",
+          "lab_section": "09 · flash_forward",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b.adapter-correction",
+          "requirement": "handout缩写名错误，实际get_flashattention_autograd_function_triton。",
+          "lab_section": "09 · flash_forward",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "最后bool默认False；is_causal:tl.constexpr；global索引Bq×Bk mask，屏蔽score加-1e6，保存ctx.is_causal；旧测试通过。",
+          "lab_section": "09 · flash_forward",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c.source-caveat",
+          "requirement": "测试参考用替换-1e6，题面加-1e6；非任意极端输入等价，不把有限mask改称-inf。矩形Bq×Bk非必须square。",
+          "lab_section": "09 · flash_forward",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "tests",
+          "requirement": "saved_tensors唯一[batch,Nq] L；O/L比较；GPU causal双路径；CUDA缺失skip不是GPU通过。",
+          "lab_section": "09 · flash_forward",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "flash_backward",
+      "points": 5,
+      "source_pages": [
+        28,
+        28
+      ],
+      "source_text_lines": [
+        1537,
+        1544
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "10 · flash_backward",
+      "guide_sections": [
+        "G5"
+      ],
+      "coverage_items": [
+        {
+          "id": "implementation",
+          "requirement": "必做PyTorch+torch.compile，输入QKVOdOL，计算并用D，按式13–19返回dQdKdV。",
+          "lab_section": "10 · flash_backward",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "causal",
+          "requirement": "与前向mask一致，非张量bool非可微；test_flash_backward覆盖PyTorch与Triton-wrapper。",
+          "lab_section": "10 · flash_backward",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "optional-boundary",
+          "requirement": "adapter注释不能把必做升级成Triton backward；选做§4.2.3另列。",
+          "lab_section": "10 · flash_backward",
+          "guide_sections": [
+            "G5"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "flash_benchmarking",
+      "points": 5,
+      "source_pages": [
+        28,
+        28
+      ],
+      "source_text_lines": [
+        1551,
+        1567
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "11 · flash_benchmarking",
+      "guide_sections": [
+        "G1"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "do_bench对部分Triton FA2与非FlashAttention普通PyTorch；forward/backward/end-to-end三时延表。",
+          "lab_section": "11 · flash_benchmarking",
+          "guide_sections": [
+            "G1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "hardware",
+          "requirement": "单B200，batch1，causal，随机输入在测量前生成。",
+          "lab_section": "11 · flash_benchmarking",
+          "guide_sections": [
+            "G1"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "sweep",
+          "requirement": "sequence 2幂128..65536 × head_dim 2幂16..128 × FP32/BF16；需要时调tile。",
+          "lab_section": "11 · flash_benchmarking",
+          "guide_sections": [
+            "G1"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "distributed_communication_single_node",
+      "points": 5,
+      "source_pages": [
+        32,
+        32
+      ],
+      "source_text_lines": [
+        1789,
+        1803
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "12 · distributed_communication_single_node",
+      "guide_sections": [
+        "G6"
+      ],
+      "coverage_items": [
+        {
+          "id": "implementation",
+          "requirement": "单node multiprocess all-reduce benchmark。",
+          "lab_section": "12 · distributed_communication_single_node",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "data",
+          "requirement": "FP32 tensors：1MB/10MB/100MB/1GB。",
+          "lab_section": "12 · distributed_communication_single_node",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "ranks",
+          "requirement": "2/4/6 GPU或process。",
+          "lab_section": "12 · distributed_communication_single_node",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "budget",
+          "requirement": "最多6GPU；每run<5min；GPU正式NCCL与CPU/Gloo分开。",
+          "lab_section": "12 · distributed_communication_single_node",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverable",
+          "requirement": "图/表比较所有设置及2–3句交互分析。",
+          "lab_section": "12 · distributed_communication_single_node",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "naive_ddp",
+      "points": 5,
+      "source_pages": [
+        33,
+        33
+      ],
+      "source_text_lines": [
+        1810,
+        1841
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "13 · naive_ddp",
+      "guide_sections": [
+        "G6"
+      ],
+      "coverage_items": [
+        {
+          "id": "implementation",
+          "requirement": "rank0广播初值，batch等分且disjoint，backward后逐参数all-reduce平均，所有rank一致optimizer更新。",
+          "lab_section": "13 · naive_ddp",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "interface",
+          "requirement": "get_ddp及可选ddp_on_after_backward；tests/test_ddp.py。",
+          "lab_section": "13 · naive_ddp",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "test-contract",
+          "requirement": "任意module，tied与requires_grad=False参数，逐步单进程全局batch等价。",
+          "lab_section": "13 · naive_ddp",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "naive_ddp_benchmarking",
+      "points": 3,
+      "source_pages": [
+        33,
+        33
+      ],
+      "source_text_lines": [
+        1846,
+        1856
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "14 · naive_ddp_benchmarking",
+      "guide_sections": [
+        "G6"
+      ],
+      "coverage_items": [
+        {
+          "id": "configuration",
+          "requirement": "单node2GPU，Table1 xl。",
+          "lab_section": "14 · naive_ddp_benchmarking",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "measurement",
+          "requirement": "每训练步时间、梯度通信时间与占比。",
+          "lab_section": "14 · naive_ddp_benchmarking",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverable",
+          "requirement": "设置说明及各时间。",
+          "lab_section": "14 · naive_ddp_benchmarking",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "minimal_ddp_flat_benchmarking",
+      "points": 2,
+      "source_pages": [
+        34,
+        34
+      ],
+      "source_text_lines": [
+        1881,
+        1891
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "15 · minimal_ddp_flat_benchmarking",
+      "guide_sections": [
+        "G6"
+      ],
+      "coverage_items": [
+        {
+          "id": "implementation",
+          "requirement": "全部梯度flatten成一tensor，一次all-reduce；flatten/unflatten API提示。",
+          "lab_section": "15 · minimal_ddp_flat_benchmarking",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "comparison",
+          "requirement": "1node2GPU xl，对逐参数baseline；每步/通信时间及1–2句。",
+          "lab_section": "15 · minimal_ddp_flat_benchmarking",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "boundary",
+          "requirement": "不是已移除bucketed DDP。",
+          "lab_section": "15 · minimal_ddp_flat_benchmarking",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "ddp_overlap_individual_parameters",
+      "points": 5,
+      "source_pages": [
+        35,
+        36
+      ],
+      "source_text_lines": [
+        1951,
+        1994
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "16 · ddp_overlap_individual_parameters",
+      "guide_sections": [
+        "G6"
+      ],
+      "coverage_items": [
+        {
+          "id": "implementation",
+          "requirement": "任意nn.Module容器，初值broadcast，梯度累计就绪后逐参数async平均，与backward重叠。",
+          "lab_section": "16 · ddp_overlap_individual_parameters",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "interface",
+          "requirement": "__init__(module)、forward(*inputs,**kwargs)、finish_gradient_synchronization；optimizer前依赖完成；post_accumulate hook及handle提示。",
+          "lab_section": "16 · ddp_overlap_individual_parameters",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverable",
+          "requirement": "get_ddp、按需ddp_on_after_backward；test_ddp，官方建议重复如5次。",
+          "lab_section": "16 · ddp_overlap_individual_parameters",
+          "guide_sections": [
+            "G6"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "ddp_overlap_individual_parameters_benchmarking",
+      "points": 1,
+      "source_pages": [
+        36,
+        36
+      ],
+      "source_text_lines": [
+        1998,
+        2018
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "17 · 逐参数重叠 DDP 计时",
+      "guide_sections": [
+        "G2"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "1node2GPU xl每步时间，对朴素逐参数与单次flat；1–2句。",
+          "lab_section": "17 · 逐参数重叠 DDP 计时",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "同设置Nsight initial/overlap两截图，展示通信是否重叠backward。",
+          "lab_section": "17 · 逐参数重叠 DDP 计时",
+          "guide_sections": [
+            "G2"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "optimizer_state_sharding",
+      "points": 15,
+      "source_pages": [
+        37,
+        37
+      ],
+      "source_text_lines": [
+        2039,
+        2064
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "18 · optimizer_state_sharding",
+      "guide_sections": [
+        "G7"
+      ],
+      "coverage_items": [
+        {
+          "id": "ownership",
+          "requirement": "每rank约1/world_size参数及optimizer状态；更新后发布参数保持副本一致。",
+          "lab_section": "18 · optimizer_state_sharding",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "constructor",
+          "requirement": "params iterable或含不同超参的groups、任意optimizer_cls、转发kwargs；Optimizer父类构造。",
+          "lab_section": "18 · optimizer_state_sharding",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "step",
+          "requirement": "转发closure和kwargs，step后同步更新参数。",
+          "lab_section": "18 · optimizer_state_sharding",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "add_param_group",
+          "requirement": "父类构造及训练动态新增都支持；负责rank归属。",
+          "lab_section": "18 · optimizer_state_sharding",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverable",
+          "requirement": "容器与get_sharded_optimizer；test_sharded_optimizer，建议如5次；tied参数合同。",
+          "lab_section": "18 · optimizer_state_sharding",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "optimizer_state_sharding_accounting",
+      "points": 5,
+      "source_pages": [
+        38,
+        38
+      ],
+      "source_text_lines": [
+        2074,
+        2093
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "19 · optimizer_state_sharding_accounting",
+      "guide_sections": [
+        "G7"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "1node2GPU xl有无分片：初始化后/step前/step后peak、参数/状态拆账、是否符合预期；2–3句。",
+          "lab_section": "19 · optimizer_state_sharding_accounting",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "同设置有无分片iteration时间，2–3句。",
+          "lab_section": "19 · optimizer_state_sharding_accounting",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "与ZeRO stage1/P_os比较，尤其内存通信；针对性阅读必做，2–3句。",
+          "lab_section": "19 · optimizer_state_sharding_accounting",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "fsdp",
+      "points": 15,
+      "source_pages": [
+        38,
+        39
+      ],
+      "source_text_lines": [
+        2097,
+        2145
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "20 · fsdp",
+      "guide_sections": [
+        "G7"
+      ],
+      "coverage_items": [
+        {
+          "id": "scope",
+          "requirement": "任意完整nn.Module，包装/hook Linear/Embedding，norm等小层复制，复制梯度仍须同步。",
+          "lab_section": "20 · fsdp",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "constructor",
+          "requirement": "module,compute_dtype=None；forward/backward及时all-gather。",
+          "lab_section": "20 · fsdp",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "prefetch",
+          "requirement": "某层gather仅在前面第2层forward完成后开始；不得全模型提前gather。",
+          "lab_section": "20 · fsdp",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "lifetime",
+          "requirement": "梯度就绪reduce-scatter对应rank；完整gathered weights用后释放。",
+          "lab_section": "20 · fsdp",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "precision",
+          "requirement": "权重通信前转compute_dtype；master及optimizer FP32。",
+          "lab_section": "20 · fsdp",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "interface",
+          "requirement": "forward透传，finish_gradient_synchronization在optimizer前；shard兼容A1标准AdamW。",
+          "lab_section": "20 · fsdp",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "adapters",
+          "requirement": "get_fsdp，实际测试另需fsdp_on_after_backward和fsdp_gather_full_params(原名映射完整参数，复制原样)。",
+          "lab_section": "20 · fsdp",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "tests",
+          "requirement": "tests/test_fsdp.py，建议重复如5次；基础包自定义Linear/Embedding、FP32/FP16、grad shape/dtype、复制梯度一致；SGD测试不取消AdamW合同。",
+          "lab_section": "20 · fsdp",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "fsdp_accounting",
+      "points": 5,
+      "source_pages": [
+        39,
+        39
+      ],
+      "source_text_lines": [
+        2149,
+        2159
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "21 · fsdp_accounting",
+      "guide_sections": [
+        "G7"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "接§6估计FSDP peak节省，可忽略预分配gather buffers；2–3句。",
+          "lab_section": "21 · fsdp_accounting",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "两GPU xl观察all-gather是否赶上forward，时间、2–3句和Nsight截图。",
+          "lab_section": "21 · fsdp_accounting",
+          "guide_sections": [
+            "G7"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "alternate_ring_all_reduce",
+      "points": 1,
+      "source_pages": [
+        41,
+        41
+      ],
+      "source_text_lines": [
+        2238,
+        2250
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "22 · alternate_ring_all_reduce",
+      "guide_sections": [
+        "G8"
+      ],
+      "coverage_items": [
+        {
+          "id": "premise",
+          "requirement": "替代算法N−1轮转发原始完整S张量并累加；i轮t发送(i−t+1)modN、收(i−t)modN；per-device egress W。",
+          "lab_section": "22 · alternate_ring_all_reduce",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverable",
+          "requirement": "S,N,W时间表达式及一句理由。",
+          "lab_section": "22 · alternate_ring_all_reduce",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "data_parallel_calcs",
+      "points": 3,
+      "source_pages": [
+        42,
+        42
+      ],
+      "source_text_lines": [
+        2301,
+        2321
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "23 · data_parallel_calcs",
+      "guide_sections": [
+        "G8"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "DP backward仅matmul FLOPs，B,D,D_FF,N_DP表达式与一句理由。",
+          "lab_section": "23 · data_parallel_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "DP backward通信时间，相关参数/W表达式与一句理由。",
+          "lab_section": "23 · data_parallel_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "N_DP通信瓶颈上限不等式，参数B,D,D_FF,C,W及一句理由。",
+          "lab_section": "23 · data_parallel_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "fsdp_calcs",
+      "points": 3,
+      "source_pages": [
+        43,
+        44
+      ],
+      "source_text_lines": [
+        2391,
+        2412
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "24 · fsdp_calcs",
+      "guide_sections": [
+        "G8"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "backward/forward两FLOP表达式，各一句理由。",
+          "lab_section": "24 · fsdp_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "backward/forward两通信时间，各一句理由；forward gather、backward regather+reduce-scatter。",
+          "lab_section": "24 · fsdp_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "backward/forward两N_FSDP上限不等式，各一句理由。",
+          "lab_section": "24 · fsdp_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "tp_calcs",
+      "points": 4,
+      "source_pages": [
+        44,
+        45
+      ],
+      "source_text_lines": [
+        2460,
+        2492
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "25 · tp_calcs",
+      "guide_sections": [
+        "G8"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "dy[B,D]，以sharded W、saved activations、中间量与collective写完整backward，产生三dW shards与dx。",
+          "lab_section": "25 · tp_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "forward/backward两FLOP表达式，各一句理由。",
+          "lab_section": "25 · tp_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "forward/backward两通信时间，各一句理由。",
+          "lab_section": "25 · tp_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "d",
+          "requirement": "backward/forward两N_TP上限不等式，各一句理由。",
+          "lab_section": "25 · tp_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "fsdp_tp_calcs",
+      "points": 6,
+      "source_pages": [
+        45,
+        46
+      ],
+      "source_text_lines": [
+        2559,
+        2582
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "26 · fsdp_tp_calcs",
+      "guide_sections": [
+        "G8"
+      ],
+      "coverage_items": [
+        {
+          "id": "a",
+          "requirement": "2D forward FLOPs，B,D,D_FF,N_FSDP,N_TP式及一句理由。",
+          "lab_section": "26 · fsdp_tp_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "b",
+          "requirement": "两通信轴可重叠；forward通信时间max(FSDP,TP)式与一句理由。",
+          "lab_section": "26 · fsdp_tp_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "c",
+          "requirement": "最优两轴下总N上限不等式、若干句和方程。",
+          "lab_section": "26 · fsdp_tp_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "d",
+          "requirement": "共享网络两轴不能重叠；重求最优总N上限，不用整数截断；若干句和方程。",
+          "lab_section": "26 · fsdp_tp_calcs",
+          "guide_sections": [
+            "G8"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "leaderboard",
+      "points": 10,
+      "source_pages": [
+        46,
+        48
+      ],
+      "source_text_lines": [
+        2586,
+        2670
+      ],
+      "source_file": "p1-assignments-a1-a4/a2/cs336_assignment2_systems.txt",
+      "lab_section": "27 · leaderboard",
+      "guide_sections": [
+        "G9"
+      ],
+      "coverage_items": [
+        {
+          "id": "semantics",
+          "requirement": "8B-shaped完整step：清梯度set_to_none，forward，cross_entropy.sum，backward，AdamW；保持cs336_basics I/O及同测试；必须自己实现，不用/抄现成。",
+          "lab_section": "27 · leaderboard",
+          "guide_sections": [
+            "G9"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "configuration",
+          "requirement": "2 B200，batch2，context32768，vocab151936，d_model4096，d_ff11008，34层32头，BF16 causal。",
+          "lab_section": "27 · leaderboard",
+          "guide_sections": [
+            "G9"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "inputs",
+          "requirement": "随机labels/targets，各[batch,context]；模型与optimizer在train_step计时区域外。",
+          "lab_section": "27 · leaderboard",
+          "guide_sections": [
+            "G9"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "timing",
+          "requirement": "do_bench rep30000ms、warmup10000ms，非迭代数；开发允许缩短。",
+          "lab_section": "27 · leaderboard",
+          "guide_sections": [
+            "G9"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "cold-cache",
+          "requirement": "空PyTorch/Triton cache整个benchmark run≤10min；编译/autotune包含；期望优于10s/step。",
+          "lab_section": "27 · leaderboard",
+          "guide_sections": [
+            "G9"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "deliverable",
+          "requirement": "最佳完整训练步wallclock及leaderboard提交；前5–10名验证。",
+          "lab_section": "27 · leaderboard",
+          "guide_sections": [
+            "G9"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "optional-ideas",
+          "requirement": "tile/autotune/compile；fusedAdamW；LMhead-loss及可选backward融合；FA2/Triton backward两遍；causal跳tile和对角区分；TMA；必要时checkpoint。非全员硬性任务或方案。",
+          "lab_section": "27 · leaderboard",
+          "guide_sections": [
+            "G9"
+          ],
+          "status": "written_not_executed"
+        },
+        {
+          "id": "leaderboard-readme",
+          "requirement": "独立固定README：PR升序毫秒表、方法/缓存硬件编译假设、最佳快照；外校global第二表及前五验证、指定维护者minimal uv repo pyproject/lock/main；两B200 uv run main.py。",
+          "lab_section": "27 · leaderboard",
+          "guide_sections": [
+            "G9"
+          ],
+          "status": "written_not_executed"
+        }
+      ]
+    }
+  ],
+  "accepted": false
+}

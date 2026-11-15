@@ -1,0 +1,50 @@
+Stanford CS336 Spring2026 — P4主审与交付记录
+工作日期：2026-11-15；实际来源获取/阅读UTC时间保留在各manifest，不用工作日期覆盖它们。
+结论：P4内容、来源、原创算例与页面验收通过；出版状态单列p4-publication-record.json。P5未启动。
+
+1. 完整交付与范围
+新增18份正文：L05–L08各notes/draft共8；ext04–09六篇notes；lec06/materials承载FlashAttention/FA2、lec08/materials承载ZeRO；A2 lab/guide两份。新增15张原创SVG。累计40份正文、22张SVG：36讲座文档+4实验文档；8个官方讲次、8桥接、9专题、5篇论文指定核心及A1/A2。
+共享更新仅course.json的A2范围表述、resources.zh.md、status.json及本课程sources证据。未改src、其他课程、官方作业实现。没有L05/L07 materials占位或专题假视频。
+
+2. 六个真实子任务与中断恢复
+使用P4HardwareKernels、P4TrainingParallelism、P4AttentionProfiling、P4DistributedSystems、P4PaperMaterials、P4AssignmentTwo六个独占任务；指定openai-codex/gpt-6-astra:xhigh。Main核对初始model_change、effort、first assistant及恢复后的assistant事件；均为同一模型/xhigh，无fallback/配置写入/换模型。
+首次5任务usage_limit_reached、1任务取消，未产出正文；P4-BLOCKED及interruption-check是历史快照。用户明确报告额度恢复并要求续跑后，通过原agent会话恢复六任务；全部成功交付，未丢上下文或静默缩范围。作者accepted=false保留为交接时状态，主验收独立覆盖；不把worker的自审当独立主审。
+
+3. 实际阅读与版权边界
+四讲全读1925/1552/1312/1870条字幕，共6659；累计L01–L08为13551。完整时间块连续覆盖0至4719/5201/4862/4810秒，每cue按起点恰归一次。内部>2秒gap为8/44/65/8，共125；首尾、疑词、INAUDIBLE保留。manual/non-ASR仅为平台类别。没有核音、观看录像或课堂截图；draft是有限独立译述+全片导航，不是全译。
+L05/L06/L07/L08文字来源分别完整535/745/619/675行；作者另看L05五页与L08十二页原PDF。固定讲义是2026-09-12课后提交，L06带宽修订不倒填录像。源码/trace读到与执行是不同状态，本批未执行。
+FlashAttention2205.14135v2、FA2 2307.08691v1、ZeRO1910.02054v3指定核心全部实际读；作者视觉检查22选定PDF页。完整行窗、核心/附加/未读范围在p4-papers/reading-updates.json；不称三篇全文精读或全图表数据审计。未确认公众全文翻译授权，材料为自主问题组织、推导和评论，原PDF图片只留本地。
+A2固定ca8bc81a59b70516f7ebb2da4808daade877c736；PDF v26.1.3共48页全文提取已读，package26.1.4另记；27任务、47字母子问、6嵌套罗马子项、137分完整映射。第一方MIT全文声明保留，不扩展到论文/外部网站/排行榜。实际adapters和tests用于合同核对，未运行。
+补充NVIDIA/PyTorch/Triton/Megatron文档按各record选段读取；后期快照不是课堂或A2依赖版本。原件许可未确认则不发布全文或复制图。
+
+4. 独立主审与技术纠错
+Main完整读18份正文；完整读四讲文字来源，并按source-spotcheck.json独立抽核A2任务、实际interfaces/attention/FSDP tests、提交脚本、排行榜和Triton计时说明。另视觉看FA1两页、FA2六页、ZeRO两页，共10页，范围不冒充作者全部22页。
+重点核对：
+- ReLU倒数AI由讲者当堂自纠；MXFP4/NVFP4命名冲突不能归咎提取器；逻辑program/block元素、物理线程、SM驻留分开。
+- L06课后40/17TB/s与旧19/9分开；64/128线程、wave倍数、softmax读数、mask/stride、同步和非线性融合的前提明确。
+- DP全局计数权重、同一优化器状态和更新合同；TP拼接/部分和及伴随；no-op教学trace不是多卡实测；GiB与GB不混用。
+- FSDP状态片与临时物化窗口分开；两AG+RS、PP气泡两个分母、SP/CP和并行组嵌套均有假设。
+- FA2原PDF dK次序、1/d脚注、旧分子缩放逆号、分母/旧输出比例、causal方向和D维度问题以原页为证，不静默照抄；Table1的2.8倍不是全表最大值。FA IO量词不是每个M逐点最优证明。
+- ZeRO16bytes/parameter是特定精度约定，状态式不是峰值；通信按每rank发送、dtype、有限rank因子和调度计数；历史评测只覆盖对应子集。
+- A2必做compiled-PyTorch backward与选做Triton、class而非instance、L保存、finite mask差异、FSDP自定义层/master梯度/预取窗口、完整step及冷缓存10min边界保留。不提供可提交代码、伪代码或计分解答。
+Main整合还修正ext04六份对象计数、A2“临时视图”误导；四份draft页首阅读/版权说明移入页底来源节。没有新增无关重构。
+
+5. 已实际执行的最小验证
+sources/check-p4.py最终通过：18正文、15SVG、203站内链接、307合法时间范围、8来源分片/109记录/98唯一文件哈希身份、16论文归属、全部A2任务和子项。
+检查器曾把嵌套(i)/(v)当字母题、又错误依赖PDF缩进/忽略form-feed；修正为读取所有标记并识别连续罗马序列，保持原27/47/6要求不变。失败是检查器解析问题，不删除题目或放宽覆盖。
+独立CPU算例10组通过（Python3.11.8）：roofline/tile/occupancy、Attention字节和FLOPs、softmax局部梯度与有限差分、FA2缩放反例、加权DP/TP、ZeRO精度/流量、PP/SP、ring/tree、恢复边界、MoE路由/容量/combine。不是GPU微基准或官方实现；结果在cpu-smoke.json，临时脚本已删。
+npm run build首次通过；针对真实手机溢出和深色SVG问题作两次必要重建，最终tsc与Vite5.4.21通过：3253个本地模块、Vite5.63秒。三个完整日志保留。没有运行无关全仓测试或官方课程测试。
+
+6. 真实页面、视频和视觉验收
+19个路由（18正文+公共资料）各在1440x1000及390x844访问，共38组几何记录。最后无根横向溢出或KaTeX错误/display公式溢出；桌面/手机根宽1440/390。
+发现并修复：L06单行tile字节式；A2长内联API、task17长标题；ZeRO来源长标识符。API完整名称仍在接口表；task17精确原ID留在可横向滚动text块，coverage三个标题映射同步。
+15张原创SVG均实际滚入视口并加载、截图；Light布局全图已视觉查看。外部SVG图片不继承网页CSS变量导致深色黑字不可读；仅在SVG内部将CanvasText按color-scheme映射至现有fg/muted/border变量，透明底，未改src。最终15图深色截图齐全，代表性黑白/彩色依赖图及浅深切换实看可读。
+实际展开ext05答案；实际横向滚动A2表，scrollLeft从0到218，文档根仍390。
+L05–L08页头各核对正确ID及78:39/86:41/81:02/80:10；无query入口均默认notes。L05桌面、L08手机真实点击YouTube链接，各产生正确新tab，原笔记tab保留。没有把打开原站当作核音/性能证明。
+首次浏览检查沿用构建前旧壳导致lazy Lab旧chunk失效，已整页reload；另修正HashRouter返回早于Reader加载的测量等待。旧壳/未就绪结果弃用，后续以正文首节标记确认。屏外lazy图片的incomplete不当作损坏，最终显式滚动确认。清洁壳后的runtime error记录为空。
+
+7. 发布与后续
+sources本身受gitignore保护；只显式加入本批正文/SVG、共享元数据和轻量证据白名单。原字幕/规范化全文、PDF/提取全文、raw/text镜像、原页图和页面截图不提交。不要force-add整个sources。Local build可因既有图片glob包含本地未提交取证图，GitHub Actions在清洁checkout上仅构建已提交白名单；不上传本地dist。
+作者original_assets哈希描述整合前快照；最终正文/SVG身份在p4-shared/final-artifacts.json，避免将主题修正后的文件冒充原哈希。新克隆需按固定URL重取原件才能重跑本地来源哈希检查，不能说源资料已远端备份。
+NEXT-P5-PROMPT.txt完整准备L09–12、ext10–12、A3与指定论文的后续合同、固定来源和访问/预算边界。只有用户明确接续才启动。保留L18缺录像、后期讲义/文档版本、A3 API资格、A4规模与A5授权/模型权限等旧缺口，不因本批完成而抹除。
+没有官方实验、GPU/云费用、模型或语料下载、AI代写作业、账号/密钥操作。内容完成不等于实验完成。

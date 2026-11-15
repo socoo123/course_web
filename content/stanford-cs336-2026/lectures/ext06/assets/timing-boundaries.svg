@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 520" role="img" aria-labelledby="title desc">
+<style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}</style>
+  <title id="title">主机提交、设备事件和端到端计时边界</title>
+  <desc id="desc">上方示意主机提交后返回，GPU工作随后执行；CPU返回不等于GPU完成。下方分别显示提交区间、同一stream中两个完成的事件标记之间的设备经过时间，以及起点排空旧工作、终点等待本次完成的墙钟区间。所有线段长度仅说明顺序，没有真实时长或采集数据。</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; fill: var(--fg, #64748b); }
+    .heading { font-size: 22px; font-weight: 700; }
+    .body { font-size: 18px; }
+    .small { font-size: 17px; }
+    .line { fill: none; stroke: var(--fg, #64748b); stroke-width: 1.6; }
+    .work { fill: none; stroke: var(--accent, #64748b); stroke-width: 2; }
+    .dash { fill: none; stroke: var(--muted, #64748b); stroke-width: 1.5; stroke-dasharray: 5 5; }
+  </style>
+  <text class="heading" x="24" y="34">返回 ≠ 完成；先定义你要测什么</text>
+  <text class="body" x="24" y="77">CPU</text>
+  <path class="line" d="M90 90 H470 M462 85 L470 90 L462 95"/>
+  <rect class="work" x="115" y="63" width="108" height="48" rx="6"/>
+  <text class="body" x="133" y="94">提交</text>
+  <text class="small" x="235" y="77">返回，可继续主机工作</text>
+  <text class="body" x="24" y="160">GPU</text>
+  <path class="line" d="M90 174 H470 M462 169 L470 174 L462 179"/>
+  <rect class="work" x="252" y="145" width="180" height="50" rx="6"/>
+  <text class="body" x="283" y="177">本次设备工作</text>
+  <path class="dash" d="M223 111 L252 144 M432 196 V225"/>
+  <text class="small" x="112" y="219">提交结束</text>
+  <text class="small" x="375" y="219">设备完成</text>
+  <path class="line" d="M24 241 H476"/>
+  <text class="heading" x="24" y="276">三种范围，三种含义</text>
+  <text class="body" x="24" y="313">主机提交：调用返回前的主机时间</text>
+  <text class="body" x="24" y="352">设备events：标记之间的经过时间</text>
+  <text class="small" x="42" y="378">可能含空隙和依赖等待，不只是kernel</text>
+  <text class="body" x="24" y="416">墙钟完成：提交 → 等待本次工作结束</text>
+  <text class="small" x="42" y="442">起点前先排除旧任务；多stream要汇合</text>
+  <text class="small" x="24" y="488">原创符号示意；长度不表示任何实测时长</text>
+</svg>
