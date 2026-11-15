@@ -2,7 +2,7 @@
   "phase": "P4",
   "repository": "socoo123/course_web",
   "branch": "main",
-  "status": "prepared_not_committed",
+  "status": "published_and_content_deployment_verified",
   "preparedAt": "2026-11-15T01:19:46.587Z",
   "files": [
     "lectures/lec05/notes.zh.md",
@@ -93,8 +93,33 @@
     "sources/p4-shared/build-after-mobile-fixes.log",
     "sources/p4-shared/build-final.log"
   ],
-  "contentCommit": null,
-  "verifiedDeployment": null,
+  "contentCommit": "276bd319941a15e4144d3e5e17b58570f26df7ee",
+  "verifiedDeployment": {
+    "status": "success",
+    "workflowRunId": 43662628484,
+    "workflowUrl": "https://github.com/socoo123/course_web/actions/runs/43662628484",
+    "successfulSteps": ["npm ci", "npm run build", "configure-pages", "upload-pages-artifact", "deploy-pages"],
+    "publicUrl": "https://socoo123.github.io/course_web/#/c/stanford-cs336-2026",
+    "liveDesktop": {
+      "route": "lec/lec06",
+      "title": "Kernel 与 Triton",
+      "defaultTab": "课程笔记",
+      "videoDuration": "86:41",
+      "bodyMarker": "1. 一条kernel要过两道关",
+      "rootWidth": 1440
+    },
+    "liveMobile": {
+      "route": "lab/a2-systems?v=zh",
+      "title": "A2 · 系统优化与分布式训练",
+      "task17": "17 · 逐参数重叠 DDP 计时（1 分；p.36）",
+      "exactOriginalTaskIdPresent": true,
+      "viewportWidth": 390,
+      "rootWidth": 390,
+      "katexErrors": 0
+    },
+    "liveRuntimeErrors": 0,
+    "browserNote": "Initial text-wait attempt expired;successful final proof used a fresh cache-key URL and explicit DOM inspection. Screenshots were actually viewed;no audio verification."
+  },
   "publicationBoundary": "Only the explicit files array is staged. No whole-directory force-add;raw captions,normalized transcripts,PDF/fulltext mirrors,raw/text folders,original PDF renders,browser screenshots and local dist remain local.",
-  "recordScope": "The content commit and its verified deployment will be filled after publication;this record may be published in a subsequent metadata-only commit."
+  "recordScope": "This metadata-only receipt is committed after the verified content deployment above. It does not change course bodies/assets and intentionally does not claim its own not-yet-known commit hash."
 }
