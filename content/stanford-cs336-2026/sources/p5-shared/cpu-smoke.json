@@ -1,0 +1,102 @@
+{
+  "phase": "P5",
+  "status": "passed",
+  "groups": 11,
+  "checks": {
+    "scaling_units_and_loss_floor": {
+      "seconds": [
+        3000,
+        5000
+      ],
+      "losses": [
+        6.0,
+        4.0,
+        3.0
+      ],
+      "break_even_requests": 10000
+    },
+    "kv_and_ideal_serving": {
+      "bytes_per_token": 131072,
+      "kv20_gib": 10,
+      "step_ms": [
+        7.87353515625,
+        9.765625
+      ],
+      "batch32_tokens_per_second": 3276.8
+    },
+    "request_metrics": {
+      "ttft_ms": 300,
+      "itl_ms": [
+        40,
+        80,
+        40
+      ],
+      "tpot_ms": 53.33333333333334
+    },
+    "speculative_mass_conservation": {
+      "accepted": [
+        0.5,
+        0.2
+      ],
+      "residual": [
+        0.0,
+        0.3
+      ],
+      "target": [
+        0.5,
+        0.5
+      ]
+    },
+    "evaluation_protocol_and_uncertainty": {
+      "ppl": 4,
+      "standard_error": 0.021650635094610966,
+      "paired_standard_error": 0.028355606218883844,
+      "independent_three_attempt_success": 0.875
+    },
+    "lora_and_quantization": {
+      "merged_output": [
+        11,
+        7
+      ],
+      "adapter_parameters": 65536,
+      "nf4_dq_bits_per_weight": 4.126953125,
+      "lora_parameter_state_mib": 33,
+      "nf4_dq_parameter_state_mib": 9.25390625
+    },
+    "schedule_prefix_reuse": {
+      "separate_units": 700,
+      "shared_units": 430,
+      "saved_units": 270
+    },
+    "paging_and_queueing": {
+      "physical_occupied_slots": 10,
+      "distinct_information_states": 8,
+      "empty_slots": 2,
+      "fcfs_wait_ms": [
+        0,
+        30,
+        60
+      ]
+    },
+    "global_block_normalization": {
+      "correct": 3,
+      "incorrect_sum_of_local_outputs": 4
+    },
+    "independent_budget_ledger": {
+      "reserved_balance": 60,
+      "settled_balance": 75
+    },
+    "statistical_identifiability_and_extrapolation": {
+      "two_point_fit_predictions_at64": [
+        2.25,
+        1.6875
+      ],
+      "predictive_sd": 0.022360679774997897,
+      "extrapolation_factors": [
+        0.8128305161640993,
+        1.2302687708123816
+      ]
+    }
+  },
+  "boundary": "Deterministic independent toy arithmetic; no official fitting implementation, API, model or GPU experiment."
+}

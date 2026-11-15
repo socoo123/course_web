@@ -1,0 +1,51 @@
+P5 L09 AUTHOR HANDOFF — authored; Main acceptance pending
+
+Owned authored files:
+lectures/lec09/notes.zh.md
+lectures/lec09/draft.zh.md
+lectures/lec09/assets/loss-floor-and-range.svg
+Local evidence: captions.normalized.json, transcript.en.txt, video-metadata.json,
+time-intervals.json, reading-log.json, manifest-fragment.json, this review.txt.
+
+Actual source reading this run:
+Q15rhEWZPQ4 Spring2026 individual metadata identity/duration/license and selected caption evidence.
+All 1812 cues actually displayed/read in windows1–400,401–800,801–1200,1201–1600,1601–1812.
+First6.040s; last4673.510s; individual video4677s; timed union4642.957s.
+23 navigation blocks continuously cover0–4677; cue assigned by start, no invented times.
+Seven internal caption gaps >2s, plus leading6.040/trailing3.490. All positive gaps retained.
+Fixed lecture_09 extracted text1–548 fully read. Original57-page PDF visually read pages17,19,38,43,51,52.
+P1 handout manifest347–368 and reading-map paper06 entry1259–1534 consulted for exact rights/home/core scope.
+P1 source archives were not changed. SHA256 and retrieval provenance are in manifest.
+
+Coverage:
+Scaling decision and variables N/D/U/C/T/B/L; tokenizer and parameter-count conventions;
+fixed FLOPs versus wall-clock and finite independent data; power law and loss floors;
+mean estimation and bounded nonparametric derivation; architecture/optimizer/data mixture;
+MoE total versus active parameters; critical batch; upstream/downstream transfer;
+joint error conceptual model; extrapolation/uncertainty; training versus deployment objective.
+Limited chronological draft has full-video navigation, seven finite independent paraphrase sections,
+explicit caption gaps and correction/uncertainty notes. It is NOT a full transcript translation.
+
+Corrections/limits:
+PDF19 restores sqrt(n) lost by extraction. Generic n^(-1/d) not a universal regression rate.
+Lipschitz histogram example explicitly gives an MSE upper-bound order, not a lower/minimax guarantee.
+Empirical lower-bound phrase is explained as attainable recipe baseline, not mathematical loss bound.
+N/D spoken exponent swap retains self-correction. Spoken GPT3 token ratio3 versus slide2 not silently resolved.
+Raw suspect words/inaudible markers remain archived; no audio verification or manufactured questions.
+No classroom screenshot, media, model, training data, GPU/cloud/API or official assignment execution.
+Chinchilla paper text belongs ONLY lec09/materials; later refitting is attributed to 2026 classroom discussion.
+No independent full reads of later named research papers claimed.
+
+Suggested Main integration:
+Enable lec09 notes/draft and retain paper worker materials as sole Chinchilla home.
+Publish original MD/SVG and lightweight evidence only; never raw/normalized captions, transcript or PDFs.
+Required model requested openai-codex/gpt-6-astra:xhigh; Main owns runtime identity attestation.
+No build/lint/test/formatter/smoke/browser/CPU checks run by worker. This is author handoff only.
+
+Independent toy checks for Main (NOT run here):
+1. 3e17/1e14=3000s;3e17/6e13=5000s (equal compute, unequal time).
+2. L=2+4/sqrt(D) atD=1,4,16 gives6,4,3; excess4,2,1.
+3. sigma=3, sample n=100/400: MSE .09/.0225; RMSE .3/.15.
+4. Smin100/Emin10000 gives critical batch100, balancedS200/E20000; normalized product=1.
+5. Extra training30 and per-request saving.003 gives break-even10000 requests under stated quality assumptions.
+6. Check conceptual floor derivative, variable units, source timing/cue coverage, links and mobile SVG/KaTeX.

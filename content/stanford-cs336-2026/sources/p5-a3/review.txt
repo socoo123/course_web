@@ -1,0 +1,83 @@
+P5 A3 作者交接（不是 Main 页面验收）
+作者模型：openai-codex/gpt-6-astra:xhigh
+完成日期：2026-11-15
+状态：authored complete / reviewed authored / accepted pending Main
+
+1. 文件归属与交付
+只写入 labs/a3-scaling/ 和 sources/p5-a3/，未改共享 metadata、官方实现或其他作者文件。
+正文：
+- labs/a3-scaling/lab.zh.md
+- labs/a3-scaling/guide.zh.md
+原创图：
+- labs/a3-scaling/assets/budget-evidence.svg
+轻量证据：
+- sources/p5-a3/manifest-fragment.json（顶层 sources 数组）
+- sources/p5-a3/task-coverage.json
+- sources/p5-a3/review.txt
+本地原件补齐：sources/p5-a3/upstream/ 内12个固定源码／文本；不是新的学生实现，不应整目录发布。
+
+2. 任务与子问精确计数
+固定 assignment3-scaling commit：03e9372992e913061b9e78b5cfcb62ad8a87de35。
+Spring2026 handout v26.0.5，8页；package26.0.2单记。
+2个计分 Problem：chinchilla_isoflops 5分，scaling_laws 50分；共55分。
+Part1：2个字母子问(a)(b)；各有2个目标预算预测，共4个预测数值；2幅必须图，包含实际用于拟合的点，均外推至少1e24FLOPs。
+Part2：没有新造字母子问；原文5个必须讨论的报告因素分别映射。以结构化问项合计是2个字母子问+5个讨论项=7项，不把它们说成7个独立计分Problem。
+task-coverage另列13组共享合同／134个细粒度覆盖项；这是编辑审计单位，不是官方新增题数。Part1(a)(b)进一步展开10个交付子要求。
+HTTP census：5个不同path，6个method/path组合；/final_submission有GET与POST。没有7个接口。
+公开练习JSON：72条合成run，9档预算，每档8条，6e18至3e21FLOPs。只阅读，不执行拟合或挑出题目最低点。
+
+3. 本次实际阅读与来源记录
+manifest共有31条来源记录：18条既有A3原件／派生物、12条本次新取固定源码、1条既有AI policy导出。PDF及提取文本是两个出处记录，不假装两份独立作业。
+实际重新通读handout全部8页提取文本，工具newline行号1–223和224–415；表单换页符不另计行。没有逐页视觉审校PDF。
+完整重读README、LICENSE、CHANGELOG、pyproject；所有相关公共API、客户端、认证、预算、全局配置、Modal配置、TrainingConfig、run.py全文。
+新取并完整静态阅读：AGENTS.md（本地AGENTS.txt）、make_submission.sh、model/config.py、model/basic_model.py、optimizer.py、loop.py、training/data.py、schemas/__init__.py、schemas/base.py、schemas/experiment.py、internal_client.py、scheduler/dispatch_loop.py。
+完整阅读72条synthetic JSON（工具行1–300、301–362）。
+tokenized_data.py细读1–243：来源URL、deterministic shard list、tokenizer、EOS、uint16、默认规模、数据构建出口；对244–811只做声明/关键词导航，不声称全文审计外部排序合并实现。
+完整阅读官方AI政策和固定AGENTS约束。P1 assignment-audit 的A3对象、reading-map A3关联仅作导航与范围对照，不替代这次读原件。
+所有记录保留固定URL、版本、获取时间、SHA256、文件位置、read_at、实际阅读范围、license与加工方式；旧原件hash沿用既有采集记录，新取源码hash在采集时生成。Main再作来源hash核验；作者没有运行整合检查。
+
+4. 完整要求的主要落点
+lab§1：观察最低训练loss，不悄悄换成论文二次连续最低点；模型／token规模两套图及1e23/1e24预测要求；不提供回归结果、系数、最终数值或解题代码。
+lab§2：12h真实探索与48h最终目标分开；单B200；JAX/Equinox而非A1 PyTorch；Q/K RMSNorm、门控MLP、RoPE、无dropout；seq512、32k Llama-2 tokenizer、≤500B固定顺序无epoching、validation2^18、最终更大；model_seed只影响初始化。
+完整保留12个architecture字段、SGD/AdamW与warmup-cosine字段及数值约束、8个顶层配置对象／字段、3项整除要求、禁止额外字段。GQA明确不支持，KV头数必须等于attention头数。官方示例仅说明接口，不称推荐最优或已执行。
+lab§3：所有method/path与返回、预算预留/结算、400/409、四状态、completed最终loss、timeout局部loss精确schema位置。
+lab§4–5：Part2全部5个报告讨论因素、12*n_layer*d_model^2非embedding近似、完整可复现writeup.pdf、code.zip、API最终配置和loss、性能参与评分；未加造Part2固定图数或成绩线。
+lab§6：学生API和非学生自建完全分开；static direct-run矛盾、staff namespace/W&B entity/内部API/代理/Tailscale/数据库与自有数据存储边界。
+lab§7：L09/L11/ext12/Chinchilla sole home和ext04/ext06链接；必做方法不扩成整篇论文必读；DCLM数据提及不变DataComp-LM论文必读。
+两个正文都完整保留2026 Stanford MIT版权/permission/condition/warranty；不扩展到第三方资料和服务。
+guide：单位、观察最小vs连续最优、误差模型、loss下限与可识别性、预留账本、训练终点/调度/timeout、重复验证非独立样本、合法配置映射、证据/隐私、8个概念自测。没有Python、伪代码、搜索网格、预算配方、回归答案或学生报告代写。
+
+5. 已读固定源码带来的澄清／静态矛盾
+- README direct command -> run.py __main__ 的run_training.local；函数98–102行要求非空modal.current_function_call_id。静态上下文冲突，不是本次运行复现的报错。
+- dispatcher硬编码scaling-brunborg，Modal配置含staff namespace；W&B entity hashimoto-group。不能默认借用校内资源；launch_mode字段不证明已有可用local worker路径。
+- internal_client回报内部API，读取内部key／Tailscale地址，requests使用localhost1080代理。完整外部依赖未运行验证。
+- TrainingConfig只保留runtime≥1下界，/submit依剩余12h额度限制；/final_submission只是持久化/覆盖预测，不创建可反复试48h的探索job。
+- 固定worker的Modal装饰器仍为12h timeout；已读源码不足以确认48h最终评测另行部署方式。保留不确定性，不擅自修官方代码。
+- 余额检查在重复检查之前；低余额时不能保证总先409。
+- timeout partial loss实际路径status.reason.partial_val_losses；unexpected失败不保证有局部曲线。
+- worker训练计时在初始数据准备/模型构造/编译之后开始，涵盖chunk训练/验证；队列running日历时间与收费时间不同。
+- 数据builder2^29验证池不是探索每次2^18 token用量。源数据@main与tokenizer未固定revision也不证明校外重建字节一致。
+- 默认3333 shards/max_containers100；500B uint16仅token载荷约1TB十进制是量纲推算，非实测下载或峰值存储；默认资源申请不等于机器最低规格。
+- make_submission.sh实际zip、无pytest、排除JSON/TXT/LOG等；注释tar.gz残留；打包存在不代表执行成功或证据齐全。
+- CHANGELOG2024 2e18FLOPs与2026真实wall-clock预算隔离；文内FLOPs budget残余措辞不覆盖12h/48h。
+
+6. 未执行边界
+没有运行官方仓库代码、测试或导入训练包；没有启动uv sync/依赖安装；没有训练/API调用（含budget）、身份验证、凭据收集、final_submission、GPU/Modal/cloud服务、模型/tokenizer/训练数据下载。
+没有运行72条数据回归、生成题目预测值或伪造benchmark/排行榜成绩。
+未进行build/lint/test/formatter、浏览器页面验收或官方实验认证。本作者的静态阅读和写作完成，不等于Main验收，更不等于学生作业完成。
+获取的12个新增文件仅是公开固定第一方源码/政策/打包脚本文本；P1原件未更改。
+
+7. Main共享metadata建议
+- 将A3两正文及原创SVG注册为P5 authored complete；Main真正验收后再改accepted；official_experiments_executed继续false。
+- reading-map保存8页本次实际读取、2Problem/2字母问/5讨论项、Chinchilla既有sole home与“必做自包含方法+建议咨询论文”的分类；不要给L11另建materials。
+- resources/status保留5分合成练习与50分真实API的不可替代性；12h探索/48h目标，单B200，注册用户+Stanfordnetwork/VPN；self-host不是免配置公开服务。
+- 版本字段同时留PDF26.0.5/package26.0.2/固定commit；不要继承2024预算。
+- 将静态矛盾列为限制而非官方已执行失败或本机已确认不可行；服务当前可用性、48h部署、数据授权/远端字节版本均未验证。
+- publication白名单仅2md+原创svg+3轻量证据；不要force-add upstream源码、PDF、handout原文、synthetic数据或其他镜像。
+
+8. 建议Main一次性必要检查（作者未运行）
+- 两个实际route：lab/a3-scaling?v=zh 与?v=guide；同课L09/L11/ext12、lec09?v=materials、ext04/ext06链接。
+- 390px与桌面实际看2页和SVG，长字段/表格不撑根宽，KaTeX无报错，SVG文本不裁切；SVG用CanvasText/currentColor自带color-scheme，无脚本/外链资源。
+- 主验收检查manifest来源hash与coverage关键项、MIT全文、runtime/schema静态依据。
+- 独立概念算术仅检查100−40=60、100−25=75、12×3600=43200、2^18=262144、500e9×2=1e12bytes；不做官方JSON回归，不调用API、不执行repo代码。
+- 由Main按共享合同完成最终站点build/页面验收；作者没有代做。

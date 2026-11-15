@@ -1,0 +1,50 @@
+接续关键词：CS336-2026-P6-数据流水线与污染审计
+
+继续 Stanford CS336 Spring 2026，仅执行 P6「数据批」。
+项目：/Users/zy/ai_learn/course_web
+课程：content/stanford-cs336-2026/
+启用门槛：用户明确发送接续关键词，且status.json与p5-acceptance.json已记录P5验收完成。本文件提前准备不是完成声明，不自动开始P6。
+
+一、按真实状态接续
+先读status.json、production-plan.json、P5-REVIEW.txt、p5-acceptance.json、p5-model-preflight.json、p5-publication-record.json，再读manifest.json、reading-map.json及所复用P1分片。若发布记录未成功，不能声称已上线。
+保留P1–P5各批来源、许可、读取范围、执行和发布边界。登记、获取、阅读、撰写、审查、页面验收、官方实验执行分别记录。作者分片pending/false可能仅是作者交接状态，以主验收为准。
+P4-BLOCKED及原额度中断是历史；P4后来恢复并已验收，不当作当前可用性证据。新一轮重新核实模型与可用性。已验收旧正文仅在有具体错误时修正，不重做。
+
+二、完整范围与正文唯一归属
+1. L13「数据来源与数据集」、L14「过滤、去重、混合与合成数据」：各notes.zh.md和有限课堂译述draft.zh.md，严格依2026视频时间轴。
+2. ext13「数据配方与污染审计」：编者notes，自主推导、例子、边界、自测和必要SVG；复用L12的评测协议/污染概念，不重复正文。
+3. A4「预训练数据流水线」：完整lab.zh.md和非答案式guide.zh.md；忠实所有任务、字母子问、观察样例数量、实现合同、交付物、固定训练约束和评分。不得缩成过滤器摘要。
+4. paper08 The FineWeb Datasets固定2406.17557v2，paper09 DataComp-LM固定2406.11794v4，两篇唯一正文均lectures/lec14/materials.zh.md。L13/ext13/A4通过链接使用；不在L13造重复材料页。
+5. 两篇固定论文CC BY4.0。按reading-map精确核心范围完整翻译，并保留作者、固定版本链接、许可、中文修改说明、非官方身份和第三方权利边界。选读范围实际读到才补，不将摘要叫全文译文或把编者节号叫官方必读。
+6. FineWeb核心：§§3.1–3.7，§4主节及4.1–4.2，§5，附录B/E.1；D、E.2–E.4、F、G为选读。DataComp-LM核心：§§3.1–3.5、4.1–4.6、附录C.1–C.3；§§5–6/F/G/J/L/O为选读。具体物理PDF页和标题看reading-map，v4为89页，不搬旧版页码。
+7. FineWeb不等于RefinedWeb。A4并未指定FineWeb/DataComp-LM全文必读；编者关联与官方引用分开。不要把P5的QLoRA、A3 tokenized DCLM API当成本批的数据训练方案。
+8. 不进入L15–17/A5/ext14–16或嘉宾课；P6后停止。
+
+三、固定来源与课堂边界
+课堂讲义固定de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e（2026-09-12课后版本）。复用p1-lectures/raw/lecture_13.py、lecture_14.py及实际需要的trace/引用；通过manifest/tree定位，不猜路径。课后代码不是录像逐字依据。
+P1已核视频：L13 -qm0ln33G24 /4921s(82:01)，L14 5sxHosTLPF8 /5086s(84:46)，发布者Stanford Online；复用p1-videos/metadata和caption原件，再核讲次/作者/年份/时长。
+逐讲全读字幕，记录cue读取范围、首尾、内部>2秒间隙与疑词。manual/non-ASR是平台标签，不是核音保证。未确认录像开放翻译许可：draft为有限独立译述加全片时间导航，不是全译。没有实际媒体则不造课堂截图；不下载音轨/片段。
+每个使用来源记录URL/固定版本/获取日期/文件/SHA256/许可/实际阅读范围/处理类型；原件缺失按固定URL重取，不把路径登记当备份。字幕/PDF/全文镜像留sources且不用.md后缀。
+
+四、A4不可缩减的要求及访问边界
+固定仓库0555bea66369872d912652debf10b115ca0688c8；讲义Spring2026 v26.0.1共16页，package26.0.0另记。重读全部讲义、README/LICENSE/CHANGELOG和相关实现/adapter/tests合同，P1审计仅作导航。
+完整覆盖：WARC/WET观察、Resiliparse HTML提取；fastText语言识别；email/US phone/IPv4 PII掩码；Dolma NSFW/toxicity；Gopher规则；学习者自己训练fastText质量分类器；exact-line去重；MinHash+LSH候选、真实ngram Jaccard及聚类保留；流水线统计、人工误差分析；GPT-2 tokenizer/EOS/uint16 .bin；固定staff模型训练与验证。
+保留25条WET观察、各相关20例分析、5条保留+5条删除、过滤比例/总时间、token数、最佳C4 100 validation loss、学习曲线及迭代说明等实际要求；按源逐项映射，不能由上述导航替代完整阅读。
+数据：CC-MAIN-2026-12单WARC/WET观察样例；流水线输入为CC-MAIN-2026-17的2500 raw WET经English过滤后的数据（seed336、每4文件合并、lid.176 P(English)>=0.7），不是2025旧5000。正例路线含May2026 English Wikipedia外链文件及后续网页采样。Paloma C4 100 domains用于验证，可依题设观察构造过滤器，但不能复制进训练数据。
+固定训练：约430M参数，50257词表、seq512、d_model1024、d_ff3072、24层、16头、RoPE10000、BF16；8×B200、batch128/device、16384steps，共2^33≈8.6B tokens。staff约2小时是历史报告非当前实测/免费额度。手册GPT-2 small-shaped措辞不等于124M。数据-only比较，禁止为了成绩改模型、训练procedure或staff脚本。
+官方校内路径/shared-data及a4-shared-data volume不是公共下载URL。README的offline-only仍会下载验证集、示例和分类器；SUNET_ID=TODO的import guard、institution namespace/volume、furu返回路径与仅远程建立的软链须静态核实，不写开箱即跑。n_files缩小须满足group_size4整除，缩小路线明确为教学改编。
+远程max_containers128、临时磁盘申请524288MB不是建议直接执行或实际大小。不得下载2500WET、Wikipedia、模型/分类器或启动Modal/云/GPU训练；不访问私有卷、不索要SUNET/凭据、不调用提交接口。只运行编者原创且独立的小字符串/概率算例，不能替代官方实现/原规模作业。官方AI政策禁止AI实现作业与排行榜代码，禁自动补全，保留概念/API辅助边界。
+MIT第一方文档翻译须保留完整版权/许可；不能延伸到网页、CommonCrawl、论文、数据和分类器权重。
+
+五、技术与版权审查重点
+区分文本质量、语言概率、领域匹配、法律/许可、个人信息和有害内容；过滤分数不是标签真值。清洗改变分布，报告false positive/false negative、保留比例和顺序依赖，不凭少量样例证明无PII或无毒。
+精确/近似去重、文档/行级、站内/跨站/跨split分别说明；MinHash碰撞与LSH候选概率不是精确Jaccard阈值，候选还需按任务合同验证。连通分量的传递聚类不意味着任意两文档都超过阈值。
+FineWeb论文许可CC BY4.0与数据ODC-By v1.0/CommonCrawl Terms分开；§4.2 domain-fit未去污染，不当作无泄漏泛化证据；75%是MinHash概率性阈值，不写硬门槛。DataComp-LM五档计算量/固定训练配方、filtering与mixing赛道、53项评测及CORE/EXTENDED区别准确；附录C禁止改训练/评测，评测集只用于评测与去污染。
+先固定训练/评测/tokenizer/预算，再比较数据配方；规模、重复、混合、质量相互混杂，不把小规模消融外推全域最优。污染审计需声明比对材料/时间范围/粒度，未检出不等于不存在；不能输出真实网页PII或不必要有害原文，教学示例用自拟数据。
+
+六、分工、验证、发布
+所有实际子agent（含审核）显式openai-codex/gpt-6-astra:xhigh；先读匹配技能及受支持cfg入口，再核当次model_change/thinking_level_change或等效元数据和assistant字段。不可用则停止报告，不替换、不降级、不持久化配置。
+按独立正文范围批量并行，Main独占course/catalog/resources/status、manifest/reading-map/plan、验收和发布；workers独占正文与来源分片，先约定论文同页的唯一编辑者。中途不build/lint/tests/formatters，Main整合后一次必要验证。
+仅改本课程content，不改src/其他课程/官方作业代码；新文件write、已有edit。390px公式分行、长标识符避免撑破根布局；SVG使用主题变量、title/desc、透明底、无脚本或外部资源，外部img的独立深浅色适配复用P4/P5已验收模式。
+实际访问所有新正文/SVG/表格/公式桌面和390px；核根宽、KaTeX错误、图片、链接、cue连续覆盖与源哈希。L13/L14页头逐讲检查ID/时长；代表性真实点击新标签且原笔记保留。npm run build通过才能提交。不执行官方作业或把单元算例叫性能复现。
+完工写P6-REVIEW、p6-acceptance和完整NEXT-P7-PROMPT；真实更新累计计数与未解除限制。只白名单提交正文、原创SVG与轻量证据，不整目录force-add sources，不发布字幕/PDF/原文镜像/PDF渲染/浏览器截图。推送现有main，不强推、不改远端；实际Actions成功及线上页面证实后记录发布。最终简短报告内容、验证、提交/部署和限制，停止不自动进入P7。

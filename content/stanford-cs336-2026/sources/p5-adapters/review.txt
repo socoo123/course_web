@@ -1,0 +1,68 @@
+P5 ext11 / paper10–paper11 author handoff
+Date: 2026-11-15
+Status: written; author source/coverage review only; accepted=false; main browser/build/CPU acceptance pending.
+Model requested/delegated: openai-codex/gpt-6-astra:xhigh. No nested agents/substitution. Runtime event verification is Main's evidence responsibility, not a separate worker claim.
+
+1. Owned output files
+- lectures/ext11/notes.zh.md: original independent quantization/PEFT pedagogy;12 sections,9 self-check questions with answers; prerequisite bridge does not depend on unwritten L15.
+- lectures/ext11/materials.zh.md: sole paper10/paper11 body. A=question-organized independent LoRA analysis. B=complete authorized QLoRA selected core translation, plus clearly separate E/G selections.
+- lectures/ext11/assets/adapter-gradient-ledger.svg: original self-contained forward/gradient/state diagram with title/desc, CanvasText/color-scheme theme support, no external resource or source-paper artwork.
+- sources/p5-adapters/manifest-fragment.json: top-level sources array per Main's corrected interface;8 reused source records,14 local visual checks, author/acceptance boundary.
+- sources/p5-adapters/reading-updates.json: paper10/paper11 keyed patches; preserve ext11 sole home/materialFile/alsoUsedBy, update actual scope/rights/written status; prereqs replace unwritten L15 with lec02/lec04/ext04 (+paper10 for QLoRA).
+- sources/p5-adapters/mechanism-cases.json:4 tiny original CPU check cases with author expected numbers, NOT executed.
+- sources/p5-adapters/review.txt: this handoff.
+Local-only evidence:14 PNG renders under sources/p5-adapters/visual/. Do not publish them.
+No changes outside allocated scope; P1 source archives untouched. No throwaway scripts created.
+
+2. Sources actually read this batch
+LoRA fixed2106.09685v2:
+- Complete core §2 (physicalpp2–3), §4.1–4.2(pp4–5), §7.1–7.2(pp10–11), including core footnotes2–7, Tables5–6, Eq4, Figures3–4. Figure4 floats to physicalp12 and was inspected.
+- Text request windows1–143,147–158,200–277,281–318,535–692. Reader context provided144–146 and278–280, completing §2/§5-intro adjacency. §4 footnotes4–5 are lines298–303. §7.2 footnote7/Figure4 read on PDF.
+- Context title/authors/abstract/§1 and §4/§7 introductions; §5 introduction/§5.1 beginning and FT definition were read because core footnotes are on the same page. No complete §5 experimental or §7.3/appendix claim.
+- Actual visual inspection:pp4,10,11,12. p12 used for Figure4, not to promote §7.3 to full optional close reading.
+QLoRA fixed2305.14314v1:
+- Complete core §2(lines124–176,pp3–4), §3(178–287,pp4–5), §4(289–506,pp5–7 +Table4 lines515–523 physicallyp8), §8(945–982,pp15–16).
+- All selected substantive paragraphs, Eqs1–6, Tables2–4 and relevant Figures1–3 captions translated. Source plots not reproduced; visual text descriptions supplied. Table4 cannot be dropped merely because reading-map lists §4pp5–7.
+- Complete optional AppendixE16-code table(lines1381–1387,p24), AppendixG and Figure6 caption/limits(lines1440–1480,p26); codebook and memory boundary used explicitly.
+- Title/authors/abstract/§1 read as context, not included in the claimed core translation. No complete reading of §5–7/§9/AppendicesA–D/F. Neighboring material visible in full-page renders does not upgrade the scope.
+- Actual visual inspection:pp3,4,5,6,7,8,15,16,24,26.
+Rights:
+- LoRA metadata line39 untruncated, license link line176; full33-line arXiv nonexclusive license read.
+- QLoRA metadata line41 untruncated, license link182–184; full396-line CC BY4.0 legalcode read in1–300/301–396 windows.
+All8 original source SHA256 values were recomputed during intake and agree with P1. Exact hashes/retrieval times/files/URLs and image hashes are in manifest. No new network source downloads.
+
+3. Coverage/rights implementation
+- LoRA:3 grouped core ranges (=§2,4.1,4.2,7.1,7.2) covered by original analysis, not serial paragraph paraphrase or unauthorized full translation; no full tables or paper artwork republished.
+- QLoRA:4 complete core sections (§2,3,4,8),6 numbered equations,3 full numeric tables,3 relevant figure captions, then optional E/G. B0 supplies all4 authors, equal-contribution note, fixed URL/version/date, CC BY4.0/legalcode/disclaimer, modification notice, nonofficial status and third-party/model/data boundary; translation contribution itself CC BY4.0.
+- A and B are visibly separated. Complete selected translation is not mislabeled full26-page translation; editor comments do not replace source paragraphs.
+- Source citations in QLoRA translated text retain original bibliography numbers; this does not falsely claim all cited works were read.
+- Publication whitelist should include the2 bodies,1 original SVG,4 lightweight p5-adapters evidence files only. Never publish local PNG/PDF/text/metadata mirror archives.
+
+4. Technical details explicitly preserved/corrected
+Notes cover:parameter-state versus peak ledger, input gradients through frozen base, zero/random initialization (including nullspace exception), rank(delta) not rank(W), rank-versus-placement budget, deterministic linear merge and multi-adapter/rounding conditions, storage versus compute precision, NF4 distribution caveat, DQ0.5->0.126953125bits/weight, optimizer paging/host traffic, full-tuning versus LoRA comparison identity. No model/GPU commands.
+Source issues are visibly separated as editor notes, not silently fixed:
+- LoRA Table5 four projections attain MultiNLI91.7 vs query/value91.3, so author's best-overall wording is not strict dominance.
+- LoRA footnote5 throughput32.5->43.1tokens/s means about+32.6% throughput /-24.6% fixed-work time; prose25% uses a different possible denominator.
+- LoRA Eq4 similarity1 with unequal subspace dimensions means containment, not equality.
+- QLoRA Eq2 dequant reconstruction equality does not undo rounding.
+- QLoRA §2 says18MB remains more than26MB under unclear aggregation; faithfully translated and flagged, not fabricated into a consistent total. Its5048MB base differs from Figure6's5046MB, also retained.
+- QLoRA §3 original partialX/partialW notation is on the PDF, not OCR corruption. It is preserved in translation with separate correct input-gradient chain rule. Original Eq5 does not explicitly show s; DQ mean restoration is hidden in abstract dequant operator, not omitted from conceptual accounting.
+- NF4 theoretical normal/quantile rationale is not universal MSE/task optimality; asymmetry/exact zero and codebook preserved.
+- Table3 original missing entries and T5-11B full baseline62.0 versus NF4+DQ60.9 are retained.
+- Table4 BF16 is adapter tuning, not full tuning; FP4 not literally1pp worse in every cell. §8 explicitly says33B/65B full16-bit full-tuning matching was not established. No equivalence claim made.
+- Paging speed report is narrow, not comprehensive latency evidence; AppendixG'sbatch1/seq512/checkpoint and no-attention input-gradient estimate remain explicit.
+
+5. Minimal checks for Main (not run by worker)
+Use mechanism-cases.json as independent expected-value inputs, not a ready-made official implementation:
+1)2x2 merge output[11,7], rank(delta)=1 while merged determinant=-9.5; analytic gradients for loss[1,2]dot h: dA=[14,7],dB=[3,6],dx=[8,-3.5]. Optionally central-difference CPU floats.
+2)A=[1,2],B=0,x=[2,1],g=[3,-1]: dA=0,dB=[12,-4]; both factors zero freezes both; x=[2,-1] gives a first-step nullspace exception.
+3)4096-square,r8 parameter ledger: P=16777216,Pa=65536; full256MiB,LoRA33MiB,ideal NF4+DQ+same adapter9.25390625MiB under declared16-byte/trainable-param state convention, excluding all runtime/metadata extras.
+4)Toy scalar requantization: weight1+delta0.26,input2 gives2.52; grid0.5 requantization gives3.0, showing post-merge requantization is not exact.
+Do not turn these into model accuracy, actual memory peak, GPU speed or official experiment acceptance.
+
+6. Main integration/page checks
+- Merge manifest sources and reading-updates keyed paper10/paper11; preserve existing home/alsoUsedBy. Notes/materials links use ext11 canonical route, with ext04/ext06/L02/L04/L06 reuse and ext10 cross-link.
+- No L15 source or body was entered; prereq details explicitly allow independent learning.
+- Both page bodies, full tables, mathematical blocks (especially QLoRA Eq4/5/6 and blockquoted corrected gradient), and original SVG need actual desktop/390px/theme review. Long formulas were proactively split/abbreviated without changing mathematics; Table3 remains horizontally scrollable via existing site behavior, not a worker-tested browser claim.
+- No build/tests/lint/formatter/browser checks executed, per worker contract. Source hashing/rendering/reading are acquisition work, not page acceptance. No official assignment execution/API/cloud/GPU/model/data/audio operations.
+- Main owns status/catalog/resources/acceptance/publication and can mark accepted only after its final checks.

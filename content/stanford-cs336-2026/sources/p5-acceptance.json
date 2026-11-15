@@ -1,0 +1,82 @@
+{
+  "courseId": "stanford-cs336-2026",
+  "phase": "P5",
+  "date": "2026-11-15",
+  "status": "accepted_with_documented_limits",
+  "scope": [
+    "lec09",
+    "lec10",
+    "lec11",
+    "lec12",
+    "ext10",
+    "ext11",
+    "ext12",
+    "paper06",
+    "paper07",
+    "paper10",
+    "paper11",
+    "a3-scaling"
+  ],
+  "newBodyDocuments": 16,
+  "newOriginalSvgAssets": 11,
+  "cumulativeBodyDocuments": 56,
+  "cumulativeOriginalSvgAssets": 33,
+  "newCaptionCuesRead": 6505,
+  "cumulativeCaptionCuesRead": 20056,
+  "cumulativePapersSpecifiedCoreCompleted": 9,
+  "papersFullyCloseRead": 0,
+  "officialAssignmentsExecuted": 0,
+  "modelEvidence": "p5-model-preflight.json",
+  "sourceEvidence": "p5-shared/structure-check.json",
+  "mainSourceReview": "p5-shared/source-spotcheck.json",
+  "technicalReview": "P5-REVIEW.txt",
+  "cpuMechanismGroupsPassed": 11,
+  "cpuEvidence": "p5-shared/cpu-smoke.json",
+  "build": {
+    "command": "npm run build",
+    "runs": 1,
+    "exitCode": 0,
+    "typecheck": "tsc --noEmit",
+    "viteVersion": "5.4.21",
+    "localModules": 3428,
+    "viteSeconds": 6.11,
+    "log": "p5-shared/build.log",
+    "publicationBoundary": "Local dist contains ignored evidence images and is not uploaded. Actions rebuilds the explicit Git allowlist."
+  },
+  "pageEvidence": "p5-shared/page-check.json",
+  "pageViewportCombinationsAccepted": 34,
+  "mobileEquationFixes": [
+    "lec09",
+    "lec10",
+    "lec12"
+  ],
+  "a3": {
+    "handoutVersion": "26.0.5",
+    "handoutTextPages": 8,
+    "repositoryCommit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+    "scoredTasks": 2,
+    "letteredQuestions": 2,
+    "reportDiscussionItems": 5,
+    "sourcePoints": 55,
+    "sharedContractItems": 134,
+    "execution": false,
+    "evidence": "p5-a3/task-coverage.json"
+  },
+  "finalArtifacts": "p5-shared/final-artifacts.json",
+  "metadataJsonParse": "passed_six_updated_json_files",
+  "publicationRecord": "p5-publication-record.json",
+  "limits": [
+    "Classroom subtitles and text read; no audio/video verification or classroom screenshots.",
+    "Specified paper cores and declared selections only; not full-paper close reading.",
+    "Only PagedAttention/QLoRA specified cores are authorized translations; other papers use independent analysis.",
+    "No GPU, official assignment execution, training API call, credentials, paid compute, model or dataset download.",
+    "Raw sources and screenshots remain local; fresh clones must reacquire from fixed source identities."
+  ],
+  "nextStage": {
+    "id": "P6",
+    "keyword": "CS336-2026-P6-数据流水线与污染审计",
+    "prompt": "NEXT-P6-PROMPT.txt",
+    "autoStart": false,
+    "state": "awaiting_explicit_user_continuation"
+  }
+}

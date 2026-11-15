@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 580" role="img" aria-labelledby="title desc">
+  <title id="title">训练最优与部署最优的目标边界</title>
+  <desc id="desc">原创概念图。训练预算固定时，在参数和训练token之间分配计算，以最小化结束损失。部署问题还需要纳入累计推理工作量、延迟和硬件约束，两个目标不等价。本图没有实验曲线。</desc>
+  <style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}text{font-family:system-ui,sans-serif;fill:var(--fg,currentColor)}rect,path{stroke:var(--border,currentColor);fill:none;stroke-width:2}</style>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" style="fill:var(--fg,currentColor);stroke:none"/></marker></defs>
+  <text x="28" y="40" font-size="26" font-weight="700">训练预算问题</text>
+  <rect x="28" y="64" width="544" height="68" rx="10"/>
+  <text x="300" y="107" text-anchor="middle" font-size="25">固定训练 FLOPs：C ≈ 6ND</text>
+  <path d="M300 134V172" marker-end="url(#arrow)"/>
+  <rect x="28" y="184" width="252" height="94" rx="10"/>
+  <rect x="320" y="184" width="252" height="94" rx="10"/>
+  <text x="154" y="222" text-anchor="middle" font-size="24">参数 N 增大</text>
+  <text x="154" y="255" text-anchor="middle" font-size="22">每个 token 更贵</text>
+  <text x="446" y="222" text-anchor="middle" font-size="24">训练 token D 增多</text>
+  <text x="446" y="255" text-anchor="middle" font-size="22">需要训练更久</text>
+  <path d="M154 280V312H446V280M300 312V340" marker-end="url(#arrow)"/>
+  <text x="300" y="378" text-anchor="middle" font-size="26" font-weight="700">选择结束损失最低的组合</text>
+  <path d="M28 409H572" stroke-dasharray="7 6"/>
+  <text x="28" y="450" font-size="26" font-weight="700">部署：换了目标，必须重新立题</text>
+  <text x="28" y="493" font-size="24">还要考虑：推理总量、延迟、硬件</text>
+  <text x="28" y="535" font-size="23">训练最优 ≠ 全生命周期成本最优</text>
+</svg>

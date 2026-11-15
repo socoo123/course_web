@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 760" role="img" aria-labelledby="title desc">
+<title id="title">WSD共享稳定前缀与独立退火分支</title>
+<desc id="desc">一个训练家族先warmup，再沿稳定学习率主干前进。从稳定阶段的三个checkpoint分别分支并完成decay，得到三个训练长度的终点。分支共享历史而不统计独立。不能从已经退火的短终点直接续训并当作等价的长run。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:22px system-ui,-apple-system,"PingFang SC",sans-serif}.title{font-size:26px;font-weight:700}.small{font-size:20px}.box,.line{fill:none;stroke:var(--border);stroke-width:2}.thick{stroke-width:4}.dash{stroke-dasharray:7 6}circle{fill:var(--fg)}</style>
+<text class="title" x="28" y="42">复用稳定历史，不复用终点假设</text>
+<rect class="box" x="30" y="70" width="580" height="74" rx="10"/>
+<text x="320" y="102" text-anchor="middle">同一初始化、数据前缀与优化器历史</text>
+<text class="small" x="320" y="131" text-anchor="middle">三个终点 ≠ 三个独立随机种子</text>
+<text x="40" y="184">学习率</text>
+<path class="line" d="M70 203V395H592"/>
+<path class="line thick" d="M85 380L135 232H535"/>
+<circle cx="235" cy="232" r="6"/><circle cx="380" cy="232" r="6"/><circle cx="535" cy="232" r="6"/>
+<path class="line thick dash" d="M235 232L280 376 M380 232L425 376 M535 232L580 376"/>
+<text class="small" x="90" y="426">warmup</text>
+<text class="small" x="275" y="208">共享 stable 主干</text>
+<text class="small" x="247" y="454">每条虚线：独立完成 decay</text>
+<text class="small" x="443" y="426">已处理数据 →</text>
+<rect class="box" x="30" y="483" width="580" height="108" rx="10"/>
+<text x="52" y="520">正确分支点：稳定段 checkpoint</text>
+<text class="small" x="52" y="554">记录模型、优化器、数据位置和调度状态</text>
+<text class="small" x="52" y="580">每条分支的退火计算仍要计入成本</text>
+<rect class="box dash" x="30" y="615" width="580" height="105" rx="10"/>
+<text x="52" y="651">已退火短终点 → 直接继续训练</text>
+<text class="small" x="52" y="684">这改变了历史，不能自动等同于更长原配方。</text>
+<text class="small" x="35" y="747">原创示意；线长、坡度不代表实测或固定标准。</text>
+</svg>

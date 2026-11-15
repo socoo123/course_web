@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 610" role="img" aria-labelledby="title desc">
+  <title id="title">LoRA的两条前向分支与反向资源账本</title>
+  <desc id="desc">输入x同时进入冻结基础矩阵W和可训练低秩分支A、B，两个输出相加。反向时基础矩阵不更新，但仍参与计算输入梯度。QLoRA将基础矩阵持久存为NF4编码及双重量化尺度，使用时恢复为计算精度。适配器仍有参数梯度与优化器状态。</desc>
+  <style>
+    :root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}
+    text{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;fill:var(--fg)}
+    .head{font-size:22px;font-weight:700}.body{font-size:19px}.small{font-size:17px}
+    .box{fill:none;stroke:var(--border);stroke-width:1.5}.arrow{fill:none;stroke:currentColor;stroke-width:2}
+  </style>
+  <text class="head" x="24" y="35">冻结参数 ≠ 切断输入梯度</text>
+  <rect class="box" x="185" y="55" width="130" height="48" rx="10"/>
+  <text class="body" x="220" y="85">输入 x</text>
+  <path class="arrow" d="M250 104 V120 H120 V145 M114 137 L120 145 L126 137 M250 120 H380 V145 M374 137 L380 145 L386 137"/>
+  <rect class="box" x="25" y="148" width="190" height="124" rx="10"/>
+  <text class="head" x="47" y="182">冻结基础 W</text>
+  <text class="body" x="47" y="214">前向：Wx</text>
+  <text class="small" x="47" y="246">不存参数梯度</text>
+  <rect class="box" x="285" y="148" width="190" height="124" rx="10"/>
+  <text class="head" x="305" y="182">训练 A、B</text>
+  <text class="body" x="305" y="214">前向：sB(Ax)</text>
+  <text class="small" x="305" y="246">存梯度与优化器状态</text>
+  <path class="arrow" d="M120 274 V294 H250 V315 M380 274 V294 H250 M244 307 L250 315 L256 307"/>
+  <rect class="box" x="156" y="318" width="188" height="48" rx="10"/>
+  <text class="body" x="179" y="349">相加得到输出 h</text>
+  <rect class="box" x="25" y="389" width="450" height="86" rx="10"/>
+  <text class="head" x="43" y="419">反向仍经过两条分支</text>
+  <text class="body" x="43" y="451">输入梯度 = Wᵀg + sAᵀBᵀg</text>
+  <rect class="box" x="25" y="495" width="450" height="94" rx="10"/>
+  <text class="head" x="43" y="526">QLoRA只改变基础权重表示</text>
+  <text class="small" x="43" y="553">持久存储：NF4码 + DQ尺度</text>
+  <text class="small" x="43" y="578">使用时恢复BF16；不更新量化基础权重</text>
+</svg>

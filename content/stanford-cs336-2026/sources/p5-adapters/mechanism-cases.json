@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "phase": "P5",
+  "slice": "adapters_quantization",
+  "status": "author_expected_values_only_not_executed",
+  "execution_owner": "Main",
+  "boundary": "Tiny original CPU arithmetic only. No torch/model/data/GPU/API dependencies, no official assignment implementation, no claim of runtime or model-quality replication.",
+  "cases": [
+    {
+      "id": "lora_merge_rank_and_gradients",
+      "purpose": "Check merge equivalence, rank-of-increment distinction, and analytic/finite-difference gradient path.",
+      "inputs": {
+        "W0": [[1, 2], [0, -1]],
+        "A": [[2, -1]],
+        "B": [[1], [3]],
+        "s": 0.5,
+        "x": [4, 2],
+        "g": [1, 2]
+      },
+      "definition": "h=W0*x+s*B*(A*x); scalar loss=g dot h. Treat W0 fixed, use central differences for A/B/x if desired.",
+      "expected": {
+        "base_output": [8, -2],
+        "adapter_output": [3, 9],
+        "h_unmerged_and_merged": [11, 7],
+        "merged_W": [[2, 1.5], [3, -2.5]],
+        "rank_delta": 1,
+        "determinant_merged": -9.5,
+        "gradient_A": [[14, 7]],
+        "gradient_B": [[3], [6]],
+        "gradient_x": [8, -3.5],
+        "W0_must_remain_unchanged": true
+      },
+      "recommended_tolerance": "Float64 central differences epsilon1e-6; absolute error <=1e-6. Exact hand arithmetic equality is not a BF16 bitwise claim."
+    },
+    {
+      "id": "zero_random_initialization",
+      "purpose": "Check first-step gradient asymmetry and all-zero dead branch; optional nullspace counterexample.",
+      "inputs": {"A":[[1,2]],"B":[[0],[0]],"x":[2,1],"g":[3,-1],"s":1},
+      "expected": {"Ax":4,"delta_output":[0,0],"gradient_A":[[0,0]],"gradient_B":[[12],[-4]]},
+      "additional_checks": [
+        "Set both A and B to zero: both factor gradients are zero.",
+        "Keep A=[1,2], B=0 but use x=[2,-1]: Ax=0, so the first B gradient is also zero despite nonzero g. Random/zero initialization only usually yields a nonzero first B gradient."
+      ]
+    },
+    {
+      "id": "dq_state_ledger",
+      "purpose": "Separate weight bits, first/second-level scale bits, adapter optimizer states and MiB units.",
+      "inputs": {"d":4096,"k":4096,"rank":8,"base_block":64,"scale_block":256,"trainable_state_bytes_per_parameter":16},
+      "expected": {
+        "base_parameter_count":16777216,
+        "adapter_parameter_count":65536,
+        "trainable_fraction":0.00390625,
+        "first_level_without_DQ_bits_per_weight":0.5,
+        "with_DQ_scale_bits_per_weight":0.126953125,
+        "saved_scale_bits_per_weight":0.373046875,
+        "total_NF4_DQ_bits_per_weight":4.126953125,
+        "full_tuning_parameter_state_bytes":268435456,
+        "LoRA_parameter_state_bytes":34603008,
+        "NF4_DQ_frozen_weight_bytes":8654848,
+        "QLoRA_parameter_state_bytes":9703424,
+        "full_tuning_parameter_state_MiB":256,
+        "LoRA_parameter_state_MiB":33,
+        "QLoRA_parameter_state_MiB":9.25390625
+      },
+      "assumptions": "Full tuning or adapters use2-byte params+2-byte grads+4-byte master+8-byte Adam states. Frozen LoRA base uses2-byte params only; NF4_DQ base ideal full blocks; exclude codebook/mean/fixed metadata, padding/alignment, unquantized modules, activations, attention, dequant workspace and allocator overhead. Not a peak-memory measurement."
+    },
+    {
+      "id": "requantization_not_exact_merge",
+      "purpose": "Demonstrate that post-merge requantization changes a linear mapping without any model dependency.",
+      "inputs": {"frozen_reconstructed_weight":1.0,"adapter_delta":0.26,"input":2.0,"requantization_grid_step":0.5},
+      "definition": "Round merged weight to nearest multiple of0.5; values avoid ties.",
+      "expected": {"unmerged_or_real_merged_output":2.52,"requantized_merged_weight":1.5,"requantized_output":3.0,"output_difference":0.48},
+      "boundary": "Illustrative scalar quantizer, not NF4 implementation or a claim about measured QLoRA errors."
+    }
+  ]
+}

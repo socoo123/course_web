@@ -1,0 +1,1113 @@
+{
+  "schema_version": 1,
+  "course_id": "stanford-cs336-2026",
+  "phase": "P5",
+  "slice": "a3-scaling",
+  "created_at": "2026-11-15T06:49:48.196193+00:00",
+  "model": "openai-codex/gpt-6-astra:xhigh",
+  "material_files": [
+    "labs/a3-scaling/lab.zh.md",
+    "labs/a3-scaling/guide.zh.md"
+  ],
+  "assets": [
+    "labs/a3-scaling/assets/budget-evidence.svg"
+  ],
+  "source_audit": "p1-assignments-a1-a4/assignment-audit.json",
+  "source_audit_role": "Navigation only. P5 actual reading is recorded per source; P1 status unchanged.",
+  "task_coverage": "p5-a3/task-coverage.json",
+  "review": "p5-a3/review.txt",
+  "status": "author_complete_pending_main",
+  "reviewed": true,
+  "accepted": false,
+  "official_experiments_executed": false,
+  "sources": [
+    {
+      "kind": "repository_changelog",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/CHANGELOG.md",
+      "file": "p1-assignments-a1-a4/a3/CHANGELOG.txt",
+      "sha256": "7b90cad43c490b2d275c19a09b7f10476039a7a1b1286c07e3dfbed1af13de0c",
+      "retrieved_at": "2026-11-14T13:39:15Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-changelog-txt",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–46 read in this P5 session.",
+      "read_line_ranges": [
+        [
+          1,
+          46
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-changelog-txt"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "license",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/LICENSE",
+      "file": "p1-assignments-a1-a4/a3/LICENSE",
+      "sha256": "b51b84ea0047227436109908f0edb347231d7a07398b746464f0a8f94295e19d",
+      "retrieved_at": "2026-11-14T13:38:01Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-license",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–7 read in this P5 session.",
+      "read_line_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-license"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "repository_readme",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/README.md",
+      "file": "p1-assignments-a1-a4/a3/README.txt",
+      "sha256": "836e66a2442a0622586c74d9d06efa7bf1c04507117931ceb235bfccbaacaba9",
+      "retrieved_at": "2026-11-14T13:38:00Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-readme-txt",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–67 read in this P5 session.",
+      "read_line_ranges": [
+        [
+          1,
+          67
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-readme-txt"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "assignment_handout",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_assignment3_scaling.pdf",
+      "file": "p1-assignments-a1-a4/a3/cs336_assignment3_scaling.pdf",
+      "sha256": "121e9d15b1ba508cef437acc764eaa83268b559c4898c10bda3fd56bdde50392",
+      "retrieved_at": "2026-11-14T13:38:00Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-handout",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "All 8 pages read via existing extracted text lines 1–415; no PDF page-image review. PDF file retained as original provenance.",
+      "read_line_ranges": [],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-handout"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "assignment_handout_text",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_assignment3_scaling.pdf",
+      "file": "p1-assignments-a1-a4/a3/cs336_assignment3_scaling.txt",
+      "sha256": "8ea655c8d5dacf1917882ddf835829e447055ea508e829c90b668a46d7934934",
+      "retrieved_at": "2026-11-14T13:38:40Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-handout-text",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full extracted text lines 1–415 (newline-based tool numbering), all 8 pages, read in this P5 session. Form-feed page separators are not counted as extra lines.",
+      "read_line_ranges": [
+        [
+          1,
+          415
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-handout-text"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/api/public.py",
+      "file": "p1-assignments-a1-a4/a3/cs336_scaling/api/public.py",
+      "sha256": "d2e6bde9a4ad5acc3604876abe37212ac1acd8787302c6266b57d09e7f86c62e",
+      "retrieved_at": "2026-11-14T13:40:04Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-cs336-scaling-api-public-py",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–187 read in this P5 session.",
+      "read_line_ranges": [
+        [
+          1,
+          187
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-cs336-scaling-api-public-py"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/auth.py",
+      "file": "p1-assignments-a1-a4/a3/cs336_scaling/auth.py",
+      "sha256": "7c61934d33c41c092fa8bed549a67f2a16d840095e3b2805c1d29740c8219f2f",
+      "retrieved_at": "2026-11-14T13:40:01Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-cs336-scaling-auth-py",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–52 read in this P5 session.",
+      "read_line_ranges": [
+        [
+          1,
+          52
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-cs336-scaling-auth-py"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/budget.py",
+      "file": "p1-assignments-a1-a4/a3/cs336_scaling/budget.py",
+      "sha256": "e235baaf3cbae58e4821f3d0e3642f7de27bd6bc51dfad858d02cc57a772d585",
+      "retrieved_at": "2026-11-14T13:40:01Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-cs336-scaling-budget-py",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–55 read in this P5 session.",
+      "read_line_ranges": [
+        [
+          1,
+          55
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-cs336-scaling-budget-py"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/client.py",
+      "file": "p1-assignments-a1-a4/a3/cs336_scaling/client.py",
+      "sha256": "e1c16433276839c9881369fc1ab9b16ceef6f6cc8235b71f3a471133e8e62781",
+      "retrieved_at": "2026-11-14T13:40:01Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-cs336-scaling-client-py",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–110 read in this P5 session.",
+      "read_line_ranges": [
+        [
+          1,
+          110
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-cs336-scaling-client-py"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/config.py",
+      "file": "p1-assignments-a1-a4/a3/cs336_scaling/config.py",
+      "sha256": "e7f9dd68adfb58b369d1025ddb2b1d493583d1de3c9f13bd635e2b98620834b0",
+      "retrieved_at": "2026-11-14T13:40:03Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-cs336-scaling-config-py",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–56 read in this P5 session.",
+      "read_line_ranges": [
+        [
+          1,
+          56
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-cs336-scaling-config-py"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/modal_utils.py",
+      "file": "p1-assignments-a1-a4/a3/cs336_scaling/modal_utils.py",
+      "sha256": "0a1c0e1dd44fe20c7d174594126f4d20d5c2d9f1527f06edb342ccd621c5f7a2",
+      "retrieved_at": "2026-11-14T13:40:03Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-cs336-scaling-modal-utils-py",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–51 read in this P5 session.",
+      "read_line_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-cs336-scaling-modal-utils-py"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/tokenized_data.py",
+      "file": "p1-assignments-a1-a4/a3/cs336_scaling/tokenized_data.py",
+      "sha256": "67c332bdb2fb7324d3c4d38269b838ae4684500af64a341a857755cb27cfe7d2",
+      "retrieved_at": "2026-11-14T13:40:04Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-cs336-scaling-tokenized-data-py",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Lines 1–243 read in full: dataset URL, deterministic shard list, Llama-2 tokenizer, uint16 tokens/EOS, defaults and data creation. Declaration/keyword navigation across lines 244–811 only; sorting/merge implementation not claimed fully read.",
+      "read_line_ranges": [
+        [
+          1,
+          243
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-cs336-scaling-tokenized-data-py"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/training/run.py",
+      "file": "p1-assignments-a1-a4/a3/cs336_scaling/training/run.py",
+      "sha256": "dd4e6958b7cae13a584e0dc537ee6d22ba8c008dda2477c77ff76c6044410d3c",
+      "retrieved_at": "2026-11-14T13:40:02Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-cs336-scaling-training-run-py",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–511 read in this P5 session.",
+      "read_line_ranges": [
+        [
+          1,
+          511
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-cs336-scaling-training-run-py"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/training/training_config.py",
+      "file": "p1-assignments-a1-a4/a3/cs336_scaling/training/training_config.py",
+      "sha256": "8f56477663af8ff742b1ce8842dacc21ec35b1913e110bf15ceffad2a8e576e7",
+      "retrieved_at": "2026-11-14T13:40:02Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-cs336-scaling-training-training-config-py",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–147 read in this P5 session.",
+      "read_line_ranges": [
+        [
+          1,
+          147
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-cs336-scaling-training-training-config-py"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "synthetic_exercise_data",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/data/isoflops_curves.json",
+      "file": "p1-assignments-a1-a4/a3/data/isoflops_curves.json",
+      "sha256": "da6a464c3f5e5039d3f20e137dfcab3031a3d8e7ef0ac2f376f96e295d4afd27",
+      "retrieved_at": "2026-11-14T13:40:27Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-data-isoflops-curves-json",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "All 72 synthetic run objects (lines 1–362), fields and 9 budget groups read. No minima selected, fitting, prediction or exercise solution run.",
+      "read_line_ranges": [
+        [
+          1,
+          362
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-data-isoflops-curves-json"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "dependency_manifest",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/pyproject.toml",
+      "file": "p1-assignments-a1-a4/a3/pyproject.toml",
+      "sha256": "115a22e3f6424499f135494db5762b8399cca86b428f6d3eb530c1160eea42cc",
+      "retrieved_at": "2026-11-14T13:39:14Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-pyproject-toml",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–73 read in this P5 session.",
+      "read_line_ranges": [
+        [
+          1,
+          73
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-pyproject-toml"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "runtime_source",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/scripts/1_download_tokenized_data.py",
+      "file": "p1-assignments-a1-a4/a3/scripts/1_download_tokenized_data.py",
+      "sha256": "c72d128510297d1a0f63ebeb322af7c5c4d099fa0cf9313e454942d29254e008",
+      "retrieved_at": "2026-11-14T13:40:04Z",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "id": "p5-a3-scripts-1-download-tokenized-data-py",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–62 read in this P5 session.",
+      "read_line_ranges": [
+        [
+          1,
+          62
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-scripts-1-download-tokenized-data-py"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "kind": "repository_tree",
+      "url": "https://api.github.com/repos/stanford-cs336/assignment3-scaling/git/trees/03e9372992e913061b9e78b5cfcb62ad8a87de35?recursive=1",
+      "file": "p1-assignments-a1-a4/a3/tree.json",
+      "sha256": "533d27aa718739a7a35858390cf89c1d7eede8a1d0c2485a1c42c32ac8fdaf97",
+      "retrieved_at": "2026-11-14T13:37:59Z",
+      "license": "GitHub repository metadata; no independent license asserted",
+      "id": "p5-a3-tree-json",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Complete fixed tree inventory read to discover exact missing source paths; navigation metadata, not evidence that all files were read.",
+      "read_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish",
+      "source_record": {
+        "fragment": "p1-assignments-a1-a4/manifest-fragment.json",
+        "id": "p1-a3-tree-json"
+      },
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; complete Copyright 2026 Stanford University and MIT notice retained in both Chinese pages. Third-party data, models, papers and services excluded."
+    },
+    {
+      "upstream_path": "AGENTS.md",
+      "file": "p5-a3/upstream/AGENTS.txt",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/AGENTS.md",
+      "sha256": "afefa0d2b55acc7add9f0f3a8fe90042db3985d1928462040382d11a23c065e1",
+      "retrieved_at": "2026-11-15T06:38:55.719758+00:00",
+      "id": "p5-a3-agents-md",
+      "kind": "course_agent_policy",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "acquired_and_read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–74 read in this session; static only.",
+      "read_line_ranges": [
+        [
+          1,
+          74
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; copyright/permission/warranty retained fully in both output pages.",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "upstream_path": "make_submission.sh",
+      "file": "p5-a3/upstream/make_submission.sh",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/make_submission.sh",
+      "sha256": "54e8d44715ab3a4136caab459997374f747de542a07b9998e5f7dc0429015bf1",
+      "retrieved_at": "2026-11-15T06:38:56.748807+00:00",
+      "id": "p5-a3-make-submission-sh",
+      "kind": "runtime_source",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "acquired_and_read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–29 read in this session; static only.",
+      "read_line_ranges": [
+        [
+          1,
+          29
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; copyright/permission/warranty retained fully in both output pages.",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "upstream_path": "cs336_scaling/training/model/config.py",
+      "file": "p5-a3/upstream/cs336_scaling/training/model/config.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/training/model/config.py",
+      "sha256": "f2ecf9888805742ae363d8919d24cc225c3e795de4bec1a8e7fd4a70258af07a",
+      "retrieved_at": "2026-11-15T06:38:57.439974+00:00",
+      "id": "p5-a3-cs336-scaling-training-model-config-py",
+      "kind": "runtime_source",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "acquired_and_read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–24 read in this session; static only.",
+      "read_line_ranges": [
+        [
+          1,
+          24
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; copyright/permission/warranty retained fully in both output pages.",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "upstream_path": "cs336_scaling/training/model/basic_model.py",
+      "file": "p5-a3/upstream/cs336_scaling/training/model/basic_model.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/training/model/basic_model.py",
+      "sha256": "6f86a187f7753705e88230cf41510a1aa6f2bf08f460f2d9bb8806a262358631",
+      "retrieved_at": "2026-11-15T06:38:58.325297+00:00",
+      "id": "p5-a3-cs336-scaling-training-model-basic-model-py",
+      "kind": "runtime_source",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "acquired_and_read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–363 read in this session; static only.",
+      "read_line_ranges": [
+        [
+          1,
+          363
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; copyright/permission/warranty retained fully in both output pages.",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "upstream_path": "cs336_scaling/training/optimizer.py",
+      "file": "p5-a3/upstream/cs336_scaling/training/optimizer.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/training/optimizer.py",
+      "sha256": "45a85e44637f2b76529ea8d60da6a09552ba08d058af604e01f13dd38f23cc46",
+      "retrieved_at": "2026-11-15T06:38:59.548230+00:00",
+      "id": "p5-a3-cs336-scaling-training-optimizer-py",
+      "kind": "runtime_source",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "acquired_and_read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–84 read in this session; static only.",
+      "read_line_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; copyright/permission/warranty retained fully in both output pages.",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "upstream_path": "cs336_scaling/training/loop.py",
+      "file": "p5-a3/upstream/cs336_scaling/training/loop.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/training/loop.py",
+      "sha256": "5d1ad5308a0087991aee9048135ca9c508de075a2f9d5c8ab5038a460f84dac1",
+      "retrieved_at": "2026-11-15T06:39:00.528012+00:00",
+      "id": "p5-a3-cs336-scaling-training-loop-py",
+      "kind": "runtime_source",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "acquired_and_read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–156 read in this session; static only.",
+      "read_line_ranges": [
+        [
+          1,
+          156
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; copyright/permission/warranty retained fully in both output pages.",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "upstream_path": "cs336_scaling/training/data.py",
+      "file": "p5-a3/upstream/cs336_scaling/training/data.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/training/data.py",
+      "sha256": "0bc250a10c6919b6ab1ceff7ccf5ea98f618d70816154adfaa607c0103a31f45",
+      "retrieved_at": "2026-11-15T06:39:01.518261+00:00",
+      "id": "p5-a3-cs336-scaling-training-data-py",
+      "kind": "runtime_source",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "acquired_and_read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–292 read in this session; static only.",
+      "read_line_ranges": [
+        [
+          1,
+          292
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; copyright/permission/warranty retained fully in both output pages.",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "upstream_path": "cs336_scaling/schemas/__init__.py",
+      "file": "p5-a3/upstream/cs336_scaling/schemas/__init__.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/schemas/__init__.py",
+      "sha256": "c456fe06d65d2c2af4663c99e55821ea35793bb7f4e92b49138c289569c87d2d",
+      "retrieved_at": "2026-11-15T06:39:02.518275+00:00",
+      "id": "p5-a3-cs336-scaling-schemas---init---py",
+      "kind": "runtime_source",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "acquired_and_read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–62 read in this session; static only.",
+      "read_line_ranges": [
+        [
+          1,
+          62
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; copyright/permission/warranty retained fully in both output pages.",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "upstream_path": "cs336_scaling/schemas/base.py",
+      "file": "p5-a3/upstream/cs336_scaling/schemas/base.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/schemas/base.py",
+      "sha256": "a9e1846917996078a64f6fac713aa34689eb0f09759e7958e36dd4c5d0d15499",
+      "retrieved_at": "2026-11-15T06:39:03.679212+00:00",
+      "id": "p5-a3-cs336-scaling-schemas-base-py",
+      "kind": "runtime_source",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "acquired_and_read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–5 read in this session; static only.",
+      "read_line_ranges": [
+        [
+          1,
+          5
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; copyright/permission/warranty retained fully in both output pages.",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "upstream_path": "cs336_scaling/schemas/experiment.py",
+      "file": "p5-a3/upstream/cs336_scaling/schemas/experiment.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/schemas/experiment.py",
+      "sha256": "4b5adade5414f24dfac6509e965573487cf313bde98529ed0ef250de4e7ab378",
+      "retrieved_at": "2026-11-15T06:39:04.352682+00:00",
+      "id": "p5-a3-cs336-scaling-schemas-experiment-py",
+      "kind": "runtime_source",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "acquired_and_read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–64 read in this session; static only.",
+      "read_line_ranges": [
+        [
+          1,
+          64
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; copyright/permission/warranty retained fully in both output pages.",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "upstream_path": "cs336_scaling/internal_client.py",
+      "file": "p5-a3/upstream/cs336_scaling/internal_client.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/internal_client.py",
+      "sha256": "89c807be5a64951bb9ee1848ba19f75995ef3ea2da9d3eac406999ca6f15e4ac",
+      "retrieved_at": "2026-11-15T06:39:07.170085+00:00",
+      "id": "p5-a3-cs336-scaling-internal-client-py",
+      "kind": "runtime_source",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "acquired_and_read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–105 read in this session; static only.",
+      "read_line_ranges": [
+        [
+          1,
+          105
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; copyright/permission/warranty retained fully in both output pages.",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "upstream_path": "cs336_scaling/scheduler/dispatch_loop.py",
+      "file": "p5-a3/upstream/cs336_scaling/scheduler/dispatch_loop.py",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment3-scaling/03e9372992e913061b9e78b5cfcb62ad8a87de35/cs336_scaling/scheduler/dispatch_loop.py",
+      "sha256": "3d4730e0e805cf466b320e7869f8616d0787b8926c4cd14d9413f304bac67e6b",
+      "retrieved_at": "2026-11-15T06:39:08.279374+00:00",
+      "id": "p5-a3-cs336-scaling-scheduler-dispatch-loop-py",
+      "kind": "runtime_source",
+      "version": {
+        "repository": "stanford-cs336/assignment3-scaling",
+        "commit": "03e9372992e913061b9e78b5cfcb62ad8a87de35",
+        "handout": "26.0.5",
+        "package": "26.0.2",
+        "course": "Spring 2026"
+      },
+      "status": "acquired_and_read_scope_completed_for_P5",
+      "read_scope": "Full lines 1–107 read in this session; static only.",
+      "read_line_ranges": [
+        [
+          1,
+          107
+        ]
+      ],
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "license": "MIT (repository first-party software and associated documentation; third-party material excluded)",
+      "license_evidence": "p1-assignments-a1-a4/a3/LICENSE; copyright/permission/warranty retained fully in both output pages.",
+      "chinese_treatment": "MIT first-party requirements Chinese restatement plus independent conceptual guidance. No scored answers, fitted coefficients, requested predictions, pseudocode or submit-ready code. No official execution.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "local_evidence_only_not_git_backup"
+    },
+    {
+      "id": "p5-a3-ai-policy",
+      "kind": "course_policy",
+      "url": "https://docs.google.com/document/d/1SZAlExB1qAc9izHt54gwunNpjKE6wXb8Y7yA_e-baK8/export?format=txt",
+      "file": "p1-shared/ai-policy.txt",
+      "sha256": "127b697e3a67d9a3d86e0aa6cfdd6bb2ddc74a28c5786198b8d24008b9d6ef01",
+      "version": "CS336 AI Policy Spring 2025-2026, live document snapshot",
+      "status": "read_scope_completed_for_P5",
+      "read_scope": "Complete exported course AI policy read this session; concept/API permission, implementation/experiment/leaderboard prohibition, autocomplete and AGENTS requirements.",
+      "read_at": "2026-11-15T06:49:48.196193+00:00",
+      "license": "No explicit reuse license in document; independent summary only",
+      "license_evidence": "Full text inspected",
+      "retrieved_at": "2026-11-14T13:42:10Z",
+      "chinese_treatment": "Independent limited Chinese policy summary, not full translation.",
+      "material_files": [
+        "labs/a3-scaling/lab.zh.md",
+        "labs/a3-scaling/guide.zh.md"
+      ],
+      "publication_status": "reuse_local_original_not_republish"
+    }
+  ],
+  "counts": {
+    "source_records": 31,
+    "handout_pages": 8,
+    "scored_problems": 2,
+    "lettered_subquestions": 2,
+    "required_report_discussion_items": 5,
+    "points_total": 55,
+    "synthetic_runs": 72,
+    "synthetic_budgets": 9,
+    "http_paths": 5,
+    "method_path_combinations": 6
+  },
+  "execution_boundary": {
+    "repository_code_executed": false,
+    "api_calls": false,
+    "credentials_collected": false,
+    "gpu_or_cloud_started": false,
+    "model_or_training_data_downloaded": false,
+    "official_synthetic_regression_executed": false,
+    "build_lint_test_formatter_run": false,
+    "browser_acceptance": "pending_main"
+  },
+  "static_caveats": [
+    "README direct-run calls .local but run_training requires modal.current_function_call_id: static contradiction, not runtime reproduction.",
+    "Staff Modal namespace, W&B entity, Tailscale/proxy/internal API reporting and PostgreSQL remain external dependencies.",
+    "TrainingConfig runtime has lower bound only; /submit enforces remaining 12h budget; /final_submission persists predictions, not exploration jobs. Worker decorator remains 12h; final48h deployment not established by inspected source.",
+    "Fixed DCLM order is an API protocol; data builder references dataset @main and tokenizer without fixed revision. Rebuilding byte-identical remote data is not established.",
+    "No blanket MIT rights to dataset/tokenizer/models/papers/services."
+  ]
+}

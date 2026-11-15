@@ -48,12 +48,12 @@
     "requestedModel": "openai-codex/gpt-6-astra:xhigh",
     "observedConfiguration": {
       "defaultModelRole": "openai-codex/gpt-6-astra:xhigh",
-      "taskPerCallModel": "on (P3 observed existing configuration; no config mutation this run)",
+      "taskPerCallModel": "on (P5 observed existing configuration; no config mutation this run)",
       "taskEnableEffort": false,
       "taskAgentModelOverrides": {},
-      "checkedAt": "2026-11-14"
+      "checkedAt": "2026-11-15"
     },
-    "dispatchPreflight": "P4显式派发6个独立任务，Main核对实际gpt-6-astra/xhigh、无fallback。首次5任务usage_limit_reached、1取消；用户明确恢复后原6会话全部完成，保留上下文与所有权，不替换模型。p4-model-preflight.json保留首次中断及恢复运行证据。",
+    "dispatchPreflight": "P5显式派发6个独立任务，Main核对每个实际gpt-6-astra/xhigh、无fallback；六任务全部完成，Main整合和验收。运行身份见p5-model-preflight.json；P4中断/恢复仅保留于历史p4-model-preflight.json，不是本批状态。",
     "concurrency": "建议每波 4 至 6 个相互独立的任务，按来源访问情况调整；不是一次性启动全课。",
     "ownership": "每个内容任务独占其讲次、实验和来源分片目录；主 agent 独占 catalog.json、course.json、resources.zh.md、status.json 和汇总来源清单。",
     "workerContract": "按分配范围完成来源核实、采集和正文制作；记录源 URL、版本、许可、读取范围与缺口；不跨目录改共享文件；中途不运行构建、lint、测试或格式化。",
@@ -134,7 +134,7 @@
     {"title": "Learning Transferable Visual Models From Natural Language Supervision (CLIP)", "url": "https://arxiv.org/abs/2103.00020", "home": "lec17", "alsoUsedBy": ["ext15"], "priority": "图文对齐方法"},
     {"title": "Visual Instruction Tuning (LLaVA)", "url": "https://arxiv.org/abs/2304.08485", "home": "lec17", "alsoUsedBy": ["ext15"], "priority": "架构、数据和训练阶段"}
   ],
-  "readingStatus": "16篇固定全文均已本地获取。P3完成paper01/02，P4完成FlashAttention v2、FlashAttention-2 v1、ZeRO v3指定核心自主精读；共5篇核心完成，仍不称全文精读。其余11篇保持P1实际阅读范围。唯一正文归属、官方推荐/任务必查与编者安排不变；具体范围和权利以reading-map.json为准。",
+  "readingStatus": "16篇固定全文均已本地获取。P3–P5累计完成9篇指定核心：RoPE、GQA、FlashAttention、FlashAttention-2、ZeRO、Chinchilla、PagedAttention、LoRA、QLoRA；仍不称全文精读。PagedAttention与QLoRA为获授权的指定核心完整中译，其他已完成材料为自主精读。其余7篇保持P1实际阅读范围。唯一正文归属与官方/编者阅读区分不变，具体范围和权利见reading-map.json。",
   "assignments": [
     {"id": "a1-basics", "title": "从零训练 Transformer 语言模型", "url": "https://github.com/stanford-cs336/assignment1-basics", "commit": "a158843b20107949f1a8d7df1b05cd33b9166712", "handoutVersion": "Spring 2026 / 26.0.3", "scope": "BPE、Transformer、交叉熵、AdamW、训练与保存恢复、采样和困惑度；单B200参考训练，官方低资源路线另有token预算与目标，不与原规模等同"},
     {"id": "a2-systems", "title": "系统优化与分布式训练", "url": "https://github.com/stanford-cs336/assignment2-systems", "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736", "handoutVersion": "Spring 2026 / 26.1.3", "scope": "性能分析、激活重算、Triton FlashAttention-2前向、PyTorch+compile后向、DDP、优化器状态分片、FSDP、TP/2D分析；Triton后向选做；通信实验最高6GPU，8B完整training-step排行榜用双B200"},
@@ -150,7 +150,7 @@
     {"id": "phase2", "title": "首批端到端样板", "deliverables": ["L01–L02 的实际可制作材料", "对应先修桥接", "A1 的来源与任务拆解", "真实页面与视频入口验收"], "status": "complete_with_documented_limits", "completedAt": "2026-11-14", "acceptance": "p2-acceptance.json", "review": "P2-REVIEW.txt", "note": "10份讲次正文+1份A1任务地图，2张原创SVG。draft为适度译述而非全文翻译；无materials占位。A1完整说明/指导仍属P3，官方实验未执行。"},
     {"id": "phase3", "title": "模型基础批", "deliverables": ["L03–L04", "A1 完整说明和指导", "关联桥接、专题与论文材料"], "status": "complete_with_documented_limits", "completedAt": "2026-11-15", "acceptance": "p3-acceptance.json", "review": "P3-REVIEW.txt", "note": "12份本批正文（11新建、A1 guide原位扩写）、5张原创SVG。两讲全部3958 cues已读；两篇论文指定核心精读，非全文翻译/全文精读。A1覆盖38计分任务及25字母子问，未执行官方作业。"},
     {"id": "phase4", "title": "硬件与训练系统批", "deliverables": ["L05–L08", "A2 完整说明和指导", "关联专题与论文材料"], "status": "complete_with_documented_limits", "completedAt": "2026-11-15", "priorInterruption": "P4-BLOCKED.txt", "acceptance": "p4-acceptance.json", "review": "P4-REVIEW.txt", "note": "原6任务恢复后完成18份正文、15张SVG；6659 cues全读，三篇论文指定核心精读；A2覆盖27任务/47字母子问/6罗马子项。Main通过来源、算例、构建和桌面手机验收；未执行官方实验。"},
-    {"id": "phase5", "title": "缩放推理与评测批", "deliverables": ["L09–L12", "A3 完整说明和指导", "关联专题与论文材料"]},
+    {"id": "phase5", "title": "缩放推理与评测批", "deliverables": ["L09–L12", "A3 完整说明和指导", "关联专题与论文材料"], "status": "complete_with_documented_limits", "startedAt": "2026-11-15", "completedAt": "2026-11-15", "modelEvidence": "p5-model-preflight.json", "acceptance": "p5-acceptance.json", "review": "P5-REVIEW.txt", "note": "16份新正文、11张原创SVG；6505 cues全读；四篇论文指定核心完成，非全文精读；A3覆盖2任务/55分及完整API与预算合同。Main通过来源、11组CPU算例、一次构建及桌面手机页面验收；未执行官方实验。"},
     {"id": "phase6", "title": "数据批", "deliverables": ["L13–L14", "A4 完整说明和指导", "关联专题与论文材料"]},
     {"id": "phase7", "title": "后训练与多模态批", "deliverables": ["L15–L17", "A5 必做及官方选做说明和指导", "关联专题与论文材料"]},
     {"id": "phase8", "title": "嘉宾课与全课收尾", "deliverables": ["按实际来源制作 L18–L19", "综合项目说明与指导", "补齐剩余桥接与专题", "总学习路线及真实完成度清单"]}
@@ -169,14 +169,14 @@
     "https://github.com/stanford-cs336/lectures",
     "https://cs336.stanford.edu/spring2025/"
   ],
-  "currentDelivery": "已验收P4：累计40份正文、22张原创SVG。L01–L08有笔记与有限译述，全部8桥接、ext01–09、5篇论文指定核心和A1/A2说明指导已完成。P4首次额度中断与用户恢复证据保留；P5仅准备完整交接，不自动开始。出版状态见p4-publication-record.json。",
+  "currentDelivery": "P5已验收：累计56份正文、33张原创SVG，L01–L12、全部8篇桥接、ext01–12、9篇论文指定核心及A1–A3说明/指导。四讲本批6505 cues，累计20056；无核音、课堂截图、官方实验执行或收费计算。P6仅准备完整交接提示，等待明确用户接续。",
   "actualProgressFile": "../status.json",
-  "modelPreflightFile": "p4-model-preflight.json",
+  "modelPreflightFile": "p5-model-preflight.json",
   "nextStage": {
-    "id": "phase5",
-    "keyword": "CS336-2026-P5-缩放推理与评测",
-    "promptFile": "NEXT-P5-PROMPT.txt",
-    "status": "not_started",
+    "id": "phase6",
+    "keyword": "CS336-2026-P6-数据流水线与污染审计",
+    "promptFile": "NEXT-P6-PROMPT.txt",
+    "status": "awaiting_explicit_user_continuation",
     "autoStart": false
   }
 }

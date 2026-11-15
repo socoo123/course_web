@@ -1,0 +1,35 @@
+P5 ext10 serving author handoff — authored, Main acceptance pending
+
+Files
+- lectures/ext10/notes.zh.md: substantive independent service extension,10sections with self-checks.
+- lectures/ext10/assets/kv-copy-on-write.svg and queue-timeline.svg: original conceptual diagrams, CanvasText/light-dark variables, title/desc, no scripts/external resources.
+- sources/p5-serving/manifest-fragment.json,review.txt,toy-arithmetic.json.
+
+Scope delivered
+Request state/lifetime; logical/physical KV; future reservation vs permanent unused slots vs external fragmentation; dynamic fixed-size blocks; tail bounds; state-identity conditions for prefix reuse; read-only sharing/refcounts/COW; physical duplicate versus unique information; async reclamation; parallel sampling/beam/prefix distinction; continuous batching and request/token/history budgets; conceptual prefill chunking and latency tradeoffs; growth headroom; FCFS/group preemption of fixed2023paper; CPU swap vs GPU recomputation and preserved token history; queue timing/Little relation; TTFT/ITL/TPOT/throughput and tails/SLO; block-size tradeoffs; reporting protocol/open-loop vs closed-loop; exact baseline and metric caveats.
+
+Actual source evidence
+- Full611lines of pinned lecture_10.py de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e read in L10 slice; serving uses553–607 chiefly. No code execution.
+- PagedAttention2309.06180v1 raw-order TXT windows370–700,701–1005,1220–1288,1508–1578,1579–1605 actually displayed/read. These cover§3–4.5;§6.1;§7.1–7.3;§8opening and incidental neighboring headers. No whole-paper/full-PDF/visual-figure read claim.
+- Reading-map fixed paper07 identity/license/scope and P1license-reading-evidence.txt32lines actually read. Paper authors retained in page footer, fixed version and CC BY4.0 linked, modifications described, third-party materials not copied.
+- ext04notes333lines and ext06notes329lines read and reused. No supplementary contemporary rolling docs needed; no current software API/default behavior claimed.
+
+Original examples and corrected accounting
+Main identified the COW unique-information/physical-fill distinction during integration review. Final body and SVG now use:prefix6,b=4,two branches each+1 =>3blocks12slots;unique information8;physical occupied10 (shared first4 + two tails3each);empty2. Copied old-tail2states are duplicate stored information, not empty slots. Self-check title no longer implies CPU computes restored KV; CPU is the swap destination, recomputation is typically model/GPU prefill over saved tokens.
+Other original arithmetic cases are recorded in toy-arithmetic.json as expectations, not executed checks. Header/model/token assumptions explicit. Queue diagram is a deterministic serial single-server toy, not pretending to be LLM continuous-batch trace.
+
+Single-home and reuse boundaries
+PagedAttention paper body remains lectures/lec10/materials.zh.md, reached via canonical #/c/stanford-cs336-2026/lec/lec10?v=materials. This page has service invariants/examples, not a second translation. Reuses ext04capacity/IO, lec06/ext05attention foundation, ext06measurement. No ownership overlap with paper-* assets or shared resources/catalog/status.
+
+Important limits
+- Fixed2023FCFS/preemption/CPU swapping/block16 facts are not statements about2026vLLM defaults.
+- Prefix identity, multi-tenant isolation, async reclamation, SLO, chunked-prefill tradeoffs are labeled editor design analysis, not unsupported engine implementation claims.
+- Single-kernel latency can be worse while system throughput improves; quoted20–26%is the fixedpaper's baseline-specific finding, not a new result.
+- Orca was author reimplementation;Oracle/Pow2/Max are assumptions;arrival times synthetic;normalized latency is mean of per-request E2E/output-length, not TPOT/p99.
+- Specified core paper translation and visuals are another owned task; this slice makes no claim to cover them.
+
+Acceptance/execution
+Author review only. Main should perform actual desktop/mobile/SVG/link/formula/hash and necessary arithmetic/build validation after all workers land. This worker ran no tests/build/lint/formatters/browser/SVG parser/service/official assignment/API/cloud/GPU workload. No model/data/audio/video/image downloads, no screenshots, no Git operations. Only source reading, lossless caption/evidence processing, new source manifests and assigned original content writes/targeted corrections.
+
+Suggested metadata
+ext10 type editor extension,notes only;fully authored,source_read_scoped;accepted pending_main. Source records use top-level sources array. Original paper/source/caption archives remain local; lightweight evidence publication controlled by Main.

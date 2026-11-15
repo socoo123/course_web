@@ -1,0 +1,159 @@
+{
+  "paper06": {
+    "home": "lec09",
+    "materialFile": "lectures/lec09/materials.zh.md",
+    "alsoUsedBy": ["lec11", "ext12", "a3-scaling"],
+    "version": "arXiv:2203.15556v1",
+    "versionDate": "2022-03-29",
+    "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
+    "chineseTreatment": "independent_close_reading",
+    "chineseTreatmentStatus": "P5_independent_analytical_material_authored_not_full_or_serial_translation",
+    "chineseTreatmentConditions": "No confirmed public full-translation grant; independent question-led analysis, original derivation and limited factual excerpts; no original figure republication.",
+    "status": "P5_core_read_and_material_authored_main_acceptance_pending",
+    "written": "complete_for_declared_core_scope",
+    "reviewed": "P5_author_source_and_content_review_not_main_browser_acceptance",
+    "accepted": false,
+    "acceptanceStatus": "pending_main",
+    "verifiedScope": {
+      "fixedVersion": "arXiv:2203.15556v1",
+      "pageNumbering": "1-based physical PDF pages",
+      "core": [
+        {"section": "3.1–3.4", "title": "Three fit approaches and optimal model scaling", "pdfPages": "5–8", "requirement": "编者推荐必读"},
+        {"section": "4.1", "title": "Model and training details", "pdfPages": "9", "requirement": "编者推荐必读"},
+        {"section": "4.2.1–4.2.2", "title": "Language modelling and MMLU", "pdfPages": "10–11", "requirement": "编者推荐必读"},
+        {"section": "5", "title": "Discussion and Conclusion", "pdfPages": "15–16", "requirement": "编者推荐必读"},
+        {"section": "B", "title": "Optimal cosine cycle length", "pdfPages": "22–23", "requirement": "编者推荐必读"},
+        {"section": "F", "title": "FLOPs computation", "pdfPages": "27–28", "requirement": "编者推荐必读"}
+      ],
+      "optional": [
+        {"section": "D.1–D.4", "title": "Details on the scaling analyses", "pdfPages": "24–27", "requirement": "编者推荐选读", "P5Use": "read_and_used; D.4 continues on physical p.27"},
+        {"section": "E", "title": "Curvature of the FLOP-loss frontier", "pdfPages": "27–28", "requirement": "编者推荐选读", "P5Use": "read_and_used; Figure A5 is on p.28"},
+        {"section": "4.2.3–4.2.7", "title": "Other downstream evaluations", "pdfPages": "11–15", "requirement": "编者推荐选读", "P5Use": "not_claimed_fully_read_or_used_as_independent_evaluation_evidence"},
+        {"section": "I", "title": "Model Card", "pdfPages": "30–33", "requirement": "编者推荐选读", "P5Use": "not_read_this_run"}
+      ],
+      "summary": "All six fixed core groups read and analytically covered; D.1–D.4/E read as optional supporting detail. This is editorial scope, not an official full-paper mandate.",
+      "designation": "editorial_core_scope_with_existing_P1_official_crosscheck_preserved"
+    },
+    "actualReading": {
+      "readAt": "2026-11-15",
+      "method": "Read P1 fixed pdftotext-layout extraction this run and visually inspect selected original PDF renders",
+      "textFile": "p1-papers-01-08/paper06-2203.15556v1.txt",
+      "textLineSelections": [[1, 568], [635, 687], [1130, 1183], [1476, 1578], [1654, 1980]],
+      "visualPdfPages": [5, 6, 7, 8, 9, 10, 11, 23, 24, 25, 26, 27, 28],
+      "coreSectionsCompletelyRead": ["3.1", "3.2", "3.3", "3.4", "4.1", "4.2.1", "4.2.2", "5", "B", "F"],
+      "optionalReadAndUsed": ["D.1", "D.2", "D.3", "D.4", "E"],
+      "additionalContextRead": ["abstract/title/authors", "introduction", "§2", "§3 and §4 introductions"],
+      "incidentalReadNotClaimedFullScope": ["Appendix C opening and Figure A2 adjacent to B", "Appendix G opening/partial Figure A6", "neighboring 4.2.3/4.2.4 text on rendered p.11"],
+      "notReadClaim": "No whole-paper, full downstream-task, or model-card review; no experiment replication. Source hashes recorded separately from Main's independent verification."
+    },
+    "coverageMap": [
+      {"source": "3.1", "materialHeading": "3.1 曲线包络", "coverage": "four horizons, smoothing/interpolation, 1500 log-budget points, empirical envelope, shared-data caveat"},
+      {"source": "3.2", "materialHeading": "3.2 IsoFLOP 切片", "coverage": "nine budgets, endpoint loss, matched cosine schedule, valley coverage/parabolic minimum; distinguished from A3 observed minimum"},
+      {"source": "3.3", "materialHeading": "3.3 参数化损失 / 4 最优分配推导", "coverage": "loss floor and two finite-resource terms, log-loss Huber delta 1e-3, L-BFGS multistart, constrained closed-form allocation"},
+      {"source": "3.4", "materialHeading": "3.4 相近结论 / 7 外推边界", "coverage": "0.50/0.50,0.49/0.51,0.46/0.54; low-budget residual downweighting, curvature, uncertainty and fixed-v1 table inconsistencies"},
+      {"source": "4.1", "materialHeading": "6.1 从预测区间到选择", "coverage": "70B/1.4T vs280B,40–70B prediction range, all four setup changes, architecture/precision/optimizer/batch/LR and hardware confounders"},
+      {"source": "4.2.1", "materialHeading": "6.2 语言建模", "coverage": "Pile bpb, Jurassic exceptions,WikiText1037.16vs7.75,tokenizer comparability and leakage warning"},
+      {"source": "4.2.2", "materialHeading": "6.3 MMLU", "coverage": "57-task 5-shot mean,67.5 abstract vs67.6 body/table,7.6 percentage points,51/2/4 task split,expert reference boundary"},
+      {"source": "5", "materialHeading": "7 外推边界 / 训练最优之后", "coverage": "two comparable large runs,missing intermediate-scale tests,power-law concavity,less-than-one-epoch regime,data quality/leakage/privacy/toxicity; deployment objective distinction"},
+      {"source": "B", "materialHeading": "2 训练有没有公平结束", "coverage": "cosine horizons1–5x,25%overshoot,10x decay versus zero/5x,intermediate checkpoints not matched shorter runs"},
+      {"source": "F", "materialHeading": "5 实验FLOP账本", "coverage": "embeddings included,MAC=2,backward2xforward,per-operator terms,6ND approximation,0.99–1.10 ratios,5.76e23vs6.3e23 convention"}
+    ],
+    "versionSpecificCautions": [
+      "MMLU abstract 67.5% versus Table6/§4.2.2 67.6%, preserved explicitly.",
+      "Table2 method3 rounded central estimates versus printed 10th/90th percentiles are not silently harmonized or labelled modern replication confidence intervals.",
+      "§3.4 prose versus Table3 175B projections differ; TableA3 method3 175B FLOP/token entry fails 6ND order-of-magnitude consistency; no budget advice copied from suspect row.",
+      "Appendix D equations6/8 print positive E[log p] with minimization; original analytical treatment uses conventional negative log likelihood and labels the inconsistency.",
+      "Appendix F calls PV Softmax @ query reductions; material labels its actual value-reduction meaning and records the adjustment."
+    ],
+    "sourcePaths": {
+      "metadata": "p1-papers-01-08/paper06-2203.15556v1-abs.html",
+      "fullText": "p1-papers-01-08/paper06-2203.15556v1.pdf",
+      "extractedText": "p1-papers-01-08/paper06-2203.15556v1.txt",
+      "licenseTerms": "p1-papers-01-08/license-arxiv-nonexclusive-1.0.html",
+      "P5Evidence": "p5-papers/manifest-fragment.json"
+    },
+    "sourceIds": ["p5-paper06-version-metadata", "p5-paper06-fulltext", "p5-paper06-extracted-text", "p5-papers-arxiv-license"],
+    "sha256": "3fd3632a8ef48171bd25282990221d49535d75356192f068b3b2ebe08f2aedd4",
+    "retrievedAt": "2026-11-14T13:42:34.658578Z",
+    "officialRequirementNote": "Preserve P1 official-assignment evidence and recommendations unchanged; this material does not convert editorial core sections into an official full-paper mandate."
+  },
+  "paper07": {
+    "home": "lec10",
+    "materialFile": "lectures/lec10/materials.zh.md",
+    "alsoUsedBy": ["ext10"],
+    "version": "arXiv:2309.06180v1",
+    "versionDate": "2023-09-12",
+    "license": "CC-BY-4.0",
+    "chineseTreatment": "authorized_translation",
+    "chineseTreatmentStatus": "P5_complete_selected_core_translation_authored_not_whole_paper_translation",
+    "chineseTreatmentConditions": "All nine authors, equal contribution, fixed source/version, copyright, CC BY4.0 link, changes/unofficial status/disclaimer retained; original figure images and third-party Fig10 example set not republished.",
+    "status": "P5_core_read_and_selected_core_translation_authored_main_acceptance_pending",
+    "written": "complete_for_declared_core_scope",
+    "reviewed": "P5_author_source_and_translation_review_not_main_browser_acceptance",
+    "accepted": false,
+    "acceptanceStatus": "pending_main",
+    "verifiedScope": {
+      "fixedVersion": "arXiv:2309.06180v1",
+      "pageNumbering": "1-based physical PDF pages",
+      "core": [
+        {"section": "3–3.1", "title": "Memory Challenges; Memory Management in Existing Systems", "pdfPages": "4–5", "requirement": "编者推荐必读", "paginationCorrection": "§3.1 final compaction paragraph continues on p.5; prior scope shorthand said p.4"},
+        {"section": "4.1–4.5", "title": "PagedAttention; KV Manager; Decoding; Other Scenarios; Scheduling and Preemption", "pdfPages": "5–8", "requirement": "编者推荐必读"},
+        {"section": "6.1–6.3", "title": "Setup; Basic Sampling; Parallel Sampling and Beam Search", "pdfPages": "10–11", "requirement": "编者推荐必读"},
+        {"section": "7.1–7.2", "title": "Kernel Microbenchmark; Impact of Block Size", "pdfPages": "12", "requirement": "编者推荐必读", "paginationCorrection": "§7.2 ends on p.12; prior shorthand said pp.12–13; p.13 begins §7.3"}
+      ],
+      "optional": [
+        {"section": "4.6", "title": "Distributed Execution", "pdfPages": "8–9", "requirement": "编者推荐选读", "P5Use": "read_as_implementation_context_not_translated"},
+        {"section": "5.1–5.2", "title": "Kernel optimization and decoding implementation", "pdfPages": "9", "requirement": "编者推荐选读", "P5Use": "read_visually_in_full_as_background_not_translated"},
+        {"section": "6.4–6.5", "title": "Shared prefix and chatbot", "pdfPages": "11–12", "requirement": "编者推荐选读", "P5Use": "neighboring_material_read_incidentally_not_a_claim_of_complete_translation_or_core_coverage"},
+        {"section": "7.3", "title": "Comparing Recomputation and Swapping", "pdfPages": "13", "requirement": "编者推荐选读", "P5Use": "read_not_translated_or_expanded_into_results"}
+      ],
+      "summary": "All 12 individual core sections/subsections completely translated, with footnote1 and related captions; Table1 and Figure11 included as setup support. Not a whole-paper translation.",
+      "designation": "editorial_core_scope_with_existing_P1_official_crosscheck_preserved"
+    },
+    "actualReading": {
+      "readAt": "2026-11-15",
+      "method": "P1 fixed raw-order text re-read; original PDF pages visually inspected to resolve columns/formula and figure values",
+      "textFile": "p1-papers-01-08/paper07-2309.06180v1-raw-order.txt",
+      "textLineSelections": [[1, 183], [236, 337], [369, 1097], [1132, 1433], [1450, 1682]],
+      "visualPdfPages": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "coreSectionsCompletelyReadAndTranslated": ["3", "3.1", "4.1", "4.2", "4.3", "4.4", "4.5", "6.1", "6.2", "6.3", "7.1", "7.2"],
+      "supportingReadAndUsed": ["§2.1–2.2 Eq3 and KV timing", "§4 introduction", "Table1", "Figure11", "full caption/footnote context for core"],
+      "optionalReadAsBackgroundNotTranslated": ["4.6", "5.1–5.2", "7.3", "8", "parts of9"],
+      "incidentalRead": ["neighboring §2.3 on rendered p3", "§6.4 continuation and §6.5 on rendered p12", "beginning of conclusion in text range"],
+      "notReadClaim": "Not whole paper; no claim of reading every cited reference, running current vLLM, validating actual cloud deployment or reproducing benchmark."
+    },
+    "translationCoverage": [
+      {"source": "3", "materialHeading": "§3 大语言模型服务中的内存挑战", "complete": true, "details": "largeKV800KB/1.6GB,capacitytrend,12%prompt/55%beam examples,variable lengths and scheduling"},
+      {"source": "3.1", "materialHeading": "§3.1 现有系统的内存管理", "complete": true, "details": "contiguous static allocation,2048/512example,reservation/internal/external fragments,20.4%,cross-page compaction and sharing"},
+      {"source": "4.1", "materialHeading": "§4.1 PagedAttention", "complete": true, "details": "fixedKVblocks,footnote1 layer/head variants,Eq4 with explicit source-error note,block attention example and conclusion"},
+      {"source": "4.2", "materialHeading": "§4.2 KV Cache 管理器", "complete": true, "details": "virtual memory analogy,logical/physical blocks,tailreservation,CPU/GPU pools,blocktable filled count"},
+      {"source": "4.3", "materialHeading": "§4.3 使用PagedAttention与vLLM解码", "complete": true, "details": "all three original seven-token/B4 steps,physical7/1/3 mappings,prefill/decode iteration batching,blockparallelism/fragmentation,lifetime,reuse"},
+      {"source": "4.4", "materialHeading": "§4.4 其他解码场景的应用", "complete": true, "details": "parallel sampling COW/refcounts,full beam-tree example with freed/allocated blockIDs,sharedprefix and mixeddecoding; Fig10 thirdparty image/example set excluded with notice"},
+      {"source": "4.5", "materialHeading": "§4.5 调度与抢占", "complete": true, "details": "FCFS earliestserve/latestpreempt,allornothing eviction,ganggroups,CPU swapping stop-new-admission and boundedspace,recompute existing tokens,hardwaredependence"},
+      {"source": "6.1", "materialHeading": "§6.1 实验设置", "complete": true, "details": "all model/hardware/workload sources,Poisson arrivals,FT custom scheduler,author-reimplemented Orca/buddy/Oracle/Pow2/Max assumptions,mean normalized latency,1h/15min"},
+      {"source": "6.2", "materialHeading": "§6.2 基础采样", "complete": true, "details": "all ShareGPT baseline ratios and Fig13 counts,queue explosion,Alpaca175B compute-bound exception"},
+      {"source": "6.3", "materialHeading": "§6.3 并行采样与Beam search", "complete": true, "details": "more sharing with branches,1.3xto2.3x,all Alpaca/ShareGPTmemory ranges and denominator,Fig14/15 captions"},
+      {"source": "7.1", "materialHeading": "§7.1 Kernel微基准", "complete": true, "details": "blocktable/branch/varlen overhead,20–26%higherattentionlatency,notLinear,systembenefit"},
+      {"source": "7.2", "materialHeading": "§7.2 块大小的影响", "complete": true, "details": "too-smallparallelism/toolargefragmentation-sharing,ShareGPT16–128,Alpaca16/32,default16contextualized"}
+    ],
+    "editorialChanges": [
+      "Chinese translation and mobile-safe equation line breaks; original figure images omitted, captions retained and selected values transcribed.",
+      "Explicit correction note: printed Eq4 places block sum inside exponential; corrected mathematical display uses exp per position and global denominator as in original Eq3, with explicit tail/causal masking clarification.",
+      "800KB/1.6GB original units retained then clarified as819200bytes=800KiB and2048tokens=1.5625GiB.",
+      "Prefill/decode KV timing clarified; normalized mean distinguished from ratio of sums,TTFT,TPOT and percentiles.",
+      "Original invented-block SVG and toy invariant checks added, separated from translation.",
+      "All nine authors/version/license/copyright/change notice/no endorsement/as-is and third-party boundaries retained."
+    ],
+    "sourcePaths": {
+      "metadata": "p1-papers-01-08/paper07-2309.06180v1-abs.html",
+      "fullText": "p1-papers-01-08/paper07-2309.06180v1.pdf",
+      "extractedText": "p1-papers-01-08/paper07-2309.06180v1-raw-order.txt",
+      "licenseReading": "p5-papers/license-reading.txt",
+      "P5Evidence": "p5-papers/manifest-fragment.json"
+    },
+    "sourceIds": ["p5-paper07-version-metadata", "p5-paper07-fulltext", "p5-paper07-extracted-text", "p5-papers-license-live-reading"],
+    "sha256": "55b3b324d779a67c59dac2519445e3b07c14e6ff5c656fadb47a3d7b5997469e",
+    "retrievedAt": "2026-11-14T13:43:00.720333Z",
+    "officialRequirementNote": "Preserve P1 official citation mapping; no related assignment is invented and editorial selected-core scope is not represented as an official full-paper reading mandate."
+  }
+}

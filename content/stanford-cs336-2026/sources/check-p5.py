@@ -1,0 +1,174 @@
+"""Check P5 source identity, navigation and time coverage; never execute course code."""
+import hashlib
+import json
+import re
+import xml.etree.ElementTree as ET
+from pathlib import Path
+from urllib.parse import unquote
+
+ROOT = Path(__file__).resolve().parent.parent
+SOURCES = ROOT / "sources"
+
+
+def load(path):
+    return json.loads(path.read_text())
+
+
+def seconds(value):
+    result = 0
+    for part in value.split(":"):
+        result = result * 60 + float(part)
+    return result
+
+
+course = load(ROOT / "course.json")
+lectures = {item["id"]: item for item in course["lectures"]}
+labs = {item["id"]: item for item in course["labs"]}
+video_specs = [
+    ("lec09", "Q15rhEWZPQ4", 4677),
+    ("lec10", "EfM546A79aM", 5130),
+    ("lec11", "vTfEyOyzV9E", 4623),
+    ("lec12", "JpAxdTWQJxM", 4714),
+]
+lecture_ids = [item[0] for item in video_specs]
+body_files = [f"lectures/{entry}/{kind}.zh.md" for entry in lecture_ids for kind in ("notes", "draft")]
+body_files += [f"lectures/ext{number}/notes.zh.md" for number in (10, 11, 12)]
+body_files += [f"lectures/{entry}/materials.zh.md" for entry in ("lec09", "lec10", "ext11")]
+body_files += ["labs/a3-scaling/lab.zh.md", "labs/a3-scaling/guide.zh.md"]
+links = images = time_ranges = 0
+svgs = set()
+for relative in body_files + ["resources.zh.md"]:
+    path = ROOT / relative
+    text = path.read_text()
+    assert text.startswith("---\n"), relative
+    assert "#/c/stanford-cs336-2026/resources" not in text, relative
+    for kind, target in re.findall(r"#/c/stanford-cs336-2026/(lec|lab)/([^?\s)#]+)", text):
+        assert target in (lectures if kind == "lec" else labs), (relative, target)
+        links += 1
+    for target in re.findall(r"!\[[^\]]*\]\(([^)]+)\)", text):
+        assert not target.startswith(("https://", "http://", "data:")), (relative, target)
+        image = path.parent / unquote(target.split("#")[0])
+        assert image.is_file(), (relative, target)
+        images += 1
+        if image.suffix == ".svg":
+            svgs.add(image)
+    if path.parent.name in lecture_ids and path.name != "materials.zh.md":
+        duration = seconds(lectures[path.parent.name]["video"]["duration"])
+        for begin, end in re.findall(r"\b((?:\d+:)?\d{1,2}:\d{2}(?:\.\d{1,3})?)\s*[–—]\s*((?:\d+:)?\d{1,2}:\d{2}(?:\.\d{1,3})?)\b", text):
+            assert 0 <= seconds(begin) <= seconds(end) <= duration, (relative, begin, end)
+            time_ranges += 1
+for image in svgs:
+    root = ET.parse(image).getroot()
+    assert root.tag.endswith("svg"), image
+    assert any(node.tag.endswith("title") for node in root.iter()), image
+    assert any(node.tag.endswith("desc") for node in root.iter()), image
+    for node in root.iter():
+        assert not node.tag.endswith(("script", "foreignObject")), image
+        assert not any(key.endswith("href") and value.startswith(("http:", "https:"))
+                       for key, value in node.attrib.items()), image
+
+fragment_names = [*lecture_ids, "statistics", "serving", "adapters", "papers", "a3"]
+verified_hashes = set()
+source_count = 0
+source_ids = set()
+for name in fragment_names:
+    path = SOURCES / f"p5-{name}/manifest-fragment.json"
+    records = load(path)["sources"]
+    for record in records:
+        assert record["id"] not in source_ids, (path, record["id"])
+        source_ids.add(record["id"])
+        for field in ["id", "kind", "url", "file", "sha256", "version", "retrieved_at",
+                      "license", "read_scope", "read_at", "chinese_treatment", "material_files"]:
+            assert field in record, (path, record.get("id"), field)
+        source_count += 1
+        file, digest = record["file"], record["sha256"]
+        if file is None:
+            assert digest is None, record["id"]
+            continue
+        source = SOURCES / file
+        assert source.is_file(), (path, file)
+        if (file, digest) not in verified_hashes:
+            assert hashlib.sha256(source.read_bytes()).hexdigest() == digest, (path, file)
+            verified_hashes.add((file, digest))
+    assert not list((SOURCES / f"p5-{name}").rglob("*.md")), name
+
+caption_results = []
+for lecture, video_id, duration in video_specs:
+    video = lectures[lecture]["video"]
+    assert video["youtube"] == f"https://www.youtube.com/watch?v={video_id}", lecture
+    assert seconds(video["duration"]) == duration, lecture
+    raw = load(SOURCES / f"p1-videos/captions/{video_id}.en-US.manual.json3")
+    cues = [cue for cue in raw["events"] if cue.get("segs")]
+    last_start = -1
+    for cue in cues:
+        start = cue["tStartMs"]
+        end = start + cue["dDurationMs"]
+        assert last_start <= start <= end <= duration * 1000, lecture
+        last_start = start
+    timing = load(SOURCES / f"p5-{lecture}/time-intervals.json")
+    covered = []
+    last_end = 0
+    for block in timing["blocks"]:
+        start = round(block["start_seconds"] * 1000)
+        end = round(block["end_seconds"] * 1000)
+        assert start == last_end and 0 <= start < end <= duration * 1000, (lecture, block)
+        last_end = end
+        members = [i for i, cue in enumerate(cues, 1) if start <= cue["tStartMs"] < end]
+        indices = block["cue_indices_1_based_by_start"]
+        assert members == ([] if indices is None else list(range(indices[0], indices[1] + 1))), (lecture, block)
+        covered.extend(members)
+    assert last_end == duration * 1000 and covered == list(range(1, len(cues) + 1)), lecture
+    gaps = []
+    end = cues[0]["tStartMs"] + cues[0]["dDurationMs"]
+    for cue in cues[1:]:
+        if cue["tStartMs"] - end > 2000:
+            gaps.append((end, cue["tStartMs"]))
+        end = max(end, cue["tStartMs"] + cue["dDurationMs"])
+    recorded = [(round(gap["start_seconds"] * 1000), round(gap["end_seconds"] * 1000))
+                for gap in timing["caption_gaps"] if gap["kind"] == "internal"]
+    assert recorded == gaps, (lecture, recorded, gaps)
+    caption_results.append({"lecture": lecture, "cues": len(cues), "duration_seconds": duration,
+                            "internal_gaps_over_2s": len(gaps)})
+
+preflight = load(SOURCES / "p5-model-preflight.json")
+assert preflight["resolvedSubagentModel"] == "openai-codex/gpt-6-astra"
+assert preflight["resolvedSubagentEffort"] == "xhigh" and preflight["resolvedModelIsFallback"] is False
+assert len(preflight["runtimeEvidence"]) == preflight["subagentsStarted"] == 6
+readings = load(SOURCES / "reading-map.json")["readings"]
+assert len(readings) == 16
+assert all(item["materialFile"] == f'lectures/{item["home"]}/materials.zh.md' for item in readings)
+for paper, home in [("paper06", "lec09"), ("paper07", "lec10"), ("paper10", "ext11"), ("paper11", "ext11")]:
+    assert next(item for item in readings if item["id"] == paper)["home"] == home
+for lecture in ("lec11", "lec12"):
+    assert not (ROOT / f"lectures/{lecture}/materials.zh.md").exists(), lecture
+
+source_text = (SOURCES / "p1-assignments-a1-a4/a3/cs336_assignment3_scaling.txt").read_text()
+problems = re.findall(r"Problem \(([^)]+)\):[^\n]*\((\d+) points\)", source_text)
+assert dict(problems) == {"chinchilla_isoflops": "5", "scaling_laws": "50"}
+assert {task["id"] for task in labs["a3-scaling"]["tasks"]} == set(dict(problems))
+# Requirement fidelity is independently read by Main, not inferred from text matching.
+coverage = load(SOURCES / "p5-a3/task-coverage.json")
+mapped_tasks = {task["id"]: task for task in coverage["tasks"]}
+assert {key: task["points"] for key, task in mapped_tasks.items()} == {
+    key: int(points) for key, points in problems
+}
+part1 = source_text.split("Problem (chinchilla_isoflops)", 1)[1].split("3 Constructing", 1)[0]
+source_letters = set(re.findall(r"^\s*\(([a-z])\)\s", part1, re.M))
+assert {item["id"] for item in mapped_tasks["chinchilla_isoflops"]["coverage_items"]} == source_letters
+part2_questions = source_text.split("below:", 1)[1].split("In addition to the report", 1)[0]
+assert len(mapped_tasks["scaling_laws"]["coverage_items"]) == len(re.findall(r"^\s*•", part2_questions, re.M))
+source_line_count = source_text.count("\n")
+for task in mapped_tasks.values():
+    for item in task["coverage_items"]:
+        first, last = item["source_text_lines"]
+        assert 1 <= first <= last <= source_line_count, item["id"]
+
+print(json.dumps({
+    "phase": "P5", "status": "passed", "body_documents": len(body_files),
+    "internal_links": links, "local_image_references": images, "parsed_svgs": len(svgs),
+    "in_bounds_time_ranges": time_ranges, "source_fragments": len(fragment_names),
+    "source_records": source_count, "verified_unique_source_hashes": len(verified_hashes),
+    "captions": caption_results, "paper_homes_preserved": len(readings),
+    "a3_source_tasks": len(problems), "a3_source_points": sum(int(points) for _, points in problems),
+    "scope": "P5 navigation, provenance and cue coverage only. Not audio verification, full-paper reading or official assignment execution."
+}, ensure_ascii=False, indent=2))

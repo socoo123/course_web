@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 930" role="img" aria-labelledby="title desc">
+  <title id="title">评测测量合同：目标、协议、分数与结论</title>
+  <desc id="desc">从目标人群和用途开始，固定提示、模型、工具及预算，再保存输出并应用评分器，最后按预先定义的权重汇总和报告不确定性。相同模型更换其中任一条件都可能测量不同对象。更多样本只能减少适用假设下的随机误差，不能自动纠正数据污染、评分偏差或目标错配。</desc>
+  <style>
+    :root { color-scheme: light dark; --fg: CanvasText; --muted: CanvasText; --border: CanvasText; color: var(--fg); }
+    text { font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; fill: currentColor; font-size: 23px; }
+    .title { font-size: 29px; font-weight: 700; }
+    .head { font-size: 26px; font-weight: 650; }
+    .small { font-size: 22px; }
+    .box { fill: none; stroke: currentColor; stroke-width: 2; }
+    .arrow { fill: none; stroke: currentColor; stroke-width: 2.5; }
+    .boundary { fill: none; stroke: currentColor; stroke-width: 2; stroke-dasharray: 7 5; }
+  </style>
+  <text class="title" x="320" y="43" text-anchor="middle">同一个模型，不一定是同一次测量</text>
+  <rect class="box" x="28" y="70" width="584" height="125" rx="12"/>
+  <text class="head" x="48" y="108">① 目标：为谁，解决什么问题？</text>
+  <text x="48" y="145">真实工单 / 均衡类别 / 高风险任务</text>
+  <text class="small" x="48" y="176">改变任务分布与权重，可以改变赢家。</text>
+  <path class="arrow" d="M320 195V224 M310 214L320 224L330 214"/>
+  <rect class="box" x="28" y="235" width="584" height="125" rx="12"/>
+  <text class="head" x="48" y="273">② 协议：允许看到、做什么？</text>
+  <text x="48" y="310">模型版本 · 提示 · 工具 · 推理预算</text>
+  <text class="small" x="48" y="341">单次回答与多轮工具执行，不是同一合同。</text>
+  <path class="arrow" d="M320 360V389 M310 379L320 389L330 379"/>
+  <rect class="box" x="28" y="400" width="584" height="125" rx="12"/>
+  <text class="head" x="48" y="438">③ 观测：保存输出，再按规则评分</text>
+  <text x="48" y="475">答案抽取 · 测试 · 人类或模型judge</text>
+  <text class="small" x="48" y="506">偏好、正确性、任务完成不能自动互换。</text>
+  <path class="arrow" d="M320 525V554 M310 544L320 554L330 544"/>
+  <rect class="box" x="28" y="565" width="584" height="125" rx="12"/>
+  <text class="head" x="48" y="603">④ 结论：这个分数支持什么决定？</text>
+  <text x="48" y="640">分层结果 · 配对差异 · 不确定性 · 成本</text>
+  <text class="small" x="48" y="671">报告成立条件，不外推为所有用途的排名。</text>
+  <rect class="boundary" x="28" y="725" width="584" height="170" rx="12"/>
+  <text class="head" x="48" y="766">样本变多，哪些问题还在？</text>
+  <text x="48" y="806">随机波动可缩小 ≠ 系统偏差被消除</text>
+  <text x="48" y="844">污染、目标错配、评分器偏差仍需另查。</text>
+  <text class="small" x="48" y="878">原创概念图；不是课堂截图或实测结果。</text>
+</svg>

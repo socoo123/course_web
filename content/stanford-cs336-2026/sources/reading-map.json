@@ -1,7 +1,7 @@
 {
   "courseId": "stanford-cs336-2026",
   "updatedAt": "2026-11-15",
-  "status": "P4_paper01_through_paper05_specified_core_readings_reviewed_and_page_accepted",
+  "status": "P5_nine_cumulative_specified_core_readings_reviewed_and_page_accepted_with_documented_limits",
   "policy": "每篇单一正文归属不变。16篇全文已本地获取，但实际已读仅各记录所列范围；未称全文精读。官方明确推荐/任务必查与编者必读/选读分开。授权不明或ND材料仅自主精读。",
   "readings": [
     {
@@ -1316,13 +1316,13 @@
           {
             "section": "D.1–D.4",
             "title": "Details on the scaling analyses",
-            "pdfPages": "24–26",
+            "pdfPages": "24–27",
             "requirement": "编者推荐选读"
           },
           {
             "section": "E",
             "title": "Curvature of the FLOP-loss frontier",
-            "pdfPages": "27",
+            "pdfPages": "27–28",
             "requirement": "编者推荐选读"
           },
           {
@@ -1351,8 +1351,8 @@
       "chineseTreatment": "independent_close_reading",
       "version": "arXiv:2203.15556v1",
       "license": "LicenseRef-arXiv-nonexclusive-distrib-1.0",
-      "status": "P1_source_and_scope_reviewed_not_full_close_read",
-      "readingEvidence": "题名/22名作者/v1；§3导言与3.1–3.4的三种方法/拟合及外推限制正文，§4/4.1，§4.2导言、4.2.1的主要结论与泄漏警告、4.2.2正文；§5与附录B/F正文；扫描主文及A–J附录标题。",
+      "status": "P5_specified_core_independent_close_reading_reviewed_page_accepted",
+      "readingEvidence": "P5重读全部指定核心§3.1–3.4、4.1、4.2.1–4.2.2、5、B/F及D/E选读；视觉核对13页。精确行窗、版本疑点与覆盖见p5-papers/reading-updates.json#paper06；不是全文精读。",
       "authors": [
         "Hoffmann, Jordan",
         "Borgeaud, Sebastian",
@@ -1419,7 +1419,7 @@
         "note": "a3-scaling：固定预算IsoFLOP试验、损失拟合、模型大小与训练token分配；附录B学习率周期和F FLOP口径是实验可比性的约束。",
         "officialCrosscheckFile": "p1-assignments-a1-a4/reading-updates.json"
       },
-      "chineseTreatmentStatus": "P1_permission_decision_only; no_translation_or_course_body_written",
+      "chineseTreatmentStatus": "P5_independent_analytical_close_reading_written_not_full_translation",
       "chineseTreatmentConditions": "只写自主概括、推导和评论，必要的短引须标出处；不发布逐段改写/整篇译文替代品。",
       "versionDate": "2022-03-29",
       "licenseEvidence": {
@@ -1434,7 +1434,8 @@
         "readAt": "2026-11-14T13:47:55.076422Z",
         "notes": "许可逐份从本固定版arXiv页面核实，不由其他论文或代码仓库许可推断。"
       },
-      "actualReading": {
+      "actualReading": {"phase":"P5","specifiedCoreCloseRead":true,"completePaperCloseRead":false,"visualPdfPages":[5,6,7,8,9,10,11,23,24,25,26,27,28],"detailedRecord":"p5-papers/reading-updates.json#paper06.actualReading","readAt":"2026-11-15"},
+      "priorActualReading": {
         "method": "pdftotext -layout",
         "scope": "题名/22名作者/v1；§3导言与3.1–3.4的三种方法/拟合及外推限制正文，§4/4.1，§4.2导言、4.2.1的主要结论与泄漏警告、4.2.2正文；§5与附录B/F正文；扫描主文及A–J附录标题。",
         "pdfPageSelections": [
@@ -1571,9 +1572,9 @@
       "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review.",
       "officialCrosscheck": "L09 lines 448–505 and L11 cite/discuss Chinchilla; A3 separately recommends consulting methods.",
       "officialRequirement": "A3必做手册中的IsoFLOPs练习并建议熟悉论文方法；未要求全文或明确论文节号",
-      "written": "not_started",
-      "reviewed": "P1_source_version_license_and_selected_scope_only",
-      "accepted": "placement_only_no_body_page"
+      "written": "P5_written",
+      "reviewed": "P5_author_and_main_body_review_source_spotchecked",
+      "accepted": "P5_desktop_mobile_p5-acceptance.json"
     },
     {
       "id": "paper07",
@@ -1595,7 +1596,7 @@
           {
             "section": "3–3.1",
             "title": "Memory Challenges in LLM Serving; Memory Management in Existing Systems",
-            "pdfPages": "4",
+            "pdfPages": "4–5",
             "requirement": "编者推荐必读"
           },
           {
@@ -1613,7 +1614,7 @@
           {
             "section": "7.1–7.2",
             "title": "Kernel Microbenchmark; Impact of Block Size",
-            "pdfPages": "12–13",
+            "pdfPages": "12",
             "requirement": "编者推荐必读"
           }
         ],
@@ -1654,8 +1655,8 @@
       "chineseTreatment": "authorized_translation",
       "version": "arXiv:2309.06180v1",
       "license": "CC-BY-4.0",
-      "status": "P1_source_and_scope_reviewed_not_full_close_read",
-      "readingEvidence": "题名/作者；按raw-order提取正文核查§3、§§4.1–4.6、§§6.1–6.3及§§7.1–7.2的机制、工作负载和指标；扫描§2–10标题。双栏layout/default提取曾交错，改用pdftotext -raw；图只读提取到的标题/说明，未逐图视觉审读。",
+      "status": "P5_specified_core_authorized_translation_reviewed_page_accepted",
+      "readingEvidence": "P5重读并完整翻译12个指定节/小节，含核心脚注、图注与配置表；视觉核对pp3–12，显式处理式4原分母错误。精确范围见p5-papers/reading-updates.json#paper07；不称整篇全译。",
       "authors": [
         "Kwon, Woosuk",
         "Li, Zhuohan",
@@ -1679,8 +1680,8 @@
         "note": "既有relatedAssignments为空，保持为空；与lec10/ext10的KV cache、连续批处理和服务性能分析作编者关联，不凭论文主题捏造课程实验。",
         "officialCrosscheckFile": "p1-assignments-a1-a4/reading-updates.json"
       },
-      "chineseTreatmentStatus": "P1_permission_decision_only; no_translation_or_course_body_written",
-      "chineseTreatmentConditions": "未来译文保留全体作者/题名/固定版本链接/CC BY 4.0链接和翻译改动说明，标明非作者或Stanford官方译文，并检查第三方素材。",
+      "chineseTreatmentStatus": "P5_complete_selected_core_translation_written_not_whole_paper",
+      "chineseTreatmentConditions": "全体作者、固定版链接、CC BY4.0、修改说明与非官方身份保留；不复刊原图10第三方整组示例，许可不延伸至数据、权重或其他第三方材料。",
       "versionDate": "2023-09-12",
       "licenseEvidence": {
         "url": "http://creativecommons.org/licenses/by/4.0/",
@@ -1694,7 +1695,8 @@
         "readAt": "2026-11-14T13:47:55.076422Z",
         "notes": "许可逐份从本固定版arXiv页面核实，不由其他论文或代码仓库许可推断。"
       },
-      "actualReading": {
+      "actualReading": {"phase":"P5","specifiedCoreCloseRead":true,"completePaperCloseRead":false,"completeSelectedCoreTranslation":true,"visualPdfPages":[3,4,5,6,7,8,9,10,11,12],"detailedRecord":"p5-papers/reading-updates.json#paper07.actualReading","readAt":"2026-11-15"},
+      "priorActualReading": {
         "method": "pdftotext -raw",
         "scope": "题名/作者；按raw-order提取正文核查§3、§§4.1–4.6、§§6.1–6.3及§§7.1–7.2的机制、工作负载和指标；扫描§2–10标题。双栏layout/default提取曾交错，改用pdftotext -raw；图只读提取到的标题/说明，未逐图视觉审读。",
         "pdfPageSelections": [
@@ -1794,9 +1796,9 @@
       "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review.",
       "officialCrosscheck": "Pinned lecture_10.py line 577 explicitly links arXiv2309.06180; reference, not required reading.",
       "officialRequirement": "未发现明确论文阅读指令；中文精读范围为编者安排",
-      "written": "not_started",
-      "reviewed": "P1_source_version_license_and_selected_scope_only",
-      "accepted": "placement_only_no_body_page"
+      "written": "P5_written",
+      "reviewed": "P5_author_and_main_body_review_source_spotchecked",
+      "accepted": "P5_desktop_mobile_p5-acceptance.json"
     },
     {
       "id": "paper08",
@@ -2284,21 +2286,21 @@
             "title": "Problem Statement",
             "pdfPages": "2–3",
             "focus": "全参数微调与低维参数增量的问题定义",
-            "readStatus": "text_read_for_P1"
+            "readStatus": "P5_complete_core_read_and_independent_analysis_written"
           },
           {
             "section": "4.1–4.2",
             "title": "Low-Rank-Parametrized Update Matrices; Applying LoRA to Transformer",
             "pdfPages": "4–5",
             "focus": "W0+BA、A随机/B零初始化、alpha/r缩放、可合并权重及部署限制",
-            "readStatus": "text_read_for_P1"
+            "readStatus": "P5_complete_core_read_and_independent_analysis_written"
           },
           {
             "section": "7.1–7.2",
             "title": "Which Weight Matrices in Transformer Should We Apply LoRA To?; What Is the Optimal Rank r for LoRA?",
             "pdfPages": "10–11",
             "focus": "投影矩阵选择、rank消融与有限任务/模型的经验边界",
-            "readStatus": "text_read_for_P1"
+            "readStatus": "P5_complete_core_read_and_independent_analysis_written; Figure4_p12_included"
           }
         ],
         "optional": [
@@ -2306,8 +2308,8 @@
             "section": "5.1–5.5",
             "title": "Empirical Experiments",
             "pdfPages": "5–8",
-            "focus": "RoBERTa/DeBERTa/GPT-2/GPT-3对照；本轮只读§5引入、§5.1开头及§5.5",
-            "readStatus": "partial_text_read"
+            "focus": "完整实验为选读；P1/P5实际上下文范围分别保留，不把相邻页视为全文精读",
+            "readStatus": "P5_partial_context_only; prior_scope_in_priorActualReading"
           },
           {
             "section": "7.3",
@@ -2327,15 +2329,16 @@
         "requirementAuthority": "editorial_only; core means the recommended core within this reading, not official course requirement"
       },
       "prerequisites": [
-        "lec10",
-        "lec15"
+        "lec02",
+        "lec04",
+        "ext04"
       ],
       "relatedAssignments": [],
       "chineseTreatment": "independent_close_reading_no_full_translation_permission",
       "version": "arXiv:2106.09685v2",
       "license": "arXiv-nonexclusive-distrib-1.0",
-      "status": "p1_fixed_fulltext_and_core_scope_verified_not_full_close_reading",
-      "readingEvidence": "题名、作者、v2；§1–4、§5引入/5.1开头/5.5、§7.1–7.3和§8开头实际读取；其他章节标题扫描。 已取得固定版本完整PDF后按所列页/节核查，不以摘要或搜索片段代替全文；§5.1后半至§5.4、相关工作、附录与§8跨页结尾未完整精读；未验证全部实验或子空间结论。",
+      "status": "P5_specified_core_independent_close_reading_reviewed_page_accepted",
+      "readingEvidence": "P5全部核心§2、4.1–4.2、7.1–7.2及核心脚注已读；视觉核对pp4/10/11/12。完整范围、子空间/表格限制及文字疑点见p5-adapters/reading-updates.json#paper10。",
       "canonicalTitle": "LoRA: Low-Rank Adaptation of Large Language Models",
       "authors": [
         "Hu, Edward J.",
@@ -2353,7 +2356,7 @@
       "officialAssignmentEvidence": [],
       "officialCrosscheck": "No explicit required paper reading found in checked A1–A5 evidence; remains editorial ext11 supplement.",
       "prerequisiteDetails": [
-        "编者前置：矩阵秩、线性层反向传播、冻结参数、Adam状态显存和监督微调；ext11作为独立拓展不升级为官方必读。"
+        "矩阵秩、线性层链式法则、冻结参数与Adam状态；ext11页内补齐最小微调前置，L15仅为后续使用方，不构成本批学习门槛。"
       ],
       "experimentAssociation": "编者拓展实验：比较全参微调与LoRA的可训练参数/优化器显存，并检查合并前后前向等价；既有计划未绑定正式作业，本轮不新增强制实验。",
       "licenseEvidence": {
@@ -2381,7 +2384,9 @@
         "p1-paper10-text-v2"
       ],
       "retrievedAt": "2026-11-14T13:39:00.049272Z",
-      "actualRead": {
+      "chineseTreatmentStatus": "P5_original_analysis_written_not_translation",
+      "actualReading": {"phase":"P5","specifiedCoreCloseRead":true,"completePaperCloseRead":false,"visualPdfPages":[4,10,11,12],"detailedRecord":"p5-adapters/reading-updates.json#paper10.actualRead","readAt":"2026-11-15"},
+      "priorActualReading": {
         "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
         "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
         "pagesRead": "1–5, 8, 10–12",
@@ -2405,9 +2410,9 @@
       "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review.",
       "officialAssignmentStatus": "固定2026 A1–A5作业证据已交叉；普通引用和方法实现不等于论文必读。",
       "officialRequirement": "未发现明确论文阅读指令；中文精读范围为编者安排",
-      "written": "not_started",
-      "reviewed": "P1_source_version_license_and_selected_scope_only",
-      "accepted": "placement_only_no_body_page"
+      "written": "P5_written",
+      "reviewed": "P5_author_and_main_body_review_source_spotchecked",
+      "accepted": "P5_desktop_mobile_p5-acceptance.json"
     },
     {
       "id": "paper11",
@@ -2432,28 +2437,28 @@
             "title": "Background",
             "pdfPages": "3–4",
             "focus": "分块量化、LoRA和参数高效微调的显存组成",
-            "readStatus": "text_read_for_P1"
+            "readStatus": "P5_complete_core_read_and_complete_selected_translation"
           },
           {
             "section": "3",
             "title": "QLoRA Finetuning",
             "pdfPages": "4–5",
             "focus": "NF4、Double Quantization、Paged Optimizers；4位存储与BF16计算的区别",
-            "readStatus": "text_read_for_P1"
+            "readStatus": "P5_complete_core_read_and_complete_selected_translation"
           },
           {
             "section": "4",
             "title": "QLoRA vs. Standard Finetuning",
-            "pdfPages": "5–7",
+            "pdfPages": "5–8（含浮动表4）",
             "focus": "对照协议、LoRA插入范围与NF4/DQ消融",
-            "readStatus": "text_read_for_P1"
+            "readStatus": "P5_complete_core_read_and_complete_selected_translation"
           },
           {
             "section": "8",
             "title": "Limitations and Discussion",
             "pdfPages": "15–16",
             "focus": "33B/65B未建立与全16位全参微调等效；聊天评测限制",
-            "readStatus": "text_read_for_P1"
+            "readStatus": "P5_complete_core_read_and_complete_selected_translation"
           }
         ],
         "optional": [
@@ -2468,23 +2473,24 @@
             "section": "E; G",
             "title": "NormalFloat 4-bit data type; Memory Footprint",
             "pdfPages": "24; 26",
-            "focus": "NF4码本在第24页，显存分析在第26页；本轮读G及图6文字说明，E仅标题及码表开头",
-            "readStatus": "partial_text_read"
+            "focus": "本批完整读并转录E的16码值；G正文及图6说明完整选段翻译，保留batch1/seq512/checkpoint及no-attention估算范围",
+            "readStatus": "P5_complete_selected_appendices_read_and_translated"
           }
         ],
         "requirementAuthority": "editorial_only; core means the recommended core within this reading, not official course requirement"
       },
       "prerequisites": [
-        "lec10",
-        "lec15",
+        "lec02",
+        "lec04",
+        "ext04",
         "paper10"
       ],
       "relatedAssignments": [],
       "chineseTreatment": "authorized_translation_with_attribution_and_change_notice",
       "version": "arXiv:2305.14314v1",
       "license": "CC-BY-4.0",
-      "status": "p1_fixed_fulltext_and_core_scope_verified_not_full_close_reading",
-      "readingEvidence": "题名/作者/v1；§2–4、§8、§9及附录G文字/图6说明实际读取，全文标题结构扫描。 已取得固定版本完整PDF后按所列页/节核查，不以摘要或搜索片段代替全文；§5–7主体、定性示例和附录A–F未完整精读；未进行显存或吞吐实测。",
+      "status": "P5_specified_core_authorized_translation_reviewed_page_accepted",
+      "readingEvidence": "P5全部核心§2/3/4/8完整译文，式1–6、表2–4与相关图注均保留；E/G另列选读。视觉核对10页，精确行窗和边界见p5-adapters/reading-updates.json#paper11；不是全文精读或全文翻译。",
       "canonicalTitle": "QLoRA: Efficient Finetuning of Quantized LLMs",
       "authors": [
         "Dettmers, Tim",
@@ -2526,7 +2532,9 @@
         "p1-paper11-text-v1"
       ],
       "retrievedAt": "2026-11-14T13:38:54.429146Z",
-      "actualRead": {
+      "chineseTreatmentStatus": "P5_complete_selected_core_translation_written_not_whole_paper",
+      "actualReading": {"phase":"P5","specifiedCoreCloseRead":true,"completePaperCloseRead":false,"completeSelectedCoreTranslation":true,"visualPdfPages":[3,4,5,6,7,8,15,16,24,26],"detailedRecord":"p5-adapters/reading-updates.json#paper11.actualRead","readAt":"2026-11-15"},
+      "priorActualReading": {
         "mode": "P1_selective_fulltext_verification_not_complete_close_reading",
         "pdfPageNumbering": "1-based physical PDF page; not inferred from web snippets",
         "pagesRead": "1, 3–7, 15–16, 26",
@@ -2549,9 +2557,9 @@
       "editorialScopeNote": "Planned paper section ranges and priority are editorial unless separately supported by a direct official requirement. This update does not replace paper-full-text/license review.",
       "officialAssignmentStatus": "固定2026 A1–A5作业证据已交叉；普通引用和方法实现不等于论文必读。",
       "officialRequirement": "未发现明确论文阅读指令；中文精读范围为编者安排",
-      "written": "not_started",
-      "reviewed": "P1_source_version_license_and_selected_scope_only",
-      "accepted": "placement_only_no_body_page"
+      "written": "P5_written",
+      "reviewed": "P5_author_and_main_body_review_source_spotchecked",
+      "accepted": "P5_desktop_mobile_p5-acceptance.json"
     },
     {
       "id": "paper12",

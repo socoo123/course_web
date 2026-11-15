@@ -334,7 +334,7 @@
       "title": "专题 · 量化与参数高效微调",
       "titleEn": "Quantization and Parameter-efficient Finetuning",
       "optional": true,
-      "note": "编者深挖专题，非官方讲次；在 L10、L15 后按需阅读。共享论文只在其归属页展开，见公共资料。"
+      "note": "编者深挖专题，非官方讲次；L10 后可独立阅读，页内补齐微调前置，后续 L15 再回用。LoRA 与 QLoRA 正文统一放本专题课程资料。"
     },
     {
       "id": "lec16",
@@ -451,12 +451,12 @@
       "goal": "先做合成数据的 IsoFLOPs 拟合，再以 12 B200 小时真实训练探索预测 48 B200 小时配置；校内 API 资格与校外自建路径分开。",
       "tasks": [
         {
-          "id": "components",
-          "title": "分析模型组件与实验变量"
+          "id": "chinchilla_isoflops",
+          "title": "Part 1 · 合成 IsoFLOPs 数据拟合与外推（5 分）"
         },
         {
-          "id": "scaling",
-          "title": "拟合与检验缩放关系"
+          "id": "scaling_laws",
+          "title": "Part 2 · 12 B200 小时探索与 48 小时配置预测（50 分）"
         }
       ]
     },

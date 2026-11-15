@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 545" role="img" aria-labelledby="title desc">
+<style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;--accent:CanvasText;color:var(--fg)}text{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;fill:var(--fg);font-size:23px}.head{font-size:27px;font-weight:700}.small{font-size:20px}.box{fill:none;stroke:var(--border);stroke-width:2}.line{fill:none;stroke:var(--muted);stroke-width:2}.wait{fill:none;stroke:var(--accent);stroke-width:3;stroke-dasharray:7 5}</style>
+<title id="title">服务时间不变，排队让用户等待增长</title><desc id="desc">自拟单服务台FCFS例子。A、B、C在0、10、20毫秒到达，每个请求服务40毫秒。A在40毫秒结束，B在80毫秒结束，C在120毫秒结束；对应等待0、30、60毫秒。实线框表示服务，虚线表示等待。这不是LLM动态batch或真实trace。</desc>
+<text class="head" x="27" y="40">同样服务40 ms，等待并不一样</text><text class="small" x="27" y="77">单服务台、不可抢占、先到先服务</text>
+<path class="line" d="M70 122H550M70 116V128M230 116V128M390 116V128M550 116V128"/><text class="small" x="62" y="109">0</text><text class="small" x="216" y="109">40</text><text class="small" x="376" y="109">80</text><text class="small" x="521" y="109">120</text>
+<text x="25" y="183">A</text><rect class="box" x="70" y="151" width="160" height="48" rx="6"/><text class="small" x="103" y="182">服务40</text>
+<text x="25" y="260">B</text><path class="wait" d="M110 252H230"/><circle cx="110" cy="252" r="5" fill="currentColor"/><rect class="box" x="230" y="228" width="160" height="48" rx="6"/><text class="small" x="263" y="259">服务40</text><text class="small" x="116" y="225">等30</text>
+<text x="25" y="337">C</text><path class="wait" d="M150 329H390"/><circle cx="150" cy="329" r="5" fill="currentColor"/><rect class="box" x="390" y="305" width="160" height="48" rx="6"/><text class="small" x="423" y="336">服务40</text><text class="small" x="232" y="303">等60</text>
+<text class="small" x="28" y="396">虚线 = 排队；方框 = 服务；单位为ms</text><text class="small" x="28" y="434">总停留：A为40，B为70，C为100</text><text class="small" x="28" y="472">到达过程改变体验，不必改变kernel时间</text><text class="small" x="28" y="510">原创确定性例；不是服务压测或截图</text>
+</svg>

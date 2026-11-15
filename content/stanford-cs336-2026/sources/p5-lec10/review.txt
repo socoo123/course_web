@@ -1,0 +1,48 @@
+P5 L10 inference author handoff — authored, Main acceptance pending
+
+Owned deliverables
+- lectures/lec10/notes.zh.md: independent teaching, full-video question index, prefill/decode dependency and asymptotic costs, MLP/attention intensity assumptions, KV capacity, latency/throughput model, TTFT/ITL/TPOT/queue/tails, architecture/quantization/pruning caveats, exact speculative-sampling argument, continuous batching and paper cross-link, self-checks.
+- lectures/lec10/draft.zh.md: full-video navigation plus8 short selected independent paraphrases and explicit question/uncertainty notes. NOT complete translation, sentence transcript or video substitute; no video URL in body.
+- lectures/lec10/assets/prefill-decode.svg: original dependency diagram, accessible title/desc, self-contained CanvasText/light-dark theme variables, no outside resources.
+- sources/p5-lec10/{manifest-fragment.json,video-metadata.json,time-intervals.json,reading-log.json,trace-selection.json,review.txt}; normalized captions and indexed English TXT are local-only source archives.
+
+Actual source reading this run
+1. P1 metadata lec10-EfM546A79aM.json identity/selected-caption fields; recorded title explicitly Spring2026 Lecture10 Inference, uploader Stanford Online, channel UCBa5G_ESCn8Yd4vw5U-gIcg, duration5130seconds, upload20260511. Official schedule fields say Percy Liang,2026-04-29. No fresh watch-page retrieval, no audio/visual identity claim. Automatic-language inventory35–194 not fully enumerated.
+2. ALL1509cues of EfM546A79aM.en-US.manual.json3, actually read as indexed TXT windows1–300,301–600,601–900,901–1200,1201–1509. Normalized source preserves original event/segment/text/order/millisecond timestamps; TXT only flattens linebreaks. Platform manual/non-ASR is not human-authorship or audio-accuracy verification.
+3. lecture_10.py at de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e, ALL611lines. This is2026-09-12post-term source, not asserted identical to recording.
+4. Saved trace437steps: opening/container/source embedding inspected,20 selected arithmetic env states fully displayed/read, indices70,72,77,124,126,148,152,155,197,198,199,200,203,204,206,241,243,246,294,295. No source execution/import; stored outputs are upstream evidence, not our measurements. Image links were not downloaded or visually reviewed.
+5. PagedAttention fixed2309.06180v1 raw-order text lines370–1005,1220–1288,1508–1605. Used only mechanism/evaluation boundaries; complete paper materials remain the paper owner's lec10/materials.
+6. ext04 notes333lines and ext06 notes329lines fully read; lec06 tile-lifetime.svg17lines read for theme conventions. L06/ext05/L04/ext11 linked to their canonical foundation topics rather than duplicated.
+7. p1-lectures/version-review.json all25lines; fixed reading-map paper07 scope/attribution/license; p1-papers-01-08/license-reading-evidence.txt all32lines. No blanket lecture translation grant established; paper CC BY4.0 does not authorize unrelated classroom material.
+
+Timing and uncertainty
+- Video0–5130seconds; caption first5.320,last5124.280; timed union4989.191seconds.
+- Leading gap5.320seconds; trailing gap5.720seconds;31internal gaps totaling129.769seconds, all exceed2seconds, all exact intervals retained. Longest2086.860–2097.560(10.700seconds).
+- Explicit INA UDIBLE markers (without the space in raw):cues363,364,371,372,373,1082,1245. Student questions are not reconstructed beyond readable parts and lecturer responses.
+- time-intervals.json has25editorial topic blocks plus leading/trailing, continuous0–5130 navigation; exact cue membership based on start times; millisecond values preserved separately from floor-to-second display.
+- Common transcription doubts:agentic/vLLM/einops/batching/matmul/HBM/KV/TTFT. Only contextual/source-based editorial readings; raw English unchanged. Industry token totals, adoption claims, newer-architecture empirical claims, unread AWQ/pruning/speculative papers not independently verified.
+
+Technical corrections kept separate from paraphrase
+- line267 num_params is a count, not bytes.
+- line334 theoretical maximum latency is wrong direction: ideal bandwidth model is optimistic lower-bound direction, not worst-case guarantee.
+- line397 fixedB64,K40->8: stored latency23.7964ms->9.97399ms improves, contrary to string 'Worse latency'; captions agree with improvement. KV projection parameter count changes too.
+- line451 'higher latency' is not improvement; corrected direction with assumptions, also explicit draft note.
+- line529 [0,1] is normalized two-token residual, not generic unnormalized max(q-p,0).
+- MLP byte accounting omits some intermediate reads and nonlinear work; treated as idealized main-term/fused model, not exact traffic.
+- Attention read-once model is not strict tile-level FlashAttention IO bound; MHA/BF16 intensity<1 is not universal or an impossibility theorem. Batching may improve occupancy/launch efficiency even when B cancels in the model.
+- AWQ verbal mixed-precision intuition not adopted as literal exact mechanism; no unread source cited as checked.
+- First sampled token and when that token's KV enters cache distinguished.
+- Speculative math proof is editor supplement; classroom explicitly skipped proof. Zero proposal/support and zero residual cases addressed.
+- System throughput benefit never relabelled as per-kernel guarantee. PagedAttention §7.1 overhead and Orca reimplementation/metric assumptions linked.
+
+Suggested Main integration
+- Update lec10 to authored/source-read; acceptance only after Main's actual checks. Keep original videoID EfM546A79aM and duration5130.
+- Merge sources-array manifests, not a records key. Duplicate source files across slices use distinct p5 IDs except canonical lec10-video/lec10-handout update records.
+- L10 and ext10 materials link is #/c/stanford-cs336-2026/lec/lec10?v=materials; no second paper body. No edits made to materials, paper-* assets, shared JSON, catalog/status/resources, official source, other courses or app src.
+- Do not publish original JSON3, normalized captions, full English TXT, upstream trace extracts or paper text mirrors. Main controls lightweight evidence whitelist.
+
+Minimal independent arithmetic checks for Main (NOT RUN)
+See ../p5-serving/toy-arithmetic.json for explicit inputs/expected outcomes:KV128KiB/token and512MiB/request;ideal decode127.0vs3276.8token/s;streaming300msTTFT/53.333msTPOT;dynamic blocks;COW unique-vs-physical;queue timing and tail quantiles. No model, tokenizer, GPU, API, official assignment code or external datasets required.
+
+Checks/execution boundary
+No build, lint, test, formatter, browser, SVG parser, smoke run, service launch or GPU benchmark performed by this worker. No official experiment/API/cloud calls, model/data/media downloads, source imports, screenshots or Git operations. Author content/evidence is ready; Main retains all browser/mobile/formula/link/hash/build/publication acceptance.

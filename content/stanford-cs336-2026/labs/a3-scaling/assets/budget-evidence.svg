@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 650" role="img" aria-labelledby="title desc">
+  <style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}</style>
+  <title id="title">A3 的合成数据、真实探索与最终预测</title>
+  <desc id="desc">上半为五分 Part 1：七十二条合成 run、九档 FLOPs，通过观察最低点产生模型和数据规模外推图。下半为五十分 Part 2：真实 API 单 B200 累计十二小时探索，区分完成和失败状态，拟合后预测四十八小时最终配置与验证 loss。最终提交只是保存预测，不会产生新的探索额度。两条证据链不能互相替代。</desc>
+  <g fill="none" stroke="var(--border,currentColor)" stroke-width="1.5">
+    <rect x="18" y="54" width="524" height="205" rx="12"/>
+    <rect x="18" y="287" width="524" height="292" rx="12"/>
+  </g>
+  <g font-family="system-ui, sans-serif" fill="var(--fg,currentColor)">
+    <text x="24" y="31" font-size="23" font-weight="650">两条证据链，不能互相替代</text>
+    <text x="38" y="87" font-size="21" font-weight="650">Part 1 · 5 分 · 合成数据</text>
+    <text x="38" y="124" font-size="20">72 条 run ／ 9 档 FLOPs 预算</text>
+    <text x="38" y="159" font-size="20">每档最低观察 loss ≠ 连续真最优</text>
+    <text x="38" y="198" font-size="20">模型规模图 ＋ 数据规模图</text>
+    <text x="38" y="234" font-size="20">各预测 10²³、10²⁴ FLOPs 的规模</text>
+    <text x="38" y="321" font-size="21" font-weight="650">Part 2 · 50 分 · 真实训练</text>
+    <text x="38" y="359" font-size="20">单 B200：累计 12 小时探索</text>
+    <text x="38" y="394" font-size="20">排队／运行先预留；结束再结算</text>
+    <text x="38" y="429" font-size="20">完成的最终 loss ≠ 失败的局部值</text>
+    <text x="38" y="474" font-size="20">自己的方法、证据与决策</text>
+    <text x="38" y="512" font-size="20">预测 48 小时配置与 validation loss</text>
+    <text x="38" y="551" font-size="19">最终提交：保存预测，不增加探索额度</text>
+    <text x="24" y="615" font-size="19">图为协议示意，不含拟合答案或实测成绩。</text>
+  </g>
+  <path d="M36 447H522" fill="none" stroke="var(--muted,currentColor)" stroke-dasharray="5 5"/>
+</svg>

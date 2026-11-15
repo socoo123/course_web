@@ -1,0 +1,343 @@
+{
+  "schema_version": 1,
+  "slice": "p5-lec12",
+  "read_at": "2026-11-15T06:49:20.149173+00:00",
+  "method": "Listed cue/source/trace windows were actually displayed and read in this P5 run. read_at is evidence compilation time after reading, not fabricated individual read timestamps.",
+  "caption_reading": {
+    "source": "p5-lec12/transcript.en.txt",
+    "source_sha256": "3133a76c9ea8b0b502fe268543fc5cbe9bb226388a4c5ebebaee281f6d5f639c",
+    "original_file": "p1-videos/captions/JpAxdTWQJxM.en-US.manual.json3",
+    "original_sha256": "0b0c1835e4cccb7dbc07ed1eb534ea0a9d275079a444246db279582435861cf8",
+    "normalized_file": "p5-lec12/captions.normalized.json",
+    "normalized_sha256": "1760d0f85f87a61ac4632c986950047395b33b1150dc9fd3190b07e68e6a9872",
+    "one_line_per_cue": true,
+    "total_cues": 1376,
+    "total_lines": 1376,
+    "windows": [
+      {
+        "requested_lines_1_based": [
+          1,
+          300
+        ],
+        "cue_range_1_based": [
+          1,
+          300
+        ],
+        "first_start_seconds": 5.72,
+        "last_end_seconds": 982.53,
+        "method": "functions.read exact :raw range; complete displayed cue text actually read"
+      },
+      {
+        "requested_lines_1_based": [
+          301,
+          600
+        ],
+        "cue_range_1_based": [
+          301,
+          600
+        ],
+        "first_start_seconds": 982.53,
+        "last_end_seconds": 1962.81,
+        "method": "functions.read exact :raw range; complete displayed cue text actually read"
+      },
+      {
+        "requested_lines_1_based": [
+          601,
+          900
+        ],
+        "cue_range_1_based": [
+          601,
+          900
+        ],
+        "first_start_seconds": 1962.81,
+        "last_end_seconds": 3059.67,
+        "method": "functions.read exact :raw range; complete displayed cue text actually read"
+      },
+      {
+        "requested_lines_1_based": [
+          901,
+          1200
+        ],
+        "cue_range_1_based": [
+          901,
+          1200
+        ],
+        "first_start_seconds": 3059.67,
+        "last_end_seconds": 4123.83,
+        "method": "functions.read exact :raw range; complete displayed cue text actually read"
+      },
+      {
+        "requested_lines_1_based": [
+          1201,
+          1376
+        ],
+        "cue_range_1_based": [
+          1201,
+          1376
+        ],
+        "first_start_seconds": 4123.83,
+        "last_end_seconds": 4710.71,
+        "method": "functions.read exact :raw range; complete displayed cue text actually read"
+      }
+    ],
+    "normalization": "Inspected skill normalizer. New local artifacts written via tool.write from JSON3 events in original order. All nonblank text events retain exact concatenated segment text and millisecond start/end in normalized JSON; no editorial text corrections. TXT replaces embedded newline with visible ⏎ marker and adds cue/start/end. Original raw JSON3 remains untouched and authoritative; no media fetched. Skill script not executed.",
+    "not_done": [
+      "audio listening",
+      "video playback",
+      "speaker voice verification",
+      "frame extraction"
+    ]
+  },
+  "handout_reading": {
+    "file": "p1-lectures/raw/lecture_12.py",
+    "sha256": "93e4049c9ee2665a7e5c883fee2c213e2eaa45aa5d452e447b5a15a5f353fd09",
+    "complete_text_lines": 394,
+    "requested_windows_1_based": [
+      [
+        1,
+        300
+      ],
+      [
+        301,
+        394
+      ]
+    ],
+    "actual_read_scope": "Complete separate Python source text including all evaluation functions and main. No source execution."
+  },
+  "trace_reading": {
+    "file": "p1-lectures/raw/var/traces/lecture_12.json",
+    "sha256": "1f71bd19541b5902c35cc4ead4442ec6e25445e442ac746029558ad55259b35f",
+    "derived_file": "p5-lec12/trace-renderings.txt",
+    "derived_sha256": "31c211335804a899d769275322fead73f4af8590b2193f71a87af590a0533f32",
+    "total_steps": 313,
+    "requested_windows_1_based": [
+      [
+        1,
+        100
+      ],
+      [
+        98,
+        165
+      ],
+      [
+        166,
+        240
+      ],
+      [
+        241,
+        313
+      ]
+    ],
+    "displayed_windows_1_based": [
+      [
+        1,
+        97
+      ],
+      [
+        98,
+        165
+      ],
+      [
+        166,
+        240
+      ],
+      [
+        241,
+        313
+      ]
+    ],
+    "actual_read_scope": "All steps 1–313: stack/source locations, full rendering text, link records (including embedded abstracts), image locations. Initial raw JSON lines1–70 also displayed. Parser read whole JSON; no claim of manual reading every environment/raw serialization field.",
+    "image_location_count": 43,
+    "images_visually_read": 0,
+    "linked_paper_full_texts_read": 0,
+    "note": "Embedded abstract reading is not a paper full-text read or verification of live linked resources."
+  },
+  "metadata_reading": {
+    "file": "p1-videos/metadata/lec12-JpAxdTWQJxM.json",
+    "windows_1_based": [
+      [
+        1,
+        300
+      ],
+      [
+        301,
+        370
+      ]
+    ],
+    "complete": true
+  },
+  "prerequisites_read": [
+    "skill://technical-video-notes complete and scripts/normalize_captions.py complete",
+    "local://cs336-p5-contract.txt complete",
+    "sources/NEXT-P5-PROMPT.txt complete",
+    "p1-lectures/manifest-fragment.json repository header and lec12 record; p1-lectures/tree.json known paths found by grep",
+    "p1-lectures/version-review.json complete",
+    "p1-lectures/acquisition.json source/trace records extracted and read",
+    "reading-map.json evaluation/lec12 search; no L12 standalone paper home introduced",
+    "p4-lec08/reading-log.json and lec08 SVG formatting pattern"
+  ],
+  "uncertainties": [
+    {
+      "cues": [
+        89,
+        89
+      ],
+      "issue": "top bottles likely models from context; not audio-corrected"
+    },
+    {
+      "cues": [
+        190,
+        192
+      ],
+      "source_lines": [
+        83,
+        83
+      ],
+      "issue": "Entropy versus perplexity conflated; editorial mathematical correction to cross-entropy H and PPL exp(H)"
+    },
+    {
+      "cues": [
+        232,
+        240
+      ],
+      "source_lines": [
+        90,
+        90
+      ],
+      "issue": "Source conditional perplexity lacks inverse/negative exponent; screen formula not visually checked"
+    },
+    {
+      "cues": [
+        246,
+        246
+      ],
+      "source_lines": [
+        93,
+        93
+      ],
+      "issue": "closed tasks versus cloze; source supports cloze"
+    },
+    {
+      "cues": [
+        269,
+        269
+      ],
+      "issue": "language modeling vowels unclear; not adopted as term"
+    },
+    {
+      "cues": [
+        330,
+        330
+      ],
+      "issue": "slow perplexity likely low; no audio claim"
+    },
+    {
+      "cues": [
+        419,
+        422
+      ],
+      "source_lines": [
+        126,
+        126
+      ],
+      "issue": "Spoken/subtitle numerical wording not reconciled to source 16–33% decrease; no leaderboard score repeated"
+    },
+    {
+      "cues": [
+        452,
+        456
+      ],
+      "issue": "GPQA Diamond non-expert selection clause has ambiguous at one/negation; precise rule not asserted"
+    },
+    {
+      "cues": [
+        628,
+        628
+      ],
+      "issue": "Explicit [INAUDIBLE] in Elo explanation; not filled"
+    },
+    {
+      "cues": [
+        654,
+        654
+      ],
+      "issue": "La Marina likely Arena by source/context only"
+    },
+    {
+      "cues": [
+        1031,
+        1031
+      ],
+      "issue": "people can benchmark anything unclear; no detailed technical claim derived"
+    },
+    {
+      "cues": [
+        1039,
+        1039
+      ],
+      "issue": "Explicit [INAUDIBLE]; no competition name supplied"
+    },
+    {
+      "cues": [
+        1051,
+        1054
+      ],
+      "issue": "Speaker hedges resolution; 64x64 not asserted as specification"
+    },
+    {
+      "cues": [
+        1125,
+        1125
+      ],
+      "issue": "not who is seeing as much unclear; hallucination context not audio proof"
+    },
+    {
+      "cues": [
+        1250,
+        1252
+      ],
+      "source_lines": [
+        354,
+        354
+      ],
+      "issue": "UncheeatableEval standardized by source to UncheatableEval; archive papers not used to invent source"
+    },
+    {
+      "cues": [
+        1303,
+        1305
+      ],
+      "trace_steps": [
+        289,
+        289
+      ],
+      "issue": "TorchBench caption versus TAU-bench in trace embedded abstract; no paper-full-text/audio adjudication, no specific exploit score repeated"
+    },
+    {
+      "cues": [
+        1368,
+        1368
+      ],
+      "issue": "trade tests contamination understood contextually as train-test contamination; raw unchanged"
+    }
+  ],
+  "version_boundary": "Pinned commit is post-term (2026-09-12); separate recording chronology retained. Dynamic leaderboard claims not promoted to present-day facts.",
+  "authorial_boundary": "Notes: independent teaching, derivations, original statistical examples, self-checks and SVG. Draft: full navigation and eight limited independent paraphrases plus editorial exercises/Q&A/uncertainty record; not full translation.",
+  "model_evidence": {
+    "requested": "openai-codex/gpt-6-astra:xhigh",
+    "runtime_evidence_owner": "Main",
+    "worker_did_not_independently_audit_runtime_events": true
+  },
+  "status": {
+    "caption_full_read": true,
+    "handout_text_full_read": true,
+    "trace_renderings_full_read": true,
+    "worker_self_reviewed": "authored",
+    "accepted": false,
+    "main_review_pending": true,
+    "page_checked": false,
+    "build_run": false,
+    "tests_run": false,
+    "official_assignment_run": false
+  }
+}

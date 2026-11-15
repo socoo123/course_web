@@ -1,0 +1,36 @@
+{
+  "phase": "P5",
+  "reviewer": "Main",
+  "date": "2026-11-15",
+  "sourceInspection": [
+    {"file":"p1-lectures/lecture_09.txt","read":"all548 lines","focus":"empirical laws vs bounds; nonparametric rate assumptions; Chinchilla fit methods; training-optimal versus deployment"},
+    {"file":"p1-lectures/lecture_11.txt","read":"all455 lines","focus":"WSD restart semantics, optimizer comparisons, muP activation/update norm argument and limits"},
+    {"file":"p1-lectures/raw/lecture_10.py","read":"all611 lines","focus":"ideal IO accounting, GQA comparison wording, latency bounds, quantization and speculative residual normalization; code not executed"},
+    {"file":"p1-lectures/raw/lecture_12.py","read":"all394 lines","focus":"cross-entropy/perplexity distinction, conditional inverse, benchmarks as historical lecture examples, construct/protocol/validity"},
+    {"file":"p1-assignments-a1-a4/a3/cs336_assignment3_scaling.txt","read":"all415 lines covering8 extracted PDF pages","focus":"all two scored problems, lettered Part1 questions and five Part2 design factors, complete API/budget/submission requirements"},
+    {"file":"p1-assignments-a1-a4/a3/README.txt","read":"all67 lines","focus":"student and nonstudent paths; setup is not execution"},
+    {"file":"p1-assignments-a1-a4/a3/CHANGELOG.txt","read":"all46 lines","focus":"2026 wall-clock service vs historical2024 budget; final48h config correction"},
+    {"file":"p1-assignments-a1-a4/a3/LICENSE","read":"all7 lines","focus":"Stanford2026 first-party MIT notice and limits"},
+    {"file":"p1-assignments-a1-a4/a3/cs336_scaling/training/training_config.py","read":"all147 lines","focus":"head equality forbids GQA, validation/train/evaluation divisibility, sequence/data/precision and optimizer constraints"},
+    {"file":"p1-assignments-a1-a4/a3/cs336_scaling/training/run.py","read":"declarations plus86–175 and450–511","focus":"direct local call conflicts with mandatory Modal current_function_call_id; W&B entity, internal service events and GPU declaration; no runtime assertion"}
+  ],
+  "originalPdfVisualInspection": [
+    {"file":"p1-papers-01-08/paper06-2203.15556v1.pdf","physicalPages":[6,7,8],"focus":"Huber/log-residual objective; constrained frontier exponents; Table2 fixed-v1 numerical inconsistency"},
+    {"file":"p1-papers-01-08/paper07-2309.06180v1.pdf","physicalPages":[3,5,10,12,13],"focus":"Eq3 versus Eq4 misplaced normalization sum; author reimplementation and Orca assumptions; normalized latency;20–26% kernel overhead; block-size and swap/recompute scope"},
+    {"file":"p1-papers-09-16/paper10-2106.09685v2.pdf","physicalPages":[4,5],"focus":"update factor shapes, scaling/init, merger and batching limits; optimizer-state savings not entire memory"},
+    {"file":"p1-papers-09-16/paper11-2305.14314v1.pdf","physicalPages":[4,5,15,16],"focus":"NF4/DQ storage andBF16 arithmetic; gradient through frozen base; large-scale/evaluation limits"}
+  ],
+  "visualMethod": "PyMuPDF1.26.7 original-page rasterization, images actually displayed to Main; no classroom media or audio, no claim of complete PDF visual review.",
+  "captionSpotchecks": [
+    {"lecture":"lec09","seconds":[1095,1224],"cues":[404,453],"focus":"two-dimensional binning and heuristic dimension exponent"},
+    {"lecture":"lec10","seconds":[2976,3000],"cues":[858,864],"focus":"speaker says latency and throughput both improve when KV shrinks"},
+    {"lecture":"lec11","seconds":[3918,4224],"cues":[1530,1652],"focus":"explicit single-example deep-linear SGD and no-cancellation/nontrivial-update assumptions"},
+    {"lecture":"lec12","seconds":[614,627],"cues":[190,193],"focus":"caption explicitly conflates best perplexity and entropy"}
+  ],
+  "contentReview": {
+    "state": "all_sixteen_bodies_read_and_integration_findings_resolved",
+    "files": ["lectures/lec09/notes.zh.md","lectures/lec09/draft.zh.md","lectures/lec09/materials.zh.md","lectures/lec10/notes.zh.md","lectures/lec10/draft.zh.md","lectures/lec10/materials.zh.md","lectures/lec11/notes.zh.md","lectures/lec11/draft.zh.md","lectures/lec12/notes.zh.md","lectures/lec12/draft.zh.md","lectures/ext10/notes.zh.md","lectures/ext11/notes.zh.md","lectures/ext11/materials.zh.md","lectures/ext12/notes.zh.md","labs/a3-scaling/lab.zh.md","labs/a3-scaling/guide.zh.md"],
+    "integrationFindings": ["L09 Lipschitz histogram argument yields an upper-bound rate, not a universal two-sided rate; empirical lower envelopes are not theorems.","L11 norm/SGD arguments and WSD cost examples now expose assumptions and shared-history dependence.","L10 corrects latency and GQA source wording, normalizes the speculative residual and labels ideal IO assumptions.","L12 distinguishes entropy from perplexity; self-check heading no longer contains 参考, which would relocate it to sources.","ext10 COW example has8 unique states but10 physically occupied slots and2 empty slots; reconstruction does not imply CPU generates KV.","PagedAttention fixed-v1 Eq4 denominator, Chinchilla fixed-v1 table/score discrepancies and QLoRA derivative/memory wording are explicitly distinguished from editorial corrections.","Removed duplicate notes diagram from L10 draft; moved PagedAttention and LoRA/QLoRA attribution blocks to page-bottom sources.","A3 navigation uses both real problem IDs and5/50 points; ext11 is independently readable after L10 without requiring unwritten L15.","Three mobile display formulas in L09/L10/L12 were split into lines after actual browser overflow findings."]
+  },
+  "officialAssignmentExecution": false
+}

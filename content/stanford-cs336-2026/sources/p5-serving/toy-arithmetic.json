@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "status": "editor_expected_values_only_not_executed",
+  "verification_owner": "Main",
+  "method_boundary": "Independent scalar arithmetic only; no official lecture/assignment imports, GPU, model, dataset, tokenizer, service, API or external files needed. These are test ideas, not passing check records.",
+  "cases": [
+    {
+      "id": "kv_payload",
+      "page": "lectures/lec10/notes.zh.md section4",
+      "inputs": {"layers":32,"kv_heads":8,"head_dim":128,"bytes_per_element":2,"keys_and_values":2,"cached_tokens":4096,"requests":20},
+      "expected": {"bytes_per_token":131072,"bytes_per_request":536870912,"all_requests_GiB":10,"MHA32heads_multiplier":4,"requests_fitting_12GiB_payload_only":24},
+      "check": "2*L*Hkv*d*b; multiply by4096 and20. Use binaryKiB/MiB/GiB;24is capacity without growth/overhead headroom, not admission promise."
+    },
+    {
+      "id": "ideal_decode_batch",
+      "page": "lectures/lec10/notes.zh.md section5",
+      "inputs": {"weight_GiB":8,"kv_GiB_per_request":0.0625,"bandwidth_GiB_per_second":1024,"batches":[1,32]},
+      "expected": {"batch1_read_GiB":8.0625,"batch1_step_seconds":0.00787353515625,"batch1_throughput_rounded":127,"batch32_read_GiB":10,"batch32_step_seconds":0.009765625,"batch32_throughput":3276.8},
+      "check": "t=(W+B*K)/bandwidth;R=B/t. Paper numbers not used;approximate throughput has rounding."
+    },
+    {
+      "id": "stream_metrics",
+      "page": "lectures/lec10/notes.zh.md section6",
+      "inputs": {"arrival_seconds":0,"output_seconds":[0.30,0.34,0.42,0.46]},
+      "expected": {"TTFT_ms":300,"ITL_ms":[40,80,40],"TPOT_ms_fraction":"160/3","end_to_end_ms":460},
+      "check": "Use adjacent differences and(first,last)formula;one-outputTPOTundefined,notzero."
+    },
+    {
+      "id": "speculative_distribution",
+      "page": "lectures/lec10/notes.zh.md section7.2",
+      "inputs": {"p":[0.8,0.2],"q":[0.5,0.5]},
+      "expected": {"accepted_probability_mass":[0.5,0.2],"total_rejected_mass":0.3,"normalized_positive_residual":[0,1],"final_distribution":[0.5,0.5]},
+      "check": "accepted=min(p,q);residual=max(q-p,0)/sum;accepted+rejected*residual=q."
+    },
+    {
+      "id": "dynamic_blocks",
+      "page": "lectures/ext10/notes.zh.md section3.1",
+      "inputs": {"block_tokens":4,"lengths":[6,9,3],"contiguous_preallocation_per_request":16},
+      "expected": {"blocks_per_request":[2,3,1],"total_blocks":6,"physical_slots":24,"valid_slots":18,"empty_slots":6,"preallocated_slots":48,"currently_unused_preallocated_slots":30},
+      "check": "ceil(length/b);distinguishcurrentreservedfromeventualwaste."
+    },
+    {
+      "id": "copy_on_write_accounting",
+      "page": "lectures/ext10/notes.zh.md section4.1 andkv-copy-on-write.svg",
+      "inputs": {"prefix_tokens":6,"block_tokens":4,"branches":2,"new_cached_tokens_per_branch":1},
+      "expected": {"unshared_blocks":4,"unshared_slots":16,"shared_blocks_after_COW":3,"shared_slots":12,"unique_information_tokens":8,"physically_filled_slots":10,"duplicate_old_tail_slots":2,"empty_slots":2},
+      "check": "Shared fullblock4 + two physical tails(2prefix+1new)=10filled;12-10=2empty. Do not subtractunique8fromphysical12andcallempty4."
+    },
+    {
+      "id": "fcfs_queue",
+      "page": "lectures/ext10/notes.zh.md section7 andqueue-timeline.svg",
+      "inputs": {"arrivals_ms":[0,10,20],"serial_service_ms":[40,40,40]},
+      "expected": {"starts_ms":[0,40,80],"ends_ms":[40,80,120],"waiting_ms":[0,30,60],"total_sojourn_ms":[40,70,100]},
+      "check": "start[i]=max(arrival[i],end[i-1]);notLLMdynamicbatchmodel."
+    },
+    {
+      "id": "little_relation",
+      "page": "lectures/ext10/notes.zh.md section7.1",
+      "inputs": {"steady_request_rate_per_s":8,"mean_sojourn_s":0.5},
+      "expected": {"mean_in_system":4},
+      "check": "N=lambda*T;sameboundaryandstablelong-runassumptions;notp99prediction."
+    },
+    {
+      "id": "tail_quantiles",
+      "page": "lectures/ext10/notes.zh.md section7.2",
+      "inputs": {"fast_count":95,"fast_TTFT_ms":100,"slow_count":5,"slow_TTFT_ms":2100,"quantile_definition":"nearest_rank_ceiling(p*n),1based"},
+      "expected": {"mean_TTFT_ms":200,"p95_TTFT_ms":100,"p99_TTFT_ms":2100},
+      "check": "Weightedmeanandsortednearest-rankquantiles;otherinterpolationdefinitionsmaydiffer."
+    }
+  ]
+}

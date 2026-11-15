@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 660" role="img" aria-labelledby="title desc">
+<style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;--accent:CanvasText;color:var(--fg)}text{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;fill:var(--fg);font-size:23px}.head{font-size:27px;font-weight:700}.small{font-size:21px}.box{fill:none;stroke:var(--border);stroke-width:2}.arrow{fill:none;stroke:var(--accent);stroke-width:2}.dash{stroke-dasharray:6 5}</style>
+<title id="title">Prefill与decode的状态依赖</title><desc id="desc">Prefill处理全部已知prompt并生成prompt的KV，由最后位置的分布采样第一枚响应y1。下一次decode将y1送回模型，读取prompt KV，追加y1的KV并采样y2。再下一步才追加y2的KV。图中所有长度都不表示执行时间。</desc>
+<text class="head" x="28" y="40">已知位置能并行，未知输出有依赖</text>
+<rect class="box" x="45" y="72" width="510" height="73" rx="10"/><text x="70" y="103">已知prompt：x₁　x₂　…　xₚ</text><text class="small" x="70" y="132">因果mask不因并行计算而取消</text>
+<path class="arrow" d="M300 145V177M292 168L300 177L308 168"/>
+<rect class="box" x="45" y="185" width="510" height="98" rx="10"/><text x="70" y="218">Prefill：处理全部prompt位置</text><text class="small" x="70" y="248">保存prompt KV；最后位置产生分布</text><text class="small" x="70" y="273">从分布采样第一枚响应 y₁</text>
+<path class="arrow" d="M300 283V315M292 306L300 315L308 306"/>
+<rect class="box" x="45" y="323" width="510" height="98" rx="10"/><text x="70" y="357">Decode：将 y₁ 送回模型</text><text class="small" x="70" y="387">读取prompt KV，追加 y₁ 的KV</text><text class="small" x="70" y="412">产生下一个分布，采样 y₂</text>
+<path class="arrow" d="M300 421V453M292 444L300 453L308 444"/>
+<rect class="box" x="45" y="461" width="510" height="98" rx="10"/><text x="70" y="495">下一步：将 y₂ 送回模型</text><text class="small" x="70" y="525">读取已有KV，追加 y₂ 的KV</text><text class="small" x="70" y="550">随后才采样 y₃，继续增长历史</text>
+<text class="small" x="28" y="601">采样到token ≠ 已计算该token的KV</text><text class="small" x="28" y="634">原创依赖示意；不是课堂截图或计时图</text>
+</svg>

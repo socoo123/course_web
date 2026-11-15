@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 650" role="img" aria-labelledby="title desc">
+  <title id="title">分页KV的共享尾块与写时复制</title>
+  <desc id="desc">原创例子，每块四个token。A和B最初共享完整物理块P4与只填两个位置的尾块P9。A写入之前把P9复制为P2，P9引用计数降至一。完整块仍共享，两个尾块分别写入，物理块总计三个。图内块号和位置均为自拟。</desc>
+  <style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}text{font-family:system-ui,sans-serif;fill:var(--fg,currentColor)}rect,path{stroke:var(--border,currentColor);fill:none;stroke-width:2}</style>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" style="fill:var(--fg,currentColor);stroke:none"/></marker></defs>
+  <text x="24" y="40" font-size="26" font-weight="700">写入前：6 个前缀位置共享</text>
+  <rect x="24" y="66" width="552" height="63" rx="9"/>
+  <text x="300" y="106" text-anchor="middle" font-size="24">A 与 B 的块表都指向：P4 → P9</text>
+  <rect x="24" y="157" width="252" height="100" rx="9"/>
+  <rect x="324" y="157" width="252" height="100" rx="9"/>
+  <text x="150" y="190" text-anchor="middle" font-size="23">P4：完整前缀块</text>
+  <text x="150" y="233" text-anchor="middle" font-size="24">1　2　3　4</text>
+  <text x="450" y="190" text-anchor="middle" font-size="23">P9：共享尾块</text>
+  <text x="450" y="233" text-anchor="middle" font-size="24">5　6　□　□</text>
+  <text x="300" y="294" text-anchor="middle" font-size="23">两块的引用计数都为 2</text>
+  <path d="M300 311V352" marker-end="url(#arrow)"/>
+  <text x="300" y="392" text-anchor="middle" font-size="25" font-weight="700">A 要写：只复制尾块，不复制全前缀</text>
+  <rect x="24" y="419" width="552" height="58" rx="9"/>
+  <text x="300" y="456" text-anchor="middle" font-size="24">P4 仍共享，引用计数仍为 2</text>
+  <rect x="24" y="505" width="252" height="110" rx="9"/>
+  <rect x="324" y="505" width="252" height="110" rx="9"/>
+  <text x="150" y="539" text-anchor="middle" font-size="23">A 独占新 P2</text>
+  <text x="150" y="582" text-anchor="middle" font-size="24">5　6　A　□</text>
+  <text x="450" y="539" text-anchor="middle" font-size="23">B 独占原 P9</text>
+  <text x="450" y="582" text-anchor="middle" font-size="24">5　6　B　□</text>
+</svg>

@@ -1,0 +1,57 @@
+P5 L12 author handoff — reviewed: authored; accepted: pending Main
+Owner: P5Evaluation. Requested runtime model openai-codex/gpt-6-astra:xhigh; runtime event audit belongs to Main. No nested agents, tests, build, lint, formatter, browser acceptance, official code execution, API/model/data/media/cloud access, git staging or publication performed.
+
+Authored files (course-root relative):
+- lectures/lec12/notes.zh.md — independent teaching organized around measurement target and protocol, probability vs generation/choice scoring, judge reliability, agents/reasoning/safety, contamination, uncertainty, ecological validity and reproducibility. Eight self-checks with answers; full-video overview. No current leaderboard ranks; no materials placeholder or data-batch/ext13 body.
+- lectures/lec12/draft.zh.md — full 0–4714s navigation with cue ranges, eight finite independent paraphrases, three substantive Q&A records plus unanswered question-invitation gap, original viewing exercises, terminology/math/version uncertainty ledger, every >2s internal gap. Not full translation or a substitute transcript. No video URL in its body.
+- lectures/lec12/assets/measurement-contract.svg — original vertical measurement-contract diagram; title/desc, self-contained CanvasText/color-scheme variables, no external resources or screenshot claim.
+
+Evidence files (sources-root relative):
+- p5-lec12/manifest-fragment.json: top-level sources array per Main's integration correction; seven records with URL/version/retrieval/read/file/SHA/license/treatment/material_files.
+- p5-lec12/video-metadata.json
+- p5-lec12/time-intervals.json: 30 contiguous navigation blocks, including leading/trailing uncovered and final caption AUDIO LOGO block; blocks use start_seconds/end_seconds/cue_indices_1_based_by_start. caption_gaps use kind=leading/internal/trailing.
+- p5-lec12/reading-log.json
+- p5-lec12/review.txt
+LOCAL ONLY, NOT PUBLICATION WHITELIST:
+- p5-lec12/captions.normalized.json
+- p5-lec12/transcript.en.txt
+- p5-lec12/trace-renderings.txt
+All P1 originals remain untouched. Existing raw caption/source/trace are local evidence, not new publication assets.
+
+Actual reading this run:
+- skill://technical-video-notes complete and normalize_captions.py; shared contract and NEXT-P5-PROMPT completely read.
+- P1 individual L12 metadata all370 lines. Title explicitly Spring2026 Lecture12 Evaluation; Stanford Online; JpAxdTWQJxM; duration4714s; official-schedule speaker Percy Liang/date2026-05-06; upload2026-05-19. No visual/voice speaker verification.
+- All1376 nonblank caption cues actually displayed and read in five exact raw windows1–300,301–600,601–900,901–1200,1201–1376. First5.720s, last4710.710s. Last cue1376 at4707.660–4710.710 is only [AUDIO LOGO]. Leading5.720s/trailing3.290s uncovered; 21 internal gaps>2s; P1 mechanical timed union4617.390s. This is not an audio semantic-coverage claim.
+- Separate fixed lecture_12.py all394 lines (1–300,301–394).
+- Fixed trace all313 steps' full renderings (text, links including embedded abstracts, 43 image locations) via windows1–97,98–165,166–240,241–313. Initial raw JSON1–70 also displayed. Whole JSON parsed, but not claiming manual review of every environment/raw serialization field. Zero image pixels or linked paper full texts read; zero live leaderboard checks.
+- P1 source/trace manifest and tree lookup, source acquisition records, complete version-review. Reading-map search confirms not introducing another L12 paper home. Footer cites only the actually read classroom/handout/trace sources; mentioned benchmark papers are classroom examples, not claimed full reads.
+
+Rights/version boundary:
+- Video metadata license=null and no separate caption open translation license; pinned lecture repository has no established blanket full-translation grant. Chinese pages use independent explanation/finite paraphrase; no copied third-party figures.
+- Pinned commit de53a9f979a6ee35f7d13a5e1aadee5ea1afc58e is dated2026-09-12, after class. Source is a conceptual/term crosscheck, never overwrites recording chronology. All dynamic ranking references are treated as lecture-time context, not present-day facts.
+- Source acquisition dates retained: Python2026-11-14T13:39:08.298148+00:00; trace2026-11-14T13:41:36.629700+00:00; video/caption timestamps inherited individually from P1. P5 read_at records evidence compilation after actual reads, not manufactured per-tool timestamps.
+
+Concrete corrections and preserved uncertainties:
+- Source83 and caption190–192 conflate minimum cross-entropy H(q) with minimum PPL exp(H(q)); explicit editorial correction. Source90 lacks reciprocal/negative exponent for conditional PPL; explicit correction, no claim that classroom screen was checked. Finite-test loss improvement is not equality to the true distribution or proof of AGI.
+- GPQA Diamond non-expert selection clause cue452–456 ambiguous; precise rule not asserted. MMLU-Pro numerical wording cue419–422 not promoted to scores.
+- Explicit INAУDIBLE markers (ASCII source spelling [INAUDIBLE]) at cues628 and1039 retained, not filled.
+- TorchBench in cue1303 versus TAU-bench in trace step289 embedded abstract is documented as unresolved source/transcription discrepancy. No specific empty-output score repeated and no linked-paper full-read claim.
+- ARC input resolution is speaker-hedged, not published as specification. Other caption lexical issues and exact positions in reading-log/draft; no silent raw corrections.
+- Main requested self-check heading not contain 参考 because of citation relocation; notes heading now 自测与答案.
+
+Main integration hints:
+- Register lec12 notes/draft written and author-reviewed, not accepted until Main checks. Video header uses exactly JpAxdTWQJxM and4714s (78:34). No L12 materials entry.
+- Source record IDs p5-lec12-video-metadata, p5-lec12-caption-original, p5-lec12-handout-source, p5-lec12-handout-trace and three local-derivative records.
+- Whitelist only the two pages, original SVG and lightweight five evidence files. Exclude caption/trace derivatives and P1 raw mirrors. SHA256 values refer to real local files; Main performs final hash verification.
+- Cross-links: lec12 draft/notes and ext12 notes only; no ownership-crossing edits. Source footer raw URLs are pinned.
+- Main should check rendered math/table/SVG at desktop and390px, actual header video click/new-tab behavior, local image resolution and routing, exact cue/block coverage, source hashes and final build. Worker did not perform any of these acceptance checks.
+
+Minimal original CPU/toy checks for Main (NOT RUN):
+1. Two-token probability example: (1/2)*(1/8)=1/16; perplexity=(1/16)^(-1/2)=4; positive exponent gives1/4, not PPL.
+2. Choice length reversal: S joint1/4,length1; L joint1/16,length4. Raw probability selectsS, geometric means1/4 vs1/2 selectL.
+3. Mixture: A=0.9*0.95+0.1*0.40=0.895; B=0.9*0.90+0.1*0.80=0.890. Equal category weights: A0.675,B0.850.
+4. Bernoulli n400,k300: SE=sqrt(.75*.25/400)≈.02165; Wald teaching half-width1.96*SE≈.04244. Explicit limitations and no guarantee of population representativeness.
+5. Paired 100-task table both65,A-only5,B-only3,neither27: A.70,B.68,delta.02; s_d²=(8-100*.02²)/99=7.96/99; SE=sqrt(s_d²/100)≈.02836. Not a decisive win.
+6. Elo toy:400-point advantage yields10/11; independent ideal best-of3 withp.5 yields.875. Both illustrative, not observed benchmark results; selection/independence and budget assumptions explicit.
+
+No tests or acceptance claims beyond actual source reading and authored artifacts. Final publication/status/reading-map updates remain Main-owned.

@@ -1,0 +1,58 @@
+P5 L11 AUTHOR HANDOFF — authored; Main acceptance pending
+
+Owned authored files:
+lectures/lec11/notes.zh.md
+lectures/lec11/draft.zh.md
+lectures/lec11/assets/wsd-branching.svg
+Local evidence: captions.normalized.json, transcript.en.txt, video-metadata.json,
+time-intervals.json, reading-log.json, manifest-fragment.json, this review.txt.
+No materials.zh.md created: L11 has no independent placeholder reading.
+
+Actual source reading this run:
+vTfEyOyzV9E Spring2026 individual metadata identity/duration/license and selected caption evidence.
+All1808 cues displayed/read in windows1–400,401–800,801–1200,1201–1600,1601–1808.
+First5.080s; last4618.220s; timed union4583.920s. Individual duration4623s used, not playlist4624s.
+27 navigation blocks cover0–4623 continuously. Seven internal gaps >2s plus leading5.080/trailing4.780.
+Fixed lecture_11 extracted text1–455 fully read. Original58-page PDF visually read
+8,14,21,33,36,42,46,47,48,49,50,54,55,56. P1 handout manifest393–414 consulted.
+Reading-map paper06 exact home/core/rights read but NOT counted as an independent Chinchilla full read.
+Source checksums and complete timing/suspect/reading evidence are in sibling JSON files.
+
+Coverage:
+MiniCPM/DeepSeek as classroom examples of stabilization versus empirical prediction;
+cosine horizon confounding; WSD shared prefix/independent decay cost and statistical dependency;
+near-optimal hyperparameter sets, grid quantization, winner selection;
+N/D/C collinearity, learning-rate/batch/weight-decay interactions; failed runs;
+fair optimizer baselines, compute and D/N axes, FLOPs versus wall-time;
+Muon update-matrix spectral intuition with finite-iteration/rank/rectangular caveats;
+muP coordinate versus norm invariants, average versus spectral initialization views;
+restricted single-example linear SGD derivation, assumption boundaries and Adam non-transfer;
+RMSNorm/Lion/decay stress tests, limits on depth/MoE/posttraining transfer.
+Draft provides seven limited chronological paraphrase sections, full navigation and explicit gaps.
+
+Corrections/limits:
+PDF46–50 visually checked roots/operator norm. Inequality not replaced by universal equality.
+Single-example SGD rank1 alignment not claimed for batches/Adam; loss O(1) alone insufficient
+for nonvanishing Theta conclusions. No full muP or Muon implementation supplied.
+WSD terminal0 versus10%-peak described as family variation, not silently unified.
+Quadratic-to-linear sweep cost claim bounded by endpoint-grid choice; geometric grid already
+has constant-factor total cost relative to largest horizon.
+Named model reports and optimizer/muP papers are attributed classroom cases, not claimed separately full-read.
+No audio/media/screenshots/model/data/API/GPU/cloud or course experiment execution.
+Chinchilla body cross-links lec09/materials; no A3 final solution/configuration/fitting implementation.
+
+Suggested Main integration:
+Enable lec11 notes/draft only; materials absent by design. Inspect all navigation/header identity.
+Publish authored MD/SVG and light evidence only, not complete captions/transcript/PDF.
+Main owns model attestation, browser acceptance/build and independent CPU verification.
+Worker ran no builds/lints/tests/formatters/smoke/browser/CPU checks.
+
+Independent toy checks for Main (NOT run here):
+1. At t=H/2, horizonH cosine eta/peak=.5; horizon2H gives(1+cos(pi/4))/2≈.853553.
+2. Three horizons100,200,400,10% decay: separate700; shared stable360+10+20+40=430;
+saving270,270/700≈.385714. Branches statistical dependence retained.
+3. For small explicit g,h, verify DeltaW=-eta*g*h^T, DeltaW*h=-eta*g*||h||²;
+rank1 Frobenius/operator norms equal; arbitrary W,h generally only satisfy norm inequality.
+4. Given m,n, symbolic sigma*(sqrt(m)+sqrt(n))=sqrt(n/m); do not test random output equality.
+5. Pure decay product versus exp(-lambda*sum eta) only approximate for small steps.
+6. Check original SVG narrow-width text, full-page math and canonical links.

@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "slice": "p5-lec10",
+  "read_at": "2026-11-15T06:40:07.778684+00:00",
+  "method": "Listed ranges actually displayed and read this run. Timestamps are evidence compilation time, not fabricated per-tool clocks. Normalization/hash/interval computation is source evidence processing, not official execution or completed verification.",
+  "caption_reading": {
+    "original_file": "p1-videos/captions/EfM546A79aM.en-US.manual.json3",
+    "original_sha256": "f8013253699ca406ef22f560884acda74391b3e5cde3e102f11b37fa30075727",
+    "normalized_file": "p5-lec10/captions.normalized.json",
+    "normalized_sha256": "cb7ee8dd6c7a705d543a24d81bb55fc3a7059fc92baf0e3d95af5ab4b98c670b",
+    "source": "p5-lec10/transcript.en.txt",
+    "source_sha256": "9f4fa38be66af65ce399483e57d7138b4e7d84a2d862f88b5ddf74113eb533b0",
+    "total_cues": 1509,
+    "total_lines": 1509,
+    "one_line_per_cue": true,
+    "windows": [
+      {
+        "start_line": 1,
+        "end_line": 300,
+        "cue_range_1_based": [
+          1,
+          300
+        ],
+        "first_start_seconds": 5.32,
+        "last_end_seconds": 921.07,
+        "read": true
+      },
+      {
+        "start_line": 301,
+        "end_line": 600,
+        "cue_range_1_based": [
+          301,
+          600
+        ],
+        "first_start_seconds": 921.07,
+        "last_end_seconds": 2013.49,
+        "read": true
+      },
+      {
+        "start_line": 601,
+        "end_line": 900,
+        "cue_range_1_based": [
+          601,
+          900
+        ],
+        "first_start_seconds": 2013.49,
+        "last_end_seconds": 3127.28,
+        "read": true
+      },
+      {
+        "start_line": 901,
+        "end_line": 1200,
+        "cue_range_1_based": [
+          901,
+          1200
+        ],
+        "first_start_seconds": 3127.28,
+        "last_end_seconds": 4146.39,
+        "read": true
+      },
+      {
+        "start_line": 1201,
+        "end_line": 1509,
+        "cue_range_1_based": [
+          1201,
+          1509
+        ],
+        "first_start_seconds": 4146.39,
+        "last_end_seconds": 5124.28,
+        "read": true
+      }
+    ],
+    "normalization": "Each original nonempty event retains event index, exact segment array and text including linebreaks, original order and millisecond timing. TXT replaces linebreak with space only; no corrections or deduplication.",
+    "not_done": [
+      "No audio/video verification",
+      "No sentence-by-sentence Chinese translation",
+      "No source caption publication"
+    ]
+  },
+  "handout_reading": {
+    "file": "p1-lectures/raw/lecture_10.py",
+    "sha256": "e79acd9115d75f0b8bf4902d97dc41c1f6b5016778321f19c2dc241a90cfe9b9",
+    "complete_text_lines": 611,
+    "requested_windows_1_based": [
+      [
+        1,
+        260
+      ],
+      [
+        264,
+        611
+      ]
+    ],
+    "displayed_windows_1_based": [
+      [
+        1,
+        263
+      ],
+      [
+        263,
+        611
+      ]
+    ],
+    "complete": true,
+    "execution": false
+  },
+  "trace_reading": {
+    "file": "p1-lectures/raw/var/traces/lecture_10.json",
+    "sha256": "b9229447c3042f34bd6e307c2f2c34ba294d10708f208e8d1237be080d683cb6",
+    "saved_step_count": 437,
+    "selected_saved_env_count": 20,
+    "selected_step_indices_1_based": [
+      70,
+      72,
+      77,
+      124,
+      126,
+      148,
+      152,
+      155,
+      197,
+      198,
+      199,
+      200,
+      203,
+      204,
+      206,
+      241,
+      243,
+      246,
+      294,
+      295
+    ],
+    "derivative_file": "p5-lec10/trace-selection.json",
+    "method": "Static JSON read only; values read as saved upstream evidence, not reproduced results."
+  },
+  "metadata_reading": {
+    "file": "p1-videos/metadata/lec10-EfM546A79aM.json",
+    "windows_1_based": [
+      [
+        1,
+        34
+      ],
+      [
+        195,
+        226
+      ],
+      [
+        230,
+        419
+      ]
+    ],
+    "complete": false,
+    "not_read": "Automatic-language list35–194 not enumerated; selected-track and identity fields read."
+  },
+  "paper_supporting_reading": {
+    "file": "p1-papers-01-08/paper07-2309.06180v1-raw-order.txt",
+    "ranges_1_based": [
+      [
+        370,
+        700
+      ],
+      [
+        701,
+        1005
+      ],
+      [
+        1220,
+        1288
+      ],
+      [
+        1508,
+        1578
+      ],
+      [
+        1579,
+        1605
+      ]
+    ],
+    "visual_figures_read": false,
+    "full_paper_read": false
+  },
+  "prerequisites_read": [
+    {
+      "file": "lectures/ext04/notes.zh.md",
+      "scope": "Entire333lines in1–300 and301–333; reused logical-vs-physical/traffic andKV foundations."
+    },
+    {
+      "file": "lectures/ext06/notes.zh.md",
+      "scope": "Entire329lines in1–300 and301–329; reused async lifetime and measurement boundaries."
+    },
+    {
+      "file": "lectures/lec06/assets/tile-lifetime.svg",
+      "scope": "Entire17lines; currentColor/CanvasText theme pattern. No image or source figure reused."
+    }
+  ],
+  "single_home_boundary": "PagedAttention full close reading only lec10/materials; ext10 original service notes only. L06/ext05 foundations linked, not duplicated. Quantization details ext11; L04 architecture foundations linked.",
+  "technical_corrections": [
+    "Source line334 ideal latency direction",
+    "Source line267 parameter count is not bytes",
+    "Source line397 fixedB64 GQA direction conflicts with saved values and spoken explanation",
+    "Source line451 latency word direction",
+    "Source line529 unnormalized residual versus normalized probability",
+    "MLP IO is idealized main-term model with omitted intermediate reads",
+    "FlashAttention IO not full tile traffic; MHA/BF16 intensity not universal",
+    "AWQ classroom simplification not adopted as exact mechanism",
+    "COW unique information versus physical occupied slots distinguished:8 unique,10 filled,2empty for12slots"
+  ],
+  "status": {
+    "authored": true,
+    "author_review": "source/rights/technical handoff, not page acceptance",
+    "accepted": "pending_main",
+    "tests_run": false,
+    "browser_checks_run": false,
+    "official_experiments_run": false
+  }
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 650" role="img" aria-labelledby="title desc">
+<style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;--accent:CanvasText;color:var(--fg)}text{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;fill:var(--fg);font-size:23px}.head{font-size:27px;font-weight:700}.small{font-size:20px}.box{fill:none;stroke:var(--border);stroke-width:2}.arrow{fill:none;stroke:var(--accent);stroke-width:2}.dash{stroke-dasharray:6 5}</style>
+<title id="title">共享前缀与尾块写时复制</title><desc id="desc">块长为4。起初两条分支共享一个包含token1到4的完整块和一个包含token5、6的尾块。写入前复制共享尾块，各分支随后独占不同尾块。最终共同完整块引用数2，各尾块引用数1；共3块而不是不共享时的4块。</desc>
+<text class="head" x="25" y="40">共享只读历史，写入前取得独占</text>
+<text x="30" y="86">起初：A、B都指向相同两块</text>
+<rect class="box" x="45" y="109" width="230" height="83" rx="8"/><text x="66" y="143">1　2　3　4</text><text class="small" x="66" y="175">完整块：引用数2</text>
+<rect class="box" x="315" y="109" width="240" height="83" rx="8"/><text x="336" y="143">5　6　空　空</text><text class="small" x="336" y="175">尾块：引用数2</text>
+<path class="arrow" d="M435 194V225M427 216L435 225L443 216"/><text class="small" x="40" y="232">A写入前：复制尾块，更新映射</text>
+<text x="30" y="287">之后：只读完整块继续共享</text>
+<rect class="box" x="45" y="310" width="230" height="83" rx="8"/><text x="66" y="344">1　2　3　4</text><text class="small" x="66" y="376">引用数仍为2</text>
+<rect class="box" x="315" y="310" width="240" height="83" rx="8"/><text x="336" y="344">5　6　a　空</text><text class="small" x="336" y="376">A独占：引用数1</text>
+<rect class="box" x="315" y="421" width="240" height="83" rx="8"/><text x="336" y="455">5　6　b　空</text><text class="small" x="336" y="487">B独占：引用数1</text>
+<path class="arrow" d="M275 351H308M299 343L308 351L299 359M161 393V463H307M298 455L307 463L298 471"/>
+<text class="small" x="28" y="547">3块 × 4槽 = 12槽；不共享需要16槽</text><text class="small" x="28" y="580">唯一信息8；物理已填10；真正空槽2</text><text class="small" x="28" y="613">回收还须等待在途GPU访问完成</text>
+</svg>

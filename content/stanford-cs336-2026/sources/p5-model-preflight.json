@@ -1,0 +1,23 @@
+{
+  "phase": "P5",
+  "checkedAt": "2026-11-15",
+  "requestedModel": "openai-codex/gpt-6-astra:xhigh",
+  "observedConfiguration": {"taskPerCallModel":"on","taskEnableEffort":false,"taskAgentModelOverrides":{},"taskPrewalk":false},
+  "configurationChangedThisRun": false,
+  "resolvedSubagentModel": "openai-codex/gpt-6-astra",
+  "resolvedSubagentEffort": "xhigh",
+  "resolvedModelIsFallback": false,
+  "subagentsStarted": 6,
+  "subagentsCompleted": 6,
+  "mainAcceptance": "p5-acceptance.json",
+  "runtimeEvidence": [
+    {"agent":"P5ScalingStatistics","modelEvent":"69c01d3a","effortEvent":"adc9175d","firstAssistantEvent":"15652cdf","timestamp":"2026-11-15T06:37:52.330Z"},
+    {"agent":"P5InferenceServing","modelEvent":"8819f696","effortEvent":"a3098df2","firstAssistantEvent":"a8abf476","timestamp":"2026-11-15T06:37:52.657Z"},
+    {"agent":"P5Evaluation","modelEvent":"8a62f06d","effortEvent":"638cac00","firstAssistantEvent":"cfbc6bc4","timestamp":"2026-11-15T06:37:52.806Z"},
+    {"agent":"P5AdaptersQuantization","modelEvent":"602b78e6","effortEvent":"a4a0f569","firstAssistantEvent":"95f77efc","timestamp":"2026-11-15T06:37:52.781Z"},
+    {"agent":"P5ScalingServingPapers","modelEvent":"c5661c38","effortEvent":"89df8de2","firstAssistantEvent":"9d3e1d11","timestamp":"2026-11-15T06:37:53.020Z"},
+    {"agent":"P5AssignmentThree","modelEvent":"5237dcc3","effortEvent":"ecacde5f","firstAssistantEvent":"4bea6e67","timestamp":"2026-11-15T06:37:52.670Z"}
+  ],
+  "verification": "Main read cfg://task before dispatch and inspected model_change, thinking_level_change and first assistant provider/model for all six current workers. Every model is gpt-6-astra, xhigh, fallback=false. No configuration writes or substitutions. Startup evidence proves dispatch identity, not eventual task success.",
+  "nextDispatchGate": "Any additional requested-model agent requires the same exact identity and runtime verification; unavailable means stop, not substitute."
+}

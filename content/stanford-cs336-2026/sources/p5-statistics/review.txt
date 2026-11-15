@@ -1,0 +1,52 @@
+P5 ext12 AUTHOR HANDOFF — authored; Main acceptance pending
+
+Owned authored files:
+lectures/ext12/notes.zh.md
+lectures/ext12/assets/design-and-holdout.svg
+Evidence: manifest-fragment.json, review.txt; local raw mirrors
+nist-nonlinear-regression.html, nist-residual-diagnostics.html (NOT for publication).
+
+Actual reading:
+This same worker fully read L09/L11 caption tracks and extracted handouts plus listed PDF pages;
+those exact original/read records are cross-referenced, not credited twice as new source reads.
+Exact reading-map paper06 scope/home/rights consulted; Chinchilla paper body remains lec09/materials.
+NIST/SEMATECH e-Handbook section4.1.4.2 nonlinear least squares: full reader text body.
+NIST section5.2.4 residuals: full reader text body covering all subsections.
+Linked plot images not independently visually read; no NIST plots reused.
+Known NIST URLs initially returned HTTP403 through urllib; native read succeeded without auth/bypass.
+Raw reader HTML archived via tool.write, residual HTML documented300-line display omission recovered
+explicitly301–687 and footer replaced through edit. SHA hashes refer to complete UTF-8 reader HTML,
+not claimed byte-identical original HTTP responses. No raw source mirrors should be committed.
+Public full-translation license not established in this retrieval; only autonomous explanation written.
+
+Substantive scope:
+Estimands and protocol cards; model/data/time/serving constraints; independent training families;
+identifiability under fixed D/N and loss-floor/exponent compensation; experimental spans/replicates/
+bridging blocks; original two-point exact-fit counterexample; raw/log objective weighting;
+nonlinear optimizer pitfalls; residual structure against scale/ratio/time/decay;
+interpolation, scale extrapolation and recipe transfer holdouts; four uncertainty layers;
+mean versus future-run prediction intervals; clustered resampling; exponent sensitivity;
+near-optimal regions, decision consequences, evidence-reporting requirements, self-check answers.
+This deepens statistical design instead of repeating lecture chronology or paper text.
+
+Original contributions:
+All numeric toy data, collinearity/floor/Jacobian/uncertainty/near-optimal derivations, SVG and protocol
+organization are original editorial teaching. No official A3 synthetic data read or fit, no final formula
+set/configuration/program implementing the assignment, no API or resource consumption.
+
+Suggested Main integration:
+Enable ext12 notes only, canonical paper06 cross-link remains lec09/materials.
+Publish original MD/SVG and lightweight JSON/review only; exclude source mirrors.
+Main acceptance/build/browser/math/source checks pending. No worker checks were run.
+
+Independent toy checks for Main (NOT run here):
+1. ModelA2+2*x^(-.5), ModelB4*x^(-gamma), gamma=log(4/3)/log4:
+both predict4,3 atx1,4; at64 predict2.25,1.6875; at16 predict2.5,2.25.
+2. Verify derivatives1,x^(-alpha),-a*x^(-alpha)*log(x); fixedD=rN implies
+logD=logr+logN, so predictors cannot independently identify effects along this path alone.
+3. Equal absolute .1 residual at predictions2,4 gives raw squares.01/.01;
+relative-error squares .0025/.000625 (approximately fourfold log-scale influence).
+4. sqrt(.01²+.02²)=.02236068; times1.96≈.0438269; mean-onlyhalfwidth.0196.
+5. 1000^(±.03)≈1.230269/0.812831; no empirical model confidence claimed.
+6. Quadratic near-optimal conditiona*(z-z*)²≤delta givesradius sqrt(delta/a).
+7. Browser: SVG/table/math fit390px; all route links and footnote source links resolve.

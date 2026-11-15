@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+<title id="title">缩放设计中的训练家族与规模留出</title>
+<desc id="desc">横轴为对数模型规模，纵轴为对数数据规模。仅沿固定数据参数比例的对角线采样难以区分两种变量。设计应在该路径两侧提供观测，并整体留出相关训练家族。图下方分开插值、规模外推和配方迁移三种审计，不含真实数据。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:22px system-ui,-apple-system,"PingFang SC",sans-serif}.title{font-size:26px;font-weight:700}.small{font-size:19px}.axis,.box,.line{fill:none;stroke:var(--border);stroke-width:2}.dash{stroke-dasharray:8 6}.dot{fill:var(--fg)}.open{fill:none;stroke:var(--fg);stroke-width:3}</style>
+<text class="title" x="25" y="40">让不同机制产生不同可观测预测</text>
+<text x="28" y="85">log D</text>
+<path class="axis" d="M75 100V355H590"/>
+<path class="line dash" d="M100 329L470 120"/>
+<circle class="dot" cx="150" cy="301" r="7"/><circle class="dot" cx="250" cy="244" r="7"/><circle class="dot" cx="350" cy="188" r="7"/>
+<circle class="open" cx="150" cy="205" r="7"/><circle class="open" cx="250" cy="311" r="7"/><circle class="open" cx="350" cy="278" r="7"/>
+<path class="line" d="M150 205V301 M250 244V311 M350 188V278"/>
+<rect class="box dash" x="462" y="111" width="105" height="220" rx="8"/>
+<text class="small" x="478" y="173">更大</text><text class="small" x="478" y="203">规模</text><text class="small" x="478" y="233">留出</text>
+<text class="small" x="503" y="385">log N →</text>
+<text class="small" x="33" y="421">实心点：只沿固定比例，变量彼此混淆</text>
+<text class="small" x="33" y="451">空心点：偏离该路径，增加辨别信息</text>
+<text class="small" x="33" y="481">连线点若共享轨迹：必须按家族分组</text>
+<rect class="box" x="30" y="513" width="580" height="67" rx="9"/>
+<text x="48" y="543">随机独立留点：附近插值</text><text class="small" x="48" y="569">不能自动证明大规模外推</text>
+<rect class="box" x="30" y="597" width="580" height="67" rx="9"/>
+<text x="48" y="627">留出更大规模：外推演练</text><text class="small" x="48" y="653">审计点一旦用于调模型，就不再独立</text>
+<rect class="box" x="30" y="681" width="580" height="67" rx="9"/>
+<text x="48" y="711">留出数据/配方块：迁移检验</text><text class="small" x="48" y="737">失败不等于所有幂律被否定</text>
+<text class="small" x="32" y="783">原创设计示意，不是官方A3运行方案或实验数据。</text>
+</svg>

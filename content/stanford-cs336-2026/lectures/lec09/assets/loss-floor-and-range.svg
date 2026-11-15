@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 700" role="img" aria-labelledby="title desc">
+<title id="title">损失下限、观测范围与条件性外推</title>
+<desc id="desc">上图总损失随资源增大接近非零下限。下图扣除正确下限后的超额损失在双对数坐标上才可能近似直线。实线是观测区间内的概念趋势，虚线是没有测量保证的外推。没有真实数据或数值坐标。</desc>
+<style>:root{color-scheme:light dark;--fg:CanvasText;--muted:CanvasText;--border:CanvasText;color:var(--fg)}text{fill:var(--fg);font:22px system-ui,-apple-system,"PingFang SC",sans-serif}.title{font-size:27px;font-weight:700}.small{font-size:19px}.axis,.line{fill:none;stroke:var(--fg);stroke-width:2}.trend{fill:none;stroke:var(--fg);stroke-width:4}.dash{stroke-dasharray:8 7}.soft{opacity:.55}</style>
+<text class="title" x="28" y="40">先定义误差，再解释斜率</text>
+<text x="35" y="82">总损失 L</text>
+<path class="axis" d="M75 100V290H592"/>
+<path class="trend" d="M90 116C145 188 210 230 310 247"/>
+<path class="trend dash" d="M310 247C390 258 488 263 575 265"/>
+<path class="line dash soft" d="M75 270H588"/>
+<text class="small" x="346" y="235">非零下限 L∞</text>
+<text class="small" x="425" y="319">资源增加 →</text>
+<path class="line dash soft" d="M310 102V290"/>
+<text class="small" x="108" y="342">已观察范围</text>
+<text class="small" x="359" y="342">条件性外推</text>
+<text x="35" y="393">log（L − L∞）</text>
+<path class="axis" d="M75 414V588H592"/>
+<path class="trend" d="M95 430L310 500"/>
+<path class="trend dash" d="M310 500L575 570"/>
+<path class="line dash soft" d="M310 414V588"/>
+<text class="small" x="400" y="619">log（资源）→</text>
+<text x="35" y="659">下限估错，直线与外推都会改变。</text>
+<text class="small" x="35" y="686">概念示意；不是测量结果，也不是无限外推保证。</text>
+</svg>
