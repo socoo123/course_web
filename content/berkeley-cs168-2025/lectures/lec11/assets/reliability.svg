@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 410" role="img" aria-labelledby="title desc">
+<title id="title">ACK 丢失：重传与去重共同提供可靠交付</title><desc id="desc">发送方发送数据 D，接收方交付一次但 ACK 丢失；发送方超时重传，接收方识别重复，只再次确认，不重复交付。</desc>
+<style>:root{color:#173047;--ink:#173047;--accent:#176c9a;--warn:#a33d29;--panel:#e7f3f7}text{fill:var(--ink,#173047);font:17px system-ui,"PingFang SC","Microsoft YaHei",sans-serif}.line{stroke:var(--ink,#173047);stroke-width:2;fill:none}.data{stroke:var(--accent,#176c9a);stroke-width:2.5;fill:none}.lost{stroke:var(--warn,#a33d29);stroke-width:2;stroke-dasharray:7 5;fill:none}.box{fill:var(--panel,#e7f3f7);stroke:var(--accent,#176c9a)}@media(prefers-color-scheme:dark){:root{color:#e3eef7;--ink:#e3eef7;--accent:#78c9f5;--warn:#ffae93;--panel:#21394a}}</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="var(--accent,#176c9a)"/></marker></defs>
+<text x="110" y="35">发送方</text><text x="470" y="35">接收方</text><path class="line" d="M140 55V365M500 55V365"/>
+<path class="data" marker-end="url(#arrow)" d="M140 85L500 135"/><text x="260" y="90">D：序号区间不变</text>
+<rect class="box" x="515" y="112" width="225" height="47" rx="8"/><text x="527" y="142">首次收到 → 交付一次</text>
+<path class="lost" d="M500 170L210 210"/><text x="305" y="188">ACK 丢失 ×</text><text x="20" y="238">超时</text>
+<path class="data" marker-end="url(#arrow)" d="M140 245L500 290"/><text x="245" y="250">重发同一范围的 D</text>
+<rect class="box" x="515" y="269" width="225" height="47" rx="8"/><text x="527" y="299">重复副本 → 不再交付</text>
+<path class="data" marker-end="url(#arrow)" d="M500 325L140 355"/><text x="310" y="340">再次 ACK</text><text x="110" y="398">接收成功与发送方获知成功，不是同一个事件。</text>
+</svg>

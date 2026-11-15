@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 510" role="img" aria-labelledby="title desc">
+<title id="title">TCP 双方向字节边界账本</title>
+<desc id="desc">上半部显示发送方向：100之前已确认，100至139已发送未确认，140至179可以首次发送，180起超出窗口。下半部显示接收方向：500是连续接收边界，500至539存在缺口，540至579已乱序缓存，因此累计确认仍为500。</desc>
+<style>
+svg{color:#172033;--ink:#172033;--line:#44536c;--blue:#075aa6;--green:#267045;--amber:#875000;font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
+@media(prefers-color-scheme:dark){svg{color:#e5edf8;--ink:#e5edf8;--line:#b6c7e0;--blue:#86c8ff;--green:#95dfb0;--amber:#ffd18a}}
+text{fill:var(--ink,#172033);font-size:18px}.head{font-size:23px;font-weight:700}.small{font-size:16px}.line{stroke:var(--line,#44536c);stroke-width:2;fill:none}.blue{stroke:var(--blue,#075aa6);fill:none;stroke-width:2}.green{stroke:var(--green,#267045);fill:none;stroke-width:2}.amber{stroke:var(--amber,#875000);fill:none;stroke-width:2}.dash{stroke-dasharray:7 5}
+</style>
+<text x="30" y="38" class="head">发送方向：ACK 边界、首次发送边界、窗口边界</text>
+<rect x="30" y="75" width="165" height="85" rx="5" class="green"/>
+<rect x="195" y="75" width="195" height="85" class="amber"/>
+<rect x="390" y="75" width="195" height="85" class="blue"/>
+<rect x="585" y="75" width="200" height="85" rx="5" class="line dash"/>
+<text x="56" y="112">已确认前缀</text><text x="74" y="140" class="small">到 99 为止</text>
+<text x="227" y="112">在途、未确认</text><text x="249" y="140" class="small">[100,140)</text>
+<text x="421" y="112">可以首次发送</text><text x="446" y="140" class="small">[140,180)</text>
+<text x="621" y="112">当前窗口之外</text><text x="642" y="140" class="small">从 180 起</text>
+<path d="M195 165v20 M390 165v20 M585 165v20" class="line"/>
+<text x="148" y="210">una=100</text><text x="343" y="210">nxt=140</text><text x="538" y="210">右界=180</text>
+<path d="M195 233v10h390v-10" class="blue"/>
+<text x="304" y="270">通告窗口 wnd=80</text>
+<text x="30" y="318" class="head">接收方向：有缓存不等于连续收齐</text>
+<rect x="30" y="349" width="165" height="80" rx="5" class="green"/>
+<rect x="195" y="349" width="195" height="80" class="amber dash"/>
+<rect x="390" y="349" width="195" height="80" class="blue"/>
+<text x="55" y="380">连续收到 499</text><text x="51" y="410" class="small">可交付给应用</text>
+<text x="252" y="380">仍有缺口</text><text x="250" y="410" class="small">[500,540)</text>
+<text x="421" y="380">已乱序缓存</text><text x="445" y="410" class="small">[540,580)</text>
+<path d="M195 434v20" class="line"/>
+<text x="85" y="484">rcv.nxt = ACK = 500</text>
+<text x="608" y="375" class="small">必须补齐缺口，</text><text x="608" y="404" class="small">ACK 才能推进。</text>
+</svg>

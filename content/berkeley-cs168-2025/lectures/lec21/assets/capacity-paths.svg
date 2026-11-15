@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 570" role="img" aria-labelledby="title desc">
+<title id="title">容量、路径分配、拥塞反馈是三层不同问题</title><desc id="desc">Clos提供多条路径，两条100 Gbps路径不自动让一条流达到200 Gbps。容量预算之后仍需要路径分配和队列反馈。k等于6时54台主机，二分带宽27R。</desc>
+<style>:root{--ink:#17354c;--line:#276a91;--panel:#e5f1f8;--warn:#8c451c}text{fill:var(--ink,#17354c);font:19px system-ui,"PingFang SC","Microsoft YaHei",sans-serif}.box{fill:var(--panel,#e5f1f8);stroke:var(--line,#276a91);stroke-width:2}.line{stroke:var(--line,#276a91);stroke-width:3;fill:none}.warn{fill:var(--warn,#8c451c)}@media(prefers-color-scheme:dark){:root{--ink:#e3eff8;--line:#7bc9f3;--panel:#203b50;--warn:#ffbe94}}</style>
+<rect class="box" x="30" y="25" width="760" height="100" rx="12"/><text x="55" y="60">① 拓扑预算：每台主机的总速率不超过 R</text><text x="55" y="98">k = 6：54 台主机；27 对跨二分配对；切口容量 27R</text>
+<rect class="box" x="30" y="155" width="760" height="220" rx="12"/><text x="55" y="190">② 路径分配：两条路 ≠ 每条流都能同时使用两条路</text>
+<path class="line" d="M150 275L350 225L650 275M150 275L350 330L650 275"/><text x="80" y="280">源</text><text x="680" y="280">目的</text><text x="380" y="225">路径 A：100 Gbps</text><text x="380" y="335">路径 B：100 Gbps</text><text x="55" y="358" class="warn">普通流级 ECMP：一条流固定到其中一条路径。</text>
+<rect class="box" x="30" y="405" width="760" height="130" rx="12"/><text x="55" y="443">③ 队列控制：路径选对之后，突发仍可能形成排队</text><text x="55" y="482">DCTCP：队列超过阈值 → CE 标记 → 接收反馈 → 降窗</text><text x="55" y="514">低队列目标与高利用率目标，需要反馈共同维持。</text>
+</svg>

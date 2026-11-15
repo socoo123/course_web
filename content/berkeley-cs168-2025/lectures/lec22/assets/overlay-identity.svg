@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 550" role="img" aria-labelledby="title desc">
+<title id="title">租户身份与物理位置分离</title><desc id="desc">同一个虚拟目的10.0.0.8在租户7和租户9中表示不同虚拟机。映射以租户和虚拟地址为键，外层只携带物理位置，目的主机解封装后仍按租户区分。</desc>
+<style>:root{--ink:#18374b;--edge:#286d8e;--panel:#e5f2f7;--other:#f6eddf}text{fill:var(--ink,#18374b);font:18px system-ui,"PingFang SC","Microsoft YaHei",sans-serif}.box{fill:var(--panel,#e5f2f7);stroke:var(--edge,#286d8e);stroke-width:2}.other{fill:var(--other,#f6eddf);stroke:var(--edge,#286d8e);stroke-width:2}.line{fill:none;stroke:var(--edge,#286d8e);stroke-width:3}@media(prefers-color-scheme:dark){:root{--ink:#e8f2f8;--edge:#8ad0ee;--panel:#203c50;--other:#493b2d}}</style>
+<rect class="box" x="30" y="25" width="355" height="90" rx="10"/><text x="50" y="60">租户 7，虚拟目的 10.0.0.8</text><text x="50" y="92">映射到宿主 192.0.2.20</text>
+<rect class="other" x="435" y="25" width="355" height="90" rx="10"/><text x="455" y="60">租户 9，虚拟目的 10.0.0.8</text><text x="455" y="92">映射到宿主 192.0.2.20</text>
+<path class="line" d="M207 115V145H410V170M612 115V145H410"/>
+<rect class="box" x="145" y="175" width="530" height="55"/><text x="170" y="210">外层 IP：去 192.0.2.20（物理位置）</text>
+<rect class="other" x="145" y="230" width="530" height="55"/><text x="170" y="265">虚拟网络 ID：7 或 9（租户上下文）</text>
+<rect class="box" x="145" y="285" width="530" height="55"/><text x="170" y="320">内层 IP：去 10.0.0.8（虚拟身份）</text>
+<rect class="box" x="145" y="340" width="530" height="55"/><text x="170" y="375">传输层头与应用数据</text>
+<text x="55" y="445">Underlay只按外层转发；相同宿主不等于相同VM。</text><text x="55" y="480">目的边缘先解外层，再以「租户 + 内层地址」交付。</text><text x="55" y="515">迁移改变物理映射；租户内地址可以保持不变。</text>
+</svg>

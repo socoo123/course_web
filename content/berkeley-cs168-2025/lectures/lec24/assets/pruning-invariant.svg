@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 470" role="img" aria-labelledby="title desc">
+<title id="title">组播剪枝必须同时检查本地成员和所有孩子</title>
+<desc id="desc">源S经父P到路由器R。R有成员分支A、无成员分支B以及一个本地成员。B可以被剪枝，但A或本地成员仍存在时，R不能请求父P剪掉自己。</desc>
+<style>:root{color:var(--diagram-ink,#182838);--good:#086c5c;--cut:#a13247}@media(prefers-color-scheme:dark){:root{color:var(--diagram-ink-dark,#e7eef8);--good:#6bdfc5;--cut:#ffa5b5}}text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:currentColor} .line{stroke:currentColor;stroke-width:2;fill:none}.good{stroke:var(--good,#086c5c)}.cut{stroke:var(--cut,#a13247);stroke-dasharray:6 5}</style>
+<g text-anchor="middle" font-size="17"><text x="240" y="28" font-size="20">剪枝是一份“整个下游无人需要”的证明</text>
+<g class="line"><path d="M240 75V115M240 155V204M215 245L112 300M265 245L368 300M240 256V356"/><circle cx="240" cy="55" r="21"/><circle cx="240" cy="135" r="21"/><circle cx="240" cy="230" r="26"/><rect x="64" y="300" width="96" height="48" rx="10" class="good"/><rect x="320" y="300" width="96" height="48" rx="10" class="cut"/><rect x="183" y="356" width="114" height="42" rx="10" class="good"/></g>
+<text x="240" y="61">S</text><text x="240" y="141">P</text><text x="240" y="236">R</text><text x="112" y="330">A 有成员</text><text x="368" y="330">B 无成员</text><text x="240" y="383">本地成员</text><text x="330" y="184">R 不能向 P 剪枝</text><text x="240" y="433">A 或本地成员存在 → 保留 R</text><text x="240" y="458">B 可剪掉，不代表整个 R 子树可剪</text></g></svg>

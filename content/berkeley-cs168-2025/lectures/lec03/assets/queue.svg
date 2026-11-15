@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 390" role="img" aria-labelledby="title desc" style="color:var(--diagram-text,#64748b)">
+<style>@media (prefers-color-scheme: dark) { :root { --diagram-text: #e2e8f0; --diagram-fill: rgba(226,232,240,0.10); } }</style>
+<title id="title">队列能平滑突发但不能制造带宽</title><desc id="desc">左侧每时隙到达2、2、0、0，服务能力每时隙1，时隙结束积压依次1、2、1、0。右侧持续每时隙到达2，服务1，积压依次1、2、3、4。有限队列迟早溢出。</desc>
+<g font-family="system-ui, sans-serif" fill="currentColor" text-anchor="middle" font-size="18"><text x="460" y="35" font-size="23">同样的出口速率，不同的输入持续时间</text><text x="235" y="80">瞬时突发：到达 2、2、0、0</text><text x="690" y="80">持续过载：到达 2、2、2、2</text>
+<g stroke="currentColor" stroke-width="2" fill="var(--diagram-fill,rgba(100,116,139,0.10))"><path d="M60 280H420M515 280H875" fill="none"/><rect x="100" y="240" width="50" height="40"/><rect x="180" y="200" width="50" height="80"/><rect x="260" y="240" width="50" height="40"/><rect x="555" y="240" width="50" height="40"/><rect x="635" y="200" width="50" height="80"/><rect x="715" y="160" width="50" height="120"/><rect x="795" y="120" width="50" height="160"/></g>
+<text x="125" y="230">1</text><text x="205" y="190">2</text><text x="285" y="230">1</text><text x="365" y="267">0</text><text x="580" y="230">1</text><text x="660" y="190">2</text><text x="740" y="150">3</text><text x="820" y="110">4</text>
+<text x="235" y="315">时隙结束队长：最终可清空</text><text x="690" y="315">时隙结束队长：不断增长</text><text x="460" y="358" font-size="16">每时隙先到达、再服务一个；柱高表示服务后的排队分组数，未计队列上限。</text></g></svg>

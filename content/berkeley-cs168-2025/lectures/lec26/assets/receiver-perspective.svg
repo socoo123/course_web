@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" role="img" aria-labelledby="title desc">
+<title id="title">隐藏终端与暴露终端：必须在接收位置判断干扰</title>
+<desc id="desc">上半图中 A 和 C 听不到彼此却都发送给 B，B 发生碰撞。下半图中 B 向 A、C 向 D，单向数据接收本可并行，但 C 为接收 D 的 CTS 又成为接收者，可能被 B 的数据干扰。</desc>
+<style>:root{color:var(--diagram-ink,#1f2937);--accent:#075985;--warn:#9a3412}@media(prefers-color-scheme:dark){:root{color:var(--diagram-ink-dark,#e5e7eb);--accent:#7dd3fc;--warn:#fdba74}}text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:currentColor} .wire{fill:none;stroke:currentColor;stroke-width:3}.data{fill:none;stroke:var(--accent,#075985);stroke-width:4}.warn{fill:var(--warn,#9a3412)}.node{fill:none;stroke:currentColor;stroke-width:2}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="context-stroke"/></marker></defs>
+<text x="35" y="42" font-size="25">隐藏：本地空闲 ≠ 远端空闲</text>
+<g class="node"><circle cx="120" cy="130" r="32"/><circle cx="400" cy="130" r="32"/><circle cx="680" cy="130" r="32"/></g>
+<g text-anchor="middle" font-size="25"><text x="120" y="139">A</text><text x="400" y="139">B</text><text x="680" y="139">C</text></g>
+<path class="data" marker-end="url(#arrow)" d="M158 130H356"/><path class="data" marker-end="url(#arrow)" d="M642 130H444"/>
+<text x="400" y="198" text-anchor="middle" font-size="22" class="warn">B 收到两路信号，无法仅靠 A/C 本地侦听避免</text>
+<path class="wire" stroke-dasharray="7 6" d="M120 220V250H680V220"/><text x="400" y="282" text-anchor="middle" font-size="20">A 与 C 互相听不见；B 的 CTS 可把接收意图告诉 C</text>
+<path class="wire" stroke-opacity=".4" d="M35 320H765"/>
+<text x="35" y="366" font-size="25">暴露：DATA 能并行 ≠ 握手也能并行</text>
+<g class="node"><circle cx="90" cy="440" r="28"/><circle cx="290" cy="440" r="28"/><circle cx="510" cy="440" r="28"/><circle cx="710" cy="440" r="28"/></g>
+<g text-anchor="middle" font-size="24"><text x="90" y="448">A</text><text x="290" y="448">B</text><text x="510" y="448">C</text><text x="710" y="448">D</text></g>
+<path class="data" marker-end="url(#arrow)" d="M254 440H126"/><path class="data" marker-end="url(#arrow)" d="M546 440H674"/>
+<path class="wire" stroke-dasharray="6 5" d="M322 420Q400 365 478 420"/>
+<text x="400" y="397" text-anchor="middle" font-size="18">B、C 互相听见</text>
+<text x="400" y="510" text-anchor="middle" font-size="21">只看 DATA：A 和 D 可不受另一路干扰</text>
+<path class="wire" marker-end="url(#arrow)" d="M710 548H520"/><text x="610" y="580" text-anchor="middle" font-size="21">D → C：CTS</text>
+<text x="400" y="623" text-anchor="middle" font-size="21" class="warn">但此时 C 要接收 CTS，B 的 DATA 可能盖住它</text>
+</svg>

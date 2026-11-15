@@ -1,0 +1,146 @@
+{
+  "id": "berkeley-cs168-2025",
+  "year": 2025,
+  "instructors": [
+    "Peyrin Kao",
+    "Sylvia Ratnasamy",
+    "Rob Shakir（嘉宾）"
+  ],
+  "versions": [
+    {
+      "label": "课程 / 视频",
+      "value": "UC Berkeley CS168 Spring 2025"
+    },
+    {
+      "label": "教材",
+      "value": "0b8208742d31 · 2026-11-15 固定快照（非 2025 历史版）"
+    },
+    {
+      "label": "实验",
+      "value": "Spring 2025 官方 ZIP · SHA-256 见公共资料"
+    }
+  ],
+  "intro": "从数据包如何穿过一条链路出发，理解互联网的分层、路由、可靠传输与拥塞控制，再走到 Web、数据中心、集体通信和无线网络。沿 Spring 2025 的 27 讲学习，配合 12 组讨论、2 组考试复习，以及 Traceroute、距离向量路由和 TCP 子集三个 Python 实验。",
+  "links": [
+    {
+      "label": "2025 官方课表",
+      "url": "https://sp25.cs168.io/"
+    },
+    {
+      "label": "官方教材",
+      "url": "https://textbook.cs168.io/"
+    },
+    {
+      "label": "公开视频列表",
+      "url": "https://www.youtube.com/playlist?list=PL0_XloRC3MWs5MylcqPFEeTCx0RQocrD7"
+    }
+  ],
+  "lectures": [
+    {"id": "lec01", "num": "1", "title": "互联网分层", "titleEn": "Intro 1: Layers of the Internet", "video": {"label": "Spring 2025 L1", "youtube": "https://www.youtube.com/watch?v=7mat3QOxpTg", "language": "en", "duration": "1:20:16"}, "readings": ["Intro", "Layers", "Headers"], "lab": "traceroute"},
+    {"id": "lec02", "num": "2", "title": "互联网设计原则", "titleEn": "Intro 2: Design Principles", "video": {"label": "Spring 2025 L2", "youtube": "https://www.youtube.com/watch?v=ItYYFdUuz8k", "language": "en", "duration": "1:21:10"}, "readings": ["Architecture", "Design"], "lab": "traceroute"},
+    {"id": "lec03", "num": "3", "title": "链路与资源共享", "titleEn": "Intro 3: Links", "video": {"label": "Spring 2025 L3", "youtube": "https://www.youtube.com/watch?v=jqprd49WDIc", "language": "en", "duration": "1:22:54"}, "readings": ["Links", "Multiplexing"], "lab": "traceroute"},
+    {"id": "lec04", "num": "4", "title": "路由原则与状态", "titleEn": "Routing 1: Principles", "video": {"label": "Spring 2025 L4", "youtube": "https://www.youtube.com/watch?v=aEkZKsOWvzE", "language": "en", "duration": "1:21:21"}, "readings": ["Intro", "Model", "States"], "lab": "routing"},
+    {"id": "lec05", "num": "5", "title": "距离向量路由", "titleEn": "Routing 2: Distance-Vector", "video": {"label": "Spring 2025 L5", "youtube": "https://www.youtube.com/watch?v=6gCFWEqusMA", "language": "en", "duration": "1:21:13"}, "readings": ["Distance-Vector"], "lab": "routing"},
+    {"id": "lec06", "num": "6", "title": "距离向量路由（续）", "titleEn": "Routing 2: Distance-Vector (continued)", "video": {"label": "Spring 2025 L6", "youtube": "https://www.youtube.com/watch?v=glKg5DAXW7o", "language": "en", "duration": "1:20:38"}, "readings": ["Distance-Vector"], "lab": "routing", "note": "指定阅读与 L5 共用；见公共资料的教材索引。"},
+    {"id": "lec07", "num": "7", "title": "链路状态与编址", "titleEn": "Routing 3: Link-State, Addressing", "video": {"label": "Spring 2025 L7", "youtube": "https://www.youtube.com/watch?v=T69UaqNeWvw", "language": "en", "duration": "1:22:00"}, "readings": ["Link-State", "Addressing"], "lab": "routing"},
+    {"id": "lec08", "num": "8", "title": "路由器实现", "titleEn": "Routing 4: Routers", "video": {"label": "Spring 2025 L8", "youtube": "https://www.youtube.com/watch?v=KWU_8UY2cOM", "language": "en", "duration": "1:16:32"}, "readings": ["Routers"], "lab": "routing"},
+    {"id": "lec09", "num": "9", "title": "BGP：自治系统与策略", "titleEn": "Routing 5: BGP I", "video": {"label": "Spring 2025 L9", "youtube": "https://www.youtube.com/watch?v=MAbRnl5tqTo", "language": "en", "duration": "1:21:37"}, "readings": ["Model", "Design"]},
+    {"id": "lec10", "num": "10", "title": "BGP 实现与 IP 首部", "titleEn": "Routing 6: BGP II", "video": {"label": "Spring 2025 L10 · 全 19 P 合计", "youtube": "https://www.youtube.com/playlist?list=PL0_XloRC3MWtXZPKRiEhVJmR54yme-mru", "language": "en", "duration": "1:46:26"}, "readings": ["Implementation", "IP Header"]},
+    {"id": "lec11", "num": "11", "title": "可靠传输原理", "titleEn": "Transport 1: TCP I", "video": {"label": "Spring 2025 L11 · 全 15 P 合计", "youtube": "https://www.youtube.com/playlist?list=PL0_XloRC3MWuroYx9jW6ZHw4F_tymsGUH", "language": "en", "duration": "1:54:31"}, "readings": ["Principles"], "lab": "transport"},
+    {"id": "lec12", "num": "12", "title": "TCP 设计与实现", "titleEn": "Transport 2: TCP II", "video": {"label": "Spring 2025 L12", "youtube": "https://www.youtube.com/watch?v=t-qicTlEh5o", "language": "en", "duration": "1:20:16"}, "readings": ["Design", "Implementation"], "lab": "transport"},
+    {"id": "lec13", "num": "13", "title": "拥塞控制原理", "titleEn": "Transport 3: Congestion Control I", "video": {"label": "Spring 2025 L13", "youtube": "https://www.youtube.com/watch?v=c_iL0b1kXbk", "language": "en", "duration": "1:19:23"}, "readings": ["Principles", "Design", "Implementation"]},
+    {"id": "lec14", "num": "14", "title": "拥塞控制模型与路由器辅助", "titleEn": "Transport 4: Congestion Control II", "video": {"label": "Spring 2025 L14", "youtube": "https://www.youtube.com/watch?v=td_edyGAOFk", "language": "en", "duration": "1:21:41"}, "readings": ["Throughput", "Issues", "Router-Assisted"]},
+    {"id": "lec15", "num": "15", "title": "拥塞控制（续）", "titleEn": "Transport 4: Congestion Control II (continued)", "video": {"label": "Spring 2025 L15", "youtube": "https://www.youtube.com/watch?v=gI1RBAxQH_c", "language": "en", "duration": "1:19:55"}, "readings": ["Throughput", "Issues", "Router-Assisted"], "note": "指定阅读与 L14 共用；见公共资料的教材索引。"},
+    {"id": "lec16", "num": "16", "title": "DNS：分布式命名", "titleEn": "Applications 1: DNS", "video": {"label": "Spring 2025 L16", "youtube": "https://www.youtube.com/watch?v=BTqZzOujdy0", "language": "en", "duration": "1:19:10"}, "readings": ["DNS"]},
+    {"id": "lec17", "num": "17", "title": "HTTP：Web 协议", "titleEn": "Applications 2: HTTP", "video": {"label": "2025 课表指定 · FA24 L17", "youtube": "https://www.youtube.com/watch?v=WDkTLnYGhA8", "language": "en", "duration": "1:20:12"}, "readings": ["HTTP"], "note": "官网指定 Fall 2024 录像，非 Spring 2025 当堂录制。"},
+    {"id": "lec18", "num": "18", "title": "以太网与生成树", "titleEn": "End-to-End 1: Ethernet, STP", "video": {"label": "Spring 2025 L18", "youtube": "https://www.youtube.com/watch?v=efWtZ8bzBOM", "language": "en", "duration": "1:19:02"}, "readings": ["Ethernet", "STP"]},
+    {"id": "lec19", "num": "19", "title": "ARP、DHCP、NAT 与 TLS", "titleEn": "End-to-End 2: ARP, DHCP, NAT, TLS", "video": {"label": "Spring 2025 L19", "youtube": "https://www.youtube.com/watch?v=AgoxhLdLQSQ", "language": "en", "duration": "1:20:43"}, "readings": ["ARP", "DHCP", "NAT", "TLS", "End-to-End"]},
+    {"id": "lec20", "num": "20", "title": "端到端协议协作（续）", "titleEn": "End-to-End 2: ARP, DHCP, NAT, TLS (continued)", "video": {"label": "2025 课表 L20 · 视频题名 Datacenter Topology", "youtube": "https://www.youtube.com/watch?v=fWoO4SmlF3g", "language": "en", "duration": "1:19:57"}, "readings": ["ARP", "DHCP", "NAT", "TLS", "End-to-End"], "note": "官网课表题名与所链录像标题不一致，保留官方入口；指定教材与 L19 共用，不推测录像内容。"},
+    {"id": "lec21", "num": "21", "title": "数据中心拓扑与拥塞", "titleEn": "Datacenters 1: Topology", "video": {"label": "Spring 2025 L21", "youtube": "https://www.youtube.com/watch?v=EY4_bLVqtZQ", "language": "en", "duration": "1:20:19"}, "readings": ["Topology", "Congestion"]},
+    {"id": "lec22", "num": "22", "title": "数据中心路由、编址与虚拟化", "titleEn": "Datacenters 2: Routing", "video": {"label": "Spring 2025 L22", "youtube": "https://www.youtube.com/watch?v=LxIY-65Cbn0", "language": "en", "duration": "1:21:34"}, "readings": ["Routing", "Addressing", "Virtualization"]},
+    {"id": "lec23", "num": "23", "title": "SDN 与主机网络", "titleEn": "Datacenters 3-4: SDN and Host Networking", "video": {"label": "Spring 2025 L23", "youtube": "https://www.youtube.com/watch?v=OaqLmzS407M", "language": "en", "duration": "1:21:17"}, "readings": ["SDN", "Host Networking"]},
+    {"id": "lec24", "num": "24", "title": "组播", "titleEn": "Beyond Client-Server 1: Multicast", "video": {"label": "2025 课表 L24 · 上传标题标 L25", "youtube": "https://www.youtube.com/watch?v=4YpTehZYPaw", "language": "en", "duration": "1:20:38"}, "readings": ["Multicast"], "note": "按官网第24讲归属；所链上传标题标为 Lecture 25，保留题名差异，不擅自换片。"},
+    {"id": "lec25", "num": "25", "title": "集体通信", "titleEn": "Beyond Client-Server 2: Collectives", "video": {"label": "Spring 2025 L25", "youtube": "https://www.youtube.com/watch?v=g-gNXO01T5I", "language": "en", "duration": "1:21:23"}, "readings": ["Operations", "Implementation"], "note": "录像题名含 Multicast continued 与 Collectives；无字幕证据，不推测主题切换时间。"},
+    {"id": "lec26", "num": "26", "title": "无线网络", "titleEn": "Special Topics 1: Wireless", "video": {"label": "Spring 2025 L26", "youtube": "https://www.youtube.com/watch?v=kfJdwlNJIa4", "language": "en", "duration": "1:21:53"}, "readings": ["Wireless"], "note": "录像题名含 Collectives continued 与 Wireless Links；无线仍是主课内容，不因期末排除而省略。"},
+    {"id": "lec27", "num": "27", "title": "蜂窝网络", "titleEn": "Special Topics 2: Cellular", "video": {"label": "Spring 2025 L27", "youtube": "https://www.youtube.com/watch?v=4LjEmcvVVGY", "language": "en", "duration": "1:13:57"}, "readings": ["Cellular"]},
+    {"id": "disc01", "num": "选读", "title": "讨论 01：分层与体系结构", "titleEn": "Intro I", "optional": true},
+    {"id": "disc02", "num": "选读", "title": "讨论 02：链路与复用", "titleEn": "Intro II", "optional": true},
+    {"id": "disc03", "num": "选读", "title": "讨论 03：距离向量", "titleEn": "Routing I", "optional": true},
+    {"id": "disc04", "num": "选读", "title": "讨论 04：路由与编址", "titleEn": "Routing II", "optional": true},
+    {"id": "disc05", "num": "选读", "title": "讨论 05：BGP", "titleEn": "BGP", "optional": true},
+    {"id": "disc06", "num": "选读", "title": "讨论 06：TCP", "titleEn": "TCP", "optional": true},
+    {"id": "disc07", "num": "选读", "title": "讨论 07：拥塞控制与 DNS 缓存", "titleEn": "Congestion Control and DNS", "optional": true, "note": "实际题卷还包含 DNS 缓存题；讨论08第2组复用同题，完整推导集中在本页。"},
+    {"id": "disc08", "num": "选读", "title": "讨论 08：DNS 与 HTTP", "titleEn": "DNS and HTTP", "optional": true, "note": "官方标题含 Ethernet/STP，但可达题卷实际只有 DNS/HTTP；STP 练习见讨论10。"},
+    {"id": "disc09", "num": "选读", "title": "讨论 09：ARP、DHCP 与 NAT", "titleEn": "ARP, DHCP, NAT", "optional": true},
+    {"id": "disc10", "num": "选读", "title": "讨论 10：STP、数据中心与虚拟化", "titleEn": "STP, Datacenters and Virtualization", "optional": true, "note": "按实际题卷组织；SDN 抽象题在讨论11。"},
+    {"id": "disc11", "num": "选读", "title": "讨论 11：SDN 与主机网络", "titleEn": "SDN and Host Networking", "optional": true, "note": "包含 SDN 抽象、虚拟网络解复用和 RDMA Send/Receive。"},
+    {"id": "disc12", "num": "选读", "title": "讨论 12：组播与集体通信", "titleEn": "Multicast and Collectives", "optional": true},
+    {"id": "review-midterm", "num": "选读", "title": "期中复习：Spring 2025", "titleEn": "Spring 2025 Midterm Review", "optional": true},
+    {"id": "review-final", "num": "选读", "title": "期末复习：Spring 2025", "titleEn": "Spring 2025 Final Review", "optional": true}
+  ],
+  "labs": [
+    {
+      "id": "traceroute",
+      "num": 1,
+      "title": "Traceroute：探测网络路径",
+      "titleEn": "Traceroute",
+      "stars": 3,
+      "hours": "按报文解析与调试基础安排",
+      "url": "https://sp25.cs168.io/proj1/",
+      "goal": "完成 1A 基本探测和 1B 异常报文处理；具体 Python 命令见实验说明，页面通用 QEMU/grade 命令不适用。",
+      "tasks": [
+        {
+          "id": "1a",
+          "title": "1A：报文解析与基本 Traceroute"
+        },
+        {
+          "id": "1b",
+          "title": "1B：应对延迟、重复、无关与异常响应"
+        }
+      ]
+    },
+    {
+      "id": "routing",
+      "num": 2,
+      "title": "距离向量路由",
+      "titleEn": "Distance-Vector Routing",
+      "stars": 4,
+      "hours": "按十个阶段逐步实现",
+      "url": "https://sp25.cs168.io/proj2/",
+      "goal": "在模拟器中实现距离向量路由，处理通告、过期与拓扑变化；具体 Python 阶段测试见实验说明，通用 QEMU/grade 命令不适用。",
+      "tasks": [
+        {"id": "stage1", "title": "Stage 1：静态路由"},
+        {"id": "stage2", "title": "Stage 2：按表转发"},
+        {"id": "stage3", "title": "Stage 3：发送通告"},
+        {"id": "stage4", "title": "Stage 4：接收通告"},
+        {"id": "stage5", "title": "Stage 5：过期删除"},
+        {"id": "stage6", "title": "Stage 6：水平分割"},
+        {"id": "stage7", "title": "Stage 7：毒性逆转"},
+        {"id": "stage8", "title": "Stage 8：有限无穷距离"},
+        {"id": "stage9", "title": "Stage 9：过期 poison"},
+        {"id": "stage10", "title": "Stage 10：增量触发与链路事件"}
+      ]
+    },
+    {
+      "id": "transport",
+      "num": 3,
+      "title": "可靠传输：TCP 子集",
+      "titleEn": "Transport",
+      "stars": 5,
+      "hours": "按连接状态与重传阶段推进",
+      "url": "https://sp25.cs168.io/proj3/",
+      "goal": "实现可靠字节流、连接管理与重传；不要求拥塞控制。具体 POX/阶段测试见实验说明，通用 QEMU/grade 命令不适用。",
+      "tasks": [
+        {"id": "stage1", "title": "3A · Stage 1：三次握手"},
+        {"id": "stage2", "title": "3A · Stage 2：按序接收"},
+        {"id": "stage3", "title": "3A · Stage 3：乱序缓存与去重"},
+        {"id": "stage4", "title": "3A · Stage 4：分段发送与累计确认"},
+        {"id": "stage5", "title": "3A · Stage 5：接收窗口流量控制"},
+        {"id": "stage6", "title": "3B · Stage 6：被动关闭"},
+        {"id": "stage7", "title": "3B · Stage 7：主动关闭"},
+        {"id": "stage8", "title": "3B · Stage 8：超时重传"},
+        {"id": "stage9", "title": "3B · Stage 9：RTT估计与RTO退避"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 470" role="img" aria-labelledby="title desc" style="color:var(--diagram-text,#64748b)">
+<style>@media (prefers-color-scheme: dark) { :root { --diagram-text: #e2e8f0; --diagram-fill: rgba(226,232,240,0.10); } }</style>
+<title id="title">800 比特经过 1 Mbps、1 毫秒链路的时间关系</title><desc id="desc">开始发送为零时刻，发送完全部800比特为0.8毫秒，最后一个比特在1.8毫秒完整到达。各比特的传播在后续比特序列化的同时发生，因此不用对每个比特串行累加传播时延。</desc>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="currentColor"/></marker></defs>
+<g font-family="system-ui, sans-serif" fill="currentColor" font-size="18" text-anchor="middle"><text x="460" y="33" font-size="23">两种时间：把数据送进去，与让数据走到另一端</text><text x="260" y="73">发送方</text><text x="660" y="73">接收方</text>
+<g stroke="currentColor" fill="none" stroke-width="2"><path d="M260 90V390M660 90V390" marker-end="url(#a)"/><path d="M260 110L660 255M260 218L660 363" marker-end="url(#a)"/><path d="M260 110L660 255V363L260 218Z" fill="var(--diagram-fill,rgba(100,116,139,0.10))"/><path d="M230 110H215V218H230"/></g>
+<text x="145" y="115">0 ms：开始</text><text x="130" y="170">L/R = 0.8 ms</text><text x="130" y="225">0.8 ms：发完</text><text x="780" y="260">约 1 ms：首部位抵达</text><text x="780" y="368">1.8 ms：收完</text><text x="460" y="168">每个位置传播约 1 ms</text><text x="460" y="414">总时延 = 800 / 1,000,000 + 0.001 = 0.0018 s</text><text x="460" y="449" font-size="16">示意图采用连续比特流前沿；若量首个完整比特，到达为 1.001 ms。</text></g></svg>

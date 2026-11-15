@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc" style="color:var(--diagram-text,#64748b)">
+<style>@media (prefers-color-scheme: dark) { :root { --diagram-text: #e2e8f0; --diagram-fill: rgba(226,232,240,0.10); } }</style>
+<title id="title">错峰需求如何减少所需共享容量</title><desc id="desc">三个时段中，A 需求为 10、2、2，B 需求为 2、2、10。分别预留峰值需要20，共享总需求峰值只需12。右侧强调这依赖峰值不同步，若同时达到10仍需20。</desc>
+<g font-family="system-ui, sans-serif" fill="currentColor" font-size="19" text-anchor="middle">
+<text x="460" y="35" font-size="24">先相加再取峰值，与先取峰值再相加</text>
+<g fill="none" stroke="currentColor" stroke-width="2"><path d="M70 310H560M70 310V75"/><path d="M95 110H215V270H540" stroke-width="4"/><path d="M95 270H420V110H540" stroke-width="4" stroke-dasharray="9 6"/><path d="M95 90H215V250H420V90H540" stroke-width="2" stroke-dasharray="3 5"/></g>
+<text x="42" y="115">10</text><text x="42" y="95">12</text><text x="45" y="275">2</text><text x="45" y="255">4</text><text x="155" y="340">早</text><text x="315" y="340">中</text><text x="480" y="340">晚</text>
+<text x="155" y="65">A 高峰</text><text x="480" y="65">B 高峰</text>
+<text x="735" y="120">固定预留：10 + 10 = 20</text><text x="735" y="175">总需求：12、4、12</text><text x="735" y="230">动态共享峰值：12</text>
+<text x="735" y="290" font-size="16">如果两人同时冲到 10，</text><text x="735" y="315" font-size="16">共享需求仍会达到 20。</text>
+<text x="460" y="380" font-size="17">实线：A　长虚线：B　点线：A+B　（纵轴为需求单位，横轴为时段）</text><text x="460" y="411" font-size="16">节省来自错峰；动态分配不等于保证永不排队、永不丢包。</text>
+</g></svg>

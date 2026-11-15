@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 490" role="img" aria-labelledby="title desc">
+<title id="title">ReduceScatter之后AllGather得到AllReduce</title>
+<desc id="desc">三个节点输入分别为(1,2,3)、(10,20,30)、(100,200,300)。逐元素总和为(111,222,333)。ReduceScatter后各节点各得一块，AllGather只复制这些块，让所有人得到完整和。</desc>
+<style>:root{color:var(--diagram-ink,#182838);--reduce:#7343a7;--copy:#155f9d}@media(prefers-color-scheme:dark){:root{color:var(--diagram-ink-dark,#e7eef8);--reduce:#d6b0ff;--copy:#8bcaff}}text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:currentColor}.box{fill:none;stroke:currentColor;stroke-width:1.8}.reduce{fill:none;stroke:var(--reduce,#7343a7);stroke-width:3}.copy{fill:none;stroke:var(--copy,#155f9d);stroke-width:3}</style>
+<g font-size="17" text-anchor="middle"><text x="240" y="28" font-size="21">先求和并分块，再只复制</text>
+<text x="85" y="65">节点0</text><text x="240" y="65">节点1</text><text x="395" y="65">节点2</text>
+<g class="box"><rect x="15" y="82" width="140" height="56" rx="8"/><rect x="170" y="82" width="140" height="56" rx="8"/><rect x="325" y="82" width="140" height="56" rx="8"/></g>
+<text x="85" y="116">1, 2, 3</text><text x="240" y="116">10, 20, 30</text><text x="395" y="116">100, 200, 300</text>
+<path class="reduce" d="M85 148V182H395V148M240 182V215M233 208L240 215L247 208"/>
+<text x="240" y="246">ReduceScatter：每人一块全局和</text>
+<g class="box"><rect x="15" y="268" width="140" height="45" rx="8"/><rect x="170" y="268" width="140" height="45" rx="8"/><rect x="325" y="268" width="140" height="45" rx="8"/></g>
+<text x="85" y="298">111</text><text x="240" y="298">222</text><text x="395" y="298">333</text>
+<path class="copy" d="M85 322V342H395V322M240 342V375M233 368L240 375L247 368"/>
+<text x="240" y="402">AllGather：只复制，不再求和</text>
+<rect class="box" x="45" y="425" width="390" height="44" rx="8"/><text x="240" y="454">每个节点都得到 (111, 222, 333)</text></g></svg>

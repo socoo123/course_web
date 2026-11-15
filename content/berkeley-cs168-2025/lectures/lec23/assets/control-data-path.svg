@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 610" role="img" aria-labelledby="title desc">
+<title id="title">控制决策、数据转发与主机卸载分别位于哪里</title><desc id="desc">多个控制器副本形成逻辑集中控制，向交换机和虚拟交换机安装规则。数据分组直接经过应用、主机队列、NIC和交换机，不逐包绕经控制器。RDMA应用提交工作，NIC移动数据，再通过完成队列通知应用。</desc>
+<style>:root{--ink:#19364c;--line:#2d7096;--panel:#e5f0f7;--accent:#945222}text{fill:var(--ink,#19364c);font:18px system-ui,"PingFang SC","Microsoft YaHei",sans-serif}.box{fill:var(--panel,#e5f0f7);stroke:var(--line,#2d7096);stroke-width:2}.data{stroke:var(--line,#2d7096);stroke-width:3;fill:none}.control{stroke:var(--accent,#945222);stroke-width:2;stroke-dasharray:8 5;fill:none}@media(prefers-color-scheme:dark){:root{--ink:#e4eef7;--line:#84ccf2;--panel:#223b50;--accent:#ffc094}}</style>
+<rect class="box" x="145" y="20" width="550" height="95" rx="10"/><text x="170" y="55">逻辑集中控制：副本 A ／ 副本 B ／ 副本 C</text><text x="170" y="88">维护视图、选择路径、安装匹配—动作规则</text>
+<path class="control" d="M270 115V240M565 115V240"/><text x="290" y="175">规则更新不是每个数据包的转发</text>
+<rect class="box" x="25" y="240" width="170" height="80" rx="8"/><text x="48" y="275">应用／VM</text><text x="48" y="302">业务语义</text>
+<rect class="box" x="230" y="240" width="170" height="80" rx="8"/><text x="248" y="275">主机／NIC</text><text x="248" y="302">队列与卸载</text>
+<rect class="box" x="435" y="240" width="170" height="80" rx="8"/><text x="455" y="275">交换网络</text><text x="455" y="302">执行规则</text>
+<rect class="box" x="640" y="240" width="170" height="80" rx="8"/><text x="658" y="275">对端主机</text><text x="658" y="302">接收与交付</text>
+<path class="data" d="M195 280H230M400 280H435M605 280H640"/>
+<rect class="box" x="25" y="380" width="785" height="195" rx="10"/><text x="50" y="418">RDMA 数据路径：CPU 不逐包搬运，不等于 CPU 完全消失</text><text x="50" y="462">① 应用提交 WQE：说明缓冲区、长度、操作与权限</text><text x="50" y="502">② NIC 执行数据移动与相应传输服务</text><text x="50" y="542">③ 应用读取 CQE：检查完成状态，再安全复用缓冲区</text>
+</svg>

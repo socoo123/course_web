@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 410" role="img" aria-labelledby="title desc">
+  <title id="title">一次探测与返回错误的两层地址语义</title>
+  <desc id="desc">发送者向目标发送 IPv4 和 UDP 探测。返回的外层 IPv4 表示报错者到发送者，ICMP 后引用原探测的 IPv4 和 UDP 头。原应用载荷不保证被引用。报错者地址用于观察路由，引用头用于追问该错误是否属于本次探测。</desc>
+  <style>
+    svg { color: var(--text-primary, #243447); font-family: system-ui, sans-serif; }
+    rect, path, line { stroke: currentColor; stroke-width: 1.6; fill: none; }
+    text { fill: currentColor; font-size: 16px; }
+    .label { font-size: 19px; font-weight: 600; }
+    .hint { font-size: 14px; }
+    .accent { stroke: var(--accent-color, #32769c); }
+    .dash { stroke-dasharray: 7 5; }
+    @media (prefers-color-scheme: dark) { svg { color: var(--text-primary, #e2e8f0); } .accent { stroke: var(--accent-color, #83c5e8); } }
+  </style>
+  <text x="22" y="30" class="label">发送：目的地一直是目标，不是中间路由器</text>
+  <rect x="22" y="48" width="856" height="66" rx="6"/>
+  <line x1="366" y1="48" x2="366" y2="114"/>
+  <line x1="591" y1="48" x2="591" y2="114"/>
+  <text x="40" y="75">原 IPv4：我 → 目标</text>
+  <text x="40" y="98" class="hint">初始 TTL 是这次探测的跳数预算</text>
+  <text x="384" y="75">UDP 头部</text>
+  <text x="384" y="98" class="hint">含发送与目标端口</text>
+  <text x="609" y="75">短应用载荷</text>
+  <text x="609" y="98" class="hint">不能假定错误会原样带回它</text>
+  <path d="M194 118 V147 H432 V169" class="accent dash"/>
+  <text x="22" y="174" class="label">接收：外层描述错误，内层引用被报告的探测</text>
+  <rect x="22" y="193" width="856" height="116" rx="6"/>
+  <line x1="260" y1="193" x2="260" y2="309"/>
+  <line x1="432" y1="193" x2="432" y2="309"/>
+  <line x1="705" y1="193" x2="705" y2="309"/>
+  <text x="38" y="225">外层 IPv4</text>
+  <text x="38" y="251">报错者 → 我</text>
+  <text x="38" y="281" class="hint">头长由外层 IHL 决定</text>
+  <text x="276" y="225">ICMP 错误头</text>
+  <text x="276" y="251">type / code</text>
+  <text x="276" y="281" class="hint">本实验为 8 字节</text>
+  <text x="448" y="225">引用的 IPv4 头</text>
+  <text x="448" y="251">原发送者 → 原目标</text>
+  <text x="448" y="281" class="hint">按自身 IHL 找其下一层</text>
+  <text x="721" y="225">引用的 UDP 头</text>
+  <text x="721" y="251">原端口等字段</text>
+  <text x="721" y="281" class="hint">不是新的 UDP 回复</text>
+  <path d="M432 320 V329 H878 V320" class="accent"/>
+  <text x="450" y="353" class="hint">引用片段可能短于原报文总长；不要把它误当成完整原包</text>
+  <text x="22" y="390">先问“结构有效吗”，再问“与本次探测相关吗”，最后才更新状态。</text>
+</svg>

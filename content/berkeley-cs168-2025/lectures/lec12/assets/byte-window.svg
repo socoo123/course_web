@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" role="img" aria-labelledby="title desc">
+<title id="title">累计确认停在第一个缺口</title><desc id="desc">1001到1101已确认；1101到1201缺失；1201到1401已乱序收到但不能推动累计确认。缺口填上后确认可直接推进到1401。</desc>
+<style>:root{color:#183247;--ink:#183247;--ok:#d4ecdc;--held:#dcecf8;--accent:#176c9a;--gap:#9c412c}text{fill:var(--ink,#183247);font:18px system-ui,"PingFang SC","Microsoft YaHei",sans-serif}.edge{stroke:var(--ink,#183247);stroke-width:2;fill:none}.ok{fill:var(--ok,#d4ecdc)}.held{fill:var(--held,#dcecf8)}.gap{fill:none;stroke:var(--gap,#9c412c);stroke-width:2;stroke-dasharray:7 4}@media(prefers-color-scheme:dark){:root{color:#e4eef8;--ink:#e4eef8;--ok:#244d39;--held:#223f59;--accent:#79c9ef;--gap:#ffa28b}}</style>
+<text x="35" y="34">乱序数据已到达，但累计 ACK 仍为 1101</text>
+<rect class="ok" x="40" y="80" width="180" height="70"/><rect class="gap" x="220" y="80" width="180" height="70"/><rect class="held" x="400" y="80" width="360" height="70"/>
+<path class="edge" d="M40 150H760M220 70V165M400 80V150M580 80V150"/>
+<text x="72" y="122">已确认前缀</text><text x="290" y="122">缺口</text><text x="455" y="122">已缓冲，尚未累计确认</text>
+<text x="20" y="185">1001</text><text x="195" y="185">1101</text><text x="375" y="185">1201</text><text x="555" y="185">1301</text><text x="735" y="185">1401</text>
+<text x="40" y="230">补齐 [1101,1201) 后：</text><rect class="ok" x="40" y="250" width="720" height="52"/><path class="edge" d="M40 302H760M760 240V315"/><text x="200" y="283">连续前缀一次扩展到 [1001,1401)</text><text x="565" y="341">新 ACK = 1401</text>
+</svg>
