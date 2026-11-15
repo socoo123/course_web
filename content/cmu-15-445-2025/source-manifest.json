@@ -9,10 +9,10 @@
     "title": "Database System Concepts",
     "edition": 7,
     "url": "https://www.db-book.com/",
-    "readingStatus": "homepage_and_selected_table_of_contents_read; textbook_body_not_read",
+    "readingStatus": "homepage_and_selected_table_of_contents_read_for_L1–3; textbook_body_not_read",
     "licenseStatus": "unknown"
   },
-  "scope": "P0 merged public provenance and recovery inventory. No raw captions/media/textbook or student solutions included. Lecture 1 read state overrides the inventory-worker-only observation; all other caption bodies remain unread.",
+  "scope": "Public provenance through production batch P1. L1–3 caption bodies have been read sequentially; L4–25 remain acquired but unread. sourceRecords.inventory preserves P0 inventory-worker observations; current lectures and batchP1 records supersede only their explicitly reviewed scopes. No raw captions/media/textbook or student solutions published.",
   "lectures": [
     {
       "id": "lec01",
@@ -150,8 +150,8 @@
           "firstTextStartMs": 100,
           "lastTextEndMs": 4658920,
           "startsNondecreasing": true,
-          "fullTranscriptRead": false,
-          "interiorCoverageAudited": false,
+          "fullTranscriptRead": true,
+          "interiorCoverageAudited": true,
           "language": "en",
           "track": "en-orig",
           "kind": "automatic",
@@ -160,14 +160,14 @@
           "exitCode": 0,
           "error": null,
           "tailDeltaMs": 2080,
-          "coverageNote": "Only acquisition/body structure and first/last timestamps recorded. Positive tailDeltaMs is uncovered by text; negative value means caption timestamps exceed metadata duration. Neither is audio-verified; no silence inferred.",
-          "readingStatus": "not_read",
-          "audioVisualStatus": "not_verified",
+          "coverageNote": "P1 independent union audit: 4571010ms covered; 65 interior gaps total 87810ms; unknown head 100ms and tail 2080ms. No silence inferred. All 2042 normalized cues read sequentially by LectureTwo; parent sampled 60:00–end.",
+          "readingStatus": "full_sequential_read",
+          "audioVisualStatus": "partial_visual_only",
           "warningsPath": "content/cmu-15-445-2025/sources/inventory/video-evidence/O5gU9NQjCAs.log"
         },
         "audioVisual": {
-          "status": "not_verified",
-          "scope": "No playback, audio listening, or frame inspection by inventory worker"
+          "status": "partial_visual_only",
+          "scope": "Approximately 40:29 MySQL date subtraction and 72:01 dbt dependency graph frames inspected by worker and parent; no full-video viewing or audio listening"
         },
         "retrievedAt": "2026-11-15T14:03:48.933208+00:00"
       },
@@ -233,8 +233,8 @@
           "firstTextStartMs": 90,
           "lastTextEndMs": 4617619,
           "startsNondecreasing": true,
-          "fullTranscriptRead": false,
-          "interiorCoverageAudited": false,
+          "fullTranscriptRead": true,
+          "interiorCoverageAudited": true,
           "language": "en",
           "track": "en-orig",
           "kind": "automatic",
@@ -243,14 +243,14 @@
           "exitCode": 0,
           "error": null,
           "tailDeltaMs": 4381,
-          "coverageNote": "Only acquisition/body structure and first/last timestamps recorded. Positive tailDeltaMs is uncovered by text; negative value means caption timestamps exceed metadata duration. Neither is audio-verified; no silence inferred.",
-          "readingStatus": "not_read",
-          "audioVisualStatus": "not_verified",
+          "coverageNote": "P1 independent union audit: 4600357ms covered; 13 interior gaps total 17172ms; unknown head 90ms and tail 4381ms. No silence inferred. All 2108 normalized cues read sequentially by LectureThree; parent sampled 65:00–70:00.",
+          "readingStatus": "full_sequential_read",
+          "audioVisualStatus": "partial_visual_only",
           "warningsPath": "content/cmu-15-445-2025/sources/inventory/video-evidence/PRLXdIMJhOg.log"
         },
         "audioVisual": {
-          "status": "not_verified",
-          "scope": "No playback, audio listening, or frame inspection by inventory worker"
+          "status": "partial_visual_only",
+          "scope": "Approximately 47:11 slotted-page frame inspected by worker and parent; no full-video viewing or audio listening"
         },
         "retrievedAt": "2026-11-15T14:03:48.933208+00:00"
       },
@@ -2115,12 +2115,12 @@
       "learnerCompletion": "not_attempted",
       "license": {
         "status": "unknown",
-        "evidence": "No reuse grant established from the official assignment page/PDF",
+        "evidence": "P1 full assignment-page and footer review found no full-translation reuse grant; original requirements guide used instead. Video CC and BusTub MIT do not license this page.",
         "scope": "This assignment only"
       },
       "reading": {
-        "status": "metadata_sections_read",
-        "scope": "Official assignment index dates, schedule association, and page/PDF metadata; assignment questions not solved or technically audited"
+        "status": "full_assignment_body_read",
+        "scope": "All 11 table descriptions, six questions, grading, filenames, packaging and collaboration rules read by PrimerWorker and parent; dataset not downloaded or queried; no student answers produced."
       },
       "revision": "2025-08-28",
       "localSourcePath": "content/cmu-15-445-2025/sources/inventory/hw1.html",
@@ -2379,12 +2379,12 @@
       "learnerCompletion": "not_attempted",
       "license": {
         "status": "unknown",
-        "evidence": "No reuse grant established from the official assignment page/PDF",
+        "evidence": "P1 full project-page and footer review found no full-translation reuse grant; original requirements guide used instead. Fixed BusTub code license is separate.",
         "scope": "This assignment only"
       },
       "reading": {
-        "status": "metadata_sections_read",
-        "scope": "Official assignment index dates, schedule association, and page/PDF metadata; assignment questions not solved or technically audited"
+        "status": "full_assignment_body_and_fixed_project0_code_read",
+        "scope": "Entire Project0 page, CountMinSketch header/skeleton and all 13 public tests statically read by PrimerWorker and parent; no build, benchmark, student implementation or Gradescope submission."
       },
       "num": 0,
       "localSourcePath": "content/cmu-15-445-2025/sources/inventory/project0.html",
@@ -2397,7 +2397,7 @@
         "evidence": "Syllabus says project recitation recordings are made available on Piazza; no public project video URL established by this worker"
       },
       "readings": {
-        "status": "metadata_only",
+        "status": "full_assignment_read",
         "assignmentUrl": "https://15445.courses.cs.cmu.edu/fall2025/project0/"
       },
       "sha256": "ee86d9b3878089642bb66f74aa0ac90d6becd8caac4785920301647097443188"
@@ -2603,10 +2603,10 @@
     "audioVisualVerifiedByThisWorker": 0,
     "homeworkCount": 6,
     "projectCount": 5,
-    "captionBodiesFullyRead": 1,
+    "captionBodiesFullyRead": 3,
     "wholeVideosAudioVerified": 0,
-    "videosWithInspectedFrames": 1,
-    "parentReview": "Full public draft/notes read; original captions sampled at 56:45–59:51 and 69:36–74:47, not a second full caption reading."
+    "videosWithInspectedFrames": 3,
+    "parentReview": "P0 review preserved in status. P1 original L2 captions sampled at 60:00–end, L3 at 65:00–70:00. Workers read L2/L3 captions sequentially in full; no second full parent caption reading or full audio verification. Final Chinese-output acceptance is recorded separately in status."
   },
   "knownExceptions": [
     "lec03: official No In-Class Lecture notice preserved; video independently identifies Fall 2025.",
@@ -9072,6 +9072,2193 @@
       "pageLinkDifference": "P0–P3 网页 Submission 指向 /courses/1074751，P4 指向 /courses/935004；记录原文差异，不能凭页面链接判断当前哪门已开放。",
       "studentRepositoryPolicy": "私有实现；不公开完整答案。固定 README 另要求提交前运行 gradescope_sign.py 协议签署，本批未运行。"
     }
+  },
+  "batchP1": {
+    "updatedOn": "2026-11-15",
+    "scope": "L2–3, HW1 SQL and official Project0 only; sourceRecords.inventory retains historical P0 observations",
+    "lectures": {
+      "lec02": {
+        "sources": [
+          {
+            "id": "lec02-raw-captions",
+            "url": "https://www.youtube.com/watch?v=O5gU9NQjCAs",
+            "retrievedAt": "2026-11-15",
+            "version": "CMU 15-445/645 Fall 2025 L2; 2025-08-27 classroom; video uploaded 2025-08-28",
+            "sha256": "d1d907f264675aa55a4d8cba792bb63a96029853ba5da29394a2fff9b7368190",
+            "license": {
+              "status": "CC_Attribution_reuse_allowed",
+              "label": "Creative Commons Attribution license (reuse allowed)",
+              "evidence": "Individual-video yt-dlp license field; sources/inventory/video-evidence/O5gU9NQjCAs.json; sha256 3844319cedce92a617d4ea66287c826947aa0e76a8c87df6f9d1c8d8802644e3",
+              "url": "https://creativecommons.org/licenses/by/3.0/",
+              "scope": "Only this video. Not a license for separate textbook, PDFs, third-party music, or unrelated web pages."
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/inventory/captions/O5gU9NQjCAs.en-orig.json3",
+              "method": "Reused acquired original json3; no subtitle download this batch",
+              "error": null
+            },
+            "reading": {
+              "status": "full_sequential_read",
+              "scope": "Original 2042 text events read in order via lossless normalized transcript"
+            },
+            "audioVisual": {
+              "status": "not_verified",
+              "scope": "No audio verification; text/metadata only"
+            }
+          },
+          {
+            "id": "lec02-normalized-captions",
+            "url": "https://www.youtube.com/watch?v=O5gU9NQjCAs",
+            "retrievedAt": "2026-11-15",
+            "version": "CMU 15-445/645 Fall 2025 L2; 2025-08-27 classroom; video uploaded 2025-08-28",
+            "sha256": "dfcea1bf5019a1e8e4684a2f126fbb567d5cde9241ec32c656cb8dcbb0339d3e",
+            "license": {
+              "status": "CC_Attribution_reuse_allowed",
+              "label": "Creative Commons Attribution license (reuse allowed)",
+              "evidence": "Individual-video yt-dlp license field; sources/inventory/video-evidence/O5gU9NQjCAs.json; sha256 3844319cedce92a617d4ea66287c826947aa0e76a8c87df6f9d1c8d8802644e3",
+              "url": "https://creativecommons.org/licenses/by/3.0/",
+              "scope": "Only this video. Not a license for separate textbook, PDFs, third-party music, or unrelated web pages."
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/lec02/captions.normalized.json",
+              "method": "technical-video-notes/scripts/normalize_captions.py",
+              "error": null
+            },
+            "reading": {
+              "status": "full_sequential_read",
+              "scope": "All normalized cue text read via transcript; raw ASR preserved separately"
+            },
+            "audioVisual": {
+              "status": "not_verified",
+              "scope": "No audio verification; text/metadata only"
+            }
+          },
+          {
+            "id": "lec02-transcript",
+            "url": "https://www.youtube.com/watch?v=O5gU9NQjCAs",
+            "retrievedAt": "2026-11-15",
+            "version": "CMU 15-445/645 Fall 2025 L2; 2025-08-27 classroom; video uploaded 2025-08-28",
+            "sha256": "6a52ce71fed750754be552e993b30b73a8eee9c0ef2d66522ef721eccbe5ff15",
+            "license": {
+              "status": "CC_Attribution_reuse_allowed",
+              "label": "Creative Commons Attribution license (reuse allowed)",
+              "evidence": "Individual-video yt-dlp license field; sources/inventory/video-evidence/O5gU9NQjCAs.json; sha256 3844319cedce92a617d4ea66287c826947aa0e76a8c87df6f9d1c8d8802644e3",
+              "url": "https://creativecommons.org/licenses/by/3.0/",
+              "scope": "Only this video. Not a license for separate textbook, PDFs, third-party music, or unrelated web pages."
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/lec02/transcript.en.txt",
+              "method": "technical-video-notes/scripts/normalize_captions.py",
+              "error": null
+            },
+            "reading": {
+              "status": "full_sequential_read",
+              "scope": "All 2042 lines in four strict sequential ranges 1–510, 511–1020, 1021–1530, 1531–2042"
+            },
+            "audioVisual": {
+              "status": "not_verified",
+              "scope": "No audio verification; text/metadata only"
+            }
+          },
+          {
+            "id": "lec02-vtt",
+            "url": "https://www.youtube.com/watch?v=O5gU9NQjCAs",
+            "retrievedAt": "2026-11-15",
+            "version": "CMU 15-445/645 Fall 2025 L2; 2025-08-27 classroom; video uploaded 2025-08-28",
+            "sha256": "e40eca68a7045a52277150ee61c2415dca8454e53fbbd871a10d705e11a9197f",
+            "license": {
+              "status": "CC_Attribution_reuse_allowed",
+              "label": "Creative Commons Attribution license (reuse allowed)",
+              "evidence": "Individual-video yt-dlp license field; sources/inventory/video-evidence/O5gU9NQjCAs.json; sha256 3844319cedce92a617d4ea66287c826947aa0e76a8c87df6f9d1c8d8802644e3",
+              "url": "https://creativecommons.org/licenses/by/3.0/",
+              "scope": "Only this video. Not a license for separate textbook, PDFs, third-party music, or unrelated web pages."
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/lec02/captions.en.vtt",
+              "method": "technical-video-notes/scripts/normalize_captions.py",
+              "error": null
+            },
+            "reading": {
+              "status": "derived_same_text_not_separately_read",
+              "scope": "Same normalized text; VTT serialization not separately read"
+            },
+            "audioVisual": {
+              "status": "not_verified",
+              "scope": "No audio verification; text/metadata only"
+            }
+          },
+          {
+            "id": "lec02-video-evidence",
+            "url": "https://www.youtube.com/watch?v=O5gU9NQjCAs",
+            "retrievedAt": "2026-11-15",
+            "version": "CMU 15-445/645 Fall 2025 L2; 2025-08-27 classroom; video uploaded 2025-08-28",
+            "sha256": "3844319cedce92a617d4ea66287c826947aa0e76a8c87df6f9d1c8d8802644e3",
+            "license": {
+              "status": "CC_Attribution_reuse_allowed",
+              "label": "Creative Commons Attribution license (reuse allowed)",
+              "evidence": "Individual-video yt-dlp license field; sources/inventory/video-evidence/O5gU9NQjCAs.json; sha256 3844319cedce92a617d4ea66287c826947aa0e76a8c87df6f9d1c8d8802644e3",
+              "url": "https://creativecommons.org/licenses/by/3.0/",
+              "scope": "Only this video. Not a license for separate textbook, PDFs, third-party music, or unrelated web pages."
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/inventory/video-evidence/O5gU9NQjCAs.json",
+              "method": "Reused individually acquired metadata evidence",
+              "error": null
+            },
+            "reading": {
+              "status": "full_metadata_read",
+              "scope": "Entire evidence object read; title, description, duration, author, guest and individual-video license"
+            },
+            "audioVisual": {
+              "status": "not_verified",
+              "scope": "No audio verification; text/metadata only"
+            }
+          },
+          {
+            "id": "lec02-frame-2429",
+            "url": "https://www.youtube.com/watch?v=O5gU9NQjCAs",
+            "retrievedAt": "2026-11-15",
+            "version": "CMU 15-445/645 Fall 2025 L2; 2025-08-27 classroom; video uploaded 2025-08-28",
+            "sha256": "ec40289201ef045e26b6df0c6d7f0b5a9862d90b04d83e05f29b1a0faa71cdca",
+            "license": {
+              "status": "CC_Attribution_reuse_allowed",
+              "label": "Creative Commons Attribution license (reuse allowed)",
+              "evidence": "Individual-video yt-dlp license field; sources/inventory/video-evidence/O5gU9NQjCAs.json; sha256 3844319cedce92a617d4ea66287c826947aa0e76a8c87df6f9d1c8d8802644e3",
+              "url": "https://creativecommons.org/licenses/by/3.0/",
+              "scope": "Only this video. Not a license for separate textbook, PDFs, third-party music, or unrelated web pages."
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "lectures/lec02/assets/frame-004029.jpg",
+              "method": "yt-dlp --js-runtimes node --format bv[height<=480] --download-sections with existing imageio_ffmpeg binary; extract offset 1s; video-only, no full download",
+              "sectionSeconds": [
+                2428,
+                2430
+              ],
+              "error": null,
+              "attemptHistory": [
+                "tv,web_safari client with hardcoded 135: page needs reload",
+                "visionos with hardcoded 135: requested format unavailable",
+                "default clients with Node and available video-only <=480p selector: success"
+              ]
+            },
+            "reading": {
+              "status": "not_applicable_visual_source",
+              "scope": "No transcript inferred solely from frame"
+            },
+            "audioVisual": {
+              "status": "visual_frame_inspected",
+              "scope": "MySQL DATE CAST subtraction result 726 and presenter inset; approx 2429 seconds only; audio not acquired or listened"
+            }
+          },
+          {
+            "id": "lec02-frame-4321",
+            "url": "https://www.youtube.com/watch?v=O5gU9NQjCAs",
+            "retrievedAt": "2026-11-15",
+            "version": "CMU 15-445/645 Fall 2025 L2; 2025-08-27 classroom; video uploaded 2025-08-28",
+            "sha256": "d0fa16274d0c19ca0c3b32ffecbaa52da39f0208092125fb46cb8bd43186d9bc",
+            "license": {
+              "status": "CC_Attribution_reuse_allowed",
+              "label": "Creative Commons Attribution license (reuse allowed)",
+              "evidence": "Individual-video yt-dlp license field; sources/inventory/video-evidence/O5gU9NQjCAs.json; sha256 3844319cedce92a617d4ea66287c826947aa0e76a8c87df6f9d1c8d8802644e3",
+              "url": "https://creativecommons.org/licenses/by/3.0/",
+              "scope": "Only this video. Not a license for separate textbook, PDFs, third-party music, or unrelated web pages."
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "lectures/lec02/assets/frame-011201.jpg",
+              "method": "yt-dlp --js-runtimes node --format bv[height<=480] --download-sections with existing imageio_ffmpeg binary; extract offset 1s; video-only, no full download",
+              "sectionSeconds": [
+                4320,
+                4322
+              ],
+              "error": null,
+              "attemptHistory": [
+                "tv,web_safari client with hardcoded 135: page needs reload",
+                "visionos with hardcoded 135: requested format unavailable",
+                "default clients with Node and available video-only <=480p selector: success"
+              ]
+            },
+            "reading": {
+              "status": "not_applicable_visual_source",
+              "scope": "No transcript inferred solely from frame"
+            },
+            "audioVisual": {
+              "status": "visual_frame_inspected",
+              "scope": "dbt graph with source/intermediate/BI annotations; dim_stripe_customers and speaker inset; approx 4321 seconds only; audio not acquired or listened"
+            }
+          },
+          {
+            "id": "lec02-schedule",
+            "url": "https://15445.courses.cs.cmu.edu/fall2025/schedule.html",
+            "retrievedAt": "2026-11-15",
+            "version": "Fall 2025 archived schedule, last updated Dec 04 2025",
+            "sha256": null,
+            "license": {
+              "status": "full_translation_permission_not_established",
+              "evidence": "No broad republication license established from read source",
+              "scope": "Original guide with short chapter-title locators only; no textbook or webpage full translation"
+            },
+            "acquisition": {
+              "status": "body_accessed_with_reader",
+              "path": null,
+              "method": "functions.read URL; PDF text extracted by reader, not locally downloaded",
+              "error": null
+            },
+            "reading": {
+              "status": "relevant_scope_read",
+              "scope": "Read L2 row: Modern SQL, Aug 27, Drew Banin/dbt, Chapters 3–5, HW1 link; remaining rows not used for L2 content"
+            },
+            "audioVisual": {
+              "status": "not_applicable",
+              "scope": "Static web/directory text"
+            }
+          },
+          {
+            "id": "lec02-textbook-home",
+            "url": "https://www.db-book.com/",
+            "retrievedAt": "2026-11-15",
+            "version": "Database System Concepts 7th edition, March 2019",
+            "sha256": null,
+            "license": {
+              "status": "full_translation_permission_not_established",
+              "evidence": "No broad republication license established from read source",
+              "scope": "Original guide with short chapter-title locators only; no textbook or webpage full translation"
+            },
+            "acquisition": {
+              "status": "body_accessed_with_reader",
+              "path": null,
+              "method": "functions.read URL; PDF text extracted by reader, not locally downloaded",
+              "error": null
+            },
+            "reading": {
+              "status": "relevant_scope_read",
+              "scope": "Read home page: authors, edition, publisher and link to official contents"
+            },
+            "audioVisual": {
+              "status": "not_applicable",
+              "scope": "Static web/directory text"
+            }
+          },
+          {
+            "id": "lec02-textbook-toc",
+            "url": "https://www.db-book.com/toc-dir/toc.pdf",
+            "retrievedAt": "2026-11-15",
+            "version": "Database System Concepts 7th edition, official table of contents",
+            "sha256": null,
+            "license": {
+              "status": "full_translation_permission_not_established",
+              "evidence": "No broad republication license established from read source",
+              "scope": "Original guide with short chapter-title locators only; no textbook or webpage full translation"
+            },
+            "acquisition": {
+              "status": "body_accessed_with_reader",
+              "path": null,
+              "method": "functions.read URL; PDF text extracted by reader, not locally downloaded",
+              "error": null
+            },
+            "reading": {
+              "status": "relevant_scope_read",
+              "scope": "Independent reading limited to Chapter 3–5 entries on PDF pages 1–2, section numbers and titles; chapter bodies not read"
+            },
+            "audioVisual": {
+              "status": "not_applicable",
+              "scope": "Static web/directory text"
+            }
+          }
+        ],
+        "captionReading": {
+          "status": "full_sequential_read",
+          "rangesInclusive": [
+            [
+              1,
+              510
+            ],
+            [
+              511,
+              1020
+            ],
+            [
+              1021,
+              1530
+            ],
+            [
+              1531,
+              2042
+            ]
+          ],
+          "scope": "All normalized text events, including music fragments, administrative remarks, SQL examples/demos/Q&A, dbt 65:54–76:45 and closing. No keyword sampling."
+        },
+        "coverage": {
+          "durationMs": 4661000,
+          "cueCount": 2042,
+          "firstTextStartMs": 100,
+          "lastTextEndMs": 4658920,
+          "startsNondecreasing": true,
+          "unionCoveredMs": 4571010,
+          "unionCoverageFraction": 0.9806929843381249,
+          "internalGapCount": 65,
+          "internalGapTotalMs": 87810,
+          "internalGapsMs": [
+            [
+              6230,
+              6560
+            ],
+            [
+              11320,
+              11860
+            ],
+            [
+              505240,
+              506319
+            ],
+            [
+              541000,
+              541040
+            ],
+            [
+              571399,
+              571839
+            ],
+            [
+              1103799,
+              1104160
+            ],
+            [
+              1195240,
+              1195840
+            ],
+            [
+              1238240,
+              1238799
+            ],
+            [
+              1360760,
+              1361600
+            ],
+            [
+              1398079,
+              1404559
+            ],
+            [
+              1427320,
+              1427360
+            ],
+            [
+              1430679,
+              1431919
+            ],
+            [
+              1578919,
+              1580240
+            ],
+            [
+              1585159,
+              1586240
+            ],
+            [
+              1597400,
+              1598000
+            ],
+            [
+              1618679,
+              1618720
+            ],
+            [
+              1624039,
+              1625520
+            ],
+            [
+              1629799,
+              1634799
+            ],
+            [
+              1640200,
+              1641600
+            ],
+            [
+              1653240,
+              1653600
+            ],
+            [
+              1671640,
+              1675120
+            ],
+            [
+              1680360,
+              1680799
+            ],
+            [
+              1690520,
+              1694240
+            ],
+            [
+              1705559,
+              1708240
+            ],
+            [
+              1712399,
+              1713440
+            ],
+            [
+              1740600,
+              1741360
+            ],
+            [
+              1811960,
+              1814320
+            ],
+            [
+              1834279,
+              1834720
+            ],
+            [
+              1837960,
+              1838880
+            ],
+            [
+              1877799,
+              1877919
+            ],
+            [
+              1880919,
+              1882320
+            ],
+            [
+              1903720,
+              1904320
+            ],
+            [
+              1989679,
+              1998000
+            ],
+            [
+              2007799,
+              2008480
+            ],
+            [
+              2044679,
+              2049040
+            ],
+            [
+              2052280,
+              2054159
+            ],
+            [
+              2189800,
+              2190079
+            ],
+            [
+              2285160,
+              2287119
+            ],
+            [
+              2316200,
+              2318320
+            ],
+            [
+              2390920,
+              2391280
+            ],
+            [
+              2425560,
+              2427040
+            ],
+            [
+              2444200,
+              2445119
+            ],
+            [
+              2482440,
+              2482880
+            ],
+            [
+              2531240,
+              2532480
+            ],
+            [
+              2589240,
+              2589440
+            ],
+            [
+              2605480,
+              2606319
+            ],
+            [
+              2652760,
+              2652960
+            ],
+            [
+              2693960,
+              2694160
+            ],
+            [
+              2957480,
+              2957680
+            ],
+            [
+              2965319,
+              2966800
+            ],
+            [
+              2986520,
+              2988559
+            ],
+            [
+              3008760,
+              3009119
+            ],
+            [
+              3397799,
+              3398319
+            ],
+            [
+              3495400,
+              3495839
+            ],
+            [
+              3509720,
+              3510960
+            ],
+            [
+              3514680,
+              3514799
+            ],
+            [
+              3596839,
+              3598720
+            ],
+            [
+              3610040,
+              3613040
+            ],
+            [
+              3618200,
+              3620160
+            ],
+            [
+              3674920,
+              3675920
+            ],
+            [
+              3701720,
+              3701839
+            ],
+            [
+              4490520,
+              4493679
+            ],
+            [
+              4624920,
+              4626040
+            ],
+            [
+              4640360,
+              4641690
+            ],
+            [
+              4644790,
+              4645360
+            ]
+          ],
+          "headGapsMs": [
+            [
+              0,
+              100
+            ]
+          ],
+          "tailGapsMs": [
+            [
+              4658920,
+              4661000
+            ]
+          ],
+          "totalUncoveredMs": 89990,
+          "gapInterpretation": "No caption coverage, NOT verified silence. ASR durations can also span silence; coverage is not word-level or audio verification."
+        },
+        "audioVisual": {
+          "status": "partial_visual_only",
+          "frames": [
+            {
+              "approxSeconds": 2429,
+              "sectionSeconds": [
+                2428,
+                2430
+              ],
+              "path": "lectures/lec02/assets/frame-004029.jpg",
+              "observed": "MySQL DATE CAST subtraction result 726 and presenter inset"
+            },
+            {
+              "approxSeconds": 4321,
+              "sectionSeconds": [
+                4320,
+                4322
+              ],
+              "path": "lectures/lec02/assets/frame-011201.jpg",
+              "observed": "dbt graph with source/intermediate/BI annotations; dim_stripe_customers and speaker inset"
+            }
+          ],
+          "audio": "not_acquired_not_listened",
+          "fullVideo": "not_viewed"
+        },
+        "uncertainties": [
+          {
+            "startMs": 0,
+            "endMs": 32000,
+            "kind": "music_and_unclear_lyrics",
+            "handling": "No reconstructed lyrics; initial head gap explicit."
+          },
+          {
+            "startMs": 1160000,
+            "endMs": 1200000,
+            "kind": "brief_unrecovered_audience_interjection",
+            "handling": "Not fabricated; main grouping-sets explanation retained."
+          },
+          {
+            "startMs": 1260000,
+            "endMs": 1336000,
+            "kind": "GPA_threshold_direction_spoken_correction",
+            "handling": "Explain group threshold without inventing exact comparison operator."
+          },
+          {
+            "startMs": 1840000,
+            "endMs": 1904000,
+            "kind": "identifier_case_not_preserved_by_ASR",
+            "handling": "Describe quoted identifier demo without fabricating exact case."
+          },
+          {
+            "startMs": 3290000,
+            "endMs": 3308000,
+            "kind": "ASR_can_cannot_ambiguity",
+            "handling": "No definitive current-product optimizer support claim."
+          },
+          {
+            "startMs": 3402000,
+            "endMs": 3495000,
+            "kind": "ascending_descending_spoken_conflict",
+            "handling": "Retain sorting by enrollment count without inventing direction."
+          },
+          {
+            "startMs": 3590000,
+            "endMs": 3649000,
+            "kind": "CTE_parameterization_question_partial",
+            "handling": "Preserve speaker uncertainty, not a universal prohibition."
+          },
+          {
+            "startMs": 3689920,
+            "endMs": 3702000,
+            "kind": "audience_question_incomplete",
+            "handling": "Explicitly no generalized rule inferred."
+          },
+          {
+            "startMs": 4227000,
+            "endMs": 4313000,
+            "kind": "staging_column_names_unclear",
+            "handling": "No invented exact model SQL, loader name, or deduplication ordering."
+          },
+          {
+            "startMs": 4622000,
+            "endMs": 4661000,
+            "kind": "music_and_unclear_lyrics",
+            "handling": "No reconstructed lyrics; tail gap explicit."
+          }
+        ],
+        "publicRecovery": {
+          "videoUrl": "https://www.youtube.com/watch?v=O5gU9NQjCAs",
+          "captionLanguage": "en",
+          "captionTrack": "en-orig",
+          "captionFormat": "json3",
+          "normalization": "Use technical-video-notes normalize_captions.py; preserve all nonempty text events; read 2042 events sequentially rather than keyword sampling.",
+          "scope": "Full 00:00–77:41, including dbt 65:54–76:45 and Q&A 73:33–76:17. Material guide is chapter-directory-based, not textbook-body reading.",
+          "frameSectionsSeconds": [
+            [
+              2428,
+              2430
+            ],
+            [
+              4320,
+              4322
+            ]
+          ],
+          "doNotPublish": "Raw captions, downloaded MP4 sections, local acquisition logs and signed URLs, cookies, textbook originals. Screenshot JPEGs and original SVGs only among media assets."
+        },
+        "draftBlockCount": 35,
+        "textbookBodyReading": "not_read"
+      },
+      "lec03": {
+        "sources": [
+          {
+            "id": "lec03-video",
+            "url": "https://www.youtube.com/watch?v=PRLXdIMJhOg",
+            "retrievedAt": "2026-11-15",
+            "version": "Fall 2025; uploaded 2025-09-04; 4622 seconds",
+            "sha256": "a7b0bfd63bf17b784c62aebef709c4839e2ead1b6bb14c3b8bc37eafcb4add8d",
+            "license": {
+              "status": "CC_Attribution_reuse_allowed",
+              "evidence": "sources/inventory/video-evidence/PRLXdIMJhOg.json license field",
+              "scope": "this individual lecture video only; not textbook, independent PDFs, documentation, or third-party music",
+              "url": "https://creativecommons.org/licenses/by/3.0/"
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/inventory/video-evidence/PRLXdIMJhOg.json",
+              "method": "reuse previously acquired yt-dlp evidence",
+              "error": null
+            },
+            "reading": {
+              "status": "metadata_read",
+              "scope": "all individual video metadata fields"
+            },
+            "audioVisual": {
+              "status": "limited_frame_inspection",
+              "scope": "single approximately 47:11 frame only; no audio verification"
+            }
+          },
+          {
+            "id": "lec03-captions",
+            "url": "https://www.youtube.com/watch?v=PRLXdIMJhOg",
+            "retrievedAt": "2026-11-15",
+            "version": "Fall 2025; English automatic en-orig",
+            "sha256": "3fb88566c76ae6c31e861630dc48467daf3f5fd444b693e9b91c23c431c7978d",
+            "license": {
+              "status": "CC_Attribution_reuse_allowed",
+              "evidence": "sources/inventory/video-evidence/PRLXdIMJhOg.json license field",
+              "scope": "this individual lecture video only; not textbook, independent PDFs, documentation, or third-party music",
+              "url": "https://creativecommons.org/licenses/by/3.0/"
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/inventory/captions/PRLXdIMJhOg.en-orig.json3",
+              "method": "reused raw acquisition; not downloaded again",
+              "error": null
+            },
+            "reading": {
+              "status": "full_sequential_read",
+              "scope": "all 2108 text events via normalized chronological transcript"
+            },
+            "audioVisual": {
+              "status": "not_verified",
+              "scope": "caption reading is not audio verification"
+            }
+          },
+          {
+            "id": "lec03-normalized-captions",
+            "url": "https://www.youtube.com/watch?v=PRLXdIMJhOg",
+            "retrievedAt": "2026-11-15",
+            "version": "Fall 2025; English automatic en-orig",
+            "sha256": "07b825b98c0e8cf851aacf815cbcdfa21efe2e18cc9fc4059d793c72e3c76470",
+            "license": {
+              "status": "CC_Attribution_reuse_allowed",
+              "evidence": "sources/inventory/video-evidence/PRLXdIMJhOg.json license field",
+              "scope": "this individual lecture video only; not textbook, independent PDFs, documentation, or third-party music",
+              "url": "https://creativecommons.org/licenses/by/3.0/"
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/lec03/captions.normalized.json",
+              "method": "skill normalize_captions.py",
+              "error": null
+            },
+            "reading": {
+              "status": "full_sequential_read",
+              "scope": "all 2108 cues via transcript.en.txt"
+            },
+            "audioVisual": {
+              "status": "not_verified",
+              "scope": "caption reading is not audio verification"
+            }
+          },
+          {
+            "id": "lec03-transcript",
+            "url": "https://www.youtube.com/watch?v=PRLXdIMJhOg",
+            "retrievedAt": "2026-11-15",
+            "version": "Fall 2025; English automatic en-orig",
+            "sha256": "d3d9e058cecdd3554ba3a426f0dbcc099bc0587f0f02cd59917ad7fc78d7e626",
+            "license": {
+              "status": "CC_Attribution_reuse_allowed",
+              "evidence": "sources/inventory/video-evidence/PRLXdIMJhOg.json license field",
+              "scope": "this individual lecture video only; not textbook, independent PDFs, documentation, or third-party music",
+              "url": "https://creativecommons.org/licenses/by/3.0/"
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/lec03/transcript.en.txt",
+              "method": "skill normalize_captions.py",
+              "error": null
+            },
+            "reading": {
+              "status": "full_sequential_read",
+              "scope": "all 2108 lines in consecutive inclusive ranges 1–533,534–1063,1064–1593,1594–2108"
+            },
+            "audioVisual": {
+              "status": "not_verified",
+              "scope": "caption reading is not audio verification"
+            }
+          },
+          {
+            "id": "lec03-frame",
+            "url": "https://www.youtube.com/watch?v=PRLXdIMJhOg",
+            "retrievedAt": "2026-11-15",
+            "version": "Fall 2025; approximate 47:11 frame",
+            "sha256": "8512f3f4aa2c4dfa323c03b08763a2c442db2c3c553bd5de4a0c3d568af63eb6",
+            "license": {
+              "status": "CC_Attribution_reuse_allowed",
+              "evidence": "sources/inventory/video-evidence/PRLXdIMJhOg.json license field",
+              "scope": "this individual lecture video only; not textbook, independent PDFs, documentation, or third-party music",
+              "url": "https://creativecommons.org/licenses/by/3.0/"
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "lectures/lec03/assets/slotted-page-47m11s.jpg",
+              "method": "yt-dlp format 135 requested section 2830–2832 seconds; imageio_ffmpeg binary extracted frame at local offset 1 second; no full video download",
+              "error": null
+            },
+            "reading": {
+              "status": "visually_inspected",
+              "scope": "slotted page diagram, header, slot array, tuples, instructor inset"
+            },
+            "audioVisual": {
+              "status": "single_frame_verified",
+              "scope": "one still image only; downloaded video-only track; no audio"
+            }
+          },
+          {
+            "id": "lec03-postgresql-system-columns",
+            "url": "https://www.postgresql.org/docs/17/ddl-system-columns.html",
+            "retrievedAt": "2026-11-15",
+            "version": "PostgreSQL 17 documentation, §5.6",
+            "sha256": "b05ae3e5379f8826e575fc89b1c5f50a3f84d2180157bd5000a544e92f74188f",
+            "license": {
+              "status": "not_verified_for_full_translation",
+              "evidence": "official webpage read; no independent republication license verification",
+              "scope": "original guidance and limited factual references only"
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/lec03/postgresql17-system-columns.html",
+              "method": "native read for cited body; curl archived independent snapshot",
+              "error": null
+            },
+            "reading": {
+              "status": "full_page_body_read",
+              "scope": "all system-column definitions and concluding notes"
+            },
+            "audioVisual": {
+              "status": "not_applicable",
+              "scope": "textual reference"
+            }
+          },
+          {
+            "id": "lec03-postgresql-toast",
+            "url": "https://www.postgresql.org/docs/17/storage-toast.html",
+            "retrievedAt": "2026-11-15",
+            "version": "PostgreSQL 17 documentation, §65.2",
+            "sha256": "3d61db5df373f43f0b4f998f77180a0e78a5e91b1846ea15992de630faee02dd",
+            "license": {
+              "status": "not_verified_for_full_translation",
+              "evidence": "official webpage read; no independent republication license verification",
+              "scope": "original guidance and limited factual references only"
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/lec03/postgresql17-toast.html",
+              "method": "native read for cited body; curl archived independent snapshot",
+              "error": "Initial curl archive request timed out after 30s; one 45s retry succeeded"
+            },
+            "reading": {
+              "status": "full_page_body_read",
+              "scope": "§65.2, §65.2.1, §65.2.2 in full; linked source code not read"
+            },
+            "audioVisual": {
+              "status": "not_applicable",
+              "scope": "textual reference"
+            }
+          },
+          {
+            "id": "lec03-sqlite-rowid",
+            "url": "https://www.sqlite.org/rowidtable.html",
+            "retrievedAt": "2026-11-15",
+            "version": "SQLite official live documentation; page updated 2025-05-31",
+            "sha256": "438ffa605579b5628e8e9c2050f4850306f60261fa59a1f98eec3c7ceb543937",
+            "license": {
+              "status": "not_verified_for_full_translation",
+              "evidence": "official webpage read; no independent republication license verification",
+              "scope": "original guidance and limited factual references only"
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/lec03/sqlite-rowid.html",
+              "method": "native read for cited body; curl archived independent snapshot",
+              "error": null
+            },
+            "reading": {
+              "status": "full_page_body_read",
+              "scope": "Definition and Quirks in full"
+            },
+            "audioVisual": {
+              "status": "not_applicable",
+              "scope": "textual reference"
+            }
+          },
+          {
+            "id": "lec03-sqlite-datatypes",
+            "url": "https://www.sqlite.org/datatype3.html",
+            "retrievedAt": "2026-11-15",
+            "version": "SQLite official live documentation as retrieved",
+            "sha256": "4eaab766411136c123d392b2a931c69106a60a616f5a52536eacc79729816fe1",
+            "license": {
+              "status": "not_verified_for_full_translation",
+              "evidence": "official webpage read; no independent republication license verification",
+              "scope": "original guidance and limited factual references only"
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/lec03/sqlite-datatypes.html",
+              "method": "native read for cited body; curl archived independent snapshot",
+              "error": null
+            },
+            "reading": {
+              "status": "partial_page_read",
+              "scope": "§§1–3.1.1 read; §3.2 opening visible but not counted complete; later comparisons and collations not read"
+            },
+            "audioVisual": {
+              "status": "not_applicable",
+              "scope": "textual reference"
+            }
+          },
+          {
+            "id": "lec03-textbook-toc",
+            "url": "https://www.db-book.com/toc-dir/toc.pdf",
+            "retrievedAt": "2026-11-15",
+            "version": "Database System Concepts 7e, 2019",
+            "sha256": "2f3c7f95be6f2dcde17d1d4b4225788a80d9e1ed40e641b18a7f7f22d0f8982f",
+            "license": {
+              "status": "not_verified_for_full_translation",
+              "evidence": "official webpage read; no independent republication license verification",
+              "scope": "original guidance and limited factual references only"
+            },
+            "acquisition": {
+              "status": "acquired",
+              "path": "sources/lec03/textbook-toc.pdf",
+              "method": "native read for cited body; curl archived independent snapshot",
+              "error": null
+            },
+            "reading": {
+              "status": "selected_contents_read",
+              "scope": "chapter 12 and 13 section names/pages; §12.1 page missing in extraction, not guessed"
+            },
+            "audioVisual": {
+              "status": "not_applicable",
+              "scope": "textual reference"
+            }
+          },
+          {
+            "id": "lec03-textbook-home",
+            "url": "https://www.db-book.com/",
+            "retrievedAt": "2026-11-15",
+            "version": "Database System Concepts 7e, 2019",
+            "sha256": null,
+            "license": {
+              "status": "not_verified_for_full_translation",
+              "evidence": "official webpage read; no independent republication license verification",
+              "scope": "original guidance and limited factual references only"
+            },
+            "acquisition": {
+              "status": "reader_text_acquired",
+              "path": null,
+              "method": "native read; no separate local snapshot",
+              "error": null
+            },
+            "reading": {
+              "status": "full_page_body_read",
+              "scope": "edition, authors, year and official links"
+            },
+            "audioVisual": {
+              "status": "not_applicable",
+              "scope": "textual reference"
+            }
+          },
+          {
+            "id": "lec03-textbook-open-index",
+            "url": "https://www.db-book.com/online-chapters-dir/index.html",
+            "retrievedAt": "2026-11-15",
+            "version": "Database System Concepts 7e",
+            "sha256": null,
+            "license": {
+              "status": "not_verified_for_full_translation",
+              "evidence": "official webpage read; no independent republication license verification",
+              "scope": "original guidance and limited factual references only"
+            },
+            "acquisition": {
+              "status": "reader_text_acquired",
+              "path": null,
+              "method": "native read; no separate local snapshot",
+              "error": null
+            },
+            "reading": {
+              "status": "full_page_body_read",
+              "scope": "open chapter list 27–32; assigned chapters 12–13 not offered here"
+            },
+            "audioVisual": {
+              "status": "not_applicable",
+              "scope": "textual reference"
+            }
+          }
+        ],
+        "schedule": {
+          "date": "2025-09-03",
+          "specialNotice": "No In-Class Lecture",
+          "evidence": "existing source-manifest lec03 schedule record; do not label recording as on-campus lecture on that date"
+        },
+        "coverage": {
+          "firstStartMs": 90,
+          "lastEndMs": 4617619,
+          "unionDurationMs": 4600357,
+          "unionFraction": 0.9953173950670705,
+          "uncoveredHeadMs": 90,
+          "uncoveredTailMs": 4381,
+          "internalGapCount": 13,
+          "internalGapDurationMs": 17172,
+          "internalGaps": [
+            {
+              "startMs": 6230,
+              "endMs": 6560,
+              "durationMs": 330,
+              "interpretation": "caption_gap_not_verified_as_silence"
+            },
+            {
+              "startMs": 11320,
+              "endMs": 11860,
+              "durationMs": 540,
+              "interpretation": "caption_gap_not_verified_as_silence"
+            },
+            {
+              "startMs": 909360,
+              "endMs": 910800,
+              "durationMs": 1440,
+              "interpretation": "caption_gap_not_verified_as_silence"
+            },
+            {
+              "startMs": 1011000,
+              "endMs": 1012160,
+              "durationMs": 1160,
+              "interpretation": "caption_gap_not_verified_as_silence"
+            },
+            {
+              "startMs": 1476840,
+              "endMs": 1478320,
+              "durationMs": 1480,
+              "interpretation": "caption_gap_not_verified_as_silence"
+            },
+            {
+              "startMs": 1748279,
+              "endMs": 1750960,
+              "durationMs": 2681,
+              "interpretation": "caption_gap_not_verified_as_silence"
+            },
+            {
+              "startMs": 2032519,
+              "endMs": 2034960,
+              "durationMs": 2441,
+              "interpretation": "caption_gap_not_verified_as_silence"
+            },
+            {
+              "startMs": 2115800,
+              "endMs": 2116160,
+              "durationMs": 360,
+              "interpretation": "caption_gap_not_verified_as_silence"
+            },
+            {
+              "startMs": 2267720,
+              "endMs": 2268160,
+              "durationMs": 440,
+              "interpretation": "caption_gap_not_verified_as_silence"
+            },
+            {
+              "startMs": 2650040,
+              "endMs": 2651040,
+              "durationMs": 1000,
+              "interpretation": "caption_gap_not_verified_as_silence"
+            },
+            {
+              "startMs": 3148800,
+              "endMs": 3152640,
+              "durationMs": 3840,
+              "interpretation": "caption_gap_not_verified_as_silence"
+            },
+            {
+              "startMs": 4017720,
+              "endMs": 4017760,
+              "durationMs": 40,
+              "interpretation": "caption_gap_not_verified_as_silence"
+            },
+            {
+              "startMs": 4590360,
+              "endMs": 4591780,
+              "durationMs": 1420,
+              "interpretation": "caption_gap_not_verified_as_silence"
+            }
+          ],
+          "mergedIntervalsMs": [
+            [
+              90,
+              6230
+            ],
+            [
+              6560,
+              11320
+            ],
+            [
+              11860,
+              909360
+            ],
+            [
+              910800,
+              1011000
+            ],
+            [
+              1012160,
+              1476840
+            ],
+            [
+              1478320,
+              1748279
+            ],
+            [
+              1750960,
+              2032519
+            ],
+            [
+              2034960,
+              2115800
+            ],
+            [
+              2116160,
+              2267720
+            ],
+            [
+              2268160,
+              2650040
+            ],
+            [
+              2651040,
+              3148800
+            ],
+            [
+              3152640,
+              4017720
+            ],
+            [
+              4017760,
+              4590360
+            ],
+            [
+              4591780,
+              4617619
+            ]
+          ]
+        },
+        "audioVisual": {
+          "status": "limited_frame_inspection",
+          "scope": "approximately 47:11 screenshot only; no full-video viewing; no audio listening"
+        },
+        "technicalDifferences": [
+          "page versus frame versus tuple versus RID explicitly separated",
+          "slotted page preserves page-local slot identity, not universal cross-page identity",
+          "SQLite rowid is integer B-tree key, with WITHOUT ROWID and INTEGER PRIMARY KEY qualifications",
+          "SQLite does not store everything as text; ordinary DECIMAL affinity is not PostgreSQL NUMERIC",
+          "PostgreSQL ctid is a row-version physical location and may change on update/VACUUM FULL",
+          "TOAST threshold concerns row width and compression/storage strategies, not every field over 2KB",
+          "hardware 4KB atomicity and product page-size lists are classroom approximations, not universal hardware guarantees",
+          "external URI storage does not inherit all database guarantees; named product APIs not independently verified",
+          "Gray large-object threshold and unspecified numeric/NULL source code/papers not independently read"
+        ],
+        "textbook": {
+          "assigned": "7e §§12.1–12.4,13.2–13.3",
+          "acquisition": "assigned_body_not_acquired",
+          "reading": "assigned_body_not_read",
+          "license": "full_translation_not_verified",
+          "delivered": "accurate chapter navigation and original questions; independent official product documentation guide",
+          "blockerScope": "textbook full-body reading/translation only; lecture caption translation complete",
+          "recovery": "obtain legitimate access to the specified edition and permission before any full translation"
+        },
+        "draftBlockCount": 47
+      }
+    },
+    "assignments": {
+      "version": {
+        "tag": "v20251119-2025fall",
+        "commit": "d49b823f829a4bf311a2c80b239ab5a9864c9c41",
+        "standard": "C++17",
+        "recommendedCompiler": "Clang15",
+        "faqStandard": "C++20",
+        "duckdbAssignmentExample": "1.3.2"
+      },
+      "navigation": {
+        "project0": "#/c/cmu-15-445-2025/lab/project0?v=zh",
+        "hw01": "#/c/cmu-15-445-2025/lab/hw01?v=zh",
+        "guidesUse": "?v=guide",
+        "resources": "#/c/cmu-15-445-2025",
+        "officialProjectCount": 5,
+        "hw01IsOfficialProject": false
+      },
+      "sources": [
+        {
+          "id": "hw01-assignment",
+          "url": "https://15445.courses.cs.cmu.edu/fall2025/homework1/",
+          "retrievedAt": "2026-11-15",
+          "version": "Fall 2025",
+          "sha256": "96b15ca694c2a8e684c3365a50c0df7356799a41ba39ef6ac0bd895964dedba3",
+          "license": {
+            "status": "full_translation_permission_not_found",
+            "evidence": "Full cached HTML/body/footer and linked Fall 2025 syllabus/FAQ inspected on 2026-11-15. No explicit website-wide or assignment-page translation/republication grant found. Academic-integrity provisions are not a copyright license. No full translation is published.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://15445.courses.cs.cmu.edu/fall2025/homework1/",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "cached_original_reused",
+            "path": "content/cmu-15-445-2025/sources/inventory/hw1.html",
+            "method": "Reused existing source bytes without downloading",
+            "error": null
+          },
+          "reading": {
+            "status": "full_read",
+            "scope": "Full sequential text extracted from complete cached HTML, including examples, tasks, all schema tables when present, grading, submission, collaboration and footer; HTML links also inspected."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "project0-assignment",
+          "url": "https://15445.courses.cs.cmu.edu/fall2025/project0/",
+          "retrievedAt": "2026-11-15",
+          "version": "Fall 2025",
+          "sha256": "ee86d9b3878089642bb66f74aa0ac90d6becd8caac4785920301647097443188",
+          "license": {
+            "status": "full_translation_permission_not_found",
+            "evidence": "Full cached HTML/body/footer and linked Fall 2025 syllabus/FAQ inspected on 2026-11-15. No explicit website-wide or assignment-page translation/republication grant found. Academic-integrity provisions are not a copyright license. No full translation is published.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://15445.courses.cs.cmu.edu/fall2025/project0/",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "cached_original_reused",
+            "path": "content/cmu-15-445-2025/sources/inventory/project0.html",
+            "method": "Reused existing source bytes without downloading",
+            "error": null
+          },
+          "reading": {
+            "status": "full_read",
+            "scope": "Full sequential text extracted from complete cached HTML, including examples, tasks, all schema tables when present, grading, submission, collaboration and footer; HTML links also inspected."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "project0-header",
+          "url": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/src/include/primer/count_min_sketch.h",
+          "retrievedAt": "2026-11-15",
+          "version": "v20251119-2025fall @ d49b823f829a4bf311a2c80b239ab5a9864c9c41",
+          "sha256": "bebe0ed2356aad5daee4131fd65a57e2596f558e9b640733368e1b52427251a2",
+          "license": {
+            "status": "MIT_verified",
+            "evidence": "Read fixed repository LICENSE in full; permission applies to repository software and associated documentation, not separate course assignment webpages.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/src/include/primer/count_min_sketch.h",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "cached_original_reused",
+            "path": "content/cmu-15-445-2025/sources/bustub/code/src/include/primer/count_min_sketch.h",
+            "method": "Reused existing source bytes without downloading",
+            "error": null
+          },
+          "reading": {
+            "status": "full_read",
+            "scope": "Full file; deleted copying, noexcept moves, all eight operations, captured this, SEED_BASE, stale heap/initial-k comments"
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "project0-skeleton",
+          "url": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/src/primer/count_min_sketch.cpp",
+          "retrievedAt": "2026-11-15",
+          "version": "v20251119-2025fall @ d49b823f829a4bf311a2c80b239ab5a9864c9c41",
+          "sha256": "3285bee3895384ebd9da1f72c1f4753538897e62321d11f56da8ff6b1b1d333f",
+          "license": {
+            "status": "MIT_verified",
+            "evidence": "Read fixed repository LICENSE in full; permission applies to repository software and associated documentation, not separate course assignment webpages.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/src/primer/count_min_sketch.cpp",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "cached_original_reused",
+            "path": "content/cmu-15-445-2025/sources/bustub/code/src/primer/count_min_sketch.cpp",
+            "method": "Reused existing source bytes without downloading",
+            "error": null
+          },
+          "reading": {
+            "status": "full_read",
+            "scope": "Full file; constructor, protected seeded hash initialization, move operations, dimension mismatch exception, explicit instantiations"
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "project0-public-tests",
+          "url": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/test/primer/count_min_sketch_test.cpp",
+          "retrievedAt": "2026-11-15",
+          "version": "v20251119-2025fall @ d49b823f829a4bf311a2c80b239ab5a9864c9c41",
+          "sha256": "4c2d6a2a3f4b530f88b0197741f3c2ab0d2bc1b26d8b3f2cbe7a9b922fa70c29",
+          "license": {
+            "status": "MIT_verified",
+            "evidence": "Read fixed repository LICENSE in full; permission applies to repository software and associated documentation, not separate course assignment webpages.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/test/primer/count_min_sketch_test.cpp",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "cached_original_reused",
+            "path": "content/cmu-15-445-2025/sources/bustub/code/test/primer/count_min_sketch_test.cpp",
+            "method": "Reused existing source bytes without downloading",
+            "error": null
+          },
+          "reading": {
+            "status": "full_read",
+            "scope": "Full sequential read, lines 1-791, all 13 TEST cases; no compilation/execution"
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "bustub-p0-build",
+          "url": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/CMakeLists.txt",
+          "retrievedAt": "2026-11-15",
+          "version": "v20251119-2025fall @ d49b823f829a4bf311a2c80b239ab5a9864c9c41",
+          "sha256": "4e6b6bf7f024908b23dba6007a5b851a724869ed3ed9ead504072d1cfe87ec53",
+          "license": {
+            "status": "MIT_verified",
+            "evidence": "Read fixed repository LICENSE in full; permission applies to repository software and associated documentation, not separate course assignment webpages.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/CMakeLists.txt",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "cached_original_reused",
+            "path": "content/cmu-15-445-2025/sources/bustub/code/CMakeLists.txt",
+            "method": "Reused existing source bytes without downloading",
+            "error": null
+          },
+          "reading": {
+            "status": "partial_read",
+            "scope": "Lines 1-300 only; C++17, Clang15, Debug sanitizers, build directories, formatting/lint targets, P0_FILES and submit-p0 working directory. No full-build-file reading claim"
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "bustub-readme",
+          "url": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/README.md",
+          "retrievedAt": "2026-11-15",
+          "version": "v20251119-2025fall @ d49b823f829a4bf311a2c80b239ab5a9864c9c41",
+          "sha256": "ce27ee2d5d5f0cf12c85284a60b522fc6268eec5dd7b36b2be8ef4ae39a4cc5b",
+          "license": {
+            "status": "MIT_verified",
+            "evidence": "Read fixed repository LICENSE in full; permission applies to repository software and associated documentation, not separate course assignment webpages.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/README.md",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "cached_original_reused",
+            "path": "content/cmu-15-445-2025/sources/bustub/code/README.txt",
+            "method": "Reused existing source bytes without downloading",
+            "error": null
+          },
+          "reading": {
+            "status": "full_read",
+            "scope": "Full 117-line cached README; private repository, non-CMU agreement, Ubuntu 24.04, macOS M1/M2/Intel, unsupported WSL, sanitizer and platform differences"
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "bustub-license",
+          "url": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/LICENSE",
+          "retrievedAt": "2026-11-15",
+          "version": "v20251119-2025fall @ d49b823f829a4bf311a2c80b239ab5a9864c9c41",
+          "sha256": "cea46dcabf9a86d9a456eb50df903f360dc90bed0704dc82b1591f72f39f8493",
+          "license": {
+            "status": "MIT_verified",
+            "evidence": "Read fixed repository LICENSE in full; permission applies to repository software and associated documentation, not separate course assignment webpages.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/LICENSE",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "cached_original_reused",
+            "path": "content/cmu-15-445-2025/sources/bustub/code/LICENSE",
+            "method": "Reused existing source bytes without downloading",
+            "error": null
+          },
+          "reading": {
+            "status": "full_read",
+            "scope": "Full MIT license; copyright CMU Database Group 2019; software scope only"
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "bustub-packages",
+          "url": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/build_support/packages.sh",
+          "retrievedAt": "2026-11-15",
+          "version": "v20251119-2025fall @ d49b823f829a4bf311a2c80b239ab5a9864c9c41",
+          "sha256": "713483cdb700a070d36828379509421ea1ae2f755d87b14eba8397169e72bdf4",
+          "license": {
+            "status": "MIT_verified",
+            "evidence": "Read fixed repository LICENSE in full; permission applies to repository software and associated documentation, not separate course assignment webpages.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/build_support/packages.sh",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "cached_original_reused",
+            "path": "content/cmu-15-445-2025/sources/bustub/code/build_support/packages.sh",
+            "method": "Reused existing source bytes without downloading",
+            "error": null
+          },
+          "reading": {
+            "status": "full_read",
+            "scope": "Full script; installs system packages, Clang15, Linux and Darwin branches; not executed"
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "bustub-hash-util",
+          "url": "https://raw.githubusercontent.com/cmu-db/bustub/d49b823f829a4bf311a2c80b239ab5a9864c9c41/src/include/common/util/hash_util.h",
+          "retrievedAt": "2026-11-15",
+          "version": "v20251119-2025fall @ d49b823f829a4bf311a2c80b239ab5a9864c9c41",
+          "sha256": null,
+          "license": {
+            "status": "MIT_verified",
+            "evidence": "Same fixed repository MIT license; short API facts only, no full code reproduction.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://raw.githubusercontent.com/cmu-db/bustub/d49b823f829a4bf311a2c80b239ab5a9864c9c41/src/include/common/util/hash_util.h",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "read_tool_acquired",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": null
+          },
+          "reading": {
+            "status": "full_read",
+            "scope": "Full file, especially CombineHashes and HashBytes; Value-related methods also read but type/value.h implementation not read or needed for primer hashing path"
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "bustub-macros",
+          "url": "https://raw.githubusercontent.com/cmu-db/bustub/d49b823f829a4bf311a2c80b239ab5a9864c9c41/src/include/common/macros.h",
+          "retrievedAt": "2026-11-15",
+          "version": "v20251119-2025fall @ d49b823f829a4bf311a2c80b239ab5a9864c9c41",
+          "sha256": null,
+          "license": {
+            "status": "MIT_verified",
+            "evidence": "Same fixed repository MIT license; short API facts only, no full code reproduction.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://raw.githubusercontent.com/cmu-db/bustub/d49b823f829a4bf311a2c80b239ab5a9864c9c41/src/include/common/macros.h",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "read_tool_acquired",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": null
+          },
+          "reading": {
+            "status": "full_read",
+            "scope": "Full file; BUSTUB_ASSERT and BUSTUB_ENSURE behavior"
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "hw01-schema-image",
+          "url": "https://15445.courses.cs.cmu.edu/fall2025/homework1/img/schema2025.png",
+          "retrievedAt": "2026-11-15",
+          "version": "Fall 2025",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://15445.courses.cs.cmu.edu/fall2025/homework1/img/schema2025.png",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "read_tool_acquired",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": null
+          },
+          "reading": {
+            "status": "image_visually_inspected",
+            "scope": "Entire image visually inspected: 11 table boxes, fields and relationship lines; not a database constraint/runtime verification."
+          },
+          "audioVisual": {
+            "status": "image_visually_verified",
+            "scope": "Official schema diagram only; no lecture audio/video involved; original image not republished."
+          }
+        },
+        {
+          "id": "fall2025-syllabus",
+          "url": "https://15445.courses.cs.cmu.edu/fall2025/syllabus.html",
+          "retrievedAt": "2026-11-15",
+          "version": "Fall 2025",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://15445.courses.cs.cmu.edu/fall2025/syllabus.html",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "read_tool_acquired",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": null
+          },
+          "reading": {
+            "status": "full_read",
+            "scope": "Full reader body; policies, homework no late days, Project0 full-score gate, independent work, language-version mismatch and non-CMU access as applicable."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "fall2025-faq",
+          "url": "https://15445.courses.cs.cmu.edu/fall2025/faq.html",
+          "retrievedAt": "2026-11-15",
+          "version": "Fall 2025",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://15445.courses.cs.cmu.edu/fall2025/faq.html",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "read_tool_acquired",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": null
+          },
+          "reading": {
+            "status": "full_read",
+            "scope": "Full reader body; policies, homework no late days, Project0 full-score gate, independent work, language-version mismatch and non-CMU access as applicable."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "duckdb13-subqueries",
+          "url": "https://duckdb.org/docs/1.3/sql/expressions/subqueries.html",
+          "retrievedAt": "2026-11-15",
+          "version": "DuckDB documentation 1.3 (not runtime-verified 1.3.2)",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://duckdb.org/docs/1.3/sql/expressions/subqueries.html",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "read_tool_acquired",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": null
+          },
+          "reading": {
+            "status": "full_body_read",
+            "scope": "Full body; scalar, correlated, EXISTS/NOT EXISTS, IN and NULL semantics."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "duckdb13-with",
+          "url": "https://duckdb.org/docs/1.3/sql/query_syntax/with.html",
+          "retrievedAt": "2026-11-15",
+          "version": "DuckDB documentation 1.3 (not runtime-verified 1.3.2)",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://duckdb.org/docs/1.3/sql/query_syntax/with.html",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "read_tool_acquired",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": null
+          },
+          "reading": {
+            "status": "required_sections_read",
+            "scope": "Required opening, Basic CTE Examples and CTE Materialization sections; reader also exposed initial recursive examples, but no full recursive section read claim."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "duckdb13-from",
+          "url": "https://duckdb.org/docs/1.3/sql/query_syntax/from.html",
+          "retrievedAt": "2026-11-15",
+          "version": "DuckDB documentation 1.3 (not runtime-verified 1.3.2)",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://duckdb.org/docs/1.3/sql/query_syntax/from.html",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "read_tool_acquired",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": null
+          },
+          "reading": {
+            "status": "required_sections_read",
+            "scope": "FROM, ordinary joins, semi/anti joins and LATERAL sections through line 430 of response; no complete As-Of, positional or remaining-section reading claim."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "duckdb13-insert",
+          "url": "https://duckdb.org/docs/1.3/sql/statements/insert.html",
+          "retrievedAt": "2026-11-15",
+          "version": "DuckDB documentation 1.3 (not runtime-verified 1.3.2)",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://duckdb.org/docs/1.3/sql/statements/insert.html",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "read_tool_acquired",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": null
+          },
+          "reading": {
+            "status": "full_body_read",
+            "scope": "Full statement body, columns, ON CONFLICT DO UPDATE, EXCLUDED, OR REPLACE, NOT NULL limitation, composite keys, conflict target and RETURNING."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "cms-paper-linked-pdf",
+          "url": "https://dsf.berkeley.edu/cs286/papers/countmin-latin2004.pdf",
+          "retrievedAt": "2026-11-15",
+          "version": "Fall 2025",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://dsf.berkeley.edu/cs286/papers/countmin-latin2004.pdf",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "failed",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": "ECONNRESET: socket connection closed unexpectedly"
+          },
+          "reading": {
+            "status": "not_read",
+            "scope": "No paper body obtained or read."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "cms-author-locator",
+          "url": "https://dimacs.rutgers.edu/~graham/pubs/html/CormodeMuthukrishnan04CMLatin.html",
+          "retrievedAt": "2026-11-15",
+          "version": "Fall 2025",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://dimacs.rutgers.edu/~graham/pubs/html/CormodeMuthukrishnan04CMLatin.html",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "failed",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": "HTTP 404"
+          },
+          "reading": {
+            "status": "not_read",
+            "scope": "Search located primary-author publication page; direct read returned 404, so no body reading claim."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "cms-technical-report-abstract",
+          "url": "https://archive.dimacs.rutgers.edu/TechnicalReports/abstracts/2003/2003-20.html",
+          "retrievedAt": "2026-11-15",
+          "version": "DIMACS TR 2003-20",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://archive.dimacs.rutgers.edu/TechnicalReports/abstracts/2003/2003-20.html",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "read_tool_acquired",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": null
+          },
+          "reading": {
+            "status": "abstract_only_read",
+            "scope": "Full abstract and author/title metadata only; linked FTP PostScript paper not obtained."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "duckdb-install-entry",
+          "url": "https://duckdb.org/docs/installation/",
+          "retrievedAt": "2026-11-15",
+          "version": "Current redirect on 2026-11-15",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://duckdb.org/docs/installation/",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "read_tool_acquired",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": null
+          },
+          "reading": {
+            "status": "redirect_only",
+            "scope": "Redirect page read; points to 2.0 installation, no historical installation procedure verified."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "duckdb13-install-candidate",
+          "url": "https://duckdb.org/docs/1.3/installation/",
+          "retrievedAt": "2026-11-15",
+          "version": "Attempted 1.3 documentation directory",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://duckdb.org/docs/1.3/installation/",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "failed",
+            "path": null,
+            "method": "Static read tool; no login or access-control bypass",
+            "error": "HTTP 404"
+          },
+          "reading": {
+            "status": "not_read",
+            "scope": "No installation body read."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "hw01-dataset",
+          "url": "https://15445.courses.cs.cmu.edu/fall2025/files/lahman-cmudb2025.db.gz",
+          "retrievedAt": "2026-11-15",
+          "version": "Fall 2025",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://15445.courses.cs.cmu.edu/fall2025/files/lahman-cmudb2025.db.gz",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "not_attempted",
+            "path": null,
+            "method": "Linked in fully read homework page; no data download attempted",
+            "error": null
+          },
+          "reading": {
+            "status": "metadata_from_assignment_only",
+            "scope": "Only assignment-provided metadata and expected MD5 a4fb302c11f80030f26bb6bb59d68cac; database bytes not acquired, opened or queried."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        },
+        {
+          "id": "gradescope-course",
+          "url": "https://www.gradescope.com/courses/1074751",
+          "retrievedAt": "2026-11-15",
+          "version": "Fall 2025",
+          "sha256": null,
+          "license": {
+            "status": "unknown",
+            "evidence": "No redistribution or complete-translation permission established; original explanatory use only.",
+            "checkedAt": "2026-11-15",
+            "evidenceUrl": "https://www.gradescope.com/courses/1074751",
+            "scope": "This source only; no extrapolation from YouTube CC labels or BusTub MIT license."
+          },
+          "acquisition": {
+            "status": "not_attempted",
+            "path": null,
+            "method": "No login or submission attempted",
+            "error": null
+          },
+          "reading": {
+            "status": "linked_metadata_only",
+            "scope": "Only assignment/FAQ/README references read; current login, enrollment, grading and hidden account state unknown."
+          },
+          "audioVisual": {
+            "status": "not_applicable",
+            "scope": "Textual assignment or source code; no audio/video claim."
+          }
+        }
+      ],
+      "taskCompleteness": {
+        "project0": {
+          "requirements": "complete_for_reachable_spec_and_fixed_api",
+          "operations": [
+            "constructor",
+            "move_constructor",
+            "move_assignment",
+            "Insert_concurrency_only",
+            "Count",
+            "Clear",
+            "in_place_void_Merge",
+            "TopK_given_candidates"
+          ],
+          "publicTests": {
+            "lines": 791,
+            "cases": 13,
+            "fullSequentialRead": true,
+            "executed": false,
+            "names": [
+              "BasicTest1",
+              "BasicTest2",
+              "EdgeTest1",
+              "EdgeTest2",
+              "MoveTest",
+              "ClearTest",
+              "MergeTest",
+              "ParallelTest",
+              "ComplexParallelTest",
+              "TopKBasicTest",
+              "TopKDynamicTest",
+              "TopKComprehensiveTest",
+              "ContentionRatioTest"
+            ]
+          },
+          "hashProbabilityPrimer": "single_home_in_project0_guide; explicit ideal-model assumptions; no claim fixed HashUtil proves independence",
+          "websiteTranslation": "not_authorized_full_translation; original_requirement_guide_delivered"
+        },
+        "hw01": {
+          "requirements": "complete_all_six_reachable_questions",
+          "scores": [
+            0,
+            20,
+            20,
+            30,
+            20,
+            10
+          ],
+          "files": [
+            "q1_sample.duckdb.sql",
+            "q2_hr.duckdb.sql",
+            "q3_mvp.duckdb.sql",
+            "q4_award.duckdb.sql",
+            "q5_hof.duckdb.sql",
+            "q6_upsert.duckdb.sql"
+          ],
+          "schemaTables": [
+            "appearances",
+            "awardsmanagers",
+            "awardsplayers",
+            "collegeplaying",
+            "divisions",
+            "halloffame",
+            "leagues",
+            "managers",
+            "people",
+            "schools",
+            "teams"
+          ],
+          "dataRulesCovered": [
+            "official_archive",
+            "expected_MD5_not_measured",
+            "tar_extraction_as_specified",
+            "40MB_expected",
+            "11_tables_expected",
+            "115355_appearances_expected",
+            "DuckDB_1.3.2_example_not_installed"
+          ],
+          "submissionRulesCovered": [
+            "one_statement_per_question",
+            "column_order_matters_names_do_not",
+            "required_ordering",
+            "six_filenames",
+            "zip_j_flat_archive",
+            "Gradescope_single_submission_zip",
+            "individual_work",
+            "no_late_homework"
+          ],
+          "websiteTranslation": "not_authorized_full_translation; original_requirement_guide_delivered"
+        }
+      },
+      "technicalDiscrepancies": [
+        {
+          "topic": "Merge",
+          "web": "creates new sketch",
+          "fixedCode": "void in-place update, other unchanged",
+          "resolution": "fixed API controls tutorial"
+        },
+        {
+          "topic": "TopK",
+          "headerComments": "heap/item-set/initial-k remnants",
+          "fixedCode": "constructor only width/depth; caller supplies candidates",
+          "resolution": "no invented whole-key enumeration or obligatory persistent heap"
+        },
+        {
+          "topic": "moves",
+          "evidence": "HashFunction closure captures [seed,this]",
+          "resolution": "tutorial highlights resource move does not rebind captured pointer; lifetime and noexcept analysis required"
+        },
+        {
+          "topic": "language",
+          "fixedCode": "C++17 Clang15",
+          "FAQ": "C++20",
+          "resolution": "keep discrepancy; do not alter student source"
+        },
+        {
+          "topic": "submissionZIP",
+          "web": "invoke make submit-p0 from build",
+          "fixedCMake": "WORKING_DIRECTORY source root",
+          "resolution": "explain zip appears at source root"
+        },
+        {
+          "topic": "contention",
+          "web": "fine-grained latch or no latch; avoid global latch",
+          "testOutput": "manual deduction warning for not lock-free",
+          "resolution": "retain both wordings; do not promise lock-based full score"
+        },
+        {
+          "topic": "HW1 engine",
+          "web": "one stale SQLite sentence",
+          "remainingSpec": "DuckDB data/CLI/suffixes and syntax",
+          "resolution": "DuckDB path, no SQLite-format compatibility claim"
+        },
+        {
+          "topic": "DuckDB docs",
+          "stableEntry": "redirects 2.0",
+          "resolution": "read required 1.3 SQL docs separately"
+        }
+      ],
+      "limitations": [
+        {
+          "id": "assignment-translation-rights",
+          "impact": "No authorized full webpage translation claimed; complete original functional requirement guides instead",
+          "recovery": "Obtain explicit rightsholder permission or applicable assignment-page license before publishing full translations"
+        },
+        {
+          "id": "paper-body",
+          "impact": "Optional external paper body unread; no project-task gap; probability section explicitly original derivation",
+          "recovery": "Reach official/author full paper and independently check hypotheses and theorem statements"
+        },
+        {
+          "id": "old-install-doc",
+          "impact": "Historical installation not reproduced; does not block text questions",
+          "recovery": "Acquire official target CLI release and verify in isolated learner environment"
+        },
+        {
+          "id": "runtime-and-data",
+          "impact": "No BusTub builds/tests/benchmarks, DuckDB SQL, data checksum or Gradescope run",
+          "recovery": "Learner implements in private workspace, obtains target data/environment, then performs actual checks"
+        }
+      ],
+      "learnerLabCompletion": {
+        "project0": "not_attempted",
+        "hw01": "not_attempted"
+      }
+    },
+    "parentCaptionAudit": {
+      "lec02": {
+        "videoId": "O5gU9NQjCAs",
+        "textEvents": 2042,
+        "sha256": "d1d907f264675aa55a4d8cba792bb63a96029853ba5da29394a2fff9b7368190",
+        "durationMs": 4661000,
+        "firstTextStartMs": 100,
+        "lastTextEndMs": 4658920,
+        "startsNondecreasing": true,
+        "unionMs": 4571010,
+        "interiorGapCount": 65,
+        "interiorGapMs": 87810,
+        "unknownHeadMs": 100,
+        "unknownTailMs": 2080,
+        "largestGaps": [
+          {
+            "startMs": 1989679,
+            "endMs": 1998000,
+            "durationMs": 8321
+          },
+          {
+            "startMs": 1398079,
+            "endMs": 1404559,
+            "durationMs": 6480
+          },
+          {
+            "startMs": 1629799,
+            "endMs": 1634799,
+            "durationMs": 5000
+          },
+          {
+            "startMs": 2044679,
+            "endMs": 2049040,
+            "durationMs": 4361
+          },
+          {
+            "startMs": 1690520,
+            "endMs": 1694240,
+            "durationMs": 3720
+          }
+        ]
+      },
+      "lec03": {
+        "videoId": "PRLXdIMJhOg",
+        "textEvents": 2108,
+        "sha256": "3fb88566c76ae6c31e861630dc48467daf3f5fd444b693e9b91c23c431c7978d",
+        "durationMs": 4622000,
+        "firstTextStartMs": 90,
+        "lastTextEndMs": 4617619,
+        "startsNondecreasing": true,
+        "unionMs": 4600357,
+        "interiorGapCount": 13,
+        "interiorGapMs": 17172,
+        "unknownHeadMs": 90,
+        "unknownTailMs": 4381,
+        "largestGaps": [
+          {
+            "startMs": 3148800,
+            "endMs": 3152640,
+            "durationMs": 3840
+          },
+          {
+            "startMs": 1748279,
+            "endMs": 1750960,
+            "durationMs": 2681
+          },
+          {
+            "startMs": 2032519,
+            "endMs": 2034960,
+            "durationMs": 2441
+          },
+          {
+            "startMs": 1476840,
+            "endMs": 1478320,
+            "durationMs": 1480
+          },
+          {
+            "startMs": 909360,
+            "endMs": 910800,
+            "durationMs": 1440
+          }
+        ]
+      }
+    },
+    "publication": "Only original Chinese content, licensed video stills and original SVGs. Raw captions, media sections, raw acquisition logs and signed media URLs stay in ignored sources. Main acceptance recorded in status.json."
   },
   "publicationPolicy": {
     "rawFilesPublished": false,

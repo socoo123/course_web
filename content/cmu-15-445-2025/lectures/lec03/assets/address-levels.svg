@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" role="img" aria-labelledby="title desc">
+  <title id="title">订单从业务键到元组字节的定位层次</title>
+  <desc id="desc">订单号103经访问方法找到页7槽2。页目录定位磁盘页，缓冲池把页装入内存帧。页内槽2再给出元组偏移。业务身份、持久化定位和内存地址有不同稳定范围。</desc>
+  <style>
+    svg { color: var(--text-color, #334155); }
+    text { fill: currentColor; font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 17px; }
+    rect { fill: none; stroke: var(--accent-color, #4776b4); stroke-width: 2; }
+    path { fill: none; stroke: currentColor; stroke-width: 2; }
+    .small { font-size: 15px; }
+  </style>
+  <rect x="25" y="20" width="630" height="62" rx="8"/>
+  <text x="45" y="47">逻辑身份：Orders.order_id = 103</text>
+  <text class="small" x="45" y="69">应用不依赖文件偏移</text>
+  <path d="M340 82v28m-6-8 6 8 6-8"/>
+  <rect x="25" y="110" width="630" height="62" rx="8"/>
+  <text x="45" y="137">内部定位：RID =（page 7，slot 2）</text>
+  <text class="small" x="45" y="159">按需包含文件／表上下文；不是业务主键</text>
+  <path d="M340 172v28m-6-8 6 8 6-8"/>
+  <rect x="25" y="200" width="630" height="70" rx="8"/>
+  <text x="45" y="229">页目录 → 文件中的页 7 → 缓冲池的某个帧</text>
+  <text class="small" x="45" y="253">页可能已驻留内存；换帧不等于换页号</text>
+  <path d="M340 270v28m-6-8 6 8 6-8"/>
+  <rect x="25" y="298" width="630" height="76" rx="8"/>
+  <text x="45" y="326">slot[2] → 页内偏移 7800 → 元组字节</text>
+  <text class="small" x="45" y="352">内存地址 = frame_base + 7800；只在有效持有期内使用</text>
+</svg>

@@ -1,7 +1,7 @@
 {
   "courseId": "cmu-15-445-2025",
   "updatedOn": "2026-11-15",
-  "phase": "P0_complete_with_documented_source_limits",
+  "phase": "P1_accepted_pending_push",
   "planConfirmed": true,
   "versions": {
     "course": "CMU 15-445/645 Fall 2025",
@@ -20,6 +20,7 @@
       "project3",
       "project4"
     ],
+    "homeworkNavigationIds": ["hw01"],
     "batchNumbersAreNotProjectNumbers": true,
     "stopAfterEachBatch": true,
     "studentSolutionsPublished": false,
@@ -32,7 +33,7 @@
       "scope": "准备与样章：全课来源/版本清单、公共资料、导航骨架、L1、C++/BusTub 准备"
     },
     "P1": {
-      "status": "not_started",
+      "status": "accepted_pending_push_with_documented_source_limits",
       "scope": "L2–3；HW1 SQL；官方 Project 0 Count–Min Sketch 指导"
     },
     "P2": {
@@ -104,26 +105,34 @@
         }
       },
       "lec02": {
-        "notes": {
-          "status": "not_started"
-        },
+        "notes": {"status": "complete", "path": "lectures/lec02/notes.zh.md"},
         "draft": {
-          "status": "not_started"
+          "status": "complete_caption_based_paragraph_translation_with_explicit_gaps",
+          "path": "lectures/lec02/draft.zh.md",
+          "fullSequentialCaptionRead": true,
+          "captionCues": 2042,
+          "timeBlocks": 35,
+          "wholeAudioVideoVerified": false,
+          "verifiedFrames": ["approximately 40:29", "approximately 72:01"],
+          "coverage": {"unionMs": 4571010, "interiorGapCount": 65, "interiorGapMs": 87810, "unknownHeadMs": 100, "unknownTailMs": 2080},
+          "acceptanceBoundary": "完整顺序整理可辨认实质字幕，含SQL演示、dbt嘉宾及问答；不是逐字听译，ASR缺失发言、字面代码与歌词不补造。"
         },
-        "materials": {
-          "status": "not_started"
-        }
+        "materials": {"status": "complete_original_directory_based_reading_guide", "path": "lectures/lec02/materials.zh.md", "textbookBodyReading": "not_read"}
       },
       "lec03": {
-        "notes": {
-          "status": "not_started"
-        },
+        "notes": {"status": "complete", "path": "lectures/lec03/notes.zh.md"},
         "draft": {
-          "status": "not_started"
+          "status": "complete_caption_based_paragraph_translation_with_explicit_gaps",
+          "path": "lectures/lec03/draft.zh.md",
+          "fullSequentialCaptionRead": true,
+          "captionCues": 2108,
+          "timeBlocks": 47,
+          "wholeAudioVideoVerified": false,
+          "verifiedFrames": ["approximately 47:11"],
+          "coverage": {"unionMs": 4600357, "interiorGapCount": 13, "interiorGapMs": 17172, "unknownHeadMs": 90, "unknownTailMs": 4381},
+          "acceptanceBoundary": "完整顺序整理可辨认实质字幕；保留No In-Class Lecture，录制情境与叫号不伪造为学生问答；产品纠错单列。"
         },
-        "materials": {
-          "status": "not_started"
-        }
+        "materials": {"status": "complete_original_independent_reading_guide", "path": "lectures/lec03/materials.zh.md", "textbookBodyReading": "not_read", "independentDocuments": "PostgreSQL 17 System Columns/TOAST; SQLite Rowid Tables及Datatypes部分"}
       },
       "lec04": {
         "notes": {
@@ -369,10 +378,16 @@
       }
     },
     "labs": {
+      "hw01": {
+        "metadata": "complete",
+        "statement": "complete_original_requirements_guide",
+        "guide": "complete_non_solution_guidance",
+        "kind": "homework_not_official_project"
+      },
       "project0": {
         "metadata": "complete",
-        "statement": "not_started",
-        "guide": "not_started"
+        "statement": "complete_original_requirements_guide",
+        "guide": "complete_non_solution_guidance_with_hash_probability_primer"
       },
       "project1": {
         "metadata": "complete",
@@ -397,6 +412,7 @@
     }
   },
   "learnerLabCompletion": {
+    "hw01": "not_attempted",
     "project0": "not_attempted",
     "project1": "not_attempted",
     "project2": "not_attempted",
@@ -405,16 +421,19 @@
   },
   "knownGaps": [
     "L1 未逐句核验音轨或全片画面；仅约46:51一张真实帧已查看。字幕46处内部间隙、首尾未知及ASR疑点已保留，不推定静音。",
-    "L2–25 元数据、逐视频 CC 标签及字幕正文均已取得，但尚未全文审读或核验音画；正文未开始。",
+    "L2/L3字幕已顺序全文读并逐段整理；分别65/13处内部间隙及首尾未知未听核，只查看L2两帧、L3一帧。L4–25仍仅取得元数据、逐视频CC标签和字幕，未全文阅读。",
     "L12/L14 字幕尾部缺约98.462/114.182秒；L15/L16/L18 字幕端点超整数时长645/241/662毫秒，后续审读不得静默裁剪。",
-    "指定教材、独立 PDF、作业与项目网页未确认全文翻译发布许可；本批仅原创导航，不能套用视频CC授权。",
+    "指定教材正文未取得/未读，全文翻译许可未确认。L2为目录型原创导引，L3增加实际已读官方产品文档导引；HW1/Project0经网页许可核查未获全译授权，交付完整原创要求导读而非全译。",
     "HW3/HW5官方索引与PDF截止日期冲突；P4网页更新时间晚于固定源码tag。具体证据见source-manifest。",
     "固定CMake为C++17/Clang15，FAQ写C++20；P0 Merge原地接口与网页措辞不同；P4不兼容P3全部场景，保留独立checkpoint。",
     "Apple Silicon环境只做工具观察和静态准备路线；BusTub未配置、编译或运行学生项目测试。",
     "Gradescope 校外入口登录后可用性未验证；不承诺隐藏评分。",
+    "Count–Min Sketch可选论文正文获取遇ECONNRESET，作者候选入口404，仅读DIMACS摘要；概率先修为明确理想假设的原创推导，不冒充论文精读。",
+    "HW1数据集未下载/校验，DuckDB未安装/运行；官方1.3 SQL文档已读，历史安装目录候选404、当前入口跳转2.0，不宣称旧环境复现。",
     "本地asset glob可能包含sources图片；不上传本地dist，仅用GitHub Actions干净检出构建部署。"
   ],
-  "validation": {
+  "previousBatchValidation": {
+    "batch": "P0",
     "content": {"status": "passed", "publicMarkdownFiles": 3, "images": 2, "svgXml": "parsed", "draftTimeline": "43 consecutive blocks, 0–4489 seconds", "captionUnionRecomputed": true, "referencesWithinDuration": true, "futureLectureBodiesAbsent": true, "projectBodiesAbsent": true},
     "review": {"publicDraftAndNotes": "全文阅读", "originalCaptionParentSample": "transcript.en.txt 1560–1645及1890–2019", "originalCaptionWorker": "2019条顺序全文阅读", "scope": "主审未重复全文读字幕，未听核音轨"},
     "build": {"status": "passed", "command": "npm run build", "exitCode": 0, "runs": 1, "modules": 6071, "viteSeconds": 8.92, "warning": "Existing large-chunk warning; no source/config changes"},
@@ -422,7 +441,8 @@
     "studentProjectBuild": "not_run",
     "studentProjectTests": "not_run"
   },
-  "delivery": {
+  "previousBatchDelivery": {
+    "batch": "P0",
     "contentCommit": "4ddc6b16e7538d090851b2d80ccebead47ec3fe6",
     "contentCommitUrl": "https://github.com/socoo123/course_web/commit/4ddc6b16e7538d090851b2d80ccebead47ec3fe6",
     "push": {"status": "succeeded", "remote": "origin", "branch": "main"},
@@ -431,12 +451,30 @@
     "handoffCommitPolicy": "本状态在后续交接提交中记录已推送的内容提交，不循环写入自身SHA；此处CI结果对应内容提交，交接提交结果见最终交接记录。",
     "policy": "仅在 P0 验收通过后选择性提交并推送 main；Pages 使用 CI 干净检出，不上传本地 dist。"
   },
+  "validation": {
+    "batch": "P1",
+    "content": {"status": "passed", "batchPublicMarkdownFiles": 10, "updatedSharedResources": 1, "originalSvgFiles": 5, "authenticVideoFrames": 3, "svgXml": "parsed", "localImagePaths": "all_resolved", "draftTimeline": {"lec02": "35 consecutive blocks, 0–4661 seconds", "lec03": "47 consecutive blocks, 0–4622 seconds"}, "captionUnionIndependentlyRecomputed": true, "internalRoutes": "passed", "futureLectureBodiesAbsent": true, "futureProjectBodiesAbsent": true},
+    "review": {"publicChineseOutputs": "全部10份正文全文阅读，含独立资料、六题HW1和Project0两页", "sourceCaptionWorkers": "L2全部2042条、L3全部2108条顺序全文阅读", "sourceCaptionParent": "L2 60:00至片尾；L3 65:00–70:00；不是主审再次全文听译", "assignmentsParent": "HW1/Project0网页、固定头文件/骨架和13个公开测试全文静态阅读", "frames": ["L2 approximately 40:29", "L2 approximately 72:01", "L3 approximately 47:11"]},
+    "build": {"status": "passed", "command": "npm run build", "exitCode": 0, "runs": 1, "modules": 6089, "viteSeconds": 8.56, "warning": "Existing large-chunk warning; no source/config changes", "afterBuildContentFix": "Project0移除会触发旧qemu命令卡的branch元数据，版本保留在goal/正文；由实际桌面与手机页面复验，无额外构建"},
+    "browser": {"status": "passed", "engine": "Chromium", "origin": "http://127.0.0.1:5310", "desktop": "1365×900", "mobile": "390×844", "views": ["L2 notes/draft/materials", "L3 notes/draft/materials", "HW1 zh/guide", "Project0 zh/guide"], "visualScreenshotsInspected": true, "allEightImagesScrolledLoadedAndVisuallyInspected": true, "videoHeaders": {"lec02": {"youtubeId": "O5gU9NQjCAs", "duration": "1:17:41"}, "lec03": {"youtubeId": "PRLXdIMJhOg", "duration": "1:17:02"}}, "actualVideoClick": {"popupUrl": "https://www.youtube.com/watch?v=O5gU9NQjCAs", "originalNotesPageRetained": true}, "katexErrors": 0, "mobileDocumentWidths": "all ten views 390px", "mobileDisplayedMathWidths": "L3 notes and Project0 guide all 358px within 358px container", "detailsActuallyOpened": true, "contentOnlyFix": "移除Project0 branch字段触发的无关make qemu/make grade提示，不改src；固定BusTub版本不变"},
+    "studentProjectBuild": "not_run",
+    "studentProjectTests": "not_run",
+    "studentSqlExecution": "not_run"
+  },
+  "delivery": {
+    "batch": "P1",
+    "contentCommit": null,
+    "push": {"status": "pending", "remote": "origin", "branch": "main"},
+    "ci": {"status": "not_started"},
+    "online": {"status": "not_verified"},
+    "policy": "选择性提交公开content；不提交sources或上传本地dist。推送后用后续交接提交记录内容SHA，不循环把自身SHA写进自身。"
+  },
   "next": {
     "keyword": "CMU15445-P1",
     "batch": "P1",
-    "mode": "await_user_trigger",
+    "mode": "await_P1_delivery_recovery_only",
     "scope": "仅L2–3、HW1 SQL与官方Project0 Count–Min Sketch指导；不执行P2",
     "promptFile": "content/cmu-15-445-2025/sources/NEXT-EXECUTION-PROMPT.txt",
-    "publicRecovery": "P0已验收、推送并经CI干净构建部署。仅在用户主动启动后执行P1，不重复P0。先读status和source-manifest；若sources缺失，按公开来源清单有限补取，不能把已取得字幕等同已全文读。使用多agent：L2与L3各端到端独占讲次，HW1/Project0独占实验资料，主agent维护共享状态导航。L2 O5gU9NQjCAs 1:17:41含dbt嘉宾段；L3 PRLXdIMJhOg 1:17:02，保留No In-Class Lecture。完整顺序审读字幕、连续逐段译稿、原创带图笔记及真实必要截图；无独立阅读不造materials。教材/题面全译权限需另核实，未获许可时明确采用原创要求导读，不冒充授权全文翻译。Project0完整覆盖构造/移动、Insert并发、Count/Clear、原地Merge、给定candidates的TopK；不写学生答案、不跑未实现评分测试。固定BusTub版本不变，保留C++17/Clang15与FAQ差异。只改content，统一一次build和真实桌面/手机验收，通过后选择性提交推送并交还控制；若P1核心正文阻塞保留P1恢复入口。"
+    "publicRecovery": "P1正文、来源、一次本地构建及桌面/手机视觉验收均已通过。若交付中断，先恢复本批选择性提交推送，不重复制作。只有确认推送成功后才将下一批切换P2；所有来源、字幕间隙、局部截图核验与未读教材/未跑实验边界见本状态及source-manifest.batchP1。"
   }
 }

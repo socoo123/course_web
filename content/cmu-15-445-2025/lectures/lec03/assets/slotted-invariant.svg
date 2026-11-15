@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 460" role="img" aria-labelledby="title desc">
+  <title id="title">页内压缩改变偏移但不改变活跃槽身份</title>
+  <desc id="desc">整理前页7槽2指向偏移7800处订单103，删除订单102留下空洞。整理后订单103移到7900，槽2修改偏移，索引保存的页7槽2不变。图不按字节比例。</desc>
+  <style>
+    svg { color: var(--text-color, #334155); }
+    text { fill: currentColor; font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 17px; }
+    rect, path { fill: none; stroke: currentColor; stroke-width: 1.8; }
+    .accent { stroke: var(--accent-color, #4776b4); stroke-width: 2.5; }
+    .small { font-size: 14px; }
+    .hole { stroke-dasharray: 5 4; }
+  </style>
+  <text x="24" y="28">外部索引始终保存：page 7，slot 2</text>
+  <text x="24" y="66">整理前</text><text x="368" y="66">整理后</text>
+  <rect x="24" y="82" width="284" height="310" rx="5"/>
+  <rect x="368" y="82" width="284" height="310" rx="5"/>
+  <text x="40" y="111">页头</text><text x="384" y="111">页头</text>
+  <path d="M24 126h284M368 126h284"/>
+  <text x="40" y="155">slot 2 → 7800</text><text x="384" y="155">slot 2 → 7900</text>
+  <path d="M24 172h284M368 172h284"/>
+  <text class="small" x="40" y="206">连续空闲区</text>
+  <text class="small" x="384" y="206">合并后的连续空闲区</text>
+  <rect class="accent" x="40" y="236" width="252" height="42"/>
+  <text x="53" y="263">103（偏移 7800）</text>
+  <rect class="hole" x="40" y="286" width="252" height="42"/>
+  <text class="small" x="53" y="313">删除 102 留下的空洞</text>
+  <rect class="accent" x="384" y="286" width="252" height="42"/>
+  <text x="397" y="313">103（偏移 7900）</text>
+  <rect x="40" y="340" width="252" height="36"/>
+  <rect x="384" y="340" width="252" height="36"/>
+  <text x="53" y="365">订单 101</text><text x="397" y="365">订单 101</text>
+  <path class="accent" d="M308 256h22v48h38m-8-6 8 6-8 6"/>
+  <text class="small" x="24" y="426">不变量：槽 2 仍定位订单 103；只在页内移动，不推出跨页 RID 稳定。</text>
+</svg>

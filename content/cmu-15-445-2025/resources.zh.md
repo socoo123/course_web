@@ -29,9 +29,11 @@ license: 本页为编者原创导航；视频、教材、讲义、实验网页�
 - **课程笔记**：按问题提炼机制、推导、反例与自测。默认从这里开始。
 - **中文译稿**：按真实视频时间顺序整理课堂讲解、演示与问答；课堂截图只放这里。时间索引是返回原片定位的依据，不代表逐帧核验。
 - **课程资料**：只承载独立课外阅读，不再把课堂逐项讲过的 slides/notes 翻译一遍。无独立内容时不创建占位文件。
-- **公共资料**：共用教材、版本、工具链和学习方法集中在本页；实验说明与指导按后续制作批次提供，学习者实现留在独立私有仓库。
+- **公共资料**：共用教材、版本、工具链和学习方法集中在本页；实验说明与指导提供无答案的要求导读，学习者实现留在独立私有仓库。
 
-网站“材料已就绪”不等于学习者完成实验。**制作批次 P0–P11 与官方 Project 0–4 是两套编号**；本批准备路线不是 Project 0 的完整指导或答案。
+网站“材料已就绪”不等于学习者完成实验。**制作批次 P0–P11 与官方 Project 0–4 是两套编号**；HW1–6 是另一组作业，导航中的 HW1 不是第六个官方 Project。
+
+L2–3 的动手入口：[HW1 SQL 要求导读](#/c/cmu-15-445-2025/lab/hw01?v=zh)与[无答案指导](#/c/cmu-15-445-2025/lab/hw01?v=guide)；[Project 0 要求导读](#/c/cmu-15-445-2025/lab/project0?v=zh)与[哈希、概率及实现指导](#/c/cmu-15-445-2025/lab/project0?v=guide)。题面网页的全文翻译发布许可未确认，这些页面是编者原创导读，不冒充授权全文译文。
 
 ## C++ 先修：先把资源归属说清楚
 
@@ -42,9 +44,9 @@ license: 本页为编者原创导航；视频、教材、讲义、实验网页�
 3. **容器、模板与复杂度**：能读懂 `vector`、哈希表、模板类和迭代器；不把“平均常数时间”当作没有内存或同步成本。
 4. **并发与错误定位**：理解互斥锁、条件变量、原子操作和数据竞争的区别；能读编译错误、栈回溯与 sanitizer 报告。原子计数并不自动保护多字段不变量。
 
-这些是编者先修检查，不是官方项目答案。后续 Count–Min Sketch 再补哈希碰撞、概率界与近似计数；此处不提前展开实现。
+这些是编者先修检查，不是官方项目答案。Count–Min Sketch 所需的哈希碰撞、概率界与近似计数集中在 [Project 0 指导](#/c/cmu-15-445-2025/lab/project0?v=guide)，不必等到 L7 才开始。
 
-## 教材怎么配合第一讲
+## 教材定位与分讲阅读
 
 指定教材是 Silberschatz、Korth、Sudarshan 的 **Database System Concepts，第七版（2019）**。第六版或其他数据库教材可以辅助理解，但页码和章节编号不能混用。
 
@@ -59,6 +61,8 @@ license: 本页为编者原创导航；视频、教材、讲义、实验网页�
 | §2.6 The Relational Algebra | 一个操作的输入和输出是什么？怎样组合操作而不指定存储布局？ | 选择、投影、集合操作、连接 |
 
 本页只依据官网与目录定位章节，**不是教材全文翻译，也不表示已通读教材正文**。阅读时先自己写出一个三行小表，再计算表达式结果；用反例区分关系代数的集合语义与后续 SQL 的多重集语义。L1 的技术提炼见[关系模型与关系代数笔记](#/c/cmu-15-445-2025/lec/lec01?v=notes)。
+
+L2 指定 **Chapters 3–5**，L3 指定 **§12.1–12.4、§13.2–13.3**。按各讲笔记中的问题读自己的教材；该书全文翻译发布授权仍未确认。独立章节阅读导引若有制作，放在对应讲次的课程资料；它与课堂译稿分开，也不表示通读了教材正文。
 
 ## 版本冻结与实验工作区
 
@@ -140,5 +144,5 @@ HW1 对应 SQL，HW2–6 分别衔接存储、索引、执行、事务、恢复�
 - CMU Database Group：[BusTub 固定源码](https://github.com/cmu-db/bustub/tree/v20251119-2025fall)、[固定提交](https://github.com/cmu-db/bustub/commit/d49b823f829a4bf311a2c80b239ab5a9864c9c41)。代码许可与课程网页、视频、第三方依赖许可分别适用。
 - 官方 [作业与项目索引](https://15445.courses.cs.cmu.edu/fall2025/assignments.html)：[Project 0](https://15445.courses.cs.cmu.edu/fall2025/project0/)、[Project 1](https://15445.courses.cs.cmu.edu/fall2025/project1/)、[Project 2](https://15445.courses.cs.cmu.edu/fall2025/project2/)、[Project 3](https://15445.courses.cs.cmu.edu/fall2025/project3/)、[Project 4](https://15445.courses.cs.cmu.edu/fall2025/project4/)。任务与测试范围经网页和固定源码静态核对；不是已运行的验证结果。
 - 工具链依据：固定提交的 [README](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/README.md)、[CMakeLists.txt](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/CMakeLists.txt)、[packages.sh](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/build_support/packages.sh)。原生开发与 Linux 验证路线为编者建议，未实际配置或运行。
-- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。本批仅登记、获取并核对元数据，不宣称已解题或全文技术审读。HW3 索引截止日为 2025-10-05，PDF 却印 “Sunday October 3rd”；HW5 索引为 11-23，PDF 为 11-16。保留冲突，不猜测延期原因。
+- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1 已阅读全文并制作原创要求导读；HW2–6 仍仅登记、获取并核对元数据，不宣称已解题或全文技术审读。HW3 索引截止日为 2025-10-05，PDF 却印 “Sunday October 3rd”；HW5 索引为 11-23，PDF 为 11-16。保留冲突，不猜测延期原因。
 - 全课逐来源版本、访问与阅读范围见仓库 `content/cmu-15-445-2025/source-manifest.json`；制作与恢复状态见同目录 `status.json`。原始字幕、媒体与网页快照只保存在本地忽略的 `sources/`，不随站点发布。

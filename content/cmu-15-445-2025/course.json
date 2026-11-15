@@ -58,7 +58,7 @@
       "title": "现代 SQL",
       "titleEn": "Modern SQL",
       "video": {
-        "label": "Fall 2025 L2",
+        "label": "Fall 2025 L2 · 含 dbt 嘉宾演讲",
         "youtube": "https://www.youtube.com/watch?v=O5gU9NQjCAs",
         "duration": "1:17:41",
         "language": "en"
@@ -67,7 +67,8 @@
       "readings": [
         "Database System Concepts 第七版 · Chapters 3-5"
       ],
-      "lab": "project0"
+      "lab": "hw01",
+      "note": "录像包含现代 SQL 与 dbt 嘉宾演讲；HW1 为独立 SQL 作业，不计入五个官方 Project。"
     },
     {
       "id": "lec03",
@@ -457,15 +458,32 @@
   ],
   "labs": [
     {
+      "id": "hw01",
+      "num": 1,
+      "title": "HW1 · SQL 作业（非 Project）",
+      "titleEn": "Homework 1 — SQL",
+      "stars": 2,
+      "hours": "官方约 6 小时（个人基础有差异）",
+      "url": "https://15445.courses.cs.cmu.edu/fall2025/homework1/",
+      "goal": "使用 DuckDB 分析 Lahman 数据；练习聚合、相关子查询、连接和单语句 UPSERT，逐题确认结果粒度。",
+      "tasks": [
+        {"id": "q1", "title": "输出格式校准", "grade": "0 分"},
+        {"id": "q2", "title": "PA 学校球员的最高单条出场 HR", "grade": "20 分"},
+        {"id": "q3", "title": "Gold Glove 球员与球队组合", "grade": "20 分"},
+        {"id": "q4", "title": "球队年度获奖事件", "grade": "30 分"},
+        {"id": "q5", "title": "名人堂球员的最早队友", "grade": "20 分"},
+        {"id": "q6", "title": "球队记录 UPSERT", "grade": "10 分"}
+      ]
+    },
+    {
       "id": "project0",
       "num": 0,
       "title": "C++ 入门：Count–Min Sketch",
       "titleEn": "C++ Primer — Count–Min Sketch",
       "stars": 2,
       "hours": "按基础安排（未估时）",
-      "branch": "v20251119-2025fall",
       "url": "https://15445.courses.cs.cmu.edu/fall2025/project0/",
-      "goal": "练习模板、移动语义、并发插入与近似频率统计；Merge 以固定原地接口为准。",
+      "goal": "基于 BusTub v20251119-2025fall 练习模板、移动语义、并发插入与近似频率统计；Merge 以固定原地接口为准。",
       "tasks": [
         {
           "id": "task-1",
