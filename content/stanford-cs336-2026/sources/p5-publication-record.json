@@ -1,14 +1,42 @@
 {
   "phase": "P5",
   "date": "2026-11-15",
-  "status": "prepared_for_explicit_allowlist_publication",
+  "status": "content_commit_pushed_actions_deployed_live_pages_accepted",
   "repository": "https://github.com/socoo123/course_web",
   "branch": "main",
   "workflow": ".github/workflows/pages.yml",
   "page": "https://socoo123.github.io/course_web/#/c/stanford-cs336-2026",
-  "contentCommit": null,
-  "deployment": null,
-  "liveAcceptance": null,
+  "contentCommit": "3f3c705bf5c5bc367d0704abcec0098202dc4207",
+  "deployment": {
+    "runId": 43689480572,
+    "url": "https://github.com/socoo123/course_web/actions/runs/43689480572",
+    "conclusion": "success",
+    "jobSeconds": 43,
+    "completedAt": "2026-11-15T07:20:57Z",
+    "cleanCheckoutBuild": {"modules":2652,"viteSeconds":11.22,"typecheck":"passed","localDistUploaded":false},
+    "runnerNotices": ["Existing v4/v5 actions emitted a Node20 deprecation/forced Node24 notice.","ubuntu-latest migration notice; not a build failure."],
+    "workflowChanged": false
+  },
+  "liveAcceptance": {
+    "method": "Real Chromium on public Pages after successful deployment; exact route first-heading readiness, loaded fonts and finite animations.",
+    "pages": [
+      {"id":"lec09","view":"default_notes","viewport":[1440,1000],"header":"77:57 · Q15rhEWZPQ4","heading":"1. 先写决策，再画直线"},
+      {"id":"lec10","view":"default_notes","viewport":[1440,1000],"header":"85:30 · EfM546A79aM","heading":"1. “更快”必须先指定谁在等待"},
+      {"id":"lec11","view":"default_notes","viewport":[1440,1000],"header":"77:03 · vTfEyOyzV9E","heading":"1. 预测错了，未必是幂律错了"},
+      {"id":"lec12","view":"default_notes","viewport":[390,844],"header":"78:34 · JpAxdTWQJxM","heading":"1. 一个准确率，可能回答了三个不同问题"},
+      {"id":"lec10","view":"materials","viewport":[390,844],"heading":"§3 大语言模型服务中的内存挑战"},
+      {"id":"ext11","view":"materials","viewport":[390,844],"heading":"A. LoRA：把“能适配”与“能压缩原模型”分开"},
+      {"id":"a3-scaling","view":"zh","viewport":[390,844],"heading":"0．版本、政策与访问范围"}
+    ],
+    "rootWidthsMatchViewports": true,
+    "katexErrors": 0,
+    "displayMathOverflows": 0,
+    "screenshotsActuallyViewed": ["L09 desktop","A3 mobile"],
+    "productionSvg": "L09 diagram scrolled into view; data:image/svg+xml;base64 asset loaded with nonzero naturalWidth.",
+    "headerTargets": "_blank; noreferrer",
+    "videoClickEvidence": "Actual L09 desktop/L12 mobile new-tab clicks and preserved reading pages were checked locally; see p5-shared/page-check.json.",
+    "noPlaybackClaim": true
+  },
   "allowlistFileCount": 80,
   "allowlist": [
     "course.json",
