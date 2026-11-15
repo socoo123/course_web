@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" role="img" aria-labelledby="title desc">
+  <title id="title">替换器在观察什么：最近、重复与淘汰后的反馈</title>
+  <desc id="desc">原创概念图。LRU只看最近一次访问；频率计数可能被过时热点占据；ARC用驻留recent和frequent列表以及相应ghost历史提供反馈，调整recent目标p。Ghost只存历史，不存页面字节；图不是本期项目的完整转移规则。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#566c7b"/></marker></defs>
+  <style>text{font-family:system-ui,"Noto Sans CJK SC","PingFang SC",sans-serif;fill:#172d3b;font-size:18px}.heading{font-size:23px;font-weight:700}.small{font-size:16px}.resident{fill:#e9f4fd;stroke:#3979a5;stroke-width:2}.ghost{fill:#f4f0fa;stroke:#8664ad;stroke-width:2;stroke-dasharray:7 4}.line{fill:none;stroke:#566c7b;stroke-width:2;marker-end:url(#arrow)}</style>
+  <rect x="8" y="8" width="864" height="544" rx="16" fill="#fff"/>
+  <text x="35" y="45" class="heading">不只问“刚刚用过吗”，还问“被淘汰后又回来了吗”</text>
+  <text x="35" y="85">反例 1：大扫描中的冷页很“新”，但可能只用一次。</text>
+  <text x="35" y="118">反例 2：上周热点计数很高，但今天可能不再需要。</text>
+  <rect x="35" y="150" width="385" height="98" rx="10" class="resident"/>
+  <text x="54" y="183" class="heading">T1：recent 驻留页</text><text x="54" y="216">页面字节实际占用 buffer frames</text>
+  <rect x="460" y="150" width="385" height="98" rx="10" class="resident"/>
+  <text x="479" y="183" class="heading">T2：frequent 驻留页</text><text x="479" y="216">有重复访问证据，不是永久保护</text>
+  <path d="M225 248 V292" class="line"/><text x="241" y="277" class="small">淘汰后留下历史</text>
+  <path d="M653 248 V292" class="line"/><text x="667" y="277" class="small">淘汰后留下历史</text>
+  <rect x="35" y="300" width="385" height="80" rx="10" class="ghost"/>
+  <text x="54" y="332">B1：recent ghost 历史</text><text x="54" y="360" class="small">有身份/历史，没有可读页面字节</text>
+  <rect x="460" y="300" width="385" height="80" rx="10" class="ghost"/>
+  <text x="479" y="332">B2：frequent ghost 历史</text><text x="479" y="360" class="small">ghost 命中仍需要重新装载页面</text>
+  <path d="M225 380 V420 H355" class="line"/><path d="M653 380 V420 H525" class="line"/>
+  <rect x="360" y="397" width="160" height="48" rx="9" class="resident"/><text x="385" y="428">调节目标 p</text>
+  <text x="35" y="483">B1 命中 → 倾向增加 recent 目标；B2 命中 → 倾向减少它。</text>
+  <text x="35" y="517" class="small">编者概念重绘：具体步长、容量边界、不可驱逐页处理以固定 Project 1 为准。</text>
+</svg>

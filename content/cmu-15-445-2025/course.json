@@ -111,7 +111,7 @@
       "title": "数据库存储（二）",
       "titleEn": "Database Storage II",
       "video": {
-        "label": "Fall 2025 L5",
+        "label": "Fall 2025 L5 · 含 SingleStore 嘉宾演讲",
         "youtube": "https://www.youtube.com/watch?v=2_sTdS4h-bY",
         "duration": "1:19:18",
         "language": "en"
@@ -492,15 +492,29 @@
       ]
     },
     {
+      "id": "hw02",
+      "num": 2,
+      "title": "HW2 · 存储作业（非 Project）",
+      "titleEn": "Homework 2 — Storage",
+      "stars": 2,
+      "hours": "官方约 4–6 小时（个人基础有差异）",
+      "url": "https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf",
+      "goal": "比较 slotted pages 与日志结构，按固定前提估算 NSM/DSM 页读取，并检验压缩方案的适用条件；不提供选项答案。",
+      "tasks": [
+        {"id": "q1", "title": "Slotted Pages 与 Log-Structured", "grade": "30 分"},
+        {"id": "q2", "title": "存储模型与页访问", "grade": "35 分"},
+        {"id": "q3", "title": "数据库压缩", "grade": "35 分"}
+      ]
+    },
+    {
       "id": "project1",
       "num": 1,
       "title": "缓冲池：ARC、调度与页守卫",
       "titleEn": "Buffer Pool Manager — ARC、Disk Scheduler 与 Page Guards",
       "stars": 4,
       "hours": "按基础安排（未估时）",
-      "branch": "v20251119-2025fall",
       "url": "https://15445.courses.cs.cmu.edu/fall2025/project1/",
-      "goal": "管理页面生命周期、异步 I/O 与 move-only 页守卫，维护 pin、dirty 与替换状态。",
+      "goal": "基于 BusTub v20251119-2025fall 管理页面生命周期、批量异步 I/O 与 move-only 页守卫，维护 pin、dirty、latch 与 ARC 替换状态。",
       "tasks": [
         {
           "id": "task-1",

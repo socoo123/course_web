@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 610" role="img" aria-labelledby="title desc">
+  <title id="title">从列的数据规律选择编码，并核算代价</title>
+  <desc id="desc">长连续重复段适合RLE，小值域适合位打包，少量异常配补丁，特定值筛选适合位图，相邻小差异适合delta，重复字符串适合字典。每种选择还要检查段数、异常映射、基数、恢复链与字典语义。</desc>
+  <style>
+    svg { color: var(--text-color, #334155); }
+    text { fill: currentColor; font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 17px; }
+    rect { fill: none; stroke: var(--accent-color, #4776b4); stroke-width: 2; }
+    .small { font-size: 15px; }
+    .label { font-weight: 600; }
+    path { fill: none; stroke: currentColor; stroke-width: 2; }
+  </style>
+  <text x="20" y="30" class="label">不是“最强算法”，而是“这一块有什么规律”</text>
+  <text x="20" y="62" class="small">数据／查询规律</text><text x="390" y="62" class="small">候选编码 → 必查的隐藏成本</text>
+  <rect x="20" y="80" width="290" height="70" rx="7"/><text x="35" y="109">status：paid paid paid …</text><text x="35" y="134" class="small">长连续重复段</text>
+  <path d="M320 115h45m-8-6 8 6-8 6"/>
+  <rect x="380" y="80" width="260" height="70" rx="7"/><text x="395" y="109">RLE</text><text x="395" y="134" class="small">段数多时可能反而膨胀</text>
+  <rect x="20" y="168" width="290" height="70" rx="7"/><text x="35" y="197">available：2 7 3 999999</text><text x="35" y="222" class="small">多数小值，极少数例外</text>
+  <path d="M320 203h45m-8-6 8 6-8 6"/>
+  <rect x="380" y="168" width="260" height="70" rx="7"/><text x="395" y="197">Bit packing + patching</text><text x="395" y="222" class="small">标记、位置与宽值都占空间</text>
+  <rect x="20" y="256" width="290" height="70" rx="7"/><text x="35" y="285">paid AND east</text><text x="35" y="310" class="small">筛选集合需要频繁组合</text>
+  <path d="M320 291h45m-8-6 8 6-8 6"/>
+  <rect x="380" y="256" width="260" height="70" rx="7"/><text x="395" y="285">Bitmap</text><text x="395" y="310" class="small">一值一图：先核算基数 K</text>
+  <rect x="20" y="344" width="290" height="70" rx="7"/><text x="35" y="373">time：1000 1001 1002 …</text><text x="35" y="398" class="small">相邻差值小且重复</text>
+  <path d="M320 379h45m-8-6 8 6-8 6"/>
+  <rect x="380" y="344" width="260" height="70" rx="7"/><text x="395" y="373">Delta，可再做 RLE</text><text x="395" y="398" class="small">随机定位要考虑恢复链</text>
+  <rect x="20" y="432" width="290" height="70" rx="7"/><text x="35" y="461">sku：A B A A C …</text><text x="35" y="486" class="small">重复字符串，长度可变</text>
+  <path d="M320 467h45m-8-6 8 6-8 6"/>
+  <rect x="380" y="432" width="260" height="70" rx="7"/><text x="395" y="461">Dictionary</text><text x="395" y="486" class="small">原值仍在；保序须另行确认</text>
+  <text x="20" y="548" class="label">总成本 = 主数据 + 元数据 + 例外／字典 + 计算</text>
+  <text x="20" y="581" class="small">无损、位置对齐、查询语义：三者都要保持</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 540" role="img" aria-labelledby="title desc">
+<title id="title">Leveled compaction 的同层不重叠范围</title>
+<desc id="desc">L0 的三个 SSTable 分别覆盖 A 到 R、E 到 T、B 到 Q，都可能含 Q。归并后 L1 分为 A 到 M 与 N 到 T，找 Q 只需考虑第二个文件。该保证仅在单个非 L0 层内，不能排除其他层还有 Q 的旧状态。</desc>
+<style>text{font-family:system-ui,"Noto Sans CJK SC","PingFang SC",sans-serif;fill:currentColor;font-size:19px}.box{fill:none;stroke:currentColor;stroke-width:2}.accent{fill:none;stroke:var(--accent,#287c9a);stroke-width:3}.small{font-size:16px}.label{fill:var(--accent,#287c9a);font-weight:600}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="var(--accent,#287c9a)"/></marker></defs>
+<text x="28" y="35" font-size="24">查找 Q：减少候选，而不是凭范围证明存在</text>
+<text x="28" y="78">L0：flush 输入，文件范围可重叠</text>
+<rect class="box" x="155" y="103" width="570" height="46" rx="6"/>
+<text x="172" y="133">A …………………………………………… R</text>
+<rect class="box" x="285" y="164" width="490" height="46" rx="6"/>
+<text x="302" y="194">E ………………………………………… T</text>
+<rect class="box" x="190" y="225" width="500" height="46" rx="6"/>
+<text x="207" y="255">B ………………………………………… Q</text>
+<path class="accent" d="M675 90 V280" stroke-dasharray="5 5"/>
+<text x="690" y="91" class="label">Q</text>
+<path class="accent" d="M455 281 V332" marker-end="url(#arrow)"/>
+<text x="478" y="313" class="small">归并、去掉可安全回收的旧状态</text>
+<text x="28" y="365">L1：同层范围不重叠</text>
+<rect class="box" x="155" y="387" width="315" height="56" rx="6"/>
+<rect class="accent" x="489" y="387" width="286" height="56" rx="6"/>
+<text x="239" y="423">A … M</text><text x="560" y="423" class="label">N … Q … T</text>
+<text x="28" y="484">本层仅右侧文件可能含 Q；filter 可进一步排除，但“可能”不是“存在”。</text>
+<text x="28" y="515" class="small">跨层仍可有同 key。减少读取候选的代价，是归并时可能重写已有数据。</text>
+</svg>

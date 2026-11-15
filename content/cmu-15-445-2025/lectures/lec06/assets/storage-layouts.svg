@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 610" role="img" aria-labelledby="title desc">
+  <title id="title">Orders 的行存、列存与分组列存</title>
+  <desc id="desc">四条订单的订单号为101到104，商品为A、B、A、C，数量为2、1、3、1。行存逐行连续，列存逐列连续，分组列存先将前两行和后两行分组，再在每组内部按列存放。跨列同一位置必须保持同一行身份。</desc>
+  <style>
+    svg { color: var(--text-color, #334155); }
+    text { fill: currentColor; font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 17px; }
+    rect { fill: none; stroke: var(--accent-color, #4776b4); stroke-width: 2; }
+    .small { font-size: 15px; }
+    .label { font-weight: 600; }
+    path { fill: none; stroke: currentColor; stroke-width: 1.5; }
+  </style>
+  <text x="20" y="30" class="label">同一张 Orders：order_id / sku / qty</text>
+  <text x="20" y="59" class="small">四行：(101,A,2)　(102,B,1)　(103,A,3)　(104,C,1)</text>
+  <text x="20" y="105" class="label">NSM：一行的属性相邻</text>
+  <rect x="20" y="120" width="145" height="55" rx="5"/><text x="35" y="154">101 / A / 2</text>
+  <rect x="175" y="120" width="145" height="55" rx="5"/><text x="190" y="154">102 / B / 1</text>
+  <rect x="330" y="120" width="145" height="55" rx="5"/><text x="345" y="154">103 / A / 3</text>
+  <rect x="485" y="120" width="145" height="55" rx="5"/><text x="500" y="154">104 / C / 1</text>
+  <text x="20" y="204" class="small">读订单详情方便；只统计 qty 也可能搬入其他字段</text>
+  <text x="20" y="250" class="label">DSM：同一列的值相邻</text>
+  <rect x="20" y="265" width="250" height="55" rx="5"/><text x="34" y="298">ID：101　102　103　104</text>
+  <rect x="280" y="265" width="170" height="55" rx="5"/><text x="294" y="298">sku：A B A C</text>
+  <rect x="460" y="265" width="170" height="55" rx="5"/><text x="474" y="298">qty：2 1 3 1</text>
+  <text x="20" y="348" class="small">同一位置 i → 同一行；列可分布在不同页面</text>
+  <text x="20" y="395" class="label">PAX 风格：先按行分组，再组内分列</text>
+  <rect x="20" y="412" width="295" height="125" rx="8"/>
+  <text x="35" y="438" class="label">行组 0：位置 0、1</text>
+  <path d="M35 450h265"/><text x="35" y="477">ID：[101,102]</text><text x="35" y="510">sku：[A,B]　qty：[2,1]</text>
+  <rect x="335" y="412" width="295" height="125" rx="8"/>
+  <text x="350" y="438" class="label">行组 1：位置 2、3</text>
+  <path d="M350 450h265"/><text x="350" y="477">ID：[103,104]</text><text x="350" y="510">sku：[A,C]　qty：[3,1]</text>
+  <text x="20" y="568" class="small">组内保持列局部性，也限制跨列重组的距离</text>
+  <text x="20" y="594" class="small">概念图：行组 ≠ 编码页 ≠ 一次 I/O ≠ 硬件块</text>
+</svg>
