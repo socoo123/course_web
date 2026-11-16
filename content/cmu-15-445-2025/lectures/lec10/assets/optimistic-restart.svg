@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 650" role="img" aria-labelledby="title desc">
 <title id="title">乐观下行的成功与清理重启路径</title>
 <desc id="desc">内部节点读保护交接，到叶子取得写保护并判断是否可局部完成。安全则释放祖先并完成；不安全则释放本次全部资源，从根使用基础写路径重试。不可持叶子向上追讨锁。</desc>
-<style>text{font-family:system-ui,-apple-system,'Noto Sans SC',sans-serif;fill:var(--fg,currentColor);text-anchor:middle}.edge{fill:none;stroke:var(--border,currentColor);stroke-width:2}.box{stroke:var(--border,currentColor);stroke-width:1.5}</style>
+<style>:root{color-scheme:light dark}text{font-family:system-ui,-apple-system,'Noto Sans SC',sans-serif;fill:var(--fg,currentColor);text-anchor:middle}.edge{fill:none;stroke:var(--border,currentColor);stroke-width:2}.box{stroke:var(--border,currentColor);stroke-width:1.5}</style>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--border,currentColor)"/></marker></defs>
 <text x="195" y="34" font-size="21" font-weight="700">乐观 ≠ 无保护</text>
 <rect class="box" x="43" y="60" width="304" height="73" rx="10" fill="none"/>
