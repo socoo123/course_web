@@ -45,6 +45,8 @@ L13–14 可连续练习：先读[查询执行（一）](#/c/cmu-15-445-2025/lec
 
 L15–16 接着问：优化器还没读完数据，凭什么选这个执行顺序？先在下文「让缺货订单换一个连接顺序」对照估计与实测，再做 [HW4 执行与规划导读](#/c/cmu-15-445-2025/lab/hw04?v=zh)与[推演指导](#/c/cmu-15-445-2025/lab/hw04?v=guide)。[Project 3 要求导读](#/c/cmu-15-445-2025/lab/project3?v=zh)与[执行器指导](#/c/cmu-15-445-2025/lab/project3?v=guide)则把问题倒过来：给定计划，怎样分批产出正确结果，且不把整张表留在内存？
 
+L17–18 换一个问题：两笔预订都拿到了正确的最终库存，就能证明中途没读错吗？先在[并发控制理论](#/c/cmu-15-445-2025/lec/lec17?v=notes)学会检查读写历史，再到[两阶段锁](#/c/cmu-15-445-2025/lec/lec18?v=notes)看锁管理器怎样在操作发生**之前**阻塞它。下文「两笔预订」用同一组数据练习这两个判断。
+
 ## C++ 先修：先把资源归属说清楚
 
 开始写 BusTub 前，至少能独立完成下面四类小练习，并解释失败时破坏了什么条件：
@@ -374,6 +376,51 @@ WHERE s.on_hand=0 GROUP BY o.sku;
 
 自问：若 100 种商品**全部**缺货，暂且固定 A 的旧计划与旧估数，哪一层会由高估变为低估？订单查找会启动几次？再改数据并重新 `ANALYZE`、看新计划；更新统计后，优化器不必继续选 A 的旧路径。
 
+## 两笔预订：相同的终值，不同的历史
+
+订单 42 追加预订商品 A。只看两个逻辑数据项：`O = Orders[42].reserved`（已预订件数），`S = Stock[A].free`（可用件数），初值 `(O,S) = (0,5)`。甲预订 1 件，先给订单加 1，再从库存减 1；乙预订 2 件，先从库存减 2，再给订单加 2。库存足够；每次改数都要先读旧值再写回。以下是纸面调度，不是数据库实测。
+
+### 去掉锁：最终 `(3,2)` 就够了吗？
+
+| 步 | 甲 | 乙 |
+|---|---|---|
+| 1 | 读 O=0，写 O=1 | |
+| 2 | | 读 S=5，写 S=3 |
+| 3 | 读 S=3，写 S=2，提交 | |
+| 4 | | 读 O=1，写 O=3，提交 |
+
+先盖住下面的图：如果甲真的先于乙执行，它应当读到多少库存？如果乙先执行，它应当读到多少已预订量？
+
+```mermaid
+flowchart LR
+    A[甲] -->|O 上甲先写、乙后读| B[乙]
+    B -->|S 上乙先写、甲后读| A
+```
+
+这是**冲突优先图**，边来自已经发生的操作。两个串行顺序的终值都是 `(3,2)`，但甲先执行应读到 `S=5`，乙先执行应读到 `O=0`。没有一个顺序能解释表里的两次读取；图有环，调度不是冲突可串行化的。第 3 步还读了乙未提交的值：即便这一次乙最终提交，也不能据此说这次读取没有风险。
+
+### 加上锁：为什么操作表走不完？
+
+让两笔事务按需申请排他锁 `X`，先拿锁再读写，所有锁持有到提交或回滚结束（rigorous 2PL）。甲先拿 `X(O)`，把 O 写成 1；乙拿 `X(S)`，把 S 写成 3。现在甲申请 `X(S)`，它**尚未读 S**，只能等乙。乙再申请 `X(O)`，也必须等。
+
+```mermaid
+flowchart LR
+    A[甲] -->|请求 S；乙持锁| B[乙]
+    B -->|请求 O；甲持锁| A
+```
+
+这是**此刻的等待图**，箭头从请求者指向持有者。只有第一条等待边时是阻塞；第二条边闭环才是死锁。锁管理器没有放行另外两次读写，不能拿上一张图里已经执行过的操作来解释这个环。
+
+<details><summary>若选乙做牺牲者，锁什么时候放，最后还剩几件？</summary>
+
+乙先撤销 `S: 5→3` 的写入，使库存恢复为 5；回滚结束释放 `X(S)`，取消它对 O 的请求。甲获准读到 `S=5`，写 4，提交并释放两把锁。若应用重试乙并成功，它读 4、写 2，再读 `O=1`、写 3，提交后得到 `(3,2)`。若不重试，就只保留甲的预订，结果是 `(1,4)`。不能只释放乙的锁而留下那次扣减。
+
+</details>
+
+**换一种预防办法。** 若这两个数据项预先已知，双方统一按 O、S 的次序申请 X，输掉第一把锁的一方会在**未持有 S**时等待，另一方可以做完退出。这消除了本例的环，不等于随意的 2PL 程序都不会死锁。
+
+**回到页守卫。** B+ 树页的 latch 能让一次页内修改不被并发改坏，却不承诺下一页、下一条 SQL 看到什么；这里的 lock 保护的是事务对逻辑数据的读写。也别把 **2PL** 的“增长、收缩”（决定何时可拿锁）读成 **2PC** 的“准备、决定”（协调多个参与方一致提交或中止）。本例在一个数据库里就能发生，不需要分布式提交。
+
 ## 引用与来源
 
 - CMU Database Group / Andy Pavlo：[Fall 2025 官方课表](https://15445.courses.cs.cmu.edu/fall2025/schedule.html)、[课程大纲](https://15445.courses.cs.cmu.edu/fall2025/syllabus.html)、[FAQ](https://15445.courses.cs.cmu.edu/fall2025/faq.html)、[官方视频列表](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYMAgsGH-GtY5rJYZ6zjsd5)。逐讲视频入口显示在各讲页头。
@@ -384,4 +431,5 @@ WHERE s.on_hand=0 GROUP BY o.sku;
 - 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1–4 提供原创导读而非参考答案；HW5–6 仅登记并核对元数据。HW3 索引截止日为 2025-10-05，PDF 却印“Sunday October 3rd”；HW5 索引为 11-23，PDF 为 11-16。保留冲突，不猜测延期原因。
 - SQLite 官方文档：[Query Optimizer Overview §7.1.2](https://www.sqlite.org/optoverview.html#manual_control_of_query_plans_using_cross_join)、[Profiling SQL Queries §§2、4](https://www.sqlite.org/profile.html#planner_estimates)、[Scan Status 指标定义](https://www.sqlite.org/c3ref/c_scanstat_est.html)。订单数据与对照实验为编者自拟；记录的是 SQLite 3.51.0 的结果，不是 BusTub 计划或课堂演示。
 - 期中范围依据：L8 课堂通知 **01:31–01:48** 明确为 Lecture 1–11 inclusive，见[L8 中文译稿 00:00–01:54](#/c/cmu-15-445-2025/lec/lec08?v=draft)。本页自测为原创，未取用官方考卷或解答；L12 虽同属制作 P4，未据此纳入官方期中考纲。
+- 「两笔预订」为原创纸面练习。冲突优先图见当季[第 17 讲讲义 §6](https://15445.courses.cs.cmu.edu/fall2025/notes/17-concurrencycontrol.pdf)，等待图见[第 18 讲讲义 §3](https://15445.courses.cs.cmu.edu/fall2025/notes/18-twophaselocking.pdf)；strict 与 rigorous 2PL 的锁释放规则按[教材作者第 18 章课件，第 18.10 页](https://www.db-book.com/slides-dir/PDF-dir/ch18.pdf)区分。
 - 全课逐来源版本、访问与阅读范围见仓库 `content/cmu-15-445-2025/source-manifest.json`；制作与恢复状态见同目录 `status.json`。原始字幕、媒体与网页快照只保存在本地忽略的 `sources/`，不随站点发布。

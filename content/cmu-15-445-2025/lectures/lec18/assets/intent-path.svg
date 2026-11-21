@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 396 340">
+  <title id="title">表级意向冲突与行级精确判断</title>
+  <desc id="desc">写者要改 Stock 的一行，先在表上取 IX，再给 A 行加 X。另一位点读者可以在表上取 IS，但只有读不同的 B 行才能继续，同一 A 行要等。整表 S 的请求在表层就被 IX 拦住。</desc>
+  <style>
+    svg{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;--bg:#f7f8f4;--ink:#24372d;--edge:#496452;--tag:#e8f0e6;--stop:#783d24;--line:#9ca99c}
+    @media(prefers-color-scheme:dark){svg{--bg:#1d2927;--ink:#edf4eb;--edge:#b0cbb6;--tag:#2a413a;--stop:#ffbc93;--line:#859b8e}}
+    text{fill:var(--ink)}.box{fill:var(--tag);stroke:var(--edge);stroke-width:1.8}.branch{fill:none;stroke:var(--edge);stroke-width:2.4}.stop{fill:var(--stop);font-weight:650}
+  </style>
+  <rect x="1" y="1" width="394" height="338" rx="14" fill="var(--bg)" stroke="var(--line)"/>
+  <text x="198" y="33" text-anchor="middle" font-size="21" font-weight="700">点读与整表读，在哪一层等？</text>
+  <text x="198" y="62" text-anchor="middle" font-size="16">写者先取表 IX，再取 A 行 X。</text>
+  <g text-anchor="middle">
+    <rect x="36" y="82" width="324" height="74" rx="9" class="box"/>
+    <text x="198" y="110" font-size="20" font-weight="650">Stock 表　已持 IX</text>
+    <text x="198" y="137" font-size="16">点读请求 IS：可授予；整表 S：等待</text>
+    <path d="M198 156V176H99V196M198 176H297V196" class="branch"/>
+    <rect x="15" y="196" width="168" height="77" rx="9" class="box"/><rect x="213" y="196" width="168" height="77" rx="9" class="box"/>
+    <text x="99" y="225" font-size="19">A 行　已持 X</text><text x="297" y="225" font-size="19">B 行　无人持锁</text>
+    <text x="99" y="251" font-size="16" class="stop">点读请求 S：等待</text><text x="297" y="251" font-size="16">点读请求 S：可授予</text>
+    <text x="198" y="309" font-size="16">表上准许向下走，不等于准许读 A 行。</text>
+  </g>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 374 534" width="374" height="534" role="img" aria-labelledby="title desc">
+  <title id="title">读操作可以穿插，冲突的次序不能换</title>
+  <desc id="desc">时间依次为 T1 读 O、T2 读 O、T1 写 O、T1 读 S、T1 写 S、T3 读 S。第二步到第三步在 O 上给出 T2 到 T1，第五步到第六步在 S 上给出 T1 到 T3。图无环，串行见证是 T2、T1、T3。</desc>
+  <style>
+    svg{--bg:#fbfaf5;--fg:#182c35;--muted:#39505a;--line:#bcc8c7;--chip:#f1eee5;--o:#8a4318;--s:#006064} @media(prefers-color-scheme:dark){svg{--bg:#14242b;--fg:#f4f0dd;--muted:#c4d3d3;--line:#4c656a;--chip:#273b42;--o:#ffb881;--s:#88e3df}}
+    text{font-family:"PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:var(--fg)}.title{font-size:21px;font-weight:700}.sub{font-size:15px;fill:var(--muted)}.op{font-size:17px}.node{font-size:20px;font-weight:bold}.o{fill:var(--o);font-weight:700}.s{fill:var(--s);font-weight:700}
+  </style>
+  <rect width="374" height="534" rx="14" fill="var(--bg)"/>
+  <text x="20" y="36" class="title">先写下事实，再画边</text>
+  <text x="20" y="64" class="sub">O：已预留件数　 S：可用件数</text>
+  <rect x="16" y="80" width="342" height="236" rx="9" fill="var(--chip)"/>
+  <g class="op">
+    <text x="28" y="111">①　T1 读 O = 0</text><text x="28" y="147">②　T2 读 O = 0</text><text x="28" y="183">③　T1 写 O = 1</text>
+    <text x="28" y="219">④　T1 读 S = 5</text><text x="28" y="255">⑤　T1 写 S = 4</text><text x="28" y="291">⑥　T3 读 S = 4</text>
+    <path d="M188 141 h12 v36 h-12" stroke="var(--o)" fill="none" stroke-width="2.3"/><text x="213" y="166" class="o">O：读在写前</text>
+    <path d="M188 249 h12 v36 h-12" stroke="var(--s)" fill="none" stroke-width="2.3"/><text x="213" y="274" class="s">S：写在读前</text>
+  </g>
+  <text x="20" y="353" class="title">谁必须排在谁前面？</text>
+  <g fill="var(--chip)" stroke="var(--line)" stroke-width="1.5"><circle cx="54" cy="415" r="27"/><circle cx="187" cy="415" r="27"/><circle cx="320" cy="415" r="27"/></g>
+  <g class="node" text-anchor="middle"><text x="54" y="422">T2</text><text x="187" y="422">T1</text><text x="320" y="422">T3</text></g>
+  <path d="M84 415 h65 m-8 -6 9 6 -9 6" fill="none" stroke="var(--o)" stroke-width="2.5"/><path d="M217 415 h65 m-8 -6 9 6 -9 6" fill="none" stroke="var(--s)" stroke-width="2.5"/>
+  <g class="sub" text-anchor="middle"><text x="120" y="392" class="o">②→③</text><text x="253" y="392" class="s">⑤→⑥</text></g>
+  <text x="20" y="473" class="op">T1 最先动手，串行见证却从 T2 开始。</text>
+  <text x="20" y="505" class="sub">边写的是已发生的读写，不是“正在等锁”。</text>
+</svg>

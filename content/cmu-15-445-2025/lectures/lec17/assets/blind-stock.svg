@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 374 448" width="374" height="448" role="img" aria-labelledby="title desc">
+  <title id="title">没有读者的盲写：同一段历史的两种比较</title>
+  <desc id="desc">A 写库存 4、B 写库存 8、A 写库存 7。前两步要求 A 在 B 前，后两步要求 B 在 A 前，所以不冲突可串行化。历史无读操作，末写是 A。串行 B 然后 A 仍然无读操作、末写仍是 A，因此视图等价。</desc>
+  <style>
+    svg{--bg:#f9f8f1;--fg:#202f38;--muted:#40535d;--fill:#eaece6;--bad:#93421a;--good:#006168} @media(prefers-color-scheme:dark){svg{--bg:#17262d;--fg:#f1f4ee;--muted:#c0d1d0;--fill:#2b3e46;--bad:#ffbb85;--good:#8de1d8}}
+    text{font-family:"PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:var(--fg)}.t{font-size:20px;font-weight:700}.n{font-size:17px}.sm{font-size:15px;fill:var(--muted)}.bad{fill:var(--bad);font-weight:bold}.good{fill:var(--good);font-weight:bold}
+  </style>
+  <rect width="374" height="448" rx="14" fill="var(--bg)"/>
+  <text x="19" y="35" class="t">同一条库存记录 S，三次覆盖</text>
+  <text x="19" y="64" class="sm">竖线分隔操作；数字是写入值，均未先读。</text>
+  <rect x="16" y="83" width="342" height="65" rx="8" fill="var(--fill)"/>
+  <text x="31" y="109" class="sm">实际历史</text><text x="31" y="134" class="n">A 写 4　 |　 B 写 8　 |　 A 写 7</text>
+  <text x="19" y="184" class="t bad">看冲突对：矛盾</text>
+  <text x="19" y="214" class="n">写 4 在写 8 前，要求 A → B。</text>
+  <text x="19" y="244" class="n">写 8 在写 7 前，又要求 B → A。</text>
+  <text x="19" y="290" class="t good">看读来源与末写者：找得到见证</text>
+  <rect x="16" y="306" width="342" height="65" rx="8" fill="var(--fill)"/>
+  <text x="31" y="332" class="sm">串行 B、A</text><text x="31" y="357" class="n">B 写 8　 |　 A 写 4　 |　 A 写 7</text>
+  <text x="19" y="400" class="n">两者都没有读，S 的末写者都是 A。</text>
+  <text x="19" y="428" class="sm">若另有读者，不能把其读来源也省掉。</text>
+</svg>

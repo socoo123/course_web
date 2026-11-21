@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 396 318">
+  <title id="title">等待图：请求方指向持有方</title>
+  <desc id="desc">T1 持有订单项的排他锁，申请库存项的排他锁，箭头从 T1 指向持有库存锁的 T2；T2 反向申请订单项的排他锁，箭头从 T2 指向 T1。两条未满足的请求构成死锁。</desc>
+  <style>
+    svg{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;--bg:#f5f8fb;--text:#182d3e;--line:#07555c;--box:#e1f2ef;--stroke:#968a6f;--muted:#3c5260}
+    @media(prefers-color-scheme:dark){svg{--bg:#172735;--text:#f1f6f7;--line:#8cddd4;--box:#214047;--stroke:#b6ac90;--muted:#cee2e5}}
+    text{fill:var(--text)}.label{font-size:17px}.muted{fill:var(--muted);font-size:16px}.node{fill:var(--box);stroke:var(--line);stroke-width:2}.edge{fill:none;stroke:var(--line);stroke-width:3}.head{fill:var(--line)}
+  </style>
+  <defs><marker id="arrow" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto"><path class="head" d="M0 0 10 4 0 8 2 4Z"/></marker></defs>
+  <rect x="1" y="1" width="394" height="316" rx="14" fill="var(--bg)" stroke="var(--stroke)"/>
+  <text x="198" y="32" text-anchor="middle" font-size="21" font-weight="700">等待图：请求方 → 持有方</text>
+  <text x="198" y="58" text-anchor="middle" class="muted">读箭头：“我在等你释放锁”</text>
+  <g text-anchor="middle">
+    <text x="198" y="92" class="label">T1 请求库存项 X 锁</text>
+    <path class="edge" marker-end="url(#arrow)" d="M87 132V117Q87 106 99 106H297Q309 106 309 118V131"/>
+    <rect x="20" y="136" width="134" height="72" rx="10" class="node"/><rect x="242" y="136" width="134" height="72" rx="10" class="node"/>
+    <text x="87" y="163" font-size="22" font-weight="700">T1</text><text x="309" y="163" font-size="22" font-weight="700">T2</text>
+    <text x="87" y="190" class="label">持有 X(订单项)</text><text x="309" y="190" class="label">持有 X(库存项)</text>
+    <path class="edge" marker-end="url(#arrow)" d="M309 212V228Q309 240 297 240H99Q87 240 87 228V213"/>
+    <text x="198" y="265" class="label">T2 请求订单项 X 锁</text>
+    <text x="198" y="297" class="muted">两条边同时存在，才有这个环。</text>
+  </g>
+</svg>
