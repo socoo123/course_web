@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 382" role="img" aria-labelledby="title desc" style="color-scheme:light dark;max-width:100%;height:auto">
+  <title id="title">订单与库存连接：两条流水线与一份必须完成的哈希表</title>
+  <desc id="desc">先扫描 Stock，以 SKU 为键，把每个仓库加入同一个桶。Stock 耗尽后才开始第二条流水线：扫描 Orders，通过数量过滤，以 SKU 探测已经封好的桶，然后投影。订单 103 命中两个仓库，产生两行。</desc>
+  <style>
+    .paper{fill:#f7faf8}.ink{fill:#132e37}.sub{fill:#284852}.head{fill:#174c46}.panel{fill:#e4f3eb;stroke:#38806f}.next{fill:#e8f0fa;stroke:#5579a1}.bar{stroke:#91401b}.edge{fill:none;stroke:#244b59;stroke-width:2.5}.tip{fill:#244b59}
+    text{font:15px system-ui,'PingFang SC','Microsoft YaHei',sans-serif}.big{font-size:20px;font-weight:700}.label{font-size:16px;font-weight:650}.small{font-size:14px}
+    @media(prefers-color-scheme:dark){.paper{fill:#13262e}.ink{fill:#f2f7f8}.sub{fill:#d3e6e8}.head{fill:#a9efcf}.panel{fill:#203c38;stroke:#80c2a8}.next{fill:#24394e;stroke:#9abde6}.bar{stroke:#ffb688}.edge{stroke:#b4d6e5}.tip{fill:#b4d6e5}}
+  </style>
+  <rect class="paper" width="360" height="382" rx="12"/>
+  <text x="16" y="30" class="big ink">先建表，后探测</text>
+  <text x="17" y="52" class="small sub">箭头表示数据或已完成的状态，不是调用栈。</text>
+  <rect x="14" y="67" width="332" height="82" rx="8" class="panel"/>
+  <text x="26" y="92" class="label head">① Stock 扫描 → 写入哈希表 H</text>
+  <text x="26" y="116" class="ink">H[A] = [东仓, 西仓]</text>
+  <text x="26" y="137" class="small sub">同一 SKU 的两个仓库都要保留。</text>
+  <path d="M180 149v16" class="edge"/><path d="m175 162 5 7 5-7" class="tip"/>
+  <path d="M20 183h53m214 0h53" fill="none" stroke-width="3" class="bar"/>
+  <text x="180" y="189" text-anchor="middle" class="label ink">边界：Stock 已经耗尽</text>
+  <path d="M180 199v17" class="edge"/><path d="m175 212 5 7 5-7" class="tip"/>
+  <rect x="14" y="222" width="332" height="142" rx="8" class="next"/>
+  <text x="26" y="247" class="label ink">② Orders 扫描 → 数量过滤</text>
+  <text x="26" y="273" class="ink">(103, A, 5) 通过 → 查 H[A]</text>
+  <path d="M37 282v38m0-25h17m-17 25h17" class="edge"/>
+  <text x="62" y="300" class="ink">投影得到 (103, 东仓)</text>
+  <text x="62" y="325" class="ink">继续同一桶 → (103, 西仓)</text>
+  <text x="26" y="350" class="small sub">同一订单可以贡献两行，不是布尔成员测试。</text>
+</svg>

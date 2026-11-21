@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 295" role="img" aria-labelledby="t d" style="color-scheme:light dark;max-width:100%;height:auto">
+  <title id="t">一次 UPDATE 怎样两次改变同一笔库存</title>
+  <desc id="d">索引游标沿库存数从小到大前进，一次语句只想给小于十一的每一行加一。初值九的 A 东仓被修改成十，索引新键在游标前方，于是它再次被扫描并改为十一。正确的结果是十。</desc>
+  <style>
+    text{font:15px system-ui,'PingFang SC','Microsoft YaHei',sans-serif}.big{font-size:19px;font-weight:700}.strong{font-weight:650}.paper{fill:#f8f7f2}.ink{fill:#252e32}.line{stroke:#77533a;stroke-width:2}.marker{fill:#443829}.num{fill:white}.alert{fill:#6d2d1a}.box{fill:#fae8d8}.ok{fill:#174c43}
+    @media(prefers-color-scheme:dark){.paper{fill:#23282e}.ink{fill:#f0f4f6}.line{stroke:#dfa783}.marker{fill:#f5cd9d}.num{fill:#202730}.alert{fill:#ffc4a8}.box{fill:#45322b}.ok{fill:#a2e7cc}}
+  </style>
+  <rect class="paper" width="360" height="295" rx="12"/>
+  <text x="15" y="29" class="big ink">目标行的身份 ≠ 索引中的位置</text>
+  <text x="16" y="53" class="ink">规则：on_hand &lt; 11 的行各加 1。</text>
+  <path d="M30 85v125" class="line"/>
+  <circle cx="30" cy="87" r="12" class="marker"/><text x="30" y="92" text-anchor="middle" class="num">1</text>
+  <text x="53" y="92" class="strong ink">游标读键 9，命中 A 东仓。</text>
+  <text x="53" y="114" class="ink">行更新为 10，索引也要换键。</text>
+  <circle cx="30" cy="149" r="12" class="marker"/><text x="30" y="154" text-anchor="middle" class="num">2</text>
+  <text x="53" y="154" class="strong ink">继续向前，又看见键 10。</text>
+  <text x="53" y="176" class="ink">这是刚写过的 A 东仓，不是新目标。</text>
+  <circle cx="30" cy="210" r="12" class="marker"/><text x="30" y="215" text-anchor="middle" class="num">3</text>
+  <text x="53" y="215" class="strong alert">若再执行一次，错误结果为 11。</text>
+  <rect x="15" y="236" width="330" height="46" rx="7" class="box"/>
+  <text x="26" y="256" class="strong ok">按本语句的原目标集只改一次。</text>
+  <text x="26" y="275" class="ink">A 东仓的正确结果是 10。</text>
+</svg>

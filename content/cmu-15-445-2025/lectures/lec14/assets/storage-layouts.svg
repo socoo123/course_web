@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" width="360" height="300" role="img" aria-labelledby="title desc">
+<title id="title">同一组六个逻辑页在三盘上的两种放置</title><desc id="desc">条带化让第一盘存一和四，第二盘存二和五，第三盘存三和六；全镜像每盘都有一到六。前者非冗余，后者在示例的同步策略下等待所有副本写入。</desc>
+<style>text{fill:#192e43;font:14px system-ui,"PingFang SC","Microsoft YaHei",sans-serif;text-anchor:middle}.h{font-size:18px;font-weight:700}.b{font-weight:700}.s{font-size:12px}.stripe{fill:#dceef8;stroke:#315b75;stroke-width:1.2}.mirror{fill:#e1f3e9;stroke:#286348;stroke-width:1.2}</style>
+<rect width="360" height="300" rx="12" fill="#fafaf5"/>
+<text x="180" y="27" class="h">页号不变，放置与写承诺改变</text>
+<text x="35" y="55" class="b">设备</text><text x="125" y="55" class="b">条带：仅一份</text><text x="270" y="55" class="b">镜像：每盘一份</text>
+<g><rect x="65" y="67" width="119" height="36" rx="5" class="stripe"/><rect x="194" y="67" width="154" height="36" rx="5" class="mirror"/>
+<text x="34" y="90">盘 1</text><text x="125" y="90">1　4</text><text x="271" y="90">1　2　3　4　5　6</text></g>
+<g><rect x="65" y="113" width="119" height="36" rx="5" class="stripe"/><rect x="194" y="113" width="154" height="36" rx="5" class="mirror"/>
+<text x="34" y="136">盘 2</text><text x="125" y="136">2　5</text><text x="271" y="136">1　2　3　4　5　6</text></g>
+<g><rect x="65" y="159" width="119" height="36" rx="5" class="stripe"/><rect x="194" y="159" width="154" height="36" rx="5" class="mirror"/>
+<text x="34" y="182">盘 3</text><text x="125" y="182">3　6</text><text x="271" y="182">1　2　3　4　5　6</text></g>
+<path d="M12 209h336" stroke="#9aa6a9"/>
+<text x="180" y="231">修改第 2 页</text><text x="114" y="255" class="b">条带 → 写盘 2</text><text x="257" y="255" class="b">镜像 → 三盘都写</text>
+<text x="180" y="281" class="s">只讨论页的设备读写，不等于一次事务提交协议。</text>
+</svg>

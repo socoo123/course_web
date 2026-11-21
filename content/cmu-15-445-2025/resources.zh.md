@@ -41,6 +41,8 @@ L7–9 的动手入口：[HW3 Indexes & Filters 要求导读](#/c/cmu-15-445-202
 
 L10–12 的动手入口：[Project 2 要求导读](#/c/cmu-15-445-2025/lab/project2?v=zh)与[tombstone B+Tree 无答案指导](#/c/cmu-15-445-2025/lab/project2?v=guide)。先解释并发修改为何仍能保持树的物理结构，再计算外部排序和连接的页 I/O；不把这些纸面练习当成已经运行 BusTub。
 
+L13–14 可连续练习：先读[查询执行（一）](#/c/cmu-15-445-2025/lec/lec13?v=notes)，跟踪算子如何交接一批记录；再读[查询执行（二）](#/c/cmu-15-445-2025/lec/lec14?v=notes)，判断把同一批工作分给多个 worker 后谁最后交卷。下文「订单查询推演」给出同一条查询的两种执行安排。
+
 ## C++ 先修：先把资源归属说清楚
 
 开始写 BusTub 前，至少能独立完成下面四类小练习，并解释失败时破坏了什么条件：
@@ -281,6 +283,48 @@ $$
 
 若第 3–4 题解释不清，回到 Project 1 页面生命周期；若第 9–10 题解释不清，先看 L8/L10 再做 Project 2；若第 11–12 题只会套公式，回到 L11 重写内存与输出成本假设。答对这些题不等于完成任何官方实验。
 
+## 订单查询推演：第一行何时能返回？
+
+仓库只想知道每种缺货商品还欠多少件。`Orders` 中每行是一条未发货订单行，`Stock` 中 `sku` 唯一；本题所有值非 NULL。用同一条查询追踪单机流水线与并行分区。数据和代价均为纸面设定，不是 BusTub 实测或官方项目题。
+
+```sql
+SELECT o.sku, SUM(o.qty) AS missing_qty
+FROM Orders AS o JOIN Stock AS s ON s.sku = o.sku
+WHERE s.on_hand = 0
+GROUP BY o.sku;
+```
+
+`Stock` 是 `(A,0), (B,4), (C,0)`；`Orders` 按扫描顺序分两批到达：`[(A,2),(B,1)]`、`[(C,3),(A,5)]`。
+
+### 先手推：一次调用返回的不是最终答案
+
+采用如下物理计划：先过滤并在 Stock 上建立哈希表，再扫描 Orders 探测，最后做普通的无序哈希聚合。写出每批后的连接输出和累计状态。第一批结束时，哪些算子已有输出？客户端能收到 `A` 的最终总数吗？
+
+<details><summary>核对状态、阻塞点和结束条件</summary>
+
+| 时刻 | 算子交给下游的记录 | 聚合表 |
+|---|---|---|
+| 建表完成 | 探测侧现在可以查 `{A,C}`，还没有连接结果 | 空 |
+| 第一批结束 | `(A,2)`；`B` 没有匹配 | `A:2` |
+| 第二批结束 | `(C,3), (A,5)` | `A:7, C:3` |
+| 探测侧报告结束 | 不再有可能改变任一分组的记录 | 可输出 `(A,7), (C,3)`，不保证顺序 |
+
+连接的**建表阶段**是屏障；之后探测和聚合更新可以流水工作。聚合可以提早消费，但在这份无序计划里不能提早交付最终分组。若第一批恰好全部未命中，一个空的中间批也不证明上游耗尽：结束要由实际的执行器协议报告。
+
+</details>
+
+### 再手推：工作均分了吗？
+
+放大同一查询。假设同一阶段有 1000 条**已经过连接**的记录，按 `sku` 重分区给四个 worker，每个 worker 每毫秒处理 1 条。测量从分区交付完毕、四者同时开工起算；末端另有不可重叠的固定 20 ms 收尾。本题忽略 I/O、网络和同步。分别计算分区大小为 `[250,250,250,250]` 和 `[700,100,100,100]` 的用时。若 700 条全是同一个键，增加分区数能保证消除长尾吗？
+
+<details><summary>核对关键路径，并找出可以搬动的工作</summary>
+
+收尾必须等待最慢分区；总时间分别为 `max(250,250,250,250)+20 = 270 ms` 和 `700+20 = 720 ms`。两种安排的分区处理总工作量都是 1000 worker·ms；变的是完成时间，不是记录数。单 worker 同模型需 1020 ms，不应把四个 worker 直接记为四倍提速。
+
+同一键的记录仍由同一分区接收。对本题的 `SUM`，可以在重分区**之前**按输入切片各算局部和，再让键的最终所有者合并各局部和；重复出现的 `A` 不必逐条经过交换。这个改写要求局部状态可合并，且足以恢复原查询的结果。它既没有消除扫描，也不保证总是更快：若几乎每行一个键，局部聚合可能只增加状态和工作。
+
+</details>
+
 ## 引用与来源
 
 - CMU Database Group / Andy Pavlo：[Fall 2025 官方课表](https://15445.courses.cs.cmu.edu/fall2025/schedule.html)、[课程大纲](https://15445.courses.cs.cmu.edu/fall2025/syllabus.html)、[FAQ](https://15445.courses.cs.cmu.edu/fall2025/faq.html)、[官方视频列表](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYMAgsGH-GtY5rJYZ6zjsd5)。逐讲视频入口显示在各讲页头。
@@ -288,6 +332,6 @@ $$
 - CMU Database Group：[BusTub 固定源码](https://github.com/cmu-db/bustub/tree/v20251119-2025fall)、[固定提交](https://github.com/cmu-db/bustub/commit/d49b823f829a4bf311a2c80b239ab5a9864c9c41)。代码许可与课程网页、视频、第三方依赖许可分别适用。
 - 官方 [作业与项目索引](https://15445.courses.cs.cmu.edu/fall2025/assignments.html)：[Project 0](https://15445.courses.cs.cmu.edu/fall2025/project0/)、[Project 1](https://15445.courses.cs.cmu.edu/fall2025/project1/)、[Project 2](https://15445.courses.cs.cmu.edu/fall2025/project2/)、[Project 3](https://15445.courses.cs.cmu.edu/fall2025/project3/)、[Project 4](https://15445.courses.cs.cmu.edu/fall2025/project4/)。任务与测试范围经网页和固定源码静态核对；不是已运行的验证结果。
 - 工具链依据：固定提交的 [README](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/README.md)、[CMakeLists.txt](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/CMakeLists.txt)、[packages.sh](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/build_support/packages.sh)。原生开发与 Linux 验证路线为编者建议，未实际配置或运行。
-- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1–3已阅读全文并制作原创要求导读；HW3全部5大题及图形条件已读，不提供选项答案。L10 notes在P3仅为HW3依赖阅读；P4另行完成L10–12字幕阅读及Project 2题面/固定源码导读，不能混淆两批阅读范围。L12片尾短音段仍阻塞严格验收，具体见status.json。HW4–6仍仅登记、获取并核对元数据。HW3索引截止日为2025-10-05，PDF却印“Sunday October 3rd”；HW5索引为11-23，PDF为11-16。保留冲突，不猜测延期原因。
+- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1–3 已阅读全文并制作原创要求导读；HW3 全部五大题及图形条件已读，不提供选项答案。HW4–6 仅登记、获取并核对元数据。HW3 索引截止日为 2025-10-05，PDF 却印“Sunday October 3rd”；HW5 索引为 11-23，PDF 为 11-16。保留冲突，不猜测延期原因。
 - 期中范围依据：L8 课堂通知 **01:31–01:48** 明确为 Lecture 1–11 inclusive，见[L8 中文译稿 00:00–01:54](#/c/cmu-15-445-2025/lec/lec08?v=draft)。本页自测为原创，未取用官方考卷或解答；L12 虽同属制作 P4，未据此纳入官方期中考纲。
 - 全课逐来源版本、访问与阅读范围见仓库 `content/cmu-15-445-2025/source-manifest.json`；制作与恢复状态见同目录 `status.json`。原始字幕、媒体与网页快照只保存在本地忽略的 `sources/`，不随站点发布。

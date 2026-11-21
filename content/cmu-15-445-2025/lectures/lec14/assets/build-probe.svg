@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 386" width="360" height="386" role="img" aria-labelledby="title desc">
+<title id="title">共享哈希表：两个阶段，三种消息</title><desc id="desc">两个扫描者分别把库存分片插入哈希表，全部完成后发布只读表；订单分片才能探测。到达结果行与全部探测者结束是两种不同消息。</desc>
+<style>text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:#172b3a;text-anchor:middle;font-size:14px}.head{font-size:18px;font-weight:700}.label{font-weight:700}.sub{font-size:12px}.box{stroke:#236564;stroke-width:1.5;fill:#def4ed}.line{fill:none;stroke:#235362;stroke-width:2}.control{fill:none;stroke:#75401b;stroke-width:2;stroke-dasharray:4 3}</style>
+<defs><marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path fill="#235362" d="M0 0 8 4 0 8z"/></marker></defs>
+<rect width="360" height="386" rx="12" fill="#f8faf7"/>
+<text x="180" y="30" class="head">先让哈希表完整，再让探测并行</text>
+<rect x="12" y="49" width="156" height="43" rx="7" class="box"/><rect x="192" y="49" width="156" height="43" rx="7" class="box"/>
+<text x="90" y="67" class="label">建表者 1</text><text x="90" y="84" class="sub">Stock 东仓分片</text><text x="270" y="67" class="label">建表者 2</text><text x="270" y="84" class="sub">Stock 西仓分片</text>
+<path class="line" marker-end="url(#arrow)" d="M90 93v12l45 10"/><path class="line" marker-end="url(#arrow)" d="M270 93v12l-45 10"/>
+<rect x="60" y="116" width="240" height="34" rx="7" fill="#dceaf5" stroke="#315674"/><text x="180" y="138">共享表 H：一个键可有多条库存</text>
+<path class="control" d="M34 92v80h22m270-80v80h-22"/>
+<rect x="56" y="157" width="248" height="42" rx="7" fill="#fff2d8" stroke="#865019"/><text x="180" y="174" class="label">控制：收到两份 build 完成</text><text x="180" y="191" class="sub">发布 H，此后不再写入</text>
+<path class="line" marker-end="url(#arrow)" d="M180 200v11H90v15"/><path class="line" marker-end="url(#arrow)" d="M180 211h90v15"/>
+<rect x="12" y="228" width="156" height="47" rx="7" class="box"/><rect x="192" y="228" width="156" height="47" rx="7" class="box"/>
+<text x="90" y="248" class="label">探测者 1</text><text x="90" y="266" class="sub">Orders 分片 1 → H</text><text x="270" y="248" class="label">探测者 2</text><text x="270" y="266" class="sub">Orders 分片 2 → H</text>
+<path class="line" marker-end="url(#arrow)" d="M90 276v18h66v9"/><path class="line" marker-end="url(#arrow)" d="M270 276v18h-66v9"/>
+<rect x="33" y="306" width="294" height="39" rx="7" fill="#dceaf5" stroke="#315674"/><text x="180" y="331">Gather：匹配行可以先到先发</text>
+<text x="180" y="370" class="sub">结束条件：两位探测者都结束，且已排空缓冲。</text>
+</svg>
