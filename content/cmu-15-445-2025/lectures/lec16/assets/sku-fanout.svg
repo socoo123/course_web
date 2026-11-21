@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 443" role="img" aria-labelledby="t d">
+<title id="t">按 SKU 配对时，频数相乘再相加</title><desc id="d">至少买两件的订单中 A、B、C 的行数为二、零、一。库存中分别有二、一、一行。同键形成四、零、一对，共五对；库存量条件再去一对，因此结果四行。只用总行数和两个不同值数估算得到四对，是对等值连接的低估。</desc>
+<rect width="420" height="443" rx="16" fill="#f7f7f2"/>
+<g font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Noto Sans CJK SC',sans-serif" fill="#20352e">
+<text x="21" y="38" font-size="24" font-weight="700">键出现几次，决定配出几对</text>
+<text x="21" y="69" font-size="17">订单已筛 qty ≥ 2；库存尚未验数量。</text>
+<rect x="19" y="90" width="382" height="160" rx="12" fill="#e4eee7"/>
+<g font-size="17" text-anchor="middle"><g font-weight="700"><text x="62" y="117">SKU</text><text x="145" y="117">订单行</text><text x="229" y="117">库存行</text><text x="332" y="117">可配对数</text></g>
+<path d="M32 129H389" stroke="#7c9889"/>
+<text x="62" y="156">A</text><text x="145" y="156">2</text><text x="229" y="156">2</text><text x="332" y="156" font-weight="700">2 × 2 = 4</text>
+<text x="62" y="192">B</text><text x="145" y="192">0</text><text x="229" y="192">1</text><text x="332" y="192">0 × 1 = 0</text>
+<text x="62" y="228">C</text><text x="145" y="228">1</text><text x="229" y="228">1</text><text x="332" y="228">1 × 1 = 1</text></g>
+<rect x="19" y="267" width="382" height="71" rx="10" fill="#fff3d9" stroke="#967536"/>
+<text x="33" y="294" font-size="17" font-weight="700">只按 SKU 等值连接：实有 5 对</text>
+<text x="33" y="320" font-size="16">只用总行数与不同值数，估成 3 × 4 / 3 = 4。</text>
+<text x="23" y="371" font-size="18" font-weight="700">再验 on_hand ≥ qty：5 − 1 = 4 行</text>
+<text x="23" y="400" font-size="16">被剔除的是订单 103 和西仓的配对。</text>
+<text x="23" y="426" font-size="16">不要拿连接阶段的预测去对比过滤后的真值。</text>
+</g></svg>

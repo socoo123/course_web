@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 410" role="img" aria-labelledby="t d">
+<title id="t">同一个连接，要求按 SKU 排序时应比较完整路径</title><desc id="d">哈希方案连接代价七，加排序九得十六。已满足输入排序要求的归并连接代价十一，不再补排序。有序交付选十一；没有排序要求选七。示例为自拟相对单位。</desc>
+<rect width="420" height="410" rx="16" fill="#f5f7fa"/>
+<g font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Noto Sans CJK SC',sans-serif" fill="#102d3e">
+<text x="22" y="38" font-size="24" font-weight="700">同一连接，两种交付要求</text>
+<text x="22" y="69" font-size="17">价格含子树工作，单位仅供本例比较。</text>
+<rect x="20" y="92" width="380" height="106" rx="12" fill="#e0edf6" stroke="#3e637c"/>
+<text x="35" y="122" font-size="18" font-weight="700">路径 H　哈希连接，不承诺顺序</text>
+<text x="35" y="153" font-size="18">只需行：7</text><text x="35" y="181" font-size="18">要有序：7 ＋ 排序 9 ＝ 16</text>
+<rect x="20" y="212" width="380" height="106" rx="12" fill="#dceee3" stroke="#386a54"/>
+<text x="35" y="242" font-size="18" font-weight="700">路径 M　按 SKU 归并，输出有序</text>
+<text x="35" y="273" font-size="18">只需行：11</text><text x="35" y="301" font-size="18">要有序：11 ＋ 0 ＝ 11</text>
+<path d="M21 339H399" stroke="#a4b1b8"/>
+<text x="22" y="367" font-size="19" font-weight="700">不要求顺序选 H；要求有序选 M。</text>
+<text x="22" y="393" font-size="16">若只存一个“局部最便宜”，M 会被早删。</text>
+</g></svg>

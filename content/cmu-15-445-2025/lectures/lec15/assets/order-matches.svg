@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="442" viewBox="0 0 390 442" role="img" aria-labelledby="t d" lang="zh-CN">
+<title id="t">订单与库存：五个同键候选，四个足量匹配</title>
+<desc id="d">筛掉数量为一的订单 102。101 商品 A 数量二，东仓九件、西仓三件都够。103 商品 A 数量五，只有东仓够。104 商品 C 数量四，东仓六件够。等值连接一共五个候选，再检查数量得四行。</desc>
+<style>text{font-family:"PingFang SC","Microsoft YaHei",sans-serif;fill:#163147}.title{font-size:20px;font-weight:700}.h{font-size:16px;font-weight:650}.s{font-size:15px}.cell{stroke:#adc1cd;stroke-width:1}.ok{fill:#e5f3eb}.no{fill:#feefde}.dim{fill:#f1f4f7}</style>
+<rect x="1" y="1" width="388" height="440" rx="14" fill="#fff" stroke="#91a8b7"/>
+<text x="20" y="37" class="title">先匹配商品，再检查库存量</text>
+<text x="20" y="65" class="s">过滤后：101/A/2、103/A/5、104/C/4</text>
+<text x="20" y="100" class="h">订单</text><text x="116" y="100" class="h">东/A/9</text><text x="203" y="100" class="h">西/A/3</text><text x="290" y="100" class="h">东/C/6</text>
+<g class="cell"><rect x="19" y="115" width="84" height="53" class="dim"/><rect x="105" y="115" width="85" height="53" class="ok"/><rect x="192" y="115" width="85" height="53" class="ok"/><rect x="279" y="115" width="91" height="53" class="dim"/><rect x="19" y="170" width="84" height="53" class="dim"/><rect x="105" y="170" width="85" height="53" class="ok"/><rect x="192" y="170" width="85" height="53" class="no"/><rect x="279" y="170" width="91" height="53" class="dim"/><rect x="19" y="225" width="84" height="53" class="dim"/><rect x="105" y="225" width="85" height="53" class="dim"/><rect x="192" y="225" width="85" height="53" class="dim"/><rect x="279" y="225" width="91" height="53" class="ok"/></g>
+<g class="s" text-anchor="middle"><text x="61" y="148">101 · 2</text><text x="148" y="148">9 ≥ 2</text><text x="235" y="148">3 ≥ 2</text><text x="324" y="148">异键</text><text x="61" y="203">103 · 5</text><text x="148" y="203">9 ≥ 5</text><text x="235" y="203">3 &lt; 5</text><text x="324" y="203">异键</text><text x="61" y="258">104 · 4</text><text x="148" y="258">异键</text><text x="235" y="258">异键</text><text x="324" y="258">6 ≥ 4</text></g>
+<text x="20" y="307" class="s">西/B/0 对三笔订单都异键，未画入矩阵。</text>
+<path d="M20 327H370" stroke="#b3c4cf"/><text x="20" y="357" class="h">同键：A 有 2×2 对，C 有 1×1 对</text><text x="20" y="386" class="s">5 个候选中仅 (103, 西) 数量不足。</text><text x="20" y="414" class="s">输出 4 行；两条 101 不是重复错误。</text>
+</svg>

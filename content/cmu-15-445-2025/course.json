@@ -273,7 +273,7 @@
       "readings": [
         "Database System Concepts 第七版 · Chapter 22"
       ],
-      "lab": "project3"
+      "lab": "hw04"
     },
     {
       "id": "lec15",
@@ -576,15 +576,29 @@
       ]
     },
     {
+      "id": "hw04",
+      "num": 4,
+      "title": "HW4 · 查询执行与规划（非 Project）",
+      "titleEn": "Homework 4 — Execution & Planning",
+      "stars": 3,
+      "hours": "官方约 2–3 小时（个人基础有差异）",
+      "url": "https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf",
+      "goal": "按页核算连接代价，辨析执行与优化的适用条件，在分布假设与键约束下估计基数。",
+      "tasks": [
+        {"id": "q1", "title": "连接算法与页 I/O", "grade": "45 分"},
+        {"id": "q2", "title": "查询执行、规划与优化", "grade": "30 分"},
+        {"id": "q3", "title": "基数估计", "grade": "25 分"}
+      ]
+    },
+    {
       "id": "project3",
       "num": 3,
       "title": "查询执行：批量接口与外部算子",
       "titleEn": "Query Execution — Batch Next 与外部算子",
       "stars": 4,
       "hours": "按基础安排（未估时）",
-      "branch": "v20251119-2025fall",
       "url": "https://15445.courses.cs.cmu.edu/fall2025/project3/",
-      "goal": "沿批量 Next 接口实现访问、聚合、连接、Grace Hash Join、外部排序、Limit 与窗口函数。",
+      "goal": "在 BusTub v20251119-2025fall 上沿批量 Next 接口实现访问、聚合、连接、Grace Hash Join、外部排序、Limit 与窗口函数，并核对计划改写前后的结果。",
       "tasks": [
         {
           "id": "task-1",

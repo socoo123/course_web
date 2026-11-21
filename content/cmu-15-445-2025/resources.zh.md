@@ -31,7 +31,7 @@ license: 本页为编者原创导航；视频、教材、讲义、实验网页�
 - **课程资料**：只承载独立课外阅读，不再把课堂逐项讲过的 slides/notes 翻译一遍。无独立内容时不创建占位文件。
 - **公共资料**：共用教材、版本、工具链和学习方法集中在本页；实验说明与指导提供无答案的要求导读，学习者实现留在独立私有仓库。
 
-网站“材料已就绪”不等于学习者完成实验。**制作批次 P0–P11 与官方 Project 0–4 是两套编号**；HW1–6 是另一组作业，导航中的 HW1、HW2、HW3 不是新增的官方 Project。
+网站“材料已就绪”不等于学习者完成实验。**制作批次 P0–P11 与官方 Project 0–4 是两套编号**；导航中的 HW1–4 属于课程作业，不是新增的官方 Project。
 
 L2–3 的动手入口：[HW1 SQL 要求导读](#/c/cmu-15-445-2025/lab/hw01?v=zh)与[无答案指导](#/c/cmu-15-445-2025/lab/hw01?v=guide)；[Project 0 要求导读](#/c/cmu-15-445-2025/lab/project0?v=zh)与[哈希、概率及实现指导](#/c/cmu-15-445-2025/lab/project0?v=guide)。题面网页的全文翻译发布许可未确认，这些页面是编者原创导读，不冒充授权全文译文。
 
@@ -42,6 +42,8 @@ L7–9 的动手入口：[HW3 Indexes & Filters 要求导读](#/c/cmu-15-445-202
 L10–12 的动手入口：[Project 2 要求导读](#/c/cmu-15-445-2025/lab/project2?v=zh)与[tombstone B+Tree 无答案指导](#/c/cmu-15-445-2025/lab/project2?v=guide)。先解释并发修改为何仍能保持树的物理结构，再计算外部排序和连接的页 I/O；不把这些纸面练习当成已经运行 BusTub。
 
 L13–14 可连续练习：先读[查询执行（一）](#/c/cmu-15-445-2025/lec/lec13?v=notes)，跟踪算子如何交接一批记录；再读[查询执行（二）](#/c/cmu-15-445-2025/lec/lec14?v=notes)，判断把同一批工作分给多个 worker 后谁最后交卷。下文「订单查询推演」给出同一条查询的两种执行安排。
+
+L15–16 接着问：优化器还没读完数据，凭什么选这个执行顺序？先在下文「让缺货订单换一个连接顺序」对照估计与实测，再做 [HW4 执行与规划导读](#/c/cmu-15-445-2025/lab/hw04?v=zh)与[推演指导](#/c/cmu-15-445-2025/lab/hw04?v=guide)。[Project 3 要求导读](#/c/cmu-15-445-2025/lab/project3?v=zh)与[执行器指导](#/c/cmu-15-445-2025/lab/project3?v=guide)则把问题倒过来：给定计划，怎样分批产出正确结果，且不把整张表留在内存？
 
 ## C++ 先修：先把资源归属说清楚
 
@@ -77,6 +79,8 @@ L4 指定 **§13.2–13.5**，L5 指定 **§14.8.1、24.2**，L6 指定 **§11.2
 L7 指定 **§14.5、24.5（Hash Indices）**，L8 指定 **§14.1–14.4（基础概念、有序索引、B+Tree 及扩展）**，L9 另含 **§24.1（Bloom Filter）**。这里只核对第七版目录定位，未取得或通读这些教材正文。读自己的教材时分别记录“查找键是什么、索引项指向什么、更新会破坏哪条不变量”；不要把过滤器的可能命中当成已经找到记录。
 
 L10 指定 **§18.10.2**，L11 指定 **§15.4–15.5**，L12 指定 **§15.4–15.6**。这些是官方课表的阅读定位，不代表已取得教材正文；用合法教材补读并发索引与查询处理。下列阶段自测限定 L1–11；L12 的连接算法自测留在[该讲笔记](#/c/cmu-15-445-2025/lec/lec12?v=notes)，不擅自扩大官方期中范围。
+
+L13 指定 **§15.1–15.3、§15.7**，L14 指定 **Chapter 22**；L15–16 都指定 **Chapter 16（查询优化）**。对同一个连接，先画等价的逻辑表达式，再给物理计划标出访问路径、估计行数和所需顺序。到本页的 SQLite 练习逐项核对哪些是规划时就有的信息，哪些必须等到执行后才知道；不要把这些观测当作教材原文。
 
 ## 版本冻结与实验工作区
 
@@ -325,6 +329,51 @@ GROUP BY o.sku;
 
 </details>
 
+## 让缺货订单换一个连接顺序
+
+仍然求每种缺货商品欠多少件。这次不指定哈希连接，把同一条 SQL 交给 SQLite。先问三个不同的问题：**该返回几行？计划预计在每一层得到几行？执行时每一层真的访问了几行？** 最后一个问题不能用 `EXPLAIN QUERY PLAN` 单独回答。
+
+在空的 `sqlite3 :memory:` 会话中生成 100 种商品；只有 1 号缺货。每种商品恰有 100 条订单，每条 2 件。两份索引分别支持“找缺货商品”和“按商品找订单”。
+
+```sql
+CREATE TABLE Stock(sku INTEGER PRIMARY KEY, on_hand INTEGER NOT NULL);
+CREATE TABLE Orders(sku INTEGER NOT NULL, qty INTEGER NOT NULL);
+WITH RECURSIVE n(x) AS (VALUES(1) UNION ALL SELECT x+1 FROM n WHERE x<100)
+  INSERT INTO Stock SELECT x, x<>1 FROM n;
+WITH RECURSIVE n(x) AS (VALUES(0) UNION ALL SELECT x+1 FROM n WHERE x<9999)
+  INSERT INTO Orders SELECT 1+x%100, 2 FROM n;
+CREATE INDEX stock_by_hand ON Stock(on_hand);
+CREATE INDEX orders_by_sku ON Orders(sku,qty);
+ANALYZE;
+```
+
+在 SQLite 命令行分别输入 `.eqp on` 与 `.scanstats est`，再执行下面两条只读查询。前者让 shell 在执行前显示计划树；后者在执行后显示循环计数及规划时的行数估计，需要启用 `SQLITE_ENABLE_STMT_SCANSTATUS` 的构建。缺少此选项仍可看树，但看不到下表中的实测行数。SQLite 的 `CROSS JOIN` 在这里固定左右嵌套循环的相对顺序，`ON` 条件仍保留；它是制造对照的手段，不是一般的调优建议。
+
+```sql
+-- A：优化器自由选顺序。FROM 先写 Orders，并不保证它是外层。
+SELECT o.sku, SUM(o.qty) FROM Orders o JOIN Stock s ON s.sku=o.sku
+WHERE s.on_hand=0 GROUP BY o.sku;
+
+-- B：只改变顺序约束，让 Orders 成为外层。
+SELECT o.sku, SUM(o.qty) FROM Orders o CROSS JOIN Stock s ON s.sku=o.sku
+WHERE s.on_hand=0 GROUP BY o.sku;
+```
+
+本次 SQLite **3.51.0** 内存库实测，启用 scanstatus、未启用 STAT4。`est` 是**每轮**预计产出行数；`rows` 是该层**所有轮次累计**访问的行数，不能不看 `loops` 就把两列相除。
+
+| 计划 / 实际路径（从外向内） | 每轮估计 `est` | 实际 `loops` | 累计 `rows` |
+|---|---:|---:|---:|
+| A：按 `stock_by_hand` 找缺货商品 | 48 | 1 | 1 |
+| A：按 `orders_by_sku` 找对应订单 | 96 | 1 | 100 |
+| B：顺扫覆盖索引 `orders_by_sku` | 9216 | 1 | 10000 |
+| B：Bloom 过滤配合 `Stock` 主键查找 | 0.9 | 10000 | 100 |
+
+**先找估计最早错在哪里。** A 的第一层预计得到 48 个缺货商品，实际只有 1 个。`on_hand` 只有两个值，但它们不是各占一半；收集过统计不等于掌握每个值的频率。若用两层估数做粗算，连接输出约为 $48\times96=4608$ 行；实际交给聚合的是 100 行，最终两条查询都只输出 `(1, 200)`。4608 是依据两项 `est` 的手算，不是运行计数，也不是 SQLite 给出的总成本。
+
+**再说代价，不拿行数冒充毫秒。** A 只启动一次订单查找，但计划还有 `USE TEMP B-TREE FOR GROUP BY`，实际接收 100 行。B 要扫描一万条订单，计划出现 `BLOOM FILTER ON s`，最终仍只有 100 行匹配；不能把 10000 次内层循环说成一万次成功取行或一万次物理读盘。B 按商品索引扫描，此次没有单列分组临时树。两种计划交换的是外层扫描、内层探测和分组工作；本次未测量延迟，不能由此声称快了多少倍。
+
+自问：若 100 种商品**全部**缺货，暂且固定 A 的旧计划与旧估数，哪一层会由高估变为低估？订单查找会启动几次？再改数据并重新 `ANALYZE`、看新计划；更新统计后，优化器不必继续选 A 的旧路径。
+
 ## 引用与来源
 
 - CMU Database Group / Andy Pavlo：[Fall 2025 官方课表](https://15445.courses.cs.cmu.edu/fall2025/schedule.html)、[课程大纲](https://15445.courses.cs.cmu.edu/fall2025/syllabus.html)、[FAQ](https://15445.courses.cs.cmu.edu/fall2025/faq.html)、[官方视频列表](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYMAgsGH-GtY5rJYZ6zjsd5)。逐讲视频入口显示在各讲页头。
@@ -332,6 +381,7 @@ GROUP BY o.sku;
 - CMU Database Group：[BusTub 固定源码](https://github.com/cmu-db/bustub/tree/v20251119-2025fall)、[固定提交](https://github.com/cmu-db/bustub/commit/d49b823f829a4bf311a2c80b239ab5a9864c9c41)。代码许可与课程网页、视频、第三方依赖许可分别适用。
 - 官方 [作业与项目索引](https://15445.courses.cs.cmu.edu/fall2025/assignments.html)：[Project 0](https://15445.courses.cs.cmu.edu/fall2025/project0/)、[Project 1](https://15445.courses.cs.cmu.edu/fall2025/project1/)、[Project 2](https://15445.courses.cs.cmu.edu/fall2025/project2/)、[Project 3](https://15445.courses.cs.cmu.edu/fall2025/project3/)、[Project 4](https://15445.courses.cs.cmu.edu/fall2025/project4/)。任务与测试范围经网页和固定源码静态核对；不是已运行的验证结果。
 - 工具链依据：固定提交的 [README](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/README.md)、[CMakeLists.txt](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/CMakeLists.txt)、[packages.sh](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/build_support/packages.sh)。原生开发与 Linux 验证路线为编者建议，未实际配置或运行。
-- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1–3 已阅读全文并制作原创要求导读；HW3 全部五大题及图形条件已读，不提供选项答案。HW4–6 仅登记、获取并核对元数据。HW3 索引截止日为 2025-10-05，PDF 却印“Sunday October 3rd”；HW5 索引为 11-23，PDF 为 11-16。保留冲突，不猜测延期原因。
+- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1–4 提供原创导读而非参考答案；HW5–6 仅登记并核对元数据。HW3 索引截止日为 2025-10-05，PDF 却印“Sunday October 3rd”；HW5 索引为 11-23，PDF 为 11-16。保留冲突，不猜测延期原因。
+- SQLite 官方文档：[Query Optimizer Overview §7.1.2](https://www.sqlite.org/optoverview.html#manual_control_of_query_plans_using_cross_join)、[Profiling SQL Queries §§2、4](https://www.sqlite.org/profile.html#planner_estimates)、[Scan Status 指标定义](https://www.sqlite.org/c3ref/c_scanstat_est.html)。订单数据与对照实验为编者自拟；记录的是 SQLite 3.51.0 的结果，不是 BusTub 计划或课堂演示。
 - 期中范围依据：L8 课堂通知 **01:31–01:48** 明确为 Lecture 1–11 inclusive，见[L8 中文译稿 00:00–01:54](#/c/cmu-15-445-2025/lec/lec08?v=draft)。本页自测为原创，未取用官方考卷或解答；L12 虽同属制作 P4，未据此纳入官方期中考纲。
 - 全课逐来源版本、访问与阅读范围见仓库 `content/cmu-15-445-2025/source-manifest.json`；制作与恢复状态见同目录 `status.json`。原始字幕、媒体与网页快照只保存在本地忽略的 `sources/`，不随站点发布。

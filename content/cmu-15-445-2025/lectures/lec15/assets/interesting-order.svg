@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="390" viewBox="0 0 390 390" role="img" aria-labelledby="t d" lang="zh-CN">
+<title id="t">同一子集为何要保留两种输出性质</title>
+<desc id="d">目标按订单号升序。无序路径子计划成本九，最终排序另需七，总成本十六；已经按订单号升序的路径成本十二，不必再排序，总成本十二。局部较贵的路径赢得整条计划。</desc>
+<style>text{font-family:"PingFang SC","Microsoft YaHei",sans-serif;fill:#163147}.title{font-size:20px;font-weight:700}.h{font-size:17px;font-weight:650}.s{font-size:15px}.r{font-size:21px;font-weight:700}.line{fill:none;stroke:#496676;stroke-width:2}</style>
+<rect x="1" y="1" width="388" height="388" rx="14" fill="#fff" stroke="#91a8b7"/><text x="20" y="36" class="title">上层要求：按订单号升序</text><text x="20" y="63" class="s">同一批行、同样重数，两条可执行路线。</text>
+<rect x="18" y="86" width="169" height="71" rx="9" fill="#eef2f7" stroke="#8ca5b7"/><rect x="203" y="86" width="169" height="71" rx="9" fill="#e4f1ea" stroke="#64947e"/><g text-anchor="middle"><text x="102" y="113" class="h">路径 U：无序</text><text x="102" y="140" class="s">子计划代价 9</text><text x="287" y="113" class="h">路径 O：已有序</text><text x="287" y="140" class="s">子计划代价 12</text></g>
+<path class="line" d="M102 158v32m-5-6 5 6 5-6m180-26v32m-5-6 5 6 5-6"/><rect x="18" y="196" width="169" height="49" rx="9" fill="#fff3de" stroke="#b09348"/><rect x="203" y="196" width="169" height="49" rx="9" fill="#eff7f3" stroke="#64947e"/><g text-anchor="middle"><text x="102" y="227" class="h">加一次排序：7</text><text x="287" y="227" class="h">不再排序：0</text><text x="102" y="286" class="r">总计 16</text><text x="287" y="286" class="r">总计 12</text></g>
+<path d="M20 310H370" stroke="#b3c4cf"/><text x="20" y="340" class="s">在相同输出性质内比较代价，再决定保留谁。</text><text x="20" y="365" class="s">数值均为自拟代价单位，不是毫秒。</text>
+</svg>
