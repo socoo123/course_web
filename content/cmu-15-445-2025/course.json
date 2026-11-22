@@ -341,7 +341,7 @@
       "readings": [
         "Database System Concepts 第七版 · Chapter 18.1-18.3, 18.9"
       ],
-      "lab": "project4"
+      "lab": "hw05"
     },
     {
       "id": "lec19",
@@ -619,71 +619,100 @@
       ]
     },
     {
+      "id": "hw05",
+      "num": 5,
+      "title": "HW5 · 事务（非 Project）",
+      "titleEn": "Homework 5 — Transactions!",
+      "stars": 3,
+      "hours": "官方约 2–4 小时（个人基础有差异）",
+      "url": "https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf",
+      "goal": "从给定的读写历史判断可串行化与锁请求，按时间线检查 OCC 验证，区分版本存储、索引和回收条件。",
+      "tasks": [
+        {"id": "q1", "title": "可串行化与两阶段锁", "grade": "30 分"},
+        {"id": "q2", "title": "层次锁", "grade": "30 分"},
+        {"id": "q3", "title": "乐观并发控制", "grade": "25 分"},
+        {"id": "q4", "title": "多版本并发控制", "grade": "15 分"}
+      ]
+    },
+    {
       "id": "project4",
       "num": 4,
       "title": "并发控制：MVOCC",
-      "titleEn": "Concurrency Control — MVOCC",
+      "titleEn": "Concurrency Control",
       "stars": 5,
       "hours": "按基础安排（未估时）",
-      "branch": "v20251119-2025fall",
       "url": "https://15445.courses.cs.cmu.edu/fall2025/project4/",
-      "goal": "实现版本可见性、undo、Commit、GC、Abort、主键更新和可串行化验证；不可止步于快照隔离。",
+      "goal": "在 BusTub v20251119-2025fall 上按快照重建旧行，处理并发写、回滚、旧版本回收与主键更新，最后用谓词检查让事务达到可串行化。",
       "tasks": [
         {
           "id": "task-1-1",
-          "title": "Timestamp Allocation"
+          "title": "1.1 · 分配读时间戳与提交时间戳",
+          "titleEn": "Timestamp Allocation"
         },
         {
           "id": "task-1-2",
-          "title": "Watermark"
+          "title": "1.2 · 维护水位线",
+          "titleEn": "Watermark"
         },
         {
           "id": "task-2-1",
-          "title": "Tuple Reconstruction"
+          "title": "2.1 · 从差量重建元组",
+          "titleEn": "Tuple Reconstruction"
         },
         {
           "id": "task-2-2",
-          "title": "Sequential Scan / Tuple Retrieval"
+          "title": "2.2 · 按快照顺序扫描",
+          "titleEn": "Sequential Scan / Tuple Retrieval"
         },
         {
           "id": "task-3-1",
-          "title": "Insert Executor"
+          "title": "3.1 · 插入新行",
+          "titleEn": "Insert Executor"
         },
         {
           "id": "task-3-2",
-          "title": "Commit"
+          "title": "3.2 · 原子发布提交",
+          "titleEn": "Commit"
         },
         {
           "id": "task-3-3",
-          "title": "Generate Undo Log"
+          "title": "3.3 · 生成与合并 undo",
+          "titleEn": "Generate Undo Log"
         },
         {
           "id": "task-3-4",
-          "title": "Update & Delete Executors"
+          "title": "3.4 · 更新与删除",
+          "titleEn": "Update & Delete Executors"
         },
         {
           "id": "task-3-5",
-          "title": "Stop-the-world Garbage Collection"
+          "title": "3.5 · 暂停事务后回收历史",
+          "titleEn": "Stop-the-world Garbage Collection"
         },
         {
           "id": "task-3-6",
-          "title": "Abort"
+          "title": "3.6 · 回滚未提交修改",
+          "titleEn": "Abort"
         },
         {
           "id": "task-4-1",
-          "title": "Primary Key Index Insert"
+          "title": "4.1 · 竞争插入主键",
+          "titleEn": "Primary Key Index Insert"
         },
         {
           "id": "task-4-2",
-          "title": "Index Scan, Delete & Update"
+          "title": "4.2 · 索引扫描与墓碑复用",
+          "titleEn": "Index Scan, Delete & Update"
         },
         {
           "id": "task-4-3",
-          "title": "Primary Key Updates"
+          "title": "4.3 · 更新主键",
+          "titleEn": "Primary Key Updates"
         },
         {
           "id": "task-4-4",
-          "title": "Serializable Verification"
+          "title": "4.4 · 可串行化验证",
+          "titleEn": "Serializable Verification"
         }
       ]
     }

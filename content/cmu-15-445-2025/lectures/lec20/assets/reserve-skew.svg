@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 442" role="img" aria-labelledby="title desc">
+  <title id="title">两笔订单分别预留一个仓库的最后一件备货</title>
+  <desc id="desc">起点甲乙各有一件，至少留一件作备用。订单一读到乙有一件，扣甲；订单二读到甲有一件，扣乙。各自只看原快照且不写同一行，两笔都提交会使两个仓库都没有备货，没有可解释该结果的串行顺序。</desc>
+  <defs><marker id="tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#435770"/></marker></defs>
+  <rect width="540" height="442" rx="12" fill="#f7f9fc"/>
+  <g font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#172f48">
+    <text x="24" y="39" font-size="26" font-weight="700">同时扣库存：没有写同一行也会错</text>
+    <rect x="46" y="65" width="448" height="54" rx="9" fill="#e7edf5"/>
+    <text x="270" y="99" text-anchor="middle" font-size="21">同一张快照：甲 1，乙 1；总量须 ≥ 1</text>
+    <g fill="none" stroke="#435770" stroke-width="2.5" marker-end="url(#tip)"><path d="M186 120l-45 40"/><path d="M354 120l45 40"/></g>
+    <rect x="24" y="166" width="231" height="102" rx="10" fill="#dfefe9" stroke="#327767" stroke-width="2"/>
+    <rect x="285" y="166" width="231" height="102" rx="10" fill="#f9e9cf" stroke="#906532" stroke-width="2"/>
+    <text x="42" y="198" font-size="22" font-weight="650">订单一</text><text x="42" y="226" font-size="19">读：乙还有 1</text><text x="42" y="252" font-size="19">写：甲 1 → 0</text>
+    <text x="303" y="198" font-size="22" font-weight="650">订单二</text><text x="303" y="226" font-size="19">读：甲还有 1</text><text x="303" y="252" font-size="19">写：乙 1 → 0</text>
+    <g fill="none" stroke="#435770" stroke-width="2.5" marker-end="url(#tip)"><path d="M140 269l55 46"/><path d="M400 269l-55 46"/></g>
+    <rect x="72" y="321" width="396" height="66" rx="9" fill="#fae3e1" stroke="#a04f58" stroke-width="2"/>
+    <text x="270" y="348" text-anchor="middle" font-size="21" font-weight="650">都提交：甲 0，乙 0</text><text x="270" y="374" text-anchor="middle" font-size="18">共同的业务条件失效</text>
+    <text x="270" y="420" text-anchor="middle" font-size="17">任一串行顺序下，第二笔都会看到对仓已空并放弃。</text>
+  </g>
+</svg>

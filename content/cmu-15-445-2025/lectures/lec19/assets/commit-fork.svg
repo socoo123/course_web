@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="536" viewBox="0 0 360 536" role="img" aria-labelledby="t d">
+<title id="t">相同的库存操作，两种验证顺序</title><desc id="d">现存五件。预留者把四件写进私有区。查询者仍读五件。若预留者先验证，写集碰到查询者的读集，课上策略中预留者中止。若只读查询先验证，可以排在预留之前，最终库存为四。</desc>
+<rect width="360" height="536" rx="13" fill="#faf8f1"/>
+<g font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#19332b">
+<text x="20" y="35" font-size="21" font-weight="700">同一段执行，两种结局</text>
+<text x="20" y="62" font-size="15">库存 K 的已提交值从 5 开始</text>
+<path d="M32 93v86" fill="none" stroke="#7c8e83" stroke-width="2"/>
+<circle cx="32" cy="99" r="8" fill="#305f52"/><text x="53" y="105" font-size="16">预留者 A 读 K=5，私下写 4。</text>
+<circle cx="32" cy="139" r="8" fill="#305f52"/><text x="53" y="145" font-size="16">查询者 B 从全局读 K=5。</text>
+<circle cx="32" cy="179" r="8" fill="#305f52"/><text x="53" y="185" font-size="16" font-weight="700">轮到谁先验证？</text>
+<rect x="14" y="208" width="332" height="137" rx="8" fill="#f6e4d5" stroke="#aa653d"/>
+<text x="27" y="236" fill="#713c1f" font-size="18" font-weight="700">① A 先验：不能都通过</text>
+<text x="27" y="265" font-size="16">A 要排在 B 前；B 理应读到 4。</text>
+<text x="27" y="293" font-size="16">实际 B 已读 5：W(A) ∩ R(B) 有 K。</text>
+<text x="27" y="322" font-size="16" font-weight="700">按课堂策略 A 中止，全局仍是 5。</text>
+<rect x="14" y="360" width="332" height="147" rx="8" fill="#dcece4" stroke="#497362"/>
+<text x="27" y="390" fill="#254c40" font-size="18" font-weight="700">② B 先验：B → A 成立</text>
+<text x="27" y="420" font-size="16">B 没有待公开的写；先提交。</text>
+<text x="27" y="449" font-size="16">A 再验，再安装 4。于是 B 读 5</text>
+<text x="27" y="477" font-size="16" font-weight="700">恰好等于先查询、后预留。</text>
+</g></svg>

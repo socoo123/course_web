@@ -31,7 +31,7 @@ license: 本页为编者原创导航；视频、教材、讲义、实验网页�
 - **课程资料**：只承载独立课外阅读，不再把课堂逐项讲过的 slides/notes 翻译一遍。无独立内容时不创建占位文件。
 - **公共资料**：共用教材、版本、工具链和学习方法集中在本页；实验说明与指导提供无答案的要求导读，学习者实现留在独立私有仓库。
 
-网站“材料已就绪”不等于学习者完成实验。**制作批次 P0–P11 与官方 Project 0–4 是两套编号**；导航中的 HW1–4 属于课程作业，不是新增的官方 Project。
+网站“材料已就绪”不等于学习者完成实验。**制作批次 P0–P11 与官方 Project 0–4 是两套编号**；导航中的 HW1–5 属于课程作业，不是新增的官方 Project。
 
 L2–3 的动手入口：[HW1 SQL 要求导读](#/c/cmu-15-445-2025/lab/hw01?v=zh)与[无答案指导](#/c/cmu-15-445-2025/lab/hw01?v=guide)；[Project 0 要求导读](#/c/cmu-15-445-2025/lab/project0?v=zh)与[哈希、概率及实现指导](#/c/cmu-15-445-2025/lab/project0?v=guide)。题面网页的全文翻译发布许可未确认，这些页面是编者原创导读，不冒充授权全文译文。
 
@@ -46,6 +46,8 @@ L13–14 可连续练习：先读[查询执行（一）](#/c/cmu-15-445-2025/lec
 L15–16 接着问：优化器还没读完数据，凭什么选这个执行顺序？先在下文「让缺货订单换一个连接顺序」对照估计与实测，再做 [HW4 执行与规划导读](#/c/cmu-15-445-2025/lab/hw04?v=zh)与[推演指导](#/c/cmu-15-445-2025/lab/hw04?v=guide)。[Project 3 要求导读](#/c/cmu-15-445-2025/lab/project3?v=zh)与[执行器指导](#/c/cmu-15-445-2025/lab/project3?v=guide)则把问题倒过来：给定计划，怎样分批产出正确结果，且不把整张表留在内存？
 
 L17–18 换一个问题：两笔预订都拿到了正确的最终库存，就能证明中途没读错吗？先在[并发控制理论](#/c/cmu-15-445-2025/lec/lec17?v=notes)学会检查读写历史，再到[两阶段锁](#/c/cmu-15-445-2025/lec/lec18?v=notes)看锁管理器怎样在操作发生**之前**阻塞它。下文「两笔预订」用同一组数据练习这两个判断。
+
+L19–20 接着问：旧库存还读得出来，为什么不能照着它写？对照[时间戳排序](#/c/cmu-15-445-2025/lec/lec19?v=notes)和[多版本并发控制](#/c/cmu-15-445-2025/lec/lec20?v=notes)，用下文「库存变成 3 以后」手推一次。纸面历史与隔离协议见 [HW5 题面导读](#/c/cmu-15-445-2025/lab/hw05?v=zh)和[推演指导](#/c/cmu-15-445-2025/lab/hw05?v=guide)；要把这些历史具体落实到 RID、undo 和验证器，再读 [Project 4 全任务说明](#/c/cmu-15-445-2025/lab/project4?v=zh)与[调试指导](#/c/cmu-15-445-2025/lab/project4?v=guide)。
 
 ## C++ 先修：先把资源归属说清楚
 
@@ -421,6 +423,27 @@ flowchart LR
 
 **回到页守卫。** B+ 树页的 latch 能让一次页内修改不被并发改坏，却不承诺下一页、下一条 SQL 看到什么；这里的 lock 保护的是事务对逻辑数据的读写。也别把 **2PL** 的“增长、收缩”（决定何时可拿锁）读成 **2PC** 的“准备、决定”（协调多个参与方一致提交或中止）。本例在一个数据库里就能发生，不需要分布式提交。
 
+## 库存变成 3 以后，谁还能看见 5？
+
+沿用订单 42 与商品 A，记一组读数为 `(已预订, 可用)`。提交 6 留下 `(0,5)`；提交 7、8 都没碰这两行。对账事务 R 在提交 8 后开始。以下按 Project 4 的快照规则手推，不是 SQL 会话实测。
+
+| 时刻 | 数据库里发生了什么？ | 谁能读到什么？ |
+|---|---|---|
+| R 和预订事务 W 都取得 `read_ts=8` | 此时两行最新版本仍来自提交 6 | 两者都读到 `(0,5)`。读时间不是行的版本号 |
+| W 预订两件，尚未提交 | 表堆中两行的最新值已是 `(2,3)`，带 W 的临时标记 | W 读自己的写，得到 `(2,3)`；R 沿 undo 取回 `(0,5)` |
+| W 提交为 9，另一事务 N 随后开始 | 两行现在都属于提交 9 | N 读 `(2,3)`；同一个 R 再查仍读 `(0,5)` |
+| N 再预订一件，读回后主动 Abort | N 一度看到自己的 `(3,2)`；撤销要恢复先前已提交的行及可用的版本链 | 随后新开的读者见 `(2,3)`；R 仍可重建 `(0,5)`。没有任何人应读到“一边撤销、一边已提交”的订单 |
+
+**能读不等于能写。** 把 R 的下一步改成更新 A：若它在 W 提交前尝试，堆头是**别人的未提交修改**；若在提交 9 后尝试，堆头是**晚于 R 快照的已提交修改**。Project 4 在这两种分支都拒绝该写，把 R 标成 `TAINTED`，随后仍需 Abort；不是让 R 接着拿旧库存覆盖 3。主表中的 R 保持只读。
+
+<details><summary>水位线是 8，能把提交时间为 6 的旧值马上丢掉吗？</summary>
+
+不能。R 要的不是“标着 8 的版本”，而是**不晚于 8 的最近版本**，即 6。从当前的提交 9 倒推到 6 的 undo 必须可达。R 退出、没有其他同样老的快照后，若水位线已至少为 9，才不再需要为这两行保留那一步。项目回收的单位是已结束事务的工作区：同一工作区只要还有一条别的行所需的 undo，就不能整体删除。
+
+</details>
+
+**同一 RID 的写冲突都抓住了，够不够？** 看[L20 笔记的双仓反例](#/c/cmu-15-445-2025/lec/lec20?v=notes)：两笔订单扣的是不同的行，却都依赖另一仓还有货。把它带回 Project 4：若后一笔扫描的条件是 `free > 0`，先提交者把一行从 `1` 改为 `0`，检查更新后的 `0` 会漏掉什么？**更新前的 `1` 本来匹配谓词。** 只查写集交集，或只拿更新后的行验证，都可能让快照隔离下的写偏斜溜过 Serializable 检查。
+
 ## 引用与来源
 
 - CMU Database Group / Andy Pavlo：[Fall 2025 官方课表](https://15445.courses.cs.cmu.edu/fall2025/schedule.html)、[课程大纲](https://15445.courses.cs.cmu.edu/fall2025/syllabus.html)、[FAQ](https://15445.courses.cs.cmu.edu/fall2025/faq.html)、[官方视频列表](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYMAgsGH-GtY5rJYZ6zjsd5)。逐讲视频入口显示在各讲页头。
@@ -428,8 +451,9 @@ flowchart LR
 - CMU Database Group：[BusTub 固定源码](https://github.com/cmu-db/bustub/tree/v20251119-2025fall)、[固定提交](https://github.com/cmu-db/bustub/commit/d49b823f829a4bf311a2c80b239ab5a9864c9c41)。代码许可与课程网页、视频、第三方依赖许可分别适用。
 - 官方 [作业与项目索引](https://15445.courses.cs.cmu.edu/fall2025/assignments.html)：[Project 0](https://15445.courses.cs.cmu.edu/fall2025/project0/)、[Project 1](https://15445.courses.cs.cmu.edu/fall2025/project1/)、[Project 2](https://15445.courses.cs.cmu.edu/fall2025/project2/)、[Project 3](https://15445.courses.cs.cmu.edu/fall2025/project3/)、[Project 4](https://15445.courses.cs.cmu.edu/fall2025/project4/)。任务与测试范围经网页和固定源码静态核对；不是已运行的验证结果。
 - 工具链依据：固定提交的 [README](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/README.md)、[CMakeLists.txt](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/CMakeLists.txt)、[packages.sh](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/build_support/packages.sh)。原生开发与 Linux 验证路线为编者建议，未实际配置或运行。
-- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1–4 提供原创导读而非参考答案；HW5–6 仅登记并核对元数据。HW3 索引截止日为 2025-10-05，PDF 却印“Sunday October 3rd”；HW5 索引为 11-23，PDF 为 11-16。保留冲突，不猜测延期原因。
+- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1–5 提供原创导读而非参考答案；HW6 仅登记元数据。HW3 索引截止日为 2025-10-05，PDF 却印“Sunday October 3rd”。HW5 索引为 11-23，PDF 为 11-16；[L19 译稿 01:19–01:32](#/c/cmu-15-445-2025/lec/lec19?v=draft)说明讲师宣布延后一周，[L20 译稿 01:08–01:14](#/c/cmu-15-445-2025/lec/lec20?v=draft)再次确认 23 日；未核验评分系统实际设置。
 - SQLite 官方文档：[Query Optimizer Overview §7.1.2](https://www.sqlite.org/optoverview.html#manual_control_of_query_plans_using_cross_join)、[Profiling SQL Queries §§2、4](https://www.sqlite.org/profile.html#planner_estimates)、[Scan Status 指标定义](https://www.sqlite.org/c3ref/c_scanstat_est.html)。订单数据与对照实验为编者自拟；记录的是 SQLite 3.51.0 的结果，不是 BusTub 计划或课堂演示。
 - 期中范围依据：L8 课堂通知 **01:31–01:48** 明确为 Lecture 1–11 inclusive，见[L8 中文译稿 00:00–01:54](#/c/cmu-15-445-2025/lec/lec08?v=draft)。本页自测为原创，未取用官方考卷或解答；L12 虽同属制作 P4，未据此纳入官方期中考纲。
 - 「两笔预订」为原创纸面练习。冲突优先图见当季[第 17 讲讲义 §6](https://15445.courses.cs.cmu.edu/fall2025/notes/17-concurrencycontrol.pdf)，等待图见[第 18 讲讲义 §3](https://15445.courses.cs.cmu.edu/fall2025/notes/18-twophaselocking.pdf)；strict 与 rigorous 2PL 的锁释放规则按[教材作者第 18 章课件，第 18.10 页](https://www.db-book.com/slides-dir/PDF-dir/ch18.pdf)区分。
+- 「库存变成 3 以后」是原创快照推演，取规则自 [Fall 2025 Project 4](https://15445.courses.cs.cmu.edu/fall2025/project4/) §§1.1–1.2、2.2、3.4–3.6、4.4。数字、订单与双仓反例不是官方作业题或运行输出。
 - 全课逐来源版本、访问与阅读范围见仓库 `content/cmu-15-445-2025/source-manifest.json`；制作与恢复状态见同目录 `status.json`。原始字幕、媒体与网页快照只保存在本地忽略的 `sources/`，不随站点发布。

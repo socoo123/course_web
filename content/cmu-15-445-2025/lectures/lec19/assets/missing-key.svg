@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="390" viewBox="0 0 360 390" role="img" aria-labelledby="t d">
+<title id="t">首次查询没有读出行，仍读了一个范围</title><desc id="d">订单号索引现有四十与五十。查询四十一至四十九没有返回行，物理结构上这段落在四十和五十之间的开间隙。未来插入四十五会改变查询。保护索引间隙与保护页内字节是不同机制。</desc>
+<rect width="360" height="390" rx="13" fill="#f3f6f6"/>
+<g font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#183846">
+<text x="18" y="35" font-size="21" font-weight="700">空的结果，不是空的依赖</text>
+<text x="18" y="66" font-size="15">订单号索引：现有 40、50；中间无键。</text>
+<rect x="18" y="92" width="324" height="111" rx="8" fill="#fff" stroke="#75919a"/>
+<text x="29" y="119" font-size="16" font-weight="700">保护间隙 (40, 50)</text>
+<path d="M39 153h282" stroke="#526d77" stroke-width="2"/>
+<path d="M67 153h225" stroke="#00756c" stroke-width="8"/>
+<g fill="#fff" stroke="#00756c" stroke-width="3"><circle cx="67" cy="153" r="6"/><circle cx="292" cy="153" r="6"/></g>
+<path d="M180 140v26" stroke="#934529" stroke-width="3"/>
+<g font-size="16" text-anchor="middle"><text x="67" y="184">40</text><text x="180" y="184" fill="#7e341d">45：拟插入</text><text x="292" y="184">50</text></g>
+<text x="20" y="237" font-size="16">第一次：查 41–49，结果为空。</text>
+<text x="20" y="268" font-size="16">若插入 45 后提交，再查便有一行。</text>
+<path d="M20 288h319" fill="none" stroke="#a9bcbf"/>
+<text x="20" y="319" font-size="16" font-weight="700">事务锁：保护这段逻辑键域。</text>
+<text x="20" y="350" font-size="16" font-weight="700">页闩：短时保护槽位移动与分裂。</text>
+<text x="20" y="375" font-size="13">空心端点表示不包含已有的 40 和 50。</text>
+</g></svg>

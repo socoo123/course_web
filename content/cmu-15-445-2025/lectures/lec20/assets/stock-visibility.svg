@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 490" role="img" aria-labelledby="title desc">
+  <title id="title">库存 K：沿版本链为快照选择数量</title>
+  <desc id="desc">订单事务 U 的未提交数量四只对自己可见。最近两次提交的数量分别是七和十。快照二十五跳过 U 和提交时间三十的版本，沿链得到提交时间十的数量十；快照三十五得到七。U 回滚后四不能成为任何已提交读的结果。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path fill="#364b60" d="M0 0 10 5 0 10z"/></marker></defs>
+  <rect width="560" height="490" rx="12" fill="#faf8f1"/>
+  <g font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#163244">
+    <text x="26" y="42" font-size="28" font-weight="700">同一个 SKU，三个物理状态</text>
+    <text x="26" y="75" font-size="19">沿箭头向过去找；一行至多返回一个可见值。</text>
+    <rect x="26" y="102" width="216" height="77" rx="9" fill="#ffedcc" stroke="#9b662a" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="41" y="133" font-size="22" font-weight="650">U 写入：数量 4</text><text x="41" y="161" font-size="18">暂存 · 尚未提交</text>
+    <path d="M134 181v39" fill="none" stroke="#364b60" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="26" y="225" width="216" height="77" rx="9" fill="#d9eee8" stroke="#337968" stroke-width="2"/>
+    <text x="41" y="256" font-size="22" font-weight="650">提交 30：数量 7</text><text x="41" y="284" font-size="18">已提交 · 当前值</text>
+    <path d="M134 304v39" fill="none" stroke="#364b60" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="26" y="348" width="216" height="77" rx="9" fill="#e3ebf6" stroke="#51749a" stroke-width="2"/>
+    <text x="41" y="379" font-size="22" font-weight="650">提交 10：数量 10</text><text x="41" y="407" font-size="18">已提交 · 历史值</text>
+    <g fill="none" stroke="#364b60" stroke-width="2.5" marker-end="url(#arrow)"><path d="M302 143h-51"/><path d="M302 266h-51"/><path d="M302 389h-51"/></g>
+    <text x="312" y="137" font-size="21" font-weight="650">写者 U 自己</text><text x="312" y="165" font-size="18">读己之写</text>
+    <text x="312" y="260" font-size="21" font-weight="650">快照 35</text><text x="312" y="288" font-size="18">跳过别人的暂存</text>
+    <text x="312" y="383" font-size="21" font-weight="650">快照 25</text><text x="312" y="411" font-size="18">30 也太晚</text>
+    <text x="26" y="463" font-size="18">U 回滚：撤销暂存，不给数量 4 分配提交时刻。</text>
+  </g>
+</svg>
