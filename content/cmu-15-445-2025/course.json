@@ -391,7 +391,8 @@
       "core": true,
       "readings": [
         "Database System Concepts 第七版 · Chapter 19.1-19.8"
-      ]
+      ],
+      "lab": "hw06"
     },
     {
       "id": "lec22",
@@ -407,7 +408,8 @@
       "core": true,
       "readings": [
         "Database System Concepts 第七版 · Chapter 19.1-19.9"
-      ]
+      ],
+      "lab": "hw06"
     },
     {
       "id": "lec23",
@@ -714,6 +716,21 @@
           "title": "4.4 · 可串行化验证",
           "titleEn": "Serializable Verification"
         }
+      ]
+    },
+    {
+      "id": "hw06",
+      "num": 6,
+      "title": "HW6 · 数据库恢复（本批：Q1–2）",
+      "titleEn": "Homework 6 — Recovery",
+      "stars": 3,
+      "hours": "题面未给估时；本批为纸面推演",
+      "url": "https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf",
+      "goal": "在同一条日志上移动崩溃点，判断磁盘可能保留哪些修改，区分恢复时的重做与撤销。本批覆盖恢复题 80 分，不是编程项目。",
+      "tasks": [
+        {"id": "q1", "title": "ARIES：三个崩溃点", "titleEn": "ARIES", "grade": "48 分"},
+        {"id": "q2", "title": "日志与恢复策略", "titleEn": "Logging and Recovery", "grade": "32 分"},
+        {"id": "q3", "title": "分布式数据库（留待 P10）", "titleEn": "Distributed Databases", "grade": "20 分"}
       ]
     }
   ]

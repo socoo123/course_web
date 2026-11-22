@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 588" role="img" aria-labelledby="title desc">
+<title id="title">一张订单、一个未提交预留和两次崩溃</title><desc id="desc">订单 W 的提交记录 50 先持久化，再答复客户。未提交的 U 修改的订单页已经刷出，库存页仍旧。第一次恢复撤销 90 并持久化补偿记录 110，第二次从其 undoNext 80 接着撤订单，不再撤 90。</desc>
+<rect width="400" height="588" rx="12" fill="#f4f7f9"/>
+<g font-family="system-ui,'PingFang SC','Microsoft YaHei',sans-serif" fill="#142f42">
+<text x="20" y="35" font-size="23" font-weight="700">持久化哪条证据，才算数？</text>
+<path d="M35 74V522" stroke="#3f596a" stroke-width="3" fill="none"/>
+<g font-size="16"><circle cx="35" cy="78" r="10" fill="#11695b"/><text x="58" y="83" font-weight="700">020、030　W：库存 10→7；建订单 71</text><text x="58" y="107">040　开始检查点，拍下两张表。</text>
+<circle cx="35" cy="151" r="10" fill="#11695b"/><text x="58" y="156" font-weight="700">050　W 的 COMMIT 已落盘 → 应答</text><text x="58" y="180">库存页可以不落盘，不能丢这次扣减。</text>
+<circle cx="35" cy="224" r="10" fill="#11695b"/><text x="58" y="229" font-weight="700">080、090　U：建预留 72；库存 7→5</text><text x="58" y="253">WAL 先落盘，订单页才可刷出。</text>
+<circle cx="35" cy="296" r="10" fill="#8c3a26"/><text x="58" y="302" font-weight="700">100　检查点结束后，第一次崩溃</text><text x="58" y="326">盘：库存仍 10，订单 71、预留 72 都在。</text>
+<circle cx="35" cy="367" r="10" fill="#155e89"/><text x="58" y="373" font-weight="700">Redo 历史：库存 10→7→5</text><text x="58" y="397">订单页已有 080，不重复插入两行。</text>
+<circle cx="35" cy="438" r="10" fill="#8c3a26"/><text x="58" y="444" font-weight="700">110　撤 090：库存回到 7；又崩溃</text><text x="58" y="468">设 CLR 已持久，指向待撤的 080。</text>
+<circle cx="35" cy="513" r="10" fill="#155e89"/><text x="58" y="518" font-weight="700">再启动：必要时重放 110，再撤 080</text><text x="58" y="542">结局：库存 7，有订单 71，无预留 72。</text></g>
+<text x="20" y="571" font-size="14" fill="#435966">编号是 WAL 位置示意；纵轴向下表示时间推进。</text></g></svg>

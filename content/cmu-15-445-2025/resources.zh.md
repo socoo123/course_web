@@ -31,7 +31,7 @@ license: 本页为编者原创导航；视频、教材、讲义、实验网页�
 - **课程资料**：只承载独立课外阅读，不再把课堂逐项讲过的 slides/notes 翻译一遍。无独立内容时不创建占位文件。
 - **公共资料**：共用教材、版本、工具链和学习方法集中在本页；实验说明与指导提供无答案的要求导读，学习者实现留在独立私有仓库。
 
-网站“材料已就绪”不等于学习者完成实验。**制作批次 P0–P11 与官方 Project 0–4 是两套编号**；导航中的 HW1–5 属于课程作业，不是新增的官方 Project。
+网站“材料已就绪”不等于学习者完成实验。**制作批次 P0–P11 与官方 Project 0–4 是两套编号**；导航中的 HW1–6 属于课程作业，不是新增的官方 Project。
 
 L2–3 的动手入口：[HW1 SQL 要求导读](#/c/cmu-15-445-2025/lab/hw01?v=zh)与[无答案指导](#/c/cmu-15-445-2025/lab/hw01?v=guide)；[Project 0 要求导读](#/c/cmu-15-445-2025/lab/project0?v=zh)与[哈希、概率及实现指导](#/c/cmu-15-445-2025/lab/project0?v=guide)。题面网页的全文翻译发布许可未确认，这些页面是编者原创导读，不冒充授权全文译文。
 
@@ -48,6 +48,8 @@ L15–16 接着问：优化器还没读完数据，凭什么选这个执行顺�
 L17–18 换一个问题：两笔预订都拿到了正确的最终库存，就能证明中途没读错吗？先在[并发控制理论](#/c/cmu-15-445-2025/lec/lec17?v=notes)学会检查读写历史，再到[两阶段锁](#/c/cmu-15-445-2025/lec/lec18?v=notes)看锁管理器怎样在操作发生**之前**阻塞它。下文「两笔预订」用同一组数据练习这两个判断。
 
 L19–20 接着问：旧库存还读得出来，为什么不能照着它写？对照[时间戳排序](#/c/cmu-15-445-2025/lec/lec19?v=notes)和[多版本并发控制](#/c/cmu-15-445-2025/lec/lec20?v=notes)，用下文「库存变成 3 以后」手推一次。纸面历史与隔离协议见 [HW5 题面导读](#/c/cmu-15-445-2025/lab/hw05?v=zh)和[推演指导](#/c/cmu-15-445-2025/lab/hw05?v=guide)；要把这些历史具体落实到 RID、undo 和验证器，再读 [Project 4 全任务说明](#/c/cmu-15-445-2025/lab/project4?v=zh)与[调试指导](#/c/cmu-15-445-2025/lab/project4?v=guide)。
+
+L21–22 把同一笔预订放到磁盘上：[数据库日志](#/c/cmu-15-445-2025/lec/lec21?v=notes)问“回复成功前必须写什么”，[数据库恢复](#/c/cmu-15-445-2025/lec/lec22?v=notes)问“重启后哪些写要保留”。先做下文「订单已确认，为什么磁盘上还没有订单」，再做 [HW6 恢复部分](#/c/cmu-15-445-2025/lab/hw06?v=zh)；[指导](#/c/cmu-15-445-2025/lab/hw06?v=guide)不提供选项答案。
 
 ## C++ 先修：先把资源归属说清楚
 
@@ -85,6 +87,8 @@ L7 指定 **§14.5、24.5（Hash Indices）**，L8 指定 **§14.1–14.4（基�
 L10 指定 **§18.10.2**，L11 指定 **§15.4–15.5**，L12 指定 **§15.4–15.6**。这些是官方课表的阅读定位，不代表已取得教材正文；用合法教材补读并发索引与查询处理。下列阶段自测限定 L1–11；L12 的连接算法自测留在[该讲笔记](#/c/cmu-15-445-2025/lec/lec12?v=notes)，不擅自扩大官方期中范围。
 
 L13 指定 **§15.1–15.3、§15.7**，L14 指定 **Chapter 22**；L15–16 都指定 **Chapter 16（查询优化）**。对同一个连接，先画等价的逻辑表达式，再给物理计划标出访问路径、估计行数和所需顺序。到本页的 SQLite 练习逐项核对哪些是规划时就有的信息，哪些必须等到执行后才知道；不要把这些观测当作教材原文。
+
+L21 指定 **§19.1–19.8**，L22 在此基础上加读 **§19.9 ARIES（第 941 页起）**。按目录先区分 §19.3–19.5 的原子性、恢复算法与缓冲管理，以及 §19.6 的非易失存储丢失：如果盘也坏了，只剩内存丢失的推演就不够。读 §19.9 时用下文的订单例子分别标出分析、重做、撤销的起点，别给三趟扫描画同一个箭头。
 
 ## 版本冻结与实验工作区
 
@@ -444,6 +448,33 @@ flowchart LR
 
 **同一 RID 的写冲突都抓住了，够不够？** 看[L20 笔记的双仓反例](#/c/cmu-15-445-2025/lec/lec20?v=notes)：两笔订单扣的是不同的行，却都依赖另一仓还有货。把它带回 Project 4：若后一笔扫描的条件是 `free > 0`，先提交者把一行从 `1` 改为 `0`，检查更新后的 `0` 会漏掉什么？**更新前的 `1` 本来匹配谓词。** 只查写集交集，或只拿更新后的行验证，都可能让快照隔离下的写偏斜溜过 Serializable 检查。
 
+## 订单已确认，为什么磁盘上还没有订单？
+
+订单 42 已预订 `O=0` 件，库存 `S=5` 件。两个数各占一页，初始磁盘页的 `pageLSN` 均为 0。甲预订两件，乙随后再预订一件。每个成功事务都该保持 `O+S=5`。只考虑掉电丢内存、已完成的持久写不丢、不撕页；用 STEAL + NO-FORCE 和同步提交。以下是自拟的日志，不是 BusTub 项目，也不是 HW6 的日志。
+
+| LSN | 日志或动作 | 此时允许发生什么？ |
+|---|---|---|
+| 5、10、20 | 甲开始；写 O：0→2；写 S：5→3 | 页已在内存中改动。本例暂不刷数据页 |
+| 30 | 甲 COMMIT | **先**把日志前缀刷到 30，**再**回复成功；本例回复时盘上仍是 `(0,5)` |
+| 35、40、50 | 甲 END；开始、完成一次模糊检查点 | 起点快照为 `ATT={}`、`DPT={O:10, S:20}`；检查点记录持久化后，主记录指向 40。此间没有刷数据页 |
+| 55、60、70 | 乙开始；写 S：3→2；写 O：2→3 | 日志刷到 70；后台将 `S@60` 刷盘，O 不刷。**这时掉电**：乙没有 COMMIT |
+
+**WAL 是两条先后约束，不是一条刷盘指令。** 刷某一页之前，日志必须至少持久到该页的 `pageLSN`；回复提交成功之前，日志必须至少持久到本事务的 COMMIT。第一条允许把乙未提交的 `S@60` 写盘（STEAL）；第二条不要求把甲已提交的 `O@10` 同时写盘（NO-FORCE）。因此最终崩溃现场的磁盘是 `O=0@0, S=2@60`：缺甲的一次写，又多乙的一次写。只看盘上两个数，无法判断该留哪笔订单。
+
+**先把掉电点往前挪。** 若日志只刷到 20 就掉电，甲尚不能得到成功回复；重启后不能保留这笔预订。若 30 已持久、回复还在路上就掉电，甲在库内已经提交，恢复后应得 `(2,3)`。客户端此时只知道自己没收到回复；盲目重下单，可能真的再订两件。
+
+### 在最后一个掉电点，ARIES 从哪里开始？
+
+1. **Analysis：找人、找页，不改数值。** 主记录给的是 40。用完成的检查点和后续日志重建：甲已经结束，乙未提交，乙的 `lastLSN=70`；DPT 给出候选 `O:10, S:20`。后台刷 S 并没有留下可供此次扫描排除它的日志记录。**可能脏**和**磁盘确实落后**不是一回事。
+2. **Redo：从 10 开始，而非从 40 开始。** 取 DPT 中最小的 `recLSN`，按日志顺序重复历史。O 的盘页是 `@0`，所以重做 10；S 已是 `@60`，其 20、60 两次写均跳过；O 现在仅到 `@10`，所以连乙的 70 也要重做。此时恢复工作区是 `(3,2)`。和为 5，却不是可交给用户的结果。
+3. **Undo：只倒走乙的事务链。** 先撤销 70，把 O 还原成 2；再撤销 60，把 S 还原成 3。每撤销一次都追加一条可重做的补偿日志（CLR），页的 `pageLSN` 前进到对应 CLR，而不是倒退到旧的 LSN。到乙的 BEGIN 后结束它。数据库最终是 `(2,3)`：既没漏掉甲，也没保留乙。
+
+<details><summary>如果 O 的补偿日志已持久，O 的补偿结果却还没刷盘，又掉电了呢？</summary>
+
+第一次撤销 70 的 CLR 记着“把 O 恢复到 2，下一条待撤销的是 60”。再次 Redo 会按 O 的 `pageLSN` 补做尚未落页的历史，**包括这条 CLR**。再次 Undo 读到 CLR 时沿 `undoNextLSN` 跳到 60，继续恢复 S；不会撤销 CLR，把订单又改回 3。若 CLR 尚未持久，WAL 也不允许把带着这次补偿的新 O 页先刷出去。
+
+</details>
+
 ## 引用与来源
 
 - CMU Database Group / Andy Pavlo：[Fall 2025 官方课表](https://15445.courses.cs.cmu.edu/fall2025/schedule.html)、[课程大纲](https://15445.courses.cs.cmu.edu/fall2025/syllabus.html)、[FAQ](https://15445.courses.cs.cmu.edu/fall2025/faq.html)、[官方视频列表](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYMAgsGH-GtY5rJYZ6zjsd5)。逐讲视频入口显示在各讲页头。
@@ -451,9 +482,10 @@ flowchart LR
 - CMU Database Group：[BusTub 固定源码](https://github.com/cmu-db/bustub/tree/v20251119-2025fall)、[固定提交](https://github.com/cmu-db/bustub/commit/d49b823f829a4bf311a2c80b239ab5a9864c9c41)。代码许可与课程网页、视频、第三方依赖许可分别适用。
 - 官方 [作业与项目索引](https://15445.courses.cs.cmu.edu/fall2025/assignments.html)：[Project 0](https://15445.courses.cs.cmu.edu/fall2025/project0/)、[Project 1](https://15445.courses.cs.cmu.edu/fall2025/project1/)、[Project 2](https://15445.courses.cs.cmu.edu/fall2025/project2/)、[Project 3](https://15445.courses.cs.cmu.edu/fall2025/project3/)、[Project 4](https://15445.courses.cs.cmu.edu/fall2025/project4/)。任务与测试范围经网页和固定源码静态核对；不是已运行的验证结果。
 - 工具链依据：固定提交的 [README](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/README.md)、[CMakeLists.txt](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/CMakeLists.txt)、[packages.sh](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/build_support/packages.sh)。原生开发与 Linux 验证路线为编者建议，未实际配置或运行。
-- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1–5 提供原创导读而非参考答案；HW6 仅登记元数据。HW3 索引截止日为 2025-10-05，PDF 却印“Sunday October 3rd”。HW5 索引为 11-23，PDF 为 11-16；[L19 译稿 01:19–01:32](#/c/cmu-15-445-2025/lec/lec19?v=draft)说明讲师宣布延后一周，[L20 译稿 01:08–01:14](#/c/cmu-15-445-2025/lec/lec20?v=draft)再次确认 23 日；未核验评分系统实际设置。
+- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1–5 和 HW6 的 Q1–2 提供原创导读而非参考答案；HW6 Q3 分布式部分单列。HW3 索引截止日为 2025-10-05，PDF 却印“Sunday October 3rd”。HW5 索引为 11-23，PDF 为 11-16；[L19 译稿 01:19–01:32](#/c/cmu-15-445-2025/lec/lec19?v=draft)说明讲师宣布延后一周，[L20 译稿 01:08–01:14](#/c/cmu-15-445-2025/lec/lec20?v=draft)再次确认 23 日；未核验评分系统实际设置。
 - SQLite 官方文档：[Query Optimizer Overview §7.1.2](https://www.sqlite.org/optoverview.html#manual_control_of_query_plans_using_cross_join)、[Profiling SQL Queries §§2、4](https://www.sqlite.org/profile.html#planner_estimates)、[Scan Status 指标定义](https://www.sqlite.org/c3ref/c_scanstat_est.html)。订单数据与对照实验为编者自拟；记录的是 SQLite 3.51.0 的结果，不是 BusTub 计划或课堂演示。
 - 期中范围依据：L8 课堂通知 **01:31–01:48** 明确为 Lecture 1–11 inclusive，见[L8 中文译稿 00:00–01:54](#/c/cmu-15-445-2025/lec/lec08?v=draft)。本页自测为原创，未取用官方考卷或解答；L12 虽同属制作 P4，未据此纳入官方期中考纲。
 - 「两笔预订」为原创纸面练习。冲突优先图见当季[第 17 讲讲义 §6](https://15445.courses.cs.cmu.edu/fall2025/notes/17-concurrencycontrol.pdf)，等待图见[第 18 讲讲义 §3](https://15445.courses.cs.cmu.edu/fall2025/notes/18-twophaselocking.pdf)；strict 与 rigorous 2PL 的锁释放规则按[教材作者第 18 章课件，第 18.10 页](https://www.db-book.com/slides-dir/PDF-dir/ch18.pdf)区分。
 - 「库存变成 3 以后」是原创快照推演，取规则自 [Fall 2025 Project 4](https://15445.courses.cs.cmu.edu/fall2025/project4/) §§1.1–1.2、2.2、3.4–3.6、4.4。数字、订单与双仓反例不是官方作业题或运行输出。
+- 「订单已确认」的写入顺序采用 Andy Pavlo / CMU Database Group 的 [L21 讲义 §§2、6](https://15445.courses.cs.cmu.edu/fall2025/notes/21-logging.pdf) 与 [L22 讲义 §§2–5](https://15445.courses.cs.cmu.edu/fall2025/notes/22-recovery.pdf)。LSN、刷页时机、再次掉电点为编者自拟，非产品运行输出。
 - 全课逐来源版本、访问与阅读范围见仓库 `content/cmu-15-445-2025/source-manifest.json`；制作与恢复状态见同目录 `status.json`。原始字幕、媒体与网页快照只保存在本地忽略的 `sources/`，不随站点发布。

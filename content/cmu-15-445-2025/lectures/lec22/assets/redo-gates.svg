@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 444" role="img" aria-labelledby="t d">
+<title id="t">对第 L 条页更新或补偿记录，何时读页、何时重放？</title><desc id="d">页 P 不在脏页表，或 L 小于该页 recLSN 时直接跳过，不取页。余下候选取得页后，只有 pageLSN 小于 L 才重做并把页头设为 L；等于也不重做。</desc>
+<rect width="390" height="444" rx="12" fill="#f4f7f9"/>
+<g font-family="system-ui,'PingFang SC','Microsoft YaHei',sans-serif" fill="#16384c"><text x="17" y="34" font-size="22" font-weight="700">重放第 L 条记录？</text><text x="18" y="60" font-size="16">对象：页 P 上的 UPDATE 或 CLR。</text>
+<path d="M32 98V362" stroke="#647a88" stroke-width="3"/><g fill="#e1eff4" stroke="#87a9b7"><rect x="15" y="81" width="360" height="66" rx="8"/><rect x="15" y="158" width="360" height="66" rx="8"/></g>
+<g font-size="17"><text x="28" y="107" font-weight="700">①　P 在分析后的 DPT 吗？</text><text x="28" y="132">否 → 跳过；是 → 检查 ②。</text><text x="28" y="184" font-weight="700">②　L ≥ recLSN[P] 吗？</text><text x="28" y="209">否 → 早于可能缺失的范围，跳过。</text></g>
+<text x="52" y="254" font-size="16" fill="#28516b">通过前两关，才需要取页看页头。</text>
+<rect x="15" y="273" width="360" height="65" rx="8" fill="#eeeee4" stroke="#aaa474"/><text x="28" y="300" font-size="17" font-weight="700">③　pageLSN[P] ＜ L 吗？</text><text x="28" y="324" font-size="17">否 → 此步已反映在页上；等于也跳过。</text>
+<rect x="15" y="356" width="360" height="62" rx="8" fill="#def1e9" stroke="#71a08b"/><text x="28" y="382" font-size="17" font-weight="700">是 → 重放并令 pageLSN[P] = L</text><text x="28" y="406" font-size="16">不是生成一条新的普通 UPDATE。</text></g></svg>

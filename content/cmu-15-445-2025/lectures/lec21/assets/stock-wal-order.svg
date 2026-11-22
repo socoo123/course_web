@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 364 556" role="img" aria-labelledby="title desc">
+  <title id="title">同一笔预订，两个持久化门槛</title>
+  <desc id="desc">依次在内存中扣减库存、建立订单，刷两条更新日志，然后允许单独刷库存页。此时崩溃，撤销库存。再把提交记录刷盘，从此必须保住订单，即使尚未应答；此后才应答客户，订单页可更晚写回。</desc>
+  <rect width="364" height="556" rx="12" fill="#faf8f2"/>
+  <g font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#162f3a">
+    <text x="18" y="31" font-size="21" font-weight="700">扣库存与建订单：谁先落盘？</text>
+    <text x="18" y="57" font-size="16">初态：库存 10；订单 42 不存在。</text>
+    <path d="M32 93V516" fill="none" stroke="#788b90" stroke-width="3"/>
+    <g fill="#fff" stroke="#245e69" stroke-width="2"><circle cx="32" cy="102" r="13"/><circle cx="32" cy="181" r="13"/><circle cx="32" cy="261" r="13"/><circle cx="32" cy="359" r="13"/><circle cx="32" cy="449" r="13"/><circle cx="32" cy="516" r="13"/></g>
+    <g text-anchor="middle" font-size="15" font-weight="700"><text x="32" y="107">1</text><text x="32" y="186">2</text><text x="32" y="266">3</text><text x="32" y="364">4</text><text x="32" y="454">5</text><text x="32" y="521">6</text></g>
+    <g font-size="17" font-weight="700"><text x="56" y="108">在内存追加日志，修改两页</text><text x="56" y="187">两条更新记录先到稳定存储</text><text x="56" y="267">允许刷库存页：磁盘库存 = 7</text><text x="56" y="365">COMMIT 记录持久化</text><text x="56" y="455">客户端收到提交成功</text><text x="56" y="522">订单页可在以后刷出</text></g>
+    <g font-size="16"><text x="56" y="134">库存 10 → 7；订单 ∅ → 42。</text><text x="56" y="213">此刻没有持久的提交决定。</text><text x="56" y="292">订单页仍旧。若现在断电：</text><text x="56" y="315" fill="#824321">撤销未提交效果，库存回到 10。</text><text x="56" y="391">若现在断电：即使还没回复，</text><text x="56" y="414" fill="#195649">也须补齐订单，保留库存 7。</text><text x="56" y="480">不必等订单页，也不再反悔。</text></g>
+  </g>
+</svg>

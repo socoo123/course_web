@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 364 479" role="img" aria-labelledby="title desc">
+  <title id="title">两种崩溃恢复办法：选目录，还是还原旧页？</title>
+  <desc id="desc">影子分页在别处建立新库存页和订单页，根仍指旧目录；提交时原子地改指新目录。回滚日志保存旧页，主文件可已含部分新值；若崩溃留下热日志，恢复用旧页覆盖主文件。</desc>
+  <rect width="364" height="479" rx="12" fill="#faf8f2"/>
+  <g font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif" fill="#162f3a">
+    <text x="18" y="34" font-size="21" font-weight="700">同一场断电，证据放在哪？</text>
+    <rect x="14" y="55" width="336" height="181" rx="8" fill="#e6f0ee"/>
+    <text x="27" y="84" font-size="18" font-weight="700">影子分页：根指向哪份目录？</text>
+    <g font-size="16"><text x="27" y="112">根 → 旧目录：库存 10，无订单。</text><text x="27" y="139">另备新目录：库存 7，有订单 42。</text><text x="27" y="166">先把新页与目录写稳，再原子换根。</text></g>
+    <path d="M27 183h306" stroke="#69918a"/><text x="27" y="211" font-size="16" font-weight="700">换根前断电：选旧目录，不追新页。</text>
+    <rect x="14" y="251" width="336" height="210" rx="8" fill="#f4e8d9"/>
+    <text x="27" y="281" font-size="18" font-weight="700">回滚日志：旧副本能否撤销？</text>
+    <g font-size="16"><text x="27" y="311">先在日志保存库存、订单的旧页。</text><text x="27" y="339">主文件可先写库存 7，订单仍空。</text><text x="27" y="367">此时断电，未提交，热日志尚在。</text></g>
+    <path d="M27 385h306" stroke="#ae8962"/><g font-size="16" font-weight="700"><text x="27" y="413">用旧页覆盖主文件；确认写稳后</text><text x="27" y="438">再解除日志。结果仍是 10、无订单。</text></g>
+  </g>
+</svg>
