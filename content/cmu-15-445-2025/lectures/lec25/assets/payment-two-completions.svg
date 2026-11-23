@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="364" height="455" viewBox="0 0 364 455" role="img" aria-labelledby="t d">
+<title id="t">同一数据库记录可以对应两种付款事实</title><desc id="d">一笔付款明确属于订单 42，另一笔的订单号未知。若第二笔属于 43，则 44 未付；若属于 44，则 43 未付。不能把两单都当成确定未付。</desc>
+<style>text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:#202d3d}.h{font-weight:700}.k{fill:#484d71}.alert{fill:#793e13}</style>
+<rect width="364" height="455" rx="15" fill="#f7f7fb"/><text x="17" y="33" class="h" font-size="21">找不到匹配，钱就没付吗？</text>
+<rect x="15" y="51" width="334" height="98" rx="9" fill="#fff" stroke="#afb4d0"/><g font-size="16"><text x="28" y="79" class="h">数据库看得见</text><text x="28" y="108">订单：42、43、44</text><text x="28" y="133">付款：P1 → 42；P2 → 未知</text></g>
+<path d="M181 150v23m-92 0h184m-184 0v19m184-19v19" fill="none" stroke="#666a95" stroke-width="2"/>
+<rect x="14" y="192" width="160" height="104" rx="9" fill="#e7e9f6"/><rect x="190" y="192" width="160" height="104" rx="9" fill="#e7e9f6"/>
+<g text-anchor="middle" font-size="16"><text x="94" y="220" class="h k">可能世界 A</text><text x="270" y="220" class="h k">可能世界 B</text><text x="94" y="249">P2 其实属于 43</text><text x="270" y="249">P2 其实属于 44</text><text x="94" y="277" class="h">44 未付</text><text x="270" y="277" class="h">43 未付</text></g>
+<text x="17" y="329" font-size="16">反连接的结果是「43、44 都没有</text><text x="17" y="353" font-size="16">明确匹配」，不是「两笔都未付」。</text>
+<rect x="15" y="376" width="334" height="65" rx="9" fill="#fff2df"/><text x="28" y="403" class="h alert" font-size="16">发催款信之前还缺一个事实：</text><text x="28" y="427" class="alert" font-size="16">查清 P2，或证明不存在这种缺失。</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="364" height="458" viewBox="0 0 364 458" role="img" aria-labelledby="t d">
+<title id="t">四笔订单中，哪几行的金额在六十至一百之间？</title><desc id="d">偏移 0 至 3 对应订单 42 至 45，金额是 88、140、65 和 NULL。WHERE 只留下两个比较都为真的位置 0 和 2，映回订单 42、44。</desc>
+<style>text{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;fill:#172e39}.h{font-weight:700}.n{font-family:ui-monospace,monospace}.dim{fill:#47616c}.hit{fill:#126447;font-weight:700}</style>
+<rect width="364" height="458" rx="15" fill="#f4f8f7"/><text x="17" y="32" class="h" font-size="21">按金额筛：60 ≤ 金额 ≤ 100</text><text x="17" y="57" class="dim" font-size="15">同一列的四个位置，不是四个分片</text>
+<rect x="14" y="74" width="336" height="140" rx="9" fill="#fff" stroke="#9db8b2"/><path d="M14 119H350M14 164H350" stroke="#d5e2df"/>
+<g font-size="16" class="h"><text x="25" y="103">偏移</text><text x="25" y="148">订单</text><text x="25" y="194">金额</text></g>
+<g text-anchor="middle" class="n" font-size="17"><text x="116" y="103">0</text><text x="177" y="103">1</text><text x="238" y="103">2</text><text x="306" y="103">3</text><text x="116" y="148">42</text><text x="177" y="148">43</text><text x="238" y="148">44</text><text x="306" y="148">45</text><text class="hit" x="116" y="194">88</text><text x="177" y="194">140</text><text class="hit" x="238" y="194">65</text><text class="dim" x="306" y="194">NULL</text></g>
+<text x="17" y="244" font-size="16" class="h">① 谓词真值</text><text x="17" y="270" font-size="16">真　／　假　／　真　／　未知</text>
+<text x="17" y="305" font-size="16" class="h">② WHERE 只保留「真」</text><rect x="16" y="319" width="332" height="47" rx="8" fill="#e1efeb"/><text x="29" y="348" font-size="17">有效掩码</text><text x="174" y="348" class="n" font-size="20">1　0　1　0</text>
+<text x="17" y="397" font-size="16" class="h">③ 压紧偏移 [0, 2]，再回取所需列</text><text x="17" y="431" font-size="19" class="hit">输出订单：42、44</text>
+</svg>

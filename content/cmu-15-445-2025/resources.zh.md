@@ -475,6 +475,36 @@ flowchart LR
 
 </details>
 
+## 跨分片下单：TCP 已经确认，库存能扣吗？
+
+订单 42 预订商品 A 两件。订单按 `order_id` 路由到分片 O，库存按 `sku` 路由到分片 S；每个分片各有一个三副本 Raft 组。六个副本里，谁负责判断 A 是否有两件可卖？**只有 S 负责这份库存。** O 的三个副本不是 S 的替补；反过来，给 S 再加副本，也不会把订单 42 移到 S。前者是[分片键与数据放置](#/c/cmu-15-445-2025/lec/lec23?v=notes)，后者是[一组副本怎样保住同一段历史](#/c/mit-6.824-2021/lec/lec05?v=notes)。
+
+假定每个组能在本组内持久记录 `PREPARED(T)`，恢复出待定写入及其锁；另有一个可恢复的协调者 C，用[两阶段提交](#/c/cmu-15-445-2025/lec/lec24?v=notes)决定事务 T 的结局。沿着发给库存组的那条请求，找出**最早可以断言整笔订单不会再撤销**的位置：
+
+```mermaid
+flowchart TD
+    send["C 发出 PREPARE"] --> recv["S 的 TCP 收齐请求字节"]
+    recv --> prep["S 检查库存，持久记录 PREPARED"]
+    prep --> yes["C 收到 S 的 YES"]
+    yes --> all["C 已集齐 O、S 的 YES"]
+    all --> decision["C 持久记录 COMMIT：全局决定不可逆"]
+    decision --> apply["S 收到决定，完成扣减并解锁"]
+```
+
+即使 C 收到覆盖整条请求的 **TCP ACK**，S 的数据库进程也可能连字节都没读；见 [CS168 L12 的累计 ACK 与应用读取](#/c/berkeley-cs168-2025/lec/lec12?v=notes)。即使 S 组已经用 Raft **提交了 `PREPARED` 这条日志**，它也只承诺“此后两种决定我都能执行”，不是说 T 已提交。分片组数决定这笔交易要征得谁同意，副本数决定一个组在什么故障下还能履行承诺；不能把六台机器混在一起数四票。
+
+这里的“全局”指两边最终不能一个提交、一个撤销，并不是两台机器在同一时刻改完页。要让并发读者也看不到半笔订单，还得有覆盖两边的隔离规则；单靠 2PC 的决定记录没有给读者定义快照。
+
+**剪断一条链路。** 让 S 在发出 YES 后一直收不到决定。可能是 O 拒绝了库存以外的业务条件，C 已记录 ABORT；也可能是 O 同意了，C 已记录 COMMIT，只是通知没有送达。从 S 的磁盘看，两段历史相同。能恢复自己的 `PREPARED` 日志，不代表能从中读出 C 的决定；超时后单方面解锁并撤销，会在第二段历史里留下已确认却没扣库存的订单。这是[MIT 6.824 L13：已投 YES 的参与者为何可能阻塞](#/c/mit-6.824-2021/lec/lec13?v=notes)要解释的故障边界。
+
+<details><summary>广域链路每次往返 40 ms。两边同时 prepare，是两个分片各花 40 ms 再相加吗？如果客户超时怎么办？</summary>
+
+先固定计时点：从 C 发出 PREPARE，到它收到两个参与者的第二阶段完成确认。假设每条 C↔参与者链路的 RTT 都是 40 ms，各阶段内并发发送，不计排队、处理、日志刷写和分片组内复制，两轮串行往返约 **80 ms**；每轮取最慢参与者的返回时间，而不是把两个并行请求相加。若改为 C 持久化决定后提前回复，计时终点变了，不能把少等的一轮说成参与者已全部完成。
+
+客户端没收到成功不等于失败：若决定已持久，恢复必须仍是 COMMIT。用同一业务请求号查询或重试，并让数据库把该号与结果一起持久去重；不要生成新订单号再扣一次。这里是故障与延迟的纸面推演，不是跨机实测。
+
+</details>
+
 ## 引用与来源
 
 - CMU Database Group / Andy Pavlo：[Fall 2025 官方课表](https://15445.courses.cs.cmu.edu/fall2025/schedule.html)、[课程大纲](https://15445.courses.cs.cmu.edu/fall2025/syllabus.html)、[FAQ](https://15445.courses.cs.cmu.edu/fall2025/faq.html)、[官方视频列表](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYMAgsGH-GtY5rJYZ6zjsd5)。逐讲视频入口显示在各讲页头。
@@ -482,10 +512,11 @@ flowchart LR
 - CMU Database Group：[BusTub 固定源码](https://github.com/cmu-db/bustub/tree/v20251119-2025fall)、[固定提交](https://github.com/cmu-db/bustub/commit/d49b823f829a4bf311a2c80b239ab5a9864c9c41)。代码许可与课程网页、视频、第三方依赖许可分别适用。
 - 官方 [作业与项目索引](https://15445.courses.cs.cmu.edu/fall2025/assignments.html)：[Project 0](https://15445.courses.cs.cmu.edu/fall2025/project0/)、[Project 1](https://15445.courses.cs.cmu.edu/fall2025/project1/)、[Project 2](https://15445.courses.cs.cmu.edu/fall2025/project2/)、[Project 3](https://15445.courses.cs.cmu.edu/fall2025/project3/)、[Project 4](https://15445.courses.cs.cmu.edu/fall2025/project4/)。任务与测试范围经网页和固定源码静态核对；不是已运行的验证结果。
 - 工具链依据：固定提交的 [README](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/README.md)、[CMakeLists.txt](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/CMakeLists.txt)、[packages.sh](https://github.com/cmu-db/bustub/blob/d49b823f829a4bf311a2c80b239ab5a9864c9c41/build_support/packages.sh)。原生开发与 Linux 验证路线为编者建议，未实际配置或运行。
-- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。HW1–5 和 HW6 的 Q1–2 提供原创导读而非参考答案；HW6 Q3 分布式部分单列。HW3 索引截止日为 2025-10-05，PDF 却印“Sunday October 3rd”。HW5 索引为 11-23，PDF 为 11-16；[L19 译稿 01:19–01:32](#/c/cmu-15-445-2025/lec/lec19?v=draft)说明讲师宣布延后一周，[L20 译稿 01:08–01:14](#/c/cmu-15-445-2025/lec/lec20?v=draft)再次确认 23 日；未核验评分系统实际设置。
+- 六份作业：[HW1 SQL](https://15445.courses.cs.cmu.edu/fall2025/homework1/)、[HW2 Storage](https://15445.courses.cs.cmu.edu/fall2025/files/hw2-clean.pdf)、[HW3 Indexes & Filters](https://15445.courses.cs.cmu.edu/fall2025/files/hw3-clean.pdf)、[HW4 Execution & Planning](https://15445.courses.cs.cmu.edu/fall2025/files/hw4-clean.pdf)、[HW5 Transactions](https://15445.courses.cs.cmu.edu/fall2025/files/hw5-clean.pdf)、[HW6 Recovery / Distributed](https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf)。均提供原创导读，不提供参考答案。HW3 索引截止日为 2025-10-05，PDF 却印“Sunday October 3rd”。HW5 索引为 11-23，PDF 为 11-16；[L19 译稿 01:19–01:32](#/c/cmu-15-445-2025/lec/lec19?v=draft)说明讲师宣布延后一周，[L20 译稿 01:08–01:14](#/c/cmu-15-445-2025/lec/lec20?v=draft)再次确认 23 日；未核验评分系统实际设置。
 - SQLite 官方文档：[Query Optimizer Overview §7.1.2](https://www.sqlite.org/optoverview.html#manual_control_of_query_plans_using_cross_join)、[Profiling SQL Queries §§2、4](https://www.sqlite.org/profile.html#planner_estimates)、[Scan Status 指标定义](https://www.sqlite.org/c3ref/c_scanstat_est.html)。订单数据与对照实验为编者自拟；记录的是 SQLite 3.51.0 的结果，不是 BusTub 计划或课堂演示。
 - 期中范围依据：L8 课堂通知 **01:31–01:48** 明确为 Lecture 1–11 inclusive，见[L8 中文译稿 00:00–01:54](#/c/cmu-15-445-2025/lec/lec08?v=draft)。本页自测为原创，未取用官方考卷或解答；L12 虽同属制作 P4，未据此纳入官方期中考纲。
 - 「两笔预订」为原创纸面练习。冲突优先图见当季[第 17 讲讲义 §6](https://15445.courses.cs.cmu.edu/fall2025/notes/17-concurrencycontrol.pdf)，等待图见[第 18 讲讲义 §3](https://15445.courses.cs.cmu.edu/fall2025/notes/18-twophaselocking.pdf)；strict 与 rigorous 2PL 的锁释放规则按[教材作者第 18 章课件，第 18.10 页](https://www.db-book.com/slides-dir/PDF-dir/ch18.pdf)区分。
 - 「库存变成 3 以后」是原创快照推演，取规则自 [Fall 2025 Project 4](https://15445.courses.cs.cmu.edu/fall2025/project4/) §§1.1–1.2、2.2、3.4–3.6、4.4。数字、订单与双仓反例不是官方作业题或运行输出。
 - 「订单已确认」的写入顺序采用 Andy Pavlo / CMU Database Group 的 [L21 讲义 §§2、6](https://15445.courses.cs.cmu.edu/fall2025/notes/21-logging.pdf) 与 [L22 讲义 §§2–5](https://15445.courses.cs.cmu.edu/fall2025/notes/22-recovery.pdf)。LSN、刷页时机、再次掉电点为编者自拟，非产品运行输出。
+- 「跨分片下单」的分片与提交模型参考 Andy Pavlo 的 [L23 讲义 §4](https://15445.courses.cs.cmu.edu/fall2025/notes/23-distributed1.pdf)、[L24 讲义 §2](https://15445.courses.cs.cmu.edu/fall2025/notes/24-distributed2.pdf)；订单、故障切点与 RTT 算例为自拟，与 HW6 的 JOIN 题无关。
 - 全课逐来源版本、访问与阅读范围见仓库 `content/cmu-15-445-2025/source-manifest.json`；制作与恢复状态见同目录 `status.json`。原始字幕、媒体与网页快照只保存在本地忽略的 `sources/`，不随站点发布。

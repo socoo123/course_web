@@ -425,7 +425,8 @@
       "core": true,
       "readings": [
         "Database System Concepts 第七版 · Chapter 20.4-20.5, 21, 23.1-23.4"
-      ]
+      ],
+      "lab": "hw06"
     },
     {
       "id": "lec24",
@@ -441,7 +442,8 @@
       "core": true,
       "readings": [
         "Database System Concepts 第七版 · Chapter 20.7, 22.9"
-      ]
+      ],
+      "lab": "hw06"
     },
     {
       "id": "lec25",
@@ -721,16 +723,16 @@
     {
       "id": "hw06",
       "num": 6,
-      "title": "HW6 · 数据库恢复（本批：Q1–2）",
+      "title": "HW6 · 恢复与分布式数据库",
       "titleEn": "Homework 6 — Recovery",
       "stars": 3,
-      "hours": "题面未给估时；本批为纸面推演",
+      "hours": "题面未给估时；纸面推演",
       "url": "https://15445.courses.cs.cmu.edu/fall2025/files/hw6-clean.pdf",
-      "goal": "在同一条日志上移动崩溃点，判断磁盘可能保留哪些修改，区分恢复时的重做与撤销。本批覆盖恢复题 80 分，不是编程项目。",
+      "goal": "移动崩溃点，判断哪些修改必须重做或撤销；再根据数据放置和网络故障，分析分布式连接、事务决定与键的重新分配。",
       "tasks": [
         {"id": "q1", "title": "ARIES：三个崩溃点", "titleEn": "ARIES", "grade": "48 分"},
         {"id": "q2", "title": "日志与恢复策略", "titleEn": "Logging and Recovery", "grade": "32 分"},
-        {"id": "q3", "title": "分布式数据库（留待 P10）", "titleEn": "Distributed Databases", "grade": "20 分"}
+        {"id": "q3", "title": "分布式连接、提交与一致性哈希", "titleEn": "Distributed Databases", "grade": "20 分"}
       ]
     }
   ]
